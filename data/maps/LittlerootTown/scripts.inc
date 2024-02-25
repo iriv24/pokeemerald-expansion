@@ -4084,21 +4084,3 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1021 "data/maps/LittlerootTown/scripts.pory"
 # 2043 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
-# 2044 "data/maps/LittlerootTown/scripts.pory"
-
-# 2045 "data/maps/LittlerootTown/scripts.pory"
-LittleRootTown_EventScript_NewSign::
-# 2046 "data/maps/LittlerootTown/scripts.pory"
-# 1026 "data/maps/LittlerootTown/scripts.pory"
-# 2047 "data/maps/LittlerootTown/scripts.pory"
-	lockall
-# 2048 "data/maps/LittlerootTown/scripts.pory"
-# 1027 "data/maps/LittlerootTown/scripts.pory"
-# 2049 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_NewSign_Text_0
-# 2050 "data/maps/LittlerootTown/scripts.pory"
-# 1028 "data/maps/LittlerootTown/scripts.pory"
-# 2051 "data/maps/LittlerootTown/scripts.pory"
-	releaseall
-# 2052 "data/maps/LittlerootTown/scripts.pory"
-	return
