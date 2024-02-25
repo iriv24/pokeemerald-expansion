@@ -4102,13 +4102,3 @@ LittleRootTown_EventScript_NewSign::
 	releaseall
 # 2052 "data/maps/LittlerootTown/scripts.pory"
 	return
-# 2053 "data/maps/LittlerootTown/scripts.pory"
-
-# 2054 "data/maps/LittlerootTown/scripts.pory"
-
-# 2055 "data/maps/LittlerootTown/scripts.pory"
-LittleRootTown_EventScript_NewSign_Text_0:
-# 2056 "data/maps/LittlerootTown/scripts.pory"
-# 1027 "data/maps/LittlerootTown/scripts.pory"
-# 2057 "data/maps/LittlerootTown/scripts.pory"
-	.string "Hello World you fools!$"
