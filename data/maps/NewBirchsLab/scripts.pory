@@ -34,7 +34,10 @@ script NewBirchsLab_EventScript_Birch{
  
 script NewBirchsLab_EventScript_PokeballOne{
     lockall
-    if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
+    if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
+        msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Squirtle)
         }
@@ -73,7 +76,10 @@ script NewBirchsLab_EventScript_PokeballOne{
  
 script NewBirchsLab_EventScript_PokeballTwo{
     lockall
-    if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
+    if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
+        msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Bulbasaur)
         }
@@ -112,7 +118,10 @@ script NewBirchsLab_EventScript_PokeballTwo{
  
 script NewBirchsLab_EventScript_PokeballThree{
     lockall
-    if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
+    if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
+        msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Charmander)
         }
@@ -176,6 +185,18 @@ script NewBirchsLab_EventScript_Squirtle{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -211,6 +232,18 @@ script NewBirchsLab_EventScript_Totodile{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -246,6 +279,18 @@ script NewBirchsLab_EventScript_Mudkip{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -281,6 +326,18 @@ script NewBirchsLab_EventScript_Piplup{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -316,6 +373,18 @@ script NewBirchsLab_EventScript_Oshawott{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -351,6 +420,18 @@ script NewBirchsLab_EventScript_Froakie{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -386,6 +467,18 @@ script NewBirchsLab_EventScript_Popplio{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -421,6 +514,18 @@ script NewBirchsLab_EventScript_Sobble{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -456,6 +561,18 @@ script NewBirchsLab_EventScript_Quaxly{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 2)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -491,6 +608,18 @@ script NewBirchsLab_EventScript_Bulbasaur{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -526,6 +655,18 @@ script NewBirchsLab_EventScript_Chikorita{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -561,6 +702,18 @@ script NewBirchsLab_EventScript_Treecko{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -596,6 +749,18 @@ script NewBirchsLab_EventScript_Turtwig{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -631,6 +796,18 @@ script NewBirchsLab_EventScript_Snivy{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -666,6 +843,18 @@ script NewBirchsLab_EventScript_Chespin{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -701,6 +890,18 @@ script NewBirchsLab_EventScript_Rowlet{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -736,6 +937,18 @@ script NewBirchsLab_EventScript_Grookey{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -771,6 +984,18 @@ script NewBirchsLab_EventScript_Sprigatito{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -806,6 +1031,18 @@ script NewBirchsLab_EventScript_Charmander{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -841,6 +1078,18 @@ script NewBirchsLab_EventScript_Cyndaquil{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -876,6 +1125,18 @@ script NewBirchsLab_EventScript_Torchic{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -911,6 +1172,18 @@ script NewBirchsLab_EventScript_Chimchar{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -946,6 +1219,18 @@ script NewBirchsLab_EventScript_Tepig{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -981,6 +1266,18 @@ script NewBirchsLab_EventScript_Fennekin{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -1016,6 +1313,18 @@ script NewBirchsLab_EventScript_Litten{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -1051,6 +1360,18 @@ script NewBirchsLab_EventScript_Scorbunny{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -1086,6 +1407,18 @@ script NewBirchsLab_EventScript_Fuecoco{
         // 0=Treecko, 1=Torchic, 2=Mudkip
         setflag(FLAG_SYS_POKEMON_GET)
         setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
     else{
         hidemonpic
@@ -1118,4 +1451,9 @@ script NicknameBoxMon{
  
 text NewBirchsLab_NotChosen{
     "You did not choose the Pokemon"
+}
+
+text NewBirchsLab_NotYet{
+    "Better not touch these yet!\p"
+    "Maybe you should talk to {RIVAL}."
 }

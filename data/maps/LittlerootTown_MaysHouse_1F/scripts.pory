@@ -202,6 +202,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	delay 30
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
@@ -340,10 +341,10 @@ RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "scrabbling about in grassy places.$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-	.string "That {RIVAL}!\p"
-	.string "I guess our child is too busy with\n"
-	.string "POKéMON to notice that you came\l"
-	.string "to visit, {PLAYER}{KUN}.$"
+	.string "Did you meet {RIVAL}?\p"
+	.string "I hope they told you to stop by\n"
+	.string "my husband's lab!\l"
+	.string "Best of luck, {PLAYER}{KUN}!$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
 	.string "Oh, {RIVAL} went out to ROUTE 103\n"
