@@ -5678,7 +5678,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .power = 60,
-            .accuracy = 95,
+            .accuracy = 100,
             .pp = 15,
         #else
             .power = 50,
