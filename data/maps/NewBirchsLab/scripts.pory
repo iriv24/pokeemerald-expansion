@@ -5,28 +5,106 @@ mapscripts NewBirchsLab_MapScripts {
  
 script NewBirchsLab_EventScript_BallDefault{
     setvar(VAR_UNUSED_0x40F7, 0)
+    setvar(VAR_UNUSED_0x40F8, 1)
 }
  
 script NewBirchsLab_EventScript_Birch{
     lockall
     faceplayer
+    if(!flag(FLAG_UNUSED_0x023))
+    {
+        msgbox(NewBirchsLab_Welcome)
+        setflag(FLAG_UNUSED_0x023)
+    }
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
-        msgbox("Hello, would you like to see more?", MSGBOX_YESNO)
+        msgbox(NewBirchsLab_ChangeStarters, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
             if(var(VAR_UNUSED_0x40F7) != 8){
                 addvar(VAR_UNUSED_0x40F7, 1)
+                addvar(VAR_UNUSED_0x40F8, 1)
             }
             else{
                 setvar(VAR_UNUSED_0x40F7, 0)
+                setvar(VAR_UNUSED_0x40F8, 1)
             }
-            msgbox("Choose your Pokemon wisely")
+            if(var(VAR_UNUSED_0x40F8) == 1)
+            {
+                msgbox("Now showing starters for Gen 1.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 2)
+            {
+                msgbox("Now showing starters for Gen 2.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 3)
+            {
+                msgbox("Now showing starters for Gen 3.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 4)
+            {
+                msgbox("Now showing starters for Gen 4.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 5)
+            {
+                msgbox("Now showing starters for Gen 5.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 6)
+            {
+                msgbox("Now showing starters for Gen 6.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 7)
+            {
+                msgbox("Now showing starters for Gen 7.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 8)
+            {
+                msgbox("Now showing starters for Gen 8.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 9)
+            {
+                msgbox("Now showing starters for Gen 9.")
+            }
         }
         else{
-            msgbox("Choose your Pokemon wisely")
+            if(var(VAR_UNUSED_0x40F8) == 1)
+            {
+                msgbox("Now showing starters for Gen 1.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 2)
+            {
+                msgbox("Now showing starters for Gen 2.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 3)
+            {
+                msgbox("Now showing starters for Gen 3.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 4)
+            {
+                msgbox("Now showing starters for Gen 4.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 5)
+            {
+                msgbox("Now showing starters for Gen 5.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 6)
+            {
+                msgbox("Now showing starters for Gen 6.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 7)
+            {
+                msgbox("Now showing starters for Gen 7.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 8)
+            {
+                msgbox("Now showing starters for Gen 8.")
+            }
+            if(var(VAR_UNUSED_0x40F8) == 9)
+            {
+                msgbox("Now showing starters for Gen 9.")
+            }
         }
     }
     else{
-        msgbox("Take care of your Pokemon")
+        msgbox("Good luck out there on ROUTE 103\n and beyond!")
     }
     waitmessage
     releaseall
@@ -37,6 +115,10 @@ script NewBirchsLab_EventScript_PokeballOne{
     lockall
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!flag(FLAG_UNUSED_0x023))
+    {
+        msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
@@ -80,6 +162,10 @@ script NewBirchsLab_EventScript_PokeballTwo{
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
     }
+    elif(!flag(FLAG_UNUSED_0x023))
+    {
+        msgbox("Ask Professor Birch about this!")
+    }
     elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Bulbasaur)
@@ -121,6 +207,10 @@ script NewBirchsLab_EventScript_PokeballThree{
     lockall
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!flag(FLAG_UNUSED_0x023))
+    {
+        msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
@@ -1447,14 +1537,33 @@ script NicknameBoxMon{
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedBoxMon)
     }
-    msgbox("Transferred to PC")
+    msgbox("Transferred to PC.")
 }
  
 text NewBirchsLab_NotChosen{
-    "You did not choose the Pokemon"
+    "You did not choose this Pokemon."
 }
 
 text NewBirchsLab_NotYet{
     "Better not touch these yet!\p"
     "Maybe you should talk to {RIVAL}."
+}
+
+
+text NewBirchsLab_Welcome{
+    "Welcome to my lab! I'm\n"
+    "sure that if you've found this\p"
+    "hack that you've played Pokemon\n"
+    "before and know how this works.\p"
+    "BUT, what you didn't know is that\n"
+    "you can talk to me to change\p"
+    "the region of the available\n"
+    "starter Pokemon.\p"
+    "You are now viewing the Gen 1\n"
+    "starter Pokemon."
+}
+
+text NewBirchsLab_ChangeStarters{
+    "Would you like to see\n"
+    "the next Gen of starters?"
 }
