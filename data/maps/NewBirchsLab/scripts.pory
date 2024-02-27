@@ -1,5 +1,6 @@
 mapscripts NewBirchsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: NewBirchsLab_EventScript_BallDefault
+    MAP_SCRIPT_ON_FRAME_TABLE: LittlerootTown_ProfessorBirchsLab_OnFrame
 }
  
 script NewBirchsLab_EventScript_BallDefault{

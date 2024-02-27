@@ -104,7 +104,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters::
 	end
 
 LittlerootTown_ProfessorBirchsLab_OnFrame:
-	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent
 	map_script_2 VAR_BIRCH_LAB_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
@@ -163,6 +162,8 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_right
 	walk_up
 	step_end
 
@@ -516,13 +517,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls
+	call LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls
 	setvar VAR_BIRCH_LAB_STATE, 5
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_OLDALE_TOWN_STATE, 1
@@ -768,18 +763,14 @@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 	.string "and do fieldwork again!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
-	.string "MAY: Oh, wow, {PLAYER}{KUN}!\n"
-	.string "You got a POKéDEX, too!\p"
-	.string "That's great! Just like me!\n"
-	.string "I've got something for you, too!$"
+	.string "Oh, also, {PLAYER}{KUN}, I \n"
+	.string "gave these to {RIVAL} already.\p"
+	.string "You should probably have some too.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
-	.string "MAY: It's fun if you can get a lot of\n"
-	.string "POKéMON!\p"
-	.string "I'm going to look all over the place\n"
-	.string "because I want different POKéMON.\p"
-	.string "If I find any cute POKéMON, I'll catch\n"
-	.string "them with POKé BALLS!$"
+	.string "Now go catch a lot of Pokemon and remember\n"
+	.string "this game might be harder.\p"
+	.string "Good luck, {PLAYER}{KUN}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"
