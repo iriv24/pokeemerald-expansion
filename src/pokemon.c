@@ -54,6 +54,7 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
+#include "level_caps.h"
 
 #if P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9
 #define FRIENDSHIP_EVO_THRESHOLD 160
@@ -4768,7 +4769,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
         expPoints = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
         SetMonData(mon, MON_DATA_EXP, &expPoints);
     }
-    if (nextLevel > MAX_LEVEL || expPoints < gExperienceTables[gSpeciesInfo[species].growthRate][nextLevel])
+    if (nextLevel > GetCurrentLevelCap() || expPoints < gExperienceTables[gSpeciesInfo[species].growthRate][nextLevel])
     {
         return FALSE;
     }
