@@ -341,7 +341,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival::
 # 171 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
 # 172 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 # 173 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	savebgm MUS_DUMMY
 # 174 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
