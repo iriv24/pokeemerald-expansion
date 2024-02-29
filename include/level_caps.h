@@ -16,7 +16,7 @@
 #define B_LEVEL_CAP_VARIABLE            0 // event variable used to derive level cap if B_LEVEL_CAP_TYPE is set to LEVEL_CAP_VARIABLE
 
 #define B_RARE_CANDY_CAP                TRUE // If set to true, Rare Candies can't be used to go over the level cap
-#define B_LEVEL_CAP_EXP_UP              FALSE // If set to true, mons under level cap will receive more experience
+#define B_LEVEL_CAP_EXP_UP              TRUE // If set to true, mons under level cap will receive more experience
 
 #if B_EXP_CAP_TYPE != EXP_CAP_NONE && B_EXP_CAP_TYPE != EXP_CAP_HARD && B_EXP_CAP_TYPE != EXP_CAP_SOFT
 #error "Invalid choice for B_EXP_CAP_TYPE, must be of [EXP_CAP_NONE, EXP_CAP_HARD, EXP_CAP_SOFT]"
