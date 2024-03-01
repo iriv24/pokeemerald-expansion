@@ -10259,4 +10259,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = TRAINER_PARTY(sParty_MayLinkPlaceholder),
     },
+
+    [TRAINER_DAWN_ROUTE_104] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("MAY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_DawnRoute104),
+    }
 };

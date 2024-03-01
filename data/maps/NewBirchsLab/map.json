@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBirchsLab_EventScript_PokeballOne",
-      "flag": "FLAG_UNUSED_0x020"
+      "flag": "FLAG_UNUSED_WATERSTARTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBirchsLab_EventScript_PokeballTwo",
-      "flag": "FLAG_UNUSED_0x021"
+      "flag": "FLAG_UNUSED_GRASSSTARTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBirchsLab_EventScript_PokeballThree",
-      "flag": "FLAG_UNUSED_0x022"
+      "flag": "FLAG_UNUSED_FIRESTARTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",

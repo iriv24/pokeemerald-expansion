@@ -2344,3 +2344,27 @@ Route104_Text_BrendanPostBattle:
 	.string "Like MR. BRINEY, it's important to\n"
 # 1173 "data/maps/Route104/scripts.pory"
 	.string "become friends with your POKéMON.$"
+
+Route104_EventScript_DawnRivalBattle::
+# 1177 "data/maps/Route104/scripts.pory"
+	trainerbattle_single TRAINER_DAWN_ROUTE_104, Dawn_Intro, Dawn_Outro
+# 1178 "data/maps/Route104/scripts.pory"
+	msgbox PostBattle_Dawn, MSGBOX_AUTOCLOSE
+# 1179 "data/maps/Route104/scripts.pory"
+	waitmessage
+# 1180 "data/maps/Route104/scripts.pory"
+	setflag FLAG_UNUSED_0x024
+	end
+
+
+Dawn_Intro::
+# 1185 "data/maps/Route104/scripts.pory"
+	.string "Hi im dawn$"
+
+Dawn_Outro::
+# 1189 "data/maps/Route104/scripts.pory"
+	.string "bye im dawn$"
+
+PostBattle_Dawn::
+# 1193 "data/maps/Route104/scripts.pory"
+	.string "bye im dawn again!$"

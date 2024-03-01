@@ -471,6 +471,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_Rival",
       "flag": "FLAG_HIDE_ROUTE_104_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 25,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route104_EventScript_DawnRivalBattle",
+      "flag": "FLAG_UNUSED_0x024"
     }
   ],
   "warp_events": [

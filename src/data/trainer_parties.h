@@ -11819,3 +11819,33 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMon sParty_DawnRoute104[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 12,
+    .species = SPECIES_BUNEARY,
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_LIMBER,
+    .moves = {MOVE_FAKE_OUT, MOVE_QUICK_ATTACK, MOVE_MACH_PUNCH, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 13,
+    .species = SPECIES_NOIBAT,
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_INFILTRATOR,
+    .moves = {MOVE_GUST, MOVE_ABSORB, MOVE_TWISTER, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 14,
+    .species = SPECIES_PIPLUP,
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_SERIOUS,
+    .ability = ABILITY_TORRENT,
+    .moves = {MOVE_BUBBLE_BEAM, MOVE_AQUA_JET, MOVE_BABY_DOLL_EYES, MOVE_QUICK_ATTACK}
+    },
+};

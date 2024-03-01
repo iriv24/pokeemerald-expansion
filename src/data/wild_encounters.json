@@ -85,22 +85,22 @@
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_WURMPLE"
+                "species": "SPECIES_DARUMAKA_GALARIAN"
               },
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_VOLTORB_HISUIAN"
               },
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_PIDGEY"
+                "species": "SPECIES_DIGLETT_ALOLAN"
               },
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_BLIPBUG"
+                "species": "SPECIES_SANDSHREW_ALOLAN"
               },
               {
                 "min_level": 2,
@@ -110,17 +110,17 @@
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_BUNNELBY"
+                "species": "SPECIES_WOOPER_PALDEAN"
               },
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_CHEWTLE"
+                "species": "SPECIES_TAUROS_PALDEAN_AQUA_BREED"
               },
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_CLODSIRE"
               },
               {
                 "min_level": 2,

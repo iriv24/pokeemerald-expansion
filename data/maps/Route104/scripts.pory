@@ -1172,3 +1172,24 @@ Route104_Text_BrendanPostBattle:
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your POKéMON.$"
 `
+
+script Route104_EventScript_DawnRivalBattle{
+	trainerbattle_single(TRAINER_DAWN_ROUTE_104, Dawn_Intro, Dawn_Outro)
+	msgbox(PostBattle_Dawn, MSGBOX_AUTOCLOSE)
+	waitmessage
+	setflag(FLAG_UNUSED_0x024)
+	end
+
+}
+
+text Dawn_Intro{
+	"Hi im dawn"
+}
+
+text Dawn_Outro{
+	"bye im dawn"
+}
+
+text PostBattle_Dawn{
+	"bye im dawn again!"
+}
