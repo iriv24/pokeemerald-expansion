@@ -7600,12 +7600,18 @@ static const struct TrainerMon sParty_Tiana[] = {
 
 static const struct TrainerMon sParty_Haley1[] = {
     {
-    .lvl = 6,
+    .lvl = 7,
     .species = SPECIES_LOTAD,
+    .moves = {MOVE_ABSORB, MOVE_BUBBLE, MOVE_NONE, MOVE_NONE} 
     },
     {
     .lvl = 6,
     .species = SPECIES_SHROOMISH,
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_TAILLOW,
+    .moves = {MOVE_WING_ATTACK, MOVE_TACKLE, MOVE_NONE, MOVE_NONE} 
     }
 };
 
