@@ -11792,11 +11792,34 @@ static const struct TrainerMon sParty_Everett[] = {
     }
 };
 
-static const struct TrainerMon sParty_Red[] = {
+static const struct TrainerMon sParty_Roark[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_CHARMANDER,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 12,
+    .species = SPECIES_SHIELDON,
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_IMPISH,
+    .ability = ABILITY_STURDY,
+    .moves = {MOVE_ROCK_TOMB, MOVE_METAL_BURST, MOVE_METAL_CLAW, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 13,
+    .species = SPECIES_TYRUNT,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_STRONG_JAW,
+    .moves = {MOVE_BITE, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_ROCK_TOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 14,
+    .species = SPECIES_CRANIDOS,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_SHEER_FORCE,
+    .moves = {MOVE_ROCK_TOMB, MOVE_HEADBUTT, MOVE_IRON_HEAD, MOVE_CRUNCH}
+    },
 };
 
 static const struct TrainerMon sParty_Leaf[] = {

@@ -2172,3 +2172,25 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 7),
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 8),
 };
+
+/*
+TODOROARK
+const struct SpriteFrameImage gObjectEventPicTable_Roark[] = {
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 5),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 6),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 7),
+    overworld_frame(gObjectEventPic_Roark, 4, 4, 8),
+};
+
+ALSO ADD 
+$(OBJEVENTGFXDIR)/people/roark.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+TO spritesheet_rules.mk
+*/
+

@@ -473,3 +473,24 @@ Route116_Text_TrainerTipsBagHasPockets:
 	.string "a BAG of their own.$"
 
 `
+
+script Route116_EventScript_RoarkBattle{
+	trainerbattle_single(TRAINER_ROARK, Roark_Intro, Roark_Outro)
+	msgbox(PostBattle_Roark, MSGBOX_AUTOCLOSE)
+	waitmessage
+	setflag(FLAG_UNUSED_ROARK)
+	end
+
+}
+
+text Roark_Intro{
+	"Hi im Roark"
+}
+
+text Roark_Outro{
+	"bye im Roark"
+}
+
+text PostBattle_Roark{
+	"bye im Roark again!"
+}

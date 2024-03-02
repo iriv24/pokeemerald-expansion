@@ -1177,7 +1177,7 @@ script Route104_EventScript_DawnRivalBattle{
 	trainerbattle_single(TRAINER_DAWN_ROUTE_104, Dawn_Intro, Dawn_Outro)
 	msgbox(PostBattle_Dawn, MSGBOX_AUTOCLOSE)
 	waitmessage
-	setflag(FLAG_UNUSED_0x024)
+	setflag(FLAG_UNUSED_DAWN)
 	end
 
 }

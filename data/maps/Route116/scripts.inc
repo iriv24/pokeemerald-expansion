@@ -944,3 +944,27 @@ Route116_Text_TrainerTipsBagHasPockets:
 	.string "No TRAINER can afford to be without\n"
 # 473 "data/maps/Route116/scripts.pory"
 	.string "a BAG of their own.$"
+
+Route116_EventScript_RoarkBattle::
+# 478 "data/maps/Route116/scripts.pory"
+	trainerbattle_single TRAINER_ROARK, Roark_Intro, Roark_Outro
+# 479 "data/maps/Route116/scripts.pory"
+	msgbox PostBattle_Roark, MSGBOX_AUTOCLOSE
+# 480 "data/maps/Route116/scripts.pory"
+	waitmessage
+# 481 "data/maps/Route116/scripts.pory"
+	setflag FLAG_UNUSED_ROARK
+	end
+
+
+Roark_Intro::
+# 486 "data/maps/Route116/scripts.pory"
+	.string "Hi im Roark$"
+
+Roark_Outro::
+# 490 "data/maps/Route116/scripts.pory"
+	.string "bye im Roark$"
+
+PostBattle_Roark::
+# 494 "data/maps/Route116/scripts.pory"
+	.string "bye im Roark again!$"

@@ -483,7 +483,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route104_EventScript_DawnRivalBattle",
-      "flag": "FLAG_UNUSED_0x024"
+      "flag": "FLAG_UNUSED_DAWN"
     }
   ],
   "warp_events": [

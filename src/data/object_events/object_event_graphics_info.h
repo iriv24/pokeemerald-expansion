@@ -4652,3 +4652,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .images = sPicTable_HoOh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+/*TODOROARK
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roark = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ROARK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_2,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_Roark,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+*/

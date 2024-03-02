@@ -10212,16 +10212,16 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Everett),
     },
 
-    [TRAINER_RED] =
+    [TRAINER_ROARK] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_RED,
-        .trainerName = _("RED"),
+        .trainerName = _("ROARK"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = 0,
-        .party = TRAINER_PARTY(sParty_Red),
+        .party = TRAINER_PARTY(sParty_Roark),
     },
 
     [TRAINER_LEAF] =
@@ -10265,7 +10265,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_MAY,
-        .trainerName = _("MAY"),
+        .trainerName = _("DAWN"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,

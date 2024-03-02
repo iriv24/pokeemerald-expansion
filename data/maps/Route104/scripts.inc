@@ -2353,7 +2353,7 @@ Route104_EventScript_DawnRivalBattle::
 # 1179 "data/maps/Route104/scripts.pory"
 	waitmessage
 # 1180 "data/maps/Route104/scripts.pory"
-	setflag FLAG_UNUSED_0x024
+	setflag FLAG_UNUSED_DAWN
 	end
 
 
