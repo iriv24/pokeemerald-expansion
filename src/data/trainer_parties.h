@@ -11852,7 +11852,7 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
 static const struct TrainerMon sParty_DawnRoute104[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 103,
+    .lvl = 203,
     .species = SPECIES_BUNEARY,
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_ADAMANT,
@@ -11861,7 +11861,7 @@ static const struct TrainerMon sParty_DawnRoute104[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 102,
+    .lvl = 202,
     .species = SPECIES_NOIBAT,
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_TIMID,
@@ -11870,7 +11870,7 @@ static const struct TrainerMon sParty_DawnRoute104[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 101,
+    .lvl = 201,
     .species = SPECIES_PIPLUP,
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_SERIOUS,

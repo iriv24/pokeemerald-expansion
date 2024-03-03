@@ -1978,9 +1978,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            if(partyData[i].lvl > 100)
+            if(partyData[i].lvl >= 200)
             {
-                playerLevelMinus = partyData[i].lvl - 100;
+                playerLevelMinus = partyData[i].lvl - 200;
                 if(!decidedLevel)
                 {
                     maxLevel = DecideLevel();
