@@ -1947,6 +1947,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             monsCount = trainer->partySize;
         }
 
+        bool8 decidedLevel = FALSE;
+        u8 maxLevel;
+        u8 playerLevelMinus;
+        u8 finalLevel;
         for (i = 0; i < monsCount; i++)
         {
             s32 ball = -1;
@@ -1974,8 +1978,27 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
-            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+            if(partyData[i].lvl > 100)
+            {
+                playerLevelMinus = partyData[i].lvl - 100;
+                if(!decidedLevel)
+                {
+                    maxLevel = DecideLevel();
+                    decidedLevel = TRUE;
+                }
+                finalLevel = maxLevel - playerLevelMinus;
+                if(finalLevel <= 0 || finalLevel > 100)
+                {
+                    finalLevel = maxLevel;
+                }
+                CreateMon(&party[i], partyData[i].species, finalLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);  
+            }
+            else
+            {
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+            }
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[i].iv));
@@ -2023,6 +2046,19 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     }
 
     return trainer->partySize;
+}
+
+u8 DecideLevel(void)
+{
+    u32 i;
+    u8 newhighest = 0;
+    for (i = 0; i < 6; i++)
+    {
+        u16 level = (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL));
+        if (level > newhighest)
+            newhighest = level;
+    }
+    return newhighest;
 }
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)

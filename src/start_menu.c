@@ -715,7 +715,6 @@ static bool8 StartMenuBagCallback(void)
 
 static bool8 StartMenuPCCallback(void)
 {
-	u8 taskId;
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
