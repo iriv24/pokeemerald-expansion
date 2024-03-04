@@ -9814,4 +9814,26 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_POKE_VIAL] =
+    {
+        .name = _("PokeVial"),
+        .price = 0,
+        .importance = 1,
+        .description = sPokeVialDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
+    },
+
+    [ITEM_INFINITE_CANDY] =
+    {
+        .name = _("InfiniteCandy"),
+        .price = 0,
+        .importance = 1,
+        .description = sInfiniteCandyDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+    },
 };

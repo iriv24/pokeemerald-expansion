@@ -1814,6 +1814,9 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 907 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 # 908 "data/maps/LittlerootTown/scripts.pory"
+	giveitem ITEM_POKE_VIAL
+	giveitem ITEM_INFINITE_CANDY
+	msgbox LittlerootTown_Text_ExplainPokeVialAndInfiniteCandy, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 # 909 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
@@ -1896,8 +1899,17 @@ LittlerootTown_Text_ExplainRunningShoes:
 # 948 "data/maps/LittlerootTown/scripts.pory"
 	.string "“Slip on these RUNNING SHOES and race\n"
 # 949 "data/maps/LittlerootTown/scripts.pory"
-	.string "in the great outdoors!”$"
+	.string "in the great outdoors!”\p"
+	.string "I also have some more\n"
+	.string "gear that you'll like!$"
 # 950 "data/maps/LittlerootTown/scripts.pory"
+LittlerootTown_Text_ExplainPokeVialAndInfiniteCandy:
+	.string "I also gave you a Poke Vial\n"
+	.string "that will heal your party\p"
+	.string "from anywhere, and an\n"
+	.string "Infinite Candy, which is a\p"
+	.string "Rare Candy that never ends!\n"
+	.string "They're in your Key Items!$"
 
 # 951 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ComeHomeIfAnythingHappens:

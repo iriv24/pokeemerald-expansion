@@ -3993,3 +3993,13 @@ static const u8 sGlimmeringCharmDesc[] = _(
     "A charm that will\n"
     "raise the shards\n"
     "from Tera Raids.");
+
+static const u8 sPokeVialDesc[] = _(
+    "The Poke Vial\n"
+    "restores your party\n"
+    "entirely.");
+
+static const u8 sInfiniteCandyDesc[] = _(
+    "An ultra rare\n"
+    "candy that never\n"
+    "goes away.");
