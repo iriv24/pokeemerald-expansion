@@ -1901,8 +1901,8 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "“Slip on these RUNNING SHOES and race\n"
 # 949 "data/maps/LittlerootTown/scripts.pory"
 	.string "in the great outdoors!”\p"
-	.string "I also have some more\n"
-	.string "gear that you'll like!$"
+	.string "I also have some more gear that you'll\l"
+	.string "like!$"
 # 950 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ExplainNewGear:
 	.string "I also gave you a Poke Vial that will\n"
