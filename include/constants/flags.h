@@ -49,8 +49,7 @@
 #define FLAG_UNUSED_DAWN     0x24 // Unused Flag
 #define FLAG_UNUSED_ROARK    0x25 // Unused Flag
 #define FLAG_UNUSED_POKEMONPCMENU    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_UNUSED_0x028    0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

@@ -37,6 +37,7 @@ void ItemUseOutOfBattle_CannotUse(u8);
 void ItemUseOutOfBattle_ExpShare(u8);
 void ItemUseOutOfBattle_PokeVial(u8);
 void ItemUseCB_PokeVial(u8);
+void ItemUseOutOfBattle_InfiniteRepel(u8);
 void ItemUseInBattle_BagMenu(u8 taskId);
 void ItemUseInBattle_PartyMenu(u8 taskId);
 void ItemUseInBattle_PartyMenuChooseMove(u8 taskId);

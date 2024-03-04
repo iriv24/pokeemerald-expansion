@@ -1816,7 +1816,8 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 908 "data/maps/LittlerootTown/scripts.pory"
 	giveitem ITEM_POKE_VIAL
 	giveitem ITEM_INFINITE_CANDY
-	msgbox LittlerootTown_Text_ExplainPokeVialAndInfiniteCandy, MSGBOX_DEFAULT
+	giveitem ITEM_INFINITE_REPEL
+	msgbox LittlerootTown_Text_ExplainNewGear, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 # 909 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
@@ -1903,12 +1904,14 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "I also have some more\n"
 	.string "gear that you'll like!$"
 # 950 "data/maps/LittlerootTown/scripts.pory"
-LittlerootTown_Text_ExplainPokeVialAndInfiniteCandy:
+LittlerootTown_Text_ExplainNewGear:
 	.string "I also gave you a Poke Vial that will\n"
-	.string "heal your party from anywhere, and an\p"
+	.string "heal your party from anywhere, an\p"
 	.string "Infinite Candy, which is basically a\n"
-	.string "Rare Candy that will never run out!\p"
-	.string "They are both in your Key Items!$\n"
+	.string "Rare Candy that will never run out, and\p"
+	.string "an Infinite Repel, which is basically a\n"
+	.string "Repel that will never run out! They are\l"
+	.string "all in your Key Items!$"
 
 # 951 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ComeHomeIfAnythingHappens:

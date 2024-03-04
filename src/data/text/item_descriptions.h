@@ -4003,3 +4003,8 @@ static const u8 sInfiniteCandyDesc[] = _(
     "An ultra rare\n"
     "candy that never\n"
     "goes away.");
+
+static const u8 sInfiniteRepelDesc[] = _(
+    "Repels all wild\n"
+    "Pokémon for any\n"
+    "number of steps.");
