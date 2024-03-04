@@ -1904,12 +1904,11 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "gear that you'll like!$"
 # 950 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ExplainPokeVialAndInfiniteCandy:
-	.string "I also gave you a Poke Vial\n"
-	.string "that will heal your party\p"
-	.string "from anywhere, and an\n"
-	.string "Infinite Candy, which is a\p"
-	.string "Rare Candy that never ends!\n"
-	.string "They're in your Key Items!$"
+	.string "I also gave you a Poke Vial that will\n"
+	.string "heal your party from anywhere, and an\p"
+	.string "Infinite Candy, which is basically a\n"
+	.string "Rare Candy that will never run out!\p"
+	.string "They are both in your Key Items!$\n"
 
 # 951 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ComeHomeIfAnythingHappens:

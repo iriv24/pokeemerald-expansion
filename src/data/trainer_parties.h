@@ -11801,7 +11801,7 @@ static const struct TrainerMon sParty_Everett[] = {
 static const struct TrainerMon sParty_Roark[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 12,
+    .lvl = 203,
     .species = SPECIES_SHIELDON,
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_IMPISH,
@@ -11810,16 +11810,16 @@ static const struct TrainerMon sParty_Roark[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 13,
+    .lvl = 202,
     .species = SPECIES_TYRUNT,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_STRONG_JAW,
-    .moves = {MOVE_BITE, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_ROCK_TOMB}
+    .moves = {MOVE_BITE, MOVE_THUNDER_FANG, MOVE_ROCK_TOMB, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 14,
+    .lvl = 201,
     .species = SPECIES_CRANIDOS,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
