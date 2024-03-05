@@ -17,7 +17,7 @@ SSTidalRooms_EventScript_SnatchGiver::
 # 9 "data/maps/SSTidalRooms/scripts.pory"
 	msgbox SSTidalRooms_Text_NotSuspiciousTakeThis, MSGBOX_DEFAULT
 # 10 "data/maps/SSTidalRooms/scripts.pory"
-	giveitem ITEM_TM_SNATCH
+	giveitem ITEM_TM_LEECH_LIFE
 # 11 "data/maps/SSTidalRooms/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 12 "data/maps/SSTidalRooms/scripts.pory"

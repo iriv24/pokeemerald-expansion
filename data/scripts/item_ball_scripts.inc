@@ -507,7 +507,7 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 	end
 
 MtPyre_Exterior_EventScript_ItemTMSkillSwap::
-	finditem ITEM_TM_SKILL_SWAP
+	finditem ITEM_TM_METEOR_BEAM
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
@@ -555,7 +555,7 @@ ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal::
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemTMHail::
-	finditem ITEM_TM_HAIL
+	finditem ITEM_TM_SNOWSCAPE
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::

@@ -229,7 +229,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 # 115 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_EventScript_GiveShockWave2::
 # 116 "data/maps/MauvilleCity_Gym/scripts.pory"
-	giveitem ITEM_TM_SHOCK_WAVE
+	giveitem ITEM_TM_TELEPORT
 # 117 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 118 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -245,7 +245,7 @@ MauvilleCity_Gym_EventScript_GiveShockWave2::
 # 123 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_EventScript_GiveShockWave::
 # 124 "data/maps/MauvilleCity_Gym/scripts.pory"
-	giveitem ITEM_TM_SHOCK_WAVE
+	giveitem ITEM_TM_TELEPORT
 # 125 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 126 "data/maps/MauvilleCity_Gym/scripts.pory"

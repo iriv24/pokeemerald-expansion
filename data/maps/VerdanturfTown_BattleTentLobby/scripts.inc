@@ -459,7 +459,7 @@ VerdanturfTown_BattleTentLobby_EventScript_AttractGiver::
 # 230 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 	msgbox VerdanturfTown_BattleTentLobby_Text_AttractionRunsDeep, MSGBOX_DEFAULT
 # 231 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
-	giveitem ITEM_TM_ATTRACT
+	giveitem ITEM_TM_DRAINING_KISS
 # 232 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 # 233 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"

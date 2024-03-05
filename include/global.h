@@ -521,6 +521,10 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
 }; // sizeof=0xF2C
+//from debug as of 3/4/2024 before any space changes: 3884b/3968b; free space, 84b.
+//after changing SECTOR_DATA_SIZE -> 4084: 3884b/4084b; free space: 200b.
+//change BAG_TMHM_COUNT from 64 -> 120; results: 3884b/4084b; free space: 200b (unchanged)
+//change BAG_ITEM_COUNT from 30 -> 150; results: 3884b/4084b; free space: 200b (unchanged)
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
 
@@ -1056,6 +1060,10 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     // sizeof: 0x3???
+    //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
+    //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
+    //change BAG_TMHM_COUNT from 64 -> 120; results: 15792b/16336b; free space: 544b (4 byte per TM slot added)
+    //change BAG_ITEM_COUNT from 30 -> 150; results: 16272b/16336b; free space: 64b (4 byte per item slot added)
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;

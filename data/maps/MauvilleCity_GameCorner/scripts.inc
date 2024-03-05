@@ -499,9 +499,9 @@ MauvilleCity_GameCorner_EventScript_TMDoubleTeam::
 # 250 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 1
 # 251 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_TM_DOUBLE_TEAM
+	bufferitemname STR_VAR_1, ITEM_TM_SOLAR_BLADE
 # 252 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_TM_DOUBLE_TEAM
+	setvar VAR_0x8004, ITEM_TM_SOLAR_BLADE
 # 253 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 # 254 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -585,13 +585,13 @@ MauvilleCity_GameCorner_EventScript_BuyTMDoubleTeam::
 # 293 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, TM_DOUBLE_TEAM_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
 # 294 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_TM_DOUBLE_TEAM
+	checkitemspace ITEM_TM_SOLAR_BLADE
 # 295 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForTM
 # 296 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins TM_DOUBLE_TEAM_COINS
 # 297 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_TM_DOUBLE_TEAM
+	additem ITEM_TM_SOLAR_BLADE
 # 298 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 299 "data/maps/MauvilleCity_GameCorner/scripts.pory"

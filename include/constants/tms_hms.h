@@ -4,11 +4,11 @@
 #define FOREACH_TM(F) \
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(FLIP_TURN) \
     F(CALM_MIND) \
     F(ROAR) \
     F(TOXIC) \
-    F(HAIL) \
+    F(SNOWSCAPE) \
     F(BULK_UP) \
     F(BULLET_SEED) \
     F(HIDDEN_POWER) \
@@ -16,13 +16,13 @@
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
-    F(HYPER_BEAM) \
+    F(ELECTROWEB) \
     F(LIGHT_SCREEN) \
     F(PROTECT) \
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
-    F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(HYPER_VOICE) \
+    F(ICY_WIND) \
     F(SOLAR_BEAM) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \
@@ -33,25 +33,83 @@
     F(PSYCHIC) \
     F(SHADOW_BALL) \
     F(BRICK_BREAK) \
-    F(DOUBLE_TEAM) \
+    F(SOLAR_BLADE) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(TELEPORT) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
     F(SANDSTORM) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
-    F(TORMENT) \
+    F(DRAGON_DANCE) \
     F(FACADE) \
-    F(SECRET_POWER) \
+    F(DEFOG) \
     F(REST) \
-    F(ATTRACT) \
+    F(DRAINING_KISS) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(SKILL_SWAP) \
-    F(SNATCH) \
-    F(OVERHEAT)
+    F(METEOR_BEAM) \
+    F(LEECH_LIFE) \
+    F(OVERHEAT) \
+    F(ROOST) \
+    F(FOCUS_BLAST) \
+    F(ENERGY_BALL) \
+    F(GRASSY_GLIDE) \
+    F(EXPANDING_FORCE) \
+    F(POWER_UP_PUNCH) \
+    F(CHARGE_BEAM) \
+    F(RISING_VOLTAGE) \
+    F(DRAGON_PULSE) \
+    F(DRAIN_PUNCH) \
+    F(WILL_O_WISP) \
+    F(SILVER_WIND) \
+    F(VENOSHOCK) \
+    F(EXPLOSION) \
+    F(SHADOW_CLAW) \
+    F(DAZZLING_GLEAM) \
+    F(POLTERGEIST) \
+    F(DUAL_CHOP) \
+    F(ROCK_POLISH) \
+    F(TRIPLE_AXEL) \
+    F(STONE_EDGE) \
+    F(PSYSHOCK) \
+    F(THUNDER_WAVE) \
+    F(GYRO_BALL) \
+    F(SWORDS_DANCE) \
+    F(STEALTH_ROCK) \
+    F(FLAME_CHARGE) \
+    F(LOW_SWEEP) \
+    F(DARK_PULSE) \
+    F(ROCK_SLIDE) \
+    F(X_SCISSOR) \
+    F(SLEEP_TALK) \
+    F(SCALD) \
+    F(POISON_JAB) \
+    F(FUTURE_SIGHT) \
+    F(GRASS_KNOT) \
+    F(LOW_KICK) \
+    F(PLUCK) \
+    F(U_TURN) \
+    F(SUBSTITUTE) \
+    F(FLASH_CANNON) \
+    F(VOLT_SWITCH) \
+    F(DRAGON_TAIL) \
+    F(TRAILBLAZE) \
+    F(ACROBATICS) \
+    F(BULLDOZE) \
+    F(SNARL) \
+    F(WORK_UP) \
+    F(WILD_CHARGE) \
+    F(DUAL_WINGBEAT) \
+    F(SUPERPOWER) \
+    F(SCORCHING_SANDS) \
+    F(SMACK_DOWN) \
+    F(HEAT_CRASH) \
+    F(BODY_PRESS) \
+    F(TRICK_ROOM) \
+    F(BRAVE_BIRD) \
+    F(ICE_SPINNER)
 
 #define FOREACH_HM(F) \
     F(CUT) \

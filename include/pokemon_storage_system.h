@@ -25,6 +25,10 @@ struct PokemonStorage
     /*0x83C2*/ u8 boxWallpapers[TOTAL_BOXES_COUNT];
     /*0x8432*/ struct Pokemon fusions[MAX_FUSION_STORAGE];
 };
+//from debug as of 3/4/2024 before any space changes: 34114b/35712b; free space: 1568b.
+//after changing SECTOR_DATA_SIZE -> 4084: 34114b/36756b; free space: 2612b.
+//change BAG_TMHM_COUNT from 64 -> 120; results: 34114b/36756b; free space: 2612b (unchanged)
+//change BAG_ITEM_COUNT from 30 -> 150; results: 34114b/36756b; free space: 2612b (unchanged)
 
 extern struct PokemonStorage *gPokemonStoragePtr;
 

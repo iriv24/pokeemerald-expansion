@@ -407,7 +407,7 @@ SlateportCity_BattleTentLobby_EventScript_TormentGiver::
 # 204 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	msgbox SlateportCity_BattleTentLobby_Text_CouldntFindMonForMe, MSGBOX_DEFAULT
 # 205 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
-	giveitem ITEM_TM_TORMENT
+	giveitem ITEM_TM_DRAGON_DANCE
 # 206 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 207 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
