@@ -2734,9 +2734,28 @@ bool32 AI_CanSleep(u32 battler, u32 ability)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || (gFieldStatuses & (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN))
-      || IsAbilityStatusProtected(battler))
+      || IsAbilityStatusProtected(battler)
+      || AnyPartyMemberAsleep(battler))
         return FALSE;
     return TRUE;
+}
+
+bool32 AnyPartyMemberAsleep(u32 battlerId)
+{
+    struct Pokemon *party;
+    u32 i;
+
+    if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
+        party = gPlayerParty;
+    else
+        party = gEnemyParty;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&party[i], MON_DATA_STATUS) == STATUS1_SLEEP)
+            return TRUE;
+    }
+    return FALSE;
 }
 
 bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
