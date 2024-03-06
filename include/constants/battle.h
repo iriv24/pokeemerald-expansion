@@ -226,7 +226,7 @@
 #define SIDE_STATUS_SAFEGUARD               (1 << 5)
 #define SIDE_STATUS_FUTUREATTACK            (1 << 6)
 #define SIDE_STATUS_MIST                    (1 << 8)
-// (1 << 9) previously was SIDE_STATUS_SPIKES_DAMAGED
+#define SIDE_STATUS_SLEEP_CLAUSE            (1 << 9)
 #define SIDE_STATUS_TAILWIND                (1 << 10)
 #define SIDE_STATUS_AURORA_VEIL             (1 << 11)
 #define SIDE_STATUS_LUCKY_CHANT             (1 << 12)
