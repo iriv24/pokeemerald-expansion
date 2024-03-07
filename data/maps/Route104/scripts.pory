@@ -1173,23 +1173,135 @@ Route104_Text_BrendanPostBattle:
 	.string "become friends with your POKéMON.$"
 `
 
-script Route104_EventScript_DawnRivalBattle{
-	trainerbattle_single(TRAINER_DAWN_ROUTE_104, Dawn_Intro, Dawn_Outro)
-	msgbox(PostBattle_Dawn, MSGBOX_AUTOCLOSE)
-	waitmessage
-	setflag(FLAG_UNUSED_DAWN)
+script Route104_EventScript_DawnTrigger1{
+	setvar(VAR_0x8008, 1)
+	goto(Route104_EventScript_DawnScene)
 	end
+}
+	
 
+script Route104_EventScript_DawnTrigger2{
+	setvar(VAR_0x8008, 2)
+	goto(Route104_EventScript_DawnScene)
+	end
 }
 
-text Dawn_Intro{
-	"Hi im dawn"
+
+script Route104_EventScript_DawnScene{
+	lockall
+	applymovement(35, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	applymovement(35, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(35, Common_Movement_Delay48)
+	waitmovement(0)
+	delay(30)
+	call_if_eq(VAR_0x8008, 1, Route104_EventScript_DawnApproachPlayer1)
+	call_if_eq(VAR_0x8008, 2, Route104_EventScript_DawnApproachPlayer2)
+	goto(Route104_EventScript_DawnRivalBattle)
+	releaseall
+	end
 }
 
-text Dawn_Outro{
-	"bye im dawn"
+script Route104_EventScript_DawnRivalBattle{
+	msgbox(Dawn_Greeting)
+	trainerbattle_no_intro(TRAINER_DAWN_ROUTE_104, Dawn_Defeated)
+	goto(Route104_EventScript_DawnDefeated)
+	end
 }
 
-text PostBattle_Dawn{
-	"bye im dawn again!"
+script Route104_EventScript_DawnDefeated{
+	msgbox(Dawn_TakeThis)
+	giveitem(ITEM_WISE_GLASSES)
+	msgbox(ExplainWiseGlasses)
+	goto(Route104_EventScript_DawnExit)
+	end
 }
+	
+
+
+script Route104_EventScript_DawnApproachPlayer1{
+	applymovement(35, Route104_Movement_DawnApproachPlayer1)
+	waitmovement(0)
+	return
+}
+	
+	
+script Route104_Movement_DawnApproachPlayer1{
+	walk_down
+	walk_left
+	walk_in_place_faster_down
+	step_end
+}
+
+script Route104_EventScript_DawnApproachPlayer2{
+	applymovement(35, Route104_Movement_DawnApproachPlayer2)
+	waitmovement(0)
+	return
+}
+
+script Route104_Movement_DawnApproachPlayer2{
+	walk_down
+	step_end
+}
+
+script Route104_EventScript_DawnExit{
+	closemessage
+	delay(45)
+	call_if_eq(VAR_0x8008, 1, ApplyMovementDawn)
+	call_if_eq(VAR_0x8008, 2, ApplyMovementDawn)
+	removeobject(35)
+	setflag(FLAG_UNUSED_DAWN)
+	setvar(VAR_UNUSED_FOUGHT_DAWN104, 1)
+	savebgm(MUS_DUMMY)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
+script ApplyMovementDawn{
+	applymovement(35, Route104_EventScript_DawnExit1)
+	waitmovement(0)
+	return
+}
+
+script Route104_EventScript_DawnExit1{
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+}
+
+text Dawn_Greeting{
+	"Hey! My name is Dawn, I'm a friend of\n"
+	"{RIVAL}'s. I haven't beaten all the\p"
+	"gyms in Hoenn yet, so I'll be making my\n"
+	"way through the region and catching up\p"
+	"with {RIVAL} every once in a while!\n"
+	"{RIVAL} also told me to be on the\p"
+	"lookout for a trainer named {PLAYER}\n"
+	"because it seems like they've got\p"
+	"potential. I'm assuming that trainer is\n"
+	"you? I guess I'll be the judge of that!"
+}
+
+text Dawn_Defeated{
+	"Looks like {RIVAL} was right!"
+}
+
+text Dawn_TakeThis{
+	"That was a great battle! I'll definitely\n"
+	"be seeing you again, {PLAYER}, so I can\p"
+	"test my strength! Also, here, I have an\n"
+	"extra set of these you can have."
+}
+
+text ExplainWiseGlasses{
+	"They'll boost your Special Attack if\n"
+	"held. Alright, I'm off, see you around!"
+}
+	

@@ -11886,6 +11886,6 @@ static const struct TrainerMon sParty_DawnRoute104[] = {
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_SERIOUS,
     .ability = ABILITY_TORRENT,
-    .moves = {MOVE_BUBBLE_BEAM, MOVE_AQUA_JET, MOVE_BABY_DOLL_EYES, MOVE_QUICK_ATTACK}
+    .moves = {MOVE_BUBBLE_BEAM, MOVE_AQUA_JET, MOVE_BABY_DOLL_EYES, MOVE_PECK}
     },
 };

@@ -475,22 +475,60 @@ Route116_Text_TrainerTipsBagHasPockets:
 `
 
 script Route116_EventScript_RoarkBattle{
-	trainerbattle_single(TRAINER_ROARK, Roark_Intro, Roark_Outro)
+	trainerbattle_single(TRAINER_ROARK, Roark_Greeting, Roark_Outro, Route116_EventScript_RoarkDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkGiveRockTomb)
 	msgbox(PostBattle_Roark, MSGBOX_AUTOCLOSE)
 	waitmessage
-	setflag(FLAG_UNUSED_ROARK)
+	end
+}
+
+script Route116_EventScript_RoarkDefeated{
+	setvar(VAR_UNUSED_FOUGHT_ROARK116, 1)
+	goto(Route116_EventScript_RoarkGiveRockTomb)
 	end
 
 }
 
-text Roark_Intro{
-	"Hi im Roark"
+script Route116_EventScript_RoarkGiveRockTomb{
+	giveitem(ITEM_TM_ROCK_TOMB)
+	giveitem(ITEM_MUSCLE_BAND)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	setflag(FLAG_RECEIVED_TM_ROCK_TOMB)
+	msgbox(Roark_ExplainRockTombAndMuscleBand)
+	release
+	end
 }
 
+text Roark_ExplainRockTombAndMuscleBand{
+	"That TECHNICAL MACHINE, TM39,\n"
+	"contains ROCK TOMB.\p"
+	"It not only inflicts damage by dropping\n"
+	"rocks, it also lowers SPEED.\p"
+	"If you use a TM, it instantly teaches\n"
+	"the move to a POKéMON.\p"
+	"In this game, you can use a TM as many\n"
+	"times as you want!\p"
+	"And the Muscle Band will boost your\n"
+	"Attack if held!"
+}
+
+text Roark_Greeting{
+	"Hi there! I'm Roark, a gym leader from\n"
+	"the Sinnoh region. I've heard there are\p"
+	"a lot of cool underground areas to\n"
+	"explore here in Hoenn, so I had to come\p"
+	"check it out. I've also heard that the\n"
+	"trainers in this region were weaker\p"
+	"than the ones in Sinnoh. I wonder if\n"
+	"that's true... "
+}
+	
 text Roark_Outro{
-	"bye im Roark"
+	"Looks like the trainers here are\n"
+	"pretty strong! Please, take these\p"
+	"as rewards for beating me."
 }
 
 text PostBattle_Roark{
-	"bye im Roark again!"
+	"Time to explore the underground!"
 }

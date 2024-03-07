@@ -2598,3 +2598,29 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Don't you think it'd be cool if you\n"
 # 1300 "data/maps/RustboroCity/scripts.pory"
 	.string "could beat two TRAINERS by yourself?$"
+
+RustboroCity_Trigger_BlockGymEntrance::
+# 1304 "data/maps/RustboroCity/scripts.pory"
+	lockall
+# 1305 "data/maps/RustboroCity/scripts.pory"
+	msgbox GoBeatRoark
+# 1306 "data/maps/RustboroCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 1307 "data/maps/RustboroCity/scripts.pory"
+	waitmovement 0
+# 1308 "data/maps/RustboroCity/scripts.pory"
+	releaseall
+	return
+
+
+# 1317 "data/maps/RustboroCity/scripts.pory"
+StopPlayer:
+# 1318 "data/maps/RustboroCity/scripts.pory"
+	walk_down
+	step_end
+
+GoBeatRoark::
+# 1311 "data/maps/RustboroCity/scripts.pory"
+	.string "You should go see if there are any\n"
+	.string "other strong trainers to fight, perhaps\p"
+	.string "very far east on Route 116!$"

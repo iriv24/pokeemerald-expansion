@@ -42,13 +42,13 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_WATERSTARTER    0x20 // Unused Flag
-#define FLAG_UNUSED_GRASSSTARTER    0x21 // Unused Flag
-#define FLAG_UNUSED_FIRESTARTER    0x22 // Unused Flag
-#define FLAG_UNUSED_TOUCHBALLS    0x23 // Unused Flag
-#define FLAG_UNUSED_DAWN     0x24 // Unused Flag
-#define FLAG_UNUSED_ROARK    0x25 // Unused Flag
-#define FLAG_UNUSED_POKEMONPCMENU    0x26 // Unused Flag
+#define FLAG_UNUSED_WATERSTARTER    0x20
+#define FLAG_UNUSED_GRASSSTARTER    0x21
+#define FLAG_UNUSED_FIRESTARTER    0x22
+#define FLAG_UNUSED_TOUCHBALLS    0x23
+#define FLAG_UNUSED_DAWN     0x24
+#define FLAG_RECEIVED_TM_ROCK_TOMB   0x25 // Unused Flag
+#define FLAG_UNUSED_POKEMONPCMENU    0x26
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
@@ -182,7 +182,7 @@
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5
+#define FLAG_RECEIVED_TM_BULLDOZE           0xA5
 #define FLAG_RECEIVED_TM_BULK_UP             0xA6
 #define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
 #define FLAG_RECEIVED_TM_OVERHEAT            0xA8

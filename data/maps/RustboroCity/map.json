@@ -514,6 +514,15 @@
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
       "script": "RustboroCity_EventScript_RivalTrigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_UNUSED_FOUGHT_ROARK116",
+      "var_value": "0",
+      "script": "RustboroCity_Trigger_BlockGymEntrance"
     }
   ],
   "bg_events": [

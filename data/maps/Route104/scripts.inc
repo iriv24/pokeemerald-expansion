@@ -2345,26 +2345,185 @@ Route104_Text_BrendanPostBattle:
 # 1173 "data/maps/Route104/scripts.pory"
 	.string "become friends with your POKéMON.$"
 
-Route104_EventScript_DawnRivalBattle::
+Route104_EventScript_DawnTrigger1::
 # 1177 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_DAWN_ROUTE_104, Dawn_Intro, Dawn_Outro
+	setvar VAR_0x8008, 1
 # 1178 "data/maps/Route104/scripts.pory"
-	msgbox PostBattle_Dawn, MSGBOX_AUTOCLOSE
-# 1179 "data/maps/Route104/scripts.pory"
-	waitmessage
-# 1180 "data/maps/Route104/scripts.pory"
-	setflag FLAG_UNUSED_DAWN
+	goto Route104_EventScript_DawnScene
 	end
 
 
-Dawn_Intro::
+Route104_EventScript_DawnTrigger2::
+# 1184 "data/maps/Route104/scripts.pory"
+	setvar VAR_0x8008, 2
 # 1185 "data/maps/Route104/scripts.pory"
-	.string "Hi im dawn$"
+	goto Route104_EventScript_DawnScene
+	end
 
-Dawn_Outro::
-# 1189 "data/maps/Route104/scripts.pory"
-	.string "bye im dawn$"
 
-PostBattle_Dawn::
+Route104_EventScript_DawnScene::
+# 1191 "data/maps/Route104/scripts.pory"
+	lockall
+# 1192 "data/maps/Route104/scripts.pory"
+	applymovement 35, Common_Movement_WalkInPlaceFasterDown
 # 1193 "data/maps/Route104/scripts.pory"
-	.string "bye im dawn again!$"
+	waitmovement 0
+# 1194 "data/maps/Route104/scripts.pory"
+	applymovement 35, Common_Movement_ExclamationMark
+# 1195 "data/maps/Route104/scripts.pory"
+	waitmovement 0
+# 1196 "data/maps/Route104/scripts.pory"
+	applymovement 35, Common_Movement_Delay48
+# 1197 "data/maps/Route104/scripts.pory"
+	waitmovement 0
+# 1198 "data/maps/Route104/scripts.pory"
+	delay 30
+# 1199 "data/maps/Route104/scripts.pory"
+	call_if_eq VAR_0x8008, 1, Route104_EventScript_DawnApproachPlayer1
+# 1200 "data/maps/Route104/scripts.pory"
+	call_if_eq VAR_0x8008, 2, Route104_EventScript_DawnApproachPlayer2
+# 1201 "data/maps/Route104/scripts.pory"
+	goto Route104_EventScript_DawnRivalBattle
+# 1202 "data/maps/Route104/scripts.pory"
+	releaseall
+	end
+
+
+Route104_EventScript_DawnRivalBattle::
+# 1207 "data/maps/Route104/scripts.pory"
+	msgbox Dawn_Greeting
+# 1208 "data/maps/Route104/scripts.pory"
+	trainerbattle_no_intro TRAINER_DAWN_ROUTE_104, Dawn_Defeated
+# 1209 "data/maps/Route104/scripts.pory"
+	goto Route104_EventScript_DawnDefeated
+	end
+
+
+Route104_EventScript_DawnDefeated::
+# 1214 "data/maps/Route104/scripts.pory"
+	msgbox Dawn_TakeThis
+# 1215 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_WISE_GLASSES
+# 1216 "data/maps/Route104/scripts.pory"
+	msgbox ExplainWiseGlasses
+# 1217 "data/maps/Route104/scripts.pory"
+	goto Route104_EventScript_DawnExit
+	end
+
+
+Route104_EventScript_DawnApproachPlayer1::
+# 1224 "data/maps/Route104/scripts.pory"
+	applymovement 35, Route104_Movement_DawnApproachPlayer1
+# 1225 "data/maps/Route104/scripts.pory"
+	waitmovement 0
+	return
+
+
+Route104_Movement_DawnApproachPlayer1::
+# 1231 "data/maps/Route104/scripts.pory"
+	walk_down
+# 1232 "data/maps/Route104/scripts.pory"
+	walk_left
+# 1233 "data/maps/Route104/scripts.pory"
+	walk_in_place_faster_down
+# 1234 "data/maps/Route104/scripts.pory"
+	step_end
+	return
+
+
+Route104_EventScript_DawnApproachPlayer2::
+# 1238 "data/maps/Route104/scripts.pory"
+	applymovement 35, Route104_Movement_DawnApproachPlayer2
+# 1239 "data/maps/Route104/scripts.pory"
+	waitmovement 0
+	return
+
+
+Route104_Movement_DawnApproachPlayer2::
+# 1244 "data/maps/Route104/scripts.pory"
+	walk_down
+# 1245 "data/maps/Route104/scripts.pory"
+	step_end
+	return
+
+
+Route104_EventScript_DawnExit::
+# 1249 "data/maps/Route104/scripts.pory"
+	closemessage
+# 1250 "data/maps/Route104/scripts.pory"
+	delay 45
+# 1251 "data/maps/Route104/scripts.pory"
+	call_if_eq VAR_0x8008, 1, ApplyMovementDawn
+# 1252 "data/maps/Route104/scripts.pory"
+	call_if_eq VAR_0x8008, 2, ApplyMovementDawn
+# 1253 "data/maps/Route104/scripts.pory"
+	removeobject 35
+# 1254 "data/maps/Route104/scripts.pory"
+	setflag FLAG_UNUSED_DAWN
+# 1255 "data/maps/Route104/scripts.pory"
+	setvar VAR_UNUSED_FOUGHT_DAWN104, 1
+# 1256 "data/maps/Route104/scripts.pory"
+	savebgm MUS_DUMMY
+# 1257 "data/maps/Route104/scripts.pory"
+	fadedefaultbgm
+# 1258 "data/maps/Route104/scripts.pory"
+	releaseall
+	end
+
+
+ApplyMovementDawn::
+# 1263 "data/maps/Route104/scripts.pory"
+	applymovement 35, Route104_EventScript_DawnExit1
+# 1264 "data/maps/Route104/scripts.pory"
+	waitmovement 0
+	return
+
+
+Route104_EventScript_DawnExit1::
+# 1269 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1270 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1271 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1272 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1273 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1274 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1275 "data/maps/Route104/scripts.pory"
+	walk_up
+# 1276 "data/maps/Route104/scripts.pory"
+	step_end
+	return
+
+
+Dawn_Greeting::
+# 1279 "data/maps/Route104/scripts.pory"
+	.string "Hey! My name is Dawn, I'm a friend of\n"
+	.string "{RIVAL}'s. I haven't beaten all the\p"
+	.string "gyms in Hoenn yet, so I'll be making my\n"
+	.string "way through the region and catching up\p"
+	.string "with {RIVAL} every once in a while!\n"
+	.string "{RIVAL} also told me to be on the\p"
+	.string "lookout for a trainer named {PLAYER}\n"
+	.string "because it seems like they've got\p"
+	.string "potential. I'm assuming that trainer is\n"
+	.string "you? I guess I'll be the judge of that!$"
+
+Dawn_Defeated::
+# 1292 "data/maps/Route104/scripts.pory"
+	.string "Looks like {RIVAL} was right!$"
+
+Dawn_TakeThis::
+# 1296 "data/maps/Route104/scripts.pory"
+	.string "That was a great battle! I'll definitely\n"
+	.string "be seeing you again, {PLAYER}, so I can\p"
+	.string "test my strength! Also, here, I have an\n"
+	.string "extra set of these you can have.$"
+
+ExplainWiseGlasses::
+# 1303 "data/maps/Route104/scripts.pory"
+	.string "They'll boost your Special Attack if\n"
+	.string "held. Alright, I'm off, see you around!$"

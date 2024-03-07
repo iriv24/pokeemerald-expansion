@@ -1299,3 +1299,21 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
 `
+
+script RustboroCity_Trigger_BlockGymEntrance{
+	lockall
+	msgbox(GoBeatRoark)
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text GoBeatRoark{
+	"You should go see if there are any\n"
+	"other strong trainers to fight, perhaps\p"
+	"very far east on Route 116!"
+}
+
+movement StopPlayer {
+	walk_down
+}

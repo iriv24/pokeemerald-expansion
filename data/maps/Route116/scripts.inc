@@ -947,24 +947,70 @@ Route116_Text_TrainerTipsBagHasPockets:
 
 Route116_EventScript_RoarkBattle::
 # 478 "data/maps/Route116/scripts.pory"
-	trainerbattle_single TRAINER_ROARK, Roark_Intro, Roark_Outro
+	trainerbattle_single TRAINER_ROARK, Roark_Greeting, Roark_Outro, Route116_EventScript_RoarkDefeated, NO_MUSIC
 # 479 "data/maps/Route116/scripts.pory"
-	msgbox PostBattle_Roark, MSGBOX_AUTOCLOSE
+	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkGiveRockTomb
 # 480 "data/maps/Route116/scripts.pory"
-	waitmessage
+	msgbox PostBattle_Roark, MSGBOX_AUTOCLOSE
 # 481 "data/maps/Route116/scripts.pory"
-	setflag FLAG_UNUSED_ROARK
+	waitmessage
 	end
 
 
-Roark_Intro::
+Route116_EventScript_RoarkDefeated::
 # 486 "data/maps/Route116/scripts.pory"
-	.string "Hi im Roark$"
+	setvar VAR_UNUSED_FOUGHT_ROARK116, 1
+# 487 "data/maps/Route116/scripts.pory"
+	goto Route116_EventScript_RoarkGiveRockTomb
+	end
+
+
+Route116_EventScript_RoarkGiveRockTomb::
+# 493 "data/maps/Route116/scripts.pory"
+	giveitem ITEM_TM_ROCK_TOMB
+# 494 "data/maps/Route116/scripts.pory"
+	giveitem ITEM_MUSCLE_BAND
+# 495 "data/maps/Route116/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 496 "data/maps/Route116/scripts.pory"
+	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+# 497 "data/maps/Route116/scripts.pory"
+	msgbox Roark_ExplainRockTombAndMuscleBand
+# 498 "data/maps/Route116/scripts.pory"
+	release
+	end
+
+
+Roark_ExplainRockTombAndMuscleBand::
+# 502 "data/maps/Route116/scripts.pory"
+	.string "That TECHNICAL MACHINE, TM39,\n"
+	.string "contains ROCK TOMB.\p"
+	.string "It not only inflicts damage by dropping\n"
+	.string "rocks, it also lowers SPEED.\p"
+	.string "If you use a TM, it instantly teaches\n"
+	.string "the move to a POKéMON.\p"
+	.string "In this game, you can use a TM as many\n"
+	.string "times as you want!\p"
+	.string "And the Muscle Band will boost your\n"
+	.string "Attack if held!$"
+
+Roark_Greeting::
+# 515 "data/maps/Route116/scripts.pory"
+	.string "Hi there! I'm Roark, a gym leader from\n"
+	.string "the Sinnoh region. I've heard there are\p"
+	.string "a lot of cool underground areas to\n"
+	.string "explore here in Hoenn, so I had to come\p"
+	.string "check it out. I've also heard that the\n"
+	.string "trainers in this region were weaker\p"
+	.string "than the ones in Sinnoh. I wonder if\n"
+	.string "that's true... $"
 
 Roark_Outro::
-# 490 "data/maps/Route116/scripts.pory"
-	.string "bye im Roark$"
+# 526 "data/maps/Route116/scripts.pory"
+	.string "Looks like the trainers here are\n"
+	.string "pretty strong! Please, take these\p"
+	.string "as rewards for beating me.$"
 
 PostBattle_Roark::
-# 494 "data/maps/Route116/scripts.pory"
-	.string "bye im Roark again!$"
+# 532 "data/maps/Route116/scripts.pory"
+	.string "Time to explore the underground!$"
