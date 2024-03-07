@@ -2517,13 +2517,13 @@ Dawn_Defeated::
 	.string "Looks like {RIVAL} was right!$"
 
 Dawn_TakeThis::
-# 1296 "data/maps/Route104/scripts.pory"
+# 1297 "data/maps/Route104/scripts.pory"
 	.string "That was a great battle! I'll definitely\n"
 	.string "be seeing you again, {PLAYER}, so I can\p"
 	.string "test my strength! Also, here, I have an\n"
 	.string "extra set of these you can have.$"
 
 ExplainWiseGlasses::
-# 1303 "data/maps/Route104/scripts.pory"
+# 1304 "data/maps/Route104/scripts.pory"
 	.string "They'll boost your Special Attack if\n"
 	.string "held. Alright, I'm off, see you around!$"

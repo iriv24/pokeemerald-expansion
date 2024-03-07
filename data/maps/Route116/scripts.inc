@@ -1012,5 +1012,5 @@ Roark_Outro::
 	.string "as rewards for beating me.$"
 
 PostBattle_Roark::
-# 532 "data/maps/Route116/scripts.pory"
+# 533 "data/maps/Route116/scripts.pory"
 	.string "Time to explore the underground!$"
