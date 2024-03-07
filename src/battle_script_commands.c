@@ -3873,6 +3873,10 @@ static void Cmd_cleareffectsonfaint(void)
         const u8 *clearDataResult = NULL;
         if (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || gBattleMons[battler].hp == 0)
         {
+            if(gBattleMons[battler].status1 & STATUS1_SLEEP)
+            {
+                gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
+            }
             gBattleMons[battler].status1 = 0;
             BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
             MarkBattlerForControllerExec(battler);
@@ -12904,6 +12908,7 @@ static void Cmd_healpartystatus(void)
 
     if (toHeal)
     {
+        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
         BtlController_EmitSetMonData(gBattlerAttacker, BUFFER_A, REQUEST_STATUS_BATTLE, toHeal, sizeof(zero), &zero);
         MarkBattlerForControllerExec(gBattlerAttacker);
     }
