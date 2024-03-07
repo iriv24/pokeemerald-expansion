@@ -529,6 +529,7 @@ text Roark_Outro{
 	"as rewards for beating me."
 }
 
+
 text PostBattle_Roark{
 	"Time to explore the underground!"
 }

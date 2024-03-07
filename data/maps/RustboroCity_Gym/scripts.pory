@@ -208,6 +208,7 @@ RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 	.string "CUT outside of battle.\p"
 	.string "Please take this with you, too.$"
 
+
 RustboroCity_Gym_Text_ExplainBulldoze:
 	.string "That TECHNICAL MACHINE, TM96,\n"
 	.string "contains BULLDOZE.\p"

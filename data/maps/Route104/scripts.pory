@@ -1293,6 +1293,7 @@ text Dawn_Defeated{
 	"Looks like {RIVAL} was right!"
 }
 
+
 text Dawn_TakeThis{
 	"That was a great battle! I'll definitely\n"
 	"be seeing you again, {PLAYER}, so I can\p"
