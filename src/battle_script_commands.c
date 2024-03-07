@@ -15894,7 +15894,10 @@ void BS_ItemCureStatus(void)
     {
         statusChanged = TRUE;
         if (GetItemStatus1Mask(gLastUsedItem) & STATUS1_SLEEP)
+        {
             gBattleMons[battler].status2 &= ~STATUS2_NIGHTMARE;
+            gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
+        }
         if (GetItemStatus2Mask(gLastUsedItem) & STATUS2_CONFUSION)
             gStatuses4[battler] &= ~STATUS4_INFINITE_CONFUSION;
     }
