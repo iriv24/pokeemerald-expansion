@@ -119,9 +119,6 @@
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
 
-//tx_registered_items_menu
-#define REGISTERED_ITEMS_MAX 10
-
 // Calls m0/m1/.../m8 depending on how many arguments are passed.
 #define VARARG_8(m, ...) CAT(m, NARG_8(__VA_ARGS__))(__VA_ARGS__)
 
@@ -581,11 +578,6 @@ struct ItemSlot
     u16 quantity;
 };
 
-struct RegisteredItemSlot
-{
-    u16 itemId;
-};
-
 struct Pokeblock
 {
     u8 color;
@@ -994,7 +986,7 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-    /*0x496*/ u16 registeredItemSelect; // registered for use with SELECT button
+    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
@@ -1068,10 +1060,6 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     // sizeof: 0x3???
-    u8 registeredItemLastSelected:4; //max 16 items
-    u8 registeredItemListCount:4;
-    struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
-
     //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
     //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
     //change BAG_TMHM_COUNT from 64 -> 120; results: 15792b/16336b; free space: 544b (4 byte per TM slot added)
