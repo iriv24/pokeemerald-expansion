@@ -3188,7 +3188,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("ROXANNE"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_WILL_SUICIDE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_SETUP_FIRST_TURN,
         .party = TRAINER_PARTY(sParty_Roxanne1),
     },
 
@@ -3200,7 +3200,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRAWLY"),
         .items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Brawly1),
     },
 
@@ -7112,7 +7112,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_BrendanRustboroTreecko),
     },
 
@@ -7124,7 +7124,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_BrendanRustboroMudkip),
     },
 
@@ -7196,7 +7196,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_BrendanRustboroTorchic),
     },
 
@@ -7208,7 +7208,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
         .party = TRAINER_PARTY(sParty_MayRustboroMudkip),
     },
 
@@ -9224,7 +9224,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_MayRustboroTreecko),
     },
 
@@ -9236,7 +9236,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_MayRustboroTorchic),
     },
 
@@ -10220,7 +10220,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("ROARK"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = 0,
         .party = TRAINER_PARTY(sParty_Roark),
     },
 
@@ -10268,7 +10268,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("DAWN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_DawnRoute104),
     }
 };
