@@ -169,7 +169,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_TIMBURR"
+                "species": "SPECIES_TYROGUE"
               },
               {
                 "min_level": 3,
@@ -328,7 +328,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_CRABRAWLER"
+                "species": "SPECIES_SHELMET"
               },
               {
                 "min_level": 3,
@@ -1920,7 +1920,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_BRONZOR"
+                "species": "SPECIES_PARAS"
               },
               {
                 "min_level": 6,
