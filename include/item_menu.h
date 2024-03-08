@@ -108,6 +108,5 @@ void DisplayItemMessage(u8 taskId, u8 fontId, const u8 *str, void ( *callback)(u
 void DisplayItemMessageOnField(u8 taskId, const u8 *src, TaskFunc callback);
 void CloseItemMessage(u8 taskId);
 void ItemMenu_RotomCatalog(u8 taskId);
-void ShowRegisteredItemsMenu(void);
 
 #endif //GUARD_ITEM_MENU_H
