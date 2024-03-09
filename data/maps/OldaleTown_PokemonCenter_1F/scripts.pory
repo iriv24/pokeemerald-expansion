@@ -64,3 +64,98 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 	.string "I traded POKéMON right away.$"
 
 `
+
+script OldDaleTown_PokemonCenter_EventScript_NatureMaster {
+    lock
+    faceplayer
+    msgbox("Hello, would you like one of your\nPokémon to change their Nature?", MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_NatureMasterNo)
+	}
+
+    msgbox("Which Pokémon?")
+    special(ChoosePartyMon)
+    waitstate
+
+    if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_NatureMasterNo)
+	}
+
+    specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+
+    if(var(VAR_RESULT) == SPECIES_EGG) {
+        msgbox("I can't change the Nature of an egg.")
+        release
+        end
+    }
+
+    special(BufferMonNickname)
+
+    msgbox("Which new Nature suits {STR_VAR_1}\nbest?")
+	dynmultipush("Adamant        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_ADAMANT)
+	dynmultipush("Bashful        neutral", NATURE_BASHFUL)
+	dynmultipush("Bold           {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk", NATURE_BOLD)
+	dynmultipush("Brave          {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed", NATURE_BRAVE)
+	dynmultipush("Calm           {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk", NATURE_CALM)
+	dynmultipush("Careful        {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_CAREFUL)
+	dynmultipush("Docile         neutral", NATURE_DOCILE)
+	dynmultipush("Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def", NATURE_GENTLE)
+    dynmultipush("Hardy          neutral", NATURE_HARDY)
+    dynmultipush("Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def", NATURE_HASTY)
+    dynmultipush("Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_IMPISH)
+    dynmultipush("Jolly          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_JOLLY)
+    dynmultipush("Lax            {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef", NATURE_LAX)
+	dynmultipush("Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def", NATURE_LONELY)
+    dynmultipush("Mild           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def", NATURE_MILD)
+    dynmultipush("Modest         {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk", NATURE_MODEST)
+    dynmultipush("Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef", NATURE_NAIVE)
+	dynmultipush("Naughty        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef", NATURE_NAUGHTY)
+    dynmultipush("Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed", NATURE_QUIET)
+    dynmultipush("Quirky         neutral", NATURE_QUIRKY)
+	dynmultipush("Rash           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef", NATURE_RASH)
+    dynmultipush("Relaxed        {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed", NATURE_RELAXED)
+    dynmultipush("Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed", NATURE_SASSY)
+    dynmultipush("Serious        neutral", NATURE_SERIOUS)
+	dynmultipush("Timid          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk", NATURE_TIMID)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_NatureMasterNo)
+	}
+
+    copyvar(VAR_0x8005, VAR_RESULT)
+    buffernaturename(STR_VAR_2, VAR_RESULT)
+
+    msgbox("So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?", MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_NatureMasterNo)
+	}
+
+    msgbox("Excellent. We shall begin at once!")
+
+    fadescreen(FADE_TO_BLACK)
+    special(ChangeMonNature)
+    playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+    closemessage
+    fadescreen(FADE_FROM_BLACK)
+
+    msgbox("{STR_VAR_1}'s nature has been\nchanged. Come again if you need to\pchange another Pokémon's nature.")
+    release
+    end
+}
+
+script OldDaleTown_PokemonCenter_EventScript_NatureMasterNo {
+    msgbox("I see. Come back when one of your\nPokémon needs to acquire a new Nature.")
+    release
+    end
+}

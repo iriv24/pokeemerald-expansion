@@ -126,3 +126,293 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 	.string "the second floor was built recently.\p"
 # 64 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "I traded POKéMON right away.$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster::
+# 69 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	lock
+# 70 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	faceplayer
+# 71 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_0, MSGBOX_YESNO
+# 73 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_2
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_1:
+# 78 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_1
+# 79 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special ChoosePartyMon
+# 80 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitstate
+# 82 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_5
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_4:
+# 87 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 89 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_8
+# 95 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special BufferMonNickname
+# 97 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_3
+# 98 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_4, NATURE_ADAMANT
+# 99 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_5, NATURE_BASHFUL
+# 100 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_6, NATURE_BOLD
+# 101 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_7, NATURE_BRAVE
+# 102 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_8, NATURE_CALM
+# 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_9, NATURE_CAREFUL
+# 104 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_10, NATURE_DOCILE
+# 105 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_11, NATURE_GENTLE
+# 106 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_12, NATURE_HARDY
+# 107 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_13, NATURE_HASTY
+# 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_14, NATURE_IMPISH
+# 109 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_15, NATURE_JOLLY
+# 110 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_16, NATURE_LAX
+# 111 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_17, NATURE_LONELY
+# 112 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_18, NATURE_MILD
+# 113 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_19, NATURE_MODEST
+# 114 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_20, NATURE_NAIVE
+# 115 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_21, NATURE_NAUGHTY
+# 116 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_22, NATURE_QUIET
+# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_23, NATURE_QUIRKY
+# 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_24, NATURE_RASH
+# 119 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_25, NATURE_RELAXED
+# 120 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_26, NATURE_SASSY
+# 121 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_27, NATURE_SERIOUS
+# 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_28, NATURE_TIMID
+# 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_29, MULTI_B_PRESSED
+# 126 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 128 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_11
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_10:
+# 133 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	copyvar VAR_0x8005, VAR_RESULT
+# 134 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	buffernaturename STR_VAR_2, VAR_RESULT
+# 136 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_30, MSGBOX_YESNO
+# 138 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_14
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_13:
+# 143 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_31
+# 145 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 146 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special ChangeMonNature
+# 147 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 148 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitfanfare
+# 149 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	closemessage
+# 150 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 152 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_32
+# 153 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_2:
+# 75 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMasterNo
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMaster_1
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_5:
+# 84 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMasterNo
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMaster_4
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_8:
+# 90 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_2
+# 91 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_11:
+# 130 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMasterNo
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMaster_10
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_14:
+# 140 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMasterNo
+	goto OldDaleTown_PokemonCenter_EventScript_NatureMaster_13
+
+
+OldDaleTown_PokemonCenter_EventScript_NatureMasterNo::
+# 158 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_NatureMasterNo_Text_0
+# 159 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_0:
+# 71 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Hello, would you like one of your\nPokémon to change their Nature?$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_1:
+# 78 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Which Pokémon?$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_2:
+# 90 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "I can't change the Nature of an egg.$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_3:
+# 97 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Which new Nature suits {STR_VAR_1}\nbest?$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_4:
+# 98 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Adamant        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_5:
+# 99 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Bashful        neutral$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_6:
+# 100 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Bold           {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_7:
+# 101 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Brave          {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_8:
+# 102 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Calm           {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_9:
+# 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Careful        {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_10:
+# 104 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Docile         neutral$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_11:
+# 105 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_12:
+# 106 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Hardy          neutral$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_13:
+# 107 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_14:
+# 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_15:
+# 109 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Jolly          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_16:
+# 110 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Lax            {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_17:
+# 111 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_18:
+# 112 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Mild           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_19:
+# 113 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Modest         {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_20:
+# 114 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_21:
+# 115 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Naughty        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_22:
+# 116 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_23:
+# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Quirky         neutral$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_24:
+# 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Rash           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_25:
+# 119 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Relaxed        {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_26:
+# 120 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_27:
+# 121 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Serious        neutral$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_28:
+# 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Timid          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_29:
+# 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Cancel$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_30:
+# 136 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_31:
+# 143 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Excellent. We shall begin at once!$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_32:
+# 152 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "{STR_VAR_1}'s nature has been\nchanged. Come again if you need to\pchange another Pokémon's nature.$"
+
+OldDaleTown_PokemonCenter_EventScript_NatureMasterNo_Text_0:
+# 158 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "I see. Come back when one of your\nPokémon needs to acquire a new Nature.$"
