@@ -525,36 +525,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 10
-	giveitem ITEM_ORAN_BERRY, 20
-	giveitem ITEM_CHARTI_BERRY, 10
-	giveitem ITEM_CHILAN_BERRY, 10
-	giveitem ITEM_COBA_BERRY, 10
-	giveitem ITEM_KEBIA_BERRY, 10
-	giveitem ITEM_OCCA_BERRY, 10
-	giveitem ITEM_PASSHO_BERRY, 10
-	giveitem ITEM_PAYAPA_BERRY, 10
-	giveitem ITEM_RINDO_BERRY, 10
-	giveitem ITEM_YACHE_BERRY, 10
-	giveitem ITEM_QUICK_BALL, 99
-	giveitem ITEM_ABSORB_BULB, 10
-	giveitem ITEM_BLUE_SHARD, 10
-	giveitem ITEM_RED_SHARD, 10
-	giveitem ITEM_GREEN_SHARD, 10
-	giveitem ITEM_YELLOW_SHARD, 10
-	giveitem ITEM_HARD_STONE, 10
-	giveitem ITEM_MYSTIC_WATER, 10
-	giveitem ITEM_NEVER_MELT_ICE, 10
-	giveitem ITEM_PIXIE_PLATE, 10
-	giveitem ITEM_SHARP_BEAK, 10
-	giveitem ITEM_SILVER_POWDER, 10
-	giveitem ITEM_SOFT_SAND, 10
-	giveitem ITEM_SPELL_TAG, 10
-	giveitem ITEM_TWISTED_SPOON, 10
-	giveitem ITEM_MAGNET, 10
-	giveitem ITEM_POISON_BARB, 10
-	giveitem ITEM_MENTAL_HERB, 10
-	giveitem ITEM_LIGHT_BALL, 10
+	giveitem ITEM_POKE_BALL, 5
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
@@ -785,16 +756,12 @@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 	.string "Oh, also, {PLAYER}{KUN}, I \n"
 	.string "gave these to {RIVAL} already.\p"
-	.string "I swear these starting items are\n"
-	.string "getting more and more advanced. Back in\p"
-	.string "my day, I had to walk to the Mart uphill\n"
-	.string "both ways with no items or... I digress,\p"
-	.string "just take these.$"
+	.string "You should probably have some too.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
-	.string "Kids these days... I mean uh, good luck\n"
-	.string "{PLAYER}, hope you catch lots of cool\p"
-	.string "Pokémon.$"
+	.string "Now go catch a lot of Pokemon and\n"
+	.string "remember, this game might be harder.\p"
+	.string "Good luck, {PLAYER}{KUN}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"

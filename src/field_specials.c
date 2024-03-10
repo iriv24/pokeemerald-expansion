@@ -4297,6 +4297,7 @@ void ChangeMonNature(void)
     struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     u8 gender = GetMonGender(mon);
     bool8 isShiny = IsMonShiny(mon);
     //todo maybe worry about spinda spots, unown letter, wurmple evo

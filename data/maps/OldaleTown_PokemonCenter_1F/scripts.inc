@@ -299,103 +299,103 @@ OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_3:
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_4:
 # 98 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Adamant       {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
+	.string "Adamant        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_5:
 # 99 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Bashful        Neutral         $"
+	.string "Bashful        neutral$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_6:
 # 100 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Bold             {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk       $"
+	.string "Bold           {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_7:
 # 101 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Brave           {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed     $"
+	.string "Brave          {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_8:
 # 102 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Calm             {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk     $"
+	.string "Calm           {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_9:
 # 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Careful       {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
+	.string "Careful        {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_10:
 # 104 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Docile          Neutral         $"
+	.string "Docile         neutral$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_11:
 # 105 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
+	.string "Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_12:
 # 106 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Hardy           Neutral         $"
+	.string "Hardy          neutral$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_13:
 # 107 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
+	.string "Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_14:
 # 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
+	.string "Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_15:
 # 109 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Jolly           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
+	.string "Jolly          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_16:
 # 110 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Lax              {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   $"
+	.string "Lax            {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_17:
 # 111 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
+	.string "Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_18:
 # 112 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Mild             {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def   $"
+	.string "Mild           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_19:
 # 113 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Modest        {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   $"
+	.string "Modest         {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_20:
 # 114 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef $"
+	.string "Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_21:
 # 115 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Naughty      {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   $"
+	.string "Naughty        {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_22:
 # 116 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed $"
+	.string "Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_23:
 # 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Quirky          Neutral         $"
+	.string "Quirky         neutral$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_24:
 # 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Rash            {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef $"
+	.string "Rash           {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_25:
 # 119 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Relaxed       {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed   $"
+	.string "Relaxed        {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_26:
 # 120 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed $"
+	.string "Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_27:
 # 121 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Serious       Neutral         $"
+	.string "Serious        neutral$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_28:
 # 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "Timid           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   $"
+	.string "Timid          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk$"
 
 OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_29:
 # 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
