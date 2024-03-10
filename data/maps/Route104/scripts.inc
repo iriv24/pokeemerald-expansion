@@ -2405,102 +2405,136 @@ Route104_EventScript_DawnDefeated::
 # 1215 "data/maps/Route104/scripts.pory"
 	giveitem ITEM_WISE_GLASSES
 # 1216 "data/maps/Route104/scripts.pory"
-	msgbox ExplainWiseGlasses
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 1217 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PSYCHIC_SEED, 10
+# 1218 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1219 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_BLACK_BELT, 10
+# 1220 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1221 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_DRAGON_FANG, 10
+# 1222 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1223 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PERSIM_BERRY, 10
+# 1224 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1225 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PECHA_BERRY, 10
+# 1226 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1227 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_RAWST_BERRY, 10
+# 1228 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1229 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_TANGA_BERRY, 10
+# 1230 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1231 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_MIRACLE_SEED, 10
+# 1232 "data/maps/Route104/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 1233 "data/maps/Route104/scripts.pory"
+	msgbox DawnGoodbye
+# 1234 "data/maps/Route104/scripts.pory"
 	goto Route104_EventScript_DawnExit
 	end
 
 
 Route104_EventScript_DawnApproachPlayer1::
-# 1224 "data/maps/Route104/scripts.pory"
+# 1241 "data/maps/Route104/scripts.pory"
 	applymovement 35, Route104_Movement_DawnApproachPlayer1
-# 1225 "data/maps/Route104/scripts.pory"
+# 1242 "data/maps/Route104/scripts.pory"
 	waitmovement 0
 	return
 
 
 Route104_Movement_DawnApproachPlayer1::
-# 1231 "data/maps/Route104/scripts.pory"
+# 1248 "data/maps/Route104/scripts.pory"
 	walk_down
-# 1232 "data/maps/Route104/scripts.pory"
+# 1249 "data/maps/Route104/scripts.pory"
 	walk_left
-# 1233 "data/maps/Route104/scripts.pory"
+# 1250 "data/maps/Route104/scripts.pory"
 	walk_in_place_faster_down
-# 1234 "data/maps/Route104/scripts.pory"
+# 1251 "data/maps/Route104/scripts.pory"
 	step_end
 	return
 
 
 Route104_EventScript_DawnApproachPlayer2::
-# 1238 "data/maps/Route104/scripts.pory"
+# 1255 "data/maps/Route104/scripts.pory"
 	applymovement 35, Route104_Movement_DawnApproachPlayer2
-# 1239 "data/maps/Route104/scripts.pory"
+# 1256 "data/maps/Route104/scripts.pory"
 	waitmovement 0
 	return
 
 
 Route104_Movement_DawnApproachPlayer2::
-# 1244 "data/maps/Route104/scripts.pory"
+# 1261 "data/maps/Route104/scripts.pory"
 	walk_down
-# 1245 "data/maps/Route104/scripts.pory"
+# 1262 "data/maps/Route104/scripts.pory"
 	step_end
 	return
 
 
 Route104_EventScript_DawnExit::
-# 1249 "data/maps/Route104/scripts.pory"
+# 1266 "data/maps/Route104/scripts.pory"
 	closemessage
-# 1250 "data/maps/Route104/scripts.pory"
+# 1267 "data/maps/Route104/scripts.pory"
 	delay 45
-# 1251 "data/maps/Route104/scripts.pory"
+# 1268 "data/maps/Route104/scripts.pory"
 	call_if_eq VAR_0x8008, 1, ApplyMovementDawn
-# 1252 "data/maps/Route104/scripts.pory"
+# 1269 "data/maps/Route104/scripts.pory"
 	call_if_eq VAR_0x8008, 2, ApplyMovementDawn
-# 1253 "data/maps/Route104/scripts.pory"
+# 1270 "data/maps/Route104/scripts.pory"
 	removeobject 35
-# 1254 "data/maps/Route104/scripts.pory"
+# 1271 "data/maps/Route104/scripts.pory"
 	setflag FLAG_UNUSED_DAWN
-# 1255 "data/maps/Route104/scripts.pory"
+# 1272 "data/maps/Route104/scripts.pory"
 	setvar VAR_UNUSED_FOUGHT_DAWN104, 1
-# 1256 "data/maps/Route104/scripts.pory"
+# 1273 "data/maps/Route104/scripts.pory"
 	savebgm MUS_DUMMY
-# 1257 "data/maps/Route104/scripts.pory"
+# 1274 "data/maps/Route104/scripts.pory"
 	fadedefaultbgm
-# 1258 "data/maps/Route104/scripts.pory"
+# 1275 "data/maps/Route104/scripts.pory"
 	releaseall
 	end
 
 
 ApplyMovementDawn::
-# 1263 "data/maps/Route104/scripts.pory"
+# 1280 "data/maps/Route104/scripts.pory"
 	applymovement 35, Route104_EventScript_DawnExit1
-# 1264 "data/maps/Route104/scripts.pory"
+# 1281 "data/maps/Route104/scripts.pory"
 	waitmovement 0
 	return
 
 
 Route104_EventScript_DawnExit1::
-# 1269 "data/maps/Route104/scripts.pory"
+# 1286 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1270 "data/maps/Route104/scripts.pory"
+# 1287 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1271 "data/maps/Route104/scripts.pory"
+# 1288 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1272 "data/maps/Route104/scripts.pory"
+# 1289 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1273 "data/maps/Route104/scripts.pory"
+# 1290 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1274 "data/maps/Route104/scripts.pory"
+# 1291 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1275 "data/maps/Route104/scripts.pory"
+# 1292 "data/maps/Route104/scripts.pory"
 	walk_up
-# 1276 "data/maps/Route104/scripts.pory"
+# 1293 "data/maps/Route104/scripts.pory"
 	step_end
 	return
 
 
 Dawn_Greeting::
-# 1279 "data/maps/Route104/scripts.pory"
+# 1296 "data/maps/Route104/scripts.pory"
 	.string "Hey! My name is Dawn, I'm a friend of\n"
 	.string "{RIVAL}'s. I haven't beaten all the\p"
 	.string "gyms in Hoenn yet, so I'll be making my\n"
@@ -2513,17 +2547,17 @@ Dawn_Greeting::
 	.string "you? I guess I'll be the judge of that!$"
 
 Dawn_Defeated::
-# 1292 "data/maps/Route104/scripts.pory"
+# 1309 "data/maps/Route104/scripts.pory"
 	.string "Looks like {RIVAL} was right!$"
 
 Dawn_TakeThis::
-# 1297 "data/maps/Route104/scripts.pory"
+# 1314 "data/maps/Route104/scripts.pory"
 	.string "That was a great battle! I'll definitely\n"
 	.string "be seeing you again, {PLAYER}, so I can\p"
-	.string "test my strength! Also, here, I have an\n"
-	.string "extra set of these you can have.$"
+	.string "test my strength! Also, here, I have\n"
+	.string "some extra sets of items taking up\p"
+	.string "space in my bag that you can have.$"
 
-ExplainWiseGlasses::
-# 1304 "data/maps/Route104/scripts.pory"
-	.string "They'll boost your Special Attack if\n"
-	.string "held. Alright, I'm off, see you around!$"
+DawnGoodbye::
+# 1322 "data/maps/Route104/scripts.pory"
+	.string "Alright, I'm off, see you around!$"

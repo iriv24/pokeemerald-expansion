@@ -1213,7 +1213,24 @@ script Route104_EventScript_DawnRivalBattle{
 script Route104_EventScript_DawnDefeated{
 	msgbox(Dawn_TakeThis)
 	giveitem(ITEM_WISE_GLASSES)
-	msgbox(ExplainWiseGlasses)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_PSYCHIC_SEED, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_BLACK_BELT, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_DRAGON_FANG, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_PERSIM_BERRY, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_PECHA_BERRY, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_RAWST_BERRY, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_TANGA_BERRY, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_MIRACLE_SEED, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	msgbox(DawnGoodbye)
 	goto(Route104_EventScript_DawnExit)
 	end
 }
@@ -1297,12 +1314,12 @@ text Dawn_Defeated{
 text Dawn_TakeThis{
 	"That was a great battle! I'll definitely\n"
 	"be seeing you again, {PLAYER}, so I can\p"
-	"test my strength! Also, here, I have an\n"
-	"extra set of these you can have."
+	"test my strength! Also, here, I have\n"
+	"some extra sets of items taking up\p"
+	"space in my bag that you can have."
 }
 
-text ExplainWiseGlasses{
-	"They'll boost your Special Attack if\n"
-	"held. Alright, I'm off, see you around!"
+text DawnGoodbye{
+	"Alright, I'm off, see you around!"
 }
 	
