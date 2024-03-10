@@ -11986,11 +11986,43 @@ static const struct TrainerMon sParty_Roark[] = {
     },
 };
 
-static const struct TrainerMon sParty_Leaf[] = {
+static const struct TrainerMon sParty_Gardenia[] = {
     {
-    .lvl = 5,
-    .species = SPECIES_BULBASAUR,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30),
+    .lvl = 200,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_MIRACLE_SEED,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_TECHNICIAN,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE, MOVE_SLEEP_POWDER, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ARBOLIVA,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .nature = NATURE_CALM,
+    .ability = ABILITY_HARVEST,
+    .moves = {MOVE_LEECH_SEED, MOVE_PROTECT, MOVE_GIGA_DRAIN, MOVE_HYPER_VOICE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_SUDOWOODO,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_STURDY,
+    .moves = {MOVE_ROCK_SLIDE, MOVE_HIGH_HORSEPOWER, MOVE_SEED_BOMB, MOVE_SUCKER_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_GLOOM,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_STENCH,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_SYNTHESIS}
+    },
 };
 
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {

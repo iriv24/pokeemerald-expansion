@@ -853,7 +853,7 @@
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
 #define TRAINER_ROARK                       851
-#define TRAINER_LEAF                        852
+#define TRAINER_GARDENIA                    852
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_DAWN_ROUTE_104              855
