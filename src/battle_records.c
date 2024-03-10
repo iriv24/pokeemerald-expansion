@@ -222,9 +222,7 @@ static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 
 
 void ClearPlayerLinkBattleRecords(void)
 {
-    #ifndef FREE_LINK_BATTLE_RECORDS
     ClearLinkBattleRecords(gSaveBlock1Ptr->linkBattleRecords.entries);
-    #endif
 }
 
 static void IncTrainerCardWins(s32 battlerId)
@@ -260,7 +258,6 @@ static void UpdateTrainerCardWinsLosses(s32 battlerId)
 
 void UpdatePlayerLinkBattleRecords(s32 battlerId)
 {
-    #ifndef FREE_LINK_BATTLE_RECORDS
     if (InUnionRoom() != TRUE)
     {
         UpdateTrainerCardWinsLosses(battlerId);
@@ -271,7 +268,6 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
             gBattleOutcome,
             battlerId);
     }
-    #endif
 }
 
 static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
@@ -327,7 +323,6 @@ void ShowLinkBattleRecords(void)
 
     x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 208);
     AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 1, 0, NULL);
-    #ifndef FREE_LINK_BATTLE_RECORDS
     PrintLinkBattleWinsLossesDraws(gSaveBlock1Ptr->linkBattleRecords.entries);
 
     StringExpandPlaceholders(gStringVar4, gText_WinLoseDraw);
@@ -337,7 +332,7 @@ void ShowLinkBattleRecords(void)
     {
         PrintLinkBattleRecord(&gSaveBlock1Ptr->linkBattleRecords.entries[i], 7 + (i * 2), gSaveBlock1Ptr->linkBattleRecords.languages[i]);
     }
-    #endif
+
     PutWindowTilemap(gRecordsWindowId);
     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
 }

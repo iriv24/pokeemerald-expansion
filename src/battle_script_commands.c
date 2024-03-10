@@ -4077,7 +4077,6 @@ static void Cmd_getexp(void)
 {
     CMD_ARGS(u8 battler);
 
-    u16 item;
     u32 holdEffect;
     s32 i; // also used as stringId
     u8 *expMonId = &gBattleStruct->expGetterMonId;
@@ -4117,15 +4116,6 @@ static void Cmd_getexp(void)
                     viaSentIn++;
 
                 holdEffect = GetMonHoldEffect(&gPlayerParty[i]);
-                item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
-                if (item == ITEM_ENIGMA_BERRY)
-                    #ifndef FREE_ENIGMA_BERRY
-                    holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
-                    #else
-                    holdEffect = 0;
-                    #endif
-                else
-                    holdEffect = ItemId_GetHoldEffect(item);
                 if (holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
                 {
                     expShareBits |= gBitTable[i];

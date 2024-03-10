@@ -4483,12 +4483,6 @@ static void Task_SetSacredAshCB(u8 taskId)
 static bool8 IsHPRecoveryItem(u16 item)
 {
     const u8 *effect = GetItemEffect(item);
-    if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
-        effect = GetItemEffect(item);
-        #else
-        effect = NULL;
-        #endif
 
     if (effect == NULL)
         return FALSE;
@@ -5116,13 +5110,6 @@ static void Task_HandleWhichMoveInput(u8 taskId)
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task)
 {
     const u8 *effect = GetItemEffect(gSpecialVar_ItemId);
-    u16 item = gSpecialVar_ItemId;
-    if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
-        effect = GetItemEffect(gSpecialVar_ItemId);
-        #else
-        effect = NULL;
-        #endif
 
     if (effect == NULL || !(effect[4] & ITEM4_HEAL_PP_ONE))
     {
@@ -6491,12 +6478,6 @@ u8 GetItemEffectType(u16 item)
 {
     u32 statusCure;
     const u8 *itemEffect = GetItemEffect(item);
-    if (item == ITEM_ENIGMA_BERRY)
-        #ifndef FREE_ENIGMA_BERRY
-        itemEffect = GetItemEffect(item);
-        #else
-        itemEffect = NULL;
-        #endif
 
     if (itemEffect == NULL)
         return ITEM_EFFECT_NONE;

@@ -1997,6 +1997,7 @@ static bool32 AiExpectsToFaintPlayer(u32 battler)
     }
 
     return FALSE;
+}
 
 static bool8 ShouldUseItem(u32 battler)
 {
@@ -2044,12 +2045,6 @@ static bool8 ShouldUseItem(u32 battler)
         itemEffects = GetItemEffect(item);
         if (itemEffects == NULL)
             continue;
-        if (item == ITEM_ENIGMA_BERRY)
-            #ifndef FREE_ENIGMA_BERRY
-            itemEffects = gSaveBlock1Ptr->enigmaBerry.itemEffect;
-            #else
-            itemEffects = 0;
-            #endif
 
         switch (ItemId_GetBattleUsage(item))
         {
