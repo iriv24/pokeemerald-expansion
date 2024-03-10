@@ -950,3 +950,78 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "If a POKéMON runs out of PP, it must be\n"
 # 476 "data/maps/PetalburgWoods/scripts.pory"
 	.string "taken to a POKéMON CENTER.$"
+
+PetalburgWoods_EventScript_GardeniaBattle::
+# 481 "data/maps/PetalburgWoods/scripts.pory"
+	trainerbattle_single TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, Route116_EventScript_GardeniaDefeated, NO_MUSIC
+# 482 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_U_TURN, Route116_EventScript_GardeniaGiveItems
+# 483 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox PostBattle_Gardenia, MSGBOX_AUTOCLOSE
+# 484 "data/maps/PetalburgWoods/scripts.pory"
+	waitmessage
+	end
+
+
+Route116_EventScript_GardeniaDefeated::
+# 489 "data/maps/PetalburgWoods/scripts.pory"
+	goto Route116_EventScript_GardeniaGiveItems
+	end
+
+
+Route116_EventScript_GardeniaGiveItems::
+# 495 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_TM_U_TURN
+# 496 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 497 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_EVIOLITE
+# 498 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 499 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_LEAF_STONE, 10
+# 500 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 501 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_SHINY_STONE, 10
+# 502 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 503 "data/maps/PetalburgWoods/scripts.pory"
+	setflag FLAG_RECEIVED_TM_U_TURN
+# 504 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_ExplainItems
+# 505 "data/maps/PetalburgWoods/scripts.pory"
+	release
+	end
+
+
+Gardenia_ExplainItems::
+# 509 "data/maps/PetalburgWoods/scripts.pory"
+	.string "TThat TM contains U-turn, it's very \n"
+	.string "useful for getting a hit off while\p"
+	.string "switching out a Pokémon. I also\n"
+	.string "included some useful evolution stones\p"
+	.string "and an item that will be good for a\n"
+	.string "Pokémon you can't evolve quite yet.\p$"
+
+Gardenia_Greeting::
+# 518 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Aha! I saw you run by through those\n"
+	.string "trees earlier while I was hunting some\p"
+	.string "grass types, but it seemed clear you\n"
+	.string "couldn't cut them. The fact that you\p"
+	.string "can now must mean you're a trainer\n"
+	.string "who's strong enough to beat Roxanne,\p"
+	.string "which means you're a trainer I want to\n"
+	.string "face! If you can beat me I'll make it\p"
+	.string "worth your while!$"
+
+Gardenia_Outro::
+# 530 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Not bad at all! As promised, please take\n"
+	.string "these rewards for beating me.$"
+
+PostBattle_Gardenia::
+# 536 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Hope there are some cool grass types in\n"
+	.string "this region!$"

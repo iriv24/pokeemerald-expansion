@@ -50,7 +50,7 @@
 #define FLAG_RECEIVED_TM_ROCK_TOMB   0x25 // Unused Flag
 #define FLAG_UNUSED_POKEMONPCMENU    0x26
 #define FLAG_PARTY_MOVES     0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_RECEIVED_TM_U_TURN    0x29
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
