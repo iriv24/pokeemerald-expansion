@@ -49,7 +49,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Rowlet, 0),
         .footprint = gMonFootprint_Rowlet,
         LEARNSETS(Rowlet),
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_DARTRIX}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DARTRIX}),
     },
 
     [SPECIES_DARTRIX] =
@@ -98,8 +98,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Dartrix, 1),
         .footprint = gMonFootprint_Dartrix,
         LEARNSETS(Dartrix),
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_DECIDUEYE},
-                                {EVO_NONE, 0, SPECIES_DECIDUEYE_HISUIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DECIDUEYE},
+                                {EVO_MOVE, MOVE_AURA_SPHERE, SPECIES_DECIDUEYE_HISUIAN}),
     },
 
 #define DECIDUEYE_MISC_INFO                                     \
@@ -232,7 +232,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Litten, 0),
         .footprint = gMonFootprint_Litten,
         LEARNSETS(Litten),
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_TORRACAT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_TORRACAT}),
     },
 
     [SPECIES_TORRACAT] =
@@ -280,7 +280,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Torracat, 0),
         .footprint = gMonFootprint_Torracat,
         LEARNSETS(Torracat),
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_INCINEROAR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_INCINEROAR}),
     },
 
     [SPECIES_INCINEROAR] =
@@ -377,7 +377,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Popplio, 0),
         .footprint = gMonFootprint_Popplio,
         LEARNSETS(Popplio),
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_BRIONNE}),
     },
 
     [SPECIES_BRIONNE] =
@@ -425,7 +425,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Brionne, 0),
         .footprint = gMonFootprint_Brionne,
         LEARNSETS(Brionne),
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PRIMARINA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_PRIMARINA}),
     },
 
     [SPECIES_PRIMARINA] =
@@ -671,7 +671,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Yungoos, 2),
         .footprint = gMonFootprint_Yungoos,
         LEARNSETS(Yungoos),
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 20, SPECIES_GUMSHOOS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_GUMSHOOS}),
     },
 
     [SPECIES_GUMSHOOS] =
@@ -918,8 +918,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Crabrawler, 2),
         .footprint = gMonFootprint_Crabrawler,
         LEARNSETS(Crabrawler),
-        .evolutions = EVOLUTION({EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE},
-                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_CRABOMINABLE}),
     },
 
     [SPECIES_CRABOMINABLE] =
@@ -1234,8 +1233,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FRONT_PIC(Rockruff, 37, 39),
         BACK_PIC(Rockruff, 64, 56),
         .backAnimId = BACK_ANIM_V_STRETCH,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 25, SPECIES_LYCANROC_MIDDAY},
-                                {EVO_LEVEL_NIGHT, 25, SPECIES_LYCANROC_MIDNIGHT}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LYCANROC_MIDDAY},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_LYCANROC_MIDNIGHT}),
     },
 
     [SPECIES_ROCKRUFF_OWN_TEMPO] =
@@ -1245,7 +1244,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FRONT_PIC(Rockruff, 40, 48),
         BACK_PIC(Rockruff, 64, 56),
         //.backAnimId = BACK_ANIM_NONE,
-        .evolutions = EVOLUTION({EVO_LEVEL_DUSK, 25, SPECIES_LYCANROC_DUSK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_LYCANROC_DUSK}),
     },
 
 #define LYCANROC_MISC_INFO                                  \
@@ -1785,7 +1784,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Fomantis, 1),
         .footprint = gMonFootprint_Fomantis,
         LEARNSETS(Fomantis),
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 34, SPECIES_LURANTIS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_LURANTIS}),
     },
 
     [SPECIES_LURANTIS] =
@@ -3716,8 +3715,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         ICON(Cosmoem, 0),
         .footprint = gMonFootprint_Cosmoem,
         LEARNSETS(Cosmoem),
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 53, SPECIES_SOLGALEO},
-                                {EVO_LEVEL_NIGHT, 53, SPECIES_LUNALA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 52, SPECIES_SOLGALEO},
+                                {EVO_LEVEL, 53, SPECIES_LUNALA}),
     },
 
     [SPECIES_SOLGALEO] =

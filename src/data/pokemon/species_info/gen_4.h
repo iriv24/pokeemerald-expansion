@@ -1208,8 +1208,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backPicYOffset = 6,
         PALETTES(BurmyPlantCloak),
         ICON(BurmyPlantCloak, 1),
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_PLANT_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 16, SPECIES_WORMADAM_PLANT_CLOAK},
+                                {EVO_LEVEL_MALE, 16, SPECIES_MOTHIM}),
     },
 
     [SPECIES_BURMY_SANDY_CLOAK] =
@@ -1227,8 +1227,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backPicYOffset = 7,
         PALETTES(BurmySandyCloak),
         ICON(BurmySandyCloak, 1),
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_SANDY_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 16, SPECIES_WORMADAM_SANDY_CLOAK},
+                                {EVO_LEVEL_MALE, 16, SPECIES_MOTHIM}),
     },
 
     [SPECIES_BURMY_TRASH_CLOAK] =
@@ -1246,8 +1246,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backPicYOffset = 0,
         PALETTES(BurmyTrashCloak),
         ICON(BurmyTrashCloak, 0),
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_TRASH_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 16, SPECIES_WORMADAM_TRASH_CLOAK},
+                                {EVO_LEVEL_MALE, 16, SPECIES_MOTHIM}),
     },
 
 #define WORMADAM_MISC_INFO                                                      \
@@ -1829,7 +1829,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         BACK_PIC(ShellosWestSea, 40, 56),
         PALETTES(ShellosWestSea),
         ICON(ShellosWestSea, 0),
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_WEST_SEA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_GASTRODON_WEST_SEA}),
     },
 
     [SPECIES_SHELLOS_EAST_SEA] =
@@ -1846,7 +1846,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         BACK_PIC(ShellosEastSea, 56, 48),
         PALETTES(ShellosEastSea),
         ICON(ShellosEastSea, 0),
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_EAST_SEA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_GASTRODON_EAST_SEA}),
     },
 
 #define GASTRODON_MISC_INFO                                                             \
@@ -2201,7 +2201,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         ICON(Glameow, 0),
         .footprint = gMonFootprint_Glameow,
         LEARNSETS(Glameow),
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_PURUGLY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PURUGLY}),
     },
 
     [SPECIES_PURUGLY] =
@@ -2298,7 +2298,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         ICON(Stunky, 2),
         .footprint = gMonFootprint_Stunky,
         LEARNSETS(Stunky),
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_SKUNTANK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_SKUNTANK}),
     },
 
     [SPECIES_SKUNTANK] =
@@ -2783,7 +2783,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         ICON(Riolu, 2),
         .footprint = gMonFootprint_Riolu,
         LEARNSETS(Riolu),
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP_DAY, 0, SPECIES_LUCARIO}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_LUCARIO}),
     },
 
 #define LUCARIO_MISC_INFO                                       \
@@ -3282,7 +3282,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         ICON(Finneon, 0),
         .footprint = gMonFootprint_Finneon,
         LEARNSETS(Finneon),
-        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_LUMINEON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_LUMINEON}),
     },
 
     [SPECIES_LUMINEON] =
@@ -3384,7 +3384,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         ICON(Snover, 1),
         .footprint = gMonFootprint_Snover,
         LEARNSETS(Snover),
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ABOMASNOW}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_ABOMASNOW}),
     },
 
 #define ABOMASNOW_MISC_INFO                                 \
