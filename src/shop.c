@@ -1156,14 +1156,20 @@ static void BuyMenuSubtractMoney(u8 taskId)
 static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+    u8 freePremierBalls = 0;
 
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
         PlaySE(SE_SELECT);
 
         // Purchasing 10+ Poke Balls gets the player a Premier Ball
-        if (tItemId == ITEM_POKE_BALL && tItemCount >= 10 && AddBagItem(ITEM_PREMIER_BALL, 1) == TRUE)
-            BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBall, BuyMenuReturnToItemList);
+        if (tItemId == ITEM_POKE_BALL && tItemCount >= 10) {
+            freePremierBalls = (tItemCount / 10);
+            if (freePremierBalls > 0 && AddBagItem(ITEM_PREMIER_BALL, freePremierBalls) == TRUE)
+            {
+                BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBall, BuyMenuReturnToItemList);
+            }
+        }
         else
             BuyMenuReturnToItemList(taskId);
     }

@@ -985,6 +985,7 @@ static void Task_EvolutionScene(u8 taskId)
                 {
                     // Selected move to forget
                     u16 move = GetMonData(mon, var + MON_DATA_MOVE1);
+                    // this function changed to always return false so you can forget HMs
                     if (IsMoveHM(move))
                     {
                         // Can't forget HMs
@@ -1367,6 +1368,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
                 {
                     // Selected move to forget
                     u16 move = GetMonData(mon, var + MON_DATA_MOVE1);
+                    // this function changed to always return false so you can forget HMs
                     if (IsMoveHM(move))
                     {
                         // Can't forget HMs

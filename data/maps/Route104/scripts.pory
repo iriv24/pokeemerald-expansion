@@ -1226,6 +1226,8 @@ script Route104_EventScript_DawnDefeated{
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_RAWST_BERRY, 10)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_ASPEAR_BERRY, 10)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_TANGA_BERRY, 10)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_MIRACLE_SEED, 10)

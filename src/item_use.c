@@ -298,7 +298,7 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
             DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
         }
         else{
-            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOn, CloseItemMessage);
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
         }
     }
 }

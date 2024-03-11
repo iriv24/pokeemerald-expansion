@@ -507,7 +507,7 @@ script Route116_EventScript_GardeniaGiveItems{
 }
 
 text Gardenia_ExplainItems{
-	"TThat TM contains U-turn, it's very \n"
+	"That TM contains U-turn, it's very\n"
 	"useful for getting a hit off while\p"
 	"switching out a Pokémon. I also\n"
 	"included some useful evolution stones\p"

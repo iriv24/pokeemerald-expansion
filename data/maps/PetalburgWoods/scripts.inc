@@ -997,7 +997,7 @@ Route116_EventScript_GardeniaGiveItems::
 
 Gardenia_ExplainItems::
 # 509 "data/maps/PetalburgWoods/scripts.pory"
-	.string "TThat TM contains U-turn, it's very \n"
+	.string "That TM contains U-turn, it's very\n"
 	.string "useful for getting a hit off while\p"
 	.string "switching out a Pokémon. I also\n"
 	.string "included some useful evolution stones\p"
