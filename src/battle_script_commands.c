@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_message.h"
+#include "battle_main.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -7290,6 +7291,8 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u32 i = 0;
     u32 lastMonLevel = 0;
     u32 moneyReward;
+    u8 myMaxLevel;
+    u8 playerLevelMinus;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -7299,6 +7302,17 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     {
         const struct TrainerMon *party = gTrainers[trainerId].party;
         lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
+        
+        if (lastMonLevel >= 200)
+        {
+            playerLevelMinus = lastMonLevel - 200;
+            myMaxLevel = DecideLevel();
+            lastMonLevel = myMaxLevel - playerLevelMinus;
+            if(lastMonLevel <= 0 || lastMonLevel > 100)
+            {
+                lastMonLevel = myMaxLevel;
+            }
+        }
 
         for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
         {
