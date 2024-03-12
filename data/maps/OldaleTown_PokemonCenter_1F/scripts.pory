@@ -123,7 +123,7 @@ script OldDaleTown_PokemonCenter_EventScript_NatureMaster {
     dynmultipush("Cancel", MULTI_B_PRESSED)
 
     // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
 
     if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{

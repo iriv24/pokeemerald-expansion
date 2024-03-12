@@ -210,7 +210,7 @@ OldDaleTown_PokemonCenter_EventScript_NatureMaster_4:
 # 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	dynmultipush OldDaleTown_PokemonCenter_EventScript_NatureMaster_Text_29, MULTI_B_PRESSED
 # 126 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 0, 0, FALSE, 6, FALSE, 2, DYN_MULTICHOICE_CB_NONE
 # 128 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_NatureMaster_11
