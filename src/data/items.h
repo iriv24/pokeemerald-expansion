@@ -6555,7 +6555,7 @@ const struct Item gItems[] =
     [ITEM_POMEG_BERRY] =
     {
         .name = _("Pomeg Berry"),
-        .price = 20,
+        .price = 0,
         .description = sPomegBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
