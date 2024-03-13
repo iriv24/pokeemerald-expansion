@@ -30,7 +30,7 @@ RustboroCity_CuttersHouse_EventScript_Lass::
 
 RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
 	.string "Hey, that's the Stone Badge! Nicely\n"
-	.string "Tdone, take this!\p"
+	.string "done, take this!\p"
 	.string "I'm sure that you can put this\n"
 	.string "HIDDEN MACHINE to good use.\p"
 	.string "No need to be modest or shy.\n"
