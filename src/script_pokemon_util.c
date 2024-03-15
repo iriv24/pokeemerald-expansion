@@ -27,6 +27,10 @@
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
+static u16 PickRustboroEgg(void);
+static u16 PickWaterStarterEgg(void);
+static u16 PickGrassStarterEgg(void);
+static u16 PickFireStarterEgg(void);
 
 void HealPlayerParty(void)
 {
@@ -103,12 +107,94 @@ u8 ScriptGiveEgg(u16 species)
 {
     struct Pokemon mon;
     u8 isEgg;
+    bool8 fromHotSprings = TRUE;
 
-    CreateEgg(&mon, species, TRUE);
+    if(species == SPECIES_WOOPER_PALDEAN)
+    {
+        species = PickRustboroEgg();
+        fromHotSprings = FALSE;
+    }
+    if(species == SPECIES_SQUIRTLE)
+    {
+        species = PickWaterStarterEgg();
+        fromHotSprings = FALSE;
+    }
+    else if(species == SPECIES_BULBASAUR)
+    {
+        species = PickGrassStarterEgg();
+        fromHotSprings = FALSE;
+    }
+    else if(species == SPECIES_CHARMANDER)
+    {
+        species = PickFireStarterEgg();
+        fromHotSprings = FALSE;
+    }
+
+    CreateEgg(&mon, species, fromHotSprings);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
 
     return GiveMonToPlayer(&mon);
+}
+
+static u16 PickRustboroEgg(void)
+{
+    u16 pokes[5];
+    u16 rand = Random() % 5;
+    pokes[0] = SPECIES_WOOPER_PALDEAN;
+    pokes[1] = SPECIES_NYMBLE;
+    pokes[2] = SPECIES_MASCHIFF;
+    pokes[3] = SPECIES_SHROODLE;
+    pokes[4] = SPECIES_WIGLETT;
+    return pokes[rand];
+}
+
+static u16 PickWaterStarterEgg(void)
+{
+    u16 pokes[9];
+    u16 rand = Random() % 9;
+    pokes[0] = SPECIES_SQUIRTLE;
+    pokes[1] = SPECIES_TOTODILE;
+    pokes[2] = SPECIES_MUDKIP;
+    pokes[3] = SPECIES_PIPLUP;
+    pokes[4] = SPECIES_OSHAWOTT;
+    pokes[5] = SPECIES_FROAKIE;
+    pokes[6] = SPECIES_POPPLIO;
+    pokes[7] = SPECIES_SOBBLE;
+    pokes[8] = SPECIES_QUAXLY;
+    return pokes[rand];
+}
+
+static u16 PickGrassStarterEgg(void)
+{
+    u16 pokes[9];
+    u16 rand = Random() % 9;
+    pokes[0] = SPECIES_BULBASAUR;
+    pokes[1] = SPECIES_CHIKORITA;
+    pokes[2] = SPECIES_TREECKO;
+    pokes[3] = SPECIES_TURTWIG;
+    pokes[4] = SPECIES_SNIVY;
+    pokes[5] = SPECIES_CHESPIN;
+    pokes[6] = SPECIES_ROWLET;
+    pokes[7] = SPECIES_GROOKEY;
+    pokes[8] = SPECIES_SPRIGATITO;
+    return pokes[rand];
+}
+
+static u16 PickFireStarterEgg(void)
+{
+    u16 pokes[9];
+    u16 rand = Random() % 9;
+    pokes[0] = SPECIES_CHARMANDER;
+    pokes[1] = SPECIES_CYNDAQUIL;
+    pokes[2] = SPECIES_TORCHIC;
+    pokes[3] = SPECIES_CHIMCHAR;
+    pokes[4] = SPECIES_TEPIG;
+    pokes[5] = SPECIES_FENNEKIN;
+    pokes[6] = SPECIES_LITTEN;
+    pokes[7] = SPECIES_SCORBUNNY;
+    pokes[8] = SPECIES_FUECOCO;
+    return pokes[rand];
 }
 
 void HasEnoughMonsForDoubleBattle(void)
