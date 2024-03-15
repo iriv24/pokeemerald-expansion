@@ -63,7 +63,7 @@ RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
 # 32 "data/maps/RustboroCity_CuttersHouse/scripts.pory"
 	.string "Hey, that's the Stone Badge! Nicely\n"
 # 33 "data/maps/RustboroCity_CuttersHouse/scripts.pory"
-	.string "done, take this!\p"
+	.string "Tdone, take this!\p"
 # 34 "data/maps/RustboroCity_CuttersHouse/scripts.pory"
 	.string "I'm sure that you can put this\n"
 # 35 "data/maps/RustboroCity_CuttersHouse/scripts.pory"
