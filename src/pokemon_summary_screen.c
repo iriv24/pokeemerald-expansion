@@ -3398,7 +3398,7 @@ static void PrintEggMemo(void)
         else if (sum->metLocation == METLOC_SPECIAL_EGG)
             text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
         else
-            text = gText_EggFromOldMan;
+            text = gText_OddEggFoundByCouple;
     }
     else
     {

@@ -130,8 +130,8 @@ Route116_EventScript_ItemXSpecial::
 	finditem ITEM_X_SP_ATK
 	end
 
-Route116_EventScript_ItemTMRoar::
-	finditem ITEM_TM_ROAR
+Route116_EventScript_ItemEther::
+	finditem ITEM_ETHER
 	end
 
 Route116_EventScript_ItemRepel::

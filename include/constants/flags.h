@@ -51,7 +51,7 @@
 #define FLAG_UNUSED_POKEMONPCMENU    0x26
 #define FLAG_PARTY_MOVES     0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
 #define FLAG_RECEIVED_TM_U_TURN    0x29
-#define FLAG_RECEIVED_RUSTBORO_EGG    0x2A // Unused Flag
+#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
@@ -1064,7 +1064,7 @@
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9
 #define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
-#define FLAG_ITEM_ROUTE_116_TM_ROAR                                 0x3FB
+#define FLAG_ITEM_ROUTE_116_ETHER                                   0x3FB
 #define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
 #define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
 #define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
