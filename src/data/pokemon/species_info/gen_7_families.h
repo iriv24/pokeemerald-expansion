@@ -54,7 +54,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Rowlet)
         .levelUpLearnset = sRowletLevelUpLearnset,
         .teachableLearnset = sRowletTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_DARTRIX}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DARTRIX}),
     },
 
     [SPECIES_DARTRIX] =
@@ -108,8 +108,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Dartrix)
         .levelUpLearnset = sDartrixLevelUpLearnset,
         .teachableLearnset = sDartrixTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_DECIDUEYE},
-                                {EVO_NONE, 0, SPECIES_DECIDUEYE_HISUIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DECIDUEYE},
+                                {EVO_MOVE, MOVE_AURA_SPHERE, SPECIES_DECIDUEYE_HISUIAN}),
     },
 
     [SPECIES_DECIDUEYE] =
@@ -273,7 +273,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Litten)
         .levelUpLearnset = sLittenLevelUpLearnset,
         .teachableLearnset = sLittenTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_TORRACAT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_TORRACAT}),
     },
 
     [SPECIES_TORRACAT] =
@@ -326,7 +326,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Torracat)
         .levelUpLearnset = sTorracatLevelUpLearnset,
         .teachableLearnset = sTorracatTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_INCINEROAR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_INCINEROAR}),
     },
 
     [SPECIES_INCINEROAR] =
@@ -433,7 +433,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Popplio)
         .levelUpLearnset = sPopplioLevelUpLearnset,
         .teachableLearnset = sPopplioTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_BRIONNE}),
     },
 
     [SPECIES_BRIONNE] =
@@ -486,7 +486,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Brionne)
         .levelUpLearnset = sBrionneLevelUpLearnset,
         .teachableLearnset = sBrionneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PRIMARINA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_PRIMARINA}),
     },
 
     [SPECIES_PRIMARINA] =
@@ -757,7 +757,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Yungoos)
         .levelUpLearnset = sYungoosLevelUpLearnset,
         .teachableLearnset = sYungoosTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 20, SPECIES_GUMSHOOS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_GUMSHOOS}),
     },
 
     [SPECIES_GUMSHOOS] =
@@ -1126,8 +1126,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Crabrawler)
         .levelUpLearnset = sCrabrawlerLevelUpLearnset,
         .teachableLearnset = sCrabrawlerTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE},
-                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_CRABOMINABLE}),
     },
 
     [SPECIES_CRABOMINABLE] =
@@ -1615,8 +1614,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sRockruffLevelUpLearnset,
         .teachableLearnset = sRockruffTeachableLearnset,
         .formSpeciesIdTable = sRockruffFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 25, SPECIES_LYCANROC_MIDDAY},
-                                {EVO_LEVEL_NIGHT, 25, SPECIES_LYCANROC_MIDNIGHT}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LYCANROC_MIDDAY},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_LYCANROC_MIDNIGHT}),
     },
 
     [SPECIES_ROCKRUFF_OWN_TEMPO] =
@@ -1666,7 +1665,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sRockruffLevelUpLearnset,
         .teachableLearnset = sRockruffTeachableLearnset,
         .formSpeciesIdTable = sRockruffFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_DUSK, 25, SPECIES_LYCANROC_DUSK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_LYCANROC_DUSK}),
     },
 
     [SPECIES_LYCANROC_MIDDAY] =
@@ -2368,7 +2367,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         FOOTPRINT(Fomantis)
         .levelUpLearnset = sFomantisLevelUpLearnset,
         .teachableLearnset = sFomantisTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 34, SPECIES_LURANTIS},
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_LURANTIS},
                                 {EVO_NONE, 0, SPECIES_LURANTIS_TOTEM}),
     },
 
@@ -4813,8 +4812,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCosmoemLevelUpLearnset,
         .teachableLearnset = sCosmoemTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 53, SPECIES_SOLGALEO},
-                                {EVO_LEVEL_NIGHT, 53, SPECIES_LUNALA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 52, SPECIES_SOLGALEO},
+                                {EVO_LEVEL, 53, SPECIES_LUNALA}),
     },
 
     [SPECIES_SOLGALEO] =
