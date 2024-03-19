@@ -211,9 +211,9 @@
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
-#define MAX_PER_STAT_EVS ((P_EV_CAP >= GEN_6) ? 0 : 0)
+#define MAX_PER_STAT_EVS 0
 #define MAX_TOTAL_EVS 0
-#define EV_ITEM_RAISE_LIMIT ((I_VITAMIN_EV_CAP >= GEN_8) ? MAX_PER_STAT_EVS : 100)
+#define EV_ITEM_RAISE_LIMIT 100
 
 // Move category defines.
 #define DAMAGE_CATEGORY_PHYSICAL    0
