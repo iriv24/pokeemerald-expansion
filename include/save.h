@@ -69,7 +69,7 @@ struct SaveSectorLocation
 struct SaveSector
 {
     u8 data[SECTOR_DATA_SIZE];
-    u8 unused[SECTOR_FOOTER_SIZE - 12]; // Unused portion of the footer
+    u8 saveBlock3Chunk[SAVE_BLOCK_3_CHUNK_SIZE];
     u16 id;
     u16 checksum;
     u32 signature;

@@ -236,9 +236,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigSeedot:
 
 # 119 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_GoshMightBeBiggerThanLotad:
-# 120 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2} inches!\n"
-# 121 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}!\n"
 	.string "Oh, my gosh, this is a big one!\p"
 # 122 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "It might even beat the big LOTAD\n"
@@ -268,9 +266,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull1:
 
 # 135 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerSeedot:
-# 136 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2} inches, is it?\p"
-# 137 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}, is it?\p"
 	.string "Hmm… I've seen a bigger SEEDOT\n"
 # 138 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "than this one.$"
@@ -300,9 +296,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_DontHaveBigSeedot:
 SootopolisCity_LotadAndSeedotHouse_Text_BiggestSeedotInHistory:
 # 151 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "The biggest SEEDOT in history!\n"
-# 152 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2}'s {STR_VAR_3}-inch giant!\p"
-# 153 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}'s {STR_VAR_3} giant!\p"
 	.string "A SEEDOT bigger than a LOTAD\n"
 # 154 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "always wanted!$"
@@ -332,9 +326,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigLotad:
 
 # 167 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_WowMightBeBiggerThanSeedot:
-# 168 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2} inches!\n"
-# 169 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}!\n"
 	.string "Wow, that is big!\p"
 # 170 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "It might be even bigger than the huge\n"
@@ -364,9 +356,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull2:
 
 # 183 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerLotad:
-# 184 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2} inches?\p"
-# 185 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}?\p"
 	.string "Hmm… I've seen a bigger LOTAD\n"
 # 186 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "than this one here.$"
@@ -396,9 +386,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_DontHaveBigLotad:
 SootopolisCity_LotadAndSeedotHouse_Text_BiggestLotadInHistory:
 # 199 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "The biggest LOTAD in history!\n"
-# 200 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "{STR_VAR_2}'s {STR_VAR_3}-inch colossus!\p"
-# 201 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
+	.string "{STR_VAR_2}'s {STR_VAR_3} colossus!\p"
 	.string "A LOTAD bigger than a SEEDOT\n"
 # 202 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "always wanted!$"

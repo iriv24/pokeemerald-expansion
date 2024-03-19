@@ -49,6 +49,8 @@
 #include "trainer_see.h"
 #include "tv.h"
 #include "window.h"
+#include "list_menu.h"
+#include "malloc.h"
 #include "constants/event_objects.h"
 #include "list_menu.h"
 #include "malloc.h"
@@ -494,7 +496,7 @@ bool8 ScrCmd_additem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = AddBagItem(itemId, (u8)quantity);
+    gSpecialVar_Result = AddBagItem(itemId, quantity);
     return FALSE;
 }
 
@@ -503,7 +505,7 @@ bool8 ScrCmd_removeitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = RemoveBagItem(itemId, (u8)quantity);
+    gSpecialVar_Result = RemoveBagItem(itemId, quantity);
     return FALSE;
 }
 
@@ -512,7 +514,7 @@ bool8 ScrCmd_checkitemspace(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = CheckBagHasSpace(itemId, (u8)quantity);
+    gSpecialVar_Result = CheckBagHasSpace(itemId, quantity);
     return FALSE;
 }
 
@@ -521,7 +523,7 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = CheckBagHasItem(itemId, (u8)quantity);
+    gSpecialVar_Result = CheckBagHasItem(itemId, quantity);
     return FALSE;
 }
 
@@ -1718,7 +1720,7 @@ bool8 ScrCmd_buffermovename(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 moveId = VarGet(ScriptReadHalfword(ctx));
 
-    StringCopy(sScriptStringVars[stringVarIndex], gMoveNames[moveId]);
+    StringCopy(sScriptStringVars[stringVarIndex], GetMoveName(moveId));
     return FALSE;
 }
 
@@ -1784,19 +1786,6 @@ bool8 ScrCmd_bufferboxname(struct ScriptContext *ctx)
     u16 boxId = VarGet(ScriptReadHalfword(ctx));
 
     StringCopy(sScriptStringVars[stringVarIndex], GetBoxNamePtr(boxId));
-    return FALSE;
-}
-
-bool8 ScrCmd_givemon(struct ScriptContext *ctx)
-{
-    u16 species = VarGet(ScriptReadHalfword(ctx));
-    u8 level = ScriptReadByte(ctx);
-    u16 item = VarGet(ScriptReadHalfword(ctx));
-    u32 unkParam1 = ScriptReadWord(ctx);
-    u32 unkParam2 = ScriptReadWord(ctx);
-    u8 unkParam3 = ScriptReadByte(ctx);
-
-    gSpecialVar_Result = ScriptGiveMon(species, level, item, unkParam1, unkParam2, unkParam3);
     return FALSE;
 }
 

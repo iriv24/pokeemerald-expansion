@@ -36,20 +36,12 @@ const u8 gItemEffect_MaxPotion[7] = {
 
 const u8 gItemEffect_HyperPotion[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 120, // Amount of HP to recover
-#else
-    [6] = 200, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
 };
 
 const u8 gItemEffect_SuperPotion[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 60, // Amount of HP to recover
-#else
-    [6] = 50, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 60 : 50, // Amount of HP to recover
 };
 
 const u8 gItemEffect_FullHeal[6] = {
@@ -68,29 +60,17 @@ const u8 gItemEffect_MaxRevive[7] = {
 
 const u8 gItemEffect_FreshWater[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 30, // Amount of HP to recover
-#else
-    [6] = 50, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 30 : 50, // Amount of HP to recover
 };
 
 const u8 gItemEffect_SodaPop[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 50, // Amount of HP to recover
-#else
-    [6] = 60, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 50 : 60, // Amount of HP to recover
 };
 
 const u8 gItemEffect_Lemonade[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 70, // Amount of HP to recover
-#else
-    [6] = 80, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 70 : 80, // Amount of HP to recover
 };
 
 const u8 gItemEffect_MoomooMilk[7] = {
@@ -101,11 +81,7 @@ const u8 gItemEffect_MoomooMilk[7] = {
 const u8 gItemEffect_EnergyPowder[10] = {
     [4] = ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 60, // Amount of HP to recover
-#else
-    [6] = 50, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 60 : 50, // Amount of HP to recover
     [7] = -5, // Friendship change, low
     [8] = -5, // Friendship change, mid
     [9] = -10, // Friendship change, high
@@ -114,11 +90,7 @@ const u8 gItemEffect_EnergyPowder[10] = {
 const u8 gItemEffect_EnergyRoot[10] = {
     [4] = ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
-#if I_HEALTH_RECOVERY >= GEN_7
-    [6] = 120, // Amount of HP to recover
-#else
-    [6] = 200, // Amount of HP to recover
-#endif
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
     [7] = -10, // Friendship change, low
     [8] = -10, // Friendship change, mid
     [9] = -15, // Friendship change, high
@@ -136,6 +108,33 @@ const u8 gItemEffect_RevivalHerb[10] = {
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
     [6] = ITEM6_HEAL_HP_FULL,
+    [7] = -15, // Friendship change, low
+    [8] = -15, // Friendship change, mid
+    [9] = -20, // Friendship change, high
+};
+
+const u8 gItemEffect_Remedy[10] = {
+    [4] = ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = 20, // Amount of HP to recover
+    [7] = -5, // Friendship change, low
+    [8] = -5, // Friendship change, mid
+    [9] = -10, // Friendship change, high
+};
+
+const u8 gItemEffect_FineRemedy[10] = {
+    [4] = ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 60 : 50, // Amount of HP to recover
+    [7] = -10, // Friendship change, low
+    [8] = -10, // Friendship change, mid
+    [9] = -15, // Friendship change, high
+};
+
+const u8 gItemEffect_SuperbRemedy[10] = {
+    [4] = ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 120 : 200, // Amount of HP to recover
     [7] = -15, // Friendship change, low
     [8] = -15, // Friendship change, mid
     [9] = -20, // Friendship change, high
@@ -161,21 +160,12 @@ const u8 gItemEffect_MaxElixir[7] = {
     [6] = ITEM6_HEAL_PP_FULL,
 };
 
-const u8 gItemEffect_BlueFlute[6] = {
-    [3] = ITEM3_SLEEP,
-};
-
 const u8 gItemEffect_YellowFlute[6] = {
     [3] = ITEM3_CONFUSION,
 };
 
 const u8 gItemEffect_RedFlute[6] = {
     [0] = ITEM0_INFATUATION,
-};
-
-const u8 gItemEffect_BerryJuice[7] = {
-    [4] = ITEM4_HEAL_HP,
-    [6] = 20, // Amount of HP to recover
 };
 
 const u8 gItemEffect_SacredAsh[7] = {
@@ -402,26 +392,6 @@ const u8 gItemEffect_XSpecialDefense[8] = {
 
 const u8 gItemEffect_EvoItem[6] = {
     [4] = ITEM4_EVO_STONE,
-};
-
-const u8 gItemEffect_CheriBerry[6] = {
-    [3] = ITEM3_PARALYSIS,
-};
-
-const u8 gItemEffect_ChestoBerry[6] = {
-    [3] = ITEM3_SLEEP,
-};
-
-const u8 gItemEffect_PechaBerry[6] = {
-    [3] = ITEM3_POISON,
-};
-
-const u8 gItemEffect_RawstBerry[6] = {
-    [3] = ITEM3_BURN,
-};
-
-const u8 gItemEffect_AspearBerry[6] = {
-    [3] = ITEM3_FREEZE,
 };
 
 const u8 gItemEffect_LeppaBerry[7] = {

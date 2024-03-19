@@ -875,7 +875,8 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
             ListMenuErasePrintedCursor(list, oldSelectedRow);
             ListMenuScroll(list, cursorCount, movingDown);
             ListMenuDrawCursor(list);
-            ListMenuCallSelectionChangedCallback(list, FALSE);
+            if (callCallback)
+                ListMenuCallSelectionChangedCallback(list, FALSE);
             CopyWindowToVram(list->template.windowId, COPYWIN_GFX);
             break;
         }

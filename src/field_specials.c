@@ -87,6 +87,7 @@ static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_NeverRead = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
+
 static EWRAM_DATA u16 sFrontierExchangeCorner_NeverRead = 0;
 static EWRAM_DATA u8 sScrollableMultichoice_ItemSpriteId = 0;
 static EWRAM_DATA u8 sBattlePointsWindowId = 0;
@@ -139,7 +140,11 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
+#if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
+#else
+static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
+#endif //FREE_LINK_BATTLE_RECORDS
 
 void Special_ShowDiploma(void)
 {
@@ -1647,7 +1652,7 @@ bool8 BufferTMHMMoveName(void)
 {
     if (gSpecialVar_0x8004 >= ITEM_TM01 && gSpecialVar_0x8004 <= ITEM_HM08)
     {
-        StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
+        StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(gSpecialVar_0x8004)));
         return TRUE;
     }
 
@@ -3068,7 +3073,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
 
 void BufferBattleFrontierTutorMoveName(void)
 {
-    StringCopy(gStringVar1, gMoveNames[gSpecialVar_0x8005]);
+    StringCopy(gStringVar1, GetMoveName(gSpecialVar_0x8005));
 }
 
 static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
@@ -4141,9 +4146,14 @@ void BufferFanClubTrainerName(void)
     case FANCLUB_MEMBER8:
         break;
     }
+#if FREE_LINK_BATTLE_RECORDS == FALSE
     BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
+#else
+    BufferFanClubTrainerName_(whichLinkTrainer, whichNPCTrainer);
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
+#if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
 {
     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
@@ -4181,6 +4191,35 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 
         ConvertInternationalString(gStringVar1, linkRecords->languages[whichLinkTrainer]);
     }
 }
+#else
+static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer)
+{
+    switch (whichNPCTrainer)
+    {
+        case 0:
+            StringCopy(gStringVar1, gText_Wallace);
+            break;
+        case 1:
+            StringCopy(gStringVar1, gText_Steven);
+            break;
+        case 2:
+            StringCopy(gStringVar1, gText_Brawly);
+            break;
+        case 3:
+            StringCopy(gStringVar1, gText_Winona);
+            break;
+        case 4:
+            StringCopy(gStringVar1, gText_Phoebe);
+            break;
+        case 5:
+            StringCopy(gStringVar1, gText_Glacia);
+            break;
+        default:
+            StringCopy(gStringVar1, gText_Wallace);
+            break;
+    }
+}
+#endif //FREE_LINK_BATTLE_RECORDS
 
 void UpdateTrainerFansAfterLinkBattle(void)
 {

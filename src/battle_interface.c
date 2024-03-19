@@ -196,7 +196,6 @@ static void SpriteCB_StatusSummaryBalls_OnSwitchout(struct Sprite *);
 
 static void SpriteCb_MegaTrigger(struct Sprite *);
 static void SpriteCb_BurstTrigger(struct Sprite *);
-static void MegaIndicator_SetVisibilities(u32 healthboxId, bool32 invisible);
 static void MegaIndicator_UpdateLevel(u32 healthboxId, u32 level);
 static void MegaIndicator_CreateSprite(u32 battlerId, u32 healthboxSpriteId);
 static void MegaIndicator_UpdateOamPriority(u32 healthboxId, u32 oamPriority);
@@ -3115,7 +3114,7 @@ static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
 
 static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
 {
-    PrintOnAbilityPopUp(gAbilityNames[ability],
+    PrintOnAbilityPopUp(gAbilitiesInfo[ability].name,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         5, 12,
