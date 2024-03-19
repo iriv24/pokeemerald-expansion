@@ -18,61 +18,13 @@
 
 // Shared Item Description entries
 
-static const u8 sFullHealDesc[]       = _("Heals all the\n"
-                                          "status problems of\n"
-                                          "one Pokémon.");
 
-static const u8 sPokeDollDesc[]       = _("Use to flee from\n"
-                                          "any battle with\n"
-                                          "a wild Pokémon.");
 
-static const u8 sMaxReviveDesc[]      = _("Revives a fainted\n"
-                                          "Pokémon with all\n"
-                                          "its HP.");
-
-static const u8 sHealthFeatherDesc[]  = _("An item that raises\n"
-                                          "the base HP of\n"
-                                          "a Pokémon.");
-
-static const u8 sMuscleFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Attack of\n"
-                                          "a Pokémon.");
-
-static const u8 sResistFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Defense\n"
-                                          "of a Pokémon.");
-
-static const u8 sGeniusFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Sp. Atk.\n"
-                                          "of a Pokémon.");
-
-static const u8 sCleverFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Sp. Def.\n"
-                                          "of a Pokémon.");
-
-static const u8 sSwiftFeatherDesc[]   = _("An item that raises\n"
-                                          "the base Speed of\n"
-                                          "a Pokémon.");
-
-static const u8 sBigMushroomDesc[]    = _("A rare mushroom\n"
-                                          "that would sell at a\n"
-                                          "high price.");
 
 static const u8 sShardsDesc[]         = _("A shard from an\n"
                                           "ancient item. Can\n"
                                           "be sold cheaply.");
 
-static const u8 sRootFossilDesc[]     = _("A fossil of an\n"
-                                          "ancient, seafloor-\n"
-                                          "dwelling Pokémon.");
-
-static const u8 sFossilizedFishDesc[] = _("A fossil of an\n"
-                                          "ancient, sea-\n"
-                                          "dwelling Pokémon.");
-
-static const u8 sBeadMailDesc[]       = _("Mail featuring a\n"
-                                          "sketch of the\n"
-                                          "holding Pokémon.");
 
 static const u8 sEvolutionStoneDesc[] = _("Makes certain\n"
                                           "species of Pokémon\n"
@@ -82,59 +34,11 @@ static const u8 sNectarDesc[]         = _("Flower nectar that\n"
                                           "changes the form\n"
                                           "of certain Pokémon.");
 
-static const u8 sCharizarditeDesc[]   = _("This stone enables\n"
-                                          "Charizard to Mega\n"
-                                          "Evolve in battle.");
-
-static const u8 sMewtwoniteDesc[]     = _("This stone enables\n"
-                                          "Mewtwo to Mega\n"
-                                          "Evolve in battle.");
-
-static const u8 sSeaIncenseDesc[]     = _("A hold item that\n"
-                                          "slightly boosts\n"
-                                          "Water-type moves.");
-
-static const u8 sOddIncenseDesc[]     = _("A hold item that\n"
-                                          "boosts Psychic-\n"
-                                          "type moves.");
-
-static const u8 sRockIncenseDesc[]    = _("A hold item that\n"
-                                          "raises the power of\n"
-                                          "Rock-type moves.");
-
-static const u8 sFullIncenseDesc[]    = _("A held item that\n"
-                                          "makes the holder\n"
-                                          "move slower.");
-
-static const u8 sRoseIncenseDesc[]    = _("A hold item that\n"
-                                          "raises the power of\n"
-                                          "Grass-type moves.");
-
-static const u8 sLuckIncenseDesc[]    = _("Doubles money in\n"
-                                          "battle if the\n"
-                                          "holder takes part.");
-
-static const u8 sPureIncenseDesc[]    = _("A hold item that\n"
-                                          "helps repel wild\n"
-                                          "Pokémon.");
-
-static const u8 sKingsRockDesc[]      = _("A hold item that\n"
-                                          "may cause flinching\n"
-                                          "when the foe is hit.");
-
-static const u8 sFigyBerryDesc[]      = _("A hold item that\n"
-                                          "restores HP but\n"
-                                          "may confuse.");
-
 static const u8 sQuestionMarksDesc[]  = _("?????");
 
 static const u8 sKeyToRoomDesc[]      = _("A key that opens a\n"
                                           "door inside the\n"
                                           "Abandoned Ship.");
-
-static const u8 sTeraShardDesc[]      = _("These shards may\n"
-                                          "form when a Tera\n"
-                                          "Pokémon faints.");
 
 static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"

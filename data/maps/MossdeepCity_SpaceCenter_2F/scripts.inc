@@ -518,7 +518,23 @@ MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 
 # 260 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
-	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_STEVEN, TRAINER_BACK_PIC_STEVEN
+# 261 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	special ReducePlayerPartyToSelectedMons
+# 262 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
+# 263 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	setvar VAR_0x8004, SPECIAL_BATTLE_STEVEN
+# 264 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	setvar VAR_0x8005, 0
+# 265 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	special DoSpecialTrainerBattle
+# 266 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	waitstate
+# 267 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	frontier_saveparty
+# 268 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	special LoadPlayerParty
+# 269 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	switch VAR_RESULT
 # 270 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
@@ -660,6 +676,23 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest::
 	return
 # 339 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 
+# 340 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer::
+# 341 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, 0, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
+# 342 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	end
+# 343 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 344 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer::
+# 345 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
+# 346 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	end
+# 347 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 348 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
 # 349 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	lockall

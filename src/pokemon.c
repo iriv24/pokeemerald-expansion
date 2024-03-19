@@ -5685,6 +5685,15 @@ bool8 IsMonShiny(struct Pokemon *mon)
     return GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 }
 
+bool8 IsShinyOtIdPersonality(u32 otId, u32 personality)	
+{	
+    bool8 retVal = FALSE;	
+    u32 shinyValue = GET_SHINY_VALUE(otId, personality);	
+    if (shinyValue < SHINY_ODDS)	
+        retVal = TRUE;	
+    return retVal;	
+}
+
 const u8 *GetTrainerPartnerName(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)

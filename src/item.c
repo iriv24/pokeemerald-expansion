@@ -17,6 +17,7 @@
 #include "constants/items.h"
 #include "constants/item_effects.h"
 #include "constants/hold_effects.h"
+#include "data/text/item_descriptions.h"
 
 static bool8 CheckPyramidBagHasItem(u16 itemId, u16 count);
 static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count);
