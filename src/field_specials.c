@@ -4314,5 +4314,6 @@ void ChangeMonNature(void)
            (IsShinyOtIdPersonality(otId, newPersonality) != isShiny));
 
     UpdateMonPersonality(&mon->box, newPersonality);
-    CalculateMonStats(mon);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &newNature);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
