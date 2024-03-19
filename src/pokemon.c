@@ -421,6 +421,8 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 
 #include "data/pokemon/trainer_class_lookups.h"
 #include "data/pokemon/experience_tables.h"
+#include "data/pokemon/level_up_learnsets.h"
+#if FALSE
 
 #if P_LVL_UP_LEARNSETS >= GEN_9
 #include "data/pokemon/level_up_learnsets/gen_9.h" // Scarlet/Violet
@@ -440,6 +442,7 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 #include "data/pokemon/level_up_learnsets/gen_2.h" // Crystal
 #elif P_LVL_UP_LEARNSETS >= GEN_1
 #include "data/pokemon/level_up_learnsets/gen_1.h" // Yellow
+#endif
 #endif
 
 #include "data/pokemon/teachable_learnsets.h"
