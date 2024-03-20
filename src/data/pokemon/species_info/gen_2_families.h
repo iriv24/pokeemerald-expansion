@@ -3123,7 +3123,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD, ABILITY_SAP_SIPPER },
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_EARLY_BIRD, ABILITY_INNER_FOCUS },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Girafarig"),
         .cryId = CRY_GIRAFARIG,
@@ -3181,7 +3181,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_CUD_CHEW, ABILITY_ARMOR_TAIL, ABILITY_SAP_SIPPER },
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_ARMOR_TAIL, ABILITY_PARENTAL_BOND },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Farigiraf"),
         .cryId = CRY_FARIGIRAF,
@@ -3738,7 +3738,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_QWILFISH] =
     {
-        .baseHP        = 65,
+        .baseHP        = 80,
         .baseAttack    = 95,
         .baseDefense   = P_UPDATED_STATS >= GEN_7 ? 85 : 75,
         .baseSpeed     = 85,
@@ -3754,7 +3754,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_2),
-        .abilities = { ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE },
+        .abilities = { ABILITY_TOXIC_DEBRIS, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Qwilfish"),
         .cryId = CRY_QWILFISH,
