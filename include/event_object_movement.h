@@ -92,11 +92,10 @@ struct LockedAnimObjectEvents
 extern const struct OamData gObjectEventBaseOam_32x8;
 extern const struct OamData gObjectEventBaseOam_32x32;
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
-extern const u8 gReflectionEffectPaletteMap[];
 
 extern const u16 *const gBerryTreeObjectEventGraphicsIdTablePointers[];
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
-extern const u8 *const gBerryTreePaletteSlotTablePointers[];
+extern const u16 *const gBerryTreePaletteSlotTablePointers[];
 
 void ResetObjectEvents(void);
 u8 GetMoveDirectionAnimNum(u8 direction);
@@ -212,6 +211,7 @@ void UpdateObjectEventSpriteInvisibility(struct Sprite *sprite, bool8 invisible)
 s16 GetFigure8XOffset(s16 idx);
 s16 GetFigure8YOffset(s16 idx);
 void CameraObjectReset2(void);
+void LoadObjectEventPalette(u16 paletteTag);
 u8 GetObjectEventBerryTreeId(u8 objectEventId);
 void SetBerryTreeJustPicked(u8 mapId, u8 mapNumber, u8 mapGroup);
 bool8 IsBerryTreeSparkling(u8 localId, u8 mapNum, u8 mapGroup);

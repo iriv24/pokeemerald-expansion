@@ -4653,7 +4653,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-/*TODOROARK
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roark = { 
     .tileTag = 0xFFFF,
     .paletteTag = OBJ_EVENT_PAL_TAG_ROARK,
@@ -4672,4 +4671,3 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roark = {
     .images = gObjectEventPicTable_Roark,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-*/
