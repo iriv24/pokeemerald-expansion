@@ -391,8 +391,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROARK",
-      "x": 55,
-      "y": 9,
+      "x": 53,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
