@@ -377,3 +377,6 @@ const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/h
 const u32 gObjectEventPic_Roark[] = INCBIN_U32("graphics/object_events/pics/people/roark.4bpp");
 const u16 gObjectEventPal_Roark[] = INCBIN_U16("graphics/object_events/palettes/roark.gbapal");
 
+const u32 gObjectEventPic_Dawn[] = INCBIN_U32("graphics/object_events/pics/people/dawn.4bpp");
+const u16 gObjectEventPal_Dawn[] = INCBIN_U16("graphics/object_events/palettes/dawn.gbapal");
+
