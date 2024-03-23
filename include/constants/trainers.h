@@ -108,7 +108,17 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
-#define TRAINER_PIC_COUNT                 93
+#define TRAINER_PIC_ROARK                 93
+#define TRAINER_PIC_DAWN                  94
+#define TRAINER_PIC_GARDENIA              95
+#define TRAINER_PIC_MAYLENE               96
+#define TRAINER_PIC_WAKE                  97
+#define TRAINER_PIC_FANTINA               98
+#define TRAINER_PIC_BYRON                 99
+#define TRAINER_PIC_CANDICE               100
+#define TRAINER_PIC_VOLKNER               101
+#define TRAINER_PIC_CYNTHIA               102
+#define TRAINER_PIC_COUNT                 103
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

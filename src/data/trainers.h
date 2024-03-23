@@ -10224,9 +10224,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ROARK] =
     {
-        .trainerClass = TRAINER_CLASS_RIVAL,
+        .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_RED,
+        .trainerPic = TRAINER_PIC_ROARK,
         .trainerName = _("ROARK"),
         .items = {},
         .doubleBattle = FALSE,
@@ -10236,9 +10236,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GARDENIA] =
     {
-        .trainerClass = TRAINER_CLASS_RIVAL,
+        .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEAF,
+        .trainerPic = TRAINER_PIC_GARDENIA,
         .trainerName = _("GARDENIA"),
         .items = {},
         .doubleBattle = FALSE,
@@ -10274,7 +10274,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_MAY,
+        .trainerPic = TRAINER_PIC_DAWN,
         .trainerName = _("DAWN"),
         .items = {},
         .doubleBattle = FALSE,
