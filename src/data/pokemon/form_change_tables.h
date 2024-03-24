@@ -1107,5 +1107,12 @@ static const struct FormChange sTerapagosFormChangeTable[] = {
 };
 #endif //P_FAMILY_TERAPAGOS
 
+#if P_FAMILY_SHINX
+static const struct FormChange sLuxrayFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_LUXRAY_MEGA, ITEM_MANECTITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_SHINX
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

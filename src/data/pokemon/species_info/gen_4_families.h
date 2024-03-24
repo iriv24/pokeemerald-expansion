@@ -1105,6 +1105,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Luxray)
         .levelUpLearnset = sLuxrayLevelUpLearnset,
         .teachableLearnset = sLuxrayTeachableLearnset,
+        .formSpeciesIdTable = sLuxrayFormSpeciesIdTable,
+        .formChangeTable = sLuxrayFormChangeTable,
     },
 #endif //P_FAMILY_SHINX
 

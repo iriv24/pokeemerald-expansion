@@ -3377,32 +3377,49 @@ static const struct TrainerMon sParty_Brawly1[] = {
 
 static const struct TrainerMon sParty_Wattson1[] = {
     {
-    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
-    .lvl = 20,
-    .species = SPECIES_VOLTORB,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_SPARK, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 33,
+    .species = SPECIES_POLITOED,
+    .nature = NATURE_RELAXED,
+    .heldItem = ITEM_DAMP_ROCK,
+    .ability = ABILITY_DRIZZLE,
+    .moves = {MOVE_FLIP_TURN, MOVE_SCALD, MOVE_ICY_WIND, MOVE_MUD_SHOT}
     },
     {
-    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
-    .lvl = 20,
-    .species = SPECIES_ELECTRIKE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHOCK_WAVE, MOVE_LEER, MOVE_QUICK_ATTACK, MOVE_HOWL}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 34,
+    .species = SPECIES_KILOWATTREL,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_VOLT_ABSORB,
+    .moves = {MOVE_HURRICANE, MOVE_THUNDER, MOVE_VOLT_SWITCH, MOVE_WEATHER_BALL}
     },
     {
-    .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
-    .lvl = 22,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 34,
     .species = SPECIES_MAGNETON,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SUPERSONIC, MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_SONIC_BOOM}
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_ANALYTIC,
+    .moves = {MOVE_THUNDER, MOVE_FLASH_CANNON, MOVE_VOLT_SWITCH, MOVE_TRI_ATTACK}
     },
     {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 24,
-    .species = SPECIES_MANECTRIC,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 34,
+    .species = SPECIES_EELEKTROSS,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
+    .nature = NATURE_BRAVE,
+    .ability = ABILITY_LEVITATE,
+    .moves = {MOVE_THUNDER, MOVE_GIGA_DRAIN, MOVE_DRAIN_PUNCH, MOVE_LIQUIDATION}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 34,
+    .species = SPECIES_LUXRAY,
+    .heldItem = ITEM_MANECTITE,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_THUNDER_FANG, MOVE_CRUNCH, MOVE_SUCKER_PUNCH, MOVE_ICE_FANG}
     }
 };
 
