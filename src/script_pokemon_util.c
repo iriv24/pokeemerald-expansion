@@ -66,7 +66,7 @@ u8 ScriptGiveEgg(u16 species)
     u8 isEgg;
     bool8 fromHotSprings = TRUE;
 
-    if(species == SPECIES_WOOPER_PALDEAN)
+    if(species == SPECIES_OMANYTE)
     {
         species = PickRustboroEgg();
         fromHotSprings = FALSE;
@@ -96,13 +96,18 @@ u8 ScriptGiveEgg(u16 species)
 
 static u16 PickRustboroEgg(void)
 {
-    u16 pokes[5];
-    u16 rand = Random() % 5;
-    pokes[0] = SPECIES_WOOPER_PALDEAN;
-    pokes[1] = SPECIES_NYMBLE;
-    pokes[2] = SPECIES_MASCHIFF;
-    pokes[3] = SPECIES_SHROODLE;
-    pokes[4] = SPECIES_WIGLETT;
+    u16 pokes[10];
+    u16 rand = Random() % 10;
+    pokes[0] = SPECIES_OMANYTE;
+    pokes[1] = SPECIES_KABUTO;
+    pokes[2] = SPECIES_LILEEP;
+    pokes[3] = SPECIES_ANORITH;
+    pokes[4] = SPECIES_CRANIDOS;
+    pokes[5] = SPECIES_SHIELDON;
+    pokes[6] = SPECIES_ARCHEN;
+    pokes[7] = SPECIES_TIRTOUGA;
+    pokes[8] = SPECIES_AMAURA;
+    pokes[9] = SPECIES_TYRUNT;
     return pokes[rand];
 }
 

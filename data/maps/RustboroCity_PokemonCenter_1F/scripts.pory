@@ -36,7 +36,7 @@ RustboroCity_PokemonCenter_1F_EventScript_EggMan::
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_PokemonCenter_1F_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_WOOPER_PALDEAN
+	giveegg SPECIES_OMANYTE
 	release
 	end
 

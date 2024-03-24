@@ -10,7 +10,7 @@ Route109_SeashoreHouse_OnTransition:
 Route109_SeashoreHouse_EventScript_Owner::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_6_SODA_POP, Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop
+	goto_if_set FLAG_RECEIVED_CHARCADET, Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop
 	goto_if_set FLAG_DEFEATED_SEASHORE_HOUSE, Route109_SeashoreHouse_EventScript_DefeatedTrainers
 	goto_if_set FLAG_TEMP_2, Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction
 	msgbox Route109_SeashoreHouse_Text_SeashoreHouseIntro, MSGBOX_DEFAULT
@@ -25,9 +25,46 @@ Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction::
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers::
 	msgbox Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles, MSGBOX_DEFAULT
-	giveitem ITEM_SODA_POP, 6
-	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_BagFull
-	setflag FLAG_RECEIVED_6_SODA_POP
+	givemon SPECIES_CHARCADET, 25
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route109_SeashoreHouse_EventScript_ReceiveCharcadetParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route109_SeashoreHouse_EventScript_ReceiveCharcadetPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+Route109_SeashoreHouse_EventScript_ReceiveCharcadetParty::
+	call Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_ExplainCharcadet
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route109_SeashoreHouse_EventScript_ExplainCharcadet
+	end
+
+Route109_SeashoreHouse_EventScript_ReceiveCharcadetPC::
+	call Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_SendCharcadetToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto Route109_SeashoreHouse_EventScript_SendCharcadetToPC
+	end
+
+Route109_SeashoreHouse_EventScript_SendCharcadetToPC::
+	call Common_EventScript_TransferredToPC
+	goto Route109_SeashoreHouse_EventScript_ExplainCharcadet
+	end
+
+Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare::
+	playfanfare MUS_OBTAIN_ITEM
+	message Route109_SeashoreHouse_Text_PlayerReceivedCharcadet
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CHARCADET
+	return
+
+Route109_SeashoreHouse_EventScript_ExplainCharcadet::
+	msgbox Route109_SeashoreHouse_Text_PokemonChangesWithStone, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_CHARCADET
 	release
 	end
 
@@ -116,8 +153,9 @@ Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
 	.string "Those battles blazed!\l"
 	.string "I'm more than just satisfied!\p"
 	.string "As thanks for showing me your hot\n"
-	.string "streak, I want you to take these.\p"
-	.string "It's half a dozen bottles of SODA POP!$"
+	.string "streak, I want you to take this\p"
+	.string "Pokémon. It's a scorching hot battler,\n"
+	.string "I'm sure you'll put it to good use!$"
 
 Route109_SeashoreHouse_Text_BagFull:
 	.string "Oh, but hey, your BAG's jammed full.\n"
@@ -175,5 +213,16 @@ Route109_SeashoreHouse_Text_SimonPostBattle:
 	.string "If one of my POKéMON knew the move\n"
 	.string "for carrying me across water on its\l"
 	.string "back, I could get rid of this inner tube.$"
+
+Route109_SeashoreHouse_Text_PlayerReceivedCharcadet:
+	.string "{PLAYER} received Charcadet!$"
+
+Route109_SeashoreHouse_Text_PokemonChangesWithStone:
+	.string "That Pokémon can evolve into two\n"
+	.string "different forms. You can use a Sun\p"
+	.string "Stone to turn it into an Armarouge or a\n"
+	.string "Moon Stone to turn it into a Ceruledge.\p"
+	.string "I think both are great options, so you\n"
+	.string "can't go wrong!$"
 
 `
