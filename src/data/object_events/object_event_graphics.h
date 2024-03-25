@@ -389,3 +389,6 @@ const u16 gObjectEventPal_Gardenia[] = INCBIN_U16("graphics/object_events/palett
 const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
 const u16 gObjectEventPal_Cynthia[] = INCBIN_U16("graphics/object_events/palettes/cynthia.gbapal");
 
+const u32 gObjectEventPic_Wake[] = INCBIN_U32("graphics/object_events/pics/people/wake.4bpp");
+const u16 gObjectEventPal_Wake[] = INCBIN_U16("graphics/object_events/palettes/wake.gbapal");
+
