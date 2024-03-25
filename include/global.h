@@ -533,6 +533,7 @@ struct SaveBlock2
 //after changing SECTOR_DATA_SIZE -> 4084: 3884b/4084b; free space: 200b.
 //change BAG_TMHM_COUNT from 64 -> 120; results: 3884b/4084b; free space: 200b (unchanged)
 //change BAG_ITEM_COUNT from 30 -> 150; results: 3884b/4084b; free space: 200b (unchanged)
+//changed values of FREE_TRAINER_HILL etc in save.h: results: 2664b/4084b; free space: 1420b
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
 
@@ -1091,6 +1092,9 @@ struct SaveBlock1
     //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
     //change BAG_TMHM_COUNT from 64 -> 120; results: 15792b/16336b; free space: 544b (4 byte per TM slot added)
     //change BAG_ITEM_COUNT from 30 -> 150; results: 16272b/16336b; free space: 64b (4 byte per item slot added)
+    //changed values of FREE_TRAINER_HILL etc in save.h:
+    //BAG_TMHM_COUNT from 120 -> 130, BAG_ITEM_COUNT from 150 -> 250, BAG_POKEBALLS_COUNT 16 -> 30
+    //results: 14508/16336b; free space: 1828b 
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
