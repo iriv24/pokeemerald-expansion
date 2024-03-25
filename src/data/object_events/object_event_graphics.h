@@ -383,3 +383,9 @@ const u16 gObjectEventPal_Dawn[] = INCBIN_U16("graphics/object_events/palettes/d
 const u32 gObjectEventPic_Maylene[] = INCBIN_U32("graphics/object_events/pics/people/maylene.4bpp");
 const u16 gObjectEventPal_Maylene[] = INCBIN_U16("graphics/object_events/palettes/maylene.gbapal");
 
+const u32 gObjectEventPic_Gardenia[] = INCBIN_U32("graphics/object_events/pics/people/gardenia.4bpp");
+const u16 gObjectEventPal_Gardenia[] = INCBIN_U16("graphics/object_events/palettes/gardenia.gbapal");
+
+const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
+const u16 gObjectEventPal_Cynthia[] = INCBIN_U16("graphics/object_events/palettes/cynthia.gbapal");
+
