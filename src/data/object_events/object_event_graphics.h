@@ -392,3 +392,15 @@ const u16 gObjectEventPal_Cynthia[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Wake[] = INCBIN_U32("graphics/object_events/pics/people/wake.4bpp");
 const u16 gObjectEventPal_Wake[] = INCBIN_U16("graphics/object_events/palettes/wake.gbapal");
 
+const u32 gObjectEventPic_Fantina[] = INCBIN_U32("graphics/object_events/pics/people/fantina.4bpp");
+const u16 gObjectEventPal_Fantina[] = INCBIN_U16("graphics/object_events/palettes/fantina.gbapal");
+
+const u32 gObjectEventPic_Byron[] = INCBIN_U32("graphics/object_events/pics/people/byron.4bpp");
+const u16 gObjectEventPal_Byron[] = INCBIN_U16("graphics/object_events/palettes/byron.gbapal");
+
+const u32 gObjectEventPic_Candice[] = INCBIN_U32("graphics/object_events/pics/people/candice.4bpp");
+const u16 gObjectEventPal_Candice[] = INCBIN_U16("graphics/object_events/palettes/candice.gbapal");
+
+const u32 gObjectEventPic_Volkner[] = INCBIN_U32("graphics/object_events/pics/people/volkner.4bpp");
+const u16 gObjectEventPal_Volkner[] = INCBIN_U16("graphics/object_events/palettes/volkner.gbapal");
+

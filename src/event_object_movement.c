@@ -440,6 +440,10 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_GARDENIA                0x1127
 #define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x1128
 #define OBJ_EVENT_PAL_TAG_WAKE                    0x1129
+#define OBJ_EVENT_PAL_TAG_FANTINA                 0x112A
+#define OBJ_EVENT_PAL_TAG_BYRON                   0x112B
+#define OBJ_EVENT_PAL_TAG_CANDICE                 0x112C
+#define OBJ_EVENT_PAL_TAG_VOLKNER                 0x112D
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -492,6 +496,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Gardenia,              OBJ_EVENT_PAL_TAG_GARDENIA},
     {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA},
     {gObjectEventPal_Wake,                  OBJ_EVENT_PAL_TAG_WAKE},
+    {gObjectEventPal_Fantina,               OBJ_EVENT_PAL_TAG_FANTINA},
+    {gObjectEventPal_Byron,                 OBJ_EVENT_PAL_TAG_BYRON},
+    {gObjectEventPal_Candice,               OBJ_EVENT_PAL_TAG_CANDICE},
+    {gObjectEventPal_Volkner,               OBJ_EVENT_PAL_TAG_VOLKNER},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

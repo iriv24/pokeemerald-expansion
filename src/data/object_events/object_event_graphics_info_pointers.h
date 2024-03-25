@@ -250,6 +250,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maylene;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardenia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wake;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fantina;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Byron;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Candice;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volkner;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -498,6 +502,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GARDENIA] =                 &gObjectEventGraphicsInfo_Gardenia,
     [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_WAKE] =                     &gObjectEventGraphicsInfo_Wake,
+    [OBJ_EVENT_GFX_FANTINA] =                  &gObjectEventGraphicsInfo_Fantina,
+    [OBJ_EVENT_GFX_BYRON] =                    &gObjectEventGraphicsInfo_Byron,
+    [OBJ_EVENT_GFX_CANDICE] =                  &gObjectEventGraphicsInfo_Candice,
+    [OBJ_EVENT_GFX_VOLKNER] =                  &gObjectEventGraphicsInfo_Volkner,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
