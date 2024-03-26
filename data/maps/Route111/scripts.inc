@@ -1451,8 +1451,6 @@ Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 # 726 "data/maps/Route111/scripts.pory"
 Route111_Text_TrainerHillSign:
 # 727 "data/maps/Route111/scripts.pory"
-	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
+	.string "TRAINER HILL\n"
 # 728 "data/maps/Route111/scripts.pory"
-	.string "“Scale the heights, you hot-blooded\n"
-# 729 "data/maps/Route111/scripts.pory"
-	.string "TRAINERS!”$"
+	.string "UNDER DEVELOPMENT$"

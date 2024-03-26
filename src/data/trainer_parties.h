@@ -6216,7 +6216,7 @@ static const struct TrainerMon sParty_Ernest1[] = {
 };
 
 static const struct TrainerMon sParty_Dwayne[] = {
-    /*{
+    {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 32,
     .species = SPECIES_THIEVUL,
@@ -6242,15 +6242,6 @@ static const struct TrainerMon sParty_Dwayne[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_MOLD_BREAKER,
     .moves = {MOVE_X_SCISSOR, MOVE_BRICK_BREAK, MOVE_ROCK_SLIDE, MOVE_CUT}
-    },*/
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 203,
-    .species = SPECIES_MINUN,
-    .heldItem = ITEM_MAGNET,
-    .nature = NATURE_JOLLY,
-    .ability = ABILITY_GALVANIZE,
-    .moves = {MOVE_BODY_SLAM, MOVE_FAKE_OUT, MOVE_NONE, MOVE_QUICK_ATTACK}
     },
 };
 
