@@ -2594,6 +2594,7 @@ bool32 AI_CanSleep(u32 battler, u32 ability)
       || ability == ABILITY_COMATOSE
       || gBattleMons[battler].status1 & STATUS1_ANY
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
+      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SLEEP_CLAUSE
       || (gFieldStatuses & (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN))
       || IsAbilityStatusProtected(battler)
       || AnyPartyMemberAsleep(battler))
