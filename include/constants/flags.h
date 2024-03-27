@@ -47,12 +47,12 @@
 #define FLAG_UNUSED_FIRESTARTER    0x22
 #define FLAG_UNUSED_TOUCHBALLS    0x23
 #define FLAG_UNUSED_DAWN     0x24
-#define FLAG_RECEIVED_TM_ROCK_TOMB   0x25 // Unused Flag
+#define FLAG_RECEIVED_TM_ROCK_TOMB   0x25
 #define FLAG_UNUSED_POKEMONPCMENU    0x26
 #define FLAG_PARTY_MOVES     0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
 #define FLAG_RECEIVED_TM_U_TURN    0x29
 #define FLAG_RECEIVED_RUSTBORO_EGG    0x2A
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_RECEIVED_SETUP_TMS    0x2B
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -182,8 +182,8 @@
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_BULLDOZE           0xA5
-#define FLAG_RECEIVED_TM_LOW_SWEEP             0xA6
+#define FLAG_RECEIVED_TM_BULLDOZE            0xA5
+#define FLAG_RECEIVED_TM_LOW_SWEEP           0xA6
 #define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
 #define FLAG_RECEIVED_TM_OVERHEAT            0xA8
 #define FLAG_RECEIVED_TM_FACADE              0xA9

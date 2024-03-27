@@ -259,7 +259,7 @@
 // allow increasing NUM_OBJ_EVENT_GFX to 240. There are also a handful of unused
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
-// https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
+// https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion -- you did this i think so you should be able to go way higher
 #define NUM_OBJ_EVENT_GFX                        249
 
 

@@ -19,8 +19,24 @@ Route117_EventScript_Woman::
 	msgbox Route117_Text_ArentTheseFlowersPretty, MSGBOX_NPC
 	end
 
-Route117_EventScript_LittleBoy::
-	msgbox Route117_Text_AirIsTastyHere, MSGBOX_NPC
+Route117_EventScript_LittleBoyDancing::
+	msgbox Route117_Text_LittleBoyDancing, MSGBOX_NPC
+	end
+
+Route117_EventScript_MomDancing::
+	msgbox Route117_Text_MomDancing, MSGBOX_NPC
+	end
+
+Route117_EventScript_DadDancing::
+	msgbox Route117_Text_DadDancing, MSGBOX_NPC
+	end
+
+Route117_EventScript_LittleGirlDancing::
+	msgbox Route117_Text_LittleGirlDancing, MSGBOX_NPC
+	end
+
+Route117_EventScript_DanceInstructorDancing::
+	msgbox Route117_Text_DanceInstructor, MSGBOX_NPC
 	end
 
 Route117_EventScript_Girl::
@@ -192,8 +208,34 @@ Route117_Text_ArentTheseFlowersPretty:
 	.string "Aren't these flowers pretty?\p"
 	.string "I planted them all!$"
 
-Route117_Text_AirIsTastyHere:
-	.string "The air is tasty here!$"
+Route117_Text_LittleBoyDancing:
+	.string "Weeee! This dance is so fun!$"
+
+Route117_Text_MomDancing:
+	.string "I hope we get to do outdoor lessons\n"
+	.string "more often!$"
+
+Route117_Text_DadDancing:
+	.string "I have no idea what I'm doing, but I'm\n"
+	.string "glad my daughter is having fun.$"
+
+Route117_Text_LittleGirlDancing:
+	.string "I love spinning!! Thanks for taking me\n"
+	.string "dancing, dad!$"
+
+Route117_Text_DanceInstructor:
+	.string "It's such a beautiful day that I\n"
+	.string "thought we'd have class outside! Oh,\p"
+	.string "you must be wondering what the Elite\n"
+	.string "Four member Phoebe is doing way out\p"
+	.string "here...\p"
+	.string "...\p"
+	.string "Surprise! I'm her twin sister, Ursula! I\n"
+	.string "may not be as good a battler as Phoebe,\p"
+	.string "but I'm a way better dancer! Tell you\n"
+	.string "what, if you can beat Wattson, come see\p"
+	.string "me in Vendanturf Town and I'll give you\n"
+	.string "a lesson!$"
 
 Route117_Text_RouteSignVerdanturf:
 	.string "ROUTE 117\n"

@@ -12482,3 +12482,42 @@ static const struct TrainerMon sParty_DawnRoute104[] = {
     .moves = {MOVE_BUBBLE_BEAM, MOVE_AQUA_JET, MOVE_BABY_DOLL_EYES, MOVE_PECK}
     },
 };
+
+static const struct TrainerMon sParty_Ursula[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ORICORIO_PAU,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_DANCER,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_QUIVER_DANCE, MOVE_AIR_CUTTER, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ORICORIO_BAILE,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_DANCER,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_QUIVER_DANCE, MOVE_AIR_CUTTER, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ORICORIO_SENSU,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_DANCER,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_QUIVER_DANCE, MOVE_AIR_CUTTER, MOVE_ROOST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ORICORIO_POM_POM,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_DANCER,
+    .moves = {MOVE_REVELATION_DANCE, MOVE_QUIVER_DANCE, MOVE_AIR_CUTTER, MOVE_ROOST}
+    },
+};

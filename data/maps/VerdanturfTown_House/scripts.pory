@@ -2,26 +2,98 @@ raw `
 VerdanturfTown_House_MapScripts::
 	.byte 0
 
+VerdanturfTown_House_EventScript_Man1::
+	msgbox VerdanturfTown_House_Text_MorePassion, MSGBOX_NPC
+	end
+
 VerdanturfTown_House_EventScript_Woman1::
-	msgbox VerdanturfTown_House_Text_TrainersGatherAtPokemonLeague, MSGBOX_NPC
+	msgbox VerdanturfTown_House_Text_ImproveFootwork, MSGBOX_NPC
 	end
 
-VerdanturfTown_House_EventScript_Woman2::
-	msgbox VerdanturfTown_House_Text_DefeatEliteFourInARow, MSGBOX_NPC
+VerdanturfTown_House_EventScript_LittleBoyDancing::
+	msgbox VerdanturfTown_House_Text_LittleBoyDancing, MSGBOX_NPC
 	end
 
-VerdanturfTown_House_Text_TrainersGatherAtPokemonLeague:
-	.string "Far away, deep in EVER GRANDE CITY,\n"
-	.string "is the POKéMON LEAGUE.\p"
-	.string "The TRAINERS who gather there are\n"
-	.string "all frighteningly well skilled.$"
+VerdanturfTown_House_EventScript_MomDancing::
+	msgbox VerdanturfTown_House_Text_MomDancing, MSGBOX_NPC
+	end
 
-VerdanturfTown_House_Text_DefeatEliteFourInARow:
-	.string "In the POKéMON LEAGUE, I think the\n"
-	.string "rules say that you have to battle the\l"
-	.string "ELITE FOUR all in a row.\p"
-	.string "If you lose to any of them, you have\n"
-	.string "to begin your challenge again from the\l"
-	.string "first one.$"
+VerdanturfTown_House_EventScript_DadDancing::
+	msgbox VerdanturfTown_House_Text_DadDancing, MSGBOX_NPC
+	end
+
+VerdanturfTown_House_EventScript_LittleGirlDancing::
+	msgbox VerdanturfTown_House_Text_LittleGirlDancing, MSGBOX_NPC
+	end
+
+VerdanturfTown_House_EventScript_Ursula::
+	trainerbattle_double TRAINER_URSULA, VerdanturfTown_House_Text_UrsulaIntro, VerdanturfTown_House_Text_UrsulaDefeat, VerdanturfTown_House_Text_UrsulaNotEnoughMons, VerdanturfTown_House_EventScript_GiveSetupTms
+	goto_if_unset FLAG_RECEIVED_SETUP_TMS, VerdanturfTown_House_EventScript_GiveSetupTms
+	msgbox VerdanturfTown_House_Text_UrsulaPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+
+VerdanturfTown_House_EventScript_GiveSetupTms::
+	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_BULK_UP
+	giveitem ITEM_TM_DRAGON_DANCE
+	giveitem ITEM_TM_ROOST
+	giveitem ITEM_TM_POWER_UP_PUNCH
+	giveitem ITEM_TM_CHARGE_BEAM
+	giveitem ITEM_TM_ROCK_POLISH
+	giveitem ITEM_TM_SWORDS_DANCE
+	giveitem ITEM_TM_FLAME_CHARGE
+	giveitem ITEM_TM_TRAILBLAZE
+	giveitem ITEM_TM_WORK_UP
+	setflag FLAG_RECEIVED_SETUP_TMS
+	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
+	release
+	end
+
+
+VerdanturfTown_House_Text_UrsulaIntro:
+	.string "Welcome to my dance studio! I see you\n"
+	.string "have the Dynamo Badge now, not too\p"
+	.string "shabby! You may be a good at Pokémon\n"
+	.string "battles, but let's see how you fare in a\l"
+	.string "dance battle!$"
+
+VerdanturfTown_House_Text_UrsulaDefeat:
+	.string "Nice moves! Now I've got some nice\n"
+	.string "moves for you to take!$"
+
+VerdanturfTown_House_Text_UrsulaNotEnoughMons:
+	.string "Come back when you have enough\n"
+	.string "Pokémon for a dance battle!$"
+
+
+VerdanturfTown_House_Text_ExplainTms:
+	.string "Now THOSE are some nice moves! Good\n"
+	.string "luck against my sister, if you ever make\l"
+	.string "it far enough to meet her!$"
+
+VerdanturfTown_House_Text_UrsulaPostBattle:
+	.string "Back to dancing for me!$\n"
+
+VerdanturfTown_House_Text_MorePassion:
+	.string "More passion! More passion! More\n"
+	.string "passion! More energy! More energy!$"
+
+VerdanturfTown_House_Text_ImproveFootwork:
+	.string "I've got to improve my footwork!$"
+
+VerdanturfTown_House_Text_LittleBoyDancing:
+	.string "Whew! I'm pooped!$"
+
+VerdanturfTown_House_Text_MomDancing:
+	.string "He's becoming such a good little dancer,\n"
+	.string "I'm so proud of him!$"
+
+VerdanturfTown_House_Text_DadDancing:
+	.string "Where does she get all this energy?$"
+
+VerdanturfTown_House_Text_LittleGirlDancing:
+	.string "Look at my twirls daddy!!!$"
 
 `
