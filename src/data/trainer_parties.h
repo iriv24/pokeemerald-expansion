@@ -3379,11 +3379,11 @@ static const struct TrainerMon sParty_Wattson1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 33,
-    .species = SPECIES_POLITOED,
+    .species = SPECIES_LANTURN,
     .nature = NATURE_RELAXED,
     .heldItem = ITEM_DAMP_ROCK,
     .ability = ABILITY_DRIZZLE,
-    .moves = {MOVE_FLIP_TURN, MOVE_SCALD, MOVE_ICY_WIND, MOVE_MUD_SHOT}
+    .moves = {MOVE_THUNDER, MOVE_SCALD, MOVE_ICY_WIND, MOVE_SIGNAL_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3419,7 +3419,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .heldItem = ITEM_MANECTITE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_THUNDER_FANG, MOVE_CRUNCH, MOVE_SUCKER_PUNCH, MOVE_ICE_FANG}
+    .moves = {MOVE_THUNDER_FANG, MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_ICE_FANG}
     }
 };
 
