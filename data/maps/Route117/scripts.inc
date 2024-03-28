@@ -523,13 +523,13 @@ Route117_EventScript_FantinaGiveItems::
 # 270 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_TM_BRICK_BREAK
 # 271 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_BANETTITE, 10
+	giveitem ITEM_BANETTITE
 # 272 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_SABLENITE, 10
+	giveitem ITEM_SABLENITE
 # 273 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_GENGARITE, 10
+	giveitem ITEM_GENGARITE
 # 274 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT, 10
+	giveitem ITEM_EXPERT_BELT
 # 275 "data/maps/Route117/scripts.pory"
 	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 # 276 "data/maps/Route117/scripts.pory"
