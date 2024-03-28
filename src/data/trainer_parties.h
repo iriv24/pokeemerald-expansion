@@ -89,19 +89,20 @@ static const struct TrainerMon sParty_GruntPetalburgWoods[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),   
     .lvl = 202, 
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_QUICK_FEET,
     .species = SPECIES_POOCHYENA,
-    .moves = {MOVE_BITE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_BITE, MOVE_TACKLE, MOVE_NONE, MOVE_NONE}
     },
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 202,
-        .species = SPECIES_CARVANHA,
-        .nature = NATURE_ADAMANT,
-        .moves = {MOVE_AQUA_JET, MOVE_BITE, MOVE_NONE, MOVE_NONE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_CARVANHA,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_ROUGH_SKIN,
+    .moves = {MOVE_AQUA_JET, MOVE_BITE, MOVE_NONE, MOVE_NONE}
     }
-    }
-    
-;
+};
 
 static const struct TrainerMon sParty_Marcel[] = {
     {
@@ -177,7 +178,7 @@ static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
      .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),   
     .lvl = 202, 
     .species = SPECIES_GRUMPIG,
-    .moves = {MOVE_PSYBEAM, MOVE_THUNDER_WAVE, MOVE_CONFUSE_RAY, MOVE_GRASS_KNOT},
+    .moves = {MOVE_PSYBEAM, MOVE_FLASH, MOVE_ICY_WIND, MOVE_GRASS_KNOT},
     .ability = ABILITY_GLUTTONY,
     .nature = NATURE_CALM,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -801,7 +802,7 @@ static const struct TrainerMon sParty_Simon[] = {
     .heldItem = ITEM_MYSTIC_WATER,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_HUGE_POWER,
-    .moves = {MOVE_AQUA_TAIL, MOVE_PLAY_ROUGH, MOVE_AQUA_JET, MOVE_BULLDOZE}
+    .moves = {MOVE_AQUA_TAIL, MOVE_PLAY_ROUGH, MOVE_AQUA_JET, MOVE_ICE_PUNCH}
     },
 };
 
@@ -3380,7 +3381,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 33,
     .species = SPECIES_LANTURN,
-    .nature = NATURE_RELAXED,
+    .nature = NATURE_MODEST,
     .heldItem = ITEM_DAMP_ROCK,
     .ability = ABILITY_DRIZZLE,
     .moves = {MOVE_THUNDER, MOVE_SCALD, MOVE_ICY_WIND, MOVE_SIGNAL_BEAM}
@@ -6619,7 +6620,7 @@ static const struct TrainerMon sParty_BrendanRoute110Mudkip[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6692,7 +6693,7 @@ static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6765,7 +6766,7 @@ static const struct TrainerMon sParty_BrendanRoute110Torchic[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6836,9 +6837,9 @@ static const struct TrainerMon sParty_MayRoute110Mudkip[] = {
     .lvl = 201,
     .species = SPECIES_CROBAT,
     .nature = NATURE_JOLLY,
-    .ability = ABILITY_INNER_FOCUS,
+    .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6911,7 +6912,7 @@ static const struct TrainerMon sParty_MayRoute110Treecko[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6984,7 +6985,7 @@ static const struct TrainerMon sParty_MayRoute110Torchic[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_DUAL_WINGBEAT, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_DUAL_WINGBEAT, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -7801,7 +7802,7 @@ static const struct TrainerMon sParty_BrendanRustboroTreecko[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -7840,7 +7841,7 @@ static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -7942,7 +7943,7 @@ static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -7981,7 +7982,7 @@ static const struct TrainerMon sParty_MayRustboroMudkip[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10206,7 +10207,7 @@ static const struct TrainerMon sParty_MayRustboroTreecko[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10245,7 +10246,7 @@ static const struct TrainerMon sParty_MayRustboroTorchic[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_FANG, MOVE_BITE, MOVE_U_TURN}
+    .moves = {MOVE_WING_ATTACK, MOVE_CROSS_POISON, MOVE_BITE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10270,7 +10271,7 @@ static const struct TrainerMon sParty_MayRustboroTorchic[] = {
     .lvl = 201,
     .species = SPECIES_MARSHTOMP,
     .heldItem = ITEM_SITRUS_BERRY,
-    .nature = NATURE_BRAVE,
+    .nature = NATURE_QUIET,
     .ability = ABILITY_TORRENT,
     .moves = {MOVE_WATER_PULSE, MOVE_ROCK_TOMB, MOVE_MUD_SHOT, MOVE_ICE_PUNCH}
     }
