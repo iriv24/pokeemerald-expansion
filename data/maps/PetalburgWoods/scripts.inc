@@ -953,9 +953,9 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 PetalburgWoods_EventScript_GardeniaBattle::
 # 481 "data/maps/PetalburgWoods/scripts.pory"
-	trainerbattle_single TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, Route116_EventScript_GardeniaDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, PetalburgWoods_EventScript_GardeniaDefeated, NO_MUSIC
 # 482 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_U_TURN, Route116_EventScript_GardeniaGiveItems
+	goto_if_unset FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaGiveItems
 # 483 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PostBattle_Gardenia, MSGBOX_AUTOCLOSE
 # 484 "data/maps/PetalburgWoods/scripts.pory"
@@ -963,13 +963,13 @@ PetalburgWoods_EventScript_GardeniaBattle::
 	end
 
 
-Route116_EventScript_GardeniaDefeated::
+PetalburgWoods_EventScript_GardeniaDefeated::
 # 489 "data/maps/PetalburgWoods/scripts.pory"
-	goto Route116_EventScript_GardeniaGiveItems
+	goto PetalburgWoods_EventScript_GardeniaGiveItems
 	end
 
 
-Route116_EventScript_GardeniaGiveItems::
+PetalburgWoods_EventScript_GardeniaGiveItems::
 # 495 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_TM_U_TURN
 # 496 "data/maps/PetalburgWoods/scripts.pory"

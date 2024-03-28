@@ -250,3 +250,59 @@ Route117_Text_DayCareSign:
 	.string "“Let us raise your POKéMON.”$"
 
 `
+
+script Route117_EventScript_FantinaBattle{
+	trainerbattle_single(TRAINER_FANTINA, Fantina_Greeting, Fantina_Outro, Route117_EventScript_FantinaDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaGiveItems)
+	msgbox(PostBattle_Fantina, MSGBOX_AUTOCLOSE)
+	waitmessage
+	end
+}
+
+script Route117_EventScript_FantinaDefeated{
+	goto(Route117_EventScript_FantinaGiveItems)
+	end
+
+}
+
+script Route117_EventScript_FantinaGiveItems{
+	giveitem(ITEM_TM_SHADOW_BALL)
+	giveitem(ITEM_TM_BRICK_BREAK)
+	giveitem(ITEM_BANETTITE)
+	giveitem(ITEM_SABLENITE)
+	giveitem(ITEM_GENGARITE)
+	giveitem(ITEM_EXPERT_BELT)
+	setflag(FLAG_RECEIVED_TM_SHADOW_BALL)
+	msgbox(Fantina_ExplainItems)
+	release
+	end
+}
+
+text Fantina_ExplainItems{
+	"Shadow Ball and Brick Break are two\n"
+	"very powerful moves. In addition, I had\p"
+	"a few spare Mega Stones for some\n"
+	"Ghost-type Pokémon, though you'll need\p"
+	"a Mega Ring if you want to use them.\n"
+	"Finally, the Expert Belt is used for\p"
+	"boosting moves that are super\n"
+	"effective. I'm, sure you'll put it to\p"
+	"good use. Best of luck!"
+}
+
+text Fantina_Greeting{
+	"Oh, hello there, my name is Fantina. Did\n"
+	"you come here to enjoy the flowers,\p"
+	"too? Or were you looking for a battle?"
+}
+	
+text Fantina_Outro{
+	"My my! To think, there are such strong\n"
+	"trainers here in the Hoenn region. I\p"
+	"think you can make good use of these."
+}
+
+
+text PostBattle_Fantina{
+	"It's much prettier here than back home."
+}

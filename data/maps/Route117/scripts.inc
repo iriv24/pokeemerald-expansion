@@ -498,3 +498,71 @@ Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"
 # 250 "data/maps/Route117/scripts.pory"
 	.string "“Let us raise your POKéMON.”$"
+
+Route117_EventScript_FantinaBattle::
+# 255 "data/maps/Route117/scripts.pory"
+	trainerbattle_single TRAINER_FANTINA, Fantina_Greeting, Fantina_Outro, Route117_EventScript_FantinaDefeated, NO_MUSIC
+# 256 "data/maps/Route117/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaGiveItems
+# 257 "data/maps/Route117/scripts.pory"
+	msgbox PostBattle_Fantina, MSGBOX_AUTOCLOSE
+# 258 "data/maps/Route117/scripts.pory"
+	waitmessage
+	end
+
+
+Route117_EventScript_FantinaDefeated::
+# 263 "data/maps/Route117/scripts.pory"
+	goto Route117_EventScript_FantinaGiveItems
+	end
+
+
+Route117_EventScript_FantinaGiveItems::
+# 269 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_TM_SHADOW_BALL
+# 270 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_TM_BRICK_BREAK
+# 271 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_BANETTITE, 10
+# 272 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_SABLENITE, 10
+# 273 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_GENGARITE, 10
+# 274 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_EXPERT_BELT, 10
+# 275 "data/maps/Route117/scripts.pory"
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+# 276 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 277 "data/maps/Route117/scripts.pory"
+	release
+	end
+
+
+Fantina_ExplainItems::
+# 281 "data/maps/Route117/scripts.pory"
+	.string "Shadow Ball and Brick Break are two\n"
+	.string "very powerful moves. In addition, I had\p"
+	.string "a few spare Mega Stones for some\n"
+	.string "Ghost-type Pokémon, though you'll need\p"
+	.string "a Mega Ring if you want to use them.\n"
+	.string "Finally, the Expert Belt is used for\p"
+	.string "boosting moves that are super\n"
+	.string "effective. I'm, sure you'll put it to\p"
+	.string "good use. Best of luck!$"
+
+Fantina_Greeting::
+# 293 "data/maps/Route117/scripts.pory"
+	.string "Oh, hello there, my name is Fantina. Did\n"
+	.string "you come here to enjoy the flowers,\p"
+	.string "too? Or were you looking for a battle?$"
+
+Fantina_Outro::
+# 299 "data/maps/Route117/scripts.pory"
+	.string "My my! To think, there are such strong\n"
+	.string "trainers here in the Hoenn region. I\p"
+	.string "think you can make good use of these.$"
+
+PostBattle_Fantina::
+# 306 "data/maps/Route117/scripts.pory"
+	.string "It's much prettier here than back home.$"

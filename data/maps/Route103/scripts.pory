@@ -244,8 +244,7 @@ Route102_EventScript_LivRematch::
 	end
 
 Route103_EventScript_Andrew::
-	trainerbattle_single TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
-	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route103_Text_AndrewNotBiting, MSGBOX_NPC
 	end
 
 Route103_EventScript_Miguel::
@@ -353,5 +352,8 @@ Route103_Text_ShortcutToOldale:
 Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
+
+Route103_Text_AndrewNotBiting:
+	.string "Nothing's biting for me today!$"
 
 `

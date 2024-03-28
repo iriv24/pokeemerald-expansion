@@ -478,20 +478,20 @@ PetalburgWoods_Text_TrainerTipsPP:
 `
 
 script PetalburgWoods_EventScript_GardeniaBattle{
-	trainerbattle_single(TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, Route116_EventScript_GardeniaDefeated, NO_MUSIC)
-	goto_if_unset(FLAG_RECEIVED_TM_U_TURN, Route116_EventScript_GardeniaGiveItems)
+	trainerbattle_single(TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, PetalburgWoods_EventScript_GardeniaDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaGiveItems)
 	msgbox(PostBattle_Gardenia, MSGBOX_AUTOCLOSE)
 	waitmessage
 	end
 }
 
-script Route116_EventScript_GardeniaDefeated{
-	goto(Route116_EventScript_GardeniaGiveItems)
+script PetalburgWoods_EventScript_GardeniaDefeated{
+	goto(PetalburgWoods_EventScript_GardeniaGiveItems)
 	end
 
 }
 
-script Route116_EventScript_GardeniaGiveItems{
+script PetalburgWoods_EventScript_GardeniaGiveItems{
 	giveitem(ITEM_TM_U_TURN)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_EVIOLITE)
