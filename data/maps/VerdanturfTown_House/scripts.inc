@@ -77,118 +77,120 @@ VerdanturfTown_House_EventScript_GiveSetupTms::
 # 39 "data/maps/VerdanturfTown_House/scripts.pory"
 	giveitem ITEM_TM_BULK_UP
 # 40 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_DRAGON_DANCE
+	giveitem ITEM_TM_RAIN_DANCE
 # 41 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_ROOST
+	giveitem ITEM_TM_DRAGON_DANCE
 # 42 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_POWER_UP_PUNCH
+	giveitem ITEM_TM_ROOST
 # 43 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_CHARGE_BEAM
+	giveitem ITEM_TM_POWER_UP_PUNCH
 # 44 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_ROCK_POLISH
+	giveitem ITEM_TM_CHARGE_BEAM
 # 45 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_SWORDS_DANCE
+	giveitem ITEM_TM_ROCK_POLISH
 # 46 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_FLAME_CHARGE
+	giveitem ITEM_TM_SWORDS_DANCE
 # 47 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_TRAILBLAZE
+	giveitem ITEM_TM_FLAME_CHARGE
 # 48 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_WORK_UP
+	giveitem ITEM_TM_TRAILBLAZE
 # 49 "data/maps/VerdanturfTown_House/scripts.pory"
-	setflag FLAG_RECEIVED_SETUP_TMS
+	giveitem ITEM_TM_WORK_UP
 # 50 "data/maps/VerdanturfTown_House/scripts.pory"
-	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_SETUP_TMS
 # 51 "data/maps/VerdanturfTown_House/scripts.pory"
-	release
+	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
 # 52 "data/maps/VerdanturfTown_House/scripts.pory"
-	end
+	release
 # 53 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	end
 # 54 "data/maps/VerdanturfTown_House/scripts.pory"
 
 # 55 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaIntro:
+
 # 56 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Welcome to my dance studio! I see you\n"
+VerdanturfTown_House_Text_UrsulaIntro:
 # 57 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "have the Dynamo Badge now, not too\p"
+	.string "Welcome to my dance studio! I see you\n"
 # 58 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "shabby! You may be a good at Pokémon\n"
+	.string "have the Dynamo Badge now, not too\p"
 # 59 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "battles, but let's see how you fare in a\l"
+	.string "shabby! You may be a good at Pokémon\n"
 # 60 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "dance battle!$"
+	.string "battles, but let's see how you fare in a\l"
 # 61 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "dance battle!$"
 # 62 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaDefeat:
+
 # 63 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Nice moves! Now I've got some nice\n"
+VerdanturfTown_House_Text_UrsulaDefeat:
 # 64 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "moves for you to take!$"
+	.string "Nice moves! Now I've got some nice\n"
 # 65 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "moves for you to take!$"
 # 66 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaNotEnoughMons:
-# 67 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Come back when you have enough\n"
-# 68 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Pokémon for a dance battle!$"
-# 69 "data/maps/VerdanturfTown_House/scripts.pory"
 
+# 67 "data/maps/VerdanturfTown_House/scripts.pory"
+VerdanturfTown_House_Text_UrsulaNotEnoughMons:
+# 68 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Come back when you have enough\n"
+# 69 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Pokémon for a dance battle!$"
 # 70 "data/maps/VerdanturfTown_House/scripts.pory"
 
 # 71 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_ExplainTms:
+
 # 72 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Now THOSE are some nice moves! Good\n"
+VerdanturfTown_House_Text_ExplainTms:
 # 73 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "luck against my sister, if you ever make\l"
+	.string "Now THOSE are some nice moves! Good\n"
 # 74 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "it far enough to meet her!$"
+	.string "luck against my sister, if you ever make\l"
 # 75 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "it far enough to meet her!$"
 # 76 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaPostBattle:
+
 # 77 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Back to dancing for me!$\n"
+VerdanturfTown_House_Text_UrsulaPostBattle:
 # 78 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "Back to dancing for me!$\n"
 # 79 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_MorePassion:
+
 # 80 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "More passion! More passion! More\n"
+VerdanturfTown_House_Text_MorePassion:
 # 81 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "passion! More energy! More energy!$"
+	.string "More passion! More passion! More\n"
 # 82 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "passion! More energy! More energy!$"
 # 83 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_ImproveFootwork:
+
 # 84 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "I've got to improve my footwork!$"
+VerdanturfTown_House_Text_ImproveFootwork:
 # 85 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "I've got to improve my footwork!$"
 # 86 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_LittleBoyDancing:
+
 # 87 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Whew! I'm pooped!$"
+VerdanturfTown_House_Text_LittleBoyDancing:
 # 88 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "Whew! I'm pooped!$"
 # 89 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_MomDancing:
+
 # 90 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "He's becoming such a good little dancer,\n"
+VerdanturfTown_House_Text_MomDancing:
 # 91 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "I'm so proud of him!$"
+	.string "He's becoming such a good little dancer,\n"
 # 92 "data/maps/VerdanturfTown_House/scripts.pory"
-
+	.string "I'm so proud of him!$"
 # 93 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_DadDancing:
-# 94 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Where does she get all this energy?$"
-# 95 "data/maps/VerdanturfTown_House/scripts.pory"
 
+# 94 "data/maps/VerdanturfTown_House/scripts.pory"
+VerdanturfTown_House_Text_DadDancing:
+# 95 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Where does she get all this energy?$"
 # 96 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_LittleGirlDancing:
+
 # 97 "data/maps/VerdanturfTown_House/scripts.pory"
+VerdanturfTown_House_Text_LittleGirlDancing:
+# 98 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "Look at my twirls daddy!!!$"

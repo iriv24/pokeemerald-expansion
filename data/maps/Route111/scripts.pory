@@ -268,10 +268,16 @@ Route111_EventScript_SandstormTrigger::
 Route111_EventScript_Victor::
 	lock
 	faceplayer
+	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_ComeBackLater
 	setflag FLAG_LANDMARK_WINSTRATE_FAMILY
 	msgbox Route111_Text_BattleOurFamily, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route111_EventScript_BattleWinstrates
 	msgbox Route111_Text_IsThatSo, MSGBOX_DEFAULT
+	release
+	end
+
+Route111_EventScript_ComeBackLater::
+	msgbox Route111_Text_ShouldGetStronger, MSGBOX_DEFAULT
 	release
 	end
 
@@ -583,6 +589,10 @@ Route111_Text_BattleOurFamily:
 Route111_Text_IsThatSo:
 	.string "Is that so?\n"
 	.string "Drop in, if you change your mind!$"
+
+Route111_Text_ShouldGetStronger:
+	.string "Hmm... Maybe you should get a little\n"
+	.string "stronger before you take on the family.$"
 
 Route111_Text_VictorIntro:
 	.string "That's the spirit! I like you!$"
