@@ -1336,3 +1336,22 @@ MauvilleCity_Text_ExplainTV:
 MauvilleCity_Text_BeenCheckingOutTV:
 # 669 "data/maps/MauvilleCity/scripts.pory"
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Trigger_BlockGameCornerEntrance::
+# 673 "data/maps/MauvilleCity/scripts.pory"
+	lockall
+# 674 "data/maps/MauvilleCity/scripts.pory"
+	msgbox GoBeatWattson
+# 675 "data/maps/MauvilleCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 676 "data/maps/MauvilleCity/scripts.pory"
+	waitmovement 0
+# 677 "data/maps/MauvilleCity/scripts.pory"
+	releaseall
+	return
+
+
+GoBeatWattson::
+# 680 "data/maps/MauvilleCity/scripts.pory"
+	.string "You should probably beat Wattson\n"
+	.string "before trying your hand at the slots.$"

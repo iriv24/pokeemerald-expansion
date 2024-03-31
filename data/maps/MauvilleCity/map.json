@@ -231,7 +231,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_BEAT_WATTSON",
+      "var_value": "0",
+      "script": "MauvilleCity_Trigger_BlockGameCornerEntrance"
+    }
   ],
   "bg_events": [
     {

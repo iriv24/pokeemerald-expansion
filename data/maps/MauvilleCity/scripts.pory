@@ -668,3 +668,16 @@ MauvilleCity_Text_ExplainTV:
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
 `
+
+script MauvilleCity_Trigger_BlockGameCornerEntrance{
+	lockall
+	msgbox(GoBeatWattson)
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text GoBeatWattson{
+	"You should probably beat Wattson\n"
+	"before trying your hand at the slots."
+}
