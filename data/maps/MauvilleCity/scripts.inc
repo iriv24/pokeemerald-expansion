@@ -971,7 +971,7 @@ MauvilleCity_Text_WallyWeCanBeatAnyone:
 # 486 "data/maps/MauvilleCity/scripts.pory"
 	.string "WALLY: I'm not pushing it.\p"
 # 487 "data/maps/MauvilleCity/scripts.pory"
-	.string "If I combine forces with RALTS,\n"
+	.string "If I combine forces with Gardevoir,\n"
 # 488 "data/maps/MauvilleCity/scripts.pory"
 	.string "we can beat anyone!$"
 # 489 "data/maps/MauvilleCity/scripts.pory"
