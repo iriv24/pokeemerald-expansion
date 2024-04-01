@@ -5059,10 +5059,13 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (gMovesInfo[gCurrentMove].windMove && !(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove) & MOVE_TARGET_USER))
                     effect = 2, statId = STAT_ATK;
                 break;
+            case ABILITY_ICE_EATER:
+                if (moveType == TYPE_ICE)
+                    effect = 1;
+                break;
             case ABILITY_EARTH_EATER:
                 if (moveType == TYPE_GROUND)
                     effect = 1;
-                break;
             }
 
             if (effect == 1) // Drain Hp ability.

@@ -1903,3 +1903,11 @@ static const u16 sLuxrayFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_SHINX
+
+#if P_FAMILY_TURTWIG
+static const u16 sTorterraFormSpeciesIdTable[] = {
+    SPECIES_TORTERRA,
+    SPECIES_TORTERRA_MEGA,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_TURTWIG

@@ -2647,4 +2647,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_ICE_EATER] =
+    {
+        .name = _("Ice Eater"),
+        .description = COMPOUND_STRING("Eats ice to heal HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
 };
