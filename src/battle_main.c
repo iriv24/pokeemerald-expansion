@@ -5076,6 +5076,10 @@ s8 GetMovePriority(u32 battler, u16 move)
     {
         priority++;
     }
+    else if (ability == ABILITY_BLAZING_SOUL && BATTLER_MAX_HP(battler) && gMovesInfo[move].type == TYPE_FIRE)
+    {
+        priority++;
+    }
     else if (ability == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
     {
         gProtectStructs[battler].pranksterElevated = 1;
