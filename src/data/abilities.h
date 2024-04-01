@@ -2609,8 +2609,23 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_FELINE_PROWESS] =
     {
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
         .name = _("Feline Prowess"),
+    #else
+        .name = _("FlinePrwss"),
+    #endif
         .description = COMPOUND_STRING("Raises Sp. Atk."),
         .aiRating = 10,
+    },
+
+    [ABILITY_SAGE_POWER] =
+    {
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Sage Power"),
+    #else
+        .name = _("SgePwer"),
+    #endif
+        .description = COMPOUND_STRING("Ups Sp. Atk and locks move."),
+        .aiRating = 4,
     },
 };
