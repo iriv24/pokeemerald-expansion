@@ -3372,10 +3372,10 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
-    .species = SPECIES_LYCANROC_MIDDAY,
+    .species = SPECIES_LYCANROC_DUSK,
     .nature = NATURE_JOLLY,
     .heldItem = ITEM_MUSCLE_BAND,
-    .ability = ABILITY_STEADFAST,
+    .ability = ABILITY_TOUGH_CLAWS,
     .moves = {MOVE_LOW_SWEEP, MOVE_ACCELEROCK, MOVE_BULLDOZE, MOVE_ICE_FANG}
     },
     {
