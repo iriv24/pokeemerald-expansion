@@ -6755,7 +6755,7 @@ static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_BLAZE,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -6974,7 +6974,7 @@ static const struct TrainerMon sParty_MayRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_BLAZE,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -7855,7 +7855,7 @@ static const struct TrainerMon sParty_BrendanRustboroTreecko[] = {
     .lvl = 201,
     .species = SPECIES_COMBUSKEN,
     .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_BLAZE,
+    .ability = ABILITY_STRIKER,
     .nature = NATURE_ADAMANT,
     .moves = {MOVE_DOUBLE_KICK, MOVE_ROCK_TOMB, MOVE_FLAME_CHARGE, MOVE_THUNDER_PUNCH}
     }
@@ -10328,7 +10328,7 @@ static const struct TrainerMon sParty_MayRustboroTreecko[] = {
     .species = SPECIES_COMBUSKEN,
     .heldItem = ITEM_SITRUS_BERRY,
     .nature = NATURE_ADAMANT,
-    .ability = ABILITY_BLAZE,
+    .ability = ABILITY_STRIKER,
     .moves = {MOVE_DOUBLE_KICK, MOVE_ROCK_TOMB, MOVE_FLAME_CHARGE, MOVE_THUNDER_PUNCH}
     }
 };
