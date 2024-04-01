@@ -9507,6 +9507,12 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             return UQ_4_12(1.25);
         break;
+    case ABILITY_FATAL_PRECISION:
+        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+        {
+            return UQ_4_12(1.2);
+        }
+        break;
     case ABILITY_SNIPER:
         if (isCrit)
             return UQ_4_12(1.5);

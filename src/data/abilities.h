@@ -2628,4 +2628,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups Sp. Atk and locks move."),
         .aiRating = 4,
     },
+
+    [ABILITY_FATAL_PRECISION] =
+    {
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Fatal Precision"),
+    #else
+        .name = _("FtlPrecsn"),
+    #endif
+        .description = COMPOUND_STRING("Ups supereffective moves."),
+        .aiRating = 6,
+    },
+
 };

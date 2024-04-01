@@ -1548,7 +1548,7 @@ static bool32 AccuracyCalcHelper(u16 move)
         return TRUE;
     }
     // If the attacker has the ability No Guard and they aren't targeting a Pokemon involved in a Sky Drop with the move Sky Drop, move hits.
-    else if (GetBattlerAbility(gBattlerTarget) == ABILITY_NO_GUARD && (move != MOVE_SKY_DROP || gBattleStruct->skyDropTargets[gBattlerTarget] == 0xFF))
+    else if (GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD && (move != MOVE_SKY_DROP || gBattleStruct->skyDropTargets[gBattlerTarget] == 0xFF))
     {
         if (!JumpIfMoveFailed(7, move))
             RecordAbilityBattle(gBattlerAttacker, ABILITY_NO_GUARD);
@@ -1559,6 +1559,15 @@ static bool32 AccuracyCalcHelper(u16 move)
     {
         if (!JumpIfMoveFailed(7, move))
             RecordAbilityBattle(gBattlerTarget, ABILITY_NO_GUARD);
+        return TRUE;
+    }
+    // If the attacker has the ability Fatal Precision and the move is supereffective and they aren't targeting a Pokemon involved in a Sky Drop with the move Sky Drop, move hits.
+    //(AI_GetMoveEffectiveness(move, gBattlerAttacker, gBattlerTarget) >= 5)) also works?
+    else if (((GetBattlerAbility(gBattlerAttacker) == ABILITY_FATAL_PRECISION) && (CalcTypeEffectivenessMultiplier(move, gMovesInfo[move].type, gBattlerAttacker, gBattlerTarget, ABILITY_FATAL_PRECISION, FALSE) >= UQ_4_12(2.0)))
+            && (move != MOVE_SKY_DROP || gBattleStruct->skyDropTargets[gBattlerTarget] == 0xFF))
+    {
+        if (!JumpIfMoveFailed(7, move))
+            RecordAbilityBattle(gBattlerAttacker, ABILITY_FATAL_PRECISION);
         return TRUE;
     }
     // If the target is under the effects of Telekinesis, and the move isn't a OH-KO move, move hits.
