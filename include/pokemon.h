@@ -525,6 +525,7 @@ struct MoveInfo
     u8 contestCategory:3;
     u8 contestComboStarterId;
     u8 contestComboMoves[MAX_COMBO_MOVES];
+    u32 kickingMove:1;
 };
 
 #define EFFECTS_ARR(...) (const struct AdditionalEffect[]) {__VA_ARGS__}

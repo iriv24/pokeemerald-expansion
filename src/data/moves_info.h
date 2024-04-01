@@ -698,7 +698,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_MEGA_KICK] =
@@ -720,6 +721,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_MIND_READER},
+        .kickingMove = TRUE,
     },
 
     [MOVE_JUMP_KICK] =
@@ -748,6 +750,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
+        .kickingMove = TRUE,
     },
 
     [MOVE_ROLLING_KICK] =
@@ -773,7 +776,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_SAND_ATTACK] =
@@ -1721,7 +1725,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_COUNTER] =
@@ -3364,6 +3369,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
+        .kickingMove = TRUE,
     },
 
     [MOVE_GLARE] =
@@ -4125,6 +4131,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+        .kickingMove = TRUE,
     },
 
     [MOVE_THIEF] =
@@ -7287,6 +7294,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
+        .kickingMove = TRUE,
     },
 
     [MOVE_MUD_SPORT] =
@@ -15538,7 +15546,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_INSTRUCT] =
@@ -17613,7 +17622,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_DUAL_WINGBEAT] =
@@ -17860,6 +17870,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .kickingMove = TRUE,
     },
 
     [MOVE_GLACIAL_LANCE] =
@@ -18479,6 +18490,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .moveEffect = MOVE_EFFECT_CONFUSION,
             .chance = 30,
         }),
+        .kickingMove = TRUE,
     },
 
     [MOVE_LAST_RESPECTS] =
