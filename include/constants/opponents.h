@@ -230,7 +230,7 @@
 #define TRAINER_DONALD                      224
 #define TRAINER_TAYLOR                      225
 #define TRAINER_JEFFREY_1                   226
-#define TRAINER_DEREK                       227
+#define TRAINER_ISAAC                       227
 #define TRAINER_JEFFREY_2                   228
 #define TRAINER_JEFFREY_3                   229
 #define TRAINER_JEFFREY_4                   230

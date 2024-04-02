@@ -1911,3 +1911,21 @@ static const u16 sTorterraFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TURTWIG
+
+#if P_FAMILY_PIPLUP
+static const u16 sEmpoleonFormSpeciesIdTable[] = {
+    SPECIES_EMPOLEON,
+    SPECIES_EMPOLEON_MEGA_O,
+    SPECIES_EMPOLEON_MEGA_D,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_PIPLUP
+
+#if P_FAMILY_CHIMCHAR
+static const u16 sInfernapeFormSpeciesIdTable[] = {
+    SPECIES_INFERNAPE,
+    SPECIES_INFERNAPE_MEGA,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_CHIMCHAR
+

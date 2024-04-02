@@ -283,272 +283,280 @@ Route117_EventScript_RematchMaria::
 # 142 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Derek::
 # 143 "data/maps/Route117/scripts.pory"
-	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat
+	msgbox Route117_Text_DerekYouFoundMe, MSGBOX_NPC
 # 144 "data/maps/Route117/scripts.pory"
-	msgbox Route117_Text_DerekPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 145 "data/maps/Route117/scripts.pory"
-	end
+
 # 146 "data/maps/Route117/scripts.pory"
-
-# 147 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Anna::
-# 148 "data/maps/Route117/scripts.pory"
+# 147 "data/maps/Route117/scripts.pory"
 	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons, Route117_EventScript_RegisterAnna
+# 148 "data/maps/Route117/scripts.pory"
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 149 "data/maps/Route117/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 150 "data/maps/Route117/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchAnna
-# 151 "data/maps/Route117/scripts.pory"
+# 150 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_AnnaPostBattle, MSGBOX_DEFAULT
+# 151 "data/maps/Route117/scripts.pory"
+	release
 # 152 "data/maps/Route117/scripts.pory"
-	release
+	end
 # 153 "data/maps/Route117/scripts.pory"
-	end
+
 # 154 "data/maps/Route117/scripts.pory"
-
-# 155 "data/maps/Route117/scripts.pory"
 Route117_EventScript_RegisterAnna::
+# 155 "data/maps/Route117/scripts.pory"
+	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
 # 156 "data/maps/Route117/scripts.pory"
-	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_ANNA_AND_MEG_1
 # 157 "data/maps/Route117/scripts.pory"
-	register_matchcall TRAINER_ANNA_AND_MEG_1
+	release
 # 158 "data/maps/Route117/scripts.pory"
-	release
+	end
 # 159 "data/maps/Route117/scripts.pory"
-	end
+
 # 160 "data/maps/Route117/scripts.pory"
-
-# 161 "data/maps/Route117/scripts.pory"
 Route117_EventScript_RematchAnna::
-# 162 "data/maps/Route117/scripts.pory"
+# 161 "data/maps/Route117/scripts.pory"
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaRematchIntro, Route117_Text_AnnaRematchDefeat, Route117_Text_AnnaRematchNotEnoughMons
-# 163 "data/maps/Route117/scripts.pory"
+# 162 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_AnnaPostRematch, MSGBOX_AUTOCLOSE
+# 163 "data/maps/Route117/scripts.pory"
+	end
 # 164 "data/maps/Route117/scripts.pory"
-	end
+
 # 165 "data/maps/Route117/scripts.pory"
-
-# 166 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Meg::
-# 167 "data/maps/Route117/scripts.pory"
+# 166 "data/maps/Route117/scripts.pory"
 	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegIntro, Route117_Text_MegDefeat, Route117_Text_MegNotEnoughMons, Route117_EventScript_RegisterMeg
-# 168 "data/maps/Route117/scripts.pory"
+# 167 "data/maps/Route117/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 169 "data/maps/Route117/scripts.pory"
+# 168 "data/maps/Route117/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchMeg
-# 170 "data/maps/Route117/scripts.pory"
+# 169 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_MegPostBattle, MSGBOX_DEFAULT
+# 170 "data/maps/Route117/scripts.pory"
+	release
 # 171 "data/maps/Route117/scripts.pory"
-	release
+	end
 # 172 "data/maps/Route117/scripts.pory"
-	end
+
 # 173 "data/maps/Route117/scripts.pory"
-
-# 174 "data/maps/Route117/scripts.pory"
 Route117_EventScript_RegisterMeg::
-# 175 "data/maps/Route117/scripts.pory"
+# 174 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
-# 176 "data/maps/Route117/scripts.pory"
+# 175 "data/maps/Route117/scripts.pory"
 	register_matchcall TRAINER_ANNA_AND_MEG_1
-# 177 "data/maps/Route117/scripts.pory"
+# 176 "data/maps/Route117/scripts.pory"
 	release
+# 177 "data/maps/Route117/scripts.pory"
+	end
 # 178 "data/maps/Route117/scripts.pory"
-	end
+
 # 179 "data/maps/Route117/scripts.pory"
-
-# 180 "data/maps/Route117/scripts.pory"
 Route117_EventScript_RematchMeg::
-# 181 "data/maps/Route117/scripts.pory"
+# 180 "data/maps/Route117/scripts.pory"
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegRematchIntro, Route117_Text_MegRematchDefeat, Route117_Text_MegRematchNotEnoughMons
-# 182 "data/maps/Route117/scripts.pory"
+# 181 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_MegPostRematch, MSGBOX_AUTOCLOSE
+# 182 "data/maps/Route117/scripts.pory"
+	end
 # 183 "data/maps/Route117/scripts.pory"
-	end
+
 # 184 "data/maps/Route117/scripts.pory"
-
-# 185 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Melina::
-# 186 "data/maps/Route117/scripts.pory"
+# 185 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_MelinaDaycare, MSGBOX_NPC
+# 186 "data/maps/Route117/scripts.pory"
+	end
 # 187 "data/maps/Route117/scripts.pory"
-	end
+
 # 188 "data/maps/Route117/scripts.pory"
-
-# 189 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Brandi::
-# 190 "data/maps/Route117/scripts.pory"
+# 189 "data/maps/Route117/scripts.pory"
 	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat
-# 191 "data/maps/Route117/scripts.pory"
+# 190 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_BrandiPostBattle, MSGBOX_AUTOCLOSE
+# 191 "data/maps/Route117/scripts.pory"
+	end
 # 192 "data/maps/Route117/scripts.pory"
-	end
+
 # 193 "data/maps/Route117/scripts.pory"
-
-# 194 "data/maps/Route117/scripts.pory"
 Route117_EventScript_Aisha::
-# 195 "data/maps/Route117/scripts.pory"
+# 194 "data/maps/Route117/scripts.pory"
 	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
-# 196 "data/maps/Route117/scripts.pory"
+# 195 "data/maps/Route117/scripts.pory"
 	msgbox Route117_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
-# 197 "data/maps/Route117/scripts.pory"
+# 196 "data/maps/Route117/scripts.pory"
 	end
+# 197 "data/maps/Route117/scripts.pory"
+
 # 198 "data/maps/Route117/scripts.pory"
-
-# 199 "data/maps/Route117/scripts.pory"
 Route117_Text_MelinaDaycare:
-# 200 "data/maps/Route117/scripts.pory"
+# 199 "data/maps/Route117/scripts.pory"
 	.string "Yo I actually don't know if the eggs out\n"
-# 201 "data/maps/Route117/scripts.pory"
+# 200 "data/maps/Route117/scripts.pory"
 	.string "of the day care will have perfect IVs,\p"
-# 202 "data/maps/Route117/scripts.pory"
+# 201 "data/maps/Route117/scripts.pory"
 	.string "you sure can try though.$"
+# 202 "data/maps/Route117/scripts.pory"
+
 # 203 "data/maps/Route117/scripts.pory"
-
+Route117_Text_DerekYouFoundMe:
 # 204 "data/maps/Route117/scripts.pory"
-Route117_Text_DayCarePokemonHadNewMove:
+	.string "Wow, you found me! I didn't think anyone\n"
 # 205 "data/maps/Route117/scripts.pory"
-	.string "I left my POKéMON at the DAY CARE.\p"
+	.string "ever would! I guess I don't have Hidden\p"
 # 206 "data/maps/Route117/scripts.pory"
-	.string "When I got it back, it had a new move\n"
+	.string "Power anymore, so you should have it!$"
 # 207 "data/maps/Route117/scripts.pory"
-	.string "that I didn't teach it.\l"
+
 # 208 "data/maps/Route117/scripts.pory"
-	.string "I was really, really surprised.$"
+Route117_Text_DayCarePokemonHadNewMove:
 # 209 "data/maps/Route117/scripts.pory"
-
+	.string "I left my POKéMON at the DAY CARE.\p"
 # 210 "data/maps/Route117/scripts.pory"
-Route117_Text_ArentTheseFlowersPretty:
+	.string "When I got it back, it had a new move\n"
 # 211 "data/maps/Route117/scripts.pory"
-	.string "What do you think?\n"
+	.string "that I didn't teach it.\l"
 # 212 "data/maps/Route117/scripts.pory"
-	.string "Aren't these flowers pretty?\p"
+	.string "I was really, really surprised.$"
 # 213 "data/maps/Route117/scripts.pory"
-	.string "I planted them all!$"
+
 # 214 "data/maps/Route117/scripts.pory"
-
+Route117_Text_ArentTheseFlowersPretty:
 # 215 "data/maps/Route117/scripts.pory"
-Route117_Text_LittleBoyDancing:
+	.string "What do you think?\n"
 # 216 "data/maps/Route117/scripts.pory"
-	.string "Weeee! This dance is so fun!$"
+	.string "Aren't these flowers pretty?\p"
 # 217 "data/maps/Route117/scripts.pory"
-
+	.string "I planted them all!$"
 # 218 "data/maps/Route117/scripts.pory"
-Route117_Text_MomDancing:
+
 # 219 "data/maps/Route117/scripts.pory"
-	.string "I hope we get to do outdoor lessons\n"
+Route117_Text_LittleBoyDancing:
 # 220 "data/maps/Route117/scripts.pory"
-	.string "more often!$"
+	.string "Weeee! This dance is so fun!$"
 # 221 "data/maps/Route117/scripts.pory"
 
 # 222 "data/maps/Route117/scripts.pory"
-Route117_Text_DadDancing:
+Route117_Text_MomDancing:
 # 223 "data/maps/Route117/scripts.pory"
-	.string "I have no idea what I'm doing, but I'm\n"
+	.string "I hope we get to do outdoor lessons\n"
 # 224 "data/maps/Route117/scripts.pory"
-	.string "glad my daughter is having fun.$"
+	.string "more often!$"
 # 225 "data/maps/Route117/scripts.pory"
 
 # 226 "data/maps/Route117/scripts.pory"
-Route117_Text_LittleGirlDancing:
+Route117_Text_DadDancing:
 # 227 "data/maps/Route117/scripts.pory"
-	.string "I love spinning!! Thanks for taking me\n"
+	.string "I have no idea what I'm doing, but I'm\n"
 # 228 "data/maps/Route117/scripts.pory"
-	.string "dancing, dad!$"
+	.string "glad my daughter is having fun.$"
 # 229 "data/maps/Route117/scripts.pory"
 
 # 230 "data/maps/Route117/scripts.pory"
-Route117_Text_DanceInstructor:
+Route117_Text_LittleGirlDancing:
 # 231 "data/maps/Route117/scripts.pory"
-	.string "It's such a beautiful day that I\n"
+	.string "I love spinning!! Thanks for taking me\n"
 # 232 "data/maps/Route117/scripts.pory"
-	.string "thought we'd have class outside! Oh,\p"
+	.string "dancing, dad!$"
 # 233 "data/maps/Route117/scripts.pory"
-	.string "you must be wondering what the Elite\n"
-# 234 "data/maps/Route117/scripts.pory"
-	.string "Four member Phoebe is doing way out\p"
-# 235 "data/maps/Route117/scripts.pory"
-	.string "here...\p"
-# 236 "data/maps/Route117/scripts.pory"
-	.string "...\p"
-# 237 "data/maps/Route117/scripts.pory"
-	.string "Surprise! I'm her twin sister, Ursula! I\n"
-# 238 "data/maps/Route117/scripts.pory"
-	.string "may not be as good a battler as Phoebe,\p"
-# 239 "data/maps/Route117/scripts.pory"
-	.string "but I'm a way better dancer! Tell you\n"
-# 240 "data/maps/Route117/scripts.pory"
-	.string "what, if you can beat Wattson, come see\p"
-# 241 "data/maps/Route117/scripts.pory"
-	.string "me in Vendanturf Town and I'll give you\n"
-# 242 "data/maps/Route117/scripts.pory"
-	.string "a lesson!$"
-# 243 "data/maps/Route117/scripts.pory"
 
+# 234 "data/maps/Route117/scripts.pory"
+Route117_Text_DanceInstructor:
+# 235 "data/maps/Route117/scripts.pory"
+	.string "It's such a beautiful day that I\n"
+# 236 "data/maps/Route117/scripts.pory"
+	.string "thought we'd have class outside! Oh,\p"
+# 237 "data/maps/Route117/scripts.pory"
+	.string "you must be wondering what the Elite\n"
+# 238 "data/maps/Route117/scripts.pory"
+	.string "Four member Phoebe is doing way out\p"
+# 239 "data/maps/Route117/scripts.pory"
+	.string "here...\p"
+# 240 "data/maps/Route117/scripts.pory"
+	.string "...\p"
+# 241 "data/maps/Route117/scripts.pory"
+	.string "Surprise! I'm her twin sister, Ursula! I\n"
+# 242 "data/maps/Route117/scripts.pory"
+	.string "may not be as good a battler as Phoebe,\p"
+# 243 "data/maps/Route117/scripts.pory"
+	.string "but I'm a way better dancer! Tell you\n"
 # 244 "data/maps/Route117/scripts.pory"
-Route117_Text_RouteSignVerdanturf:
+	.string "what, if you can beat Wattson, come see\p"
 # 245 "data/maps/Route117/scripts.pory"
-	.string "ROUTE 117\n"
+	.string "me in Vendanturf Town and I'll give you\n"
 # 246 "data/maps/Route117/scripts.pory"
-	.string "{LEFT_ARROW} VERDANTURF TOWN$"
+	.string "a lesson!$"
 # 247 "data/maps/Route117/scripts.pory"
 
 # 248 "data/maps/Route117/scripts.pory"
-Route117_Text_RouteSignMauville:
+Route117_Text_RouteSignVerdanturf:
 # 249 "data/maps/Route117/scripts.pory"
 	.string "ROUTE 117\n"
 # 250 "data/maps/Route117/scripts.pory"
-	.string "{RIGHT_ARROW} MAUVILLE CITY$"
+	.string "{LEFT_ARROW} VERDANTURF TOWN$"
 # 251 "data/maps/Route117/scripts.pory"
 
 # 252 "data/maps/Route117/scripts.pory"
-Route117_Text_DayCareSign:
+Route117_Text_RouteSignMauville:
 # 253 "data/maps/Route117/scripts.pory"
-	.string "POKéMON DAY CARE\n"
+	.string "ROUTE 117\n"
 # 254 "data/maps/Route117/scripts.pory"
+	.string "{RIGHT_ARROW} MAUVILLE CITY$"
+# 255 "data/maps/Route117/scripts.pory"
+
+# 256 "data/maps/Route117/scripts.pory"
+Route117_Text_DayCareSign:
+# 257 "data/maps/Route117/scripts.pory"
+	.string "POKéMON DAY CARE\n"
+# 258 "data/maps/Route117/scripts.pory"
 	.string "“Let us raise your POKéMON.”$"
 
 Route117_EventScript_FantinaBattle::
-# 259 "data/maps/Route117/scripts.pory"
+# 263 "data/maps/Route117/scripts.pory"
 	trainerbattle_single TRAINER_FANTINA, Fantina_Greeting, Fantina_Outro, Route117_EventScript_FantinaDefeated, NO_MUSIC
-# 260 "data/maps/Route117/scripts.pory"
+# 264 "data/maps/Route117/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaGiveItems
-# 261 "data/maps/Route117/scripts.pory"
+# 265 "data/maps/Route117/scripts.pory"
 	msgbox PostBattle_Fantina, MSGBOX_AUTOCLOSE
-# 262 "data/maps/Route117/scripts.pory"
+# 266 "data/maps/Route117/scripts.pory"
 	waitmessage
 	end
 
 
 Route117_EventScript_FantinaDefeated::
-# 267 "data/maps/Route117/scripts.pory"
+# 271 "data/maps/Route117/scripts.pory"
 	goto Route117_EventScript_FantinaGiveItems
 	end
 
 
 Route117_EventScript_FantinaGiveItems::
-# 273 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_SHADOW_BALL
-# 274 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_BRICK_BREAK
-# 275 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_BANETTITE
-# 276 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_SABLENITE
 # 277 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_GENGARITE
+	giveitem ITEM_TM_SHADOW_BALL
 # 278 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT
+	giveitem ITEM_TM_BRICK_BREAK
 # 279 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+	giveitem ITEM_BANETTITE
 # 280 "data/maps/Route117/scripts.pory"
-	msgbox Fantina_ExplainItems
+	giveitem ITEM_SABLENITE
 # 281 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_GENGARITE
+# 282 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_EXPERT_BELT
+# 283 "data/maps/Route117/scripts.pory"
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+# 284 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 285 "data/maps/Route117/scripts.pory"
 	release
 	end
 
 
 Fantina_ExplainItems::
-# 285 "data/maps/Route117/scripts.pory"
+# 289 "data/maps/Route117/scripts.pory"
 	.string "Shadow Ball and Brick Break are two\n"
 	.string "very powerful moves. In addition, I had\p"
 	.string "a few spare Mega Stones for some\n"
@@ -560,17 +568,17 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Greeting::
-# 297 "data/maps/Route117/scripts.pory"
+# 301 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina. Did\n"
 	.string "you come here to enjoy the flowers,\p"
 	.string "too? Or were you looking for a battle?$"
 
 Fantina_Outro::
-# 303 "data/maps/Route117/scripts.pory"
+# 307 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\p"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 310 "data/maps/Route117/scripts.pory"
+# 314 "data/maps/Route117/scripts.pory"
 	.string "It's much prettier here than back home.$"

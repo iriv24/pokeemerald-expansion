@@ -5634,6 +5634,13 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonBackPic_Torterra[] = INCBIN_U32("graphics/pokemon/torterra/back.4bpp.lz");
     const u32 gMonShinyPalette_Torterra[] = INCBIN_U32("graphics/pokemon/torterra/shiny.gbapal.lz");
     const u8 gMonIcon_Torterra[] = INCBIN_U8("graphics/pokemon/torterra/icon.4bpp");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_TorterraMega[] = INCBIN_U32("graphics/pokemon/torterra/mega/megatorterra.4bpp.lz");
+    const u32 gMonPalette_TorterraMega[] = INCBIN_U32("graphics/pokemon/torterra/mega/megatorterra.gbapal.lz");
+    //const u32 gMonBackPic_LuxrayMega[] = INCBIN_U32("graphics/pokemon/luxray/mega/megaluxrayback.4bpp.lz");
+    //const u32 gMonShinyPalette_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/shiny.gbapal.lz");
+    //const u8 gMonIcon_LopunnyMega[] = INCBIN_U8("graphics/pokemon/lopunny/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Torterra[] = INCBIN_U8("graphics/pokemon/torterra/footprint.1bpp");
 #endif //P_FOOTPRINTS

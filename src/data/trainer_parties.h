@@ -2719,19 +2719,6 @@ static const struct TrainerMon sParty_Jeffrey1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Derek[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
-    .lvl = 16,
-    .species = SPECIES_DUSTOX,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
-    .lvl = 16,
-    .species = SPECIES_BEAUTIFLY,
-    }
-};
-
 static const struct TrainerMon sParty_Jeffrey2[] = {
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -12498,7 +12485,8 @@ static const struct TrainerMon sParty_Roark[] = {
 
 static const struct TrainerMon sParty_Gardenia[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 31, 30),
+         //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
     .lvl = 200,
     .species = SPECIES_ROSERADE,
     .heldItem = ITEM_MIRACLE_SEED,
@@ -12722,5 +12710,63 @@ static const struct TrainerMon sParty_Xavier[] = {
     .ability = ABILITY_OVERGROW,
     .heldItem = ITEM_MANECTITE,
     .moves = {MOVE_SEED_BOMB, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_HEAVY_SLAM}
+    },
+};
+
+static const struct TrainerMon sParty_Isaac[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_RILLABOOM,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_GRASSY_SURGE,
+    .heldItem = ITEM_TERRAIN_EXTENDER,
+    .moves = {MOVE_GRASSY_GLIDE, MOVE_WOOD_HAMMER, MOVE_KNOCK_OFF, MOVE_DRAIN_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_ALAKAZAM,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_MAGIC_GUARD,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_GRASS_KNOT, MOVE_FOCUS_BLAST}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_TYRANITAR,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_SAND_STREAM,
+    .heldItem = ITEM_CHOPLE_BERRY,
+    .moves = {MOVE_CRUNCH, MOVE_ROCK_SLIDE, MOVE_HIGH_HORSEPOWER, MOVE_DRAGON_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_AMPHAROS,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_STATIC,
+    .heldItem = ITEM_MAGNET,
+    .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_SIGNAL_BEAM, MOVE_TAIL_GLOW}
+    },
+    {
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
+    .lvl = 202,
+    .species = SPECIES_FLORGES,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_NATURAL_CURE,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_WISH, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_EMPOLEON,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_TORRENT,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_CUT, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK}
     },
 };

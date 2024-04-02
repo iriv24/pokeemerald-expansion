@@ -252,16 +252,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .pokemonOffset = 0,
         .trainerScale = 348,
         .trainerOffset = 6,
-        .frontPic = gMonFrontPic_Torterra,
+        .frontPic = gMonFrontPic_TorterraMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_Torterra,
+        .frontAnimFrames = sAnims_TorterraMega,
         .frontAnimId = ANIM_H_SHAKE,
         .backPic = gMonBackPic_Torterra,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 4,
         .backAnimId = BACK_ANIM_SHAKE_GLOW_GREEN,
-        .palette = gMonPalette_Torterra,
+        .palette = gMonPalette_TorterraMega,
         .shinyPalette = gMonShinyPalette_Torterra,
         .iconSprite = gMonIcon_Torterra,
         .iconPalIndex = 1,
@@ -271,6 +271,191 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sTorterraTeachableLearnset,
         .formSpeciesIdTable = sTorterraFormSpeciesIdTable,
         .formChangeTable = sTorterraFormChangeTable,
+    },
+
+    [SPECIES_EMPOLEON_MEGA_O] =
+    {
+        .baseHP        = 100, //+16
+        .baseAttack    = 150, //+64
+        .baseDefense   = 75,  //-13
+        .baseSpeed     = 120, //+60
+        .baseSpAttack  = 110, //-1
+        .baseSpDefense = 75,  //-26
+        .types = MON_TYPES(TYPE_WATER, TYPE_STEEL),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 265,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 239,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_STEELY_SPIRIT, ABILITY_STEELY_SPIRIT, ABILITY_STEELY_SPIRIT },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Empoleon"),
+        .cryId = CRY_EMPOLEON,
+        .natDexNum = NATIONAL_DEX_EMPOLEON,
+        .categoryName = _("Emperor"),
+        .height = 17,
+        .weight = 845,
+        .description = COMPOUND_STRING(
+            "The three horns that extend from its beak\n"
+            "attest to its power. It avoids unnecessary\n"
+            "disputes, but it will decimate anything\n"
+            "that threatens its pride."),
+        .pokemonScale = 259,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Empoleon,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Empoleon,
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_Empoleon,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_Empoleon,
+        .shinyPalette = gMonShinyPalette_Empoleon,
+        .iconSprite = gMonIcon_Empoleon,
+        .iconPalIndex = 0,
+        FOOTPRINT(Empoleon)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sEmpoleonLevelUpLearnset,
+        .teachableLearnset = sEmpoleonTeachableLearnset,
+        .formSpeciesIdTable = sEmpoleonFormSpeciesIdTable,
+        .formChangeTable = sEmpoleonFormChangeTable,
+    },
+
+    [SPECIES_EMPOLEON_MEGA_D] =
+    {
+        .baseHP        = 140, //+56
+        .baseAttack    = 75,  //-11
+        .baseDefense   = 145, //+57
+        .baseSpeed     = 50,  //-10
+        .baseSpAttack  = 75,  //-36
+        .baseSpDefense = 145, //+44
+        .types = MON_TYPES(TYPE_WATER, TYPE_STEEL),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 265,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 239,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Empoleon"),
+        .cryId = CRY_EMPOLEON,
+        .natDexNum = NATIONAL_DEX_EMPOLEON,
+        .categoryName = _("Emperor"),
+        .height = 17,
+        .weight = 845,
+        .description = COMPOUND_STRING(
+            "The three horns that extend from its beak\n"
+            "attest to its power. It avoids unnecessary\n"
+            "disputes, but it will decimate anything\n"
+            "that threatens its pride."),
+        .pokemonScale = 259,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Empoleon,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Empoleon,
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_Empoleon,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_Empoleon,
+        .shinyPalette = gMonShinyPalette_Empoleon,
+        .iconSprite = gMonIcon_Empoleon,
+        .iconPalIndex = 0,
+        FOOTPRINT(Empoleon)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sEmpoleonLevelUpLearnset,
+        .teachableLearnset = sEmpoleonTeachableLearnset,
+        .formSpeciesIdTable = sEmpoleonFormSpeciesIdTable,
+        .formChangeTable = sEmpoleonFormChangeTable,
+    },
+
+    [SPECIES_INFERNAPE_MEGA] =
+    {
+        .baseHP        = 76,
+        .baseAttack    = 137, //+33
+        .baseDefense   = 71,
+        .baseSpeed     = 142, //+34
+        .baseSpAttack  = 137, //+33
+        .baseSpDefense = 71,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 267,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 240,
+    #else
+        .expYield = 209,
+    #endif
+        .evYield_Attack = 1,
+        .evYield_Speed = 1,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Infernape"),
+        .cryId = CRY_INFERNAPE,
+        .natDexNum = NATIONAL_DEX_INFERNAPE,
+        .categoryName = _("Flame"),
+        .height = 12,
+        .weight = 550,
+        .description = COMPOUND_STRING(
+            "Its crown of fire is indicative of its\n"
+            "fiery nature. It uses a special kind of\n"
+            "martial arts involving all of its limbs to\n"
+            "take on any opponent."),
+        .pokemonScale = 282,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Infernape,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_Infernape,
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_Infernape,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        .palette = gMonPalette_Infernape,
+        .shinyPalette = gMonShinyPalette_Infernape,
+        .iconSprite = gMonIcon_Infernape,
+        .iconPalIndex = 0,
+        FOOTPRINT(Infernape)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sInfernapeLevelUpLearnset,
+        .teachableLearnset = sInfernapeTeachableLearnset,
+        .formSpeciesIdTable = sInfernapeFormSpeciesIdTable,
+        .formChangeTable = sInfernapeFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
 };

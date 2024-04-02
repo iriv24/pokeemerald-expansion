@@ -140,8 +140,7 @@ Route117_EventScript_RematchMaria::
 	end
 
 Route117_EventScript_Derek::
-	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat
-	msgbox Route117_Text_DerekPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route117_Text_DerekYouFoundMe, MSGBOX_NPC
 	end
 
 Route117_EventScript_Anna::
@@ -200,6 +199,11 @@ Route117_Text_MelinaDaycare:
 	.string "Yo I actually don't know if the eggs out\n"
 	.string "of the day care will have perfect IVs,\p"
 	.string "you sure can try though.$"
+
+Route117_Text_DerekYouFoundMe:
+	.string "Wow, you found me! I didn't think anyone\n"
+	.string "ever would! I guess I don't have Hidden\p"
+	.string "Power anymore, so you should have it!$"
 
 Route117_Text_DayCarePokemonHadNewMove:
 	.string "I left my POKéMON at the DAY CARE.\p"

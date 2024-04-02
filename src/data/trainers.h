@@ -2724,18 +2724,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Jeffrey1),
     },
 
-    [TRAINER_DEREK] =
-    {
-        .trainerClass = TRAINER_CLASS_BUG_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .trainerName = _("DEREK"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Derek),
-    },
-
     [TRAINER_JEFFREY_2] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
@@ -10290,7 +10278,19 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("XAVIER"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Xavier),
+    },
+
+    [TRAINER_ISAAC] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BUG_MANIAC,
+        .trainerName = _("ISAAC"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES,
+        .party = TRAINER_PARTY(sParty_Isaac),
     },
 };

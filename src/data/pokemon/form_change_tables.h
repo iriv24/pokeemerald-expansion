@@ -1121,5 +1121,20 @@ static const struct FormChange sTorterraFormChangeTable[] = {
 };
 #endif //P_FAMILY_TURTWIG
 
+#if P_FAMILY_PIPLUP
+static const struct FormChange sEmpoleonFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EMPOLEON_MEGA_O, ITEM_CHARIZARDITE_X},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EMPOLEON_MEGA_D, ITEM_CHARIZARDITE_Y},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_PIPLUP
+
+#if P_FAMILY_CHIMCHAR
+static const struct FormChange sInfernapeFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_INFERNAPE_MEGA, ITEM_MANECTITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_CHIMCHAR
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

@@ -342,6 +342,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Infernape)
         .levelUpLearnset = sInfernapeLevelUpLearnset,
         .teachableLearnset = sInfernapeTeachableLearnset,
+        .formSpeciesIdTable = sInfernapeFormSpeciesIdTable,
+        .formChangeTable = sInfernapeFormChangeTable,
     },
 #endif //P_FAMILY_CHIMCHAR
 
@@ -508,6 +510,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Empoleon)
         .levelUpLearnset = sEmpoleonLevelUpLearnset,
         .teachableLearnset = sEmpoleonTeachableLearnset,
+        .formSpeciesIdTable = sEmpoleonFormSpeciesIdTable,
+        .formChangeTable = sEmpoleonFormChangeTable,
     },
 #endif //P_FAMILY_PIPLUP
 
