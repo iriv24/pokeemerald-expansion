@@ -1232,6 +1232,8 @@ script Route104_EventScript_DawnDefeated{
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_MIRACLE_SEED, 10)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	giveitem(ITEM_HARBOR_MAIL, 1)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	msgbox(DawnGoodbye)
 	goto(Route104_EventScript_DawnExit)
 	end
