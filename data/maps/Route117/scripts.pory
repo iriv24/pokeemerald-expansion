@@ -55,25 +55,25 @@ Route117_EventScript_DayCareSign::
 	msgbox Route117_Text_DayCareSign, MSGBOX_SIGN
 	end
 
-Route117_EventScript_Isaac::
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
+Route117_EventScript_Ezekiel::
+	trainerbattle_single TRAINER_EZEKIEL_1, Route117_Text_EzekielIntro, Route117_Text_EzekielDefeat, Route117_EventScript_RegisterEzekiel
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchIsaac
-	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchEzekiel
+	msgbox Route117_Text_EzekielPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Route117_EventScript_RegisterIsaac::
+Route117_EventScript_RegisterEzekiel::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
-	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ISAAC_1
+	msgbox Route117_Text_EzekielRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_EZEKIEL_1
 	release
 	end
 
-Route117_EventScript_RematchIsaac::
-	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
-	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
+Route117_EventScript_RematchEzekiel::
+	trainerbattle_rematch TRAINER_EZEKIEL_1, Route117_Text_EzekielRematchIntro, Route117_Text_EzekielRematchDefeat
+	msgbox Route117_Text_EzekielPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Lydia::

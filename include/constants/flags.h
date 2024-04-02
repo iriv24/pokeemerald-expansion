@@ -431,7 +431,7 @@
 #define FLAG_REMATCH_CORY                    0x191
 #define FLAG_REMATCH_EDWIN                   0x192
 #define FLAG_REMATCH_LYDIA                   0x193
-#define FLAG_REMATCH_ISAAC                   0x194
+#define FLAG_REMATCH_EZEKIEL                 0x194
 #define FLAG_REMATCH_GABRIELLE               0x195
 #define FLAG_REMATCH_CATHERINE               0x196
 #define FLAG_REMATCH_JACKSON                 0x197

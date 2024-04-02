@@ -2325,32 +2325,32 @@ Route116_Text_JohnsonPostBattle:
 	.string "Want to stay here and keep\n"
 	.string "me company?$"
 
-Route117_Text_IsaacIntro:
+Route117_Text_EzekielIntro:
 	.string "Listen, could I get you to battle\n"
 	.string "the POKéMON I'm raising?$"
 
-Route117_Text_IsaacDefeat:
+Route117_Text_EzekielDefeat:
 	.string "You've raised yours superbly…$"
 
-Route117_Text_IsaacPostBattle:
+Route117_Text_EzekielPostBattle:
 	.string "POKéMON isn't all about power.\p"
 	.string "Polishing a unique aspect of one's\n"
 	.string "character is another way of enjoying\l"
 	.string "POKéMON.$"
 
-Route117_Text_IsaacRegister:
+Route117_Text_EzekielRegister:
 	.string "I'm going to redouble my training.\n"
 	.string "Would you come look in on us?$"
 
-Route117_Text_IsaacRematchIntro:
+Route117_Text_EzekielRematchIntro:
 	.string "The POKéMON I've been raising are\n"
 	.string "looking good, just like before.$"
 
-Route117_Text_IsaacRematchDefeat:
+Route117_Text_EzekielRematchDefeat:
 	.string "You know how to raise them properly.\n"
 	.string "You might have DAY CARE skills…$"
 
-Route117_Text_IsaacPostRematch:
+Route117_Text_EzekielPostRematch:
 	.string "Your POKéMON are growing good!\n"
 	.string "You should enter them in CONTESTS.$"
 

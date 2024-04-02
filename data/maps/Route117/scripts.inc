@@ -113,15 +113,15 @@ Route117_EventScript_DayCareSign::
 # 57 "data/maps/Route117/scripts.pory"
 
 # 58 "data/maps/Route117/scripts.pory"
-Route117_EventScript_Isaac::
+Route117_EventScript_Ezekiel::
 # 59 "data/maps/Route117/scripts.pory"
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
+	trainerbattle_single TRAINER_EZEKIEL_1, Route117_Text_EzekielIntro, Route117_Text_EzekielDefeat, Route117_EventScript_RegisterEzekiel
 # 60 "data/maps/Route117/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 61 "data/maps/Route117/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchIsaac
+	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchEzekiel
 # 62 "data/maps/Route117/scripts.pory"
-	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
+	msgbox Route117_Text_EzekielPostBattle, MSGBOX_DEFAULT
 # 63 "data/maps/Route117/scripts.pory"
 	release
 # 64 "data/maps/Route117/scripts.pory"
@@ -129,15 +129,15 @@ Route117_EventScript_Isaac::
 # 65 "data/maps/Route117/scripts.pory"
 
 # 66 "data/maps/Route117/scripts.pory"
-Route117_EventScript_RegisterIsaac::
+Route117_EventScript_RegisterEzekiel::
 # 67 "data/maps/Route117/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
 # 68 "data/maps/Route117/scripts.pory"
 	waitmovement 0
 # 69 "data/maps/Route117/scripts.pory"
-	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
+	msgbox Route117_Text_EzekielRegister, MSGBOX_DEFAULT
 # 70 "data/maps/Route117/scripts.pory"
-	register_matchcall TRAINER_ISAAC_1
+	register_matchcall TRAINER_EZEKIEL_1
 # 71 "data/maps/Route117/scripts.pory"
 	release
 # 72 "data/maps/Route117/scripts.pory"
@@ -145,11 +145,11 @@ Route117_EventScript_RegisterIsaac::
 # 73 "data/maps/Route117/scripts.pory"
 
 # 74 "data/maps/Route117/scripts.pory"
-Route117_EventScript_RematchIsaac::
+Route117_EventScript_RematchEzekiel::
 # 75 "data/maps/Route117/scripts.pory"
-	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
+	trainerbattle_rematch TRAINER_EZEKIEL_1, Route117_Text_EzekielRematchIntro, Route117_Text_EzekielRematchDefeat
 # 76 "data/maps/Route117/scripts.pory"
-	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
+	msgbox Route117_Text_EzekielPostRematch, MSGBOX_AUTOCLOSE
 # 77 "data/maps/Route117/scripts.pory"
 	end
 # 78 "data/maps/Route117/scripts.pory"

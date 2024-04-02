@@ -6454,16 +6454,16 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MayRoute119Torchic),
     },
 
-    [TRAINER_ISAAC_1] =
+    [TRAINER_EZEKIEL_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("EZEKIEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Isaac1),
+        .party = TRAINER_PARTY(sParty_Ezekiel1),
     },
 
     [TRAINER_DAVIS] =
@@ -6490,52 +6490,52 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Mitchell),
     },
 
-    [TRAINER_ISAAC_2] =
+    [TRAINER_EZEKIEL_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("EZEKIEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Isaac2),
+        .party = TRAINER_PARTY(sParty_Ezekiel2),
     },
 
-    [TRAINER_ISAAC_3] =
+    [TRAINER_EZEKIEL_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("EZEKIEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Isaac3),
+        .party = TRAINER_PARTY(sParty_Ezekiel3),
     },
 
-    [TRAINER_ISAAC_4] =
+    [TRAINER_EZEKIEL_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("EZEKIEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Isaac4),
+        .party = TRAINER_PARTY(sParty_Ezekiel4),
     },
 
-    [TRAINER_ISAAC_5] =
+    [TRAINER_EZEKIEL_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("EZEKIEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Isaac5),
+        .party = TRAINER_PARTY(sParty_Ezekiel5),
     },
 
     [TRAINER_LYDIA_1] =
