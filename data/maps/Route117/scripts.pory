@@ -140,7 +140,19 @@ Route117_EventScript_RematchMaria::
 	end
 
 Route117_EventScript_Derek::
-	msgbox Route117_Text_DerekYouFoundMe, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_HIDDEN_POWER, Route114_EventScript_ReceivedHP
+	msgbox Route117_Text_DerekYouFoundMe, MSGBOX_DEFAULT
+	giveitem ITEM_TM_HIDDEN_POWER
+	setflag FLAG_RECEIVED_TM_HIDDEN_POWER
+	msgbox Route117_Text_ExplainHP, MSGBOX_DEFAULT
+	release
+	end
+
+Route114_EventScript_ReceivedHP::
+	msgbox Route117_Text_ExplainHP, MSGBOX_DEFAULT
+	release
 	end
 
 Route117_EventScript_Anna::
@@ -204,6 +216,14 @@ Route117_Text_DerekYouFoundMe:
 	.string "Wow, you found me! I didn't think anyone\n"
 	.string "ever would! I guess I don't have Hidden\p"
 	.string "Power anymore, so you should have it!$"
+
+Route117_Text_ExplainHP:
+	.string "TM10 contains Hidden Power. That\n"
+	.string "move's type can change depending on\p"
+	.string "how your IVs are set. There's a guy\n"
+	.string "somewhere who can change your IVs for\p"
+	.string "that, I think he's further ahead\l"
+	.string "though.$"
 
 Route117_Text_DayCarePokemonHadNewMove:
 	.string "I left my POKéMON at the DAY CARE.\p"
