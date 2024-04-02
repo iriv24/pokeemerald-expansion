@@ -8812,6 +8812,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (moveType == TYPE_STEEL)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_RUSTY_AURA:
+        if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_TRANSISTOR:
         if (moveType == TYPE_ELECTRIC)
         {
@@ -8894,6 +8898,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
             break;
         case ABILITY_STEELY_SPIRIT:
             if (moveType == TYPE_STEEL)
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_RUSTY_AURA:
+            if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
             break;
         }

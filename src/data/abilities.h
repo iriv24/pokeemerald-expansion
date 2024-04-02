@@ -2667,4 +2667,17 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_RUSTY_AURA] =
+    {
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Rusty Aura"),
+    #else
+        .name = _("RustyAura"),
+    #endif
+        .description = COMPOUND_STRING("Boosts Steel/Water moves."),
+        .aiRating = 2,
+    },
+
+    
+
 };
