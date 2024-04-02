@@ -1480,13 +1480,13 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
         .speechLose = {EC_WORD_YOU_RE, EC_WORD_MORE, EC_WORD_HEALTHY, EC_WORD_THAN, EC_WORD_I_AM, EC_WORD_ELLIPSIS},
         .monSet = gBattleFrontierTrainerMons_Aiden
     },
-    [FRONTIER_TRAINER_XAVIER] = {
+    [FRONTIER_TRAINER_JAVIER] = {
         .facilityClass = FACILITY_CLASS_RUIN_MANIAC,
-        .trainerName = _("XAVIER"),
+        .trainerName = _("JAVIER"),
         .speechBefore = {EC_WORD_HEY_THERE, EC_WORD_EXCL, EC_EMPTY_WORD, EC_WORD_LOOK, EC_WORD_LOOK, EC_WORD_EXCL_EXCL},
         .speechWin = {EC_WORD_GOOD_BYE, EC_WORD_AND, EC_WORD_THANK_YOU, EC_WORD_THAT_WAS, EC_WORD_FUNNY, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WOWEE, EC_WORD_EXCL, EC_EMPTY_WORD, EC_WORD_NO, EC_WORD_NO, EC_WORD_EXCL_EXCL},
-        .monSet = gBattleFrontierTrainerMons_Xavier
+        .monSet = gBattleFrontierTrainerMons_Javier
     },
     [FRONTIER_TRAINER_CLINTON] = {
         .facilityClass = FACILITY_CLASS_COLLECTOR,

@@ -169,6 +169,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Torterra)
         .levelUpLearnset = sTorterraLevelUpLearnset,
         .teachableLearnset = sTorterraTeachableLearnset,
+        .formSpeciesIdTable = sTorterraFormSpeciesIdTable,
+        .formChangeTable = sTorterraFormChangeTable,
     },
 #endif //P_FAMILY_TURTWIG
 

@@ -758,7 +758,7 @@
 #define TRAINER_MARLENE                     752
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
-#define TRAINER_MELINA                      755
+#define TRAINER_XAVIER                      755
 #define TRAINER_BRANDI                      756
 #define TRAINER_AISHA                       757
 #define TRAINER_MAKAYLA                     758

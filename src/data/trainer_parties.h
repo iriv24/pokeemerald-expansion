@@ -12667,3 +12667,60 @@ static const struct TrainerMon sParty_Ursula[] = {
     .moves = {MOVE_REVELATION_DANCE, MOVE_QUIVER_DANCE, MOVE_AIR_CUTTER, MOVE_ROOST}
     },
 };
+
+static const struct TrainerMon sParty_Xavier[] = {
+   {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_GALVANTULA,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_COMPOUND_EYES,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_STICKY_WEB, MOVE_THUNDER, MOVE_BUG_BUZZ, MOVE_GIGA_DRAIN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_MALAMAR,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_CONTRARY,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_SUPERPOWER, MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_PLUCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_DARMANITAN,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_SHEER_FORCE,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_BRICK_BREAK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_MIMIKYU_DISGUISED,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_DISGUISE,
+    .heldItem = ITEM_SPELL_TAG,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_SHADOW_CLAW, MOVE_PLAY_ROUGH, MOVE_SHADOW_SNEAK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_GRENINJA,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_PROTEAN,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_WATER_SHURIKEN, MOVE_ICE_BEAM, MOVE_DARK_PULSE, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_TORTERRA,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_OVERGROW,
+    .heldItem = ITEM_MANECTITE,
+    .moves = {MOVE_SEED_BOMB, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_HEAVY_SLAM}
+    },
+};
