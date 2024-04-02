@@ -226,6 +226,7 @@ struct SpecialStatus
     u8 emergencyExited:1;
     u8 afterYou:1;
     u8 preventLifeOrbDamage:1; // So that Life Orb doesn't activate various effects.
+    u8 electromagnetismRedirected:1;
 };
 
 struct SideTimer

@@ -384,6 +384,7 @@ bool32 IsDamageMoveUsable(u32 move, u32 battlerAtk, u32 battlerDef)
     {
     case ABILITY_VOLT_ABSORB:
     case ABILITY_MOTOR_DRIVE:
+    case ABILITY_ELECTROMAGNETISM:
     case ABILITY_LIGHTNING_ROD:
         if (moveType == TYPE_ELECTRIC)
             return TRUE;
@@ -1131,6 +1132,8 @@ bool32 AI_IsBattlerGrounded(u32 battlerId)
     else if (holdEffect == HOLD_EFFECT_AIR_BALLOON)
         return FALSE;
     else if (AI_DATA->abilities[battlerId] == ABILITY_LEVITATE)
+        return FALSE;
+    else if (AI_DATA->abilities[battlerId] == ABILITY_ELECTROMAGNETISM)
         return FALSE;
     else if (IS_BATTLER_OF_TYPE(battlerId, TYPE_FLYING))
         return FALSE;
@@ -2358,7 +2361,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         hazardDamage += GetStealthHazardDamageByTypesAndHP(gMovesInfo[MOVE_STEALTH_ROCK].type, type1, type2, maxHp);
 
     if (flags & SIDE_STATUS_SPIKES && ((type1 != TYPE_FLYING && type2 != TYPE_FLYING
-        && ability != ABILITY_LEVITATE && holdEffect != HOLD_EFFECT_AIR_BALLOON)
+        && ability != ABILITY_LEVITATE && ability != ABILITY_ELECTROMAGNETISM && holdEffect != HOLD_EFFECT_AIR_BALLOON)
         || holdEffect == HOLD_EFFECT_IRON_BALL || gFieldStatuses & STATUS_FIELD_GRAVITY))
     {
         s32 spikesDmg = maxHp / ((5 - gSideTimers[GetBattlerSide(currBattler)].spikesAmount) * 2);

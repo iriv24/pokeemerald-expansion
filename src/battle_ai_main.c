@@ -931,6 +931,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             {
                 switch (aiData->abilities[BATTLE_PARTNER(battlerDef)])
                 {
+                case ABILITY_ELECTROMAGNETISM:
                 case ABILITY_LIGHTNING_ROD:
                     if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(move, aiData->abilities[battlerAtk]))
                         RETURN_SCORE_MINUS(20);
@@ -1643,7 +1644,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_MAGNITUDE:
-            if (aiData->abilities[battlerDef] == ABILITY_LEVITATE)
+            if (aiData->abilities[battlerDef] == ABILITY_LEVITATE || aiData->abilities[battlerDef] == ABILITY_ELECTROMAGNETISM)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_PARTING_SHOT:
@@ -2769,6 +2770,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     RETURN_SCORE_PLUS(WEAK_EFFECT);
                 }
                 break;
+            case ABILITY_ELECTROMAGNETISM:
             case ABILITY_LIGHTNING_ROD:
                 if (moveType == TYPE_ELECTRIC
                     && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_SPECIAL)
@@ -4210,7 +4212,8 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
     case EFFECT_ION_DELUGE:
         if ((aiData->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
           || aiData->abilities[battlerAtk] == ABILITY_MOTOR_DRIVE
-          || aiData->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD)
+          || aiData->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD
+          || aiData->abilities[battlerAtk] == ABILITY_ELECTROMAGNETISM)
           && gMovesInfo[predictedMove].type == TYPE_NORMAL)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
@@ -4269,7 +4272,8 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
         if (predictedMove != MOVE_NONE
          && (aiData->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
           || aiData->abilities[battlerAtk] == ABILITY_MOTOR_DRIVE
-          || aiData->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD))
+          || aiData->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD
+          || aiData->abilities[battlerAtk] == ABILITY_ELECTROMAGNETISM))
         {
             ADJUST_SCORE(DECENT_EFFECT);
         }

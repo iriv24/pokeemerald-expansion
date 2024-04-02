@@ -2655,4 +2655,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_ELECTROMAGNETISM] =
+    {
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Electromagntsm"),
+    #else
+        .name = _("Elctromgntsm"),
+    #endif
+        .description = COMPOUND_STRING("Floats, draws electricity."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
 };

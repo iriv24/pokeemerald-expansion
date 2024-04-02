@@ -12766,7 +12766,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     .species = SPECIES_EMPOLEON,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_TORRENT,
-    .heldItem = ITEM_MANECTITE,
+    .heldItem = ITEM_CHARIZARDITE_X,
     .moves = {MOVE_CUT, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK}
     },
 };
