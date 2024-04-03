@@ -3427,7 +3427,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 34,
     .species = SPECIES_LUXRAY,
-    .heldItem = ITEM_MANECTITE,
+    .heldItem = ITEM_LUXRITE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INTIMIDATE,
     .moves = {MOVE_THUNDER_FANG, MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_ICE_FANG}
@@ -12760,7 +12760,7 @@ static const struct TrainerMon sParty_DawnRoute111[] = {
     .species = SPECIES_EMPOLEON,
     .nature = NATURE_BOLD,
     .ability = ABILITY_TORRENT,
-    .heldItem = ITEM_CHARIZARDITE_Y,
+    .heldItem = ITEM_EMPOLEONITE_D,
     .moves = {MOVE_SURF, MOVE_FLASH_CANNON, MOVE_TOXIC, MOVE_ROOST}
     },
 };
@@ -12856,7 +12856,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     .species = SPECIES_TORTERRA,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_OVERGROW,
-    .heldItem = ITEM_MANECTITE,
+    .heldItem = ITEM_TORTERRITE,
     .moves = {MOVE_SEED_BOMB, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_HEAVY_SLAM}
     },
 };
@@ -12914,7 +12914,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     .species = SPECIES_EMPOLEON,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_TORRENT,
-    .heldItem = ITEM_CHARIZARDITE_X,
+    .heldItem = ITEM_EMPOLEONITE_O,
     .moves = {MOVE_CUT, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK}
     },
 };

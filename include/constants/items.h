@@ -1010,8 +1010,13 @@
 #define ITEM_SWAP_SNACK 838
 #define ITEM_TWICE_SPICED_RADISH 839
 #define ITEM_POKESHI_DOLL 840
+#define ITEM_LUXRITE 841
+#define ITEM_TORTERRITE 842
+#define ITEM_EMPOLEONITE_O 843
+#define ITEM_EMPOLEONITE_D 844
+#define ITEM_INFERNAPITE 845
 
-#define ITEMS_COUNT 841
+#define ITEMS_COUNT 846
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

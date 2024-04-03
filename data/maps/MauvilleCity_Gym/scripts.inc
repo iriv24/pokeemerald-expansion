@@ -159,7 +159,7 @@ MauvilleCity_Gym_EventScript_Wattson::
 # 80 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
 # 81 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_SHOCK_WAVE, MauvilleCity_Gym_EventScript_GiveShockWave2
+	goto_if_unset FLAG_RECEIVED_TM_VOLT_SWITCH, MauvilleCity_Gym_EventScript_GiveVoltSwitch2
 # 82 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_Gym_EventScript_CompletedNewMauville
 # 83 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -205,7 +205,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 # 103 "data/maps/MauvilleCity_Gym/scripts.pory"
 	playse SE_UNLOCK
 # 104 "data/maps/MauvilleCity_Gym/scripts.pory"
-	call MauvilleCity_Gym_EventScript_GiveShockWave
+	call MauvilleCity_Gym_EventScript_GiveVoltSwitch
 # 105 "data/maps/MauvilleCity_Gym/scripts.pory"
 	closemessage
 # 106 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -229,616 +229,646 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 # 115 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 116 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GiveShockWave2::
+MauvilleCity_Gym_EventScript_GiveVoltSwitch2::
 # 117 "data/maps/MauvilleCity_Gym/scripts.pory"
-	giveitem ITEM_TM_TELEPORT
+	giveitem ITEM_TM_VOLT_SWITCH
 # 118 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 119 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
+	giveitem ITEM_LUXRITE
 # 120 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 121 "data/maps/MauvilleCity_Gym/scripts.pory"
-	release
+	giveitem ITEM_MANECTITE
 # 122 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 123 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	giveitem ITEM_AMPHAROSITE
 # 124 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GiveShockWave::
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 125 "data/maps/MauvilleCity_Gym/scripts.pory"
-	giveitem ITEM_TM_TELEPORT
+	msgbox MauvilleCity_Gym_Text_ExplainVoltSwitch, MSGBOX_DEFAULT
 # 126 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
 # 127 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
+	release
 # 128 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
+	end
 # 129 "data/maps/MauvilleCity_Gym/scripts.pory"
-	return
+
 # 130 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_EventScript_GiveVoltSwitch::
 # 131 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_CompletedNewMauville::
+	giveitem ITEM_TM_VOLT_SWITCH
 # 132 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 133 "data/maps/MauvilleCity_Gym/scripts.pory"
-	release
+	giveitem ITEM_LUXRITE
 # 134 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 135 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	giveitem ITEM_MANECTITE
 # 136 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_WattsonRematch::
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 137 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
+	giveitem ITEM_AMPHAROSITE
 # 138 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
+	msgbox MauvilleCity_Gym_Text_ExplainVoltSwitch, MSGBOX_DEFAULT
 # 139 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
 # 140 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	return
 # 141 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Switch1::
+
 # 142 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lockall
+MauvilleCity_Gym_EventScript_CompletedNewMauville::
 # 143 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
 # 144 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_eq VAR_MAUVILLE_GYM_STATE, 1, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	release
 # 145 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_MAUVILLE_GYM_STATE, 1
+	end
 # 146 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_0x8004, 0
+
 # 147 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
+MauvilleCity_Gym_EventScript_WattsonRematch::
 # 148 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
 # 149 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
 # 150 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Switch2::
+	end
 # 151 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lockall
+
 # 152 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+MauvilleCity_Gym_EventScript_Switch1::
 # 153 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_eq VAR_MAUVILLE_GYM_STATE, 2, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	lockall
 # 154 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_MAUVILLE_GYM_STATE, 2
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
 # 155 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_0x8004, 1
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 1, MauvilleCity_Gym_EventScript_SwitchDoNothing
 # 156 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
+	setvar VAR_MAUVILLE_GYM_STATE, 1
 # 157 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	setvar VAR_0x8004, 0
 # 158 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
 # 159 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Switch3::
+	end
 # 160 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lockall
+
 # 161 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+MauvilleCity_Gym_EventScript_Switch2::
 # 162 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_eq VAR_MAUVILLE_GYM_STATE, 3, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	lockall
 # 163 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_MAUVILLE_GYM_STATE, 3
-# 164 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_0x8004, 2
-# 165 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
-# 166 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 167 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 168 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Switch4::
-# 169 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lockall
-# 170 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
-# 171 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_eq VAR_MAUVILLE_GYM_STATE, 4, MauvilleCity_Gym_EventScript_SwitchDoNothing
-# 172 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_MAUVILLE_GYM_STATE, 4
-# 173 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setvar VAR_0x8004, 3
-# 174 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 164 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 2, MauvilleCity_Gym_EventScript_SwitchDoNothing
+# 165 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_MAUVILLE_GYM_STATE, 2
+# 166 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_0x8004, 1
+# 167 "data/maps/MauvilleCity_Gym/scripts.pory"
 	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
-# 175 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 168 "data/maps/MauvilleCity_Gym/scripts.pory"
 	end
-# 176 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 169 "data/maps/MauvilleCity_Gym/scripts.pory"
 
-# 177 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_PressFloorSwitch::
-# 178 "data/maps/MauvilleCity_Gym/scripts.pory"
-	special MauvilleGymSetDefaultBarriers
-# 179 "data/maps/MauvilleCity_Gym/scripts.pory"
-	special MauvilleGymPressSwitch
-# 180 "data/maps/MauvilleCity_Gym/scripts.pory"
-	special DrawWholeMapView
-# 181 "data/maps/MauvilleCity_Gym/scripts.pory"
-	playse SE_UNLOCK
-# 182 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_MAUVILLE_GYM_BARRIERS_STATE, MauvilleCity_Gym_EventScript_ClearBarriersAltState
-# 183 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_unset FLAG_MAUVILLE_GYM_BARRIERS_STATE, MauvilleCity_Gym_EventScript_SetBarriersAltState
-# 184 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
-# 185 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 186 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 187 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_SwitchDoNothing::
-# 188 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
-# 189 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 190 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 191 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_SetBarriersAltState::
-# 192 "data/maps/MauvilleCity_Gym/scripts.pory"
-	setflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
-# 193 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
-# 194 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 195 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 196 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_ClearBarriersAltState::
-# 197 "data/maps/MauvilleCity_Gym/scripts.pory"
-	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
-# 198 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
-# 199 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 200 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 201 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Kirk::
-# 202 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_KIRK, MauvilleCity_Gym_Text_KirkIntro, MauvilleCity_Gym_Text_KirkDefeat
-# 203 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_KirkPostBattle, MSGBOX_AUTOCLOSE
-# 204 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 205 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 206 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Shawn::
-# 207 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_SHAWN, MauvilleCity_Gym_Text_ShawnIntro, MauvilleCity_Gym_Text_ShawnDefeat
-# 208 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_ShawnPostBattle, MSGBOX_AUTOCLOSE
-# 209 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 210 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 211 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Ben::
-# 212 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BEN, MauvilleCity_Gym_Text_BenIntro, MauvilleCity_Gym_Text_BenDefeat
-# 213 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_BenPostBattle, MSGBOX_AUTOCLOSE
-# 214 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 215 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 216 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Vivian::
-# 217 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_VIVIAN, MauvilleCity_Gym_Text_VivianIntro, MauvilleCity_Gym_Text_VivianDefeat
-# 218 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_VivianPostBattle, MSGBOX_AUTOCLOSE
-# 219 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 220 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 221 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_Angelo::
-# 222 "data/maps/MauvilleCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_ANGELO, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat
-# 223 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_AngeloPostBattle, MSGBOX_AUTOCLOSE
-# 224 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 225 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 226 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GymGuide::
-# 227 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lock
-# 228 "data/maps/MauvilleCity_Gym/scripts.pory"
-	faceplayer
-# 229 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_GymGuidePostVictory
-# 230 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-# 231 "data/maps/MauvilleCity_Gym/scripts.pory"
-	release
-# 232 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 233 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 234 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GymGuidePostVictory::
-# 235 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
-# 236 "data/maps/MauvilleCity_Gym/scripts.pory"
-	release
-# 237 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
-# 238 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 239 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_LeftGymStatue::
-# 240 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 170 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Switch3::
+# 171 "data/maps/MauvilleCity_Gym/scripts.pory"
 	lockall
+# 172 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+# 173 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 3, MauvilleCity_Gym_EventScript_SwitchDoNothing
+# 174 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_MAUVILLE_GYM_STATE, 3
+# 175 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_0x8004, 2
+# 176 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
+# 177 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 178 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 179 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Switch4::
+# 180 "data/maps/MauvilleCity_Gym/scripts.pory"
+	lockall
+# 181 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+# 182 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 4, MauvilleCity_Gym_EventScript_SwitchDoNothing
+# 183 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_MAUVILLE_GYM_STATE, 4
+# 184 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setvar VAR_0x8004, 3
+# 185 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
+# 186 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 187 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 188 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_PressFloorSwitch::
+# 189 "data/maps/MauvilleCity_Gym/scripts.pory"
+	special MauvilleGymSetDefaultBarriers
+# 190 "data/maps/MauvilleCity_Gym/scripts.pory"
+	special MauvilleGymPressSwitch
+# 191 "data/maps/MauvilleCity_Gym/scripts.pory"
+	special DrawWholeMapView
+# 192 "data/maps/MauvilleCity_Gym/scripts.pory"
+	playse SE_UNLOCK
+# 193 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_set FLAG_MAUVILLE_GYM_BARRIERS_STATE, MauvilleCity_Gym_EventScript_ClearBarriersAltState
+# 194 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_unset FLAG_MAUVILLE_GYM_BARRIERS_STATE, MauvilleCity_Gym_EventScript_SetBarriersAltState
+# 195 "data/maps/MauvilleCity_Gym/scripts.pory"
+	releaseall
+# 196 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 197 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 198 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_SwitchDoNothing::
+# 199 "data/maps/MauvilleCity_Gym/scripts.pory"
+	releaseall
+# 200 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 201 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 202 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_SetBarriersAltState::
+# 203 "data/maps/MauvilleCity_Gym/scripts.pory"
+	setflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
+# 204 "data/maps/MauvilleCity_Gym/scripts.pory"
+	releaseall
+# 205 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 206 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 207 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_ClearBarriersAltState::
+# 208 "data/maps/MauvilleCity_Gym/scripts.pory"
+	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
+# 209 "data/maps/MauvilleCity_Gym/scripts.pory"
+	releaseall
+# 210 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 211 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 212 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Kirk::
+# 213 "data/maps/MauvilleCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_KIRK, MauvilleCity_Gym_Text_KirkIntro, MauvilleCity_Gym_Text_KirkDefeat
+# 214 "data/maps/MauvilleCity_Gym/scripts.pory"
+	msgbox MauvilleCity_Gym_Text_KirkPostBattle, MSGBOX_AUTOCLOSE
+# 215 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 216 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 217 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Shawn::
+# 218 "data/maps/MauvilleCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_SHAWN, MauvilleCity_Gym_Text_ShawnIntro, MauvilleCity_Gym_Text_ShawnDefeat
+# 219 "data/maps/MauvilleCity_Gym/scripts.pory"
+	msgbox MauvilleCity_Gym_Text_ShawnPostBattle, MSGBOX_AUTOCLOSE
+# 220 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 221 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 222 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Ben::
+# 223 "data/maps/MauvilleCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_BEN, MauvilleCity_Gym_Text_BenIntro, MauvilleCity_Gym_Text_BenDefeat
+# 224 "data/maps/MauvilleCity_Gym/scripts.pory"
+	msgbox MauvilleCity_Gym_Text_BenPostBattle, MSGBOX_AUTOCLOSE
+# 225 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 226 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 227 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Vivian::
+# 228 "data/maps/MauvilleCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_VIVIAN, MauvilleCity_Gym_Text_VivianIntro, MauvilleCity_Gym_Text_VivianDefeat
+# 229 "data/maps/MauvilleCity_Gym/scripts.pory"
+	msgbox MauvilleCity_Gym_Text_VivianPostBattle, MSGBOX_AUTOCLOSE
+# 230 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 231 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 232 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_Angelo::
+# 233 "data/maps/MauvilleCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_ANGELO, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat
+# 234 "data/maps/MauvilleCity_Gym/scripts.pory"
+	msgbox MauvilleCity_Gym_Text_AngeloPostBattle, MSGBOX_AUTOCLOSE
+# 235 "data/maps/MauvilleCity_Gym/scripts.pory"
+	end
+# 236 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 237 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_GymGuide::
+# 238 "data/maps/MauvilleCity_Gym/scripts.pory"
+	lock
+# 239 "data/maps/MauvilleCity_Gym/scripts.pory"
+	faceplayer
+# 240 "data/maps/MauvilleCity_Gym/scripts.pory"
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_GymGuidePostVictory
 # 241 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE03_GET, MauvilleCity_Gym_EventScript_GymStatueCertified
+	msgbox MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 # 242 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto MauvilleCity_Gym_EventScript_GymStatue
+	release
 # 243 "data/maps/MauvilleCity_Gym/scripts.pory"
 	end
 # 244 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 245 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_RightGymStatue::
+MauvilleCity_Gym_EventScript_GymGuidePostVictory::
 # 246 "data/maps/MauvilleCity_Gym/scripts.pory"
-	lockall
+	msgbox MauvilleCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
 # 247 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE03_GET, MauvilleCity_Gym_EventScript_GymStatueCertified
+	release
 # 248 "data/maps/MauvilleCity_Gym/scripts.pory"
-	goto MauvilleCity_Gym_EventScript_GymStatue
-# 249 "data/maps/MauvilleCity_Gym/scripts.pory"
 	end
-# 250 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 249 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 250 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_EventScript_LeftGymStatue::
 # 251 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GymStatueCertified::
+	lockall
 # 252 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE03_GET, MauvilleCity_Gym_EventScript_GymStatueCertified
 # 253 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
+	goto MauvilleCity_Gym_EventScript_GymStatue
 # 254 "data/maps/MauvilleCity_Gym/scripts.pory"
 	end
 # 255 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 256 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_EventScript_GymStatue::
+MauvilleCity_Gym_EventScript_RightGymStatue::
 # 257 "data/maps/MauvilleCity_Gym/scripts.pory"
-	msgbox MauvilleCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+	lockall
 # 258 "data/maps/MauvilleCity_Gym/scripts.pory"
-	releaseall
+	goto_if_set FLAG_BADGE03_GET, MauvilleCity_Gym_EventScript_GymStatueCertified
 # 259 "data/maps/MauvilleCity_Gym/scripts.pory"
-	end
+	goto MauvilleCity_Gym_EventScript_GymStatue
 # 260 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	end
 # 261 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymGuideAdvice:
+
 # 262 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hey, how's it going, CHAMPION-\n"
+MauvilleCity_Gym_EventScript_GymStatueCertified::
 # 263 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "bound {PLAYER}?\p"
+	msgbox MauvilleCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
 # 264 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON, the LEADER of MAUVILLE\n"
+	releaseall
 # 265 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "GYM, uses ELECTRIC-type POKéMON.\p"
+	end
 # 266 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "If you challenge him with WATER-type\n"
+
 # 267 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "POKéMON, he'll zap them! Bzzt!\p"
+MauvilleCity_Gym_EventScript_GymStatue::
 # 268 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "And, he's put in switch-controlled\n"
+	msgbox MauvilleCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 # 269 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "doors all over his GYM! Eccentric!\p"
+	releaseall
 # 270 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hey, go for it!$"
+	end
 # 271 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 272 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymGuidePostVictory:
+MauvilleCity_Gym_Text_GymGuideAdvice:
 # 273 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Whoa, you're electrifying!\n"
+	.string "Hey, how's it going, CHAMPION-\n"
 # 274 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You've powered the door open!$"
+	.string "bound {PLAYER}?\p"
 # 275 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "WATTSON, the LEADER of MAUVILLE\n"
 # 276 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkIntro:
+	.string "GYM, uses ELECTRIC-type POKéMON.\p"
 # 277 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "My electric soul, it'll shatter your\n"
+	.string "If you challenge him with WATER-type\n"
 # 278 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "dreams whole, whoa-yeahah!$"
+	.string "POKéMON, he'll zap them! Bzzt!\p"
 # 279 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "And, he's put in switch-controlled\n"
 # 280 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkDefeat:
+	.string "doors all over his GYM! Eccentric!\p"
 # 281 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "That was plugged in, amped up,\n"
+	.string "Hey, go for it!$"
 # 282 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "over-driven electric, man!$"
+
 # 283 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_GymGuidePostVictory:
 # 284 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkPostBattle:
+	.string "Whoa, you're electrifying!\n"
 # 285 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "POKéMON and rock, it's all about heart,\n"
+	.string "You've powered the door open!$"
 # 286 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "whoa-yeah!$"
+
 # 287 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_KirkIntro:
 # 288 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnIntro:
+	.string "My electric soul, it'll shatter your\n"
 # 289 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I trained under WATTSON!\n"
+	.string "dreams whole, whoa-yeahah!$"
 # 290 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "There ain't no way I'll lose easily!$"
-# 291 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 291 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_KirkDefeat:
 # 292 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnDefeat:
+	.string "That was plugged in, amped up,\n"
 # 293 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Unplugged and turned off…$"
+	.string "over-driven electric, man!$"
 # 294 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 295 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnPostBattle:
+MauvilleCity_Gym_Text_KirkPostBattle:
 # 296 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON, our GYM LEADER, has been\n"
+	.string "POKéMON and rock, it's all about heart,\n"
 # 297 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "around for a long, long time.\p"
+	.string "whoa-yeah!$"
 # 298 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He was battling even before your\n"
+
 # 299 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "daddy was born, that tough coot.$"
+MauvilleCity_Gym_Text_ShawnIntro:
 # 300 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "I trained under WATTSON!\n"
 # 301 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenIntro:
+	.string "There ain't no way I'll lose easily!$"
 # 302 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "This GYM's got puzzles!\n"
+
 # 303 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Isn't it fun?$"
+MauvilleCity_Gym_Text_ShawnDefeat:
 # 304 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "Unplugged and turned off…$"
 # 305 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenDefeat:
-# 306 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "It's no fun to lose…$"
-# 307 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 306 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_ShawnPostBattle:
+# 307 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "WATTSON, our GYM LEADER, has been\n"
 # 308 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenPostBattle:
+	.string "around for a long, long time.\p"
 # 309 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON says he likes setting up\n"
+	.string "He was battling even before your\n"
 # 310 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "little traps with switches.$"
+	.string "daddy was born, that tough coot.$"
 # 311 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 312 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianIntro:
+MauvilleCity_Gym_Text_BenIntro:
 # 313 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "With my charm and my POKéMON's moves,\n"
+	.string "This GYM's got puzzles!\n"
 # 314 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "you'll be shocked!$"
+	.string "Isn't it fun?$"
 # 315 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 316 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianDefeat:
+MauvilleCity_Gym_Text_BenDefeat:
 # 317 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I'm shocked by your power!$"
+	.string "It's no fun to lose…$"
 # 318 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 319 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianPostBattle:
+MauvilleCity_Gym_Text_BenPostBattle:
 # 320 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I've heard that MAUVILLE was founded\n"
+	.string "WATTSON says he likes setting up\n"
 # 321 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "by WATTSON.\p"
+	.string "little traps with switches.$"
 # 322 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He was a TRAINER long before we\n"
+
 # 323 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "became TRAINERS.\l"
+MauvilleCity_Gym_Text_VivianIntro:
 # 324 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He must know all sorts of things!$"
+	.string "With my charm and my POKéMON's moves,\n"
 # 325 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "you'll be shocked!$"
 # 326 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloIntro:
+
 # 327 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I love shiny things!$"
+MauvilleCity_Gym_Text_VivianDefeat:
 # 328 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "I'm shocked by your power!$"
 # 329 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloDefeat:
-# 330 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oh…\n"
-# 331 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "My eyes are frazzled…$"
-# 332 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 330 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_VivianPostBattle:
+# 331 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I've heard that MAUVILLE was founded\n"
+# 332 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "by WATTSON.\p"
 # 333 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloPostBattle:
+	.string "He was a TRAINER long before we\n"
 # 334 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE GYM's WATTSON has a shiny\n"
+	.string "became TRAINERS.\l"
 # 335 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "forehead. It makes me happy!$"
+	.string "He must know all sorts of things!$"
 # 336 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 337 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonIntro:
+MauvilleCity_Gym_Text_AngeloIntro:
 # 338 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I've given up on my plans to convert\n"
+	.string "I love shiny things!$"
 # 339 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "the city, I have.\p"
+
 # 340 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "And so, I put my time into making\n"
+MauvilleCity_Gym_Text_AngeloDefeat:
 # 341 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "door traps in my GYM.\p"
+	.string "Oh…\n"
 # 342 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oh? Now, what are you doing here?\p"
+	.string "My eyes are frazzled…$"
 # 343 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "What's that? You say you've gotten\n"
+
 # 344 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "past all my rigged doors?\p"
+MauvilleCity_Gym_Text_AngeloPostBattle:
 # 345 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahah!\n"
+	.string "MAUVILLE GYM's WATTSON has a shiny\n"
 # 346 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Now, that is amusing!\p"
+	.string "forehead. It makes me happy!$"
 # 347 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Then, I, WATTSON, the LEADER of\n"
+
 # 348 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE GYM, shall electrify you!$"
+MauvilleCity_Gym_Text_WattsonIntro:
 # 349 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "I've given up on my plans to convert\n"
 # 350 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonDefeat:
+	.string "the city, I have.\p"
 # 351 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahah!\n"
+	.string "And so, I put my time into making\n"
 # 352 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Fine, I lost!\p"
+	.string "door traps in my GYM.\p"
 # 353 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You ended up giving me a thrill!\n"
+	.string "Oh? Now, what are you doing here?\p"
 # 354 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Take this BADGE!$"
+	.string "What's that? You say you've gotten\n"
 # 355 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "past all my rigged doors?\p"
 # 356 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ReceivedDynamoBadge:
-# 357 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "{PLAYER} received the DYNAMO BADGE\n"
-# 358 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "from WATTSON.$"
-# 359 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 360 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-# 361 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "With the DYNAMO BADGE, POKéMON can\n"
-# 362 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "use ROCK SMASH out of battle.\p"
-# 363 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "And, it will make your POKéMON a little\n"
-# 364 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "bit faster, too.\p"
-# 365 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hmm…\n"
-# 366 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You should take this, too!$"
-# 367 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 368 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ExplainShockWave:
-# 369 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "That TM34 there contains SHOCK WAVE.\p"
-# 370 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "It's a trustworthy move that never\n"
-# 371 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "misses! You can count on it!\p"
-# 372 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "… … … … … …$"
-# 373 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 374 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_RegisteredWattson:
-# 375 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Registered GYM LEADER WATTSON\n"
-# 376 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
-# 377 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 378 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPostBattle:
-# 379 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I swell with optimism, seeing a promising\n"
-# 380 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "young TRAINER like you!$"
-# 381 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 382 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
-# 383 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Wahahahah!\n"
-# 384 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Go forth and endeavor, youngster!$"
-# 385 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 357 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Now, that is amusing!\p"
+# 358 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Then, I, WATTSON, the LEADER of\n"
+# 359 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "MAUVILLE GYM, shall electrify you!$"
+# 360 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 361 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonDefeat:
+# 362 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Wahahahah!\n"
+# 363 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Fine, I lost!\p"
+# 364 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You ended up giving me a thrill!\n"
+# 365 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Take this BADGE!$"
+# 366 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 367 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_ReceivedDynamoBadge:
+# 368 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "{PLAYER} received the DYNAMO BADGE\n"
+# 369 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "from WATTSON.$"
+# 370 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 371 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
+# 372 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "With the DYNAMO BADGE, POKéMON can\n"
+# 373 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "use ROCK SMASH out of battle.\p"
+# 374 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "And, it will make your POKéMON a little\n"
+# 375 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "bit faster, too.\p"
+# 376 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Hmm…\n"
+# 377 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You should take this, too!$"
+# 378 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 379 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_ExplainVoltSwitch:
+# 380 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "That TM92 there contains Volt Switch.\p"
+# 381 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "It will let you zap an opponent and\n"
+# 382 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "then switch out immediately, pretty\p"
+# 383 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "handy! I also included some of my\n"
+# 384 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "favorite Mega Stones, hopefully once\p"
+# 385 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "you get the Mega Ring they'll be of some\n"
 # 386 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymStatue:
+	.string "use to you.\p"
 # 387 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "… … … … … …$"
 # 388 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 389 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymStatueCertified:
+MauvilleCity_Gym_Text_RegisteredWattson:
 # 390 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM\p"
+	.string "Registered GYM LEADER WATTSON\n"
 # 391 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
+	.string "in the POKéNAV.$"
 # 392 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "{PLAYER}$"
+
 # 393 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_WattsonPostBattle:
 # 394 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPreRematch:
+	.string "I swell with optimism, seeing a promising\n"
 # 395 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "young TRAINER like you!$"
 # 396 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I know what you want.\l"
+
 # 397 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You want to battle my POKéMON!\p"
+MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 # 398 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahaha!\p"
+	.string "Wahahahah!\n"
 # 399 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I'll make sparks fly from you!\n"
+	.string "Go forth and endeavor, youngster!$"
 # 400 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Don't say I didn't warn you!$"
+
 # 401 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_GymStatue:
 # 402 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonRematchDefeat:
+	.string "MAUVILLE CITY POKéMON GYM$"
 # 403 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oof…\n"
+
 # 404 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Our batteries ran dry…$"
+MauvilleCity_Gym_Text_GymStatueCertified:
 # 405 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "MAUVILLE CITY POKéMON GYM\p"
 # 406 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPostRematch:
+	.string "WATTSON'S CERTIFIED TRAINERS:\n"
 # 407 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON: We'll have to recharge our\n"
+	.string "{PLAYER}$"
 # 408 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "batteries again.\p"
-# 409 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "When we're fully charged up, we'll\n"
-# 410 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "gladly accept your challenge.\p"
-# 411 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "So, come back again sometime,\n"
-# 412 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "won't you?$"
-# 413 "data/maps/MauvilleCity_Gym/scripts.pory"
 
-# 414 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-# 415 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 409 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonPreRematch:
+# 410 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "WATTSON: Ah-ha! Here at last!\n"
-# 416 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 411 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "I know what you want.\l"
-# 417 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 412 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "You want to battle my POKéMON!\p"
-# 418 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 413 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Wahahahaha!\p"
+# 414 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I'll make sparks fly from you!\n"
+# 415 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Don't say I didn't warn you!$"
+# 416 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 417 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonRematchDefeat:
+# 418 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Oof…\n"
 # 419 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oops! Wait!\n"
+	.string "Our batteries ran dry…$"
 # 420 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You've only one POKéMON with you!\p"
+
 # 421 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Come see me with two or more\n"
+MauvilleCity_Gym_Text_WattsonPostRematch:
 # 422 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "WATTSON: We'll have to recharge our\n"
+# 423 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "batteries again.\p"
+# 424 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "When we're fully charged up, we'll\n"
+# 425 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "gladly accept your challenge.\p"
+# 426 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "So, come back again sometime,\n"
+# 427 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "won't you?$"
+# 428 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 429 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
+# 430 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "WATTSON: Ah-ha! Here at last!\n"
+# 431 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I know what you want.\l"
+# 432 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You want to battle my POKéMON!\p"
+# 433 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Wahahahaha!\p"
+# 434 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Oops! Wait!\n"
+# 435 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You've only one POKéMON with you!\p"
+# 436 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Come see me with two or more\n"
+# 437 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "POKéMON, all right?$"

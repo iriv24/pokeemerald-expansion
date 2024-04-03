@@ -884,6 +884,12 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SWAP_SNACK] = {gItemIcon_SwapSnack, gItemIconPalette_SwapSnack},
     [ITEM_TWICE_SPICED_RADISH] = {gItemIcon_TwiceSpicedRadish, gItemIconPalette_TwiceSpicedRadish},
     [ITEM_POKESHI_DOLL] = {gItemIcon_PokeshiDoll, gItemIconPalette_PokeshiDoll},
+    [ITEM_LUXRITE] = {gItemIcon_Beedrillite, gItemIconPalette_Beedrillite},
+    [ITEM_TORTERRITE] = {gItemIcon_Venusaurite, gItemIconPalette_Venusaurite},
+    [ITEM_EMPOLEONITE_O] = {gItemIcon_CharizarditeX, gItemIconPalette_CharizarditeX},
+    [ITEM_EMPOLEONITE_D] = {gItemIcon_Blastoisinite, gItemIconPalette_Blastoisinite},
+    [ITEM_INFERNAPITE] = {gItemIcon_Blazikenite, gItemIconPalette_Blazikenite},
+    
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };
