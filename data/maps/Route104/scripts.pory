@@ -1272,8 +1272,8 @@ script Route104_EventScript_DawnExit{
 	call_if_eq(VAR_0x8008, 1, ApplyMovementDawn)
 	call_if_eq(VAR_0x8008, 2, ApplyMovementDawn)
 	removeobject(35)
-	setflag(FLAG_UNUSED_DAWN)
-	setvar(VAR_UNUSED_FOUGHT_DAWN104, 1)
+	setflag(FLAG_DAWN_104)
+	setvar(VAR_FOUGHT_DAWN_104, 1)
 	savebgm(MUS_DUMMY)
 	fadedefaultbgm
 	releaseall

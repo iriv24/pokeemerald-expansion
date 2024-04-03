@@ -483,7 +483,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_UNUSED_DAWN"
+      "flag": "FLAG_DAWN_104"
     }
   ],
   "warp_events": [
@@ -559,7 +559,7 @@
       "x": 24,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_UNUSED_FOUGHT_DAWN104",
+      "var": "VAR_FOUGHT_DAWN_104",
       "var_value": "0",
       "script": "Route104_EventScript_DawnTrigger1"
     },
@@ -568,7 +568,7 @@
       "x": 25,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_UNUSED_FOUGHT_DAWN104",
+      "var": "VAR_FOUGHT_DAWN_104",
       "var_value": "0",
       "script": "Route104_EventScript_DawnTrigger2"
     }

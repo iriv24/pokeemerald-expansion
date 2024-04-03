@@ -46,7 +46,7 @@
 #define FLAG_UNUSED_GRASSSTARTER    0x21
 #define FLAG_UNUSED_FIRESTARTER    0x22
 #define FLAG_UNUSED_TOUCHBALLS    0x23
-#define FLAG_UNUSED_DAWN     0x24
+#define FLAG_DAWN_104     0x24
 #define FLAG_RECEIVED_TM_ROCK_TOMB   0x25
 #define FLAG_UNUSED_POKEMONPCMENU    0x26
 #define FLAG_PARTY_MOVES     0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
@@ -54,7 +54,7 @@
 #define FLAG_RECEIVED_RUSTBORO_EGG    0x2A
 #define FLAG_RECEIVED_SETUP_TMS    0x2B
 #define FLAG_RECEIVED_TM_SHADOW_BALL    0x2C
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_DAWN_111    0x2D
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag

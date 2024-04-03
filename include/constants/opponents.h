@@ -747,7 +747,7 @@
 #define TRAINER_CAROLINA                    741
 #define TRAINER_ELIJAH                      742
 #define TRAINER_CELIA                       743
-#define TRAINER_BRYAN                       744
+#define TRAINER_DAWN_ROUTE_111              744
 #define TRAINER_BRANDEN                     745
 #define TRAINER_BRYANT                      746
 #define TRAINER_SHAYLA                      747

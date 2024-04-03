@@ -2501,9 +2501,9 @@ Route104_EventScript_DawnExit::
 # 1274 "data/maps/Route104/scripts.pory"
 	removeobject 35
 # 1275 "data/maps/Route104/scripts.pory"
-	setflag FLAG_UNUSED_DAWN
+	setflag FLAG_DAWN_104
 # 1276 "data/maps/Route104/scripts.pory"
-	setvar VAR_UNUSED_FOUGHT_DAWN104, 1
+	setvar VAR_FOUGHT_DAWN_104, 1
 # 1277 "data/maps/Route104/scripts.pory"
 	savebgm MUS_DUMMY
 # 1278 "data/maps/Route104/scripts.pory"

@@ -266,10 +266,10 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_FOUGHT_DAWN104                        0x40F9
+#define VAR_FOUGHT_DAWN_104                              0x40F9
 #define VAR_UNUSED_FOUGHT_ROARK116                       0x40FA
 #define VAR_BEAT_WATTSON                                 0x40FB
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_FOUGHT_DAWN_111                              0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
