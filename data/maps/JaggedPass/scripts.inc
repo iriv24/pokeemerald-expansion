@@ -502,3 +502,72 @@ JaggedPass_Text_AutumnPostBattle:
 	.string "What is that odd rock protrusion\n"
 # 252 "data/maps/JaggedPass/scripts.pory"
 	.string "a little up the hill from here?$"
+
+JaggedPass_EventScript_MayleneBattle::
+# 257 "data/maps/JaggedPass/scripts.pory"
+	trainerbattle_single TRAINER_MAYLENE, Maylene_Greeting, Maylene_Outro, JaggedPass_EventScript_MayleneDefeated, NO_MUSIC
+# 258 "data/maps/JaggedPass/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneGiveItems
+# 259 "data/maps/JaggedPass/scripts.pory"
+	msgbox PostBattle_Maylene, MSGBOX_AUTOCLOSE
+# 260 "data/maps/JaggedPass/scripts.pory"
+	waitmessage
+	end
+
+
+JaggedPass_EventScript_MayleneDefeated::
+# 265 "data/maps/JaggedPass/scripts.pory"
+	goto JaggedPass_EventScript_MayleneGiveItems
+	end
+
+
+JaggedPass_EventScript_MayleneGiveItems::
+# 271 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_DRAIN_PUNCH
+# 272 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LUCARIONITE
+# 273 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LIFE_ORB
+# 274 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_PUNCHING_GLOVE
+# 275 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_HEAVY_DUTY_BOOTS
+# 276 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LEFTOVERS
+# 277 "data/maps/JaggedPass/scripts.pory"
+	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
+# 278 "data/maps/JaggedPass/scripts.pory"
+	msgbox Maylene_ExplainItems
+# 279 "data/maps/JaggedPass/scripts.pory"
+	release
+	end
+
+
+Maylene_ExplainItems::
+# 283 "data/maps/JaggedPass/scripts.pory"
+	.string "Drain Punch allows your Pokémon to\n"
+	.string "absorb health with each strike. The\p"
+	.string "Life Orb boosts the power of your\n"
+	.string "Pokémon's moves at the cost of some of\p"
+	.string "its health with each attack. The\n"
+	.string "Punching Glove enhances the power of\p"
+	.string "punching moves, and the Heavy Duty\n"
+	.string "Boots grant immunity to hazards on\p"
+	.string "entry. I threw in one of my favorite\n"
+	.string "Mega Stones and a set of Leftovers as\p"
+	.string "well. Good luck!$"
+
+Maylene_Greeting::
+# 297 "data/maps/JaggedPass/scripts.pory"
+	.string "HOO-HAH! Is this finally a worthy\n"
+	.string "opponent? I can tell that you seem\p"
+	.string "pretty strong, let's see if my instincts\l"
+	.string "are correct!$"
+
+Maylene_Outro::
+# 304 "data/maps/JaggedPass/scripts.pory"
+	.string "My instincts were right!$"
+
+PostBattle_Maylene::
+# 309 "data/maps/JaggedPass/scripts.pory"
+	.string "Gotta. Get. Stronger.$"

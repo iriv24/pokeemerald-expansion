@@ -587,16 +587,18 @@ Route117_EventScript_FantinaGiveItems::
 # 302 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_EXPERT_BELT
 # 303 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+	giveitem ITEM_LEFTOVERS
 # 304 "data/maps/Route117/scripts.pory"
-	msgbox Fantina_ExplainItems
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 # 305 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 306 "data/maps/Route117/scripts.pory"
 	release
 	end
 
 
 Fantina_ExplainItems::
-# 309 "data/maps/Route117/scripts.pory"
+# 310 "data/maps/Route117/scripts.pory"
 	.string "Shadow Ball and Brick Break are two\n"
 	.string "very powerful moves. In addition, I had\p"
 	.string "a few spare Mega Stones for some\n"
@@ -608,17 +610,17 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Greeting::
-# 321 "data/maps/Route117/scripts.pory"
+# 322 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina. Did\n"
 	.string "you come here to enjoy the flowers,\p"
 	.string "too? Or were you looking for a battle?$"
 
 Fantina_Outro::
-# 327 "data/maps/Route117/scripts.pory"
+# 328 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\p"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 334 "data/maps/Route117/scripts.pory"
+# 335 "data/maps/Route117/scripts.pory"
 	.string "It's much prettier here than back home.$"

@@ -54,9 +54,9 @@
 #define FLAG_RECEIVED_RUSTBORO_EGG    0x2A
 #define FLAG_RECEIVED_SETUP_TMS    0x2B
 #define FLAG_RECEIVED_TM_SHADOW_BALL    0x2C
-#define FLAG_DAWN_111    0x2D
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
+#define FLAG_RIVAL_110    0x2D
+#define FLAG_DAWN_111    0x2E // Unused Flag
+#define FLAG_RECEIVED_TM_DRAIN_PUNCH    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag

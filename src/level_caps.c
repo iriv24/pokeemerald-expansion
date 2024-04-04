@@ -11,8 +11,10 @@ u32 GetCurrentLevelCap(void)
     {
         {FLAG_BADGE01_GET, 15},
         {FLAG_BADGE02_GET, 25},
+        {FLAG_RIVAL_110,   30},
         {FLAG_BADGE03_GET, 34},
-        {FLAG_BADGE04_GET, 44},
+        {FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, 44},
+        {FLAG_BADGE04_GET, 47},
         {FLAG_BADGE05_GET, 53},
         {FLAG_BADGE06_GET, 64},
         {FLAG_BADGE07_GET, 73},
@@ -64,6 +66,10 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
             return expValue / sExpScalingDown[ARRAY_COUNT(sExpScalingDown) - 1];
         else
             return expValue / sExpScalingDown[levelDifference];
+    }
+    else if (level < currentLevelCap)
+    {
+        return expValue;
     }
     else
         return 0;

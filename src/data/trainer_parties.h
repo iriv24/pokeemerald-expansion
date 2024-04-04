@@ -12759,11 +12759,62 @@ static const struct TrainerMon sParty_Fantina[] = {
 
 };
 
+//leftovers, life orb, drain punch, lucarionite, punch glove, HD boots
 static const struct TrainerMon sParty_Maylene[] = {
     {
-    .lvl = 21,
-    .species = SPECIES_MAGNEMITE,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_MELOETTA_PIROUETTE,
+    .nature = NATURE_HASTY,
+    .ability = ABILITY_SERENE_GRACE,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_RELIC_SONG, MOVE_DRAIN_PUNCH, MOVE_PSYCHIC, MOVE_AURA_SPHERE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_PANGORO,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_DRAIN_PUNCH, MOVE_KNOCK_OFF, MOVE_FIRE_PUNCH, MOVE_THUNDER_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_FALINKS,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_DEFIANT,
+    .heldItem = ITEM_COBA_BERRY,
+    .moves = {MOVE_LEECH_LIFE, MOVE_CLOSE_COMBAT, MOVE_ROCK_SLIDE, MOVE_NO_RETREAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_LILLIGANT_HISUIAN,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_HUSTLE,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_LEAF_BLADE, MOVE_DRAIN_PUNCH, MOVE_FACADE, MOVE_VICTORY_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_LUCARIO,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_STEADFAST,
+    .heldItem = ITEM_LUCARIONITE,
+    .moves = {MOVE_AURA_SPHERE, MOVE_FLASH_CANNON, MOVE_VACUUM_WAVE, MOVE_DRAGON_PULSE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_KINGAMBIT,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_SUPREME_OVERLORD,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_IRON_HEAD, MOVE_SUCKER_PUNCH}
+    },
 };
 
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {

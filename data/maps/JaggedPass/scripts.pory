@@ -252,3 +252,60 @@ JaggedPass_Text_AutumnPostBattle:
 	.string "a little up the hill from here?$"
 
 `
+
+script JaggedPass_EventScript_MayleneBattle{
+	trainerbattle_single(TRAINER_MAYLENE, Maylene_Greeting, Maylene_Outro, JaggedPass_EventScript_MayleneDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneGiveItems)
+	msgbox(PostBattle_Maylene, MSGBOX_AUTOCLOSE)
+	waitmessage
+	end
+}
+
+script JaggedPass_EventScript_MayleneDefeated{
+	goto(JaggedPass_EventScript_MayleneGiveItems)
+	end
+
+}
+
+script JaggedPass_EventScript_MayleneGiveItems{
+	giveitem(ITEM_TM_DRAIN_PUNCH)
+	giveitem(ITEM_LUCARIONITE)
+	giveitem(ITEM_LIFE_ORB)
+	giveitem(ITEM_PUNCHING_GLOVE)
+	giveitem(ITEM_HEAVY_DUTY_BOOTS)
+	giveitem(ITEM_LEFTOVERS)
+	setflag(FLAG_RECEIVED_TM_DRAIN_PUNCH)
+	msgbox(Maylene_ExplainItems)
+	release
+	end
+}
+
+text Maylene_ExplainItems{
+	"Drain Punch allows your Pokémon to\n"
+	"absorb health with each strike. The\p"
+	"Life Orb boosts the power of your\n"
+	"Pokémon's moves at the cost of some of\p"
+	"its health with each attack. The\n"
+	"Punching Glove enhances the power of\p"
+	"punching moves, and the Heavy Duty\n"
+	"Boots grant immunity to hazards on\p"
+	"entry. I threw in one of my favorite\n"
+	"Mega Stones and a set of Leftovers as\p"
+	"well. Good luck!"
+}
+
+text Maylene_Greeting{
+	"HOO-HAH! Is this finally a worthy\n"
+	"opponent? I can tell that you seem\p"
+	"pretty strong, let's see if my instincts\l"
+	"are correct!"
+}
+	
+text Maylene_Outro{
+	"My instincts were right!"
+}
+
+
+text PostBattle_Maylene{
+	"Gotta. Get. Stronger."
+}
