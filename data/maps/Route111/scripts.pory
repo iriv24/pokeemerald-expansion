@@ -268,7 +268,7 @@ Route111_EventScript_SandstormTrigger::
 Route111_EventScript_Victor::
 	lock
 	faceplayer
-	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_ComeBackLater
+	goto_if_unset FLAG_BADGE04_GET, Route111_EventScript_ComeBackLater
 	setflag FLAG_LANDMARK_WINSTRATE_FAMILY
 	msgbox Route111_Text_BattleOurFamily, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route111_EventScript_BattleWinstrates
@@ -594,7 +594,9 @@ Route111_Text_IsThatSo:
 
 Route111_Text_ShouldGetStronger:
 	.string "Hmm... Maybe you should get a little\n"
-	.string "stronger before you take on the family.$"
+	.string "stronger before you take on the family.\p"
+	.string "If you can show me the Heat Badge, then\n"
+	.string "I'll know you're strong enough.$"
 
 Route111_Text_VictorIntro:
 	.string "That's the spirit! I like you!$"
