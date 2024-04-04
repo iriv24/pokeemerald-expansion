@@ -140,11 +140,6 @@ JaggedPass_EventScript_EthanRematch::
 	msgbox JaggedPass_Text_EthanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-JaggedPass_EventScript_Julio::
-	trainerbattle_single TRAINER_JULIO, JaggedPass_Text_JulioIntro, JaggedPass_Text_JulioDefeat
-	msgbox JaggedPass_Text_JulioPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 JaggedPass_EventScript_Autumn::
 	trainerbattle_single TRAINER_AUTUMN, JaggedPass_Text_AutumnIntro, JaggedPass_Text_AutumnDefeat
 	msgbox JaggedPass_Text_AutumnPostBattle, MSGBOX_AUTOCLOSE
@@ -243,17 +238,6 @@ JaggedPass_Text_GoWhereverYouWant:
 JaggedPass_Text_BoulderShakingInResponseToEmblem:
 	.string "Oh! This boulder is shaking in response\n"
 	.string "to the MAGMA EMBLEM!$"
-
-JaggedPass_Text_JulioIntro:
-	.string "Aiyeeh! It's awfully scary to shoot\n"
-	.string "down the mountain in one go!$"
-
-JaggedPass_Text_JulioDefeat:
-	.string "I feel like I'm falling apart…$"
-
-JaggedPass_Text_JulioPostBattle:
-	.string "My bicycle bounced around so much,\n"
-	.string "my rear end's sore…$"
 
 JaggedPass_Text_AutumnIntro:
 	.string "I climb this hill every day.\n"
