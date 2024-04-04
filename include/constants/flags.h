@@ -57,7 +57,7 @@
 #define FLAG_RIVAL_110    0x2D
 #define FLAG_DAWN_111    0x2E // Unused Flag
 #define FLAG_RECEIVED_TM_DRAIN_PUNCH    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_RECEIVED_MEGA_STONES    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

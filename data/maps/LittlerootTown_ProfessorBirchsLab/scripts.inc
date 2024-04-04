@@ -1079,13 +1079,13 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 # 540 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_ABSORB_BULB, 10
 # 541 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitem ITEM_BLUE_SHARD, 10
+	giveitem ITEM_BLUE_SHARD, 100
 # 542 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitem ITEM_RED_SHARD, 10
+	giveitem ITEM_RED_SHARD, 100
 # 543 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitem ITEM_GREEN_SHARD, 10
+	giveitem ITEM_GREEN_SHARD, 100
 # 544 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitem ITEM_YELLOW_SHARD, 10
+	giveitem ITEM_YELLOW_SHARD, 100
 # 545 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitem ITEM_HARD_STONE, 10
 # 546 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
