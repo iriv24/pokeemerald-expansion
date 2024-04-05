@@ -797,7 +797,7 @@ script Route111_EventScript_DawnRivalBattle{
 
 script Route111_EventScript_DawnDefeated{
 	msgbox(Route111_Text_Dawn_MagmaAndAqua)
-	giveitem(ITEM_CHARIZARDITE_Y)
+	giveitem(ITEM_EMPOLEONITE_D)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)

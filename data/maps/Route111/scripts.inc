@@ -1561,7 +1561,7 @@ Route111_EventScript_DawnDefeated::
 # 799 "data/maps/Route111/scripts.pory"
 	msgbox Route111_Text_Dawn_MagmaAndAqua
 # 800 "data/maps/Route111/scripts.pory"
-	giveitem ITEM_CHARIZARDITE_Y
+	giveitem ITEM_EMPOLEONITE_D
 # 801 "data/maps/Route111/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 802 "data/maps/Route111/scripts.pory"
