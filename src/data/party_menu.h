@@ -879,7 +879,7 @@ const struct SpriteSheet gSpriteSheet_HeldItem =
     .data = sHeldItemGfx, .size = sizeof(sHeldItemGfx), .tag = TAG_HELD_ITEM
 };
 
-static const struct SpritePalette sSpritePalette_HeldItem =
+const struct SpritePalette sSpritePalette_HeldItem =
 {
     .data = gHeldItemPalette, .tag = TAG_HELD_ITEM
 };

@@ -8964,7 +8964,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .weight = 520,
         .description = COMPOUND_STRING(
             "While it's unexpectedly quiet and friendly,\n"
-            "if it's not fed any trash for a while,,\n"
+            "if it's not fed any trash for a while,\n"
             "it will smash its Trainer's furnishings,\n"
             "and eat up the fragments."),
         .pokemonScale = 256,
