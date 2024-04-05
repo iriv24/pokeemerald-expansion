@@ -183,7 +183,7 @@ RustboroCity_PokemonCenter_1F_Text_AsYouWishThen:
 # 92 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg:
 # 93 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "Oh? You've too many POKéMON.\n"
+	.string "Oh? You've too many Pokémon.\n"
 # 94 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	.string "There's no room for this Egg…$"
 # 95 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"

@@ -196,3 +196,253 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "Hunh? There isn't a single move that\n"
 # 99 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "I can teach an EGG.$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive::
+# 104 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	lockall
+# 105 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	faceplayer
+# 106 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	waitmovement 0
+# 107 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox EggManIntro
+# 109 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	dynmultipush FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_0, ITEM_RED_SHARD
+# 110 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	dynmultipush FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_1, ITEM_BLUE_SHARD
+# 111 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	dynmultipush FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_2, ITEM_GREEN_SHARD
+# 112 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	dynmultipush FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_3, MULTI_B_PRESSED
+# 115 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE
+# 117 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_2
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_1:
+# 122 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	compare VAR_RESULT, ITEM_RED_SHARD
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_5
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_4:
+# 126 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	compare VAR_RESULT, ITEM_BLUE_SHARD
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_8
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_7:
+# 131 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	compare VAR_RESULT, ITEM_GREEN_SHARD
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_11
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_10:
+# 136 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_2:
+# 119 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto FallarborTown_MoveRelearnersHouse_EventScript_EggManNo
+	goto FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_1
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_5:
+# 124 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg
+	goto FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_4
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_8:
+# 128 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg
+# 129 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4
+	goto FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_7
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_11:
+# 133 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg
+# 134 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4
+	goto FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_10
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg::
+# 142 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	checkitem ITEM_RED_SHARD
+# 143 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard
+# 144 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	getpartysize
+# 145 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg
+# 146 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg_Text_0
+# 147 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 148 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	message FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg
+# 149 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	waitfanfare
+# 150 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	giveegg SPECIES_CHARMANDER
+# 151 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	removeitem ITEM_RED_SHARD
+# 152 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4
+# 153 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg::
+# 158 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	checkitem ITEM_BLUE_SHARD
+# 159 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard
+# 160 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	getpartysize
+# 161 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg
+# 162 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg_Text_0
+# 163 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 164 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	message FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg
+# 165 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	waitfanfare
+# 166 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	giveegg SPECIES_SQUIRTLE
+# 167 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	removeitem ITEM_BLUE_SHARD
+# 168 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4
+# 169 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg::
+# 174 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	checkitem ITEM_GREEN_SHARD
+# 175 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard
+# 176 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	getpartysize
+# 177 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg
+# 178 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg_Text_0
+# 179 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 180 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	message FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg
+# 181 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	waitfanfare
+# 182 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	giveegg SPECIES_BULBASAUR
+# 183 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	removeitem ITEM_GREEN_SHARD
+# 184 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4
+# 185 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggManNo::
+# 190 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_EventScript_EggManNo_Text_0
+# 191 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard::
+# 196 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithRedShard, MSGBOX_DEFAULT
+# 197 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard::
+# 202 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithBlueShard, MSGBOX_DEFAULT
+# 203 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard::
+# 208 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithGreenShard, MSGBOX_DEFAULT
+# 209 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg::
+# 214 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	msgbox FallarborTown_MoveRelearnersHouse_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
+# 215 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	release
+	end
+
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_0:
+# 109 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}Fire$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_1:
+# 110 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Water$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_2:
+# 111 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Grass$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_3:
+# 112 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "Cancel$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive_Text_4:
+# 129 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "Come back if you have more shards!$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg_Text_0:
+# 146 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "A wise choice. Here you go.$"
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggManNo_Text_0:
+# 190 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "I see. Come back when you\nwant a starter egg.$"
+
+EggManIntro::
+# 222 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "Hello, I am a shard collector. If you\n"
+	.string "give me a Red Shard, I can give you an\p"
+	.string "Egg for a Fire-type Starter Pokémon. I\n"
+	.string "can do the same with Blue Shards and\p"
+	.string "Green Shards for the other types of\n"
+	.string "starters.\l"
+	.string "Which type of Egg do you want?$"
+
+FallarborTown_MoveRelearnersHouse_Text_ComeBackWithRedShard::
+# 233 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "It doesn't look like you have a Red\n"
+	.string "Shard. Come back when you do.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ComeBackWithBlueShard::
+# 238 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "It doesn't look like you have a Blue\n"
+	.string "Shard. Come back when you do.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ComeBackWithGreenShard::
+# 243 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "It doesn't look like you have a Green\n"
+	.string "Shard. Come back when you do.$"
+
+FallarborTown_MoveRelearnersHouse_Text_NoRoomForThisEgg::
+# 248 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "Oh? You've too many Pokémon.\n"
+	.string "There's no room for this Egg.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg::
+# 253 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	.string "{PLAYER} received the Egg.$"

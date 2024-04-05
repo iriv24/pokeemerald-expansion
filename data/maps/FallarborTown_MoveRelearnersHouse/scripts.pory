@@ -99,3 +99,158 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "I can teach an EGG.$"
 
 `
+
+script FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive {
+	lockall
+	faceplayer
+	waitmovement(0)
+	msgbox(EggManIntro)
+
+	dynmultipush("{COLOR RED}{SHADOW LIGHT_RED}Fire", ITEM_RED_SHARD)
+	dynmultipush("{COLOR BLUE}{SHADOW LIGHT_BLUE}Water", ITEM_BLUE_SHARD)
+	dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Grass", ITEM_GREEN_SHARD)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(FallarborTown_MoveRelearnersHouse_EventScript_EggManNo)
+	}
+
+	if (var(VAR_RESULT) == ITEM_RED_SHARD)
+	{
+		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg)
+	}
+	if (var(VAR_RESULT) == ITEM_BLUE_SHARD)
+	{
+		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg)
+		msgbox("Come back if you have more shards!")
+	}
+	if (var(VAR_RESULT) == ITEM_GREEN_SHARD)
+	{
+		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg)
+		msgbox("Come back if you have more shards!")
+	}
+	release
+	end
+	
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg {
+	checkitem(ITEM_RED_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
+	msgbox("A wise choice. Here you go.")
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
+	waitfanfare
+	giveegg(SPECIES_CHARMANDER)
+	removeitem(ITEM_RED_SHARD)
+	msgbox("Come back if you have more shards!")
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg {
+	checkitem(ITEM_BLUE_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
+	msgbox("A wise choice. Here you go.")
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
+	waitfanfare
+	giveegg(SPECIES_SQUIRTLE)
+	removeitem(ITEM_BLUE_SHARD)
+	msgbox("Come back if you have more shards!")
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg {
+	checkitem(ITEM_GREEN_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
+	msgbox("A wise choice. Here you go.")
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
+	waitfanfare
+	giveegg(SPECIES_BULBASAUR)
+	removeitem(ITEM_GREEN_SHARD)
+	msgbox("Come back if you have more shards!")
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_EggManNo {
+    msgbox("I see. Come back when you\nwant a starter egg.")
+    release
+    end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard {
+	msgbox(FallarborTown_MoveRelearnersHouse_Text_ComeBackWithRedShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard {
+	msgbox(FallarborTown_MoveRelearnersHouse_Text_ComeBackWithBlueShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard {
+	msgbox(FallarborTown_MoveRelearnersHouse_Text_ComeBackWithGreenShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg {
+	msgbox(FallarborTown_MoveRelearnersHouse_Text_NoRoomForThisEgg, MSGBOX_DEFAULT)
+	release
+	end
+}
+	
+	
+
+
+text EggManIntro {
+	"Hello, I am a shard collector. If you\n"
+	"give me a Red Shard, I can give you an\p"
+	"Egg for a Fire-type Starter Pokémon. I\n"
+	"can do the same with Blue Shards and\p"
+	"Green Shards for the other types of\n"
+	"starters.\l"
+	"Which type of Egg do you want?"
+	
+}
+
+text FallarborTown_MoveRelearnersHouse_Text_ComeBackWithRedShard {
+	"It doesn't look like you have a Red\n"
+	"Shard. Come back when you do."
+}
+
+text FallarborTown_MoveRelearnersHouse_Text_ComeBackWithBlueShard {
+	"It doesn't look like you have a Blue\n"
+	"Shard. Come back when you do."
+}
+
+text FallarborTown_MoveRelearnersHouse_Text_ComeBackWithGreenShard {
+	"It doesn't look like you have a Green\n"
+	"Shard. Come back when you do."
+}
+
+text FallarborTown_MoveRelearnersHouse_Text_NoRoomForThisEgg {
+	"Oh? You've too many Pokémon.\n"
+	"There's no room for this Egg."
+}
+
+text FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg {
+	"{PLAYER} received the Egg."
+}
+	
