@@ -1073,3 +1073,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/NewBirchsLab/scripts.inc"
+    .include "data/scripts/dexnav.inc"
+    
