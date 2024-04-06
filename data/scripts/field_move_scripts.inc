@@ -11,25 +11,21 @@ EventScript_CutTree::
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
 	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
+EventScript_CutTreeCommon:
+	setfieldeffectargument 3, 0 @ skip pose if so
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
-	goto EventScript_CutTreeDown
-	end
-
-@ Use cut from party menu
-EventScript_UseCut::
-	lockall
-	dofieldeffect FLDEFF_USE_CUT_ON_TREE
-	waitstate
-	goto EventScript_CutTreeDown
-	end
-
-EventScript_CutTreeDown::
+EventScript_CutTreeDown:: @ fallthrough
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	releaseall
 	end
+
+@ Use cut from party menu
+EventScript_UseCut::
+	lockall
+	goto EventScript_CutTreeCommon
 
 Movement_CutTreeDown:
 	cut_tree
@@ -57,6 +53,11 @@ Text_CantCut:
 	.string "This tree looks like it can be\n"
 	.string "CUT down!$"
 
+@ Use rock smash from party menu
+EventScript_UseRockSmash::
+	lockall
+	goto EventScript_RockSmashCommon
+
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
@@ -70,20 +71,11 @@ EventScript_RockSmash::
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
 	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
+EventScript_RockSmashCommon:
+	setfieldeffectargument 3, 0
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
-	goto EventScript_SmashRock
-	end
-
-@ Use rock smash from party menu
-EventScript_UseRockSmash::
-	lockall
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-	goto EventScript_SmashRock
-	end
-
-EventScript_SmashRock::
+EventScript_SmashRock:: @ fallthrough
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -98,6 +90,38 @@ EventScript_SmashRock::
 EventScript_EndSmash::
 	releaseall
 	end
+
+Movement_WalkUp:
+	walk_up
+	step_end
+
+Movement_JumpUp:
+	jump_in_place_up
+	step_end
+
+Movement_WalkRight:
+	walk_right
+	step_end
+
+Movement_JumpRight:
+	jump_in_place_right
+	step_end
+
+Movement_WalkDown:
+	walk_down
+	step_end
+
+Movement_JumpDown:
+	jump_in_place_down
+	step_end
+
+Movement_WalkLeft:
+	walk_left
+	step_end
+
+Movement_JumpLeft:
+	jump_in_place_left
+	step_end
 
 Movement_SmashRock:
 	rock_smash_break
