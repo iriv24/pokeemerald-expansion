@@ -505,7 +505,7 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
     StringExpandPlaceholders(gStringVar4, sText_MonLevel);
     AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, 0, WINDOW_COL_1, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
     
-    if (proximity <= SNEAKING_PROXIMITY)
+    /*if (proximity <= SNEAKING_PROXIMITY)
     {
         PlaySE(SE_POKENAV_ON);
         // move
@@ -530,7 +530,7 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
                 AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_0, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
             }
         }
-    }
+    }*/
     
     //chain level - always present
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -630,10 +630,10 @@ static bool8 DexNavPickTile(u8 environment, u8 areaX, u8 areaY, bool8 smallScan)
             
             //Check for objects
             nextIter = FALSE;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+            /*if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
                 tileBuffer = SNEAKING_PROXIMITY + 3;
             else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
-                tileBuffer = SNEAKING_PROXIMITY + 1;
+                tileBuffer = SNEAKING_PROXIMITY + 1;*/
             
             if (GetPlayerDistance(topX, topY) <= tileBuffer)
             {
@@ -714,7 +714,6 @@ static bool8 TryStartHiddenMonFieldEffect(u8 environment, u8 xSize, u8 ySize, bo
 {
     u8 currMapType = GetCurrentMapType();
     u8 fldEffId = 0;
-    
     if (DexNavPickTile(environment, xSize, ySize, smallScan))
     {
         u8 metatileBehaviour = MapGridGetMetatileBehaviorAt(sDexNavSearchDataPtr->tileX, sDexNavSearchDataPtr->tileY);
@@ -1058,6 +1057,7 @@ static void Task_DexNavSearch(u8 taskId)
         return;
     }
     
+    /*
     if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && task->tFrameCount > 60)
     { //should be creeping but player walks normally
         if (sDexNavSearchDataPtr->hiddenSearch && !task->tRevealed)
@@ -1073,6 +1073,7 @@ static void Task_DexNavSearch(u8 taskId)
         EndDexNavSearchSetupScript(EventScript_MovedTooFast, taskId);
         return;
     }
+    */
     
     if (ArePlayerFieldControlsLocked() == TRUE)
     { // check if script just executed
@@ -1175,7 +1176,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
     if (sDexNavSearchDataPtr->starSpriteIds[2] != MAX_SPRITES)
         gSprites[sDexNavSearchDataPtr->starSpriteIds[2]].invisible = TRUE;
     
-    if (proximity <= SNEAKING_PROXIMITY)
+    /*if (proximity <= SNEAKING_PROXIMITY)
     {
         if (searchLevel > 2 && sDexNavSearchDataPtr->heldItem)
         {
@@ -1195,7 +1196,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
             if (sDexNavSearchDataPtr->starSpriteIds[2] != MAX_SPRITES)
                 gSprites[sDexNavSearchDataPtr->starSpriteIds[2]].invisible = FALSE;
         }
-    }
+    }*/
 }
 
 //////////////////////////////
@@ -1204,29 +1205,23 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
 static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityNum, u16 item, u16* moves)
 {
     struct Pokemon* mon = &gEnemyParty[0];
-    u8 iv[3] = {NUM_STATS};
     u8 i;
     u8 perfectIv = 31;
     
     if (DexNavTryMakeShinyMon())
+    {
         FlagSet(FLAG_SHINY_CREATION); // just easier this way
+    }
+        
     
     CreateWildMon(species, level);  // shiny rate bonus handled in CreateBoxMon
     
-    // Pick random, unique IVs to set to 31. The number of perfect IVs that are assigned is equal to the potential
-    iv[0] = Random() % NUM_STATS;               // choose 1st perfect stat
-    do {
-        iv[1] = Random() % NUM_STATS;
-        iv[2] = Random() % NUM_STATS;
-    } while ((iv[1] == iv[0])                   // unique 2nd perfect stat
-      || (iv[2] == iv[0] || iv[2] == iv[1]));   // unique 3rd perfect stat
-    
-    if (potential > 2 && iv[2] != NUM_STATS)
-        SetMonData(mon, MON_DATA_HP_IV + iv[2], &perfectIv);
-    if (potential > 1 && iv[1] != NUM_STATS)
-        SetMonData(mon, MON_DATA_HP_IV + iv[1], &perfectIv);
-    if (potential > 0 && iv[0] != NUM_STATS)
-        SetMonData(mon, MON_DATA_HP_IV + iv[0], &perfectIv);
+    SetMonData(mon, MON_DATA_HP_IV, &perfectIv);
+    SetMonData(mon, MON_DATA_ATK_IV, &perfectIv);
+    SetMonData(mon, MON_DATA_DEF_IV, &perfectIv);
+    SetMonData(mon, MON_DATA_SPEED_IV, &perfectIv);
+    SetMonData(mon, MON_DATA_SPATK_IV, &perfectIv);
+    SetMonData(mon, MON_DATA_SPDEF_IV, &perfectIv);
     
     //Set ability
     SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
@@ -2675,41 +2670,46 @@ static void DexNavDrawHiddenIcons(void)
 /////////////////////////
 bool8 DexNavTryMakeShinyMon(void)
 {
-    u32 i, shinyRolls, chainBonus, rndBonus;
-    u32 shinyRate = 0;
-    u32 charmBonus = 0;
-    u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
-    u8 chain = gSaveBlock1Ptr->dexNavChain;
+    //u32 i, shinyRolls, chainBonus;
+    // u32 shinyRate = 1;
+    // u32 charmBonus = 0;
+    // u8 chain = gSaveBlock1Ptr->dexNavChain;
     
-    #ifdef ITEM_SHINY_CHARM
-    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
-    #endif
+    // #ifdef ITEM_SHINY_CHARM
+    // charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
+    // #endif
     
-    chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
-    rndBonus = (Random() % 100 < 4 ? 4 : 0);
-    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
+    // chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
+    // shinyRolls = 1 + charmBonus + chainBonus;
 
-    if (searchLevel > 200)
-    {
-        shinyRate += searchLevel - 200;
-        searchLevel = 200;
-    }
-    if (searchLevel > 100)
-    {
-        shinyRate += (searchLevel * 2) - 200;
-        searchLevel = 100;
-    }
-    if (searchLevel > 0)
-    {
-        shinyRate += searchLevel * 6;
-    }
+    //if (searchLevel > 200)
+    //{
+    //    shinyRate += searchLevel - 200;
+    //    searchLevel = 200;
+    //}
+    //if (searchLevel > 100)
+    //{
+    //    shinyRate += (searchLevel * 2) - 200;
+    //    searchLevel = 100;
+    // }
+    // if (searchLevel > 0)
+    // {
+    //     shinyRate += searchLevel * 6;
+    // }
     
-    shinyRate /= 100;
-    for (i = 0; i < shinyRolls; i++)
+    // shinyRate /= 100;
+
+    // for (i = 0; i < shinyRolls; i++)
+    // {
+    //     if (Random() % 10000 <= shinyRate)
+    //         return TRUE;
+    // }
+
+    if (Random() % 8192 == 24)
     {
-        if (Random() % 10000 < shinyRate)
-            return TRUE;
+        return TRUE;
     }
+        
     
     return FALSE;
 }

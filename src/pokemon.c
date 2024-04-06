@@ -877,7 +877,10 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         for (i = 0; i < shinyRolls; i++)
         {
             if (Random() < SHINY_ODDS)
+            {
                 FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
+            }
+                
         }
 
         if (FlagGet(FLAG_SHINY_CREATION))

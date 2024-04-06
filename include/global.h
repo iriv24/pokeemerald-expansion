@@ -1088,6 +1088,7 @@ struct SaveBlock1
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
                u8 dexNavSearchLevels[NUM_SPECIES];
+               u8 unused_speciesPadding[100];
                u8 dexNavChain;
     // sizeof: 0x3???
     //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
