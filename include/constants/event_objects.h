@@ -250,7 +250,6 @@
 #define OBJ_EVENT_GFX_BYRON                      246
 #define OBJ_EVENT_GFX_CANDICE                    247
 #define OBJ_EVENT_GFX_VOLKNER                    248
-#define OBJ_EVENT_GFX_LIGHT_SPRITE               OBJ_EVENT_GFX_QUINTY_PLUMP
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239. -- max is really 256
 //
@@ -288,8 +287,7 @@
 #define SHADOW_SIZE_S   0
 #define SHADOW_SIZE_M   1
 #define SHADOW_SIZE_L   2
-#define SHADOW_SIZE_XL  3 // unused; repurposed to mean no shadow
-#define SHADOW_SIZE_NONE 3
+#define SHADOW_SIZE_XL  3
 
 #define F_INANIMATE                        (1 << 6)
 #define F_DISABLE_REFLECTION_PALETTE_LOAD  (1 << 7)
@@ -297,9 +295,6 @@
 #define TRACKS_NONE       0
 #define TRACKS_FOOT       1
 #define TRACKS_BIKE_TIRE  2
-#define TRACKS_SLITHER    3
-#define TRACKS_SPOT       4
-#define TRACKS_BUG        5
 
 #define FIRST_DECORATION_SPRITE_GFX OBJ_EVENT_GFX_PICHU_DOLL
 

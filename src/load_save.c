@@ -198,35 +198,17 @@ void LoadPlayerParty(void)
 void SaveObjectEvents(void)
 {
     int i;
-    u16 graphicsId;
 
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++) {
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
         gSaveBlock1Ptr->objectEvents[i] = gObjectEvents[i];
-        // Swap graphicsId bytes when saving and loading
-        // This keeps compatibility with vanilla,
-        // since the lower graphicsIds will be in the same place as vanilla
-        graphicsId = gObjectEvents[i].graphicsId;
-        gSaveBlock1Ptr->objectEvents[i].graphicsId = (graphicsId >> 8) | (graphicsId << 8);
-        gSaveBlock1Ptr->objectEvents[i].spriteId = 127; // magic number
-    }
 }
 
 void LoadObjectEvents(void)
 {
     int i;
-    u16 graphicsId;
 
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++) {
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
         gObjectEvents[i] = gSaveBlock1Ptr->objectEvents[i];
-        // Swap graphicsId bytes when saving and loading
-        // This keeps compatibility with vanilla,
-        // since the lower graphicsIds will be in the same place as vanilla
-        graphicsId = gObjectEvents[i].graphicsId;
-        gObjectEvents[i].graphicsId = (graphicsId >> 8) | (graphicsId << 8);
-        if (gObjectEvents[i].spriteId != 127)
-            gObjectEvents[i].graphicsId &= 0xFF;
-        gObjectEvents[i].spriteId = 0;
-    }
 }
 
 void CopyPartyAndObjectsToSave(void)

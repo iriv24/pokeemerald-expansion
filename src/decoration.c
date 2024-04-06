@@ -41,7 +41,7 @@
 
 #define PLACE_DECORATION_SELECTOR_TAG 0xbe5
 #define PLACE_DECORATION_PLAYER_TAG   0x008
-#define NUM_DECORATION_FLAGS (FLAG_DECORATION_13 - FLAG_DECORATION_1 + 1)
+#define NUM_DECORATION_FLAGS (FLAG_DECORATION_14 - FLAG_DECORATION_1 + 1)
 
 #define tCursorX data[0]
 #define tCursorY data[1]
@@ -1625,14 +1625,6 @@ static bool8 CanPlaceDecoration(u8 taskId, const struct Decoration *decoration)
         }
         break;
     }
-
-    // If sprite(like), check if there is an available object event slot for it
-    if (decoration->permission == DECORPERM_SPRITE) {
-        for (i = 0; i < NUM_DECORATION_FLAGS; i++)
-            if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
-                return TRUE;
-        return FALSE;
-    }
     return TRUE;
 }
 
@@ -2128,7 +2120,7 @@ static u8 AddDecorationIconObjectFromObjectEvent(u16 tilesTag, u16 paletteTag, u
     }
     else
     {
-        spriteId = CreateObjectGraphicsSpriteWithTag(sPlaceDecorationGraphicsDataBuffer.decoration->tiles[0], SpriteCallbackDummy, 0, 0, 1, paletteTag);
+        spriteId = CreateObjectGraphicsSprite(sPlaceDecorationGraphicsDataBuffer.decoration->tiles[0], SpriteCallbackDummy, 0, 0, 1);
     }
     return spriteId;
 }

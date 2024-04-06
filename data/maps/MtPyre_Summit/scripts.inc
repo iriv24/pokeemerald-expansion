@@ -102,7 +102,9 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	msgbox MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo, MSGBOX_DEFAULT
 # 52 "data/maps/MtPyre_Summit/scripts.pory"
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
+# 53 "data/maps/MtPyre_Summit/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 54 "data/maps/MtPyre_Summit/scripts.pory"
 	removeobject LOCALID_ARCHIE
 # 55 "data/maps/MtPyre_Summit/scripts.pory"
 	removeobject LOCALID_GRUNT_1
@@ -118,7 +120,9 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	setflag FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA
 # 61 "data/maps/MtPyre_Summit/scripts.pory"
 	fadedefaultbgm
-	fadescreenswapbuffers FADE_FROM_BLACK
+# 62 "data/maps/MtPyre_Summit/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 63 "data/maps/MtPyre_Summit/scripts.pory"
 	delay 20
 # 64 "data/maps/MtPyre_Summit/scripts.pory"
 	setvar VAR_MT_PYRE_STATE, 1

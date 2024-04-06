@@ -434,7 +434,7 @@ BattleFrontier_BattlePalaceLobby_EventScript_CancelChallengeSaveFailed::
 BattleFrontier_BattlePalaceLobby_EventScript_LoadPartyAndCancelChallenge::
 # 218 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	special LoadPlayerParty
-  callnative LoadPlayerParty
+# 219 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 BattleFrontier_BattlePalaceLobby_EventScript_CancelChallenge::
 # 220 "data/maps/BattleFrontier_BattlePalaceLobby/scripts.pory"
 	msgbox BattleFrontier_BattlePalaceLobby_Text_ReturnWhenFortified, MSGBOX_DEFAULT

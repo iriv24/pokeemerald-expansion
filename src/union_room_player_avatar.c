@@ -131,7 +131,6 @@ static bool32 IsPlayerStandingStill(void)
 
 // Gender and trainer id are used to determine which sprite a player appears as
 static u16 GetUnionRoomPlayerGraphicsId(u32 gender, u32 id)
-static u16 GetUnionRoomPlayerGraphicsId(u32 gender, u32 id)
 {
     return sUnionRoomObjGfxIds[gender][id % NUM_UNION_ROOM_CLASSES];
 }
@@ -442,7 +441,6 @@ static bool32 IsUnionRoomPlayerInvisible(u32 leaderId, u32 memberId)
     return IsVirtualObjectInvisible(UR_PLAYER_SPRITE_ID(leaderId, memberId) - UR_SPRITE_START_ID);
 }
 
-static void SpawnGroupMember(u32 leaderId, u32 memberId, u16 graphicsId, struct RfuGameData * gameData)
 static void SpawnGroupMember(u32 leaderId, u32 memberId, u16 graphicsId, struct RfuGameData * gameData)
 {
     s32 x, y;

@@ -2,7 +2,7 @@
 
 # 2 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_MapScripts::
-  map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_Gym_OnTransition
+# 3 "data/maps/MossdeepCity_Gym/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
 # 4 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.byte 0
@@ -12,9 +12,7 @@ MossdeepCity_Gym_MapScripts::
 @ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
 # 7 "data/maps/MossdeepCity_Gym/scripts.pory"
 
-MossdeepCity_Gym_OnTransition:
-  end
-
+# 8 "data/maps/MossdeepCity_Gym/scripts.pory"
 @ All the below checks are leftover from RS. FLAG_MOSSDEEP_GYM_SWITCH_X is never set
 # 9 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_OnLoad:

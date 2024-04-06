@@ -25,10 +25,6 @@
 #define MOVEMENT_MODE_SCRIPTED 2
 
 #define SKIP_OBJECT_EVENT_LOAD  1
-#define TIME_OF_DAY_NIGHT 0
-#define TIME_OF_DAY_TWILIGHT 1
-#define TIME_OF_DAY_DAY 2
-#define TIME_OF_DAY_MAX TIME_OF_DAY_DAY
 
 struct InitialPlayerAvatarState
 {
@@ -44,15 +40,6 @@ struct LinkPlayerObjectEvent
     u8 movementMode;
 };
 
-struct __attribute__((packed)) TimeBlendSettings {
-  u16 weight:9;
-  u16 time1:3;
-  u16 time0:3;
-  u16 unused:1;
-  u16 altWeight;
-};
-
-// Exported RAM declarations
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
 
@@ -64,10 +51,6 @@ extern void (*gFieldCallback)(void);
 extern bool8 (*gFieldCallback2)(void);
 extern u8 gLocalLinkPlayerId;
 extern u8 gFieldLinkPlayerCount;
-extern u8 gTimeOfDay;
-extern u16 gTimeUpdateCounter;
-
-extern struct TimeBlendSettings currentTimeBlend;
 
 extern const struct UCoords32 gDirectionToVectors[];
 
@@ -145,10 +128,6 @@ void CleanupOverworldWindowsAndTilemaps(void);
 bool32 IsOverworldLinkActive(void);
 void CB1_Overworld(void);
 void CB2_OverworldBasic(void);
-u8 UpdateTimeOfDay(void);
-bool8 MapHasNaturalLight(u8 mapType);
-void UpdateAltBgPalettes(u16 palettes);
-void UpdatePalettesWithTime(u32);
 void CB2_Overworld(void);
 void SetMainCallback1(void (*cb)(void));
 void SetUnusedCallback(void *func);

@@ -461,12 +461,11 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_RotatingGate[] =
     sSpriteAffineAnim_RotatingClockwise270to360Faster,
 };
 
-#define OBJ_EVENT_PAL_TAG_NPC_1 0x1103
 
 static const struct SpriteTemplate sSpriteTemplate_RotatingGateLarge =
 {
     .tileTag = ROTATING_GATE_TILE_TAG,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = TAG_NONE,
     .oam = &sOamData_RotatingGateLarge,
     .anims = sSpriteAnimTable_RotatingGateLarge,
     .images = NULL,
@@ -477,7 +476,7 @@ static const struct SpriteTemplate sSpriteTemplate_RotatingGateLarge =
 static const struct SpriteTemplate sSpriteTemplate_RotatingGateRegular =
 {
     .tileTag = ROTATING_GATE_TILE_TAG,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = TAG_NONE,
     .oam = &sOamData_RotatingGateRegular,
     .anims = sSpriteAnimTable_RotatingGateRegular,
     .images = NULL,
@@ -741,7 +740,7 @@ static u8 RotatingGate_CreateGate(u8 gateId, s16 deltaX, s16 deltaY)
 
     template.tileTag = gate->shape + ROTATING_GATE_TILE_TAG;
 
-    spriteId = CreateSprite(&template, 0, 0, 0x93);
+    spriteId = CreateSprite(&template, 0, 0, 0x94);
     if (spriteId == MAX_SPRITES)
         return MAX_SPRITES;
 
@@ -749,7 +748,6 @@ static u8 RotatingGate_CreateGate(u8 gateId, s16 deltaX, s16 deltaY)
     y = gate->y + MAP_OFFSET;
 
     sprite = &gSprites[spriteId];
-    UpdateSpritePaletteByTemplate(&template, sprite);
     sprite->data[0] = gateId;
     sprite->coordOffsetEnabled = 1;
 

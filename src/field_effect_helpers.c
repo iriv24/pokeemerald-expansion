@@ -8,28 +8,17 @@
 #include "gpu_regs.h"
 #include "metatile_behavior.h"
 #include "palette.h"
-#include "palette.h"
 #include "sound.h"
 #include "sprite.h"
 #include "trig.h"
-#include "constants/event_objects.h"
 #include "constants/field_effects.h"
-#include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
 
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
-#define PAL_TAG_REFLECTION_OFFSET 0x2000 // reflection tag value is paletteTag + 0x2000
-#define PAL_RAW_REFLECTION_OFFSET 0x4000 // raw reflection tag is paletteNum + 0x4000
-#define HIGH_BRIDGE_PAL_TAG 0x4010
-// Build a unique tag for reflection's palette based on based tag, or paletteNum
-#define REFLECTION_PAL_TAG(tag, num) ((tag) == TAG_NONE ? (num) + PAL_RAW_REFLECTION_OFFSET : (tag) + PAL_TAG_REFLECTION_OFFSET)
 
 static void UpdateObjectReflectionSprite(struct Sprite *);
 static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-static void LoadObjectHighBridgeReflectionPalette(struct ObjectEvent *, struct Sprite *sprite);
-static void LoadObjectRegularReflectionPalette(struct ObjectEvent *, struct Sprite *);
-
 static void UpdateGrassFieldEffectSubpriority(struct Sprite *, u8, u8);
 static void FadeFootprintsTireTracks_Step0(struct Sprite *);
 static void FadeFootprintsTireTracks_Step1(struct Sprite *);
@@ -47,7 +36,6 @@ static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType);
 void LoadSpecialReflectionPalette(struct Sprite *sprite);
 
 extern u16 gReflectionPaletteBuffer[];
-u32 FldEff_Shadow(void);
 
 // Data used by all the field effects that share UpdateJumpImpactEffect
 #define sJumpElevation  data[0]
@@ -61,13 +49,6 @@ u32 FldEff_Shadow(void);
 #define sReflectionVerticalOffset   data[2]
 #define sIsStillReflection          data[7]
 
-void SetUpShadow(struct ObjectEvent *objectEvent, struct Sprite *sprite) {
-  gFieldEffectArguments[0] = objectEvent->localId;
-  gFieldEffectArguments[1] = gSaveBlock1Ptr->location.mapNum;
-  gFieldEffectArguments[2] = gSaveBlock1Ptr->location.mapGroup;
-  FldEff_Shadow();
-}
-
 void SetUpReflection(struct ObjectEvent *objectEvent, struct Sprite *sprite, bool8 stillReflection)
 {
     struct Sprite *reflectionSprite;
@@ -80,9 +61,8 @@ void SetUpReflection(struct ObjectEvent *objectEvent, struct Sprite *sprite, boo
     StartSpriteAnim(reflectionSprite, 0);
     reflectionSprite->affineAnims = gDummySpriteAffineAnimTable;
     reflectionSprite->affineAnimBeginning = TRUE;
-    reflectionSprite->subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
-    reflectionSprite->subspriteTableNum = 0;
-    reflectionSprite->sReflectionObjEventId = sprite->sReflectionObjEventId;
+    reflectionSprite->subspriteMode = SUBSPRITES_OFF;
+    reflectionSprite->sReflectionObjEventId = sprite->data[0];
     reflectionSprite->sReflectionObjEventLocalId = objectEvent->localId;
     reflectionSprite->sIsStillReflection = stillReflection;
     LoadObjectReflectionPalette(objectEvent, reflectionSprite);
@@ -122,49 +102,6 @@ static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct 
     else
     {
         LoadSpecialReflectionPalette(reflectionSprite);
-        LoadObjectRegularReflectionPalette(objectEvent, reflectionSprite);
-    }
-}
-
-// Apply a blue tint effect to a palette
-static void ApplyPondFilter(u8 paletteNum, u16 *dest) {
-    u32 i;
-    s32 r, g, b;
-    u16 *src = gPlttBufferUnfaded + OBJ_PLTT_ID(paletteNum);
-    *dest++ = *src++; // copy transparency
-    for (i = 0; i < 16 - 1; i++) {
-        u32 color = *src++;
-        r = (color << 27) >> 27;
-        g = (color << 22) >> 27;
-        b = (color << 17) >> 27;
-        b += 10;
-        if (b > 31)
-            b = 31;
-        *dest++ = RGB2(r, g, b);
-    }
-}
-
-// Apply a ice tint effect to a palette
-static void ApplyIceFilter(u8 paletteNum, u16 *dest) {
-    u32 i;
-    s32 r, g, b;
-    u16 *src = gPlttBufferUnfaded + OBJ_PLTT_ID(paletteNum);
-    *dest++ = *src++; // copy transparency
-    for (i = 0; i < 16 - 1; i++) {
-        u32 color = *src++;
-        r = (color << 27) >> 27;
-        g = (color << 22) >> 27;
-        b = (color << 17) >> 27;
-        r -= 5;
-        if (r < 0)
-            r = 0;
-        g += 3;
-        if (g > 31)
-            g = 31;
-        b += 16;
-        if (b > 31)
-            b = 31;
-        *dest++ = RGB2(r, g, b);
     }
 }
 
@@ -200,7 +137,6 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
 {
     struct ObjectEvent *objectEvent = &gObjectEvents[reflectionSprite->sReflectionObjEventId];
     struct Sprite *mainSprite = &gSprites[objectEvent->spriteId];
-
     if (!objectEvent->active || !objectEvent->hasReflection || objectEvent->localId != reflectionSprite->sReflectionObjEventLocalId)
     {
         reflectionSprite->inUse = FALSE;
@@ -222,20 +158,18 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
         reflectionSprite->y2 = -mainSprite->y2;
         reflectionSprite->coordOffsetEnabled = mainSprite->coordOffsetEnabled;
 
-    if (objectEvent->hideReflection == TRUE)
-        reflectionSprite->invisible = TRUE;
+        if (objectEvent->hideReflection == TRUE)
+            reflectionSprite->invisible = TRUE;
 
-    // Support "virtual" sprites which can't be rotated via affines
-    if (reflectionSprite->subspriteTables[0].subsprites) {
-        reflectionSprite->oam.affineMode = ST_OAM_AFFINE_OFF;
-        return;
-    }
-    if (reflectionSprite->sIsStillReflection == FALSE)
-    {
-        // Sets the reflection sprite's rot/scale matrix to the correct
-        // water reflection matrix based on the main sprite's facing direction.
-        // If the sprite is facing east, then it's flipped, and its matrixNum is 1.
-        reflectionSprite->oam.matrixNum = (mainSprite->oam.matrixNum & ST_OAM_HFLIP) ? 1 : 0;
+        if (reflectionSprite->sIsStillReflection == FALSE)
+        {
+            // Sets the reflection sprite's rot/scale matrix to the appropriate
+            // matrix based on whether or not the main sprite is horizontally flipped.
+            // If the sprite is facing to the east, then it is flipped, and its matrixNum is 8.
+            reflectionSprite->oam.matrixNum = 0;
+            if (mainSprite->oam.matrixNum & ST_OAM_HFLIP)
+                reflectionSprite->oam.matrixNum = 1;
+        }
     }
 }
 
@@ -256,8 +190,6 @@ u8 CreateWarpArrowSprite(void)
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
-        // Can use either gender's palette, so try to use the one that should be loaded
-        sprite->oam.paletteNum = LoadObjectEventPalette(gSaveBlock2Ptr->playerGender ? FLDEFF_PAL_TAG_MAY : FLDEFF_PAL_TAG_BRENDAN);
         sprite->oam.priority = 1;
         sprite->coordOffsetEnabled = TRUE;
         sprite->invisible = TRUE;
@@ -318,8 +250,6 @@ u32 FldEff_Shadow(void)
     u8 spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[sShadowEffectTemplateIds[graphicsInfo->shadowSize]], 0, 0, 148);
     if (spriteId != MAX_SPRITES)
     {
-        // SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(8, 12));
-        gSprites[spriteId].oam.objMode = 1; // BLEND
         gSprites[spriteId].coordOffsetEnabled = TRUE;
         gSprites[spriteId].sLocalId = gFieldEffectArguments[0];
         gSprites[spriteId].sMapNum = gFieldEffectArguments[1];
@@ -344,16 +274,12 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
         sprite->oam.priority = linkedSprite->oam.priority;
         sprite->x = linkedSprite->x;
         sprite->y = linkedSprite->y + sprite->sYOffset;
-        sprite->invisible = linkedSprite->invisible;
-        if (!objectEvent->active
-         || objectEvent->noShadow
-         || objectEvent->inHotSprings
-         || objectEvent->inSandPile
-         || gWeatherPtr->noShadows
+        if (!objectEvent->active || !objectEvent->hasShadow
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)
-         || MetatileBehavior_IsPuddle(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
-         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
+         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior)
+         || MetatileBehavior_IsReflective(objectEvent->currentMetatileBehavior)
+         || MetatileBehavior_IsReflective(objectEvent->previousMetatileBehavior))
         {
             FieldEffectStop(sprite, FLDEFF_SHADOW);
         }
@@ -673,42 +599,6 @@ u32 FldEff_DeepSandFootprints(void)
     return spriteId;
 }
 
-u32 FldEff_TracksBug(void)
-{
-	u8 spriteId;
-	struct Sprite *sprite;
-
-	SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-	spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_TRACKS_BUG], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
-	if (spriteId != MAX_SPRITES)
-	{
-		sprite = &gSprites[spriteId];
-		sprite->coordOffsetEnabled = TRUE;
-		sprite->oam.priority = gFieldEffectArguments[3];
-		sprite->data[7] = FLDEFF_TRACKS_BUG;
-		StartSpriteAnim(sprite, gFieldEffectArguments[4]);
-	}
-	return 0;
-}
-
-u32 FldEff_TracksSpot(void)
-{
-	u8 spriteId;
-	struct Sprite *sprite;
-
-	SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-	spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_TRACKS_SPOT], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
-	if (spriteId != MAX_SPRITES)
-	{
-		sprite = &gSprites[spriteId];
-		sprite->coordOffsetEnabled = TRUE;
-		sprite->oam.priority = gFieldEffectArguments[3];
-		sprite->data[7] = FLDEFF_TRACKS_SPOT;
-		StartSpriteAnim(sprite, gFieldEffectArguments[4]);
-	}
-	return 0;
-}
-
 u32 FldEff_BikeTireTracks(void)
 {
     u8 spriteId;
@@ -724,24 +614,6 @@ u32 FldEff_BikeTireTracks(void)
         StartSpriteAnim(sprite, gFieldEffectArguments[4]);
     }
     return spriteId;
-}
-
-u32 FldEff_TracksSlither(void)
-{
-	u8 spriteId;
-	struct Sprite *sprite;
-
-	SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-	spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_TRACKS_SLITHER], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
-	if (spriteId != MAX_SPRITES)
-	{
-		sprite = &gSprites[spriteId];
-		sprite->coordOffsetEnabled = TRUE;
-		sprite->oam.priority = gFieldEffectArguments[3];
-		sprite->data[7] = FLDEFF_TRACKS_SLITHER;
-		StartSpriteAnim(sprite, gFieldEffectArguments[4]);
-	}
-	return spriteId;
 }
 
 void (*const gFadeFootprintsTireTracksFuncs[])(struct Sprite *) = {
@@ -1152,8 +1024,6 @@ u32 FldEff_SurfBlob(void)
         struct Sprite *sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->sPlayerObjId = gFieldEffectArguments[2];
-        // Can use either gender's palette, so try to use the one that should be loaded
-        sprite->oam.paletteNum = LoadObjectEventPalette(gSaveBlock2Ptr->playerGender ? FLDEFF_PAL_TAG_MAY : FLDEFF_PAL_TAG_BRENDAN);
         sprite->sVelocity = -1;
         sprite->sPrevX = -1;
         sprite->sPrevY = -1;
@@ -1485,7 +1355,6 @@ static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx)
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
-        sprite->oam.paletteNum = LoadObjectEventPalette(gFieldEffectObjectTemplatePointers[fldEffObj]->paletteTag);
         sprite->coordOffsetEnabled ++;
         sprite->sFldEff = fldEff;
         sprite->sLocalId = gFieldEffectArguments[0];
