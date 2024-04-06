@@ -473,7 +473,6 @@ Route110_EventScript_GiveItemfinder::
 	giveitem ITEM_TERRAIN_EXTENDER, 10
 	giveitem ITEM_GREAT_BALL, 99
 	giveitem ITEM_ULTRA_BALL, 99
-
 	setflag FLAG_RIVAL_110
 	return
 

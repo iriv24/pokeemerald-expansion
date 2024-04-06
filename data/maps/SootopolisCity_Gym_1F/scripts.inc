@@ -239,400 +239,396 @@ SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
 # 120 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	giveitem ITEM_TM_FLIP_TURN
 # 121 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 # 122 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_WATER_PULSE
 # 123 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	setflag FLAG_RECEIVED_TM_WATER_PULSE
-# 124 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	return
+# 124 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+
 # 125 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 126 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
-# 127 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 126 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	giveitem ITEM_TM_FLIP_TURN
-# 128 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-# 129 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 127 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
-# 130 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 128 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
+# 129 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	release
+# 130 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
 # 131 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	release
+
 # 132 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 133 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 134 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge::
-# 135 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 133 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_GoGetFortreeBadge, MSGBOX_DEFAULT
+# 134 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	release
+# 135 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
 # 136 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	release
+
 # 137 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 138 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 139 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_JuanRematch::
-# 140 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 138 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	trainerbattle_rematch_double TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
-# 141 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 139 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+# 140 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
+# 141 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+
 # 142 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 143 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 144 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GymGuide::
-# 145 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 143 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	lock
-# 146 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 144 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	faceplayer
-# 147 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 145 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
-# 148 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 146 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
+# 147 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	release
+# 148 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
 # 149 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	release
+
 # 150 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 151 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 152 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory::
-# 153 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 151 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_GymGuidePostVictory, MSGBOX_DEFAULT
-# 154 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 152 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	release
+# 153 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
+# 154 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+
 # 155 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 156 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 157 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_LeftGymStatue::
+# 156 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	lockall
+# 157 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
 # 158 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	lockall
+	goto SootopolisCity_Gym_1F_EventScript_GymStatue
 # 159 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	goto_if_set FLAG_BADGE08_GET, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
+	end
 # 160 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	goto SootopolisCity_Gym_1F_EventScript_GymStatue
+
 # 161 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 162 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 163 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_RightGymStatue::
-# 164 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 162 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	lockall
-# 165 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 163 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	goto_if_set FLAG_BADGE08_GET, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
-# 166 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 164 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	goto SootopolisCity_Gym_1F_EventScript_GymStatue
+# 165 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
+# 166 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+
 # 167 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 168 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 169 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GymStatueCertified::
-# 170 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 168 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_GymStatueCertified, MSGBOX_DEFAULT
+# 169 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	releaseall
+# 170 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	end
 # 171 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	releaseall
+
 # 172 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	end
-# 173 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-
-# 174 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_EventScript_GymStatue::
-# 175 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 173 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	msgbox SootopolisCity_Gym_1F_Text_GymStatue, MSGBOX_DEFAULT
-# 176 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 174 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	releaseall
-# 177 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 175 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	end
-# 178 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 176 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 179 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 177 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
-# 180 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 178 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Yo! How's it going, CHAMPION-\n"
-# 181 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 179 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "bound {PLAYER}?\p"
-# 182 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 180 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "SOOTOPOLIS's GYM LEADER JUAN is\n"
-# 183 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 181 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "a master of WATER-type POKéMON.\p"
-# 184 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 182 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "And, to get to JUAN, an icy floor\n"
-# 185 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 183 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "will hamper your progress…\p"
-# 186 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 184 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Listen, I'm sorry, but that's all the\n"
-# 187 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 185 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "advice that I have for you.\p"
-# 188 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 186 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "The rest of the way, you have to\n"
-# 189 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 187 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "go for it yourself!$"
-# 190 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 188 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 191 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 189 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
-# 192 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 190 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Yow! You've beaten even JUAN, who\n"
-# 193 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 191 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "was supposedly the best in all HOENN!\p"
-# 194 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 192 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Okay! Check out your TRAINER CARD.\p"
-# 195 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 193 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "If you've gotten all the BADGES, you're\n"
-# 196 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 194 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "set for the POKéMON LEAGUE challenge!$"
-# 197 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 195 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 198 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 196 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanIntro:
-# 199 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 197 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Let me ask you.\n"
-# 200 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 198 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Did you know?\l"
-# 201 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 199 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Ah, I should not be so coy.\p"
-# 202 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 200 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "It was I who taught WALLACE everything\n"
-# 203 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 201 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "there is to know about POKéMON.\p"
-# 204 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 202 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Once, I had given up my position as\n"
-# 205 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 203 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "the GYM LEADER.\p"
-# 206 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 204 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "In my place, I had entrusted WALLACE\n"
-# 207 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 205 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "with the GYM.\p"
-# 208 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 206 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "However, a compelling reason arose for\n"
-# 209 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 207 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "me to make a comeback.\p"
-# 210 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 208 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Ah, but enough chatter.\n"
-# 211 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 209 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Let us begin our match, shall we?\p"
-# 212 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 210 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Please, you shall bear witness to\n"
-# 213 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 211 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "our artistry.\p"
-# 214 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 212 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "A grand illusion of water sculpted\n"
-# 215 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 213 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "by POKéMON and myself!$"
-# 216 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 214 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 217 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 215 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 @ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
-# 218 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 216 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 @ the gDisplayedStringBattle buffer that it's put into, and it stomps all over the gBattleTextBuffs
-# 219 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 217 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 @ after, as well as the otherwise unused array after that. One wonders if that's the reason for
-# 220 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 218 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 @ the existence of that unused array of ints.
-# 221 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 219 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanDefeat:
-# 222 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 220 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Ahahaha, excellent!\n"
-# 223 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 221 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Very well, you are the winner.\p"
-# 224 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 222 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "From you, I sense the brilliant shine\n"
-# 225 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 223 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "of skill that will overcome all.\p"
-# 226 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 224 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "However, compared with me or even\n"
-# 227 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 225 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "WALLACE, you are lacking in elegance.\p"
-# 228 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 226 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Perhaps I should make you a loan\n"
-# 229 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 227 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "of my outfit?\p"
-# 230 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 228 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "… … … … … …\n"
-# 231 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 229 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "… … … … … …\p"
-# 232 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 230 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Hahaha, I merely jest!\p"
-# 233 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 231 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Rather than my clothes, I shall reward\n"
-# 234 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 232 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "you with this, the RAIN BADGE!$"
-# 235 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 233 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 236 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 234 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
-# 237 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 235 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "{PLAYER} received the RAIN BADGE\n"
-# 238 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 236 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "from JUAN.$"
-# 239 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 237 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 240 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 238 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
-# 241 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 239 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Having the RAIN BADGE shall assure you\n"
-# 242 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 240 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "the full obedience of all your POKéMON\l"
-# 243 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 241 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "to your every command.\p"
-# 244 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 242 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "The RAIN BADGE also allows the use\n"
-# 245 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 243 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "of the HM move WATERFALL to scale\l"
-# 246 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 244 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "walls of cascading water.\p"
-# 247 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 245 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "And, so that you never forget the\n"
-# 248 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 246 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "battle we shared, take this…$"
-# 249 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 247 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 250 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 248 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
-# 251 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 249 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "The TECHNICAL MACHINE I handed you\n"
-# 252 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 250 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "contains WATER PULSE.\p"
-# 253 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 251 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "In use, it will occasionally confuse\n"
-# 254 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 252 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "the target with ultrasonic waves.\p"
-# 255 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 253 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "… … … … … …$"
-# 256 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 254 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 257 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 255 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_RegisteredJuan:
-# 258 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 256 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Registered GYM LEADER JUAN\n"
-# 259 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 257 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "in the POKéNAV.$"
-# 260 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 258 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 261 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 259 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanPostBattle:
-# 262 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 260 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "The TRAINERS who have gathered all\n"
-# 263 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 261 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "the GYM BADGES of HOENN should make\l"
-# 264 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 262 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "way to the ultimate destination.\p"
-# 265 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 263 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "The POKéMON LEAGUE.\p"
-# 266 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 264 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Travel to the easternmost reaches\n"
-# 267 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 265 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "of HOENN, to the island EVER GRANDE.\p"
-# 268 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 266 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "There, you shall find the POKéMON\n"
-# 269 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 267 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "LEAGUE.$"
-# 270 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 268 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 271 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 269 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
-# 272 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 270 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "There remains but one BADGE to\n"
-# 273 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 271 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "obtain in HOENN.\p"
-# 274 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 272 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "If you wish to challenge the POKéMON\n"
-# 275 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 273 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "LEAGUE, you must obtain the last\l"
-# 276 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 274 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "BADGE from the GYM in FORTREE.$"
-# 277 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 275 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 278 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 276 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymStatue:
-# 279 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 277 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "SOOTOPOLIS CITY POKéMON GYM$"
-# 280 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 278 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 281 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 279 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymStatueCertified:
-# 282 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 280 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "SOOTOPOLIS CITY POKéMON GYM\p"
-# 283 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 281 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "JUAN'S CERTIFIED TRAINERS:\n"
-# 284 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 282 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "{PLAYER}$"
-# 285 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 283 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 286 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 284 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanPreRematch:
+# 285 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	.string "JUAN: Ah, this GYM had returned to its\n"
+# 286 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+	.string "usual state of serenity…\p"
 # 287 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "But our young typhoon has returned\n"
 # 288 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "usual state of serenity…\p"
+	.string "to put us to the test again!\p"
 # 289 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "But our young typhoon has returned\n"
-# 290 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "to put us to the test again!\p"
-# 291 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Well, my friend, most certainly!\p"
-# 292 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 290 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "I shall be delighted to dance with you\n"
-# 293 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 291 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "as often as you wish!$"
-# 294 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 292 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 295 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 293 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanRematchDefeat:
-# 296 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 294 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Ahahaha, you are the winner!\n"
-# 297 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 295 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "You have defeated me again!$"
-# 298 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 296 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 299 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 297 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanPostRematch:
-# 300 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 298 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "JUAN: If I told you to become my\n"
-# 301 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 299 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "apprentice, you will refuse, I am sure.\p"
-# 302 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 300 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "I would like to make a gift of my coat\n"
-# 303 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 301 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "to you.\p"
-# 304 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 302 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "But again, you will refuse.\n"
-# 305 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 303 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "I imagine that to be so.\p"
-# 306 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 304 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "And that, my friend, is a certain sign\n"
-# 307 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 305 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "of nobility!$"
-# 308 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 306 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
-# 309 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 307 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
-# 310 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 308 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "JUAN: Ah, this GYM had returned to its\n"
-# 311 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 309 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "usual state of serenity…\p"
-# 312 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 310 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "But our young typhoon has returned\n"
-# 313 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 311 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "to put us to the test again!\p"
-# 314 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 312 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Well, my friend, most certainly!\n"
-# 315 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 313 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "I shall be delighted to dance with you…\p"
-# 316 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 314 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Ah, no, no, no.\n"
-# 317 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 315 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "You have with you but one POKéMON.\p"
-# 318 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 316 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "I wish that you would return with\n"
-# 319 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
+# 317 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "two, perhaps more, POKéMON, please.$"

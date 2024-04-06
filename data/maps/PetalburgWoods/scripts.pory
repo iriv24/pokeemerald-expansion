@@ -493,13 +493,9 @@ script PetalburgWoods_EventScript_GardeniaDefeated{
 
 script PetalburgWoods_EventScript_GardeniaGiveItems{
 	giveitem(ITEM_TM_U_TURN)
-	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_EVIOLITE)
-	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_LEAF_STONE, 10)
-	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	giveitem(ITEM_SHINY_STONE, 10)
-	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	setflag(FLAG_RECEIVED_TM_U_TURN)
 	msgbox(Gardenia_ExplainItems)
 	release

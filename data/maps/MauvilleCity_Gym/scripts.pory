@@ -115,13 +115,9 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 
 MauvilleCity_Gym_EventScript_GiveVoltSwitch2::
 	giveitem ITEM_TM_VOLT_SWITCH
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_LUXRITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_MANECTITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_AMPHAROSITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainVoltSwitch, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
 	release
@@ -129,11 +125,8 @@ MauvilleCity_Gym_EventScript_GiveVoltSwitch2::
 
 MauvilleCity_Gym_EventScript_GiveVoltSwitch::
 	giveitem ITEM_TM_VOLT_SWITCH
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_LUXRITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_MANECTITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	giveitem ITEM_AMPHAROSITE
 	msgbox MauvilleCity_Gym_Text_ExplainVoltSwitch, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
