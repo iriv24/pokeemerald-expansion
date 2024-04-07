@@ -7398,7 +7398,7 @@ static const struct TrainerMon sParty_Lydia1[] = {
     .species = SPECIES_BAYLEEF,
     .nature = NATURE_BOLD,
     .ability = ABILITY_OVERGROW,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_EVIOLITE,
     .moves = {MOVE_MEGA_DRAIN, MOVE_SYNTHESIS, MOVE_POISON_POWDER, MOVE_FLASH}
     },
     {
@@ -8713,16 +8713,16 @@ static const struct TrainerMon sParty_Mike1[] = {
 
 static const struct TrainerMon sParty_Mike2[] = {
     {
-    .lvl = 16,
-    .species = SPECIES_GEODUDE,
+    .lvl = 28,
+    .species = SPECIES_HITMONTOP,
     },
     {
-    .lvl = 16,
-    .species = SPECIES_GEODUDE,
+    .lvl = 28,
+    .species = SPECIES_KLAWF,
     },
     {
-    .lvl = 16,
-    .species = SPECIES_MACHOP,
+    .lvl = 28,
+    .species = SPECIES_ESCAVALIER,
     }
 };
 
