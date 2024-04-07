@@ -25,6 +25,7 @@ Exceptions:
 #define DECAP_MAIN_MENU     TRUE // Main menu text.
 #define DECAP_OPTION_MENU   TRUE // Option menu text.
 #define DECAP_START_MENU    TRUE // Start menu options & Save menu text.
+#define DECAP_L_MENU        TRUE // L menu options & Save menu text.
 #define DECAP_PARTY_MENU    TRUE // Party menu text.
 #define DECAP_MAP_NAMES     TRUE // Map and location names.
 #define DECAP_EASY_CHAT     TRUE // Easy Chat words and interface.

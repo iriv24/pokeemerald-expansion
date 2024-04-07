@@ -3251,6 +3251,12 @@ void SetUsingUnionRoomStartMenu(void)
         gSpecialVar_Result = UR_INTERACT_START_MENU;
 }
 
+void SetUsingUnionRoomLMenu(void)
+{
+    if (InUnionRoom() == TRUE)
+        gSpecialVar_Result = UR_INTERACT_START_MENU;
+}
+
 static void ReceiveUnionRoomActivityPacket(struct WirelessLink_URoom *data)
 {
     if (gRecvCmds[1][1] != 0 && (gRecvCmds[1][0] & RFUCMD_MASK) == RFUCMD_SEND_PACKET)
