@@ -53,6 +53,7 @@ RustboroCity_PokemonCenter_1F_EventScript_DeclineEgg::
 RustboroCity_PokemonCenter_1F_EventScript_NoRoomForEgg::
 	msgbox RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
 	release
+	end
 
 RustboroCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor, MSGBOX_NPC

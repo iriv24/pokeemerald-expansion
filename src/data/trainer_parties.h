@@ -157,7 +157,7 @@ static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),   
     .lvl = 202, 
-    .species = SPECIES_PURUGLY,
+    .species = SPECIES_GLAMEOW,
     .moves = {MOVE_FAKE_OUT, MOVE_KNOCK_OFF, MOVE_U_TURN, MOVE_FACADE},
     .ability = ABILITY_DEFIANT,
     .nature = NATURE_JOLLY,
@@ -177,7 +177,7 @@ static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
     {
      .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),   
     .lvl = 202, 
-    .species = SPECIES_GRUMPIG,
+    .species = SPECIES_SPOINK,
     .moves = {MOVE_PSYBEAM, MOVE_FLASH, MOVE_ICY_WIND, MOVE_GRASS_KNOT},
     .ability = ABILITY_GLUTTONY,
     .nature = NATURE_CALM,

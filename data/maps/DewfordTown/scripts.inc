@@ -9,7 +9,7 @@
 # 5 "data/maps/DewfordTown/scripts.pory"
 .equ LOCALID_BRINEY_DEWFORD, 2
 # 6 "data/maps/DewfordTown/scripts.pory"
-.equ LOCALID_BOAT_DEWFORD, 4
+.equ LOCALID_BOAT_DEWFORD, 3
 # 7 "data/maps/DewfordTown/scripts.pory"
 
 # 8 "data/maps/DewfordTown/scripts.pory"

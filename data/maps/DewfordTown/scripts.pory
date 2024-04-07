@@ -3,7 +3,7 @@ raw `
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map
 @ All of these local IDs are labeled here
 .equ LOCALID_BRINEY_DEWFORD, 2
-.equ LOCALID_BOAT_DEWFORD, 4
+.equ LOCALID_BOAT_DEWFORD, 3
 
 .equ LOCALID_BOAT_R109, 1
 .equ LOCALID_BRINEY_R109, 2

@@ -371,10 +371,6 @@ static bool8 HandleLMenuInput(void)
     if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
-        //TODO something here
-        if (sCurrentLMenuActions[sLMenuCursorPos] == MENU_ACTION_DEXNAV
-          && MapHasNoEncounterData())
-            return FALSE;
         
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 

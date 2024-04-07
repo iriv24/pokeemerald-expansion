@@ -109,94 +109,96 @@ RustboroCity_PokemonCenter_1F_EventScript_NoRoomForEgg::
 # 55 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	release
 # 56 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
-# 57 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_EventScript_Girl::
-# 58 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	msgbox RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor, MSGBOX_NPC
-# 59 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	end
+# 57 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+
+# 58 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_EventScript_Girl::
+# 59 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+	msgbox RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor, MSGBOX_NPC
 # 60 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	end
 # 61 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
+
 # 62 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "My POKéMON has a NAIVE nature, and my\n"
+RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
 # 63 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "friend's has a JOLLY nature.\p"
+	.string "My POKéMON has a NAIVE nature, and my\n"
 # 64 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "It's fascinating how POKéMON have\n"
+	.string "friend's has a JOLLY nature.\p"
 # 65 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "personalities!$"
+	.string "It's fascinating how POKéMON have\n"
 # 66 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "personalities!$"
 # 67 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
+
 # 68 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "Just like people, there are male and\n"
+RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
 # 69 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "female POKéMON.\p"
+	.string "Just like people, there are male and\n"
 # 70 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "But no one seems to have any idea how\n"
+	.string "female POKéMON.\p"
 # 71 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "they're different.$"
+	.string "But no one seems to have any idea how\n"
 # 72 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "they're different.$"
 # 73 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
+
 # 74 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "The man next door gave me an HM!\p"
+RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
 # 75 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "I used it to teach my POKéMON how to\n"
+	.string "The man next door gave me an HM!\p"
 # 76 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "CUT down skinny trees.$"
+	.string "I used it to teach my POKéMON how to\n"
 # 77 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "CUT down skinny trees.$"
 # 78 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare:
+
 # 79 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "I truly have no idea what\n"
+RustboroCity_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare:
 # 80 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "is inside that egg.$"
+	.string "I truly have no idea what\n"
 # 81 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "is inside that egg.$"
 # 82 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_HaveEggWillYouTakeIt:
+
 # 83 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "I have an Egg here, but I'm too old to be\n"
+RustboroCity_PokemonCenter_1F_Text_HaveEggWillYouTakeIt:
 # 84 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "running around for long enough for it\p"
+	.string "I have an Egg here, but I'm too old to be\n"
 # 85 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "to hatch. Will you take it?$"
+	.string "running around for long enough for it\p"
 # 86 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "to hatch. Will you take it?$"
 # 87 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_AsYouWishThen:
+
 # 88 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "As you wish, then…\p"
+RustboroCity_PokemonCenter_1F_Text_AsYouWishThen:
 # 89 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "If you have a change of heart about\n"
+	.string "As you wish, then…\p"
 # 90 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "hatching this Egg, I will be here.$"
+	.string "If you have a change of heart about\n"
 # 91 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "hatching this Egg, I will be here.$"
 # 92 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg:
+
 # 93 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "Oh? You've too many Pokémon.\n"
+RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg:
 # 94 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "There's no room for this Egg…$"
+	.string "Oh? You've too many Pokémon.\n"
 # 95 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-
+	.string "There's no room for this Egg…$"
 # 96 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg:
-# 97 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "Good! I hope you'll walk plenty with\n"
-# 98 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "that there Egg!$"
-# 99 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 
+# 97 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg:
+# 98 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.string "Good! I hope you'll walk plenty with\n"
+# 99 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+	.string "that there Egg!$"
 # 100 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-RustboroCity_PokemonCenter_1F_Text_ReceivedTheEgg:
+
 # 101 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
+RustboroCity_PokemonCenter_1F_Text_ReceivedTheEgg:
+# 102 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} received the Egg.$"
