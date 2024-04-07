@@ -1835,6 +1835,20 @@ Route111_EventScript_DawnExit4::
 	return
 
 
+Route111_Trigger_BlockTrainerHillEntrance::
+# 1002 "data/maps/Route111/scripts.pory"
+	lockall
+# 1003 "data/maps/Route111/scripts.pory"
+	msgbox TrainerHillDev
+# 1004 "data/maps/Route111/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 1005 "data/maps/Route111/scripts.pory"
+	waitmovement 0
+# 1006 "data/maps/Route111/scripts.pory"
+	releaseall
+	return
+
+
 Route111_Text_Dawn_Greeting::
 # 891 "data/maps/Route111/scripts.pory"
 	.string "Hey, {PLAYER}! Long time no see! Wow,\n"
@@ -1865,3 +1879,8 @@ Route111_Text_Dawn_MagmaAndAqua::
 Route111_Text_DawnGoodbye::
 # 918 "data/maps/Route111/scripts.pory"
 	.string "Back to training, see you later!$"
+
+TrainerHillDev::
+# 1009 "data/maps/Route111/scripts.pory"
+	.string "TRAINER HILL\n"
+	.string "UNDER DEVELOPMENT$"

@@ -1021,6 +1021,15 @@
       "var": "VAR_FOUGHT_DAWN_111",
       "var_value": "0",
       "script": "Route111_EventScript_DawnTrigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 114,
+      "elevation": 0,
+      "var": "VAR_BLOCK_TRAINER_HILL",
+      "var_value": "0",
+      "script": "Route111_Trigger_BlockTrainerHillEntrance"
     }
   ],
   "bg_events": [
@@ -1151,14 +1160,6 @@
       "elevation": 0,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY"
-    },
-    {
-      "type": "sign",
-      "x": 31,
-      "y": 114,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route111_EventScript_TrainerHillSign"
     }
   ]
 }

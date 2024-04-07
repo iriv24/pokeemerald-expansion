@@ -1719,6 +1719,13 @@ void CB2_ReturnToFieldWithOpenMenu(void)
     CB2_ReturnToField();
 }
 
+void CB2_ReturnToFieldWithOpenLMenu(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+    gFieldCallback2 = FieldCB_ReturnToFieldOpenLMenu;
+    CB2_ReturnToField();
+}
+
 void CB2_ReturnToFieldContinueScript(void)
 {
     FieldClearVBlankHBlankCallbacks();

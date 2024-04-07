@@ -139,6 +139,7 @@ void CB2_ReturnToFieldCableClub(void);
 void CB2_ReturnToField(void);
 void CB2_ReturnToFieldFromMultiplayer(void);
 void CB2_ReturnToFieldWithOpenMenu(void);
+void CB2_ReturnToFieldWithOpenLMenu(void);
 void CB2_ReturnToFieldContinueScript(void);
 void CB2_ReturnToFieldContinueScriptPlayMapMusic(void);
 void CB2_ReturnToFieldFadeFromBlack(void);

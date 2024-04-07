@@ -996,3 +996,17 @@ script Route111_EventScript_DawnExit4{
 	walk_down
 	step_end
 }
+
+
+script Route111_Trigger_BlockTrainerHillEntrance{
+	lockall
+	msgbox(TrainerHillDev)
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text TrainerHillDev{
+	"TRAINER HILL\n"
+	"UNDER DEVELOPMENT"
+}
