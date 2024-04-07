@@ -3571,6 +3571,510 @@ static const u8 sTM108Desc[] = _(
     "hit a foe and\n"
     "clear the terrain.");
 
+static const u8 sTM109Desc[] = _(
+    "The user bites the\n"
+    "target, eating its\n"
+    "held Berry. ");
+    
+static const u8 sTM110Desc[] = _(
+    "Stomps around\n"
+    "angrily. Stronger\n"
+    "after a failure.");
+    
+static const u8 sTM111Desc[] = _(
+    "The user punches\n"
+    "with a fiery fist.\n"
+    "May burn.");
+    
+static const u8 sTM112Desc[] = _(
+    "The user punches\n"
+    "with an icy fist.\n"
+    "May frostbite");
+    
+static const u8 sTM113Desc[] = _(
+    "The user punches\n"
+    "with an electrified\n"
+    "fist. May paralyze.");
+    
+static const u8 sTM114Desc[] = _(
+    "The user bites with\n"
+    "flaming fangs. May\n"
+    "flinch or burn.");
+    
+static const u8 sTM115Desc[] = _(
+    "The user bites with\n"
+    "icy fangs. May\n"
+    "flinch or frost.");
+    
+static const u8 sTM116Desc[] = _(
+    "The user bites with\n"
+    "electrified fangs.\n"
+    "May flinch or para.");
+    
+static const u8 sTM117Desc[] = _(
+    "The user bites with\n"
+    "psychic fangs.\n"
+    "Breaks screens.");
+    
+static const u8 sTM118Desc[] = _(
+    "The user bites with\n"
+    "poisonous fangs.\n"
+    "May badly poison.");
+    
+static const u8 sTM119Desc[] = _(
+    "The user slams the\n"
+    "target with a steel\n"
+    "head. May flinch.");
+    
+static const u8 sTM120Desc[] = _(
+    "The user liquidates\n"
+    "the target. May\n"
+    "lower Defense.");
+    
+static const u8 sTM121Desc[] = _(
+    "The user fires a\n"
+    "Hydro Pump that \n"
+    "slams the target.");
+    
+static const u8 sTM122Desc[] = _(
+    "User crashes into\n"
+    "target with drills.\n"
+    "High crit ratio.");
+    
+static const u8 sTM123Desc[] = _(
+    "The user launches\n"
+    "a fiery kick. May\n"
+    "burn, high crit.");
+    
+static const u8 sTM124Desc[] = _(
+    "The user splits its\n"
+    "HP in half with the\n"
+    "target.");
+    
+static const u8 sTM125Desc[] = _(
+    "User focuses its\n"
+    "mind before ramm-\n"
+    "ing. May flinch.");
+    
+static const u8 sTM126Desc[] = _(
+    "Type depends on\n"
+    "the weather on\n"
+    "the field.");
+    
+static const u8 sTM127Desc[] = _(
+    "User attacks with\n"
+    "a blade of air.\n"
+    "May flinch.");
+    
+static const u8 sTM128Desc[] = _(
+    "The user hexes the\n"
+    "target. Doubles\n"
+    "dmg if statused.");
+    
+static const u8 sTM129Desc[] = _(
+    "Attacks the target\n"
+    "with mystical\n"
+    "fire. Lowers SpAtk.");
+    
+static const u8 sTM130Desc[] = _(
+    "The user slams\n"
+    "seeds down on\n"
+    "the target.");
+    
+static const u8 sTM131Desc[] = _(
+    "The user cuts its\n"
+    "target with leaves.\n"
+    "High crit ratio.");
+    
+static const u8 sTM132Desc[] = _(
+    "The user knocks\n"
+    "the target's held\n"
+    "item off.");
+    
+static const u8 sTM133Desc[] = _(
+    "Attacks with rays\n"
+    "of light that\n"
+    "shine like diamonds.");
+    
+static const u8 sTM134Desc[] = _(
+    "Hurls boulders at\n"
+    "the foe 2 to 5\n"
+    "times in a row.");
+    
+static const u8 sTM135Desc[] = _(
+    "Sharp pins are\n"
+    "fired to strike\n"
+    "2 to 5 times.");
+    
+static const u8 sTM136Desc[] = _(
+    "Attacks the foe\n"
+    "by firing 2 to 5\n"
+    "icicles in a row.");
+    
+static const u8 sTM137Desc[] = _(
+    "Strikes the foe\n"
+    "with its tail 2\n"
+    "to 5 times.");
+    
+static const u8 sTM138Desc[] = _(
+    "Straight-arm hits\n"
+    "that strike the foe\n"
+    "2 to 5 times.");
+    
+static const u8 sTM139Desc[] = _(
+    "The higher the\n"
+    "foe's Attack the\n"
+    "more damage caused.");
+    
+static const u8 sTM140Desc[] = _(
+    "Hardens the body's\n"
+    "surface to sharply\n"
+    "raise Defense.");
+    
+static const u8 sTM141Desc[] = _(
+    "Thinks bad\n"
+    "thoughts to boost\n"
+    "Sp. Atk sharply.");
+    
+static const u8 sTM142Desc[] = _(
+    "Makes the ground\n"
+    "erupt with power.\n"
+    "May lower Sp.Def.");
+    
+static const u8 sTM143Desc[] = _(
+    "Attacks with an\n"
+    "aura blast that\n"
+    "cannot be evaded.");
+    
+static const u8 sTM144Desc[] = _(
+    "Exhales a hot\n"
+    "breath on the foe\n"
+    "May inflict a burn.");
+    
+static const u8 sTM145Desc[] = _(
+    "Traps the foe in\n"
+    "a fierce wind. May\n"
+    "cause confusion.");
+    
+static const u8 sTM146Desc[] = _(
+    "Violently lashes\n"
+    "the foe with vines\n"
+    "or tentacles.");
+    
+static const u8 sTM147Desc[] = _(
+    "Slams hard into\n"
+    "the foe with its\n"
+    "entire body.");
+    
+static const u8 sTM148Desc[] = _(
+    "A damaging sound\n"
+    "wave that may\n"
+    "lower Sp. Def.");
+    
+static const u8 sTM149Desc[] = _(
+    "Vanishes on the\n"
+    "first turn then\n"
+    "strikes the next.");
+    
+static const u8 sTM150Desc[] = _(
+    "A charge that may\n"
+    "burn the foe. Also\n"
+    "hurts the user.");
+    
+static const u8 sTM151Desc[] = _(
+    "The higher the\n"
+    "user's stats the\n"
+    "more damage caused.");
+    
+static const u8 sTM152Desc[] = _(
+    "Shoots filthy\n"
+    "garbage at the\n"
+    "foe. May poison.");
+    
+static const u8 sTM153Desc[] = _(
+    "Whips up a\n"
+    "turbulent breeze\n"
+    "that raises Speed.");
+    
+static const u8 sTM154Desc[] = _(
+    "A brutal ramming\n"
+    "attack using out-\n"
+    "thrust horns.");
+    
+static const u8 sTM155Desc[] = _(
+    "Casts comets onto\n"
+    "the foe. Harshly\n"
+    "lowers the Sp.Atk.");
+    
+static const u8 sTM156Desc[] = _(
+    "The user fights the\n"
+    "target up close\n"
+    "without guarding.");
+
+static const u8 sTM157Desc[] = _(
+    "Attacks with the\n"
+    "power of the moon.\n"
+    "May lower Sp. Atk.");
+
+static const u8 sTM158Desc[] = _(
+    "A full-body\n"
+    "slam that may\n"
+    "cause paralysis.");
+
+static const u8 sTM159Desc[] = _(
+    "Plays rough with\n"
+    "the target. May\n"
+    "lower attack.");
+
+static const u8 sTM160Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM161Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM162Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM163Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM164Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM165Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM166Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM167Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM168Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM169Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM170Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM171Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM172Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM173Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM174Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM175Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM176Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM177Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM178Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM179Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM180Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM181Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM182Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM183Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM184Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM185Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM186Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM187Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM188Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM189Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM190Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM191Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM192Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM193Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM194Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM195Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM196Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM197Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM198Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM199Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM200Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM201Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM202Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM203Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM204Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM205Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM206Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM207Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM208Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM209Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM210Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM211Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM212Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM213Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM214Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM215Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM216Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM217Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM218Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM219Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM220Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM221Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM222Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM223Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM224Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM225Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM226Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM227Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM228Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM229Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM230Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM231Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM232Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM233Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM234Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM235Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM236Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM237Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM238Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM239Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM240Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM241Desc[] = _( // Todo
+    "?????");
+
+static const u8 sTM242Desc[] = _( // Todo
+    "?????");
+
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"
     "with sharp blades\n"

@@ -109,7 +109,58 @@
     F(BODY_PRESS) \
     F(TRICK_ROOM) \
     F(BRAVE_BIRD) \
-    F(ICE_SPINNER)
+    F(ICE_SPINNER) \
+    F(BUG_BITE) \
+    F(STOMPING_TANTRUM) \
+    F(FIRE_PUNCH) \
+    F(ICE_PUNCH) \
+    F(THUNDER_PUNCH) \
+    F(FIRE_FANG) \
+    F(ICE_FANG) \
+    F(THUNDER_FANG) \
+    F(PSYCHIC_FANGS) \
+    F(POISON_FANG) \
+    F(IRON_HEAD) \
+    F(LIQUIDATION) \
+    F(HYDRO_PUMP) \
+    F(DRILL_RUN) \
+    F(BLAZE_KICK) \
+    F(PAIN_SPLIT) \
+    F(ZEN_HEADBUTT) \
+    F(WEATHER_BALL) \
+    F(AIR_SLASH) \
+    F(HEX) \
+    F(MYSTICAL_FIRE) \
+    F(SEED_BOMB) \
+    F(LEAF_BLADE) \
+    F(KNOCK_OFF) \
+    F(POWER_GEM) \
+    F(ROCK_BLAST) \
+    F(PIN_MISSILE) \
+    F(ICICLE_SPEAR) \
+    F(TAIL_SLAP) \
+    F(ARM_THRUST) \
+    F(FOUL_PLAY) \
+    F(IRON_DEFENSE) \
+    F(NASTY_PLOT) \
+    F(EARTH_POWER) \
+    F(AURA_SPHERE) \
+    F(HEAT_WAVE) \
+    F(HURRICANE) \
+    F(POWER_WHIP) \
+    F(HIGH_HORSEPOWER) \
+    F(BUG_BUZZ) \
+    F(PHANTOM_FORCE) \
+    F(FLARE_BLITZ) \
+    F(STORED_POWER) \
+    F(GUNK_SHOT) \
+    F(TAILWIND) \
+    F(MEGAHORN) \
+    F(DRACO_METEOR) \
+    F(CLOSE_COMBAT) \
+    F(MOONBLAST) \
+    F(BODY_SLAM) \
+    F(PLAY_ROUGH)
 
 #define FOREACH_HM(F) \
     F(CUT) \
