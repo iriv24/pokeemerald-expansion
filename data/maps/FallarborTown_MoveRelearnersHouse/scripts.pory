@@ -102,14 +102,14 @@ FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale::
 	end
 
 FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
-	.string "I'm the MOVE TUTOR.\p"
-	.string "I know all the moves that POKéMON\n"
-	.string "learn--every one of them--and I can\l"
-	.string "teach POKéMON those moves.\p"
-	.string "I can teach a move to a POKéMON\n"
-	.string "of yours if you'd like.\p"
-	.string "I'll do it for a HEART SCALE.\n"
-	.string "I'm collecting those now.$"
+	.string "I'm the Move Tutor.\n"
+	.string "Or at least I used to be. I got tired of\p"
+	.string "collecting Heart Scales and teaching\n"
+	.string "Pokémon the same moves over and over\p"
+	.string "again, and trainers got tired of coming\n"
+	.string "all the way out here just to have me\p"
+	.string "teach them moves. So, I solved both\n"
+	.string "problems by making these!$"
 
 FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
 	.string "Oh! That's it! That's an honest to\n"
