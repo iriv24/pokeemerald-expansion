@@ -143,12 +143,12 @@ enum {
     FIELD_MOVE_ROCK_SMASH,  // FLAG_BADGE03_GET
     FIELD_MOVE_STRENGTH,    // FLAG_BADGE04_GET
     FIELD_MOVE_SURF,        // FLAG_BADGE05_GET
-    FIELD_MOVE_FLY,         // FLAG_BADGE06_GET
+    FIELD_MOVE_SECRET_POWER,// FLAG_BADGE06_GET
     FIELD_MOVE_DIVE,        // FLAG_BADGE07_GET
     FIELD_MOVE_WATERFALL,   // FLAG_BADGE08_GET
+    FIELD_MOVE_FLY,
     FIELD_MOVE_TELEPORT,
     FIELD_MOVE_DIG,
-    FIELD_MOVE_SECRET_POWER,
     FIELD_MOVE_MILK_DRINK,
     FIELD_MOVE_SOFT_BOILED,
     FIELD_MOVE_SWEET_SCENT,
@@ -2809,11 +2809,35 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
+                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02, 1)){
+                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
+                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05, 1)){ 
+                        if (sFieldMoves[j] != MOVE_DIG ){
+                            if (sFieldMoves[j] != MOVE_TELEPORT){
+                                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                            }
+                        }
+                    }
+                }
                 break;
             }
         }
     }
+
+    // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 8 + MENU_FIELD_MOVES);
+    // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+
+    // If Mon can learn Dig and action list consists of < 4 moves, add DIG to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_DIG) != 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 10 + MENU_FIELD_MOVES);
+    // If Mon can learn Teleport and action list consists of < 4 moves, add TELEPORT to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_TELEPORT) != 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 9 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
     {
