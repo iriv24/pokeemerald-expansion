@@ -162,11 +162,6 @@ Route114_EventScript_Ivy::
 	msgbox Route114_Text_IvyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route114_EventScript_Angelina::
-	trainerbattle_single TRAINER_ANGELINA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
-	msgbox Route114_Text_AngelinaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route114_EventScript_Charlotte::
 	trainerbattle_single TRAINER_CHARLOTTE, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
 	msgbox Route114_Text_CharlottePostBattle, MSGBOX_AUTOCLOSE
