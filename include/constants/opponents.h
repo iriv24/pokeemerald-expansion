@@ -715,7 +715,7 @@
 #define TRAINER_COBY                        709
 #define TRAINER_CANDICE                     710
 #define TRAINER_BYRON                       711
-#define TRAINER_ANGELINA                    712
+#define TRAINER_VOLKNER                     712
 #define TRAINER_KAI                         713
 #define TRAINER_CHARLOTTE                   714
 #define TRAINER_DEANDRE                     715
