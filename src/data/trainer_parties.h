@@ -1802,7 +1802,7 @@ static const struct TrainerMon sParty_Mark[] = {
 static const struct TrainerMon sParty_GruntMtChimney1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 42,
     .species = SPECIES_CENTISKORCH,
     .nature = NATURE_JOLLY,
     .heldItem = ITEM_CHARTI_BERRY,
@@ -1811,7 +1811,7 @@ static const struct TrainerMon sParty_GruntMtChimney1[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 42,
     .species = SPECIES_SKUNTANK,
     .heldItem = ITEM_AIR_BALLOON,
     .nature = NATURE_JOLLY,
@@ -2594,19 +2594,15 @@ static const struct TrainerMon sParty_Justin[] = {
 
 static const struct TrainerMon sParty_Ethan1[] = {
     {
-    .lvl = 20,
-    .species = SPECIES_ZIGZAGOON,
-    },
-    {
-    .lvl = 20,
-    .species = SPECIES_TAILLOW,
+    .lvl = 40,
+    .species = SPECIES_PERSIAN_ALOLAN,
     }
 };
 
 static const struct TrainerMon sParty_Autumn[] = {
     {
-    .lvl = 21,
-    .species = SPECIES_SHROOMISH,
+    .lvl = 40,
+    .species = SPECIES_PERRSERKER,
     }
 };
 
@@ -6148,16 +6144,12 @@ static const struct TrainerMon sParty_Martha[] = {
 
 static const struct TrainerMon sParty_Diana1[] = {
     {
-    .lvl = 19,
-    .species = SPECIES_SHROOMISH,
+    .lvl = 39,
+    .species = SPECIES_BELLOSSOM,
     },
     {
-    .lvl = 19,
-    .species = SPECIES_ODDISH,
-    },
-    {
-    .lvl = 19,
-    .species = SPECIES_SWABLU,
+    .lvl = 39,
+    .species = SPECIES_DODRIO,
     }
 };
 
@@ -7915,7 +7907,7 @@ static const struct TrainerMon sParty_Harrison[] = {
 static const struct TrainerMon sParty_GruntMtChimney2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 42,
     .species = SPECIES_CRADILY,
     .nature = NATURE_RELAXED,
     .heldItem = ITEM_CHOPLE_BERRY,
@@ -7924,7 +7916,7 @@ static const struct TrainerMon sParty_GruntMtChimney2[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 42,
     .species = SPECIES_BOMBIRDIER,
     .heldItem = ITEM_EXPERT_BELT,
     .nature = NATURE_JOLLY,
@@ -8133,7 +8125,7 @@ static const struct TrainerMon sParty_GruntWeatherInst5[] = {
 static const struct TrainerMon sParty_TabithaMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 43,
     .species = SPECIES_ZARUDE,
     .nature = NATURE_JOLLY,
     .heldItem = ITEM_FOCUS_SASH,
@@ -8142,7 +8134,7 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 43,
     .species = SPECIES_ARCANINE_HISUIAN,
     .heldItem = ITEM_LIFE_ORB,
     .nature = NATURE_JOLLY,
@@ -8151,7 +8143,7 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 44,
     .species = SPECIES_EMBOAR,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
@@ -8161,7 +8153,7 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     {
         //hp, atk, def, speed, spatk, spdef
     .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
-    .lvl = 201,
+    .lvl = 43,
     .species = SPECIES_SALAZZLE,
     .heldItem = ITEM_AIR_BALLOON,
     .nature = NATURE_TIMID,
@@ -8170,7 +8162,7 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_HOUNDOOM,
     .heldItem = ITEM_HOUNDOOMINITE,
     .nature = NATURE_TIMID,
@@ -8289,7 +8281,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
 static const struct TrainerMon sParty_MaxieMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_GIGALITH,
     .nature = NATURE_IMPISH,
     .heldItem = ITEM_SMOOTH_ROCK,
@@ -8298,7 +8290,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_CACTURNE,
     .heldItem = ITEM_LIFE_ORB,
     .nature = NATURE_MILD,
@@ -8307,7 +8299,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_COALOSSAL,
     .heldItem = ITEM_AIR_BALLOON,
     .nature = NATURE_RELAXED,
@@ -8316,7 +8308,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_HAWLUCHA,
     .heldItem = ITEM_WHITE_HERB,
     .nature = NATURE_ADAMANT,
@@ -8325,7 +8317,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
+    .lvl = 44,
     .species = SPECIES_CAMERUPT,
     .heldItem = ITEM_CAMERUPTITE,
     .nature = NATURE_MODEST,
@@ -8698,7 +8690,7 @@ static const struct TrainerMon sParty_Lucas1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 204,
-    .species = SPECIES_EISCUE,
+    .species = SPECIES_EISCUE_ICE_FACE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_ICE_FACE,
     .heldItem = ITEM_SALAC_BERRY,
@@ -8748,12 +8740,12 @@ static const struct TrainerMon sParty_Clark[] = {
 
 static const struct TrainerMon sParty_Eric[] = {
     {
-    .lvl = 20,
-    .species = SPECIES_GEODUDE,
+    .lvl = 39,
+    .species = SPECIES_WORMADAM_SANDY_CLOAK,
     },
     {
-    .lvl = 20,
-    .species = SPECIES_BALTOY,
+    .lvl = 39,
+    .species = SPECIES_GOLEM_ALOLAN,
     }
 };
 
@@ -10091,7 +10083,7 @@ static const struct TrainerMon sParty_Charlotte[] = {
     .nature = NATURE_NAIVE,
     .ability = ABILITY_SNOW_WARNING,
     .heldItem = ITEM_ABOMASITE,
-    .moves = {MOVE_BLIZZARD, MOVE_GIGA_DRAIN, MOVE_WOOD_HAMMER, MOVE_DOUBLE_EDGE}
+    .moves = {MOVE_BLIZZARD, MOVE_GIGA_DRAIN, MOVE_WOOD_HAMMER, MOVE_EARTHQUAKE}
     }
 };
 
