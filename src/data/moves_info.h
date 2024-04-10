@@ -16316,10 +16316,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Giant stalk scatters seeds\n"
             "that drain HP every turn."),
         .effect = EFFECT_SAPPY_SEED,
-        .power = B_UPDATED_MOVE_DATA >= GEN_8 ? 100 : 90,
+        .power = 95,
         .type = TYPE_GRASS,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_8 ? 90 : 100,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_8 ? 10 : 15,
+        .accuracy = 100,
+        .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
