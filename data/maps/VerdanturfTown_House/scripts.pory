@@ -47,6 +47,7 @@ VerdanturfTown_House_EventScript_GiveSetupTms::
 	giveitem ITEM_TM_FLAME_CHARGE
 	giveitem ITEM_TM_TRAILBLAZE
 	giveitem ITEM_TM_WORK_UP
+	giveitem ITEM_TM_NASTY_PLOT
 	setflag FLAG_RECEIVED_SETUP_TMS
 	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
 	release

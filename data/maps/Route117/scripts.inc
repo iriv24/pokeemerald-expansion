@@ -575,32 +575,34 @@ Route117_EventScript_FantinaDefeated::
 
 Route117_EventScript_FantinaGiveItems::
 # 297 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_SHADOW_BALL
+	giveitem ITEM_TM_PSYCHIC
 # 298 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_BRICK_BREAK
+	giveitem ITEM_TM_SHADOW_BALL
 # 299 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_BANETTITE
+	giveitem ITEM_TM_BRICK_BREAK
 # 300 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_SABLENITE
+	giveitem ITEM_BANETTITE
 # 301 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_GENGARITE
+	giveitem ITEM_SABLENITE
 # 302 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT
+	giveitem ITEM_GENGARITE
 # 303 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_EXPERT_BELT
 # 304 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+	giveitem ITEM_LEFTOVERS
 # 305 "data/maps/Route117/scripts.pory"
-	msgbox Fantina_ExplainItems
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 # 306 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 307 "data/maps/Route117/scripts.pory"
 	release
 	end
 
 
 Fantina_ExplainItems::
-# 310 "data/maps/Route117/scripts.pory"
-	.string "Shadow Ball and Brick Break are two\n"
-	.string "very powerful moves. In addition, I had\p"
+# 311 "data/maps/Route117/scripts.pory"
+	.string "Those three are some very\n"
+	.string "powerful moves. In addition, I had\p"
 	.string "a few spare Mega Stones for some\n"
 	.string "Ghost-type Pokémon, though you'll need\p"
 	.string "a Mega Ring if you want to use them.\n"
@@ -610,17 +612,17 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Greeting::
-# 322 "data/maps/Route117/scripts.pory"
+# 323 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina. Did\n"
 	.string "you come here to enjoy the flowers,\p"
 	.string "too? Or were you looking for a battle?$"
 
 Fantina_Outro::
-# 328 "data/maps/Route117/scripts.pory"
+# 329 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\p"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 335 "data/maps/Route117/scripts.pory"
+# 336 "data/maps/Route117/scripts.pory"
 	.string "It's much prettier here than back home.$"

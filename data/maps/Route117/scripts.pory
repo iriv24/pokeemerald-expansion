@@ -294,6 +294,7 @@ script Route117_EventScript_FantinaDefeated{
 }
 
 script Route117_EventScript_FantinaGiveItems{
+	giveitem(ITEM_TM_PSYCHIC)
 	giveitem(ITEM_TM_SHADOW_BALL)
 	giveitem(ITEM_TM_BRICK_BREAK)
 	giveitem(ITEM_BANETTITE)
@@ -308,8 +309,8 @@ script Route117_EventScript_FantinaGiveItems{
 }
 
 text Fantina_ExplainItems{
-	"Shadow Ball and Brick Break are two\n"
-	"very powerful moves. In addition, I had\p"
+	"Those three are some very\n"
+	"powerful moves. In addition, I had\p"
 	"a few spare Mega Stones for some\n"
 	"Ghost-type Pokémon, though you'll need\p"
 	"a Mega Ring if you want to use them.\n"
