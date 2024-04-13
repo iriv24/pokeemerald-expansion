@@ -772,6 +772,7 @@ script Route111_EventScript_DawnTrigger4{
 
 script Route111_EventScript_DawnScene{
 	lockall
+	call(Route110_EventScript_PlayMayMusic)
 	applymovement(47, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	applymovement(47, Common_Movement_ExclamationMark)
@@ -797,6 +798,7 @@ script Route111_EventScript_DawnRivalBattle{
 
 script Route111_EventScript_DawnDefeated{
 	msgbox(Route111_Text_Dawn_MagmaAndAqua)
+	giveitem(ITEM_ABILITY_PATCH, 999)
 	giveitem(ITEM_EMPOLEONITE_D)
 	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	msgbox(Route111_Text_DawnGoodbye)

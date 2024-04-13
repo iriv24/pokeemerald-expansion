@@ -15,7 +15,7 @@ RustboroCity_House1_EventScript_Trader::
 # 8 "data/maps/RustboroCity_House1/scripts.pory"
 	goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, RustboroCity_House1_EventScript_TradeCompleted
 # 9 "data/maps/RustboroCity_House1/scripts.pory"
-	setvar VAR_0x8008, INGAME_TRADE_SEEDOT
+	setvar VAR_0x8008, INGAME_TRADE_MIMR_JR
 # 10 "data/maps/RustboroCity_House1/scripts.pory"
 	copyvar VAR_0x8004, VAR_0x8008
 # 11 "data/maps/RustboroCity_House1/scripts.pory"

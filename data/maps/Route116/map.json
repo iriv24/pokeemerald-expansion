@@ -394,12 +394,12 @@
       "x": 53,
       "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route116_EventScript_RoarkBattle",
+      "script": "Route116_EventScript_Roark",
       "flag": "0"
     }
   ],

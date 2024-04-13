@@ -537,6 +537,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitem ITEM_RINDO_BERRY, 10
 	giveitem ITEM_YACHE_BERRY, 10
 	giveitem ITEM_QUICK_BALL, 99
+	giveitem ITEM_ABILITY_CAPSULE, 999
 	giveitem ITEM_ABSORB_BULB, 10
 	giveitem ITEM_BLUE_SHARD, 100
 	giveitem ITEM_RED_SHARD, 100
@@ -555,8 +556,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitem ITEM_POISON_BARB, 10
 	giveitem ITEM_MENTAL_HERB, 10
 	giveitem ITEM_LIGHT_BALL, 10
-	giveitem ITEM_ABILITY_CAPSULE, 999
-	giveitem ITEM_ABILITY_PATCH, 999
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
 	return

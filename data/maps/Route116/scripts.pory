@@ -474,19 +474,51 @@ Route116_Text_TrainerTipsBagHasPockets:
 
 `
 
-script Route116_EventScript_RoarkBattle{
-	trainerbattle_single(TRAINER_ROARK, Roark_Greeting, Roark_Outro, Route116_EventScript_RoarkDefeated, NO_MUSIC)
-	goto_if_unset(FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkGiveRockTomb)
-	msgbox(PostBattle_Roark, MSGBOX_AUTOCLOSE)
+script Route116_EventScript_Roark{
+	lockall
+	applymovement(29, Common_Movement_FacePlayer)
+	call_if_eq(VAR_UNUSED_FOUGHT_ROARK116, 1, Route116_EventScript_RoarkDefeated)
+	goto_if_set(FLAG_DECLINED_ROARK_BATTLE_116, Route116_EventScript_RoarkRequestBattleAgain)
+	msgbox(Roark_Greeting, MSGBOX_DEFAULT)
 	waitmessage
+	msgbox(Roark_WillYouBattleMe, MSGBOX_YESNO)
+	goto(Route116_EventScript_BattleRoarkPrompt)
 	end
 }
 
-script Route116_EventScript_RoarkDefeated{
+script Route116_EventScript_RoarkRequestBattleAgain{
+	msgbox(Ready_Yet_Roark, MSGBOX_YESNO)
+	goto(Route116_EventScript_BattleRoarkPrompt)
+	end
+}
+
+script Route116_EventScript_BattleRoarkPrompt{
+	call_if_eq(VAR_RESULT, YES, Route116_EventScript_BattleRoark)
+	goto_if_eq(VAR_RESULT, NO, Route116_EventScript_DeclineRoarkBattle)
+	closemessage
+	end
+}
+
+script Route116_EventScript_DeclineRoarkBattle {
+	setflag(FLAG_DECLINED_ROARK_BATTLE_116)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route116_EventScript_BattleRoark{
+	msgbox("Let's do this!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ROARK, Roark_Outro)
 	setvar(VAR_UNUSED_FOUGHT_ROARK116, 1)
 	goto(Route116_EventScript_RoarkGiveRockTomb)
-	end
+	return
+}
+	
 
+script Route116_EventScript_RoarkDefeated{
+	msgbox(PostBattle_Roark, MSGBOX_DEFAULT)
+	releaseall
+	end
 }
 
 script Route116_EventScript_RoarkGiveRockTomb{
@@ -522,6 +554,11 @@ text Roark_Greeting{
 	"than the ones in Sinnoh. I wonder if\n"
 	"that's true... "
 }
+
+text Roark_WillYouBattleMe{
+	"So what do you say, want to\n"
+	"have a battle?"
+}
 	
 text Roark_Outro{
 	"Looks like the trainers here are\n"
@@ -533,3 +570,12 @@ text Roark_Outro{
 text PostBattle_Roark{
 	"Time to explore the underground!"
 }
+
+text Ready_Yet_Roark{
+	"Ready for our battle now?"
+}
+
+text Come_Back_When_Ready{
+	"Come back when you're ready.\n"
+}
+	

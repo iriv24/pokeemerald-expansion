@@ -945,44 +945,96 @@ Route116_Text_TrainerTipsBagHasPockets:
 # 473 "data/maps/Route116/scripts.pory"
 	.string "a BAG of their own.$"
 
-Route116_EventScript_RoarkBattle::
+Route116_EventScript_Roark::
 # 478 "data/maps/Route116/scripts.pory"
-	trainerbattle_single TRAINER_ROARK, Roark_Greeting, Roark_Outro, Route116_EventScript_RoarkDefeated, NO_MUSIC
+	lockall
 # 479 "data/maps/Route116/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkGiveRockTomb
+	applymovement 29, Common_Movement_FacePlayer
 # 480 "data/maps/Route116/scripts.pory"
-	msgbox PostBattle_Roark, MSGBOX_AUTOCLOSE
+	call_if_eq VAR_UNUSED_FOUGHT_ROARK116, 1, Route116_EventScript_RoarkDefeated
 # 481 "data/maps/Route116/scripts.pory"
+	goto_if_set FLAG_DECLINED_ROARK_BATTLE_116, Route116_EventScript_RoarkRequestBattleAgain
+# 482 "data/maps/Route116/scripts.pory"
+	msgbox Roark_Greeting, MSGBOX_DEFAULT
+# 483 "data/maps/Route116/scripts.pory"
 	waitmessage
+# 484 "data/maps/Route116/scripts.pory"
+	msgbox Roark_WillYouBattleMe, MSGBOX_YESNO
+# 485 "data/maps/Route116/scripts.pory"
+	goto Route116_EventScript_BattleRoarkPrompt
 	end
 
 
-Route116_EventScript_RoarkDefeated::
-# 486 "data/maps/Route116/scripts.pory"
-	setvar VAR_UNUSED_FOUGHT_ROARK116, 1
-# 487 "data/maps/Route116/scripts.pory"
-	goto Route116_EventScript_RoarkGiveRockTomb
+Route116_EventScript_RoarkRequestBattleAgain::
+# 490 "data/maps/Route116/scripts.pory"
+	msgbox Ready_Yet_Roark, MSGBOX_YESNO
+# 491 "data/maps/Route116/scripts.pory"
+	goto Route116_EventScript_BattleRoarkPrompt
 	end
 
 
-Route116_EventScript_RoarkGiveRockTomb::
-# 493 "data/maps/Route116/scripts.pory"
-	giveitem ITEM_TM_ROCK_TOMB
-# 494 "data/maps/Route116/scripts.pory"
-	giveitem ITEM_MUSCLE_BAND
-# 495 "data/maps/Route116/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+Route116_EventScript_BattleRoarkPrompt::
 # 496 "data/maps/Route116/scripts.pory"
-	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+	call_if_eq VAR_RESULT, YES, Route116_EventScript_BattleRoark
 # 497 "data/maps/Route116/scripts.pory"
-	msgbox Roark_ExplainRockTombAndMuscleBand
+	goto_if_eq VAR_RESULT, NO, Route116_EventScript_DeclineRoarkBattle
 # 498 "data/maps/Route116/scripts.pory"
+	closemessage
+	end
+
+
+Route116_EventScript_DeclineRoarkBattle::
+# 503 "data/maps/Route116/scripts.pory"
+	setflag FLAG_DECLINED_ROARK_BATTLE_116
+# 504 "data/maps/Route116/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 505 "data/maps/Route116/scripts.pory"
 	release
 	end
 
 
+Route116_EventScript_BattleRoark::
+# 510 "data/maps/Route116/scripts.pory"
+	msgbox Route116_EventScript_BattleRoark_Text_0, MSGBOX_DEFAULT
+# 511 "data/maps/Route116/scripts.pory"
+	trainerbattle_no_intro TRAINER_ROARK, Roark_Outro
+# 512 "data/maps/Route116/scripts.pory"
+	setvar VAR_UNUSED_FOUGHT_ROARK116, 1
+# 513 "data/maps/Route116/scripts.pory"
+	goto Route116_EventScript_RoarkGiveRockTomb
+	return
+
+
+Route116_EventScript_RoarkDefeated::
+# 519 "data/maps/Route116/scripts.pory"
+	msgbox PostBattle_Roark, MSGBOX_DEFAULT
+# 520 "data/maps/Route116/scripts.pory"
+	releaseall
+	end
+
+
+Route116_EventScript_RoarkGiveRockTomb::
+# 525 "data/maps/Route116/scripts.pory"
+	giveitem ITEM_TM_ROCK_TOMB
+# 526 "data/maps/Route116/scripts.pory"
+	giveitem ITEM_MUSCLE_BAND
+# 527 "data/maps/Route116/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+# 528 "data/maps/Route116/scripts.pory"
+	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+# 529 "data/maps/Route116/scripts.pory"
+	msgbox Roark_ExplainRockTombAndMuscleBand
+# 530 "data/maps/Route116/scripts.pory"
+	release
+	end
+
+
+Route116_EventScript_BattleRoark_Text_0:
+# 510 "data/maps/Route116/scripts.pory"
+	.string "Let's do this!$"
+
 Roark_ExplainRockTombAndMuscleBand::
-# 502 "data/maps/Route116/scripts.pory"
+# 534 "data/maps/Route116/scripts.pory"
 	.string "That TECHNICAL MACHINE, TM39,\n"
 	.string "contains ROCK TOMB.\p"
 	.string "It not only inflicts damage by dropping\n"
@@ -995,7 +1047,7 @@ Roark_ExplainRockTombAndMuscleBand::
 	.string "Attack if held!$"
 
 Roark_Greeting::
-# 515 "data/maps/Route116/scripts.pory"
+# 547 "data/maps/Route116/scripts.pory"
 	.string "Hi there! I'm Roark, a gym leader from\n"
 	.string "the Sinnoh region. I've heard there are\p"
 	.string "a lot of cool underground areas to\n"
@@ -1005,12 +1057,25 @@ Roark_Greeting::
 	.string "than the ones in Sinnoh. I wonder if\n"
 	.string "that's true... $"
 
+Roark_WillYouBattleMe::
+# 558 "data/maps/Route116/scripts.pory"
+	.string "So what do you say, want to\n"
+	.string "have a battle?$"
+
 Roark_Outro::
-# 526 "data/maps/Route116/scripts.pory"
+# 563 "data/maps/Route116/scripts.pory"
 	.string "Looks like the trainers here are\n"
 	.string "pretty strong! Please, take these\p"
 	.string "as rewards for beating me.$"
 
 PostBattle_Roark::
-# 533 "data/maps/Route116/scripts.pory"
+# 570 "data/maps/Route116/scripts.pory"
 	.string "Time to explore the underground!$"
+
+Ready_Yet_Roark::
+# 574 "data/maps/Route116/scripts.pory"
+	.string "Ready for our battle now?$"
+
+Come_Back_When_Ready::
+# 578 "data/maps/Route116/scripts.pory"
+	.string "Come back when you're ready.\n$"
