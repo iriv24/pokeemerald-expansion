@@ -477,18 +477,50 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 `
 
-script PetalburgWoods_EventScript_GardeniaBattle{
-	trainerbattle_single(TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, PetalburgWoods_EventScript_GardeniaDefeated, NO_MUSIC)
-	goto_if_unset(FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaGiveItems)
-	msgbox(PostBattle_Gardenia, MSGBOX_AUTOCLOSE)
+script PetalburgWoods_EventScript_Gardenia{
+	lockall
+	applymovement(14, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaDefeated)
+	goto_if_set(FLAG_DECLINED_GARDENIA_BATTLE, PetalburgWoods_EventScript_GardeniaRequestBattleAgain)
+	msgbox(Gardenia_Greeting, MSGBOX_DEFAULT)
 	waitmessage
+	msgbox(WillYouBattleMe, MSGBOX_YESNO)
+	goto(PetalburgWoods_EventScript_BattleGardeniaPrompt)
 	end
 }
 
-script PetalburgWoods_EventScript_GardeniaDefeated{
-	goto(PetalburgWoods_EventScript_GardeniaGiveItems)
+script PetalburgWoods_EventScript_GardeniaRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(PetalburgWoods_EventScript_BattleGardeniaPrompt)
 	end
+}
 
+script PetalburgWoods_EventScript_BattleGardeniaPrompt{
+	call_if_eq(VAR_RESULT, YES, PetalburgWoods_EventScript_BattleGardenia)
+	goto_if_eq(VAR_RESULT, NO, PetalburgWoods_EventScript_DeclineGardeniaBattle)
+	closemessage
+	end
+}
+
+script PetalburgWoods_EventScript_DeclineGardeniaBattle {
+	setflag(FLAG_DECLINED_GARDENIA_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script PetalburgWoods_EventScript_BattleGardenia{
+	msgbox("Let's go!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_GARDENIA, Gardenia_Outro)
+	goto(PetalburgWoods_EventScript_GardeniaGiveItems)
+	return
+}
+	
+
+script PetalburgWoods_EventScript_GardeniaDefeated{
+	msgbox(PostBattle_Gardenia, MSGBOX_DEFAULT)
+	releaseall
+	end
 }
 
 script PetalburgWoods_EventScript_GardeniaGiveItems{

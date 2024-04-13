@@ -481,13 +481,13 @@ script Route116_EventScript_Roark{
 	goto_if_set(FLAG_DECLINED_ROARK_BATTLE_116, Route116_EventScript_RoarkRequestBattleAgain)
 	msgbox(Roark_Greeting, MSGBOX_DEFAULT)
 	waitmessage
-	msgbox(Roark_WillYouBattleMe, MSGBOX_YESNO)
+	msgbox(WillYouBattleMe, MSGBOX_YESNO)
 	goto(Route116_EventScript_BattleRoarkPrompt)
 	end
 }
 
 script Route116_EventScript_RoarkRequestBattleAgain{
-	msgbox(Ready_Yet_Roark, MSGBOX_YESNO)
+	msgbox(Ready_Yet, MSGBOX_YESNO)
 	goto(Route116_EventScript_BattleRoarkPrompt)
 	end
 }
@@ -555,7 +555,7 @@ text Roark_Greeting{
 	"that's true... "
 }
 
-text Roark_WillYouBattleMe{
+text WillYouBattleMe{
 	"So what do you say, want to\n"
 	"have a battle?"
 }
@@ -571,7 +571,7 @@ text PostBattle_Roark{
 	"Time to explore the underground!"
 }
 
-text Ready_Yet_Roark{
+text Ready_Yet{
 	"Ready for our battle now?"
 }
 

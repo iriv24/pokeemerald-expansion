@@ -959,7 +959,7 @@ Route116_EventScript_Roark::
 # 483 "data/maps/Route116/scripts.pory"
 	waitmessage
 # 484 "data/maps/Route116/scripts.pory"
-	msgbox Roark_WillYouBattleMe, MSGBOX_YESNO
+	msgbox WillYouBattleMe, MSGBOX_YESNO
 # 485 "data/maps/Route116/scripts.pory"
 	goto Route116_EventScript_BattleRoarkPrompt
 	end
@@ -967,7 +967,7 @@ Route116_EventScript_Roark::
 
 Route116_EventScript_RoarkRequestBattleAgain::
 # 490 "data/maps/Route116/scripts.pory"
-	msgbox Ready_Yet_Roark, MSGBOX_YESNO
+	msgbox Ready_Yet, MSGBOX_YESNO
 # 491 "data/maps/Route116/scripts.pory"
 	goto Route116_EventScript_BattleRoarkPrompt
 	end
@@ -1057,7 +1057,7 @@ Roark_Greeting::
 	.string "than the ones in Sinnoh. I wonder if\n"
 	.string "that's true... $"
 
-Roark_WillYouBattleMe::
+WillYouBattleMe::
 # 558 "data/maps/Route116/scripts.pory"
 	.string "So what do you say, want to\n"
 	.string "have a battle?$"
@@ -1072,7 +1072,7 @@ PostBattle_Roark::
 # 570 "data/maps/Route116/scripts.pory"
 	.string "Time to explore the underground!$"
 
-Ready_Yet_Roark::
+Ready_Yet::
 # 574 "data/maps/Route116/scripts.pory"
 	.string "Ready for our battle now?$"
 

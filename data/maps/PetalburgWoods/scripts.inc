@@ -951,44 +951,96 @@ PetalburgWoods_Text_TrainerTipsPP:
 # 476 "data/maps/PetalburgWoods/scripts.pory"
 	.string "taken to a POKéMON CENTER.$"
 
-PetalburgWoods_EventScript_GardeniaBattle::
+PetalburgWoods_EventScript_Gardenia::
 # 481 "data/maps/PetalburgWoods/scripts.pory"
-	trainerbattle_single TRAINER_GARDENIA, Gardenia_Greeting, Gardenia_Outro, PetalburgWoods_EventScript_GardeniaDefeated, NO_MUSIC
+	lockall
 # 482 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaGiveItems
+	applymovement 14, Common_Movement_FacePlayer
 # 483 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox PostBattle_Gardenia, MSGBOX_AUTOCLOSE
+	goto_if_set FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaDefeated
 # 484 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_set FLAG_DECLINED_GARDENIA_BATTLE, PetalburgWoods_EventScript_GardeniaRequestBattleAgain
+# 485 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_Greeting, MSGBOX_DEFAULT
+# 486 "data/maps/PetalburgWoods/scripts.pory"
 	waitmessage
+# 487 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox WillYouBattleMe, MSGBOX_YESNO
+# 488 "data/maps/PetalburgWoods/scripts.pory"
+	goto PetalburgWoods_EventScript_BattleGardeniaPrompt
 	end
 
 
-PetalburgWoods_EventScript_GardeniaDefeated::
-# 489 "data/maps/PetalburgWoods/scripts.pory"
-	goto PetalburgWoods_EventScript_GardeniaGiveItems
+PetalburgWoods_EventScript_GardeniaRequestBattleAgain::
+# 493 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Ready_Yet, MSGBOX_YESNO
+# 494 "data/maps/PetalburgWoods/scripts.pory"
+	goto PetalburgWoods_EventScript_BattleGardeniaPrompt
 	end
 
 
-PetalburgWoods_EventScript_GardeniaGiveItems::
-# 495 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_TM_U_TURN
-# 496 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_EVIOLITE
-# 497 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_LEAF_STONE, 10
-# 498 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_SHINY_STONE, 10
+PetalburgWoods_EventScript_BattleGardeniaPrompt::
 # 499 "data/maps/PetalburgWoods/scripts.pory"
-	setflag FLAG_RECEIVED_TM_U_TURN
+	call_if_eq VAR_RESULT, YES, PetalburgWoods_EventScript_BattleGardenia
 # 500 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox Gardenia_ExplainItems
+	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_DeclineGardeniaBattle
 # 501 "data/maps/PetalburgWoods/scripts.pory"
+	closemessage
+	end
+
+
+PetalburgWoods_EventScript_DeclineGardeniaBattle::
+# 506 "data/maps/PetalburgWoods/scripts.pory"
+	setflag FLAG_DECLINED_GARDENIA_BATTLE
+# 507 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 508 "data/maps/PetalburgWoods/scripts.pory"
 	release
 	end
 
 
+PetalburgWoods_EventScript_BattleGardenia::
+# 513 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox PetalburgWoods_EventScript_BattleGardenia_Text_0, MSGBOX_DEFAULT
+# 514 "data/maps/PetalburgWoods/scripts.pory"
+	trainerbattle_no_intro TRAINER_GARDENIA, Gardenia_Outro
+# 515 "data/maps/PetalburgWoods/scripts.pory"
+	goto PetalburgWoods_EventScript_GardeniaGiveItems
+	return
+
+
+PetalburgWoods_EventScript_GardeniaDefeated::
+# 521 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox PostBattle_Gardenia, MSGBOX_DEFAULT
+# 522 "data/maps/PetalburgWoods/scripts.pory"
+	releaseall
+	end
+
+
+PetalburgWoods_EventScript_GardeniaGiveItems::
+# 527 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_TM_U_TURN
+# 528 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_EVIOLITE
+# 529 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_LEAF_STONE, 10
+# 530 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_SHINY_STONE, 10
+# 531 "data/maps/PetalburgWoods/scripts.pory"
+	setflag FLAG_RECEIVED_TM_U_TURN
+# 532 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_ExplainItems
+# 533 "data/maps/PetalburgWoods/scripts.pory"
+	release
+	end
+
+
+PetalburgWoods_EventScript_BattleGardenia_Text_0:
+# 513 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Let's go!$"
+
 Gardenia_ExplainItems::
-# 505 "data/maps/PetalburgWoods/scripts.pory"
+# 537 "data/maps/PetalburgWoods/scripts.pory"
 	.string "That TM contains U-turn, it's very\n"
 	.string "useful for getting a hit off while\p"
 	.string "switching out a Pokémon. I also\n"
@@ -997,7 +1049,7 @@ Gardenia_ExplainItems::
 	.string "Pokémon you can't evolve quite yet.\p$"
 
 Gardenia_Greeting::
-# 514 "data/maps/PetalburgWoods/scripts.pory"
+# 546 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Aha! I saw you run by through those\n"
 	.string "trees earlier while I was hunting some\p"
 	.string "grass types, but it seemed clear you\n"
@@ -1009,11 +1061,11 @@ Gardenia_Greeting::
 	.string "worth your while!$"
 
 Gardenia_Outro::
-# 526 "data/maps/PetalburgWoods/scripts.pory"
+# 558 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Not bad at all! As promised, please take\n"
 	.string "these rewards for beating me.$"
 
 PostBattle_Gardenia::
-# 532 "data/maps/PetalburgWoods/scripts.pory"
+# 564 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Hope there are some cool grass types in\n"
 	.string "this region!$"
