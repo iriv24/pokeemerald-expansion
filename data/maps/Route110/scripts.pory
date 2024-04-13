@@ -464,25 +464,8 @@ Route110_EventScript_BrendanDefeated::
 	end
 
 Route110_EventScript_GiveItemfinder::
+	giveitem ITEM_HM02
 	giveitem ITEM_DOWSING_MACHINE
-	giveitem ITEM_CHARCOAL, 10
-	giveitem ITEM_BLACK_SLUDGE, 10
-	giveitem ITEM_FLAME_ORB, 10
-	giveitem ITEM_SMOKE_BALL, 10
-	giveitem ITEM_THICK_CLUB, 10
-	giveitem ITEM_WEAKNESS_POLICY, 10
-	giveitem ITEM_MISTY_SEED, 10
-	giveitem ITEM_HABAN_BERRY, 10
-	giveitem ITEM_ROSELI_BERRY, 10
-	giveitem ITEM_SHUCA_BERRY, 10
-	giveitem ITEM_BABIRI_BERRY, 10
-	giveitem ITEM_KASIB_BERRY, 10
-	giveitem ITEM_AIR_BALLOON, 10
-	giveitem ITEM_TERRAIN_EXTENDER, 10
-	giveitem ITEM_GREAT_BALL, 99
-	giveitem ITEM_ULTRA_BALL, 99
-	giveitem ITEM_DIVE_BALL, 99
-	giveitem ITEM_DUSK_BALL, 99
 	giveitem ITEM_TM_BUG_BITE
 	giveitem ITEM_TM_STOMPING_TANTRUM
 	giveitem ITEM_TM_FIRE_PUNCH
@@ -493,7 +476,24 @@ Route110_EventScript_GiveItemfinder::
 	giveitem ITEM_TM_THUNDER_FANG
 	giveitem ITEM_TM_PSYCHIC_FANGS
 	giveitem ITEM_TM_POISON_FANG
-	giveitem ITEM_HM02
+	giveitem ITEM_HABAN_BERRY, 10
+	giveitem ITEM_ROSELI_BERRY, 10
+	giveitem ITEM_SHUCA_BERRY, 10
+	giveitem ITEM_BABIRI_BERRY, 10
+	giveitem ITEM_KASIB_BERRY, 10
+	giveitem ITEM_GREAT_BALL, 99
+	giveitem ITEM_ULTRA_BALL, 99
+	giveitem ITEM_DIVE_BALL, 99
+	giveitem ITEM_DUSK_BALL, 99
+	giveitem ITEM_CHARCOAL, 10
+	giveitem ITEM_BLACK_SLUDGE, 10
+	giveitem ITEM_FLAME_ORB, 10
+	giveitem ITEM_SMOKE_BALL, 10
+	giveitem ITEM_THICK_CLUB, 10
+	giveitem ITEM_WEAKNESS_POLICY, 10
+	giveitem ITEM_MISTY_SEED, 10
+	giveitem ITEM_AIR_BALLOON, 10
+	giveitem ITEM_TERRAIN_EXTENDER, 10
 	setflag FLAG_RIVAL_110
 	return
 
@@ -833,7 +833,7 @@ Route110_Text_BrendanTakeThis:
 	.string "BRENDAN: {PLAYER}, you've trained\n"
 	.string "without me noticing…\p"
 	.string "Good enough!\n"
-	.string "Here, take these,\p."
+	.string "Here, take these,\p"
 	.string "I've got a whole slew\n"
 	.string "of items for you.$"
 
@@ -1028,3 +1028,18 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "See you again, {PLAYER}{KUN}!$"
 
 `
+
+script Route110_Trigger_BlockTrickHouse{
+	lockall
+	msgbox(TrickHouseMessage)
+	waitmessage
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text TrickHouseMessage {
+	"The Trick Master says he'll be ready\n"
+	"once you beat Flannery."
+
+}

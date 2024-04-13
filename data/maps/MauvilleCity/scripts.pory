@@ -464,6 +464,13 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	releaseall
 	end
 
+MauvilleCity_EventScript_FormerRolloutTutor::
+	lockall
+	faceplayer
+	msgbox MauvilleCity_Text_FormerRolloutTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
 MauvilleCity_Text_UncleHesTooPeppy:
 	.string "UNCLE: It's because of POKéMON that\n"
 	.string "this boy's got more pep, I suppose…\l"
@@ -667,6 +674,10 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Text_FormerRolloutTutor:
+	.string "I used to be able to rock and roll... Oh,\n"
+	.string "what happened?$"
 `
 
 script MauvilleCity_Trigger_BlockGameCornerEntrance{

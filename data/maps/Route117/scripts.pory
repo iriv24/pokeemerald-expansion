@@ -279,18 +279,48 @@ Route117_Text_DayCareSign:
 
 `
 
-script Route117_EventScript_FantinaBattle{
-	trainerbattle_single(TRAINER_FANTINA, Fantina_Greeting, Fantina_Outro, Route117_EventScript_FantinaDefeated, NO_MUSIC)
-	goto_if_unset(FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaGiveItems)
-	msgbox(PostBattle_Fantina, MSGBOX_AUTOCLOSE)
-	waitmessage
+script Route117_EventScript_Fantina{
+	lockall
+	applymovement(29, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaDefeated)
+	goto_if_set(FLAG_DECLINED_FANTINA_BATTLE_117, Route117_EventScript_FantinaRequestBattleAgain)
+	msgbox(Fantina_Greeting, MSGBOX_YESNO)
+	goto(Route117_EventScript_BattleFantinaPrompt)
 	end
 }
 
-script Route117_EventScript_FantinaDefeated{
-	goto(Route117_EventScript_FantinaGiveItems)
+script Route117_EventScript_FantinaRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(Route117_EventScript_BattleFantinaPrompt)
 	end
+}
 
+script Route117_EventScript_BattleFantinaPrompt{
+	call_if_eq(VAR_RESULT, YES, Route117_EventScript_BattleFantina)
+	goto_if_eq(VAR_RESULT, NO, Route117_EventScript_DeclineFantinaBattle)
+	closemessage
+	end
+}
+
+script Route117_EventScript_DeclineFantinaBattle {
+	setflag(FLAG_DECLINED_FANTINA_BATTLE_117)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route117_EventScript_BattleFantina{
+	msgbox("You're on!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_FANTINA, Fantina_Outro)
+	goto(Route117_EventScript_FantinaGiveItems)
+	return
+}
+	
+
+script Route117_EventScript_FantinaDefeated{
+	msgbox(PostBattle_Fantina, MSGBOX_DEFAULT)
+	releaseall
+	end
 }
 
 script Route117_EventScript_FantinaGiveItems{

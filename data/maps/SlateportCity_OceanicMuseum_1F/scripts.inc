@@ -311,7 +311,7 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt::
 # 156 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	goto_if_eq VAR_RESULT, 0, SlateportCity_OceanicMuseum_1F_EventScript_NoRoomForThief
 # 157 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	setflag FLAG_RECEIVED_TM_THIEF
+	setflag FLAG_RECEIVED_TM_FLIP_TURN
 # 158 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain, MSGBOX_DEFAULT
 # 159 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"

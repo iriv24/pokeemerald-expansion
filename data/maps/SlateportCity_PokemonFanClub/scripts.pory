@@ -253,6 +253,10 @@ SlateportCity_PokemonFanClub_EventScript_Azumarill::
 	release
 	end
 
+SlateportCity_PokemonFanClub_EventScript_FormerSwaggerTutor::
+	msgbox SlateportCity_PokemonFanClub_Text_FormerSwaggerTutor, MSGBOX_NPC
+	end
+
 SlateportCity_PokemonFanClub_Text_MeetChairman:
 	.string "Er-hem! I am the CHAIRMAN of the\n"
 	.string "POKéMON FAN CLUB!\p"
@@ -398,5 +402,9 @@ SlateportCity_PokemonFanClub_Text_Zigzagoon:
 
 SlateportCity_PokemonFanClub_Text_Azumarill:
 	.string "AZUMARILL: Marimari?$"
+
+SlateportCity_PokemonFanClub_Text_FormerSwaggerTutor:
+	.string "I used to have such a swagger about\n"
+	.string "me... Oh, what happened?$"
 
 `

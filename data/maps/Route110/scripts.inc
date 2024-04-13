@@ -931,65 +931,65 @@ Route110_EventScript_BrendanDefeated::
 # 466 "data/maps/Route110/scripts.pory"
 Route110_EventScript_GiveItemfinder::
 # 467 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_DOWSING_MACHINE
-# 468 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_CHARCOAL, 10
-# 469 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_BLACK_SLUDGE, 10
-# 470 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_FLAME_ORB, 10
-# 471 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_SMOKE_BALL, 10
-# 472 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_THICK_CLUB, 10
-# 473 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_WEAKNESS_POLICY, 10
-# 474 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_MISTY_SEED, 10
-# 475 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_HABAN_BERRY, 10
-# 476 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_ROSELI_BERRY, 10
-# 477 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_SHUCA_BERRY, 10
-# 478 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_BABIRI_BERRY, 10
-# 479 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_KASIB_BERRY, 10
-# 480 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_AIR_BALLOON, 10
-# 481 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TERRAIN_EXTENDER, 10
-# 482 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_GREAT_BALL, 99
-# 483 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_ULTRA_BALL, 99
-# 484 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_DIVE_BALL, 99
-# 485 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_DUSK_BALL, 99
-# 486 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_BUG_BITE
-# 487 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_STOMPING_TANTRUM
-# 488 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_FIRE_PUNCH
-# 489 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_ICE_PUNCH
-# 490 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_THUNDER_PUNCH
-# 491 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_FIRE_FANG
-# 492 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_ICE_FANG
-# 493 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_THUNDER_FANG
-# 494 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_PSYCHIC_FANGS
-# 495 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_TM_POISON_FANG
-# 496 "data/maps/Route110/scripts.pory"
 	giveitem ITEM_HM02
+# 468 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_DOWSING_MACHINE
+# 469 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_BUG_BITE
+# 470 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_STOMPING_TANTRUM
+# 471 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_FIRE_PUNCH
+# 472 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_ICE_PUNCH
+# 473 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_THUNDER_PUNCH
+# 474 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_FIRE_FANG
+# 475 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_ICE_FANG
+# 476 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_THUNDER_FANG
+# 477 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_PSYCHIC_FANGS
+# 478 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TM_POISON_FANG
+# 479 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_HABAN_BERRY, 10
+# 480 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_ROSELI_BERRY, 10
+# 481 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_SHUCA_BERRY, 10
+# 482 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_BABIRI_BERRY, 10
+# 483 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_KASIB_BERRY, 10
+# 484 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_GREAT_BALL, 99
+# 485 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_ULTRA_BALL, 99
+# 486 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_DIVE_BALL, 99
+# 487 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_DUSK_BALL, 99
+# 488 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_CHARCOAL, 10
+# 489 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_BLACK_SLUDGE, 10
+# 490 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_FLAME_ORB, 10
+# 491 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_SMOKE_BALL, 10
+# 492 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_THICK_CLUB, 10
+# 493 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_WEAKNESS_POLICY, 10
+# 494 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_MISTY_SEED, 10
+# 495 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_AIR_BALLOON, 10
+# 496 "data/maps/Route110/scripts.pory"
+	giveitem ITEM_TERRAIN_EXTENDER, 10
 # 497 "data/maps/Route110/scripts.pory"
 	setflag FLAG_RIVAL_110
 # 498 "data/maps/Route110/scripts.pory"
@@ -1669,7 +1669,7 @@ Route110_Text_BrendanTakeThis:
 # 835 "data/maps/Route110/scripts.pory"
 	.string "Good enough!\n"
 # 836 "data/maps/Route110/scripts.pory"
-	.string "Here, take these,\p."
+	.string "Here, take these,\p"
 # 837 "data/maps/Route110/scripts.pory"
 	.string "I've got a whole slew\n"
 # 838 "data/maps/Route110/scripts.pory"
@@ -2054,3 +2054,24 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "Well, I had better get going.\n"
 # 1028 "data/maps/Route110/scripts.pory"
 	.string "See you again, {PLAYER}{KUN}!$"
+
+Route110_Trigger_BlockTrickHouse::
+# 1033 "data/maps/Route110/scripts.pory"
+	lockall
+# 1034 "data/maps/Route110/scripts.pory"
+	msgbox TrickHouseMessage
+# 1035 "data/maps/Route110/scripts.pory"
+	waitmessage
+# 1036 "data/maps/Route110/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 1037 "data/maps/Route110/scripts.pory"
+	waitmovement 0
+# 1038 "data/maps/Route110/scripts.pory"
+	releaseall
+	return
+
+
+TrickHouseMessage::
+# 1041 "data/maps/Route110/scripts.pory"
+	.string "The Trick Master says he'll be ready\n"
+	.string "once you beat Flannery.$"

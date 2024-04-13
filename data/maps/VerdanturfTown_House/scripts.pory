@@ -39,7 +39,6 @@ VerdanturfTown_House_EventScript_GiveSetupTms::
 	giveitem ITEM_TM_BULK_UP
 	giveitem ITEM_TM_RAIN_DANCE
 	giveitem ITEM_TM_DRAGON_DANCE
-	giveitem ITEM_TM_ROOST
 	giveitem ITEM_TM_POWER_UP_PUNCH
 	giveitem ITEM_TM_CHARGE_BEAM
 	giveitem ITEM_TM_ROCK_POLISH

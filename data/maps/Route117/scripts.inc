@@ -555,52 +555,100 @@ Route117_Text_DayCareSign:
 # 278 "data/maps/Route117/scripts.pory"
 	.string "“Let us raise your POKéMON.”$"
 
-Route117_EventScript_FantinaBattle::
+Route117_EventScript_Fantina::
 # 283 "data/maps/Route117/scripts.pory"
-	trainerbattle_single TRAINER_FANTINA, Fantina_Greeting, Fantina_Outro, Route117_EventScript_FantinaDefeated, NO_MUSIC
+	lockall
 # 284 "data/maps/Route117/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaGiveItems
+	applymovement 29, Common_Movement_FacePlayer
 # 285 "data/maps/Route117/scripts.pory"
-	msgbox PostBattle_Fantina, MSGBOX_AUTOCLOSE
+	goto_if_set FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaDefeated
 # 286 "data/maps/Route117/scripts.pory"
-	waitmessage
+	goto_if_set FLAG_DECLINED_FANTINA_BATTLE_117, Route117_EventScript_FantinaRequestBattleAgain
+# 287 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_Greeting, MSGBOX_YESNO
+# 288 "data/maps/Route117/scripts.pory"
+	goto Route117_EventScript_BattleFantinaPrompt
 	end
 
 
-Route117_EventScript_FantinaDefeated::
-# 291 "data/maps/Route117/scripts.pory"
-	goto Route117_EventScript_FantinaGiveItems
+Route117_EventScript_FantinaRequestBattleAgain::
+# 293 "data/maps/Route117/scripts.pory"
+	msgbox Ready_Yet, MSGBOX_YESNO
+# 294 "data/maps/Route117/scripts.pory"
+	goto Route117_EventScript_BattleFantinaPrompt
 	end
 
 
-Route117_EventScript_FantinaGiveItems::
-# 297 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_PSYCHIC
-# 298 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_SHADOW_BALL
+Route117_EventScript_BattleFantinaPrompt::
 # 299 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_TM_BRICK_BREAK
+	call_if_eq VAR_RESULT, YES, Route117_EventScript_BattleFantina
 # 300 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_BANETTITE
+	goto_if_eq VAR_RESULT, NO, Route117_EventScript_DeclineFantinaBattle
 # 301 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_SABLENITE
-# 302 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_GENGARITE
-# 303 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT
-# 304 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_LEFTOVERS
-# 305 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+	closemessage
+	end
+
+
+Route117_EventScript_DeclineFantinaBattle::
 # 306 "data/maps/Route117/scripts.pory"
-	msgbox Fantina_ExplainItems
+	setflag FLAG_DECLINED_FANTINA_BATTLE_117
 # 307 "data/maps/Route117/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 308 "data/maps/Route117/scripts.pory"
 	release
 	end
 
 
+Route117_EventScript_BattleFantina::
+# 313 "data/maps/Route117/scripts.pory"
+	msgbox Route117_EventScript_BattleFantina_Text_0, MSGBOX_DEFAULT
+# 314 "data/maps/Route117/scripts.pory"
+	trainerbattle_no_intro TRAINER_FANTINA, Fantina_Outro
+# 315 "data/maps/Route117/scripts.pory"
+	goto Route117_EventScript_FantinaGiveItems
+	return
+
+
+Route117_EventScript_FantinaDefeated::
+# 321 "data/maps/Route117/scripts.pory"
+	msgbox PostBattle_Fantina, MSGBOX_DEFAULT
+# 322 "data/maps/Route117/scripts.pory"
+	releaseall
+	end
+
+
+Route117_EventScript_FantinaGiveItems::
+# 327 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_TM_PSYCHIC
+# 328 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_TM_SHADOW_BALL
+# 329 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_TM_BRICK_BREAK
+# 330 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_BANETTITE
+# 331 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_SABLENITE
+# 332 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_GENGARITE
+# 333 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_EXPERT_BELT
+# 334 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_LEFTOVERS
+# 335 "data/maps/Route117/scripts.pory"
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+# 336 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 337 "data/maps/Route117/scripts.pory"
+	release
+	end
+
+
+Route117_EventScript_BattleFantina_Text_0:
+# 313 "data/maps/Route117/scripts.pory"
+	.string "You're on!$"
+
 Fantina_ExplainItems::
-# 311 "data/maps/Route117/scripts.pory"
+# 341 "data/maps/Route117/scripts.pory"
 	.string "Those three are some very\n"
 	.string "powerful moves. In addition, I had\p"
 	.string "a few spare Mega Stones for some\n"
@@ -612,17 +660,17 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Greeting::
-# 323 "data/maps/Route117/scripts.pory"
+# 353 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina. Did\n"
 	.string "you come here to enjoy the flowers,\p"
 	.string "too? Or were you looking for a battle?$"
 
 Fantina_Outro::
-# 329 "data/maps/Route117/scripts.pory"
+# 359 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\p"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 336 "data/maps/Route117/scripts.pory"
+# 366 "data/maps/Route117/scripts.pory"
 	.string "It's much prettier here than back home.$"
