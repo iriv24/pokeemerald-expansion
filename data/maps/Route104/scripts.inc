@@ -2405,27 +2405,27 @@ Route104_EventScript_DawnDefeated::
 # 1215 "data/maps/Route104/scripts.pory"
 	msgbox Dawn_TakeThis
 # 1216 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_WISE_GLASSES
-# 1217 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_PSYCHIC_SEED, 10
-# 1218 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_BLACK_BELT, 10
-# 1219 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_DRAGON_FANG, 10
-# 1220 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_PERSIM_BERRY, 10
-# 1221 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_PECHA_BERRY, 10
-# 1222 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_RAWST_BERRY, 10
-# 1223 "data/maps/Route104/scripts.pory"
 	giveitem ITEM_ASPEAR_BERRY, 10
-# 1224 "data/maps/Route104/scripts.pory"
+# 1217 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PERSIM_BERRY, 10
+# 1218 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PECHA_BERRY, 10
+# 1219 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_RAWST_BERRY, 10
+# 1220 "data/maps/Route104/scripts.pory"
 	giveitem ITEM_TANGA_BERRY, 10
-# 1225 "data/maps/Route104/scripts.pory"
+# 1221 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_PSYCHIC_SEED, 10
+# 1222 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_BLACK_BELT, 10
+# 1223 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_DRAGON_FANG, 10
+# 1224 "data/maps/Route104/scripts.pory"
 	giveitem ITEM_MIRACLE_SEED, 10
+# 1225 "data/maps/Route104/scripts.pory"
+	giveitem ITEM_HARBOR_MAIL
 # 1226 "data/maps/Route104/scripts.pory"
-	giveitem ITEM_HARBOR_MAIL, 1
+	giveitem ITEM_WISE_GLASSES
 # 1227 "data/maps/Route104/scripts.pory"
 	msgbox DawnGoodbye
 # 1228 "data/maps/Route104/scripts.pory"

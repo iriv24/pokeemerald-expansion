@@ -540,7 +540,7 @@ text Gardenia_ExplainItems{
 	"switching out a Pokémon. I also\n"
 	"included some useful evolution stones\p"
 	"and an item that will be good for a\n"
-	"Pokémon you can't evolve quite yet.\p"
+	"Pokémon you can't evolve quite yet."
 }
 
 text Gardenia_Greeting{

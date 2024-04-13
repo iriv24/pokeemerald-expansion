@@ -1046,7 +1046,7 @@ Gardenia_ExplainItems::
 	.string "switching out a Pokémon. I also\n"
 	.string "included some useful evolution stones\p"
 	.string "and an item that will be good for a\n"
-	.string "Pokémon you can't evolve quite yet.\p$"
+	.string "Pokémon you can't evolve quite yet.$"
 
 Gardenia_Greeting::
 # 546 "data/maps/PetalburgWoods/scripts.pory"

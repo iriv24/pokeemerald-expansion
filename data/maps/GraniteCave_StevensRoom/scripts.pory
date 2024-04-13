@@ -14,21 +14,21 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_STEEL_WING
 	giveitem ITEM_CHERI_BERRY, 10
+	giveitem ITEM_CHESTO_BERRY, 10
 	giveitem ITEM_CHOPLE_BERRY, 10
+	giveitem ITEM_COLBUR_BERRY, 10
+	giveitem ITEM_SITRUS_BERRY, 20
+	giveitem ITEM_WACAN_BERRY, 10
+	giveitem ITEM_HEAL_BALL, 99
+	giveitem ITEM_BERRY_JUICE, 10
 	giveitem ITEM_MOON_STONE, 10
 	giveitem ITEM_THROAT_SPRAY, 10
-	giveitem ITEM_BERRY_JUICE, 10
-	giveitem ITEM_CHESTO_BERRY, 10
-	giveitem ITEM_HEAL_BALL, 99
 	giveitem ITEM_PP_UP, 20
-	giveitem ITEM_SITRUS_BERRY, 20
 	giveitem ITEM_IRON_BALL, 10
-	giveitem ITEM_COLBUR_BERRY, 10
 	giveitem ITEM_WIDE_LENS, 10
 	giveitem ITEM_HEAT_ROCK, 10
 	giveitem ITEM_LEEK, 10
 	giveitem ITEM_SILK_SCARF, 10
-	giveitem ITEM_WACAN_BERRY, 10
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30

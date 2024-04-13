@@ -564,3 +564,17 @@ Route109_Text_TrainerTipsSign:
 	.string "POKéMON raised by TRAINERS are said\n"
 	.string "to grow stronger than wild POKéMON.$"
 `
+
+script Route109_Trigger_BlockHotHouse{
+	lockall
+	msgbox(GoBeatBrawly)
+	waitmessage
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text GoBeatBrawly{
+	"You should defeat Brawly before\n"
+	"entering here."
+}

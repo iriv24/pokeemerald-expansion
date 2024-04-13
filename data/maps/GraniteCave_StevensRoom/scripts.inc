@@ -31,35 +31,35 @@ GraniteCave_StevensRoom_EventScript_Steven::
 # 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	giveitem ITEM_CHERI_BERRY, 10
 # 17 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_CHOPLE_BERRY, 10
-# 18 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_MOON_STONE, 10
-# 19 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_THROAT_SPRAY, 10
-# 20 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_BERRY_JUICE, 10
-# 21 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	giveitem ITEM_CHESTO_BERRY, 10
+# 18 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	giveitem ITEM_CHOPLE_BERRY, 10
+# 19 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	giveitem ITEM_COLBUR_BERRY, 10
+# 20 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	giveitem ITEM_SITRUS_BERRY, 20
+# 21 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	giveitem ITEM_WACAN_BERRY, 10
 # 22 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	giveitem ITEM_HEAL_BALL, 99
 # 23 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_PP_UP, 20
+	giveitem ITEM_BERRY_JUICE, 10
 # 24 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_SITRUS_BERRY, 20
+	giveitem ITEM_MOON_STONE, 10
 # 25 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_IRON_BALL, 10
+	giveitem ITEM_THROAT_SPRAY, 10
 # 26 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_COLBUR_BERRY, 10
+	giveitem ITEM_PP_UP, 20
 # 27 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_WIDE_LENS, 10
+	giveitem ITEM_IRON_BALL, 10
 # 28 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_HEAT_ROCK, 10
+	giveitem ITEM_WIDE_LENS, 10
 # 29 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_LEEK, 10
+	giveitem ITEM_HEAT_ROCK, 10
 # 30 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_SILK_SCARF, 10
+	giveitem ITEM_LEEK, 10
 # 31 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_WACAN_BERRY, 10
+	giveitem ITEM_SILK_SCARF, 10
 # 32 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 # 33 "data/maps/GraniteCave_StevensRoom/scripts.pory"

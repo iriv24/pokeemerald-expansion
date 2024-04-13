@@ -2653,22 +2653,24 @@ RustboroCity_Trigger_BlockGymEntrance::
 # 1329 "data/maps/RustboroCity/scripts.pory"
 	msgbox GoBeatRoark
 # 1330 "data/maps/RustboroCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+	waitmessage
 # 1331 "data/maps/RustboroCity/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
 # 1332 "data/maps/RustboroCity/scripts.pory"
+	waitmovement 0
+# 1333 "data/maps/RustboroCity/scripts.pory"
 	releaseall
 	return
 
 
-# 1341 "data/maps/RustboroCity/scripts.pory"
-StopPlayer:
 # 1342 "data/maps/RustboroCity/scripts.pory"
+StopPlayer:
+# 1343 "data/maps/RustboroCity/scripts.pory"
 	walk_down
 	step_end
 
 GoBeatRoark::
-# 1335 "data/maps/RustboroCity/scripts.pory"
+# 1336 "data/maps/RustboroCity/scripts.pory"
 	.string "You should go see if there are any\n"
 	.string "other strong trainers to fight, perhaps\p"
 	.string "very far east on Route 116!$"

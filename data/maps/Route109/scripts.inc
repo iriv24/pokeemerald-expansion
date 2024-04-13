@@ -1128,3 +1128,24 @@ Route109_Text_TrainerTipsSign:
 	.string "POKéMON raised by TRAINERS are said\n"
 # 565 "data/maps/Route109/scripts.pory"
 	.string "to grow stronger than wild POKéMON.$"
+
+Route109_Trigger_BlockHotHouse::
+# 569 "data/maps/Route109/scripts.pory"
+	lockall
+# 570 "data/maps/Route109/scripts.pory"
+	msgbox GoBeatBrawly
+# 571 "data/maps/Route109/scripts.pory"
+	waitmessage
+# 572 "data/maps/Route109/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 573 "data/maps/Route109/scripts.pory"
+	waitmovement 0
+# 574 "data/maps/Route109/scripts.pory"
+	releaseall
+	return
+
+
+GoBeatBrawly::
+# 577 "data/maps/Route109/scripts.pory"
+	.string "You should defeat Brawly before\n"
+	.string "entering here.$"

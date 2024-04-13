@@ -1213,17 +1213,17 @@ script Route104_EventScript_DawnRivalBattle{
 
 script Route104_EventScript_DawnDefeated{
 	msgbox(Dawn_TakeThis)
-	giveitem(ITEM_WISE_GLASSES)
-	giveitem(ITEM_PSYCHIC_SEED, 10)
-	giveitem(ITEM_BLACK_BELT, 10)
-	giveitem(ITEM_DRAGON_FANG, 10)
+	giveitem(ITEM_ASPEAR_BERRY, 10)
 	giveitem(ITEM_PERSIM_BERRY, 10)
 	giveitem(ITEM_PECHA_BERRY, 10)
 	giveitem(ITEM_RAWST_BERRY, 10)
-	giveitem(ITEM_ASPEAR_BERRY, 10)
 	giveitem(ITEM_TANGA_BERRY, 10)
+	giveitem(ITEM_PSYCHIC_SEED, 10)
+	giveitem(ITEM_BLACK_BELT, 10)
+	giveitem(ITEM_DRAGON_FANG, 10)
 	giveitem(ITEM_MIRACLE_SEED, 10)
-	giveitem(ITEM_HARBOR_MAIL, 1)
+	giveitem(ITEM_HARBOR_MAIL)
+	giveitem(ITEM_WISE_GLASSES)
 	msgbox(DawnGoodbye)
 	goto(Route104_EventScript_DawnExit)
 	end

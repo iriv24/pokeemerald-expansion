@@ -1327,6 +1327,7 @@ RustboroCity_Text_YouCanHave2On2Battle:
 script RustboroCity_Trigger_BlockGymEntrance{
 	lockall
 	msgbox(GoBeatRoark)
+	waitmessage
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall

@@ -574,6 +574,15 @@
       "var": "VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE",
       "var_value": "2",
       "script": "SlateportCity_EventScript_ScottBattleTentScene"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 39,
+      "elevation": 0,
+      "var": "VAR_BEAT_BRAWLY",
+      "var_value": "0",
+      "script": "Route109_Trigger_BlockHotHouse"
     }
   ],
   "bg_events": [
