@@ -8077,7 +8077,8 @@ bool32 IsMoveMakingContact(u32 move, u32 battlerAtk)
     }
     else if ((atkHoldEffect == HOLD_EFFECT_PUNCHING_GLOVE && gMovesInfo[move].punchingMove)
            || atkHoldEffect == HOLD_EFFECT_PROTECTIVE_PADS
-           || GetBattlerAbility(battlerAtk) == ABILITY_LONG_REACH)
+           || GetBattlerAbility(battlerAtk) == ABILITY_LONG_REACH
+           || (atkHoldEffect == HOLD_EFFECT_KICKING_SHOES && gMovesInfo[move].kickingMove))
     {
         return FALSE;
     }
@@ -9010,6 +9011,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         break;
     case HOLD_EFFECT_PUNCHING_GLOVE:
         if (gMovesInfo[move].punchingMove)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
+        break;
+    case HOLD_EFFECT_KICKING_SHOES:
+        if (gMovesInfo[move].kickingMove)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
         break;
     }

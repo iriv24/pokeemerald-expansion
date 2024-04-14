@@ -2,27 +2,18 @@ Route111_Text_MakingRoomUseTMToMakeYourOwn:
 	.string "What's that?\n"
 	.string "What am I doing?\p"
 	.string "I'm thinking about making my own room\n"
-	.string "here using a POKéMON move.\p"
-	.string "I know! I'll give you this TM.\n"
-	.string "Will you use it to make your own room?$"
+	.string "here using a Pokémon move.\p"
+	.string "Or at least, that's what I used to do.\n"
+	.string "Now, I guess I just clear fog out of the\p"
+	.string "air. Want the ability to do the same?$"
 
 Route111_Text_ExplainSecretPower:
-	.string "Find a big tree that looks like it might\n"
-	.string "drop some vines.\p"
-	.string "Use SECRET POWER in front of the tree.\n"
-	.string "Some vines should get free and drop\l"
-	.string "down, so you can climb the tree.\p"
-	.string "You'll find a lot of space for putting\n"
-	.string "your favorite things.\p"
-	.string "It'll be your own secret room…\n"
-	.string "A SECRET BASE!\p"
-	.string "You should make one, too.\p"
-	.string "Another thing, you don't always have\n"
-	.string "to make your SECRET BASE in a tree.\p"
-	.string "Try using SECRET POWER on rock walls\n"
-	.string "that have small indents in them.\p"
-	.string "I'm going to look for other places, too.\n"
-	.string "Okay, bye!$"
+	.string "In a past life, I'd give you the move\n"
+	.string "Secret Power right about now. However,\p"
+	.string "Secret Bases were removed from the\n"
+	.string "game, so I'll give you this instead. You\p"
+	.string "can at least use to clear terrains in\n"
+	.string "battle. Okay, bye!$"
 
 Route111_Text_DontWantThis:
 	.string "Oh, you don't want this?\n"
@@ -44,11 +35,8 @@ Route111_EventScript_SecretPowerMan::
 
 Route111_EventScript_GiveSecretPower::
 	giveitem ITEM_TM_DEFOG
-	goto_if_eq VAR_RESULT, FALSE, Route111_EventScript_NoRoomForSecretPower
 	msgbox Route111_Text_ExplainSecretPower, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_RECEIVED_SECRET_POWER
-	clearflag FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN
 	call_if_eq VAR_FACING, DIR_WEST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_EAST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_NORTH, Route111_EventScript_SecretPowerManExitNorth

@@ -494,11 +494,6 @@ Route111_EventScript_Irene::
 	msgbox Route111_Text_IrenePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route111_EventScript_Daisuke::
-	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
-	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route111_EventScript_Wilton::
 	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -803,6 +798,7 @@ script Route111_EventScript_DawnDefeated{
 	giveitem(ITEM_TM_FLASH_CANNON)
 	giveitem(ITEM_EMPOLEONITE_D)
 	giveitem(ITEM_ABILITY_PATCH, 999)
+	giveitem(ITEM_LOADED_DICE)
 	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)
 	end
@@ -1013,4 +1009,146 @@ script Route111_Trigger_BlockTrainerHillEntrance{
 text TrainerHillDev{
 	"TRAINER HILL\n"
 	"UNDER DEVELOPMENT"
+}
+
+
+
+script Route111_EventScript_Daisuke{
+	lockall
+	applymovement(30, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_TYROGUE, Route111_EventScript_DaisukeDefeated)
+	goto_if_set(FLAG_DECLINED_DAISUKE_BATTLE, Route111_EventScript_DaisukeRequestBattleAgain)
+	msgbox(Daisuke_Greeting, MSGBOX_YESNO)
+	goto(Route111_EventScript_BattleDaisukePrompt)
+	end
+}
+
+script Route111_EventScript_DaisukeRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(Route111_EventScript_BattleDaisukePrompt)
+	end
+}
+
+script Route111_EventScript_BattleDaisukePrompt{
+	call_if_eq(VAR_RESULT, YES, Route111_EventScript_BattleDaisuke)
+	goto_if_eq(VAR_RESULT, NO, Route111_EventScript_DeclineDaisukeBattle)
+	closemessage
+	end
+}
+
+script Route111_EventScript_DeclineDaisukeBattle {
+	setflag(FLAG_DECLINED_DAISUKE_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route111_EventScript_BattleDaisuke{
+	msgbox("Bring it on!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_DAISUKE, Daisuke_Outro)
+	giveitem(ITEM_FOCUS_SASH)
+	giveitem(ITEM_PUNCHING_GLOVE)
+	giveitem(ITEM_KICKING_SHOES)
+	goto(Route111_EventScript_DaisukeGiveTyrogue)
+	return
+}
+	
+
+script Route111_EventScript_DaisukeDefeated{
+	msgbox(PostBattle_Daisuke, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script Route111_EventScript_DaisukeGiveTyrogue{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
+	givemon(SPECIES_TYROGUE, 15)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route111_EventScript_ReceiveTyroguePC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script Route111_EventScript_ReceiveTyrogueParty{
+	call(Route111_EventScript_ReceivedTyrogueFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route111_EventScript_ExplainTyrogue)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Route111_EventScript_ExplainTyrogue)
+	end
+}
+	
+
+script Route111_EventScript_ReceiveTyroguePC {
+	call(Route111_EventScript_ReceivedTyrogueFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route111_EventScript_SendTyrogueToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(Route111_EventScript_SendTyrogueToPC)
+	end
+}
+	
+
+script Route111_EventScript_SendTyrogueToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(Route111_EventScript_ExplainTyrogue)
+	end
+}
+	
+
+script Route111_EventScript_ReceivedTyrogueFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(Route111_Text_PlayerReceivedTyrogue)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
+	return
+}
+	
+
+script Route111_EventScript_ExplainTyrogue {
+	msgbox(Daisuke_ExplainTyrogue, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_TYROGUE)
+	release
+	end
+}
+	
+text Route111_Text_PlayerReceivedTyrogue{
+	"{PLAYER} received Tyrogue!$"
+}
+
+
+
+text Daisuke_ExplainTyrogue{
+	"Tyrogue can evolve in 3 different ways,\n"
+	"all when it reaches level 20. If its\p"
+	"Attack is less than its Defense, it will\n"
+	"evolve into Hitmonchan, Attack greater\p"
+	"than Defense will result in Hitmonlee,\n"
+	"and Attack equal to Defense will result\p"
+	"in Hitmontop. It's very versatile!"
+}
+
+	
+
+text Daisuke_Greeting{
+	"Yo! I'm working on becoming the karate\n"
+	"master of this region. If you can help\p"
+	"me with my training, I'll reward you with\n"
+	"one of the Pokémon I've been training\l"
+	"up. What do you say?"
+}
+	
+text Daisuke_Outro{
+	"Great battle! I know I'll be leaving this\n"
+	"Pokémon in good hands."
+}
+
+
+text PostBattle_Daisuke{
+	"Looks like I still have a long way to go.\n"
+	"Hope you're taking good care of\p"
+	"Tyrogue for me."
 }

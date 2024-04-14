@@ -271,7 +271,6 @@ script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_DRAIN_PUNCH)
 	giveitem(ITEM_LUCARIONITE)
 	giveitem(ITEM_LIFE_ORB)
-	giveitem(ITEM_PUNCHING_GLOVE)
 	giveitem(ITEM_HEAVY_DUTY_BOOTS)
 	giveitem(ITEM_LEFTOVERS)
 	setflag(FLAG_RECEIVED_TM_DRAIN_PUNCH)

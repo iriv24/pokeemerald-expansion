@@ -1023,6 +1023,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_EMPOLEONITE_O] = {gItemIcon_CharizarditeX, gItemIconPalette_CharizarditeX},
     [ITEM_EMPOLEONITE_D] = {gItemIcon_Blastoisinite, gItemIconPalette_Blastoisinite},
     [ITEM_INFERNAPITE] = {gItemIcon_Blazikenite, gItemIconPalette_Blazikenite},
+    [ITEM_KICKING_SHOES] = {gItemIcon_HeavyDutyBoots, gItemIconPalette_HeavyDutyBoots},
     
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

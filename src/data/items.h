@@ -14186,4 +14186,19 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
     },
+
+    [ITEM_KICKING_SHOES] =
+    {
+        .name = _("KickingShoes"),
+        .price = 15000,
+        .holdEffect = HOLD_EFFECT_KICKING_SHOES,
+        .description = COMPOUND_STRING(
+            "Powers up kicking\n"
+            "moves and removes\n"
+            "their contact."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+    },
 };

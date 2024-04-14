@@ -2275,17 +2275,50 @@ static const struct TrainerMon sParty_Yuji[] = {
 
 static const struct TrainerMon sParty_Daisuke[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_FARFETCHD,
-    },
-    {
-    .lvl = 36,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
     .species = SPECIES_GRANBULL,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_PLAY_ROUGH, MOVE_ICE_FANG, MOVE_JAW_LOCK, MOVE_CRUNCH}
     },
     {
-    .lvl = 36,
-    .species = SPECIES_LURANTIS,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_KROOKODILE,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_EARTHQUAKE, MOVE_KNOCK_OFF, MOVE_STONE_EDGE, MOVE_CUT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_HITMONTOP,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_WIDE_LENS,
+    .moves = {MOVE_TRIPLE_AXEL, MOVE_TRIPLE_KICK, MOVE_SUCKER_PUNCH, MOVE_FACADE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_HITMONCHAN,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_PUNCHING_GLOVE,
+    .moves = {MOVE_DRAIN_PUNCH, MOVE_FIRE_PUNCH, MOVE_THUNDER_PUNCH, MOVE_MACH_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_HITMONLEE,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_STRIKER,
+    .heldItem = ITEM_KICKING_SHOES,
+    .moves = {MOVE_HIGH_JUMP_KICK, MOVE_SUCKER_PUNCH, MOVE_BLAZE_KICK, MOVE_AQUA_STEP}
+    },
 };
 
 static const struct TrainerMon sParty_Atsushi[] = {

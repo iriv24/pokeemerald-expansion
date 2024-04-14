@@ -60,8 +60,8 @@
 #define FLAG_RECEIVED_MEGA_STONES    0x30
 #define FLAG_RECEIVED_TMS_FROM_TUTOR    0x31
 #define FLAG_DECLINED_DANCE_BATTLE    0x32
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_RECEIVED_TYROGUE    0x33
+#define FLAG_DECLINED_DAISUKE_BATTLE    0x34 
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
