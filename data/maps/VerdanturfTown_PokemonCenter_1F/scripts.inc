@@ -57,32 +57,54 @@ VerdanturfTown_PokemonCenter_1F_EventScript_ExpertM::
 # 29 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
 
 # 30 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-VerdanturfTown_PokemonCenter_1F_Text_FaithInYourPokemon:
+VerdanturfTown_PokemonCenter_1F_EventScript_FormerFuryCutterTutor::
 # 31 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "You can't consider yourself a real\n"
+	lockall
 # 32 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "TRAINER if you don't have faith\l"
+	faceplayer
 # 33 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "in your POKéMON.\p"
+	msgbox MauvilleCity_Text_FormerFuryCutterTutor, MSGBOX_DEFAULT
 # 34 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "Only those people who can believe\n"
+	releaseall
 # 35 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "in their battling POKéMON can win\l"
+	end
 # 36 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "through to the very end.$"
-# 37 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
 
+# 37 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+VerdanturfTown_PokemonCenter_1F_Text_FaithInYourPokemon:
 # 38 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent:
+	.string "You can't consider yourself a real\n"
 # 39 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "The reason why anyone would visit\n"
+	.string "TRAINER if you don't have faith\l"
 # 40 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "VERDANTURF…\p"
+	.string "in your POKéMON.\p"
 # 41 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "It's the BATTLE TENT. It goes without\n"
+	.string "Only those people who can believe\n"
 # 42 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "saying.\p"
+	.string "in their battling POKéMON can win\l"
 # 43 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "Or is there somebody here that you\n"
+	.string "through to the very end.$"
 # 44 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+
+# 45 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent:
+# 46 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "The reason why anyone would visit\n"
+# 47 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "VERDANTURF…\p"
+# 48 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "It's the BATTLE TENT. It goes without\n"
+# 49 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "saying.\p"
+# 50 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "Or is there somebody here that you\n"
+# 51 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
 	.string "came to see?$"
+# 52 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+
+# 53 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+MauvilleCity_Text_FormerFuryCutterTutor:
+# 54 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "I used to be able to cut with a fury...\n"
+# 55 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
+	.string "Oh, what happened?$"

@@ -55,11 +55,11 @@
 #define FLAG_RECEIVED_SETUP_TMS    0x2B
 #define FLAG_RECEIVED_TM_SHADOW_BALL    0x2C
 #define FLAG_RIVAL_110    0x2D
-#define FLAG_DAWN_111    0x2E // Unused Flag
-#define FLAG_RECEIVED_TM_DRAIN_PUNCH    0x2F // Unused Flag
-#define FLAG_RECEIVED_MEGA_STONES    0x30 // Unused Flag
-#define FLAG_RECEIVED_TMS_FROM_TUTOR    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_DAWN_111    0x2E
+#define FLAG_RECEIVED_TM_DRAIN_PUNCH    0x2F
+#define FLAG_RECEIVED_MEGA_STONES    0x30
+#define FLAG_RECEIVED_TMS_FROM_TUTOR    0x31
+#define FLAG_DECLINED_DANCE_BATTLE    0x32
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
@@ -256,7 +256,7 @@
 #define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
 
 #define FLAG_RECEIVED_TM_REST                0xEA
-#define FLAG_RECEIVED_TM_ATTRACT             0xEB
+#define FLAG_RECEIVED_TM_DRAIN_KISS          0xEB
 #define FLAG_RECEIVED_GLASS_ORNAMENT         0xEC
 #define FLAG_RECEIVED_SILVER_SHIELD          0xED
 #define FLAG_RECEIVED_GOLD_SHIELD            0xEE

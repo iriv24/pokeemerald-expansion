@@ -55,142 +55,179 @@ VerdanturfTown_House_EventScript_LittleGirlDancing::
 # 28 "data/maps/VerdanturfTown_House/scripts.pory"
 
 # 29 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_EventScript_Ursula::
+VerdanturfTown_House_Text_MorePassion:
 # 30 "data/maps/VerdanturfTown_House/scripts.pory"
-	trainerbattle_double TRAINER_URSULA, VerdanturfTown_House_Text_UrsulaIntro, VerdanturfTown_House_Text_UrsulaDefeat, VerdanturfTown_House_Text_UrsulaNotEnoughMons, VerdanturfTown_House_EventScript_GiveSetupTms
+	.string "More passion! More passion! More\n"
 # 31 "data/maps/VerdanturfTown_House/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_SETUP_TMS, VerdanturfTown_House_EventScript_GiveSetupTms
+	.string "passion! More energy! More energy!$"
 # 32 "data/maps/VerdanturfTown_House/scripts.pory"
-	msgbox VerdanturfTown_House_Text_UrsulaPostBattle, MSGBOX_DEFAULT
+
 # 33 "data/maps/VerdanturfTown_House/scripts.pory"
-	release
+VerdanturfTown_House_Text_ImproveFootwork:
 # 34 "data/maps/VerdanturfTown_House/scripts.pory"
-	end
+	.string "I've got to improve my footwork!$"
 # 35 "data/maps/VerdanturfTown_House/scripts.pory"
 
 # 36 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 37 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_EventScript_GiveSetupTms::
-# 38 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_CALM_MIND
-# 39 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_BULK_UP
-# 40 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_RAIN_DANCE
-# 41 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_DRAGON_DANCE
-# 42 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_POWER_UP_PUNCH
-# 43 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_CHARGE_BEAM
-# 44 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_ROCK_POLISH
-# 45 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_SWORDS_DANCE
-# 46 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_FLAME_CHARGE
-# 47 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_TRAILBLAZE
-# 48 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_WORK_UP
-# 49 "data/maps/VerdanturfTown_House/scripts.pory"
-	giveitem ITEM_TM_NASTY_PLOT
-# 50 "data/maps/VerdanturfTown_House/scripts.pory"
-	setflag FLAG_RECEIVED_SETUP_TMS
-# 51 "data/maps/VerdanturfTown_House/scripts.pory"
-	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
-# 52 "data/maps/VerdanturfTown_House/scripts.pory"
-	release
-# 53 "data/maps/VerdanturfTown_House/scripts.pory"
-	end
-# 54 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 55 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 56 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaIntro:
-# 57 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Welcome to my dance studio! I see you\n"
-# 58 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "have the Dynamo Badge now, not too\p"
-# 59 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "shabby! You may be a good at Pokémon\n"
-# 60 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "battles, but let's see how you fare in a\l"
-# 61 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "dance battle!$"
-# 62 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 63 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaDefeat:
-# 64 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Nice moves! Now I've got some nice\n"
-# 65 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "moves for you to take!$"
-# 66 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 67 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaNotEnoughMons:
-# 68 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Come back when you have enough\n"
-# 69 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Pokémon for a dance battle!$"
-# 70 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 71 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 72 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_ExplainTms:
-# 73 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Now THOSE are some nice moves! Good\n"
-# 74 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "luck against my sister, if you ever make\l"
-# 75 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "it far enough to meet her!$"
-# 76 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 77 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_UrsulaPostBattle:
-# 78 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "Back to dancing for me!$\n"
-# 79 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 80 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_MorePassion:
-# 81 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "More passion! More passion! More\n"
-# 82 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "passion! More energy! More energy!$"
-# 83 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 84 "data/maps/VerdanturfTown_House/scripts.pory"
-VerdanturfTown_House_Text_ImproveFootwork:
-# 85 "data/maps/VerdanturfTown_House/scripts.pory"
-	.string "I've got to improve my footwork!$"
-# 86 "data/maps/VerdanturfTown_House/scripts.pory"
-
-# 87 "data/maps/VerdanturfTown_House/scripts.pory"
 VerdanturfTown_House_Text_LittleBoyDancing:
-# 88 "data/maps/VerdanturfTown_House/scripts.pory"
+# 37 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "Whew! I'm pooped!$"
-# 89 "data/maps/VerdanturfTown_House/scripts.pory"
+# 38 "data/maps/VerdanturfTown_House/scripts.pory"
 
-# 90 "data/maps/VerdanturfTown_House/scripts.pory"
+# 39 "data/maps/VerdanturfTown_House/scripts.pory"
 VerdanturfTown_House_Text_MomDancing:
-# 91 "data/maps/VerdanturfTown_House/scripts.pory"
+# 40 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "He's becoming such a good little dancer,\n"
-# 92 "data/maps/VerdanturfTown_House/scripts.pory"
+# 41 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "I'm so proud of him!$"
-# 93 "data/maps/VerdanturfTown_House/scripts.pory"
+# 42 "data/maps/VerdanturfTown_House/scripts.pory"
 
-# 94 "data/maps/VerdanturfTown_House/scripts.pory"
+# 43 "data/maps/VerdanturfTown_House/scripts.pory"
 VerdanturfTown_House_Text_DadDancing:
-# 95 "data/maps/VerdanturfTown_House/scripts.pory"
+# 44 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "Where does she get all this energy?$"
-# 96 "data/maps/VerdanturfTown_House/scripts.pory"
+# 45 "data/maps/VerdanturfTown_House/scripts.pory"
 
-# 97 "data/maps/VerdanturfTown_House/scripts.pory"
+# 46 "data/maps/VerdanturfTown_House/scripts.pory"
 VerdanturfTown_House_Text_LittleGirlDancing:
-# 98 "data/maps/VerdanturfTown_House/scripts.pory"
+# 47 "data/maps/VerdanturfTown_House/scripts.pory"
 	.string "Look at my twirls daddy!!!$"
+
+VerdanturfTown_House_EventScript_Ursula::
+# 52 "data/maps/VerdanturfTown_House/scripts.pory"
+	lockall
+# 53 "data/maps/VerdanturfTown_House/scripts.pory"
+	applymovement 3, Common_Movement_FacePlayer
+# 54 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto_if_set FLAG_RECEIVED_SETUP_TMS, VerdanturfTown_EventScript_UrsulaDefeated
+# 55 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto_if_set FLAG_DECLINED_DANCE_BATTLE, VerdanturfTown_EventScript_UrsulaRequestBattleAgain
+# 56 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox UrsulaGreeting, MSGBOX_DEFAULT
+# 57 "data/maps/VerdanturfTown_House/scripts.pory"
+	waitmessage
+# 58 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox WillYouDance, MSGBOX_YESNO
+# 59 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto VerdanturfTown_EventScript_BattleUrsulaPrompt
+	end
+
+
+VerdanturfTown_EventScript_UrsulaRequestBattleAgain::
+# 64 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox Ready_Dance_Yet, MSGBOX_YESNO
+# 65 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto VerdanturfTown_EventScript_BattleUrsulaPrompt
+	end
+
+
+VerdanturfTown_EventScript_BattleUrsulaPrompt::
+# 70 "data/maps/VerdanturfTown_House/scripts.pory"
+	call_if_eq VAR_RESULT, YES, VerdanturfTown_EventScript_BattleUrsula
+# 71 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, VerdanturfTown_EventScript_DeclineUrsulaBattle
+# 72 "data/maps/VerdanturfTown_House/scripts.pory"
+	closemessage
+	end
+
+
+VerdanturfTown_EventScript_DeclineUrsulaBattle::
+# 77 "data/maps/VerdanturfTown_House/scripts.pory"
+	setflag FLAG_DECLINED_DANCE_BATTLE
+# 78 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 79 "data/maps/VerdanturfTown_House/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_EventScript_BattleUrsula::
+# 84 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox VerdanturfTown_EventScript_BattleUrsula_Text_0, MSGBOX_DEFAULT
+# 85 "data/maps/VerdanturfTown_House/scripts.pory"
+	trainerbattle_no_intro TRAINER_URSULA, UrsulaDefeat
+# 86 "data/maps/VerdanturfTown_House/scripts.pory"
+	goto VerdanturfTown_EventScript_UrsulaGiveItems
+	return
+
+
+VerdanturfTown_EventScript_UrsulaDefeated::
+# 92 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox VerdanturfTown_House_Text_UrsulaPostBattle, MSGBOX_DEFAULT
+# 93 "data/maps/VerdanturfTown_House/scripts.pory"
+	releaseall
+	end
+
+
+VerdanturfTown_EventScript_UrsulaGiveItems::
+# 98 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_CALM_MIND
+# 99 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_BULK_UP
+# 100 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_RAIN_DANCE
+# 101 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_DRAGON_DANCE
+# 102 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_POWER_UP_PUNCH
+# 103 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_CHARGE_BEAM
+# 104 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_ROCK_POLISH
+# 105 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_SWORDS_DANCE
+# 106 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_FLAME_CHARGE
+# 107 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_TRAILBLAZE
+# 108 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_WORK_UP
+# 109 "data/maps/VerdanturfTown_House/scripts.pory"
+	giveitem ITEM_TM_NASTY_PLOT
+# 110 "data/maps/VerdanturfTown_House/scripts.pory"
+	setflag FLAG_RECEIVED_SETUP_TMS
+# 111 "data/maps/VerdanturfTown_House/scripts.pory"
+	msgbox VerdanturfTown_House_Text_ExplainTms
+# 112 "data/maps/VerdanturfTown_House/scripts.pory"
+	release
+	end
+
+
+VerdanturfTown_EventScript_BattleUrsula_Text_0:
+# 84 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Let's boogie!$"
+
+UrsulaGreeting::
+# 116 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Welcome to my dance studio! I see you\n"
+	.string "have the Dynamo Badge now, not too\p"
+	.string "shabby! You may be a good at Pokémon\n"
+	.string "battles, but let's see how you fare in a\p"
+	.string "dance battle! And by the way, this is\n"
+	.string "going to be a double battle, so I'd\p"
+	.string "recommend bringing more than one\n"
+	.string "Pokémon to dance!$"
+
+UrsulaDefeat::
+# 128 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Nice moves! Now I've got some nice\n"
+	.string "moves for you to take!$"
+
+VerdanturfTown_House_Text_ExplainTms::
+# 133 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Now THOSE are some nice moves! Good\n"
+	.string "luck against my sister, if you ever make\l"
+	.string "it far enough to meet her!$"
+
+VerdanturfTown_House_Text_UrsulaPostBattle::
+# 141 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Back to dancing for me!$"
+
+WillYouDance::
+# 145 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "So what do you say, want to\n"
+	.string "dance?$"
+
+Ready_Dance_Yet::
+# 150 "data/maps/VerdanturfTown_House/scripts.pory"
+	.string "Ready for a dance?$"

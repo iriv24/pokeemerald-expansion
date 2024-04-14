@@ -27,6 +27,13 @@ VerdanturfTown_PokemonCenter_1F_EventScript_ExpertM::
 	msgbox VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent, MSGBOX_NPC
 	end
 
+VerdanturfTown_PokemonCenter_1F_EventScript_FormerFuryCutterTutor::
+	lockall
+	faceplayer
+	msgbox MauvilleCity_Text_FormerFuryCutterTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
 VerdanturfTown_PokemonCenter_1F_Text_FaithInYourPokemon:
 	.string "You can't consider yourself a real\n"
 	.string "TRAINER if you don't have faith\l"
@@ -43,4 +50,7 @@ VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent:
 	.string "Or is there somebody here that you\n"
 	.string "came to see?$"
 
+MauvilleCity_Text_FormerFuryCutterTutor:
+	.string "I used to be able to cut with a fury...\n"
+	.string "Oh, what happened?$"
 `

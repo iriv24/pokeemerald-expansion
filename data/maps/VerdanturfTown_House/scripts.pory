@@ -26,57 +26,6 @@ VerdanturfTown_House_EventScript_LittleGirlDancing::
 	msgbox VerdanturfTown_House_Text_LittleGirlDancing, MSGBOX_NPC
 	end
 
-VerdanturfTown_House_EventScript_Ursula::
-	trainerbattle_double TRAINER_URSULA, VerdanturfTown_House_Text_UrsulaIntro, VerdanturfTown_House_Text_UrsulaDefeat, VerdanturfTown_House_Text_UrsulaNotEnoughMons, VerdanturfTown_House_EventScript_GiveSetupTms
-	goto_if_unset FLAG_RECEIVED_SETUP_TMS, VerdanturfTown_House_EventScript_GiveSetupTms
-	msgbox VerdanturfTown_House_Text_UrsulaPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-
-VerdanturfTown_House_EventScript_GiveSetupTms::
-	giveitem ITEM_TM_CALM_MIND
-	giveitem ITEM_TM_BULK_UP
-	giveitem ITEM_TM_RAIN_DANCE
-	giveitem ITEM_TM_DRAGON_DANCE
-	giveitem ITEM_TM_POWER_UP_PUNCH
-	giveitem ITEM_TM_CHARGE_BEAM
-	giveitem ITEM_TM_ROCK_POLISH
-	giveitem ITEM_TM_SWORDS_DANCE
-	giveitem ITEM_TM_FLAME_CHARGE
-	giveitem ITEM_TM_TRAILBLAZE
-	giveitem ITEM_TM_WORK_UP
-	giveitem ITEM_TM_NASTY_PLOT
-	setflag FLAG_RECEIVED_SETUP_TMS
-	msgbox VerdanturfTown_House_Text_ExplainTms, MSGBOX_DEFAULT
-	release
-	end
-
-
-VerdanturfTown_House_Text_UrsulaIntro:
-	.string "Welcome to my dance studio! I see you\n"
-	.string "have the Dynamo Badge now, not too\p"
-	.string "shabby! You may be a good at Pokémon\n"
-	.string "battles, but let's see how you fare in a\l"
-	.string "dance battle!$"
-
-VerdanturfTown_House_Text_UrsulaDefeat:
-	.string "Nice moves! Now I've got some nice\n"
-	.string "moves for you to take!$"
-
-VerdanturfTown_House_Text_UrsulaNotEnoughMons:
-	.string "Come back when you have enough\n"
-	.string "Pokémon for a dance battle!$"
-
-
-VerdanturfTown_House_Text_ExplainTms:
-	.string "Now THOSE are some nice moves! Good\n"
-	.string "luck against my sister, if you ever make\l"
-	.string "it far enough to meet her!$"
-
-VerdanturfTown_House_Text_UrsulaPostBattle:
-	.string "Back to dancing for me!$\n"
-
 VerdanturfTown_House_Text_MorePassion:
 	.string "More passion! More passion! More\n"
 	.string "passion! More energy! More energy!$"
@@ -98,3 +47,107 @@ VerdanturfTown_House_Text_LittleGirlDancing:
 	.string "Look at my twirls daddy!!!$"
 
 `
+
+script VerdanturfTown_House_EventScript_Ursula{
+	lockall
+	applymovement(3, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_SETUP_TMS, VerdanturfTown_EventScript_UrsulaDefeated)
+	goto_if_set(FLAG_DECLINED_DANCE_BATTLE, VerdanturfTown_EventScript_UrsulaRequestBattleAgain)
+	msgbox(UrsulaGreeting, MSGBOX_DEFAULT)
+	waitmessage
+	msgbox(WillYouDance, MSGBOX_YESNO)
+	goto(VerdanturfTown_EventScript_BattleUrsulaPrompt)
+	end
+}
+
+script VerdanturfTown_EventScript_UrsulaRequestBattleAgain{
+	msgbox(Ready_Dance_Yet, MSGBOX_YESNO)
+	goto(VerdanturfTown_EventScript_BattleUrsulaPrompt)
+	end
+}
+
+script VerdanturfTown_EventScript_BattleUrsulaPrompt{
+	call_if_eq(VAR_RESULT, YES, VerdanturfTown_EventScript_BattleUrsula)
+	goto_if_eq(VAR_RESULT, NO, VerdanturfTown_EventScript_DeclineUrsulaBattle)
+	closemessage
+	end
+}
+
+script VerdanturfTown_EventScript_DeclineUrsulaBattle {
+	setflag(FLAG_DECLINED_DANCE_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script VerdanturfTown_EventScript_BattleUrsula{
+	msgbox("Let's boogie!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_URSULA, UrsulaDefeat)
+	goto(VerdanturfTown_EventScript_UrsulaGiveItems)
+	return
+}
+	
+
+script VerdanturfTown_EventScript_UrsulaDefeated{
+	msgbox(VerdanturfTown_House_Text_UrsulaPostBattle, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script VerdanturfTown_EventScript_UrsulaGiveItems{
+	giveitem(ITEM_TM_CALM_MIND)
+	giveitem(ITEM_TM_BULK_UP)
+	giveitem(ITEM_TM_RAIN_DANCE)
+	giveitem(ITEM_TM_DRAGON_DANCE)
+	giveitem(ITEM_TM_POWER_UP_PUNCH)
+	giveitem(ITEM_TM_CHARGE_BEAM)
+	giveitem(ITEM_TM_ROCK_POLISH)
+	giveitem(ITEM_TM_SWORDS_DANCE)
+	giveitem(ITEM_TM_FLAME_CHARGE)
+	giveitem(ITEM_TM_TRAILBLAZE)
+	giveitem(ITEM_TM_WORK_UP)
+	giveitem(ITEM_TM_NASTY_PLOT)
+	setflag(FLAG_RECEIVED_SETUP_TMS)
+	msgbox(VerdanturfTown_House_Text_ExplainTms)
+	release
+	end
+}
+
+text UrsulaGreeting {
+	"Welcome to my dance studio! I see you\n"
+	"have the Dynamo Badge now, not too\p"
+	"shabby! You may be a good at Pokémon\n"
+	"battles, but let's see how you fare in a\p"
+	"dance battle! And by the way, this is\n"
+	"going to be a double battle, so I'd\p"
+	"recommend bringing more than one\n"
+	"Pokémon to dance!"
+}
+	
+
+text UrsulaDefeat{
+	"Nice moves! Now I've got some nice\n"
+	"moves for you to take!"
+}
+
+text VerdanturfTown_House_Text_ExplainTms{
+	"Now THOSE are some nice moves! Good\n"
+	"luck against my sister, if you ever make\l"
+	"it far enough to meet her!"
+
+}
+	
+
+text VerdanturfTown_House_Text_UrsulaPostBattle{
+	"Back to dancing for me!"
+}
+
+text WillYouDance{
+	"So what do you say, want to\n"
+	"dance?"
+}
+
+text Ready_Dance_Yet{
+	"Ready for a dance?"
+}
+	
