@@ -9787,16 +9787,16 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sKinglerFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_KINGLER_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_KINGLER_MEGA] =
     {
         .baseHP        = 55,
-        .baseAttack    = 130,
-        .baseDefense   = 115,
-        .baseSpeed     = 75,
+        .baseAttack    = 150,
+        .baseDefense   = 130,
+        .baseSpeed     = 110,
         .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_WATER),
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_WATER, TYPE_STEEL),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 166 : 206,
         .evYield_Attack = 2,
@@ -9805,7 +9805,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_3),
-        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_SHELL_ARMOR, ABILITY_SHEER_FORCE },
+        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
         .speciesName = _("Kingler"),
@@ -9815,7 +9815,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .height = 190,
         .weight = 0,
         .description = COMPOUND_STRING(
-            "The flow of Gigantamax energy has\n"
+            "The flow of Mega energy has\n"
             "spurred this Pokémon's left pincer\n"
             "to grow to an enormous size. That\n"
             "claw can pulverize anything."),
@@ -9827,11 +9827,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_KinglerGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_KinglerGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 5,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_KinglerGigantamax,
         .shinyPalette = gMonShinyPalette_KinglerGigantamax,
         .iconSprite = gMonIcon_KinglerGigantamax,
@@ -9843,7 +9843,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sKinglerFormSpeciesIdTable,
         .formChangeTable = sKinglerFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_KRABBY
 
 #if P_FAMILY_VOLTORB

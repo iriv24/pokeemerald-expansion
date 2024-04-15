@@ -103,7 +103,7 @@ static const struct FormChange sSteelixFormChangeTable[] = {
 #if P_FAMILY_KRABBY
 static const struct FormChange sKinglerFormChangeTable[] =
 {
-    {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_KINGLER_GIGANTAMAX},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM, SPECIES_KINGLER_MEGA, ITEM_KINGLERITE},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_KRABBY

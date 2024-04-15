@@ -1150,8 +1150,9 @@
 #define ITEM_EMPOLEONITE_D 978
 #define ITEM_INFERNAPITE 979
 #define ITEM_KICKING_SHOES 980
+#define ITEM_KINGLERITE 981
 
-#define ITEMS_COUNT 981
+#define ITEMS_COUNT 982
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

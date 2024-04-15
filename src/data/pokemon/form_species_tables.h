@@ -291,7 +291,7 @@ static const u16 sSteelixFormSpeciesIdTable[] = {
 #if P_FAMILY_KRABBY
 static const u16 sKinglerFormSpeciesIdTable[] = {
     SPECIES_KINGLER,
-    SPECIES_KINGLER_GIGANTAMAX,
+    SPECIES_KINGLER_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_KRABBY
