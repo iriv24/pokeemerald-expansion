@@ -193,7 +193,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 # 97 "data/maps/MauvilleCity_Gym/scripts.pory"
 	addvar VAR_PETALBURG_GYM_STATE, 1
 # 98 "data/maps/MauvilleCity_Gym/scripts.pory"
-	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	call_if_eq VAR_PETALBURG_GYM_STATE, 7, Common_EventScript_ReadyPetalburgGymForBattle
 # 99 "data/maps/MauvilleCity_Gym/scripts.pory"
 	setvar VAR_0x8008, 3
 # 100 "data/maps/MauvilleCity_Gym/scripts.pory"

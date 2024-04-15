@@ -75,8 +75,8 @@ LavaridgeTown_EventScript_BrendanGiveGoGoggles::
 	msgbox LavaridgeTown_Text_BrendanNiceBadgesTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_GO_GOGGLES
 	giveitem ITEM_MEGA_RING
-	setflag FLAG_RECEIVED_GO_GOGGLES
 	giveitem ITEM_SAFETY_GOGGLES
+	setflag FLAG_RECEIVED_GO_GOGGLES
 	msgbox LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
@@ -250,7 +250,7 @@ LavaridgeTown_EventScript_EggWoman::
 	playfanfare MUS_OBTAIN_ITEM
 	message LavaridgeTown_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_WYNAUT
+	giveegg SPECIES_EEVEE
 	release
 	end
 
@@ -282,48 +282,46 @@ LavaridgeTown_EventScript_HerbShopSign::
 	end
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
-	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
-	.string "Oh? While I visited the hot springs,\n"
-	.string "you got the LAVARIDGE GYM BADGE.\p"
-	.string "You must have collected\n"
-	.string "good POKéMON…\l"
-	.string "No, I believe you raised some.\p"
-	.string "I guess it would be okay for you to\n"
-	.string "have this.$"
+	.string "Hey {PLAYER}! Glad I caught you here, I\p"
+	.string "was just in Petalburg and I've got some\n"
+	.string "gifts and messages to deliver to you.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
-	.string "MAY: With those GO-GOGGLES, you'll\n"
-	.string "have no trouble getting through the\l"
-	.string "desert near ROUTE 111.\p"
-	.string "But, wow, {PLAYER}{KUN}…\n"
-	.string "Challenging GYMS…\p"
-	.string "You're trying hard because you don't\n"
-	.string "want to lose to me, I bet!\p"
-	.string "{PLAYER}{KUN}, I think I should challenge\n"
-	.string "your dad in PETALBURG GYM.\p"
-	.string "See you again!$"
+	.string "Those Go-Goggles will let you get\n"
+	.string "through the desert in Route 111. I\p"
+	.string "threw in some Safety Goggles as well,\n"
+	.string "can never have too many goggles, you\p"
+	.string "know? Also, I spoke to your dad in\n"
+	.string "Petalburg, and he said to give you that\p"
+	.string "Mega Ring if you've beaten Flannery. He\n"
+	.string "wants it to be a fair fight when you\p"
+	.string "guys face off. Finally, I spoke with\n"
+	.string "Wally's Uncle, and he told me he was\p"
+	.string "going to give you the HM03 Surf, but he\n"
+	.string "accidentally dropped it out in the\p"
+	.string "desert somewhere. Okay, I think that's\n"
+	.string "everything, I'll see you around!$"
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
-	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
-	.string "How's it going?\p"
-	.string "Hmm…\n"
-	.string "That's a decent collection of BADGES.\p"
-	.string "All right, then.\n"
-	.string "You may as well have this.$"
+	.string "Hey {PLAYER}! Glad I caught you here, I\p"
+	.string "was just in Petalburg and I've got some\n"
+	.string "gifts and messages to deliver to you.$"
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
-	.string "BRENDAN: Keep those with you if you're\n"
-	.string "planning on going into that desert near\l"
-	.string "ROUTE 111.\p"
-	.string "There should be some POKéMON that\n"
-	.string "are exclusively desert-dwellers.\l"
-	.string "You might look around for those.\p"
-	.string "As for me…\n"
-	.string "I'm considering challenging NORMAN,\l"
-	.string "the GYM LEADER of PETALBURG.\p"
-	.string "Unlike you, {PLAYER}, your dad looks like\n"
-	.string "he really is tough.\p"
-	.string "See you around!$"
+	.string "Those Go-Goggles will let you get\n"
+	.string "through the desert in Route 111. I\p"
+	.string "threw in some Safety Goggles as well,\n"
+	.string "can never have too many goggles, you\p"
+	.string "know? Also, I spoke to your dad in\n"
+	.string "Petalburg, and he said to give you that\p"
+	.string "Mega Ring if you've beaten Flannery. He\n"
+	.string "wants it to be a fair fight when you\p"
+	.string "guys face off. Finally, I spoke with\n"
+	.string "Wally's Uncle, and he told me he was\p"
+	.string "going to give you the HM03 Surf, but he\n"
+	.string "accidentally dropped it out in the\p"
+	.string "desert somewhere. Okay, I think that's\n"
+	.string "everything, I'll see you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
 	.string "I have here an EGG.\p"

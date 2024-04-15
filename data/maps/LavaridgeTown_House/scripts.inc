@@ -35,18 +35,40 @@ LavaridgeTown_House_EventScript_Zigzagoon::
 # 18 "data/maps/LavaridgeTown_House/scripts.pory"
 
 # 19 "data/maps/LavaridgeTown_House/scripts.pory"
-LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
+LavaridgeTown_House_EventScript_FormerMimicTutor::
 # 20 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "My wife's warming an EGG in the hot\n"
+	lockall
 # 21 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "springs. This is what she told me.\p"
+	faceplayer
 # 22 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "She left two POKéMON with the DAY CARE.\n"
+	msgbox LavaridgeTown_House_Text_FormerMimicTutor, MSGBOX_DEFAULT
 # 23 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "And they discovered that EGG!$"
+	releaseall
 # 24 "data/maps/LavaridgeTown_House/scripts.pory"
-
+	end
 # 25 "data/maps/LavaridgeTown_House/scripts.pory"
-LavaridgeTown_House_Text_Zigzagoon:
+
 # 26 "data/maps/LavaridgeTown_House/scripts.pory"
+LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
+# 27 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "My wife's warming an EGG in the hot\n"
+# 28 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "springs. This is what she told me.\p"
+# 29 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "She left two POKéMON with the DAY CARE.\n"
+# 30 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "And they discovered that EGG!$"
+# 31 "data/maps/LavaridgeTown_House/scripts.pory"
+
+# 32 "data/maps/LavaridgeTown_House/scripts.pory"
+LavaridgeTown_House_Text_Zigzagoon:
+# 33 "data/maps/LavaridgeTown_House/scripts.pory"
 	.string "ZIGZAGOON: Pshoo!$"
+# 34 "data/maps/LavaridgeTown_House/scripts.pory"
+
+# 35 "data/maps/LavaridgeTown_House/scripts.pory"
+LavaridgeTown_House_Text_FormerMimicTutor:
+# 36 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "I used to be able to mimic\n"
+# 37 "data/maps/LavaridgeTown_House/scripts.pory"
+	.string "anything... Oh, what happened?$"

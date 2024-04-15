@@ -305,7 +305,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 # 153 "data/maps/DewfordTown_Gym/scripts.pory"
 	addvar VAR_PETALBURG_GYM_STATE, 1
 # 154 "data/maps/DewfordTown_Gym/scripts.pory"
-	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	call_if_eq VAR_PETALBURG_GYM_STATE, 7, Common_EventScript_ReadyPetalburgGymForBattle
 # 155 "data/maps/DewfordTown_Gym/scripts.pory"
 	setvar VAR_0x8008, 2
 # 156 "data/maps/DewfordTown_Gym/scripts.pory"

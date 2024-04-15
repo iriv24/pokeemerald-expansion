@@ -16,6 +16,13 @@ LavaridgeTown_House_EventScript_Zigzagoon::
 	release
 	end
 
+LavaridgeTown_House_EventScript_FormerMimicTutor::
+	lockall
+	faceplayer
+	msgbox LavaridgeTown_House_Text_FormerMimicTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
 LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
 	.string "My wife's warming an EGG in the hot\n"
 	.string "springs. This is what she told me.\p"
@@ -24,5 +31,9 @@ LavaridgeTown_House_Text_WifeWarmingEggInHotSprings:
 
 LavaridgeTown_House_Text_Zigzagoon:
 	.string "ZIGZAGOON: Pshoo!$"
+
+LavaridgeTown_House_Text_FormerMimicTutor:
+	.string "I used to be able to mimic\n"
+	.string "anything... Oh, what happened?$"
 
 `

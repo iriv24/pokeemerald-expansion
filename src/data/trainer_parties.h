@@ -3493,12 +3493,12 @@ static const struct TrainerMon sParty_Wattson1[] = {
 static const struct TrainerMon sParty_Flannery1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 46,
+    .lvl = 47,
     .species = SPECIES_NINETALES,
     .nature = NATURE_TIMID,
     .ability = ABILITY_DROUGHT,
     .heldItem = ITEM_HEAT_ROCK,
-    .moves = {MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_PSYSHOCK, MOVE_SCORCHING_SANDS}
+    .moves = {MOVE_FLAMETHROWER, MOVE_ENERGY_BALL, MOVE_PSYSHOCK, MOVE_SCORCHING_SANDS}
     },
     {
         //hp, atk, def, speed, spatk, spdef

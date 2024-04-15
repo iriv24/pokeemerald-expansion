@@ -33,7 +33,7 @@ PetalburgCity_OnTransition:
 # 17 "data/maps/PetalburgCity/scripts.pory"
 	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
 # 18 "data/maps/PetalburgCity/scripts.pory"
-	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
+	call_if_eq VAR_PETALBURG_GYM_STATE, 9, PetalburgCity_EventScript_SetGymDoorsUnlocked
 # 19 "data/maps/PetalburgCity/scripts.pory"
 	end
 # 20 "data/maps/PetalburgCity/scripts.pory"
@@ -59,7 +59,7 @@ PetalburgCity_EventScript_DisableMapNameAndMusic::
 # 30 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_EventScript_SetGymDoorsUnlocked::
 # 31 "data/maps/PetalburgCity/scripts.pory"
-	setvar VAR_PETALBURG_GYM_STATE, 7
+	setvar VAR_PETALBURG_GYM_STATE, 8
 # 32 "data/maps/PetalburgCity/scripts.pory"
 	return
 # 33 "data/maps/PetalburgCity/scripts.pory"

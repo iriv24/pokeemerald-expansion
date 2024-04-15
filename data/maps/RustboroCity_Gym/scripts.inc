@@ -47,7 +47,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 # 24 "data/maps/RustboroCity_Gym/scripts.pory"
 	call Common_EventScript_SetGymTrainers
 # 25 "data/maps/RustboroCity_Gym/scripts.pory"
-	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	call_if_eq VAR_PETALBURG_GYM_STATE, 7, Common_EventScript_ReadyPetalburgGymForBattle
 # 26 "data/maps/RustboroCity_Gym/scripts.pory"
 	goto RustboroCity_Gym_EventScript_GiveBulldoze
 # 27 "data/maps/RustboroCity_Gym/scripts.pory"
