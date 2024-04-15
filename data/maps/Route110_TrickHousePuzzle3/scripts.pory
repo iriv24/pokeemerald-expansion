@@ -287,9 +287,9 @@ Route110_TrickHousePuzzle3_EventScript_FoundScroll::
 	goto Route110_TrickHousePuzzle_EventScript_FoundScroll
 	end
 
-Route110_TrickHousePuzzle3_EventScript_Justin::
-	trainerbattle_single TRAINER_JUSTIN, Route110_TrickHousePuzzle3_Text_JustinIntro, Route110_TrickHousePuzzle3_Text_JustinDefeat
-	msgbox Route110_TrickHousePuzzle3_Text_JustinPostBattle, MSGBOX_AUTOCLOSE
+Route110_TrickHousePuzzle3_EventScript_Rusty::
+	trainerbattle_single TRAINER_RUSTY, Route110_TrickHousePuzzle3_Text_RustyIntro, Route110_TrickHousePuzzle3_Text_RustyDefeat
+	msgbox Route110_TrickHousePuzzle3_Text_RustyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_TrickHousePuzzle3_EventScript_Martha::
@@ -309,14 +309,14 @@ Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened:
 	.string "… … … … … … … …\p"
 	.string "The lock clicked open!$"
 
-Route110_TrickHousePuzzle3_Text_JustinIntro:
+Route110_TrickHousePuzzle3_Text_RustyIntro:
 	.string "I keep coming back to this same place!$"
 
-Route110_TrickHousePuzzle3_Text_JustinDefeat:
+Route110_TrickHousePuzzle3_Text_RustyDefeat:
 	.string "I'm already having trouble, and then\n"
 	.string "you have to beat me? It's not fair!$"
 
-Route110_TrickHousePuzzle3_Text_JustinPostBattle:
+Route110_TrickHousePuzzle3_Text_RustyPostBattle:
 	.string "It's full of doors here!\n"
 	.string "It's too small and dark in here! Help!$"
 

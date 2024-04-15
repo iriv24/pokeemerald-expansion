@@ -577,11 +577,11 @@ Route110_TrickHousePuzzle3_EventScript_FoundScroll::
 # 289 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 
 # 290 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-Route110_TrickHousePuzzle3_EventScript_Justin::
+Route110_TrickHousePuzzle3_EventScript_Rusty::
 # 291 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	trainerbattle_single TRAINER_JUSTIN, Route110_TrickHousePuzzle3_Text_JustinIntro, Route110_TrickHousePuzzle3_Text_JustinDefeat
+	trainerbattle_single TRAINER_RUSTY, Route110_TrickHousePuzzle3_Text_RustyIntro, Route110_TrickHousePuzzle3_Text_RustyDefeat
 # 292 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	msgbox Route110_TrickHousePuzzle3_Text_JustinPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route110_TrickHousePuzzle3_Text_RustyPostBattle, MSGBOX_AUTOCLOSE
 # 293 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	end
 # 294 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
@@ -621,13 +621,13 @@ Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened:
 # 311 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 
 # 312 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-Route110_TrickHousePuzzle3_Text_JustinIntro:
+Route110_TrickHousePuzzle3_Text_RustyIntro:
 # 313 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	.string "I keep coming back to this same place!$"
 # 314 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 
 # 315 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-Route110_TrickHousePuzzle3_Text_JustinDefeat:
+Route110_TrickHousePuzzle3_Text_RustyDefeat:
 # 316 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	.string "I'm already having trouble, and then\n"
 # 317 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
@@ -635,7 +635,7 @@ Route110_TrickHousePuzzle3_Text_JustinDefeat:
 # 318 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 
 # 319 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-Route110_TrickHousePuzzle3_Text_JustinPostBattle:
+Route110_TrickHousePuzzle3_Text_RustyPostBattle:
 # 320 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	.string "It's full of doors here!\n"
 # 321 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"

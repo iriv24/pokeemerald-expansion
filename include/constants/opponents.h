@@ -218,7 +218,7 @@
 #define TRAINER_BEAU                        212
 #define TRAINER_LARRY                       213
 #define TRAINER_SHANE                       214
-#define TRAINER_JUSTIN                      215
+#define TRAINER_RUSTY                       215
 #define TRAINER_ETHAN_1                     216
 #define TRAINER_AUTUMN                      217
 #define TRAINER_TRAVIS                      218
