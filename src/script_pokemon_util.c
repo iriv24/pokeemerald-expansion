@@ -71,7 +71,7 @@ u8 ScriptGiveEgg(u16 species)
         species = PickRustboroEgg();
         fromHotSprings = FALSE;
     }
-    if(species == SPECIES_SQUIRTLE)
+    else if(species == SPECIES_SQUIRTLE)
     {
         species = PickWaterStarterEgg();
         fromHotSprings = FALSE;

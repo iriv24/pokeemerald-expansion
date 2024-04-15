@@ -48,6 +48,17 @@ FallarborTown_Mart_EventScript_Skitty::
 	release
 	end
 
+FallarborTown_Mart_EventScript_FormerMetronomeTutor::
+	lockall
+	faceplayer
+	msgbox MauvilleCity_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MauvilleCity_Text_FormerMetronomeTutor:
+	.string "I used to have such a great\n"
+	.string "rhythm... Oh, what happened?$"
+
 FallarborTown_Mart_Text_DecidingSkittyEvolve:
 	.string "I'm having a hard time deciding if I\n"
 	.string "should make my SKITTY evolve or not.\p"

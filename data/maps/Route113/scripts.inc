@@ -309,4 +309,4 @@ Route113_Text_GlassWorkshopSign:
 # 155 "data/maps/Route113/scripts.pory"
 	.string "GLASS WORKSHOP\n"
 # 156 "data/maps/Route113/scripts.pory"
-	.string "“Turning Volcanic Ash into Glass Items”$"
+	.string "Retired$"

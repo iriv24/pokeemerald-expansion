@@ -99,34 +99,56 @@ FallarborTown_Mart_EventScript_Skitty::
 # 50 "data/maps/FallarborTown_Mart/scripts.pory"
 
 # 51 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_DecidingSkittyEvolve:
+FallarborTown_Mart_EventScript_FormerMetronomeTutor::
 # 52 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I'm having a hard time deciding if I\n"
+	lockall
 # 53 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "should make my SKITTY evolve or not.\p"
+	faceplayer
 # 54 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I only have to use this MOON STONE,\n"
+	msgbox MauvilleCity_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
 # 55 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "but it's so hard to decide…\p"
+	releaseall
 # 56 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "If I make it evolve, it will become\n"
+	end
 # 57 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "much stronger.\p"
+
 # 58 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "But it will look so different, too.$"
+MauvilleCity_Text_FormerMetronomeTutor:
 # 59 "data/maps/FallarborTown_Mart/scripts.pory"
-
+	.string "I used to have such a great\n"
 # 60 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_Skitty:
+	.string "rhythm... Oh, what happened?$"
 # 61 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "SKITTY: Miyao?$"
-# 62 "data/maps/FallarborTown_Mart/scripts.pory"
 
+# 62 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_Text_DecidingSkittyEvolve:
 # 63 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_SellNuggetIFound:
+	.string "I'm having a hard time deciding if I\n"
 # 64 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "This NUGGET I found here…\n"
+	.string "should make my SKITTY evolve or not.\p"
 # 65 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I suppose I'll have to sell it, seeing\l"
+	.string "I only have to use this MOON STONE,\n"
 # 66 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "but it's so hard to decide…\p"
+# 67 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "If I make it evolve, it will become\n"
+# 68 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "much stronger.\p"
+# 69 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "But it will look so different, too.$"
+# 70 "data/maps/FallarborTown_Mart/scripts.pory"
+
+# 71 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_Text_Skitty:
+# 72 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "SKITTY: Miyao?$"
+# 73 "data/maps/FallarborTown_Mart/scripts.pory"
+
+# 74 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_Text_SellNuggetIFound:
+# 75 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "This NUGGET I found here…\n"
+# 76 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "I suppose I'll have to sell it, seeing\l"
+# 77 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "as how it has no other use.$"
