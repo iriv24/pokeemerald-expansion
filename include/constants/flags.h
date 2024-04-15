@@ -64,7 +64,7 @@
 #define FLAG_DECLINED_DAISUKE_BATTLE    0x34 
 #define FLAG_RECEIVED_ROUTE_111_EGG    0x35
 #define FLAG_RECEIVED_SCOPE_LENS    0x36
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_DECLINED_MAYLENE_BATTLE    0x37
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag

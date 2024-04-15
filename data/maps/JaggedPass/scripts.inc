@@ -503,69 +503,127 @@ JaggedPass_Text_AutumnPostBattle:
 # 252 "data/maps/JaggedPass/scripts.pory"
 	.string "a little up the hill from here?$"
 
-JaggedPass_EventScript_MayleneBattle::
+JaggedPass_EventScript_Maylene::
 # 257 "data/maps/JaggedPass/scripts.pory"
-	trainerbattle_single TRAINER_MAYLENE, Maylene_Greeting, Maylene_Outro, JaggedPass_EventScript_MayleneDefeated, NO_MUSIC
+	lockall
 # 258 "data/maps/JaggedPass/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneGiveItems
+	applymovement 7, Common_Movement_FacePlayer
 # 259 "data/maps/JaggedPass/scripts.pory"
-	msgbox PostBattle_Maylene, MSGBOX_AUTOCLOSE
+	goto_if_set FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneDefeated
 # 260 "data/maps/JaggedPass/scripts.pory"
-	waitmessage
+	goto_if_set FLAG_DECLINED_MAYLENE_BATTLE, JaggedPass_EventScript_MayleneRequestBattleAgain
+# 261 "data/maps/JaggedPass/scripts.pory"
+	msgbox Maylene_Greeting, MSGBOX_YESNO
+# 262 "data/maps/JaggedPass/scripts.pory"
+	goto JaggedPass_EventScript_BattleMaylenePrompt
 	end
 
 
-JaggedPass_EventScript_MayleneDefeated::
-# 265 "data/maps/JaggedPass/scripts.pory"
-	goto JaggedPass_EventScript_MayleneGiveItems
+JaggedPass_EventScript_MayleneRequestBattleAgain::
+# 267 "data/maps/JaggedPass/scripts.pory"
+	msgbox Ready_Yet, MSGBOX_YESNO
+# 268 "data/maps/JaggedPass/scripts.pory"
+	goto JaggedPass_EventScript_BattleMaylenePrompt
 	end
 
 
-JaggedPass_EventScript_MayleneGiveItems::
-# 271 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_TM_DRAIN_PUNCH
-# 272 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_LUCARIONITE
+JaggedPass_EventScript_BattleMaylenePrompt::
 # 273 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_LIFE_ORB
+	call_if_eq VAR_RESULT, YES, JaggedPass_EventScript_BattleMaylene
 # 274 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_HEAVY_DUTY_BOOTS
+	goto_if_eq VAR_RESULT, NO, JaggedPass_EventScript_DeclineMayleneBattle
 # 275 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_LEFTOVERS
-# 276 "data/maps/JaggedPass/scripts.pory"
-	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
-# 277 "data/maps/JaggedPass/scripts.pory"
-	msgbox Maylene_ExplainItems
-# 278 "data/maps/JaggedPass/scripts.pory"
+	closemessage
+	end
+
+
+JaggedPass_EventScript_DeclineMayleneBattle::
+# 280 "data/maps/JaggedPass/scripts.pory"
+	setflag FLAG_DECLINED_MAYLENE_BATTLE
+# 281 "data/maps/JaggedPass/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 282 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
 
 
+JaggedPass_EventScript_BattleMaylene::
+# 287 "data/maps/JaggedPass/scripts.pory"
+	msgbox JaggedPass_EventScript_BattleMaylene_Text_0, MSGBOX_DEFAULT
+# 288 "data/maps/JaggedPass/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAYLENE, Maylene_Outro
+# 289 "data/maps/JaggedPass/scripts.pory"
+	goto JaggedPass_EventScript_MayleneGiveItems
+	return
+
+
+JaggedPass_EventScript_MayleneDefeated::
+# 295 "data/maps/JaggedPass/scripts.pory"
+	msgbox PostBattle_Maylene, MSGBOX_DEFAULT
+# 296 "data/maps/JaggedPass/scripts.pory"
+	releaseall
+	end
+
+
+JaggedPass_EventScript_MayleneGiveItems::
+# 301 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_FOCUS_PUNCH
+# 302 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_FOCUS_BLAST
+# 303 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_DRAIN_PUNCH
+# 304 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_ACROBATICS
+# 305 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_BODY_PRESS
+# 306 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_TM_AURA_SPHERE
+# 307 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LUCARIONITE
+# 308 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LIFE_ORB
+# 309 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_HEAVY_DUTY_BOOTS
+# 310 "data/maps/JaggedPass/scripts.pory"
+	giveitem ITEM_LEFTOVERS
+# 311 "data/maps/JaggedPass/scripts.pory"
+	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
+# 312 "data/maps/JaggedPass/scripts.pory"
+	msgbox Maylene_ExplainItems
+# 313 "data/maps/JaggedPass/scripts.pory"
+	release
+	end
+
+
+JaggedPass_EventScript_BattleMaylene_Text_0:
+# 287 "data/maps/JaggedPass/scripts.pory"
+	.string "You're on!$"
+
 Maylene_ExplainItems::
-# 282 "data/maps/JaggedPass/scripts.pory"
+# 317 "data/maps/JaggedPass/scripts.pory"
 	.string "Drain Punch allows your Pokémon to\n"
 	.string "absorb health with each strike. The\p"
 	.string "Life Orb boosts the power of your\n"
 	.string "Pokémon's moves at the cost of some of\p"
-	.string "its health with each attack. The\n"
-	.string "Punching Glove enhances the power of\p"
-	.string "punching moves, and the Heavy Duty\n"
-	.string "Boots grant immunity to hazards on\p"
-	.string "entry. I threw in one of my favorite\n"
-	.string "Mega Stones and a set of Leftovers as\p"
-	.string "well. Good luck!$"
+	.string "its health with each attack.\n"
+	.string "The Heavy DutyBoots grant immunity\p"
+	.string "to hazards on entry. I threw in\n"
+	.string "one of my favorite Mega Stones\p"
+	.string "and a set of Leftovers as well.\n"
+	.string "Good luck!$"
 
 Maylene_Greeting::
-# 296 "data/maps/JaggedPass/scripts.pory"
+# 330 "data/maps/JaggedPass/scripts.pory"
 	.string "HOO-HAH! Is this finally a worthy\n"
 	.string "opponent? I can tell that you seem\p"
-	.string "pretty strong, let's see if my instincts\l"
-	.string "are correct!$"
+	.string "pretty strong, let's see if my instincts\n"
+	.string "are correct! What do you say, will you\l"
+	.string "battle with me?$"
 
 Maylene_Outro::
-# 303 "data/maps/JaggedPass/scripts.pory"
+# 338 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 308 "data/maps/JaggedPass/scripts.pory"
+# 343 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"

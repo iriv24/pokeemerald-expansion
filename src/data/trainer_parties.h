@@ -8182,6 +8182,15 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 43,
+    .species = SPECIES_CONKELDURR,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_SHEER_FORCE,
+    .moves = {MOVE_LOW_SWEEP, MOVE_MACH_PUNCH, MOVE_ICE_PUNCH, MOVE_BULK_UP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 44,
     .species = SPECIES_EMBOAR,
     .heldItem = ITEM_MUSCLE_BAND,
