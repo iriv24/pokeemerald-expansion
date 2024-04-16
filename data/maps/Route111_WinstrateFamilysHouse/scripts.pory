@@ -35,16 +35,20 @@ Route111_WinstrateFamilysHouse_EventScript_Victoria::
 	giveitem ITEM_ABOMASITE
 	giveitem ITEM_MEDICHAMITE
 	giveitem ITEM_AGGRONITE
-	giveitem ITEM_STEELIXITE
 	giveitem ITEM_CAMERUPTITE
 	giveitem ITEM_MAWILITE
 	giveitem ITEM_HOUNDOOMINITE
 	giveitem ITEM_PINSIRITE
+	giveitem ITEM_COALOSSITE
 	giveitem ITEM_SLOWBRONITE
+	giveitem ITEM_ORBEETLITE
 	giveitem ITEM_SCIZORITE
 	giveitem ITEM_AERODACTYLITE
 	giveitem ITEM_MANECTITE
 	giveitem ITEM_GALLADITE
+	giveitem ITEM_CENTISKITE
+	giveitem ITEM_SANDACONDITE
+	giveitem ITEM_APPLITE
 	setflag FLAG_RECEIVED_MEGA_STONES
 	goto Route111_WinstrateFamilysHouse_EventScript_FaceOriginalDirection
 	end

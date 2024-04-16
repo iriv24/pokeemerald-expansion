@@ -339,8 +339,9 @@ Route110_TrickHouseEntrance_EventScript_GiveReward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle1Reward::
-	giveitem ITEM_BEEDRILLITE
-	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_TM_GUNK_SHOT
+	giveitem ITEM_GARBODORITE
+	giveitem ITEM_TOXTRICITITE
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
@@ -348,8 +349,15 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle1Reward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
-	giveitem ITEM_BEEDRILLITE
-	giveitem ITEM_ASSAULT_VEST
+	giveitem ITEM_TM_SOLAR_BEAM
+	giveitem ITEM_TM_SOLAR_BLADE
+	giveitem ITEM_TM_GRASSY_GLIDE
+	giveitem ITEM_TM_GRASS_KNOT
+	giveitem ITEM_TM_POWER_WHIP
+	giveitem ITEM_TM_BUG_BUZZ
+	giveitem ITEM_TM_MEGAHORN
+	giveitem ITEM_BUTTERFRITE
+	giveitem ITEM_SNORLAXITE
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
@@ -358,8 +366,11 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 	setflag FLAG_BEAT_TRICK_HOUSE_3
+	giveitem ITEM_TM_STONE_EDGE
 	giveitem ITEM_STEELIXITE
+	giveitem ITEM_KINGLERITE
 	giveitem ITEM_BOOSTER_ENERGY
+	giveitem ITEM_ASSAULT_VEST
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT

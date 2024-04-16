@@ -411,8 +411,10 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade::
+	giveitem ITEM_TM_RETURN
 	giveitem ITEM_TM_FACADE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	giveitem ITEM_TM_POLTERGEIST
+	giveitem ITEM_TM_EARTH_POWER
 	setflag FLAG_RECEIVED_TM_FACADE
 	msgbox PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT
 	return
@@ -1292,49 +1294,50 @@ PetalburgCity_Gym_Text_NormanGoToTrickHouse:
 	.string "test that new Mega Ring.$"
 
 PetalburgCity_Gym_Text_NormanIntro:
-	.string "DAD: Hm…\n"
-	.string "So, you did get four GYM BADGES.\p"
-	.string "Fine, as I promised, we will have\n"
-	.string "a POKéMON battle.\p"
+	.string "ALRIGHT!!!\n"
+	.string "It looks like you've got those first 4\p"
+	.string "badges AND you've beaten the first few\n"
+	.string "puzzles at the Trick House! As\p"
+	.string "promised, we will have a Pokémon battle.\n"
 	.string "{PLAYER}…\p"
 	.string "I'm so happy that I can have\n"
-	.string "a real battle with my own child.\p"
+	.string "a real battle with my own kid.\p"
 	.string "But, a battle is a battle!\p"
 	.string "I will do everything in my power as\n"
-	.string "a GYM LEADER to win.\p"
+	.string "a Gym Leader to win.\p"
 	.string "{PLAYER}, you'd better give it your\n"
 	.string "best shot, too!$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
 	.string "…\p"
 	.string "I… I can't…\p"
-	.string "I can't believe it. {PLAYER}…\p"
-	.string "I lost to {PLAYER}?\p"
+	.string "I can't believe it, {PLAYER}…\p"
+	.string "You've grown so much..\p"
 	.string "But, rules are rules!\n"
-	.string "Here, take this.$"
+	.string "Here, take this!$"
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 	.string "{PLAYER} received the BALANCE BADGE\n"
 	.string "from DAD!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
-	.string "DAD: With that BADGE, the DEFENSE\n"
-	.string "of all your POKéMON will increase.\p"
-	.string "POKéMON that know the HM move SURF\n"
-	.string "will be able to travel over water.\p"
-	.string "This is my gift to you. {PLAYER}, I'm\n"
-	.string "sure you can use it correctly.$"
+	.string "With that Balance Badge,\n"
+	.string "Pokémon that know the HM move SURF\p"
+	.string "will be able to travel over water.\n"
+	.string "This is my gift to you. {PLAYER}, I'm\l"
+	.string "sure you can use these correctly.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
-	.string "DAD: TM42 contains FACADE.\p"
-	.string "It doubles the power of moves if\n"
-	.string "the POKéMON is poisoned, paralyzed,\l"
-	.string "or burned.\p"
-	.string "It might be able to turn a bad\n"
-	.string "situation into an advantage.$"
+	.string "Unfortunately, I am in sole possession\p"
+	.string "of the only Slakite in existence as it\n"
+	.string "currently stands. I need to hold onto\p"
+	.string "it to hold down the fort here at the\n"
+	.string "Gym, but I promise as soon as I get my\p"
+	.string "hands on a second one, I will send it\n"
+	.string "your way with one of your friends.$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
-	.string "DAD: As the GYM LEADER, I can't\n"
+	.string "As the GYM LEADER, I can't\n"
 	.string "express how upset I am…\p"
 	.string "But as a father, it makes me both\n"
 	.string "happy and a little sad. It's odd…$"

@@ -260,9 +260,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_SANDSTORM",
+      "trainer_sight_or_berry_tree_id": "ITEM_HM_SURF",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_111_TM_SANDSTORM"
+      "flag": "FLAG_ITEM_ROUTE_111_HM_SURF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",

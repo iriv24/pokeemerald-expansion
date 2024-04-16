@@ -681,155 +681,155 @@ Route110_TrickHouseEntrance_EventScript_GiveReward::
 # 341 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 Route110_TrickHouseEntrance_EventScript_GivePuzzle1Reward::
 # 342 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_BEEDRILLITE
+	giveitem ITEM_TM_GUNK_SHOT
 # 343 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_GARBODORITE
 # 344 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+	giveitem ITEM_TOXTRICITITE
 # 345 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 346 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 347 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 348 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	releaseall
 # 349 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	end
 # 350 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
+
 # 351 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_BEEDRILLITE
+Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
 # 352 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_ASSAULT_VEST
+	giveitem ITEM_TM_SOLAR_BEAM
 # 353 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+	giveitem ITEM_TM_SOLAR_BLADE
 # 354 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	giveitem ITEM_TM_GRASSY_GLIDE
 # 355 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	giveitem ITEM_TM_GRASS_KNOT
 # 356 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	giveitem ITEM_TM_POWER_WHIP
 # 357 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	giveitem ITEM_TM_BUG_BUZZ
 # 358 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	giveitem ITEM_TM_MEGAHORN
 # 359 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
+	giveitem ITEM_BUTTERFRITE
 # 360 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setflag FLAG_BEAT_TRICK_HOUSE_3
+	giveitem ITEM_SNORLAXITE
 # 361 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_STEELIXITE
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 362 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_BOOSTER_ENERGY
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 363 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 364 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	releaseall
 # 365 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	end
 # 366 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+
 # 367 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 # 368 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	setflag FLAG_BEAT_TRICK_HOUSE_3
 # 369 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle4Reward::
+	giveitem ITEM_TM_STONE_EDGE
 # 370 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_SMOKE_BALL
+	giveitem ITEM_STEELIXITE
 # 371 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+	giveitem ITEM_KINGLERITE
 # 372 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	giveitem ITEM_BOOSTER_ENERGY
 # 373 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	giveitem ITEM_ASSAULT_VEST
 # 374 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 375 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 376 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 377 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle5Reward::
+	releaseall
 # 378 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_TM_TAUNT
+	end
 # 379 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+
 # 380 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+Route110_TrickHouseEntrance_EventScript_GivePuzzle4Reward::
 # 381 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	giveitem ITEM_SMOKE_BALL
 # 382 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 383 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 384 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 385 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle6Reward::
+	releaseall
 # 386 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_MAGNET
+	end
 # 387 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+
 # 388 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+Route110_TrickHouseEntrance_EventScript_GivePuzzle5Reward::
 # 389 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	giveitem ITEM_TM_TAUNT
 # 390 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 391 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 392 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 393 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GivePuzzle7Reward::
-# 394 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_PP_MAX
-# 395 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
-# 396 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 391 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-# 397 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 392 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+# 393 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 394 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 395 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 396 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_EventScript_GivePuzzle6Reward::
+# 397 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	giveitem ITEM_MAGNET
 # 398 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 399 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 # 400 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 401 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GotReward::
-# 402 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-# 403 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 3
-# 404 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterUp
-# 405 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
-# 406 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	releaseall
-# 407 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 402 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	end
-# 408 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 403 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
+# 404 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_EventScript_GivePuzzle7Reward::
+# 405 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	giveitem ITEM_PP_MAX
+# 406 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+# 407 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+# 408 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 # 409 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_MechadollReward::
+	releaseall
 # 410 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
+	end
 # 411 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+
 # 412 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_MechadollWhichTent, MSGBOX_DEFAULT
+Route110_TrickHouseEntrance_EventScript_GotReward::
 # 413 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call Route110_TrickHouseEntrance_EventScript_ChooseTent
+	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 # 414 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_ReceivedTent
+	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 3
 # 415 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_NoRoomForDecor
+	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterUp
 # 416 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_PCFullAgain, MSGBOX_DEFAULT
+	waitmovement 0
 # 417 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	releaseall
 # 418 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
@@ -837,253 +837,253 @@ Route110_TrickHouseEntrance_EventScript_MechadollReward::
 # 419 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 420 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_ChooseTent::
+Route110_TrickHouseEntrance_EventScript_MechadollReward::
 # 421 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	multichoice 0, 0, MULTI_TENT, TRUE
+	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
 # 422 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	switch VAR_RESULT
+	waitmovement 0
 # 423 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 0, Route110_TrickHouseEntrance_EventScript_GiveRedTent
+	msgbox Route110_TrickHouseEntrance_Text_MechadollWhichTent, MSGBOX_DEFAULT
 # 424 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto Route110_TrickHouseEntrance_EventScript_GiveBlueTent
+	call Route110_TrickHouseEntrance_EventScript_ChooseTent
 # 425 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_ReceivedTent
 # 426 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GiveRedTent::
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_NoRoomForDecor
 # 427 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	givedecoration DECOR_RED_TENT
+	msgbox Route110_TrickHouseEntrance_Text_PCFullAgain, MSGBOX_DEFAULT
 # 428 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	return
+	releaseall
 # 429 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	end
 # 430 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GiveBlueTent::
+
 # 431 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	givedecoration DECOR_BLUE_TENT
+Route110_TrickHouseEntrance_EventScript_ChooseTent::
 # 432 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	return
+	multichoice 0, 0, MULTI_TENT, TRUE
 # 433 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	switch VAR_RESULT
 # 434 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_ReceivedTent::
+	case 0, Route110_TrickHouseEntrance_EventScript_GiveRedTent
 # 435 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_ThenFarewell, MSGBOX_DEFAULT
+	goto Route110_TrickHouseEntrance_EventScript_GiveBlueTent
 # 436 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	closemessage
+
 # 437 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement LOCALID_TRICK_MASTER, Route110_TrickHousePuzzle5_Movement_MechadollShake
+Route110_TrickHouseEntrance_EventScript_GiveRedTent::
 # 438 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+	givedecoration DECOR_RED_TENT
 # 439 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
+	return
 # 440 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+
 # 441 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_M_EXPLOSION
+Route110_TrickHouseEntrance_EventScript_GiveBlueTent::
 # 442 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterJumpAway
+	givedecoration DECOR_BLUE_TENT
 # 443 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+	return
 # 444 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	removeobject LOCALID_TRICK_MASTER
+
 # 445 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
+Route110_TrickHouseEntrance_EventScript_ReceivedTent::
 # 446 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 5
+	msgbox Route110_TrickHouseEntrance_Text_ThenFarewell, MSGBOX_DEFAULT
 # 447 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 448 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 449 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 450 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_Door::
-# 451 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	lockall
-# 452 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	switch VAR_TRICK_HOUSE_ENTRANCE_STATE
-# 453 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 0, Route110_TrickHouseEntrance_EventScript_ItsAScroll
-# 454 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 1, Route110_TrickHouseEntrance_EventScript_GoInHolePrompt
-# 455 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 4, Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote
-# 456 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 5, Route110_TrickHouseEntrance_EventScript_CheckLevelForMessage
-# 457 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 458 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 459 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_ItsAScroll::
-# 460 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_ItsAScroll, MSGBOX_DEFAULT
-# 461 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 462 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 463 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 464 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_GoInHolePrompt::
-# 465 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_GoInHoleBehindScroll, MSGBOX_YESNO
-# 466 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	closemessage
+# 448 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHousePuzzle5_Movement_MechadollShake
+# 449 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	waitmovement 0
+# 450 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
+# 451 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	waitmovement 0
+# 452 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_M_EXPLOSION
+# 453 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterJumpAway
+# 454 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	waitmovement 0
+# 455 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	removeobject LOCALID_TRICK_MASTER
+# 456 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
+# 457 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 5
+# 458 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 459 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 460 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 461 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_EventScript_Door::
+# 462 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	lockall
+# 463 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	switch VAR_TRICK_HOUSE_ENTRANCE_STATE
+# 464 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 0, Route110_TrickHouseEntrance_EventScript_ItsAScroll
+# 465 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 1, Route110_TrickHouseEntrance_EventScript_GoInHolePrompt
+# 466 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 4, Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote
 # 467 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom
+	case 5, Route110_TrickHouseEntrance_EventScript_CheckLevelForMessage
 # 468 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 469 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 470 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_ItsAScroll::
 # 471 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom::
+	msgbox Route110_TrickHouseEntrance_Text_ItsAScroll, MSGBOX_DEFAULT
 # 472 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 5, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, FALSE
+	releaseall
 # 473 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
+	end
 # 474 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	delay 20
+
 # 475 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+Route110_TrickHouseEntrance_EventScript_GoInHolePrompt::
 # 476 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+	msgbox Route110_TrickHouseEntrance_Text_GoInHoleBehindScroll, MSGBOX_YESNO
 # 477 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route110_TrickHouseEntrance_Movement_EnterRoom
+	closemessage
 # 478 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitmovement 0
+	goto_if_eq VAR_RESULT, YES, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom
 # 479 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	switch VAR_TRICK_HOUSE_LEVEL
+	releaseall
 # 480 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 0, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1
+	end
 # 481 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 1, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom2
+
 # 482 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 2, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom3
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom::
 # 483 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 3, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom4
+	setmetatile 5, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, FALSE
 # 484 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 4, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom5
+	special DrawWholeMapView
 # 485 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 5, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom6
+	delay 20
 # 486 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 6, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom7
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 # 487 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 7, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom8
+	waitmovement 0
 # 488 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	applymovement OBJ_EVENT_ID_PLAYER, Route110_TrickHouseEntrance_Movement_EnterRoom
 # 489 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	waitmovement 0
 # 490 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Movement_EnterRoom:
+	switch VAR_TRICK_HOUSE_LEVEL
 # 491 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	set_invisible
+	case 0, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1
 # 492 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	step_end
+	case 1, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom2
 # 493 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	case 2, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom3
 # 494 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1::
+	case 3, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom4
 # 495 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE1, 0, 21
+	case 4, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom5
 # 496 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	case 5, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom6
 # 497 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	case 6, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom7
 # 498 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+	case 7, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom8
 # 499 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	end
 # 500 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom2::
+
 # 501 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE2, 0, 21
+Route110_TrickHouseEntrance_Movement_EnterRoom:
 # 502 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	set_invisible
 # 503 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	step_end
 # 504 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 505 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1::
 # 506 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom3::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE1, 0, 21
 # 507 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE3, 0, 21
+	waitstate
 # 508 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	releaseall
 # 509 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 510 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 511 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom2::
 # 512 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom4::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE2, 0, 21
 # 513 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE4, 0, 21
+	waitstate
 # 514 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	releaseall
 # 515 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 516 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 517 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom3::
 # 518 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom5::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE3, 0, 21
 # 519 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE5, 0, 21
+	waitstate
 # 520 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	releaseall
 # 521 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 522 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 523 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom4::
 # 524 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom6::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE4, 0, 21
 # 525 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE6, 0, 21
+	waitstate
 # 526 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	releaseall
 # 527 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 528 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 529 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom5::
 # 530 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom7::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE5, 0, 21
 # 531 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE7, 0, 21
+	waitstate
 # 532 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitstate
+	releaseall
 # 533 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
+	end
 # 534 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+
 # 535 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom6::
 # 536 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom8::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE6, 0, 21
 # 537 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE8, 0, 21
-# 538 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	waitstate
-# 539 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 538 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	releaseall
-# 540 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 539 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	end
-# 541 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 540 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
+# 541 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom7::
 # 542 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote::
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE7, 0, 21
 # 543 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote, MSGBOX_DEFAULT
+	waitstate
 # 544 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	releaseall
 # 545 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
@@ -1091,11 +1091,11 @@ Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote::
 # 546 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 547 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_CheckLevelForMessage::
+Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom8::
 # 548 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_LEVEL, 8, Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote2
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE8, 0, 21
 # 549 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_ItsAScroll, MSGBOX_DEFAULT
+	waitstate
 # 550 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	releaseall
 # 551 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
@@ -1103,7 +1103,7 @@ Route110_TrickHouseEntrance_EventScript_CheckLevelForMessage::
 # 552 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 553 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote2::
+Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote::
 # 554 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	msgbox Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote, MSGBOX_DEFAULT
 # 555 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
@@ -1113,550 +1113,572 @@ Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote2::
 # 557 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 558 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_EventScript_Door::
+Route110_TrickHouseEntrance_EventScript_CheckLevelForMessage::
 # 559 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	lockall
+	goto_if_eq VAR_TRICK_HOUSE_LEVEL, 8, Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote2
 # 560 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	switch VAR_TRICK_HOUSE_LEVEL
+	msgbox Route110_TrickHouseEntrance_Text_ItsAScroll, MSGBOX_DEFAULT
 # 561 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 0, Route110_TrickHousePuzzle1_EventScript_Door
+	releaseall
 # 562 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 1, Route110_TrickHousePuzzle2_EventScript_Door
+	end
 # 563 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 2, Route110_TrickHousePuzzle3_EventScript_Door
+
 # 564 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 3, Route110_TrickHousePuzzle4_EventScript_Door
+Route110_TrickHouseEntrance_EventScript_LeftOnJourneyNote2::
 # 565 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 4, Route110_TrickHousePuzzle5_EventScript_Door
+	msgbox Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote, MSGBOX_DEFAULT
 # 566 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 5, Route110_TrickHousePuzzle6_EventScript_Door
+	releaseall
 # 567 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 6, Route110_TrickHousePuzzle7_EventScript_Door
+	end
 # 568 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	case 7, Route110_TrickHousePuzzle8_EventScript_Door
+
 # 569 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
+Route110_TrickHousePuzzle_EventScript_Door::
 # 570 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 571 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle1_EventScript_Door::
-# 572 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_1_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 573 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle1_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 574 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 575 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_1_STATE, 2
-# 576 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 577 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 578 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 579 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 580 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 581 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle2_EventScript_Door::
-# 582 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_2_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 583 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle2_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 584 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 585 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_2_STATE, 2
-# 586 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 587 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 588 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 589 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 590 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 591 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle3_EventScript_Door::
-# 592 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_3_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 593 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 594 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 595 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_3_STATE, 2
-# 596 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 597 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 598 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 599 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 600 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 601 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle4_EventScript_Door::
-# 602 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_4_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 603 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle4_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 604 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 605 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_4_STATE, 2
-# 606 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 607 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 608 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 609 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 610 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 611 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle5_EventScript_Door::
-# 612 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_5_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 613 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle5_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 614 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 615 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_5_STATE, 2
-# 616 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 617 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 618 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 619 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 620 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 621 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle6_EventScript_Door::
-# 622 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_6_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 623 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle6_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 624 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 625 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_6_STATE, 2
-# 626 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 627 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 628 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 629 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 630 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 631 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle7_EventScript_Door::
-# 632 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_7_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 633 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 634 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 635 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_7_STATE, 2
-# 636 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 637 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 638 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 639 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 640 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 641 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle8_EventScript_Door::
-# 642 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_8_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
-# 643 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle8_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
-# 644 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playse SE_PIN
-# 645 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_PUZZLE_8_STATE, 2
-# 646 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
-# 647 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	special DrawWholeMapView
-# 648 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 649 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 650 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 651 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_EventScript_DoorLocked::
-# 652 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere, MSGBOX_DEFAULT
-# 653 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 654 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 655 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 656 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_EventScript_ReadScrollAgain::
-# 657 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle_Text_SecretCodeWrittenOnIt, MSGBOX_DEFAULT
-# 658 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 659 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 660 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 661 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_EventScript_FoundScroll::
-# 662 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 663 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	message Route110_TrickHousePuzzle_Text_FoundAScroll
-# 664 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitfanfare
-# 665 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHousePuzzle_Text_MemorizedSecretCode, MSGBOX_DEFAULT
-# 666 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 667 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	end
-# 668 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 669 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_TrickMasterHiding::
-# 670 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	lockall
-# 671 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	msgbox Route110_TrickHouseEntrance_Text_YoureBeingWatched, MSGBOX_DEFAULT
-# 672 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	releaseall
-# 673 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_TRICK_HOUSE_LEVEL, 0, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle1
-# 674 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_TRICK_HOUSE_LEVEL, 1, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle2
-# 675 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call_if_eq VAR_TRICK_HOUSE_LEVEL, 2, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle3
-# 676 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_TRICK_HOUSE_BEING_WATCHED_STATE, 1
-# 677 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 571 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	switch VAR_TRICK_HOUSE_LEVEL
+# 572 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 0, Route110_TrickHousePuzzle1_EventScript_Door
+# 573 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 1, Route110_TrickHousePuzzle2_EventScript_Door
+# 574 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 2, Route110_TrickHousePuzzle3_EventScript_Door
+# 575 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 3, Route110_TrickHousePuzzle4_EventScript_Door
+# 576 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 4, Route110_TrickHousePuzzle5_EventScript_Door
+# 577 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 5, Route110_TrickHousePuzzle6_EventScript_Door
+# 578 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 6, Route110_TrickHousePuzzle7_EventScript_Door
+# 579 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	case 7, Route110_TrickHousePuzzle8_EventScript_Door
+# 580 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	end
+# 581 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 582 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle1_EventScript_Door::
+# 583 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_1_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 584 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle1_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 585 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 586 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_1_STATE, 2
+# 587 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 588 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 589 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 590 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 591 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 592 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle2_EventScript_Door::
+# 593 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_2_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 594 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle2_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 595 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 596 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_2_STATE, 2
+# 597 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 598 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 599 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 600 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 601 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 602 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle3_EventScript_Door::
+# 603 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_3_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 604 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 605 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 606 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_3_STATE, 2
+# 607 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 608 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 609 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 610 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 611 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 612 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle4_EventScript_Door::
+# 613 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_4_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 614 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle4_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 615 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 616 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_4_STATE, 2
+# 617 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 618 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 619 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 620 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 621 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 622 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle5_EventScript_Door::
+# 623 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_5_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 624 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle5_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 625 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 626 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_5_STATE, 2
+# 627 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 628 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 629 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 630 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 631 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 632 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle6_EventScript_Door::
+# 633 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_6_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 634 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle6_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 635 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 636 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_6_STATE, 2
+# 637 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 638 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 639 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 640 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 641 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 642 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle7_EventScript_Door::
+# 643 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_7_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 644 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 645 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 646 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_7_STATE, 2
+# 647 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 648 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 649 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 650 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 651 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 652 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle8_EventScript_Door::
+# 653 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_8_STATE, 0, Route110_TrickHousePuzzle_EventScript_DoorLocked
+# 654 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle8_Text_WroteSecretCodeLockOpened, MSGBOX_DEFAULT
+# 655 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playse SE_PIN
+# 656 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setvar VAR_TRICK_HOUSE_PUZZLE_8_STATE, 2
+# 657 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	setmetatile 13, 1, METATILE_TrickHousePuzzle_Stairs_Down, FALSE
+# 658 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	special DrawWholeMapView
+# 659 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 660 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 661 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 662 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle_EventScript_DoorLocked::
+# 663 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere, MSGBOX_DEFAULT
+# 664 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 665 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 666 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 667 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle_EventScript_ReadScrollAgain::
+# 668 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle_Text_SecretCodeWrittenOnIt, MSGBOX_DEFAULT
+# 669 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
+# 670 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	end
+# 671 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 672 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle_EventScript_FoundScroll::
+# 673 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 674 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	message Route110_TrickHousePuzzle_Text_FoundAScroll
+# 675 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	waitfanfare
+# 676 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	msgbox Route110_TrickHousePuzzle_Text_MemorizedSecretCode, MSGBOX_DEFAULT
+# 677 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	releaseall
 # 678 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	end
 # 679 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle1::
+
 # 680 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8004, 6  @ x
+Route110_TrickHouseEntrance_EventScript_TrickMasterHiding::
 # 681 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8005, 3  @ y
+	lockall
 # 682 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle
+	msgbox Route110_TrickHouseEntrance_Text_YoureBeingWatched, MSGBOX_DEFAULT
 # 683 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	return
+	releaseall
 # 684 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	call_if_eq VAR_TRICK_HOUSE_LEVEL, 0, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle1
 # 685 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle2::
+	call_if_eq VAR_TRICK_HOUSE_LEVEL, 1, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle2
 # 686 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8004, 11  @ x
+	call_if_eq VAR_TRICK_HOUSE_LEVEL, 2, Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle3
 # 687 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8005, 5   @ y
+	setvar VAR_TRICK_HOUSE_BEING_WATCHED_STATE, 1
 # 688 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	call Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle
+	end
 # 689 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	return
+
 # 690 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle1::
 # 691 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle3::
+	setvar VAR_0x8004, 6  @ x
 # 692 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8004, 9  @ x
+	setvar VAR_0x8005, 3  @ y
 # 693 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8005, 2  @ y
-# 694 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	call Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle
+# 694 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	return
 # 695 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	return
+
 # 696 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle2::
 # 697 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle::
+	setvar VAR_0x8004, 11  @ x
 # 698 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	setvar VAR_0x8006, 0
+	setvar VAR_0x8005, 5   @ y
 # 699 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	dofieldeffectsparkle VAR_0x8004, VAR_0x8005, VAR_0x8006
+	call Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle
 # 700 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	waitfieldeffect FLDEFF_SPARKLE
-# 701 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	delay 10
-# 702 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	return
+# 701 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 702 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle3::
 # 703 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	setvar VAR_0x8004, 9  @ x
 # 704 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_YoureBeingWatched:
+	setvar VAR_0x8005, 2  @ y
 # 705 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "You're being watched…$"
+	call Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle
 # 706 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	return
 # 707 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedBeneathDesk:
+
 # 708 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_EventScript_DoHidingSpotSparkle::
 # 709 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+	setvar VAR_0x8006, 0
 # 710 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "beneath this desk? You're sharp!$"
+	dofieldeffectsparkle VAR_0x8004, VAR_0x8005, VAR_0x8006
 # 711 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	waitfieldeffect FLDEFF_SPARKLE
 # 712 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedBehindTree:
+	delay 10
 # 713 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+	return
 # 714 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+
 # 715 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "behind this tree? You're sharp!$"
+Route110_TrickHouseEntrance_Text_YoureBeingWatched:
 # 716 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "You're being watched…$"
 # 717 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedInDresser:
+
 # 718 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_Text_ConcealedBeneathDesk:
 # 719 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+	.string "Hah? Grrr…\p"
 # 720 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "in this dresser? You're sharp!$"
+	.string "How did you know I concealed myself\n"
 # 721 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "beneath this desk? You're sharp!$"
 # 722 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConealedBeyondWindow:
+
 # 723 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_Text_ConcealedBehindTree:
 # 724 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+	.string "Hah? Grrr…\p"
 # 725 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "beyond this window? You're sharp!$"
+	.string "How did you know I concealed myself\n"
 # 726 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "behind this tree? You're sharp!$"
 # 727 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedInPlanter:
+
 # 728 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_Text_ConcealedInDresser:
 # 729 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+	.string "Hah? Grrr…\p"
 # 730 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "in this planter? You're sharp!$"
+	.string "How did you know I concealed myself\n"
 # 731 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "in this dresser? You're sharp!$"
 # 732 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedInCupboard:
+
 # 733 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_Text_ConealedBeyondWindow:
 # 734 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
+	.string "Hah? Grrr…\p"
 # 735 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "in this cupboard? You're sharp!$"
+	.string "How did you know I concealed myself\n"
 # 736 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "beyond this window? You're sharp!$"
 # 737 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedBehindWindow:
+
 # 738 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? Grrr…\p"
+Route110_TrickHouseEntrance_Text_ConcealedInPlanter:
 # 739 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "How did you know I concealed myself\n"
-# 740 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "behind this window? You're sharp!$"
-# 741 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
-# 742 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ConcealedBeneathCushion:
-# 743 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	.string "Hah? Grrr…\p"
-# 744 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+# 740 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	.string "How did you know I concealed myself\n"
+# 741 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "in this planter? You're sharp!$"
+# 742 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 743 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_Text_ConcealedInCupboard:
+# 744 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "Hah? Grrr…\p"
 # 745 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "beneath this cushion? You're sharp!$"
+	.string "How did you know I concealed myself\n"
 # 746 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "in this cupboard? You're sharp!$"
 # 747 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_TheyCallMeTrickMaster:
+
 # 748 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Behold!\p"
+Route110_TrickHouseEntrance_Text_ConcealedBehindWindow:
 # 749 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "For I am the greatest living mystery\n"
+	.string "Hah? Grrr…\p"
 # 750 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "of a man in all of HOENN!\l"
+	.string "How did you know I concealed myself\n"
 # 751 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "They call me…\p"
+	.string "behind this window? You're sharp!$"
 # 752 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "The TRICK MASTER!\n"
+
 # 753 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Wahahaha! Glad to meet you!$"
+Route110_TrickHouseEntrance_Text_ConcealedBeneathCushion:
 # 754 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "Hah? Grrr…\p"
 # 755 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ComeToChallengeTrickHouse:
+	.string "How did you know I concealed myself\n"
 # 756 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "You, you've come to challenge\n"
+	.string "beneath this cushion? You're sharp!$"
 # 757 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "my TRICK HOUSE, haven't you?\p"
+
 # 758 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "That's why you're here, isn't it?\n"
+Route110_TrickHouseEntrance_Text_TheyCallMeTrickMaster:
 # 759 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Yes, it is!\p"
+	.string "Behold!\p"
 # 760 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Consider your challenge accepted!\p"
+	.string "For I am the greatest living mystery\n"
 # 761 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Enter through the scroll there,\n"
+	.string "of a man in all of HOENN!\l"
 # 762 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "and let your challenge commence!\p"
+	.string "They call me…\p"
 # 763 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "I shall be waiting in the back!$"
+	.string "The TRICK MASTER!\n"
 # 764 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "Wahahaha! Glad to meet you!$"
 # 765 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ItsAScroll:
+
 # 766 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "It's a scroll.$"
+Route110_TrickHouseEntrance_Text_ComeToChallengeTrickHouse:
 # 767 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "You, you've come to challenge\n"
 # 768 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_GoInHoleBehindScroll:
+	.string "my TRICK HOUSE, haven't you?\p"
 # 769 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "There is a big hole behind the scroll!\p"
+	.string "That's why you're here, isn't it?\n"
 # 770 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Want to go in?$"
+	.string "Yes, it is!\p"
 # 771 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "Consider your challenge accepted!\p"
 # 772 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote:
+	.string "Enter through the scroll there,\n"
 # 773 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "There is a note affixed to the scroll…\p"
+	.string "and let your challenge commence!\p"
 # 774 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "“I am leaving on a journey.\n"
+	.string "I shall be waiting in the back!$"
 # 775 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Don't look for me. TRICK MASTER”$"
-# 776 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
+# 776 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_Text_ItsAScroll:
 # 777 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_NextTimeUseThisTrick:
+	.string "It's a scroll.$"
 # 778 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "For the next time, I'll use this trick,\n"
+
 # 779 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "and that scheme, and those ruses…\p"
+Route110_TrickHouseEntrance_Text_GoInHoleBehindScroll:
 # 780 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Mufufufu… If I may say so, it's\n"
+	.string "There is a big hole behind the scroll!\p"
 # 781 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "brilliantly difficult, even for me!$"
+	.string "Want to go in?$"
 # 782 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 783 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_InMidstOfDevisingNewChallenges:
+Route110_TrickHouseEntrance_Text_LeavingOnJourneyNote:
 # 784 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah? What?!\n"
+	.string "There is a note affixed to the scroll…\p"
 # 785 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Oh, it's you!\p"
+	.string "“I am leaving on a journey.\n"
 # 786 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "I'm in the midst of devising new tricky\n"
+	.string "Don't look for me. TRICK MASTER”$"
 # 787 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "challenges!\p"
+
 # 788 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "It's not too much to ask for a bit more\n"
+Route110_TrickHouseEntrance_Text_NextTimeUseThisTrick:
 # 789 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "time for me to think, is it now?\l"
+	.string "For the next time, I'll use this trick,\n"
 # 790 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "You wouldn't begrudge me that?\l"
+	.string "and that scheme, and those ruses…\p"
 # 791 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Come back in a little while!$"
+	.string "Mufufufu… If I may say so, it's\n"
 # 792 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "brilliantly difficult, even for me!$"
 # 793 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_YoureHereToAcceptReward:
-# 794 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Ah, it's you! You're here to accept the\n"
-# 795 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "reward from before, isn't that right?\l"
-# 796 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Yes, right I am!\p"
-# 797 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Here!\n"
-# 798 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "I'll give it to you now!$"
-# 799 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
+# 794 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_Text_InMidstOfDevisingNewChallenges:
+# 795 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "Hah? What?!\n"
+# 796 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "Oh, it's you!\p"
+# 797 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "I'm in the midst of devising new tricky\n"
+# 798 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "challenges!\p"
+# 799 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "It's not too much to ask for a bit more\n"
 # 800 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward:
+	.string "time for me to think, is it now?\l"
 # 801 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Hah?\n"
+	.string "You wouldn't begrudge me that?\l"
 # 802 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "Did you not come to claim your reward?$"
+	.string "Come back in a little while!$"
 # 803 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 804 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_MechadollWhichTent:
+Route110_TrickHouseEntrance_Text_YoureHereToAcceptReward:
 # 805 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "MECHADOLL 5 I AM!\n"
+	.string "Ah, it's you! You're here to accept the\n"
 # 806 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "IF REWARD IS NOT TAKEN BY YOU,\l"
+	.string "reward from before, isn't that right?\l"
 # 807 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "THEN TRICK MASTER YOU CANNOT FOLLOW.\p"
+	.string "Yes, right I am!\p"
 # 808 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "RED TENT OR BLUE TENT,\n"
+	.string "Here!\n"
 # 809 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "WHICH DO YOU PREFER?$"
+	.string "I'll give it to you now!$"
 # 810 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 811 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_ThenFarewell:
+Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward:
 # 812 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "THEN FAREWELL.$"
+	.string "Hah?\n"
 # 813 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "Did you not come to claim your reward?$"
 # 814 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_PCFullAgain:
+
 # 815 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "YOUR PC STATUS: FULL AGAIN.\n"
+Route110_TrickHouseEntrance_Text_MechadollWhichTent:
 # 816 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "MEAN, YOU ARE.$"
+	.string "MECHADOLL 5 I AM!\n"
 # 817 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "IF REWARD IS NOT TAKEN BY YOU,\l"
 # 818 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_Text_FoundAScroll:
+	.string "THEN TRICK MASTER YOU CANNOT FOLLOW.\p"
 # 819 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "{PLAYER} found a scroll.$"
+	.string "RED TENT OR BLUE TENT,\n"
 # 820 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "WHICH DO YOU PREFER?$"
 # 821 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_Text_MemorizedSecretCode:
+
 # 822 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "{PLAYER} memorized the secret code\n"
+Route110_TrickHouseEntrance_Text_ThenFarewell:
 # 823 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "written on the scroll.$"
+	.string "THEN FAREWELL.$"
 # 824 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 
 # 825 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHousePuzzle_Text_SecretCodeWrittenOnIt:
+Route110_TrickHouseEntrance_Text_PCFullAgain:
 # 826 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "A secret code is written on it.$"
+	.string "YOUR PC STATUS: FULL AGAIN.\n"
 # 827 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-
+	.string "MEAN, YOU ARE.$"
 # 828 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere:
+
 # 829 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "The door is locked.\p"
+Route110_TrickHousePuzzle_Text_FoundAScroll:
 # 830 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	.string "…On closer inspection, this is written\n"
+	.string "{PLAYER} found a scroll.$"
 # 831 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 832 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle_Text_MemorizedSecretCode:
+# 833 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "{PLAYER} memorized the secret code\n"
+# 834 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "written on the scroll.$"
+# 835 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 836 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHousePuzzle_Text_SecretCodeWrittenOnIt:
+# 837 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "A secret code is written on it.$"
+# 838 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+
+# 839 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere:
+# 840 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "The door is locked.\p"
+# 841 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
+	.string "…On closer inspection, this is written\n"
+# 842 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	.string "on it: “Write the secret code here.”$"

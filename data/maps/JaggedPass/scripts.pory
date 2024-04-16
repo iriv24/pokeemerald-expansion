@@ -305,6 +305,8 @@ script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_BODY_PRESS)
 	giveitem(ITEM_TM_AURA_SPHERE)
 	giveitem(ITEM_LUCARIONITE)
+	giveitem(ITEM_MACHAMPITE)
+	giveitem(ITEM_COPPERAJITE)
 	giveitem(ITEM_LIFE_ORB)
 	giveitem(ITEM_HEAVY_DUTY_BOOTS)
 	giveitem(ITEM_LEFTOVERS)
@@ -322,7 +324,7 @@ text Maylene_ExplainItems{
 	"its health with each attack.\n"
 	"The Heavy DutyBoots grant immunity\p"
 	"to hazards on entry. I threw in\n"
-	"one of my favorite Mega Stones\p"
+	"some of my favorite Mega Stones\p"
 	"and a set of Leftovers as well.\n"
 	"Good luck!"
 }

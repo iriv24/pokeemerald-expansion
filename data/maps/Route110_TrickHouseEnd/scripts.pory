@@ -62,8 +62,9 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToPlantTrees, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem ITEM_BEEDRILLITE
-	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_TM_GUNK_SHOT
+	giveitem ITEM_GARBODORITE
+	giveitem ITEM_TOXTRICITITE
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
@@ -74,8 +75,15 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem ITEM_BEEDRILLITE
-	giveitem ITEM_ASSAULT_VEST
+	giveitem ITEM_TM_SOLAR_BEAM
+	giveitem ITEM_TM_SOLAR_BLADE
+	giveitem ITEM_TM_GRASSY_GLIDE
+	giveitem ITEM_TM_GRASS_KNOT
+	giveitem ITEM_TM_POWER_WHIP
+	giveitem ITEM_TM_BUG_BUZZ
+	giveitem ITEM_TM_MEGAHORN
+	giveitem ITEM_BUTTERFRITE
+	giveitem ITEM_SNORLAXITE
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
@@ -87,8 +95,11 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	setflag FLAG_BEAT_TRICK_HOUSE_3
+	giveitem ITEM_TM_STONE_EDGE
 	giveitem ITEM_STEELIXITE
+	giveitem ITEM_KINGLERITE
 	giveitem ITEM_BOOSTER_ENERGY
+	giveitem ITEM_ASSAULT_VEST
 	addvar VAR_PETALBURG_GYM_STATE, 1
 	call_if_eq VAR_PETALBURG_GYM_STATE, 7, Common_EventScript_ReadyPetalburgGymForBattle
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
