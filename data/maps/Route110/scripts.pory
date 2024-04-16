@@ -464,7 +464,7 @@ Route110_EventScript_BrendanDefeated::
 	end
 
 Route110_EventScript_GiveItemfinder::
-	giveitem ITEM_HM02
+	giveitem ITEM_HM_FLY
 	giveitem ITEM_DOWSING_MACHINE
 	giveitem ITEM_TM_BUG_BITE
 	giveitem ITEM_TM_STOMPING_TANTRUM

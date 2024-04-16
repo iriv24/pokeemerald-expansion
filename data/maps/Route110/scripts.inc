@@ -931,7 +931,7 @@ Route110_EventScript_BrendanDefeated::
 # 466 "data/maps/Route110/scripts.pory"
 Route110_EventScript_GiveItemfinder::
 # 467 "data/maps/Route110/scripts.pory"
-	giveitem ITEM_HM02
+	giveitem ITEM_HM_FLY
 # 468 "data/maps/Route110/scripts.pory"
 	giveitem ITEM_DOWSING_MACHINE
 # 469 "data/maps/Route110/scripts.pory"
