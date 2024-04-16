@@ -2724,6 +2724,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Slaking)
         .levelUpLearnset = sSlakingLevelUpLearnset,
         .teachableLearnset = sSlakingTeachableLearnset,
+        .formSpeciesIdTable = sSlakingFormSpeciesIdTable,
+        .formChangeTable = sSlakingFormChangeTable,
     },
 #endif //P_FAMILY_SLAKOTH
 

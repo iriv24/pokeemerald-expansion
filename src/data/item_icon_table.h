@@ -1039,6 +1039,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_CENTISKITE] = {gItemIcon_CharizarditeY, gItemIconPalette_CharizarditeY},
     [ITEM_GRIMMITE] = {gItemIcon_CharizarditeX, gItemIconPalette_CharizarditeX},
     [ITEM_COPPERAJITE] = {gItemIcon_Aggronite, gItemIconPalette_Aggronite},
+    [ITEM_SLAKITE] = {gItemIcon_Lopunnite, gItemIconPalette_Lopunnite},
     
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

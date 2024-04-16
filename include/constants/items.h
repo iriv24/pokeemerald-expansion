@@ -1165,8 +1165,9 @@
 #define ITEM_CENTISKITE 993
 #define ITEM_GRIMMITE 994
 #define ITEM_COPPERAJITE 995
+#define ITEM_SLAKITE 996
 
-#define ITEMS_COUNT 996
+#define ITEMS_COUNT 997
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

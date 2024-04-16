@@ -457,5 +457,66 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formSpeciesIdTable = sInfernapeFormSpeciesIdTable,
         .formChangeTable = sInfernapeFormChangeTable,
     },
+
+    [SPECIES_SLAKING_MEGA] =
+    {
+        .baseHP        = 150,
+        .baseAttack    = 160,
+        .baseDefense   = 100,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_NORMAL),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 285,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 252,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_HP = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_COMATOSE, ABILITY_COMATOSE, ABILITY_COMATOSE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Slaking"),
+        .cryId = CRY_SLAKING,
+        .natDexNum = NATIONAL_DEX_SLAKING,
+        .categoryName = _("Lazy"),
+        .height = 20,
+        .weight = 1305,
+        .description = COMPOUND_STRING(
+            "Hordes of Slaking gather around trees\n"
+            "when fruits come into season. They wait\n"
+            "around patiently for ripened fruits to fall\n"
+            "out of the trees."),
+        .pokemonScale = 256,
+        .pokemonOffset = 2,
+        .trainerScale = 300,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Slaking,
+        .frontPicSize = MON_COORDS_SIZE(64, 56),
+        .frontPicYOffset = 7,
+        .frontAnimFrames = sAnims_Slaking,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+        .backPic = gMonBackPic_Slaking,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_H_SHAKE,
+        .palette = gMonPalette_Slaking,
+        .shinyPalette = gMonShinyPalette_Slaking,
+        .iconSprite = gMonIcon_Slaking,
+        .iconPalIndex = 2,
+        FOOTPRINT(Slaking)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sSlakingLevelUpLearnset,
+        .teachableLearnset = sSlakingTeachableLearnset,
+        .formSpeciesIdTable = sSlakingFormSpeciesIdTable,
+        .formChangeTable = sSlakingFormChangeTable,
+    },
 #endif //P_MEGA_EVOLUTIONS
 };

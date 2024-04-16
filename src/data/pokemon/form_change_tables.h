@@ -1130,5 +1130,12 @@ static const struct FormChange sInfernapeFormChangeTable[] = {
 };
 #endif //P_FAMILY_CHIMCHAR
 
+#if P_FAMILY_SLAKOTH
+static const struct FormChange sSlakingFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_SLAKING_MEGA, ITEM_SLAKITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_SLAKOTH
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

@@ -1928,3 +1928,11 @@ static const u16 sInfernapeFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_CHIMCHAR
 
+#if P_FAMILY_SLAKOTH
+static const u16 sSlakingFormSpeciesIdTable[] = {
+    SPECIES_SLAKING,
+    SPECIES_SLAKING_MEGA,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_SLAKOTH
+
