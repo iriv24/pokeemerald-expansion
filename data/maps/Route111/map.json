@@ -137,7 +137,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 30,
-      "y": 98,
+      "y": 99,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -351,9 +351,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_STARDUST",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_SANDSTORM",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_111_STARDUST"
+      "flag": "FLAG_ITEM_ROUTE_111_TM_SANDSTORM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -553,7 +553,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 32,
-      "y": 101,
+      "y": 99,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
