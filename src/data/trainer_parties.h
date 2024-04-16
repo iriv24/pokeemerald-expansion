@@ -3592,32 +3592,62 @@ static const struct TrainerMon sParty_Flannery1[] = {
 
 static const struct TrainerMon sParty_Norman1[] = {
     {
-    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
-    .lvl = 27,
-    .species = SPECIES_SPINDA,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_TEETER_DANCE, MOVE_PSYBEAM, MOVE_FACADE, MOVE_ENCORE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 59,
+    .species = SPECIES_OBSTAGOON,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_GUTS,
+    .heldItem = ITEM_FLAME_ORB,
+    .friendship = MAX_FRIENDSHIP,
+    .moves = {MOVE_RETURN, MOVE_KNOCK_OFF, MOVE_PARTING_SHOT, MOVE_OBSTRUCT}
     },
     {
-    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
-    .lvl = 27,
-    .species = SPECIES_VIGOROTH,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SLASH, MOVE_FACADE, MOVE_ENCORE, MOVE_FEINT_ATTACK}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 31),
+    .lvl = 59,
+    .species = SPECIES_ZOROARK_HISUIAN,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_ILLUSION,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_BITTER_MALICE, MOVE_AURA_SPHERE, MOVE_HYPER_VOICE, MOVE_SLUDGE_BOMB}
     },
     {
-    .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
-    .lvl = 29,
-    .species = SPECIES_LINOONE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SLASH, MOVE_BELLY_DRUM, MOVE_FACADE, MOVE_HEADBUTT}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 59,
+    .species = SPECIES_IRON_VALIANT,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_QUARK_DRIVE,
+    .heldItem = ITEM_PIXIE_PLATE,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_SPIRIT_BREAK, MOVE_BULK_UP, MOVE_KNOCK_OFF}
     },
     {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 31,
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 30, 31, 31, 31),
+    .lvl = 59,
+    .species = SPECIES_URSALUNA_BLOODMOON,
+    .nature = NATURE_QUIET,
+    .ability = ABILITY_SCRAPPY,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_EARTH_POWER, MOVE_BLOOD_MOON, MOVE_HYPER_VOICE, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 59,
     .species = SPECIES_SLAKING,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_TRUANT,
+    .heldItem = ITEM_SLAKITE,
+    .friendship = MAX_FRIENDSHIP,
+    .moves = {MOVE_RETURN, MOVE_PLAY_ROUGH, MOVE_POWER_UP_PUNCH, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 59,
+    .species = SPECIES_CYCLIZAR,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_COUNTER, MOVE_YAWN, MOVE_FACADE, MOVE_FEINT_ATTACK}
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_REGENERATOR,
+    .friendship = MAX_FRIENDSHIP,
+    .moves = {MOVE_SHED_TAIL, MOVE_AQUA_TAIL, MOVE_DRAGON_CLAW, MOVE_RETURN}
     }
 };
 
