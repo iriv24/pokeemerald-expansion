@@ -4911,15 +4911,15 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .formChangeTable = sGarbodorFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_GARBODOR_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_GARBODOR_MEGA] =
     {
         .baseHP        = 80,
-        .baseAttack    = 95,
-        .baseDefense   = 82,
+        .baseAttack    = 135,
+        .baseDefense   = 105,
         .baseSpeed     = 75,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 82,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_POISON),
         .catchRate = 60,
         .expYield = 166,
@@ -4931,7 +4931,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STENCH, ABILITY_WEAK_ARMOR, ABILITY_AFTERMATH },
+        .abilities = { ABILITY_STENCH, ABILITY_STENCH, ABILITY_STENCH },
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("Garbodor"),
@@ -4953,23 +4953,23 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_GarbodorGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_GarbodorGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 2,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_GarbodorGigantamax,
         .shinyPalette = gMonShinyPalette_GarbodorGigantamax,
         .iconSprite = gMonIcon_GarbodorGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Garbodor)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sGarbodorLevelUpLearnset,
         .teachableLearnset = sGarbodorTeachableLearnset,
         .formSpeciesIdTable = sGarbodorFormSpeciesIdTable,
         .formChangeTable = sGarbodorFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TRUBBISH
 
 #if P_FAMILY_ZORUA

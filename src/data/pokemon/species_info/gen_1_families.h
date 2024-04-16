@@ -1093,15 +1093,15 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sButterfreeFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_BUTTERFREE_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_BUTTERFREE_MEGA] =
     {
         .baseHP        = 60,
         .baseAttack    = 45,
-        .baseDefense   = 50,
-        .baseSpeed     = 70,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_6 ? 90 : 80,
-        .baseSpDefense = 80,
+        .baseDefense   = 100,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 140,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
         .catchRate = 45,
         .expYield = BUTTERFREE_EXP_YIELD,
@@ -1113,7 +1113,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_TINTED_LENS },
+        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_COMPOUND_EYES, ABILITY_COMPOUND_EYES },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Butterfree"),
         .cryId = CRY_BUTTERFREE,
@@ -1134,24 +1134,24 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 3,
         .frontAnimFrames = sAnims_ButterfreeGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .enemyMonElevation = 7,
         .backPic = gMonBackPic_ButterfreeGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 3,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_ButterfreeGigantamax,
         .shinyPalette = gMonShinyPalette_ButterfreeGigantamax,
         .iconSprite = gMonIcon_ButterfreeGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Butterfree)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sButterfreeLevelUpLearnset,
         .teachableLearnset = sButterfreeTeachableLearnset,
         .formSpeciesIdTable = sButterfreeFormSpeciesIdTable,
         .formChangeTable = sButterfreeFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CATERPIE
 
 #if P_FAMILY_WEEDLE
@@ -6869,15 +6869,15 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sMachampFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_MACHAMP_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_MACHAMP_MEGA] =
     {
         .baseHP        = 90,
-        .baseAttack    = 130,
-        .baseDefense   = 80,
-        .baseSpeed     = 55,
+        .baseAttack    = 145,
+        .baseDefense   = 110,
+        .baseSpeed     = 75,
         .baseSpAttack  = 65,
-        .baseSpDefense = 85,
+        .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = MACHAMP_EXP_YIELD,
@@ -6888,7 +6888,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST },
+        .abilities = { ABILITY_PARENTAL_BOND, ABILITY_PARENTAL_BOND, ABILITY_PARENTAL_BOND },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Machamp"),
         .cryId = CRY_MACHAMP,
@@ -6909,23 +6909,23 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_MachampGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_MachampGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 3,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_MachampGigantamax,
         .shinyPalette = gMonShinyPalette_MachampGigantamax,
         .iconSprite = gMonIcon_MachampGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Machamp)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sMachampLevelUpLearnset,
         .teachableLearnset = sMachampTeachableLearnset,
         .formSpeciesIdTable = sMachampFormSpeciesIdTable,
         .formChangeTable = sMachampFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MACHOP
 
 #if P_FAMILY_BELLSPROUT
@@ -9837,7 +9837,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .iconSprite = gMonIcon_KinglerGigantamax,
         .iconPalIndex = 0,
         FOOTPRINT(Kingler)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sKinglerLevelUpLearnset,
         .teachableLearnset = sKinglerTeachableLearnset,
         .formSpeciesIdTable = sKinglerFormSpeciesIdTable,
@@ -13422,16 +13422,16 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sLaprasFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_LAPRAS_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_LAPRAS_MEGA] =
     {
         .baseHP        = 130,
-        .baseAttack    = 85,
-        .baseDefense   = 80,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 95,
-        .types = MON_TYPES(TYPE_WATER, TYPE_ICE),
+        .baseAttack    = 105,
+        .baseDefense   = 90,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 105,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 187 : 219,
         .evYield_HP = 2,
@@ -13442,7 +13442,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_WATER_ABSORB, ABILITY_SHELL_ARMOR, ABILITY_HYDRATION },
+        .abilities = { ABILITY_LIQUID_VOICE, ABILITY_LIQUID_VOICE, ABILITY_LIQUID_VOICE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Lapras"),
         .cryId = CRY_LAPRAS,
@@ -13463,23 +13463,23 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_LaprasGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_LaprasGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 1,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_LaprasGigantamax,
         .shinyPalette = gMonShinyPalette_LaprasGigantamax,
         .iconSprite = gMonIcon_LaprasGigantamax,
         .iconPalIndex = 2,
         FOOTPRINT(Lapras)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sLaprasLevelUpLearnset,
         .teachableLearnset = sLaprasTeachableLearnset,
         .formSpeciesIdTable = sLaprasFormSpeciesIdTable,
         .formChangeTable = sLaprasFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_LAPRAS
 
 #if P_FAMILY_DITTO
@@ -14770,16 +14770,16 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sSnorlaxFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_SNORLAX_GIGANTAMAX] =
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_SNORLAX_MEGA] =
     {
         .baseHP        = 160,
-        .baseAttack    = 110,
-        .baseDefense   = 65,
+        .baseAttack    = 160,
+        .baseDefense   = 85,
         .baseSpeed     = 30,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 110,
-        .types = MON_TYPES(TYPE_NORMAL),
+        .baseSpAttack  = 80,
+        .baseSpDefense = 125,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_GRASS),
         .catchRate = 25,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 189 : 154,
         .evYield_HP = 2,
@@ -14790,7 +14790,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
-        .abilities = { ABILITY_IMMUNITY, ABILITY_THICK_FAT, ABILITY_GLUTTONY },
+        .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Snorlax"),
         .cryId = CRY_SNORLAX,
@@ -14799,7 +14799,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .height = 350,
         .weight = 0,
         .description = COMPOUND_STRING(
-            "Gigantamax energy has affected\n"
+            "Mega energy has affected\n"
             "stray seeds and even pebbles that\n"
             "got stuck to Snorlax, making them grow\n"
             "to a huge size."),
@@ -14811,23 +14811,23 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SnorlaxGigantamax,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_SnorlaxGigantamax,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 5,
-        //.backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_SnorlaxGigantamax,
         .shinyPalette = gMonShinyPalette_SnorlaxGigantamax,
         .iconSprite = gMonIcon_SnorlaxGigantamax,
         .iconPalIndex = 3,
         FOOTPRINT(Snorlax)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sSnorlaxLevelUpLearnset,
         .teachableLearnset = sSnorlaxTeachableLearnset,
         .formSpeciesIdTable = sSnorlaxFormSpeciesIdTable,
         .formChangeTable = sSnorlaxFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_SNORLAX
 
 #if P_FAMILY_ARTICUNO
