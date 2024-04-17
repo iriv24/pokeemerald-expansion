@@ -707,10 +707,8 @@
 #define STRINGID_BIZARREARENACREATED                  705
 #define STRINGID_BIZARREAREACREATED                   706
 #define STRINGID_TIDYINGUPCOMPLETE                    707
-#define STRINGID_WINDSCONTINUE                        708
-#define STRINGID_WINDSFADED                           709
 
-#define BATTLESTRINGS_COUNT                           710
+#define BATTLESTRINGS_COUNT                           708
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -860,7 +858,6 @@
 // gPrimalWeatherBlocksStringIds
 #define B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN    0
 #define B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN  1
-#define B_MSG_PRIMAL_WEATHER_BLEW_AWAY          2
 
 // gInobedientStringIds
 #define B_MSG_LOAFING            0
