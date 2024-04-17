@@ -877,7 +877,7 @@ MauvilleCity_EventScript_CompletedNewMauville::
 # 439 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WattsonThanksTakeTM, MSGBOX_DEFAULT
 # 440 "data/maps/MauvilleCity/scripts.pory"
-	giveitem ITEM_TM_THUNDERBOLT
+	giveitem ITEM_TM_CLOSE_COMBAT
 # 441 "data/maps/MauvilleCity/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 442 "data/maps/MauvilleCity/scripts.pory"
@@ -1229,7 +1229,7 @@ MauvilleCity_Text_WattsonThanksTakeTM:
 # 615 "data/maps/MauvilleCity/scripts.pory"
 	.string "This is my thanks--a TM containing\n"
 # 616 "data/maps/MauvilleCity/scripts.pory"
-	.string "THUNDERBOLT!\p"
+	.string "Close Combat!\p"
 # 617 "data/maps/MauvilleCity/scripts.pory"
 	.string "Go on, you've earned it!$"
 # 618 "data/maps/MauvilleCity/scripts.pory"

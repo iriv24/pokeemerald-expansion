@@ -44,7 +44,6 @@ Route111_WinstrateFamilysHouse_EventScript_Victoria::
 	giveitem ITEM_ORBEETLITE
 	giveitem ITEM_SCIZORITE
 	giveitem ITEM_AERODACTYLITE
-	giveitem ITEM_MANECTITE
 	giveitem ITEM_GALLADITE
 	giveitem ITEM_CENTISKITE
 	giveitem ITEM_SANDACONDITE

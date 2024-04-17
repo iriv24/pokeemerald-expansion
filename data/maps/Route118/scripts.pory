@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_STEVEN, 19
+.set LOCALID_WAKE, 22
 
 Route118_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route118_OnTransition
@@ -302,3 +303,134 @@ Route118_Text_RouteSign119:
 	.string "{UP_ARROW} ROUTE 119$"
 
 `
+
+script Route118_EventScript_Wake{
+	lockall
+	applymovement(LOCALID_WAKE, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_KUBFU, Route118_EventScript_WakeDefeated)
+	goto_if_set(FLAG_DECLINED_WAKE_BATTLE, Route118_EventScript_WakeRequestBattleAgain)
+	msgbox(Wake_Greeting, MSGBOX_YESNO)
+	goto(Route118_EventScript_BattleWakePrompt)
+	end
+}
+
+script Route118_EventScript_WakeRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(Route118_EventScript_BattleWakePrompt)
+	end
+}
+
+script Route118_EventScript_BattleWakePrompt{
+	call_if_eq(VAR_RESULT, YES, Route118_EventScript_BattleWake)
+	goto_if_eq(VAR_RESULT, NO, Route118_EventScript_DeclineWakeBattle)
+	closemessage
+	end
+}
+
+script Route118_EventScript_DeclineWakeBattle {
+	setflag(FLAG_DECLINED_WAKE_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route118_EventScript_BattleWake{
+	msgbox("Let's do this.", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_WAKE, Wake_Outro)
+	giveitem(ITEM_LAPRASITE)
+	giveitem(ITEM_DREDNAWITE)
+	giveitem(ITEM_GYARADOSITE)
+	goto(Route118_EventScript_WakeGiveKubfu)
+	return
+}
+	
+
+script Route118_EventScript_WakeDefeated{
+	msgbox(PostBattle_Wake, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script Route118_EventScript_WakeGiveKubfu{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU)
+	givemon(SPECIES_KUBFU, 15)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route118_EventScript_ReceiveKubfuParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route118_EventScript_ReceiveKubfuPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script Route118_EventScript_ReceiveKubfuParty{
+	call(Route118_EventScript_ReceivedKubfuFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route118_EventScript_ExplainKubfu)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Route118_EventScript_ExplainKubfu)
+	end
+}
+	
+
+script Route118_EventScript_ReceiveKubfuPC {
+	call(Route118_EventScript_ReceivedKubfuFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route118_EventScript_SendKubfuToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(Route118_EventScript_SendKubfuToPC)
+	end
+}
+	
+
+script Route118_EventScript_SendKubfuToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(Route118_EventScript_ExplainKubfu)
+	end
+}
+	
+
+script Route118_EventScript_ReceivedKubfuFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(Route118_Text_PlayerReceivedKubfu)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_KUBFU)
+	return
+}
+	
+
+script Route118_EventScript_ExplainKubfu {
+	msgbox(Wake_ExplainKubfu, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_KUBFU)
+	release
+	end
+}
+	
+text Route118_Text_PlayerReceivedKubfu{
+	"{PLAYER} received Kubfu!$"
+}
+
+text Wake_ExplainKubfu{
+	"Kubfu can evolve in 2 different ways.\n"
+	"You can use a Water Stone to evolve it\p"
+	"into the Rapid-Strike form, like I have,\n"
+	"or you can use a Dusk Stone to evolve\p"
+	"it into the Single-Strike form. Both are\n"
+	"quite powerful."
+}
+	
+text Wake_Greeting{
+	"GLUB GLUB This better be good if\n"
+	"you're interrupting my training. You\p"
+	"wanna battle or not?"
+}
+	
+text Wake_Outro{
+	"Wow, what a fight. I know I'll be leaving\n"
+	"this Pokémon in good hands."
+}
+
+
+text PostBattle_Wake{
+	"GLUB GLUB What now?!"
+}
