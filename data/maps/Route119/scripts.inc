@@ -1195,7 +1195,7 @@ Route119_Text_CanYourMonMakeSecretBase:
 # 598 "data/maps/Route119/scripts.pory"
 	.string "on a big pile of grass and make a\l"
 # 599 "data/maps/Route119/scripts.pory"
-	.string "SECRET BASE?$"
+	.string "SECRET BASE? Not anymore!$"
 # 600 "data/maps/Route119/scripts.pory"
 
 # 601 "data/maps/Route119/scripts.pory"
