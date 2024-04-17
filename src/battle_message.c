@@ -364,6 +364,8 @@ static const u8 sText_SandstormSubsided[] = _("The sandstorm subsided.");
 static const u8 sText_SunlightGotBright[] = _("The sunlight got bright!");
 static const u8 sText_SunlightStrong[] = _("The sunlight is strong.");
 static const u8 sText_SunlightFaded[] = _("The sunlight faded.");
+static const u8 sText_WindsContinue[] = _("The winds blow.");
+static const u8 sText_WindsFaded[] = _("The winds dissipated.");
 static const u8 sText_StartedHail[] = _("It started to hail!");
 static const u8 sText_HailContinues[] = _("Hail continues to fall.");
 static const u8 sText_HailStopped[] = _("The hail stopped.");
@@ -756,7 +758,7 @@ static const u8 sText_NoReliefFromHeavyRain[] = _("There is no relief from\nthis
 static const u8 sText_MysteriousAirCurrent[] = _("A mysterious air current is\nprotecting Flying-type Pokémon!");
 static const u8 sText_StrongWindsDissipated[] = _("The mysterious strong winds\nhave dissipated!{PAUSE 64}");
 static const u8 sText_MysteriousAirCurrentBlowsOn[] = _("The mysterious air current\nblows on regardless!");
-static const u8 sText_AttackWeakenedByStrongWinds[] = _("The mysterious strong winds\nweakened the attack!");
+static const u8 sText_AttackWeakenedByStrongWinds[] = _("The mysterious strong winds\nblew away the attack!");
 static const u8 sText_StuffCheeksCantSelect[] = _("Stuff Cheeks cannot be\nselected without a Berry!\p");
 static const u8 sText_PkmnRevertedToPrimal[] = _("{B_ATK_NAME_WITH_PREFIX}'s Primal Reversion!\nIt reverted to its primal form!");
 static const u8 sText_ButPokemonCantUseTheMove[] = _("But {B_ATK_NAME_WITH_PREFIX} can't\nuse the move!");
@@ -1543,6 +1545,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITEMWASUSEDUP - BATTLESTRINGS_TABLE_START] = sText_ItemWasUsedUp,
     [STRINGID_ATTACKERLOSTITSTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostItsType,
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
+    [STRINGID_WINDSCONTINUE - BATTLESTRINGS_TABLE_START] = sText_WindsContinue,
+    [STRINGID_WINDSFADED - BATTLESTRINGS_TABLE_START] = sText_WindsFaded,
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1939,6 +1943,7 @@ const u16 gPrimalWeatherBlocksStringIds[] =
 {
     [B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN]      = STRINGID_MOVEFIZZLEDOUTINTHEHEAVYRAIN,
     [B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN]    = STRINGID_MOVEEVAPORATEDINTHEHARSHSUNLIGHT,
+    [B_MSG_PRIMAL_WEATHER_BLEW_AWAY]            = STRINGID_ATTACKWEAKENEDBSTRONGWINDS,
 };
 
 const u16 gInobedientStringIds[] =

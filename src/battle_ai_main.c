@@ -1025,6 +1025,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (moveType == TYPE_FIRE)
                     RETURN_SCORE_MINUS(30);
             }
+            else if (weather & B_WEATHER_STRONG_WINDS)
+            {
+                if (moveType == TYPE_ELECTRIC || moveType == TYPE_FAIRY)
+                    RETURN_SCORE_MINUS(30);
+            }
         }
     }
 
