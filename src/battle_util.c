@@ -1680,6 +1680,7 @@ enum
     ENDTURN_SANDSTORM,
     ENDTURN_SUN,
     ENDTURN_HAIL,
+    ENDTURN_WIND,
     ENDTURN_SNOW,
     ENDTURN_DAMAGE_NON_TYPES,
     ENDTURN_GRAVITY,
@@ -2019,6 +2020,28 @@ u8 DoFieldEndTurnEffects(void)
                 else
                 {
                     gBattlescriptCurrInstr = BattleScript_SunlightContinues;
+                }
+
+                BattleScriptExecute(gBattlescriptCurrInstr);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_WIND:
+            if (gBattleWeather & B_WEATHER_STRONG_WINDS)
+            {
+                //TODO rework this with wind
+                if (!(gBattleWeather & B_WEATHER_STRONG_WINDS)
+                 && --gWishFutureKnock.weatherDuration == 0)
+                {
+                    gBattleWeather &= ~B_WEATHER_SUN_TEMPORARY;
+                    for (i = 0; i < gBattlersCount; i++)
+                        gDisableStructs[i].weatherAbilityDone = FALSE;
+                    gBattlescriptCurrInstr = BattleScript_WindFaded;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr = BattleScript_WindContinues;
                 }
 
                 BattleScriptExecute(gBattlescriptCurrInstr);
@@ -9442,6 +9465,12 @@ static uq4_12_t GetWeatherDamageModifier(u32 battlerAtk, u32 move, u32 moveType,
             return UQ_4_12(1.0);
         return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
+    if (weather & B_WEATHER_STRONG_WINDS)
+    {
+        if (moveType != TYPE_FLYING && moveType != TYPE_ELECTRIC && moveType != TYPE_FAIRY)
+            return UQ_4_12(1.0);
+        return (moveType == TYPE_FLYING) ? UQ_4_12(1.5) : UQ_4_12(0.5);
+    }
     return UQ_4_12(1.0);
 }
 
@@ -9808,13 +9837,6 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         mod = UQ_4_12(2.0);
-
-    // B_WEATHER_STRONG_WINDS weakens Super Effective moves against Flying-type Pokémon
-    if (gBattleWeather & B_WEATHER_STRONG_WINDS && WEATHER_HAS_EFFECT)
-    {
-        if (defType == TYPE_FLYING && mod >= UQ_4_12(2.0))
-            mod = UQ_4_12(1.0);
-    }
 
     *modifier = uq4_12_multiply(*modifier, mod);
 }
