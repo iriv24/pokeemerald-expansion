@@ -68,12 +68,12 @@
 #define FLAG_BEAT_TRICK_HOUSE_3    0x38
 #define FLAG_RECEIVED_KUBFU    0x39
 #define FLAG_DECLINED_WAKE_BATTLE    0x3A
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
+#define FLAG_RECEIVED_WATER_MEGAS    0x3B
+#define FLAG_DECLINED_ISAAC_BATTLE    0x3C
+#define FLAG_RECEIVED_GRASS_MEGAS    0x3D
+#define FLAG_DECLINED_XAVIER_BATTLE    0x3E
+#define FLAG_RECEIVED_FIRE_MEGAS    0x3F
+#define FLAG_DECLINED_JUSTIN_BATTLE    0x40
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag

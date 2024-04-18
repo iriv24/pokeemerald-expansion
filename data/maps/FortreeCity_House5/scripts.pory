@@ -6,9 +6,6 @@ FortreeCity_House5_EventScript_PokefanF::
 	msgbox FortreeCity_House5_Text_TreeHousesAreGreat, MSGBOX_NPC
 	end
 
-FortreeCity_House5_EventScript_Man::
-	msgbox FortreeCity_House5_Text_AdaptedToNature, MSGBOX_NPC
-	end
 
 FortreeCity_House5_EventScript_Zigzagoon::
 	lock
@@ -25,13 +22,96 @@ FortreeCity_House5_Text_TreeHousesAreGreat:
 	.string "I think it's the number one town for\n"
 	.string "living together with POKéMON.$"
 
-FortreeCity_House5_Text_AdaptedToNature:
-	.string "POKéMON and people have adapted to\n"
-	.string "nature for survival.\p"
-	.string "There's no need to make nature\n"
-	.string "conform to the way we want to live.$"
 
 FortreeCity_House5_Text_Zigzagoon:
 	.string "ZIGZAGOON: Bufuu!$"
 
+FortreeCity_House5_EventScript_PC::
+	msgbox Route114_LanettesHouse_Text_EmailFromBill, MSGBOX_SIGN
+	end
+
 `
+
+script FortreeCity_House5_EventScript_Isaac{
+	lockall
+	applymovement(3, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_WATER_MEGAS, FortreeCity_House5_EventScript_IsaacDefeated)
+	goto_if_set(FLAG_DECLINED_ISAAC_BATTLE, FortreeCity_House5_EventScript_IsaacRequestBattleAgain)
+	msgbox(Isaac_Greeting, MSGBOX_YESNO)
+	goto(FortreeCity_House5_EventScript_BattleIsaacPrompt)
+	end
+}
+
+script FortreeCity_House5_EventScript_IsaacRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(FortreeCity_House5_EventScript_BattleIsaacPrompt)
+	end
+}
+
+script FortreeCity_House5_EventScript_BattleIsaacPrompt{
+	call_if_eq(VAR_RESULT, YES, FortreeCity_House5_EventScript_BattleIsaac)
+	goto_if_eq(VAR_RESULT, NO, FortreeCity_House5_EventScript_DeclineIsaacBattle)
+	closemessage
+	end
+}
+
+script FortreeCity_House5_EventScript_DeclineIsaacBattle {
+	setflag(FLAG_DECLINED_ISAAC_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script FortreeCity_House5_EventScript_BattleIsaac{
+	msgbox("You're on!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_ISAAC, Isaac_Outro)
+	goto(FortreeCity_House5_EventScript_IsaacGiveItems)
+	return
+}
+	
+
+script FortreeCity_House5_EventScript_IsaacDefeated{
+	msgbox(PostBattle_Isaac, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script FortreeCity_House5_EventScript_IsaacGiveItems{
+	giveitem(ITEM_EMPOLEONITE_O)
+	giveitem(ITEM_BLASTOISINITE)
+	giveitem(ITEM_SWAMPERTITE)
+	giveitem(ITEM_TM_SUBSTITUTE)
+	setflag(FLAG_RECEIVED_WATER_MEGAS)
+	msgbox(Isaac_ExplainItems)
+	release
+	end
+}
+
+text Isaac_ExplainItems{
+	"Drain Punch allows your Pokémon to\n"
+	"absorb health with each strike. The\p"
+	"Life Orb boosts the power of your\n"
+	"Pokémon's moves at the cost of some of\p"
+	"its health with each attack.\n"
+	"The Heavy DutyBoots grant immunity\p"
+	"to hazards on entry. I threw in\n"
+	"some of my favorite Mega Stones\p"
+	"as well. Good luck!"
+}
+
+text Isaac_Greeting{
+	"HOO-HAH! Is this finally a worthy\n"
+	"opponent? I can tell that you seem\p"
+	"pretty strong, let's see if my instincts\n"
+	"are correct! What do you say, will you\l"
+	"battle with me?"
+}
+	
+text Isaac_Outro{
+	"My instincts were right!"
+}
+
+
+text PostBattle_Isaac{
+	"Gotta. Get. Stronger."
+}

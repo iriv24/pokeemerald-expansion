@@ -14014,7 +14014,7 @@ static const struct TrainerMon sParty_Ursula[] = {
 static const struct TrainerMon sParty_Xavier[] = {
    {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_GALVANTULA,
     .nature = NATURE_TIMID,
     .ability = ABILITY_COMPOUND_EYES,
@@ -14023,7 +14023,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_MALAMAR,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_CONTRARY,
@@ -14032,7 +14032,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_DARMANITAN,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SHEER_FORCE,
@@ -14041,7 +14041,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_MIMIKYU_DISGUISED,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_DISGUISE,
@@ -14050,7 +14050,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 200,
     .species = SPECIES_GRENINJA,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTEAN,
@@ -14059,7 +14059,7 @@ static const struct TrainerMon sParty_Xavier[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 200,
     .species = SPECIES_TORTERRA,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_OVERGROW,
@@ -14071,7 +14071,7 @@ static const struct TrainerMon sParty_Xavier[] = {
 static const struct TrainerMon sParty_Isaac[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 200,
     .species = SPECIES_RILLABOOM,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GRASSY_SURGE,
@@ -14080,7 +14080,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_ALAKAZAM,
     .nature = NATURE_TIMID,
     .ability = ABILITY_MAGIC_GUARD,
@@ -14089,7 +14089,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_TYRANITAR,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_SAND_STREAM,
@@ -14098,7 +14098,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_AMPHAROS,
     .nature = NATURE_MODEST,
     .ability = ABILITY_STATIC,
@@ -14108,7 +14108,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     {
         //hp, atk, def, speed, spatk, spdef
     .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
-    .lvl = 202,
+    .lvl = 200,
     .species = SPECIES_FLORGES,
     .nature = NATURE_MODEST,
     .ability = ABILITY_NATURAL_CURE,
@@ -14117,7 +14117,7 @@ static const struct TrainerMon sParty_Isaac[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 200,
     .species = SPECIES_EMPOLEON,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_TORRENT,
