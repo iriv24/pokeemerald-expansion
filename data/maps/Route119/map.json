@@ -173,7 +173,7 @@
       "x": 28,
       "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_TREE_DISGUISE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -186,7 +186,7 @@
       "x": 19,
       "y": 49,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_MOUNTAIN_DISGUISE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -459,7 +459,7 @@
       "x": 29,
       "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_TREE_DISGUISE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -619,153 +619,6 @@
       "var": "VAR_ROUTE119_STATE",
       "var_value": "0",
       "script": "Route119_EventScript_RivalTrigger2"
-    },
-    {
-      "type": "weather",
-      "x": 29,
-      "y": 13,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 30,
-      "y": 13,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 31,
-      "y": 13,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 32,
-      "y": 13,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 15,
-      "y": 133,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 16,
-      "y": 132,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 17,
-      "y": 131,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 18,
-      "y": 130,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 19,
-      "y": 131,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 20,
-      "y": 132,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 21,
-      "y": 133,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
-    },
-    {
-      "type": "weather",
-      "x": 36,
-      "y": 6,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 36,
-      "y": 7,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 35,
-      "y": 8,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 35,
-      "y": 9,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 16,
-      "y": 137,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 17,
-      "y": 137,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 18,
-      "y": 137,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 19,
-      "y": 137,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 20,
-      "y": 137,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 34,
-      "y": 13,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
     }
   ],
   "bg_events": [

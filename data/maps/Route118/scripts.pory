@@ -353,7 +353,7 @@ script Route118_EventScript_WakeDefeated{
 
 script Route118_EventScript_WakeGiveKubfu{
 	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU)
-	givemon(SPECIES_KUBFU, 15)
+	givemon(SPECIES_KUBFU, 25)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route118_EventScript_ReceiveKubfuParty)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route118_EventScript_ReceiveKubfuPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)

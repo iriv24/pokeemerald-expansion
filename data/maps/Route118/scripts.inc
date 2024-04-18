@@ -677,7 +677,7 @@ Route118_EventScript_WakeGiveKubfu::
 # 355 "data/maps/Route118/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
 # 356 "data/maps/Route118/scripts.pory"
-	givemon SPECIES_KUBFU, 15
+	givemon SPECIES_KUBFU, 25
 # 357 "data/maps/Route118/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route118_EventScript_ReceiveKubfuParty
 # 358 "data/maps/Route118/scripts.pory"
