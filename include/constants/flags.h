@@ -74,8 +74,8 @@
 #define FLAG_DECLINED_XAVIER_BATTLE    0x3E
 #define FLAG_RECEIVED_FIRE_MEGAS    0x3F
 #define FLAG_DECLINED_JUSTIN_BATTLE    0x40
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_RECEIVED_MELTAN    0x41
+#define FLAG_DECLINED_BYRON_BATTLE    0x42
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag

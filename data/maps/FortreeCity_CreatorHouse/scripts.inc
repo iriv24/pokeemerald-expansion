@@ -227,7 +227,7 @@ FortreeCity_CreatorHouse_EventScript_JustinGiveItems::
 # 190 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_BLAZIKENITE
 # 191 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_TM_SUBSTITUTE
+	giveitem ITEM_TM_DRACO_METEOR
 # 192 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHOICE_SPECS
 # 193 "data/maps/FortreeCity_CreatorHouse/scripts.pory"

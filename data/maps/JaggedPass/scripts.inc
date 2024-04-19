@@ -583,12 +583,10 @@ JaggedPass_EventScript_MayleneGiveItems::
 # 308 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_MACHAMPITE
 # 309 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_COPPERAJITE
-# 310 "data/maps/JaggedPass/scripts.pory"
 	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
-# 311 "data/maps/JaggedPass/scripts.pory"
+# 310 "data/maps/JaggedPass/scripts.pory"
 	msgbox Maylene_ExplainItems
-# 312 "data/maps/JaggedPass/scripts.pory"
+# 311 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
 
@@ -598,7 +596,7 @@ JaggedPass_EventScript_BattleMaylene_Text_0:
 	.string "You're on!$"
 
 Maylene_ExplainItems::
-# 316 "data/maps/JaggedPass/scripts.pory"
+# 315 "data/maps/JaggedPass/scripts.pory"
 	.string "Drain Punch allows your Pokémon to\n"
 	.string "absorb health with each strike. The\p"
 	.string "Life Orb boosts the power of your\n"
@@ -610,7 +608,7 @@ Maylene_ExplainItems::
 	.string "as well. Good luck!$"
 
 Maylene_Greeting::
-# 328 "data/maps/JaggedPass/scripts.pory"
+# 327 "data/maps/JaggedPass/scripts.pory"
 	.string "HOO-HAH! Is this finally a worthy\n"
 	.string "opponent? I can tell that you seem\p"
 	.string "pretty strong, let's see if my instincts\n"
@@ -618,9 +616,9 @@ Maylene_Greeting::
 	.string "battle with me?$"
 
 Maylene_Outro::
-# 336 "data/maps/JaggedPass/scripts.pory"
+# 335 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 341 "data/maps/JaggedPass/scripts.pory"
+# 340 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"

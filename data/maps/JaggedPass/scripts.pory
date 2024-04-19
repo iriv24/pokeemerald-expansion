@@ -306,7 +306,6 @@ script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_AURA_SPHERE)
 	giveitem(ITEM_LUCARIONITE)
 	giveitem(ITEM_MACHAMPITE)
-	giveitem(ITEM_COPPERAJITE)
 	setflag(FLAG_RECEIVED_TM_DRAIN_PUNCH)
 	msgbox(Maylene_ExplainItems)
 	release
