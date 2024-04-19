@@ -1075,3 +1075,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/NewBirchsLab/scripts.inc"
     .include "data/scripts/dexnav.inc"
     
+
+	.include "data/maps/FortreeCity_CreatorHouse/scripts.inc"
