@@ -89,13 +89,8 @@ FortreeCity_Movement_KecleonFlee:
 	step_end
 
 FortreeCity_Text_SawGiganticPokemonInSky:
-	.string "No one believes me, but I saw this\n"
-	.string "gigantic POKéMON in the sky.\p"
-	.string "It seemed to squirm as it flew toward\n"
-	.string "ROUTE 131.\p"
-	.string "By the way… Sniff…\n"
-	.string "Um… You, uh…smell singed.\p"
-	.string "Were you at a volcano or something?$"
+	.string "Yo, this is the creator's lab! He put me\n"
+	.string "here just to tell you that!$"
 
 FortreeCity_Text_SomethingBlockingGym:
 	.string "I want to go to the POKéMON GYM,\n"

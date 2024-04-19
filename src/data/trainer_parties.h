@@ -14122,6 +14122,64 @@ static const struct TrainerMon sParty_Isaac[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_TORRENT,
     .heldItem = ITEM_EMPOLEONITE_O,
-    .moves = {MOVE_IRON_HEAD, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK}
+    .moves = {MOVE_IRON_HEAD, MOVE_LIQUIDATION, MOVE_DRILL_PECK, MOVE_BRICK_BREAK}
+    },
+};
+
+static const struct TrainerMon sParty_Justin[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_MUK_ALOLAN,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_POISON_TOUCH,
+    .heldItem = ITEM_AIR_BALLOON,
+    .moves = {MOVE_KNOCK_OFF, MOVE_POISON_JAB, MOVE_ICE_PUNCH, MOVE_TOXIC}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_CONKELDURR,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_PUNCHING_GLOVE,
+    .gender = FEMALE,
+    .moves = {MOVE_DRAIN_PUNCH, MOVE_MACH_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DONPHAN,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_STURDY,
+    .heldItem = ITEM_CUSTAP_BERRY,
+    .moves = {MOVE_EARTHQUAKE, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_PLAY_ROUGH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_LANTURN,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_VOLT_ABSORB,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_SCALD, MOVE_THUNDER_WAVE, MOVE_CONFUSE_RAY, MOVE_THUNDERBOLT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_CELESTEELA,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_BEAST_BOOST,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_AIR_SLASH, MOVE_FLASH_CANNON, MOVE_GIGA_DRAIN, MOVE_FLAMETHROWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_CHARIZARD,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_BLAZE,
+    .heldItem = ITEM_CHARIZARDITE_X,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_DRAGON_CLAW, MOVE_FLARE_BLITZ, MOVE_EARTHQUAKE}
     },
 };
