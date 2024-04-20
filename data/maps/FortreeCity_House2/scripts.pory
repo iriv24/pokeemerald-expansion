@@ -2,11 +2,11 @@ raw `
 FortreeCity_House2_MapScripts::
 	.byte 0
 
-FortreeCity_House2_EventScript_HiddenPowerGiver::
+FortreeCity_House2_EventScript_StoredPowerGiver::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM_HIDDEN_POWER, FortreeCity_House2_EventScript_ExplainHiddenPower
-	call_if_unset FLAG_MET_HIDDEN_POWER_GIVER, FortreeCity_House2_EventScript_Greeting
+	goto_if_set FLAG_RECEIVED_TM_STORED_POWER, FortreeCity_House2_EventScript_ExplainStoredPower
+	call_if_unset FLAG_MET_STORED_POWER_GIVER, FortreeCity_House2_EventScript_Greeting
 	msgbox FortreeCity_House2_Text_CoinInWhichHand, MSGBOX_DEFAULT
 	multichoice 21, 8, MULTI_RIGHTLEFT, TRUE
 	switch VAR_RESULT
@@ -19,21 +19,21 @@ FortreeCity_House2_EventScript_HiddenPowerGiver::
 	multichoice 21, 8, MULTI_RIGHTLEFT, TRUE
 	switch VAR_RESULT
 	case 0, FortreeCity_House2_EventScript_WrongGuess
-	msgbox FortreeCity_House2_Text_YourHiddenPowerHasAwoken, MSGBOX_DEFAULT
-	giveitem ITEM_TM_HIDDEN_POWER
+	msgbox FortreeCity_House2_Text_YourStoredPowerHasAwoken, MSGBOX_DEFAULT
+	giveitem ITEM_TM_STORED_POWER
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_HIDDEN_POWER
-	msgbox FortreeCity_House2_Text_ExplainHiddenPower, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_STORED_POWER
+	msgbox FortreeCity_House2_Text_ExplainStoredPower, MSGBOX_DEFAULT
 	release
 	end
 
 FortreeCity_House2_EventScript_Greeting::
-	msgbox FortreeCity_House2_Text_HiddenPowersArousedByNature, MSGBOX_DEFAULT
-	setflag FLAG_MET_HIDDEN_POWER_GIVER
+	msgbox FortreeCity_House2_Text_StoredPowersArousedByNature, MSGBOX_DEFAULT
+	setflag FLAG_MET_STORED_POWER_GIVER
 	return
 
-FortreeCity_House2_EventScript_ExplainHiddenPower::
-	msgbox FortreeCity_House2_Text_ExplainHiddenPower, MSGBOX_DEFAULT
+FortreeCity_House2_EventScript_ExplainStoredPower::
+	msgbox FortreeCity_House2_Text_ExplainStoredPower, MSGBOX_DEFAULT
 	release
 	end
 
@@ -42,13 +42,25 @@ FortreeCity_House2_EventScript_WrongGuess::
 	release
 	end
 
-FortreeCity_House2_Text_HiddenPowersArousedByNature:
-	.string "People… POKéMON…\p"
-	.string "Their hidden powers are aroused by\n"
+
+FortreeCity_House2_EventScript_FormerSleepTalkTutor::
+	lockall
+	faceplayer
+	msgbox FortreeCity_House2_Text_FormerSleepTalkTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FortreeCity_House2_Text_FormerSleepTalkTutor:
+	.string "I used to be able to talk in my sleep...\n"
+	.string "Oh, what happened?$"
+
+FortreeCity_House2_Text_StoredPowersArousedByNature:
+	.string "People… Pokémon…\p"
+	.string "Their stored powers are aroused by\n"
 	.string "living in natural environments…$"
 
 FortreeCity_House2_Text_CoinInWhichHand:
-	.string "Let this old woman see if your hidden\n"
+	.string "Let this old woman see if your stored\n"
 	.string "power has awoken…\p"
 	.string "I hold a coin in my hand.\p"
 	.string "Now, tell me, have I palmed it in\n"
@@ -66,15 +78,16 @@ FortreeCity_House2_Text_CorrectTryAgainWhichHand2:
 	.string "In which hand have I palmed the coin?\n"
 	.string "The right or left?$"
 
-FortreeCity_House2_Text_YourHiddenPowerHasAwoken:
+FortreeCity_House2_Text_YourStoredPowerHasAwoken:
 	.string "Oh! Splendid!\n"
-	.string "Your hidden power has awoken!\p"
-	.string "Here, take this and awaken the hidden\n"
+	.string "Your stored power has awoken!\p"
+	.string "Here, take this and awaken the stored\n"
 	.string "power of your POKéMON.$"
 
-FortreeCity_House2_Text_ExplainHiddenPower:
-	.string "HIDDEN POWER is a move that changes\n"
-	.string "with the POKéMON.$"
+FortreeCity_House2_Text_ExplainStoredPower:
+	.string "Stored Power is a move that does\n"
+	.string "more damage based on the stat\l"
+	.string "raises your Pokémon has.$"
 
 FortreeCity_House2_Text_YouGuessedWrong:
 	.string "No, too bad.\n"

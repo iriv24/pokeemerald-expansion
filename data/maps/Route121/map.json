@@ -5,7 +5,7 @@
   "music": "MUS_ROUTE120",
   "region_map_section": "MAPSEC_ROUTE_121",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
+  "weather": "WEATHER_RAIN",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -453,6 +453,78 @@
       "var": "VAR_ROUTE121_STATE",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_BEAT_WINONA",
+      "var_value": "0",
+      "script": "Route121_Trigger_BlockPath"
     }
   ],
   "bg_events": [

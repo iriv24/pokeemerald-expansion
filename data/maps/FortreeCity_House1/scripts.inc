@@ -15,7 +15,7 @@ FortreeCity_House1_EventScript_Trader::
 # 8 "data/maps/FortreeCity_House1/scripts.pory"
 	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
 # 9 "data/maps/FortreeCity_House1/scripts.pory"
-	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
+	setvar VAR_0x8008, INGAME_TRADE_FIDOUGH
 # 10 "data/maps/FortreeCity_House1/scripts.pory"
 	copyvar VAR_0x8004, VAR_0x8008
 # 11 "data/maps/FortreeCity_House1/scripts.pory"
@@ -173,11 +173,11 @@ FortreeCity_House1_Text_YouWontTradeMe:
 # 87 "data/maps/FortreeCity_House1/scripts.pory"
 FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
 # 88 "data/maps/FortreeCity_House1/scripts.pory"
-	.string "I'm going to make VOLBEAT super\n"
+	.string "I'm going to make Maschiff super\n"
 # 89 "data/maps/FortreeCity_House1/scripts.pory"
 	.string "strong from this moment on!\p"
 # 90 "data/maps/FortreeCity_House1/scripts.pory"
-	.string "I hope you do the same with PLUSLE!$"
+	.string "I hope you do the same with Fidough!$"
 # 91 "data/maps/FortreeCity_House1/scripts.pory"
 
 # 92 "data/maps/FortreeCity_House1/scripts.pory"
