@@ -235,7 +235,7 @@
 #define FLAG_ENABLE_SCOTT_MATCH_CALL         0xD7
 #define FLAG_ENABLE_MOM_MATCH_CALL           0xD8
 #define FLAG_MET_DIVING_TREASURE_HUNTER      0xD9
-#define FLAG_MET_WAILMER_TRAINER             0xDA
+#define FLAG_UNUSED_0XDA                     0xDA //unused
 #define FLAG_EVIL_LEADER_PLEASE_STOP         0xDB
 
 #define FLAG_NEVER_SET_0x0DC                 0xDC // This flag is read, but never written to
@@ -758,7 +758,7 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4               0x2CA
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5               0x2CB
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6               0x2CC
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS            0x2CD
+#define FLAG_UNUSED_0x2CD                                           0x2CD
 #define FLAG_HIDE_MEW                                               0x2CE
 #define FLAG_HIDE_ROUTE_104_RIVAL                                   0x2CF
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
@@ -790,7 +790,7 @@
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0x2E8
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN            0x2E9
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY                    0x2EA
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0x2EB
+#define FLAG_UNUSED_0x2EB                                           0x2EB
 #define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0x2EC
 #define FLAG_HIDE_SLATEPORT_CITY_SCOTT                              0x2ED
 #define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
@@ -1139,7 +1139,7 @@
 #define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
 #define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
 #define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BEAM              0x446
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_WELLSPRING_MASK            0x446
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
@@ -1214,8 +1214,8 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_CORNERSTONE_MASK           0x491
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_HEARTHFLAME_MASK           0x492
 
 #define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag

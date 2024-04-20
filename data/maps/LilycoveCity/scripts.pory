@@ -196,17 +196,8 @@ LilycoveCity_EventScript_MoveDeletersHouseSign::
 	msgbox LilycoveCity_Text_MoveDeletersHouseSign, MSGBOX_SIGN
 	end
 
-LilycoveCity_EventScript_WailmerTrainerGrunt::
-	lockall
-	goto_if_set FLAG_MET_WAILMER_TRAINER, LilycoveCity_EventScript_MetWailmerTrainer
-	msgbox LilycoveCity_Text_WailmerLeapOutOfWater, MSGBOX_DEFAULT
-	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox LilycoveCity_Text_GetLostMessingUpTraining, MSGBOX_DEFAULT
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	setflag FLAG_MET_WAILMER_TRAINER
-	releaseall
+LilycoveCity_EventScript_ErenYeagerGrunt::
+	msgbox LilycoveCity_Text_Enemies, MSGBOX_NPC
 	end
 
 LilycoveCity_EventScript_MetWailmerTrainer::
@@ -249,21 +240,22 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 	msgbox LilycoveCity_Text_ExplainBerryBlender, MSGBOX_DEFAULT
 	return
 
+LilycoveCity_Text_Enemies:
+	.string "Hey... If we kill all of our enemies...\n"
+	.string "over there... will we finally... be free?\p"
+	.string "...\p"
+	.string "What the -- I mean uh, look at those \n"
+	.string "Wailmer! Right Mikayla?$"
+
 
 LilycoveCity_Text_MovedLootIntoHideoutToday:
-	.string "Fufufu…\p"
-	.string "We moved more loot into our secret\n"
-	.string "HIDEOUT today…\p"
-	.string "Wh-who are you?!\n"
-	.string "I was just talking to myself!$"
+	.string "Aaron look! We finally made it to the\n"
+	.string "sea! Aaron?$"
+
 
 LilycoveCity_Text_ChanceToDoBigThings:
-	.string "I'm just a GRUNT, so I don't know what\n"
-	.string "the BOSS is thinking…\p"
-	.string "But being on TEAM AQUA, I know I'll get\n"
-	.string "the chance to do big things!\p"
-	.string "Wh-who are you?!\n"
-	.string "I was just talking to myself!$"
+	.string "I hate seeing Aaron lost in thought\n"
+	.string "like this, I know Armie does too.$"
 
 LilycoveCity_Text_DontGoNearCaveInCove:
 	.string "Hey, you!\p"
