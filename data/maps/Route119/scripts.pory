@@ -135,6 +135,7 @@ Route119_EventScript_GiveFlyHM::
 	giveitem ITEM_LIFE_ORB
 	giveitem ITEM_HEAVY_DUTY_BOOTS
 	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_PP_MAX, 999
 	setflag FLAG_RECEIVED_HM_FLY
 	return
 

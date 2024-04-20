@@ -76,7 +76,7 @@
 #define FLAG_DECLINED_JUSTIN_BATTLE    0x40
 #define FLAG_RECEIVED_MELTAN    0x41
 #define FLAG_DECLINED_BYRON_BATTLE    0x42
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_DAWN_LILYCOVE    0x43
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
@@ -307,7 +307,7 @@
 #define FLAG_RECEIVED_FOCUS_BAND             0x11B
 #define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
 #define FLAG_RECEIVED_DEVON_SCOPE            0x11D
-#define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
+#define FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE 0x11E
 #define FLAG_MET_DEVON_EMPLOYEE              0x11F
 #define FLAG_MET_RIVAL_RUSTBORO              0x120
 #define FLAG_RECEIVED_SILK_SCARF             0x121
@@ -1014,7 +1014,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
 #define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
-#define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
+#define FLAG_HIDE_EVERGRANDE_CITY_RIVAL                             0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE

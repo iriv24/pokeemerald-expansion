@@ -19,10 +19,310 @@ EverGrandeCity_EventScript_PokemonLeagueSign::
 	msgbox EverGrandeCity_Text_EnteringPokemonLeague, MSGBOX_SIGN
 	end
 
+EverGrandeCity_EventScript_Rival::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_EventScript_May
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_EventScript_Brendan
+	end
+
+EverGrandeCity_EventScript_May::
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattleAgain
+	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattle
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineMayBattle
+	msgbox EverGrandeCity_Text_MayWontBeBeaten, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, EverGrandeCity_EventScript_BattleMayTreecko
+	case 1, EverGrandeCity_EventScript_BattleMayTorchic
+	case 2, EverGrandeCity_EventScript_BattleMayMudkip
+	end
+
+EverGrandeCity_EventScript_MayAskToBattleAgain::
+	msgbox EverGrandeCity_Text_MayBattleMe, MSGBOX_YESNO
+	return
+
+EverGrandeCity_EventScript_MayAskToBattle::
+	msgbox EverGrandeCity_Text_MayShoppingLetsBattle, MSGBOX_YESNO
+	return
+
+EverGrandeCity_EventScript_DeclineMayBattle::
+	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
+	msgbox EverGrandeCity_Text_MayNotRaisingPokemon, MSGBOX_DEFAULT
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	release
+	end
+
+EverGrandeCity_EventScript_Brendan::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattleAgain
+	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattle
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineBrendanBattle
+	msgbox EverGrandeCity_Text_BrendanWontBeBeaten, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, EverGrandeCity_EventScript_BattleBrendanTreecko
+	case 1, EverGrandeCity_EventScript_BattleBrendanTorchic
+	case 2, EverGrandeCity_EventScript_BattleBrendanMudkip
+	end
+
+EverGrandeCity_EventScript_BrendanAskToBattleAgain::
+	msgbox EverGrandeCity_Text_BrendanBattleMe, MSGBOX_YESNO
+	return
+
+EverGrandeCity_EventScript_BrendanAskToBattle::
+	msgbox EverGrandeCity_Text_BrendanShoppingLetsBattle, MSGBOX_YESNO
+	return
+
+EverGrandeCity_EventScript_DeclineBrendanBattle::
+	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
+	msgbox EverGrandeCity_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	release
+	end
+
+EverGrandeCity_EventScript_BattleMayTreecko::
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TREECKO, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_BattleMayTorchic::
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_BattleMayMudkip::
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_MUDKIP, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_BattleBrendanTreecko::
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, EverGrandeCity_Text_BrendanDefeat
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+	end
+
+EverGrandeCity_EventScript_BattleBrendanTorchic::
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, EverGrandeCity_Text_BrendanDefeat
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+	end
+
+EverGrandeCity_EventScript_BattleBrendanMudkip::
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, EverGrandeCity_Text_BrendanDefeat
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+	end
+
+EverGrandeCity_EventScript_DefeatedMay::
+	msgbox EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
+	setvar VAR_RESULT, FALSE
+	call_if_set FLAG_BADGE06_GET, EverGrandeCity_EventScript_CheckFinalBadge
+	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_EventScript_MayCollectBadges
+	call_if_eq VAR_RESULT, TRUE, EverGrandeCity_EventScript_MayPokemonLeague
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
+	goto EverGrandeCity_EventScript_RivalFlyAway
+	end
+
+EverGrandeCity_EventScript_CheckFinalBadge::
+	goto_if_set FLAG_BADGE08_GET, EverGrandeCity_EventScript_HasFinalBadge
+	return
+
+EverGrandeCity_EventScript_HasFinalBadge::
+	setvar VAR_RESULT, TRUE
+	return
+
+EverGrandeCity_EventScript_MayCollectBadges::
+	msgbox EverGrandeCity_Text_MayYouGoingToCollectBadges, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_MayPokemonLeague::
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_EventScript_MayBattleFrontier
+	msgbox EverGrandeCity_Text_MayYouGoingToPokemonLeague, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_MayBattleFrontier::
+	msgbox EverGrandeCity_Text_MayYouGoingToBattleFrontier, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_DefeatedBrendan::
+	msgbox EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
+	setvar VAR_RESULT, FALSE
+	call_if_set FLAG_BADGE06_GET, EverGrandeCity_EventScript_CheckFinalBadge
+	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_EventScript_BrendanCollectBadges
+	call_if_eq VAR_RESULT, TRUE, EverGrandeCity_EventScript_BrendanPokemonLeague
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
+	goto EverGrandeCity_EventScript_RivalFlyAway
+	end
+
+EverGrandeCity_EventScript_BrendanCollectBadges::
+	msgbox EverGrandeCity_Text_BrendanYouGoingToCollectBadges, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_BrendanPokemonLeague::
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_EventScript_BrendanBattleFrontier
+	msgbox EverGrandeCity_Text_BrendanYouGoingToPokemonLeague, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_BrendanBattleFrontier::
+	msgbox EverGrandeCity_Text_BrendanYouGoingToBattleFrontier, MSGBOX_DEFAULT
+	return
+
+EverGrandeCity_EventScript_RivalFlyAway::
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	delay 50
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject VAR_LAST_TALKED
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	setflag FLAG_MET_RIVAL_LILYCOVE
+	release
+	end
+
 EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
 	setvar VAR_TEMP_1, 1
 	end
+
+
+EverGrandeCity_Text_MayShoppingLetsBattle:
+	.string "MAY: Oh, hey?\n"
+	.string "{PLAYER}{KUN}, are you shopping, too?\p"
+	.string "I bought a whole bunch of DOLLS and\n"
+	.string "POSTERS.\p"
+	.string "Of course, I've also caught a lot of\n"
+	.string "POKéMON, and I'm raising them\l"
+	.string "properly, too.\p"
+	.string "Actually, I'm more worried if you're\n"
+	.string "raising POKéMON properly, {PLAYER}{KUN}.\p"
+	.string "I'll battle with you, so you can show\n"
+	.string "me your POKéMON, {PLAYER}{KUN}.$"
+
+EverGrandeCity_Text_MayNotRaisingPokemon:
+	.string "MAY: Oh, why? {PLAYER}{KUN}, haven't you\n"
+	.string "been raising your POKéMON?\p"
+	.string "That's not a very good showing as a\n"
+	.string "TRAINER…$"
+
+EverGrandeCity_Text_MayBattleMe:
+	.string "MAY: Come on, battle with me, so I can\n"
+	.string "check out your POKéMON!$"
+
+EverGrandeCity_Text_MayWontBeBeaten:
+	.string "MAY: The POKéMON I raised won't be\n"
+	.string "beaten by your POKéMON, {PLAYER}{KUN}!$"
+
+EverGrandeCity_Text_MayDefeat:
+	.string "… … … … … … … …\p"
+	.string "I remember the battle I had with you,\n"
+	.string "{PLAYER}{KUN}, on ROUTE 103.\p"
+	.string "That battle helped you become this\n"
+	.string "strong, {PLAYER}{KUN}, didn't it?$"
+
+EverGrandeCity_Text_MayGoingBackToLittleroot:
+	.string "MAY: I'm thinking of going back to\n"
+	.string "LITTLEROOT soon.\p"
+	.string "I've caught a decent group of POKéMON,\n"
+	.string "and my POKéDEX is coming along, so\l"
+	.string "I'm going home to show my dad.$"
+
+EverGrandeCity_Text_MayYouGoingToCollectBadges:
+	.string "{PLAYER}{KUN}, what are you going to do?\p"
+	.string "Collect all the GYM BADGES and take\n"
+	.string "the POKéMON LEAGUE challenge?\p"
+	.string "Well, while you're collecting BADGES,\n"
+	.string "{PLAYER}{KUN}, I'm going to work on my\l"
+	.string "POKéDEX. I'll complete it before you!\p"
+	.string "See you!$"
+
+EverGrandeCity_Text_MayYouGoingToPokemonLeague:
+	.string "{PLAYER}{KUN}, what are you going to do?\p"
+	.string "Are you taking the POKéMON LEAGUE\n"
+	.string "challenge?\p"
+	.string "Or, are you going to complete your\n"
+	.string "POKéDEX?\p"
+	.string "I might've lost to you in battling,\n"
+	.string "but I'll finish my POKéDEX before you!\p"
+	.string "See you!$"
+
+EverGrandeCity_Text_MayYouGoingToBattleFrontier:
+	.string "{PLAYER}{KUN}, what are you going to do?\p"
+	.string "Are you taking the BATTLE FRONTIER\n"
+	.string "challenge?\p"
+	.string "Or, are you going to complete your\n"
+	.string "POKéDEX?\p"
+	.string "I might've lost to you in battling,\n"
+	.string "but I'll finish my POKéDEX before you!\p"
+	.string "See you!$"
+
+EverGrandeCity_Text_BrendanShoppingLetsBattle:
+	.string "BRENDAN: Oh, hey, it's {PLAYER}.\p"
+	.string "I'm running an errand for my dad.\n"
+	.string "No, I'm not buying any DOLLS.\p"
+	.string "Anyways, it's been a while.\p"
+	.string "Want to have a battle to see who's been\n"
+	.string "raising POKéMON better?$"
+
+EverGrandeCity_Text_BrendanNoConfidence:
+	.string "BRENDAN: Oh, what's the matter?\n"
+	.string "Don't have the confidence?$"
+
+EverGrandeCity_Text_BrendanBattleMe:
+	.string "BRENDAN: Want to battle to see who's\n"
+	.string "been raising POKéMON better?$"
+
+EverGrandeCity_Text_BrendanWontBeBeaten:
+	.string "BRENDAN: Aww, but you know I'm not\n"
+	.string "going to lose to no {PLAYER}.$"
+
+EverGrandeCity_Text_BrendanDefeat:
+	.string "Humph…\n"
+	.string "You've done a lot of raising.\p"
+	.string "That stings a bit--I had a head start\n"
+	.string "on you as a TRAINER…$"
+
+EverGrandeCity_Text_BrendanGoingBackToLittleroot:
+	.string "BRENDAN: I…\n"
+	.string "I plan on going home to LITTLEROOT.\p"
+	.string "You know I'm helping out my dad on his\n"
+	.string "POKéDEX. It's coming together pretty\l"
+	.string "decently, so I should go show him.$"
+
+EverGrandeCity_Text_BrendanYouGoingToCollectBadges:
+	.string "{PLAYER}, what are you going to do?\p"
+	.string "Collect all the GYM BADGES and take\n"
+	.string "the POKéMON LEAGUE challenge?\p"
+	.string "Maybe I'll do that, too…\p"
+	.string "Well, anyway, hang in there!$"
+
+EverGrandeCity_Text_BrendanYouGoingToPokemonLeague:
+	.string "{PLAYER}, what are you going to do?\p"
+	.string "Since you're that strong, are you\n"
+	.string "taking the POKéMON LEAGUE challenge?\p"
+	.string "Heh, even me--if I trained my POKéMON\n"
+	.string "a bit more, I should be stronger than\l"
+	.string "you, {PLAYER}.\p"
+	.string "Well, anyway, hang in there!$"
+
+EverGrandeCity_Text_BrendanYouGoingToBattleFrontier:
+	.string "{PLAYER}, what are you going to do?\p"
+	.string "Are you taking the BATTLE FRONTIER\n"
+	.string "challenge?\p"
+	.string "Or, are you going to complete your\n"
+	.string "POKéDEX?\p"
+	.string "Since you're that strong, you should\n"
+	.string "consider the BATTLE FRONTIER.\p"
+	.string "Heh, if I train my POKéMON a bit more,\n"
+	.string "I'll get stronger than you, {PLAYER}.\p"
+	.string "Maybe I should go to the BATTLE\n"
+	.string "FRONTIER.\p"
+	.string "Well, anyway, hang in there!$"
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"

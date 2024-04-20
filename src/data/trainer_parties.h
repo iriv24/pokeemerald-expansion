@@ -14038,6 +14038,65 @@ static const struct TrainerMon sParty_DawnRoute111[] = {
     },
 };
 
+static const struct TrainerMon sParty_DawnLilycove[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_LOPUNNY,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_LIMBER,
+    .heldItem = ITEM_LIFE_ORB,
+    .friendship = MAX_FRIENDSHIP,
+    .moves = {MOVE_FAKE_OUT, MOVE_RETURN, MOVE_THUNDER_PUNCH, MOVE_CLOSE_COMBAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_NOIVERN,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_INFILTRATOR,
+    .heldItem = ITEM_CHOICE_SPECS,
+    .moves = {MOVE_AEROBLAST, MOVE_DRAGON_PULSE, MOVE_BOOMBURST, MOVE_DARK_PULSE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_MEOWSCARADA,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_PROTEAN,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_KNOCK_OFF, MOVE_FLOWER_TRICK, MOVE_PLAY_ROUGH, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_CHANDELURE,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_FLASH_FIRE,
+    .heldItem = ITEM_CHARCOAL,
+    .moves = {MOVE_FLAMETHROWER, MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_WILL_O_WISP}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_IRON_BOULDER,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_QUARK_DRIVE,
+    //TODO replace with booster energy
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_SACRED_SWORD, MOVE_MIGHTY_CLEAVE, MOVE_PSYCHO_CUT, MOVE_MEGAHORN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_EMPOLEON,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_TORRENT,
+    .heldItem = ITEM_EMPOLEONITE_D,
+    .moves = {MOVE_SURF, MOVE_FLASH_CANNON, MOVE_TOXIC, MOVE_ROOST}
+    },
+};
+
 static const struct TrainerMon sParty_Ursula[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
