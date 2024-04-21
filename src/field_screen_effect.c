@@ -1234,22 +1234,22 @@ void DoOrbEffect(void)
 
     if (gSpecialVar_Result == 0)
     {
-        tBlueOrb = FALSE;
+        tBlueOrb = TRUE;
         tCenterX = 104;
     }
     else if (gSpecialVar_Result == 1)
     {
-        tBlueOrb = TRUE;
+        tBlueOrb = FALSE;
         tCenterX = 136;
     }
     else if (gSpecialVar_Result == 2)
     {
-        tBlueOrb = FALSE;
+        tBlueOrb = TRUE;
         tCenterX = 120;
     }
     else
     {
-        tBlueOrb = TRUE;
+        tBlueOrb = FALSE;
         tCenterX = 120;
     }
 

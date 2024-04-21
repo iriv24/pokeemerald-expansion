@@ -11,8 +11,6 @@ MagmaHideout_4F_MapScripts::
 	.byte 0
 
 MagmaHideout_4F_EventScript_Maxie::
-	lockall
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	msgbox MagmaHideout_4F_Text_MaxieAwakenGroudon, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -33,6 +31,8 @@ MagmaHideout_4F_EventScript_Maxie::
 	delay 60
 	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonApproach
 	waitmovement 0
+	applymovement LOCALID_GROUDON, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
 	special FadeOutOrbEffect
 	waitstate
 	setvar VAR_0x8004, 1  @ vertical pan
@@ -41,29 +41,53 @@ MagmaHideout_4F_EventScript_Maxie::
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
-	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
-	waitmovement 0
+	msgbox MagmaHideout_4F_Text_MaxieMasterBall, MSGBOX_DEFAULT
+	closemessage
 	removeobject LOCALID_GROUDON
-	delay 4
-	setvar VAR_0x8004, 2  @ vertical pan
-	setvar VAR_0x8005, 2  @ horizontal pan
+	delay 30
+	msgbox MagmaHideout_4F_Text_MaxieCaputredGroudon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox MagmaHideout_4F_Text_NotEvenYou, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
+	delay 30
+	addobject LOCALID_GROUDON
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 8  @ num shakes
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
-	delay 30
-	applymovement LOCALID_MAXIE, MagmaHideout_4F_Movement_MaxieLookAround
-	waitmovement 0
-	msgbox MagmaHideout_4F_Text_MaxieGroudonWhatsWrong, MSGBOX_DEFAULT
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_MAXIE, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_MAXIE, Common_Movement_FacePlayer
+	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
 	waitmovement 0
-	msgbox MagmaHideout_4F_Text_MaxieOhItWasYou, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
+	special ShakeCamera
+	waitstate
+	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
+	waitmovement 0
+	special ShakeCamera
+	waitstate
+	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
+	waitmovement 0
+	special ShakeCamera
+	waitstate
+	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
+	waitmovement 0
+	special ShakeCamera
+	waitstate
+	removeobject LOCALID_GROUDON
+	delay 20
+	applymovement LOCALID_MAXIE, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
 	msgbox MagmaHideout_4F_Text_MaxieImGoingAfterGroudon, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN
@@ -71,6 +95,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	setvar VAR_SLATEPORT_CITY_STATE, 1
 	setflag FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT
 	setvar VAR_SLATEPORT_HARBOR_STATE, 1
+	setvar VAR_BEAT_MAXIE_HIDEOUT, 1
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MAXIE
 	removeobject LOCALID_GRUNT_1
@@ -89,87 +114,58 @@ MagmaHideout_4F_Movement_GroudonApproach:
 	delay_16
 	delay_16
 	delay_16
-	walk_slow_down
-	delay_16
-	delay_16
-	delay_16
 	step_end
 
 MagmaHideout_4F_Movement_GroudonExit:
+	delay_16
+	delay_16
 	slide_up
-	slide_up
-	step_end
-
-MagmaHideout_4F_Movement_MaxieLookAround:
-	face_left
 	delay_16
-	face_right
-	delay_16
-	face_left
-	delay_16
-	face_right
-	delay_16
-	face_up
 	delay_16
 	delay_16
 	step_end
 
 MagmaHideout_4F_EventScript_Grunt11::
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_11, MagmaHideout_4F_Text_Grunt11Intro, MagmaHideout_4F_Text_Grunt11Defeat
-	msgbox MagmaHideout_4F_Text_Grunt11PostBattle, MSGBOX_AUTOCLOSE
+	msgbox MagmaHideout_4F_Text_GruntScared, MSGBOX_NPC
 	end
 
 MagmaHideout_4F_EventScript_Grunt12::
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_12, MagmaHideout_4F_Text_Grunt12Intro, MagmaHideout_4F_Text_Grunt12Defeat
-	msgbox MagmaHideout_4F_Text_Grunt12PostBattle, MSGBOX_AUTOCLOSE
+	msgbox MagmaHideout_4F_Text_GruntScared2, MSGBOX_NPC
 	end
 
 MagmaHideout_4F_EventScript_Grunt13::
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_13, MagmaHideout_4F_Text_Grunt13Intro, MagmaHideout_4F_Text_Grunt13Defeat
-	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE
+	msgbox MagmaHideout_4F_Text_GruntRightThing, MSGBOX_NPC
 	end
 
 MagmaHideout_4F_EventScript_Tabitha::
-	trainerbattle_single TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat
-	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox MagmaHideout_4F_Text_NeverStopMaxie, MSGBOX_NPC
 	end
 
-MagmaHideout_4F_Text_Grunt11Intro:
-	.string "I want to see GROUDON, too, but they\n"
-	.string "won't let me see even its tail…\p"
-	.string "It's got me feeling really frustrated.\p"
-	.string "Oh, no!\n"
-	.string "I blabbed about GROUDON!$"
+MagmaHideout_4F_Text_GruntScared:
+	.string "I've had enough! I quit! I don't know\n"
+	.string "what Maxie's doing back there, but he's\p"
+	.string "going to bring this whole mountain down\n"
+	.string "on top of us!$"
 
-MagmaHideout_4F_Text_Grunt11Defeat:
-	.string "I guess it's impossible to win if one\n"
-	.string "doesn't have a calm mind…$"
+MagmaHideout_4F_Text_GruntScared2:
+	.string "Hail Arceus, full of gra....$"
 
-MagmaHideout_4F_Text_Grunt11PostBattle:
-	.string "I wonder if GROUDON even has a tail?$"
+MagmaHideout_4F_Text_GruntRightThing:
+	.string "I hope I can still make it to Admin...$"
 
-MagmaHideout_4F_Text_Grunt12Intro:
-	.string "Fuhahaha!\n"
-	.string "Soon! Very soon!\l"
-	.string "Our grand objective will be achieved!$"
-
-MagmaHideout_4F_Text_Grunt12Defeat:
-	.string "Grrr…\n"
-	.string "I've come so far, but now this?$"
-
-MagmaHideout_4F_Text_Grunt12PostBattle:
-	.string "MAXIE, sir!\n"
-	.string "An intruder is headed your way!$"
+MagmaHideout_4F_Text_NeverStopMaxie:
+	.string "You'll never stop Maxie now.\n"
+	.string "Mwuahahahahahaha!$"
 
 MagmaHideout_4F_Text_Grunt13Intro:
 	.string "You're not finished yet!\n"
 	.string "You're not getting by me easily!$"
 
 MagmaHideout_4F_Text_Grunt13Defeat:
-	.string "Was I that easy to knock down?$"
+	.string "Will I really make it to Admin like this?$"
 
 MagmaHideout_4F_Text_Grunt13PostBattle:
-	.string "C-come on, one more match…$"
+	.string "I did my best, sir.$"
 
 MagmaHideout_4F_Text_TabithaIntro:
 	.string "Hehehe!\n"
@@ -182,23 +178,37 @@ MagmaHideout_4F_Text_TabithaIntro:
 	.string "Hehe! Hehehe!$"
 
 MagmaHideout_4F_Text_TabithaDefeat:
-	.string "Taken down again…\n"
-	.string "Hehe…$"
+	.string "I may not have been able to defeat you,\n"
+	.string "but I bet I still accomplished the\l"
+	.string "mission...$"
 
 MagmaHideout_4F_Text_TabithaPostBattle:
 	.string "…And while you wasted time with me,\n"
 	.string "MAXIE should have awakened GROUDON…$"
 
 MagmaHideout_4F_Text_MaxieAwakenGroudon:
-	.string "MAXIE: GROUDON…\p"
+	.string "Groudon…\p"
 	.string "Nothing could awaken you from your\n"
 	.string "sleep bathed in magma…\p"
-	.string "This BLUE ORB is what you sought.\n"
-	.string "Wasn't it?\p"
-	.string "I have brought you the BLUE ORB.\n"
+	.string "This Red Orb though... This will awaken\n"
+	.string "your Primal powers, won't it?\p"
+	.string "I have brought you the Red Orb.\n"
 	.string "Let its shine awaken you!\p"
-	.string "And show me…\n"
-	.string "Show me the full extent of your power!$"
+	.string "And finally…\n"
+	.string "You will be mine!$"
+
+MagmaHideout_4F_Text_MaxieMasterBall:
+	.string "Master Ball, go!$"
+
+MagmaHideout_4F_Text_MaxieCaputredGroudon:
+	.string "YES! Groudon is mine! And with this Red\n"
+	.string "Orb to unleash its Primal powers, there\l"
+	.string "is no one that can stop me...$"
+
+MagmaHideout_4F_Text_NotEvenYou:
+	.string "Not even you, {PLAYER}. Prepare to\n"
+	.string "become the first witness of the\l"
+	.string "terrible power of Primal Groudon!$"
 
 MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
 	.string "MAXIE: GROUDON!\n"
@@ -215,20 +225,161 @@ MagmaHideout_4F_Text_MaxieOhItWasYou:
 	.string "You must have pulled a cheap stunt!$"
 
 MagmaHideout_4F_Text_MaxieDefeat:
-	.string "What makes you so adept at handling\n"
-	.string "POKéMON?$"
+	.string "NO! No, no, no, no, NO!$"
 
 MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
-	.string "MAXIE: There has to be some reason\n"
-	.string "why GROUDON fled…\p"
-	.string "That's what you're trying to say,\n"
-	.string "aren't you?\p"
-	.string "… … … … … …\n"
+	.string "What?! Groudon escaped my Master Ball?\n"
+	.string "That's impossible! Perhaps its power\p"
+	.string "cannot be contained after all...\n"
 	.string "… … … … … …\p"
-	.string "Humph…\n"
-	.string "You think I didn't know that?\p"
-	.string "With GROUDON gone, there is no longer\n"
-	.string "any need for this blasted volcano.\p"
-	.string "I am going after GROUDON, so this\n"
-	.string "is where we part!$"
+	.string "Does this mean Groudon will start to\n"
+	.string "rampage out of control?\p"
+	.string "… … … … … …\p"
+	.string "HAHAHAHA! Yes! Even if I failed to\n"
+	.string "defeat you here, Groudon's rage cannot\p"
+	.string "be quelled... You were too late,\n"
+	.string "{PLAYER}, Groudon is going to wreak\p"
+	.string "havoc upon the world and there's\n"
+	.string "nothing we can do to stop it!\l"
+	.string "AHAHAHAHA!$"
 `
+
+script MagmaHideout_EventScript_MaxieTrigger1{
+	lockall
+	playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
+	applymovement(OBJ_EVENT_ID_PLAYER, ApproachMaxie1)
+	waitmovement(0)
+	goto(MagmaHideout_4F_EventScript_Maxie)
+	end
+}
+script MagmaHideout_EventScript_MaxieTrigger2{
+	lockall
+	playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
+	applymovement(OBJ_EVENT_ID_PLAYER, ApproachMaxie2)
+	waitmovement(0)
+	goto(MagmaHideout_4F_EventScript_Maxie)
+	end
+}
+
+script ApproachMaxie1{
+	walk_right
+	walk_right
+	step_end
+}
+script ApproachMaxie2{
+	walk_right
+	walk_up
+	walk_right
+	step_end
+}
+
+script MagmaHideout_EventScript_BackToBackTrigger{
+	goto(MagmaHideout_EventScript_BackToBackScene)
+	end
+}
+
+script MagmaHideout_EventScript_BackToBackScene{
+	lockall
+	playbgm(MUS_ENCOUNTER_MAGMA, TRUE)
+	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(DelayForMaxie)
+	waitmessage
+	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCALID_GRUNT_3, Common_Movement_WalkInPlaceFasterRight)
+	waitmovement(0)
+	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight)
+	waitmovement(0)
+	msgbox(GetThem)
+	waitmessage
+	applymovement(LOCALID_GRUNT_3, Common_Movement_WalkInPlaceFasterRight)
+	msgbox(YesSir)
+	waitmessage
+	applymovement(LOCALID_GRUNT_3, MagmaHideout_Movement_BackToBackGruntApproachPlayer)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtGrunt)
+	waitmovement(0)
+	trainerbattle_no_intro(TRAINER_GRUNT_MAGMA_HIDEOUT_13, MagmaHideout_4F_Text_Grunt13Defeat)
+	msgbox(MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_GRUNT_3, GruntLost)
+	waitmovement(0)
+	applymovement(LOCALID_TABITHA, MagmaHideout_Movement_BackToBackTabithaApproachPlayer)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha)
+	waitmovement(0)
+	msgbox(DealWithYouMyself, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaDefeat)
+	msgbox(ThinkWeDidOurJobs, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_TABITHA, TabithaLost)
+	waitmovement(0)
+	setvar(VAR_BEAT_MAGMA_BACK_TO_BACK, 1)
+	releaseall
+	end
+}
+	
+script MagmaHideout_Movement_BackToBackGruntApproachPlayer{
+	walk_right
+	walk_right
+	face_up
+	step_end
+}
+
+script MagmaHideout_LookAtGrunt{
+	face_down
+	step_end
+}
+
+script MagmaHideout_Movement_BackToBackTabithaApproachPlayer{
+	walk_right
+	step_end
+}
+
+script MagmaHideout_LookAtTabitha{
+	face_left
+	step_end
+}
+
+script GruntLost {
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+}
+
+script TabithaLost {
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+}
+
+text DelayForMaxie {
+	"Listen up, Courtney! We have to do\n"
+	"everything we can to stall the brat! We\p"
+	"know {PLAYER} is on their way here\n"
+	"right now, and even though our coward\p"
+	"comrades quit on us, we need to buy\n"
+	"time for Maxie to capture Groudon!"
+}
+
+text GetThem {
+	"It's {PLAYER}! Don't just stand there,\n"
+	"get them!"
+}
+
+text YesSir {
+	"Yes, sir! I won't quit like my\n"
+	"teammates!"
+}
+
+text DealWithYouMyself{
+	"Looks like I'll have to deal with you\n"
+	"myself!"
+}
+
+text ThinkWeDidOurJobs{
+	"Something tells me we did our jobs... Do\n"
+	"you feel that aura of power in the air?"
+}

@@ -3863,6 +3863,71 @@
         {
           "map": "MAP_ROUTE122",
           "base_label": "gRoute122",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_SANDSHREW_ALOLAN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_GOGOAT"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_BANETTE"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_PERSIAN_ALOLAN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_PERSIAN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_HYPNO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_SIGILYPH"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_CINCCINO"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_OVERQWIL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_ZWEILOUS"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_DARKRAI"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -3945,71 +4010,6 @@
                 "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_MUK_ALOLAN"
-              }
-            ]
-          },
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_SANDSHREW_ALOLAN"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_DHELMISE"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_GOGOAT"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_BANETTE"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_PERSIAN_ALOLAN"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_PERSIAN"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_HYPNO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_SIGILYPH"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_CINCCINO"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_OVERQWIL"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_ZWEILOUS"
-              },
-              {
-                "min_level": 40,
-                "max_level": 42,
-                "species": "SPECIES_DARKRAI"
               }
             ]
           }
