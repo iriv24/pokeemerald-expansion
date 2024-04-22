@@ -2777,9 +2777,9 @@ SootopolisCity_EventScript_MaxieArchieLeave::
 # 1389 "data/maps/SootopolisCity/scripts.pory"
 	setflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
 # 1390 "data/maps/SootopolisCity/scripts.pory"
-	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE
-# 1391 "data/maps/SootopolisCity/scripts.pory"
 	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE
+# 1391 "data/maps/SootopolisCity/scripts.pory"
+	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE
 # 1392 "data/maps/SootopolisCity/scripts.pory"
 	setvar VAR_MT_PYRE_STATE, 2
 # 1393 "data/maps/SootopolisCity/scripts.pory"

@@ -7,33 +7,33 @@ static const struct TrainerMon sParty_Sawyer1[] = {
 
 static const struct TrainerMon sParty_GruntAquaHideout1[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 65,
+    .species = SPECIES_SHARPEDO,
     }
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout2[] = {
     {
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .lvl = 65,
+    .species = SPECIES_CROBAT,
     },
     {
-    .lvl = 31,
-    .species = SPECIES_CARVANHA,
+    .lvl = 65,
+    .species = SPECIES_LANTURN,
     }
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout3[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .lvl = 65,
+    .species = SPECIES_BEARTIC,
     }
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout4[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 65,
+    .species = SPECIES_GOLURK,
     }
 };
 
@@ -342,15 +342,15 @@ static const struct TrainerMon sParty_GruntWeatherInst4[] = {
 
 static const struct TrainerMon sParty_GruntAquaHideout5[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 65,
+    .species = SPECIES_BISHARP,
     }
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout6[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .lvl = 65,
+    .species = SPECIES_GRAPPLOCT,
     }
 };
 
@@ -369,15 +369,59 @@ static const struct TrainerMon sParty_Fredrick[] = {
 
 static const struct TrainerMon sParty_Matt[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 34,
-    .species = SPECIES_MIGHTYENA,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 72,
+    .species = SPECIES_OVERQWIL,
+    .nature = NATURE_JOLLY,
+    .heldItem = ITEM_FOCUS_SASH,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_TOXIC_SPIKES, MOVE_HAZE, MOVE_BARB_BARRAGE, MOVE_THROAT_CHOP}
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 34,
-    .species = SPECIES_GOLBAT,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 72,
+    .species = SPECIES_BASCULEGION_MALE,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_ADAPTABILITY,
+    .moves = {MOVE_SPIRIT_SHACKLE, MOVE_WAVE_CRASH, MOVE_SUPERPOWER, MOVE_SHADOW_SNEAK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 72,
+    .species = SPECIES_HYDRAPPLE,
+    .heldItem = ITEM_YACHE_BERRY,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_REGENERATOR,
+    .moves = {MOVE_ENERGY_BALL, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_SUCKER_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 72,
+    .species = SPECIES_GRENINJA_BATTLE_BOND,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_TIMID,
+    .moves = {MOVE_DARK_PULSE, MOVE_SURF, MOVE_ICE_BEAM, MOVE_GRASS_KNOT}
+    },
+    {
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
+    .lvl = 72,
+    .species = SPECIES_IRON_BUNDLE,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_QUARK_DRIVE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 72,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_MACHAMPITE,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_GUTS,
+    .moves = {MOVE_MACH_PUNCH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH}
+    },
 };
 
 static const struct TrainerMon sParty_Zander[] = {
@@ -2464,19 +2508,19 @@ static const struct TrainerMon sParty_Kirk[] = {
 
 static const struct TrainerMon sParty_GruntAquaHideout7[] = {
     {
-    .lvl = 31,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 64,
+    .species = SPECIES_TOXAPEX,
     },
     {
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .lvl = 64,
+    .species = SPECIES_SPIRITOMB,
     }
 };
 
 static const struct TrainerMon sParty_GruntAquaHideout8[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 64,
+    .species = SPECIES_LIEPARD,
     }
 };
 
