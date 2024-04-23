@@ -3578,17 +3578,15 @@ Route123_Text_KayleyPostBattle:
 	.string "the secret behind fashion appeal.$"
 
 Route124_Text_SpencerIntro:
-	.string "Hey, are you lost at sea?\p"
-	.string "If you can beat my POKéMON,\n"
-	.string "I can serve as your pilot.$"
+	.string "What beautiful scenery for me to\n"
+	.string "practice my fire-dancing technique!$"
 
 Route124_Text_SpencerDefeat:
-	.string "I lost my bearings in battle!$"
+	.string "Extinguished!$"
 
 Route124_Text_SpencerPostBattle:
-	.string "Many people lose their bearings at sea.\p"
-	.string "If you're that sort, you should refer\n"
-	.string "to the POKéNAV's MAP.$"
+	.string "There's even grass starting to grow in\n"
+	.string "around here.$"
 
 Route124_Text_RolandIntro:
 	.string "Hm! You're riding a POKéMON instead\n"
@@ -3605,17 +3603,16 @@ Route124_Text_RolandPostBattle:
 	.string "I wish I could ride a POKéMON like you…$"
 
 Route124_Text_JennyIntro:
-	.string "If you just float in the sea like\n"
-	.string "this, POKéMON come around to play.$"
+	.string "I've been waiting for someone strong to\n"
+	.string "come along!$"
 
 Route124_Text_JennyDefeat:
-	.string "Oh, darn.\n"
-	.string "I've gone and lost.$"
+	.string "You're too strong!$"
 
 Route124_Text_JennyPostBattle:
-	.string "While swimming, I noticed that some\n"
-	.string "POKéMON attack, and some just watch.\p"
-	.string "I guess POKéMON have personalities\n"
+	.string "While training, I noticed that some\n"
+	.string "Pokémon attack, and some just watch.\p"
+	.string "I guess Pokémon have personalities\n"
 	.string "of their own.$"
 
 Route124_Text_JennyRegister:
@@ -3635,16 +3632,14 @@ Route124_Text_JennyPostRematch:
 	.string "but maybe I'll visit the TRICK HOUSE.$"
 
 Route124_Text_GraceIntro:
-	.string "I'm growing bored of swimming…\n"
-	.string "How about a battle?$"
+	.string "This blazing hot sun has made a nice\n"
+	.string "little beach... What do you think of it?$"
 
 Route124_Text_GraceDefeat:
-	.string "I had no idea that you were\n"
-	.string "this strong!$"
+	.string "You ruined my beach training!$"
 
 Route124_Text_GracePostBattle:
-	.string "All the effort you put in must have\n"
-	.string "made you this strong.$"
+	.string "I should've brought sunscreen.$"
 
 Route124_Text_ChadIntro:
 	.string "Fufufufu… I dive deep underwater\n"
@@ -3743,22 +3738,17 @@ Route124_Text_RoyRematchNotEnoughMons:
 	.string "Bring two POKéMON, then.$"
 
 Route124_Text_DeclanIntro:
-	.string "Here I am swimming by my lonesome\n"
-	.string "on this wide, beautiful sea.\p"
-	.string "There's no other word for it.\n"
-	.string "This is pathetic!$"
+	.string "I've already worked up a sweat training\n"
+	.string "in this heat. I'm ready for a battle!$"
 
 Route124_Text_DeclanDefeat:
-	.string "I'm feeling blue.\n"
-	.string "Blue as the sky…$"
+	.string "Forced to cool down...$"
 
 Route124_Text_DeclanPostBattle:
-	.string "I should chat up lady SWIMMERS\n"
-	.string "and invite them on a long swim.$"
+	.string "A little break never hurt anyone.$"
 
 Route124_Text_IsabellaIntro:
-	.string "I'm not going to lose to some\n"
-	.string "surfer TRAINER.$"
+	.string "I'm not some little kid!$"
 
 Route124_Text_IsabellaDefeat:
 	.string "I've only got sweat in my eyes!\n"
