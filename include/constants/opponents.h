@@ -589,11 +589,11 @@
 #define TRAINER_KATHLEEN                    583
 #define TRAINER_CLIFFORD                    584
 #define TRAINER_NICHOLAS                    585
-#define TRAINER_GRUNT_SPACE_CENTER_3        586
-#define TRAINER_GRUNT_SPACE_CENTER_4        587
-#define TRAINER_GRUNT_SPACE_CENTER_5        588
-#define TRAINER_GRUNT_SPACE_CENTER_6        589
-#define TRAINER_GRUNT_SPACE_CENTER_7        590
+#define TRAINER_GRUNT_SPACE_CENTER_3        586 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_4        587 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_5        588 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_6        589 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_7        590 // unused
 #define TRAINER_MACEY                       591
 #define TRAINER_BRENDAN_RUSTBORO_TREECKO    592
 #define TRAINER_BRENDAN_RUSTBORO_MUDKIP     593

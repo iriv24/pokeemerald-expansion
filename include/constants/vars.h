@@ -175,7 +175,7 @@
 #define VAR_BEAT_MAGMA_BACK_TO_BACK                      0x409B
 #define VAR_ELITE_4_STATE                                0x409C
 #define VAR_BEAT_MAXIE_HIDEOUT                           0x409D
-#define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
+#define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E //unused var
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
 #define VAR_UNUSED_0x40A1                                0x40A1 // Unused var

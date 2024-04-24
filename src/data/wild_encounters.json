@@ -610,6 +610,71 @@
         {
           "map": "MAP_ROUTE105",
           "base_label": "gRoute105",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_CARNIVINE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_PALPITOAD"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_TADBULB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_SALANDIT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_FERROSEED"
+              },
+              {
+                "min_level": 25,
+                "max_level": 32,
+                "species": "SPECIES_SKIPLOOM"
+              },
+              {
+                "min_level": 34,
+                "max_level": 35,
+                "species": "SPECIES_HIPPOWDON"
+              },
+              {
+                "min_level": 34,
+                "max_level": 35,
+                "species": "SPECIES_MUSHARNA"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -692,71 +757,6 @@
                 "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_TENTACRUEL"
-              }
-            ]
-          },
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_CARNIVINE"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_ARAQUANID"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_PALPITOAD"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_SANDSLASH"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_QUAGSIRE"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_TADBULB"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_SALANDIT"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_MAWILE"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_FERROSEED"
-              },
-              {
-                "min_level": 25,
-                "max_level": 32,
-                "species": "SPECIES_SKIPLOOM"
-              },
-              {
-                "min_level": 34,
-                "max_level": 35,
-                "species": "SPECIES_HIPPOWDON"
-              },
-              {
-                "min_level": 34,
-                "max_level": 35,
-                "species": "SPECIES_MUSHARNA"
               }
             ]
           }
