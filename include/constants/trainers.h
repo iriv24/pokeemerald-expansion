@@ -118,7 +118,9 @@
 #define TRAINER_PIC_CANDICE               100
 #define TRAINER_PIC_VOLKNER               101
 #define TRAINER_PIC_CYNTHIA               102
-#define TRAINER_PIC_COUNT                 103
+#define TRAINER_PIC_TATE                  103
+#define TRAINER_PIC_LIZA                  104
+#define TRAINER_PIC_COUNT                 105
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

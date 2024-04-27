@@ -571,8 +571,8 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_MAYLENE                     566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568
-#define TRAINER_GRUNT_MT_PYRE_4             569 //unused
+#define TRAINER_TATE                        568
+#define TRAINER_LIZA                        569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_MARC                        571
 #define TRAINER_BRENDEN                     572

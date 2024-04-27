@@ -50,11 +50,14 @@ MossdeepCity_Gym_EventScript_SetSwitch4Metatiles::
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLiza::
-	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Gym_EventScript_TateAndLizaRematch
-	goto_if_unset FLAG_RECEIVED_TM_CALM_MIND, MossdeepCity_Gym_EventScript_GiveCalmMind2
-	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
+	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymLeadersPostVictory
+	msgbox MossdeepCity_Gym_Text_TateAndLizaIntro, MSGBOX_DEFAULT
+	multi_player_vs_2 TRAINER_TATE, MossdeepCity_Gym_Text_TateDefeat, TRAINER_LIZA, MossdeepCity_Gym_Text_LizaDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MossdeepCity_Gym_EventScript_TateAndLizaDefeated
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
 	release
 	end
 
@@ -90,18 +93,17 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	release
 	end
 
-@ TODO move the magma emblem to after rocket encounter in mossdeep
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
-	giveitem ITEM_TM_CALM_MIND
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_TM_EXPANDING_FORCE
+	giveitem ITEM_TM_TRICK_ROOM
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
 	release
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-	giveitem ITEM_TM_CALM_MIND
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	giveitem ITEM_TM_EXPANDING_FORCE
+	giveitem ITEM_TM_TRICK_ROOM
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
 	return
@@ -275,6 +277,11 @@ MossdeepCity_Gym_EventScript_GymGuide::
 
 MossdeepCity_Gym_EventScript_GymGuidePostVictory::
 	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_EventScript_GymLeadersPostVictory::
+	msgbox MossdeepCity_Gym_Text_GymLeadersPostVictory, MSGBOX_DEFAULT
 	release
 	end
 
@@ -563,28 +570,36 @@ MossdeepCity_Gym_Text_TateAndLizaIntro:
 
 MossdeepCity_Gym_Text_TateAndLizaDefeat:
 	.string "TATE: What?! Our combination…\n"
-	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
+	.string "TATE: Was shattered!\p"
+	.string "LIZA: It can't be helped. You've won…\n"
 	.string "LIZA: So, in recognition, take this.$"
+
+MossdeepCity_Gym_Text_TateDefeat:
+	.string "TATE: What?! Our combination\n"
+	.string "Was shattered!$"
+
+MossdeepCity_Gym_Text_LizaDefeat:
+	.string "LIZA: It can't be helped, you've won!\n"
+	.string "So, in recognition, take this.$"
 
 MossdeepCity_Gym_Text_ReceivedMindBadge:
 	.string "{PLAYER} received the MIND BADGE\n"
 	.string "from TATE and LIZA.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "TATE: The MIND BADGE enhances the\n"
-	.string "SP. ATK and SP. DEF of POKéMON.\p"
-	.string "LIZA: It also lets you use the HM move\n"
-	.string "DIVE outside of battle.\p"
+	.string "LIZA: The MIND BADGE lets you use the\n"
+	.string "HM move Dive outside of battle.\p"
 	.string "TATE: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
-	.string "TATE: That TM04 contains…\n"
-	.string "LIZA: CALM MIND!\p"
-	.string "TATE: It raises SP. ATK and…\n"
-	.string "LIZA: It raises SP. DEF!\p"
-	.string "TATE: It's a move that's perfect…\n"
-	.string "LIZA: For PSYCHIC POKéMON!\p"
+	.string "TATE: That TM55 contains…\n"
+	.string "LIZA: Expanding Force!\p"
+	.string "TATE: It does way more damage...\n"
+	.string "LIZA: In Psychic Terrain!\p"
+	.string "TATE: And that TM106 contains...\n"
+	.string "LIZA: Trick Room!\p"
+	.string "TATE: They're both great TMs…\n"
+	.string "LIZA: For Psychic Pokémon!\p"
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:
@@ -606,6 +621,11 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons:
 	.string "TATE: We can't battle that way!\p"
 	.string "LIZA: If you want to challenge us,\n"
 	.string "bring some more POKéMON.$"
+
+MossdeepCity_Gym_Text_GymLeadersPostVictory:
+	.string "TATE: Looks like we need...\n"
+	.string "LIZA: some more practice?\l"
+	.string "TATE: Yea... that is what I was thinking..$"
 
 MossdeepCity_Gym_Text_GymStatue:
 	.string "MOSSDEEP CITY POKéMON GYM$"
