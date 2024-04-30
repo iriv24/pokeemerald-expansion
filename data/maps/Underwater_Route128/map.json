@@ -37,7 +37,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_BEAT_MAXIE_HIDEOUT",
+      "var_value": "0",
+      "script": "Underwater_Route128__Trigger_BlockCavernEntrance"
+    }
   ],
   "bg_events": [
     {

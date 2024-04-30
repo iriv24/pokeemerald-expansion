@@ -3,3 +3,17 @@ Underwater_Route128_MapScripts::
 	.byte 0
 
 `
+
+script Underwater_Route128__Trigger_BlockCavernEntrance{
+	lockall
+	msgbox(GoBeatMagma)
+	waitmessage
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+}
+
+text GoBeatMagma{
+	"You should focus on taking Team Magma\n"
+	"down in Jagged Pass first."
+}

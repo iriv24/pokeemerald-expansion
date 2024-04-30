@@ -328,11 +328,6 @@ Route120_EventScript_Jennifer::
 	msgbox Route120_Text_JenniferPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route120_EventScript_Chip::
-	trainerbattle_single TRAINER_BYRON, Route120_Text_ChipIntro, Route120_Text_ChipDefeat
-	msgbox Route120_Text_ChipPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route120_EventScript_Clarissa::
 	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
 	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE

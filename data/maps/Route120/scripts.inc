@@ -659,382 +659,372 @@ Route120_EventScript_Jennifer::
 # 330 "data/maps/Route120/scripts.pory"
 
 # 331 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Chip::
+Route120_EventScript_Clarissa::
 # 332 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_BYRON, Route120_Text_ChipIntro, Route120_Text_ChipDefeat
+	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
 # 333 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_ChipPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE
 # 334 "data/maps/Route120/scripts.pory"
 	end
 # 335 "data/maps/Route120/scripts.pory"
 
 # 336 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Clarissa::
+Route120_EventScript_Angelica::
 # 337 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
+	trainerbattle_single TRAINER_ANGELICA, Route120_Text_AngelicaIntro, Route120_Text_AngelicaDefeat
 # 338 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_AngelicaPostBattle, MSGBOX_AUTOCLOSE
 # 339 "data/maps/Route120/scripts.pory"
 	end
 # 340 "data/maps/Route120/scripts.pory"
 
 # 341 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Angelica::
+Route120_EventScript_Keigo::
 # 342 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_ANGELICA, Route120_Text_AngelicaIntro, Route120_Text_AngelicaDefeat
+	trainerbattle_single TRAINER_KEIGO, Route120_Text_KeigoIntro, Route120_Text_KeigoDefeat
 # 343 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_AngelicaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_KeigoPostBattle, MSGBOX_AUTOCLOSE
 # 344 "data/maps/Route120/scripts.pory"
 	end
 # 345 "data/maps/Route120/scripts.pory"
 
 # 346 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Keigo::
+Route120_EventScript_Riley::
 # 347 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_KEIGO, Route120_Text_KeigoIntro, Route120_Text_KeigoDefeat
+	trainerbattle_single TRAINER_RILEY, Route120_Text_RileyIntro, Route120_Text_RileyDefeat
 # 348 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_KeigoPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_RileyPostBattle, MSGBOX_AUTOCLOSE
 # 349 "data/maps/Route120/scripts.pory"
 	end
 # 350 "data/maps/Route120/scripts.pory"
 
 # 351 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Riley::
+Route120_EventScript_Leonel::
 # 352 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_RILEY, Route120_Text_RileyIntro, Route120_Text_RileyDefeat
+	trainerbattle_single TRAINER_LEONEL, Route120_Text_LeonelIntro, Route120_Text_LeonelDefeat
 # 353 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_RileyPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_LeonelPostBattle, MSGBOX_AUTOCLOSE
 # 354 "data/maps/Route120/scripts.pory"
 	end
 # 355 "data/maps/Route120/scripts.pory"
 
 # 356 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Leonel::
+Route120_EventScript_Callie::
 # 357 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_LEONEL, Route120_Text_LeonelIntro, Route120_Text_LeonelDefeat
+	trainerbattle_single TRAINER_CALLIE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
 # 358 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_LeonelPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 # 359 "data/maps/Route120/scripts.pory"
 	end
 # 360 "data/maps/Route120/scripts.pory"
 
 # 361 "data/maps/Route120/scripts.pory"
-Route120_EventScript_Callie::
-# 362 "data/maps/Route120/scripts.pory"
-	trainerbattle_single TRAINER_CALLIE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
-# 363 "data/maps/Route120/scripts.pory"
-	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
-# 364 "data/maps/Route120/scripts.pory"
-	end
-# 365 "data/maps/Route120/scripts.pory"
-
-# 366 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeGreeting:
-# 367 "data/maps/Route120/scripts.pory"
+# 362 "data/maps/Route120/scripts.pory"
 	.string "Hm? {PLAYER}{KUN}, hi.\n"
-# 368 "data/maps/Route120/scripts.pory"
+# 363 "data/maps/Route120/scripts.pory"
 	.string "It's been a while.\p"
-# 369 "data/maps/Route120/scripts.pory"
+# 364 "data/maps/Route120/scripts.pory"
 	.string "There's something here that you can't\n"
-# 370 "data/maps/Route120/scripts.pory"
+# 365 "data/maps/Route120/scripts.pory"
 	.string "see, right?\p"
-# 371 "data/maps/Route120/scripts.pory"
+# 366 "data/maps/Route120/scripts.pory"
 	.string "Now, if I were to use this device on\n"
-# 372 "data/maps/Route120/scripts.pory"
+# 367 "data/maps/Route120/scripts.pory"
 	.string "the invisible obstacle…\p"
-# 373 "data/maps/Route120/scripts.pory"
+# 368 "data/maps/Route120/scripts.pory"
 	.string "No, no. Rather than describing it,\n"
-# 374 "data/maps/Route120/scripts.pory"
+# 369 "data/maps/Route120/scripts.pory"
 	.string "I should just show you.\l"
-# 375 "data/maps/Route120/scripts.pory"
+# 370 "data/maps/Route120/scripts.pory"
 	.string "That would be more fun.\p"
-# 376 "data/maps/Route120/scripts.pory"
+# 371 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER}{KUN}, are your Pokémon ready for\n"
-# 377 "data/maps/Route120/scripts.pory"
+# 372 "data/maps/Route120/scripts.pory"
 	.string "battle?$"
-# 378 "data/maps/Route120/scripts.pory"
+# 373 "data/maps/Route120/scripts.pory"
 
-# 379 "data/maps/Route120/scripts.pory"
+# 374 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeIllWaitHere:
-# 380 "data/maps/Route120/scripts.pory"
+# 375 "data/maps/Route120/scripts.pory"
 	.string "No?\p"
-# 381 "data/maps/Route120/scripts.pory"
+# 376 "data/maps/Route120/scripts.pory"
 	.string "I'll wait here, so you can get ready.$"
-# 382 "data/maps/Route120/scripts.pory"
+# 377 "data/maps/Route120/scripts.pory"
 
-# 383 "data/maps/Route120/scripts.pory"
+# 378 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeReadyForBattle:
-# 384 "data/maps/Route120/scripts.pory"
+# 379 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER}{KUN}, are your Pokémon\n"
-# 385 "data/maps/Route120/scripts.pory"
+# 380 "data/maps/Route120/scripts.pory"
 	.string "ready for battle?$"
-# 386 "data/maps/Route120/scripts.pory"
+# 381 "data/maps/Route120/scripts.pory"
 
-# 387 "data/maps/Route120/scripts.pory"
+# 382 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeShowMeYourPower:
-# 388 "data/maps/Route120/scripts.pory"
+# 383 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER}{KUN}, show me your true\n"
-# 389 "data/maps/Route120/scripts.pory"
+# 384 "data/maps/Route120/scripts.pory"
 	.string "power as a Trainer!$"
-# 390 "data/maps/Route120/scripts.pory"
+# 385 "data/maps/Route120/scripts.pory"
 
-# 391 "data/maps/Route120/scripts.pory"
+# 386 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeUsedDevonScope:
-# 392 "data/maps/Route120/scripts.pory"
+# 387 "data/maps/Route120/scripts.pory"
 	.string "Drake used the Devon Scope.\p"
-# 393 "data/maps/Route120/scripts.pory"
+# 388 "data/maps/Route120/scripts.pory"
 	.string "An invisible Pokémon became completely\n"
-# 394 "data/maps/Route120/scripts.pory"
+# 389 "data/maps/Route120/scripts.pory"
 	.string "visible!\p"
-# 395 "data/maps/Route120/scripts.pory"
+# 390 "data/maps/Route120/scripts.pory"
 	.string "The startled Pokémon attacked!$"
-# 396 "data/maps/Route120/scripts.pory"
+# 391 "data/maps/Route120/scripts.pory"
 
-# 397 "data/maps/Route120/scripts.pory"
+# 392 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeGiveDevonScope:
-# 398 "data/maps/Route120/scripts.pory"
+# 393 "data/maps/Route120/scripts.pory"
 	.string "I see…\n"
-# 399 "data/maps/Route120/scripts.pory"
+# 394 "data/maps/Route120/scripts.pory"
 	.string "Your battle style is intriguing.\p"
-# 400 "data/maps/Route120/scripts.pory"
+# 395 "data/maps/Route120/scripts.pory"
 	.string "I can see how you were able to thwart\n"
-# 401 "data/maps/Route120/scripts.pory"
+# 396 "data/maps/Route120/scripts.pory"
 	.string "both Team Aqua and Team Magma by the\p"
-# 402 "data/maps/Route120/scripts.pory"
+# 397 "data/maps/Route120/scripts.pory"
 	.string "way you treat your Pokémon.\n"
-# 403 "data/maps/Route120/scripts.pory"
+# 398 "data/maps/Route120/scripts.pory"
 	.string "I'd like you to have this\p"
-# 404 "data/maps/Route120/scripts.pory"
+# 399 "data/maps/Route120/scripts.pory"
 	.string "Devon Scope.\n"
-# 405 "data/maps/Route120/scripts.pory"
+# 400 "data/maps/Route120/scripts.pory"
 	.string "Who knows, there may be other\l"
-# 406 "data/maps/Route120/scripts.pory"
+# 401 "data/maps/Route120/scripts.pory"
 	.string "concealed Pokémon.$"
-# 407 "data/maps/Route120/scripts.pory"
+# 402 "data/maps/Route120/scripts.pory"
 
-# 408 "data/maps/Route120/scripts.pory"
+# 403 "data/maps/Route120/scripts.pory"
 Route120_Text_DrakeGoodbye:
-# 409 "data/maps/Route120/scripts.pory"
+# 404 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER}{KUN}.\p"
-# 410 "data/maps/Route120/scripts.pory"
+# 405 "data/maps/Route120/scripts.pory"
 	.string "Keep up the good work. I'll press onward\n"
-# 411 "data/maps/Route120/scripts.pory"
+# 406 "data/maps/Route120/scripts.pory"
 	.string "and keep investigating what's going on\p"
-# 412 "data/maps/Route120/scripts.pory"
+# 407 "data/maps/Route120/scripts.pory"
 	.string "with Team Aqua and Team Magma, and you\p"
-# 413 "data/maps/Route120/scripts.pory"
+# 408 "data/maps/Route120/scripts.pory"
 	.string "keep getting stronger as well. I'm sure\n"
-# 414 "data/maps/Route120/scripts.pory"
+# 409 "data/maps/Route120/scripts.pory"
 	.string "our paths will cross again soon.$"
-# 415 "data/maps/Route120/scripts.pory"
+# 410 "data/maps/Route120/scripts.pory"
 
-# 416 "data/maps/Route120/scripts.pory"
+# 411 "data/maps/Route120/scripts.pory"
 Kecleon_Text_SomethingUnseeable:
-# 417 "data/maps/Route120/scripts.pory"
+# 412 "data/maps/Route120/scripts.pory"
 	.string "Something unseeable is in the way.$"
-# 418 "data/maps/Route120/scripts.pory"
+# 413 "data/maps/Route120/scripts.pory"
 
-# 419 "data/maps/Route120/scripts.pory"
+# 414 "data/maps/Route120/scripts.pory"
 Kecleon_Text_WantToUseDevonScope:
-# 420 "data/maps/Route120/scripts.pory"
+# 415 "data/maps/Route120/scripts.pory"
 	.string "Something unseeable is in the way.\p"
-# 421 "data/maps/Route120/scripts.pory"
+# 416 "data/maps/Route120/scripts.pory"
 	.string "Want to use the Devon Scope?$"
-# 422 "data/maps/Route120/scripts.pory"
+# 417 "data/maps/Route120/scripts.pory"
 
-# 423 "data/maps/Route120/scripts.pory"
+# 418 "data/maps/Route120/scripts.pory"
 Kecleon_Text_UseDevonScopeMonAttacked:
-# 424 "data/maps/Route120/scripts.pory"
+# 419 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER} used the Devon Scope.\p"
-# 425 "data/maps/Route120/scripts.pory"
+# 420 "data/maps/Route120/scripts.pory"
 	.string "An invisible Pokémon became completely\n"
-# 426 "data/maps/Route120/scripts.pory"
+# 421 "data/maps/Route120/scripts.pory"
 	.string "visible!\p"
-# 427 "data/maps/Route120/scripts.pory"
+# 422 "data/maps/Route120/scripts.pory"
 	.string "The startled Pokémon attacked!$"
-# 428 "data/maps/Route120/scripts.pory"
+# 423 "data/maps/Route120/scripts.pory"
 
-# 429 "data/maps/Route120/scripts.pory"
+# 424 "data/maps/Route120/scripts.pory"
 Route120_Text_RouteSignFortree:
-# 430 "data/maps/Route120/scripts.pory"
+# 425 "data/maps/Route120/scripts.pory"
 	.string "ROUTE 120\n"
-# 431 "data/maps/Route120/scripts.pory"
+# 426 "data/maps/Route120/scripts.pory"
 	.string "{LEFT_ARROW} FORTREE CITY$"
-# 432 "data/maps/Route120/scripts.pory"
+# 427 "data/maps/Route120/scripts.pory"
 
-# 433 "data/maps/Route120/scripts.pory"
+# 428 "data/maps/Route120/scripts.pory"
 Route120_Text_RouteSign121:
-# 434 "data/maps/Route120/scripts.pory"
+# 429 "data/maps/Route120/scripts.pory"
 	.string "{RIGHT_ARROW} ROUTE 121\n"
-# 435 "data/maps/Route120/scripts.pory"
+# 430 "data/maps/Route120/scripts.pory"
 	.string "{LEFT_ARROW} ROUTE 120$"
 
 Route120_EventScript_Byron::
-# 440 "data/maps/Route120/scripts.pory"
+# 435 "data/maps/Route120/scripts.pory"
 	lockall
-# 441 "data/maps/Route120/scripts.pory"
+# 436 "data/maps/Route120/scripts.pory"
 	applymovement 25, Common_Movement_FacePlayer
-# 442 "data/maps/Route120/scripts.pory"
+# 437 "data/maps/Route120/scripts.pory"
 	goto_if_set FLAG_RECEIVED_MELTAN, Route120_EventScript_ByronDefeated
-# 443 "data/maps/Route120/scripts.pory"
+# 438 "data/maps/Route120/scripts.pory"
 	goto_if_set FLAG_DECLINED_BYRON_BATTLE, Route120_EventScript_ByronRequestBattleAgain
-# 444 "data/maps/Route120/scripts.pory"
+# 439 "data/maps/Route120/scripts.pory"
 	msgbox Byron_Greeting, MSGBOX_YESNO
-# 445 "data/maps/Route120/scripts.pory"
+# 440 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_BattleByronPrompt
 	end
 
 
 Route120_EventScript_ByronRequestBattleAgain::
-# 450 "data/maps/Route120/scripts.pory"
+# 445 "data/maps/Route120/scripts.pory"
 	msgbox Ready_Yet, MSGBOX_YESNO
-# 451 "data/maps/Route120/scripts.pory"
+# 446 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_BattleByronPrompt
 	end
 
 
 Route120_EventScript_BattleByronPrompt::
-# 456 "data/maps/Route120/scripts.pory"
+# 451 "data/maps/Route120/scripts.pory"
 	call_if_eq VAR_RESULT, YES, Route120_EventScript_BattleByron
-# 457 "data/maps/Route120/scripts.pory"
+# 452 "data/maps/Route120/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_DeclineByronBattle
-# 458 "data/maps/Route120/scripts.pory"
+# 453 "data/maps/Route120/scripts.pory"
 	closemessage
 	end
 
 
 Route120_EventScript_DeclineByronBattle::
-# 463 "data/maps/Route120/scripts.pory"
+# 458 "data/maps/Route120/scripts.pory"
 	setflag FLAG_DECLINED_BYRON_BATTLE
-# 464 "data/maps/Route120/scripts.pory"
+# 459 "data/maps/Route120/scripts.pory"
 	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
-# 465 "data/maps/Route120/scripts.pory"
+# 460 "data/maps/Route120/scripts.pory"
 	release
 	end
 
 
 Route120_EventScript_BattleByron::
-# 470 "data/maps/Route120/scripts.pory"
+# 465 "data/maps/Route120/scripts.pory"
 	msgbox Route120_EventScript_BattleByron_Text_0, MSGBOX_DEFAULT
-# 471 "data/maps/Route120/scripts.pory"
+# 466 "data/maps/Route120/scripts.pory"
 	trainerbattle_no_intro TRAINER_BYRON, Byron_Outro
-# 472 "data/maps/Route120/scripts.pory"
+# 467 "data/maps/Route120/scripts.pory"
 	giveitem ITEM_TM_STEALTH_ROCK
-# 473 "data/maps/Route120/scripts.pory"
+# 468 "data/maps/Route120/scripts.pory"
 	giveitem ITEM_TM_HIGH_HORSEPOWER
-# 474 "data/maps/Route120/scripts.pory"
+# 469 "data/maps/Route120/scripts.pory"
 	giveitem ITEM_COPPERAJITE
-# 475 "data/maps/Route120/scripts.pory"
+# 470 "data/maps/Route120/scripts.pory"
 	giveitem ITEM_ROCKY_HELMET
-# 476 "data/maps/Route120/scripts.pory"
+# 471 "data/maps/Route120/scripts.pory"
 	giveitem ITEM_LEFTOVERS
-# 477 "data/maps/Route120/scripts.pory"
+# 472 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_ByronGiveMeltan
 	return
 
 
 Route120_EventScript_ByronDefeated::
-# 483 "data/maps/Route120/scripts.pory"
+# 478 "data/maps/Route120/scripts.pory"
 	msgbox PostBattle_Byron, MSGBOX_DEFAULT
-# 484 "data/maps/Route120/scripts.pory"
+# 479 "data/maps/Route120/scripts.pory"
 	releaseall
 	end
 
 
 Route120_EventScript_ByronGiveMeltan::
-# 489 "data/maps/Route120/scripts.pory"
+# 484 "data/maps/Route120/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN
-# 490 "data/maps/Route120/scripts.pory"
+# 485 "data/maps/Route120/scripts.pory"
 	givemon SPECIES_MELTAN, 30
-# 491 "data/maps/Route120/scripts.pory"
+# 486 "data/maps/Route120/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route120_EventScript_ReceiveMeltanParty
-# 492 "data/maps/Route120/scripts.pory"
+# 487 "data/maps/Route120/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route120_EventScript_ReceiveMeltanPC
-# 493 "data/maps/Route120/scripts.pory"
+# 488 "data/maps/Route120/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 494 "data/maps/Route120/scripts.pory"
+# 489 "data/maps/Route120/scripts.pory"
 	release
 	end
 
 
 Route120_EventScript_ReceiveMeltanParty::
-# 499 "data/maps/Route120/scripts.pory"
+# 494 "data/maps/Route120/scripts.pory"
 	call Route120_EventScript_ReceivedMeltanFanfare
-# 500 "data/maps/Route120/scripts.pory"
+# 495 "data/maps/Route120/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 501 "data/maps/Route120/scripts.pory"
+# 496 "data/maps/Route120/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_ExplainMeltan
-# 502 "data/maps/Route120/scripts.pory"
+# 497 "data/maps/Route120/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 503 "data/maps/Route120/scripts.pory"
+# 498 "data/maps/Route120/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 504 "data/maps/Route120/scripts.pory"
+# 499 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_ExplainMeltan
 	end
 
 
 Route120_EventScript_ReceiveMeltanPC::
-# 510 "data/maps/Route120/scripts.pory"
+# 505 "data/maps/Route120/scripts.pory"
 	call Route120_EventScript_ReceivedMeltanFanfare
-# 511 "data/maps/Route120/scripts.pory"
+# 506 "data/maps/Route120/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 512 "data/maps/Route120/scripts.pory"
+# 507 "data/maps/Route120/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_SendMeltanToPC
-# 513 "data/maps/Route120/scripts.pory"
+# 508 "data/maps/Route120/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 514 "data/maps/Route120/scripts.pory"
+# 509 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_SendMeltanToPC
 	end
 
 
 Route120_EventScript_SendMeltanToPC::
-# 520 "data/maps/Route120/scripts.pory"
+# 515 "data/maps/Route120/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 521 "data/maps/Route120/scripts.pory"
+# 516 "data/maps/Route120/scripts.pory"
 	goto Route120_EventScript_ExplainMeltan
 	end
 
 
 Route120_EventScript_ReceivedMeltanFanfare::
-# 527 "data/maps/Route120/scripts.pory"
+# 522 "data/maps/Route120/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 528 "data/maps/Route120/scripts.pory"
+# 523 "data/maps/Route120/scripts.pory"
 	message Route120_Text_PlayerReceivedMeltan
-# 529 "data/maps/Route120/scripts.pory"
+# 524 "data/maps/Route120/scripts.pory"
 	waitmessage
-# 530 "data/maps/Route120/scripts.pory"
+# 525 "data/maps/Route120/scripts.pory"
 	waitfanfare
-# 531 "data/maps/Route120/scripts.pory"
+# 526 "data/maps/Route120/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_MELTAN
 	return
 
 
 Route120_EventScript_ExplainMeltan::
-# 537 "data/maps/Route120/scripts.pory"
+# 532 "data/maps/Route120/scripts.pory"
 	msgbox Byron_ExplainMeltan, MSGBOX_DEFAULT
-# 538 "data/maps/Route120/scripts.pory"
+# 533 "data/maps/Route120/scripts.pory"
 	setflag FLAG_RECEIVED_MELTAN
-# 539 "data/maps/Route120/scripts.pory"
+# 534 "data/maps/Route120/scripts.pory"
 	release
 	end
 
 
 Route120_EventScript_BattleByron_Text_0:
-# 470 "data/maps/Route120/scripts.pory"
+# 465 "data/maps/Route120/scripts.pory"
 	.string "Excellent!$"
 
 Route120_Text_PlayerReceivedMeltan::
-# 543 "data/maps/Route120/scripts.pory"
+# 538 "data/maps/Route120/scripts.pory"
 	.string "{PLAYER} received Meltan!$"
 
 Byron_ExplainMeltan::
-# 547 "data/maps/Route120/scripts.pory"
+# 542 "data/maps/Route120/scripts.pory"
 	.string "Meltan and Melmetal are 2 of my\n"
 	.string "favorite Steel-types, I hope you treat\p"
 	.string "that Meltan kindly and raise it well.$"
 
 Byron_Greeting::
-# 553 "data/maps/Route120/scripts.pory"
+# 548 "data/maps/Route120/scripts.pory"
 	.string "Well hello there, you look like a well-\n"
 	.string "traveled person. Did you happen to run\p"
 	.string "into a young man named Roark during\n"
@@ -1045,13 +1035,13 @@ Byron_Greeting::
 	.string "you say to a battle with me then?$"
 
 Byron_Outro::
-# 564 "data/maps/Route120/scripts.pory"
+# 559 "data/maps/Route120/scripts.pory"
 	.string "I see how you were able to defeat my\n"
 	.string "son. I'm confident I'll be leaving this\p"
 	.string "Pokémon in good hands.$"
 
 PostBattle_Byron::
-# 571 "data/maps/Route120/scripts.pory"
+# 566 "data/maps/Route120/scripts.pory"
 	.string "I'm off to find Roark, I'm sure he's\n"
 	.string "going to explore the underground of\l"
 	.string "this region.$"

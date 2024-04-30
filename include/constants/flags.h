@@ -77,8 +77,8 @@
 #define FLAG_RECEIVED_MELTAN    0x41
 #define FLAG_DECLINED_BYRON_BATTLE    0x42
 #define FLAG_DAWN_LILYCOVE    0x43
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_DECLINED_CANDICE_BATTLE    0x44
+#define FLAG_RECEIVED_TM_BLIZZARD    0x45
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
