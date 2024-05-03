@@ -45,9 +45,9 @@ MtPyre_Exterior_EventScript_FogTrigger::
 # 23 "data/maps/MtPyre_Exterior/scripts.pory"
 
 # 24 "data/maps/MtPyre_Exterior/scripts.pory"
-MtPyre_Exterior_EventScript_SunTrigger::
+MtPyre_Exterior_EventScript_RainTrigger::
 # 25 "data/maps/MtPyre_Exterior/scripts.pory"
-	setweather WEATHER_SUNNY
+	setweather WEATHER_RAIN
 # 26 "data/maps/MtPyre_Exterior/scripts.pory"
 	doweather
 # 27 "data/maps/MtPyre_Exterior/scripts.pory"

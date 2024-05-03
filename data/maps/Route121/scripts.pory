@@ -192,3 +192,21 @@ Route121_Text_SafariZoneSign:
 	.string "SAFARI ZONE$"
 
 `
+
+script Route121_Trigger_BlockPath{
+	lockall
+	msgbox(GoBeatWinona)
+	waitmessage
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayerLeft)
+	waitmovement(0)
+	releaseall
+}
+
+text GoBeatWinona{
+	"You should defeat Winona before\n"
+	"moving on to here."
+}
+
+movement StopPlayerLeft {
+	walk_left
+}

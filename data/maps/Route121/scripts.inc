@@ -382,3 +382,30 @@ Route121_Text_SafariZoneSign:
 	.string "“Filled with rare POKéMON!”\n"
 # 192 "data/maps/Route121/scripts.pory"
 	.string "SAFARI ZONE$"
+
+Route121_Trigger_BlockPath::
+# 197 "data/maps/Route121/scripts.pory"
+	lockall
+# 198 "data/maps/Route121/scripts.pory"
+	msgbox GoBeatWinona
+# 199 "data/maps/Route121/scripts.pory"
+	waitmessage
+# 200 "data/maps/Route121/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayerLeft
+# 201 "data/maps/Route121/scripts.pory"
+	waitmovement 0
+# 202 "data/maps/Route121/scripts.pory"
+	releaseall
+	return
+
+
+# 210 "data/maps/Route121/scripts.pory"
+StopPlayerLeft:
+# 211 "data/maps/Route121/scripts.pory"
+	walk_left
+	step_end
+
+GoBeatWinona::
+# 205 "data/maps/Route121/scripts.pory"
+	.string "You should defeat Winona before\n"
+	.string "moving on to here.$"

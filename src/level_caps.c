@@ -21,7 +21,9 @@ u32 GetCurrentLevelCap(void)
         {FLAG_BADGE05_GET, 59},
         {FLAG_RECEIVED_HM_FLY, 64},
         {FLAG_BADGE06_GET, 68},
-        {FLAG_BADGE07_GET, 73},
+        {FLAG_DAWN_LILYCOVE, 71},
+        {FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 74},
+        {FLAG_BADGE07_GET, 76},
         {FLAG_BADGE08_GET, 80},
         {FLAG_IS_CHAMPION, 85},
     };

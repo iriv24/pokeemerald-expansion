@@ -26,9 +26,9 @@
 #define TRAINER_GRUNT_MUSEUM_1               20
 #define TRAINER_GRUNT_MUSEUM_2               21
 #define TRAINER_GRUNT_SPACE_CENTER_1         22
-#define TRAINER_GRUNT_MT_PYRE_1              23
-#define TRAINER_GRUNT_MT_PYRE_2              24
-#define TRAINER_GRUNT_MT_PYRE_3              25
+#define TRAINER_GRUNT_MT_PYRE_1              23 //unused
+#define TRAINER_GRUNT_MT_PYRE_2              24 //unused
+#define TRAINER_GRUNT_MT_PYRE_3              25 //unused
 #define TRAINER_GRUNT_WEATHER_INST_4         26
 #define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
 #define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
@@ -48,7 +48,7 @@
 #define TRAINER_ROSE_4                       42
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
-#define TRAINER_CHIP                         45
+#define TRAINER_SHADY                        45
 #define TRAINER_FOSTER                       46
 #define TRAINER_DUSTY_2                      47
 #define TRAINER_DUSTY_3                      48
@@ -571,8 +571,8 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_MAYLENE                     566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568
-#define TRAINER_GRUNT_MT_PYRE_4             569
+#define TRAINER_TATE                        568
+#define TRAINER_LIZA                        569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_MARC                        571
 #define TRAINER_BRENDEN                     572
@@ -589,11 +589,11 @@
 #define TRAINER_KATHLEEN                    583
 #define TRAINER_CLIFFORD                    584
 #define TRAINER_NICHOLAS                    585
-#define TRAINER_GRUNT_SPACE_CENTER_3        586
-#define TRAINER_GRUNT_SPACE_CENTER_4        587
-#define TRAINER_GRUNT_SPACE_CENTER_5        588
-#define TRAINER_GRUNT_SPACE_CENTER_6        589
-#define TRAINER_GRUNT_SPACE_CENTER_7        590
+#define TRAINER_GRUNT_SPACE_CENTER_3        586 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_4        587 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_5        588 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_6        589 // unused
+#define TRAINER_GRUNT_SPACE_CENTER_7        590 // unused
 #define TRAINER_MACEY                       591
 #define TRAINER_BRENDAN_RUSTBORO_TREECKO    592
 #define TRAINER_BRENDAN_RUSTBORO_MUDKIP     593
@@ -729,8 +729,8 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_8       723
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_9       724
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_10      725
-#define TRAINER_GRUNT_MAGMA_HIDEOUT_11      726
-#define TRAINER_GRUNT_MAGMA_HIDEOUT_12      727
+#define TRAINER_GRUNT_MAGMA_HIDEOUT_11      726 //unused
+#define TRAINER_GRUNT_MAGMA_HIDEOUT_12      727 //unused
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_13      728
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_14      729
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_15      730
@@ -860,12 +860,14 @@
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_DAWN_ROUTE_104              855
 #define TRAINER_URSULA                      856
+#define TRAINER_JUSTIN                      857
+#define TRAINER_DAWN_LILYCOVE               858
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      857
+#define TRAINERS_COUNT                      859
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

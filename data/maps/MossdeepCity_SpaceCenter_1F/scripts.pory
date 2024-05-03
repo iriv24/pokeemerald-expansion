@@ -25,9 +25,6 @@ MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForTeamMagma::
 	setobjectxyperm LOCALID_SCIENTIST_1, 3, 4
 	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectmovementtype LOCALID_SCIENTIST_2, MOVEMENT_TYPE_FACE_RIGHT
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 1, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardLeft
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardDown
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 3, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardRight
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardLeft::
@@ -206,82 +203,46 @@ MossdeepCity_SpaceCenter_1F_EventScript_MagmaNote::
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_3, MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt3Defeat
-	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_1, MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat
-	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt4::
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_4, MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt4Defeat
-	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt2::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F, MossdeepCity_SpaceCenter_1F_EventScript_Grunt2Defeated
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_2, MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat
-	setflag FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F
-	copyobjectxytoperm LOCALID_STAIR_GRUNT
-	switch VAR_FACING
-	case DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest
-#ifdef BUGFIX
-	case DIR_EAST, MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast
-#else
-	case DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast
-#endif
-	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 2
 	release
 	end
 
-MossdeepCity_SpaceCenter_1F_EventScript_Grunt2Defeated::
-	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt2PostBattle, MSGBOX_DEFAULT
-	release
-	end
 
-MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest::
-	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest
-	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 1
-	release
-	end
-
-@ Functionally unused by mistake. The movement is handled anyway after the switch (see above)
-@ This also means VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE can never be 3
-MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast::
-	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast
-	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 3
-	release
-	end
-
-MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest:
-	lock_facing_direction
-	walk_left
-	unlock_facing_direction
-	step_end
-
-@ Functionally unused. See above
-MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast:
-	lock_facing_direction
-	walk_right
-	unlock_facing_direction
-	step_end
-
-@ This was meant to only handle the player facing North, but by mistake(?) it also handles the player facing East
-MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs:
-	face_left
-	lock_facing_direction
-	walk_right
-	unlock_facing_direction
-	step_end
 
 MossdeepCity_SpaceCenter_1F_Text_RocketLaunchImminent:
 	.string "The rocket's launch is imminent!$"
@@ -370,46 +331,18 @@ MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel:
 	.string "check out the town?$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro:
-	.string "As promised, we've come for\n"
-	.string "the rocket fuel!$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt3Defeat:
-	.string "Ran out of fuel…$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt3PostBattle:
-	.string "Don't think you're on a roll just\n"
-	.string "because you've beaten me!$"
+	.string "My gosh... they were so strong..$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro:
-	.string "We gave you fair warning!\n"
-	.string "There's nothing sneaky about us!$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat:
-	.string "Grrr…\n"
-	.string "We should've used sneaky treachery…$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt1PostBattle:
-	.string "Okay, I get it already! The next time,\n"
-	.string "we'll come unannounced.$"
+	.string "That wasn't even a fair fight...\n"
+	.string "Oof.$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro:
-	.string "The rocket fuel the SPACE CENTER has\n"
-	.string "in storage--that's what we're after.\p"
-	.string "We mean to take every last bit of it!$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt4Defeat:
-	.string "Please, can you spare some fuel?\n"
-	.string "Even a chintzy cup will do!$"
-
-MossdeepCity_SpaceCenter_1F_Text_Grunt4PostBattle:
-	.string "What are we going to do with\n"
-	.string "the rocket fuel?\p"
-	.string "How would I know?\n"
-	.string "Ask our leader upstairs!$"
+	.string "Well this operation failed...$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro:
-	.string "Our leader said no one, but no one,\n"
-	.string "gets past me!$"
+	.string "Maxie said no one gets past me...\n"
+	.string "but they got past me...$"
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat:
 	.string "Ack! Ack! Aaack!$"

@@ -68,17 +68,17 @@
 #define FLAG_BEAT_TRICK_HOUSE_3    0x38
 #define FLAG_RECEIVED_KUBFU    0x39
 #define FLAG_DECLINED_WAKE_BATTLE    0x3A
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_RECEIVED_WATER_MEGAS    0x3B
+#define FLAG_DECLINED_ISAAC_BATTLE    0x3C
+#define FLAG_RECEIVED_GRASS_MEGAS    0x3D
+#define FLAG_DECLINED_XAVIER_BATTLE    0x3E
+#define FLAG_RECEIVED_FIRE_MEGAS    0x3F
+#define FLAG_DECLINED_JUSTIN_BATTLE    0x40
+#define FLAG_RECEIVED_MELTAN    0x41
+#define FLAG_DECLINED_BYRON_BATTLE    0x42
+#define FLAG_DAWN_LILYCOVE    0x43
+#define FLAG_DECLINED_CANDICE_BATTLE    0x44
+#define FLAG_RECEIVED_TM_BLIZZARD    0x45
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
@@ -133,7 +133,7 @@
 #define FLAG_RECEIVED_METEORITE              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
+#define FLAG_MET_STORED_POWER_GIVER          0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
@@ -187,7 +187,7 @@
 #define FLAG_RECEIVED_TM_VOLT_SWITCH         0xA7
 #define FLAG_RECEIVED_TM_OVERHEAT            0xA8
 #define FLAG_RECEIVED_TM_FACADE              0xA9
-#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
+#define FLAG_RECEIVED_TM_BRAVE_BIRD          0xAA
 #define FLAG_RECEIVED_TM_CALM_MIND           0xAB
 #define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
@@ -208,7 +208,7 @@
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
-#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
+#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF //unused
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
 #define FLAG_WALLY_SPEECH                    0xC1
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
@@ -222,7 +222,7 @@
 #define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
-#define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
+#define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD //unused
 #define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
@@ -235,7 +235,7 @@
 #define FLAG_ENABLE_SCOTT_MATCH_CALL         0xD7
 #define FLAG_ENABLE_MOM_MATCH_CALL           0xD8
 #define FLAG_MET_DIVING_TREASURE_HUNTER      0xD9
-#define FLAG_MET_WAILMER_TRAINER             0xDA
+#define FLAG_UNUSED_0XDA                     0xDA //unused
 #define FLAG_EVIL_LEADER_PLEASE_STOP         0xDB
 
 #define FLAG_NEVER_SET_0x0DC                 0xDC // This flag is read, but never written to
@@ -251,7 +251,7 @@
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
 #define FLAG_RECEIVED_TM_ROAR                0xE7
-#define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
+#define FLAG_UNUSED_0x0E8                    0xE8 // Unused Flag
 
 #define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
 
@@ -307,7 +307,7 @@
 #define FLAG_RECEIVED_FOCUS_BAND             0x11B
 #define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
 #define FLAG_RECEIVED_DEVON_SCOPE            0x11D
-#define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
+#define FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE 0x11E
 #define FLAG_MET_DEVON_EMPLOYEE              0x11F
 #define FLAG_MET_RIVAL_RUSTBORO              0x120
 #define FLAG_RECEIVED_SILK_SCARF             0x121
@@ -505,13 +505,13 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_DECLINED_FANTINA_BATTLE_117     0x1DA // Unused Flag
+#define FLAG_DECLINED_FANTINA_BATTLE_117     0x1DA
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
+#define FLAG_RECEIVED_TM_STORED_POWER        0x1DE
 #define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
@@ -758,7 +758,7 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4               0x2CA
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5               0x2CB
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6               0x2CC
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS            0x2CD
+#define FLAG_UNUSED_0x2CD                                           0x2CD
 #define FLAG_HIDE_MEW                                               0x2CE
 #define FLAG_HIDE_ROUTE_104_RIVAL                                   0x2CF
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
@@ -790,7 +790,7 @@
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0x2E8
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN            0x2E9
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY                    0x2EA
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0x2EB
+#define FLAG_UNUSED_0x2EB                                           0x2EB
 #define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0x2EC
 #define FLAG_HIDE_SLATEPORT_CITY_SCOTT                              0x2ED
 #define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
@@ -899,7 +899,7 @@
 #define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                          0x355
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                         0x356
 #define FLAG_HIDE_SKY_PILLAR_WALLACE                                0x357
-#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358
+#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                              0x358
 #define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                              0x359
 #define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                       0x35A
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
@@ -959,7 +959,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
+#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                             0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1014,7 +1014,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
 #define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
-#define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
+#define FLAG_HIDE_EVERGRANDE_CITY_RIVAL                             0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE
@@ -1139,7 +1139,7 @@
 #define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
 #define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
 #define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BEAM              0x446
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_WELLSPRING_MASK            0x446
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
@@ -1214,8 +1214,8 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_CORNERSTONE_MASK           0x491
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_HEARTHFLAME_MASK           0x492
 
 #define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag

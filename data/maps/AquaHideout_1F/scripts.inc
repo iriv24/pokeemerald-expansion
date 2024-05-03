@@ -15,224 +15,220 @@ AquaHideout_1F_EventScript_HideoutEntranceGrunt1::
 # 8 "data/maps/AquaHideout_1F/scripts.pory"
 	faceplayer
 # 9 "data/maps/AquaHideout_1F/scripts.pory"
-	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, AquaHideout_1F_EventScript_SlateportHint1
+	goto_if_set FLAG_RECEIVED_RED_OR_BLUE_ORB, AquaHideout_1F_EventScript_SlateportHint1
 # 10 "data/maps/AquaHideout_1F/scripts.pory"
-	goto_if_set FLAG_RECEIVED_RED_OR_BLUE_ORB, AquaHideout_1F_EventScript_MagmaHideoutHint1
-# 11 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_OurBossIsSnatchingSomething, MSGBOX_DEFAULT
+# 11 "data/maps/AquaHideout_1F/scripts.pory"
+	release
 # 12 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+	end
 # 13 "data/maps/AquaHideout_1F/scripts.pory"
-	end
+
 # 14 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 15 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_MagmaHideoutHint1::
-# 16 "data/maps/AquaHideout_1F/scripts.pory"
+# 15 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_WhereMightMagmaHideoutBe, MSGBOX_DEFAULT
+# 16 "data/maps/AquaHideout_1F/scripts.pory"
+	release
 # 17 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+	end
 # 18 "data/maps/AquaHideout_1F/scripts.pory"
-	end
+
 # 19 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 20 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_SlateportHint1::
-# 21 "data/maps/AquaHideout_1F/scripts.pory"
+# 20 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_BossWentToJackASubmarine, MSGBOX_DEFAULT
+# 21 "data/maps/AquaHideout_1F/scripts.pory"
+	release
 # 22 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+	end
 # 23 "data/maps/AquaHideout_1F/scripts.pory"
-	end
+
 # 24 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 25 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_HideoutEntranceGrunt2::
-# 26 "data/maps/AquaHideout_1F/scripts.pory"
+# 25 "data/maps/AquaHideout_1F/scripts.pory"
 	lock
-# 27 "data/maps/AquaHideout_1F/scripts.pory"
+# 26 "data/maps/AquaHideout_1F/scripts.pory"
 	faceplayer
+# 27 "data/maps/AquaHideout_1F/scripts.pory"
+	goto_if_set FLAG_RECEIVED_RED_OR_BLUE_ORB, AquaHideout_1F_EventScript_SlateportHint2
 # 28 "data/maps/AquaHideout_1F/scripts.pory"
-	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, AquaHideout_1F_EventScript_SlateportHint2
-# 29 "data/maps/AquaHideout_1F/scripts.pory"
-	goto_if_set FLAG_RECEIVED_RED_OR_BLUE_ORB, AquaHideout_1F_EventScript_MagmaHideoutHint2
-# 30 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_BossIsOnRoute122, MSGBOX_DEFAULT
+# 29 "data/maps/AquaHideout_1F/scripts.pory"
+	release
+# 30 "data/maps/AquaHideout_1F/scripts.pory"
+	end
 # 31 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+
 # 32 "data/maps/AquaHideout_1F/scripts.pory"
-	end
-# 33 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 34 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_MagmaHideoutHint2::
-# 35 "data/maps/AquaHideout_1F/scripts.pory"
+# 33 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_TeamMagmaAtMtChimney, MSGBOX_DEFAULT
+# 34 "data/maps/AquaHideout_1F/scripts.pory"
+	release
+# 35 "data/maps/AquaHideout_1F/scripts.pory"
+	end
 # 36 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+
 # 37 "data/maps/AquaHideout_1F/scripts.pory"
-	end
-# 38 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 39 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_SlateportHint2::
-# 40 "data/maps/AquaHideout_1F/scripts.pory"
+# 38 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_BossIsInSlateportCity, MSGBOX_DEFAULT
+# 39 "data/maps/AquaHideout_1F/scripts.pory"
+	release
+# 40 "data/maps/AquaHideout_1F/scripts.pory"
+	end
 # 41 "data/maps/AquaHideout_1F/scripts.pory"
-	release
+
 # 42 "data/maps/AquaHideout_1F/scripts.pory"
-	end
-# 43 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 44 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_Grunt1::
-# 45 "data/maps/AquaHideout_1F/scripts.pory"
+# 43 "data/maps/AquaHideout_1F/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_1, AquaHideout_1F_Text_Grunt1Intro, AquaHideout_1F_Text_Grunt1Defeat, AquaHideout_1F_EventScript_Grunt1Defeated
-# 46 "data/maps/AquaHideout_1F/scripts.pory"
+# 44 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
+# 45 "data/maps/AquaHideout_1F/scripts.pory"
+	end
+# 46 "data/maps/AquaHideout_1F/scripts.pory"
+
 # 47 "data/maps/AquaHideout_1F/scripts.pory"
-	end
-# 48 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 49 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_EventScript_Grunt1Defeated::
-# 50 "data/maps/AquaHideout_1F/scripts.pory"
+# 48 "data/maps/AquaHideout_1F/scripts.pory"
 	msgbox AquaHideout_1F_Text_Grunt1PostBattle, MSGBOX_DEFAULT
-# 51 "data/maps/AquaHideout_1F/scripts.pory"
+# 49 "data/maps/AquaHideout_1F/scripts.pory"
 	release
-# 52 "data/maps/AquaHideout_1F/scripts.pory"
+# 50 "data/maps/AquaHideout_1F/scripts.pory"
 	end
-# 53 "data/maps/AquaHideout_1F/scripts.pory"
+# 51 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 54 "data/maps/AquaHideout_1F/scripts.pory"
+# 52 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_OurBossIsSnatchingSomething:
+# 53 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "What? What? What do you want with \n"
+# 54 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "TEAM AQUA?\p"
 # 55 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "What? What? What do you want with \n"
-# 56 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "TEAM AQUA?\p"
-# 57 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Our BOSS isn't here! He's gone off to\n"
-# 58 "data/maps/AquaHideout_1F/scripts.pory"
+# 56 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "snatch something important!\p"
+# 57 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "… …\n"
+# 58 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "Where did he go?\p"
 # 59 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "… …\n"
+	.string "Wahaha! Do you really think I'd tell\n"
 # 60 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Where did he go?\p"
+	.string "you something that crucial?$"
 # 61 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Wahaha! Do you really think I'd tell\n"
+
 # 62 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "you something that crucial?$"
-# 63 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 64 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
+# 63 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "What? What?\n"
+# 64 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "Are you a TEAM MAGMA grunt?\p"
 # 65 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "What? What?\n"
-# 66 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Are you a TEAM MAGMA grunt?\p"
-# 67 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "I hear that TEAM MAGMA is trying to\n"
-# 68 "data/maps/AquaHideout_1F/scripts.pory"
+# 66 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "awaken an awesome POKéMON at their\l"
-# 69 "data/maps/AquaHideout_1F/scripts.pory"
+# 67 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "HIDEOUT.\p"
-# 70 "data/maps/AquaHideout_1F/scripts.pory"
+# 68 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "But where might their HIDEOUT be?$"
-# 71 "data/maps/AquaHideout_1F/scripts.pory"
+# 69 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 72 "data/maps/AquaHideout_1F/scripts.pory"
+# 70 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_BossWentToJackASubmarine:
+# 71 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "What? What? What do you want with \n"
+# 72 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "TEAM AQUA?\p"
 # 73 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "What? What? What do you want with \n"
+	.string "Our BOSS isn't here!\n"
 # 74 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "TEAM AQUA?\p"
-# 75 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Our BOSS isn't here!\n"
-# 76 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "He's gone off to jack a submarine!\p"
-# 77 "data/maps/AquaHideout_1F/scripts.pory"
+# 75 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "… …\n"
-# 78 "data/maps/AquaHideout_1F/scripts.pory"
+# 76 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Where did he go?\p"
+# 77 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "Wahaha! Do you really think I'd tell\n"
+# 78 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "you something that crucial?$"
 # 79 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Wahaha! Do you really think I'd tell\n"
+
 # 80 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "you something that crucial?$"
-# 81 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 82 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_BossIsOnRoute122:
-# 83 "data/maps/AquaHideout_1F/scripts.pory"
+# 81 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "What? What? What do you want with \n"
-# 84 "data/maps/AquaHideout_1F/scripts.pory"
+# 82 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "TEAM AQUA?\p"
-# 85 "data/maps/AquaHideout_1F/scripts.pory"
+# 83 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Our BOSS isn't here! He's on his way to\n"
-# 86 "data/maps/AquaHideout_1F/scripts.pory"
+# 84 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "MT. PYRE on ROUTE 122!\p"
+# 85 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "… …\n"
+# 86 "data/maps/AquaHideout_1F/scripts.pory"
+	.string "Why did he go?\p"
 # 87 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "… …\n"
+	.string "Wahaha! Do you really think I'd tell\n"
 # 88 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Why did he go?\p"
+	.string "you something that crucial?$"
 # 89 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "Wahaha! Do you really think I'd tell\n"
+
 # 90 "data/maps/AquaHideout_1F/scripts.pory"
-	.string "you something that crucial?$"
-# 91 "data/maps/AquaHideout_1F/scripts.pory"
-
-# 92 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_TeamMagmaAtMtChimney:
-# 93 "data/maps/AquaHideout_1F/scripts.pory"
+# 91 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "What? What?\n"
-# 94 "data/maps/AquaHideout_1F/scripts.pory"
+# 92 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Are you a TEAM MAGMA grunt?\p"
-# 95 "data/maps/AquaHideout_1F/scripts.pory"
+# 93 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "I hear that TEAM MAGMA is after\n"
-# 96 "data/maps/AquaHideout_1F/scripts.pory"
+# 94 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "an awesome POKéMON at MT. CHIMNEY.\p"
-# 97 "data/maps/AquaHideout_1F/scripts.pory"
+# 95 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "But what is that POKéMON like?$"
-# 98 "data/maps/AquaHideout_1F/scripts.pory"
+# 96 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 99 "data/maps/AquaHideout_1F/scripts.pory"
+# 97 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_BossIsInSlateportCity:
-# 100 "data/maps/AquaHideout_1F/scripts.pory"
+# 98 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "What? What? What do you want with\n"
-# 101 "data/maps/AquaHideout_1F/scripts.pory"
+# 99 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "TEAM AQUA?\p"
-# 102 "data/maps/AquaHideout_1F/scripts.pory"
+# 100 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Our BOSS isn't here!\n"
-# 103 "data/maps/AquaHideout_1F/scripts.pory"
+# 101 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "He's on his way to SLATEPORT CITY!\p"
-# 104 "data/maps/AquaHideout_1F/scripts.pory"
+# 102 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "… …\n"
-# 105 "data/maps/AquaHideout_1F/scripts.pory"
+# 103 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Why did he go?\p"
-# 106 "data/maps/AquaHideout_1F/scripts.pory"
+# 104 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Wahaha! Do you really think I'd tell\n"
-# 107 "data/maps/AquaHideout_1F/scripts.pory"
+# 105 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "you something that crucial?$"
-# 108 "data/maps/AquaHideout_1F/scripts.pory"
+# 106 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 109 "data/maps/AquaHideout_1F/scripts.pory"
+# 107 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_Grunt1Intro:
-# 110 "data/maps/AquaHideout_1F/scripts.pory"
+# 108 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Ayiyiyi!\n"
-# 111 "data/maps/AquaHideout_1F/scripts.pory"
+# 109 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Suspicious character spotted!$"
-# 112 "data/maps/AquaHideout_1F/scripts.pory"
+# 110 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 113 "data/maps/AquaHideout_1F/scripts.pory"
+# 111 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_Grunt1Defeat:
-# 114 "data/maps/AquaHideout_1F/scripts.pory"
+# 112 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "Grrrrr…\n"
-# 115 "data/maps/AquaHideout_1F/scripts.pory"
+# 113 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "I lost it!$"
-# 116 "data/maps/AquaHideout_1F/scripts.pory"
+# 114 "data/maps/AquaHideout_1F/scripts.pory"
 
-# 117 "data/maps/AquaHideout_1F/scripts.pory"
+# 115 "data/maps/AquaHideout_1F/scripts.pory"
 AquaHideout_1F_Text_Grunt1PostBattle:
-# 118 "data/maps/AquaHideout_1F/scripts.pory"
+# 116 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "I took the loss for the TEAM,\n"
-# 119 "data/maps/AquaHideout_1F/scripts.pory"
+# 117 "data/maps/AquaHideout_1F/scripts.pory"
 	.string "but I did my job…$"

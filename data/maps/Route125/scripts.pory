@@ -1,4 +1,7 @@
 raw `
+.set LOCALID_CANDICE, 11
+
+
 Route125_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route125_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route125_OnLoad
@@ -7,6 +10,7 @@ Route125_MapScripts::
 
 Route125_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_RECEIVED_TM_BLIZZARD, SetCandicePermLoc
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_StartKyogreWeather
@@ -15,6 +19,7 @@ Route125_OnTransition:
 Route125_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_PlaceTilesRoute125West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_PlaceTilesRoute125East
+	call_if_set FLAG_RECEIVED_TM_BLIZZARD, SetCandicePermLoc
 	end
 
 Route125_OnFrame:
@@ -83,3 +88,120 @@ Route125_EventScript_Auron::
 	end
 
 `
+
+script Route125_EventScript_Candice{
+	lockall
+	applymovement(LOCALID_CANDICE, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_TM_BLIZZARD, Route125_EventScript_CandiceDefeated)
+	goto_if_set(FLAG_DECLINED_CANDICE_BATTLE, Route125_EventScript_CandiceRequestBattleAgain)
+	msgbox(Candice_Greeting, MSGBOX_YESNO)
+	goto(Route125_EventScript_BattleCandicePrompt)
+	end
+}
+
+script Route125_EventScript_CandiceRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(Route125_EventScript_BattleCandicePrompt)
+	end
+}
+
+script Route125_EventScript_BattleCandicePrompt{
+	call_if_eq(VAR_RESULT, YES, Route125_EventScript_BattleCandice)
+	goto_if_eq(VAR_RESULT, NO, Route125_EventScript_DeclineCandiceBattle)
+	closemessage
+	end
+}
+
+script Route125_EventScript_DeclineCandiceBattle {
+	setflag(FLAG_DECLINED_CANDICE_BATTLE)
+	msgbox("Let me know if you want to battle.", MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route125_EventScript_BattleCandice{
+	msgbox("Okay then!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_CANDICE, Candice_Outro)
+	goto(Route125_EventScript_CandiceGiveItems)
+	return
+}
+	
+
+script Route125_EventScript_CandiceDefeated{
+	msgbox(PostBattle_Candice, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script Route125_EventScript_CandiceGiveItems{
+	giveitem(ITEM_TM_BLIZZARD)
+	giveitem(ITEM_TM_TRIPLE_AXEL)
+	setflag(FLAG_RECEIVED_TM_BLIZZARD)
+	msgbox(Candice_ExplainItems)
+	waitmessage
+	switch (var(VAR_FACING)) {
+        case DIR_EAST:
+			goto(CandiceMoveScript2)
+		default:
+            goto(CandiceMoveScript1)
+	}
+	release
+	end
+}
+
+script CandiceMoveScript1 {
+	applymovement(LOCALID_CANDICE, CandiceUnblockCaveStepWest)
+	copyobjectxytoperm(LOCALID_CANDICE)
+}
+
+script CandiceMoveScript2 {
+	applymovement(LOCALID_CANDICE, CandiceUnblockCaveStepEast)
+	copyobjectxytoperm(LOCALID_CANDICE)
+}
+
+script CandiceUnblockCaveStepWest
+{
+	walk_left
+	face_down
+	step_end
+}
+script CandiceUnblockCaveStepEast
+{
+	walk_right
+	face_down
+	step_end
+}
+
+script SetCandicePermLoc {
+	setobjectxyperm(LOCALID_CANDICE, 21, 20)
+}
+
+text Candice_ExplainItems{
+	"Those are some of my favorite Ice-type\n"
+	"moves, they may not be the most\p"
+	"accurate, but they sure do deal damage\n"
+	"if they land! I'll step out of the way\l"
+	"now and let you through."
+}
+
+text Candice_Greeting{
+	"Oh, hello there. I take it you're a\n"
+	"trainer who wants to get into this\p"
+	"cave? Well, there are a lot of strong\n"
+	"Pokémon inside, so I've decided to stay\p"
+	"out here and make sure no weak trainers\n"
+	"enter. So if you want to go in, you'll\p"
+	"have to beat me. Are you here to\n"
+	"challenge me then?"
+}
+	
+text Candice_Outro{
+	"Looks like you'll be just fine in this\n"
+	"cave."
+}
+
+
+text PostBattle_Candice{
+	"The Pokémon in there are strong,\n"
+	"aren't they?"
+}

@@ -776,6 +776,16 @@
 	trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
 	.endm
 
+	@ Sets gTrainerBattleOpponent_A for use in a special battle. Takes a trainer and loss text
+    .macro trainerbattle_set_trainer_A trainer:req, lose_text:req
+    trainerbattle TRAINER_BATTLE_SET_TRAINER_A, \trainer, 0, \lose_text, \lose_text
+    .endm
+
+    @ Sets gTrainerBattleOpponent_B for use in a special battle. Takes a trainer and loss text
+    .macro trainerbattle_set_trainer_B trainer:req, lose_text:req
+    trainerbattle TRAINER_BATTLE_SET_TRAINER_B, \trainer, 0, \lose_text, \lose_text
+    .endm
+
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
 	@ are run by trainerbattle), and blocks script execution until the battle finishes.

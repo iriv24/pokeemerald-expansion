@@ -81,6 +81,30 @@ MossdeepCity_EventScript_VisitedMossdeep::
 	setvar VAR_TEMP_1, 1
 	end
 
+MossdeepCity_EventScript_Grunt1::
+	msgbox MossdeepCity_Text_Grunt1, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_Grunt2::
+	msgbox MossdeepCity_Text_Grunt2, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_Grunt3::
+	msgbox MossdeepCity_Text_Grunt3, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_Grunt4::
+	msgbox MossdeepCity_Text_Grunt4, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_StevenPreRocket::
+	msgbox MossdeepCity_Text_StevenPreRocket, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_DrakePreRocket::
+	msgbox MossdeepCity_Text_DrakePreRocket, MSGBOX_NPC
+	end
+
 MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	lockall
 	applymovement LOCALID_MAXIE, MossdeepCity_Movement_MaxieGestureToSpaceCenter
@@ -311,6 +335,43 @@ MossdeepCity_Movement_ScottExitEast:
 	walk_left
 	step_end
 
+MossdeepCity_EventScript_FormerDynamicPunchTutor::
+	lockall
+	faceplayer
+	msgbox MossdeepCity_Text_FormerDynamicPunchTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MossdeepCity_Text_FormerDynamicPunchTutor:
+	.string "I used to be able to punch dynamically.. \n"
+	.string "Oh, what happened?$"
+
+MossdeepCity_Text_StevenPreRocket:
+	.string "Oh, hello there, {PLAYER}. We figured\p"
+	.string "you'd show up here eventually. Drake\n"
+	.string "and I are planning to stop whatever\p"
+	.string "Team Magma is planning here, why don't\n"
+	.string "you take on the Mossdeep Gym challenge\l"
+	.string "and then join us afterwards?$"
+
+MossdeepCity_Text_DrakePreRocket:
+	.string "{PLAYER}. Steven and I will handle\n"
+	.string "these insolent pups.$"
+
+MossdeepCity_Text_Grunt1:
+	.string "What are you looking at, brat? Get lost.$"
+
+MossdeepCity_Text_Grunt2:
+	.string "This mission is gonna be a huge\n"
+	.string "success!$"
+
+MossdeepCity_Text_Grunt3:
+	.string "The boss is so smart, I don't know how\n"
+	.string "he thinks of these plans.$"
+
+MossdeepCity_Text_Grunt4:
+	.string "Scram!$"
+
 MossdeepCity_Text_WantKingsRockStevenGaveMe:
 	.string "I got this from STEVEN, but I don't\n"
 	.string "know what it's good for.\p"
@@ -417,12 +478,11 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
 	.string "pretty strong, so I decided to come\l"
 	.string "take a look-see for myself.\p"
-	.string "But there's something wrong about\n"
-	.string "this town.\p"
-	.string "People are going on about a warning\n"
-	.string "letter and the SPACE CENTER…\p"
-	.string "I don't think it concerns me in any\n"
-	.string "way, though.$"
+	.string "But Team Magma's presence here... It's\n"
+	.string "making me a bit uneasy, I'm going to\p"
+	.string "split before things start going down.\n"
+	.string "I'm sure you'll take care of business as\p"
+	.string "usual, {PLAYER}.$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "Ahh… It feels great letting the waves\n"

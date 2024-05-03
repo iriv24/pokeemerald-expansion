@@ -338,16 +338,16 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_BYRON",
       "x": 9,
       "y": 60,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route120_EventScript_Chip",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route120_EventScript_Byron",
       "flag": "0"
     },
     {
@@ -416,7 +416,7 @@
       "flag": "FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "graphics_id": "OBJ_EVENT_GFX_DRAKE",
       "x": 13,
       "y": 15,
       "elevation": 4,
@@ -425,7 +425,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route120_EventScript_Steven",
+      "script": "Route120_EventScript_Drake",
       "flag": "FLAG_HIDE_ROUTE_120_STEVEN"
     },
     {
@@ -459,7 +459,7 @@
       "x": 10,
       "y": 72,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_MOUNTAIN_DISGUISE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -472,7 +472,7 @@
       "x": 19,
       "y": 28,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_TREE_DISGUISE",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -615,139 +615,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "weather",
-      "x": 7,
-      "y": 15,
-      "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_RAIN"
-    },
-    {
-      "type": "weather",
-      "x": 7,
-      "y": 16,
-      "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_RAIN"
-    },
-    {
-      "type": "weather",
-      "x": 22,
-      "y": 61,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_RAIN"
-    },
-    {
-      "type": "weather",
-      "x": 12,
-      "y": 64,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_RAIN"
-    },
-    {
-      "type": "weather",
-      "x": 35,
-      "y": 63,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 36,
-      "y": 63,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 37,
-      "y": 63,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 38,
-      "y": 63,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 32,
-      "y": 88,
-      "elevation": 5,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 28,
-      "y": 15,
-      "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 28,
-      "y": 16,
-      "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 28,
-      "y": 17,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY"
-    },
-    {
-      "type": "weather",
-      "x": 32,
-      "y": 89,
-      "elevation": 5,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 32,
-      "y": 90,
-      "elevation": 5,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 32,
-      "y": 91,
-      "elevation": 5,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 10,
-      "y": 75,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 11,
-      "y": 75,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 12,
-      "y": 75,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    },
-    {
-      "type": "weather",
-      "x": 13,
-      "y": 75,
-      "elevation": 3,
-      "weather": "COORD_EVENT_WEATHER_SUNNY_CLOUDS"
-    }
+
   ],
   "bg_events": [
     {

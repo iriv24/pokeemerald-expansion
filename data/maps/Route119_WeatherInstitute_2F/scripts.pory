@@ -289,7 +289,10 @@ Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 	.string "Thanks!\n"
 	.string "Thanks to you, we're safe!\p"
 	.string "It might be an odd way of thanking you,\n"
-	.string "but take this POKéMON.$"
+	.string "but take this Pokémon.\p"
+	.string "Honestly, it's pretty bad, but no way\n"
+	.string "the creator was putting this idiot out"
+	.string "in the wild, you know?$"
 
 @ Unused
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
