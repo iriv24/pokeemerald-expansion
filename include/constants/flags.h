@@ -251,7 +251,7 @@
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
 #define FLAG_RECEIVED_TM_ROAR                0xE7
-#define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
+#define FLAG_UNUSED_0x0E8                    0xE8 // Unused Flag
 
 #define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
 

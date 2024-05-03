@@ -335,6 +335,17 @@ MossdeepCity_Movement_ScottExitEast:
 	walk_left
 	step_end
 
+MossdeepCity_EventScript_FormerDynamicPunchTutor::
+	lockall
+	faceplayer
+	msgbox MossdeepCity_Text_FormerDynamicPunchTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MossdeepCity_Text_FormerDynamicPunchTutor:
+	.string "I used to be able to punch dynamically.. \n"
+	.string "Oh, what happened?$"
+
 MossdeepCity_Text_StevenPreRocket:
 	.string "Oh, hello there, {PLAYER}. We figured\p"
 	.string "you'd show up here eventually. Drake\n"

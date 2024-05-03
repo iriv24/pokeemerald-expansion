@@ -136,6 +136,11 @@ MossdeepCity_StevensHouse_EventScript_RockDisplay::
 	end
 
 MossdeepCity_StevensHouse_EventScript_Steven::
+	goto_if_set FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, MossdeepCity_StevensHouse_EventScript_StevenBeatMagma
+	msgbox MossdeepCity_StevensHouse_Text_MagmaHideout, MSGBOX_NPC
+	end
+
+MossdeepCity_StevensHouse_EventScript_StevenBeatMagma::
 	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_NPC
 	end
 
@@ -171,11 +176,18 @@ MossdeepCity_StevensHouse_Text_ExplainDive:
 	.string "In some places, it won't be possible\n"
 	.string "for you to surface, though.$"
 
+MossdeepCity_StevensHouse_Text_MagmaHideout:
+	.string "That Magma Emblem should do something\n"
+	.string "if you go to Jagged Pass with it, though \p"
+	.string "I'm not sure what. I would recommend\n"
+	.string "heading there before helping Drake\l"
+	.string "with Team Aqua.$"
+
 MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis:
-	.string "STEVEN: Apparently, there's an\n"
+	.string "Apparently, there's an\n"
 	.string "underwater cavern between\l"
-	.string "MOSSDEEP and SOOTOPOLIS.\p"
-	.string "You know, the one that CAPT. STERN\n"
+	.string "Mossdeep and Sootopolis.\p"
+	.string "You know, the one that Capt. Stern\n"
 	.string "found in his submarine.$"
 
 MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum:
