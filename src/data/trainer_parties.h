@@ -39,22 +39,29 @@ static const struct TrainerMon sParty_GruntAquaHideout4[] = {
 
 static const struct TrainerMon sParty_GruntSeafloorCavern1[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 70,
+    .species = SPECIES_MIGHTYENA,
+    },
+    {
+    .lvl = 70,
+    .species = SPECIES_PERSIAN,
+    },
+    {
+    .lvl = 70,
+    .species = SPECIES_PERSIAN_ALOLAN,
     }
 };
 
-static const struct TrainerMon sParty_GruntSeafloorCavern2[] = {
-    {
-    .lvl = 36,
-    .species = SPECIES_CARVANHA,
-    }
-};
+
 
 static const struct TrainerMon sParty_GruntSeafloorCavern3[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_ZUBAT,
+    .lvl = 70,
+    .species = SPECIES_CROBAT,
+    },
+    {
+    .lvl = 70,
+    .species = SPECIES_CARRACOSTA,
     }
 };
 
@@ -123,8 +130,12 @@ static const struct TrainerMon sParty_Ed[] = {
 
 static const struct TrainerMon sParty_GruntSeafloorCavern4[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_CARVANHA,
+    .lvl = 70,
+    .species = SPECIES_GOLISOPOD,
+    },
+    {
+    .lvl = 70,
+    .species = SPECIES_LOKIX,
     }
 };
 
@@ -528,6 +539,17 @@ static const struct TrainerMon sParty_ShellySeafloorCavern[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 37,
     .species = SPECIES_MIGHTYENA,
+    }
+};
+
+static const struct TrainerMon sParty_MattSeafloorCavern[] = {
+    {
+    .lvl = 70,
+    .species = SPECIES_KINGDRA,
+    },
+    {
+    .lvl = 70,
+    .species = SPECIES_DRAGALGE,
     }
 };
 
@@ -8640,14 +8662,12 @@ static const struct TrainerMon sParty_Catherine5[] = {
 
 static const struct TrainerMon sParty_GruntSeafloorCavern5[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 35,
-    .species = SPECIES_MIGHTYENA,
+    .lvl = 70,
+    .species = SPECIES_HITMONTOP,
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 35,
-    .species = SPECIES_GOLBAT,
+    .lvl = 70,
+    .species = SPECIES_OBSTAGOON,
     }
 };
 

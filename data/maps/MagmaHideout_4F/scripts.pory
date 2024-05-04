@@ -8,7 +8,17 @@ raw `
 .set LOCALID_GROUDON_SLEEPING, 7
 
 MagmaHideout_4F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MagmaHideout_4F_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, MagmaHideout_4F_OnLoad
 	.byte 0
+
+MagmaHideout_4F_OnTransition:
+	call_if_eq VAR_BEAT_MAGMA_BACK_TO_BACK, 1, SetMagmaAdminsPermLoc
+	end
+
+MagmaHideout_4F_OnLoad:
+	call_if_eq VAR_BEAT_MAGMA_BACK_TO_BACK, 1, SetMagmaAdminsPermLoc
+	end
 
 MagmaHideout_4F_EventScript_Maxie::
 	msgbox MagmaHideout_4F_Text_MaxieAwakenGroudon, MSGBOX_DEFAULT
@@ -276,11 +286,18 @@ script MagmaHideout_EventScript_BackToBackTrigger{
 
 script MagmaHideout_EventScript_BackToBackScene{
 	lockall
-	playbgm(MUS_ENCOUNTER_MAGMA, TRUE)
+	playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
+	applymovement(OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha)
+	waitmovement(0)
 	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	msgbox(DelayForMaxie)
 	waitmessage
+	playse(SE_PIN)
+	playse(SE_PIN)
+	applymovement(LOCALID_TABITHA, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	waitmovement(0)
 	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight)
 	applymovement(LOCALID_GRUNT_3, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
@@ -300,6 +317,8 @@ script MagmaHideout_EventScript_BackToBackScene{
 	closemessage
 	applymovement(LOCALID_GRUNT_3, GruntLost)
 	waitmovement(0)
+	copyobjectxytoperm(LOCALID_GRUNT_3)
+	playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
 	applymovement(LOCALID_TABITHA, MagmaHideout_Movement_BackToBackTabithaApproachPlayer)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha)
@@ -310,6 +329,8 @@ script MagmaHideout_EventScript_BackToBackScene{
 	closemessage
 	applymovement(LOCALID_TABITHA, TabithaLost)
 	waitmovement(0)
+	copyobjectxytoperm(LOCALID_TABITHA)
+	setobjectmovementtype(LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT)
 	setvar(VAR_BEAT_MAGMA_BACK_TO_BACK, 1)
 	releaseall
 	end
@@ -378,4 +399,10 @@ text DealWithYouMyself{
 text ThinkWeDidOurJobs{
 	"Something tells me we did our jobs... Do\n"
 	"you feel that aura of power in the air?"
+}
+
+script SetMagmaAdminsPermLoc {
+	setobjectxyperm(LOCALID_GRUNT_3, 38, 24)
+	setobjectxyperm(LOCALID_TABITHA, 36, 22)
+	setobjectmovementtype(LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT)
 }

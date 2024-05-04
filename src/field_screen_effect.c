@@ -1235,7 +1235,7 @@ void DoOrbEffect(void)
     if (gSpecialVar_Result == 0)
     {
         tBlueOrb = TRUE;
-        tCenterX = 104;
+        tCenterX = 136;
     }
     else if (gSpecialVar_Result == 1)
     {
