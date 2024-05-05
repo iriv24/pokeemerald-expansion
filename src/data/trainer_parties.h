@@ -3725,40 +3725,59 @@ static const struct TrainerMon sParty_Glacia[] = {
 
 static const struct TrainerMon sParty_Drake[] = {
     {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 52,
-    .species = SPECIES_SHELGON,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROCK_TOMB, MOVE_DRAGON_CLAW, MOVE_PROTECT, MOVE_DOUBLE_EDGE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 54,
-    .species = SPECIES_ALTARIA,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_DOUBLE_EDGE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 53,
-    .species = SPECIES_KINGDRA,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SMOKESCREEN, MOVE_DRAGON_DANCE, MOVE_SURF, MOVE_BODY_SLAM}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 53,
-    .species = SPECIES_FLYGON,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_DRAGON_BREATH, MOVE_EARTHQUAKE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 82,
+    .species = SPECIES_SALAMENCE,
+    .nature = NATURE_HASTY,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_OUTRAGE, MOVE_DUAL_WINGBEAT, MOVE_FIRE_BLAST, MOVE_HYDRO_PUMP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 55,
-    .species = SPECIES_SALAMENCE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_CRUNCH}
-    }
+    .lvl = 82,
+    .species = SPECIES_MAGEARNA,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_SOUL_HEART,
+    .moves = {MOVE_FLASH_CANNON, MOVE_FLEUR_CANNON, MOVE_ENERGY_BALL, MOVE_SHIFT_GEAR}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 82,
+    .species = SPECIES_ARCHALUDON,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_STAMINA,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_DRAGON_PULSE, MOVE_FLASH_CANNON, MOVE_BODY_PRESS, MOVE_DARK_PULSE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 82,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_AQUA_TAIL, MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_DRAGON_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 82,
+    .species = SPECIES_GOUGING_FIRE,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_PROTOSYNTHESIS,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_BREAKING_SWIPE, MOVE_PSYCHIC_FANGS, MOVE_STOMPING_TANTRUM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 82,
+    .species = SPECIES_RAYQUAZA,
+    .heldItem = ITEM_YACHE_BERRY,
+    .nature = NATURE_NAIVE,
+    .ability = ABILITY_AIR_LOCK,
+    .moves = {MOVE_DRAGON_ASCENT, MOVE_DRACO_METEOR, MOVE_ROCK_SLIDE, MOVE_EXTREME_SPEED}
+    },
 };
 
 static const struct TrainerMon sParty_Roxanne1[] = {

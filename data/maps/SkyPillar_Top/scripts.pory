@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_RAYQUAZA_SLEEPING, 1
+.set LOCALID_DRAKE, 3
 
 SkyPillar_Top_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_Top_OnResume
@@ -20,6 +21,7 @@ SkyPillar_Top_EventScript_TryRemoveRayquaza::
 SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
+	call_if_eq VAR_FOUGHT_AND_LOST_TO_DRAKE, 1, AddSleepingRayRay
 	end
 
 SkyPillar_Top_EventScript_SetCleanLayout::
@@ -85,6 +87,78 @@ SkyPillar_Top_EventScript_RanFromRayquaza2::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SkyPillar_Top_EventScript_Drake::
+	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 1
+	msgbox SkyPillar_Top_Text_DrakeAwakenRayquaza, MSGBOX_DEFAULT
+	closemessage
+	removeobject LOCALID_RAYQUAZA_SLEEPING
+	delay 30
+	applymovement LOCALID_DRAKE, Common_Movement_FaceDown
+	msgbox SkyPillar_Top_Text_DrakesPlan, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_DRAKE, SkyPillar_Top_Text_DrakeDefeat
+	delay 30
+	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 2
+	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
+	addobject LOCALID_RAYQUAZA_SLEEPING
+	applymovement LOCALID_DRAKE, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_DRAKE, BackAwayFromRayRay
+	waitmovement 0
+	delay 30
+	fadeoutbgm 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, SkyPillar_Top_Movement_CameraPanUp
+	waitmovement 0
+	special RemoveCameraObject
+	applymovement LOCALID_RAYQUAZA_SLEEPING, SkyPillar_Top_Movement_RayquazaStir
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
+	special ShakeCamera
+	waitstate
+	waitse
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 2  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitstate
+	waitmoncry
+	applymovement LOCALID_RAYQUAZA_SLEEPING, SkyPillar_Top_Movement_RayquazaFlyOff
+	waitmovement 0
+	removeobject LOCALID_RAYQUAZA_SLEEPING
+	msgbox SkyPillar_Top_Text_RayquazaFlewOff, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	fadeinbgm 1
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, SkyPillar_Top_Movement_CameraPanDown
+	waitmovement 0
+	special RemoveCameraObject
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 5
+	setvar VAR_SKY_PILLAR_STATE, 1
+	setflag FLAG_DEFEATED_DRAKE
+	applymovement LOCALID_DRAKE, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox SkyPillar_Top_Text_DrakeFarewell, MSGBOX_DEFAULT
+	closemessage
+	delay 50
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject LOCALID_DRAKE
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 	releaseall
 	end
 
@@ -181,7 +255,82 @@ SkyPillar_Top_Movement_CameraPanDown:
 	walk_slow_down
 	step_end
 
+SkyPillar_Top_Text_DrakeAwakenRayquaza:
+	.string "Rayquaza…\p"
+	.string "The ultimate Dragon-type, the master\n"
+	.string "of the skies…\p"
+	.string "The world has been thrown into chaos by\n"
+	.string "those two idiots Maxie and Archie, and\p"
+	.string "you, Rayquaza, are the only one who can\n"
+	.string "put a stop to Groudon and Kyogre…\p"
+	.string "So if I capture you here, the chaos will\n"
+	.string "never be stopped! Master Ball, go!$"
+
+SkyPillar_Top_Text_MaxieMasterBall:
+	.string "Master Ball, go!$"
+
+SkyPillar_Top_Text_DrakesPlan:
+	.string "I'm sorry, {PLAYER}. This has been what\n"
+	.string "I've been after all along. All this time,\p"
+	.string "I've been assisting both Team Aqua and\n"
+	.string "Team Magma from the shadows, hoping\p"
+	.string "their stupidity would unleash this\n"
+	.string "chaos onto the world. You did an\p"
+	.string "excellent job disrupting them and\n"
+	.string "thwarting all of their plans, {PLAYER}…\p"
+	.string "Unfortunately, that was all a part of\n"
+	.string "MY plan. I'm sorry I had to use you, but\p"
+	.string "I assure you, the destruction of this\n"
+	.string "world will be for the best in the long\p"
+	.string "run… The weak won't be able to survive\n"
+	.string "the coming events, leaving only the\p"
+	.string "strong to get stronger… You are the\n"
+	.string "strongest trainer I've seen in a long\p"
+	.string "time, {PLAYER}, which is why it's such a\n"
+	.string "shame you won't be around to see that\p"
+	.string "new world… I know you are going to try\n"
+	.string "and stop me, which is why I have to take\l"
+	.string "care of you here and now!$"
+
+SkyPillar_Top_Text_NotEvenYou:
+	.string "Not even you, {PLAYER}. Prepare to\n"
+	.string "become the first witness of the\l"
+	.string "terrible power of Primal Groudon!$"
+
+SkyPillar_Top_Text_DrakeDefeat:
+	.string "I can't believe it… even with Mega\n"
+	.string "Rayquaza, you were able to best me. \p"
+	.string "Looks like your power was the one\n"
+	.string "factor that I miscalculated…$"
+
+SkyPillar_Top_Text_DrakeFarewell:
+	.string "Rayquaza's gone…\p"
+	.string "It must not have seen me as a worthy\n"
+	.string "trainer, and perhaps it was right…\p"
+	.string "You defeated me, and now Rayquaza has\n"
+	.string "escaped…\p"
+	.string "It all fell apart here at the end. I\n"
+	.string "suppose I won't be able to show my face\l"
+	.string "at the Elite Four anymore…\p"
+	.string "Farewell, {PLAYER}. You were stronger\n"
+	.string "than even I could anticipate…\p"
+	.string "At least in the end, the strongest\n"
+	.string "trainer did prevail.$"
+
 SkyPillar_Top_Text_RayquazaFlewOff:
 	.string "The awakened RAYQUAZA flew off…$"
 
 `
+
+script BackAwayFromRayRay {
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+}
+
+script AddSleepingRayRay {
+	clearflag(FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA)
+	addobject(LOCALID_RAYQUAZA_SLEEPING)
+	return
+}
