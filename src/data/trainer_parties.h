@@ -3731,16 +3731,16 @@ static const struct TrainerMon sParty_Drake[] = {
     .nature = NATURE_HASTY,
     .heldItem = ITEM_LIFE_ORB,
     .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_OUTRAGE, MOVE_DUAL_WINGBEAT, MOVE_FIRE_BLAST, MOVE_HYDRO_PUMP}
+    .moves = {MOVE_DRAGON_CLAW, MOVE_DUAL_WINGBEAT, MOVE_FIRE_BLAST, MOVE_HYDRO_PUMP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 82,
     .species = SPECIES_MAGEARNA,
     .heldItem = ITEM_LEFTOVERS,
-    .nature = NATURE_TIMID,
+    .nature = NATURE_MODEST,
     .ability = ABILITY_SOUL_HEART,
-    .moves = {MOVE_FLASH_CANNON, MOVE_FLEUR_CANNON, MOVE_ENERGY_BALL, MOVE_SHIFT_GEAR}
+    .moves = {MOVE_FLASH_CANNON, MOVE_DAZZLING_GLEAM, MOVE_ENERGY_BALL, MOVE_AURA_SPHERE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3776,7 +3776,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .heldItem = ITEM_YACHE_BERRY,
     .nature = NATURE_NAIVE,
     .ability = ABILITY_AIR_LOCK,
-    .moves = {MOVE_DRAGON_ASCENT, MOVE_DRACO_METEOR, MOVE_ROCK_SLIDE, MOVE_EXTREME_SPEED}
+    .moves = {MOVE_DRAGON_ASCENT, MOVE_DRAGON_PULSE, MOVE_ROCK_SLIDE, MOVE_EXTREME_SPEED}
     },
 };
 
