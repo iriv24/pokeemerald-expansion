@@ -15,6 +15,7 @@ SeafloorCavern_Room9_MapScripts::
 
 SeafloorCavern_Room9_OnTransition:
 	call_if_eq VAR_BEAT_AQUA_BACK_TO_BACK, 1, SetAquaAdminsPermLoc
+	call_if_eq VAR_FOUGHT_AND_LOST_TO_BOSS, 1, AddSleepingKyogre
 	end
 
 SeafloorCavern_Room9_OnLoad:
@@ -23,6 +24,7 @@ SeafloorCavern_Room9_OnLoad:
 
 
 SeafloorCavern_EventScript_Archie::
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 1
 	msgbox SeafloorCavern_Room9_Text_ArchieAwakenKyogre, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -67,6 +69,7 @@ SeafloorCavern_EventScript_Archie::
 	closemessage
 	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_4F_Text_NotSurprised
 	delay 30
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	addobject LOCALID_KYOGRE
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
@@ -575,4 +578,11 @@ text MattRevenge{
 script SetAquaAdminsPermLoc {
 	setobjectxyperm(LOCALID_SHELLY, 14, 8)
 	setobjectxyperm(LOCALID_MATT, 10, 8)
+	return
+}
+
+script AddSleepingKyogre {
+	clearflag(FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP)
+	addobject(LOCALID_KYOGRE_SLEEPING)
+	return
 }

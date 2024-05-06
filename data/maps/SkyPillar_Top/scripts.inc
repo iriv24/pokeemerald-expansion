@@ -45,7 +45,7 @@ SkyPillar_Top_OnTransition:
 # 23 "data/maps/SkyPillar_Top/scripts.pory"
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
 # 24 "data/maps/SkyPillar_Top/scripts.pory"
-	call_if_eq VAR_FOUGHT_AND_LOST_TO_DRAKE, 1, AddSleepingRayRay
+	call_if_eq VAR_FOUGHT_AND_LOST_TO_BOSS, 1, AddSleepingRayRay
 # 25 "data/maps/SkyPillar_Top/scripts.pory"
 	end
 # 26 "data/maps/SkyPillar_Top/scripts.pory"
@@ -185,7 +185,7 @@ SkyPillar_Top_EventScript_RanFromRayquaza2::
 # 93 "data/maps/SkyPillar_Top/scripts.pory"
 SkyPillar_Top_EventScript_Drake::
 # 94 "data/maps/SkyPillar_Top/scripts.pory"
-	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 1
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 1
 # 95 "data/maps/SkyPillar_Top/scripts.pory"
 	msgbox SkyPillar_Top_Text_DrakeAwakenRayquaza, MSGBOX_DEFAULT
 # 96 "data/maps/SkyPillar_Top/scripts.pory"
@@ -205,7 +205,7 @@ SkyPillar_Top_EventScript_Drake::
 # 103 "data/maps/SkyPillar_Top/scripts.pory"
 	delay 30
 # 104 "data/maps/SkyPillar_Top/scripts.pory"
-	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 2
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 # 105 "data/maps/SkyPillar_Top/scripts.pory"
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
 # 106 "data/maps/SkyPillar_Top/scripts.pory"

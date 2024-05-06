@@ -14,6 +14,7 @@ MagmaHideout_4F_MapScripts::
 
 MagmaHideout_4F_OnTransition:
 	call_if_eq VAR_BEAT_MAGMA_BACK_TO_BACK, 1, SetMagmaAdminsPermLoc
+	call_if_eq VAR_FOUGHT_AND_LOST_TO_BOSS, 1, AddSleepingGroudon
 	end
 
 MagmaHideout_4F_OnLoad:
@@ -21,6 +22,7 @@ MagmaHideout_4F_OnLoad:
 	end
 
 MagmaHideout_4F_EventScript_Maxie::
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 1
 	msgbox MagmaHideout_4F_Text_MaxieAwakenGroudon, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -65,6 +67,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	closemessage
 	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
 	delay 30
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	addobject LOCALID_GROUDON
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
@@ -405,4 +408,10 @@ script SetMagmaAdminsPermLoc {
 	setobjectxyperm(LOCALID_GRUNT_3, 38, 24)
 	setobjectxyperm(LOCALID_TABITHA, 36, 22)
 	setobjectmovementtype(LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT)
+}
+
+script AddSleepingGroudon {
+	clearflag(FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP)
+	addobject(LOCALID_GROUDON_SLEEPING)
+	return
 }

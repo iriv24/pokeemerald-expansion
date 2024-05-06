@@ -21,7 +21,7 @@ SkyPillar_Top_EventScript_TryRemoveRayquaza::
 SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
-	call_if_eq VAR_FOUGHT_AND_LOST_TO_DRAKE, 1, AddSleepingRayRay
+	call_if_eq VAR_FOUGHT_AND_LOST_TO_BOSS, 1, AddSleepingRayRay
 	end
 
 SkyPillar_Top_EventScript_SetCleanLayout::
@@ -91,7 +91,7 @@ SkyPillar_Top_EventScript_RanFromRayquaza2::
 	end
 
 SkyPillar_Top_EventScript_Drake::
-	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 1
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 1
 	msgbox SkyPillar_Top_Text_DrakeAwakenRayquaza, MSGBOX_DEFAULT
 	closemessage
 	removeobject LOCALID_RAYQUAZA_SLEEPING
@@ -101,7 +101,7 @@ SkyPillar_Top_EventScript_Drake::
 	closemessage
 	trainerbattle_no_intro TRAINER_DRAKE, SkyPillar_Top_Text_DrakeDefeat
 	delay 30
-	setvar VAR_FOUGHT_AND_LOST_TO_DRAKE, 2
+	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
 	addobject LOCALID_RAYQUAZA_SLEEPING
 	applymovement LOCALID_DRAKE, Common_Movement_FaceUp
