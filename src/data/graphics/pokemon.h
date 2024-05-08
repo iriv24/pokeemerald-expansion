@@ -5717,6 +5717,20 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Empoleon[] = INCBIN_U8("graphics/pokemon/empoleon/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_EmpoleonMegaD[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megaempoleond.4bpp.lz");
+    const u32 gMonPalette_EmpoleonMegaD[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megadnormal.gbapal.lz");
+    const u32 gMonBackPic_EmpoleonMegaD[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megaempoleond_back.4bpp.lz");
+    const u32 gMonShinyPalette_EmpoleonMegaD[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megadshiny.gbapal.lz");
+    //const u8 gMonIcon_EmpoleonMegaO[] = INCBIN_U8("graphics/pokemon/empoleon/mega_d/icon.4bpp");
+
+    const u32 gMonFrontPic_EmpoleonMegaO[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaempoleono.4bpp.lz");
+    const u32 gMonPalette_EmpoleonMegaO[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaonormal.gbapal.lz");
+    const u32 gMonBackPic_EmpoleonMegaO[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaempoleono_back.4bpp.lz");
+    const u32 gMonShinyPalette_EmpoleonMegaO[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaoshiny.gbapal.lz");
+    //const u8 gMonIcon_EmpoleonMegaO[] = INCBIN_U8("graphics/pokemon/empoleon/mega_o/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #endif //P_FAMILY_PIPLUP
 
 #if P_FAMILY_STARLY
