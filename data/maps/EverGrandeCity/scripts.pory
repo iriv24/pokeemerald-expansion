@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_VOLKNER, 3
+
 EverGrandeCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
 	.byte 0
@@ -450,5 +452,142 @@ text DawnFarewell{
 	"Become the Champion, {PLAYER}, I know\n"
 	"you can do it!\p"
 	"So long, my friend, until next time!"
+}
+
+
+
+script EverGrandeCity_EventScript_Volkner{
+	lockall
+	applymovement(LOCALID_VOLKNER, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_ZERAORA, EverGrandeCity_EventScript_VolknerDefeated)
+	goto_if_set(FLAG_DECLINED_VOLKNER_BATTLE, EverGrandeCity_EventScript_VolknerRequestBattleAgain)
+	msgbox(Volkner_Greeting, MSGBOX_YESNO)
+	goto(EverGrandeCity_EventScript_BattleVolknerPrompt)
+	end
+}
+
+script EverGrandeCity_EventScript_VolknerRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(EverGrandeCity_EventScript_BattleVolknerPrompt)
+	end
+}
+
+script EverGrandeCity_EventScript_BattleVolknerPrompt{
+	call_if_eq(VAR_RESULT, YES, EverGrandeCity_EventScript_BattleVolkner)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineVolknerBattle)
+	closemessage
+	end
+}
+
+script EverGrandeCity_EventScript_DeclineVolknerBattle {
+	setflag(FLAG_DECLINED_VOLKNER_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script EverGrandeCity_EventScript_BattleVolkner{
+	msgbox("This is going to be electric!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_VOLKNER, Volkner_Outro)
+	giveitem(ITEM_TM_RISING_VOLTAGE)
+	goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
+	return
+}
+	
+
+script EverGrandeCity_EventScript_VolknerDefeated{
+	msgbox(PostBattle_Volkner, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script EverGrandeCity_EventScript_VolknerGiveZeraora{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA)
+	givemon(SPECIES_ZERAORA, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveZeraoraPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script EverGrandeCity_EventScript_ReceiveZeraoraParty{
+	call(EverGrandeCity_EventScript_ReceivedZeraoraFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_ExplainZeraora)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(EverGrandeCity_EventScript_ExplainZeraora)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_ReceiveZeraoraPC {
+	call(EverGrandeCity_EventScript_ReceivedZeraoraFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_SendZeraoraToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(EverGrandeCity_EventScript_SendZeraoraToPC)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_SendZeraoraToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(EverGrandeCity_EventScript_ExplainZeraora)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_ReceivedZeraoraFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(EverGrandeCity_Text_PlayerReceivedZeraora)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_ZERAORA)
+	return
+}
+	
+
+script EverGrandeCity_EventScript_ExplainZeraora {
+	msgbox(Volkner_ExplainZeraora, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_ZERAORA)
+	release
+	end
+}
+	
+text EverGrandeCity_Text_PlayerReceivedZeraora{
+	"{PLAYER} received Zeraora!$"
+}
+
+text Volkner_ExplainZeraora{
+	"Zeraora is definitely a favorite of\n"
+	"mine. His electrifying fists light up\l"
+	"any battle!\p"
+	"I hope you raise it well!"
+}
+	
+text Volkner_Greeting{
+	"Wow, another trainer showed up here. It\n"
+	"gets pretty boring being the strongest\p"
+	"Gym Leader in a given region… The weak\n"
+	"trainers get weeded out before they\p"
+	"can make it to me, usually. But you're\n"
+	"now the fourth strong-looking trainer\p"
+	"I've seen come through here, it's really\n"
+	"got me itching for a battle.\p"
+	"So, will you battle me?"
+}
+	
+text Volkner_Outro{
+	"Ha! Wow, the trainers here are way\n"
+	"stronger than in Sinnoh, how exciting!"
+}
+
+
+text PostBattle_Volkner{
+	"I think I'll just stay here and wait for\n"
+	"more strong trainers, someone else can\l"
+	"run my Gym for all I care."
 }
 	

@@ -14559,12 +14559,60 @@ static const struct TrainerMon sParty_Candice[] = {
 
 static const struct TrainerMon sParty_Volkner[] = {
     {
-    .lvl = 18,
-    .species = SPECIES_LOMBRE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_MIRAIDON,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_HADRON_ENGINE,
+    .heldItem = ITEM_TERRAIN_EXTENDER,
+    .moves = {MOVE_ELECTRO_DRIFT, MOVE_DRAGON_PULSE, MOVE_OVERHEAT, MOVE_TAUNT}
     },
     {
-    .lvl = 18,
-    .species = SPECIES_MARILL,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_RAICHU_ALOLAN,
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_SURGE_SURFER,
+    .heldItem = ITEM_CHOICE_SPECS,
+    .moves = {MOVE_PSYCHIC, MOVE_RISING_VOLTAGE, MOVE_THUNDERBOLT, MOVE_SURF}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_IRON_HANDS,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_QUARK_DRIVE,
+    //TODO replace with booster energy
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_FAKE_OUT, MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_HEAVY_SLAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_DODRIO,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_ROCK_HEAD,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_BRAVE_BIRD, MOVE_DOUBLE_EDGE, MOVE_QUICK_ATTACK, MOVE_JUMP_KICK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_ZERAORA,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_VOLT_ABSORB,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_PLASMA_FISTS, MOVE_AERIAL_ACE, MOVE_FAKE_OUT, MOVE_FACADE}
+    },
+    {
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
+    .lvl = 200,
+    .species = SPECIES_TOXTRICITY,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_PUNK_ROCK,
+    .heldItem = ITEM_TOXTRICITITE,
+    .moves = {MOVE_SLUDGE_WAVE, MOVE_OVERDRIVE, MOVE_BOOMBURST, MOVE_HIDDEN_POWER}
     }
 };
 

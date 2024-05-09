@@ -1,732 +1,882 @@
 # 1 "data/maps/EverGrandeCity/scripts.pory"
 
 # 2 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_MapScripts::
+.set LOCALID_VOLKNER, 3
 # 3 "data/maps/EverGrandeCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
+
 # 4 "data/maps/EverGrandeCity/scripts.pory"
-	.byte 0
+EverGrandeCity_MapScripts::
 # 5 "data/maps/EverGrandeCity/scripts.pory"
-
+	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
 # 6 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_OnTransition:
+	.byte 0
 # 7 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+
 # 8 "data/maps/EverGrandeCity/scripts.pory"
-	end
+EverGrandeCity_OnTransition:
 # 9 "data/maps/EverGrandeCity/scripts.pory"
-
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 # 10 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_VictoryRoadSign::
+	end
 # 11 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_EnteringVictoryRoad, MSGBOX_SIGN
+
 # 12 "data/maps/EverGrandeCity/scripts.pory"
-	end
+EverGrandeCity_EventScript_VictoryRoadSign::
 # 13 "data/maps/EverGrandeCity/scripts.pory"
-
+	msgbox EverGrandeCity_Text_EnteringVictoryRoad, MSGBOX_SIGN
 # 14 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_CitySign::
+	end
 # 15 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_CitySign, MSGBOX_SIGN
+
 # 16 "data/maps/EverGrandeCity/scripts.pory"
-	end
+EverGrandeCity_EventScript_CitySign::
 # 17 "data/maps/EverGrandeCity/scripts.pory"
-
+	msgbox EverGrandeCity_Text_CitySign, MSGBOX_SIGN
 # 18 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_PokemonLeagueSign::
+	end
 # 19 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_EnteringPokemonLeague, MSGBOX_SIGN
+
 # 20 "data/maps/EverGrandeCity/scripts.pory"
-	end
+EverGrandeCity_EventScript_PokemonLeagueSign::
 # 21 "data/maps/EverGrandeCity/scripts.pory"
-
+	msgbox EverGrandeCity_Text_EnteringPokemonLeague, MSGBOX_SIGN
 # 22 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_Rival::
+	end
 # 23 "data/maps/EverGrandeCity/scripts.pory"
-	lock
+
 # 24 "data/maps/EverGrandeCity/scripts.pory"
-	faceplayer
+EverGrandeCity_EventScript_Rival::
 # 25 "data/maps/EverGrandeCity/scripts.pory"
-	checkplayergender
+	lock
 # 26 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_EventScript_May
+	faceplayer
 # 27 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_EventScript_Brendan
+	checkplayergender
 # 28 "data/maps/EverGrandeCity/scripts.pory"
-	end
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_EventScript_May
 # 29 "data/maps/EverGrandeCity/scripts.pory"
-
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_EventScript_Brendan
 # 30 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_May::
+	end
 # 31 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_BeatRivalNotDawn
+
 # 32 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattleAgain
+EverGrandeCity_EventScript_May::
 # 33 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattle
-# 34 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineMayBattle
-# 35 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_MayWontBeBeaten, MSGBOX_DEFAULT
-# 36 "data/maps/EverGrandeCity/scripts.pory"
-	switch VAR_STARTER_MON
-# 37 "data/maps/EverGrandeCity/scripts.pory"
-	case 0, EverGrandeCity_EventScript_BattleMayTreecko
-# 38 "data/maps/EverGrandeCity/scripts.pory"
-	case 1, EverGrandeCity_EventScript_BattleMayTorchic
-# 39 "data/maps/EverGrandeCity/scripts.pory"
-	case 2, EverGrandeCity_EventScript_BattleMayMudkip
-# 40 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 41 "data/maps/EverGrandeCity/scripts.pory"
-
-# 42 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_MayAskToBattleAgain::
-# 43 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_MayBattleMe, MSGBOX_YESNO
-# 44 "data/maps/EverGrandeCity/scripts.pory"
-	return
-# 45 "data/maps/EverGrandeCity/scripts.pory"
-
-# 46 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_MayAskToBattle::
-# 47 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_MayShoppingLetsBattle, MSGBOX_YESNO
-# 48 "data/maps/EverGrandeCity/scripts.pory"
-	return
-# 49 "data/maps/EverGrandeCity/scripts.pory"
-
-# 50 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_DeclineMayBattle::
-# 51 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
-# 52 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_MayNotRaisingPokemon, MSGBOX_DEFAULT
-# 53 "data/maps/EverGrandeCity/scripts.pory"
-	release
-# 54 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 55 "data/maps/EverGrandeCity/scripts.pory"
-
-# 56 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleMayTreecko::
-# 57 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TREECKO, EverGrandeCity_Text_MayDefeat
-# 58 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedMay
-# 59 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 60 "data/maps/EverGrandeCity/scripts.pory"
-
-# 61 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleMayTorchic::
-# 62 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TORCHIC, EverGrandeCity_Text_MayDefeat
-# 63 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedMay
-# 64 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 65 "data/maps/EverGrandeCity/scripts.pory"
-
-# 66 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleMayMudkip::
-# 67 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_MUDKIP, EverGrandeCity_Text_MayDefeat
-# 68 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedMay
-# 69 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 70 "data/maps/EverGrandeCity/scripts.pory"
-
-# 71 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_DefeatedMay::
-# 72 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
-# 73 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_RivalsFlyAway
-# 74 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_CanYouBeatDawn, MSGBOX_DEFAULT
-# 75 "data/maps/EverGrandeCity/scripts.pory"
-	releaseall
-# 76 "data/maps/EverGrandeCity/scripts.pory"
-	end
-# 77 "data/maps/EverGrandeCity/scripts.pory"
-
-# 78 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_Brendan::
-# 79 "data/maps/EverGrandeCity/scripts.pory"
 	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_BeatRivalNotDawn
-# 80 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattleAgain
-# 81 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattle
-# 82 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineBrendanBattle
-# 83 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_BrendanWontBeBeaten, MSGBOX_DEFAULT
-# 84 "data/maps/EverGrandeCity/scripts.pory"
+# 34 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattleAgain
+# 35 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattle
+# 36 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineMayBattle
+# 37 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_MayWontBeBeaten, MSGBOX_DEFAULT
+# 38 "data/maps/EverGrandeCity/scripts.pory"
 	switch VAR_STARTER_MON
-# 85 "data/maps/EverGrandeCity/scripts.pory"
-	case 0, EverGrandeCity_EventScript_BattleBrendanTreecko
-# 86 "data/maps/EverGrandeCity/scripts.pory"
-	case 1, EverGrandeCity_EventScript_BattleBrendanTorchic
-# 87 "data/maps/EverGrandeCity/scripts.pory"
-	case 2, EverGrandeCity_EventScript_BattleBrendanMudkip
-# 88 "data/maps/EverGrandeCity/scripts.pory"
+# 39 "data/maps/EverGrandeCity/scripts.pory"
+	case 0, EverGrandeCity_EventScript_BattleMayTreecko
+# 40 "data/maps/EverGrandeCity/scripts.pory"
+	case 1, EverGrandeCity_EventScript_BattleMayTorchic
+# 41 "data/maps/EverGrandeCity/scripts.pory"
+	case 2, EverGrandeCity_EventScript_BattleMayMudkip
+# 42 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 89 "data/maps/EverGrandeCity/scripts.pory"
+# 43 "data/maps/EverGrandeCity/scripts.pory"
 
-# 90 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BrendanAskToBattleAgain::
-# 91 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_BrendanBattleMe, MSGBOX_YESNO
-# 92 "data/maps/EverGrandeCity/scripts.pory"
+# 44 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_MayAskToBattleAgain::
+# 45 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_MayBattleMe, MSGBOX_YESNO
+# 46 "data/maps/EverGrandeCity/scripts.pory"
 	return
-# 93 "data/maps/EverGrandeCity/scripts.pory"
+# 47 "data/maps/EverGrandeCity/scripts.pory"
 
-# 94 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BrendanAskToBattle::
-# 95 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_BrendanShoppingLetsBattle, MSGBOX_YESNO
-# 96 "data/maps/EverGrandeCity/scripts.pory"
+# 48 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_MayAskToBattle::
+# 49 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_MayShoppingLetsBattle, MSGBOX_YESNO
+# 50 "data/maps/EverGrandeCity/scripts.pory"
 	return
-# 97 "data/maps/EverGrandeCity/scripts.pory"
+# 51 "data/maps/EverGrandeCity/scripts.pory"
 
-# 98 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_DeclineBrendanBattle::
-# 99 "data/maps/EverGrandeCity/scripts.pory"
+# 52 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_DeclineMayBattle::
+# 53 "data/maps/EverGrandeCity/scripts.pory"
 	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
-# 100 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_BrendanNoConfidence, MSGBOX_DEFAULT
-# 101 "data/maps/EverGrandeCity/scripts.pory"
+# 54 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_MayNotRaisingPokemon, MSGBOX_DEFAULT
+# 55 "data/maps/EverGrandeCity/scripts.pory"
 	release
-# 102 "data/maps/EverGrandeCity/scripts.pory"
+# 56 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 103 "data/maps/EverGrandeCity/scripts.pory"
+# 57 "data/maps/EverGrandeCity/scripts.pory"
 
-# 104 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleBrendanTreecko::
-# 105 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TREECKO, EverGrandeCity_Text_BrendanDefeat
-# 106 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedBrendan
-# 107 "data/maps/EverGrandeCity/scripts.pory"
+# 58 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleMayTreecko::
+# 59 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TREECKO, EverGrandeCity_Text_MayDefeat
+# 60 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedMay
+# 61 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 108 "data/maps/EverGrandeCity/scripts.pory"
+# 62 "data/maps/EverGrandeCity/scripts.pory"
 
-# 109 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleBrendanTorchic::
-# 110 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TORCHIC, EverGrandeCity_Text_BrendanDefeat
-# 111 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedBrendan
-# 112 "data/maps/EverGrandeCity/scripts.pory"
+# 63 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleMayTorchic::
+# 64 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TORCHIC, EverGrandeCity_Text_MayDefeat
+# 65 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedMay
+# 66 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 113 "data/maps/EverGrandeCity/scripts.pory"
+# 67 "data/maps/EverGrandeCity/scripts.pory"
 
-# 114 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BattleBrendanMudkip::
-# 115 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_MUDKIP, EverGrandeCity_Text_BrendanDefeat
-# 116 "data/maps/EverGrandeCity/scripts.pory"
-	goto EverGrandeCity_EventScript_DefeatedBrendan
-# 117 "data/maps/EverGrandeCity/scripts.pory"
+# 68 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleMayMudkip::
+# 69 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_MUDKIP, EverGrandeCity_Text_MayDefeat
+# 70 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedMay
+# 71 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 118 "data/maps/EverGrandeCity/scripts.pory"
+# 72 "data/maps/EverGrandeCity/scripts.pory"
 
-# 119 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_DefeatedBrendan::
-# 120 "data/maps/EverGrandeCity/scripts.pory"
-    setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
-# 121 "data/maps/EverGrandeCity/scripts.pory"
+# 73 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_DefeatedMay::
+# 74 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
+# 75 "data/maps/EverGrandeCity/scripts.pory"
 	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_RivalsFlyAway
-# 122 "data/maps/EverGrandeCity/scripts.pory"
+# 76 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox EverGrandeCity_Text_CanYouBeatDawn, MSGBOX_DEFAULT
-# 123 "data/maps/EverGrandeCity/scripts.pory"
+# 77 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
-# 124 "data/maps/EverGrandeCity/scripts.pory"
+# 78 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 125 "data/maps/EverGrandeCity/scripts.pory"
+# 79 "data/maps/EverGrandeCity/scripts.pory"
 
-# 126 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_BeatRivalNotDawn::
-# 127 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_NotMovingUntilDawn, MSGBOX_DEFAULT
-# 128 "data/maps/EverGrandeCity/scripts.pory"
-	releaseall
-# 129 "data/maps/EverGrandeCity/scripts.pory"
+# 80 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_Brendan::
+# 81 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_BeatRivalNotDawn
+# 82 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattleAgain
+# 83 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattle
+# 84 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineBrendanBattle
+# 85 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_BrendanWontBeBeaten, MSGBOX_DEFAULT
+# 86 "data/maps/EverGrandeCity/scripts.pory"
+	switch VAR_STARTER_MON
+# 87 "data/maps/EverGrandeCity/scripts.pory"
+	case 0, EverGrandeCity_EventScript_BattleBrendanTreecko
+# 88 "data/maps/EverGrandeCity/scripts.pory"
+	case 1, EverGrandeCity_EventScript_BattleBrendanTorchic
+# 89 "data/maps/EverGrandeCity/scripts.pory"
+	case 2, EverGrandeCity_EventScript_BattleBrendanMudkip
+# 90 "data/maps/EverGrandeCity/scripts.pory"
 	end
-# 130 "data/maps/EverGrandeCity/scripts.pory"
+# 91 "data/maps/EverGrandeCity/scripts.pory"
 
-# 131 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_RivalFlyAway::
-# 132 "data/maps/EverGrandeCity/scripts.pory"
-	closemessage
-# 133 "data/maps/EverGrandeCity/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
-# 134 "data/maps/EverGrandeCity/scripts.pory"
-	waitmovement 0
-# 135 "data/maps/EverGrandeCity/scripts.pory"
-	delay 50
-# 136 "data/maps/EverGrandeCity/scripts.pory"
-	setfieldeffectargument 0, 1
-# 137 "data/maps/EverGrandeCity/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
-# 138 "data/maps/EverGrandeCity/scripts.pory"
-	delay 15
-# 139 "data/maps/EverGrandeCity/scripts.pory"
-	removeobject VAR_LAST_TALKED
-# 140 "data/maps/EverGrandeCity/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 141 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_MET_RIVAL_LILYCOVE
-# 142 "data/maps/EverGrandeCity/scripts.pory"
+# 92 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BrendanAskToBattleAgain::
+# 93 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_BrendanBattleMe, MSGBOX_YESNO
+# 94 "data/maps/EverGrandeCity/scripts.pory"
+	return
+# 95 "data/maps/EverGrandeCity/scripts.pory"
+
+# 96 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BrendanAskToBattle::
+# 97 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_BrendanShoppingLetsBattle, MSGBOX_YESNO
+# 98 "data/maps/EverGrandeCity/scripts.pory"
+	return
+# 99 "data/maps/EverGrandeCity/scripts.pory"
+
+# 100 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_DeclineBrendanBattle::
+# 101 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
+# 102 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+# 103 "data/maps/EverGrandeCity/scripts.pory"
 	release
+# 104 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 105 "data/maps/EverGrandeCity/scripts.pory"
+
+# 106 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleBrendanTreecko::
+# 107 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TREECKO, EverGrandeCity_Text_BrendanDefeat
+# 108 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+# 109 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 110 "data/maps/EverGrandeCity/scripts.pory"
+
+# 111 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleBrendanTorchic::
+# 112 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TORCHIC, EverGrandeCity_Text_BrendanDefeat
+# 113 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+# 114 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 115 "data/maps/EverGrandeCity/scripts.pory"
+
+# 116 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BattleBrendanMudkip::
+# 117 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_MUDKIP, EverGrandeCity_Text_BrendanDefeat
+# 118 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_DefeatedBrendan
+# 119 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 120 "data/maps/EverGrandeCity/scripts.pory"
+
+# 121 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_DefeatedBrendan::
+# 122 "data/maps/EverGrandeCity/scripts.pory"
+    setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
+# 123 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_RivalsFlyAway
+# 124 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_CanYouBeatDawn, MSGBOX_DEFAULT
+# 125 "data/maps/EverGrandeCity/scripts.pory"
+	releaseall
+# 126 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 127 "data/maps/EverGrandeCity/scripts.pory"
+
+# 128 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_BeatRivalNotDawn::
+# 129 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_NotMovingUntilDawn, MSGBOX_DEFAULT
+# 130 "data/maps/EverGrandeCity/scripts.pory"
+	releaseall
+# 131 "data/maps/EverGrandeCity/scripts.pory"
+	end
+# 132 "data/maps/EverGrandeCity/scripts.pory"
+
+# 133 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_RivalFlyAway::
+# 134 "data/maps/EverGrandeCity/scripts.pory"
+	closemessage
+# 135 "data/maps/EverGrandeCity/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+# 136 "data/maps/EverGrandeCity/scripts.pory"
+	waitmovement 0
+# 137 "data/maps/EverGrandeCity/scripts.pory"
+	delay 50
+# 138 "data/maps/EverGrandeCity/scripts.pory"
+	setfieldeffectargument 0, 1
+# 139 "data/maps/EverGrandeCity/scripts.pory"
+	dofieldeffect FLDEFF_NPCFLY_OUT
+# 140 "data/maps/EverGrandeCity/scripts.pory"
+	delay 15
+# 141 "data/maps/EverGrandeCity/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 142 "data/maps/EverGrandeCity/scripts.pory"
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 143 "data/maps/EverGrandeCity/scripts.pory"
-	end
+	setflag FLAG_MET_RIVAL_LILYCOVE
 # 144 "data/maps/EverGrandeCity/scripts.pory"
-
+	release
 # 145 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_EventScript_SetVisitedEverGrande::
-# 146 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_VISITED_EVER_GRANDE_CITY
-# 147 "data/maps/EverGrandeCity/scripts.pory"
-	setvar VAR_TEMP_1, 1
-# 148 "data/maps/EverGrandeCity/scripts.pory"
 	end
+# 146 "data/maps/EverGrandeCity/scripts.pory"
+
+# 147 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_EventScript_SetVisitedEverGrande::
+# 148 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_VISITED_EVER_GRANDE_CITY
 # 149 "data/maps/EverGrandeCity/scripts.pory"
-
+	setvar VAR_TEMP_1, 1
 # 150 "data/maps/EverGrandeCity/scripts.pory"
-
+	end
 # 151 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayShoppingLetsBattle:
+
 # 152 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}! Dawn told me about\n"
+
 # 153 "data/maps/EverGrandeCity/scripts.pory"
-	.string "everything that happened with Team\p"
+EverGrandeCity_Text_MayShoppingLetsBattle:
 # 154 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Aqua, Team Magma, and Drake! I can't\n"
+	.string "{PLAYER}! Dawn told me about\n"
 # 155 "data/maps/EverGrandeCity/scripts.pory"
-	.string "believe what he did, but I'm more\p"
+	.string "everything that happened with Team\p"
 # 156 "data/maps/EverGrandeCity/scripts.pory"
-	.string "impressed with how you were able to\n"
+	.string "Aqua, Team Magma, and Drake! I can't\n"
 # 157 "data/maps/EverGrandeCity/scripts.pory"
-	.string "stop all of them by yourself! It feels\p"
+	.string "believe what he did, but I'm more\p"
 # 158 "data/maps/EverGrandeCity/scripts.pory"
-	.string "silly to even say this, but we wanted to\n"
+	.string "impressed with how you were able to\n"
 # 159 "data/maps/EverGrandeCity/scripts.pory"
-	.string "give you one final test before you head\p"
+	.string "stop all of them by yourself! It feels\p"
 # 160 "data/maps/EverGrandeCity/scripts.pory"
-	.string "into Victory Road! We are rivals after\n"
+	.string "silly to even say this, but we wanted to\n"
 # 161 "data/maps/EverGrandeCity/scripts.pory"
-	.string "all!\p"
+	.string "give you one final test before you head\p"
 # 162 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Don't worry, we won't make you fight us\n"
+	.string "into Victory Road! We are rivals after\n"
 # 163 "data/maps/EverGrandeCity/scripts.pory"
-	.string "both at once. But you will have to beat\l"
+	.string "all!\p"
 # 164 "data/maps/EverGrandeCity/scripts.pory"
-	.string "us both to get through! So…\p"
+	.string "Don't worry, we won't make you fight us\n"
 # 165 "data/maps/EverGrandeCity/scripts.pory"
-	.string "What do you say to one last battle?$"
+	.string "both at once. But you will have to beat\l"
 # 166 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "us both to get through! So…\p"
 # 167 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayNotRaisingPokemon:
+	.string "What do you say to one last battle?$"
 # 168 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Oh, alright then. But just so you know,\n"
+
 # 169 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'm not going anywhere until you beat\l"
+EverGrandeCity_Text_MayNotRaisingPokemon:
 # 170 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Dawn and me!$"
+	.string "Oh, alright then. But just so you know,\n"
 # 171 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "I'm not going anywhere until you beat\l"
 # 172 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayBattleMe:
+	.string "Dawn and me!$"
 # 173 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Come on, battle with me one more time!\n"
+
 # 174 "data/maps/EverGrandeCity/scripts.pory"
-	.string "What do you say?$"
+EverGrandeCity_Text_MayBattleMe:
 # 175 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "Come on, battle with me one more time!\n"
 # 176 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayWontBeBeaten:
+	.string "What do you say?$"
 # 177 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'll show you how strong I've become!$"
+
 # 178 "data/maps/EverGrandeCity/scripts.pory"
-
+EverGrandeCity_Text_MayWontBeBeaten:
 # 179 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayDefeat:
+	.string "I'll show you how strong I've become!$"
 # 180 "data/maps/EverGrandeCity/scripts.pory"
-	.string "… … … … … … … …\p"
+
 # 181 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I remember the battle I had with you,\n"
+EverGrandeCity_Text_MayDefeat:
 # 182 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}{KUN}, on Route 103.\p"
+	.string "… … … … … … … …\p"
 # 183 "data/maps/EverGrandeCity/scripts.pory"
-	.string "That battle helped you become this\n"
+	.string "I remember the battle I had with you,\n"
 # 184 "data/maps/EverGrandeCity/scripts.pory"
-	.string "strong, {PLAYER}{KUN}, didn't it?$"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
 # 185 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "That battle helped you become this\n"
 # 186 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_MayGoingBackToLittleroot:
+	.string "strong, {PLAYER}{KUN}, didn't it?$"
 # 187 "data/maps/EverGrandeCity/scripts.pory"
-	.string "May: I'm thinking of going back to\n"
+
 # 188 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Littleroot soon.\p"
+EverGrandeCity_Text_MayGoingBackToLittleroot:
 # 189 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I've caught a decent group of Pokémon,\n"
+	.string "May: I'm thinking of going back to\n"
 # 190 "data/maps/EverGrandeCity/scripts.pory"
-	.string "and my Pokédex is coming along, so\l"
+	.string "Littleroot soon.\p"
 # 191 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'm going home to show my dad.\p"
+	.string "I've caught a decent group of Pokémon,\n"
 # 192 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Like Dawn said, you've got this,\n"
+	.string "and my Pokédex is coming along, so\l"
 # 193 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}. I know you're strong enough\l"
+	.string "I'm going home to show my dad.\p"
 # 194 "data/maps/EverGrandeCity/scripts.pory"
-	.string "to become the Champion!\p"
+	.string "Like Dawn said, you've got this,\n"
 # 195 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Oh, and one more thing. When we first\n"
+	.string "{PLAYER}. I know you're strong enough\l"
 # 196 "data/maps/EverGrandeCity/scripts.pory"
-	.string "got here, we saw Wally walking into\p"
+	.string "to become the Champion!\p"
 # 197 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Victory Road. He looked really\n"
+	.string "Oh, and one more thing. When we first\n"
 # 198 "data/maps/EverGrandeCity/scripts.pory"
-	.string "determined, he was almost like a\p"
+	.string "got here, we saw Wally walking into\p"
 # 199 "data/maps/EverGrandeCity/scripts.pory"
-	.string "different person than that timid kid\n"
+	.string "Victory Road. He looked really\n"
 # 200 "data/maps/EverGrandeCity/scripts.pory"
-	.string "you beat in Mauville…\l"
+	.string "determined, he was almost like a\p"
 # 201 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Just thought I'd give you a heads up!\p"
+	.string "different person than that timid kid\n"
 # 202 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "you beat in Mauville…\l"
 # 203 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'll see you again soon!$"
+	.string "Just thought I'd give you a heads up!\p"
 # 204 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "Anyway, take care, {PLAYER}, I'm sure\n"
 # 205 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "I'll see you again soon!$"
 # 206 "data/maps/EverGrandeCity/scripts.pory"
 
 # 207 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanShoppingLetsBattle:
+
 # 208 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}! Dawn told me about\n"
+
 # 209 "data/maps/EverGrandeCity/scripts.pory"
-	.string "everything that happened with Team\p"
+EverGrandeCity_Text_BrendanShoppingLetsBattle:
 # 210 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Aqua, Team Magma, and Drake! I can't\n"
+	.string "{PLAYER}! Dawn told me about\n"
 # 211 "data/maps/EverGrandeCity/scripts.pory"
-	.string "believe what he did, but I'm more\p"
+	.string "everything that happened with Team\p"
 # 212 "data/maps/EverGrandeCity/scripts.pory"
-	.string "impressed with how you were able to\n"
+	.string "Aqua, Team Magma, and Drake! I can't\n"
 # 213 "data/maps/EverGrandeCity/scripts.pory"
-	.string "stop all of them by yourself! It feels\p"
+	.string "believe what he did, but I'm more\p"
 # 214 "data/maps/EverGrandeCity/scripts.pory"
-	.string "silly to even say this, but we wanted to\n"
+	.string "impressed with how you were able to\n"
 # 215 "data/maps/EverGrandeCity/scripts.pory"
-	.string "give you one final test before you head\p"
+	.string "stop all of them by yourself! It feels\p"
 # 216 "data/maps/EverGrandeCity/scripts.pory"
-	.string "into Victory Road! We are rivals after\n"
+	.string "silly to even say this, but we wanted to\n"
 # 217 "data/maps/EverGrandeCity/scripts.pory"
-	.string "all!\p"
+	.string "give you one final test before you head\p"
 # 218 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Don't worry, we won't make you fight us\n"
+	.string "into Victory Road! We are rivals after\n"
 # 219 "data/maps/EverGrandeCity/scripts.pory"
-	.string "both at once. But you will have to beat\l"
+	.string "all!\p"
 # 220 "data/maps/EverGrandeCity/scripts.pory"
-	.string "us both to get through! So…\p"
+	.string "Don't worry, we won't make you fight us\n"
 # 221 "data/maps/EverGrandeCity/scripts.pory"
-	.string "What do you say to one last battle?$"
+	.string "both at once. But you will have to beat\l"
 # 222 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "us both to get through! So…\p"
 # 223 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanNoConfidence:
+	.string "What do you say to one last battle?$"
 # 224 "data/maps/EverGrandeCity/scripts.pory"
-	.string "If you say so, but I'm not going\n"
+
 # 225 "data/maps/EverGrandeCity/scripts.pory"
-	.string "anywhere until we battle!$"
+EverGrandeCity_Text_BrendanNoConfidence:
 # 226 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "If you say so, but I'm not going\n"
 # 227 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanBattleMe:
+	.string "anywhere until we battle!$"
 # 228 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Come on, {PLAYER}. I'm really going to\n"
+
 # 229 "data/maps/EverGrandeCity/scripts.pory"
-	.string "beat you this time!\l"
+EverGrandeCity_Text_BrendanBattleMe:
 # 230 "data/maps/EverGrandeCity/scripts.pory"
-	.string "What do you say?$"
+	.string "Come on, {PLAYER}. I'm really going to\n"
 # 231 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "beat you this time!\l"
 # 232 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanWontBeBeaten:
+	.string "What do you say?$"
 # 233 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'll show you how strong I've become!$"
+
 # 234 "data/maps/EverGrandeCity/scripts.pory"
-
+EverGrandeCity_Text_BrendanWontBeBeaten:
 # 235 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanDefeat:
+	.string "I'll show you how strong I've become!$"
 # 236 "data/maps/EverGrandeCity/scripts.pory"
-	.string "… … … … … … … …\p"
+
 # 237 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I remember the battle I had with you,\n"
+EverGrandeCity_Text_BrendanDefeat:
 # 238 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}{KUN}, on Route 103.\p"
+	.string "… … … … … … … …\p"
 # 239 "data/maps/EverGrandeCity/scripts.pory"
-	.string "That battle helped you become this\n"
+	.string "I remember the battle I had with you,\n"
 # 240 "data/maps/EverGrandeCity/scripts.pory"
-	.string "strong, {PLAYER}{KUN}, didn't it?$"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
 # 241 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "That battle helped you become this\n"
 # 242 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_BrendanGoingBackToLittleroot:
+	.string "strong, {PLAYER}{KUN}, didn't it?$"
 # 243 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Brendan: I…\n"
+
 # 244 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I plan on going home to Littleroot.\p"
+EverGrandeCity_Text_BrendanGoingBackToLittleroot:
 # 245 "data/maps/EverGrandeCity/scripts.pory"
-	.string "You know I'm helping out my dad on his\n"
+	.string "Brendan: I…\n"
 # 246 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Pokédex. It's coming together pretty\l"
+	.string "I plan on going home to Littleroot.\p"
 # 247 "data/maps/EverGrandeCity/scripts.pory"
-	.string "decently, so I should go show him.\p"
+	.string "You know I'm helping out my dad on his\n"
 # 248 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Like Dawn said, you've got this,\n"
+	.string "Pokédex. It's coming together pretty\l"
 # 249 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER}. I know you're strong enough\l"
+	.string "decently, so I should go show him.\p"
 # 250 "data/maps/EverGrandeCity/scripts.pory"
-	.string "to become the Champion!\p"
+	.string "Like Dawn said, you've got this,\n"
 # 251 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Oh, and one more thing. When we first\n"
+	.string "{PLAYER}. I know you're strong enough\l"
 # 252 "data/maps/EverGrandeCity/scripts.pory"
-	.string "got here, we saw Wally walking into\p"
+	.string "to become the Champion!\p"
 # 253 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Victory Road. He looked really\n"
+	.string "Oh, and one more thing. When we first\n"
 # 254 "data/maps/EverGrandeCity/scripts.pory"
-	.string "determined, he was almost like a\p"
+	.string "got here, we saw Wally walking into\p"
 # 255 "data/maps/EverGrandeCity/scripts.pory"
-	.string "different person than that timid kid\n"
+	.string "Victory Road. He looked really\n"
 # 256 "data/maps/EverGrandeCity/scripts.pory"
-	.string "you beat in Mauville…\l"
+	.string "determined, he was almost like a\p"
 # 257 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Just thought I'd give you a heads up!\p"
+	.string "different person than that timid kid\n"
 # 258 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "you beat in Mauville…\l"
 # 259 "data/maps/EverGrandeCity/scripts.pory"
-	.string "I'll see you again soon!$"
+	.string "Just thought I'd give you a heads up!\p"
 # 260 "data/maps/EverGrandeCity/scripts.pory"
-
+	.string "Anyway, take care, {PLAYER}, I'm sure\n"
 # 261 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_EnteringVictoryRoad:
+	.string "I'll see you again soon!$"
 # 262 "data/maps/EverGrandeCity/scripts.pory"
-	.string "ENTERING VICTORY ROAD$"
+
 # 263 "data/maps/EverGrandeCity/scripts.pory"
-
+EverGrandeCity_Text_EnteringVictoryRoad:
 # 264 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_EnteringPokemonLeague:
+	.string "ENTERING VICTORY ROAD$"
 # 265 "data/maps/EverGrandeCity/scripts.pory"
-	.string "ENTERING POKéMON LEAGUE\n"
-# 266 "data/maps/EverGrandeCity/scripts.pory"
-	.string "CENTER GATE$"
-# 267 "data/maps/EverGrandeCity/scripts.pory"
 
+# 266 "data/maps/EverGrandeCity/scripts.pory"
+EverGrandeCity_Text_EnteringPokemonLeague:
+# 267 "data/maps/EverGrandeCity/scripts.pory"
+	.string "ENTERING POKéMON LEAGUE\n"
 # 268 "data/maps/EverGrandeCity/scripts.pory"
-EverGrandeCity_Text_CitySign:
+	.string "CENTER GATE$"
 # 269 "data/maps/EverGrandeCity/scripts.pory"
-	.string "EVER GRANDE CITY\p"
+
 # 270 "data/maps/EverGrandeCity/scripts.pory"
-	.string "“The paradise of flowers, the sea,\n"
+EverGrandeCity_Text_CitySign:
 # 271 "data/maps/EverGrandeCity/scripts.pory"
+	.string "EVER GRANDE CITY\p"
+# 272 "data/maps/EverGrandeCity/scripts.pory"
+	.string "“The paradise of flowers, the sea,\n"
+# 273 "data/maps/EverGrandeCity/scripts.pory"
 	.string "and POKéMON.”$"
 
 EverGrandeCity_EventScript_Dawn::
-# 276 "data/maps/EverGrandeCity/scripts.pory"
-	lockall
-# 277 "data/maps/EverGrandeCity/scripts.pory"
-	applymovement 2, Common_Movement_FacePlayer
 # 278 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_BeatDawnNotRival
+	lockall
 # 279 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_DECLINED_DAWN_EVERGRANDE, EverGrandeCity_EventScript_DawnRequestBattleAgain
+	applymovement 2, Common_Movement_FacePlayer
 # 280 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox Dawn_GreetingEvergrande, MSGBOX_YESNO
+	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_BeatDawnNotRival
 # 281 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_DECLINED_DAWN_EVERGRANDE, EverGrandeCity_EventScript_DawnRequestBattleAgain
+# 282 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox Dawn_GreetingEvergrande, MSGBOX_YESNO
+# 283 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_BattleDawnPrompt
 	end
 
 
 EverGrandeCity_EventScript_DawnRequestBattleAgain::
-# 286 "data/maps/EverGrandeCity/scripts.pory"
+# 288 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox ReadyYetFinal, MSGBOX_YESNO
-# 287 "data/maps/EverGrandeCity/scripts.pory"
+# 289 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_BattleDawnPrompt
 	end
 
 
 EverGrandeCity_EventScript_BattleDawnPrompt::
-# 292 "data/maps/EverGrandeCity/scripts.pory"
-	call_if_eq VAR_RESULT, YES, EverGrandeCity_EventScript_BattleDawn
-# 293 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineDawnBattle
 # 294 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_eq VAR_RESULT, YES, EverGrandeCity_EventScript_BattleDawn
+# 295 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineDawnBattle
+# 296 "data/maps/EverGrandeCity/scripts.pory"
 	closemessage
 	end
 
 
 EverGrandeCity_EventScript_DeclineDawnBattle::
-# 299 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_DECLINED_DAWN_EVERGRANDE
-# 300 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox ComeBackWhenReadyFinal, MSGBOX_DEFAULT
 # 301 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_DECLINED_DAWN_EVERGRANDE
+# 302 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox ComeBackWhenReadyFinal, MSGBOX_DEFAULT
+# 303 "data/maps/EverGrandeCity/scripts.pory"
 	release
 	end
 
 
 EverGrandeCity_EventScript_BattleDawn::
-# 306 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_EventScript_BattleDawn_Text_0, MSGBOX_DEFAULT
-# 307 "data/maps/EverGrandeCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_DAWN_EVERGRANDE, Dawn_OutroEvergrande
 # 308 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_EventScript_BattleDawn_Text_0, MSGBOX_DEFAULT
+# 309 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_DAWN_EVERGRANDE, Dawn_OutroEvergrande
+# 310 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_DawnDefeated
 	return
 
 
 EverGrandeCity_EventScript_DawnDefeated::
-# 314 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_BEAT_DAWN_EVERGRANDE
-# 315 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_RivalsFlyAway
 # 316 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_CanYouBeatRival, MSGBOX_DEFAULT
+	setflag FLAG_BEAT_DAWN_EVERGRANDE
 # 317 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_RivalsFlyAway
+# 318 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_Text_CanYouBeatRival, MSGBOX_DEFAULT
+# 319 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
 EverGrandeCity_EventScript_BeatDawnNotRival::
-# 322 "data/maps/EverGrandeCity/scripts.pory"
+# 324 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox EverGrandeCity_Text_NotMovingUntilRival, MSGBOX_DEFAULT
-# 323 "data/maps/EverGrandeCity/scripts.pory"
+# 325 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
 EverGrandeCity_EventScript_RivalsFlyAway::
-# 329 "data/maps/EverGrandeCity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceFasterDown
-# 330 "data/maps/EverGrandeCity/scripts.pory"
-	waitmovement 0
 # 331 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox DawnFarewell, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_WalkInPlaceFasterDown
 # 332 "data/maps/EverGrandeCity/scripts.pory"
-	closemessage
+	waitmovement 0
 # 333 "data/maps/EverGrandeCity/scripts.pory"
-	delay 30
+	msgbox DawnFarewell, MSGBOX_DEFAULT
 # 334 "data/maps/EverGrandeCity/scripts.pory"
-	setfieldeffectargument 0, 1
+	closemessage
 # 335 "data/maps/EverGrandeCity/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 30
 # 336 "data/maps/EverGrandeCity/scripts.pory"
-	delay 15
+	setfieldeffectargument 0, 1
 # 337 "data/maps/EverGrandeCity/scripts.pory"
-	removeobject 2
+	dofieldeffect FLDEFF_NPCFLY_OUT
 # 338 "data/maps/EverGrandeCity/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 339 "data/maps/EverGrandeCity/scripts.pory"
 	delay 15
+# 339 "data/maps/EverGrandeCity/scripts.pory"
+	removeobject 2
 # 340 "data/maps/EverGrandeCity/scripts.pory"
-	checkplayergender
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 341 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell
+	delay 15
 # 342 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell
+	checkplayergender
 # 343 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell
+# 344 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell
+# 345 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
 EverGrandeCity_EventScript_MayFarewell::
-# 348 "data/maps/EverGrandeCity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceFasterDown
-# 349 "data/maps/EverGrandeCity/scripts.pory"
-	waitmovement 0
 # 350 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
+	applymovement 1, Common_Movement_WalkInPlaceFasterDown
 # 351 "data/maps/EverGrandeCity/scripts.pory"
-	closemessage
+	waitmovement 0
 # 352 "data/maps/EverGrandeCity/scripts.pory"
-	delay 30
+	msgbox EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
 # 353 "data/maps/EverGrandeCity/scripts.pory"
-	setfieldeffectargument 0, 1
+	closemessage
 # 354 "data/maps/EverGrandeCity/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 30
 # 355 "data/maps/EverGrandeCity/scripts.pory"
-	delay 15
+	setfieldeffectargument 0, 1
 # 356 "data/maps/EverGrandeCity/scripts.pory"
-	removeobject 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
 # 357 "data/maps/EverGrandeCity/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 358 "data/maps/EverGrandeCity/scripts.pory"
 	delay 15
+# 358 "data/maps/EverGrandeCity/scripts.pory"
+	removeobject 1
 # 359 "data/maps/EverGrandeCity/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 360 "data/maps/EverGrandeCity/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
+	delay 15
 # 361 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_MET_RIVAL_LILYCOVE
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 # 362 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_BEAT_BOTH_RIVALS
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
 # 363 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_MET_RIVAL_LILYCOVE
+# 364 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_BEAT_BOTH_RIVALS
+# 365 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
 EverGrandeCity_EventScript_BrendanFarewell::
-# 368 "data/maps/EverGrandeCity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceFasterDown
-# 369 "data/maps/EverGrandeCity/scripts.pory"
-	waitmovement 0
 # 370 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
+	applymovement 1, Common_Movement_WalkInPlaceFasterDown
 # 371 "data/maps/EverGrandeCity/scripts.pory"
-	closemessage
+	waitmovement 0
 # 372 "data/maps/EverGrandeCity/scripts.pory"
-	delay 30
+	msgbox EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
 # 373 "data/maps/EverGrandeCity/scripts.pory"
-	setfieldeffectargument 0, 1
+	closemessage
 # 374 "data/maps/EverGrandeCity/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 30
 # 375 "data/maps/EverGrandeCity/scripts.pory"
-	delay 15
+	setfieldeffectargument 0, 1
 # 376 "data/maps/EverGrandeCity/scripts.pory"
-	removeobject 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
 # 377 "data/maps/EverGrandeCity/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 378 "data/maps/EverGrandeCity/scripts.pory"
 	delay 15
+# 378 "data/maps/EverGrandeCity/scripts.pory"
+	removeobject 1
 # 379 "data/maps/EverGrandeCity/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 380 "data/maps/EverGrandeCity/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
+	delay 15
 # 381 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_MET_RIVAL_LILYCOVE
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 # 382 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_BEAT_BOTH_RIVALS
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
 # 383 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_MET_RIVAL_LILYCOVE
+# 384 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_BEAT_BOTH_RIVALS
+# 385 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
+EverGrandeCity_EventScript_Volkner::
+# 460 "data/maps/EverGrandeCity/scripts.pory"
+	lockall
+# 461 "data/maps/EverGrandeCity/scripts.pory"
+	applymovement LOCALID_VOLKNER, Common_Movement_FacePlayer
+# 462 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_RECEIVED_ZERAORA, EverGrandeCity_EventScript_VolknerDefeated
+# 463 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_set FLAG_DECLINED_VOLKNER_BATTLE, EverGrandeCity_EventScript_VolknerRequestBattleAgain
+# 464 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox Volkner_Greeting, MSGBOX_YESNO
+# 465 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_BattleVolknerPrompt
+	end
+
+
+EverGrandeCity_EventScript_VolknerRequestBattleAgain::
+# 470 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox Ready_Yet, MSGBOX_YESNO
+# 471 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_BattleVolknerPrompt
+	end
+
+
+EverGrandeCity_EventScript_BattleVolknerPrompt::
+# 476 "data/maps/EverGrandeCity/scripts.pory"
+	call_if_eq VAR_RESULT, YES, EverGrandeCity_EventScript_BattleVolkner
+# 477 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineVolknerBattle
+# 478 "data/maps/EverGrandeCity/scripts.pory"
+	closemessage
+	end
+
+
+EverGrandeCity_EventScript_DeclineVolknerBattle::
+# 483 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_DECLINED_VOLKNER_BATTLE
+# 484 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 485 "data/maps/EverGrandeCity/scripts.pory"
+	release
+	end
+
+
+EverGrandeCity_EventScript_BattleVolkner::
+# 490 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox EverGrandeCity_EventScript_BattleVolkner_Text_0, MSGBOX_DEFAULT
+# 491 "data/maps/EverGrandeCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_VOLKNER, Volkner_Outro
+# 492 "data/maps/EverGrandeCity/scripts.pory"
+	giveitem ITEM_TM_RISING_VOLTAGE
+# 493 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_VolknerGiveZeraora
+	return
+
+
+EverGrandeCity_EventScript_VolknerDefeated::
+# 499 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox PostBattle_Volkner, MSGBOX_DEFAULT
+# 500 "data/maps/EverGrandeCity/scripts.pory"
+	releaseall
+	end
+
+
+EverGrandeCity_EventScript_VolknerGiveZeraora::
+# 505 "data/maps/EverGrandeCity/scripts.pory"
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA
+# 506 "data/maps/EverGrandeCity/scripts.pory"
+	givemon SPECIES_ZERAORA, 50
+# 507 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty
+# 508 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveZeraoraPC
+# 509 "data/maps/EverGrandeCity/scripts.pory"
+	goto Common_EventScript_NoMoreRoomForPokemon
+# 510 "data/maps/EverGrandeCity/scripts.pory"
+	release
+	end
+
+
+EverGrandeCity_EventScript_ReceiveZeraoraParty::
+# 515 "data/maps/EverGrandeCity/scripts.pory"
+	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
+# 516 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 517 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_ExplainZeraora
+# 518 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 519 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 520 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_ExplainZeraora
+	end
+
+
+EverGrandeCity_EventScript_ReceiveZeraoraPC::
+# 526 "data/maps/EverGrandeCity/scripts.pory"
+	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
+# 527 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 528 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_SendZeraoraToPC
+# 529 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_NameReceivedBoxMon
+# 530 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_SendZeraoraToPC
+	end
+
+
+EverGrandeCity_EventScript_SendZeraoraToPC::
+# 536 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_TransferredToPC
+# 537 "data/maps/EverGrandeCity/scripts.pory"
+	goto EverGrandeCity_EventScript_ExplainZeraora
+	end
+
+
+EverGrandeCity_EventScript_ReceivedZeraoraFanfare::
+# 543 "data/maps/EverGrandeCity/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 544 "data/maps/EverGrandeCity/scripts.pory"
+	message EverGrandeCity_Text_PlayerReceivedZeraora
+# 545 "data/maps/EverGrandeCity/scripts.pory"
+	waitmessage
+# 546 "data/maps/EverGrandeCity/scripts.pory"
+	waitfanfare
+# 547 "data/maps/EverGrandeCity/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_ZERAORA
+	return
+
+
+EverGrandeCity_EventScript_ExplainZeraora::
+# 553 "data/maps/EverGrandeCity/scripts.pory"
+	msgbox Volkner_ExplainZeraora, MSGBOX_DEFAULT
+# 554 "data/maps/EverGrandeCity/scripts.pory"
+	setflag FLAG_RECEIVED_ZERAORA
+# 555 "data/maps/EverGrandeCity/scripts.pory"
+	release
+	end
+
+
 EverGrandeCity_EventScript_BattleDawn_Text_0:
-# 306 "data/maps/EverGrandeCity/scripts.pory"
+# 308 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Let's do this, one last time!$"
 
+EverGrandeCity_EventScript_BattleVolkner_Text_0:
+# 490 "data/maps/EverGrandeCity/scripts.pory"
+	.string "This is going to be electric!$"
+
 Dawn_GreetingEvergrande::
-# 388 "data/maps/EverGrandeCity/scripts.pory"
+# 390 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Hey, {PLAYER}! After everything that\n"
 	.string "happened in Sootopolis, I called up\p"
 	.string "{RIVAL}, and we decided to meet up here\n"
@@ -742,16 +892,16 @@ Dawn_GreetingEvergrande::
 	.string "final battle?$"
 
 ReadyYetFinal::
-# 404 "data/maps/EverGrandeCity/scripts.pory"
+# 406 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Ready for our final battle now?$"
 
 ComeBackWhenReadyFinal::
-# 408 "data/maps/EverGrandeCity/scripts.pory"
+# 410 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Come back when you're ready, I'll be\n"
 	.string "here!$"
 
 Dawn_OutroEvergrande::
-# 413 "data/maps/EverGrandeCity/scripts.pory"
+# 415 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Looks like you passed my final test\n"
 	.string "with flying colors, {PLAYER}.\p"
 	.string "Not that there was ever any doubt, but\n"
@@ -759,28 +909,28 @@ Dawn_OutroEvergrande::
 	.string "League.$"
 
 EverGrandeCity_Text_CanYouBeatRival::
-# 421 "data/maps/EverGrandeCity/scripts.pory"
+# 423 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Thanks for one last great battle,\n"
 	.string "{PLAYER}. But I'm not going anywhere\l"
 	.string "until you beat {RIVAL} too!$"
 
 EverGrandeCity_Text_NotMovingUntilRival::
-# 428 "data/maps/EverGrandeCity/scripts.pory"
+# 430 "data/maps/EverGrandeCity/scripts.pory"
 	.string "I'm not going anywhere until\n"
 	.string "you beat {RIVAL} too!$"
 
 EverGrandeCity_Text_CanYouBeatDawn::
-# 433 "data/maps/EverGrandeCity/scripts.pory"
+# 435 "data/maps/EverGrandeCity/scripts.pory"
 	.string "That was a great battle, {PLAYER}, but\n"
 	.string "can you beat Dawn too?$"
 
 EverGrandeCity_Text_NotMovingUntilDawn::
-# 438 "data/maps/EverGrandeCity/scripts.pory"
+# 440 "data/maps/EverGrandeCity/scripts.pory"
 	.string "I'm not going anywhere until\n"
 	.string "you beat Dawn too!$"
 
 DawnFarewell::
-# 443 "data/maps/EverGrandeCity/scripts.pory"
+# 445 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Dawn: Well, {PLAYER}, neither of us were\n"
 	.string "a match for you once again.\p"
 	.string "I have nothing more I can give you to\n"
@@ -790,3 +940,37 @@ DawnFarewell::
 	.string "Become the Champion, {PLAYER}, I know\n"
 	.string "you can do it!\p"
 	.string "So long, my friend, until next time!$"
+
+EverGrandeCity_Text_PlayerReceivedZeraora::
+# 559 "data/maps/EverGrandeCity/scripts.pory"
+	.string "{PLAYER} received Zeraora!$"
+
+Volkner_ExplainZeraora::
+# 563 "data/maps/EverGrandeCity/scripts.pory"
+	.string "Zeraora is definitely a favorite of\n"
+	.string "mine. His electrifying fists light up\l"
+	.string "any battle!\p"
+	.string "I hope you raise it well!$"
+
+Volkner_Greeting::
+# 570 "data/maps/EverGrandeCity/scripts.pory"
+	.string "Wow, another trainer showed up here. It\n"
+	.string "gets pretty boring being the strongest\p"
+	.string "Gym Leader in a given region… The weak\n"
+	.string "trainers get weeded out before they\p"
+	.string "can make it to me, usually. But you're\n"
+	.string "now the fourth strong-looking trainer\p"
+	.string "I've seen come through here, it's really\n"
+	.string "got me itching for a battle.\p"
+	.string "So, will you battle me?$"
+
+Volkner_Outro::
+# 582 "data/maps/EverGrandeCity/scripts.pory"
+	.string "Ha! Wow, the trainers here are way\n"
+	.string "stronger than in Sinnoh, how exciting!$"
+
+PostBattle_Volkner::
+# 588 "data/maps/EverGrandeCity/scripts.pory"
+	.string "I think I'll just stay here and wait for\n"
+	.string "more strong trainers, someone else can\l"
+	.string "run my Gym for all I care.$"

@@ -82,8 +82,8 @@
 #define FLAG_BEAT_DAWN_EVERGRANDE    0x46
 #define FLAG_BEAT_BOTH_RIVALS    0x47
 #define FLAG_DECLINED_DAWN_EVERGRANDE    0x48
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_RECEIVED_ZERAORA    0x49
+#define FLAG_DECLINED_VOLKNER_BATTLE    0x4A
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
