@@ -664,12 +664,12 @@
 #define TRAINER_WALLY_VR_3                  658
 #define TRAINER_WALLY_VR_4                  659
 #define TRAINER_WALLY_VR_5                  660
-#define TRAINER_BRENDAN_LILYCOVE_MUDKIP     661
-#define TRAINER_BRENDAN_LILYCOVE_TREECKO    662
-#define TRAINER_BRENDAN_LILYCOVE_TORCHIC    663
-#define TRAINER_MAY_LILYCOVE_MUDKIP         664
-#define TRAINER_MAY_LILYCOVE_TREECKO        665
-#define TRAINER_MAY_LILYCOVE_TORCHIC        666
+#define TRAINER_BRENDAN_EVERGRANDE_MUDKIP     661
+#define TRAINER_BRENDAN_EVERGRANDE_TREECKO    662
+#define TRAINER_BRENDAN_EVERGRANDE_TORCHIC    663
+#define TRAINER_MAY_EVERGRANDE_MUDKIP         664
+#define TRAINER_MAY_EVERGRANDE_TREECKO        665
+#define TRAINER_MAY_EVERGRANDE_TORCHIC        666
 #define TRAINER_JONAH                       667
 #define TRAINER_HENRY                       668
 #define TRAINER_ROGER                       669
@@ -862,12 +862,13 @@
 #define TRAINER_URSULA                      856
 #define TRAINER_JUSTIN                      857
 #define TRAINER_DAWN_LILYCOVE               858
+#define TRAINER_DAWN_EVERGRANDE             859
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      859
+#define TRAINERS_COUNT                      860
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

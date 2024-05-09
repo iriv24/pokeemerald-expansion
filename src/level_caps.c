@@ -26,6 +26,7 @@ u32 GetCurrentLevelCap(void)
         {FLAG_BADGE07_GET, 76},
         {FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, 80},
         {FLAG_BADGE08_GET, 82},
+        {FLAG_BEAT_BOTH_RIVALS, 84},
         {FLAG_IS_CHAMPION, 85},
     };
 

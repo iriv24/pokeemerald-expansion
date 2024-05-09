@@ -1078,4 +1078,4 @@ Ready_Yet::
 
 Come_Back_When_Ready::
 # 578 "data/maps/Route116/scripts.pory"
-	.string "Come back when you're ready.\n$"
+	.string "Come back when you're ready.$"

@@ -79,9 +79,9 @@
 #define FLAG_DAWN_LILYCOVE    0x43
 #define FLAG_DECLINED_CANDICE_BATTLE    0x44
 #define FLAG_RECEIVED_TM_BLIZZARD    0x45
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
+#define FLAG_BEAT_DAWN_EVERGRANDE    0x46
+#define FLAG_BEAT_BOTH_RIVALS    0x47
+#define FLAG_DECLINED_DAWN_EVERGRANDE    0x48
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
@@ -1014,7 +1014,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
 #define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
-#define FLAG_HIDE_EVERGRANDE_CITY_RIVAL                             0x3CB
+#define FLAG_EVERGRANDE_CITY_BEAT_RIVAL                             0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE

@@ -28,7 +28,7 @@ EverGrandeCity_EventScript_Rival::
 	end
 
 EverGrandeCity_EventScript_May::
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_BeatRivalNotDawn
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_MayAskToBattle
 	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineMayBattle
@@ -50,13 +50,33 @@ EverGrandeCity_EventScript_MayAskToBattle::
 EverGrandeCity_EventScript_DeclineMayBattle::
 	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
 	msgbox EverGrandeCity_Text_MayNotRaisingPokemon, MSGBOX_DEFAULT
-	savebgm MUS_DUMMY
-	fadedefaultbgm
 	release
 	end
 
+EverGrandeCity_EventScript_BattleMayTreecko::
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TREECKO, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_BattleMayTorchic::
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_TORCHIC, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_BattleMayMudkip::
+	trainerbattle_no_intro TRAINER_MAY_EVERGRANDE_MUDKIP, EverGrandeCity_Text_MayDefeat
+	goto EverGrandeCity_EventScript_DefeatedMay
+	end
+
+EverGrandeCity_EventScript_DefeatedMay::
+	setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
+	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_RivalsFlyAway
+	msgbox EverGrandeCity_Text_CanYouBeatDawn, MSGBOX_DEFAULT
+	releaseall
+	end
+
 EverGrandeCity_EventScript_Brendan::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	goto_if_set FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_BeatRivalNotDawn
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE, EverGrandeCity_EventScript_BrendanAskToBattle
 	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineBrendanBattle
@@ -78,96 +98,35 @@ EverGrandeCity_EventScript_BrendanAskToBattle::
 EverGrandeCity_EventScript_DeclineBrendanBattle::
 	setflag FLAG_DECLINED_RIVAL_BATTLE_EVERGRANDE
 	msgbox EverGrandeCity_Text_BrendanNoConfidence, MSGBOX_DEFAULT
-	savebgm MUS_DUMMY
-	fadedefaultbgm
 	release
 	end
 
-EverGrandeCity_EventScript_BattleMayTreecko::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TREECKO, EverGrandeCity_Text_MayDefeat
-	goto EverGrandeCity_EventScript_DefeatedMay
-	end
-
-EverGrandeCity_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, EverGrandeCity_Text_MayDefeat
-	goto EverGrandeCity_EventScript_DefeatedMay
-	end
-
-EverGrandeCity_EventScript_BattleMayMudkip::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_MUDKIP, EverGrandeCity_Text_MayDefeat
-	goto EverGrandeCity_EventScript_DefeatedMay
-	end
-
 EverGrandeCity_EventScript_BattleBrendanTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, EverGrandeCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TREECKO, EverGrandeCity_Text_BrendanDefeat
 	goto EverGrandeCity_EventScript_DefeatedBrendan
 	end
 
 EverGrandeCity_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, EverGrandeCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_TORCHIC, EverGrandeCity_Text_BrendanDefeat
 	goto EverGrandeCity_EventScript_DefeatedBrendan
 	end
 
 EverGrandeCity_EventScript_BattleBrendanMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, EverGrandeCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_EVERGRANDE_MUDKIP, EverGrandeCity_Text_BrendanDefeat
 	goto EverGrandeCity_EventScript_DefeatedBrendan
 	end
 
-EverGrandeCity_EventScript_DefeatedMay::
-	msgbox EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
-	setvar VAR_RESULT, FALSE
-	call_if_set FLAG_BADGE06_GET, EverGrandeCity_EventScript_CheckFinalBadge
-	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_EventScript_MayCollectBadges
-	call_if_eq VAR_RESULT, TRUE, EverGrandeCity_EventScript_MayPokemonLeague
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
-	goto EverGrandeCity_EventScript_RivalFlyAway
-	end
-
-EverGrandeCity_EventScript_CheckFinalBadge::
-	goto_if_set FLAG_BADGE08_GET, EverGrandeCity_EventScript_HasFinalBadge
-	return
-
-EverGrandeCity_EventScript_HasFinalBadge::
-	setvar VAR_RESULT, TRUE
-	return
-
-EverGrandeCity_EventScript_MayCollectBadges::
-	msgbox EverGrandeCity_Text_MayYouGoingToCollectBadges, MSGBOX_DEFAULT
-	return
-
-EverGrandeCity_EventScript_MayPokemonLeague::
-	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_EventScript_MayBattleFrontier
-	msgbox EverGrandeCity_Text_MayYouGoingToPokemonLeague, MSGBOX_DEFAULT
-	return
-
-EverGrandeCity_EventScript_MayBattleFrontier::
-	msgbox EverGrandeCity_Text_MayYouGoingToBattleFrontier, MSGBOX_DEFAULT
-	return
-
 EverGrandeCity_EventScript_DefeatedBrendan::
-	msgbox EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
-	setvar VAR_RESULT, FALSE
-	call_if_set FLAG_BADGE06_GET, EverGrandeCity_EventScript_CheckFinalBadge
-	call_if_eq VAR_RESULT, FALSE, EverGrandeCity_EventScript_BrendanCollectBadges
-	call_if_eq VAR_RESULT, TRUE, EverGrandeCity_EventScript_BrendanPokemonLeague
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
-	goto EverGrandeCity_EventScript_RivalFlyAway
+    setflag FLAG_EVERGRANDE_CITY_BEAT_RIVAL
+	goto_if_set FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_RivalsFlyAway
+	msgbox EverGrandeCity_Text_CanYouBeatDawn, MSGBOX_DEFAULT
+	releaseall
 	end
 
-EverGrandeCity_EventScript_BrendanCollectBadges::
-	msgbox EverGrandeCity_Text_BrendanYouGoingToCollectBadges, MSGBOX_DEFAULT
-	return
-
-EverGrandeCity_EventScript_BrendanPokemonLeague::
-	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_EventScript_BrendanBattleFrontier
-	msgbox EverGrandeCity_Text_BrendanYouGoingToPokemonLeague, MSGBOX_DEFAULT
-	return
-
-EverGrandeCity_EventScript_BrendanBattleFrontier::
-	msgbox EverGrandeCity_Text_BrendanYouGoingToBattleFrontier, MSGBOX_DEFAULT
-	return
+EverGrandeCity_EventScript_BeatRivalNotDawn::
+	msgbox EverGrandeCity_Text_NotMovingUntilDawn, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EverGrandeCity_EventScript_RivalFlyAway::
 	closemessage
@@ -179,8 +138,6 @@ EverGrandeCity_EventScript_RivalFlyAway::
 	delay 15
 	removeobject VAR_LAST_TALKED
 	waitfieldeffect FLDEFF_NPCFLY_OUT
-	savebgm MUS_DUMMY
-	fadedefaultbgm
 	setflag FLAG_MET_RIVAL_LILYCOVE
 	release
 	end
@@ -192,137 +149,114 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 
 EverGrandeCity_Text_MayShoppingLetsBattle:
-	.string "MAY: Oh, hey?\n"
-	.string "{PLAYER}{KUN}, are you shopping, too?\p"
-	.string "I bought a whole bunch of DOLLS and\n"
-	.string "POSTERS.\p"
-	.string "Of course, I've also caught a lot of\n"
-	.string "POKéMON, and I'm raising them\l"
-	.string "properly, too.\p"
-	.string "Actually, I'm more worried if you're\n"
-	.string "raising POKéMON properly, {PLAYER}{KUN}.\p"
-	.string "I'll battle with you, so you can show\n"
-	.string "me your POKéMON, {PLAYER}{KUN}.$"
+	.string "{PLAYER}! Dawn told me about\n"
+	.string "everything that happened with Team\p"
+	.string "Aqua, Team Magma, and Drake! I can't\n"
+	.string "believe what he did, but I'm more\p"
+	.string "impressed with how you were able to\n"
+	.string "stop all of them by yourself! It feels\p"
+	.string "silly to even say this, but we wanted to\n"
+	.string "give you one final test before you head\p"
+	.string "into Victory Road! We are rivals after\n"
+	.string "all!\p"
+	.string "Don't worry, we won't make you fight us\n"
+	.string "both at once. But you will have to beat\l"
+	.string "us both to get through! So…\p"
+	.string "What do you say to one last battle?$"
 
 EverGrandeCity_Text_MayNotRaisingPokemon:
-	.string "MAY: Oh, why? {PLAYER}{KUN}, haven't you\n"
-	.string "been raising your POKéMON?\p"
-	.string "That's not a very good showing as a\n"
-	.string "TRAINER…$"
+	.string "Oh, alright then. But just so you know,\n"
+	.string "I'm not going anywhere until you beat\l"
+	.string "Dawn and me!$"
 
 EverGrandeCity_Text_MayBattleMe:
-	.string "MAY: Come on, battle with me, so I can\n"
-	.string "check out your POKéMON!$"
+	.string "Come on, battle with me one more time!\n"
+	.string "What do you say?$"
 
 EverGrandeCity_Text_MayWontBeBeaten:
-	.string "MAY: The POKéMON I raised won't be\n"
-	.string "beaten by your POKéMON, {PLAYER}{KUN}!$"
+	.string "I'll show you how strong I've become!$"
 
 EverGrandeCity_Text_MayDefeat:
 	.string "… … … … … … … …\p"
 	.string "I remember the battle I had with you,\n"
-	.string "{PLAYER}{KUN}, on ROUTE 103.\p"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
 	.string "That battle helped you become this\n"
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
 EverGrandeCity_Text_MayGoingBackToLittleroot:
-	.string "MAY: I'm thinking of going back to\n"
-	.string "LITTLEROOT soon.\p"
-	.string "I've caught a decent group of POKéMON,\n"
-	.string "and my POKéDEX is coming along, so\l"
-	.string "I'm going home to show my dad.$"
+	.string "May: I'm thinking of going back to\n"
+	.string "Littleroot soon.\p"
+	.string "I've caught a decent group of Pokémon,\n"
+	.string "and my Pokédex is coming along, so\l"
+	.string "I'm going home to show my dad.\p"
+	.string "Like Dawn said, you've got this,\n"
+	.string "{PLAYER}. I know you're strong enough\l"
+	.string "to become the Champion!\p"
+	.string "Oh, and one more thing. When we first\n"
+	.string "got here, we saw Wally walking into\p"
+	.string "Victory Road. He looked really\n"
+	.string "determined, he was almost like a\p"
+	.string "different person than that timid kid\n"
+	.string "you beat in Mauville…\l"
+	.string "Just thought I'd give you a heads up!\p"
+	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "I'll see you again soon!$"
 
-EverGrandeCity_Text_MayYouGoingToCollectBadges:
-	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Collect all the GYM BADGES and take\n"
-	.string "the POKéMON LEAGUE challenge?\p"
-	.string "Well, while you're collecting BADGES,\n"
-	.string "{PLAYER}{KUN}, I'm going to work on my\l"
-	.string "POKéDEX. I'll complete it before you!\p"
-	.string "See you!$"
 
-EverGrandeCity_Text_MayYouGoingToPokemonLeague:
-	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Are you taking the POKéMON LEAGUE\n"
-	.string "challenge?\p"
-	.string "Or, are you going to complete your\n"
-	.string "POKéDEX?\p"
-	.string "I might've lost to you in battling,\n"
-	.string "but I'll finish my POKéDEX before you!\p"
-	.string "See you!$"
-
-EverGrandeCity_Text_MayYouGoingToBattleFrontier:
-	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Are you taking the BATTLE FRONTIER\n"
-	.string "challenge?\p"
-	.string "Or, are you going to complete your\n"
-	.string "POKéDEX?\p"
-	.string "I might've lost to you in battling,\n"
-	.string "but I'll finish my POKéDEX before you!\p"
-	.string "See you!$"
 
 EverGrandeCity_Text_BrendanShoppingLetsBattle:
-	.string "BRENDAN: Oh, hey, it's {PLAYER}.\p"
-	.string "I'm running an errand for my dad.\n"
-	.string "No, I'm not buying any DOLLS.\p"
-	.string "Anyways, it's been a while.\p"
-	.string "Want to have a battle to see who's been\n"
-	.string "raising POKéMON better?$"
+	.string "{PLAYER}! Dawn told me about\n"
+	.string "everything that happened with Team\p"
+	.string "Aqua, Team Magma, and Drake! I can't\n"
+	.string "believe what he did, but I'm more\p"
+	.string "impressed with how you were able to\n"
+	.string "stop all of them by yourself! It feels\p"
+	.string "silly to even say this, but we wanted to\n"
+	.string "give you one final test before you head\p"
+	.string "into Victory Road! We are rivals after\n"
+	.string "all!\p"
+	.string "Don't worry, we won't make you fight us\n"
+	.string "both at once. But you will have to beat\l"
+	.string "us both to get through! So…\p"
+	.string "What do you say to one last battle?$"
 
 EverGrandeCity_Text_BrendanNoConfidence:
-	.string "BRENDAN: Oh, what's the matter?\n"
-	.string "Don't have the confidence?$"
+	.string "If you say so, but I'm not going\n"
+	.string "anywhere until we battle!$"
 
 EverGrandeCity_Text_BrendanBattleMe:
-	.string "BRENDAN: Want to battle to see who's\n"
-	.string "been raising POKéMON better?$"
+	.string "Come on, {PLAYER}. I'm really going to\n"
+	.string "beat you this time!\l"
+	.string "What do you say?$"
 
 EverGrandeCity_Text_BrendanWontBeBeaten:
-	.string "BRENDAN: Aww, but you know I'm not\n"
-	.string "going to lose to no {PLAYER}.$"
+	.string "I'll show you how strong I've become!$"
 
 EverGrandeCity_Text_BrendanDefeat:
-	.string "Humph…\n"
-	.string "You've done a lot of raising.\p"
-	.string "That stings a bit--I had a head start\n"
-	.string "on you as a TRAINER…$"
+	.string "… … … … … … … …\p"
+	.string "I remember the battle I had with you,\n"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
+	.string "That battle helped you become this\n"
+	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
 EverGrandeCity_Text_BrendanGoingBackToLittleroot:
-	.string "BRENDAN: I…\n"
-	.string "I plan on going home to LITTLEROOT.\p"
+	.string "Brendan: I…\n"
+	.string "I plan on going home to Littleroot.\p"
 	.string "You know I'm helping out my dad on his\n"
-	.string "POKéDEX. It's coming together pretty\l"
-	.string "decently, so I should go show him.$"
-
-EverGrandeCity_Text_BrendanYouGoingToCollectBadges:
-	.string "{PLAYER}, what are you going to do?\p"
-	.string "Collect all the GYM BADGES and take\n"
-	.string "the POKéMON LEAGUE challenge?\p"
-	.string "Maybe I'll do that, too…\p"
-	.string "Well, anyway, hang in there!$"
-
-EverGrandeCity_Text_BrendanYouGoingToPokemonLeague:
-	.string "{PLAYER}, what are you going to do?\p"
-	.string "Since you're that strong, are you\n"
-	.string "taking the POKéMON LEAGUE challenge?\p"
-	.string "Heh, even me--if I trained my POKéMON\n"
-	.string "a bit more, I should be stronger than\l"
-	.string "you, {PLAYER}.\p"
-	.string "Well, anyway, hang in there!$"
-
-EverGrandeCity_Text_BrendanYouGoingToBattleFrontier:
-	.string "{PLAYER}, what are you going to do?\p"
-	.string "Are you taking the BATTLE FRONTIER\n"
-	.string "challenge?\p"
-	.string "Or, are you going to complete your\n"
-	.string "POKéDEX?\p"
-	.string "Since you're that strong, you should\n"
-	.string "consider the BATTLE FRONTIER.\p"
-	.string "Heh, if I train my POKéMON a bit more,\n"
-	.string "I'll get stronger than you, {PLAYER}.\p"
-	.string "Maybe I should go to the BATTLE\n"
-	.string "FRONTIER.\p"
-	.string "Well, anyway, hang in there!$"
+	.string "Pokédex. It's coming together pretty\l"
+	.string "decently, so I should go show him.\p"
+	.string "Like Dawn said, you've got this,\n"
+	.string "{PLAYER}. I know you're strong enough\l"
+	.string "to become the Champion!\p"
+	.string "Oh, and one more thing. When we first\n"
+	.string "got here, we saw Wally walking into\p"
+	.string "Victory Road. He looked really\n"
+	.string "determined, he was almost like a\p"
+	.string "different person than that timid kid\n"
+	.string "you beat in Mauville…\l"
+	.string "Just thought I'd give you a heads up!\p"
+	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "I'll see you again soon!$"
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
@@ -337,3 +271,184 @@ EverGrandeCity_Text_CitySign:
 	.string "and POKéMON.”$"
 
 `
+
+script EverGrandeCity_EventScript_Dawn{
+	lockall
+	applymovement(2, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_BEAT_DAWN_EVERGRANDE, EverGrandeCity_EventScript_BeatDawnNotRival)
+	goto_if_set(FLAG_DECLINED_DAWN_EVERGRANDE, EverGrandeCity_EventScript_DawnRequestBattleAgain)
+	msgbox(Dawn_GreetingEvergrande, MSGBOX_YESNO)
+	goto(EverGrandeCity_EventScript_BattleDawnPrompt)
+	end
+}
+
+script EverGrandeCity_EventScript_DawnRequestBattleAgain{
+	msgbox(ReadyYetFinal, MSGBOX_YESNO)
+	goto(EverGrandeCity_EventScript_BattleDawnPrompt)
+	end
+}
+
+script EverGrandeCity_EventScript_BattleDawnPrompt{
+	call_if_eq(VAR_RESULT, YES, EverGrandeCity_EventScript_BattleDawn)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_DeclineDawnBattle)
+	closemessage
+	end
+}
+
+script EverGrandeCity_EventScript_DeclineDawnBattle {
+	setflag(FLAG_DECLINED_DAWN_EVERGRANDE)
+	msgbox(ComeBackWhenReadyFinal, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script EverGrandeCity_EventScript_BattleDawn{
+	msgbox("Let's do this, one last time!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_DAWN_EVERGRANDE, Dawn_OutroEvergrande) 
+	goto(EverGrandeCity_EventScript_DawnDefeated)
+	return
+}
+
+
+script EverGrandeCity_EventScript_DawnDefeated{
+	setflag(FLAG_BEAT_DAWN_EVERGRANDE)
+	goto_if_set(FLAG_EVERGRANDE_CITY_BEAT_RIVAL, EverGrandeCity_EventScript_RivalsFlyAway)
+	msgbox(EverGrandeCity_Text_CanYouBeatRival, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script EverGrandeCity_EventScript_BeatDawnNotRival{
+	msgbox(EverGrandeCity_Text_NotMovingUntilRival, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+	
+
+script EverGrandeCity_EventScript_RivalsFlyAway{
+	applymovement(2, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(DawnFarewell, MSGBOX_DEFAULT)
+	closemessage()
+	delay(30)
+	setfieldeffectargument(0, 1)
+	dofieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	removeobject(2)
+	waitfieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	checkplayergender
+	goto_if_eq(VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell)
+	goto_if_eq(VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell)
+	releaseall
+	end
+}
+
+script EverGrandeCity_EventScript_MayFarewell{
+	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT)
+	closemessage()
+	delay(30)
+	setfieldeffectargument(0, 1)
+	dofieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	removeobject(1)
+	waitfieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM)
+	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL)
+	setflag(FLAG_MET_RIVAL_LILYCOVE)
+	setflag(FLAG_BEAT_BOTH_RIVALS)
+	releaseall
+	end
+}
+
+script EverGrandeCity_EventScript_BrendanFarewell{
+	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT)
+	closemessage()
+	delay(30)
+	setfieldeffectargument(0, 1)
+	dofieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	removeobject(1)
+	waitfieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(15)
+	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM)
+	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL)
+	setflag(FLAG_MET_RIVAL_LILYCOVE)
+	setflag(FLAG_BEAT_BOTH_RIVALS)
+	releaseall
+	end
+}
+	
+	
+text Dawn_GreetingEvergrande{
+	"Hey, {PLAYER}! After everything that\n"
+	"happened in Sootopolis, I called up\p"
+	"{RIVAL}, and we decided to meet up here\n"
+	"and wait for you. \p"
+	"You've beaten us both a number of\n"
+	"times, but we agreed that we can't just\p"
+	"let you through to Victory Road\n"
+	"without one more battle for each of us!\p"
+	"Don't worry, we won't make you fight us\n"
+	"both at once. But you will have to beat\l"
+	"us both to get through!\p"
+	"So what do you say, ready to have our\n"
+	"final battle?"
+}
+
+text ReadyYetFinal{
+	"Ready for our final battle now?"
+}
+
+text ComeBackWhenReadyFinal{
+	"Come back when you're ready, I'll be\n"
+	"here!"
+}
+	
+text Dawn_OutroEvergrande{
+	"Looks like you passed my final test\n"
+	"with flying colors, {PLAYER}.\p"
+	"Not that there was ever any doubt, but\n"
+	"you're definitely read for the Pokémon\l"
+	"League."
+}
+
+text EverGrandeCity_Text_CanYouBeatRival{
+	"Thanks for one last great battle,\n"
+	"{PLAYER}. But I'm not going anywhere\l"
+	"until you beat {RIVAL} too!"
+
+}
+	
+text EverGrandeCity_Text_NotMovingUntilRival{
+	"I'm not going anywhere until\n"
+	"you beat {RIVAL} too!"
+}
+
+text EverGrandeCity_Text_CanYouBeatDawn{
+	"That was a great battle, {PLAYER}, but\n"
+	"can you beat Dawn too?"
+}
+	
+text EverGrandeCity_Text_NotMovingUntilDawn{
+	"I'm not going anywhere until\n"
+	"you beat Dawn too!"
+}
+
+text DawnFarewell{
+	"Dawn: Well, {PLAYER}, neither of us were\n"
+	"a match for you once again.\p"
+	"I have nothing more I can give you to\n"
+	"help, I just want to wish you good luck\p"
+	"against the Elite Four when you make it\n"
+	"there.\p"
+	"Become the Champion, {PLAYER}, I know\n"
+	"you can do it!\p"
+	"So long, my friend, until next time!"
+}
+	
