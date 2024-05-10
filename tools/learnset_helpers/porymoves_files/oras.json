@@ -51883,7 +51883,8 @@
       "MOVE_STRENGTH",
       "MOVE_WATERFALL",
       "MOVE_ROCK_SMASH",
-      "MOVE_DIVE"
+      "MOVE_DIVE",
+      "MOVE_IRON_HEAD"
     ],
     "EggMoves": [
       "MOVE_AGILITY",

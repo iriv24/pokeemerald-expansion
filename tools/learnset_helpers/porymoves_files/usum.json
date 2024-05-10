@@ -51626,7 +51626,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_IRON_HEAD"
     ],
     "EggMoves": [
       "MOVE_AGILITY",

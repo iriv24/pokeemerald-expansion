@@ -35565,7 +35565,8 @@
       "MOVE_TRIPLE_AXEL",
       "MOVE_FEATHER_DANCE",
       "MOVE_THROAT_CHOP",
-      "MOVE_METAL_SOUND"
+      "MOVE_METAL_SOUND",
+      "MOVE_IRON_HEAD"
     ],
     "EggMoves": [
       "MOVE_AQUA_RING",
@@ -71256,7 +71257,8 @@
       "MOVE_FOCUS_PUNCH",
       "MOVE_BURNING_JEALOUSY",
       "MOVE_LASH_OUT",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [
       "MOVE_PARTING_SHOT"
@@ -92080,7 +92082,8 @@
       "MOVE_SPITE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_LASH_OUT",
-      "MOVE_PAIN_SPLIT"
+      "MOVE_PAIN_SPLIT",
+      "MOVE_TRICK_ROOM"
     ],
     "EggMoves": [],
     "TutorMoves": []

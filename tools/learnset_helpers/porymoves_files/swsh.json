@@ -73385,7 +73385,8 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DARKEST_LARIAT",
       "MOVE_THROAT_CHOP",
-      "MOVE_BODY_PRESS"
+      "MOVE_BODY_PRESS",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -80472,7 +80473,8 @@
       "MOVE_BRAVE_BIRD",
       "MOVE_NASTY_PLOT",
       "MOVE_FOUL_PLAY",
-      "MOVE_HURRICANE"
+      "MOVE_HURRICANE",
+      "MOVE_TRICK_ROOM"
     ],
     "EggMoves": [],
     "TutorMoves": [

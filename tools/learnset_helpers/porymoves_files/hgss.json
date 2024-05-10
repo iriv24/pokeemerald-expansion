@@ -47588,7 +47588,8 @@
       "MOVE_WHIRLPOOL",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL",
-      "MOVE_ROCK_CLIMB"
+      "MOVE_ROCK_CLIMB",
+      "MOVE_IRON_HEAD"
     ],
     "EggMoves": [
       "MOVE_AGILITY",

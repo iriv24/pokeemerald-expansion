@@ -3924,11 +3924,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #if P_MEGA_EVOLUTIONS
     [SPECIES_GRIMMSNARL_MEGA] =
     {
-        .baseHP        = 95,
-        .baseAttack    = 150,
-        .baseDefense   = 85,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 95,
+        .baseHP        = 115,
+        .baseAttack    = 100,
+        .baseDefense   = 95,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 145,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_DARK, TYPE_FAIRY),
         .catchRate = 45,

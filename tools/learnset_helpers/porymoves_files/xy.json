@@ -46294,7 +46294,8 @@
       "MOVE_CUT",
       "MOVE_SURF",
       "MOVE_STRENGTH",
-      "MOVE_WATERFALL"
+      "MOVE_WATERFALL",
+      "MOVE_IRON_HEAD"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
