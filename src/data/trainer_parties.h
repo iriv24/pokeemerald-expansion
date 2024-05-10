@@ -14491,11 +14491,11 @@ static const struct TrainerMon sParty_Fantina[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_ANNIHILAPE,
+    .species = SPECIES_PRIMEAPE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_DEFIANT,
-    .heldItem = ITEM_PUNCHING_GLOVE,
-    .moves = {MOVE_DRAIN_PUNCH, MOVE_RAGE_FIST, MOVE_BULK_UP, MOVE_ROCK_SLIDE}
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_DRAIN_PUNCH, MOVE_SHADOW_PUNCH, MOVE_BULK_UP, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
