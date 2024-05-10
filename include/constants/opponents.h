@@ -264,9 +264,9 @@
 #define TRAINER_WALTER_3                    258
 #define TRAINER_WALTER_4                    259
 #define TRAINER_WALTER_5                    260
-#define TRAINER_SIDNEY                      261
-#define TRAINER_PHOEBE                      262
-#define TRAINER_GLACIA                      263
+#define TRAINER_SIDNEY1                     261
+#define TRAINER_PHOEBE1                     262
+#define TRAINER_GLACIA1                     263
 #define TRAINER_DRAKE                       264
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
@@ -589,9 +589,9 @@
 #define TRAINER_KATHLEEN                    583
 #define TRAINER_CLIFFORD                    584
 #define TRAINER_NICHOLAS                    585
-#define TRAINER_GRUNT_SPACE_CENTER_3        586 // unused
-#define TRAINER_GRUNT_SPACE_CENTER_4        587 // unused
-#define TRAINER_GRUNT_SPACE_CENTER_5        588 // unused
+#define TRAINER_SIDNEY2                     586
+#define TRAINER_PHOEBE2                     587
+#define TRAINER_GLACIA2                     588
 #define TRAINER_GRUNT_SPACE_CENTER_6        589 // unused
 #define TRAINER_GRUNT_SPACE_CENTER_7        590 // unused
 #define TRAINER_MACEY                       591
@@ -863,12 +863,13 @@
 #define TRAINER_JUSTIN                      857
 #define TRAINER_DAWN_LILYCOVE               858
 #define TRAINER_DAWN_EVERGRANDE             859
+#define TRAINER_CYNTHIA                     860
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      860
+#define TRAINERS_COUNT                      861
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

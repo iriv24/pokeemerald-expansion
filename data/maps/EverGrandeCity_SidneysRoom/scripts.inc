@@ -101,74 +101,92 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 # 51 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 52 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
+	random 2
 # 53 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_SidneysRoom_EventScript_BattleSidney1
 # 54 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	end
+	trainerbattle_no_intro TRAINER_SIDNEY2, EverGrandeCity_SidneysRoom_Text_Defeat
 # 55 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 # 56 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech::
+	end
 # 57 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+
 # 58 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	release
+EverGrandeCity_SidneysRoom_EventScript_BattleSidney1::
 # 59 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	end
+	trainerbattle_no_intro TRAINER_SIDNEY1, EverGrandeCity_SidneysRoom_Text_Defeat
 # 60 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 # 61 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_EventScript_Defeated::
-# 62 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
-# 63 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-# 64 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-# 65 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	release
-# 66 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	end
+# 62 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+
+# 63 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+
+# 64 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech::
+# 65 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+# 66 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	release
 # 67 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	end
 # 68 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_IntroSpeech:
+
 # 69 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Welcome, challenger!\n"
+EverGrandeCity_SidneysRoom_EventScript_Defeated::
 # 70 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 # 71 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I like that look you're giving me.\n"
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 # 72 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I guess you'll give me a good match.\l"
+	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 # 73 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "That's good! Looking real good!\p"
+	release
 # 74 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "All right! You and me, let's enjoy\n"
+	end
 # 75 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "a battle that can only be staged\l"
+
 # 76 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "here in the POKéMON LEAGUE!$"
+EverGrandeCity_SidneysRoom_Text_IntroSpeech:
 # 77 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	.string "Welcome, challenger!\n"
 # 78 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_Defeat:
+	.string "I'm Sidney of the Elite Four.\p"
 # 79 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Well, how do you like that? I lost!\n"
+	.string "I'll give you a piece of advice from\n"
 # 80 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Eh, it was fun, so it doesn't matter.$"
+	.string "what I've learned over my years here,\l"
 # 81 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	.string "and it's really quite simple:\p"
 # 82 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
+	.string "If you control the Speed of the battle,\n"
 # 83 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Well, listen to what this loser has\n"
+	.string "you can control the outcome.\p"
 # 84 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "to say.\p"
+	.string "And me? I control the Speed to make it\n"
 # 85 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "You've got what it takes to go far.\n"
+	.string "so I never lose!$"
 # 86 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Now, go on to the next room and enjoy\l"
+
 # 87 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+EverGrandeCity_SidneysRoom_Text_Defeat:
+# 88 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Well, how do you like that? I lost!\n"
+# 89 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Eh, it was fun, so it doesn't matter.$"
+# 90 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+
+# 91 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
+# 92 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Well, listen to what this loser has\n"
+# 93 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "to say.\p"
+# 94 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "You've got what it takes to go far.\n"
+# 95 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Now, go on to the next room and enjoy\l"
+# 96 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	.string "your next battle!$"

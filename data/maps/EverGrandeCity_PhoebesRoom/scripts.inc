@@ -89,7 +89,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 # 45 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 46 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_PHOEBE1, EverGrandeCity_PhoebesRoom_Text_Defeat
 # 47 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 # 48 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"

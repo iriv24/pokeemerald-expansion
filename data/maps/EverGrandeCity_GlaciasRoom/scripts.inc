@@ -89,7 +89,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 # 45 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 46 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_GLACIA1, EverGrandeCity_GlaciasRoom_Text_Defeat
 # 47 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 # 48 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"

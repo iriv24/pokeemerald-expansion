@@ -628,7 +628,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 	clearflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	clearflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	clearflag FLAG_DEFEATED_ELITE_4_GLACIA
-	clearflag FLAG_DEFEATED_ELITE_4_DRAKE
+	clearflag FLAG_DEFEATED_ELITE_4_CYNTHIA
 	setvar VAR_ELITE_4_STATE, 0
 	return
 
