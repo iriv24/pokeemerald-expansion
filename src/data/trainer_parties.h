@@ -3936,6 +3936,66 @@ static const struct TrainerMon sParty_Glacia2[] = {
     }
 };
 
+static const struct TrainerMon sParty_Cynthia[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 85,
+    .species = SPECIES_GLIMMORA,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_TOXIC_DEBRIS,
+    .heldItem = ITEM_AIR_BALLOON,
+    .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_MORTAL_SPIN, MOVE_STEALTH_ROCK}
+    },
+    {
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
+    .lvl = 85,
+    .species = SPECIES_IRON_BUNDLE,
+    //TODO replace with booster energy
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_QUARK_DRIVE,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 85,
+    .species = SPECIES_ELECTIVIRE,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_PLASMA_FISTS, MOVE_POWER_UP_PUNCH, MOVE_EARTHQUAKE, MOVE_CLOSE_COMBAT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 85,
+    .species = SPECIES_HO_OH,
+    .nature = NATURE_IMPISH,
+    .ability = ABILITY_REGENERATOR,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+    .moves = {MOVE_SACRED_FIRE, MOVE_BRAVE_BIRD, MOVE_TOXIC, MOVE_ROOST}
+    },
+    //hp, atk, def, speed, spatk, spdef
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30),
+    .lvl = 85,
+    .species = SPECIES_XERNEAS,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_FAIRY_AURA,
+    .heldItem = ITEM_POWER_HERB,
+    .moves = {MOVE_MOONBLAST, MOVE_PSYSHOCK, MOVE_HIDDEN_POWER, MOVE_GEOMANCY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 85,
+    .species = SPECIES_GARCHOMP,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_SAND_VEIL,
+    .heldItem = ITEM_GARCHOMPITE,
+    .moves = {MOVE_SCALE_SHOT, MOVE_EARTHQUAKE, MOVE_IRON_HEAD, MOVE_SWORDS_DANCE}
+    }
+};
+
 static const struct TrainerMon sParty_Drake[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

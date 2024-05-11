@@ -38,7 +38,7 @@ EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
 	call PokemonLeague_EliteFour_EventScript_CloseDoor
 	return
 
-EverGrandeCity_DrakesRoom_EventScript_Drake::
+EverGrandeCity_DrakesRoom_EventScript_Cynthia::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_CYNTHIA, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
@@ -63,32 +63,48 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_DrakesRoom_Text_IntroSpeech:
-	.string "I am the last of the POKéMON LEAGUE\n"
-	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
-	.string "In their natural state, POKéMON are\n"
-	.string "wild living things. They are free.\p"
-	.string "At times, they hinder us.\n"
-	.string "At times, they help us.\p"
-	.string "For us to battle with POKéMON as\n"
-	.string "partners, do you know what it takes?\p"
-	.string "Do you know what is needed?\p"
-	.string "If you don't, then you will never\n"
-	.string "prevail over me!$"
+	.string "Well, well, well. You must be {PLAYER}.\n"
+	.string "I've heard a lot about you from Dawn,\l"
+	.string "Steven, and Wallace.\p"
+	.string "Dawn called me some time ago when that\n"
+	.string "crisis broke out here in Hoenn, but you\p"
+	.string "had already taken care of everything\n"
+	.string "by the time I arrived.\p"
+	.string "However, since I was here and since\n"
+	.string "Drake fled after his plan failed, they\p"
+	.string "asked me to stand in as the fourth\n"
+	.string "Elite Four member, temporarily.\p"
+	.string "It's really quite unfortunate for you,\n"
+	.string "you've already faced Drake separately,\p"
+	.string "and now you're facing possibly the\n"
+	.string "strongest Elite Four of any region…\p"
+	.string "You know what they say, no good deed\n"
+	.string "goes unpunished!\p"
+	.string "Don't worry though, I won't let my\n"
+	.string "feelings of pity stop me from holding\l"
+	.string "back on you.\p"
+	.string "Get ready, by the time I'm through with\n"
+	.string "you, I promise you'll wish it was Drake\l"
+	.string "here instead.$"
 
 EverGrandeCity_DrakesRoom_Text_Defeat:
-	.string "Superb, it should be said.$"
+	.string "I'm impressed, and that's saying\n"
+	.string "something. It seems all the things I've\l"
+	.string "heard about you were true after all.$"
 
 EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
-	.string "You deserve every credit for coming\n"
-	.string "this far as a TRAINER of POKéMON.\p"
-	.string "You do seem to know what is needed.\p"
-	.string "Yes, what a TRAINER needs is a\n"
-	.string "virtuous heart.\p"
-	.string "POKéMON touch the good hearts of\n"
-	.string "TRAINERS and learn good from wrong.\p"
-	.string "They touch the good hearts of\n"
-	.string "TRAINERS and grow strong.\p"
-	.string "Go! Go onwards!\n"
-	.string "The CHAMPION is waiting!$"
+	.string "It seems all the trials you've faced\n"
+	.string "have made you a strong trainer indeed.\p"
+	.string "But what's more impressive to me is the\n"
+	.string "bond you share with your Pokémon.\p"
+	.string "I may seem tough and harsh on my\n"
+	.string "exterior, but inside I know that true\p"
+	.string "strength comes from the bond forged\n"
+	.string "with your Pokémon.\p"
+	.string "It seems you know this as well, and for\n"
+	.string "that more than anything, you have my\l"
+	.string "respect.\p"
+	.string "Now go forth, the Champion is waiting!\n"
+	.string "Or should I say, “Champions”?$"
 
 `
