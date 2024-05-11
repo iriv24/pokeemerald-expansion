@@ -519,4 +519,56 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sSlakingFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
+
+        [SPECIES_DARMANITAN_GALARIAN_ZEN_MODE_TWO] =
+        {
+            .baseHP        = 105,
+            .baseAttack    = 160,
+            .baseDefense   = 55,
+            .baseSpeed     = 135,
+            .baseSpAttack  = 30,
+            .baseSpDefense = 55,
+            .types = MON_TYPES(TYPE_ICE, TYPE_FIRE),
+            .catchRate = 60,
+            .expYield = (P_UPDATED_EXP_YIELDS >= GEN_7) ? 189 : 168,
+            .evYield_SpAttack = 2,
+            .genderRatio = PERCENT_FEMALE(50),
+            .eggCycles = 20,
+            .friendship = STANDARD_FRIENDSHIP,
+            .growthRate = GROWTH_MEDIUM_SLOW,
+            .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+            .abilities = { ABILITY_ZEN_MODE, ABILITY_ZEN_MODE, ABILITY_ZEN_MODE },
+            .bodyColor = BODY_COLOR_WHITE,
+            .speciesName = _("Darmanitan"),
+            .cryId = CRY_DARMANITAN,
+            .natDexNum = NATIONAL_DEX_DARMANITAN,
+            .categoryName = _("Blazing"),
+            .height = 17,
+            .weight = 1200,
+            .description = COMPOUND_STRING(
+                "Darmanitan takes this form when\n"
+                "enraged. It won't stop spewing flames\n"
+                "until its rage has settled, even if\n"
+                "its body starts to melt."),
+            .pokemonScale = 272,
+            .pokemonOffset = 3,
+            .trainerScale = 256,
+            .trainerOffset = 0,
+            .frontPic = gMonFrontPic_DarmanitanGalarianZenMode,
+            .frontPicSize = MON_COORDS_SIZE(48, 64),
+            .frontPicYOffset = 2,
+            .frontAnimFrames = sAnims_DarmanitanGalarianZenMode,
+            //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+            .backPic = gMonBackPic_DarmanitanGalarianZenMode,
+            .backPicSize = MON_COORDS_SIZE(64, 64),
+            .backPicYOffset = 1,
+            //.backAnimId = BACK_ANIM_NONE,
+            .palette = gMonPalette_DarmanitanGalarianZenMode,
+            .shinyPalette = gMonShinyPalette_DarmanitanGalarianZenMode,
+            .iconSprite = gMonIcon_DarmanitanGalarianZenMode,
+            .iconPalIndex = 0,
+            FOOTPRINT(Darmanitan)
+            .levelUpLearnset = sDarmanitanGalarianLevelUpLearnset,
+            .teachableLearnset = sDarmanitanGalarianTeachableLearnset,
+        },
 };

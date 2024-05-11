@@ -44,13 +44,13 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	random 2
-	goto_if_eq VAR_RESULT, 0, EverGrandeCity_SidneysRoom_EventScript_BattlePhoebe1
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_PhoebesRoom_EventScript_BattlePhoebe1
 	trainerbattle_no_intro TRAINER_PHOEBE2, EverGrandeCity_PhoebesRoom_Text_Defeat
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
 
-EverGrandeCity_SidneysRoom_EventScript_BattlePhoebe1::
-	trainerbattle_no_intro TRAINER_PHOEBE1, EverGrandeCity_SidneysRoom_Text_Defeat
+EverGrandeCity_PhoebesRoom_EventScript_BattlePhoebe1::
+	trainerbattle_no_intro TRAINER_PHOEBE1, EverGrandeCity_PhoebesRoom_Text_Defeat
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
 

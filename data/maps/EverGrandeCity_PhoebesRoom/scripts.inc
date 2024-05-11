@@ -91,7 +91,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 # 46 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	random 2
 # 47 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	goto_if_eq VAR_RESULT, 0, EverGrandeCity_SidneysRoom_EventScript_BattlePhoebe1
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_PhoebesRoom_EventScript_BattlePhoebe1
 # 48 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_PHOEBE2, EverGrandeCity_PhoebesRoom_Text_Defeat
 # 49 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
@@ -101,9 +101,9 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 # 51 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 
 # 52 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_EventScript_BattlePhoebe1::
+EverGrandeCity_PhoebesRoom_EventScript_BattlePhoebe1::
 # 53 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_PHOEBE1, EverGrandeCity_SidneysRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_PHOEBE1, EverGrandeCity_PhoebesRoom_Text_Defeat
 # 54 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 # 55 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"

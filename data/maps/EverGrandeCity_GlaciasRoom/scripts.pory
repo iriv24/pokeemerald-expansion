@@ -43,6 +43,13 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	random 2
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_GlaciasRoom_EventScript_BattleGlacia1
+	trainerbattle_no_intro TRAINER_GLACIA2, EverGrandeCity_GlaciasRoom_Text_Defeat
+	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_BattleGlacia1::
 	trainerbattle_no_intro TRAINER_GLACIA1, EverGrandeCity_GlaciasRoom_Text_Defeat
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
@@ -60,26 +67,31 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
-	.string "Welcome, my name is GLACIA\n"
-	.string "of the ELITE FOUR.\p"
-	.string "I've traveled from afar to HOENN\n"
-	.string "so that I may hone my ice skills.\p"
-	.string "But all I have seen are challenges by\n"
-	.string "weak TRAINERS and their POKéMON.\p"
-	.string "What about you?\p"
-	.string "It would please me to no end if I could\n"
-	.string "go all out against you!$"
+	.string "Welcome, my name is Glacia\n"
+	.string "of the Elite Four.\p"
+	.string "I've traveled from afar to Hoenn\n"
+	.string "so that I may hone my Ice skills.\p"
+	.string "But in my travels, I learned to expand\n"
+	.string "my strategies beyond just Ice-types.\p"
+	.string "You see, though I originally thought\n"
+	.string "Fire to be the complete opposite of\p"
+	.string "Ice, I learned that several Ice-types\n"
+	.string "have Fire-type counterparts.\p"
+	.string "This knowledge has expanded my\n"
+	.string "skillset, now see how strong I have\l"
+	.string "become with the power of Fire and Ice!$"
 
 EverGrandeCity_GlaciasRoom_Text_Defeat:
-	.string "You and your POKéMON…\n"
+	.string "You and your Pokémon…\n"
 	.string "How hot your spirits burn!\p"
 	.string "The all-consuming heat overwhelms.\p"
-	.string "It's no surprise that my icy skills\n"
-	.string "failed to harm you.$"
+	.string "It's no surprise that my fiery and icy\n"
+	.string "skills failed to harm you.$"
 
 EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
-	.string "Advance to the next room.\p"
-	.string "And there, confirm the truly fearsome\n"
-	.string "side of the POKéMON LEAGUE.$"
+	.string "Advance to the next room.\n"
+	.string "Though Drake is no longer there waiting\p"
+	.string "for you, I think you'll find his\n"
+	.string "replacement to be equally formidable.$"
 
 `

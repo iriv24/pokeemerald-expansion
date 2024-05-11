@@ -89,29 +89,29 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 # 45 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 46 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_GLACIA1, EverGrandeCity_GlaciasRoom_Text_Defeat
+	random 2
 # 47 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
+	goto_if_eq VAR_RESULT, 0, EverGrandeCity_GlaciasRoom_EventScript_BattleGlacia1
 # 48 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	end
+	trainerbattle_no_intro TRAINER_GLACIA2, EverGrandeCity_GlaciasRoom_Text_Defeat
 # 49 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-
+	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 # 50 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech::
-# 51 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-# 52 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	release
-# 53 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	end
-# 54 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+# 51 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 
+# 52 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+EverGrandeCity_GlaciasRoom_EventScript_BattleGlacia1::
+# 53 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_GLACIA1, EverGrandeCity_GlaciasRoom_Text_Defeat
+# 54 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 # 55 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-EverGrandeCity_GlaciasRoom_EventScript_Defeated::
+	end
 # 56 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ELITE_4_GLACIA
+
 # 57 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech::
 # 58 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 # 59 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
@@ -121,46 +121,70 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 # 61 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 
 # 62 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
+EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 # 63 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "Welcome, my name is GLACIA\n"
+	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 # 64 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "of the ELITE FOUR.\p"
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 # 65 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "I've traveled from afar to HOENN\n"
+	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 # 66 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "so that I may hone my ice skills.\p"
+	release
 # 67 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "But all I have seen are challenges by\n"
+	end
 # 68 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "weak TRAINERS and their POKéMON.\p"
+
 # 69 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "What about you?\p"
+EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
 # 70 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "It would please me to no end if I could\n"
+	.string "Welcome, my name is Glacia\n"
 # 71 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "go all out against you!$"
+	.string "of the Elite Four.\p"
 # 72 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-
+	.string "I've traveled from afar to Hoenn\n"
 # 73 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-EverGrandeCity_GlaciasRoom_Text_Defeat:
+	.string "so that I may hone my Ice skills.\p"
 # 74 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "You and your POKéMON…\n"
+	.string "But in my travels, I learned to expand\n"
 # 75 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "How hot your spirits burn!\p"
+	.string "my strategies beyond just Ice-types.\p"
 # 76 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "The all-consuming heat overwhelms.\p"
+	.string "You see, though I originally thought\n"
 # 77 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "It's no surprise that my icy skills\n"
+	.string "Fire to be the complete opposite of\p"
 # 78 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "failed to harm you.$"
+	.string "Ice, I learned that several Ice-types\n"
 # 79 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-
+	.string "have Fire-type counterparts.\p"
 # 80 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
+	.string "This knowledge has expanded my\n"
 # 81 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "Advance to the next room.\p"
+	.string "skillset, now see how strong I have\l"
 # 82 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "And there, confirm the truly fearsome\n"
+	.string "become with the power of Fire and Ice!$"
 # 83 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	.string "side of the POKéMON LEAGUE.$"
+
+# 84 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+EverGrandeCity_GlaciasRoom_Text_Defeat:
+# 85 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "You and your Pokémon…\n"
+# 86 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "How hot your spirits burn!\p"
+# 87 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "The all-consuming heat overwhelms.\p"
+# 88 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "It's no surprise that my fiery and icy\n"
+# 89 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "skills failed to harm you.$"
+# 90 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+
+# 91 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
+# 92 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "Advance to the next room.\n"
+# 93 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "Though Drake is no longer there waiting\p"
+# 94 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "for you, I think you'll find his\n"
+# 95 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
+	.string "replacement to be equally formidable.$"
