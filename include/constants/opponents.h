@@ -592,8 +592,8 @@
 #define TRAINER_SIDNEY2                     586
 #define TRAINER_PHOEBE2                     587
 #define TRAINER_GLACIA2                     588
-#define TRAINER_GRUNT_SPACE_CENTER_6        589 // unused
-#define TRAINER_GRUNT_SPACE_CENTER_7        590 // unused
+#define TRAINER_WALLACE_WITH_STEVEN         589
+#define TRAINER_STEVEN_WITH_WALLACE         590
 #define TRAINER_MACEY                       591
 #define TRAINER_BRENDAN_RUSTBORO_TREECKO    592
 #define TRAINER_BRENDAN_RUSTBORO_MUDKIP     593
