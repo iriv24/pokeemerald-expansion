@@ -8960,11 +8960,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_LUSTROUS_ORB:
-        if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_PALKIA && (moveType == TYPE_WATER || moveType == TYPE_DRAGON))
+        if ((GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_PALKIA || GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_PALKIA_PRIMAL) && (moveType == TYPE_WATER || moveType == TYPE_DRAGON))
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_ADAMANT_ORB:
-        if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_DIALGA && (moveType == TYPE_STEEL || moveType == TYPE_DRAGON))
+        if ((GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_DIALGA || GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_DIALGA_PRIMAL) && (moveType == TYPE_STEEL || moveType == TYPE_DRAGON))
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_GRISEOUS_ORB:

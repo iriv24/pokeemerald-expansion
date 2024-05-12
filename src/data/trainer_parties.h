@@ -5435,7 +5435,7 @@ static const struct TrainerMon sParty_WallaceWithSteven[] = {
     .species = SPECIES_PALKIA_PRIMAL,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PRIMAL_ARMOR,
-    .heldItem = ITEM_ASSAULT_VEST,
+    .heldItem = ITEM_LUSTROUS_ORB,
     .moves = {MOVE_SPACIAL_REND, MOVE_EARTH_POWER, MOVE_AURA_SPHERE, MOVE_HYDRO_PUMP}
     },
     {
@@ -5466,7 +5466,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .species = SPECIES_DIALGA_PRIMAL,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PRIMAL_ARMOR,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_ADAMANT_ORB,
     .moves = {MOVE_DRAGON_PULSE, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
     },
     {
