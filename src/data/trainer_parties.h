@@ -3948,7 +3948,7 @@ static const struct TrainerMon sParty_Cynthia[] = {
     },
     {
         //hp, atk, def, speed, spatk, spdef
-    .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
     .lvl = 85,
     .species = SPECIES_IRON_BUNDLE,
     //TODO replace with booster energy
