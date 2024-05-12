@@ -6517,6 +6517,10 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonBackPic_DialgaOrigin[] = INCBIN_U32("graphics/pokemon/dialga/origin/back.4bpp.lz");
     const u32 gMonShinyPalette_DialgaOrigin[] = INCBIN_U32("graphics/pokemon/dialga/origin/shiny.gbapal.lz");
     const u8 gMonIcon_DialgaOrigin[] = INCBIN_U8("graphics/pokemon/dialga/origin/icon.4bpp");
+
+    const u32 gMonFrontPic_DialgaPrimal[] = INCBIN_U32("graphics/pokemon/dialga/primal/anim_front.4bpp.lz");
+    const u32 gMonPalette_DialgaPrimal[] = INCBIN_U32("graphics/pokemon/dialga/primal/dialgaprimal.gbapal.lz");
+    const u32 gMonBackPic_DialgaPrimal[] = INCBIN_U32("graphics/pokemon/dialga/primal/back.4bpp.lz");
 #endif //P_FAMILY_DIALGA
 
 #if P_FAMILY_PALKIA
@@ -6534,6 +6538,10 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonBackPic_PalkiaOrigin[] = INCBIN_U32("graphics/pokemon/palkia/origin/back.4bpp.lz");
     const u32 gMonShinyPalette_PalkiaOrigin[] = INCBIN_U32("graphics/pokemon/palkia/origin/shiny.gbapal.lz");
     const u8 gMonIcon_PalkiaOrigin[] = INCBIN_U8("graphics/pokemon/palkia/origin/icon.4bpp");
+
+    const u32 gMonFrontPic_PalkiaPrimal[] = INCBIN_U32("graphics/pokemon/palkia/primal/anim_front.4bpp.lz");
+    const u32 gMonPalette_PalkiaPrimal[] = INCBIN_U32("graphics/pokemon/palkia/primal/palkiaprimal.gbapal.lz");
+    const u32 gMonBackPic_PalkiaPrimal[] = INCBIN_U32("graphics/pokemon/palkia/primal/back.4bpp.lz");
 #endif //P_FAMILY_PALKIA
 
 #if P_FAMILY_HEATRAN

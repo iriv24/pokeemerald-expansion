@@ -1633,7 +1633,9 @@
 #define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX   1526
 #define SPECIES_SLAKING_MEGA                            1527
 #define SPECIES_DARMANITAN_GALARIAN_ZEN_MODE_TWO        1528
-#define SPECIES_MIMIKYU_TOTEM_BUSTED                    1529
+#define SPECIES_DIALGA_PRIMAL                           1529
+#define SPECIES_PALKIA_PRIMAL                           1530
+#define SPECIES_MIMIKYU_TOTEM_BUSTED                    1531
 
 
 #define SPECIES_EGG SPECIES_MIMIKYU_TOTEM_BUSTED + 1
