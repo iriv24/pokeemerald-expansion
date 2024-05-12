@@ -5467,7 +5467,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .nature = NATURE_TIMID,
     .ability = ABILITY_PRIMAL_ARMOR,
     .heldItem = ITEM_ADAMANT_ORB,
-    .moves = {MOVE_DRAGON_PULSE, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
+    .moves = {MOVE_ROAR_OF_TIME, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
