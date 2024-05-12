@@ -1829,6 +1829,13 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_PRIMAL_ARMOR] =
+    {
+        .name = _("Prism Armor"),
+        .description = COMPOUND_STRING("Weakens “supereffective”."),
+        .aiRating = 6,
+    },
+
     [ABILITY_NEUROFORCE] =
     {
         .name = _("Neuroforce"),
