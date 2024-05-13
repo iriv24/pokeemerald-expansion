@@ -4149,14 +4149,15 @@ static const struct TrainerMon sParty_Brawly1[] = {
 };
 
 static const struct TrainerMon sParty_Wattson1[] = {
+    //hp, atk, def, speed, spatk, spdef
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 33,
-    .species = SPECIES_LANTURN,
-    .nature = NATURE_MODEST,
-    .heldItem = ITEM_DAMP_ROCK,
-    .ability = ABILITY_DRIZZLE,
-    .moves = {MOVE_THUNDER, MOVE_SCALD, MOVE_ICY_WIND, MOVE_SIGNAL_BEAM}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
+    .lvl = 34,
+    .species = SPECIES_DEDENNE,
+    .nature = NATURE_TIMID,
+    .heldItem = ITEM_TERRAIN_EXTENDER,
+    .ability = ABILITY_ELECTRIC_SURGE,
+    .moves = {MOVE_PARABOLIC_CHARGE, MOVE_VOLT_SWITCH, MOVE_DRAINING_KISS, MOVE_HIDDEN_POWER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4165,7 +4166,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .heldItem = ITEM_CHARTI_BERRY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_VOLT_ABSORB,
-    .moves = {MOVE_HURRICANE, MOVE_THUNDER, MOVE_VOLT_SWITCH, MOVE_WEATHER_BALL}
+    .moves = {MOVE_AIR_CUTTER, MOVE_ELECTROWEB, MOVE_VOLT_SWITCH, MOVE_ROOST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4174,16 +4175,16 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .heldItem = ITEM_EVIOLITE,
     .nature = NATURE_MODEST,
     .ability = ABILITY_ANALYTIC,
-    .moves = {MOVE_THUNDER, MOVE_FLASH_CANNON, MOVE_VOLT_SWITCH, MOVE_TRI_ATTACK}
+    .moves = {MOVE_SHOCK_WAVE, MOVE_MIRROR_SHOT, MOVE_VOLT_SWITCH, MOVE_TRI_ATTACK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 34,
-    .species = SPECIES_EELEKTROSS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .nature = NATURE_BRAVE,
+    .species = SPECIES_VIKAVOLT,
+    .heldItem = ITEM_OCCA_BERRY,
+    .nature = NATURE_MODEST,
     .ability = ABILITY_LEVITATE,
-    .moves = {MOVE_THUNDER, MOVE_GIGA_DRAIN, MOVE_DRAIN_PUNCH, MOVE_LIQUIDATION}
+    .moves = {MOVE_BUG_BUZZ, MOVE_AIR_SLASH, MOVE_ENERGY_BALL, MOVE_CHARGE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4192,7 +4193,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .heldItem = ITEM_LUXRITE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_THUNDER_FANG, MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_ICE_FANG}
+    .moves = {MOVE_THUNDER_FANG, MOVE_BITE, MOVE_PSYCHIC_FANGS, MOVE_ICE_FANG}
     }
 };
 
@@ -7746,7 +7747,7 @@ static const struct TrainerMon sParty_Edwin1[] = {
     .heldItem = ITEM_COBA_BERRY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_OWN_TEMPO,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_BUBBLE_BEAM, MOVE_AURORA_BEAM, MOVE_FAKE_OUT}
+    .moves = {MOVE_MEGA_DRAIN, MOVE_BUBBLE_BEAM, MOVE_AURORA_BEAM, MOVE_FAKE_OUT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11653,7 +11654,7 @@ static const struct TrainerMon sParty_Joseph[] = {
     .heldItem = ITEM_WISE_GLASSES,
     .nature = NATURE_MODEST,
     .ability = ABILITY_QUICK_DRAW,
-    .moves = {MOVE_PSYCHIC, MOVE_FLASH, MOVE_GRASS_KNOT, MOVE_SLUDGE_BOMB}
+    .moves = {MOVE_PSYBEAM, MOVE_FLASH, MOVE_GRASS_KNOT, MOVE_SLUDGE_BOMB}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11671,16 +11672,16 @@ static const struct TrainerMon sParty_Joseph[] = {
     .heldItem = ITEM_FOCUS_SASH,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_WIND_RIDER,
-    .moves = {MOVE_FAKE_OUT, MOVE_NIGHT_SLASH, MOVE_LEAF_BLADE, MOVE_SUCKER_PUNCH}
+    .moves = {MOVE_FAKE_OUT, MOVE_NIGHT_SLASH, MOVE_RAZOR_LEAF, MOVE_SUCKER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 203,
-    .species = SPECIES_VIKAVOLT,
-    .heldItem = ITEM_OCCA_BERRY,
+    .species = SPECIES_LANTURN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_LEVITATE,
-    .moves = {MOVE_BUG_BUZZ, MOVE_AIR_SLASH, MOVE_ENERGY_BALL, MOVE_FLASH}
+    .heldItem = ITEM_SHUCA_BERRY,
+    .ability = ABILITY_WATER_ABSORB,
+    .moves = {MOVE_SHOCK_WAVE, MOVE_SCALD, MOVE_ICY_WIND, MOVE_SIGNAL_BEAM}
     },
 };
 
@@ -11692,7 +11693,7 @@ static const struct TrainerMon sParty_Alyssa[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_HARVEST,
     .heldItem = ITEM_YACHE_BERRY,
-    .moves = {MOVE_DRAGON_HAMMER, MOVE_SEED_BOMB, MOVE_EGG_BOMB, MOVE_BRICK_BREAK}
+    .moves = {MOVE_DRAGON_TAIL, MOVE_SEED_BOMB, MOVE_EGG_BOMB, MOVE_BRICK_BREAK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
