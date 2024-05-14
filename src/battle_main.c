@@ -5331,6 +5331,7 @@ static void TurnValuesCleanUp(bool8 var0)
             gBattleMons[i].status2 &= ~STATUS2_SUBSTITUTE;
 
         gSpecialStatuses[i].parentalBondState = PARENTAL_BOND_OFF;
+        gSpecialStatuses[i].oraoraoraoraState = ORAORAORAORA_OFF;
     }
 
     gSideStatuses[B_SIDE_PLAYER] &= ~(SIDE_STATUS_QUICK_GUARD | SIDE_STATUS_WIDE_GUARD | SIDE_STATUS_CRAFTY_SHIELD | SIDE_STATUS_MAT_BLOCK);

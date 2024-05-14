@@ -1322,6 +1322,19 @@ static void Cmd_attackcanceler(void)
         PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
         return;
     }
+    if (gSpecialStatuses[gBattlerAttacker].oraoraoraoraState == ORAORAORAORA_OFF
+    && GetBattlerAbility(gBattlerAttacker) == ABILITY_ORAORAORAORA
+    && gMovesInfo[gCurrentMove].punchingMove
+    && gMovesInfo[gCurrentMove].strikeCount < 2
+    && gMovesInfo[gCurrentMove].effect != EFFECT_MULTI_HIT
+    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget])
+    && gBattleStruct->zmove.toBeUsed[gBattlerAttacker] == MOVE_NONE)
+    {
+        gSpecialStatuses[gBattlerAttacker].oraoraoraoraState = ORAORAORAORA_1ST_HIT;
+        gMultiHitCounter = 2;
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+        return;
+    }
 
     // Check Protean activation.
     if (ProteanTryChangeType(gBattlerAttacker, attackerAbility, gCurrentMove, moveType))
@@ -1473,6 +1486,12 @@ static void Cmd_attackcanceler(void)
         if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT)
         {
             gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF; // No second hit if first hit was blocked
+            gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
+            gMultiHitCounter = 0;
+        }
+        if (gSpecialStatuses[gBattlerAttacker].oraoraoraoraState == ORAORAORAORA_1ST_HIT)
+        {
+            gSpecialStatuses[gBattlerAttacker].oraoraoraoraState = ORAORAORAORA_OFF; // No second hit if first hit was blocked
             gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             gMultiHitCounter = 0;
         }
@@ -1773,11 +1792,12 @@ static void Cmd_accuracycheck(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_2ND_HIT
+        || gSpecialStatuses[gBattlerAttacker].oraoraoraoraState == ORAORAORAORA_2ND_HIT
         || (gSpecialStatuses[gBattlerAttacker].multiHitOn
         && (abilityAtk == ABILITY_SKILL_LINK || holdEffectAtk == HOLD_EFFECT_LOADED_DICE
         || !(gMovesInfo[move].effect == EFFECT_TRIPLE_KICK || gMovesInfo[move].effect == EFFECT_POPULATION_BOMB))))
     {
-        // No acc checks for second hit of Parental Bond or multi hit moves, except Triple Kick/Triple Axel/Population Bomb
+        // No acc checks for second hit of Parental Bond, ORAORAORAORA or multi hit moves, except Triple Kick/Triple Axel/Population Bomb
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -2204,6 +2224,11 @@ static void Cmd_attackanimation(void)
     else
     {
         if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_2ND_HIT) // No animation on second hit
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+        if (gSpecialStatuses[gBattlerAttacker].oraoraoraoraState == ORAORAORAORA_2ND_HIT) // No animation on second hit
         {
             gBattlescriptCurrInstr = cmd->nextInstr;
             return;
@@ -2788,6 +2813,13 @@ void SetMoveEffect(bool32 primary, bool32 certain)
         return;
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT
+        && gBattleMons[gBattlerTarget].hp != 0
+        && IsFinalStrikeEffect(gBattleScripting.moveEffect))
+    {
+        gBattlescriptCurrInstr++;
+        return;
+    }
+    if (gSpecialStatuses[gBattlerAttacker].oraoraoraoraState == ORAORAORAORA_1ST_HIT
         && gBattleMons[gBattlerTarget].hp != 0
         && IsFinalStrikeEffect(gBattleScripting.moveEffect))
     {
@@ -6003,6 +6035,9 @@ static void Cmd_moveend(void)
                     {
                         if (gSpecialStatuses[gBattlerAttacker].parentalBondState)
                             gSpecialStatuses[gBattlerAttacker].parentalBondState--;
+                        
+                        if (gSpecialStatuses[gBattlerAttacker].oraoraoraoraState)
+                            gSpecialStatuses[gBattlerAttacker].oraoraoraoraState--;
 
                         gHitMarker |= (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING);
                         gBattleScripting.animTargetsHit = 0;
@@ -6026,6 +6061,7 @@ static void Cmd_moveend(void)
             }
             gMultiHitCounter = 0;
             gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF;
+            gSpecialStatuses[gBattlerAttacker].oraoraoraoraState = ORAORAORAORA_OFF;
             gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             gBattleScripting.moveendState++;
             break;
@@ -6249,6 +6285,8 @@ static void Cmd_moveend(void)
             if (gCurrentMove != gLastResultingMoves[gBattlerAttacker] || gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 gBattleStruct->sameMoveTurns[gBattlerAttacker] = 0;
             else if (gCurrentMove == gLastResultingMoves[gBattlerAttacker] && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT)
+                gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
+            else if (gCurrentMove == gLastResultingMoves[gBattlerAttacker] && gMovesInfo[gCurrentMove].punchingMove && gSpecialStatuses[gBattlerAttacker].oraoraoraoraState != ORAORAORAORA_1ST_HIT)
                 gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
             gBattleScripting.moveendState++;
             break;
@@ -15733,7 +15771,8 @@ bool32 IsMoveAffectedByParentalBond(u32 move, u32 battler)
     if (move != MOVE_NONE && move != MOVE_UNAVAILABLE && move != MOVE_STRUGGLE
         && !gMovesInfo[move].parentalBondBanned
         && gMovesInfo[move].category != DAMAGE_CATEGORY_STATUS
-        && gMovesInfo[move].strikeCount < 2)
+        && gMovesInfo[move].strikeCount < 2
+        && gMovesInfo[gCurrentMove].effect != EFFECT_MULTI_HIT)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         {
