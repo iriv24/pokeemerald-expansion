@@ -594,7 +594,7 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
 bool32 AI_IsDamagedByRecoil(u32 battler)
 {
     u32 ability = AI_DATA->abilities[battler];
-    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD)
+    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD || ability == ABILITY_BAD_COMPANY)
         return FALSE;
     return TRUE;
 }
@@ -743,7 +743,7 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
                 case MOVE_EFFECT_SP_DEF_MINUS_1:
                 case MOVE_EFFECT_SP_DEF_MINUS_2:
-                    if ((gMovesInfo[move].additionalEffects[i].self && GetBattlerAbility(battlerAtk) != ABILITY_CONTRARY)
+                    if ((gMovesInfo[move].additionalEffects[i].self && GetBattlerAbility(battlerAtk) != ABILITY_CONTRARY && GetBattlerAbility(battlerAtk) != ABILITY_BAD_COMPANY)
                         || (noOfHitsToKo != 1 && abilityDef == ABILITY_CONTRARY && !IsMoldBreakerTypeAbility(abilityAtk)))
                         return TRUE;
                     break;
