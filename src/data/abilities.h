@@ -213,6 +213,14 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_MOUNTAINEER] =
+    {
+        .name = _("Mountaineer"),
+        .description = COMPOUND_STRING("Not hit by Rock attacks."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
     [ABILITY_EFFECT_SPORE] =
     {
         .name = _("Effect Spore"),

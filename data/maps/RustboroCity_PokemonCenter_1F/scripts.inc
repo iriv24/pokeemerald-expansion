@@ -75,7 +75,7 @@ RustboroCity_PokemonCenter_1F_EventScript_EggMan::
 # 38 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	waitfanfare
 # 39 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	giveegg SPECIES_OMANYTE
+	giveegg SPECIES_TOGEPI
 # 40 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	release
 # 41 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
