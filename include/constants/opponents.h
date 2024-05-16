@@ -149,7 +149,7 @@
 #define TRAINER_STEVE_1                     143
 #define TRAINER_THALIA_1                    144
 #define TRAINER_MARK                        145
-#define TRAINER_GRUNT_MT_CHIMNEY_1          146
+#define TRAINER_COURTNEY_MT_CHIMNEY         146
 #define TRAINER_STEVE_2                     147
 #define TRAINER_STEVE_3                     148
 #define TRAINER_STEVE_4                     149
@@ -731,7 +731,7 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_10      725
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_11      726 //unused
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_12      727 //unused
-#define TRAINER_GRUNT_MAGMA_HIDEOUT_13      728
+#define TRAINER_COURTNEY                    728
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_14      729
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_15      730
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_16      731

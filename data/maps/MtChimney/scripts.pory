@@ -510,7 +510,7 @@ MtChimney_EventScript_Shirley::
 	end
 
 MtChimney_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, MtChimney_Text_Grunt1Intro, MtChimney_Text_Grunt1Defeat
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_Grunt1Intro, MtChimney_Text_Grunt1Defeat
 	msgbox MtChimney_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -620,16 +620,15 @@ MtChimney_Text_Grunt2PostBattle:
 	.string "in our way?$"
 
 MtChimney_Text_Grunt1Intro:
-	.string "If there were more land, I'd be able\n"
-	.string "to get a big house of my own!\p"
-	.string "I'm going to build it on hardened lava!$"
+	.string "Me and this idiot grunt will stop you\n"
+	.string "right here!$"
 
 MtChimney_Text_Grunt1Defeat:
-	.string "My dream of a big house…$"
+	.string "That idiot weighed me down…$"
 
 MtChimney_Text_Grunt1PostBattle:
-	.string "A kid like you, you ought to be\n"
-	.string "splashing about in the waves!$"
+	.string "It's fine.\n"
+	.string "You won't get past Tabitha.$"
 
 MtChimney_Text_TeamAquaAlwaysMessingWithPlans:
 	.string "That annoying TEAM AQUA…\n"

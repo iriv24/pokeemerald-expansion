@@ -2066,7 +2066,7 @@ static const struct TrainerMon sParty_Mark[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMtChimney1[] = {
+static const struct TrainerMon sParty_CourtneyMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 42,
@@ -12011,7 +12011,7 @@ static const struct TrainerMon sParty_GruntMagmaHideout16[] = {
 };
 
 
-static const struct TrainerMon sParty_GruntMagmaHideout13[] = {
+static const struct TrainerMon sParty_Courtney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 80,

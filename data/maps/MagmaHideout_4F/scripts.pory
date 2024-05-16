@@ -2,7 +2,7 @@ raw `
 .set LOCALID_GROUDON, 1
 .set LOCALID_GRUNT_1, 2
 .set LOCALID_GRUNT_2, 3
-.set LOCALID_GRUNT_3, 4
+.set LOCAL_ID_COURTNEY, 4
 .set LOCALID_TABITHA, 5
 .set LOCALID_MAXIE, 6
 .set LOCALID_GROUDON_SLEEPING, 7
@@ -109,7 +109,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	removeobject LOCALID_MAXIE
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
-	removeobject LOCALID_GRUNT_3
+	removeobject LOCAL_ID_COURTNEY
 	removeobject LOCALID_TABITHA
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
@@ -157,10 +157,10 @@ MagmaHideout_4F_Text_GruntScared:
 	.string "on top of us!$"
 
 MagmaHideout_4F_Text_GruntScared2:
-	.string "Hail Arceus, full of gra....$"
+	.string "Hail Arceus, full of gra….$"
 
 MagmaHideout_4F_Text_GruntRightThing:
-	.string "I hope I can still make it to Admin...$"
+	.string "I can't believe I lost to you again…$"
 
 MagmaHideout_4F_Text_NeverStopMaxie:
 	.string "You'll never stop Maxie now.\n"
@@ -171,10 +171,10 @@ MagmaHideout_4F_Text_Grunt13Intro:
 	.string "You're not getting by me easily!$"
 
 MagmaHideout_4F_Text_Grunt13Defeat:
-	.string "Will I really make it to Admin like this?$"
+	.string "I can't believe I lost to you again…$"
 
 MagmaHideout_4F_Text_Grunt13PostBattle:
-	.string "I did my best, sir.$"
+	.string "Argh, I lost again. You're up, Tabitha.$"
 
 MagmaHideout_4F_Text_TabithaIntro:
 	.string "Hehehe!\n"
@@ -189,7 +189,7 @@ MagmaHideout_4F_Text_TabithaIntro:
 MagmaHideout_4F_Text_TabithaDefeat:
 	.string "I may not have been able to defeat you,\n"
 	.string "but I bet I still accomplished the\l"
-	.string "mission...$"
+	.string "mission…$"
 
 MagmaHideout_4F_Text_TabithaPostBattle:
 	.string "…And while you wasted time with me,\n"
@@ -199,7 +199,7 @@ MagmaHideout_4F_Text_MaxieAwakenGroudon:
 	.string "Groudon…\p"
 	.string "Nothing could awaken you from your\n"
 	.string "sleep bathed in magma…\p"
-	.string "This Red Orb though... This will awaken\n"
+	.string "This Red Orb though… This will awaken\n"
 	.string "your Primal powers, won't it?\p"
 	.string "I have brought you the Red Orb.\n"
 	.string "Let its shine awaken you!\p"
@@ -212,7 +212,7 @@ MagmaHideout_4F_Text_MaxieMasterBall:
 MagmaHideout_4F_Text_MaxieCaputredGroudon:
 	.string "YES! Groudon is mine! And with this Red\n"
 	.string "Orb to unleash its Primal powers, there\l"
-	.string "is no one that can stop me...$"
+	.string "is no one that can stop me…$"
 
 MagmaHideout_4F_Text_NotEvenYou:
 	.string "Not even you, {PLAYER}. Prepare to\n"
@@ -239,14 +239,14 @@ MagmaHideout_4F_Text_MaxieDefeat:
 MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 	.string "What?! Groudon escaped my Master Ball?\n"
 	.string "That's impossible! Perhaps its power\p"
-	.string "cannot be contained after all...\n"
+	.string "cannot be contained after all…\n"
 	.string "… … … … … …\p"
 	.string "Does this mean Groudon will start to\n"
 	.string "rampage out of control?\p"
 	.string "… … … … … …\p"
 	.string "HAHAHAHA! Yes! Even if I failed to\n"
 	.string "defeat you here, Groudon's rage cannot\p"
-	.string "be quelled... You were too late,\n"
+	.string "be quelled… You were too late,\n"
 	.string "{PLAYER}, Groudon is going to wreak\p"
 	.string "havoc upon the world and there's\n"
 	.string "nothing we can do to stop it!\l"
@@ -299,28 +299,28 @@ script MagmaHideout_EventScript_BackToBackScene{
 	playse(SE_PIN)
 	playse(SE_PIN)
 	applymovement(LOCALID_TABITHA, Common_Movement_ExclamationMark)
-	applymovement(LOCALID_GRUNT_3, Common_Movement_ExclamationMark)
+	applymovement(LOCAL_ID_COURTNEY, Common_Movement_ExclamationMark)
 	waitmovement(0)
 	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight)
-	applymovement(LOCALID_GRUNT_3, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCAL_ID_COURTNEY, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
 	applymovement(LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
 	msgbox(GetThem)
 	waitmessage
-	applymovement(LOCALID_GRUNT_3, Common_Movement_WalkInPlaceFasterRight)
+	applymovement(LOCAL_ID_COURTNEY, Common_Movement_WalkInPlaceFasterRight)
 	msgbox(YesSir)
 	waitmessage
-	applymovement(LOCALID_GRUNT_3, MagmaHideout_Movement_BackToBackGruntApproachPlayer)
+	applymovement(LOCAL_ID_COURTNEY, MagmaHideout_Movement_BackToBackGruntApproachPlayer)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtGrunt)
 	waitmovement(0)
-	trainerbattle_no_intro(TRAINER_GRUNT_MAGMA_HIDEOUT_13, MagmaHideout_4F_Text_Grunt13Defeat)
+	trainerbattle_no_intro(TRAINER_COURTNEY, MagmaHideout_4F_Text_Grunt13Defeat)
 	msgbox(MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_DEFAULT)
 	closemessage
-	applymovement(LOCALID_GRUNT_3, GruntLost)
+	applymovement(LOCAL_ID_COURTNEY, GruntLost)
 	waitmovement(0)
-	copyobjectxytoperm(LOCALID_GRUNT_3)
+	copyobjectxytoperm(LOCAL_ID_COURTNEY)
 	playbgm(MUS_ENCOUNTER_MAGMA, FALSE)
 	applymovement(LOCALID_TABITHA, MagmaHideout_Movement_BackToBackTabithaApproachPlayer)
 	waitmovement(0)
@@ -390,8 +390,10 @@ text GetThem {
 }
 
 text YesSir {
-	"Yes, sir! I won't quit like my\n"
-	"teammates!"
+	"You're not my boss anymore, Tabitha.\n"
+	"We're equals.\p"
+	"But I'll pummel this brat as revenge for\n"
+	"Mt. Chimney!$"
 }
 
 text DealWithYouMyself{
@@ -400,12 +402,12 @@ text DealWithYouMyself{
 }
 
 text ThinkWeDidOurJobs{
-	"Something tells me we did our jobs... Do\n"
+	"Something tells me we did our jobs… Do\n"
 	"you feel that aura of power in the air?"
 }
 
 script SetMagmaAdminsPermLoc {
-	setobjectxyperm(LOCALID_GRUNT_3, 38, 24)
+	setobjectxyperm(LOCAL_ID_COURTNEY, 38, 24)
 	setobjectxyperm(LOCALID_TABITHA, 36, 22)
 	setobjectmovementtype(LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT)
 }
