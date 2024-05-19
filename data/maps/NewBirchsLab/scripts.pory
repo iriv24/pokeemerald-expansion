@@ -150,7 +150,7 @@ script NewBirchsLab_EventScript_PokeballOne{
         }
     }
     else{
-        msgbox("Don't Take Another")
+        msgbox("Better not get greedy!")
     }
     waitmessage
     releaseall
@@ -196,7 +196,7 @@ script NewBirchsLab_EventScript_PokeballTwo{
         }
     }
     else{
-        msgbox("Don't Take Another")
+        msgbox("Better not get greedy!")
     }
     waitmessage
     releaseall
@@ -242,7 +242,7 @@ script NewBirchsLab_EventScript_PokeballThree{
         }
     }
     else{
-        msgbox("Don't Take Another")
+        msgbox("Better not get greedy!")
     }
     waitmessage
     releaseall

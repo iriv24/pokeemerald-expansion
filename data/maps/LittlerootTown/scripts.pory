@@ -1790,7 +1790,6 @@ LittlerootTown_EventScript_SetReceivedRunningShoes::
 # 895 "data/maps/LittlerootTown/scripts.pory"
 	removeobject LOCALID_MOM
 # 896 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_SYS_B_DASH
 # 897 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 # 898 "data/maps/LittlerootTown/scripts.pory"
@@ -1804,16 +1803,9 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 902 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
 # 903 "data/maps/LittlerootTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 904 "data/maps/LittlerootTown/scripts.pory"
-	message LittlerootTown_Text_SwitchShoesWithRunningShoes
-# 905 "data/maps/LittlerootTown/scripts.pory"
-	waitfanfare
 # 906 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 # 907 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
-# 908 "data/maps/LittlerootTown/scripts.pory"
 	giveitem ITEM_POKE_VIAL
 	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_INFINITE_REPEL
@@ -1874,42 +1866,15 @@ LittlerootTown_Text_WearTheseRunningShoes:
 # 935 "data/maps/LittlerootTown/scripts.pory"
 	.string "Here, honey! If you're going out on an\n"
 # 936 "data/maps/LittlerootTown/scripts.pory"
-	.string "adventure, wear these RUNNING SHOES.\p"
-# 937 "data/maps/LittlerootTown/scripts.pory"
-	.string "They'll put a zip in your step!$"
-# 938 "data/maps/LittlerootTown/scripts.pory"
+	.string "adventure, take these!$"
 
-# 939 "data/maps/LittlerootTown/scripts.pory"
-LittlerootTown_Text_SwitchShoesWithRunningShoes:
-# 940 "data/maps/LittlerootTown/scripts.pory"
-	.string "{PLAYER} switched shoes with the\n"
-# 941 "data/maps/LittlerootTown/scripts.pory"
-	.string "RUNNING SHOES.$"
-# 942 "data/maps/LittlerootTown/scripts.pory"
-
-# 943 "data/maps/LittlerootTown/scripts.pory"
-LittlerootTown_Text_ExplainRunningShoes:
-# 944 "data/maps/LittlerootTown/scripts.pory"
-	.string "MOM: {PLAYER}, those shoes came with\n"
-# 945 "data/maps/LittlerootTown/scripts.pory"
-	.string "instructions.\p"
-# 946 "data/maps/LittlerootTown/scripts.pory"
-	.string "“Press the B Button while wearing these\n"
-# 947 "data/maps/LittlerootTown/scripts.pory"
-	.string "RUNNING SHOES to run extra-fast!\p"
-# 948 "data/maps/LittlerootTown/scripts.pory"
-	.string "“Slip on these RUNNING SHOES and race\n"
-# 949 "data/maps/LittlerootTown/scripts.pory"
-	.string "in the great outdoors!”\p"
-	.string "I also have some more gear that you'll\l"
-	.string "like!$"
 # 950 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ExplainNewGear:
-	.string "I also gave you a Poke Vial that will\n"
+	.string "I gave you a Poke Vial that will\n"
 	.string "heal your party from anywhere, an\p"
 	.string "Infinite Candy, which is basically a\n"
 	.string "Rare Candy that will never run out, and\p"
-	.string "an Infinite Repel, which is basically a\n"
+	.string "an Infinite Repel, which is a\n"
 	.string "Repel that will never run out! They are\l"
 	.string "all in your Key Items!$"
 

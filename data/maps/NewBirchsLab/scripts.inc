@@ -2907,7 +2907,7 @@ NewBirchsLab_EventScript_PokeballOne_Text_0:
 
 NewBirchsLab_EventScript_PokeballOne_Text_1:
 # 153 "data/maps/NewBirchsLab/scripts.pory"
-	.string "Don't Take Another$"
+	.string "Better not get greedy!$"
 
 NewBirchsLab_EventScript_Squirtle_Text_0:
 # 255 "data/maps/NewBirchsLab/scripts.pory"
