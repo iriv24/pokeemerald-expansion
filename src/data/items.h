@@ -9277,7 +9277,14 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM13"),
         .price = 100,
-        .description = sTM13Desc,
+        .description = COMPOUND_STRING(
+            "Fires an icy cold\n"
+            "beam that may\n"
+        #if B_USE_FROSTBITE == TRUE
+            "give the foe frostbite."),
+        #else
+            "freeze the foe."),
+        #endif
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -9289,7 +9296,14 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM14"),
         .price = 100,
-        .description = sTM14Desc,
+        .description = COMPOUND_STRING(
+            "A brutal snow-and-\n"
+            "wind attack that\n"
+        #if B_USE_FROSTBITE == TRUE
+            "may give the foe frostbite."),
+        #else
+            "may freeze the foe."),
+        #endif
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
