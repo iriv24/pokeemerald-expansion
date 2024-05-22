@@ -449,8 +449,7 @@ static const struct TrainerMon sParty_Matt[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
     .lvl = 74,
     .species = SPECIES_IRON_BUNDLE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_QUARK_DRIVE,
     .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_HIDDEN_POWER}
@@ -3659,8 +3658,7 @@ static const struct TrainerMon sParty_Sidney1[] = {
     .species = SPECIES_ROARING_MOON,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_JAW_LOCK, MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_KNOCK_OFF}
     },
     {
@@ -3975,8 +3973,7 @@ static const struct TrainerMon sParty_Cynthia[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
     .lvl = 85,
     .species = SPECIES_IRON_BUNDLE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_QUARK_DRIVE,
     .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_HIDDEN_POWER}
@@ -4061,8 +4058,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 82,
     .species = SPECIES_GOUGING_FIRE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_PROTOSYNTHESIS,
     .moves = {MOVE_FLARE_BLITZ, MOVE_BREAKING_SWIPE, MOVE_PSYCHIC_FANGS, MOVE_STOMPING_TANTRUM}
@@ -4291,8 +4287,7 @@ static const struct TrainerMon sParty_Norman1[] = {
     .species = SPECIES_IRON_VALIANT,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_QUARK_DRIVE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_PIXIE_PLATE,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_CLOSE_COMBAT, MOVE_SPIRIT_BREAK, MOVE_BULK_UP, MOVE_KNOCK_OFF}
     },
     {
@@ -7228,8 +7223,7 @@ static const struct TrainerMon sParty_Martha[] = {
     .species = SPECIES_IRON_TREADS,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_QUARK_DRIVE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_IRON_HEAD, MOVE_WILD_CHARGE, MOVE_EARTHQUAKE, MOVE_KNOCK_OFF}
     }
 };
@@ -7870,8 +7864,7 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     .species = SPECIES_RAGING_BOLT,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_DRAGON_PULSE, MOVE_THUNDERCLAP, MOVE_THUNDERBOLT, MOVE_HYPER_VOICE}
     },
     {
@@ -10658,8 +10651,7 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     .species = SPECIES_RAGING_BOLT,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_DRAGON_PULSE, MOVE_THUNDERCLAP, MOVE_THUNDERBOLT, MOVE_HYPER_VOICE}
     },
     {
@@ -10716,8 +10708,7 @@ static const struct TrainerMon sParty_WallyVR3[] = {
     .species = SPECIES_RAGING_BOLT,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_DRAGON_PULSE, MOVE_THUNDERCLAP, MOVE_THUNDERBOLT, MOVE_HYPER_VOICE}
     },
     {
@@ -10774,8 +10765,7 @@ static const struct TrainerMon sParty_WallyVR4[] = {
     .species = SPECIES_RAGING_BOLT,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_DRAGON_PULSE, MOVE_THUNDERCLAP, MOVE_THUNDERBOLT, MOVE_HYPER_VOICE}
     },
     {
@@ -10832,8 +10822,7 @@ static const struct TrainerMon sParty_WallyVR5[] = {
     .species = SPECIES_RAGING_BOLT,
     .nature = NATURE_TIMID,
     .ability = ABILITY_PROTOSYNTHESIS,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_DRAGON_PULSE, MOVE_THUNDERCLAP, MOVE_THUNDERBOLT, MOVE_HYPER_VOICE}
     },
     {
@@ -15038,8 +15027,7 @@ static const struct TrainerMon sParty_Volkner[] = {
     .species = SPECIES_IRON_HANDS,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_QUARK_DRIVE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_FAKE_OUT, MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_HEAVY_SLAM}
     },
     {
@@ -15209,8 +15197,7 @@ static const struct TrainerMon sParty_DawnLilycove[] = {
     .species = SPECIES_IRON_BOULDER,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_QUARK_DRIVE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_SACRED_SWORD, MOVE_MIGHTY_CLEAVE, MOVE_PSYCHO_CUT, MOVE_MEGAHORN}
     },
     {
@@ -15267,8 +15254,7 @@ static const struct TrainerMon sParty_DawnEvergrande[] = {
     .species = SPECIES_IRON_BOULDER,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_QUARK_DRIVE,
-    //TODO replace with booster energy
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_BOOSTER_ENERGY,
     .moves = {MOVE_SACRED_SWORD, MOVE_MIGHTY_CLEAVE, MOVE_PSYCHO_CUT, MOVE_MEGAHORN}
     },
     {
