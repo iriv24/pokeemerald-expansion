@@ -395,10 +395,6 @@ bool32 IsDamageMoveUsable(u32 move, u32 battlerAtk, u32 battlerDef)
         if (moveType == TYPE_WATER)
             return TRUE;
         break;
-    case ABILITY_EARTH_EATER:
-        if (moveType == TYPE_GROUND)
-            return TRUE;
-        break;
     case ABILITY_ICE_EATER:
         if (moveType == TYPE_ICE)
             return TRUE;
