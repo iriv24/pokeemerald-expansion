@@ -446,7 +446,7 @@ static void UNUSED ClearAllDaycareData(struct DayCare *daycare)
 // Determines what the species of an Egg would be based on the given species.
 // It determines this by working backwards through the evolution chain of the
 // given species.
-static u16 GetEggSpecies(u16 species)
+u16 GetEggSpecies(u16 species)
 {
     int i, j, k;
     bool8 found;
@@ -480,6 +480,12 @@ static u16 GetEggSpecies(u16 species)
     }
 
     return species;
+}
+
+// For egg move reminder in pokemon.c
+u16 GetEggMovesArraySize(void) 
+{
+	return ARRAY_COUNT(gEggMoves);
 }
 
 static s32 GetParentToInheritNature(struct DayCare *daycare)

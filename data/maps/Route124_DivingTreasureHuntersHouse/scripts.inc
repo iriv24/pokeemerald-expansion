@@ -676,3 +676,177 @@ Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard:
 	.string "{CLEAR_TO 0x0a}Wanted item{CLEAR_TO 0x7c}Trade item\n"
 # 339 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "{CLEAR_TO 0x08}GREEN SHARD{CLEAR_TO 0x59}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 0x7b}LEAF STONE$"
+# 340 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 341 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 342 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript::
+# 343 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	lockall
+# 344 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	setflag FLAG_EGG_MOVE_TUTOR
+# 345 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
+# 346 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	waitmovement 0
+# 347 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_ImTheEggTutor, MSGBOX_DEFAULT
+# 348 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_AskTeachMove
+# 349 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	clearflag FLAG_EGG_MOVE_TUTOR
+# 350 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 351 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 352 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 353 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_AskTeachMove::
+# 354 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_WantMeToTeachMove, MSGBOX_YESNO
+# 355 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	switch VAR_RESULT
+# 356 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	case NO, General_EggTutor_EventScript_ComeBackWithHeartScale
+# 357 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_ChooseMon
+# 358 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	clearflag FLAG_EGG_MOVE_TUTOR
+# 359 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 360 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 361 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_ChooseMon::
+# 362 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_TutorWhichMon, MSGBOX_DEFAULT
+# 363 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	special ChooseMonForMoveRelearner
+# 364 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	waitstate
+# 365 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, General_EggTutor_EventScript_ComeBackWithHeartScale
+# 366 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	special IsSelectedMonEgg
+# 367 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, General_EggTutor_EventScript_CantTeachEgg
+# 368 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto_if_eq VAR_0x8005, 0, General_EggTutor_EventScript_NoMoveToTeachMon
+# 369 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_ChooseMove
+# 370 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 371 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 372 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_ChooseMove::
+# 373 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_TeachWhichMove, MSGBOX_DEFAULT
+# 374 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	special TeachMoveRelearnerMove
+# 375 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	waitstate
+# 376 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto_if_eq VAR_0x8004, 0, General_EggTutor_EventScript_ChooseMon
+# 377 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_ThereYouGo, MSGBOX_DEFAULT
+# 378 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_ComeBackWithHeartScale
+# 379 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 380 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 381 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_NoMoveToTeachMon::
+# 382 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
+# 383 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_ChooseMon
+# 384 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 385 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 386 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_CantTeachEgg::
+# 387 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_CantTeachEgg, MSGBOX_DEFAULT
+# 388 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto General_EggTutor_EventScript_ChooseMon
+# 389 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 390 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 391 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_EventScript_ComeBackWithHeartScale::
+# 392 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox General_EggTutor_Text_ComeBack, MSGBOX_DEFAULT
+# 393 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	clearflag FLAG_EGG_MOVE_TUTOR
+# 394 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	releaseall
+# 395 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	end
+# 396 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 397 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_ImTheEggTutor:
+# 398 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Hello, I'm an Egg Move Tutor. I can\n"
+# 399 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "teach your Pokémon any Egg Moves they\l"
+# 400 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "could possibly learn.$"
+# 401 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 402 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_WantMeToTeachMove:
+# 403 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Would you like me to teach one of your\n"
+# 404 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Pokémon an Egg Move?$"
+# 405 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 406 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_TutorWhichMon:
+# 407 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Which Pokémon?$"
+# 408 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 409 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_TeachWhichMove:
+# 410 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Which move should I teach?$"
+# 411 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 412 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_DontHaveMoveToTeachPokemon:
+# 413 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "That Pokémon doesn't have any  Egg\n"
+# 414 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Moves.$"
+# 415 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 416 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_ThereYouGo:
+# 417 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "There you go.$"
+# 418 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 419 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_ComeBack:
+# 420 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Come back if you want your Pokémon to\n"
+# 421 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "learn more Egg Moves.$"
+# 422 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+
+# 423 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+General_EggTutor_Text_CantTeachEgg:
+# 424 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Just because I'm an Egg Move tutor\n"
+# 425 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "doesn't mean I can teach moves to an\l"
+# 426 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Egg!$"
