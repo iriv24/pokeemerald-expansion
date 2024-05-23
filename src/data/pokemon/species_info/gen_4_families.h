@@ -54,7 +54,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Turtwig)
         .levelUpLearnset = sTurtwigLevelUpLearnset,
         .teachableLearnset = sTurtwigTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_GROTLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_GROTLE}),
     },
 
     [SPECIES_GROTLE] =
@@ -108,7 +108,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Grotle)
         .levelUpLearnset = sGrotleLevelUpLearnset,
         .teachableLearnset = sGrotleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_TORTERRA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_TORTERRA}),
     },
 
     [SPECIES_TORTERRA] =
@@ -226,7 +226,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Chimchar)
         .levelUpLearnset = sChimcharLevelUpLearnset,
         .teachableLearnset = sChimcharTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_MONFERNO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_MONFERNO}),
     },
 
     [SPECIES_MONFERNO] =

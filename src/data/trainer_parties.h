@@ -14678,7 +14678,7 @@ static const struct TrainerMon sParty_Roark[] = {
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_SHEER_FORCE,
-    .moves = {MOVE_ROCK_TOMB, MOVE_HEADBUTT, MOVE_IRON_HEAD, MOVE_CRUNCH}
+    .moves = {MOVE_ROCK_TOMB, MOVE_HEADBUTT, MOVE_ROCK_SMASH, MOVE_NONE}
     },
 };
 
