@@ -9382,7 +9382,7 @@ static const struct TrainerMon sParty_BrendanRustboroTreecko[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_THUNDER_PUNCH}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_THUNDER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9421,7 +9421,7 @@ static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_ROCK_TOMB}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_ROCK_TOMB}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9547,7 +9547,7 @@ static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_FIRE_PUNCH}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_FIRE_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9586,7 +9586,7 @@ static const struct TrainerMon sParty_MayRustboroMudkip[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_ROCK_TOMB}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_ROCK_TOMB}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -12515,7 +12515,7 @@ static const struct TrainerMon sParty_MayRustboroTreecko[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_THUNDER_PUNCH}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_THUNDER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -12554,7 +12554,7 @@ static const struct TrainerMon sParty_MayRustboroTorchic[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_BRICK_BREAK, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_FIRE_PUNCH}
+    .moves = {MOVE_ROCK_SMASH, MOVE_AERIAL_ACE, MOVE_HEADBUTT, MOVE_FIRE_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

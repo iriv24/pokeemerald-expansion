@@ -547,15 +547,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 17,
-      "y": 51,
-      "elevation": 3,
-      "var": "VAR_ROUTE104_STATE",
-      "var_value": "1",
-      "script": "Route104_EventScript_RivalTrigger"
-    },
-    {
-      "type": "trigger",
       "x": 24,
       "y": 11,
       "elevation": 0,
