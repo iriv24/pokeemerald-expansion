@@ -14687,6 +14687,55 @@ static const struct TrainerMon sParty_Gardenia[] = {
          //hp, atk, def, speed, spatk, spdef
     .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
     .lvl = 200,
+    .species = SPECIES_ROSELIA,
+    .heldItem = ITEM_MIRACLE_SEED,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_NATURAL_CURE,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE, MOVE_SLEEP_POWDER, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_DOLLIV,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .nature = NATURE_CALM,
+    .ability = ABILITY_HARVEST,
+    .moves = {MOVE_LEECH_SEED, MOVE_PROTECT, MOVE_MEGA_DRAIN, MOVE_FACADE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_SUDOWOODO,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_STURDY,
+    .moves = {MOVE_ROCK_TOMB, MOVE_BULLDOZE, MOVE_TRAILBLAZE, MOVE_POWER_UP_PUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_GLOOM,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_STENCH,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_SYNTHESIS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_GLOOM,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_STENCH,
+    .moves = {MOVE_SLUDGE, MOVE_POISON_POWDER, MOVE_LEECH_SEED, MOVE_SYNTHESIS}
+    },
+};
+
+static const struct TrainerMon sParty_Gardenia2[] = {
+    {
+         //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
+    .lvl = 200,
     .species = SPECIES_ROSERADE,
     .heldItem = ITEM_MIRACLE_SEED,
     .nature = NATURE_TIMID,
@@ -14709,16 +14758,25 @@ static const struct TrainerMon sParty_Gardenia[] = {
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_STURDY,
-    .moves = {MOVE_ROCK_SLIDE, MOVE_HIGH_HORSEPOWER, MOVE_SEED_BOMB, MOVE_SUCKER_PUNCH}
+    .moves = {MOVE_ROCK_SLIDE, MOVE_HIGH_HORSEPOWER, MOVE_TRAILBLAZE, MOVE_SUCKER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_GLOOM,
-    .heldItem = ITEM_EVIOLITE,
+    .species = SPECIES_BELLOSSOM,
+    .heldItem = ITEM_LEFTOVERS,
     .nature = NATURE_BOLD,
-    .ability = ABILITY_STENCH,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_SYNTHESIS}
+    .ability = ABILITY_CHLOROPHYLL,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_STUN_SPORE, MOVE_DAZZLING_GLEAM, MOVE_SYNTHESIS}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_VILEPLUME,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_EFFECT_SPORE,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_SLUDGE_BOMB, MOVE_SYNTHESIS}
     },
 };
 

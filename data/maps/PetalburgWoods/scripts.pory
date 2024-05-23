@@ -511,10 +511,18 @@ script PetalburgWoods_EventScript_DeclineGardeniaBattle {
 
 script PetalburgWoods_EventScript_BattleGardenia{
 	msgbox("Let's go!", MSGBOX_DEFAULT)
+	goto_if_set(FLAG_BADGE03_GET, PetalburgWoods_EventScript_BattleGardenia2)
 	trainerbattle_no_intro(TRAINER_GARDENIA, Gardenia_Outro)
 	goto(PetalburgWoods_EventScript_GardeniaGiveItems)
 	return
 }
+
+script PetalburgWoods_EventScript_BattleGardenia2{
+	trainerbattle_no_intro(TRAINER_GARDENIA2, Gardenia_Outro)
+	goto(PetalburgWoods_EventScript_GardeniaGiveItems)
+	end
+}
+	
 	
 
 script PetalburgWoods_EventScript_GardeniaDefeated{
