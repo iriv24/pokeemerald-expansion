@@ -1809,6 +1809,10 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	giveitem ITEM_POKE_VIAL
 	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_INFINITE_REPEL
+	setflag FLAG_SYS_DEXNAV_GET
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_Text_ReceivedDexNav, MSGBOX_DEFAULT
+	waitfanfare
 	msgbox LittlerootTown_Text_ExplainNewGear, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 # 909 "data/maps/LittlerootTown/scripts.pory"
@@ -1876,7 +1880,15 @@ LittlerootTown_Text_ExplainNewGear:
 	.string "Rare Candy that will never run out, and\p"
 	.string "an Infinite Repel, which is a\n"
 	.string "Repel that will never run out! They are\l"
-	.string "all in your Key Items!$"
+	.string "all in your Key Items!\p"
+	.string "I also gave you a brand new DexNav, it's\n"
+	.string "top of the line! If you press the “L”\l"
+	.string "button, you can see a second Menu.\p"
+	.string "This Menu will have new options on it,\n"
+	.string "including the DexNav!$"
+
+LittlerootTown_Text_ReceivedDexNav:
+	.string "Obtained the DexNav!$"
 
 # 951 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ComeHomeIfAnythingHappens:

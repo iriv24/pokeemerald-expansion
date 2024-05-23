@@ -476,21 +476,19 @@ Route110_EventScript_GiveItemfinder::
 	giveitem ITEM_TM_THUNDER_FANG
 	giveitem ITEM_TM_PSYCHIC_FANGS
 	giveitem ITEM_TM_POISON_FANG
-	giveitem ITEM_HABAN_BERRY, 10
-	giveitem ITEM_ROSELI_BERRY, 10
-	giveitem ITEM_SHUCA_BERRY, 10
-	giveitem ITEM_BABIRI_BERRY, 10
-	giveitem ITEM_KASIB_BERRY, 10
 	giveitem ITEM_GREAT_BALL, 99
 	giveitem ITEM_ULTRA_BALL, 99
 	giveitem ITEM_DIVE_BALL, 99
 	giveitem ITEM_DUSK_BALL, 99
-	giveitem ITEM_CHARCOAL, 10
+	giveitem ITEM_SHINY_STONE, 10
 	giveitem ITEM_BLACK_SLUDGE, 10
 	giveitem ITEM_FLAME_ORB, 10
 	giveitem ITEM_SMOKE_BALL, 10
 	giveitem ITEM_THICK_CLUB, 10
 	giveitem ITEM_WEAKNESS_POLICY, 10
+	giveitem ITEM_GRASSY_SEED, 10
+	giveitem ITEM_ELECTRIC_SEED, 10
+	giveitem ITEM_PSYCHIC_SEED, 10
 	giveitem ITEM_MISTY_SEED, 10
 	giveitem ITEM_AIR_BALLOON, 10
 	giveitem ITEM_TERRAIN_EXTENDER, 10

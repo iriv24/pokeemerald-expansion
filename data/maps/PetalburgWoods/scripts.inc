@@ -1025,12 +1025,10 @@ PetalburgWoods_EventScript_GardeniaGiveItems::
 # 529 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_LEAF_STONE, 10
 # 530 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_SHINY_STONE, 10
-# 531 "data/maps/PetalburgWoods/scripts.pory"
 	setflag FLAG_RECEIVED_TM_U_TURN
-# 532 "data/maps/PetalburgWoods/scripts.pory"
+# 531 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox Gardenia_ExplainItems
-# 533 "data/maps/PetalburgWoods/scripts.pory"
+# 532 "data/maps/PetalburgWoods/scripts.pory"
 	release
 	end
 
@@ -1040,7 +1038,7 @@ PetalburgWoods_EventScript_BattleGardenia_Text_0:
 	.string "Let's go!$"
 
 Gardenia_ExplainItems::
-# 537 "data/maps/PetalburgWoods/scripts.pory"
+# 536 "data/maps/PetalburgWoods/scripts.pory"
 	.string "That TM contains U-turn, it's very\n"
 	.string "useful for getting a hit off while\p"
 	.string "switching out a Pokémon. I also\n"
@@ -1049,7 +1047,7 @@ Gardenia_ExplainItems::
 	.string "Pokémon you can't evolve quite yet.$"
 
 Gardenia_Greeting::
-# 546 "data/maps/PetalburgWoods/scripts.pory"
+# 545 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Aha! I saw you run by through those\n"
 	.string "trees earlier while I was hunting some\p"
 	.string "grass types, but it seemed clear you\n"
@@ -1061,11 +1059,11 @@ Gardenia_Greeting::
 	.string "worth your while!$"
 
 Gardenia_Outro::
-# 558 "data/maps/PetalburgWoods/scripts.pory"
+# 557 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Not bad at all! As promised, please take\n"
 	.string "these rewards for beating me.$"
 
 PostBattle_Gardenia::
-# 564 "data/maps/PetalburgWoods/scripts.pory"
+# 563 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Hope there are some cool grass types in\n"
 	.string "this region!$"

@@ -13,101 +13,69 @@ script NewBirchsLab_EventScript_Birch{
     faceplayer
     if(!flag(FLAG_UNUSED_TOUCHBALLS))
     {
-        msgbox(NewBirchsLab_Welcome)
+        checkplayergender
+	    call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_WelcomePlayerFemale)
+        call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_WelcomePlayerMale)
         setflag(FLAG_UNUSED_TOUCHBALLS)
     }
     if(!(flag(FLAG_UNUSED_WATERSTARTER) || flag(FLAG_UNUSED_GRASSSTARTER) || flag(FLAG_UNUSED_FIRESTARTER))){
-        msgbox(NewBirchsLab_ChangeStarters, MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES){
-            if(var(VAR_UNUSED_0x40F7) != 8){
-                addvar(VAR_UNUSED_0x40F7, 1)
-                addvar(VAR_UNUSED_0x40F8, 1)
-            }
-            else{
-                setvar(VAR_UNUSED_0x40F7, 0)
-                setvar(VAR_UNUSED_0x40F8, 1)
-            }
-            if(var(VAR_UNUSED_0x40F8) == 1)
-            {
-                msgbox("Now showing starters for Gen 1.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 2)
-            {
-                msgbox("Now showing starters for Gen 2.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 3)
-            {
-                msgbox("Now showing starters for Gen 3.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 4)
-            {
-                msgbox("Now showing starters for Gen 4.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 5)
-            {
-                msgbox("Now showing starters for Gen 5.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 6)
-            {
-                msgbox("Now showing starters for Gen 6.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 7)
-            {
-                msgbox("Now showing starters for Gen 7.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 8)
-            {
-                msgbox("Now showing starters for Gen 8.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 9)
-            {
-                msgbox("Now showing starters for Gen 9.")
-            }
+        msgbox(NewBirchsLab_ChangeStarters)
+        dynmultipush("Gen 1", 0)
+        dynmultipush("Gen 2", 1)
+        dynmultipush("Gen 3", 2)
+        dynmultipush("Gen 4", 3)
+        dynmultipush("Gen 5", 4)
+        dynmultipush("Gen 6", 5)
+        dynmultipush("Gen 7", 6)
+        dynmultipush("Gen 8", 7)
+        dynmultipush("Gen 9", 8)
+        dynmultipush("Cancel", MULTI_B_PRESSED)
+
+        // // setting initial selected to a non-existant ID will always have it point to the first option
+        dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+        if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+        {
+            goto(NewBirchsLab_EventScript_SayGenShowing)
         }
-        else{
-            if(var(VAR_UNUSED_0x40F8) == 1)
-            {
-                msgbox("Now showing starters for Gen 1.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 2)
-            {
-                msgbox("Now showing starters for Gen 2.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 3)
-            {
-                msgbox("Now showing starters for Gen 3.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 4)
-            {
-                msgbox("Now showing starters for Gen 4.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 5)
-            {
-                msgbox("Now showing starters for Gen 5.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 6)
-            {
-                msgbox("Now showing starters for Gen 6.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 7)
-            {
-                msgbox("Now showing starters for Gen 7.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 8)
-            {
-                msgbox("Now showing starters for Gen 8.")
-            }
-            if(var(VAR_UNUSED_0x40F8) == 9)
-            {
-                msgbox("Now showing starters for Gen 9.")
-            }
-        }
+        copyvar(VAR_UNUSED_0x40F7, VAR_RESULT)
+        goto(NewBirchsLab_EventScript_SayGenShowing)
     }
     else{
-        msgbox("Good luck out there on ROUTE 103\n and beyond!")
+        checkplayergender
+	    call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_GoodbyePlayerFemale)
+        call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_GoodbyePlayerMale)
     }
     waitmessage
     releaseall
+    end
+}
+
+script NewBirchsLab_EventScript_SayGenShowing {
+    switch(var(VAR_UNUSED_0x40F7))
+    {
+        case 0:
+            msgbox("Showing starters for Gen 1.")
+        case 1:
+            msgbox("Showing starters for Gen 2.")
+        case 2:
+            msgbox("Showing starters for Gen 3.")
+        case 3:
+            msgbox("Showing starters for Gen 4.")
+        case 4:
+            msgbox("Showing starters for Gen 5.")
+        case 5:
+            msgbox("Showing starters for Gen 6.")
+        case 6:
+            msgbox("Showing starters for Gen 7.")
+        case 7:
+            msgbox("Showing starters for Gen 8.")
+        case 8:
+            msgbox("Showing starters for Gen 9.")
+        default:
+            msgbox("Now showing starters.")
+    }
+    release
     end
 }
  
@@ -147,6 +115,13 @@ script NewBirchsLab_EventScript_PokeballOne{
         }
         elif(var(VAR_UNUSED_0x40F7) == 8){
             call(NewBirchsLab_EventScript_Quaxly)
+        }
+        if(flag(FLAG_SYS_POKEMON_GET))
+        {
+
+            checkplayergender
+	        call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale)
         }
     }
     else{
@@ -194,6 +169,12 @@ script NewBirchsLab_EventScript_PokeballTwo{
         elif(var(VAR_UNUSED_0x40F7) == 8){
             call(NewBirchsLab_EventScript_Sprigatito)
         }
+        if(flag(FLAG_SYS_POKEMON_GET))
+        {
+            checkplayergender
+	        call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerMale)
+        }
     }
     else{
         msgbox("Better not get greedy!")
@@ -240,6 +221,12 @@ script NewBirchsLab_EventScript_PokeballThree{
         elif(var(VAR_UNUSED_0x40F7) == 8){
             call(NewBirchsLab_EventScript_Fuecoco)
         }
+        if(flag(FLAG_SYS_POKEMON_GET))
+        {
+            checkplayergender
+	        call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerMale)
+        }
     }
     else{
         msgbox("Better not get greedy!")
@@ -257,14 +244,16 @@ script NewBirchsLab_EventScript_Squirtle{
         givemon(SPECIES_SQUIRTLE, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Squirtle")
+            msgbox("{PLAYER} received the Squirtle!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Squirtle")
+            msgbox("{PLAYER} received the Squirtle!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -304,14 +293,16 @@ script NewBirchsLab_EventScript_Totodile{
         givemon(SPECIES_TOTODILE, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Totodile")
+            msgbox("{PLAYER} received the Totodile!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Totodile")
+            msgbox("{PLAYER} received the Totodile!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -351,14 +342,16 @@ script NewBirchsLab_EventScript_Mudkip{
         givemon(SPECIES_MUDKIP, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Mudkip")
+            msgbox("{PLAYER} received the Mudkip!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Mudkip")
+            msgbox("{PLAYER} received the Mudkip!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -398,14 +391,16 @@ script NewBirchsLab_EventScript_Piplup{
         givemon(SPECIES_PIPLUP, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Piplup")
+            msgbox("{PLAYER} received the Piplup!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Piplup")
+            msgbox("{PLAYER} received the Piplup!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -445,14 +440,16 @@ script NewBirchsLab_EventScript_Oshawott{
         givemon(SPECIES_OSHAWOTT, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Oshawott")
+            msgbox("{PLAYER} received the Oshawott!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Oshawott")
+            msgbox("{PLAYER} received the Oshawott!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -492,14 +489,16 @@ script NewBirchsLab_EventScript_Froakie{
         givemon(SPECIES_FROAKIE, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Froakie")
+            msgbox("{PLAYER} received the Froakie!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Froakie")
+            msgbox("{PLAYER} received the Froakie!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -539,14 +538,16 @@ script NewBirchsLab_EventScript_Popplio{
         givemon(SPECIES_POPPLIO, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Popplio")
+            msgbox("{PLAYER} received the Popplio!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Popplio")
+            msgbox("{PLAYER} received the Popplio!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -586,14 +587,16 @@ script NewBirchsLab_EventScript_Sobble{
         givemon(SPECIES_SOBBLE, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Sobble")
+            msgbox("{PLAYER} received the Sobble!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Sobble")
+            msgbox("{PLAYER} received the Sobble!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -633,14 +636,16 @@ script NewBirchsLab_EventScript_Quaxly{
         givemon(SPECIES_QUAXLY, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Quaxly")
+            msgbox("{PLAYER} received the Quaxly!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Sobble")
+            msgbox("{PLAYER} received the Quaxly!")
+            waitfanfare
             removeobject(1)
             setflag(FLAG_UNUSED_WATERSTARTER)
             call(NicknameBoxMon)
@@ -680,14 +685,16 @@ script NewBirchsLab_EventScript_Bulbasaur{
         givemon(SPECIES_BULBASAUR, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Bulbasaur")
+            msgbox("{PLAYER} received the Bulbasaur!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Bulbasaur")
+            msgbox("{PLAYER} received the Bulbasaur!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -727,14 +734,16 @@ script NewBirchsLab_EventScript_Chikorita{
         givemon(SPECIES_CHIKORITA, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chikorita")
+            msgbox("{PLAYER} received the Chikorita!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chikorita")
+            msgbox("{PLAYER} received the Chikorita!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -774,14 +783,16 @@ script NewBirchsLab_EventScript_Treecko{
         givemon(SPECIES_TREECKO, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Treecko")
+            msgbox("{PLAYER} received the Treecko!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Treecko")
+            msgbox("{PLAYER} received the Treecko!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -821,14 +832,16 @@ script NewBirchsLab_EventScript_Turtwig{
         givemon(SPECIES_TURTWIG, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Turtwig")
+            msgbox("{PLAYER} received the Turtwig!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Turtwig")
+            msgbox("{PLAYER} received the Turtwig!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -868,14 +881,16 @@ script NewBirchsLab_EventScript_Snivy{
         givemon(SPECIES_SNIVY, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Snivy")
+            msgbox("{PLAYER} received the Snivy!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Snivy")
+            msgbox("{PLAYER} received the Snivy!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -915,14 +930,16 @@ script NewBirchsLab_EventScript_Chespin{
         givemon(SPECIES_CHESPIN, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chespin")
+            msgbox("{PLAYER} received the Chespin!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chespin")
+            msgbox("{PLAYER} received the Chespin!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -962,14 +979,16 @@ script NewBirchsLab_EventScript_Rowlet{
         givemon(SPECIES_ROWLET, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Rowlet")
+            msgbox("{PLAYER} received the Rowlet!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Rowlet")
+            msgbox("{PLAYER} received the Rowlet!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -1009,14 +1028,16 @@ script NewBirchsLab_EventScript_Grookey{
         givemon(SPECIES_GROOKEY, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Grookey")
+            msgbox("{PLAYER} received the Grookey!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Grookey")
+            msgbox("{PLAYER} received the Grookey!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -1056,14 +1077,16 @@ script NewBirchsLab_EventScript_Sprigatito{
         givemon(SPECIES_SPRIGATITO, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Sprigatito")
+            msgbox("{PLAYER} received the Sprigatito!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Sprigatito")
+            msgbox("{PLAYER} received the Sprigatito!")
+            waitfanfare
             removeobject(2)
             setflag(FLAG_UNUSED_GRASSSTARTER)
             call(NicknameBoxMon)
@@ -1103,14 +1126,16 @@ script NewBirchsLab_EventScript_Charmander{
         givemon(SPECIES_CHARMANDER, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Charmander")
+            msgbox("{PLAYER} received the Charmander!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Charmander")
+            msgbox("{PLAYER} received the Charmander!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1150,14 +1175,16 @@ script NewBirchsLab_EventScript_Cyndaquil{
         givemon(SPECIES_CYNDAQUIL, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Cyndaquil")
+            msgbox("{PLAYER} received the Cyndaquil!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Cyndaquil")
+            msgbox("{PLAYER} received the Cyndaquil!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1197,14 +1224,16 @@ script NewBirchsLab_EventScript_Torchic{
         givemon(SPECIES_TORCHIC, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Torchic")
+            msgbox("{PLAYER} received the Torchic!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Torchic")
+            msgbox("{PLAYER} received the Torchic!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1244,14 +1273,16 @@ script NewBirchsLab_EventScript_Chimchar{
         givemon(SPECIES_CHIMCHAR, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chimchar")
+            msgbox("{PLAYER} received the Chimchar!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Chimchar")
+            msgbox("{PLAYER} received the Chimchar!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1291,14 +1322,16 @@ script NewBirchsLab_EventScript_Tepig{
         givemon(SPECIES_TEPIG, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Tepig")
+            msgbox("{PLAYER} received the Tepig!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Tepig")
+            msgbox("{PLAYER} received the Tepig!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1338,14 +1371,16 @@ script NewBirchsLab_EventScript_Fennekin{
         givemon(SPECIES_FENNEKIN, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Fennekin")
+            msgbox("{PLAYER} received the Fennekin!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Fennekin")
+            msgbox("{PLAYER} received the Fennekin!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1385,14 +1420,16 @@ script NewBirchsLab_EventScript_Litten{
         givemon(SPECIES_LITTEN, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Litten")
+            msgbox("{PLAYER} received the Litten!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Litten")
+            msgbox("{PLAYER} received the Litten!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1432,14 +1469,16 @@ script NewBirchsLab_EventScript_Scorbunny{
         givemon(SPECIES_SCORBUNNY, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Scorbunny")
+            msgbox("{PLAYER} received the Scorbunny!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Scorbunny")
+            msgbox("{PLAYER} received the Scorbunny!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1479,14 +1518,16 @@ script NewBirchsLab_EventScript_Fuecoco{
         givemon(SPECIES_FUECOCO, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Fuecoco")
+            msgbox("{PLAYER} received the Fuecoco!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Fuecoco")
+            msgbox("{PLAYER} {PLAYER} received the the Fuecoco!")
+            waitfanfare
             removeobject(3)
             setflag(FLAG_UNUSED_FIRESTARTER)
             call(NicknameBoxMon)
@@ -1517,6 +1558,65 @@ script NewBirchsLab_EventScript_Fuecoco{
     }
  
 }
+
+script NewBirchsLab_EventScript_WelcomePlayerMale {
+    msgbox(NewBirchsLab_WelcomePlayerMale)
+    return
+}
+
+script NewBirchsLab_EventScript_WelcomePlayerFemale {
+    msgbox(NewBirchsLab_WelcomePlayerFemale)
+    return
+}
+
+script NewBirchsLab_EventScript_GoodbyePlayerMale {
+    msgbox(NewBirchsLab_Route103PlayerMale)
+    return
+}
+
+script NewBirchsLab_EventScript_GoodbyePlayerFemale {
+    msgbox(NewBirchsLab_Route103PlayerFemale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale {
+    msgbox(NewBirchsLab_RivalStarterTreeckoPlayerMale)
+    msgbox(NewBirchsLab_Route103PlayerMale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale {
+    msgbox(NewBirchsLab_RivalStarterTreeckoPlayerFemale)
+    msgbox(NewBirchsLab_Route103PlayerFemale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerMale {
+    msgbox(NewBirchsLab_RivalStarterMudkipPlayerMale)
+    msgbox(NewBirchsLab_Route103PlayerMale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerFemale {
+    msgbox(NewBirchsLab_RivalStarterMudkipPlayerFemale)
+    msgbox(NewBirchsLab_Route103PlayerFemale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerMale {
+    msgbox(NewBirchsLab_RivalStarterTorchicPlayerMale)
+    msgbox(NewBirchsLab_Route103PlayerMale)
+    return
+}
+
+script NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerFemale {
+    msgbox(NewBirchsLab_RivalStarterTorchicPlayerFemale)
+    msgbox(NewBirchsLab_Route103PlayerFemale)
+    return
+}
+
+
+
 
 
  
@@ -1549,21 +1649,110 @@ text NewBirchsLab_NotYet{
     "Maybe you should talk to {RIVAL}."
 }
 
+text NewBirchsLab_WelcomePlayerMale{
+    "Hello there! I'm Prof. Birch, and you\n"
+    "must be {PLAYER}. You just missed\p"
+    "{RIVAL}, she stopped by and grabbed\n"
+    "one of my Starter Pokémon and then\l"
+    "rushed out of here.\p" 
+    "She said to be on the lookout for a\n"
+    "trainer named {PLAYER}, who just moved\l"
+    "into the house next door!\p"
+    "I'm glad to see {RIVAL} has a friend\n"
+    "to start a new Pokémon journey with.\p"
+    "How about this, I'll give you one of\n"
+    "these Starter Pokémon, and then if you\p"
+    "can beat {RIVAL} with your Pokémon,\n"
+    "come back and I'll give you a Pokédex!\p"
+    "I'll tell you which Starter she chose\n"
+    "after you pick yours, it wouldn't be\l"
+    "fair if you knew before you picked!\p"
+    "I can let you choose from any\n"
+    "Generation of Starter Pokémon, just\l"
+    "ask me if you want to change them."
+}
 
-text NewBirchsLab_Welcome{
-    "Welcome to my lab! I'm\n"
-    "sure that if you've found this\p"
-    "hack that you've played Pokemon\n"
-    "before and know how this works.\p"
-    "BUT, what you didn't know is that\n"
-    "you can talk to me to change\p"
-    "the region of the available\n"
-    "starter Pokemon.\p"
-    "You are now viewing the Gen 1\n"
-    "starter Pokemon."
+text NewBirchsLab_WelcomePlayerFemale{
+    "Hello there! I'm Prof. Birch, and you\n"
+    "must be {PLAYER}. You just missed\p"
+    "{RIVAL}, he stopped by and grabbed\n"
+    "one of my Starter Pokémon and then\l"
+    "rushed out of here.\p" 
+    "He said to be on the lookout for a\n"
+    "trainer named {PLAYER}, who just moved\l"
+    "into the house next door!\p"
+    "I'm glad to see {RIVAL} has a friend\n"
+    "to start a new Pokémon journey with.\p"
+    "How about this, I'll give you one of\n"
+    "these Starter Pokémon, and then if you\p"
+    "can beat {RIVAL} with your Pokémon,\n"
+    "come back and I'll give you a Pokédex!\p"
+    "I'll tell you which Starter he chose\n"
+    "after you pick yours, it wouldn't be\l"
+    "fair if you knew before you picked!\p"
+    "I can let you choose from any\n"
+    "Generation of Starter Pokémon, just\l"
+    "ask me if you want to change them."
+}
+
+text NewBirchsLab_Route103PlayerMale
+{
+    "{RIVAL} yelled she was heading to\n"
+    "Route 103 as she ran out the door,\l"
+    "perhaps you should look for her there."
+}
+
+text NewBirchsLab_Route103PlayerFemale
+{
+    "{RIVAL} yelled he was heading to\n"
+    "Route 103 as he ran out the door,\l"
+    "perhaps you should look for him there."
+}
+
+text NewBirchsLab_RivalStarterTreeckoPlayerMale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Treecko as\l"
+    "her Starter!"
+}
+
+text NewBirchsLab_RivalStarterTreeckoPlayerFemale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Treecko as\l"
+    "his Starter!"
+}
+
+text NewBirchsLab_RivalStarterMudkipPlayerMale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Mudkip as\l"
+    "her Starter!"
+}
+
+text NewBirchsLab_RivalStarterMudkipPlayerFemale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Mudkip as\l"
+    "his Starter!"
+}
+
+text NewBirchsLab_RivalStarterTorchicPlayerMale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Torchic as\l"
+    "her Starter!"
+}
+
+text NewBirchsLab_RivalStarterTorchicPlayerFemale
+{
+    "A great choice, but also an unlucky one!\n"
+    "{RIVAL} chose a Torchic as\l"
+    "his Starter!"
 }
 
 text NewBirchsLab_ChangeStarters{
-    "Would you like to see\n"
-    "the next Gen of starters?"
+    "Which Generation of Starters would you\n"
+    "like to see? You can change\l"
+    "Generations as many times as you want."
 }

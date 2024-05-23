@@ -527,33 +527,31 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 10
 	giveitem ITEM_ORAN_BERRY, 20
-	giveitem ITEM_CHARTI_BERRY, 10
-	giveitem ITEM_CHILAN_BERRY, 10
-	giveitem ITEM_COBA_BERRY, 10
-	giveitem ITEM_KEBIA_BERRY, 10
-	giveitem ITEM_OCCA_BERRY, 10
-	giveitem ITEM_PASSHO_BERRY, 10
-	giveitem ITEM_PAYAPA_BERRY, 10
-	giveitem ITEM_RINDO_BERRY, 10
-	giveitem ITEM_YACHE_BERRY, 10
-	giveitem ITEM_QUICK_BALL, 99
 	giveitem ITEM_ABILITY_CAPSULE, 999
-	giveitem ITEM_ABSORB_BULB, 10
-	giveitem ITEM_BLUE_SHARD, 100
-	giveitem ITEM_RED_SHARD, 100
-	giveitem ITEM_GREEN_SHARD, 100
-	giveitem ITEM_YELLOW_SHARD, 100
-	giveitem ITEM_HARD_STONE, 10
+	giveitem ITEM_SILK_SCARF, 10
 	giveitem ITEM_MYSTIC_WATER, 10
+	giveitem ITEM_MIRACLE_SEED, 10
+	giveitem ITEM_CHARCOAL, 10
 	giveitem ITEM_NEVER_MELT_ICE, 10
 	giveitem ITEM_PIXIE_PLATE, 10
+	giveitem ITEM_IRON_PLATE, 10
 	giveitem ITEM_SHARP_BEAK, 10
 	giveitem ITEM_SILVER_POWDER, 10
 	giveitem ITEM_SOFT_SAND, 10
+	giveitem ITEM_HARD_STONE, 10
 	giveitem ITEM_SPELL_TAG, 10
 	giveitem ITEM_TWISTED_SPOON, 10
 	giveitem ITEM_MAGNET, 10
 	giveitem ITEM_POISON_BARB, 10
+	giveitem ITEM_BLACK_BELT, 10
+	giveitem ITEM_BLACK_GLASSES, 10
+	giveitem ITEM_DRAGON_FANG, 10
+	giveitem ITEM_QUICK_BALL, 99
+	giveitem ITEM_BLUE_SHARD, 100
+	giveitem ITEM_RED_SHARD, 100
+	giveitem ITEM_GREEN_SHARD, 100
+	giveitem ITEM_YELLOW_SHARD, 100
+	giveitem ITEM_ABSORB_BULB, 10
 	giveitem ITEM_MENTAL_HERB, 10
 	giveitem ITEM_LIGHT_BALL, 10
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
@@ -574,7 +572,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_SYS_NATIONAL_DEX
-	setflag FLAG_SYS_DEXNAV_GET
 	special SetUnlockedPokedexFlags
 	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
@@ -794,7 +791,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 	.string "Kids these days... I mean uh, good luck\n"
-	.string "{PLAYER}, hope you catch lots of cool\p"
+	.string "{PLAYER}, hope you catch lots of cool\l"
 	.string "Pokémon.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
