@@ -8594,7 +8594,7 @@ static const struct TrainerMon sParty_Ezekiel1[] = {
     .nature = NATURE_RELAXED,
     .ability = ABILITY_INTIMIDATE,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DARK_PULSE, MOVE_SHADOW_BALL, MOVE_SHADOW_SNEAK, MOVE_WILL_O_WISP}
+    .moves = {MOVE_DARK_PULSE, MOVE_HEX, MOVE_SHADOW_SNEAK, MOVE_WILL_O_WISP}
     },
 };
 
@@ -8754,7 +8754,7 @@ static const struct TrainerMon sParty_Lydia1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 204,
-    .species = SPECIES_GLIMMORA,
+    .species = SPECIES_GLIMMET,
     .nature = NATURE_BOLD,
     .ability = ABILITY_TOXIC_DEBRIS,
     .heldItem = ITEM_AIR_BALLOON,
@@ -10603,7 +10603,7 @@ static const struct TrainerMon sParty_WallyMauville[] = {
     .nature = NATURE_TIMID,
     .ability = ABILITY_TRACE,
     .heldItem = ITEM_WISE_GLASSES,
-    .moves = {MOVE_DRAINING_KISS, MOVE_PSYCHIC, MOVE_MAGICAL_LEAF, MOVE_SHADOW_BALL}
+    .moves = {MOVE_DRAINING_KISS, MOVE_PSYCHIC_NOISE, MOVE_MAGICAL_LEAF, MOVE_SHADOW_BALL}
     },
     
 };
