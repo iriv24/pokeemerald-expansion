@@ -8039,7 +8039,7 @@ static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_STRIKER,
+    .ability = ABILITY_SPEED_BOOST,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -8375,7 +8375,7 @@ static const struct TrainerMon sParty_MayRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_STRIKER,
+    .ability = ABILITY_SPEED_BOOST,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -11624,7 +11624,7 @@ static const struct TrainerMon sParty_Joseph[] = {
     .heldItem = ITEM_WISE_GLASSES,
     .nature = NATURE_MODEST,
     .ability = ABILITY_QUICK_DRAW,
-    .moves = {MOVE_PSYBEAM, MOVE_FLASH, MOVE_GRASS_KNOT, MOVE_SLUDGE_BOMB}
+    .moves = {MOVE_PSYBEAM, MOVE_FLASH, MOVE_GRASS_KNOT, MOVE_VENOSHOCK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
