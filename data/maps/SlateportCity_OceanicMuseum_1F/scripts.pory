@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_FAMILIAR_GRUNT, 13
+.set LOCALID_DRAKE, 15
 
 SlateportCity_OceanicMuseum_1F_MapScripts::
 	.byte 0
@@ -379,3 +380,82 @@ SlateportCity_OceanicMuseum_1F_Text_DepthMeasuringMachine:
 	.string "of something…$"
 
 `
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeTrigger1{
+	setvar(VAR_0x8008, 1)
+	goto(SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene)
+	end
+}
+	
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeTrigger2{
+	setvar(VAR_0x8008, 2)
+	goto(SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene)
+	end
+}
+
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene{
+	lockall
+	addobject(LOCALID_DRAKE)
+	call_if_eq(VAR_0x8008, 1, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1)
+	call_if_eq(VAR_0x8008, 2, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2)
+	msgbox(SlateportCity_OceanicMuseum_1FDrakeIntro, MSGBOX_DEFAULT)
+	closemessage
+	delay(10)
+	call(ApplyMovementDrakeExit)
+	removeobject(LOCALID_DRAKE)
+	setvar(VAR_DRAKE_SLATEPORT, 2)
+	releaseall
+	end
+}
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1{
+	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1)
+	waitmovement(0)
+	return
+}
+	
+	
+script SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1{
+	walk_up
+	step_end
+}
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2{
+	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2)
+	waitmovement(0)
+	return
+}
+
+script SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2{
+	walk_up
+	walk_right
+	face_up
+	step_end
+}
+
+script ApplyMovementDrakeExit{
+	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit)
+	waitmovement(0)
+	return
+}
+
+script SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit{
+	walk_down
+	step_end
+}
+
+text SlateportCity_OceanicMuseum_1FDrakeIntro {
+	"Hmph. And you are?\n"
+	"… … … … … …\p"
+	"I see. I'm Drake, of the Elite Four.\p"
+	"I happened to be in the area and saw\n"
+	"several members of Team Aqua fleeing\l"
+	"from this museum.\p"
+	"I guess that means you took care of\n"
+	"whatever was going on here?\p"
+	"… … … … … …\p"
+	"Good to know. I'll leave you to it then."
+}
+

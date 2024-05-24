@@ -1347,9 +1347,13 @@ SlateportCity_Text_YouDroveTeamAquaAway:
 	.string "I'm sure I met you somewhere before.\p"
 	.string "Have I introduced myself to you?\n"
 	.string "If not, my name's SCOTT.\p"
-	.string "I just saw TEAM AQUA run away from\n"
+	.string "I just saw Team Aqua run away from\n"
 	.string "here like they were stung.\p"
-	.string "Let me guess--you drove them away?$"
+	.string "And even stranger, I think I saw\n"
+	.string "Elite Four Drake walk out of here just\l"
+	.string "now. What a crazy day.\p"
+	.string "Anyway let me guess--you drove Team\n"
+	.string "Aqua away?$"
 
 SlateportCity_Text_MaybeThisTrainer:
 	.string "SCOTT: Hmm…\n"

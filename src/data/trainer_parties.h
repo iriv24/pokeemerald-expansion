@@ -296,28 +296,28 @@ static const struct TrainerMon sParty_GruntWeatherInst3[] = {
 static const struct TrainerMon sParty_GruntMuseum1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
+    .lvl = 30,
     .species = SPECIES_SHARPEDO,
     .heldItem = ITEM_SITRUS_BERRY,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_ROUGH_SKIN,
-    .moves = {MOVE_CRUNCH, MOVE_LIQUIDATION, MOVE_AQUA_JET, MOVE_ICE_FANG}
+    .moves = {MOVE_NIGHT_SLASH, MOVE_LIQUIDATION, MOVE_AQUA_JET, MOVE_ICE_FANG}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
+    .lvl = 28,
     .species = SPECIES_VELUZA,
     .heldItem = ITEM_FOCUS_SASH,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SHARPNESS,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_LIQUIDATION, MOVE_AQUA_JET, MOVE_SLASH}
+    .moves = {MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_AQUA_JET, MOVE_CUT}
     },
 };
 
 static const struct TrainerMon sParty_GruntMuseum2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 203,
+    .lvl = 30,
     .species = SPECIES_GOLISOPOD,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
@@ -326,16 +326,16 @@ static const struct TrainerMon sParty_GruntMuseum2[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 203,
+    .lvl = 28,
     .species = SPECIES_LOKIX,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_TINTED_LENS,
-    .moves = {MOVE_FIRST_IMPRESSION, MOVE_LUNGE, MOVE_SUCKER_PUNCH, MOVE_DOUBLE_KICK}
+    .moves = {MOVE_FIRST_IMPRESSION, MOVE_LUNGE, MOVE_ASSURANCE, MOVE_DOUBLE_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 203,
+    .lvl = 28,
     .species = SPECIES_QWILFISH_HISUIAN,
     .heldItem = ITEM_EVIOLITE,
     .nature = NATURE_JOLLY,
@@ -1028,7 +1028,7 @@ static const struct TrainerMon sParty_Ricky1[] = {
 static const struct TrainerMon sParty_Simon[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 28,
+    .lvl = 202,
     .species = SPECIES_HERACROSS,
     .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_JOLLY,
@@ -1037,7 +1037,7 @@ static const struct TrainerMon sParty_Simon[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 28,
+    .lvl = 202,
     .species = SPECIES_STUNFISK,
     .heldItem = ITEM_SHUCA_BERRY,
     .nature = NATURE_SASSY,
@@ -1046,7 +1046,7 @@ static const struct TrainerMon sParty_Simon[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 28,
+    .lvl = 202,
     .species = SPECIES_AZUMARILL,
     .heldItem = ITEM_MYSTIC_WATER,
     .nature = NATURE_ADAMANT,
@@ -7477,7 +7477,7 @@ static const struct TrainerMon sParty_Ernest1[] = {
 static const struct TrainerMon sParty_Dwayne[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 30,
+    .lvl = 200,
     .species = SPECIES_THIEVUL,
     .heldItem = ITEM_DARK_GEM,
     .nature = NATURE_TIMID,
@@ -7486,7 +7486,7 @@ static const struct TrainerMon sParty_Dwayne[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 30,
+    .lvl = 200,
     .species = SPECIES_CRAMORANT,
     .heldItem = ITEM_SITRUS_BERRY,
     .nature = NATURE_TIMID,
@@ -7495,7 +7495,7 @@ static const struct TrainerMon sParty_Dwayne[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 30,
+    .lvl = 200,
     .species = SPECIES_PINSIR,
     .heldItem = ITEM_SITRUS_BERRY,
     .nature = NATURE_JOLLY,
@@ -10460,7 +10460,7 @@ static const struct TrainerMon sParty_KiraAndDan5[] = {
 static const struct TrainerMon sParty_Johanna[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 29,
+    .lvl = 201,
     .species = SPECIES_ARCANINE,
     .heldItem = ITEM_MUSCLE_BAND,
     .nature = NATURE_JOLLY,
@@ -10469,7 +10469,7 @@ static const struct TrainerMon sParty_Johanna[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 29,
+    .lvl = 201,
     .species = SPECIES_SCYTHER,
     .heldItem = ITEM_CHARTI_BERRY,
     .nature = NATURE_ADAMANT,
@@ -10478,7 +10478,7 @@ static const struct TrainerMon sParty_Johanna[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 29,
+    .lvl = 201,
     .species = SPECIES_LUMINEON,
     .heldItem = ITEM_WISE_GLASSES,
     .nature = NATURE_TIMID,
