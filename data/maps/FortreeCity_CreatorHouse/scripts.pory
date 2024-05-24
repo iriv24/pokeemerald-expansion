@@ -188,7 +188,7 @@ script FortreeCity_CreatorHouse_EventScript_JustinGiveItems{
 	giveitem(ITEM_CHARIZARDITE_X)
 	giveitem(ITEM_CHARIZARDITE_Y)
 	giveitem(ITEM_BLAZIKENITE)
-	giveitem(ITEM_TM_DRACO_METEOR)
+	giveitem(ITEM_TM_DRAGON_DANCE)
 	giveitem(ITEM_CHOICE_SPECS)
 	setflag(FLAG_RECEIVED_FIRE_MEGAS)
 	msgbox(Justin_ExplainItems)

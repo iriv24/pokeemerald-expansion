@@ -281,6 +281,29 @@ LavaridgeTown_EventScript_HerbShopSign::
 	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
 	end
 
+LavaridgeTown_MiniMarket_EventScript_Saleswoman::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LavaridgeTown_MiniMart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LavaridgeTown_MiniMart:
+	.2byte ITEM_TM_ICE_BEAM
+	.2byte ITEM_TM_HYPER_VOICE
+	.2byte ITEM_TM_THUNDERBOLT
+	.2byte ITEM_TM_FLAMETHROWER
+	.2byte ITEM_TM_SLUDGE_BOMB
+	.2byte ITEM_TM_ENERGY_BALL
+	.2byte ITEM_TM_DARK_PULSE
+	.2byte ITEM_NONE
+	release
+	end
+
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "Hey {PLAYER}! Glad I caught you here, I\p"
 	.string "was just in Petalburg and I've got some\n"

@@ -829,9 +829,9 @@ PetalburgCity_Gym_EventScript_GiveFacade::
 # 415 "data/maps/PetalburgCity_Gym/scripts.pory"
 	giveitem ITEM_TM_FACADE
 # 416 "data/maps/PetalburgCity_Gym/scripts.pory"
-	giveitem ITEM_TM_POLTERGEIST
+	giveitem ITEM_TM_SWORDS_DANCE
 # 417 "data/maps/PetalburgCity_Gym/scripts.pory"
-	giveitem ITEM_TM_EARTH_POWER
+	giveitem ITEM_TM_NASTY_PLOT
 # 418 "data/maps/PetalburgCity_Gym/scripts.pory"
 	setflag FLAG_RECEIVED_TM_FACADE
 # 419 "data/maps/PetalburgCity_Gym/scripts.pory"

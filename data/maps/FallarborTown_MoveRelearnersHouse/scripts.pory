@@ -15,6 +15,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	giveitem ITEM_TM_THUNDER
 	giveitem ITEM_TM_TELEPORT
 	giveitem ITEM_TM_FIRE_BLAST
+	giveitem ITEM_TM_POLTERGEIST
 	giveitem ITEM_TM_THUNDER_WAVE
 	giveitem ITEM_TM_X_SCISSOR
 	giveitem ITEM_TM_IRON_HEAD
@@ -39,6 +40,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	giveitem ITEM_TM_ARM_THRUST
 	giveitem ITEM_TM_FOUL_PLAY
 	giveitem ITEM_TM_IRON_DEFENSE
+	giveitem ITEM_TM_EARTH_POWER
 	giveitem ITEM_TM_BODY_SLAM
 	giveitem ITEM_TM_PLAY_ROUGH
 	setflag FLAG_RECEIVED_TMS_FROM_TUTOR

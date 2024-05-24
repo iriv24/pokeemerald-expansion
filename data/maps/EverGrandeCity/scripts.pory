@@ -331,6 +331,8 @@ script EverGrandeCity_EventScript_RivalsFlyAway{
 	applymovement(2, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	msgbox(DawnFarewell, MSGBOX_DEFAULT)
+	giveitem(ITEM_TM_DRACO_METEOR)
+	msgbox(DawnFarewell2, MSGBOX_DEFAULT)
 	closemessage()
 	delay(30)
 	setfieldeffectargument(0, 1)
@@ -445,10 +447,13 @@ text EverGrandeCity_Text_NotMovingUntilDawn{
 text DawnFarewell{
 	"Dawn: Well, {PLAYER}, neither of us were\n"
 	"a match for you once again.\p"
-	"I have nothing more I can give you to\n"
-	"help, I just want to wish you good luck\p"
+	"I have one more TM I can give you to\n"
+	"help, I hope you can use it against\p"
 	"against the Elite Four when you make it\n"
-	"there.\p"
+	"there."
+}
+
+text DawnFarewell2{
 	"Become the Champion, {PLAYER}, I know\n"
 	"you can do it!\p"
 	"So long, my friend, until next time!"
