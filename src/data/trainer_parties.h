@@ -9455,18 +9455,18 @@ static const struct TrainerMon sParty_Isabella[] = {
 static const struct TrainerMon sParty_TabithaMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 43,
-    .species = SPECIES_ZARUDE,
-    .nature = NATURE_JOLLY,
-    .heldItem = ITEM_FOCUS_SASH,
-    .ability = ABILITY_DEFIANT,
-    .moves = {MOVE_SEED_BOMB, MOVE_SUCKER_PUNCH, MOVE_KNOCK_OFF, MOVE_BRICK_BREAK}
+    .lvl = 44,
+    .species = SPECIES_EMBOAR,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_BULL_RUSH,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_EARTHQUAKE, MOVE_SUCKER_PUNCH, MOVE_JUMP_KICK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 43,
     .species = SPECIES_ARCANINE_HISUIAN,
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_EXPERT_BELT,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_ROCK_HEAD,
     .moves = {MOVE_FLARE_BLITZ, MOVE_HEAD_SMASH, MOVE_ACCELEROCK, MOVE_WILD_CHARGE}
@@ -9479,15 +9479,6 @@ static const struct TrainerMon sParty_TabithaMtChimney[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_SHEER_FORCE,
     .moves = {MOVE_LOW_SWEEP, MOVE_MACH_PUNCH, MOVE_ICE_PUNCH, MOVE_BULK_UP}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 44,
-    .species = SPECIES_EMBOAR,
-    .heldItem = ITEM_MUSCLE_BAND,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_RECKLESS,
-    .moves = {MOVE_FLARE_BLITZ, MOVE_EARTHQUAKE, MOVE_SUCKER_PUNCH, MOVE_JUMP_KICK}
     },
     {
         //hp, atk, def, speed, spatk, spdef
