@@ -2719,7 +2719,20 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Bad Company"),
         .description = COMPOUND_STRING("No recoil/self-stat drops."),
         .aiRating = 8,
-        .breakable = TRUE,
+    },
+
+    [ABILITY_BULL_RUSH] =
+    {
+        .name = _("Bull Rush"),
+        .description = COMPOUND_STRING("Boosts stats for 1st turn."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_QUILL_RUSH] =
+    {
+        .name = _("Quill Rush"),
+        .description = COMPOUND_STRING("Boosts stats for 1st turn."),
+        .aiRating = 8,
     },
 
     

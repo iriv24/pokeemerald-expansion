@@ -9164,6 +9164,11 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         if (IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
+    case ABILITY_BULL_RUSH:
+    case ABILITY_QUILL_RUSH:
+        if (gDisableStructs[battlerAtk].isFirstTurn)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.2));
+        break;
     case ABILITY_FELINE_PROWESS:
         if (IS_MOVE_SPECIAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));

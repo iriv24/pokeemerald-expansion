@@ -5008,6 +5008,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
         speed = (speed * 150) / 100;
     else if (ability == ABILITY_QUARK_DRIVE && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN && highestStat == STAT_SPEED)
         speed = (speed * 150) / 100;
+    else if ((ability == ABILITY_BULL_RUSH || ability == ABILITY_QUILL_RUSH) && gDisableStructs[battler].isFirstTurn)
+        speed = (speed * 150) / 100;   
 
     // stat stages
     speed *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][0];
