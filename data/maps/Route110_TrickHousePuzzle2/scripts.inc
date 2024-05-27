@@ -183,11 +183,11 @@ Route110_TrickHousePuzzle2_EventScript_Ted::
 # 92 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 
 # 93 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-Route110_TrickHousePuzzle2_EventScript_Paul::
+Route110_TrickHousePuzzle2_EventScript_Rachel::
 # 94 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	trainerbattle_single TRAINER_PAUL, Route110_TrickHousePuzzle2_Text_PaulIntro, Route110_TrickHousePuzzle2_Text_PaulDefeat
+	trainerbattle_single TRAINER_RACHEL, Route110_TrickHousePuzzle2_Text_RachelIntro, Route110_TrickHousePuzzle2_Text_RachelDefeat
 # 95 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	msgbox Route110_TrickHousePuzzle2_Text_PaulPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route110_TrickHousePuzzle2_Text_RachelPostBattle, MSGBOX_AUTOCLOSE
 # 96 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	end
 # 97 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
@@ -239,7 +239,7 @@ Route110_TrickHousePuzzle2_Text_TedPostBattle:
 # 120 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 
 # 121 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-Route110_TrickHousePuzzle2_Text_PaulIntro:
+Route110_TrickHousePuzzle2_Text_RachelIntro:
 # 122 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "Oh! You're on your second TRICK HOUSE\n"
 # 123 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
@@ -247,13 +247,13 @@ Route110_TrickHousePuzzle2_Text_PaulIntro:
 # 124 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 
 # 125 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-Route110_TrickHousePuzzle2_Text_PaulDefeat:
+Route110_TrickHousePuzzle2_Text_RachelDefeat:
 # 126 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "You're good at battling too?$"
 # 127 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 
 # 128 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-Route110_TrickHousePuzzle2_Text_PaulPostBattle:
+Route110_TrickHousePuzzle2_Text_RachelPostBattle:
 # 129 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "The TRICK MASTER rigged all the tricks\n"
 # 130 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"

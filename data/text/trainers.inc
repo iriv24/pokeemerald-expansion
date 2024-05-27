@@ -2915,15 +2915,15 @@ Route119_Text_DaytonPostBattle:
 	.string "I'll try emulating the pep of kid\l"
 	.string "TRAINERS like you!$"
 
-Route119_Text_RachelIntro:
+Route119_Text_RaquelIntro:
 	.string "Wherever and whenever I may be,\n"
 	.string "I always have my parasol in hand.$"
 
-Route119_Text_RachelDefeat:
+Route119_Text_RaquelDefeat:
 	.string "Oh, but…\n"
 	.string "That's not fair.$"
 
-Route119_Text_RachelPostBattle:
+Route119_Text_RaquelPostBattle:
 	.string "You're asking if my parasol is heavy?\n"
 	.string "Your BAG is filled with more junk than\l"
 	.string "I ever carry around.$"

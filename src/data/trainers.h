@@ -3392,16 +3392,16 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Ted),
     },
 
-    [TRAINER_PAUL] =
+    [TRAINER_RACHEL] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
-        .trainerName = _("PAUL"),
+        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = _("RACHEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_HP_AWARE | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_Paul),
+        .party = TRAINER_PARTY(sParty_Rachel),
     },
 
     [TRAINER_JERRY_2] =
@@ -9040,16 +9040,16 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Dayton),
     },
 
-    [TRAINER_RACHEL] =
+    [TRAINER_RAQUEL] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .trainerName = _("RACHEL"),
+        .trainerName = _("RAQUEL"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Rachel),
+        .party = TRAINER_PARTY(sParty_Raquel),
     },
 
     [TRAINER_LEONEL] =

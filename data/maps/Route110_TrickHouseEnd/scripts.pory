@@ -84,6 +84,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
 	giveitem ITEM_TM_MEGAHORN
 	giveitem ITEM_BUTTERFRITE
 	giveitem ITEM_SNORLAXITE
+	giveitem ITEM_ROSERADITE
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit

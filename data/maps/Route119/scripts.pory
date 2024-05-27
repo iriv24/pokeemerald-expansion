@@ -436,9 +436,9 @@ Route119_EventScript_Dayton::
 	msgbox Route119_Text_DaytonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_EventScript_Rachel::
-	trainerbattle_single TRAINER_RACHEL, Route119_Text_RachelIntro, Route119_Text_RachelDefeat
-	msgbox Route119_Text_RachelPostBattle, MSGBOX_AUTOCLOSE
+Route119_EventScript_Raquel::
+	trainerbattle_single TRAINER_RAQUEL, Route119_Text_RaquelIntro, Route119_Text_RaquelDefeat
+	msgbox Route119_Text_RaquelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_BridgeAquaGrunt1::

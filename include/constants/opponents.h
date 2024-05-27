@@ -278,7 +278,7 @@
 #define TRAINER_JUAN_1                      272
 #define TRAINER_JERRY_1                     273
 #define TRAINER_TED                         274
-#define TRAINER_PAUL                        275
+#define TRAINER_RACHEL                      275
 #define TRAINER_JERRY_2                     276
 #define TRAINER_JERRY_3                     277
 #define TRAINER_JERRY_4                     278
@@ -764,7 +764,7 @@
 #define TRAINER_MAKAYLA                     758
 #define TRAINER_FABIAN                      759
 #define TRAINER_DAYTON                      760
-#define TRAINER_RACHEL                      761
+#define TRAINER_RAQUEL                      761
 #define TRAINER_LEONEL                      762
 #define TRAINER_CALLIE                      763
 #define TRAINER_CALE                        764

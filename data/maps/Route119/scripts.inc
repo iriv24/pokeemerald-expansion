@@ -875,11 +875,11 @@ Route119_EventScript_Dayton::
 # 438 "data/maps/Route119/scripts.pory"
 
 # 439 "data/maps/Route119/scripts.pory"
-Route119_EventScript_Rachel::
+Route119_EventScript_Raquel::
 # 440 "data/maps/Route119/scripts.pory"
-	trainerbattle_single TRAINER_RACHEL, Route119_Text_RachelIntro, Route119_Text_RachelDefeat
+	trainerbattle_single TRAINER_RAQUEL, Route119_Text_RaquelIntro, Route119_Text_RaquelDefeat
 # 441 "data/maps/Route119/scripts.pory"
-	msgbox Route119_Text_RachelPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route119_Text_RaquelPostBattle, MSGBOX_AUTOCLOSE
 # 442 "data/maps/Route119/scripts.pory"
 	end
 # 443 "data/maps/Route119/scripts.pory"

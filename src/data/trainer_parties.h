@@ -4557,7 +4557,7 @@ static const struct TrainerMon sParty_Ted[] = {
     }
 };
 
-static const struct TrainerMon sParty_Paul[] = {
+static const struct TrainerMon sParty_Rachel[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
@@ -4579,20 +4579,21 @@ static const struct TrainerMon sParty_Paul[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
-    .species = SPECIES_LUDICOLO,
-    .nature = NATURE_HASTY,
-    .ability = ABILITY_OWN_TEMPO,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_FAKE_OUT, MOVE_SCALD, MOVE_GIGA_DRAIN, MOVE_ICE_BEAM}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 202,
     .species = SPECIES_CRUSTLE,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_STURDY,
     .heldItem = ITEM_WHITE_HERB,
     .moves = {MOVE_SHELL_SMASH, MOVE_X_SCISSOR, MOVE_STONE_EDGE, MOVE_KNOCK_OFF}
+    },
+    {
+         //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
+    .lvl = 202,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_ROSERADITE,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_TECHNICIAN,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE, MOVE_ANCIENT_POWER, MOVE_HIDDEN_POWER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -12390,7 +12391,7 @@ static const struct TrainerMon sParty_Dayton[] = {
     }
 };
 
-static const struct TrainerMon sParty_Rachel[] = {
+static const struct TrainerMon sParty_Raquel[] = {
     {
     .lvl = 60,
     .species = SPECIES_SEAKING,
@@ -14727,14 +14728,13 @@ static const struct TrainerMon sParty_Gardenia[] = {
 
 static const struct TrainerMon sParty_Gardenia2[] = {
     {
-         //hp, atk, def, speed, spatk, spdef
-    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
-    .lvl = 200,
-    .species = SPECIES_ROSERADE,
-    .heldItem = ITEM_MIRACLE_SEED,
-    .nature = NATURE_TIMID,
-    .ability = ABILITY_TECHNICIAN,
-    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE, MOVE_SLEEP_POWDER, MOVE_HIDDEN_POWER}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_VILEPLUME,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_EFFECT_SPORE,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_SLUDGE_BOMB, MOVE_SYNTHESIS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -14764,13 +14764,14 @@ static const struct TrainerMon sParty_Gardenia2[] = {
     .moves = {MOVE_GIGA_DRAIN, MOVE_STUN_SPORE, MOVE_DAZZLING_GLEAM, MOVE_SYNTHESIS}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
-    .species = SPECIES_VILEPLUME,
-    .heldItem = ITEM_BLACK_SLUDGE,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_EFFECT_SPORE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_SLUDGE_BOMB, MOVE_SYNTHESIS}
+         //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
+    .lvl = 200,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_ROSERADITE,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_TECHNICIAN,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE, MOVE_SLEEP_POWDER, MOVE_HIDDEN_POWER}
     },
 };
 

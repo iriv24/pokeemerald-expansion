@@ -90,9 +90,9 @@ Route110_TrickHousePuzzle2_EventScript_Ted::
 	msgbox Route110_TrickHousePuzzle2_Text_TedPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route110_TrickHousePuzzle2_EventScript_Paul::
-	trainerbattle_single TRAINER_PAUL, Route110_TrickHousePuzzle2_Text_PaulIntro, Route110_TrickHousePuzzle2_Text_PaulDefeat
-	msgbox Route110_TrickHousePuzzle2_Text_PaulPostBattle, MSGBOX_AUTOCLOSE
+Route110_TrickHousePuzzle2_EventScript_Rachel::
+	trainerbattle_single TRAINER_RACHEL, Route110_TrickHousePuzzle2_Text_RachelIntro, Route110_TrickHousePuzzle2_Text_RachelDefeat
+	msgbox Route110_TrickHousePuzzle2_Text_RachelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_TrickHousePuzzle2_EventScript_Georgia::
@@ -118,14 +118,14 @@ Route110_TrickHousePuzzle2_Text_TedPostBattle:
 	.string "Can I get you to push all the buttons\n"
 	.string "for me?$"
 
-Route110_TrickHousePuzzle2_Text_PaulIntro:
+Route110_TrickHousePuzzle2_Text_RachelIntro:
 	.string "Oh! You're on your second TRICK HOUSE\n"
 	.string "challenge!$"
 
-Route110_TrickHousePuzzle2_Text_PaulDefeat:
+Route110_TrickHousePuzzle2_Text_RachelDefeat:
 	.string "You're good at battling too?$"
 
-Route110_TrickHousePuzzle2_Text_PaulPostBattle:
+Route110_TrickHousePuzzle2_Text_RachelPostBattle:
 	.string "The TRICK MASTER rigged all the tricks\n"
 	.string "in this house all by himself.$"
 
