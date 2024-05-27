@@ -1328,12 +1328,12 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
 	.string "sure you can use these correctly.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
-	.string "Unfortunately, I am in sole possession\p"
-	.string "of the only Slakite in existence as it\n"
-	.string "currently stands. I need to hold onto\p"
-	.string "it to hold down the fort here at the\n"
-	.string "Gym, but I promise as soon as I get my\p"
-	.string "hands on a second one, I will send it\n"
+	.string "Unfortunately, I am in sole possession\n"
+	.string "of the only Slakite in existence as it\p"
+	.string "currently stands. I need to hold onto\n"
+	.string "it to hold down the fort here at the\p"
+	.string "Gym, but I promise as soon as I get my\n"
+	.string "hands on a second one, I will send it\l"
 	.string "your way with one of your friends.$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
