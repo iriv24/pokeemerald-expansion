@@ -4369,7 +4369,7 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
 #if P_MEGA_EVOLUTIONS
     const u32 gMonFrontPic_SlakingMega[] = INCBIN_U32("graphics/pokemon/slaking/mega/megaslaking.4bpp.lz");
     const u32 gMonPalette_SlakingMega[] = INCBIN_U32("graphics/pokemon/slaking/mega/megaslaking.gbapal.lz");
-    //const u32 gMonBackPic_SlakingMega[] = INCBIN_U32("graphics/pokemon/slaking/mega/megaluxrayback.4bpp.lz");
+    const u32 gMonBackPic_SlakingMega[] = INCBIN_U32("graphics/pokemon/slaking/mega/megaslakingback.4bpp.lz");
     //const u32 gMonShinyPalette_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/shiny.gbapal.lz");
     //const u8 gMonIcon_LopunnyMega[] = INCBIN_U8("graphics/pokemon/lopunny/mega/icon.4bpp");
 #endif //P_MEGA_EVOLUTIONS
