@@ -69350,23 +69350,27 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_TACKLE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SMOKESCREEN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_RAPID_SPIN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SMACK_DOWN"
+        "Move": "MOVE_TAR_SHOT"
       },
       {
         "Level": 1,
         "Move": "MOVE_FLAME_CHARGE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TACKLE"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "Level": 7,
+        "Move": "MOVE_SMACK_DOWN"
+      },
+      {
+        "Level": 13,
+        "Move": "MOVE_SCORCHING_SANDS" 
       },
       {
         "Level": 15,
@@ -69385,16 +69389,28 @@
         "Move": "MOVE_STEALTH_ROCK"
       },
       {
-        "Level": 45,
+        "Level": 44,
         "Move": "MOVE_HEAT_CRASH"
       },
       {
+        "Level": 47,
+        "Move": "MOVE_HYDRO_STEAM"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_BURNING_BULWARK"
+      },
+      {
         "Level": 54,
-        "Move": "MOVE_ROCK_BLAST"
+        "Move": "MOVE_STONE_EDGE"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_POWER_GEM"
       },
       {
         "Level": 63,
-        "Move": "MOVE_STONE_EDGE"
+        "Move": "MOVE_BURN_UP"
       }
     ],
     "PreEvoMoves": [],

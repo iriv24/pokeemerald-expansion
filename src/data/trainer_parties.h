@@ -661,6 +661,7 @@ static const struct TrainerMon sParty_Archie[] = {
     .heldItem = ITEM_BLUE_ORB,
     .nature = NATURE_TIMID,
     .ability = ABILITY_DRIZZLE,
+    .ball = ITEM_MASTER_BALL,
     .moves = {MOVE_ORIGIN_PULSE, MOVE_THUNDER, MOVE_ICE_BEAM, MOVE_WATER_SPOUT}
     },
 };
@@ -4070,6 +4071,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .heldItem = ITEM_YACHE_BERRY,
     .nature = NATURE_NAIVE,
     .ability = ABILITY_AIR_LOCK,
+    .ball = ITEM_MASTER_BALL,
     .moves = {MOVE_DRAGON_ASCENT, MOVE_DRAGON_PULSE, MOVE_ROCK_SLIDE, MOVE_EXTREME_SPEED}
     },
 };
@@ -9644,6 +9646,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .heldItem = ITEM_RED_ORB,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_DROUGHT,
+    .ball = ITEM_MASTER_BALL,
     .moves = {MOVE_PRECIPICE_BLADES, MOVE_FIRE_PUNCH, MOVE_BODY_PRESS, MOVE_ROCK_SLIDE}
     },
 };
@@ -9674,7 +9677,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     .heldItem = ITEM_AIR_BALLOON,
     .nature = NATURE_RELAXED,
     .ability = ABILITY_STEAM_ENGINE,
-    .moves = {MOVE_BURN_UP, MOVE_ROCK_SLIDE, MOVE_WILL_O_WISP, MOVE_SCALD}
+    .moves = {MOVE_FLAMETHROWER, MOVE_ROCK_SLIDE, MOVE_WILL_O_WISP, MOVE_SCALD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

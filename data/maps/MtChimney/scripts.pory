@@ -4,6 +4,7 @@ raw `
 .set LOCALID_TABITHA, 3
 .set LOCALID_MAGMA_GRUNT_2, 22
 .set LOCALID_MAGMA_GRUNT_1, 29
+.set LOCALID_DRAKE, 31
 
 
 MtChimney_MapScripts::
@@ -62,8 +63,8 @@ MtChimney_EventScript_Maxie::
 	removeobject LOCALID_MAGMA_GRUNT_2
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
 	fadescreen FADE_FROM_BLACK
-	setobjectxyperm LOCALID_ARCHIE, 10, 12
-	addobject LOCALID_ARCHIE
+	setobjectxyperm LOCALID_DRAKE, 10, 12
+	addobject LOCALID_DRAKE
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieApproachPlayerEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieApproachPlayerNorth
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
@@ -72,7 +73,7 @@ MtChimney_EventScript_Maxie::
 	closemessage
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieExitEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieExitNorth
-	removeobject LOCALID_ARCHIE
+	removeobject LOCALID_DRAKE
 	setflag FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA
 	setflag FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY
 	clearflag FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO
@@ -82,22 +83,22 @@ MtChimney_EventScript_Maxie::
 	end
 
 MtChimney_EventScript_ArchieApproachPlayerEast::
-	applymovement LOCALID_ARCHIE, MtChimney_Movement_ArchieApproachPlayerEast
+	applymovement LOCALID_DRAKE, MtChimney_Movement_ArchieApproachPlayerEast
 	waitmovement 0
 	return
 
 MtChimney_EventScript_ArchieApproachPlayerNorth::
-	applymovement LOCALID_ARCHIE, MtChimney_Movement_ArchieApproachPlayerNorth
+	applymovement LOCALID_DRAKE, MtChimney_Movement_ArchieApproachPlayerNorth
 	waitmovement 0
 	return
 
 MtChimney_EventScript_ArchieExitEast::
-	applymovement LOCALID_ARCHIE, MtChimney_Movement_ArchieExitEast
+	applymovement LOCALID_DRAKE, MtChimney_Movement_ArchieExitEast
 	waitmovement 0
 	return
 
 MtChimney_EventScript_ArchieExitNorth::
-	applymovement LOCALID_ARCHIE, MtChimney_Movement_ArchieExitNorth
+	applymovement LOCALID_DRAKE, MtChimney_Movement_ArchieExitNorth
 	waitmovement 0
 	return
 
@@ -676,16 +677,13 @@ MtChimney_Text_ArchieIHaveMyHandsFull:
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou:
-	.string "ARCHIE: {PLAYER}!\n"
-	.string "Thank you!\p"
-	.string "With your help, we thwarted TEAM\n"
-	.string "MAGMA's destructive plan!\p"
-	.string "But… You…\n"
-	.string "Whose side are you on?\p"
-	.string "Ah, it doesn't matter.\p"
-	.string "We will remain vigilant and keep up\n"
-	.string "our pursuit of TEAM MAGMA.\p"
-	.string "{PLAYER}, we shall meet again!$"
+	.string "{PLAYER}, we meet again.\p"
+	.string "You're a sharp one. I've been keeping an\n"
+	.string "eye on the activities of Team Magma and\p"
+	.string "Team Aqua since the incident at the\n"
+	.string "museum, but you were still able to get\l"
+	.string "here before me.\p"
+	.string "I'm sure I'll be seeing you again.$"
 
 MtChimney_Text_MagmaOutnumbersUs:
 	.string "Darn… TEAM MAGMA outnumbers us!\n"
