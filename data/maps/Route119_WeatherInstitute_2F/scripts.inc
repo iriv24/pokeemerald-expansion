@@ -585,7 +585,7 @@ Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 # 293 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Honestly, it's pretty bad, but no way\n"
 # 294 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "the creator was putting this idiot out"
+	.string "the creator was putting this idiot out\l"
 # 295 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "in the wild, you know?$"
 # 296 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"

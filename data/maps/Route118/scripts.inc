@@ -771,7 +771,7 @@ Wake_ExplainKubfu::
 Wake_Greeting::
 # 422 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB This better be good if\n"
-	.string "you're interrupting my training. You\p"
+	.string "you're interrupting my training. You\l"
 	.string "wanna battle or not?$"
 
 Wake_Outro::

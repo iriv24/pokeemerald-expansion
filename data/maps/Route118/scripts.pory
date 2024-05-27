@@ -421,7 +421,7 @@ text Wake_ExplainKubfu{
 	
 text Wake_Greeting{
 	"GLUB GLUB This better be good if\n"
-	"you're interrupting my training. You\p"
+	"you're interrupting my training. You\l"
 	"wanna battle or not?"
 }
 	
