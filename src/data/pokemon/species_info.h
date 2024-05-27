@@ -518,6 +518,75 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formSpeciesIdTable = sSlakingFormSpeciesIdTable,
         .formChangeTable = sSlakingFormChangeTable,
     },
+
+    [SPECIES_ROSERADE_MEGA] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 70,
+        .baseDefense   = 85,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 150,
+        .baseSpDefense = 120,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
+        .catchRate = 75,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 258,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 232,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 227,
+    #else
+        .expYield = 204,
+    #endif
+        .evYield_SpAttack = 3,
+        .itemRare = ITEM_POISON_BARB,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_TECHNICIAN, ABILITY_TECHNICIAN, ABILITY_TECHNICIAN },
+        .bodyColor = BODY_COLOR_GREEN,
+        .noFlip = TRUE,
+        .speciesName = _("Roserade"),
+        .cryId = CRY_ROSERADE,
+        .natDexNum = NATIONAL_DEX_ROSERADE,
+        .categoryName = _("Bouquet"),
+        .height = 9,
+        .weight = 145,
+        .description = COMPOUND_STRING(
+            "Its sweet aroma attracts prey.\n"
+            "With the movements of a dancer,\n"
+            "it strikes with whips that are densely\n"
+            "lined with poison thorns."),
+        .pokemonScale = 338,
+        .pokemonOffset = 10,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_RoseradeMega,
+        .frontPicFemale = gMonFrontPic_RoseradeMega,
+        .frontPicSize = MON_COORDS_SIZE(48, 56),
+        .frontPicSizeFemale = MON_COORDS_SIZE(48, 56),
+        .frontPicYOffset = 7,
+        .frontAnimFrames = sAnims_RoseradeMega,
+        .frontAnimId = ANIM_H_VIBRATE,
+        .backPic = gMonBackPic_Roserade,
+        .backPicFemale = gMonBackPic_RoseradeF,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_RoseradeMega,
+        .shinyPalette = gMonShinyPalette_Roserade,
+        .iconSprite = gMonIcon_Roserade,
+        .iconPalIndex = 0,
+        FOOTPRINT(Roserade)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sRoseradeLevelUpLearnset,
+        .teachableLearnset = sRoseradeTeachableLearnset,
+        .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
+        .formChangeTable = sRoseradeFormChangeTable,
+    },
 #endif //P_MEGA_EVOLUTIONS
 
         [SPECIES_DARMANITAN_GALARIAN_ZEN_MODE_TWO] =

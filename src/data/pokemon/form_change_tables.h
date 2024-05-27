@@ -1273,5 +1273,12 @@ static const struct FormChange sSlakingFormChangeTable[] = {
 };
 #endif //P_FAMILY_SLAKOTH
 
+#if P_FAMILY_ROSELIA
+static const struct FormChange sRoseradeFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ROSERADE_MEGA, ITEM_ROSERADITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_ROSELIA
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

@@ -4612,6 +4612,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Roserade)
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
+        .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
+        .formChangeTable = sRoseradeFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ROSELIA

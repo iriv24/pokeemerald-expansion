@@ -2182,3 +2182,11 @@ static const u16 sSlakingFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_SLAKOTH
 
+#if P_FAMILY_ROSELIA
+static const u16 sRoseradeFormSpeciesIdTable[] = {
+    SPECIES_ROSERADE,
+    SPECIES_ROSERADE_MEGA,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_ROSELIA
+

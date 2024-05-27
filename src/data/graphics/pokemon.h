@@ -4708,6 +4708,14 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u32 gMonBackPic_Roserade[] = INCBIN_U32("graphics/pokemon/roserade/back.4bpp.lz");
     const u32 gMonShinyPalette_Roserade[] = INCBIN_U32("graphics/pokemon/roserade/shiny.gbapal.lz");
     const u8 gMonIcon_Roserade[] = INCBIN_U8("graphics/pokemon/roserade/icon.4bpp");
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_RoseradeMega[] = INCBIN_U32("graphics/pokemon/roserade/mega/megaroserade.4bpp.lz");
+    const u32 gMonPalette_RoseradeMega[] = INCBIN_U32("graphics/pokemon/roserade/mega/megaroserade.gbapal.lz");
+    //const u32 gMonBackPic_SlakingMega[] = INCBIN_U32("graphics/pokemon/slaking/mega/megaslakingback.4bpp.lz");
+    //const u32 gMonShinyPalette_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/shiny.gbapal.lz");
+    //const u8 gMonIcon_LopunnyMega[] = INCBIN_U8("graphics/pokemon/lopunny/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Roserade[] = INCBIN_U8("graphics/pokemon/roserade/footprint.1bpp");
 #endif //P_FOOTPRINTS
