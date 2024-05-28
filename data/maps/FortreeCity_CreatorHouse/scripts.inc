@@ -158,165 +158,165 @@ FortreeCity_CreatorHouse_EventScript_IsaacGiveItems::
 
 
 FortreeCity_CreatorHouse_EventScript_Justin::
-# 144 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	lockall
-# 145 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	applymovement 2, Common_Movement_FacePlayer
-# 146 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_FIRE_MEGAS, FortreeCity_CreatorHouse_EventScript_JustinDefeated
 # 147 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	goto_if_set FLAG_DECLINED_JUSTIN_BATTLE, FortreeCity_CreatorHouse_EventScript_JustinRequestBattleAgain
+	lockall
 # 148 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	msgbox Justin_Greeting, MSGBOX_YESNO
+	applymovement 2, Common_Movement_FacePlayer
 # 149 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto_if_set FLAG_RECEIVED_FIRE_MEGAS, FortreeCity_CreatorHouse_EventScript_JustinDefeated
+# 150 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto_if_set FLAG_DECLINED_JUSTIN_BATTLE, FortreeCity_CreatorHouse_EventScript_JustinRequestBattleAgain
+# 151 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Justin_Greeting, MSGBOX_YESNO
+# 152 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleJustinPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_JustinRequestBattleAgain::
-# 154 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 157 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Ready_Yet, MSGBOX_YESNO
-# 155 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 158 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleJustinPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleJustinPrompt::
-# 160 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 163 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, FortreeCity_CreatorHouse_EventScript_BattleJustin
-# 161 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 164 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FortreeCity_CreatorHouse_EventScript_DeclineJustinBattle
-# 162 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 165 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	closemessage
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_DeclineJustinBattle::
-# 167 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 170 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_DECLINED_JUSTIN_BATTLE
-# 168 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 171 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
-# 169 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 172 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleJustin::
-# 174 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 177 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox FortreeCity_CreatorHouse_EventScript_BattleJustin_Text_0, MSGBOX_DEFAULT
-# 175 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 178 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_JUSTIN, Justin_Outro
-# 176 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 179 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_JustinGiveItems
 	return
 
 
 FortreeCity_CreatorHouse_EventScript_JustinDefeated::
-# 182 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 185 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox PostBattle_Justin, MSGBOX_DEFAULT
-# 183 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 186 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	releaseall
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_JustinGiveItems::
-# 188 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_CHARIZARDITE_X
-# 189 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_CHARIZARDITE_Y
-# 190 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_BLAZIKENITE
 # 191 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_TM_DRAGON_DANCE
+	giveitem ITEM_CHARIZARDITE_X
 # 192 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_CHOICE_SPECS
+	giveitem ITEM_CHARIZARDITE_Y
 # 193 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	setflag FLAG_RECEIVED_FIRE_MEGAS
+	giveitem ITEM_BLAZIKENITE
 # 194 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	msgbox Justin_ExplainItems
+	giveitem ITEM_TM_DRAGON_DANCE
 # 195 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	giveitem ITEM_CHOICE_SPECS
+# 196 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	setflag FLAG_RECEIVED_FIRE_MEGAS
+# 197 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Justin_ExplainItems
+# 198 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_Xavier::
-# 232 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 231 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	lockall
-# 233 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 232 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	applymovement 1, Common_Movement_FacePlayer
-# 234 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 233 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_set FLAG_RECEIVED_GRASS_MEGAS, FortreeCity_CreatorHouse_EventScript_XavierDefeated
-# 235 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 234 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_set FLAG_DECLINED_XAVIER_BATTLE, FortreeCity_CreatorHouse_EventScript_XavierRequestBattleAgain
-# 236 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 235 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Xavier_Greeting, MSGBOX_YESNO
-# 237 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 236 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleXavierPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_XavierRequestBattleAgain::
-# 242 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 241 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Ready_Yet, MSGBOX_YESNO
-# 243 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 242 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleXavierPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleXavierPrompt::
-# 248 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 247 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, FortreeCity_CreatorHouse_EventScript_BattleXavier
-# 249 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 248 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FortreeCity_CreatorHouse_EventScript_DeclineXavierBattle
-# 250 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 249 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	closemessage
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_DeclineXavierBattle::
-# 255 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 254 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_DECLINED_XAVIER_BATTLE
-# 256 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 255 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
-# 257 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 256 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleXavier::
-# 262 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 261 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox FortreeCity_CreatorHouse_EventScript_BattleJustin_Text_0, MSGBOX_DEFAULT
-# 263 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 262 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_XAVIER, Xavier_Outro
-# 264 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 263 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_XavierGiveItems
 	return
 
 
 FortreeCity_CreatorHouse_EventScript_XavierDefeated::
-# 270 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 269 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox PostBattle_Xavier, MSGBOX_DEFAULT
-# 271 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 270 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	releaseall
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_XavierGiveItems::
-# 276 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 275 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TORTERRITE
-# 277 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 276 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_VENUSAURITE
-# 278 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 277 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_SCEPTILITE
-# 279 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 278 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TM_EARTHQUAKE
-# 280 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 279 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHOICE_BAND
-# 281 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 280 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_RECEIVED_GRASS_MEGAS
-# 282 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 281 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Xavier_ExplainItems
-# 283 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 282 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
@@ -326,7 +326,7 @@ FortreeCity_CreatorHouse_EventScript_BattleIsaac_Text_0:
 	.string "Alright, let's do this.$"
 
 FortreeCity_CreatorHouse_EventScript_BattleJustin_Text_0:
-# 174 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 177 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "You're on!$"
 
 Isaac_ExplainItems::
@@ -334,72 +334,71 @@ Isaac_ExplainItems::
 	.string "There you go, as promised. Now, keep\n"
 	.string "moving forward! There are still plenty\p"
 	.string "of tough battles ahead, but if you've\n"
-	.string "made it this far, I believe you can beat\p"
-	.string "the game. Thanks again for playing,\n"
+	.string "made it this far, I believe you can beat\l"
+	.string "the game.\p"
+	.string "Thanks again for playing,\n"
 	.string "good luck out there, {PLAYER}!$"
 
 Isaac_Greeting::
-# 107 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 108 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Hi there, {PLAYER}, I am the creator of\n"
-	.string "this hack. I hope you are enjoying it so\p"
-	.string "far, and if you've made it this far, I\n"
-	.string "would like to offer my sincere\p"
-	.string "appreciation to you for playing this\n"
-	.string "game. It was a lot of fun to make, and I\p"
-	.string "hope I succeeded in making it very\n"
-	.string "challenging, but not unbeatable. Now to\p"
-	.string "business: I've got a team of my\n"
-	.string "favorite Pokémon here and am ready to\p"
-	.string "battle. If you win, I'll give you the\n"
-	.string "Mega stones for the water starters,\p"
-	.string "including Empoleon's 2nd Mega form. I'll\n"
-	.string "also give you the TM for Substitute\p"
-	.string "(broken move btw) and a Choice Scarf.\n"
-	.string "If those rewards are worth it to you,\p"
-	.string "then say the word and let's battle.\n"
+	.string "this hack.\l"
+	.string "I hope you are enjoying it so far.\p"
+	.string "Since you've made it to here, I would\n"
+	.string "like to offer my sincere appreciation\l"
+	.string "for playing this game.\p"
+	.string "It was a lot of fun to make, and I\n"
+	.string "hope I succeeded in making it very\l"
+	.string "challenging, but not unbeatable.\p"
+	.string "Now to business: I've got a team of my\n"
+	.string "favorite Pokémon here and am ready to\l"
+	.string "battle.\p"
+	.string "If you win, I'll give you the Mega\n"
+	.string "stones for the water starters,\l"
+	.string "including Empoleon's 2nd Mega form.\p"
+	.string "I'll also give you the TM for Substitute\n"
+	.string "(broken move btw) and a Choice Scarf.\p"
+	.string "If those rewards are worth it to you,\n"
+	.string "then say the word and let's battle.\l"
 	.string "What do you say?$"
 
 Isaac_Outro::
-# 128 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 131 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Looks like you've got a pretty good\n"
 	.string "team over there!$"
 
 PostBattle_Isaac::
-# 134 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 137 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Can't believe I got beat in my own game,\n"
 	.string "definitely gonna give myself a cracked\l"
 	.string "team in the next version.$"
 
 Justin_ExplainItems::
-# 199 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	.string "Drain Punch allows your Pokémon to\n"
-	.string "absorb health with each strike. The\p"
-	.string "Life Orb boosts the power of your\n"
-	.string "Pokémon's moves at the cost of some of\p"
-	.string "its health with each attack.\n"
-	.string "The Heavy DutyBoots grant immunity\p"
-	.string "to hazards on entry. I threw in\n"
-	.string "some of my favorite Mega Stones\p"
-	.string "as well. Good luck!$"
+# 202 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Honestly the rewards for beating me\n"
+	.string "are goated, this was probably worth the\l"
+	.string "hassle.$"
 
 Justin_Greeting::
-# 211 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	.string "HOO-HAH! Is this finally a worthy\n"
-	.string "opponent? I can tell that you seem\p"
-	.string "pretty strong, let's see if my instincts\n"
-	.string "are correct! What do you say, will you\l"
-	.string "battle with me?$"
+# 208 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "I was too lazy to send the creator a\n"
+	.string "script, so this is the nonsense I have\l"
+	.string "to say instead!\p"
+	.string "If you lose to me, it means you're a\n"
+	.string "literal gerber baby because this game\l"
+	.string "is easy. So we battling or what?$"
 
 Justin_Outro::
-# 219 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	.string "My instincts were right!$"
+# 217 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Looks like the team I constructed was\n"
+	.string "trash, better luck next hack I guess.$"
 
 PostBattle_Justin::
-# 224 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	.string "Gotta. Get. Stronger.$"
+# 223 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Back to.. doing nothing really.$"
 
 Xavier_ExplainItems::
-# 287 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 286 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "This move Earthquake carried me\n"
 	.string "through many a Pearl run back in the\p"
 	.string "day. Though, this should game be a bit\n"
@@ -412,17 +411,17 @@ Xavier_ExplainItems::
 	.string "I designed it myself!$"
 
 Xavier_Greeting::
-# 300 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 299 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Yo! I was just about to have lunch on\n"
 	.string "my Torterra's back, but I guess that\p"
 	.string "can wait. Do you want to battle in the\n"
 	.string "mean time?$"
 
 Xavier_Outro::
-# 307 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 306 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Well now you've gone and spoiled my\n"
 	.string "appetite...$"
 
 PostBattle_Xavier::
-# 313 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 312 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "... don't even deserve this sandwich...$"

@@ -99,29 +99,32 @@ text Isaac_ExplainItems{
 	"There you go, as promised. Now, keep\n"
 	"moving forward! There are still plenty\p"
 	"of tough battles ahead, but if you've\n"
-	"made it this far, I believe you can beat\p"
-	"the game. Thanks again for playing,\n"
+	"made it this far, I believe you can beat\l"
+	"the game.\p"
+	"Thanks again for playing,\n"
 	"good luck out there, {PLAYER}!"
 }
 
 text Isaac_Greeting{
 	"Hi there, {PLAYER}, I am the creator of\n"
-	"this hack. I hope you are enjoying it so\p"
-	"far, and if you've made it this far, I\n"
-	"would like to offer my sincere\p"
-	"appreciation to you for playing this\n"
-	"game. It was a lot of fun to make, and I\p"
-	"hope I succeeded in making it very\n"
-	"challenging, but not unbeatable. Now to\p"
-	"business: I've got a team of my\n"
-	"favorite Pokémon here and am ready to\p"
-	"battle. If you win, I'll give you the\n"
-	"Mega stones for the water starters,\p"
-	"including Empoleon's 2nd Mega form. I'll\n"
-	"also give you the TM for Substitute\p"
-	"(broken move btw) and a Choice Scarf.\n"
-	"If those rewards are worth it to you,\p"
-	"then say the word and let's battle.\n"
+	"this hack.\l"
+	"I hope you are enjoying it so far.\p"
+	"Since you've made it to here, I would\n"
+	"like to offer my sincere appreciation\l"
+	"for playing this game.\p"
+	"It was a lot of fun to make, and I\n"
+	"hope I succeeded in making it very\l"
+	"challenging, but not unbeatable.\p"
+	"Now to business: I've got a team of my\n"
+	"favorite Pokémon here and am ready to\l"
+	"battle.\p"
+	"If you win, I'll give you the Mega\n"
+	"stones for the water starters,\l"
+	"including Empoleon's 2nd Mega form.\p"
+	"I'll also give you the TM for Substitute\n"
+	"(broken move btw) and a Choice Scarf.\p"
+	"If those rewards are worth it to you,\n"
+	"then say the word and let's battle.\l"
 	"What do you say?"
 }
 	
@@ -197,32 +200,28 @@ script FortreeCity_CreatorHouse_EventScript_JustinGiveItems{
 }
 
 text Justin_ExplainItems{
-	"Drain Punch allows your Pokémon to\n"
-	"absorb health with each strike. The\p"
-	"Life Orb boosts the power of your\n"
-	"Pokémon's moves at the cost of some of\p"
-	"its health with each attack.\n"
-	"The Heavy DutyBoots grant immunity\p"
-	"to hazards on entry. I threw in\n"
-	"some of my favorite Mega Stones\p"
-	"as well. Good luck!"
+	"Honestly the rewards for beating me\n"
+	"are goated, this was probably worth the\l"
+	"hassle."
 }
 
 text Justin_Greeting{
-	"HOO-HAH! Is this finally a worthy\n"
-	"opponent? I can tell that you seem\p"
-	"pretty strong, let's see if my instincts\n"
-	"are correct! What do you say, will you\l"
-	"battle with me?"
+	"I was too lazy to send the creator a\n"
+	"script, so this is the nonsense I have\l"
+	"to say instead!\p"
+	"If you lose to me, it means you're a\n"
+	"literal gerber baby because this game\l"
+	"is easy. So we battling or what?"
 }
 	
 text Justin_Outro{
-	"My instincts were right!"
+	"Looks like the team I constructed was\n"
+	"trash, better luck next hack I guess."
 }
 
 
 text PostBattle_Justin{
-	"Gotta. Get. Stronger."
+	"Back to.. doing nothing really."
 }
 
 
