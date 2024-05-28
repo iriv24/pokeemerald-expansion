@@ -2,6 +2,7 @@ raw `
 .set LOCALID_GRUNT_1, 12
 .set LOCALID_GRUNT_2, 13
 .set LOCALID_GRUNT_3, 14
+.set LOCALID_BYRON, 30
 
 Route121_MapScripts::
 	.byte 0
@@ -192,6 +193,144 @@ Route121_Text_SafariZoneSign:
 	.string "SAFARI ZONE$"
 
 `
+
+script Route121_EventScript_Byron{
+	lockall
+	applymovement(LOCALID_BYRON, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_MELTAN, Route121_EventScript_ByronDefeated)
+	goto_if_set(FLAG_DECLINED_BYRON_BATTLE, Route121_EventScript_ByronRequestBattleAgain)
+	msgbox(Byron_Greeting, MSGBOX_YESNO)
+	goto(Route121_EventScript_BattleByronPrompt)
+	end
+}
+
+script Route121_EventScript_ByronRequestBattleAgain{
+	msgbox(Ready_Yet, MSGBOX_YESNO)
+	goto(Route121_EventScript_BattleByronPrompt)
+	end
+}
+
+script Route121_EventScript_BattleByronPrompt{
+	call_if_eq(VAR_RESULT, YES, Route121_EventScript_BattleByron)
+	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_DeclineByronBattle)
+	closemessage
+	end
+}
+
+script Route121_EventScript_DeclineByronBattle {
+	setflag(FLAG_DECLINED_BYRON_BATTLE)
+	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route121_EventScript_BattleByron{
+	msgbox("Excellent!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_BYRON, Byron_Outro)
+	giveitem(ITEM_TM_STEALTH_ROCK)
+	giveitem(ITEM_TM_HIGH_HORSEPOWER)
+	giveitem(ITEM_COPPERAJITE)
+	giveitem(ITEM_ROCKY_HELMET)
+	giveitem(ITEM_LEFTOVERS)
+	goto(Route121_EventScript_ByronGiveMeltan)
+	return
+}
+	
+
+script Route121_EventScript_ByronDefeated{
+	msgbox(PostBattle_Byron, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script Route121_EventScript_ByronGiveMeltan{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN)
+	givemon(SPECIES_MELTAN, 30)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveMeltanParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveMeltanPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script Route121_EventScript_ReceiveMeltanParty{
+	call(Route121_EventScript_ReceivedMeltanFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_ExplainMeltan)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Route121_EventScript_ExplainMeltan)
+	end
+}
+	
+
+script Route121_EventScript_ReceiveMeltanPC {
+	call(Route121_EventScript_ReceivedMeltanFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_SendMeltanToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(Route121_EventScript_SendMeltanToPC)
+	end
+}
+	
+
+script Route121_EventScript_SendMeltanToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(Route121_EventScript_ExplainMeltan)
+	end
+}
+	
+
+script Route121_EventScript_ReceivedMeltanFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(Route121_Text_PlayerReceivedMeltan)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MELTAN)
+	return
+}
+	
+
+script Route121_EventScript_ExplainMeltan {
+	msgbox(Byron_ExplainMeltan, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_MELTAN)
+	release
+	end
+}
+	
+text Route121_Text_PlayerReceivedMeltan{
+	"{PLAYER} received Meltan!$"
+}
+
+text Byron_ExplainMeltan{
+	"Meltan and Melmetal are 2 of my\n"
+	"favorite Steel-types, I hope you treat\p"
+	"that Meltan kindly and raise it well."
+}
+	
+text Byron_Greeting{
+	"Well hello there, you look like a well-\n"
+	"traveled person. Did you happen to run\p"
+	"into a young man named Roark during\n"
+	"your journey? Oh, you did! And you were\p"
+	"able to defeat him? Excellent, that\n"
+	"must mean you are a strong trainer if\p"
+	"you were able to beat my son, what do\n"
+	"you say to a battle with me then?"
+}
+	
+text Byron_Outro{
+	"I see how you were able to defeat my\n"
+	"son. I'm confident I'll be leaving this\p"
+	"Pokémon in good hands."
+}
+
+
+text PostBattle_Byron{
+	"I'm off to find Roark, I'm sure he's\n"
+	"going to explore the underground of\l"
+	"this region."
+}
 
 script Route121_Trigger_BlockPath{
 	lockall
