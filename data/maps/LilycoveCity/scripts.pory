@@ -498,7 +498,7 @@ script LilycoveCity_EventScript_DawnRivalBattle{
 
 script LilycoveCity_EventScript_DawnDefeated{
 	msgbox(LilycoveCity_Text_Dawn_MagmaAndAqua)
-	giveitem(ITEM_METRONOME)
+	giveitem(ITEM_ASSAULT_VEST)
 	giveitem(ITEM_PROTECTIVE_PADS)
 	giveitem(ITEM_EJECT_BUTTON)
 	msgbox(LilycoveCity_Text_DawnGoodbye)

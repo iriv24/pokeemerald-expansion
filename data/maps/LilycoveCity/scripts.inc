@@ -973,7 +973,7 @@ LilycoveCity_EventScript_DawnDefeated::
 # 500 "data/maps/LilycoveCity/scripts.pory"
 	msgbox LilycoveCity_Text_Dawn_MagmaAndAqua
 # 501 "data/maps/LilycoveCity/scripts.pory"
-	giveitem ITEM_METRONOME
+	giveitem ITEM_ASSAULT_VEST
 # 502 "data/maps/LilycoveCity/scripts.pory"
 	giveitem ITEM_PROTECTIVE_PADS
 # 503 "data/maps/LilycoveCity/scripts.pory"

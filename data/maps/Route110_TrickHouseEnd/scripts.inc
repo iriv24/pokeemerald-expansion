@@ -201,9 +201,9 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 # 101 "data/maps/Route110_TrickHouseEnd/scripts.pory"
 	giveitem ITEM_KINGLERITE
 # 102 "data/maps/Route110_TrickHouseEnd/scripts.pory"
-	giveitem ITEM_BOOSTER_ENERGY
+	giveitem ITEM_METRONOME
 # 103 "data/maps/Route110_TrickHouseEnd/scripts.pory"
-	giveitem ITEM_ASSAULT_VEST
+	giveitem ITEM_BOOSTER_ENERGY
 # 104 "data/maps/Route110_TrickHouseEnd/scripts.pory"
 	addvar VAR_PETALBURG_GYM_STATE, 1
 # 105 "data/maps/Route110_TrickHouseEnd/scripts.pory"

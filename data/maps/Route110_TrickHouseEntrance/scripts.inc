@@ -743,9 +743,9 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 # 372 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	giveitem ITEM_KINGLERITE
 # 373 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_BOOSTER_ENERGY
+	giveitem ITEM_METRONOME
 # 374 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
-	giveitem ITEM_ASSAULT_VEST
+	giveitem ITEM_BOOSTER_ENERGY
 # 375 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 # 376 "data/maps/Route110_TrickHouseEntrance/scripts.pory"
