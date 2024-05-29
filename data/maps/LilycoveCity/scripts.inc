@@ -1048,24 +1048,16 @@ LilycoveCity_EventScript_DawnExit::
 
 
 LilycoveCity_EventScript_ApplyMovementDawn1::
-# 589 "data/maps/LilycoveCity/scripts.pory"
+# 593 "data/maps/LilycoveCity/scripts.pory"
 	applymovement 22, LilycoveCity_EventScript_DawnExit1
-# 590 "data/maps/LilycoveCity/scripts.pory"
+# 594 "data/maps/LilycoveCity/scripts.pory"
 	waitmovement 0
 	return
 
 
 LilycoveCity_EventScript_DawnExit1::
-# 595 "data/maps/LilycoveCity/scripts.pory"
-	walk_right
-# 596 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 597 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 598 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
 # 599 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
+	walk_right
 # 600 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 601 "data/maps/LilycoveCity/scripts.pory"
@@ -1075,29 +1067,29 @@ LilycoveCity_EventScript_DawnExit1::
 # 603 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 604 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 605 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 606 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 607 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 608 "data/maps/LilycoveCity/scripts.pory"
 	step_end
 	return
 
 
 LilycoveCity_EventScript_ApplyMovementDawn2::
-# 608 "data/maps/LilycoveCity/scripts.pory"
+# 612 "data/maps/LilycoveCity/scripts.pory"
 	applymovement 22, LilycoveCity_EventScript_DawnExit2
-# 609 "data/maps/LilycoveCity/scripts.pory"
+# 613 "data/maps/LilycoveCity/scripts.pory"
 	waitmovement 0
 	return
 
 
 LilycoveCity_EventScript_DawnExit2::
-# 614 "data/maps/LilycoveCity/scripts.pory"
-	walk_left
-# 615 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 616 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 617 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
 # 618 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
+	walk_left
 # 619 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 620 "data/maps/LilycoveCity/scripts.pory"
@@ -1107,42 +1099,54 @@ LilycoveCity_EventScript_DawnExit2::
 # 622 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 623 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 624 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 625 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 626 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 627 "data/maps/LilycoveCity/scripts.pory"
 	step_end
 	return
 
 
 LilycoveCity_Text_Dawn_Greeting::
 # 552 "data/maps/LilycoveCity/scripts.pory"
-	.string "{PLAYER}! Fancy seeing you here! \n"
-	.string "{RIVAL} told me about the amazing\p"
-	.string "department store here so I had to come\n"
-	.string "check it out myself, and it did not\p"
-	.string "disappoint! It might even be better\n"
-	.string "than the one in Veilstone City back\p"
-	.string "home. Anyway, it's been a little while,\n"
+	.string "{PLAYER}! Fancy seeing you here!\p"
+	.string "{RIVAL} told me about the amazing\n"
+	.string "department store here, so I had to come\l"
+	.string "check it out myself.\p"
+	.string "It did not disappoint!\p"
+	.string "It might even be better than\n"
+	.string "the one in Veilstone City back\l"
+	.string "home.\p"
+	.string "Anyway, it's been a little while,\n"
 	.string "what do you say we have a battle?$"
 
 LilycoveCity_Text_Dawn_Defeated::
-# 563 "data/maps/LilycoveCity/scripts.pory"
+# 565 "data/maps/LilycoveCity/scripts.pory"
 	.string "Crushing it as always, {PLAYER}.$"
 
 LilycoveCity_Text_Dawn_MagmaAndAqua::
-# 567 "data/maps/LilycoveCity/scripts.pory"
+# 569 "data/maps/LilycoveCity/scripts.pory"
 	.string "Geez, I'm running out of things I can\n"
 	.string "give you, hope these will suffice.$"
 
 LilycoveCity_Text_DawnGoodbye::
-# 572 "data/maps/LilycoveCity/scripts.pory"
+# 574 "data/maps/LilycoveCity/scripts.pory"
 	.string "On a more serious note, I'm starting to\n"
-	.string "get a little concerned about Team Aqua\p"
-	.string "and Team Magma's activities, they seem\n"
-	.string "to be ramping up, and I have a bad\p"
-	.string "feeling about all of it... I know you've\n"
-	.string "been getting some help from Drake and\p"
-	.string "you've been doing a great job shutting\n"
-	.string "them down, but I think I'm going to call\p"
-	.string "a friend of mine in the Sinnoh region to\n"
-	.string "see if we can get some back backup\p"
-	.string "here, just in case. In the meantime,\n"
-	.string "stay safe, {PLAYER}, and keep up the\l"
-	.string "good work!$"
+	.string "get a little concerned about Team Aqua\l"
+	.string "and Team Magma's activities.\p"
+	.string "They seem to be ramping up, and I have a\n"
+	.string "bad feeling about all of it...\p"
+	.string "I even heard that Elite Four Drake is\n"
+	.string "doing some investigating into what's\l"
+	.string "been going on.\p"
+	.string "You've been doing a great job shutting\n"
+	.string "them down, but I think I'm going to call\l"
+	.string "a friend of mine in the Sinnoh region.\p"
+	.string "I want to see if we can get some back\n"
+	.string "backup here, just in case.\p"
+	.string "In the meantime, stay safe, {PLAYER},\n"
+	.string "and keep up the good work!$"
