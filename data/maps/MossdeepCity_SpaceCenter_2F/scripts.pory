@@ -135,7 +135,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_Steven::
 	faceplayer
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenRoundUp, MSGBOX_DEFAULT
 	closemessage
-	fadedefaultbgm
+	fadenewbgm MUS_RUSTBORO
 	fadescreen FADE_TO_BLACK
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 3
 	setvar VAR_MOSSDEEP_CITY_STATE, 3
@@ -349,55 +349,60 @@ MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
 	.string "I can't believe how strong they were...$"
 
 MossdeepCity_SpaceCenter_2F_Text_Drake:
-	.string "{PLAYER}. Nice of you to join us. The\n"
-	.string "grunts were quite weak, but Maxie\p"
-	.string "managed to escape us before we could\n"
-	.string "get to him. We were able to get some\p"
-	.string "information about their plan from the\n"
+	.string "Drake: {PLAYER}. Nice of you to join us.\n"
+	.string "The grunts were quite weak, but Maxie\l"
+	.string "managed to escape us.\p"
+	.string "We were able to get some\n"
+	.string "information about their plan from the\l"
 	.string "Team Magma members here, though.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenRoundUp:
-	.string "Oh, hello again, {PLAYER}. I see you\n"
-	.string "defeated the Mossdeep Gym Leaders,\p"
-	.string "very nicely done. Drake and I did a bit\n"
-	.string "of battling ourselves here in the\p"
-	.string "meantime, as you can see. Ah, one\n"
-	.string "moment, it looks like the authorities\p"
-	.string "are here to round up the Team Magma\n"
-	.string "members we captured.$"
+	.string "Steven: Oh, hello again, {PLAYER}. I see\n"
+	.string "you defeated the Mossdeep Gym\l"
+	.string "Leaders, very nicely done.\p"
+	.string "Drake and I did a bit of battling\n"
+	.string "ourselves here in the meantime, as you\l"
+	.string "can see.\p"
+	.string "Ah, one moment, it looks like the\n"
+	.string "authorities are here to round up the\l"
+	.string "Team Magma members we captured.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenMagmaEmblem:
-	.string "As I was saying, unfortunately, Maxie\n"
-	.string "escaped us. However, we were able to\p"
-	.string "gather that Team Magma is planning\n"
-	.string "something big at their hideout in\p"
-	.string "Jagged Pass near Lavaridge Town. We\n"
-	.string "were also able to obtain one of these\p"
-	.string "from one of the grunts, which we\n"
+	.string "Steven: As I was saying, unfortunately,\n"
+	.string "Maxie escaped us.\p"
+	.string "However, we were able to gather that\n"
+	.string "Team Magma is planning something big at\l"
+	.string "their hideout in Jagged Pass near\l"
+	.string "Lavaridge Town.\p"
+	.string "We were also able to obtain one of\n"
+	.string "these from one of the grunts, which we\l"
 	.string "suspect will get us into their hideout.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenPursueMagma:
-	.string "This may be where we part ways for now.\n"
-	.string "I am going to stay here in my hometown\p"
-	.string "to make sure things recover from this\n"
-	.string "incident and get back to normal. I think\p"
-	.string "you should pursue Team Magma to their\n"
-	.string "hideout and see what you can find, but\l"
-	.string "be very careful, {PLAYER}.$"
+	.string "Steven: This may be where we part ways\n"
+	.string "for now.\p"
+	.string "I am going to stay here in my hometown\n"
+	.string "to make sure things recover from this\l"
+	.string "incident and get back to normal.\p"
+	.string "I think you should pursue Team Magma\n"
+	.string "to their hideout and see what you can\l"
+	.string "find, but be very careful, {PLAYER}.$"
 
 MossdeepCity_SpaceCenter_2F_Text_DrakePursueAqua:
-	.string "I will follow up on Team Aqua's\n"
-	.string "activity with the submarine. {PLAYER},\p"
-	.string "after your investigation into Team\n"
-	.string "Magma's hideout is complete, check in\p"
-	.string "with Steven to see if I've given any\n"
-	.string "updates to him. If you haven't heard\p"
-	.string "from me by then, maybe start looking\n"
-	.string "into Team Aqua yourselves as well.$"
+	.string "Drake: In the meantime, I will follow up\n"
+	.string "on Team Aqua's activity with the\l"
+	.string "submarine they stole.\p"
+	.string "{PLAYER}, after your investigation\n"
+	.string "into Team Magma's hideout is complete,\l"
+	.string "check in with Steven to see if I've\l"
+	.string "given any updates to him.\p"
+	.string "If you haven't heard from me by then,\n"
+	.string "perhaps you should start looking into\l"
+	.string "Team Aqua as well.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenMeetHouse:
-	.string "That sounds like a plan.\n"
-	.string "{PLAYER}, stop by my house here on\p"
-	.string "Mossdeep, I have a gift to thank you\n"
+	.string "Steven: That sounds like a plan.\n"
+	.string "{PLAYER}, stop by my house here on\l"
+	.string "Mossdeep, I have a gift to thank you\l"
 	.string "personally for your help with all this.$"
 `
