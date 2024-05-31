@@ -1,6 +1,7 @@
 raw `
 .set LOCALID_NURSE, 1
 .set LOCALID_SCOTT, 4
+.set LOCALID_EGG_TUTOR, 6
 
 EverGrandeCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_PokemonCenter_1F_OnTransition
@@ -76,6 +77,92 @@ EverGrandeCity_PokemonCenter_1F_Movement_ScottExit:
 	walk_down
 	walk_down
 	step_end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript::
+	lockall
+	setflag FLAG_EGG_MOVE_TUTOR
+	applymovement LOCALID_EGG_TUTOR, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor, MSGBOX_DEFAULT
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_AskTeachMove
+	clearflag FLAG_EGG_MOVE_TUTOR
+	end
+
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_AskTeachMove::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
+	clearflag FLAG_EGG_MOVE_TUTOR
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon, MSGBOX_DEFAULT
+	special ChooseMonForMoveRelearner
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_CantTeachEgg
+	goto_if_eq VAR_0x8005, 0, EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_NoMoveToTeachMon
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMove
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMove::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove, MSGBOX_DEFAULT
+	special TeachMoveRelearnerMove
+	waitstate
+	goto_if_eq VAR_0x8004, 0, EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo, MSGBOX_DEFAULT
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_NoMoveToTeachMon::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_CantTeachEgg::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg, MSGBOX_DEFAULT
+	goto EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale::
+	msgbox EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ComeBack, MSGBOX_DEFAULT
+	clearflag FLAG_EGG_MOVE_TUTOR
+	releaseall
+	end
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor:
+	.string "Hello, I'm an Egg Move Tutor. I can\n"
+	.string "teach your Pokémon any Egg Moves they\l"
+	.string "could possibly learn.$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove:
+	.string "Would you like me to teach one of your\n"
+	.string "Pokémon an Egg Move?$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon:
+	.string "Which Pokémon?$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove:
+	.string "Which move should I teach?$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
+	.string "That Pokémon doesn't have any  Egg\n"
+	.string "Moves.$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo:
+	.string "There you go.$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_ComeBack:
+	.string "Come back if you want your Pokémon to\n"
+	.string "learn more Egg Moves.$"
+
+EverGrandeCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg:
+	.string "Just because I'm an Egg Move tutor\n"
+	.string "doesn't mean I can teach moves to an\l"
+	.string "Egg!$"
 
 EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad:
 	.string "The POKéMON LEAGUE is only a short\n"

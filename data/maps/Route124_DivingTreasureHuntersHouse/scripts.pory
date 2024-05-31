@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_EGG_TUTOR, 1
+
 Route124_DivingTreasureHuntersHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route124_DivingTreasureHuntersHouse_OnTransition
 	.byte 0
@@ -342,7 +344,7 @@ Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard:
 General_EggTutor_EventScript::
 	lockall
 	setflag FLAG_EGG_MOVE_TUTOR
-	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
+	applymovement LOCALID_EGG_TUTOR, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox General_EggTutor_Text_ImTheEggTutor, MSGBOX_DEFAULT
 	goto General_EggTutor_EventScript_AskTeachMove
