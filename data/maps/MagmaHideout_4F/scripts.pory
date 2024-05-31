@@ -244,13 +244,12 @@ MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 	.string "Does this mean Groudon will start to\n"
 	.string "rampage out of control?\p"
 	.string "… … … … … …\p"
-	.string "HAHAHAHA! Yes! Even if I failed to\n"
-	.string "defeat you here, Groudon's rage cannot\p"
-	.string "be quelled… You were too late,\n"
-	.string "{PLAYER}, Groudon is going to wreak\p"
-	.string "havoc upon the world and there's\n"
-	.string "nothing we can do to stop it!\l"
-	.string "AHAHAHAHA!$"
+	.string "This wasn't a part of my plan…\p"
+	.string "I never intended for things to go this\n"
+	.string "way, I wanted to be in full control of\l"
+	.string "Groudon to reshape the Earth, but now…\p"
+	.string "I have to go, I fear I may have made a\n"
+	.string "grave mistake.$"
 `
 
 script MagmaHideout_EventScript_MaxieTrigger1{
@@ -330,6 +329,7 @@ script MagmaHideout_EventScript_BackToBackScene{
 	trainerbattle_no_intro(TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaDefeat)
 	msgbox(ThinkWeDidOurJobs, MSGBOX_DEFAULT)
 	closemessage
+	fadenewbgm(MUS_AQUA_MAGMA_HIDEOUT)
 	applymovement(LOCALID_TABITHA, TabithaLost)
 	waitmovement(0)
 	copyobjectxytoperm(LOCALID_TABITHA)
@@ -376,11 +376,12 @@ script TabithaLost {
 }
 
 text DelayForMaxie {
-	"Listen up, Courtney! We have to do\n"
-	"everything we can to stall the brat! We\p"
-	"know {PLAYER} is on their way here\n"
-	"right now, and even though our coward\p"
-	"comrades quit on us, we need to buy\n"
+	"Tabitha: Listen up, Courtney! We have\n"
+	"to do everything we can to stall the\l"
+	"brat!\p"
+	"We know {PLAYER} is on their way here\n"
+	"right now, and even though our coward\l"
+	"comrades quit on us, we need to buy\l"
 	"time for Maxie to capture Groudon!"
 }
 
@@ -390,8 +391,8 @@ text GetThem {
 }
 
 text YesSir {
-	"You're not my boss anymore, Tabitha.\n"
-	"We're equals.\p"
+	"Courtney: You're not my boss anymore,\n"
+	"Tabitha. We're equals.\p"
 	"But I'll pummel this brat as revenge for\n"
 	"Mt. Chimney!$"
 }
