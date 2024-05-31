@@ -373,68 +373,90 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine::
 # 187 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
 # 188 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales:
+LilycoveCity_DepartmentStoreRooftop_EventScript_FormerSubstituteTutor::
 # 189 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Don't they have set dates for their\n"
+	lockall
 # 190 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "clear-out sales?\p"
+	faceplayer
 # 191 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "I watch TV, but they never show any\n"
+	msgbox LilycoveCity_DepartmentStoreRooftop_Text_FormerSubstituteTutor, MSGBOX_DEFAULT
 # 192 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "commercials.$"
+	releaseall
 # 193 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
+	end
 # 194 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale:
+
 # 195 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Yes! I've been waiting a long time for\n"
+LilycoveCity_DepartmentStoreRooftop_Text_FormerSubstituteTutor:
 # 196 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "this clear-out sale.\p"
+	.string "I used to be able to sub anything..\n"
 # 197 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "They have items that you can only get\n"
+	.string "Oh, what happened?$"
 # 198 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "here. I'm going to load up, that I am!$"
+
 # 199 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
+LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales:
 # 200 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
+	.string "Don't they have set dates for their\n"
 # 201 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Ohh… I'm bone-dry thirsty!$"
+	.string "clear-out sales?\p"
 # 202 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
+	.string "I watch TV, but they never show any\n"
 # 203 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
+	.string "commercials.$"
 # 204 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "It's a VENDING MACHINE.\n"
-# 205 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Which drink would you like?$"
-# 206 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
+# 205 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale:
+# 206 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "Yes! I've been waiting a long time for\n"
 # 207 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
+	.string "this clear-out sale.\p"
 # 208 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Clang!\p"
+	.string "They have items that you can only get\n"
 # 209 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "A can of {STR_VAR_1} dropped down.$"
+	.string "here. I'm going to load up, that I am!$"
 # 210 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
 # 211 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown:
+LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
 # 212 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Clang!\p"
+	.string "Ohh… I'm bone-dry thirsty!$"
 # 213 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Score! An extra can of {STR_VAR_1}\n"
+
 # 214 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "dropped down!$"
+LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
 # 215 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-
+	.string "It's a VENDING MACHINE.\n"
 # 216 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
+	.string "Which drink would you like?$"
 # 217 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "Not enough money…$"
-# 218 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 
+# 218 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
 # 219 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
+	.string "Clang!\p"
 # 220 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "A can of {STR_VAR_1} dropped down.$"
+# 221 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+
+# 222 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown:
+# 223 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "Clang!\p"
+# 224 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "Score! An extra can of {STR_VAR_1}\n"
+# 225 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "dropped down!$"
+# 226 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+
+# 227 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
+# 228 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+	.string "Not enough money…$"
+# 229 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+
+# 230 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
+LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
+# 231 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	.string "Decided against buying a drink.$"

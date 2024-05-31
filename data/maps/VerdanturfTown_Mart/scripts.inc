@@ -59,68 +59,70 @@ VerdanturfTown_Mart_Pokemart:
 # 30 "data/maps/VerdanturfTown_Mart/scripts.pory"
 	.2byte ITEM_UPGRADE
 # 31 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.2byte ITEM_NONE
+	.2byte ITEM_DUBIOUS_DISC
 # 32 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	release
+	.2byte ITEM_NONE
 # 33 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	end
+	release
 # 34 "data/maps/VerdanturfTown_Mart/scripts.pory"
-
+	end
 # 35 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_EventScript_Boy::
+
 # 36 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	msgbox VerdanturfTown_Mart_Text_XSpecialIsCrucial, MSGBOX_NPC
+VerdanturfTown_Mart_EventScript_Boy::
 # 37 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	end
+	msgbox VerdanturfTown_Mart_Text_XSpecialIsCrucial, MSGBOX_NPC
 # 38 "data/maps/VerdanturfTown_Mart/scripts.pory"
-
+	end
 # 39 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_EventScript_ExpertF::
+
 # 40 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	msgbox VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent, MSGBOX_NPC
+VerdanturfTown_Mart_EventScript_ExpertF::
 # 41 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	end
+	msgbox VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent, MSGBOX_NPC
 # 42 "data/maps/VerdanturfTown_Mart/scripts.pory"
-
-# 43 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_EventScript_Lass::
-# 44 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	msgbox VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon, MSGBOX_NPC
-# 45 "data/maps/VerdanturfTown_Mart/scripts.pory"
 	end
+# 43 "data/maps/VerdanturfTown_Mart/scripts.pory"
+
+# 44 "data/maps/VerdanturfTown_Mart/scripts.pory"
+VerdanturfTown_Mart_EventScript_Lass::
+# 45 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	msgbox VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon, MSGBOX_NPC
 # 46 "data/maps/VerdanturfTown_Mart/scripts.pory"
-
+	end
 # 47 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_Text_XSpecialIsCrucial:
+
 # 48 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "For any POKéMON match, X SPECIAL\n"
+VerdanturfTown_Mart_Text_XSpecialIsCrucial:
 # 49 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "is crucial.\p"
+	.string "For any POKéMON match, X SPECIAL\n"
 # 50 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "It jacks up the power of some moves\n"
+	.string "is crucial.\p"
 # 51 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "even though it's only for one battle.$"
+	.string "It jacks up the power of some moves\n"
 # 52 "data/maps/VerdanturfTown_Mart/scripts.pory"
-
+	.string "even though it's only for one battle.$"
 # 53 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent:
-# 54 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "They don't seem to sell any winning\n"
-# 55 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "strategy guides for the BATTLE TENT…\p"
-# 56 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "It seems one must rely on one's\n"
-# 57 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "own wits after all…$"
-# 58 "data/maps/VerdanturfTown_Mart/scripts.pory"
 
+# 54 "data/maps/VerdanturfTown_Mart/scripts.pory"
+VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent:
+# 55 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	.string "They don't seem to sell any winning\n"
+# 56 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	.string "strategy guides for the BATTLE TENT…\p"
+# 57 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	.string "It seems one must rely on one's\n"
+# 58 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	.string "own wits after all…$"
 # 59 "data/maps/VerdanturfTown_Mart/scripts.pory"
-VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon:
+
 # 60 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "The NEST BALL works better on\n"
+VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon:
 # 61 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "weakened POKéMON.\p"
+	.string "The NEST BALL works better on\n"
 # 62 "data/maps/VerdanturfTown_Mart/scripts.pory"
-	.string "VERDANTURF is the only place you can\n"
+	.string "weakened POKéMON.\p"
 # 63 "data/maps/VerdanturfTown_Mart/scripts.pory"
+	.string "VERDANTURF is the only place you can\n"
+# 64 "data/maps/VerdanturfTown_Mart/scripts.pory"
 	.string "buy it.$"

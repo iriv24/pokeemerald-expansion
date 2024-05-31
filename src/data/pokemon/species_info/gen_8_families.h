@@ -5231,7 +5231,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sDuraludonTeachableLearnset,
         .formSpeciesIdTable = sDuraludonFormSpeciesIdTable,
         .formChangeTable = sDuraludonFormChangeTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_ARCHALUDON}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_ARCHALUDON},
+                                {EVO_LEVEL, 50, SPECIES_ARCHALUDON}),
     },
 
 #if P_GIGANTAMAX_FORMS

@@ -5928,7 +5928,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         //FOOTPRINT(Poltchageist)
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_UNREMARKABLE_TEACUP, SPECIES_SINISTCHA_UNREMARKABLE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_SINISTCHA_UNREMARKABLE}),
     },
     [SPECIES_POLTCHAGEIST_ARTISAN] =
     {
@@ -5981,7 +5981,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         //FOOTPRINT(Poltchageist)
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MASTERPIECE_TEACUP, SPECIES_SINISTCHA_MASTERPIECE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_SINISTCHA_MASTERPIECE}),
     },
 
     [SPECIES_SINISTCHA_UNREMARKABLE] =
