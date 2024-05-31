@@ -2256,11 +2256,11 @@ static const struct TrainerMon sParty_Spencer[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_VOLCANION,
-    .nature = NATURE_MODEST,
-    .ability = ABILITY_WATER_ABSORB,
-    .heldItem = ITEM_CHOICE_SCARF,
-    .moves = {MOVE_STEAM_ERUPTION, MOVE_FLAMETHROWER, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER}
+    .species = SPECIES_CHARIZARD,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_SOLAR_POWER,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+    .moves = {MOVE_AIR_SLASH, MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_SCORCHING_SANDS}
     }
 };
 
