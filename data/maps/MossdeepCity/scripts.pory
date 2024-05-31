@@ -347,12 +347,12 @@ MossdeepCity_Text_FormerDynamicPunchTutor:
 	.string "Oh, what happened?$"
 
 MossdeepCity_Text_StevenPreRocket:
-	.string "Oh, hello there, {PLAYER}. We figured\p"
-	.string "you'd show up here eventually. Drake\n"
-	.string "and I are planning to stop whatever\p"
-	.string "Team Magma is planning here, why don't\n"
-	.string "you take on the Mossdeep Gym challenge\l"
-	.string "and then join us afterwards?$"
+	.string "Oh, hello there, {PLAYER}. We figured\n"
+	.string "you'd show up here eventually.\p"
+	.string "Drake and I are planning to stop whatever\n"
+	.string "Team Magma is planning here.\p"
+	.string "Why don't you take on the Mossdeep Gym\n"
+	.string "challenge and then join us afterwards?$"
 
 MossdeepCity_Text_DrakePreRocket:
 	.string "{PLAYER}. Steven and I will handle\n"
@@ -473,15 +473,15 @@ MossdeepCity_Text_SpaceCenterSign:
 	.string "“The closest place to space.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown:
-	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
+	.string "{PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
+	.string "I'd heard Mossdeep's Gym Leader is\n"
 	.string "pretty strong, so I decided to come\l"
 	.string "take a look-see for myself.\p"
 	.string "But Team Magma's presence here... It's\n"
-	.string "making me a bit uneasy, I'm going to\p"
-	.string "split before things start going down.\n"
-	.string "I'm sure you'll take care of business as\p"
+	.string "making me a bit uneasy, I'm going to\l"
+	.string "split before things start going down.\p"
+	.string "I'm sure you'll take care of business as\n"
 	.string "usual, {PLAYER}.$"
 
 MossdeepCity_Text_SootopolisNewGymLeader:
