@@ -254,41 +254,43 @@ SeafloorCavern_Room9_Text_ArchieMasterBall:
 	.string "Master Ball, go!$"
 
 SeafloorCavern_Room9_Text_ArchieCaputredKyogre:
-	.string "Excellent, Kyogre... Now, there is only\n"
+	.string "Excellent, Kyogre… Now, there is only\n"
 	.string "one more obstacle that stands in my\l"
-	.string "way...$"
+	.string "way…$"
 
 SeafloorCavern_Room9_Text_ArchieAwakenKyogre:
 	.string "Kyogre…\p"
 	.string "Finally, the time has come for you to\n"
 	.string "awaken from your slumber.\p"
 	.string "You should react to the power within\n"
-	.string "this Blue Orb... awaken, Kyogre, and join\l"
+	.string "this Blue Orb… awaken, Kyogre, and join\l"
 	.string "me, so that we may expand the sea!$"
 
 SeafloorCavern_Room9_Text_YouObstacle:
 	.string "You, {PLAYER}. I respect your abilities\n"
-	.string "as a Pokémon trainer, as\p"
-	.string "you've proven to be a thorn in my side\n"
-	.string "for quite some time now... I only wish\p"
-	.string "that you would have joined us instead...\n"
-	.string "But now, you are nothing but an\p"
-	.string "obstacle that stands between Team\n"
-	.string "Aqua and our dream of expanding the\p"
-	.string "sea. I'm sorry, {PLAYER}, but you've\n"
-	.string "left me with no choice... Prepare to\l"
+	.string "as a Pokémon trainer, as\l"
+	.string "you've proven to be a thorn in my side\l"
+	.string "for quite some time now…\p"
+	.string "I only wish that you would have joined\n"
+	.string "us instead…\p"
+	.string "But now, you are nothing but an\n"
+	.string "obstacle that stands between Team\l"
+	.string "Aqua and our dream of expanding the\l"
+	.string "sea.\p" 
+	.string "I'm sorry, {PLAYER}, but you've\n"
+	.string "left me with no choice… Prepare to\l"
 	.string "face the wrath of Primal Kyogre!$"
 
 SeafloorCavern_4F_Text_NotSurprised:
 	.string "I really shouldn't be surprised at this\n"
-	.string "point...$"
+	.string "point…$"
 
 SeafloorCavern_4F_TextKyogreAwakened:
 	.string "What's this? Kyogre was powerful\n"
-	.string "enough to escape my Master Ball? That\p"
-	.string "should have been impossible... I wonder\n"
-	.string "what Kyogre will do now that it's been \l"
-	.string "awakened...$"
+	.string "enough to escape my Master Ball?\p"
+	.string "That should have been impossible…\n"
+	.string "I wonder what Kyogre will do now that\l"
+	.string "it's been awakened…$"
 
 
 SeafloorCavern_4F_Text_NeverStopArchie:
@@ -352,22 +354,22 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard:
 	.string "Hm…\n"
 	.string "It's raining heavily?\p"
 	.string "I suppose that makes sense…\n"
-	.string "With Primal Kyogre now unleashed, we\p"
-	.string "should expect to see heavy rains.\n"
+	.string "With Primal Kyogre now unleashed, we\l"
+	.string "should expect to see heavy rains.\p"
 	.string "What?!\p"
 	.string "It's raining far harder than we\n"
 	.string "envisioned? You're in danger?\p"
 	.string "That's concerning…\n"
-	.string "Maybe this is something we should have\p"
-	.string "considered more carefully…\n"
-	.string "Hold your position and monitor\l"
+	.string "Maybe this is something we should have\l"
+	.string "considered more carefully…\p"
+	.string "Hold your position and monitor\n"
 	.string "the situation!$"
 
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear:
-	.string "Perhaps we've made a mistake... \n"
-	.string "unleashing Primal Kyogre onto the world\p"
-	.string "with no control over it... I thought with\n"
-	.string "the Blue Orb and the Master ball I...$"
+	.string "Perhaps we've made a mistake… \n"
+	.string "unleashing Primal Kyogre onto the world\l"
+	.string "with no control over it… I thought with\l"
+	.string "the Blue Orb and the Master ball I…$"
 
 SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought:
 	.string "Maxie: What have you wrought?\p"
@@ -387,8 +389,8 @@ SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty:
 SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue:
 	.string "Maxie: We don't have the time to\n"
 	.string "argue about it here!\p"
-	.string "Get outside and see for yourself!\p"
-	.string "See if what you've wrought is the\n"
+	.string "Get outside and see for yourself!\n"
+	.string "See if what you've wrought is the\l"
 	.string "world that we desired!$"
 
 SeafloorCavern_Room9_Text_MaxieComeOnPlayer:
@@ -396,18 +398,18 @@ SeafloorCavern_Room9_Text_MaxieComeOnPlayer:
 	.string "to get out of here, too!$"
 
 SeafloorCavern_Text_ShellyDefeat:
-	.string "I failed again...$"
+	.string "I failed again…$"
 
 SeafloorCavern_Text_ShellyPostBattle:
-	.string "You're up, Matt.$"
+	.string "Shelly: You're up, Matt.$"
 
 SeafloorCavern_Text_MattDefeat:
 	.string "ARGH! Another loss!$"
 
 SeafloorCavern_4F_Text_MattPostBattle:
-	.string "These battles were meaningless anyway,\n"
-	.string "Archie is going to wipe the floor with\l"
-	.string "you, punk.$"
+	.string "Matt: These battles were meaningless\n"
+	.string "anyway, Archie is going to wipe the\l"
+	.string "floor with you, punk.$"
 `
 
 script PlayerBackDown {
@@ -474,7 +476,7 @@ script SeafloorCavern_EventScript_BackToBackTrigger{
 script SeafloorCavern_EventScript_BackToBackScene{
 	lockall
 	playbgm(MUS_ENCOUNTER_AQUA, FALSE)
-	applymovement(LOCALID_SHELLY, Common_Movement_WalkInPlaceFasterLeft)
+	applymovement(LOCALID_MATT, Common_Movement_WalkInPlaceFasterRight)
 	waitmovement(0)
 	msgbox(CantStopArchie)
 	waitmessage
@@ -555,24 +557,24 @@ script MattLost {
 }
 
 text CantStopArchie {
-	"Hehehe.. Once Archie has control of\n"
-	"Primal Kyogre, there's no one in the\l"
-	"world that will be able to stop him..."
+	"Matt: Hehehe.. Once Archie has control\n"
+	"of Primal Kyogre, there's no one in the\l"
+	"world that will be able to stop him…"
 }
 
 text ShellyRevenge {
-	"This brat again... I'm getting my\n"
+	"Shelly: This brat again… I'm getting my\n"
 	"revenge for what happened at the\l"
 	"Weather Institute!"
 }
 
 text GoingDown {
-	"You're going down!"
+	"Shelly: You're going down!"
 }
 
 text MattRevenge{
-	"And this is revenge for beating me\n"
-	"at the Hideout in Lilycove!"
+	"Matt: And this is revenge for beating\n"
+	"me at the Hideout in Lilycove!"
 }
 
 script SetAquaAdminsPermLoc {

@@ -33,7 +33,7 @@ static const struct TrainerMon sParty_GruntAquaHideout3[] = {
 static const struct TrainerMon sParty_GruntAquaHideout4[] = {
     {
     .lvl = 65,
-    .species = SPECIES_GOLURK,
+    .species = SPECIES_PALOSSAND,
     }
 };
 
@@ -615,7 +615,7 @@ static const struct TrainerMon sParty_Archie[] = {
     .nature = NATURE_CAREFUL,
     .heldItem = ITEM_FOCUS_SASH,
     .ability = ABILITY_TORRENT,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_FLIP_TURN}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_ROAR, MOVE_EARTHQUAKE, MOVE_FLIP_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -629,11 +629,11 @@ static const struct TrainerMon sParty_Archie[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 80,
-    .species = SPECIES_PALOSSAND,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_WATER_COMPACTION,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_EARTH_POWER, MOVE_SHADOW_BALL, MOVE_SHORE_UP, MOVE_TOXIC}
+    .species = SPECIES_GOLURK,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_NO_GUARD,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_DYNAMIC_PUNCH, MOVE_POLTERGEIST, MOVE_STONE_EDGE, MOVE_EARTHQUAKE}
     },
     {
         //hp, atk, def, speed, spatk, spdef
