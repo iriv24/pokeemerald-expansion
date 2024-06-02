@@ -105,7 +105,7 @@ FallarborTown_Mart_EventScript_FormerMetronomeTutor::
 # 53 "data/maps/FallarborTown_Mart/scripts.pory"
 	faceplayer
 # 54 "data/maps/FallarborTown_Mart/scripts.pory"
-	msgbox MauvilleCity_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
+	msgbox FallarborTown_Mart_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
 # 55 "data/maps/FallarborTown_Mart/scripts.pory"
 	releaseall
 # 56 "data/maps/FallarborTown_Mart/scripts.pory"
@@ -113,7 +113,7 @@ FallarborTown_Mart_EventScript_FormerMetronomeTutor::
 # 57 "data/maps/FallarborTown_Mart/scripts.pory"
 
 # 58 "data/maps/FallarborTown_Mart/scripts.pory"
-MauvilleCity_Text_FormerMetronomeTutor:
+FallarborTown_Mart_Text_FormerMetronomeTutor:
 # 59 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "I used to have such a great\n"
 # 60 "data/maps/FallarborTown_Mart/scripts.pory"

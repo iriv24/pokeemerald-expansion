@@ -205,114 +205,136 @@ SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale::
 # 103 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 	end
 # 104 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	
 # 105 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor:
+SootopolisCity_PokemonCenter_1F_EventScript_FormerDoubleEdgeTutor::
 # 106 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Hello, I'm an Egg Move Tutor. I can\n"
+	lockall
 # 107 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "teach your Pokémon any Egg Moves they\l"
+	faceplayer
 # 108 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "could possibly learn.$"
+	msgbox SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor, MSGBOX_DEFAULT
 # 109 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	releaseall
 # 110 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove:
+	end
 # 111 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Would you like me to teach one of your\n"
+
 # 112 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Pokémon an Egg Move?$"
+SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor:
 # 113 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	.string "I used to have two great\n"
 # 114 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon:
+	.string "edges... Oh, what happened?$"
 # 115 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Which Pokémon?$"
+
 # 116 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor:
 # 117 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove:
+	.string "Hello, I'm an Egg Move Tutor. I can\n"
 # 118 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Which move should I teach?$"
+	.string "teach your Pokémon any Egg Moves they\l"
 # 119 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	.string "could possibly learn.$"
 # 120 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
+
 # 121 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "That Pokémon doesn't have any  Egg\n"
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove:
 # 122 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Moves.$"
+	.string "Would you like me to teach one of your\n"
 # 123 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	.string "Pokémon an Egg Move?$"
 # 124 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo:
-# 125 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "There you go.$"
-# 126 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 
+# 125 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon:
+# 126 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "Which Pokémon?$"
 # 127 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ComeBack:
+
 # 128 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Come back if you want your Pokémon to\n"
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove:
 # 129 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "learn more Egg Moves.$"
+	.string "Which move should I teach?$"
 # 130 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 
 # 131 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg:
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
 # 132 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Just because I'm an Egg Move tutor\n"
+	.string "That Pokémon doesn't have any  Egg\n"
 # 133 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "doesn't mean I can teach moves to an\l"
+	.string "Moves.$"
 # 134 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Egg!$"
+
 # 135 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo:
 # 136 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
+	.string "There you go.$"
 # 137 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "WALLACE is rumored to be the toughest\n"
+
 # 138 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "TRAINER in the whole HOENN region.\p"
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_ComeBack:
 # 139 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "This town's GYM is led by the TRAINER\n"
+	.string "Come back if you want your Pokémon to\n"
 # 140 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "who taught WALLACE.\p"
+	.string "learn more Egg Moves.$"
 # 141 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "But the ELITE FOUR… They're said to be\n"
+
 # 142 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "even stronger than WALLACE's mentor.\p"
+SootopolisCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg:
 # 143 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "How strong could they be?$"
+	.string "Just because I'm an Egg Move tutor\n"
 # 144 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	.string "doesn't mean I can teach moves to an\l"
 # 145 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
+	.string "Egg!$"
 # 146 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Everyone in town has taken refuge\n"
+
 # 147 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "and won't come out of their homes.\p"
+SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
 # 148 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Even I would rather not venture\n"
+	.string "WALLACE is rumored to be the toughest\n"
 # 149 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "outside.$"
+	.string "TRAINER in the whole HOENN region.\p"
 # 150 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-
+	.string "This town's GYM is led by the TRAINER\n"
 # 151 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
+	.string "who taught WALLACE.\p"
 # 152 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Whenever, wherever, and whatever\n"
+	.string "But the ELITE FOUR… They're said to be\n"
 # 153 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "happens, I will always be friends with\l"
+	.string "even stronger than WALLACE's mentor.\p"
 # 154 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "POKéMON.\p"
+	.string "How strong could they be?$"
 # 155 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Because it's fun to be with POKéMON!$"
-# 156 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 
+# 156 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 # 157 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
+	.string "Everyone in town has taken refuge\n"
 # 158 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Aren't POKéMON our friends?\p"
+	.string "and won't come out of their homes.\p"
 # 159 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "Even I would rather not venture\n"
+# 160 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "outside.$"
+# 161 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+
+# 162 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
+# 163 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "Whenever, wherever, and whatever\n"
+# 164 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "happens, I will always be friends with\l"
+# 165 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "POKéMON.\p"
+# 166 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "Because it's fun to be with POKéMON!$"
+# 167 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+
+# 168 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
+# 169 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
+	.string "Aren't POKéMON our friends?\p"
+# 170 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 	.string "Why are they going wild this way?$"

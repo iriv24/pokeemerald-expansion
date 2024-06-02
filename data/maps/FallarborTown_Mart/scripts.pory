@@ -51,11 +51,11 @@ FallarborTown_Mart_EventScript_Skitty::
 FallarborTown_Mart_EventScript_FormerMetronomeTutor::
 	lockall
 	faceplayer
-	msgbox MauvilleCity_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
+	msgbox FallarborTown_Mart_Text_FormerMetronomeTutor, MSGBOX_DEFAULT
 	releaseall
 	end
 
-MauvilleCity_Text_FormerMetronomeTutor:
+FallarborTown_Mart_Text_FormerMetronomeTutor:
 	.string "I used to have such a great\n"
 	.string "rhythm... Oh, what happened?$"
 

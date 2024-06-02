@@ -101,6 +101,17 @@ SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale::
 	clearflag FLAG_EGG_MOVE_TUTOR
 	releaseall
 	end
+	
+SootopolisCity_PokemonCenter_1F_EventScript_FormerDoubleEdgeTutor::
+	lockall
+	faceplayer
+	msgbox SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor:
+	.string "I used to have two great\n"
+	.string "edges... Oh, what happened?$"
 
 SootopolisCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor:
 	.string "Hello, I'm an Egg Move Tutor. I can\n"
