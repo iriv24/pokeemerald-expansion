@@ -30,6 +30,7 @@ SootopolisCity_OnLoad:
 	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockGymDoor
 	goto_if_unset FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, SootopolisCity_EventScript_LegendariesNotArrived
 	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockHouseDoors
+	call_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockMysteryHouseDoor
 	end
 
 SootopolisCity_EventScript_LegendariesNotArrived::
@@ -44,6 +45,10 @@ SootopolisCity_EventScript_LockHouseDoors::
 	setmetatile 53, 28, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 45, 6, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 48, 25, METATILE_Sootopolis_Door_Closed, TRUE
+	setmetatile 51, 36, METATILE_Sootopolis_Door_Closed, TRUE
+	return
+
+SootopolisCity_EventScript_LockMysteryHouseDoor::
 	setmetatile 51, 36, METATILE_Sootopolis_Door_Closed, TRUE
 	return
 
@@ -1510,7 +1515,10 @@ SootopolisCity_Text_ThisIsCrazy:
 SootopolisCity_Text_WonderWhatWorldIsLike:
 	.string "I… I've never been out of this city.\p"
 	.string "I wonder what the world is like on\n"
-	.string "the other side of this round sky?$"
+	.string "the other side of these round walls?\p"
+	.string "Oh, did I say walls? I meant cliffs…\n"
+	.string "Sorry, those titan-sized Pokémon\l"
+	.string "really spooked me.$"
 
 SootopolisCity_Text_ThisIsWicked:
 	.string "Wow!\n"
