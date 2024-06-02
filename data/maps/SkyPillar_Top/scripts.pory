@@ -92,11 +92,15 @@ SkyPillar_Top_EventScript_RanFromRayquaza2::
 
 SkyPillar_Top_EventScript_Drake::
 	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 1
+	playbgm MUS_VICTORY_ROAD, FALSE
 	msgbox SkyPillar_Top_Text_DrakeAwakenRayquaza, MSGBOX_DEFAULT
 	closemessage
 	removeobject LOCALID_RAYQUAZA_SLEEPING
 	delay 30
 	applymovement LOCALID_DRAKE, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement LOCALID_DRAKE, WalkTowardsPlayer
+	waitmovement 0
 	msgbox SkyPillar_Top_Text_DrakesPlan, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_DRAKE, SkyPillar_Top_Text_DrakeDefeat
@@ -105,8 +109,6 @@ SkyPillar_Top_EventScript_Drake::
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
 	addobject LOCALID_RAYQUAZA_SLEEPING
 	applymovement LOCALID_DRAKE, Common_Movement_FaceUp
-	waitmovement 0
-	applymovement LOCALID_DRAKE, BackAwayFromRayRay
 	waitmovement 0
 	delay 30
 	fadeoutbgm 1
@@ -260,46 +262,43 @@ SkyPillar_Top_Text_DrakeAwakenRayquaza:
 	.string "The ultimate Dragon-type, the master\n"
 	.string "of the skies…\p"
 	.string "The world has been thrown into chaos by\n"
-	.string "those two idiots Maxie and Archie, and\p"
-	.string "you, Rayquaza, are the only one who can\n"
+	.string "those two idiots Maxie and Archie, and\l"
+	.string "you, Rayquaza, are the only one who can\l"
 	.string "put a stop to Groudon and Kyogre…\p"
 	.string "So if I capture you here, the chaos will\n"
-	.string "never be stopped! Master Ball, go!$"
-
-SkyPillar_Top_Text_MaxieMasterBall:
+	.string "never be stopped!\l"
 	.string "Master Ball, go!$"
 
 SkyPillar_Top_Text_DrakesPlan:
 	.string "I'm sorry, {PLAYER}. This has been what\n"
-	.string "I've been after all along. All this time,\p"
-	.string "I've been assisting both Team Aqua and\n"
-	.string "Team Magma from the shadows, hoping\p"
-	.string "their stupidity would unleash this\n"
-	.string "chaos onto the world. You did an\p"
-	.string "excellent job disrupting them and\n"
-	.string "thwarting all of their plans, {PLAYER}…\p"
+	.string "I've been after all along.\p" 
+	.string "All this time, I've been assisting both\n"
+	.string "Team Aqua and Team Magma from the\l"
+	.string "shadows, hoping their stupidity would\l"
+	.string "unleash this chaos onto the world.\p"
+	.string "You did an excellent job disrupting\n"
+	.string "them and thwarting all of their plans,\l"
+	.string "{PLAYER}…\p"
 	.string "Unfortunately, that was all a part of\n"
-	.string "MY plan. I'm sorry I had to use you, but\p"
-	.string "I assure you, the destruction of this\n"
-	.string "world will be for the best in the long\p"
-	.string "run… The weak won't be able to survive\n"
-	.string "the coming events, leaving only the\p"
-	.string "strong to get stronger… You are the\n"
-	.string "strongest trainer I've seen in a long\p"
-	.string "time, {PLAYER}, which is why it's such a\n"
-	.string "shame you won't be around to see that\p"
-	.string "new world… I know you are going to try\n"
-	.string "and stop me, which is why I have to take\l"
-	.string "care of you here and now!$"
-
-SkyPillar_Top_Text_NotEvenYou:
-	.string "Not even you, {PLAYER}. Prepare to\n"
-	.string "become the first witness of the\l"
-	.string "terrible power of Primal Groudon!$"
+	.string "MY plan.\p"
+	.string "I'm sorry I had to use you, but\n"
+	.string "I assure you, the destruction of this\l"
+	.string "world will be for the best in the long\l"
+	.string "run…\p"
+	.string "The weak won't be able to survive\n"
+	.string "the coming events, leaving only the\l"
+	.string "strong to get stronger…\p" 
+	.string "You are the strongest trainer I've seen\n"
+	.string "in a long time, {PLAYER}, which is why\l"
+	.string "it's such a shame you won't be around to\l"
+	.string "see that new world…\p"
+	.string "I know you are going to try and stop me,\n"
+	.string "which is why I have to take care of you\l"
+	.string "here and now!$"
 
 SkyPillar_Top_Text_DrakeDefeat:
 	.string "I can't believe it… even with Mega\n"
-	.string "Rayquaza, you were able to best me. \p"
+	.string "Rayquaza, you were able to best me.\p"
 	.string "Looks like your power was the one\n"
 	.string "factor that I miscalculated…$"
 
@@ -322,10 +321,8 @@ SkyPillar_Top_Text_RayquazaFlewOff:
 
 `
 
-script BackAwayFromRayRay {
-	lock_facing_direction
+script WalkTowardsPlayer {
 	walk_down
-	unlock_facing_direction
 	step_end
 }
 
