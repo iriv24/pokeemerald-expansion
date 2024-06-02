@@ -186,7 +186,7 @@ EverGrandeCity_Text_MayDefeat:
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
 EverGrandeCity_Text_MayGoingBackToLittleroot:
-	.string "May: I'm thinking of going back to\n"
+	.string "Anyway, I'm thinking of going back to\n"
 	.string "Littleroot soon.\p"
 	.string "I've caught a decent group of Pokémon,\n"
 	.string "and my Pokédex is coming along, so\l"
@@ -195,16 +195,19 @@ EverGrandeCity_Text_MayGoingBackToLittleroot:
 	.string "{PLAYER}. I know you're strong enough\l"
 	.string "to become the Champion!\p"
 	.string "Oh, and one more thing. When we first\n"
-	.string "got here, we saw Wally walking into\p"
-	.string "Victory Road. He looked really\n"
-	.string "determined, he was almost like a\p"
-	.string "different person than that timid kid\n"
-	.string "you beat in Mauville…\l"
-	.string "Just thought I'd give you a heads up!\p"
-	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "got here, we saw Wally walking into\l"
+	.string "Victory Road.\p"
+	.string "He looked really determined, he was\n"
+	.string "almost like a different person from\l"
+	.string "that timid kid you beat in Mauville…\p"
+	.string "Just thought I'd give you a heads up!\n"
+	.string "Anyway, take care, {PLAYER}, I'm sure\l"
 	.string "I'll see you again soon!$"
 
 
+EverGrandeCity_Text_RivalTakeKubfu:
+	.string "Here, {PLAYER}, I have one final gift\n"
+	.string "as well before I head out.$"
 
 EverGrandeCity_Text_BrendanShoppingLetsBattle:
 	.string "{PLAYER}! Dawn told me about\n"
@@ -242,7 +245,7 @@ EverGrandeCity_Text_BrendanDefeat:
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
 EverGrandeCity_Text_BrendanGoingBackToLittleroot:
-	.string "Brendan: I…\n"
+	.string "Anyway, I…\n"
 	.string "I plan on going home to Littleroot.\p"
 	.string "You know I'm helping out my dad on his\n"
 	.string "Pokédex. It's coming together pretty\l"
@@ -251,13 +254,13 @@ EverGrandeCity_Text_BrendanGoingBackToLittleroot:
 	.string "{PLAYER}. I know you're strong enough\l"
 	.string "to become the Champion!\p"
 	.string "Oh, and one more thing. When we first\n"
-	.string "got here, we saw Wally walking into\p"
-	.string "Victory Road. He looked really\n"
-	.string "determined, he was almost like a\p"
-	.string "different person than that timid kid\n"
-	.string "you beat in Mauville…\l"
-	.string "Just thought I'd give you a heads up!\p"
-	.string "Anyway, take care, {PLAYER}, I'm sure\n"
+	.string "got here, we saw Wally walking into\l"
+	.string "Victory Road.\p"
+	.string "He looked really determined, he was\n"
+	.string "almost like a different person from\l"
+	.string "that timid kid you beat in Mauville…\p"
+	.string "Just thought I'd give you a heads up!\n"
+	.string "Anyway, take care, {PLAYER}, I'm sure\l"
 	.string "I'll see you again soon!$"
 
 EverGrandeCity_Text_EnteringVictoryRoad:
@@ -341,16 +344,22 @@ script EverGrandeCity_EventScript_RivalsFlyAway{
 	removeobject(2)
 	waitfieldeffect(FLDEFF_NPCFLY_OUT)
 	delay(15)
-	checkplayergender
-	goto_if_eq(VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell)
-	goto_if_eq(VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell)
+	goto(EverGrandeCity_EventScript_RivalFarewellStart)
+	releaseall
+	end
+}
+
+script EverGrandeCity_EventScript_RivalFarewellStart{
+	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
+	closemessage()
+	goto(EverGrandeCity_EventScript_RivalGiveKubfu)
 	releaseall
 	end
 }
 
 script EverGrandeCity_EventScript_MayFarewell{
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	waitmovement(0)
 	msgbox(EverGrandeCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT)
 	closemessage()
 	delay(30)
@@ -369,8 +378,6 @@ script EverGrandeCity_EventScript_MayFarewell{
 }
 
 script EverGrandeCity_EventScript_BrendanFarewell{
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	waitmovement(0)
 	msgbox(EverGrandeCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT)
 	closemessage()
 	delay(30)
@@ -387,16 +394,87 @@ script EverGrandeCity_EventScript_BrendanFarewell{
 	releaseall
 	end
 }
+
+script EverGrandeCity_EventScript_RivalGiveKubfu{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU)
+	givemon(SPECIES_KUBFU, 40)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveKubfuParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveKubfuPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script EverGrandeCity_EventScript_ReceiveKubfuParty{
+	call(EverGrandeCity_EventScript_ReceivedKubfuFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_ExplainKubfu)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(EverGrandeCity_EventScript_ExplainKubfu)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_ReceiveKubfuPC {
+	call(EverGrandeCity_EventScript_ReceivedKubfuFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, EverGrandeCity_EventScript_SendKubfuToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(EverGrandeCity_EventScript_SendKubfuToPC)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_SendKubfuToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(EverGrandeCity_EventScript_ExplainKubfu)
+	end
+}
+	
+
+script EverGrandeCity_EventScript_ReceivedKubfuFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(EverGrandeCity_Text_PlayerReceivedKubfu)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_KUBFU)
+	return
+}
+	
+
+script EverGrandeCity_EventScript_ExplainKubfu {
+	msgbox(Rival_ExplainKubfu, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_KUBFU)
+	checkplayergender
+	goto_if_eq(VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell)
+	goto_if_eq(VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell)
+	release
+	end
+}
+	
+text EverGrandeCity_Text_PlayerReceivedKubfu{
+	"{PLAYER} received Kubfu!"
+}
+
+text Rival_ExplainKubfu{
+	"Kubfu can evolve in 2 different ways.\n"
+	"You can use a Dusk Stone to evolve it\l"
+	"into the Single-Strike form, like I have,\l"
+	"or you can use a Water Stone to evolve\l"
+	"it into the Rapid-Strike form.\p"
+	"Both are quite powerful."
+}
 	
 	
 text Dawn_GreetingEvergrande{
 	"Hey, {PLAYER}! After everything that\n"
-	"happened in Sootopolis, I called up\p"
-	"{RIVAL}, and we decided to meet up here\n"
-	"and wait for you. \p"
+	"happened in Sootopolis, I called up\l"
+	"{RIVAL}, and we decided to meet up here\l"
+	"and wait for you.\p"
 	"You've beaten us both a number of\n"
-	"times, but we agreed that we can't just\p"
-	"let you through to Victory Road\n"
+	"times, but we agreed that we can't just\l"
+	"let you through to Victory Road\l"
 	"without one more battle for each of us!\p"
 	"Don't worry, we won't make you fight us\n"
 	"both at once. But you will have to beat\l"
@@ -418,8 +496,8 @@ text Dawn_OutroEvergrande{
 	"Looks like you passed my final test\n"
 	"with flying colors, {PLAYER}.\p"
 	"Not that there was ever any doubt, but\n"
-	"you're definitely read for the Pokémon\l"
-	"League."
+	"you're definitely ready for the\l"
+	"Pokémon League."
 }
 
 text EverGrandeCity_Text_CanYouBeatRival{
@@ -448,8 +526,8 @@ text DawnFarewell{
 	"Dawn: Well, {PLAYER}, neither of us were\n"
 	"a match for you once again.\p"
 	"I have one more TM I can give you to\n"
-	"help, I hope you can use it against\p"
-	"against the Elite Four when you make it\n"
+	"help, I hope you can use it against\l"
+	"against the Elite Four when you make it\l"
 	"there."
 }
 
@@ -562,7 +640,7 @@ script EverGrandeCity_EventScript_ExplainZeraora {
 }
 	
 text EverGrandeCity_Text_PlayerReceivedZeraora{
-	"{PLAYER} received Zeraora!$"
+	"{PLAYER} received Zeraora!"
 }
 
 text Volkner_ExplainZeraora{
@@ -574,14 +652,14 @@ text Volkner_ExplainZeraora{
 	
 text Volkner_Greeting{
 	"Wow, another trainer showed up here. It\n"
-	"gets pretty boring being the strongest\p"
-	"Gym Leader in a given region… The weak\n"
-	"trainers get weeded out before they\p"
-	"can make it to me, usually. But you're\n"
-	"now the fourth strong-looking trainer\p"
-	"I've seen come through here, it's really\n"
-	"got me itching for a battle.\p"
-	"So, will you battle me?"
+	"gets pretty boring being the strongest\l"
+	"Gym Leader in a given region…\p"
+	"The weak trainers get weeded out\n"
+	"before they can make it to me, usually.\p"
+	"But you're now the fourth strong-\n"
+	"looking trainer I've seen come through\l"
+	"here, it's really got me itching for a\l"
+	"battle. So, will you battle me?"
 }
 	
 text Volkner_Outro{

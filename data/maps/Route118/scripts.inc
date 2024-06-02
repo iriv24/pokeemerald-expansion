@@ -611,7 +611,7 @@ Route118_EventScript_Wake::
 # 309 "data/maps/Route118/scripts.pory"
 	applymovement LOCALID_WAKE, Common_Movement_FacePlayer
 # 310 "data/maps/Route118/scripts.pory"
-	goto_if_set FLAG_RECEIVED_KUBFU, Route118_EventScript_WakeDefeated
+	goto_if_set FLAG_RECEIVED_WAKE_ITEMS, Route118_EventScript_WakeDefeated
 # 311 "data/maps/Route118/scripts.pory"
 	goto_if_set FLAG_DECLINED_WAKE_BATTLE, Route118_EventScript_WakeRequestBattleAgain
 # 312 "data/maps/Route118/scripts.pory"
@@ -655,99 +655,31 @@ Route118_EventScript_BattleWake::
 # 339 "data/maps/Route118/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAKE, Wake_Outro
 # 340 "data/maps/Route118/scripts.pory"
-	giveitem ITEM_LAPRASITE
-# 341 "data/maps/Route118/scripts.pory"
-	giveitem ITEM_DREDNAWITE
-# 342 "data/maps/Route118/scripts.pory"
-	giveitem ITEM_GYARADOSITE
-# 343 "data/maps/Route118/scripts.pory"
-	goto Route118_EventScript_WakeGiveKubfu
+	goto Route118_EventScript_WakeGiveItems
 	return
+
+
+Route118_EventScript_WakeGiveItems::
+# 345 "data/maps/Route118/scripts.pory"
+	giveitem ITEM_LAPRASITE
+# 346 "data/maps/Route118/scripts.pory"
+	giveitem ITEM_DREDNAWITE
+# 347 "data/maps/Route118/scripts.pory"
+	giveitem ITEM_GYARADOSITE
+# 348 "data/maps/Route118/scripts.pory"
+	setflag FLAG_RECEIVED_WAKE_ITEMS
+# 349 "data/maps/Route118/scripts.pory"
+	msgbox Wake_ExplainItems
+# 350 "data/maps/Route118/scripts.pory"
+	release
+	end
 
 
 Route118_EventScript_WakeDefeated::
-# 349 "data/maps/Route118/scripts.pory"
-	msgbox PostBattle_Wake, MSGBOX_DEFAULT
-# 350 "data/maps/Route118/scripts.pory"
-	releaseall
-	end
-
-
-Route118_EventScript_WakeGiveKubfu::
 # 355 "data/maps/Route118/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
+	msgbox PostBattle_Wake, MSGBOX_DEFAULT
 # 356 "data/maps/Route118/scripts.pory"
-	givemon SPECIES_KUBFU, 25
-# 357 "data/maps/Route118/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route118_EventScript_ReceiveKubfuParty
-# 358 "data/maps/Route118/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route118_EventScript_ReceiveKubfuPC
-# 359 "data/maps/Route118/scripts.pory"
-	goto Common_EventScript_NoMoreRoomForPokemon
-# 360 "data/maps/Route118/scripts.pory"
-	release
-	end
-
-
-Route118_EventScript_ReceiveKubfuParty::
-# 365 "data/maps/Route118/scripts.pory"
-	call Route118_EventScript_ReceivedKubfuFanfare
-# 366 "data/maps/Route118/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 367 "data/maps/Route118/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route118_EventScript_ExplainKubfu
-# 368 "data/maps/Route118/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 369 "data/maps/Route118/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-# 370 "data/maps/Route118/scripts.pory"
-	goto Route118_EventScript_ExplainKubfu
-	end
-
-
-Route118_EventScript_ReceiveKubfuPC::
-# 376 "data/maps/Route118/scripts.pory"
-	call Route118_EventScript_ReceivedKubfuFanfare
-# 377 "data/maps/Route118/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 378 "data/maps/Route118/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route118_EventScript_SendKubfuToPC
-# 379 "data/maps/Route118/scripts.pory"
-	call Common_EventScript_NameReceivedBoxMon
-# 380 "data/maps/Route118/scripts.pory"
-	goto Route118_EventScript_SendKubfuToPC
-	end
-
-
-Route118_EventScript_SendKubfuToPC::
-# 386 "data/maps/Route118/scripts.pory"
-	call Common_EventScript_TransferredToPC
-# 387 "data/maps/Route118/scripts.pory"
-	goto Route118_EventScript_ExplainKubfu
-	end
-
-
-Route118_EventScript_ReceivedKubfuFanfare::
-# 393 "data/maps/Route118/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 394 "data/maps/Route118/scripts.pory"
-	message Route118_Text_PlayerReceivedKubfu
-# 395 "data/maps/Route118/scripts.pory"
-	waitmessage
-# 396 "data/maps/Route118/scripts.pory"
-	waitfanfare
-# 397 "data/maps/Route118/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_KUBFU
-	return
-
-
-Route118_EventScript_ExplainKubfu::
-# 403 "data/maps/Route118/scripts.pory"
-	msgbox Wake_ExplainKubfu, MSGBOX_DEFAULT
-# 404 "data/maps/Route118/scripts.pory"
-	setflag FLAG_RECEIVED_KUBFU
-# 405 "data/maps/Route118/scripts.pory"
-	release
+	releaseall
 	end
 
 
@@ -755,30 +687,22 @@ Route118_EventScript_BattleWake_Text_0:
 # 338 "data/maps/Route118/scripts.pory"
 	.string "Let's do this.$"
 
-Route118_Text_PlayerReceivedKubfu::
-# 409 "data/maps/Route118/scripts.pory"
-	.string "{PLAYER} received Kubfu!$"
-
-Wake_ExplainKubfu::
-# 413 "data/maps/Route118/scripts.pory"
-	.string "Kubfu can evolve in 2 different ways.\n"
-	.string "You can use a Water Stone to evolve it\p"
-	.string "into the Rapid-Strike form, like I have,\n"
-	.string "or you can use a Dusk Stone to evolve\p"
-	.string "it into the Single-Strike form. Both are\n"
-	.string "quite powerful.$"
-
 Wake_Greeting::
-# 422 "data/maps/Route118/scripts.pory"
+# 360 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB This better be good if\n"
 	.string "you're interrupting my training. You\l"
 	.string "wanna battle or not?$"
 
 Wake_Outro::
-# 428 "data/maps/Route118/scripts.pory"
+# 366 "data/maps/Route118/scripts.pory"
 	.string "Wow, what a fight. I know I'll be leaving\n"
-	.string "this Pokémon in good hands.$"
+	.string "these items in good hands.$"
+
+Wake_ExplainItems::
+# 371 "data/maps/Route118/scripts.pory"
+	.string "Those are the best Mega stones I have.\n"
+	.string "Hope you put them to good use.$"
 
 PostBattle_Wake::
-# 434 "data/maps/Route118/scripts.pory"
+# 376 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB What now?!$"
