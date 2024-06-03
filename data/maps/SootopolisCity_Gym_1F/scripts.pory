@@ -117,12 +117,14 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	end
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
+	giveitem ITEM_GRIMMITE
 	giveitem ITEM_TM_MOONBLAST
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_MOONBLAST
 	return
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
+	giveitem ITEM_GRIMMITE
 	giveitem ITEM_TM_MOONBLAST
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_MOONBLAST
