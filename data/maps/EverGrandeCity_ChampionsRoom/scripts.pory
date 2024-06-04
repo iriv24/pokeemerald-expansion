@@ -279,8 +279,8 @@ EverGrandeCity_ChampionsRoom_Text_WallaceDefeat:
 	.string "And yet it was utterly glorious!\p"
 	.string "Kudos to you, {PLAYER}{KUN}!\p"
 	.string "You are truly the strongest Pokémon\n"
-	.string "trainer in the region, and certainly the\l"
-	.string "strongest I've ever faced.$"
+	.string "trainer in the region, and certainly\l"
+	.string "the strongest I've ever faced.$"
 
 EverGrandeCity_ChampionsRoom_Text_StevenDefeat:
 	.string "Haha! That was incredible, {PLAYER}.\n"

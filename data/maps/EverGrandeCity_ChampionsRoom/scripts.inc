@@ -561,9 +561,9 @@ EverGrandeCity_ChampionsRoom_Text_WallaceDefeat:
 # 281 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You are truly the strongest Pokémon\n"
 # 282 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "trainer in the region, and certainly the\l"
+	.string "trainer in the region, and certainly\l"
 # 283 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "strongest I've ever faced.$"
+	.string "the strongest I've ever faced.$"
 # 284 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
 # 285 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
