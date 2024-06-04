@@ -5675,7 +5675,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .ability = ABILITY_TORRENT,
     .heldItem = ITEM_EMPOLEONITE_D,
     .isShiny = TRUE,
-    .moves = {MOVE_SCALD, MOVE_STEALTH_ROCK, MOVE_TOXIC, MOVE_ROOST}
+    .moves = {MOVE_SCALD, MOVE_STEALTH_ROCK, MOVE_ROAR, MOVE_ROOST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
