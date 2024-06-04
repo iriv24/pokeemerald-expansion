@@ -4197,9 +4197,9 @@ static const struct TrainerMon sParty_Cynthia[] = {
     .heldItem = ITEM_HEAVY_DUTY_BOOTS,
     .moves = {MOVE_SACRED_FIRE, MOVE_BRAVE_BIRD, MOVE_TOXIC, MOVE_ROOST}
     },
-    //hp, atk, def, speed, spatk, spdef
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 30, 30),
+             //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 30, 30, 31),
     .lvl = 85,
     .species = SPECIES_XERNEAS,
     .nature = NATURE_TIMID,
