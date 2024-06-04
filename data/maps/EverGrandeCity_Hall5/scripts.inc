@@ -21,4 +21,6 @@ EverGrandeCity_Hall5_EventScript_TurnPlayerNorth::
 # 11 "data/maps/EverGrandeCity_Hall5/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 # 12 "data/maps/EverGrandeCity_Hall5/scripts.pory"
+	setflag FLAG_ENTERED_ELITE_4
+# 13 "data/maps/EverGrandeCity_Hall5/scripts.pory"
 	end

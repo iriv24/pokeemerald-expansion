@@ -148,7 +148,7 @@ static void AddLMenuAction(u8 action)
 
 static void BuildNormalLMenu(void)
 {
-    if(FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+    if(FlagGet(FLAG_SYS_POKEMON_GET) && !FlagGet(FLAG_ENTERED_ELITE_4))
     {
         AddLMenuAction(MENU_ACTION_PC);
     }
@@ -170,7 +170,7 @@ static void BuildSafariZoneLMenu(void)
 
 static void BuildLinkModeLMenu(void)
 {
-    if(FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+    if(FlagGet(FLAG_SYS_POKEMON_GET))
     {
         AddLMenuAction(MENU_ACTION_PC);
     }
@@ -183,7 +183,7 @@ static void BuildLinkModeLMenu(void)
 
 static void BuildUnionRoomLMenu(void)
 {
-    if(FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+    if(FlagGet(FLAG_SYS_POKEMON_GET))
     {
         AddLMenuAction(MENU_ACTION_PC);
     }
