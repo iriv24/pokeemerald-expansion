@@ -367,94 +367,124 @@ EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale::
 # 184 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
 # 185 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ImTheEggTutor:
+EverGrandeCity_PokemonLeague_1F_EventScript_WomanTrolling::
 # 186 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Hello, I'm an Egg Move Tutor. I can\n"
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_Trolling, MSGBOX_NPC
 # 187 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "teach your Pokémon any Egg Moves they\l"
+	end
 # 188 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "could possibly learn.$"
+
 # 189 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+EverGrandeCity_PokemonLeague_1F_Text_Trolling:
 # 190 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_WantMeToTeachMove:
+	.string "Oh hey, are you here to take on the\n"
 # 191 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Would you like me to teach one of your\n"
+	.string "Pokémon League?\p"
 # 192 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Pokémon an Egg Move?$"
+	.string "Well today I saw Sidney with a Galarian\n"
 # 193 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+	.string "Moltres.\p"
 # 194 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TutorWhichMon:
+	.string "What, you want to know more than that?\p"
 # 195 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Which Pokémon?$"
+	.string "What am I, an NPC written by the\n"
 # 196 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+	.string "creator of this game who knows exactly\l"
 # 197 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TeachWhichMove:
+	.string "which team will be there? Sheesh.$"
 # 198 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Which move should I teach?$"
+
 # 199 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
 # 200 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ImTheEggTutor:
 # 201 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "That Pokémon doesn't have any  Egg\n"
+	.string "Hello, I'm an Egg Move Tutor. I can\n"
 # 202 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Moves.$"
+	.string "teach your Pokémon any Egg Moves they\l"
 # 203 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+	.string "could possibly learn.$"
 # 204 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ThereYouGo:
+
 # 205 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "There you go.$"
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_WantMeToTeachMove:
 # 206 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+	.string "Would you like me to teach one of your\n"
 # 207 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ComeBack:
+	.string "Pokémon an Egg Move?$"
 # 208 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Come back if you want your Pokémon to\n"
+
 # 209 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "learn more Egg Moves.$"
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TutorWhichMon:
 # 210 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+	.string "Which Pokémon?$"
 # 211 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_CantTeachEgg:
+
 # 212 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Just because I'm an Egg Move tutor\n"
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TeachWhichMove:
 # 213 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "doesn't mean I can teach moves to an\l"
+	.string "Which move should I teach?$"
 # 214 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Egg!$"
+
 # 215 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
 # 216 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
+	.string "That Pokémon doesn't have any  Egg\n"
 # 217 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Beyond this point, only those TRAINERS\n"
+	.string "Moves.$"
 # 218 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "who have collected all the GYM BADGES\l"
+
 # 219 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "are permitted to enter.\p"
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ThereYouGo:
 # 220 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "TRAINER, let us confirm that you have\n"
+	.string "There you go.$"
 # 221 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "all the GYM BADGES.$"
+
 # 222 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ComeBack:
 # 223 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges:
+	.string "Come back if you want your Pokémon to\n"
 # 224 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "You haven't obtained all the BADGES.\p"
+	.string "learn more Egg Moves.$"
 # 225 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "If you're bound for the POKéMON\n"
-# 226 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "LEAGUE, you must return with them.$"
-# 227 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
+# 226 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+EverGrandeCity_PokemonLeague_1F_EggTutor_Text_CantTeachEgg:
+# 227 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "Just because I'm an Egg Move tutor\n"
 # 228 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_Text_GoForth:
+	.string "doesn't mean I can teach moves to an\l"
 # 229 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "TRAINER! Believe in yourself and your\n"
+	.string "Egg!$"
 # 230 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+
+# 231 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
+# 232 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "Beyond this point, only those TRAINERS\n"
+# 233 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "who have collected all the GYM BADGES\l"
+# 234 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "are permitted to enter.\p"
+# 235 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "TRAINER, let us confirm that you have\n"
+# 236 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "all the GYM BADGES.$"
+# 237 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+
+# 238 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges:
+# 239 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "You haven't obtained all the BADGES.\p"
+# 240 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "If you're bound for the POKéMON\n"
+# 241 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "LEAGUE, you must return with them.$"
+# 242 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+
+# 243 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+EverGrandeCity_PokemonLeague_1F_Text_GoForth:
+# 244 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+	.string "TRAINER! Believe in yourself and your\n"
+# 245 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "POKéMON, and go forth!$"

@@ -182,6 +182,21 @@ EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale::
 	releaseall
 	end
 
+EverGrandeCity_PokemonLeague_1F_EventScript_WomanTrolling::
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_Trolling, MSGBOX_NPC
+	end
+
+EverGrandeCity_PokemonLeague_1F_Text_Trolling:
+	.string "Oh hey, are you here to take on the\n"
+	.string "Pokémon League?\p"
+	.string "Well today I saw Sidney with a Galarian\n"
+	.string "Moltres.\p"
+	.string "What, you want to know more than that?\p"
+	.string "What am I, an NPC written by the\n"
+	.string "creator of this game who knows exactly\l"
+	.string "which team will be there? Sheesh.$"
+
+
 EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ImTheEggTutor:
 	.string "Hello, I'm an Egg Move Tutor. I can\n"
 	.string "teach your Pokémon any Egg Moves they\l"
