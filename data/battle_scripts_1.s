@@ -3040,7 +3040,6 @@ BattleScript_MindBlownDamp:
 BattleScript_EffectMindBlown_HpDown:
 	setbyte sMULTIHIT_EFFECT, 1 @ Note to not faint the attacker
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_EffectMindBlown_AnimDmgNoFaint
-	jumpifability BS_ATTACKER, ABILITY_BAD_COMPANY, BattleScript_EffectMindBlown_AnimDmgNoFaint
 	dmg_1_2_attackerhp
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
@@ -7555,8 +7554,6 @@ BattleScript_MoveEffectConfusion::
 BattleScript_MoveEffectRecoil::
 	jumpifmove MOVE_STRUGGLE, BattleScript_DoRecoil
 	jumpifability BS_ATTACKER, ABILITY_ROCK_HEAD, BattleScript_RecoilEnd
-	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_RecoilEnd
-	jumpifability BS_ATTACKER, ABILITY_BAD_COMPANY, BattleScript_RecoilEnd
 BattleScript_DoRecoil::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_IGNORE_DISGUISE
 	healthbarupdate BS_ATTACKER

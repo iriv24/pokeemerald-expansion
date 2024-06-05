@@ -4442,10 +4442,10 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
                 case MOVE_EFFECT_ATK_DEF_DOWN:
                 case MOVE_EFFECT_SP_ATK_TWO_DOWN:
-                    if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY || aiData->abilities[battlerAtk] == ABILITY_BAD_COMPANY)
+                    if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY)
                         IncreaseStatUpScore(battlerAtk, battlerDef, oneStageStatId, &score);
                 case MOVE_EFFECT_V_CREATE:
-                    if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY || aiData->abilities[battlerAtk] == ABILITY_BAD_COMPANY)
+                    if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY)
                     {
                         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF, &score);
                         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED, &score);
