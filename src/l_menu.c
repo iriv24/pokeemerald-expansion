@@ -50,10 +50,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
-#if (DECAP_ENABLED) && (DECAP_MIRRORING) && !(DECAP_L_MENU)
-#define AddTextPrinterParameterized (AddTextPrinterFixedCaseParameterized)
-#endif
-
 // Menu actions
 enum
 {
