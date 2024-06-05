@@ -3394,6 +3394,9 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             case MOVE_EFFECT_SP_DEF_MINUS_1:
             case MOVE_EFFECT_ACC_MINUS_1:
             case MOVE_EFFECT_EVS_MINUS_1:
+                if(affectsUser && GetBattlerAbility(gEffectBattler) == ABILITY_BAD_COMPANY)
+                    break;
+
                 flags = affectsUser;
                 if (mirrorArmorReflected)
                     flags |= (STAT_CHANGE_ALLOW_PTR * !affectsUser);
@@ -3444,6 +3447,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             case MOVE_EFFECT_SP_DEF_MINUS_2:
             case MOVE_EFFECT_ACC_MINUS_2:
             case MOVE_EFFECT_EVS_MINUS_2:
+                if(affectsUser && GetBattlerAbility(gEffectBattler) == ABILITY_BAD_COMPANY)
+                    break;
                 flags = affectsUser;
                 if (mirrorArmorReflected && !affectsUser)
                     flags |= STAT_CHANGE_ALLOW_PTR;
@@ -3519,14 +3524,14 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 gBattlescriptCurrInstr = BattleScript_RapidSpinAway;
                 break;
             case MOVE_EFFECT_ATK_DEF_DOWN: // SuperPower
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && GetBattlerAbility(gEffectBattler) != ABILITY_BAD_COMPANY)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_AtkDefDown;
                 }
                 break;
             case MOVE_EFFECT_DEF_SPDEF_DOWN: // Close Combat
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && GetBattlerAbility(gEffectBattler) != ABILITY_BAD_COMPANY)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_DefSpDefDown;
@@ -3556,7 +3561,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_SP_ATK_TWO_DOWN: // Overheat
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && GetBattlerAbility(gEffectBattler) != ABILITY_BAD_COMPANY)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_SAtkDown2;
@@ -3655,7 +3660,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_V_CREATE:
-                if (!NoAliveMonsForEitherParty())
+                if (!NoAliveMonsForEitherParty() && GetBattlerAbility(gEffectBattler) != ABILITY_BAD_COMPANY)
                 {
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_VCreateStatLoss;
@@ -5632,7 +5637,8 @@ static void Cmd_moveend(void)
                    || gMovesInfo[gCurrentMove].effect == EFFECT_MIND_BLOWN)
                   && IsBattlerAlive(gBattlerAttacker)
                   && !(gMoveResultFlags & MOVE_RESULT_FAILED)
-                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                  && GetBattlerAbility(gBattlerAttacker) != ABILITY_BAD_COMPANY)
             {
                 gBattleMoveDamage = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
                 BattleScriptPushCursor();
