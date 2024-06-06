@@ -91,7 +91,6 @@ struct DexNavSearch
     s16 tileY;
     u8 fldEffSpriteId;
     u8 fldEffId;
-    u8 movementCount;
     u8 windowId;
     u8 iconSpriteId;
     u8 eyeSpriteId;
@@ -990,16 +989,6 @@ static void EndDexNavSearchSetupScript(const u8 *script, u8 taskId)
     ScriptContext_SetupScript(script);
 }
 
-static u8 GetMovementProximityBySearchLevel(void)
-{
-    if (sDexNavSearchDataPtr->searchLevel < 20)
-        return 2;
-    else if (sDexNavSearchDataPtr->searchLevel < 50)
-        return 3;
-    else
-        return 4;
-}
-
 static void Task_RevealHiddenMon(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
@@ -1116,21 +1105,6 @@ static void Task_DexNavSearch(u8 taskId)
         //sDexNavSearchDataPtr->hiddenSearch = FALSE; //now its a regular dexnav search
         task->func = Task_RevealHiddenMon;
         return;
-    }
-
-    //Caves and water the pokemon moves around
-    if ((sDexNavSearchDataPtr->environment == ENCOUNTER_TYPE_WATER || GetCurrentMapType() == MAP_TYPE_UNDERGROUND)
-        && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
-        && task->tRevealed)
-    {
-        
-        FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
-        while (1) {
-            if (TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
-                break;
-        }
-        
-        sDexNavSearchDataPtr->movementCount++;
     }
 
     DexNavProximityUpdate();

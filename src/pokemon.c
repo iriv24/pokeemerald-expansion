@@ -1012,7 +1012,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
 
-    GiveBoxMonInitialMoveset(boxMon);
+    GiveBoxMonInitialMoveset_Fast(boxMon);
 }
 
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
@@ -1667,7 +1667,7 @@ void SetBattleMonMoveSlot(struct BattlePokemon *mon, u16 move, u8 slot)
 
 void GiveMonInitialMoveset(struct Pokemon *mon)
 {
-    GiveBoxMonInitialMoveset(&mon->box);
+    GiveBoxMonInitialMoveset_Fast(&mon->box);
 }
 
 void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
