@@ -584,6 +584,11 @@ struct ItemSlot
     u16 quantity;
 };
 
+struct RegisteredItemSlot
+{
+    u16 itemId;
+};
+
 struct Pokeblock
 {
     u8 color;
@@ -993,7 +998,7 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
+    /*0x496*/ u16 registeredItemSelect; // registered for use with SELECT button
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
@@ -1087,6 +1092,9 @@ struct SaveBlock1
                u8 dexNavSearchLevels[NUM_SPECIES];
                u8 unused_speciesPadding[100];
                u8 dexNavChain;
+               u8 registeredItemLastSelected:4; //max 16 items
+               u8 registeredItemListCount:4;
+               struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
     // sizeof: 0x3???
     //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
     //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
