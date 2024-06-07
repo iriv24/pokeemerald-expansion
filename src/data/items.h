@@ -13892,7 +13892,7 @@ const struct Item gItemsInfo[] =
         .description = sInfiniteCandyDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteCandy,
         .effect = gItemEffect_RareCandy,
     },
 
