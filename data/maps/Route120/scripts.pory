@@ -328,6 +328,10 @@ Route120_EventScript_Jennifer::
 	msgbox Route120_Text_JenniferPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route120_EventScript_Chip::
+	msgbox Route120_Text_ChipPostBattle, MSGBOX_NPC
+	end
+
 Route120_EventScript_Clarissa::
 	trainerbattle_single TRAINER_CLARISSA, Route120_Text_ClarissaIntro, Route120_Text_ClarissaDefeat
 	msgbox Route120_Text_ClarissaPostBattle, MSGBOX_AUTOCLOSE
@@ -426,4 +430,4 @@ Route120_Text_RouteSignFortree:
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120$"
-`
+	`
