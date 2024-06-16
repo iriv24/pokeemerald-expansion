@@ -565,7 +565,7 @@ static const struct TrainerMon sParty_ShellySeafloorCavern[] = {
     .heldItem = ITEM_DREDNAWITE,
     .nature = NATURE_BRAVE,
     .ability = ABILITY_STRONG_JAW,
-    .moves = {MOVE_JAW_LOCK, MOVE_ICE_FANG, MOVE_CRUNCH, MOVE_LIQUIDATION}
+    .moves = {MOVE_JAW_LOCK, MOVE_ICE_FANG, MOVE_CRUNCH, MOVE_AQUA_FANG}
     },
 };
 
@@ -652,7 +652,7 @@ static const struct TrainerMon sParty_Archie[] = {
     .heldItem = ITEM_SHARPEDONITE,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SPEED_BOOST,
-    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_LIQUIDATION, MOVE_AQUA_JET}
+    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_AQUA_FANG, MOVE_AQUA_JET}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
