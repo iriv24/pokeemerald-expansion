@@ -55,6 +55,7 @@
 	STD_FIND_ITEM = 1
 	STD_OBTAIN_DECORATION = 7
 	STD_REGISTER_MATCH_CALL = 8
+	STD_OBTAIN_ITEM_FAST = 11
 
 	@ Calls the script in gStdScripts at index function.
 	.macro callstd function:req
@@ -2002,6 +2003,16 @@
 	setorcopyvar VAR_0x8000, \item
 	setorcopyvar VAR_0x8001, \amount
 	callstd STD_OBTAIN_ITEM
+	.endm
+
+	@ Gives 'amount' of the specified 'item' to the player and DOESNT print a message with fanfare.
+	@ If the player doesn't have space for all the items then as many are added as possible, the
+	@ message indicates there is no room, and VAR_RESULT is set to FALSE.
+	@ Otherwise VAR_RESULT is set to TRUE, and the message indicates they have received the item(s).
+	.macro giveitemfast item:req, amount=1
+	setorcopyvar VAR_0x8000, \item
+	setorcopyvar VAR_0x8001, \amount
+	callstd STD_OBTAIN_ITEM_FAST
 	.endm
 
 	@ For picking up items in the overworld. Similar to giveitem, but with different language and
