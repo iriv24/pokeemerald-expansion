@@ -69,6 +69,7 @@
 #define B_TXT_DEF_NAME 0x39
 #define B_TXT_DEF_TEAM1 0x3A // Your/The opposing
 #define B_TXT_DEF_TEAM2 0x3B // your/the opposing
+#define B_TXT_CHEAT_CODE 0x3C // Cheat code entry
 // #define B_TXT_SELECTION_NAME 0x3C - removed
 // #define B_TXT_SELECTION_NAME2 0x3D no Illusion check - removed
 

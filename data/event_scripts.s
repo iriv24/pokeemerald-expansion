@@ -102,6 +102,7 @@ gStdScripts::
 	.4byte Std_RegisteredInMatchCall   @ STD_REGISTER_MATCH_CALL
 	.4byte Std_MsgboxGetPoints         @ MSGBOX_GETPOINTS
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
+	.4byte Std_ObtainItemFast          @ STD_OBTAIN_ITEM_FAST
 gStdScripts_End::
 
 	.include "data/maps/PetalburgCity/scripts.inc"

@@ -270,8 +270,167 @@ PlayersHouse_2F_EventScript_Notebook::
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	msgbox EnterCheatCode_EnterCheatCodeText, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq CheatCodeExit
+	special EnterCheatCode
+	waitstate
+	special GetCheatCodeFeedback
+	goto_if_eq VAR_RESULT, 0, CheatCodeFailed
+	goto_if_eq VAR_RESULT, 1, CheatCodeDexAll
+	goto_if_eq VAR_RESULT, 2, CheatCodeCaughtEmAll
+	goto_if_eq VAR_RESULT, 3, CheatCodeEzCatch
+	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
 	end
+
+CheatCodeFailed::
+	msgbox EnterCheatCode_FailedText, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeDexAll::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_DEXALL, CheatCodeDexAllOff
+	goto_if_set FLAG_DEXALL, CheatCodeDexAllOn
+	end
+
+CheatCodeDexAllOn::
+	msgbox CheatCodeDexAllOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeDexAllOff::
+	msgbox CheatCodeDexAllOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeCaughtEmAll::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	msgbox CheatCodeCaughtEmAll_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeEzCatch::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_EZ_CATCH, CheatCodeEzCatchOff
+	goto_if_set FLAG_EZ_CATCH, CheatCodeEzCatchOn
+	end
+
+CheatCodeEzCatchOn::
+	msgbox CheatCodeEzCatchOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeEzCatchOff::
+	msgbox CheatCodeEzCatchOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeMegaStones::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	giveitemfast ITEM_VENUSAURITE
+	giveitemfast ITEM_CHARIZARDITE_X
+	giveitemfast ITEM_CHARIZARDITE_Y
+	giveitemfast ITEM_BLASTOISINITE 
+	giveitemfast ITEM_BEEDRILLITE
+	giveitemfast ITEM_PIDGEOTITE
+	giveitemfast ITEM_ALAKAZITE
+	giveitemfast ITEM_SLOWBRONITE
+	giveitemfast ITEM_GENGARITE
+	giveitemfast ITEM_KANGASKHANITE
+	giveitemfast ITEM_PINSIRITE
+	giveitemfast ITEM_GYARADOSITE
+	giveitemfast ITEM_AERODACTYLITE
+	giveitemfast ITEM_MEWTWONITE_X
+	giveitemfast ITEM_MEWTWONITE_Y
+	giveitemfast ITEM_AMPHAROSITE
+	giveitemfast ITEM_STEELIXITE
+	giveitemfast ITEM_SCIZORITE
+	giveitemfast ITEM_HERACRONITE
+	giveitemfast ITEM_HOUNDOOMINITE
+	giveitemfast ITEM_TYRANITARITE
+	giveitemfast ITEM_SCEPTILITE
+	giveitemfast ITEM_BLAZIKENITE
+	giveitemfast ITEM_SWAMPERTITE
+	giveitemfast ITEM_GARDEVOIRITE
+	giveitemfast ITEM_SABLENITE
+	giveitemfast ITEM_MAWILITE
+	giveitemfast ITEM_AGGRONITE
+	giveitemfast ITEM_MEDICHAMITE
+	giveitemfast ITEM_MANECTITE
+	giveitemfast ITEM_SHARPEDONITE
+	giveitemfast ITEM_CAMERUPTITE
+	giveitemfast ITEM_ALTARIANITE
+	giveitemfast ITEM_BANETTITE
+	giveitemfast ITEM_ABSOLITE
+	giveitemfast ITEM_GLALITITE
+	giveitemfast ITEM_SALAMENCITE
+	giveitemfast ITEM_METAGROSSITE
+	giveitemfast ITEM_LATIASITE
+	giveitemfast ITEM_LATIOSITE
+	giveitemfast ITEM_LOPUNNITE
+	giveitemfast ITEM_GARCHOMPITE
+	giveitemfast ITEM_LUCARIONITE
+	giveitemfast ITEM_ABOMASITE
+	giveitemfast ITEM_GALLADITE
+	giveitemfast ITEM_AUDINITE
+	giveitemfast ITEM_DIANCITE
+	giveitemfast ITEM_LUXRITE
+	giveitemfast ITEM_TORTERRITE
+	giveitemfast ITEM_EMPOLEONITE_O
+	giveitemfast ITEM_EMPOLEONITE_D
+	giveitemfast ITEM_INFERNAPITE
+	giveitemfast ITEM_KINGLERITE
+	giveitemfast ITEM_BUTTERFRITE
+	giveitemfast ITEM_MACHAMPITE
+	giveitemfast ITEM_LAPRASITE
+	giveitemfast ITEM_SNORLAXITE
+	giveitemfast ITEM_GARBODORITE
+	giveitemfast ITEM_ORBEETLITE
+	giveitemfast ITEM_DREDNAWITE
+	giveitemfast ITEM_COALOSSITE
+	giveitemfast ITEM_APPLITE
+	giveitemfast ITEM_SANDACONDITE
+	giveitemfast ITEM_TOXTRICITITE
+	giveitemfast ITEM_CENTISKITE
+	giveitemfast ITEM_GRIMMITE
+	giveitemfast ITEM_COPPERAJITE
+	giveitemfast ITEM_SLAKITE
+	giveitemfast ITEM_ROSERADITE
+	msgbox CheatCodeMegaStonesGiven_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeExit::
+	releaseall
+	end
+
+EnterCheatCode_EnterCheatCodeText:
+	.string "It's a Nintendo GameCube.\p"
+	.string "Enter a cheat code?$"
+
+EnterCheatCode_FailedText:
+	.string "Cheat code failed.$"
+EnterCheatCode_SucceededText:
+	.string "Cheat code succeeded.$"
+
+CheatCodeDexAllOn_Text:
+	.string "DexAll cheat enabled.$"
+
+CheatCodeDexAllOff_Text:
+	.string "DexAll cheat disabled.$"
+
+CheatCodeCaughtEmAll_Text:
+	.string "CaughtAll cheat enabled.$"
+
+CheatCodeEzCatchOn_Text:
+	.string "EZCatch cheat enabled.$"
+
+CheatCodeEzCatchOff_Text:
+	.string "EZCatch cheat disabled.$"
+
+CheatCodeMegaStonesGiven_Text:
+	.string "All Mega Stones given.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
@@ -298,9 +457,4 @@ PlayersHouse_2F_Text_Notebook:
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
 	.string "HOENN region map.$"
-
-PlayersHouse_2F_Text_ItsAGameCube:
-	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
 `

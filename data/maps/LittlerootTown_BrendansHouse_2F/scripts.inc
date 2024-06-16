@@ -543,68 +543,376 @@ PlayersHouse_2F_EventScript_Notebook::
 # 272 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_EventScript_GameCube::
 # 273 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	msgbox EnterCheatCode_EnterCheatCodeText, MSGBOX_YESNO
 # 274 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+	compare VAR_RESULT, 0
 # 275 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	goto_if_eq CheatCodeExit
 # 276 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_ClockIsStopped:
+	special EnterCheatCode
 # 277 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The clock is stopped…\p"
+	waitstate
 # 278 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Better set it and start it!$"
+	special GetCheatCodeFeedback
 # 279 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	goto_if_eq VAR_RESULT, 0, CheatCodeFailed
 # 280 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
+	goto_if_eq VAR_RESULT, 1, CheatCodeDexAll
 # 281 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "MOM: {PLAYER}, how do you like your\n"
+	goto_if_eq VAR_RESULT, 2, CheatCodeCaughtEmAll
 # 282 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "new room?\p"
+	goto_if_eq VAR_RESULT, 3, CheatCodeEzCatch
 # 283 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Good! Everything's put away neatly!\p"
+	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
 # 284 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "They finished moving everything in\n"
+	end
 # 285 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "downstairs, too.\p"
+
 # 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "POKéMON movers are so convenient!\p"
+CheatCodeFailed::
 # 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Oh, you should make sure that\n"
+	msgbox EnterCheatCode_FailedText, MSGBOX_DEFAULT
 # 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "everything's all there on your desk.$"
+	releaseall
 # 289 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	end
 # 290 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_Notebook:
-# 291 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} flipped open the notebook.\p"
-# 292 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "ADVENTURE RULE NO. 1\n"
-# 293 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Open the MENU with START.\p"
-# 294 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "ADVENTURE RULE NO. 2\n"
-# 295 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Record your progress with SAVE.\p"
-# 296 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The remaining pages are blank…$"
-# 297 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
+# 291 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeDexAll::
+# 292 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+# 293 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	goto_if_unset FLAG_DEXALL, CheatCodeDexAllOff
+# 294 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	goto_if_set FLAG_DEXALL, CheatCodeDexAllOn
+# 295 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 296 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 297 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeDexAllOn::
 # 298 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-Common_Text_LookCloserAtMap:
+	msgbox CheatCodeDexAllOn_Text, MSGBOX_DEFAULT
 # 299 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} took a closer look at the\n"
+	releaseall
 # 300 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "HOENN region map.$"
+	end
 # 301 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
 # 302 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_ItsAGameCube:
+CheatCodeDexAllOff::
 # 303 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "It's a Nintendo GameCube.\p"
+	msgbox CheatCodeDexAllOff_Text, MSGBOX_DEFAULT
 # 304 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "A Game Boy Advance is connected to\n"
+	releaseall
 # 305 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "serve as the Controller.$"
+	end
+# 306 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 307 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeCaughtEmAll::
+# 308 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+# 309 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox CheatCodeCaughtEmAll_Text, MSGBOX_DEFAULT
+# 310 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+# 311 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 312 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 313 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeEzCatch::
+# 314 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+# 315 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	goto_if_unset FLAG_EZ_CATCH, CheatCodeEzCatchOff
+# 316 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	goto_if_set FLAG_EZ_CATCH, CheatCodeEzCatchOn
+# 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 318 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 319 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeEzCatchOn::
+# 320 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox CheatCodeEzCatchOn_Text, MSGBOX_DEFAULT
+# 321 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 324 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeEzCatchOff::
+# 325 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox CheatCodeEzCatchOff_Text, MSGBOX_DEFAULT
+# 326 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+# 327 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 328 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 329 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeMegaStones::
+# 330 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+# 331 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_VENUSAURITE
+# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_CHARIZARDITE_X
+# 333 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_CHARIZARDITE_Y
+# 334 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_BLASTOISINITE 
+# 335 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_BEEDRILLITE
+# 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_PIDGEOTITE
+# 337 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ALAKAZITE
+# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SLOWBRONITE
+# 339 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GENGARITE
+# 340 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_KANGASKHANITE
+# 341 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_PINSIRITE
+# 342 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GYARADOSITE
+# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_AERODACTYLITE
+# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MEWTWONITE_X
+# 345 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MEWTWONITE_Y
+# 346 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_AMPHAROSITE
+# 347 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_STEELIXITE
+# 348 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SCIZORITE
+# 349 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_HERACRONITE
+# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_HOUNDOOMINITE
+# 351 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_TYRANITARITE
+# 352 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SCEPTILITE
+# 353 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_BLAZIKENITE
+# 354 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SWAMPERTITE
+# 355 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GARDEVOIRITE
+# 356 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SABLENITE
+# 357 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MAWILITE
+# 358 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_AGGRONITE
+# 359 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MEDICHAMITE
+# 360 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MANECTITE
+# 361 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SHARPEDONITE
+# 362 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_CAMERUPTITE
+# 363 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ALTARIANITE
+# 364 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_BANETTITE
+# 365 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ABSOLITE
+# 366 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GLALITITE
+# 367 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SALAMENCITE
+# 368 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_METAGROSSITE
+# 369 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LATIASITE
+# 370 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LATIOSITE
+# 371 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LOPUNNITE
+# 372 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GARCHOMPITE
+# 373 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LUCARIONITE
+# 374 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ABOMASITE
+# 375 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GALLADITE
+# 376 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_AUDINITE
+# 377 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_DIANCITE
+# 378 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LUXRITE
+# 379 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_TORTERRITE
+# 380 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_EMPOLEONITE_O
+# 381 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_EMPOLEONITE_D
+# 382 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_INFERNAPITE
+# 383 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_KINGLERITE
+# 384 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_BUTTERFRITE
+# 385 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_MACHAMPITE
+# 386 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_LAPRASITE
+# 387 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SNORLAXITE
+# 388 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GARBODORITE
+# 389 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ORBEETLITE
+# 390 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_DREDNAWITE
+# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_COALOSSITE
+# 392 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_APPLITE
+# 393 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SANDACONDITE
+# 394 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_TOXTRICITITE
+# 395 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_CENTISKITE
+# 396 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_GRIMMITE
+# 397 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_COPPERAJITE
+# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_SLAKITE
+# 399 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	giveitemfast ITEM_ROSERADITE
+# 400 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox CheatCodeMegaStonesGiven_Text, MSGBOX_DEFAULT
+# 401 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+# 402 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 403 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 404 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeExit::
+# 405 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+# 406 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 407 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 408 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+EnterCheatCode_EnterCheatCodeText:
+# 409 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's a Nintendo GameCube.\p"
+# 410 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Enter a cheat code?$"
+# 411 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 412 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+EnterCheatCode_FailedText:
+# 413 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Cheat code failed.$"
+# 414 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+EnterCheatCode_SucceededText:
+# 415 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Cheat code succeeded.$"
+# 416 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 417 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeDexAllOn_Text:
+# 418 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "DexAll cheat enabled.$"
+# 419 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 420 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeDexAllOff_Text:
+# 421 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "DexAll cheat disabled.$"
+# 422 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 423 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeCaughtEmAll_Text:
+# 424 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "CaughtAll cheat enabled.$"
+# 425 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 426 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeEzCatchOn_Text:
+# 427 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "EZCatch cheat enabled.$"
+# 428 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 429 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeEzCatchOff_Text:
+# 430 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "EZCatch cheat disabled.$"
+# 431 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 432 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+CheatCodeMegaStonesGiven_Text:
+# 433 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "All Mega Stones given.$"
+# 434 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 435 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_ClockIsStopped:
+# 436 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "The clock is stopped…\p"
+# 437 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Better set it and start it!$"
+# 438 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 439 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
+# 440 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "MOM: {PLAYER}, how do you like your\n"
+# 441 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "new room?\p"
+# 442 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Good! Everything's put away neatly!\p"
+# 443 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "They finished moving everything in\n"
+# 444 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "downstairs, too.\p"
+# 445 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "POKéMON movers are so convenient!\p"
+# 446 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Oh, you should make sure that\n"
+# 447 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "everything's all there on your desk.$"
+# 448 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 449 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_Notebook:
+# 450 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "{PLAYER} flipped open the notebook.\p"
+# 451 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "ADVENTURE RULE NO. 1\n"
+# 452 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Open the MENU with START.\p"
+# 453 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "ADVENTURE RULE NO. 2\n"
+# 454 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Record your progress with SAVE.\p"
+# 455 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "The remaining pages are blank…$"
+# 456 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 457 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+Common_Text_LookCloserAtMap:
+# 458 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "{PLAYER} took a closer look at the\n"
+# 459 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "HOENN region map.$"

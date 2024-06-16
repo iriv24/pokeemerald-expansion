@@ -556,3 +556,5 @@ gSpecials::
 	def_special Script_GetChosenMonOffensiveIVs
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special GetLevelCapForText
+	def_special EnterCheatCode
+	def_special GetCheatCodeFeedback

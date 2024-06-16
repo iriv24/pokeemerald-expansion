@@ -10,6 +10,14 @@ Std_ObtainItem::
 	call EventScript_ObtainItemMessage
 	return
 
+Std_ObtainItemFast::
+	copyvar VAR_0x8004, ITEMID
+	copyvar VAR_0x8005, AMOUNT
+	additem ITEMID, AMOUNT
+	copyvar VAR_0x8007, VAR_RESULT
+	call_if_eq VAR_0x8007, FALSE, EventScript_TryAddItemToPCObtain
+	return
+
 EventScript_TryAddItemToPCObtain::
 	checkitemtype VAR_0x8004 @ Don't add if it's a key item
 	goto_if_eq VAR_RESULT, POCKET_KEY_ITEMS, EventScript_TryAddItemToPCObtainContinue
