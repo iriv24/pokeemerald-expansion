@@ -55,6 +55,8 @@ enum
 {
     MENU_ACTION_PC,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_AUTO_RUN_ON,
+    MENU_ACTION_AUTO_RUN_OFF,
     MENU_ACTION_EXIT,
 };
 
@@ -72,6 +74,7 @@ static bool8 LMenuPCCallback(void);
 static bool8 LMenuPlayerNameCallback(void);
 static bool8 LMenuExitCallback(void);
 static bool8 LMenuDexNavCallback(void);
+static bool8 LMenuAutoRunCallback(void);
 
 // Menu callbacks
 static bool8 HandleLMenuInput(void);
@@ -84,6 +87,8 @@ static const struct MenuAction sLMenuItems[] =
 {
     [MENU_ACTION_PC]              = {gText_MenuPC, {.u8_void = LMenuPCCallback}},
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = LMenuDexNavCallback}},
+    [MENU_ACTION_AUTO_RUN_ON]          = {gText_AutoRunOn,  {.u8_void = LMenuAutoRunCallback}},
+    [MENU_ACTION_AUTO_RUN_OFF]          = {gText_AutoRunOff,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = LMenuExitCallback}},
 };
 
@@ -101,6 +106,7 @@ static bool32 PrintLMenuActions(s8 *pIndex, u32 count);
 static bool32 InitLMenuStep(void);
 static void CreateLMenuTask(TaskFunc followupFunc);
 static void HideLMenuWindow(void);
+static void HideLMenuWindowAutoRun(void);
 
 
 static void BuildLMenuActions(void)
@@ -152,6 +158,17 @@ static void BuildNormalLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
     }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -160,6 +177,17 @@ static void BuildSafariZoneLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+    }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
@@ -174,6 +202,17 @@ static void BuildLinkModeLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
     }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -187,6 +226,17 @@ static void BuildUnionRoomLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
     }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -195,6 +245,17 @@ static void BuildBattlePikeLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+    }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
@@ -205,6 +266,17 @@ static void BuildBattlePyramidLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
     }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -213,6 +285,17 @@ static void BuildMultiPartnerRoomLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+    }
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
@@ -370,7 +453,7 @@ static bool8 HandleLMenuInput(void)
         
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 
-        if (gMenuCallback2 != LMenuExitCallback)
+        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -420,6 +503,43 @@ static bool8 LMenuPlayerNameCallback(void)
     }
 
     return FALSE;
+}
+
+
+extern const u8 EventScript_DisableAutoRun[];
+extern const u8 EventScript_EnableAutoRun[];
+static bool8 LMenuAutoRunCallback(void)
+{
+    HideLMenuAutoRun(); // Hide start menu
+    return TRUE;
+}
+
+static void HideLMenuWindowAutoRun(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    if (FlagGet(FLAG_SYS_B_DASH))
+    {
+        PlaySE(SE_SELECT);
+        if (gSaveBlock2Ptr->autoRun)
+        {
+            gSaveBlock2Ptr->autoRun = FALSE;
+            ScriptContext_SetupScript(EventScript_DisableAutoRun);
+        }
+        else
+        {
+            gSaveBlock2Ptr->autoRun = TRUE;
+            ScriptContext_SetupScript(EventScript_EnableAutoRun);
+        }
+    }
+}
+
+void HideLMenuAutoRun(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowAutoRun();
 }
 
 static bool8 LMenuExitCallback(void)
