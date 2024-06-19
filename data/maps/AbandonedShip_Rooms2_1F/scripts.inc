@@ -105,15 +105,15 @@ AbandonedShip_Rooms2_1F_EventScript_Garrison::
 # 53 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanIntro:
 # 54 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: While searching for treasures,\n"
+	.string "Dan: While searching for treasures,\n"
 # 55 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "we discovered a TRAINER!$"
+	.string "we discovered a trainer!$"
 # 56 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 57 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanDefeat:
 # 58 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We couldn't win even though\n"
+	.string "Dan: We couldn't win even though\n"
 # 59 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "we worked together…$"
 # 60 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -121,7 +121,7 @@ AbandonedShip_Rooms2_1F_Text_DanDefeat:
 # 61 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanPostBattle:
 # 62 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We can't find any treasures…\n"
+	.string "Dan: We can't find any treasures…\n"
 # 63 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "I wonder if someone got them already?$"
 # 64 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -129,7 +129,7 @@ AbandonedShip_Rooms2_1F_Text_DanPostBattle:
 # 65 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons:
 # 66 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You don't even have two POKéMON.\n"
+	.string "Dan: You don't even have two Pokémon.\n"
 # 67 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "You can't expect to beat us like that.$"
 # 68 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -137,23 +137,23 @@ AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons:
 # 69 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraIntro:
 # 70 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh?\n"
+	.string "Kira Oh?\n"
 # 71 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "We were searching for treasures.\l"
 # 72 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "But we discovered a TRAINER instead!$"
+	.string "But we discovered a trainer instead!$"
 # 73 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 74 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraDefeat:
 # 75 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Ooh, so strong!$"
+	.string "Kira Ooh, so strong!$"
 # 76 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 77 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraPostBattle:
 # 78 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Where could the treasures be?\p"
+	.string "Kira Where could the treasures be?\p"
 # 79 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "I've already decided what I'm buying\n"
 # 80 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -163,7 +163,7 @@ AbandonedShip_Rooms2_1F_Text_KiraPostBattle:
 # 82 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons:
 # 83 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you don't have two POKéMON?\n"
+	.string "Kira Oh, you don't have two Pokémon?\n"
 # 84 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "We'll have to battle some other time!$"
 # 85 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -171,7 +171,7 @@ AbandonedShip_Rooms2_1F_Text_KiraNotEnoughMons:
 # 86 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraRegister:
 # 87 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you make me so angry!\n"
+	.string "Kira Oh, you make me so angry!\n"
 # 88 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "I'm going to register you for that!$"
 # 89 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -179,11 +179,11 @@ AbandonedShip_Rooms2_1F_Text_KiraRegister:
 # 90 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanRematchIntro:
 # 91 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We've been searching for\n"
+	.string "Dan: We've been searching for\n"
 # 92 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "treasures all this time.\p"
 # 93 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "Our POKéMON have grown stronger, too.\n"
+	.string "Our Pokémon have grown stronger, too.\n"
 # 94 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "Let us show you, okay?$"
 # 95 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -191,15 +191,15 @@ AbandonedShip_Rooms2_1F_Text_DanRematchIntro:
 # 96 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanRematchDefeat:
 # 97 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You're strong, as usual!$"
+	.string "Dan: You're strong, as usual!$"
 # 98 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 99 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanPostRematch:
 # 100 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: We can't find any treasures,\n"
+	.string "Dan: We can't find any treasures,\n"
 # 101 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "we lose at POKéMON…\p"
+	.string "we lose at Pokémon…\p"
 # 102 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "I want to go home… But if I say that,\n"
 # 103 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -209,7 +209,7 @@ AbandonedShip_Rooms2_1F_Text_DanPostRematch:
 # 105 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons:
 # 106 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "DAN: You don't even have two POKéMON.\n"
+	.string "Dan: You don't even have two Pokémon.\n"
 # 107 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "You can't expect to beat us like that.$"
 # 108 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -217,7 +217,7 @@ AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons:
 # 109 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraRematchIntro:
 # 110 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh? We meet again!\p"
+	.string "Kira Oh? We meet again!\p"
 # 111 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "Just like us, you still haven't given up\n"
 # 112 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -231,15 +231,15 @@ AbandonedShip_Rooms2_1F_Text_KiraRematchIntro:
 # 116 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat:
 # 117 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, we lost again…$"
+	.string "Kira Oh, we lost again…$"
 # 118 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 119 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraPostRematch:
 # 120 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: We're not leaving until we raise\n"
+	.string "Kira We're not leaving until we raise\n"
 # 121 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "our POKéMON some more and we find\l"
+	.string "our Pokémon some more and we find\l"
 # 122 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "the treasures here!$"
 # 123 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -247,7 +247,7 @@ AbandonedShip_Rooms2_1F_Text_KiraPostRematch:
 # 124 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons:
 # 125 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "KIRA: Oh, you don't have two POKéMON?\n"
+	.string "Kira Oh, you don't have two Pokémon?\n"
 # 126 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "We'll have to battle some other time!$"
 # 127 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
@@ -281,7 +281,7 @@ AbandonedShip_Rooms2_1F_Text_GarrisonIntro:
 # 141 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 	.string "Strength and compassion…\n"
 # 142 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
-	.string "Those are a TRAINER's treasures!$"
+	.string "Those are a trainer's treasures!$"
 # 143 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"
 
 # 144 "data/maps/AbandonedShip_Rooms2_1F/scripts.pory"

@@ -41,7 +41,7 @@ AbandonedShip_Corridors_1F_Text_CharlieDefeat:
 # 21 "data/maps/AbandonedShip_Corridors_1F/scripts.pory"
 AbandonedShip_Corridors_1F_Text_CharliePostBattle:
 # 22 "data/maps/AbandonedShip_Corridors_1F/scripts.pory"
-	.string "It's not easy throwing POKé BALLS\n"
+	.string "It's not easy throwing Poké Balls\n"
 # 23 "data/maps/AbandonedShip_Corridors_1F/scripts.pory"
 	.string "while hanging on to an inner tube!$"
 # 24 "data/maps/AbandonedShip_Corridors_1F/scripts.pory"
