@@ -221,7 +221,7 @@ AquaHideout_B1F_Text_Grunt2Intro:
 # 111 "data/maps/AquaHideout_B1F/scripts.pory"
 	.string "If you want to know the secret about\n"
 # 112 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "our HIDEOUT, you have me to beat!$"
+	.string "our Hideout, you have me to beat!$"
 # 113 "data/maps/AquaHideout_B1F/scripts.pory"
 
 # 114 "data/maps/AquaHideout_B1F/scripts.pory"
@@ -233,7 +233,7 @@ AquaHideout_B1F_Text_Grunt2Defeat:
 # 117 "data/maps/AquaHideout_B1F/scripts.pory"
 AquaHideout_B1F_Text_Grunt2PostBattle:
 # 118 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "Our HIDEOUT's secret?\p"
+	.string "Our Hideout's secret?\p"
 # 119 "data/maps/AquaHideout_B1F/scripts.pory"
 	.string "Well, let's just say…\n"
 # 120 "data/maps/AquaHideout_B1F/scripts.pory"
@@ -277,7 +277,7 @@ AquaHideout_B1F_Text_Grunt5Intro:
 # 139 "data/maps/AquaHideout_B1F/scripts.pory"
 	.string "Yawn… Keeping watch over the\n"
 # 140 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "HIDEOUT bores me. I'll take you on.$"
+	.string "Hideout bores me. I'll take you on.$"
 # 141 "data/maps/AquaHideout_B1F/scripts.pory"
 
 # 142 "data/maps/AquaHideout_B1F/scripts.pory"
@@ -291,9 +291,9 @@ AquaHideout_B1F_Text_Grunt5Defeat:
 # 146 "data/maps/AquaHideout_B1F/scripts.pory"
 AquaHideout_B1F_Text_Grunt5PostBattle:
 # 147 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "If you scurry too much, other TEAM\n"
+	.string "If you scurry too much, other Team\n"
 # 148 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "AQUA members might get you.$"
+	.string "Aqua members might get you.$"
 # 149 "data/maps/AquaHideout_B1F/scripts.pory"
 
 # 150 "data/maps/AquaHideout_B1F/scripts.pory"
@@ -305,7 +305,7 @@ AquaHideout_B1F_Text_Grunt7Intro:
 # 153 "data/maps/AquaHideout_B1F/scripts.pory"
 	.string "Which do you think is cooler?\n"
 # 154 "data/maps/AquaHideout_B1F/scripts.pory"
-	.string "TEAM AQUA's uniform or TEAM MAGMA's?$"
+	.string "Team Aqua's uniform or Team Magma's?$"
 # 155 "data/maps/AquaHideout_B1F/scripts.pory"
 
 # 156 "data/maps/AquaHideout_B1F/scripts.pory"
