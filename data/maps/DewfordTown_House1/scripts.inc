@@ -49,15 +49,15 @@ DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland:
 # 25 "data/maps/DewfordTown_House1/scripts.pory"
 	.string "a small island like this in harmony with\l"
 # 26 "data/maps/DewfordTown_House1/scripts.pory"
-	.string "POKéMON and the family.$"
+	.string "Pokémon and the family.$"
 # 27 "data/maps/DewfordTown_House1/scripts.pory"
 
 # 28 "data/maps/DewfordTown_House1/scripts.pory"
 DewfordTown_House1_Text_LifeGoesSlowlyOnIsland:
 # 29 "data/maps/DewfordTown_House1/scripts.pory"
-	.string "I left the major port of SLATEPORT\n"
+	.string "I left the major port of Slateport\n"
 # 30 "data/maps/DewfordTown_House1/scripts.pory"
-	.string "CITY when I married my husband here.\p"
+	.string "City when I married my husband here.\p"
 # 31 "data/maps/DewfordTown_House1/scripts.pory"
 	.string "Life goes by slowly on this little\n"
 # 32 "data/maps/DewfordTown_House1/scripts.pory"
@@ -69,4 +69,4 @@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland:
 # 35 "data/maps/DewfordTown_House1/scripts.pory"
 DewfordTown_House1_Text_Zigzagoon:
 # 36 "data/maps/DewfordTown_House1/scripts.pory"
-	.string "ZIGZAGOON: Guguuh!$"
+	.string "Zigzagoon: Guguuh!$"
