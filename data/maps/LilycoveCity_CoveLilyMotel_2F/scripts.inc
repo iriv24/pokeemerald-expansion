@@ -231,7 +231,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_NeverLeaveWithoutGameBoy:
 # 116 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles:
 # 117 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
-	.string "SCOTT: … … … … …\n"
+	.string "Scott: … … … … …\n"
 # 118 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 	.string "… … … … … Zzz…\p"
 # 119 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
@@ -263,7 +263,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_SnoozingPreferBattles:
 # 132 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 LilycoveCity_CoveLilyMotel_2F_Text_ContestsDoTakeStrategy:
 # 133 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
-	.string "SCOTT: I think it does take strategy\n"
+	.string "Scott: I think it does take strategy\n"
 # 134 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"
 	.string "to win a CONTEST.\p"
 # 135 "data/maps/LilycoveCity_CoveLilyMotel_2F/scripts.pory"

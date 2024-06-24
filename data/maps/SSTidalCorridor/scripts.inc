@@ -513,7 +513,7 @@ SSTidalCorridor_Movement_SailorReturn:
 # 257 "data/maps/SSTidalCorridor/scripts.pory"
 SSTidalCorridor_Text_ScottBattleFrontierInvite:
 # 258 "data/maps/SSTidalCorridor/scripts.pory"
-	.string "SCOTT: Well, hi, hi!\n"
+	.string "Scott: Well, hi, hi!\n"
 # 259 "data/maps/SSTidalCorridor/scripts.pory"
 	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
 # 260 "data/maps/SSTidalCorridor/scripts.pory"

@@ -429,7 +429,7 @@ BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayWest::
 # 215 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier:
 # 216 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Well, hello and welcome!\n"
+	.string "Scott: Well, hello and welcome!\n"
 # 217 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "Heheh… Sorry about the cramped space.\p"
 # 218 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -489,7 +489,7 @@ BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints:
 # 245 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_ExplainBattlePoints:
 # 246 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: You can check your Battle\n"
+	.string "Scott: You can check your Battle\n"
 # 247 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "Points on your FRONTIER PASS.\p"
 # 248 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -513,7 +513,7 @@ BattleFrontier_ScottsHouse_Text_ExpectingGreatThings:
 # 257 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers:
 # 258 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Every TRAINER is an individual.\n"
+	.string "Scott: Every TRAINER is an individual.\n"
 # 259 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "They all lead lives of their own.\p"
 # 260 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -537,7 +537,7 @@ BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers:
 # 269 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain:
 # 270 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Have you met any of\n"
+	.string "Scott: Have you met any of\n"
 # 271 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "the FRONTIER BRAINS?\p"
 # 272 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -557,7 +557,7 @@ BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain:
 # 279 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier:
 # 280 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: You don't just train for battle,\n"
+	.string "Scott: You don't just train for battle,\n"
 # 281 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "right?\p"
 # 282 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -577,7 +577,7 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier:
 # 289 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols:
 # 290 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Are you enjoying things in\n"
+	.string "Scott: Are you enjoying things in\n"
 # 291 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "the BATTLE FRONTIER?\p"
 # 292 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -607,7 +607,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols:
 # 304 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols:
 # 305 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: I hope you're enjoying\n"
+	.string "Scott: I hope you're enjoying\n"
 # 306 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "everything in the BATTLE FRONTIER.\p"
 # 307 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -657,7 +657,7 @@ BattleFrontier_ScottsHouse_Text_BerryPocketStuffed:
 # 329 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow:
 # 330 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Oh, I heard about you!\n"
+	.string "Scott: Oh, I heard about you!\n"
 # 331 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "How you ruled the BATTLE TOWER!\l"
 # 332 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
@@ -671,7 +671,7 @@ BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow:
 # 336 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_Beat100TrainersInARow:
 # 337 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "SCOTT: Oh, my! I heard about you!\n"
+	.string "Scott: Oh, my! I heard about you!\n"
 # 338 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "How you overwhelmed the BATTLE TOWER!\l"
 # 339 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"

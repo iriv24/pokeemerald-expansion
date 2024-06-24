@@ -549,7 +549,7 @@ EverGrandeCity_Text_CitySign:
 # 275 "data/maps/EverGrandeCity/scripts.pory"
 	.string "“The paradise of flowers, the sea,\n"
 # 276 "data/maps/EverGrandeCity/scripts.pory"
-	.string "and POKéMON.”$"
+	.string "and Pokémon.”$"
 
 EverGrandeCity_EventScript_Dawn::
 # 281 "data/maps/EverGrandeCity/scripts.pory"

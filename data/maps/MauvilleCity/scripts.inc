@@ -1149,7 +1149,7 @@ MauvilleCity_Text_RegisteredWally:
 # 575 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_ScottYouDidntHoldBack:
 # 576 "data/maps/MauvilleCity/scripts.pory"
-	.string "SCOTT: Hehe…\n"
+	.string "Scott: Hehe…\n"
 # 577 "data/maps/MauvilleCity/scripts.pory"
 	.string "I was watching that match!\p"
 # 578 "data/maps/MauvilleCity/scripts.pory"

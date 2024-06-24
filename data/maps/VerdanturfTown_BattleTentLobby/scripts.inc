@@ -733,7 +733,7 @@ VerdanturfTown_BattleTentLobby_Text_TaughtWhatKindsOfMoves:
 # 367 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers:
 # 368 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: Hey there, {PLAYER}{KUN}!\n"
+	.string "Scott: Hey there, {PLAYER}{KUN}!\n"
 # 369 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 	.string "I thought I might see you here.\p"
 # 370 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
@@ -753,7 +753,7 @@ VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers:
 # 377 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly:
 # 378 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
-	.string "SCOTT: I visit here regularly in hopes\n"
+	.string "Scott: I visit here regularly in hopes\n"
 # 379 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"
 	.string "of seeing tough TRAINERS in action\l"
 # 380 "data/maps/VerdanturfTown_BattleTentLobby/scripts.pory"

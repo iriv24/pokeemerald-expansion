@@ -2003,7 +2003,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 # 1002 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "… … … … … Beep!\p"
 # 1003 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "SCOTT: Hi, hi, {PLAYER}!\n"
+	.string "Scott: Hi, hi, {PLAYER}!\n"
 # 1004 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "It's me, SCOTT.\p"
 # 1005 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"

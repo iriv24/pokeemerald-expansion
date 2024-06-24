@@ -673,7 +673,7 @@ BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay:
 # 337 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere:
 # 338 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"
-	.string "SCOTT: It's great to see you here,\n"
+	.string "Scott: It's great to see you here,\n"
 # 339 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"
 	.string "it really is!\p"
 # 340 "data/maps/BattleFrontier_ReceptionGate/scripts.pory"

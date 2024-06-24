@@ -1063,7 +1063,7 @@ Route119_Text_BrendanExplainFly:
 # 532 "data/maps/Route119/scripts.pory"
 Route119_Text_ScottWayToGoBeSeeingYou:
 # 533 "data/maps/Route119/scripts.pory"
-	.string "SCOTT: Hahahah!\n"
+	.string "Scott: Hahahah!\n"
 # 534 "data/maps/Route119/scripts.pory"
 	.string "Way to go, {PLAYER}{KUN}!\p"
 # 535 "data/maps/Route119/scripts.pory"
@@ -1097,7 +1097,7 @@ Route119_Text_ScottYouWonAtFortreeGym:
 # 549 "data/maps/Route119/scripts.pory"
 	.string "… … … … … Beep!\p"
 # 550 "data/maps/Route119/scripts.pory"
-	.string "SCOTT: Hiya, {PLAYER}{KUN}, it's me!\p"
+	.string "Scott: Hiya, {PLAYER}{KUN}, it's me!\p"
 # 551 "data/maps/Route119/scripts.pory"
 	.string "Just as I thought, you won at\n"
 # 552 "data/maps/Route119/scripts.pory"

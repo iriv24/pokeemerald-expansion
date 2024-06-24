@@ -641,7 +641,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
 # 321 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown:
 # 322 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "SCOTT: Hmm…\p"
+	.string "Scott: Hmm…\p"
 # 323 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "The talent levels of the students here\n"
 # 324 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
@@ -651,7 +651,7 @@ RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown:
 # 326 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 RustboroCity_PokemonSchool_Text_ScottStoneBadge:
 # 327 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "SCOTT: Oh, what's that?\p"
+	.string "Scott: Oh, what's that?\p"
 # 328 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "It's a STONE BADGE, isn't it?\n"
 # 329 "data/maps/RustboroCity_PokemonSchool/scripts.pory"

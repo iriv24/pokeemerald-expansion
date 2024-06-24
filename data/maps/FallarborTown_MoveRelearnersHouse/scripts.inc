@@ -253,7 +253,7 @@ FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
 # 127 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "Oh! That's it! That's an honest to\n"
 # 128 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "goodness HEART SCALE!\p"
+	.string "goodness Heart Scale!\p"
 # 129 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "Let me guess, you want me to teach\n"
 # 130 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
@@ -263,7 +263,7 @@ FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
 # 132 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon:
 # 133 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "Which POKéMON needs tutoring?$"
+	.string "Which Pokémon needs tutoring?$"
 # 134 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 
 # 135 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
@@ -279,13 +279,13 @@ FallarborTown_MoveRelearnersHouse_Text_DontHaveMoveToTeachPokemon:
 # 140 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "It doesn't appear as if I have any move\n"
 # 141 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "I can teach that POKéMON.$"
+	.string "I can teach that Pokémon.$"
 # 142 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 
 # 143 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale:
 # 144 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "{PLAYER} handed over one HEART SCALE\n"
+	.string "{PLAYER} handed over one Heart Scale\n"
 # 145 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "in exchange.$"
 # 146 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
@@ -293,9 +293,9 @@ FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale:
 # 147 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale:
 # 148 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "If your POKéMON need to learn a move,\n"
+	.string "If your Pokémon need to learn a move,\n"
 # 149 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "come back with a HEART SCALE.$"
+	.string "come back with a Heart Scale.$"
 # 150 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 
 # 151 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
@@ -303,7 +303,7 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 # 152 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "Hunh? There isn't a single move that\n"
 # 153 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
-	.string "I can teach an EGG.$"
+	.string "I can teach an Egg.$"
 
 FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive::
 # 158 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"

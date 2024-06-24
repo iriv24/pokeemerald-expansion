@@ -125,9 +125,9 @@ FallarborTown_Mart_Text_DecidingSkittyEvolve:
 # 63 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "I'm having a hard time deciding if I\n"
 # 64 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "should make my SKITTY evolve or not.\p"
+	.string "should make my Skitty evolve or not.\p"
 # 65 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I only have to use this MOON STONE,\n"
+	.string "I only have to use this Moon Stone,\n"
 # 66 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "but it's so hard to decide…\p"
 # 67 "data/maps/FallarborTown_Mart/scripts.pory"
@@ -141,13 +141,13 @@ FallarborTown_Mart_Text_DecidingSkittyEvolve:
 # 71 "data/maps/FallarborTown_Mart/scripts.pory"
 FallarborTown_Mart_Text_Skitty:
 # 72 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "SKITTY: Miyao?$"
+	.string "Skitty: Miyao?$"
 # 73 "data/maps/FallarborTown_Mart/scripts.pory"
 
 # 74 "data/maps/FallarborTown_Mart/scripts.pory"
 FallarborTown_Mart_Text_SellNuggetIFound:
 # 75 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "This NUGGET I found here…\n"
+	.string "This Nugget I found here…\n"
 # 76 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "I suppose I'll have to sell it, seeing\l"
 # 77 "data/maps/FallarborTown_Mart/scripts.pory"

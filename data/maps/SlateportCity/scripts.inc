@@ -2689,7 +2689,7 @@ SlateportCity_Text_ComeBackToTradeBerryPowder:
 # 1345 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_YouDroveTeamAquaAway:
 # 1346 "data/maps/SlateportCity/scripts.pory"
-	.string "SCOTT: Huh?\n"
+	.string "Scott: Huh?\n"
 # 1347 "data/maps/SlateportCity/scripts.pory"
 	.string "I'm sure I met you somewhere before.\p"
 # 1348 "data/maps/SlateportCity/scripts.pory"
@@ -2715,7 +2715,7 @@ SlateportCity_Text_YouDroveTeamAquaAway:
 # 1358 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_MaybeThisTrainer:
 # 1359 "data/maps/SlateportCity/scripts.pory"
-	.string "SCOTT: Hmm…\n"
+	.string "Scott: Hmm…\n"
 # 1360 "data/maps/SlateportCity/scripts.pory"
 	.string "Maybe, just maybe, this TRAINER…$"
 # 1361 "data/maps/SlateportCity/scripts.pory"
@@ -2723,7 +2723,7 @@ SlateportCity_Text_MaybeThisTrainer:
 # 1362 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_LetsRegisterEachOther:
 # 1363 "data/maps/SlateportCity/scripts.pory"
-	.string "SCOTT: All right! I think you're going\n"
+	.string "Scott: All right! I think you're going\n"
 # 1364 "data/maps/SlateportCity/scripts.pory"
 	.string "to become a good friend.\p"
 # 1365 "data/maps/SlateportCity/scripts.pory"
@@ -2745,7 +2745,7 @@ SlateportCity_Text_RegisteredScott:
 # 1373 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
 # 1374 "data/maps/SlateportCity/scripts.pory"
-	.string "SCOTT: What I'd like to do is tag along\n"
+	.string "Scott: What I'd like to do is tag along\n"
 # 1375 "data/maps/SlateportCity/scripts.pory"
 	.string "with you, but I do want to keep an eye\l"
 # 1376 "data/maps/SlateportCity/scripts.pory"
@@ -2761,7 +2761,7 @@ SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
 # 1381 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_TakingBattleTentChallenge:
 # 1382 "data/maps/SlateportCity/scripts.pory"
-	.string "SCOTT: Oh, hey!\n"
+	.string "Scott: Oh, hey!\n"
 # 1383 "data/maps/SlateportCity/scripts.pory"
 	.string "If it isn't {PLAYER}{KUN}!\p"
 # 1384 "data/maps/SlateportCity/scripts.pory"
