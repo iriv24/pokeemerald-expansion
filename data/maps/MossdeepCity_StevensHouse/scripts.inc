@@ -317,7 +317,7 @@ MossdeepCity_StevensHouse_EventScript_DiveItemBall::
 # 159 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
 # 160 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}…\p"
+	.string "Steven: {PLAYER}{KUN}…\p"
 # 161 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "As you can see, there's not much here,\n"
 # 162 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -337,7 +337,7 @@ MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
 # 169 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_Text_ExplainDive:
 # 170 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "STEVEN: While you're using SURF, you\n"
+	.string "Steven: While you're using SURF, you\n"
 # 171 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "should notice dark patches of water.\p"
 # 172 "data/maps/MossdeepCity_StevensHouse/scripts.pory"

@@ -465,7 +465,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 # 233 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "… … … … … Beep!\p"
 # 234 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
+	.string "Roxanne: Oh, hello, {PLAYER}?\n"
 # 235 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "This is ROXANNE of RUSTBORO CITY.\p"
 # 236 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -503,7 +503,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne:
 # 252 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_RoxannePreRematch:
 # 253 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "Roxanne: I'm so glad to see you again.\n"
 # 254 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 # 255 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -527,7 +527,7 @@ RustboroCity_Gym_Text_RoxanneRematchDefeat:
 # 264 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_RoxannePostRematch:
 # 265 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I still have much to learn\n"
+	.string "Roxanne: I still have much to learn\n"
 # 266 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "when it comes to battling POKéMON.\p"
 # 267 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -539,7 +539,7 @@ RustboroCity_Gym_Text_RoxannePostRematch:
 # 270 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 # 271 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE: I'm so glad to see you again.\n"
+	.string "Roxanne: I'm so glad to see you again.\n"
 # 272 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 # 273 "data/maps/RustboroCity_Gym/scripts.pory"

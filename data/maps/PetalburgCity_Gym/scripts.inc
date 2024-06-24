@@ -2339,7 +2339,7 @@ PetalburgCity_Gym_EventScript_GymStatue::
 # 1170 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 # 1171 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm?\p"
+	.string "Dad: Hm?\p"
 # 1172 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "Well, if it isn't {PLAYER}!\n"
 # 1173 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2373,7 +2373,7 @@ PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
 # 1187 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadOhYoureWallyRight:
 # 1188 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm? You're… Uh… Oh, right.\n"
+	.string "Dad: Hm? You're… Uh… Oh, right.\n"
 # 1189 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "You're WALLY, right?$"
 # 1190 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2397,13 +2397,13 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
 # 1199 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadHmISee:
 # 1200 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm. I see.$"
+	.string "Dad: Hm. I see.$"
 # 1201 "data/maps/PetalburgCity_Gym/scripts.pory"
 
 # 1202 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadPlayerGoWithWally:
 # 1203 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, you heard that,\n"
+	.string "Dad: {PLAYER}, you heard that,\n"
 # 1204 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "right?\p"
 # 1205 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2427,7 +2427,7 @@ PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
 # 1214 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "A POKéMON!\p"
 # 1215 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm. I'll give you a POKé BALL, too.\n"
+	.string "Dad: Hm. I'll give you a POKé BALL, too.\n"
 # 1216 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "Go for it!\p"
 # 1217 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2453,7 +2453,7 @@ PetalburgCity_Gym_Text_WouldYouReallyComeWithMe:
 # 1227 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadSoDidItWorkOut:
 # 1228 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: So, did it work out?$"
+	.string "Dad: So, did it work out?$"
 # 1229 "data/maps/PetalburgCity_Gym/scripts.pory"
 
 # 1230 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2485,7 +2485,7 @@ PetalburgCity_Gym_Text_WallyThankYouBye:
 # 1243 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadGoCollectBadges:
 # 1244 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Now…\p"
+	.string "Dad: Now…\p"
 # 1245 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "{PLAYER}, if you want to become a\n"
 # 1246 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2519,7 +2519,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 # 1260 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_NormanGoToRustboro:
 # 1261 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm? Aren't you going to the\n"
+	.string "Dad: Hm? Aren't you going to the\n"
 # 1262 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "POKéMON GYM in RUSTBORO CITY?\p"
 # 1263 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2539,7 +2539,7 @@ PetalburgCity_Gym_Text_NormanGoToRustboro:
 # 1270 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_NormanGoToDewford:
 # 1271 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: I see… So, you've beaten\n"
+	.string "Dad: I see… So, you've beaten\n"
 # 1272 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "the GYM LEADER in RUSTBORO CITY.\p"
 # 1273 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2557,7 +2557,7 @@ PetalburgCity_Gym_Text_NormanGoToDewford:
 # 1279 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_YouHaveGottenStronger:
 # 1280 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm… {PLAYER}, you have gotten\n"
+	.string "Dad: Hm… {PLAYER}, you have gotten\n"
 # 1281 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "stronger.\p"
 # 1282 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2709,7 +2709,7 @@ PetalburgCity_Gym_Text_LetMeBorrowPlayer:
 # 1355 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadGoingToKeepTraining:
 # 1356 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, you should go visit\n"
+	.string "Dad: {PLAYER}, you should go visit\n"
 # 1357 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "your mother every so often.\p"
 # 1358 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -2725,7 +2725,7 @@ PetalburgCity_Gym_Text_DadGoingToKeepTraining:
 # 1363 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough:
 # 1364 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}, how are things going?\p"
+	.string "Dad: {PLAYER}, how are things going?\p"
 # 1365 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "The world of POKéMON is deep.\p"
 # 1366 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -3193,7 +3193,7 @@ PetalburgCity_Gym_Text_GymStatueCertified:
 # 1597 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_NormanPreRematch:
 # 1598 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "Dad: {PLAYER}…\n"
 # 1599 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "I had a feeling that you would come.\p"
 # 1600 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -3225,7 +3225,7 @@ PetalburgCity_Gym_Text_NormanRematchDefeat:
 # 1613 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_NormanPostRematch:
 # 1614 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "Dad: {PLAYER}…\n"
 # 1615 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "What is your dream?\p"
 # 1616 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -3239,7 +3239,7 @@ PetalburgCity_Gym_Text_NormanPostRematch:
 # 1620 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 # 1621 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: {PLAYER}…\n"
+	.string "Dad: {PLAYER}…\n"
 # 1622 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "I had a feeling that you would come.\p"
 # 1623 "data/maps/PetalburgCity_Gym/scripts.pory"

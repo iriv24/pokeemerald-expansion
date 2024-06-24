@@ -641,7 +641,7 @@ MossdeepCity_SpaceCenter_1F_Text_MagmaWantsToSpoilMyDream:
 # 321 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
 MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel:
 # 322 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, have you read that\n"
+	.string "Steven: {PLAYER}{KUN}, have you read that\n"
 # 323 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
 	.string "proclamation already?\p"
 # 324 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"

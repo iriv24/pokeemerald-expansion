@@ -1581,7 +1581,7 @@ Route110_Text_AquaActionsBringSmiles:
 # 791 "data/maps/Route110/scripts.pory"
 Route110_Text_MayLetsBattle:
 # 792 "data/maps/Route110/scripts.pory"
-	.string "MAY: Hi, {PLAYER}{KUN}, long time no see!\p"
+	.string "May: Hi, {PLAYER}{KUN}, long time no see!\p"
 # 793 "data/maps/Route110/scripts.pory"
 	.string "While I was searching for other\n"
 # 794 "data/maps/Route110/scripts.pory"
@@ -1603,7 +1603,7 @@ Route110_Text_MayDefeated:
 # 802 "data/maps/Route110/scripts.pory"
 Route110_Text_MayTakeThis:
 # 803 "data/maps/Route110/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}, you've been busy\n"
+	.string "May: {PLAYER}{KUN}, you've been busy\n"
 # 804 "data/maps/Route110/scripts.pory"
 	.string "training, too, haven't you?\p"
 # 805 "data/maps/Route110/scripts.pory"
@@ -1637,7 +1637,7 @@ Route110_Text_MayExplainItemfinder:
 # 819 "data/maps/Route110/scripts.pory"
 Route110_Text_BrendanLetsBattle:
 # 820 "data/maps/Route110/scripts.pory"
-	.string "BRENDAN: Hey, {PLAYER}.\n"
+	.string "Brendan: Hey, {PLAYER}.\n"
 # 821 "data/maps/Route110/scripts.pory"
 	.string "So this is where you were.\l"
 # 822 "data/maps/Route110/scripts.pory"
@@ -1659,7 +1659,7 @@ Route110_Text_BrendanDefeated:
 # 830 "data/maps/Route110/scripts.pory"
 Route110_Text_BrendanTakeThis:
 # 831 "data/maps/Route110/scripts.pory"
-	.string "BRENDAN: {PLAYER}, you've trained\n"
+	.string "Brendan: {PLAYER}, you've trained\n"
 # 832 "data/maps/Route110/scripts.pory"
 	.string "without me noticing…\p"
 # 833 "data/maps/Route110/scripts.pory"

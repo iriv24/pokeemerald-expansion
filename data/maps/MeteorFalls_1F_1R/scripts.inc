@@ -535,7 +535,7 @@ MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
 # 268 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
 # 269 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Didn't I see you before?\n"
+	.string "Archie: Didn't I see you before?\n"
 # 270 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "At SLATEPORT's MUSEUM?\p"
 # 271 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -573,7 +573,7 @@ MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma:
 # 287 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
 # 288 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Yes, yes, we must!\n"
+	.string "Archie: Yes, yes, we must!\n"
 # 289 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "We've got to hurry.\p"
 # 290 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -585,7 +585,7 @@ MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
 # 293 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 MeteorFalls_1F_1R_Text_ArchieFarewell:
 # 294 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: {PLAYER}, you should keep\n"
+	.string "Archie: {PLAYER}, you should keep\n"
 # 295 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "an eye out for TEAM MAGMA, too.\p"
 # 296 "data/maps/MeteorFalls_1F_1R/scripts.pory"

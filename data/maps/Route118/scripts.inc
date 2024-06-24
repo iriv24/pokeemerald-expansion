@@ -499,7 +499,7 @@ Route118_EventScript_Deandre::
 # 250 "data/maps/Route118/scripts.pory"
 Route118_Text_StevenQuestions:
 # 251 "data/maps/Route118/scripts.pory"
-	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
+	.string "Steven: Hi, {PLAYER}{KUN}!\p"
 # 252 "data/maps/Route118/scripts.pory"
 	.string "It's me, STEVEN!\n"
 # 253 "data/maps/Route118/scripts.pory"

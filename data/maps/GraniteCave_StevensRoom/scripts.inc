@@ -201,7 +201,7 @@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
 # 101 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 # 102 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "STEVEN: Okay, thank you.\p"
+	.string "Steven: Okay, thank you.\p"
 # 103 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "You went through all this trouble to\n"
 # 104 "data/maps/GraniteCave_StevensRoom/scripts.pory"
@@ -223,7 +223,7 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 # 112 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 # 113 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "STEVEN: Your POKéMON appear quite\n"
+	.string "Steven: Your POKéMON appear quite\n"
 # 114 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "capable.\p"
 # 115 "data/maps/GraniteCave_StevensRoom/scripts.pory"

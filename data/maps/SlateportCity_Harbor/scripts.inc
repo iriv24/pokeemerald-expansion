@@ -909,7 +909,7 @@ SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum:
 # 455 "data/maps/SlateportCity_Harbor/scripts.pory"
 SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove:
 # 456 "data/maps/SlateportCity_Harbor/scripts.pory"
-	.string "ARCHIE: Oh?\n"
+	.string "Archie: Oh?\n"
 # 457 "data/maps/SlateportCity_Harbor/scripts.pory"
 	.string "Not you again…\p"
 # 458 "data/maps/SlateportCity_Harbor/scripts.pory"

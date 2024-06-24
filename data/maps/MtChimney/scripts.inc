@@ -1095,7 +1095,7 @@ MtChimney_Text_MeteoriteWillActivateVolcano:
 # 548 "data/maps/MtChimney/scripts.pory"
 MtChimney_Text_MaxieIntro:
 # 549 "data/maps/MtChimney/scripts.pory"
-	.string "MAXIE: Hm?\n"
+	.string "Maxie: Hm?\n"
 # 550 "data/maps/MtChimney/scripts.pory"
 	.string "Who are you?\p"
 # 551 "data/maps/MtChimney/scripts.pory"
@@ -1159,7 +1159,7 @@ MtChimney_Text_MaxieDefeat:
 # 580 "data/maps/MtChimney/scripts.pory"
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 # 581 "data/maps/MtChimney/scripts.pory"
-	.string "MAXIE: But, enough.\n"
+	.string "Maxie: But, enough.\n"
 # 582 "data/maps/MtChimney/scripts.pory"
 	.string "I will back off this time.\p"
 # 583 "data/maps/MtChimney/scripts.pory"
@@ -1323,7 +1323,7 @@ MtChimney_Text_Bufoh:
 # 662 "data/maps/MtChimney/scripts.pory"
 MtChimney_Text_ArchieGoStopTeamMagma:
 # 663 "data/maps/MtChimney/scripts.pory"
-	.string "ARCHIE: Grr, {PLAYER}!\n"
+	.string "Archie: Grr, {PLAYER}!\n"
 # 664 "data/maps/MtChimney/scripts.pory"
 	.string "I should've guessed you'd show up!\p"
 # 665 "data/maps/MtChimney/scripts.pory"
@@ -1343,7 +1343,7 @@ MtChimney_Text_ArchieGoStopTeamMagma:
 # 672 "data/maps/MtChimney/scripts.pory"
 MtChimney_Text_ArchieIHaveMyHandsFull:
 # 673 "data/maps/MtChimney/scripts.pory"
-	.string "ARCHIE: Grrr…\p"
+	.string "Archie: Grrr…\p"
 # 674 "data/maps/MtChimney/scripts.pory"
 	.string "I want to stop that MAXIE,\n"
 # 675 "data/maps/MtChimney/scripts.pory"

@@ -163,7 +163,7 @@ Route104_Text_DadPokenavCall:
 # 82 "data/maps/Route105/scripts.pory"
 	.string "… … … … … Beep!\p"
 # 83 "data/maps/Route105/scripts.pory"
-	.string "DAD: Oh, {PLAYER}?\p"
+	.string "Dad: Oh, {PLAYER}?\p"
 # 84 "data/maps/Route105/scripts.pory"
 	.string "… … … … … …\n"
 # 85 "data/maps/Route105/scripts.pory"

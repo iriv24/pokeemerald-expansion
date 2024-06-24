@@ -1175,7 +1175,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack:
 # 588 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
 # 589 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Oh, {PLAYER}{KUN}!\n"
+	.string "Wattson: Oh, {PLAYER}{KUN}!\n"
 # 590 "data/maps/MauvilleCity/scripts.pory"
 	.string "You look like you have a lot of zip!\l"
 # 591 "data/maps/MauvilleCity/scripts.pory"
@@ -1205,7 +1205,7 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 # 603 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_WattsonWontBeChallenge:
 # 604 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Don't you worry about it.\n"
+	.string "Wattson: Don't you worry about it.\n"
 # 605 "data/maps/MauvilleCity/scripts.pory"
 	.string "It won't be a challenge to you.\p"
 # 606 "data/maps/MauvilleCity/scripts.pory"
@@ -1221,7 +1221,7 @@ MauvilleCity_Text_WattsonWontBeChallenge:
 # 611 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_WattsonThanksTakeTM:
 # 612 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Wahahahaha!\p"
+	.string "Wattson: Wahahahaha!\p"
 # 613 "data/maps/MauvilleCity/scripts.pory"
 	.string "I knew it, {PLAYER}{KUN}! I knew I'd made\n"
 # 614 "data/maps/MauvilleCity/scripts.pory"
@@ -1237,7 +1237,7 @@ MauvilleCity_Text_WattsonThanksTakeTM:
 # 619 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_WattsonYoungTakeCharge:
 # 620 "data/maps/MauvilleCity/scripts.pory"
-	.string "WATTSON: Wahahahaha!\p"
+	.string "Wattson: Wahahahaha!\p"
 # 621 "data/maps/MauvilleCity/scripts.pory"
 	.string "It pleases me to no end to see\n"
 # 622 "data/maps/MauvilleCity/scripts.pory"

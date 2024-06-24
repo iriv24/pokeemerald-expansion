@@ -581,7 +581,7 @@ Route103_EventScript_Isabelle::
 # 291 "data/maps/Route103/scripts.pory"
 Route103_Text_MayRoute103Pokemon:
 # 292 "data/maps/Route103/scripts.pory"
-	.string "MAY: Let's see… The POKéMON found\n"
+	.string "May: Let's see… The POKéMON found\n"
 # 293 "data/maps/Route103/scripts.pory"
 	.string "on ROUTE 103 include…$"
 # 294 "data/maps/Route103/scripts.pory"
@@ -615,7 +615,7 @@ Route103_Text_MayDefeated:
 # 308 "data/maps/Route103/scripts.pory"
 Route103_Text_MayTimeToHeadBack:
 # 309 "data/maps/Route103/scripts.pory"
-	.string "MAY: I think I know why my dad has\n"
+	.string "May: I think I know why my dad has\n"
 # 310 "data/maps/Route103/scripts.pory"
 	.string "an eye out for you now.\p"
 # 311 "data/maps/Route103/scripts.pory"
@@ -635,7 +635,7 @@ Route103_Text_MayTimeToHeadBack:
 # 318 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanRoute103Pokemon:
 # 319 "data/maps/Route103/scripts.pory"
-	.string "BRENDAN: Okay, so it's this one and\n"
+	.string "Brendan: Okay, so it's this one and\n"
 # 320 "data/maps/Route103/scripts.pory"
 	.string "that one that live on ROUTE 103…$"
 # 321 "data/maps/Route103/scripts.pory"
@@ -665,7 +665,7 @@ Route103_Text_BrendanDefeated:
 # 333 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanTimeToHeadBack:
 # 334 "data/maps/Route103/scripts.pory"
-	.string "BRENDAN: I think I get it.\n"
+	.string "Brendan: I think I get it.\n"
 # 335 "data/maps/Route103/scripts.pory"
 	.string "I think I know why my dad has his eye\l"
 # 336 "data/maps/Route103/scripts.pory"

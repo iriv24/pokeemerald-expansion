@@ -2169,7 +2169,7 @@ Route104_Text_TrainerTipsDoubleBattles:
 # 1085 "data/maps/Route104/scripts.pory"
 Route104_Text_MayWeShouldRegister:
 # 1086 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
 # 1087 "data/maps/Route104/scripts.pory"
 	.string "DEVON upgraded your POKéNAV with\n"
 # 1088 "data/maps/Route104/scripts.pory"
@@ -2191,7 +2191,7 @@ Route104_Text_RegisteredMay:
 # 1096 "data/maps/Route104/scripts.pory"
 Route104_Text_MayHowsYourPokedex:
 # 1097 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, by the way, {PLAYER}{KUN},\n"
+	.string "May: Oh, by the way, {PLAYER}{KUN},\n"
 # 1098 "data/maps/Route104/scripts.pory"
 	.string "how's your POKéDEX coming along?$"
 # 1099 "data/maps/Route104/scripts.pory"
@@ -2209,7 +2209,7 @@ Route104_Text_MayMinesDecentLetsBattle:
 # 1105 "data/maps/Route104/scripts.pory"
 Route104_Text_MayHaventRaisedPokemon:
 # 1106 "data/maps/Route104/scripts.pory"
-	.string "MAY: Oh, what's the matter?\p"
+	.string "May: Oh, what's the matter?\p"
 # 1107 "data/maps/Route104/scripts.pory"
 	.string "Haven't you caught or raised your\n"
 # 1108 "data/maps/Route104/scripts.pory"
@@ -2221,7 +2221,7 @@ Route104_Text_MayHaventRaisedPokemon:
 # 1111 "data/maps/Route104/scripts.pory"
 Route104_Text_MayLetsBattle:
 # 1112 "data/maps/Route104/scripts.pory"
-	.string "MAY: So, what do you think?\n"
+	.string "May: So, what do you think?\n"
 # 1113 "data/maps/Route104/scripts.pory"
 	.string "How about a little battle here?$"
 # 1114 "data/maps/Route104/scripts.pory"
@@ -2229,7 +2229,7 @@ Route104_Text_MayLetsBattle:
 # 1115 "data/maps/Route104/scripts.pory"
 Route104_Text_MayIntro:
 # 1116 "data/maps/Route104/scripts.pory"
-	.string "MAY: You just became a TRAINER,\n"
+	.string "May: You just became a TRAINER,\n"
 # 1117 "data/maps/Route104/scripts.pory"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 # 1118 "data/maps/Route104/scripts.pory"
@@ -2245,7 +2245,7 @@ Route104_Text_MayDefeat:
 # 1123 "data/maps/Route104/scripts.pory"
 Route104_Text_MayPostBattle:
 # 1124 "data/maps/Route104/scripts.pory"
-	.string "MAY: I can tell you've gotten pretty\n"
+	.string "May: I can tell you've gotten pretty\n"
 # 1125 "data/maps/Route104/scripts.pory"
 	.string "good with the way you handle POKéMON.\p"
 # 1126 "data/maps/Route104/scripts.pory"
@@ -2261,7 +2261,7 @@ Route104_Text_MayPostBattle:
 # 1131 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanWeShouldRegister:
 # 1132 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: Oh, hey, {PLAYER}!\p"
+	.string "Brendan: Oh, hey, {PLAYER}!\p"
 # 1133 "data/maps/Route104/scripts.pory"
 	.string "Cool, you had DEVON install the MATCH\n"
 # 1134 "data/maps/Route104/scripts.pory"
@@ -2283,7 +2283,7 @@ Route104_Text_RegisteredBrendan:
 # 1142 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanHowsYourPokedex:
 # 1143 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: {PLAYER}, how's your POKéDEX?\n"
+	.string "Brendan: {PLAYER}, how's your POKéDEX?\n"
 # 1144 "data/maps/Route104/scripts.pory"
 	.string "Have you filled in any pages yet?$"
 # 1145 "data/maps/Route104/scripts.pory"
@@ -2301,7 +2301,7 @@ Route104_Text_BrendanDoingGreatLetsBattle:
 # 1151 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanNoConfidence:
 # 1152 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: What's the matter? Don't have\n"
+	.string "Brendan: What's the matter? Don't have\n"
 # 1153 "data/maps/Route104/scripts.pory"
 	.string "any confidence in your POKéMON?$"
 # 1154 "data/maps/Route104/scripts.pory"
@@ -2309,7 +2309,7 @@ Route104_Text_BrendanNoConfidence:
 # 1155 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanLetsBattle:
 # 1156 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: What's up?\n"
+	.string "Brendan: What's up?\n"
 # 1157 "data/maps/Route104/scripts.pory"
 	.string "Want to have a battle with me?$"
 # 1158 "data/maps/Route104/scripts.pory"
@@ -2317,7 +2317,7 @@ Route104_Text_BrendanLetsBattle:
 # 1159 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanIntro:
 # 1160 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: I know you just became\n"
+	.string "Brendan: I know you just became\n"
 # 1161 "data/maps/Route104/scripts.pory"
 	.string "a TRAINER, but I won't go easy!$"
 # 1162 "data/maps/Route104/scripts.pory"
@@ -2333,7 +2333,7 @@ Route104_Text_BrendanDefeat:
 # 1167 "data/maps/Route104/scripts.pory"
 Route104_Text_BrendanPostBattle:
 # 1168 "data/maps/Route104/scripts.pory"
-	.string "BRENDAN: You've gotten pretty decent\n"
+	.string "Brendan: You've gotten pretty decent\n"
 # 1169 "data/maps/Route104/scripts.pory"
 	.string "at handling POKéMON.\p"
 # 1170 "data/maps/Route104/scripts.pory"

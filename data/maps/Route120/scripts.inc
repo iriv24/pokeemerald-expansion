@@ -729,7 +729,7 @@ Route120_EventScript_Callie::
 # 365 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenGreeting:
 # 366 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
+	.string "Steven: Hm? {PLAYER}{KUN}, hi.\n"
 # 367 "data/maps/Route120/scripts.pory"
 	.string "It's been a while.\p"
 # 368 "data/maps/Route120/scripts.pory"
@@ -755,7 +755,7 @@ Route120_Text_StevenGreeting:
 # 378 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenIllWaitHere:
 # 379 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: No?\p"
+	.string "Steven: No?\p"
 # 380 "data/maps/Route120/scripts.pory"
 	.string "I'll wait here, so you can get ready.$"
 # 381 "data/maps/Route120/scripts.pory"
@@ -763,7 +763,7 @@ Route120_Text_StevenIllWaitHere:
 # 382 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenReadyForBattle:
 # 383 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
+	.string "Steven: {PLAYER}{KUN}, are your POKéMON\n"
 # 384 "data/maps/Route120/scripts.pory"
 	.string "ready for battle?$"
 # 385 "data/maps/Route120/scripts.pory"
@@ -771,7 +771,7 @@ Route120_Text_StevenReadyForBattle:
 # 386 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenShowMeYourPower:
 # 387 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
+	.string "Steven: {PLAYER}{KUN}, show me your true\n"
 # 388 "data/maps/Route120/scripts.pory"
 	.string "power as a TRAINER!$"
 # 389 "data/maps/Route120/scripts.pory"
@@ -791,7 +791,7 @@ Route120_Text_StevenUsedDevonScope:
 # 396 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenGiveDevonScope:
 # 397 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: I see…\n"
+	.string "Steven: I see…\n"
 # 398 "data/maps/Route120/scripts.pory"
 	.string "Your battle style is intriguing.\p"
 # 399 "data/maps/Route120/scripts.pory"
@@ -811,7 +811,7 @@ Route120_Text_StevenGiveDevonScope:
 # 406 "data/maps/Route120/scripts.pory"
 Route120_Text_StevenGoodbye:
 # 407 "data/maps/Route120/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}.\p"
+	.string "Steven: {PLAYER}{KUN}.\p"
 # 408 "data/maps/Route120/scripts.pory"
 	.string "I enjoy seeing POKéMON and TRAINERS\n"
 # 409 "data/maps/Route120/scripts.pory"

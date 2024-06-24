@@ -220,14 +220,14 @@ MagmaHideout_4F_Text_NotEvenYou:
 	.string "terrible power of Primal Groudon!$"
 
 MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
-	.string "MAXIE: GROUDON!\n"
+	.string "Maxie: GROUDON!\n"
 	.string "What's wrong?\p"
 	.string "Wasn't the BLUE ORB the key?\p"
 	.string "GROUDON!\n"
 	.string "Where have you gone…$"
 
 MagmaHideout_4F_Text_MaxieOhItWasYou:
-	.string "MAXIE: Oh, so it was you?\p"
+	.string "Maxie: Oh, so it was you?\p"
 	.string "I've seen you poking around uninvited\n"
 	.string "here and there…\p"
 	.string "I get it now!\n"

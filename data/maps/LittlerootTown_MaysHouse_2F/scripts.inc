@@ -739,7 +739,7 @@ RivalsHouse_2F_Text_ItsRivalsPokeBall:
 # 370 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 # 371 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "May: {PLAYER}{KUN}!\p"
 # 372 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	.string "I was just checking my POKéDEX.\p"
 # 373 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
@@ -759,7 +759,7 @@ RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 # 380 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_Text_MayWhereShouldIGoNext:
 # 381 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	.string "MAY: I wonder where I should go catch\n"
+	.string "May: I wonder where I should go catch\n"
 # 382 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	.string "some POKéMON next?\p"
 # 383 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
@@ -771,7 +771,7 @@ RivalsHouse_2F_Text_MayWhereShouldIGoNext:
 # 386 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
 # 387 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	.string "BRENDAN: Hey, it's {PLAYER}.\p"
+	.string "Brendan: Hey, it's {PLAYER}.\p"
 # 388 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	.string "I was just checking out my POKéDEX.\p"
 # 389 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
@@ -789,7 +789,7 @@ RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
 # 395 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 # 396 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
-	.string "BRENDAN: I'm having a hard time deciding\n"
+	.string "Brendan: I'm having a hard time deciding\n"
 # 397 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"
 	.string "where I should catch POKéMON next.\p"
 # 398 "data/maps/LittlerootTown_MaysHouse_2F/scripts.pory"

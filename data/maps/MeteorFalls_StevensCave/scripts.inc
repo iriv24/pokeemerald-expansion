@@ -63,7 +63,7 @@ MeteorFalls_StevensCave_EventScript_Defeated::
 # 32 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 # 33 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "STEVEN: Oh, wow, {PLAYER}{KUN}.\n"
+	.string "Steven: Oh, wow, {PLAYER}{KUN}.\n"
 # 34 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	.string "I'm amazed you knew where to find me.\p"
 # 35 "data/maps/MeteorFalls_StevensCave/scripts.pory"
@@ -97,7 +97,7 @@ MeteorFalls_StevensCave_Text_StevenDefeat:
 # 49 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 MeteorFalls_StevensCave_Text_MyPredictionCameTrue:
 # 50 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "STEVEN: Come to think of it, ever since\n"
+	.string "Steven: Come to think of it, ever since\n"
 # 51 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	.string "our paths first crossed in GRANITE\l"
 # 52 "data/maps/MeteorFalls_StevensCave/scripts.pory"

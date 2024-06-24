@@ -443,7 +443,7 @@ MagmaHideout_4F_Text_NotEvenYou:
 # 222 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
 # 223 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "MAXIE: GROUDON!\n"
+	.string "Maxie: GROUDON!\n"
 # 224 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "What's wrong?\p"
 # 225 "data/maps/MagmaHideout_4F/scripts.pory"
@@ -457,7 +457,7 @@ MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
 # 229 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_MaxieOhItWasYou:
 # 230 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "MAXIE: Oh, so it was you?\p"
+	.string "Maxie: Oh, so it was you?\p"
 # 231 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "I've seen you poking around uninvited\n"
 # 232 "data/maps/MagmaHideout_4F/scripts.pory"

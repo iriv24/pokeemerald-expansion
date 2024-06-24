@@ -785,7 +785,7 @@ PlayersHouse_1F_Text_RunningShoesManual:
 # 393 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 # 394 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "DAD: Hm?\p"
+	.string "Dad: Hm?\p"
 # 395 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Hey, it's {PLAYER}!\p"
 # 396 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -807,7 +807,7 @@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 # 404 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
 # 405 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "DAD: Hm, a TICKET for a ferry?\p"
+	.string "Dad: Hm, a TICKET for a ferry?\p"
 # 406 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "If I recall, there are ferry ports in\n"
 # 407 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

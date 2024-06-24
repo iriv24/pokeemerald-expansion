@@ -589,7 +589,7 @@ FortreeCity_Gym_Text_GymStatueCertified:
 # 295 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_WinonaPreRematch:
 # 296 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: We humans can never escape\n"
+	.string "Winona: We humans can never escape\n"
 # 297 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "gravity's pull on the ground.\p"
 # 298 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -615,7 +615,7 @@ FortreeCity_Gym_Text_WinonaRematchDefeat:
 # 308 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_WinonaPostRematch:
 # 309 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: Even though I have lost,\n"
+	.string "Winona: Even though I have lost,\n"
 # 310 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "the wings of my heart remain unbroken.\p"
 # 311 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -629,7 +629,7 @@ FortreeCity_Gym_Text_WinonaPostRematch:
 # 315 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 # 316 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA: We humans can never escape\n"
+	.string "Winona: We humans can never escape\n"
 # 317 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "gravity's pull on the ground.\p"
 # 318 "data/maps/FortreeCity_Gym/scripts.pory"

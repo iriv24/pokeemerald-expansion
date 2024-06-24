@@ -755,7 +755,7 @@ LavaridgeTown_Gym_1F_Text_GymStatueCertified:
 # 378 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_Text_FlanneryPreRematch:
 # 379 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "Flannery: Losing a battle isn't going\n"
 # 380 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	.string "to deflate me.\p"
 # 381 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
@@ -781,7 +781,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat:
 # 391 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_Text_FlanneryPostRematch:
 # 392 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: I lost the match,\n"
+	.string "Flannery: I lost the match,\n"
 # 393 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	.string "but I'm completely satisfied.\p"
 # 394 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
@@ -797,7 +797,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPostRematch:
 # 399 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 # 400 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "FLANNERY: Losing a battle isn't going\n"
+	.string "Flannery: Losing a battle isn't going\n"
 # 401 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	.string "to deflate me.\p"
 # 402 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"

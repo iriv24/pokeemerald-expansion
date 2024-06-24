@@ -173,7 +173,7 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
 # 87 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
 # 88 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "WALLACE: This room…\p"
+	.string "Wallace: This room…\p"
 # 89 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	.string "This is where we keep records of\n"
 # 90 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
@@ -189,7 +189,7 @@ EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
 # 95 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
 # 96 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "WALLACE: Come on, let's record your\n"
+	.string "Wallace: Come on, let's record your\n"
 # 97 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	.string "name as a trainer who triumphed over\l"
 # 98 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"

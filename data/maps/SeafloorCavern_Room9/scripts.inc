@@ -609,13 +609,13 @@ SeafloorCavern_4F_Text_ShellyAqua:
 # 305 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieHoldItRightThere:
 # 306 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: Hold it right there.$"
+	.string "Archie: Hold it right there.$"
 # 307 "data/maps/SeafloorCavern_Room9/scripts.pory"
 
 # 308 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieSoItWasYou:
 # 309 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: Fufufu…\n"
+	.string "Archie: Fufufu…\n"
 # 310 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "So it was you, after all.$"
 # 311 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -623,7 +623,7 @@ SeafloorCavern_Room9_Text_ArchieSoItWasYou:
 # 312 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieBeholdKyogre:
 # 313 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: Behold!\p"
+	.string "Archie: Behold!\p"
 # 314 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "See how beautiful it is, the sleeping\n"
 # 315 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -637,7 +637,7 @@ SeafloorCavern_Room9_Text_ArchieBeholdKyogre:
 # 319 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieYouMustDisappear:
 # 320 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: It surprises me, how you've\n"
+	.string "Archie: It surprises me, how you've\n"
 # 321 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "managed to chase me here.\p"
 # 322 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -659,7 +659,7 @@ SeafloorCavern_Room9_Text_ArchieDefeat:
 # 330 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieWithThisRedOrb:
 # 331 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: Fufufu…\p"
+	.string "Archie: Fufufu…\p"
 # 332 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "I commend you. I must recognize that\n"
 # 333 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -683,7 +683,7 @@ SeafloorCavern_Room9_Text_RedOrbShinesByItself:
 # 342 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
 # 343 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "ARCHIE: What?!\p"
+	.string "Archie: What?!\p"
 # 344 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "I didn't do anything.\n"
 # 345 "data/maps/SeafloorCavern_Room9/scripts.pory"

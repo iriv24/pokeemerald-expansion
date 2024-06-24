@@ -969,7 +969,7 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 # 485 "data/maps/Route119/scripts.pory"
 Route119_Text_MayIntro:
 # 486 "data/maps/Route119/scripts.pory"
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "May: {PLAYER}{KUN}!\n"
 # 487 "data/maps/Route119/scripts.pory"
 	.string "Where were you? I was looking for you!\p"
 # 488 "data/maps/Route119/scripts.pory"
@@ -997,7 +997,7 @@ Route119_Text_MayDefeat:
 # 499 "data/maps/Route119/scripts.pory"
 Route119_Text_MayPresentForYou:
 # 500 "data/maps/Route119/scripts.pory"
-	.string "MAY: But I had absolutely nothing to\n"
+	.string "May: But I had absolutely nothing to\n"
 # 501 "data/maps/Route119/scripts.pory"
 	.string "worry about! Keep it up!\p"
 # 502 "data/maps/Route119/scripts.pory"
@@ -1017,7 +1017,7 @@ Route119_Text_MayExplainFly:
 # 509 "data/maps/Route119/scripts.pory"
 Route119_Text_BrendanIntro:
 # 510 "data/maps/Route119/scripts.pory"
-	.string "BRENDAN: {PLAYER}! So this is where\n"
+	.string "Brendan: {PLAYER}! So this is where\n"
 # 511 "data/maps/Route119/scripts.pory"
 	.string "you've been looking for POKéMON?\p"
 # 512 "data/maps/Route119/scripts.pory"
@@ -1041,7 +1041,7 @@ Route119_Text_BrendanDefeat:
 # 521 "data/maps/Route119/scripts.pory"
 Route119_Text_BrendanIllGiveYouThis:
 # 522 "data/maps/Route119/scripts.pory"
-	.string "BRENDAN: I'd say you're good enough\n"
+	.string "Brendan: I'd say you're good enough\n"
 # 523 "data/maps/Route119/scripts.pory"
 	.string "to search for POKéMON anywhere.\p"
 # 524 "data/maps/Route119/scripts.pory"
