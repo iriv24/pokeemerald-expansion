@@ -1310,15 +1310,15 @@ const struct SpriteFrameImage gObjectEventPicTable_Wake[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Fantina[] = {
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Fantina, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Fantina, 4, 4, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Byron[] = {
