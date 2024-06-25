@@ -364,7 +364,7 @@ static void TrySetInfoPageIcons(void);
 
 // const rom data
 
-static const u8 sMemoNatureTextColor[]                      = _("{COLOR DYNAMIC_COLOR2}{SHADOW DYNAMIC_COLOR3}");
+static const u8 sMemoNatureTextColor[]                      = _("{COLOR}{01}");
 static const u8 sMemoMiscTextColor[]                        = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
 static const u8 sStatsHPLayout[]                            = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sStatsHPIVEVLayout[]                        = _("{DYNAMIC 0}");
@@ -722,17 +722,18 @@ static const u8 sTextColors[][3] =
 {
     {0, 1, 2},
     {0, 3, 4},
-    {0, 5, 6},
+    {0, 5, 9},
     {0, 7, 8},
     {0, 9, 10},
     {0, 11, 12},
     {0, 13, 14},
     {0, 7, 8},
-    {13, 15, 14},
+    {13, 1, 14},
     {0, 1, 2},
     {0, 3, 4},
-    {0, 5, 6},
+    {0, 5, 9},
     {0, 7, 8},
+    {0, 15, 6},
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -2127,6 +2128,7 @@ static void Task_HandleInput(u8 taskId)
                 if (BW_SUMMARY_IV_EV_DISPLAY != BW_IV_EV_HIDDEN)
                 {
                     // Cycle through IVs/EVs/stats on pressing A
+                    // TODO something here
                     ChangeSummaryState(data, taskId);
                     DrawNextSkillsButtonPrompt(tSkillsState);
                     PlaySE(SE_SELECT);
@@ -3742,7 +3744,14 @@ static void PrintMonOTID(void)
 static void PrintMonAbilityName(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 4, 2, 0, 0);
+    if(sMonSummaryScreen->summary.abilityNum != 2)
+    {
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 4, 2, 0, 0);
+    }
+    else
+    {
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 4, 2, 0, 13);
+    }
 }
 
 static void PrintMonAbilityDescription(void)
