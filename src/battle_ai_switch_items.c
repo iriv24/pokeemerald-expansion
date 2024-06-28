@@ -302,7 +302,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler, bool32 emitResult)
 {
     u8 battlerIn1, battlerIn2;
     u8 numAbsorbingAbilities = 0;
-    u16 absorbingTypeAbilities[4]; // Array size is maximum number of absorbing abilities for a single type
+    u16 absorbingTypeAbilities[3]; // Array size is maximum number of absorbing abilities for a single type
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
@@ -349,8 +349,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler, bool32 emitResult)
         absorbingTypeAbilities[0] = ABILITY_VOLT_ABSORB;
         absorbingTypeAbilities[1] = ABILITY_MOTOR_DRIVE;
         absorbingTypeAbilities[2] = ABILITY_LIGHTNING_ROD;
-        absorbingTypeAbilities[3] = ABILITY_ELECTROMAGNETISM;
-        numAbsorbingAbilities = 4;
+        numAbsorbingAbilities = 3;
     }
     else if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_GRASS)
     {
@@ -1256,7 +1255,7 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
 static bool32 IsMonGrounded(u16 heldItemEffect, u32 ability, u8 type1, u8 type2)
 {
     // List that makes mon not grounded
-    if (type1 == TYPE_FLYING || type2 == TYPE_FLYING || ability == ABILITY_LEVITATE || ability == ABILITY_ELECTROMAGNETISM
+    if (type1 == TYPE_FLYING || type2 == TYPE_FLYING || ability == ABILITY_LEVITATE
          || (heldItemEffect == HOLD_EFFECT_AIR_BALLOON && ability != ABILITY_KLUTZ))
     {
         // List that overrides being off the ground

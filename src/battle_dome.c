@@ -2433,7 +2433,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
     defAbility = gSpeciesInfo[targetSpecies].abilities[0];
     moveType = gMovesInfo[move].type;
 
-    if (((defAbility == ABILITY_LEVITATE || defAbility == ABILITY_ELECTROMAGNETISM) && moveType == TYPE_GROUND) || ((defAbility == ABILITY_MOUNTAINEER) && moveType == TYPE_ROCK))
+    if ((defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND) || ((defAbility == ABILITY_MOUNTAINEER) && moveType == TYPE_ROCK))
     {
         // They likely meant to return here, as 8 is the number of points normally used in this mode for moves with no effect.
         // Because there's no return the value instead gets interpreted by the switch, and the number of points becomes 0.
