@@ -300,6 +300,7 @@ extern const u8 gText_BattlePyramidConfirmRetire[];
 extern const u8 gText_TextSpeedSlow[];
 extern const u8 gText_TextSpeedMid[];
 extern const u8 gText_TextSpeedFast[];
+extern const u8 gText_TextSpeedInstant[];
 extern const u8 gText_BattleSceneOn[];
 extern const u8 gText_BattleSceneOff[];
 extern const u8 gText_BattleStyleShift[];
