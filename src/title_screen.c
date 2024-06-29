@@ -50,7 +50,7 @@ static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToBerryFixScreen(void);
 static void CB2_GoToCopyrightScreen(void);
-static void UpdateLegendaryMarkingColor(u8);
+//static void UpdateLegendaryMarkingColor(u8);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
 static void SpriteCB_VersionBannerRight(struct Sprite *sprite);
@@ -63,9 +63,76 @@ static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
-static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
+//static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
+const u32 gTest_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaempoleono.4bpp.lz");
+const u32 gTestPal_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaonormal.gbapal.lz");
+const u32 gTest_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megaempoleondflip.4bpp.lz");
+const u32 gTestPal_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megadnormal.gbapal.lz");
 
+static const struct CompressedSpriteSheet sSpriteSheet_Mon[] =
+{
+    {gTest_Mon, 4096, 777},
+    {NULL},
+};
 
+static const struct CompressedSpritePalette sSpritePal_Mon[] =
+{
+    {gTestPal_Mon, 777},
+    {NULL},
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_Mon2[] =
+{
+    {gTest_Mon2, 4096, 778},
+    {NULL},
+};
+
+static const struct CompressedSpritePalette sSpritePal_Mon2[] =
+{
+    {gTestPal_Mon2, 778},
+    {NULL},
+};
+
+static const struct OamData sMonOamData =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = 0,
+    .x = 0,
+    .matrixNum = 0,
+    .size = 3,
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteTemplate sMonSpriteTemplate =
+
+{
+    .tileTag = 777,
+    .paletteTag = 777,
+    .oam = &sMonOamData,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate sMonSpriteTemplate2 =
+
+{
+    .tileTag = 778,
+    .paletteTag = 778,
+    .oam = &sMonOamData,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
 
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
 // Also used by the intro to blend the Game Freak name/logo in and out as they appear and disappear
@@ -603,8 +670,8 @@ void CB2_InitTitleScreen(void)
         LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
         LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
-        LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+        //LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
+        //LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -615,6 +682,10 @@ void CB2_InitTitleScreen(void)
         LoadCompressedSpriteSheet(&sPokemonLogoShineSpriteSheet[0]);
         LoadPalette(gTitleScreenEmeraldVersionPal, OBJ_PLTT_ID(0), PLTT_SIZE_4BPP);
         LoadSpritePalette(&sSpritePalette_PressStart[0]);
+        LoadCompressedSpriteSheet(sSpriteSheet_Mon);
+        LoadCompressedSpritePalette(sSpritePal_Mon);
+        LoadCompressedSpriteSheet(sSpriteSheet_Mon2);
+        LoadCompressedSpritePalette(sSpritePal_Mon2);
         gMain.state = 2;
         break;
     case 2:
@@ -758,6 +829,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_OBJ_ON);
         CreatePressStartBanner(START_BANNER_X, 108);
         CreateCopyrightBanner(START_BANNER_X, 148);
+        CreateSprite(&sMonSpriteTemplate, 200, 110, 0);
+        CreateSprite(&sMonSpriteTemplate2, 40, 110, 0);
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
@@ -806,13 +879,13 @@ static void Task_TitleScreenPhase3(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_BG2Y_L, 0);
         SetGpuReg(REG_OFFSET_BG2Y_H, 0);
-        if (++gTasks[taskId].tCounter & 1)
-        {
-            gTasks[taskId].tBg1Y++;
-            gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
-            gBattle_BG1_X = 0;
-        }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        //if (++gTasks[taskId].tCounter & 1)
+        //{
+        //    gTasks[taskId].tBg1Y++;
+        //    gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
+        //    gBattle_BG1_X = 0;
+        //}
+        //UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
@@ -854,16 +927,16 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
-static void UpdateLegendaryMarkingColor(u8 frameNum)
-{
-    if ((frameNum % 4) == 0) // Change color every 4th frame
-    {
-        s32 intensity = Cos(frameNum, 128) + 128;
-        s32 r = 31 - ((intensity * 32 - intensity) / 256);
-        s32 g = 31 - (intensity * 22 / 256);
-        s32 b = 12;
+// static void UpdateLegendaryMarkingColor(u8 frameNum)
+// {
+//     if ((frameNum % 4) == 0) // Change color every 4th frame
+//     {
+//         s32 intensity = Cos(frameNum, 128) + 128;
+//         s32 r = 31 - ((intensity * 32 - intensity) / 256);
+//         s32 g = 31 - (intensity * 22 / 256);
+//         s32 b = 12;
 
-        u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
-   }
-}
+//         u16 color = RGB(r, g, b);
+//         LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
+//    }
+// }
