@@ -23465,6 +23465,7 @@ static const u16 sJirachiTeachableLearnset[] = {
     MOVE_IRON_HEAD,
     MOVE_LIGHT_SCREEN,
     MOVE_METEOR_BEAM,
+    MOVE_MOONBLAST,
     MOVE_PLAY_ROUGH,
     MOVE_POWER_UP_PUNCH,
     MOVE_PSYCHIC,
