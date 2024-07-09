@@ -33782,7 +33782,8 @@
       "MOVE_SECRET_POWER",
       "MOVE_REST",
       "MOVE_SKILL_SWAP",
-      "MOVE_FLASH"
+      "MOVE_FLASH",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [

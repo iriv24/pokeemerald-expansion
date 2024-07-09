@@ -34287,7 +34287,8 @@
       "MOVE_EXPANDING_FORCE",
       "MOVE_METEOR_BEAM",
       "MOVE_METAL_SOUND",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": []

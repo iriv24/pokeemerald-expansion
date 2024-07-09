@@ -46265,7 +46265,8 @@
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
       "MOVE_FLASH_CANNON",
-      "MOVE_TRICK_ROOM"
+      "MOVE_TRICK_ROOM",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [

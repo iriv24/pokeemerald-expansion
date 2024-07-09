@@ -50270,7 +50270,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_TRICK_ROOM",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [

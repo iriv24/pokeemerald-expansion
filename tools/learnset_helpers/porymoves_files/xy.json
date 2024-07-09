@@ -45077,7 +45077,8 @@
       "MOVE_TRICK_ROOM",
       "MOVE_POWER_UP_PUNCH",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": []

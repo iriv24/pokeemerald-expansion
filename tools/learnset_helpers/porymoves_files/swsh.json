@@ -31557,7 +31557,8 @@
       "MOVE_STORED_POWER",
       "MOVE_ALLY_SWITCH",
       "MOVE_PLAY_ROUGH",
-      "MOVE_DAZZLING_GLEAM"
+      "MOVE_DAZZLING_GLEAM",
+      "MOVE_MOONBLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
