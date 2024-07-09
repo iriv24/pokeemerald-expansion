@@ -208,7 +208,7 @@
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
-#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF //unused
+#define FLAG_RECEIVED_FORM_CHANGERS          0xBF
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
 #define FLAG_WALLY_SPEECH                    0xC1
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused

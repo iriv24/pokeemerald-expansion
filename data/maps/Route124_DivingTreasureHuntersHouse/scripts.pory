@@ -427,3 +427,39 @@ General_EggTutor_Text_CantTeachEgg:
 	.string "doesn't mean I can teach moves to an\l"
 	.string "Egg!$"
 `
+
+script Route124_DivingTreasureHuntersHouse_EventScript_FormChangingLady{
+	lock
+	faceplayer
+	goto_if_set(FLAG_RECEIVED_FORM_CHANGERS, Route124_DivingTreasureHuntersHouse_EventScript_ReceivedFormChangers)
+	msgbox(Route124_TakeTheseFormChangers, MSGBOX_DEFAULT)
+	giveitem(ITEM_ROTOM_CATALOG)
+	giveitem(ITEM_REVEAL_GLASS)
+	giveitem(ITEM_GRACIDEA)
+	giveitem(ITEM_PRISON_BOTTLE)
+	setflag(FLAG_RECEIVED_FORM_CHANGERS)
+	msgbox(Route124_ExplainFormChangers, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route124_DivingTreasureHuntersHouse_EventScript_ReceivedFormChangers
+{
+	msgbox(Route124_ExplainFormChangers, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Route124_TakeTheseFormChangers {
+	"Well, well. You must be quite the strong\n"
+	"trainer having made it all the way here,\l"
+	"especially in this heat!\p"
+	"Here, take these, I'm sure a trainer like\n"
+	"you can make good use of them."
+}
+
+text Route124_ExplainFormChangers {
+	"It's my understanding that you can\n"
+	"change the forms of some very powerful\l"
+	"Pokémon using those."
+}

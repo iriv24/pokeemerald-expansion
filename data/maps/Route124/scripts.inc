@@ -205,4 +205,4 @@ Route124_EventScript_Isabella::
 # 103 "data/maps/Route124/scripts.pory"
 Route124_Text_HuntersHouse:
 # 104 "data/maps/Route124/scripts.pory"
-	.string "HUNTER'S HOUSE$"
+	.string "FORM CHANGERS HERE$"

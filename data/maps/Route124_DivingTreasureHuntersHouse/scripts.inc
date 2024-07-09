@@ -854,3 +854,51 @@ General_EggTutor_Text_CantTeachEgg:
 	.string "doesn't mean I can teach moves to an\l"
 # 428 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
 	.string "Egg!$"
+
+Route124_DivingTreasureHuntersHouse_EventScript_FormChangingLady::
+# 432 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	lock
+# 433 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	faceplayer
+# 434 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	goto_if_set FLAG_RECEIVED_FORM_CHANGERS, Route124_DivingTreasureHuntersHouse_EventScript_ReceivedFormChangers
+# 435 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox Route124_TakeTheseFormChangers, MSGBOX_DEFAULT
+# 436 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	giveitem ITEM_ROTOM_CATALOG
+# 437 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	giveitem ITEM_REVEAL_GLASS
+# 438 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	giveitem ITEM_GRACIDEA
+# 439 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	giveitem ITEM_PRISON_BOTTLE
+# 440 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	setflag FLAG_RECEIVED_FORM_CHANGERS
+# 441 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox Route124_ExplainFormChangers, MSGBOX_DEFAULT
+# 442 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	release
+	end
+
+
+Route124_DivingTreasureHuntersHouse_EventScript_ReceivedFormChangers::
+# 448 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	msgbox Route124_ExplainFormChangers, MSGBOX_DEFAULT
+# 449 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	release
+	end
+
+
+Route124_TakeTheseFormChangers::
+# 453 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "Well, well. You must be quite the strong\n"
+	.string "trainer having made it all the way here,\l"
+	.string "especially in this heat!\p"
+	.string "Here, take these, I'm sure a trainer like\n"
+	.string "you can make good use of them.$"
+
+Route124_ExplainFormChangers::
+# 461 "data/maps/Route124_DivingTreasureHuntersHouse/scripts.pory"
+	.string "It's my understanding that you can\n"
+	.string "change the forms of some very powerful\l"
+	.string "Pokémon using those.$"
