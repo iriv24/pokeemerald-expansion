@@ -407,3 +407,4 @@ const u16 gObjectEventPal_Candice[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Volkner[] = INCBIN_U32("graphics/object_events/pics/people/volkner.4bpp");
 const u16 gObjectEventPal_Volkner[] = INCBIN_U16("graphics/object_events/palettes/volkner.gbapal");
 
+const u32 gObjectEventPic_GoldItemBall[] = INCBIN_U32("graphics/object_events/pics/misc/gold_item_ball.4bpp");

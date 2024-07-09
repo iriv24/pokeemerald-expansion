@@ -254,6 +254,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fantina;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Byron;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Candice;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volkner;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GoldItemBall;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -506,6 +507,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BYRON] =                    &gObjectEventGraphicsInfo_Byron,
     [OBJ_EVENT_GFX_CANDICE] =                  &gObjectEventGraphicsInfo_Candice,
     [OBJ_EVENT_GFX_VOLKNER] =                  &gObjectEventGraphicsInfo_Volkner,
+    [OBJ_EVENT_GFX_GOLD_ITEM_BALL] =           &gObjectEventGraphicsInfo_GoldItemBall,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

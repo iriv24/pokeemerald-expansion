@@ -1356,3 +1356,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Volkner[] = {
     overworld_frame(gObjectEventPic_Volkner, 2, 4, 2),
     overworld_frame(gObjectEventPic_Volkner, 2, 4, 2),
 };
+
+const struct SpriteFrameImage sPicTable_GoldItemBall[] = {
+    obj_frame_tiles(gObjectEventPic_GoldItemBall),
+};
