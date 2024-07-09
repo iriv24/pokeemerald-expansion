@@ -466,8 +466,6 @@ Route110_EventScript_BrendanDefeated::
 Route110_EventScript_GiveItemfinder::
 	giveitem ITEM_HM_FLY
 	giveitem ITEM_DOWSING_MACHINE
-	giveitem ITEM_TM_BUG_BITE
-	giveitem ITEM_TM_STOMPING_TANTRUM
 	giveitem ITEM_TM_FIRE_PUNCH
 	giveitem ITEM_TM_ICE_PUNCH
 	giveitem ITEM_TM_THUNDER_PUNCH

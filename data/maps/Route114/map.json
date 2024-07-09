@@ -143,7 +143,7 @@
       "flag": "FLAG_ITEM_ROUTE_114_RARE_CANDY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 11,
       "y": 37,
       "elevation": 4,
