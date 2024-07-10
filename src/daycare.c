@@ -35,7 +35,7 @@ static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *
 static void DaycarePrintMonInfo(u8 windowId, u32 daycareSlotId, u8 y);
 static u8 ModifyBreedingScoreForOvalCharm(u8 score);
 //static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves);
-static u16 GetEggSpecies(u16 species);
+u16 GetEggSpecies(u16 species);
 
 // RAM buffers used to assist with BuildEggMoveset()
 EWRAM_DATA static u16 sHatchedEggLevelUpMoves[EGG_LVL_UP_MOVES_ARRAY_COUNT] = {0};
