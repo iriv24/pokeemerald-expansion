@@ -5191,7 +5191,6 @@ Move_SMACK_DOWN::
 	createvisualtask AnimTask_SmokescreenImpact, 0x8, 0x400, 0x1902
 	fadetobg BG_IN_AIR
 	waitbgfadeout
-	createvisualtask AnimTask_StartSlidingBg, 5, 0x0, 0x0, 0x0, 0xffff
 	createvisualtask AnimTask_SeismicTossBgAccelerateDownAtEnd, 3
 	goto SeismicTossWeak
 
@@ -29136,6 +29135,7 @@ Move_TECTONIC_RAGE:
 	waitforvisualfinish
 	call UnsetPsychicBg
 	waitbgfadein
+	clearmonbg_static ANIM_ATTACKER
 	createvisualtask AnimTask_AllBattlersVisible, 0xA
 	waitforvisualfinish
 	end
