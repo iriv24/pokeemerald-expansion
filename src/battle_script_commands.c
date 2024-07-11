@@ -5515,7 +5515,8 @@ static void Cmd_moveend(void)
                 else if (gProtectStructs[gBattlerTarget].kingsShielded)
                 {
                     gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
-                    gBattlescriptCurrInstr = BattleScript_KingsShieldEffect;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_NewKingsShieldEffect;
                     effect = 1;
                 }
                 else if (gProtectStructs[gBattlerTarget].banefulBunkered)
