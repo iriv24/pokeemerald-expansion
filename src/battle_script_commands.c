@@ -595,7 +595,7 @@ static void Cmd_setuserstatus3(void);
 static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
-static void Cmd_setsleepclause(void);
+static void Cmd_unused2(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_jumpifnotcurrentmoveargtype(void);
@@ -854,7 +854,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_assistattackselect,                      //0xDE
     Cmd_trysetmagiccoat,                         //0xDF
     Cmd_trysetsnatch,                            //0xE0
-    Cmd_setsleepclause,                          //0xE1
+    Cmd_unused2,                                 //0xE1
     Cmd_switchoutabilities,                      //0xE2
     Cmd_jumpifhasnohp,                           //0xE3
     Cmd_jumpifnotcurrentmoveargtype,             //0xE4
@@ -4125,10 +4125,6 @@ static void Cmd_cleareffectsonfaint(void)
         const u8 *clearDataResult = NULL;
         if (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || gBattleMons[battler].hp == 0)
         {
-            if(gBattleMons[battler].status1 & STATUS1_SLEEP)
-            {
-                gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
-            }
             gBattleMons[battler].status1 = 0;
             BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
             MarkBattlerForControllerExec(battler);
@@ -13327,7 +13323,6 @@ static void Cmd_healpartystatus(void)
 
     if (toHeal)
     {
-        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
         BtlController_EmitSetMonData(gBattlerAttacker, BUFFER_A, REQUEST_STATUS_BATTLE, toHeal, sizeof(zero), &zero);
         MarkBattlerForControllerExec(gBattlerAttacker);
     }
@@ -14683,11 +14678,8 @@ static void Cmd_trysetsnatch(void)
     }
 }
 
-static void Cmd_setsleepclause(void)
+static void Cmd_unused2(void)
 {
-    CMD_ARGS();
-    gSideStatuses[GetBattlerSide(gBattlerTarget)] |= SIDE_STATUS_SLEEP_CLAUSE;
-    gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 static void Cmd_switchoutabilities(void)
@@ -16269,10 +16261,7 @@ void BS_ItemCureStatus(void)
     {
         statusChanged = TRUE;
         if (GetItemStatus1Mask(gLastUsedItem) & STATUS1_SLEEP)
-        {
             gBattleMons[battler].status2 &= ~STATUS2_NIGHTMARE;
-            gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
-        }
         if (GetItemStatus2Mask(gLastUsedItem) & STATUS2_CONFUSION)
             gStatuses4[battler] &= ~STATUS4_INFINITE_CONFUSION;
     }

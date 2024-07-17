@@ -3574,10 +3574,6 @@ const u8* FaintClearSetData(u32 battler)
     for (i = 0; i < NUM_BATTLE_STATS; i++)
         gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
 
-    if(gBattleMons[battler].status1 & STATUS1_SLEEP)
-    {
-        gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
-    }
     gBattleMons[battler].status2 = 0;
     gStatuses3[battler] &= STATUS3_GASTRO_ACID; // Edge case: Keep Gastro Acid if pokemon's ability can have effect after fainting, for example Innards Out.
     gStatuses4[battler] = 0;

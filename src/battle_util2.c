@@ -141,7 +141,6 @@ u32 BattlePalace_TryEscapeStatus(u8 battler)
                     // Wake up from Uproar
                     gBattleMons[battler].status1 &= ~(STATUS1_SLEEP);
                     gBattleMons[battler].status2 &= ~(STATUS2_NIGHTMARE);
-                    gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
                     BattleScriptPushCursor();
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP_UPROAR;
                     gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;
@@ -172,7 +171,6 @@ u32 BattlePalace_TryEscapeStatus(u8 battler)
                     {
                         // Wake up
                         gBattleMons[battler].status2 &= ~(STATUS2_NIGHTMARE);
-                        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
                         BattleScriptPushCursor();
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP;
                         gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;

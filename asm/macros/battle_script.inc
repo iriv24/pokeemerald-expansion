@@ -1205,8 +1205,9 @@
 	.4byte \failInstr
 	.endm
 
-	.macro setsleepclause
+	.macro unused2 ptr:req
 	.byte 0xe1
+	.4byte \ptr
 	.endm
 
 	.macro switchoutabilities battler:req
@@ -2481,9 +2482,4 @@
 	.macro flushtextbox
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
-	.endm
-
-	.macro jumpifsleepclause jumpInstr:req
-	jumpifsideaffecting BS_TARGET, SIDE_STATUS_SLEEP_CLAUSE, \jumpInstr
-	1:
 	.endm

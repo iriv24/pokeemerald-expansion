@@ -2638,7 +2638,6 @@ u8 DoBattlerEndTurnEffects(void)
                     {
                         gBattleMons[gBattlerAttacker].status1 &= ~STATUS1_SLEEP;
                         gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
-                        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
                         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
                         BattleScriptExecute(BattleScript_MonWokeUpInUproar);
                         BtlController_EmitSetMonData(gBattlerAttacker, BUFFER_A, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gBattlerAttacker].status1);
@@ -3220,7 +3219,6 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                 {
                     gBattleMons[gBattlerAttacker].status1 &= ~STATUS1_SLEEP;
                     gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
-                    gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
                     BattleScriptPushCursor();
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP_UPROAR;
                     gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;
@@ -3249,7 +3247,6 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                     else
                     {
                         gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
-                        gSideStatuses[GetBattlerSide(gBattlerAttacker)] &= ~SIDE_STATUS_SLEEP_CLAUSE;
                         BattleScriptPushCursor();
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WOKE_UP;
                         gBattlescriptCurrInstr = BattleScript_MoveUsedWokeUp;
