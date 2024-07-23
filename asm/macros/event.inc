@@ -1813,6 +1813,29 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+	@ Prepares to start a wild battle against a 'species' at 'level' holding 'item' with specified 'moves'.
+	@ If 'species2' is something other than SPECIES_NONE, then the battle is a double battle
+	@ that is also against 'species2' at 'level2' holding 'item2' with specified 's2moves' (s2 stands for species2).
+	@ Running this command will not affect normal wild battles. You start the prepared battle with dowildbattle.
+	@ If the player only has one Pokemon, a scripted double battle will be buggy.
+	.macro setwildbattlewithmoves species:req, level:req, item=ITEM_NONE, move1=MOVE_NONE, move2=MOVE_NONE, move3=MOVE_NONE, move4=MOVE_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE, s2move1=MOVE_NONE, s2move2=MOVE_NONE, s2move3=MOVE_NONE, s2move4=MOVE_NONE
+	.byte 0xe5
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.2byte \move1
+	.2byte \move2
+	.2byte \move3
+	.2byte \move4
+	.2byte \species2
+	.byte \level2
+	.2byte \item2
+	.2byte \s2move1
+	.2byte \s2move2
+	.2byte \s2move3
+	.2byte \s2move4
+	.endm
+
 
 @ Supplementary
 
@@ -2172,3 +2195,5 @@
 	.2byte \status1
 	.2byte \slot
 	.endm
+
+

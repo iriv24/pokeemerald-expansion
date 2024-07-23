@@ -1975,6 +1975,37 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setwildbattlewithmoves(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+    u8 level = ScriptReadByte(ctx);
+    u16 item = ScriptReadHalfword(ctx);
+    u16 move1 = ScriptReadHalfword(ctx);
+    u16 move2 = ScriptReadHalfword(ctx);
+    u16 move3 = ScriptReadHalfword(ctx);
+    u16 move4 = ScriptReadHalfword(ctx);
+    u16 species2 = ScriptReadHalfword(ctx);
+    u8 level2 = ScriptReadByte(ctx);
+    u16 item2 = ScriptReadHalfword(ctx);
+    u16 s2move1 = ScriptReadHalfword(ctx);
+    u16 s2move2 = ScriptReadHalfword(ctx);
+    u16 s2move3 = ScriptReadHalfword(ctx);
+    u16 s2move4 = ScriptReadHalfword(ctx);
+
+    if(species2 == SPECIES_NONE)
+    {
+        CreateScriptedWildMonWithMoves(species, level, item, move1, move2, move3, move4);
+        sIsScriptedWildDouble = FALSE;
+    }
+    else
+    {
+        CreateScriptedDoubleWildMonWithMoves(species, level, item, move1, move2, move3, move4, species2, level2, item2, s2move1, s2move2, s2move3, s2move4);
+        sIsScriptedWildDouble = TRUE;
+    }
+
+    return FALSE;
+}
+
 bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 {
     if (sIsScriptedWildDouble == FALSE)
