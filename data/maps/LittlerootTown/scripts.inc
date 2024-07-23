@@ -393,9 +393,7 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	end
 
 LittlerootTown_EventScript_TownSign::
-	setwildbattlewithmoves SPECIES_KYOGRE, 70, ITEM_NONE, MOVE_FIRE_BLAST, MOVE_WATER_SPOUT, MOVE_NONE, MOVE_FLY, SPECIES_GROUDON, 75, ITEM_ORAN_BERRY, MOVE_SURF
-	@setwildbattle SPECIES_KYOGRE, 70
-	dowildbattle
+	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
 	end
 
 LittlerootTown_EventScript_BirchsLabSign::
