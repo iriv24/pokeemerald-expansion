@@ -2195,5 +2195,3 @@
 	.2byte \status1
 	.2byte \slot
 	.endm
-
-

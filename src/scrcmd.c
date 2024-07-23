@@ -1991,17 +1991,9 @@ bool8 ScrCmd_setwildbattlewithmoves(struct ScriptContext *ctx)
     u16 s2move2 = ScriptReadHalfword(ctx);
     u16 s2move3 = ScriptReadHalfword(ctx);
     u16 s2move4 = ScriptReadHalfword(ctx);
-
-    if(species2 == SPECIES_NONE)
-    {
-        CreateScriptedWildMonWithMoves(species, level, item, move1, move2, move3, move4);
-        sIsScriptedWildDouble = FALSE;
-    }
-    else
-    {
-        CreateScriptedDoubleWildMonWithMoves(species, level, item, move1, move2, move3, move4, species2, level2, item2, s2move1, s2move2, s2move3, s2move4);
-        sIsScriptedWildDouble = TRUE;
-    }
+    
+    sIsScriptedWildDouble = species2 != SPECIES_NONE;
+    CreateScriptedWildMonsWithMoves(species, level, item, move1, move2, move3, move4, species2, level2, item2, s2move1, s2move2, s2move3, s2move4);
 
     return FALSE;
 }

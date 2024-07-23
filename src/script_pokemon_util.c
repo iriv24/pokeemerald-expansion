@@ -152,35 +152,9 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     }
 }
 
-void CreateScriptedWildMonWithMoves(u16 species, u8 level, u16 item, u16 move1, u16 move2, u16 move3, u16 move4)
-{
-    u8 heldItem[2];
-
-    ZeroEnemyPartyMons();
-    if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
-    else
-        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-    if (item)
-    {
-        heldItem[0] = item;
-        heldItem[1] = item >> 8;
-        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
-    }
-
-    if(move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
-    if(move2 != MOVE_NONE)
-        SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move2);
-    if(move3 != MOVE_NONE)
-        SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move3);
-    if(move4 != MOVE_NONE)
-        SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move4);
-}
-void CreateScriptedDoubleWildMonWithMoves(u16 species1, u8 level1, u16 item1, u16 move1, u16 move2, u16 move3, u16 move4, u16 species2, u8 level2, u16 item2, u16 s2move1, u16 s2move2, u16 s2move3, u16 s2move4)
+void CreateScriptedWildMonsWithMoves(u16 species1, u8 level1, u16 item1, u16 move1, u16 move2, u16 move3, u16 move4, u16 species2, u8 level2, u16 item2, u16 s2move1, u16 s2move2, u16 s2move3, u16 s2move4)
 {
     u8 heldItem1[2];
-    u8 heldItem2[2];
 
     ZeroEnemyPartyMons();
 
@@ -203,24 +177,28 @@ void CreateScriptedDoubleWildMonWithMoves(u16 species1, u8 level1, u16 item1, u1
     if(move4 != MOVE_NONE)
         SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move4);
 
-    if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, PickWildMonNature());
-    else
-        CreateMon(&gEnemyParty[1], species2, level2, 32, 0, 0, OT_ID_PLAYER_ID, 0);
-    if (item2)
+    if(species2 != SPECIES_NONE)
     {
-        heldItem2[0] = item2;
-        heldItem2[1] = item2 >> 8;
-        SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
+        u8 heldItem2[2];
+        if (OW_SYNCHRONIZE_NATURE > GEN_3)
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, 32, PickWildMonNature());
+        else
+            CreateMon(&gEnemyParty[1], species2, level2, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+        if (item2)
+        {
+            heldItem2[0] = item2;
+            heldItem2[1] = item2 >> 8;
+            SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
+        }
+        if(s2move1 != MOVE_NONE)
+            SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &s2move1);
+        if(s2move2 != MOVE_NONE)
+            SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &s2move2);
+        if(s2move3 != MOVE_NONE)
+            SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &s2move3);
+        if(s2move4 != MOVE_NONE)
+            SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &s2move4);
     }
-    if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &s2move1);
-    if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &s2move2);
-    if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &s2move3);
-    if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &s2move4);
 }
 
 void ScriptSetMonMoveSlot(u8 monIndex, u16 move, u8 slot)
