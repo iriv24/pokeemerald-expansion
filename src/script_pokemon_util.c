@@ -216,11 +216,11 @@ void CreateScriptedDoubleWildMonWithMoves(u16 species1, u8 level1, u16 item1, u1
     if(s2move1 != MOVE_NONE)
         SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &s2move1);
     if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &s2move1);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &s2move2);
     if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &s2move1);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &s2move3);
     if(s2move1 != MOVE_NONE)
-        SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &s2move1);
+        SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &s2move4);
 }
 
 void ScriptSetMonMoveSlot(u8 monIndex, u16 move, u8 slot)
