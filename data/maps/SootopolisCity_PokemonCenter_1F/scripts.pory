@@ -47,61 +47,6 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	release
 	end
 
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript::
-	lockall
-	setflag FLAG_EGG_MOVE_TUTOR
-	applymovement LOCALID_EGG_TUTOR, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor, MSGBOX_DEFAULT
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_AskTeachMove
-	clearflag FLAG_EGG_MOVE_TUTOR
-	end
-
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_AskTeachMove::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove, MSGBOX_YESNO
-	switch VAR_RESULT
-	case NO, SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
-	clearflag FLAG_EGG_MOVE_TUTOR
-	end
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon, MSGBOX_DEFAULT
-	special ChooseMonForMoveRelearner
-	waitstate
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
-	special IsSelectedMonEgg
-	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_CantTeachEgg
-	goto_if_eq VAR_0x8005, 0, SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_NoMoveToTeachMon
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMove
-	end
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMove::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove, MSGBOX_DEFAULT
-	special TeachMoveRelearnerMove
-	waitstate
-	goto_if_eq VAR_0x8004, 0, SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo, MSGBOX_DEFAULT
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale
-	end
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_NoMoveToTeachMon::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
-	end
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_CantTeachEgg::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg, MSGBOX_DEFAULT
-	goto SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ChooseMon
-	end
-
-SootopolisCity_PokemonCenter_1F_EggTutor_EventScript_ComeBackWithHeartScale::
-	msgbox SootopolisCity_PokemonCenter_1F_EggTutor_Text_ComeBack, MSGBOX_DEFAULT
-	clearflag FLAG_EGG_MOVE_TUTOR
-	releaseall
-	end
-	
 SootopolisCity_PokemonCenter_1F_EventScript_FormerDoubleEdgeTutor::
 	lockall
 	faceplayer
@@ -112,37 +57,6 @@ SootopolisCity_PokemonCenter_1F_EventScript_FormerDoubleEdgeTutor::
 SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor:
 	.string "I used to have two great\n"
 	.string "edges... Oh, what happened?$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ImTheEggTutor:
-	.string "Hello, I'm an Egg Move Tutor. I can\n"
-	.string "teach your Pokémon any Egg Moves they\l"
-	.string "could possibly learn.$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_WantMeToTeachMove:
-	.string "Would you like me to teach one of your\n"
-	.string "Pokémon an Egg Move?$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_TutorWhichMon:
-	.string "Which Pokémon?$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_TeachWhichMove:
-	.string "Which move should I teach?$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
-	.string "That Pokémon doesn't have any  Egg\n"
-	.string "Moves.$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ThereYouGo:
-	.string "There you go.$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_ComeBack:
-	.string "Come back if you want your Pokémon to\n"
-	.string "learn more Egg Moves.$"
-
-SootopolisCity_PokemonCenter_1F_EggTutor_Text_CantTeachEgg:
-	.string "Just because I'm an Egg Move tutor\n"
-	.string "doesn't mean I can teach moves to an\l"
-	.string "Egg!$"
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
 	.string "WALLACE is rumored to be the toughest\n"

@@ -257,234 +257,60 @@ EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay:
 # 129 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
 # 130 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript::
-# 131 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	lockall
-# 132 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	setflag FLAG_EGG_MOVE_TUTOR
-# 133 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	applymovement LOCALID_EGG_TUTOR, Common_Movement_FacePlayer
-# 134 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	waitmovement 0
-# 135 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ImTheEggTutor, MSGBOX_DEFAULT
-# 136 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_AskTeachMove
-# 137 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	clearflag FLAG_EGG_MOVE_TUTOR
-# 138 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 139 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 140 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 141 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_AskTeachMove::
-# 142 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_WantMeToTeachMove, MSGBOX_YESNO
-# 143 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	switch VAR_RESULT
-# 144 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	case NO, EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale
-# 145 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMon
-# 146 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	clearflag FLAG_EGG_MOVE_TUTOR
-# 147 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 148 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 149 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMon::
-# 150 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TutorWhichMon, MSGBOX_DEFAULT
-# 151 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	special ChooseMonForMoveRelearner
-# 152 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	waitstate
-# 153 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale
-# 154 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	special IsSelectedMonEgg
-# 155 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_CantTeachEgg
-# 156 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto_if_eq VAR_0x8005, 0, EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_NoMoveToTeachMon
-# 157 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMove
-# 158 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 159 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 160 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMove::
-# 161 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TeachWhichMove, MSGBOX_DEFAULT
-# 162 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	special TeachMoveRelearnerMove
-# 163 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	waitstate
-# 164 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto_if_eq VAR_0x8004, 0, EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMon
-# 165 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ThereYouGo, MSGBOX_DEFAULT
-# 166 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale
-# 167 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 168 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 169 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_NoMoveToTeachMon::
-# 170 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
-# 171 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMon
-# 172 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 173 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 174 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_CantTeachEgg::
-# 175 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_CantTeachEgg, MSGBOX_DEFAULT
-# 176 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	goto EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ChooseMon
-# 177 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 178 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 179 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_EventScript_ComeBackWithHeartScale::
-# 180 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ComeBack, MSGBOX_DEFAULT
-# 181 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	clearflag FLAG_EGG_MOVE_TUTOR
-# 182 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	releaseall
-# 183 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	end
-# 184 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 185 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 EverGrandeCity_PokemonLeague_1F_EventScript_WomanTrolling::
-# 186 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 131 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	msgbox EverGrandeCity_PokemonLeague_1F_Text_Trolling, MSGBOX_NPC
-# 187 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 132 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	end
-# 188 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 133 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
-# 189 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 134 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 EverGrandeCity_PokemonLeague_1F_Text_Trolling:
-# 190 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 135 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Oh hey, are you here to take on the\n"
-# 191 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 136 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Pokémon League?\p"
-# 192 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 137 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Well today I saw Sidney with a Galarian\n"
-# 193 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 138 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Moltres.\p"
-# 194 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 139 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "What, you want to know more than that?\p"
-# 195 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 140 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "What am I, an NPC written by the\n"
-# 196 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 141 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "creator of this game who knows exactly\l"
-# 197 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 142 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "which team will be there? Sheesh.$"
-# 198 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 143 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
-# 199 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 200 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ImTheEggTutor:
-# 201 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Hello, I'm an Egg Move Tutor. I can\n"
-# 202 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "teach your Pokémon any Egg Moves they\l"
-# 203 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "could possibly learn.$"
-# 204 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 205 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_WantMeToTeachMove:
-# 206 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Would you like me to teach one of your\n"
-# 207 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Pokémon an Egg Move?$"
-# 208 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 209 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TutorWhichMon:
-# 210 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Which Pokémon?$"
-# 211 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 212 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_TeachWhichMove:
-# 213 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Which move should I teach?$"
-# 214 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 215 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_DontHaveMoveToTeachPokemon:
-# 216 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "That Pokémon doesn't have any  Egg\n"
-# 217 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Moves.$"
-# 218 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 219 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ThereYouGo:
-# 220 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "There you go.$"
-# 221 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 222 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_ComeBack:
-# 223 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Come back if you want your Pokémon to\n"
-# 224 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "learn more Egg Moves.$"
-# 225 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 226 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-EverGrandeCity_PokemonLeague_1F_EggTutor_Text_CantTeachEgg:
-# 227 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Just because I'm an Egg Move tutor\n"
-# 228 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "doesn't mean I can teach moves to an\l"
-# 229 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "Egg!$"
-# 230 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-
-# 231 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 144 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
-# 232 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 145 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Beyond this point, only those trainers\n"
-# 233 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 146 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "who have collected all the Gym Badges\l"
-# 234 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 147 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "are permitted to enter.\p"
-# 235 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 148 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "trainer, let us confirm that you have\n"
-# 236 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 149 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "all the Gym Badges.$"
-# 237 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 150 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
-# 238 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 151 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges:
-# 239 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 152 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "You haven't obtained all the Badges.\p"
-# 240 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 153 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "If you're bound for the Pokémon\n"
-# 241 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 154 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "League, you must return with them.$"
-# 242 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 155 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 
-# 243 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 156 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 EverGrandeCity_PokemonLeague_1F_Text_GoForth:
-# 244 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 157 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Trainer! Believe in yourself and your\n"
-# 245 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
+# 158 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "Pokémon, and go forth!$"

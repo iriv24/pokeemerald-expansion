@@ -34,8 +34,7 @@ static void ClearDaycareMonMail(struct DaycareMail *mail);
 static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *daycare);
 static void DaycarePrintMonInfo(u8 windowId, u32 daycareSlotId, u8 y);
 static u8 ModifyBreedingScoreForOvalCharm(u8 score);
-//static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves);
-u16 GetEggSpecies(u16 species);
+static u16 GetEggSpecies(u16 species);
 
 // RAM buffers used to assist with BuildEggMoveset()
 EWRAM_DATA static u16 sHatchedEggLevelUpMoves[EGG_LVL_UP_MOVES_ARRAY_COUNT] = {0};
@@ -481,7 +480,7 @@ static void UNUSED ClearAllDaycareData(struct DayCare *daycare)
 // Determines what the species of an Egg would be based on the given species.
 // It determines this by working backwards through the evolution chain of the
 // given species.
-u16 GetEggSpecies(u16 species)
+static u16 GetEggSpecies(u16 species)
 {
     int i, j, k;
     bool8 found;
@@ -515,12 +514,6 @@ u16 GetEggSpecies(u16 species)
     }
 
     return species;
-}
-
-// For egg move reminder in pokemon.c
-u16 GetEggMovesArraySize(void) 
-{
-	return ARRAY_COUNT(gEggMoves);
 }
 
 static s32 GetParentToInheritNature(struct DayCare *daycare)
