@@ -33,13 +33,14 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
 	return
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
-	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterLeft
+	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Turn @ Changed from Common_Movement_WalkInPlaceFasterLeft to force the follower to enter their Poké Ball
 	waitmovement 0
 	dofieldeffect FLDEFF_POKECENTER_HEAL
 	waitfieldeffect FLDEFF_POKECENTER_HEAL
 	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	special HealPlayerParty
+	callnative UpdateFollowingPokemon
 	return
 
 EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom::
@@ -123,9 +124,14 @@ Movement_PkmnCenterNurse_Bow:
 
 PokeVialHealScript::
 	special HealPlayerParty
+	callnative UpdateFollowingPokemon
 	msgbox PokeVialText, MSGBOX_DEFAULT
 	releaseall
 	end
 
 PokeVialText::
 	.string "Your party was fully healed.$"
+
+Movement_PkmnCenterNurse_Turn:
+	walk_in_place_faster_left
+	step_end

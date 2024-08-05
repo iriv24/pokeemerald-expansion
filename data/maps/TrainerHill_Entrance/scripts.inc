@@ -197,720 +197,724 @@ TrainerHill_Entrance_EventScript_PlayerExitChallenge::
 # 99 "data/maps/TrainerHill_Entrance/scripts.pory"
 	special HealPlayerParty
 # 100 "data/maps/TrainerHill_Entrance/scripts.pory"
-	releaseall
+	callnative UpdateFollowingPokemon
 # 101 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_EndExitChallenge::
+	releaseall
 # 102 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
+TrainerHill_Entrance_EventScript_EndExitChallenge::
 # 103 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	end
 # 104 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Nurse::
+
 # 105 "data/maps/TrainerHill_Entrance/scripts.pory"
-	setvar VAR_0x800B, LOCALID_NURSE
+TrainerHill_Entrance_EventScript_Nurse::
 # 106 "data/maps/TrainerHill_Entrance/scripts.pory"
-	call Common_EventScript_PkmnCenterNurse
+	setvar VAR_0x800B, LOCALID_NURSE
 # 107 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitmessage
+	call Common_EventScript_PkmnCenterNurse
 # 108 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitbuttonpress
+	waitmessage
 # 109 "data/maps/TrainerHill_Entrance/scripts.pory"
-	release
+	waitbuttonpress
 # 110 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
+	release
 # 111 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	end
 # 112 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Attendant::
+
 # 113 "data/maps/TrainerHill_Entrance/scripts.pory"
-	lock
+TrainerHill_Entrance_EventScript_Attendant::
 # 114 "data/maps/TrainerHill_Entrance/scripts.pory"
-	faceplayer
-# 115 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_inchallenge
-# 116 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_ThanksForPlaying
-# 117 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_HopeYouGiveItYourBest, MSGBOX_DEFAULT
-# 118 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto TrainerHill_Entrance_EventScript_AttendantEnd
-# 119 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 120 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_ThanksForPlaying::
-# 121 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_ThankYouForPlaying, MSGBOX_DEFAULT
-# 122 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_AttendantEnd::
-# 123 "data/maps/TrainerHill_Entrance/scripts.pory"
-	release
-# 124 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 125 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 126 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_EntryTrigger::
-# 127 "data/maps/TrainerHill_Entrance/scripts.pory"
-	lockall
-# 128 "data/maps/TrainerHill_Entrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-# 129 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_Closed
-# 130 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_WelcomeToTrainerHill, MSGBOX_DEFAULT
-# 131 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_getsaved
-# 132 "data/maps/TrainerHill_Entrance/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveGame
-# 133 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_allfloorsused
-# 134 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, TrainerHill_Entrance_EventScript_AllFloorsUsed
-# 135 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_TrainersUpToFloorX, MSGBOX_DEFAULT
-# 136 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
-# 137 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 138 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_AllFloorsUsed::
-# 139 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_TrainersInEveryRoom, MSGBOX_DEFAULT
-# 140 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_AskChallengeTrainers::
-# 141 "data/maps/TrainerHill_Entrance/scripts.pory"
-	message TrainerHill_Entrance_Text_LikeToChallengeTrainers
-# 142 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitmessage
-# 143 "data/maps/TrainerHill_Entrance/scripts.pory"
-	multichoice 15, 6, MULTI_YESNOINFO, FALSE
-# 144 "data/maps/TrainerHill_Entrance/scripts.pory"
-	switch VAR_RESULT
-# 145 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case 0, TrainerHill_Entrance_EventScript_ChooseChallenge
-# 146 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case 1, TrainerHill_Entrance_EventScript_CancelEntry
-# 147 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case 2, TrainerHill_Entrance_EventScript_Info
-# 148 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
-# 149 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 150 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 151 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Info::
-# 152 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_ExplainTrainerHill, MSGBOX_DEFAULT
-# 153 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
-# 154 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 155 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 156 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_ChooseChallenge::
-# 157 "data/maps/TrainerHill_Entrance/scripts.pory"
-	multichoice 13, 2, MULTI_TAG_MATCH_TYPE, FALSE
-# 158 "data/maps/TrainerHill_Entrance/scripts.pory"
-	switch VAR_RESULT
-# 159 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case 4, TrainerHill_Entrance_EventScript_CancelEntry
-# 160 "data/maps/TrainerHill_Entrance/scripts.pory"
-	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
-# 161 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_setmode VAR_RESULT
-# 162 "data/maps/TrainerHill_Entrance/scripts.pory"
-	setvar VAR_TRAINER_HILL_IS_ACTIVE, 1
-# 163 "data/maps/TrainerHill_Entrance/scripts.pory"
-	setvar VAR_TEMP_5, 0
-# 164 "data/maps/TrainerHill_Entrance/scripts.pory"
-	special HealPlayerParty
-# 165 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_TimeProgessGetSetGo, MSGBOX_DEFAULT
-# 166 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_start
-# 167 "data/maps/TrainerHill_Entrance/scripts.pory"
-	releaseall
-# 168 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 169 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 170 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_CancelEntry::
-# 171 "data/maps/TrainerHill_Entrance/scripts.pory"
-	setvar VAR_TEMP_5, 0
-# 172 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_PleaseVisitUsAgain, MSGBOX_DEFAULT
-# 173 "data/maps/TrainerHill_Entrance/scripts.pory"
-	closemessage
-# 174 "data/maps/TrainerHill_Entrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-# 175 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitmovement 0
-# 176 "data/maps/TrainerHill_Entrance/scripts.pory"
-	releaseall
-# 177 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 178 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 179 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_SaveGame::
-# 180 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_SaveGameBeforeEnter, MSGBOX_DEFAULT
-# 181 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_setsaved
-# 182 "data/maps/TrainerHill_Entrance/scripts.pory"
-	setvar VAR_TEMP_5, 1
-# 183 "data/maps/TrainerHill_Entrance/scripts.pory"
-	call Common_EventScript_SaveGame
-# 184 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveFailed
-# 185 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_setsaved
-# 186 "data/maps/TrainerHill_Entrance/scripts.pory"
-	return
-# 187 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 188 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_SaveFailed::
-# 189 "data/maps/TrainerHill_Entrance/scripts.pory"
-	trainerhill_clearsaved
-# 190 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto TrainerHill_Entrance_EventScript_CancelEntry
-# 191 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 192 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 193 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Closed::
-# 194 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_StillGettingReady, MSGBOX_DEFAULT
-# 195 "data/maps/TrainerHill_Entrance/scripts.pory"
-	closemessage
-# 196 "data/maps/TrainerHill_Entrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-# 197 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitmovement 0
-# 198 "data/maps/TrainerHill_Entrance/scripts.pory"
-	releaseall
-# 199 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 200 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 201 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Movement_PlayerFaceAttendant:
-# 202 "data/maps/TrainerHill_Entrance/scripts.pory"
-	face_right
-# 203 "data/maps/TrainerHill_Entrance/scripts.pory"
-	step_end
-# 204 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 205 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Movement_PushPlayerBackFromCounter:
-# 206 "data/maps/TrainerHill_Entrance/scripts.pory"
-	walk_down
-# 207 "data/maps/TrainerHill_Entrance/scripts.pory"
-	step_end
-# 208 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 209 "data/maps/TrainerHill_Entrance/scripts.pory"
-@ Unused
-# 210 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Movement_FaceUp:
-# 211 "data/maps/TrainerHill_Entrance/scripts.pory"
-	face_up
-# 212 "data/maps/TrainerHill_Entrance/scripts.pory"
-	step_end
-# 213 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 214 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Movement_PlayerExitElevator:
-# 215 "data/maps/TrainerHill_Entrance/scripts.pory"
-	walk_down
-# 216 "data/maps/TrainerHill_Entrance/scripts.pory"
-	walk_down
-# 217 "data/maps/TrainerHill_Entrance/scripts.pory"
-	step_end
-# 218 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 219 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Records::
-# 220 "data/maps/TrainerHill_Entrance/scripts.pory"
-	lockall
-# 221 "data/maps/TrainerHill_Entrance/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 222 "data/maps/TrainerHill_Entrance/scripts.pory"
-	special ShowTrainerHillRecords
-# 223 "data/maps/TrainerHill_Entrance/scripts.pory"
-	waitstate
-# 224 "data/maps/TrainerHill_Entrance/scripts.pory"
-	releaseall
-# 225 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 226 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 227 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Man::
-# 228 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ManTrainerHillClosed
-# 229 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead, MSGBOX_NPC
-# 230 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 231 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 232 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_ManTrainerHillClosed::
-# 233 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_CantWaitToTestTheWaters, MSGBOX_NPC
-# 234 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 235 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 236 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Girl::
-# 237 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_GirlTrainerHillClosed
-# 238 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop, MSGBOX_NPC
-# 239 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 240 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 241 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_GirlTrainerHillClosed::
-# 242 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen, MSGBOX_NPC
-# 243 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 244 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 245 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_Clerk::
-# 246 "data/maps/TrainerHill_Entrance/scripts.pory"
 	lock
-# 247 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 115 "data/maps/TrainerHill_Entrance/scripts.pory"
 	faceplayer
-# 248 "data/maps/TrainerHill_Entrance/scripts.pory"
-	message gText_HowMayIServeYou
-# 249 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 116 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_inchallenge
+# 117 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_ThanksForPlaying
+# 118 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_HopeYouGiveItYourBest, MSGBOX_DEFAULT
+# 119 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto TrainerHill_Entrance_EventScript_AttendantEnd
+# 120 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 121 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_ThanksForPlaying::
+# 122 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_ThankYouForPlaying, MSGBOX_DEFAULT
+# 123 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_AttendantEnd::
+# 124 "data/maps/TrainerHill_Entrance/scripts.pory"
+	release
+# 125 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 126 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 127 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_EntryTrigger::
+# 128 "data/maps/TrainerHill_Entrance/scripts.pory"
+	lockall
+# 129 "data/maps/TrainerHill_Entrance/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
+# 130 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_Closed
+# 131 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_WelcomeToTrainerHill, MSGBOX_DEFAULT
+# 132 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_getsaved
+# 133 "data/maps/TrainerHill_Entrance/scripts.pory"
+	call_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveGame
+# 134 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_allfloorsused
+# 135 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, TrainerHill_Entrance_EventScript_AllFloorsUsed
+# 136 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_TrainersUpToFloorX, MSGBOX_DEFAULT
+# 137 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
+# 138 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 139 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_AllFloorsUsed::
+# 140 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_TrainersInEveryRoom, MSGBOX_DEFAULT
+# 141 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_AskChallengeTrainers::
+# 142 "data/maps/TrainerHill_Entrance/scripts.pory"
+	message TrainerHill_Entrance_Text_LikeToChallengeTrainers
+# 143 "data/maps/TrainerHill_Entrance/scripts.pory"
 	waitmessage
+# 144 "data/maps/TrainerHill_Entrance/scripts.pory"
+	multichoice 15, 6, MULTI_YESNOINFO, FALSE
+# 145 "data/maps/TrainerHill_Entrance/scripts.pory"
+	switch VAR_RESULT
+# 146 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case 0, TrainerHill_Entrance_EventScript_ChooseChallenge
+# 147 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case 1, TrainerHill_Entrance_EventScript_CancelEntry
+# 148 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case 2, TrainerHill_Entrance_EventScript_Info
+# 149 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
+# 150 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 151 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 152 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Info::
+# 153 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_ExplainTrainerHill, MSGBOX_DEFAULT
+# 154 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto TrainerHill_Entrance_EventScript_AskChallengeTrainers
+# 155 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 156 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 157 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_ChooseChallenge::
+# 158 "data/maps/TrainerHill_Entrance/scripts.pory"
+	multichoice 13, 2, MULTI_TAG_MATCH_TYPE, FALSE
+# 159 "data/maps/TrainerHill_Entrance/scripts.pory"
+	switch VAR_RESULT
+# 160 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case 4, TrainerHill_Entrance_EventScript_CancelEntry
+# 161 "data/maps/TrainerHill_Entrance/scripts.pory"
+	case MULTI_B_PRESSED, TrainerHill_Entrance_EventScript_CancelEntry
+# 162 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_setmode VAR_RESULT
+# 163 "data/maps/TrainerHill_Entrance/scripts.pory"
+	setvar VAR_TRAINER_HILL_IS_ACTIVE, 1
+# 164 "data/maps/TrainerHill_Entrance/scripts.pory"
+	setvar VAR_TEMP_5, 0
+# 165 "data/maps/TrainerHill_Entrance/scripts.pory"
+	special HealPlayerParty
+# 166 "data/maps/TrainerHill_Entrance/scripts.pory"
+	callnative UpdateFollowingPokemon
+# 167 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_TimeProgessGetSetGo, MSGBOX_DEFAULT
+# 168 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_start
+# 169 "data/maps/TrainerHill_Entrance/scripts.pory"
+	releaseall
+# 170 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 171 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 172 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_CancelEntry::
+# 173 "data/maps/TrainerHill_Entrance/scripts.pory"
+	setvar VAR_TEMP_5, 0
+# 174 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_PleaseVisitUsAgain, MSGBOX_DEFAULT
+# 175 "data/maps/TrainerHill_Entrance/scripts.pory"
+	closemessage
+# 176 "data/maps/TrainerHill_Entrance/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
+# 177 "data/maps/TrainerHill_Entrance/scripts.pory"
+	waitmovement 0
+# 178 "data/maps/TrainerHill_Entrance/scripts.pory"
+	releaseall
+# 179 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 180 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 181 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_SaveGame::
+# 182 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_SaveGameBeforeEnter, MSGBOX_DEFAULT
+# 183 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_setsaved
+# 184 "data/maps/TrainerHill_Entrance/scripts.pory"
+	setvar VAR_TEMP_5, 1
+# 185 "data/maps/TrainerHill_Entrance/scripts.pory"
+	call Common_EventScript_SaveGame
+# 186 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_SaveFailed
+# 187 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_setsaved
+# 188 "data/maps/TrainerHill_Entrance/scripts.pory"
+	return
+# 189 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 190 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_SaveFailed::
+# 191 "data/maps/TrainerHill_Entrance/scripts.pory"
+	trainerhill_clearsaved
+# 192 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto TrainerHill_Entrance_EventScript_CancelEntry
+# 193 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 194 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 195 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Closed::
+# 196 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_StillGettingReady, MSGBOX_DEFAULT
+# 197 "data/maps/TrainerHill_Entrance/scripts.pory"
+	closemessage
+# 198 "data/maps/TrainerHill_Entrance/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
+# 199 "data/maps/TrainerHill_Entrance/scripts.pory"
+	waitmovement 0
+# 200 "data/maps/TrainerHill_Entrance/scripts.pory"
+	releaseall
+# 201 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 202 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 203 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Movement_PlayerFaceAttendant:
+# 204 "data/maps/TrainerHill_Entrance/scripts.pory"
+	face_right
+# 205 "data/maps/TrainerHill_Entrance/scripts.pory"
+	step_end
+# 206 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 207 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Movement_PushPlayerBackFromCounter:
+# 208 "data/maps/TrainerHill_Entrance/scripts.pory"
+	walk_down
+# 209 "data/maps/TrainerHill_Entrance/scripts.pory"
+	step_end
+# 210 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 211 "data/maps/TrainerHill_Entrance/scripts.pory"
+@ Unused
+# 212 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Movement_FaceUp:
+# 213 "data/maps/TrainerHill_Entrance/scripts.pory"
+	face_up
+# 214 "data/maps/TrainerHill_Entrance/scripts.pory"
+	step_end
+# 215 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 216 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Movement_PlayerExitElevator:
+# 217 "data/maps/TrainerHill_Entrance/scripts.pory"
+	walk_down
+# 218 "data/maps/TrainerHill_Entrance/scripts.pory"
+	walk_down
+# 219 "data/maps/TrainerHill_Entrance/scripts.pory"
+	step_end
+# 220 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 221 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Records::
+# 222 "data/maps/TrainerHill_Entrance/scripts.pory"
+	lockall
+# 223 "data/maps/TrainerHill_Entrance/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 224 "data/maps/TrainerHill_Entrance/scripts.pory"
+	special ShowTrainerHillRecords
+# 225 "data/maps/TrainerHill_Entrance/scripts.pory"
+	waitstate
+# 226 "data/maps/TrainerHill_Entrance/scripts.pory"
+	releaseall
+# 227 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 228 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 229 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Man::
+# 230 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ManTrainerHillClosed
+# 231 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead, MSGBOX_NPC
+# 232 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 233 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 234 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_ManTrainerHillClosed::
+# 235 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_CantWaitToTestTheWaters, MSGBOX_NPC
+# 236 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 237 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 238 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Girl::
+# 239 "data/maps/TrainerHill_Entrance/scripts.pory"
+	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_GirlTrainerHillClosed
+# 240 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop, MSGBOX_NPC
+# 241 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 242 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 243 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_GirlTrainerHillClosed::
+# 244 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen, MSGBOX_NPC
+# 245 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 246 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 247 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_Clerk::
+# 248 "data/maps/TrainerHill_Entrance/scripts.pory"
+	lock
+# 249 "data/maps/TrainerHill_Entrance/scripts.pory"
+	faceplayer
 # 250 "data/maps/TrainerHill_Entrance/scripts.pory"
-	goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
+	message gText_HowMayIServeYou
 # 251 "data/maps/TrainerHill_Entrance/scripts.pory"
-	pokemart TrainerHill_Entrance_Pokemart_Basic
+	waitmessage
 # 252 "data/maps/TrainerHill_Entrance/scripts.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
 # 253 "data/maps/TrainerHill_Entrance/scripts.pory"
-	release
+	pokemart TrainerHill_Entrance_Pokemart_Basic
 # 254 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 255 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 256 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.align 2
-# 257 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Pokemart_Basic:
-# 258 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_SUPER_POTION
-# 259 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_ANTIDOTE
-# 260 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
-# 261 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_AWAKENING
-# 262 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_X_SPEED
-# 263 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_X_SP_ATK
-# 264 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_X_ATTACK
-# 265 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_X_DEFENSE
-# 266 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_DIRE_HIT
-# 267 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_GUARD_SPEC
-# 268 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_X_ACCURACY
-# 269 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_NONE
-# 270 "data/maps/TrainerHill_Entrance/scripts.pory"
-	release
-# 271 "data/maps/TrainerHill_Entrance/scripts.pory"
-	end
-# 272 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 273 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_EventScript_ExpandedPokemart::
-# 274 "data/maps/TrainerHill_Entrance/scripts.pory"
-	pokemart TrainerHill_Entrance_Pokemart_Expanded
-# 275 "data/maps/TrainerHill_Entrance/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 276 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 255 "data/maps/TrainerHill_Entrance/scripts.pory"
 	release
-# 277 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 256 "data/maps/TrainerHill_Entrance/scripts.pory"
 	end
-# 278 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 257 "data/maps/TrainerHill_Entrance/scripts.pory"
 
-# 279 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 258 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.align 2
-# 280 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Pokemart_Expanded:
-# 281 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_HYPER_POTION
-# 282 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_MAX_POTION
-# 283 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_FULL_RESTORE
-# 284 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_FULL_HEAL
-# 285 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.2byte ITEM_REVIVE
-# 286 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 259 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Pokemart_Basic:
+# 260 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_SUPER_POTION
+# 261 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_ANTIDOTE
+# 262 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_PARALYZE_HEAL
+# 263 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 264 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_X_SPEED
-# 287 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 265 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_X_SP_ATK
-# 288 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 266 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_X_ATTACK
-# 289 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 267 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_X_DEFENSE
-# 290 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 268 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_DIRE_HIT
-# 291 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 269 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_GUARD_SPEC
-# 292 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 270 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_X_ACCURACY
-# 293 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 271 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.2byte ITEM_NONE
-# 294 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 272 "data/maps/TrainerHill_Entrance/scripts.pory"
 	release
-# 295 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 273 "data/maps/TrainerHill_Entrance/scripts.pory"
 	end
+# 274 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 275 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_EventScript_ExpandedPokemart::
+# 276 "data/maps/TrainerHill_Entrance/scripts.pory"
+	pokemart TrainerHill_Entrance_Pokemart_Expanded
+# 277 "data/maps/TrainerHill_Entrance/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 278 "data/maps/TrainerHill_Entrance/scripts.pory"
+	release
+# 279 "data/maps/TrainerHill_Entrance/scripts.pory"
+	end
+# 280 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 281 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.align 2
+# 282 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Pokemart_Expanded:
+# 283 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_HYPER_POTION
+# 284 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_MAX_POTION
+# 285 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_FULL_RESTORE
+# 286 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_FULL_HEAL
+# 287 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_REVIVE
+# 288 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_X_SPEED
+# 289 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_X_SP_ATK
+# 290 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_X_ATTACK
+# 291 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_X_DEFENSE
+# 292 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_DIRE_HIT
+# 293 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_GUARD_SPEC
+# 294 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_X_ACCURACY
+# 295 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.2byte ITEM_NONE
 # 296 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	release
 # 297 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_StillGettingReady:
+	end
 # 298 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "This is the TRAINER HILL where\n"
+
 # 299 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "you may enjoy tag battles with many\l"
+TrainerHill_Entrance_Text_StillGettingReady:
 # 300 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "TRAINERS.\p"
-# 301 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Unfortunately, we're still getting\n"
-# 302 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "things ready. Please come back later!$"
-# 303 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 304 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_WelcomeToTrainerHill:
-# 305 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Welcome!\p"
-# 306 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.string "This is the TRAINER HILL where\n"
-# 307 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 301 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.string "you may enjoy tag battles with many\l"
+# 302 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "TRAINERS.\p"
+# 303 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Unfortunately, we're still getting\n"
+# 304 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "things ready. Please come back later!$"
+# 305 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 306 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Text_WelcomeToTrainerHill:
+# 307 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Welcome!\p"
 # 308 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "TRAINERS!$"
+	.string "This is the TRAINER HILL where\n"
 # 309 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "you may enjoy tag battles with many\l"
 # 310 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_SaveGameBeforeEnter:
+	.string "TRAINERS!$"
 # 311 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Is this your first visit here?\p"
+
 # 312 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Before you enter, please save\n"
+TrainerHill_Entrance_Text_SaveGameBeforeEnter:
 # 313 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "your game.$"
+	.string "Is this your first visit here?\p"
 # 314 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "Before you enter, please save\n"
 # 315 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_TrainersUpToFloorX:
+	.string "your game.$"
 # 316 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Let's see…\n"
+
 # 317 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "The TRAINERS here now are…\p"
+TrainerHill_Entrance_Text_TrainersUpToFloorX:
 # 318 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Up to floor no. {STR_VAR_1}.$"
-# 319 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 320 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_TrainersInEveryRoom:
-# 321 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.string "Let's see…\n"
-# 322 "data/maps/TrainerHill_Entrance/scripts.pory"
+# 319 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.string "The TRAINERS here now are…\p"
+# 320 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Up to floor no. {STR_VAR_1}.$"
+# 321 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 322 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Text_TrainersInEveryRoom:
 # 323 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "There appear to be TRAINERS gathered\n"
+	.string "Let's see…\n"
 # 324 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "in every room.$"
+	.string "The TRAINERS here now are…\p"
 # 325 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "There appear to be TRAINERS gathered\n"
 # 326 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_LikeToChallengeTrainers:
+	.string "in every room.$"
 # 327 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Would you like to challenge the\n"
+
 # 328 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "waiting TRAINERS?$"
+TrainerHill_Entrance_Text_LikeToChallengeTrainers:
 # 329 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "Would you like to challenge the\n"
 # 330 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_TimeProgessGetSetGo:
+	.string "waiting TRAINERS?$"
 # 331 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I will time your progress.\n"
+
 # 332 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Best of luck!\p"
+TrainerHill_Entrance_Text_TimeProgessGetSetGo:
 # 333 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "On your marks…\p"
+	.string "I will time your progress.\n"
 # 334 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Get set…\p"
+	.string "Best of luck!\p"
 # 335 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Go!$"
+	.string "On your marks…\p"
 # 336 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "Get set…\p"
 # 337 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_PleaseVisitUsAgain:
+	.string "Go!$"
 # 338 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Please do visit us again!$"
+
 # 339 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+TrainerHill_Entrance_Text_PleaseVisitUsAgain:
 # 340 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_TooBadTremendousEffort:
+	.string "Please do visit us again!$"
 # 341 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "That was too bad.\p"
+
 # 342 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I think you put in a tremendous\n"
+TrainerHill_Entrance_Text_TooBadTremendousEffort:
 # 343 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "effort in your battling.\p"
+	.string "That was too bad.\p"
 # 344 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Please come back and try again!$"
+	.string "I think you put in a tremendous\n"
 # 345 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "effort in your battling.\p"
 # 346 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_HopeYouGiveItYourBest:
+	.string "Please come back and try again!$"
 # 347 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I hope you give it your best.$"
+
 # 348 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+TrainerHill_Entrance_Text_HopeYouGiveItYourBest:
 # 349 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_MovedReceptionHereForSwitch:
+	.string "I hope you give it your best.$"
 # 350 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "When the TRAINERS switch places,\n"
+
 # 351 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "the movement can be hectic.\p"
+TrainerHill_Entrance_Text_MovedReceptionHereForSwitch:
 # 352 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "To avoid the stampede, we moved\n"
+	.string "When the TRAINERS switch places,\n"
 # 353 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "the reception counter here.\p"
+	.string "the movement can be hectic.\p"
 # 354 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I'm sorry for the inconvenience.$"
+	.string "To avoid the stampede, we moved\n"
 # 355 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "the reception counter here.\p"
 # 356 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_ThankYouForPlaying:
+	.string "I'm sorry for the inconvenience.$"
 # 357 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Thank you for playing!$"
+
 # 358 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+TrainerHill_Entrance_Text_ThankYouForPlaying:
 # 359 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_ExplainTrainerHill:
+	.string "Thank you for playing!$"
 # 360 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Here at the TRAINER HILL, we conduct\n"
+
 # 361 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "an event called the Time Attack.\p"
+TrainerHill_Entrance_Text_ExplainTrainerHill:
 # 362 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "It is a race that measures how long\n"
+	.string "Here at the TRAINER HILL, we conduct\n"
 # 363 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "you take to reach our owner on\l"
+	.string "an event called the Time Attack.\p"
 # 364 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "the rooftop from this counter.\p"
+	.string "It is a race that measures how long\n"
 # 365 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "The fastest times are posted on\n"
+	.string "you take to reach our owner on\l"
 # 366 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "the Time Board--try competing with\l"
+	.string "the rooftop from this counter.\p"
 # 367 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "your friends.\p"
+	.string "The fastest times are posted on\n"
 # 368 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "In TRAINER battles along the way,\n"
+	.string "the Time Board--try competing with\l"
 # 369 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "neither Exp. Points nor money will\l"
+	.string "your friends.\p"
 # 370 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "be awarded.$"
+	.string "In TRAINER battles along the way,\n"
 # 371 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "neither Exp. Points nor money will\l"
 # 372 "data/maps/TrainerHill_Entrance/scripts.pory"
-@ Unused
+	.string "be awarded.$"
 # 373 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
+
 # 374 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Oh, I'm sorry, but you appear to have\n"
-# 375 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "only one POKéMON with you.\p"
-# 376 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You will need at least two POKéMON\n"
-# 377 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "to enter this event.$"
-# 378 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 379 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_YouFinallyCameBravo:
-# 380 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Hm! Hm!\p"
-# 381 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You finally came!\n"
-# 382 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Yes, you have arrived!\p"
-# 383 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Wait! Don't say it!\n"
-# 384 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I know why you came all the way\l"
-# 385 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "here by yourself!\p"
-# 386 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You wanted to see me, the owner\n"
-# 387 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "of the TRAINER HILL, because…\p"
-# 388 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You want to form a tag team with me!\n"
-# 389 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Wa-hoo!\p"
-# 390 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "…Uh?\n"
-# 391 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "That's not it?\p"
-# 392 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Anyway, I watched you on your way up.\n"
-# 393 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Marvelous battling! Bravo, indeed!$"
-# 394 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 395 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_HaveTheMostMarvelousGift:
-# 396 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "For a marvelous someone like you,\n"
-# 397 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I have the most marvelous gift!$"
-# 398 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 399 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_FullUpBeBackLaterForThis:
-# 400 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Oh, no, full up with things!\n"
-# 401 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You'll be back later for this!$"
-# 402 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 403 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_GotHereMarvelouslyQuickly:
-# 404 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Oh, hold on here! Did you possibly get\n"
-# 405 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "here marvelously quickly?\p"
-# 406 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "How splendid! You needn't have\n"
-# 407 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "hurried so to see me!\p"
-# 408 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "That is so delightful. I'll have the Time\n"
-# 409 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Board at the reception updated!$"
-# 410 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 411 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_YouWerentVeryQuick:
-# 412 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "But, oh…\n"
-# 413 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "You weren't very quick getting here.$"
-# 414 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 415 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_ArriveZippierNextTime:
-# 416 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Perhaps it would please me more if you\n"
-# 417 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "arrived zippier next time.\p"
-# 418 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Then, I should be pleased to form\n"
-# 419 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "a tag team with you!\p"
-# 420 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Until we meet again, amigo!$"
-# 421 "data/maps/TrainerHill_Entrance/scripts.pory"
-
-# 422 "data/maps/TrainerHill_Entrance/scripts.pory"
 @ Unused
+# 375 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Text_NeedAtLeastTwoPokemon:
+# 376 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Oh, I'm sorry, but you appear to have\n"
+# 377 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "only one POKéMON with you.\p"
+# 378 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You will need at least two POKéMON\n"
+# 379 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "to enter this event.$"
+# 380 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 381 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_YouFinallyCameBravo:
+# 382 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Hm! Hm!\p"
+# 383 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You finally came!\n"
+# 384 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Yes, you have arrived!\p"
+# 385 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Wait! Don't say it!\n"
+# 386 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "I know why you came all the way\l"
+# 387 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "here by yourself!\p"
+# 388 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You wanted to see me, the owner\n"
+# 389 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "of the TRAINER HILL, because…\p"
+# 390 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You want to form a tag team with me!\n"
+# 391 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Wa-hoo!\p"
+# 392 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "…Uh?\n"
+# 393 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "That's not it?\p"
+# 394 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Anyway, I watched you on your way up.\n"
+# 395 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Marvelous battling! Bravo, indeed!$"
+# 396 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 397 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_HaveTheMostMarvelousGift:
+# 398 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "For a marvelous someone like you,\n"
+# 399 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "I have the most marvelous gift!$"
+# 400 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 401 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_FullUpBeBackLaterForThis:
+# 402 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Oh, no, full up with things!\n"
+# 403 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You'll be back later for this!$"
+# 404 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 405 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_GotHereMarvelouslyQuickly:
+# 406 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Oh, hold on here! Did you possibly get\n"
+# 407 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "here marvelously quickly?\p"
+# 408 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "How splendid! You needn't have\n"
+# 409 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "hurried so to see me!\p"
+# 410 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "That is so delightful. I'll have the Time\n"
+# 411 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Board at the reception updated!$"
+# 412 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 413 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_YouWerentVeryQuick:
+# 414 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "But, oh…\n"
+# 415 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "You weren't very quick getting here.$"
+# 416 "data/maps/TrainerHill_Entrance/scripts.pory"
+
+# 417 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Roof_Text_ArriveZippierNextTime:
+# 418 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Perhaps it would please me more if you\n"
+# 419 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "arrived zippier next time.\p"
+# 420 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Then, I should be pleased to form\n"
+# 421 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "a tag team with you!\p"
+# 422 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Until we meet again, amigo!$"
 # 423 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner:
+
 # 424 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I had the TRAINER HILL built for but\n"
+@ Unused
 # 425 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "one reason and one only!\p"
+TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner:
 # 426 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "To find the most suitable partner\n"
+	.string "I had the TRAINER HILL built for but\n"
 # 427 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "with whom I may form a tag team!$"
+	.string "one reason and one only!\p"
 # 428 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "To find the most suitable partner\n"
 # 429 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_ChallengeTime:
+	.string "with whom I may form a tag team!$"
 # 430 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec.$"
+
 # 431 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+TrainerHill_Entrance_Text_ChallengeTime:
 # 432 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead:
+	.string "{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec.$"
 # 433 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Who knows what sort of TRAINERS\n"
+
 # 434 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "and POKéMON combos are ahead?\p"
+TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead:
 # 435 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "All I know is that I'll knock aside\n"
+	.string "Who knows what sort of TRAINERS\n"
 # 436 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "anyone that stands in my way!$"
+	.string "and POKéMON combos are ahead?\p"
 # 437 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "All I know is that I'll knock aside\n"
 # 438 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_CantWaitToTestTheWaters:
+	.string "anyone that stands in my way!$"
 # 439 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I heard tough TRAINERS come to this\n"
+
 # 440 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "TRAINER HILL from all over.\p"
+TrainerHill_Entrance_Text_CantWaitToTestTheWaters:
 # 441 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I can't wait to test the waters!\p"
+	.string "I heard tough TRAINERS come to this\n"
 # 442 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I'll knock aside anyone that stands\n"
+	.string "TRAINER HILL from all over.\p"
 # 443 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "in my way!$"
+	.string "I can't wait to test the waters!\p"
 # 444 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "I'll knock aside anyone that stands\n"
 # 445 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop:
+	.string "in my way!$"
 # 446 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Do you see the Time Board over there?\p"
+
 # 447 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "My friends and I are trying to see who\n"
+TrainerHill_Entrance_Text_FriendsTryingToReachTimeBoardTop:
 # 448 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "can reach the top in the least time.$"
+	.string "Do you see the Time Board over there?\p"
 # 449 "data/maps/TrainerHill_Entrance/scripts.pory"
-
+	.string "My friends and I are trying to see who\n"
 # 450 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen:
+	.string "can reach the top in the least time.$"
 # 451 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Do you know when they're opening\n"
-# 452 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "this place up?\p"
-# 453 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "I'm waiting here to be the first\n"
-# 454 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "challenger ever!$"
-# 455 "data/maps/TrainerHill_Entrance/scripts.pory"
 
+# 452 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Entrance_Text_DoYouKnowWhenTheyOpen:
+# 453 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Do you know when they're opening\n"
+# 454 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "this place up?\p"
+# 455 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "I'm waiting here to be the first\n"
 # 456 "data/maps/TrainerHill_Entrance/scripts.pory"
-TrainerHill_Elevator_Text_ReturnToReception:
+	.string "challenger ever!$"
 # 457 "data/maps/TrainerHill_Entrance/scripts.pory"
-	.string "Would you like to return to\n"
+
 # 458 "data/maps/TrainerHill_Entrance/scripts.pory"
+TrainerHill_Elevator_Text_ReturnToReception:
+# 459 "data/maps/TrainerHill_Entrance/scripts.pory"
+	.string "Would you like to return to\n"
+# 460 "data/maps/TrainerHill_Entrance/scripts.pory"
 	.string "the reception counter?$"

@@ -57,162 +57,164 @@ UnionRoom_OnResume:
 # 29 "data/maps/UnionRoom/scripts.pory"
 UnionRoom_OnTransition:
 # 30 "data/maps/UnionRoom/scripts.pory"
-	end
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 31 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 32 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player1::
+
 # 33 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player1::
 # 34 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 35 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_1
+	faceplayer
 # 36 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_1
 # 37 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 38 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 39 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 40 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player2::
+
 # 41 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player2::
 # 42 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 43 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_2
+	faceplayer
 # 44 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_2
 # 45 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 46 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 47 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 48 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player3::
+
 # 49 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player3::
 # 50 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 51 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_3
+	faceplayer
 # 52 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_3
 # 53 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 54 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 55 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 56 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player4::
+
 # 57 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player4::
 # 58 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 59 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_4
+	faceplayer
 # 60 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_4
 # 61 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 62 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 63 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 64 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player5::
+
 # 65 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player5::
 # 66 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 67 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_5
+	faceplayer
 # 68 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_5
 # 69 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 70 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 71 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 72 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player6::
+
 # 73 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player6::
 # 74 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 75 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_6
+	faceplayer
 # 76 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_6
 # 77 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 78 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 79 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 80 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player7::
+
 # 81 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player7::
 # 82 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
+	lock
 # 83 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_7
+	faceplayer
 # 84 "data/maps/UnionRoom/scripts.pory"
-	waitstate
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_7
 # 85 "data/maps/UnionRoom/scripts.pory"
-	release
+	waitstate
 # 86 "data/maps/UnionRoom/scripts.pory"
-	end
+	release
 # 87 "data/maps/UnionRoom/scripts.pory"
-
+	end
 # 88 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Player8::
+
 # 89 "data/maps/UnionRoom/scripts.pory"
-	lock
+UnionRoom_EventScript_Player8::
 # 90 "data/maps/UnionRoom/scripts.pory"
-	faceplayer
-# 91 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_PLAYER_8
-# 92 "data/maps/UnionRoom/scripts.pory"
-	waitstate
-# 93 "data/maps/UnionRoom/scripts.pory"
-	release
-# 94 "data/maps/UnionRoom/scripts.pory"
-	end
-# 95 "data/maps/UnionRoom/scripts.pory"
-
-# 96 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Attendant::
-# 97 "data/maps/UnionRoom/scripts.pory"
 	lock
-# 98 "data/maps/UnionRoom/scripts.pory"
+# 91 "data/maps/UnionRoom/scripts.pory"
 	faceplayer
-# 99 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_ATTENDANT
-# 100 "data/maps/UnionRoom/scripts.pory"
+# 92 "data/maps/UnionRoom/scripts.pory"
+	setvar VAR_RESULT, UR_INTERACT_PLAYER_8
+# 93 "data/maps/UnionRoom/scripts.pory"
 	waitstate
-# 101 "data/maps/UnionRoom/scripts.pory"
+# 94 "data/maps/UnionRoom/scripts.pory"
 	release
-# 102 "data/maps/UnionRoom/scripts.pory"
+# 95 "data/maps/UnionRoom/scripts.pory"
 	end
-# 103 "data/maps/UnionRoom/scripts.pory"
+# 96 "data/maps/UnionRoom/scripts.pory"
 
-# 104 "data/maps/UnionRoom/scripts.pory"
-UnionRoom_EventScript_Unused::
-# 105 "data/maps/UnionRoom/scripts.pory"
-	lockall
-# 106 "data/maps/UnionRoom/scripts.pory"
-	setvar VAR_RESULT, UR_INTERACT_UNUSED
-# 107 "data/maps/UnionRoom/scripts.pory"
+# 97 "data/maps/UnionRoom/scripts.pory"
+UnionRoom_EventScript_Attendant::
+# 98 "data/maps/UnionRoom/scripts.pory"
+	lock
+# 99 "data/maps/UnionRoom/scripts.pory"
+	faceplayer
+# 100 "data/maps/UnionRoom/scripts.pory"
+	setvar VAR_RESULT, UR_INTERACT_ATTENDANT
+# 101 "data/maps/UnionRoom/scripts.pory"
 	waitstate
+# 102 "data/maps/UnionRoom/scripts.pory"
+	release
+# 103 "data/maps/UnionRoom/scripts.pory"
+	end
+# 104 "data/maps/UnionRoom/scripts.pory"
+
+# 105 "data/maps/UnionRoom/scripts.pory"
+UnionRoom_EventScript_Unused::
+# 106 "data/maps/UnionRoom/scripts.pory"
+	lockall
+# 107 "data/maps/UnionRoom/scripts.pory"
+	setvar VAR_RESULT, UR_INTERACT_UNUSED
 # 108 "data/maps/UnionRoom/scripts.pory"
-	releaseall
+	waitstate
 # 109 "data/maps/UnionRoom/scripts.pory"
+	releaseall
+# 110 "data/maps/UnionRoom/scripts.pory"
 	end
