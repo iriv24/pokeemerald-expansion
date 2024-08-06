@@ -9,7 +9,7 @@
 struct Time *FakeRtc_GetCurrentTime(void)
 {
 #if OW_USE_FAKE_RTC
-    return &gSaveBlock3Ptr->fakeRTC;
+    return &gSaveBlock2Ptr->fakeRTC;
 #else
     return NULL;
 #endif

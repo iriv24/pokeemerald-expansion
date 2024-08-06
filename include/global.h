@@ -178,9 +178,7 @@ struct Time
 
 struct SaveBlock3
 {
-#if OW_USE_FAKE_RTC
-    struct Time fakeRTC;
-#endif
+    
 };
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
@@ -533,6 +531,7 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
     /*0xF2C*/ bool8 autoRun;
+              struct Time fakeRTC;
 }; // sizeof=0xF2C
 //from debug as of 3/4/2024 before any space changes: 3884b/3968b; free space, 84b.
 //after changing SECTOR_DATA_SIZE -> 4084: 3884b/4084b; free space: 200b.

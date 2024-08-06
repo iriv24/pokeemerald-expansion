@@ -260,61 +260,64 @@ static void HandleInputChooseAction(u32 battler)
     else
         gPlayerDpadHoldFrames = 0;
 
-    if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == TRUE)
+    if(gSaveBlock2Ptr->optionsButtonMode != OPTIONS_BUTTON_MODE_L_EQUALS_A) 
     {
-        if (!gLastUsedBallMenuPresent)
+        if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == TRUE)
         {
-            gBattleStruct->ackBallUseBtn = FALSE;
-        }
-        else if (JOY_NEW(B_LAST_USED_BALL_BUTTON))
-        {
-            gBattleStruct->ackBallUseBtn = TRUE;
-            gBattleStruct->ballSwapped = FALSE;
-            ArrowsChangeColorLastBallCycle(TRUE);
-        }
-
-        if (gBattleStruct->ackBallUseBtn)
-        {
-            if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_DOWN) || JOY_NEW(DPAD_RIGHT)))
-            {
-                bool32 sameBall = FALSE;
-                u32 nextBall = GetNextBall(gBallToDisplay);
-                gBattleStruct->ballSwapped = TRUE;
-                if (gBallToDisplay == nextBall)
-                    sameBall = TRUE;
-                else
-                    gBallToDisplay = nextBall;
-                SwapBallToDisplay(sameBall);
-                PlaySE(SE_SELECT);
-            }
-            else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_LEFT)))
-            {
-                bool32 sameBall = FALSE;
-                u32 prevBall = GetPrevBall(gBallToDisplay);
-                gBattleStruct->ballSwapped = TRUE;
-                if (gBallToDisplay == prevBall)
-                    sameBall = TRUE;
-                else
-                    gBallToDisplay = prevBall;
-                SwapBallToDisplay(sameBall);
-                PlaySE(SE_SELECT);
-            }
-            else if (JOY_NEW(B_BUTTON) || (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && gBattleStruct->ballSwapped))
+            if (!gLastUsedBallMenuPresent)
             {
                 gBattleStruct->ackBallUseBtn = FALSE;
+            }
+            else if (JOY_NEW(B_LAST_USED_BALL_BUTTON))
+            {
+                gBattleStruct->ackBallUseBtn = TRUE;
                 gBattleStruct->ballSwapped = FALSE;
-                ArrowsChangeColorLastBallCycle(FALSE);
+                ArrowsChangeColorLastBallCycle(TRUE);
             }
-            else if (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
+
+            if (gBattleStruct->ackBallUseBtn)
             {
-                gBattleStruct->ackBallUseBtn = FALSE;
-                PlaySE(SE_SELECT);
-                ArrowsChangeColorLastBallCycle(FALSE);
-                TryHideLastUsedBall();
-                BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_THROW_BALL, 0);
-                PlayerBufferExecCompleted(battler);
+                if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_DOWN) || JOY_NEW(DPAD_RIGHT)))
+                {
+                    bool32 sameBall = FALSE;
+                    u32 nextBall = GetNextBall(gBallToDisplay);
+                    gBattleStruct->ballSwapped = TRUE;
+                    if (gBallToDisplay == nextBall)
+                        sameBall = TRUE;
+                    else
+                        gBallToDisplay = nextBall;
+                    SwapBallToDisplay(sameBall);
+                    PlaySE(SE_SELECT);
+                }
+                else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_LEFT)))
+                {
+                    bool32 sameBall = FALSE;
+                    u32 prevBall = GetPrevBall(gBallToDisplay);
+                    gBattleStruct->ballSwapped = TRUE;
+                    if (gBallToDisplay == prevBall)
+                        sameBall = TRUE;
+                    else
+                        gBallToDisplay = prevBall;
+                    SwapBallToDisplay(sameBall);
+                    PlaySE(SE_SELECT);
+                }
+                else if (JOY_NEW(B_BUTTON) || (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && gBattleStruct->ballSwapped))
+                {
+                    gBattleStruct->ackBallUseBtn = FALSE;
+                    gBattleStruct->ballSwapped = FALSE;
+                    ArrowsChangeColorLastBallCycle(FALSE);
+                }
+                else if (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
+                {
+                    gBattleStruct->ackBallUseBtn = FALSE;
+                    PlaySE(SE_SELECT);
+                    ArrowsChangeColorLastBallCycle(FALSE);
+                    TryHideLastUsedBall();
+                    BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_THROW_BALL, 0);
+                    PlayerBufferExecCompleted(battler);
+                }
+                return;
             }
-            return;
         }
     }
 

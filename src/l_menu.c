@@ -31,6 +31,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokenav.h"
+#include "rtc.h"
 #include "safari_zone.h"
 #include "save.h"
 #include "scanline_effect.h"
@@ -50,6 +51,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+
 // Menu actions
 enum
 {
@@ -65,6 +67,7 @@ bool8 (*gMenuCallback2)(void);
 
 // EWRAM
 EWRAM_DATA static u8 sLMenuCursorPos = 0;
+EWRAM_DATA static u8 sStartClockWindowId2 = 0;
 EWRAM_DATA static u8 sNumLMenuActions = 0;
 EWRAM_DATA static u8 sCurrentLMenuActions[9] = {0};
 EWRAM_DATA static s8 sInitLMenuData[2] = {0};
@@ -82,6 +85,16 @@ static bool8 HandleLMenuInput(void);
 // Task callbacks
 static void LMenuTask(u8 taskId);
 static bool8 FieldCB_ReturnToFieldLMenu(void);
+
+static const struct WindowTemplate sWindowTemplate_StartClock = {
+    .bg = 0, 
+    .tilemapLeft = 243, 
+    .tilemapTop = 1, 
+    .width = 10, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
+    .height = 2, 
+    .paletteNum = 15,
+    .baseBlock = 0x30
+};
 
 static const struct MenuAction sLMenuItems[] =
 {
@@ -107,6 +120,8 @@ static bool32 InitLMenuStep(void);
 static void CreateLMenuTask(TaskFunc followupFunc);
 static void HideLMenuWindow(void);
 static void HideLMenuWindowAutoRun(void);
+static void ShowTimeWindow(void);
+static void RemoveLMenuTimeWindow(void);
 
 
 static void BuildLMenuActions(void)
@@ -352,6 +367,7 @@ static bool32 InitLMenuStep(void)
         sInitLMenuData[0]++;
         break;
     case 3:
+        ShowTimeWindow();
         sInitLMenuData[0]++;
         break;
     case 4:
@@ -458,6 +474,8 @@ static bool8 HandleLMenuInput(void)
            FadeScreen(FADE_TO_BLACK, 0);
         }
 
+        RemoveLMenuTimeWindow();
+        ShowTimeWindow();
         return FALSE;
     }
 
@@ -518,6 +536,7 @@ static void HideLMenuWindowAutoRun(void)
 {
     ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
     RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     if (FlagGet(FLAG_SYS_B_DASH))
@@ -553,6 +572,7 @@ static void HideLMenuWindow(void)
 {
     ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
     RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
 }
@@ -561,6 +581,12 @@ void HideLMenu(void)
 {
     PlaySE(SE_SELECT);
     HideLMenuWindow();
+}
+
+static void RemoveLMenuTimeWindow(void)
+{
+    ClearStdWindowAndFrameToTransparent(sStartClockWindowId2, FALSE);
+    RemoveWindow(sStartClockWindowId2);
 }
 
 void AppendToLList(u8 *list, u8 *pos, u8 newEntry)
@@ -573,4 +599,52 @@ static bool8 LMenuDexNavCallback(void)
 {
     CreateTask(Task_OpenDexNavFromLMenu, 0);
     return TRUE;
+}
+
+// If you want to shorten the dates to Sat., Sun., etc., change this to 70
+#define CLOCK_WINDOW_WIDTH2 75
+
+static void ShowTimeWindow(void)
+{
+    const u8 *suffix;
+    u8* ptr;
+    u8 convertedHours;
+
+    // print window
+    sStartClockWindowId2 = AddWindow(&sWindowTemplate_StartClock);
+    PutWindowTilemap(sStartClockWindowId2);
+    DrawStdWindowFrame(sStartClockWindowId2, FALSE);
+
+    if (gLocalTime.hours < 12)
+    {
+        if (gLocalTime.hours == 0)
+            convertedHours = 12;
+        else
+            convertedHours = gLocalTime.hours;
+        suffix = gText_AM;
+    }
+    else if (gLocalTime.hours == 12)
+    {
+        convertedHours = 12;
+        if (suffix == gText_AM);
+            suffix = gText_PM;
+    }
+    else
+    {
+        convertedHours = gLocalTime.hours - 12;
+        suffix = gText_PM;
+    }
+
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime); // prints "time" word, from version before weekday was added and leaving it here in case anyone would prefer to use it
+    AddTextPrinterParameterized(sStartClockWindowId2, 1, gStringVar4, 0, 1, 0xFF, NULL); 
+
+    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *ptr = 0xF0;
+
+    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    AddTextPrinterParameterized(sStartClockWindowId2, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH2) - (CLOCK_WINDOW_WIDTH2 - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH2) + 3), 1, 0xFF, NULL); // print time
+
+    AddTextPrinterParameterized(sStartClockWindowId2, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH2), 1, 0xFF, NULL); // print am/pm
+
+    CopyWindowToVram(sStartClockWindowId2, COPYWIN_GFX);
 }
