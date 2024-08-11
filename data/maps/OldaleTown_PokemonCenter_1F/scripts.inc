@@ -456,7 +456,7 @@ OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29:
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_30:
 # 162 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "{STR_VAR_1}'s nature has been\nchanged. Come again if you need\psomething else.$"
+	.string "{STR_VAR_1}'s nature has been\nchanged. Come again if you need\lsomething else.$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurseNo_Text_0:
 # 168 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"

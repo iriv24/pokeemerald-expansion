@@ -159,7 +159,7 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature{
 		waitfanfare
 		closemessage
 		fadescreen(FADE_FROM_BLACK)
-		msgbox("{STR_VAR_1}'s nature has been\nchanged. Come again if you need\psomething else.")
+		msgbox("{STR_VAR_1}'s nature has been\nchanged. Come again if you need\lsomething else.")
 		release
 		end
 }
