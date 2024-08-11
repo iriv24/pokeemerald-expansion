@@ -2019,7 +2019,7 @@ static u16 DexNavGetSpecies(void)
         return SPECIES_NONE;
     }
     
-    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN) && !FlagGet(FLAG_DEXALL))
         return SPECIES_NONE;
     
     return species;
