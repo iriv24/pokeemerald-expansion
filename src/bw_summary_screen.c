@@ -5056,11 +5056,13 @@ static u8 CreateMonSprite(struct Pokemon *unused)
         gSprites[spriteId].oam.priority = 2;
     else
         gSprites[spriteId].oam.priority = 0;
+    
+    gSprites[spriteId].hFlip = FALSE;
 
-    if (!IsMonSpriteNotFlipped(summary->species2))
-        gSprites[spriteId].hFlip = FALSE;
-    else
-        gSprites[spriteId].hFlip = TRUE;
+    //if (!IsMonSpriteNotFlipped(summary->species2))
+    //    gSprites[spriteId].hFlip = FALSE;
+    //else
+    //    gSprites[spriteId].hFlip = TRUE;
 
     return spriteId;
 }
@@ -5071,7 +5073,7 @@ static void SpriteCB_Pokemon(struct Sprite *sprite)
 
     if (!gPaletteFade.active && sprite->data[2] != 1)
     {
-        sprite->data[1] = !IsMonSpriteNotFlipped(sprite->data[0]);
+        sprite->data[1] = TRUE;
         PlayMonCry();
         PokemonSummaryDoMonAnimation(sprite, sprite->data[0], summary->isEgg);
     }
