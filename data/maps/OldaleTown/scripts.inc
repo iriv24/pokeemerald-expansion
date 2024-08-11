@@ -777,7 +777,7 @@ OldaleTown_Text_FinishedSketchingFootprints:
 # 389 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_MayLetsGoBack:
 # 390 "data/maps/OldaleTown/scripts.pory"
-	.string "May: {PLAYER}{KUN}!\n"
+	.string "{PLAYER}{KUN}!\n"
 # 391 "data/maps/OldaleTown/scripts.pory"
 	.string "Over here!\l"
 # 392 "data/maps/OldaleTown/scripts.pory"
@@ -787,9 +787,9 @@ OldaleTown_Text_MayLetsGoBack:
 # 394 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_BrendanLetsGoBack:
 # 395 "data/maps/OldaleTown/scripts.pory"
-	.string "Brendan: I'm heading back to my dad's\n"
+	.string "I'm heading back to my dad's\n"
 # 396 "data/maps/OldaleTown/scripts.pory"
-	.string "LAB now.\l"
+	.string "lab now.\l"
 # 397 "data/maps/OldaleTown/scripts.pory"
 	.string "{PLAYER}, you should hustle back, too.$"
 # 398 "data/maps/OldaleTown/scripts.pory"

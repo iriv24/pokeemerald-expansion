@@ -1651,8 +1651,8 @@ text NewBirchsLab_NotYet{
 
 text NewBirchsLab_WelcomePlayerMale{
     "Hello there! I'm Prof. Birch, and you\n"
-    "must be {PLAYER}. You just missed\p"
-    "{RIVAL}, she stopped by and grabbed\n"
+    "must be {PLAYER}. You just missed\l"
+    "{RIVAL}, she stopped by and grabbed\l"
     "one of my Starter Pokémon and then\l"
     "rushed out of here.\p" 
     "She said to be on the lookout for a\n"
@@ -1661,8 +1661,8 @@ text NewBirchsLab_WelcomePlayerMale{
     "I'm glad to see {RIVAL} has a friend\n"
     "to start a new Pokémon journey with.\p"
     "How about this, I'll give you one of\n"
-    "these Starter Pokémon, and then if you\p"
-    "can beat {RIVAL} with your Pokémon,\n"
+    "these Starter Pokémon, and then if you\l"
+    "can beat {RIVAL} with your Pokémon,\l"
     "come back and I'll give you a Pokédex!\p"
     "I'll tell you which Starter she chose\n"
     "after you pick yours, it wouldn't be\l"
@@ -1674,8 +1674,8 @@ text NewBirchsLab_WelcomePlayerMale{
 
 text NewBirchsLab_WelcomePlayerFemale{
     "Hello there! I'm Prof. Birch, and you\n"
-    "must be {PLAYER}. You just missed\p"
-    "{RIVAL}, he stopped by and grabbed\n"
+    "must be {PLAYER}. You just missed\l"
+    "{RIVAL}, he stopped by and grabbed\l"
     "one of my Starter Pokémon and then\l"
     "rushed out of here.\p" 
     "He said to be on the lookout for a\n"
@@ -1684,8 +1684,8 @@ text NewBirchsLab_WelcomePlayerFemale{
     "I'm glad to see {RIVAL} has a friend\n"
     "to start a new Pokémon journey with.\p"
     "How about this, I'll give you one of\n"
-    "these Starter Pokémon, and then if you\p"
-    "can beat {RIVAL} with your Pokémon,\n"
+    "these Starter Pokémon, and then if you\l"
+    "can beat {RIVAL} with your Pokémon,\l"
     "come back and I'll give you a Pokédex!\p"
     "I'll tell you which Starter he chose\n"
     "after you pick yours, it wouldn't be\l"

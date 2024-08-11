@@ -4639,7 +4639,7 @@ static const u8 sGlimmeringCharmDesc[] = _(
     "from Tera Raids.");
 
 static const u8 sPokeVialDesc[] = _(
-    "The Poke Vial\n"
+    "The PokéVial\n"
     "restores your party\n"
     "entirely.");
 
