@@ -260,6 +260,8 @@ extern const u8 gText_MenuRest[];
 extern const u8 gText_MenuDexNav[];
 extern const u8 gText_AutoRunOn[];
 extern const u8 gText_AutoRunOff[];
+extern const u8 gText_FollowersOn[];
+extern const u8 gText_FollowersOff[];
 extern const u8 gText_Floor1[];
 extern const u8 gText_Floor2[];
 extern const u8 gText_Floor3[];

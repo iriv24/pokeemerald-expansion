@@ -8,6 +8,7 @@ void Task_ShowLMenu(u8 taskId);
 void ShowLMenu(void);
 void HideLMenu(void);
 void HideLMenuAutoRun(void);
+void HideLMenuFollowers(void);
 void AppendToLList(u8 *list, u8 *pos, u8 newEntry);
 
 #endif // GUARD_L_MENU_H

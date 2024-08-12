@@ -87,7 +87,7 @@
 #define FLAG_RECEIVED_LILYCOVE_EGG    0x4B
 #define FLAG_EZ_CATCH    0x4C
 #define FLAG_DEXALL    0x4D
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define FLAG_DISABLE_FOLLOWERS    0x4E
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts

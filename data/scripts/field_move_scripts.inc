@@ -405,3 +405,17 @@ EventScript_EnableAutoRun::
     end
 AutoRunEnabled:
     .string "Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
+
+EventScript_DisableFollowers::
+	callnative RemoveFollowingPokemon
+    msgbox FollowersDisabled MSGBOX_SIGN
+    end
+FollowersDisabled:
+    .string "Followers {COLOR RED}Disabled{COLOR DARK_GRAY}.$"
+    
+EventScript_EnableFollowers::
+	callnative UpdateFollowingPokemon
+    msgbox FollowersEnabled MSGBOX_SIGN
+    end
+FollowersEnabled:
+    .string "Followers {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"

@@ -59,6 +59,8 @@ enum
     MENU_ACTION_DEXNAV,
     MENU_ACTION_AUTO_RUN_ON,
     MENU_ACTION_AUTO_RUN_OFF,
+    MENU_ACTION_FOLLOWERS_ON,
+    MENU_ACTION_FOLLOWERS_OFF,
     MENU_ACTION_EXIT,
 };
 
@@ -78,6 +80,7 @@ static bool8 LMenuPlayerNameCallback(void);
 static bool8 LMenuExitCallback(void);
 static bool8 LMenuDexNavCallback(void);
 static bool8 LMenuAutoRunCallback(void);
+static bool8 LMenuFollowersCallback(void);
 
 // Menu callbacks
 static bool8 HandleLMenuInput(void);
@@ -102,6 +105,8 @@ static const struct MenuAction sLMenuItems[] =
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = LMenuDexNavCallback}},
     [MENU_ACTION_AUTO_RUN_ON]          = {gText_AutoRunOn,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_AUTO_RUN_OFF]          = {gText_AutoRunOff,  {.u8_void = LMenuAutoRunCallback}},
+    [MENU_ACTION_FOLLOWERS_ON]          = {gText_FollowersOn,  {.u8_void = LMenuFollowersCallback}},
+    [MENU_ACTION_FOLLOWERS_OFF]          = {gText_FollowersOff,  {.u8_void = LMenuFollowersCallback}},
     [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = LMenuExitCallback}},
 };
 
@@ -120,6 +125,7 @@ static bool32 InitLMenuStep(void);
 static void CreateLMenuTask(TaskFunc followupFunc);
 static void HideLMenuWindow(void);
 static void HideLMenuWindowAutoRun(void);
+static void HideLMenuWindowFollowers(void);
 static void ShowTimeWindow(void);
 static void RemoveLMenuTimeWindow(void);
 
@@ -184,6 +190,17 @@ static void BuildNormalLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -202,6 +219,17 @@ static void BuildSafariZoneLMenu(void)
         else
         {
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
         }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
@@ -228,6 +256,17 @@ static void BuildLinkModeLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -252,6 +291,17 @@ static void BuildUnionRoomLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -270,6 +320,17 @@ static void BuildBattlePikeLMenu(void)
         else
         {
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
         }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
@@ -292,6 +353,17 @@ static void BuildBattlePyramidLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -310,6 +382,17 @@ static void BuildMultiPartnerRoomLMenu(void)
         else
         {
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
+        }
+    }
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
         }
     }
     AddLMenuAction(MENU_ACTION_EXIT);
@@ -469,7 +552,7 @@ static bool8 HandleLMenuInput(void)
         
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 
-        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback)
+        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback && gMenuCallback2 != LMenuFollowersCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -559,6 +642,40 @@ void HideLMenuAutoRun(void)
 {
     PlaySE(SE_SELECT);
     HideLMenuWindowAutoRun();
+}
+
+extern const u8 EventScript_DisableFollowers[];
+extern const u8 EventScript_EnableFollowers[];
+static bool8 LMenuFollowersCallback(void)
+{
+    HideLMenuFollowers(); // Hide start menu
+    return TRUE;
+}
+
+void HideLMenuFollowers(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowFollowers();
+}
+
+static void HideLMenuWindowFollowers(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    PlaySE(SE_BALL_TRADE);
+    if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+    {
+        FlagClear(FLAG_DISABLE_FOLLOWERS);
+        ScriptContext_SetupScript(EventScript_EnableFollowers);
+    }
+    else
+    {
+        FlagSet(FLAG_DISABLE_FOLLOWERS);
+        ScriptContext_SetupScript(EventScript_DisableFollowers);
+    }
 }
 
 static bool8 LMenuExitCallback(void)
