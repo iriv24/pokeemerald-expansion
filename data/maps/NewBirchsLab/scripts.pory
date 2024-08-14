@@ -11,14 +11,14 @@ script NewBirchsLab_EventScript_BallDefault{
 script NewBirchsLab_EventScript_Birch{
     lockall
     faceplayer
-    if(!flag(FLAG_UNUSED_TOUCHBALLS))
+    if(!flag(FLAG_TOUCHED_BALLS))
     {
         checkplayergender
 	    call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_WelcomePlayerFemale)
         call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_WelcomePlayerMale)
-        setflag(FLAG_UNUSED_TOUCHBALLS)
+        setflag(FLAG_TOUCHED_BALLS)
     }
-    if(!(flag(FLAG_UNUSED_WATERSTARTER) || flag(FLAG_UNUSED_GRASSSTARTER) || flag(FLAG_UNUSED_FIRESTARTER))){
+    if(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
         msgbox(NewBirchsLab_ChangeStarters)
         dynmultipush("Gen 1", 0)
         dynmultipush("Gen 2", 1)
@@ -84,11 +84,11 @@ script NewBirchsLab_EventScript_PokeballOne{
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
     }
-    elif(!flag(FLAG_UNUSED_TOUCHBALLS))
+    elif(!flag(FLAG_TOUCHED_BALLS))
     {
         msgbox("Ask Professor Birch about this!")
     }
-    elif(!(flag(FLAG_UNUSED_WATERSTARTER) || flag(FLAG_UNUSED_GRASSSTARTER) || flag(FLAG_UNUSED_FIRESTARTER))){
+    elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Squirtle)
         }
@@ -137,11 +137,11 @@ script NewBirchsLab_EventScript_PokeballTwo{
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
     }
-    elif(!flag(FLAG_UNUSED_TOUCHBALLS))
+    elif(!flag(FLAG_TOUCHED_BALLS))
     {
         msgbox("Ask Professor Birch about this!")
     }
-    elif(!(flag(FLAG_UNUSED_WATERSTARTER) || flag(FLAG_UNUSED_GRASSSTARTER) || flag(FLAG_UNUSED_FIRESTARTER))){
+    elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Bulbasaur)
         }
@@ -189,11 +189,11 @@ script NewBirchsLab_EventScript_PokeballThree{
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
     }
-    elif(!flag(FLAG_UNUSED_TOUCHBALLS))
+    elif(!flag(FLAG_TOUCHED_BALLS))
     {
         msgbox("Ask Professor Birch about this!")
     }
-    elif(!(flag(FLAG_UNUSED_WATERSTARTER) || flag(FLAG_UNUSED_GRASSSTARTER) || flag(FLAG_UNUSED_FIRESTARTER))){
+    elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
         if(var(VAR_UNUSED_0x40F7) == 0){
             call(NewBirchsLab_EventScript_Charmander)
         }
@@ -247,7 +247,7 @@ script NewBirchsLab_EventScript_Squirtle{
             msgbox("{PLAYER} received the Squirtle!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -255,7 +255,7 @@ script NewBirchsLab_EventScript_Squirtle{
             msgbox("{PLAYER} received the Squirtle!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -296,7 +296,7 @@ script NewBirchsLab_EventScript_Totodile{
             msgbox("{PLAYER} received the Totodile!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -304,7 +304,7 @@ script NewBirchsLab_EventScript_Totodile{
             msgbox("{PLAYER} received the Totodile!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -345,7 +345,7 @@ script NewBirchsLab_EventScript_Mudkip{
             msgbox("{PLAYER} received the Mudkip!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -353,7 +353,7 @@ script NewBirchsLab_EventScript_Mudkip{
             msgbox("{PLAYER} received the Mudkip!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -394,7 +394,7 @@ script NewBirchsLab_EventScript_Piplup{
             msgbox("{PLAYER} received the Piplup!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -402,7 +402,7 @@ script NewBirchsLab_EventScript_Piplup{
             msgbox("{PLAYER} received the Piplup!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -443,7 +443,7 @@ script NewBirchsLab_EventScript_Oshawott{
             msgbox("{PLAYER} received the Oshawott!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -451,7 +451,7 @@ script NewBirchsLab_EventScript_Oshawott{
             msgbox("{PLAYER} received the Oshawott!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -492,7 +492,7 @@ script NewBirchsLab_EventScript_Froakie{
             msgbox("{PLAYER} received the Froakie!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -500,7 +500,7 @@ script NewBirchsLab_EventScript_Froakie{
             msgbox("{PLAYER} received the Froakie!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -541,7 +541,7 @@ script NewBirchsLab_EventScript_Popplio{
             msgbox("{PLAYER} received the Popplio!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -549,7 +549,7 @@ script NewBirchsLab_EventScript_Popplio{
             msgbox("{PLAYER} received the Popplio!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -590,7 +590,7 @@ script NewBirchsLab_EventScript_Sobble{
             msgbox("{PLAYER} received the Sobble!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -598,7 +598,7 @@ script NewBirchsLab_EventScript_Sobble{
             msgbox("{PLAYER} received the Sobble!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -639,7 +639,7 @@ script NewBirchsLab_EventScript_Quaxly{
             msgbox("{PLAYER} received the Quaxly!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -647,7 +647,7 @@ script NewBirchsLab_EventScript_Quaxly{
             msgbox("{PLAYER} received the Quaxly!")
             waitfanfare
             removeobject(1)
-            setflag(FLAG_UNUSED_WATERSTARTER)
+            setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -688,7 +688,7 @@ script NewBirchsLab_EventScript_Bulbasaur{
             msgbox("{PLAYER} received the Bulbasaur!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -696,7 +696,7 @@ script NewBirchsLab_EventScript_Bulbasaur{
             msgbox("{PLAYER} received the Bulbasaur!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -737,7 +737,7 @@ script NewBirchsLab_EventScript_Chikorita{
             msgbox("{PLAYER} received the Chikorita!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -745,7 +745,7 @@ script NewBirchsLab_EventScript_Chikorita{
             msgbox("{PLAYER} received the Chikorita!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -786,7 +786,7 @@ script NewBirchsLab_EventScript_Treecko{
             msgbox("{PLAYER} received the Treecko!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -794,7 +794,7 @@ script NewBirchsLab_EventScript_Treecko{
             msgbox("{PLAYER} received the Treecko!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -835,7 +835,7 @@ script NewBirchsLab_EventScript_Turtwig{
             msgbox("{PLAYER} received the Turtwig!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -843,7 +843,7 @@ script NewBirchsLab_EventScript_Turtwig{
             msgbox("{PLAYER} received the Turtwig!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -884,7 +884,7 @@ script NewBirchsLab_EventScript_Snivy{
             msgbox("{PLAYER} received the Snivy!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -892,7 +892,7 @@ script NewBirchsLab_EventScript_Snivy{
             msgbox("{PLAYER} received the Snivy!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -933,7 +933,7 @@ script NewBirchsLab_EventScript_Chespin{
             msgbox("{PLAYER} received the Chespin!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -941,7 +941,7 @@ script NewBirchsLab_EventScript_Chespin{
             msgbox("{PLAYER} received the Chespin!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -982,7 +982,7 @@ script NewBirchsLab_EventScript_Rowlet{
             msgbox("{PLAYER} received the Rowlet!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -990,7 +990,7 @@ script NewBirchsLab_EventScript_Rowlet{
             msgbox("{PLAYER} received the Rowlet!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1031,7 +1031,7 @@ script NewBirchsLab_EventScript_Grookey{
             msgbox("{PLAYER} received the Grookey!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1039,7 +1039,7 @@ script NewBirchsLab_EventScript_Grookey{
             msgbox("{PLAYER} received the Grookey!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1080,7 +1080,7 @@ script NewBirchsLab_EventScript_Sprigatito{
             msgbox("{PLAYER} received the Sprigatito!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1088,7 +1088,7 @@ script NewBirchsLab_EventScript_Sprigatito{
             msgbox("{PLAYER} received the Sprigatito!")
             waitfanfare
             removeobject(2)
-            setflag(FLAG_UNUSED_GRASSSTARTER)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1129,7 +1129,7 @@ script NewBirchsLab_EventScript_Charmander{
             msgbox("{PLAYER} received the Charmander!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1137,7 +1137,7 @@ script NewBirchsLab_EventScript_Charmander{
             msgbox("{PLAYER} received the Charmander!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1178,7 +1178,7 @@ script NewBirchsLab_EventScript_Cyndaquil{
             msgbox("{PLAYER} received the Cyndaquil!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1186,7 +1186,7 @@ script NewBirchsLab_EventScript_Cyndaquil{
             msgbox("{PLAYER} received the Cyndaquil!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1227,7 +1227,7 @@ script NewBirchsLab_EventScript_Torchic{
             msgbox("{PLAYER} received the Torchic!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1235,7 +1235,7 @@ script NewBirchsLab_EventScript_Torchic{
             msgbox("{PLAYER} received the Torchic!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1276,7 +1276,7 @@ script NewBirchsLab_EventScript_Chimchar{
             msgbox("{PLAYER} received the Chimchar!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1284,7 +1284,7 @@ script NewBirchsLab_EventScript_Chimchar{
             msgbox("{PLAYER} received the Chimchar!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1325,7 +1325,7 @@ script NewBirchsLab_EventScript_Tepig{
             msgbox("{PLAYER} received the Tepig!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1333,7 +1333,7 @@ script NewBirchsLab_EventScript_Tepig{
             msgbox("{PLAYER} received the Tepig!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1374,7 +1374,7 @@ script NewBirchsLab_EventScript_Fennekin{
             msgbox("{PLAYER} received the Fennekin!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1382,7 +1382,7 @@ script NewBirchsLab_EventScript_Fennekin{
             msgbox("{PLAYER} received the Fennekin!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1423,7 +1423,7 @@ script NewBirchsLab_EventScript_Litten{
             msgbox("{PLAYER} received the Litten!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1431,7 +1431,7 @@ script NewBirchsLab_EventScript_Litten{
             msgbox("{PLAYER} received the Litten!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1472,7 +1472,7 @@ script NewBirchsLab_EventScript_Scorbunny{
             msgbox("{PLAYER} received the Scorbunny!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1480,7 +1480,7 @@ script NewBirchsLab_EventScript_Scorbunny{
             msgbox("{PLAYER} received the Scorbunny!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{
@@ -1521,7 +1521,7 @@ script NewBirchsLab_EventScript_Fuecoco{
             msgbox("{PLAYER} received the Fuecoco!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -1529,7 +1529,7 @@ script NewBirchsLab_EventScript_Fuecoco{
             msgbox("{PLAYER} {PLAYER} received the the Fuecoco!")
             waitfanfare
             removeobject(3)
-            setflag(FLAG_UNUSED_FIRESTARTER)
+            setflag(FLAG_CHOSE_FIRESTARTER)
             call(NicknameBoxMon)
         }
         else{

@@ -3,7 +3,7 @@ EventScript_PC::
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
-	setflag FLAG_UNUSED_POKEMONPCMENU
+	setflag FLAG_USING_POKEMONPCMENU
 	msgbox Text_BootUpPC, MSGBOX_DEFAULT
 	goto EventScript_PCMainMenu
 	end
@@ -55,7 +55,7 @@ EventScript_TurnOffPC::
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
-	clearflag FLAG_UNUSED_POKEMONPCMENU
+	clearflag FLAG_USING_POKEMONPCMENU
 	releaseall
 	end
 

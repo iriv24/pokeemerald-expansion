@@ -1676,7 +1676,7 @@ static void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;
-	if (FlagGet(FLAG_UNUSED_POKEMONPCMENU)==TRUE)
+	if (FlagGet(FLAG_USING_POKEMONPCMENU)==TRUE)
 	{
 		SetVBlankCallback(NULL);
 		taskId = CreateTask(Task_PCMainMenu, 80);

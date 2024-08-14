@@ -20,10 +20,10 @@ NewBirchsLab_EventScript_Birch::
 # 13 "data/maps/NewBirchsLab/scripts.pory"
 	faceplayer
 # 14 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_TOUCHBALLS, NewBirchsLab_EventScript_Birch_2
+	goto_if_unset FLAG_TOUCHED_BALLS, NewBirchsLab_EventScript_Birch_2
 NewBirchsLab_EventScript_Birch_1:
 # 21 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_WATERSTARTER, NewBirchsLab_EventScript_Birch_7
+	goto_if_unset FLAG_CHOSE_WATERSTARTER, NewBirchsLab_EventScript_Birch_7
 NewBirchsLab_EventScript_Birch_6:
 # 45 "data/maps/NewBirchsLab/scripts.pory"
 	checkplayergender
@@ -46,7 +46,7 @@ NewBirchsLab_EventScript_Birch_2:
 # 18 "data/maps/NewBirchsLab/scripts.pory"
 	call_if_eq VAR_RESULT, MALE, NewBirchsLab_EventScript_WelcomePlayerMale
 # 19 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_TOUCHBALLS
+	setflag FLAG_TOUCHED_BALLS
 	goto NewBirchsLab_EventScript_Birch_1
 
 NewBirchsLab_EventScript_Birch_5:
@@ -86,12 +86,12 @@ NewBirchsLab_EventScript_Birch_12:
 
 NewBirchsLab_EventScript_Birch_7:
 # 21 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_GRASSSTARTER, NewBirchsLab_EventScript_Birch_9
+	goto_if_unset FLAG_CHOSE_GRASSSTARTER, NewBirchsLab_EventScript_Birch_9
 	goto NewBirchsLab_EventScript_Birch_6
 
 NewBirchsLab_EventScript_Birch_9:
 # 21 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_FIRESTARTER, NewBirchsLab_EventScript_Birch_5
+	goto_if_unset FLAG_CHOSE_FIRESTARTER, NewBirchsLab_EventScript_Birch_5
 	goto NewBirchsLab_EventScript_Birch_6
 
 NewBirchsLab_EventScript_Birch_13:
@@ -180,9 +180,9 @@ NewBirchsLab_EventScript_PokeballOne::
 # 84 "data/maps/NewBirchsLab/scripts.pory"
 	goto_if_set FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH, NewBirchsLab_EventScript_PokeballOne_2
 # 87 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_TOUCHBALLS, NewBirchsLab_EventScript_PokeballOne_3
+	goto_if_unset FLAG_TOUCHED_BALLS, NewBirchsLab_EventScript_PokeballOne_3
 # 91 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_WATERSTARTER, NewBirchsLab_EventScript_PokeballOne_6
+	goto_if_unset FLAG_CHOSE_WATERSTARTER, NewBirchsLab_EventScript_PokeballOne_6
 NewBirchsLab_EventScript_PokeballOne_5:
 # 128 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_EventScript_PokeballOne_Text_1
@@ -238,12 +238,12 @@ NewBirchsLab_EventScript_PokeballOne_13:
 
 NewBirchsLab_EventScript_PokeballOne_6:
 # 91 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_GRASSSTARTER, NewBirchsLab_EventScript_PokeballOne_8
+	goto_if_unset FLAG_CHOSE_GRASSSTARTER, NewBirchsLab_EventScript_PokeballOne_8
 	goto NewBirchsLab_EventScript_PokeballOne_5
 
 NewBirchsLab_EventScript_PokeballOne_8:
 # 91 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_FIRESTARTER, NewBirchsLab_EventScript_PokeballOne_4
+	goto_if_unset FLAG_CHOSE_FIRESTARTER, NewBirchsLab_EventScript_PokeballOne_4
 	goto NewBirchsLab_EventScript_PokeballOne_5
 
 NewBirchsLab_EventScript_PokeballOne_14:
@@ -307,9 +307,9 @@ NewBirchsLab_EventScript_PokeballTwo::
 # 137 "data/maps/NewBirchsLab/scripts.pory"
 	goto_if_set FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH, NewBirchsLab_EventScript_PokeballTwo_2
 # 140 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_TOUCHBALLS, NewBirchsLab_EventScript_PokeballTwo_3
+	goto_if_unset FLAG_TOUCHED_BALLS, NewBirchsLab_EventScript_PokeballTwo_3
 # 144 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_WATERSTARTER, NewBirchsLab_EventScript_PokeballTwo_6
+	goto_if_unset FLAG_CHOSE_WATERSTARTER, NewBirchsLab_EventScript_PokeballTwo_6
 NewBirchsLab_EventScript_PokeballTwo_5:
 # 180 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_EventScript_PokeballOne_Text_1
@@ -365,12 +365,12 @@ NewBirchsLab_EventScript_PokeballTwo_13:
 
 NewBirchsLab_EventScript_PokeballTwo_6:
 # 144 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_GRASSSTARTER, NewBirchsLab_EventScript_PokeballTwo_8
+	goto_if_unset FLAG_CHOSE_GRASSSTARTER, NewBirchsLab_EventScript_PokeballTwo_8
 	goto NewBirchsLab_EventScript_PokeballTwo_5
 
 NewBirchsLab_EventScript_PokeballTwo_8:
 # 144 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_FIRESTARTER, NewBirchsLab_EventScript_PokeballTwo_4
+	goto_if_unset FLAG_CHOSE_FIRESTARTER, NewBirchsLab_EventScript_PokeballTwo_4
 	goto NewBirchsLab_EventScript_PokeballTwo_5
 
 NewBirchsLab_EventScript_PokeballTwo_14:
@@ -434,9 +434,9 @@ NewBirchsLab_EventScript_PokeballThree::
 # 189 "data/maps/NewBirchsLab/scripts.pory"
 	goto_if_set FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH, NewBirchsLab_EventScript_PokeballThree_2
 # 192 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_TOUCHBALLS, NewBirchsLab_EventScript_PokeballThree_3
+	goto_if_unset FLAG_TOUCHED_BALLS, NewBirchsLab_EventScript_PokeballThree_3
 # 196 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_WATERSTARTER, NewBirchsLab_EventScript_PokeballThree_6
+	goto_if_unset FLAG_CHOSE_WATERSTARTER, NewBirchsLab_EventScript_PokeballThree_6
 NewBirchsLab_EventScript_PokeballThree_5:
 # 232 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_EventScript_PokeballOne_Text_1
@@ -492,12 +492,12 @@ NewBirchsLab_EventScript_PokeballThree_13:
 
 NewBirchsLab_EventScript_PokeballThree_6:
 # 196 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_GRASSSTARTER, NewBirchsLab_EventScript_PokeballThree_8
+	goto_if_unset FLAG_CHOSE_GRASSSTARTER, NewBirchsLab_EventScript_PokeballThree_8
 	goto NewBirchsLab_EventScript_PokeballThree_5
 
 NewBirchsLab_EventScript_PokeballThree_8:
 # 196 "data/maps/NewBirchsLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_FIRESTARTER, NewBirchsLab_EventScript_PokeballThree_4
+	goto_if_unset FLAG_CHOSE_FIRESTARTER, NewBirchsLab_EventScript_PokeballThree_4
 	goto NewBirchsLab_EventScript_PokeballThree_5
 
 NewBirchsLab_EventScript_PokeballThree_14:
@@ -621,7 +621,7 @@ NewBirchsLab_EventScript_Squirtle_5:
 # 249 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 250 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 251 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Squirtle_4
@@ -636,7 +636,7 @@ NewBirchsLab_EventScript_Squirtle_6:
 # 257 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 258 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 259 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Squirtle_4
@@ -708,7 +708,7 @@ NewBirchsLab_EventScript_Totodile_5:
 # 298 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 299 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 300 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Totodile_4
@@ -723,7 +723,7 @@ NewBirchsLab_EventScript_Totodile_6:
 # 306 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 307 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 308 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Totodile_4
@@ -795,7 +795,7 @@ NewBirchsLab_EventScript_Mudkip_5:
 # 347 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 348 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 349 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Mudkip_4
@@ -810,7 +810,7 @@ NewBirchsLab_EventScript_Mudkip_6:
 # 355 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 356 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 357 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Mudkip_4
@@ -882,7 +882,7 @@ NewBirchsLab_EventScript_Piplup_5:
 # 396 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 397 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 398 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Piplup_4
@@ -897,7 +897,7 @@ NewBirchsLab_EventScript_Piplup_6:
 # 404 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 405 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 406 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Piplup_4
@@ -969,7 +969,7 @@ NewBirchsLab_EventScript_Oshawott_5:
 # 445 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 446 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 447 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Oshawott_4
@@ -984,7 +984,7 @@ NewBirchsLab_EventScript_Oshawott_6:
 # 453 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 454 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 455 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Oshawott_4
@@ -1056,7 +1056,7 @@ NewBirchsLab_EventScript_Froakie_5:
 # 494 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 495 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 496 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Froakie_4
@@ -1071,7 +1071,7 @@ NewBirchsLab_EventScript_Froakie_6:
 # 502 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 503 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 504 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Froakie_4
@@ -1143,7 +1143,7 @@ NewBirchsLab_EventScript_Popplio_5:
 # 543 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 544 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 545 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Popplio_4
@@ -1158,7 +1158,7 @@ NewBirchsLab_EventScript_Popplio_6:
 # 551 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 552 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 553 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Popplio_4
@@ -1230,7 +1230,7 @@ NewBirchsLab_EventScript_Sobble_5:
 # 592 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 593 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 594 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Sobble_4
@@ -1245,7 +1245,7 @@ NewBirchsLab_EventScript_Sobble_6:
 # 600 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 601 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 602 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Sobble_4
@@ -1317,7 +1317,7 @@ NewBirchsLab_EventScript_Quaxly_5:
 # 641 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 642 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 643 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Quaxly_4
@@ -1332,7 +1332,7 @@ NewBirchsLab_EventScript_Quaxly_6:
 # 649 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 1
 # 650 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_WATERSTARTER
+	setflag FLAG_CHOSE_WATERSTARTER
 # 651 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Quaxly_4
@@ -1404,7 +1404,7 @@ NewBirchsLab_EventScript_Bulbasaur_5:
 # 690 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 691 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 692 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Bulbasaur_4
@@ -1419,7 +1419,7 @@ NewBirchsLab_EventScript_Bulbasaur_6:
 # 698 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 699 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 700 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Bulbasaur_4
@@ -1491,7 +1491,7 @@ NewBirchsLab_EventScript_Chikorita_5:
 # 739 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 740 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 741 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Chikorita_4
@@ -1506,7 +1506,7 @@ NewBirchsLab_EventScript_Chikorita_6:
 # 747 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 748 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 749 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Chikorita_4
@@ -1578,7 +1578,7 @@ NewBirchsLab_EventScript_Treecko_5:
 # 788 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 789 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 790 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Treecko_4
@@ -1593,7 +1593,7 @@ NewBirchsLab_EventScript_Treecko_6:
 # 796 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 797 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 798 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Treecko_4
@@ -1665,7 +1665,7 @@ NewBirchsLab_EventScript_Turtwig_5:
 # 837 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 838 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 839 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Turtwig_4
@@ -1680,7 +1680,7 @@ NewBirchsLab_EventScript_Turtwig_6:
 # 845 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 846 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 847 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Turtwig_4
@@ -1752,7 +1752,7 @@ NewBirchsLab_EventScript_Snivy_5:
 # 886 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 887 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 888 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Snivy_4
@@ -1767,7 +1767,7 @@ NewBirchsLab_EventScript_Snivy_6:
 # 894 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 895 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 896 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Snivy_4
@@ -1839,7 +1839,7 @@ NewBirchsLab_EventScript_Chespin_5:
 # 935 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 936 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 937 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Chespin_4
@@ -1854,7 +1854,7 @@ NewBirchsLab_EventScript_Chespin_6:
 # 943 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 944 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 945 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Chespin_4
@@ -1926,7 +1926,7 @@ NewBirchsLab_EventScript_Rowlet_5:
 # 984 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 985 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 986 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Rowlet_4
@@ -1941,7 +1941,7 @@ NewBirchsLab_EventScript_Rowlet_6:
 # 992 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 993 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 994 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Rowlet_4
@@ -2013,7 +2013,7 @@ NewBirchsLab_EventScript_Grookey_5:
 # 1033 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 1034 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 1035 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Grookey_4
@@ -2028,7 +2028,7 @@ NewBirchsLab_EventScript_Grookey_6:
 # 1041 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 1042 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 1043 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Grookey_4
@@ -2100,7 +2100,7 @@ NewBirchsLab_EventScript_Sprigatito_5:
 # 1082 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 1083 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 1084 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Sprigatito_4
@@ -2115,7 +2115,7 @@ NewBirchsLab_EventScript_Sprigatito_6:
 # 1090 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 2
 # 1091 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASSSTARTER
 # 1092 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Sprigatito_4
@@ -2187,7 +2187,7 @@ NewBirchsLab_EventScript_Charmander_5:
 # 1131 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1132 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1133 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Charmander_4
@@ -2202,7 +2202,7 @@ NewBirchsLab_EventScript_Charmander_6:
 # 1139 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1140 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1141 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Charmander_4
@@ -2274,7 +2274,7 @@ NewBirchsLab_EventScript_Cyndaquil_5:
 # 1180 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1181 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1182 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Cyndaquil_4
@@ -2289,7 +2289,7 @@ NewBirchsLab_EventScript_Cyndaquil_6:
 # 1188 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1189 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1190 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Cyndaquil_4
@@ -2361,7 +2361,7 @@ NewBirchsLab_EventScript_Torchic_5:
 # 1229 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1230 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1231 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Torchic_4
@@ -2376,7 +2376,7 @@ NewBirchsLab_EventScript_Torchic_6:
 # 1237 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1238 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1239 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Torchic_4
@@ -2448,7 +2448,7 @@ NewBirchsLab_EventScript_Chimchar_5:
 # 1278 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1279 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1280 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Chimchar_4
@@ -2463,7 +2463,7 @@ NewBirchsLab_EventScript_Chimchar_6:
 # 1286 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1287 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1288 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Chimchar_4
@@ -2535,7 +2535,7 @@ NewBirchsLab_EventScript_Tepig_5:
 # 1327 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1328 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1329 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Tepig_4
@@ -2550,7 +2550,7 @@ NewBirchsLab_EventScript_Tepig_6:
 # 1335 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1336 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1337 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Tepig_4
@@ -2622,7 +2622,7 @@ NewBirchsLab_EventScript_Fennekin_5:
 # 1376 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1377 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1378 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Fennekin_4
@@ -2637,7 +2637,7 @@ NewBirchsLab_EventScript_Fennekin_6:
 # 1384 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1385 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1386 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Fennekin_4
@@ -2709,7 +2709,7 @@ NewBirchsLab_EventScript_Litten_5:
 # 1425 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1426 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1427 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Litten_4
@@ -2724,7 +2724,7 @@ NewBirchsLab_EventScript_Litten_6:
 # 1433 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1434 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1435 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Litten_4
@@ -2796,7 +2796,7 @@ NewBirchsLab_EventScript_Scorbunny_5:
 # 1474 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1475 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1476 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Scorbunny_4
@@ -2811,7 +2811,7 @@ NewBirchsLab_EventScript_Scorbunny_6:
 # 1482 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1483 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1484 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Scorbunny_4
@@ -2883,7 +2883,7 @@ NewBirchsLab_EventScript_Fuecoco_5:
 # 1523 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1524 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1525 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknamePartyMon
 	goto NewBirchsLab_EventScript_Fuecoco_4
@@ -2898,7 +2898,7 @@ NewBirchsLab_EventScript_Fuecoco_6:
 # 1531 "data/maps/NewBirchsLab/scripts.pory"
 	removeobject 3
 # 1532 "data/maps/NewBirchsLab/scripts.pory"
-	setflag FLAG_UNUSED_FIRESTARTER
+	setflag FLAG_CHOSE_FIRESTARTER
 # 1533 "data/maps/NewBirchsLab/scripts.pory"
 	call NicknameBoxMon
 	goto NewBirchsLab_EventScript_Fuecoco_4
