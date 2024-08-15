@@ -130,7 +130,7 @@
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_MEOWTH_GALARIAN"
+                "species": "SPECIES_SEWADDLE"
               },
               {
                 "min_level": 3,
@@ -338,7 +338,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_SEWADDLE"
+                "species": "SPECIES_MEOWTH_GALARIAN"
               },
               {
                 "min_level": 3,
