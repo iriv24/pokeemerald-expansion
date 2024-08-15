@@ -560,6 +560,9 @@ PetalburgCity_EventScript_Scott::
 	delay 30
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
 	closemessage
+	giveitem ITEM_EXP_SHARE
+	msgbox PetalburgCity_Text_ExplainExpShare, MSGBOX_DEFAULT
+	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
@@ -754,7 +757,7 @@ PetalburgCity_Text_WhereIsWally:
 PetalburgCity_Text_AreYouRookieTrainer:
 	.string "Hiya! Are you maybe…\n"
 	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
+	.string "Do you know what Pokémon TRAINERS\n"
 	.string "do when they reach a new town?\p"
 	.string "They first check what kind of GYM\n"
 	.string "is in the town.$"
@@ -774,7 +777,7 @@ PetalburgCity_Text_WaterReflection:
 	.string "What do you see reflected in your face?$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
+	.string "Let's say you have six Pokémon.\n"
 	.string "If you catch another one…\p"
 	.string "It is automatically sent to a STORAGE\n"
 	.string "BOX over a PC connection.$"
@@ -794,19 +797,38 @@ PetalburgCity_Text_WallyHouseSign:
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"
 	.string "Let me guess, from the way you're\n"
-	.string "dressed, are you a POKéMON TRAINER?$"
+	.string "dressed, are you a Pokémon trainer?$"
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "… … … … … …\p"
 	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "Your clothes aren't all that dirty,\l"
+	.string "so maybe you're a rookie trainer?$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "I'm not sure what to make of you yet,\n"
+	.string "but I've got a strange feeling that\l"
+	.string "you might become exactly the type of\l"
+	.string "trainer I'm looking for one day…\p"
+	.string "I was planning on giving this to the\n"
+	.string "next strong trainer I bumped into,\l"
+	.string "but something tells me you could put\l"
+	.string "it to even better use.\p"
+	.string "Here, hopefully this will help you\n"
+	.string "get to the next level.$"
+
+PetalburgCity_Text_ExplainExpShare:
+	.string "That Exp. Share will let your\n"
+	.string "Pokémon that didn't participate\l"
+	.string "in battle gain experience.\p"
+	.string "I know everyone has an InfiniteCandy\n"
+	.string "these days, so maybe you think that\l"
+	.string "thing's worthless, but what can I\l"
+	.string "say? I'm old school, and it's never\l"
+	.string "bad to have options.\p"
+	.string "I've taken enough of your time,\n"
+	.string "good luck out there.$"
+
 
 PetalburgCity_Text_GettingItchToFish:
 	.string "This is a renowned fishing spot.\n"

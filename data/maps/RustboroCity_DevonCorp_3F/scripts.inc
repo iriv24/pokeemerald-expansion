@@ -329,7 +329,7 @@ RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 # 165 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
 # 166 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	giveitem ITEM_EXP_SHARE
+	@giveitem ITEM_EXP_SHARE
 # 167 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	giveitem ITEM_WATER_STONE, 10
 # 168 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
