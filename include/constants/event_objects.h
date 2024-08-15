@@ -401,6 +401,7 @@
 #define OBJ_EVENT_PAL_TAG_BYRON                   0x112C
 #define OBJ_EVENT_PAL_TAG_CANDICE                 0x112D
 #define OBJ_EVENT_PAL_TAG_VOLKNER                 0x112E
+#define OBJ_EVENT_PAL_TAG_WALLY                   0x112F
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
