@@ -1688,8 +1688,8 @@ static void Task_WaitStopSurfing(u8 taskId)
 #define tFishingRod        data[15]
 
 #define FISHING_PROXIMITY_BOOST 4
-#define FISHING_STICKY_BOOST    36
-#define FISHING_DEFAULT_ODDS    50
+#define FISHING_STICKY_BOOST    10
+#define FISHING_DEFAULT_ODDS    20
 
 enum
 {
