@@ -333,19 +333,6 @@ extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
 
 // main menu/birch speech text
-extern const u8 gText_SaveFileErased[];
-extern const u8 gText_SaveFileCorrupted[];
-extern const u8 gJPText_No1MSubCircuit[];
-extern const u8 gText_BatteryRunDry[];
-extern const u8 gText_MainMenuNewGame[];
-extern const u8 gText_MainMenuOption[];
-extern const u8 gText_MainMenuContinue[];
-extern const u8 gText_MainMenuMysteryGift2[];
-extern const u8 gText_MainMenuMysteryEvents[];
-extern const u8 gText_MainMenuMysteryGift[];
-extern const u8 gText_WirelessNotConnected[];
-extern const u8 gText_MysteryGiftCantUse[];
-extern const u8 gText_MysteryEventsCantUse[];
 extern const u8 gText_Birch_Welcome[];
 extern const u8 gText_ThisIsAPokemon[];
 extern const u8 gText_Birch_MainSpeech[];
@@ -355,52 +342,7 @@ extern const u8 gText_Birch_WhatsYourName[];
 extern const u8 gText_Birch_SoItsPlayer[];
 extern const u8 gText_Birch_YourePlayer[];
 extern const u8 gText_Birch_AreYouReady[];
-extern const u8 gText_ContinueMenuPlayer[];
 extern const u8 gText_ContinueMenuTime[];
-extern const u8 gText_ContinueMenuPokedex[];
-extern const u8 gText_ContinueMenuBadges[];
-extern const u8 gText_BirchBoy[];
-extern const u8 gText_BirchGirl[];
-extern const u8 gText_DefaultNameStu[];
-extern const u8 gText_DefaultNameMilton[];
-extern const u8 gText_DefaultNameTom[];
-extern const u8 gText_DefaultNameKenny[];
-extern const u8 gText_DefaultNameReid[];
-extern const u8 gText_DefaultNameJude[];
-extern const u8 gText_DefaultNameJaxson[];
-extern const u8 gText_DefaultNameEaston[];
-extern const u8 gText_DefaultNameWalker[];
-extern const u8 gText_DefaultNameTeru[];
-extern const u8 gText_DefaultNameJohnny[];
-extern const u8 gText_DefaultNameBrett[];
-extern const u8 gText_DefaultNameSeth[];
-extern const u8 gText_DefaultNameTerry[];
-extern const u8 gText_DefaultNameCasey[];
-extern const u8 gText_DefaultNameDarren[];
-extern const u8 gText_DefaultNameLandon[];
-extern const u8 gText_DefaultNameCollin[];
-extern const u8 gText_DefaultNameStanley[];
-extern const u8 gText_DefaultNameQuincy[];
-extern const u8 gText_DefaultNameKimmy[];
-extern const u8 gText_DefaultNameTiara[];
-extern const u8 gText_DefaultNameBella[];
-extern const u8 gText_DefaultNameJayla[];
-extern const u8 gText_DefaultNameAllie[];
-extern const u8 gText_DefaultNameLianna[];
-extern const u8 gText_DefaultNameSara[];
-extern const u8 gText_DefaultNameMonica[];
-extern const u8 gText_DefaultNameCamila[];
-extern const u8 gText_DefaultNameAubree[];
-extern const u8 gText_DefaultNameRuthie[];
-extern const u8 gText_DefaultNameHazel[];
-extern const u8 gText_DefaultNameNadine[];
-extern const u8 gText_DefaultNameTanja[];
-extern const u8 gText_DefaultNameYasmin[];
-extern const u8 gText_DefaultNameNicola[];
-extern const u8 gText_DefaultNameLillie[];
-extern const u8 gText_DefaultNameTerra[];
-extern const u8 gText_DefaultNameLucy[];
-extern const u8 gText_DefaultNameHalie[];
 
 extern const u8 gText_BirchInTrouble[];
 extern const u8 gText_ConfirmStarterChoice[];
@@ -1057,23 +999,6 @@ extern const u8 gText_LanettesPC[];
 extern const u8 gText_SomeonesPC[];
 extern const u8 gText_PlayersPC[];
 extern const u8 gText_WhichPCShouldBeAccessed[];
-
-extern const u8 gText_PokenavMatchCall_Strategy[];
-extern const u8 gText_PokenavMatchCall_TrainerPokemon[];
-extern const u8 gText_PokenavMatchCall_SelfIntroduction[];
-extern const u8 gText_Pokenav_ClearButtonList[];
-extern const u8 gText_PokenavMap_ZoomedOutButtons[];
-extern const u8 gText_PokenavMap_ZoomedInButtons[];
-extern const u8 gText_PokenavCondition_MonListButtons[];
-extern const u8 gText_PokenavCondition_MonStatusButtons[];
-extern const u8 gText_PokenavCondition_MarkingButtons[];
-extern const u8 gText_PokenavMatchCall_TrainerListButtons[];
-extern const u8 gText_PokenavMatchCall_CallMenuButtons[];
-extern const u8 gText_PokenavMatchCall_CheckTrainerButtons[];
-extern const u8 gText_PokenavRibbons_MonListButtons[];
-extern const u8 gText_PokenavRibbons_RibbonListButtons[];
-extern const u8 gText_PokenavRibbons_RibbonCheckButtons[];
-extern const u8 gText_Number2[];
 
 extern const u8 gText_Petalburg[];
 extern const u8 gText_Slateport[];
@@ -2515,43 +2440,6 @@ extern const u8 MatchCall_Text_Phoebe[];
 extern const u8 MatchCall_Text_Glacia[];
 extern const u8 MatchCall_Text_Drake[];
 extern const u8 MatchCall_Text_Wallace[];
-extern const u8 gText_MrStoneMatchCallDesc[];
-extern const u8 gText_MrStoneMatchCallName[];
-extern const u8 gText_StevenMatchCallDesc[];
-extern const u8 gText_StevenMatchCallName[];
-extern const u8 gText_MayBrendanMatchCallDesc[];
-extern const u8 gText_WallyMatchCallDesc[];
-extern const u8 gText_NormanMatchCallDesc[];
-extern const u8 gText_NormanMatchCallName[];
-extern const u8 gText_MomMatchCallDesc[];
-extern const u8 gText_MomMatchCallName[];
-extern const u8 gText_ScottMatchCallDesc[];
-extern const u8 gText_ScottMatchCallName[];
-extern const u8 gText_RoxanneMatchCallDesc[];
-extern const u8 gText_BrawlyMatchCallDesc[];
-extern const u8 gText_WattsonMatchCallDesc[];
-extern const u8 gText_FlanneryMatchCallDesc[];
-extern const u8 gText_WinonaMatchCallDesc[];
-extern const u8 gText_TateLizaMatchCallDesc[];
-extern const u8 gText_JuanMatchCallDesc[];
-extern const u8 gText_EliteFourMatchCallDesc[];
-extern const u8 gText_ChampionMatchCallDesc[];
-extern const u8 gText_ProfBirchMatchCallDesc[];
-extern const u8 gText_ProfBirchMatchCallName[];
-extern const u8 gText_MatchCallSteven_Strategy[];
-extern const u8 gText_MatchCallSteven_Pokemon[];
-extern const u8 gText_MatchCallSteven_Intro1_BeforeMeteorFallsBattle[];
-extern const u8 gText_MatchCallSteven_Intro2_BeforeMeteorFallsBattle[];
-extern const u8 gText_MatchCallSteven_Intro1_AfterMeteorFallsBattle[];
-extern const u8 gText_MatchCallSteven_Intro2_AfterMeteorFallsBattle[];
-extern const u8 gText_MatchCallBrendan_Strategy[];
-extern const u8 gText_MatchCallBrendan_Pokemon[];
-extern const u8 gText_MatchCallBrendan_Intro1[];
-extern const u8 gText_MatchCallBrendan_Intro2[];
-extern const u8 gText_MatchCallMay_Strategy[];
-extern const u8 gText_MatchCallMay_Pokemon[];
-extern const u8 gText_MatchCallMay_Intro1[];
-extern const u8 gText_MatchCallMay_Intro2[];
 
 // Contest Link
 extern const u8 gText_ColorDarkGray[];
@@ -2969,37 +2857,6 @@ extern const u8 gText_CutenessContest[];
 extern const u8 gText_SmartnessContest[];
 extern const u8 gText_ToughnessContest[];
 
-// PokéNav Match Call
-extern const u8 gText_CallCantBeMadeHere[];
-extern const u8 gText_NumberRegistered[];
-extern const u8 gText_NumberOfBattles[];
-extern const u8 gText_Unknown[];
-extern const u8 gText_TrainerCloseBy[];
-extern const u8 gText_Call[];
-extern const u8 gText_Check[];
-extern const u8 gText_Cancel6[];
-
-// PokéNav Menu Handler
-extern const u8 gText_CheckMapOfHoenn[];
-extern const u8 gText_CheckPokemonInDetail[];
-extern const u8 gText_CallRegisteredTrainer[];
-extern const u8 gText_CheckObtainedRibbons[];
-extern const u8 gText_PutAwayPokenav[];
-extern const u8 gText_CheckPartyPokemonInDetail[];
-extern const u8 gText_CheckAllPokemonInDetail[];
-extern const u8 gText_ReturnToPokenavMenu[];
-extern const u8 gText_FindCoolPokemon[];
-extern const u8 gText_FindBeautifulPokemon[];
-extern const u8 gText_FindCutePokemon[];
-extern const u8 gText_FindSmartPokemon[];
-extern const u8 gText_FindToughPokemon[];
-extern const u8 gText_ReturnToConditionMenu[];
-extern const u8 gText_NoRibbonWinners[];
-
-// PokéNav
-extern const u8 gText_NumberIndex[];
-extern const u8 gText_RibbonsF700[];
-
 // use_pokeblock
 extern const u8 gText_Coolness[];
 extern const u8 gText_Toughness[];
@@ -3059,5 +2916,9 @@ extern const u8 gText_PlantBerry[];
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
+
+// FRLG whiteout
+extern const u8 gText_PlayerScurriedToCenter[];
+extern const u8 gText_PlayerScurriedBackHome[];
 
 #endif // GUARD_STRINGS_H

@@ -89,7 +89,6 @@
 #define BATTLE_TWO_VS_ONE_OPPONENT ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gTrainerBattleOpponent_B == 0xFFFF))
 #define BATTLE_TYPE_HAS_AI          (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_SAFARI | BATTLE_TYPE_ROAMER | BATTLE_TYPE_INGAME_PARTNER)
 
-
 // Battle Outcome defines
 #define B_OUTCOME_WON                  1
 #define B_OUTCOME_LOST                 2
@@ -138,7 +137,7 @@
 #define STATUS2_WRAPPED               (1 << 13)
 #define STATUS2_POWDER                (1 << 14)
 #define STATUS2_INFATUATION           (1 << 16 | 1 << 17 | 1 << 18 | 1 << 19)  // 4 bits, one for every battler
-#define STATUS2_INFATUATED_WITH(battler) (gBitTable[battler] << 16)
+#define STATUS2_INFATUATED_WITH(battler) (1u << (battler + 16))
 #define STATUS2_DEFENSE_CURL          (1 << 20)
 #define STATUS2_TRANSFORMED           (1 << 21)
 #define STATUS2_RECHARGE              (1 << 22)
@@ -218,8 +217,8 @@
 #define HITMARKER_OBEYS                 (1 << 25)
 #define HITMARKER_NEVER_SET             (1 << 26) // Cleared as part of a large group. Never set or checked
 #define HITMARKER_CHARGING              (1 << 27)
-#define HITMARKER_FAINTED(battler)      (gBitTable[battler] << 28)
-#define HITMARKER_FAINTED2(battler)     ((1 << 28) << battler)
+#define HITMARKER_FAINTED(battler)      (1u << (battler + 28))
+#define HITMARKER_FAINTED2(battler)     HITMARKER_FAINTED(battler)
 #define HITMARKER_STRING_PRINTED        (1 << 29)
 
 // Per-side statuses that affect an entire party

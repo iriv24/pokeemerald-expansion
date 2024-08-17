@@ -132,7 +132,7 @@ void SetControllerToOpponent(u32 battler)
 
 static void OpponentBufferRunCommand(u32 battler)
 {
-    if (gBattleControllerExecFlags & gBitTable[battler])
+    if (gBattleControllerExecFlags & (1u << battler))
     {
         if (gBattleResources->bufferA[battler][0] < ARRAY_COUNT(sOpponentBufferCommands))
             sOpponentBufferCommands[gBattleResources->bufferA[battler][0]](battler);
@@ -390,7 +390,7 @@ static void OpponentBufferExecCompleted(u32 battler)
     }
     else
     {
-        gBattleControllerExecFlags &= ~gBitTable[battler];
+        gBattleControllerExecFlags &= ~(1u << battler);
     }
 }
 
@@ -549,7 +549,7 @@ static void OpponentHandleChooseMove(u32 battler)
                     if (GetBattlerMoveTargetType(battler, chosenMove) & MOVE_TARGET_BOTH)
                     {
                         gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
-                        if (gAbsentBattlerFlags & gBitTable[gBattlerTarget])
+                        if (gAbsentBattlerFlags & (1u << gBattlerTarget))
                             gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
                     }
                     // If opponent can and should use a gimmick (considering trainer data), do it
@@ -581,7 +581,7 @@ static void OpponentHandleChooseMove(u32 battler)
 
         if (GetBattlerMoveTargetType(battler, move) & (MOVE_TARGET_USER_OR_SELECTED | MOVE_TARGET_USER))
             BtlController_EmitTwoReturnValues(battler, BUFFER_B, 10, (chosenMoveId) | (battler << 8));
-        else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+        else if (IsDoubleBattle())
         {
             do {
                 target = GetBattlerAtPosition(Random() & 2);
@@ -653,7 +653,7 @@ static void OpponentHandleChoosePokemon(u32 battler)
         {
             s32 battler1, battler2, firstId, lastId;
 
-            if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
+            if (!IsDoubleBattle())
             {
                 battler2 = battler1 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
             }

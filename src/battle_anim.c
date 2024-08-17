@@ -798,7 +798,7 @@ static void Cmd_end(void)
         // Debugging - ensure no hanging mon bg tasks
         if (FuncIsActiveTask(Task_UpdateMonBg))
             DebugPrintf("Move %d animation still has Task_UpdateMonBg active at the end!", gAnimMoveIndex);
-        
+
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
         if (!IsContest())
         {
@@ -2145,12 +2145,9 @@ static void Cmd_stopsound(void)
 
 static void Cmd_jumpifmovetypeequal(void)
 {
-    u8 moveType;
     const u8 *type = sBattleAnimScriptPtr + 1;
     sBattleAnimScriptPtr += 2;
-    GET_MOVE_TYPE(gCurrentMove, moveType);
-
-    if (*type != moveType)
+    if (*type != GetMoveType(gCurrentMove))
         sBattleAnimScriptPtr += 4;
     else
         sBattleAnimScriptPtr = T2_READ_PTR(sBattleAnimScriptPtr);

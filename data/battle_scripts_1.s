@@ -30,6 +30,19 @@ BattleScript_DamageToQuarterTargetHP::
 	damagetoquartertargethp
 	goto BattleScript_HitFromAtkAnimation
 
+BattleScript_EffectFickleBeam::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	ficklebeamdamagecalculation
+	goto BattleScript_HitFromCritCalc
+BattleScript_FickleBeamDoubled::
+	pause B_WAIT_TIME_SHORTEST
+	printstring STRINGID_FICKLEBEAMDOUBLED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_HitFromCritCalc
+
 BattleScript_Terastallization::
 	@ TODO: no string prints in S/V, but right now this helps with clarity
 	printstring STRINGID_PKMNSTORINGENERGY
@@ -565,7 +578,7 @@ BattleScript_Teatimerod:
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TeatimeBuffer
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0x2, BattleScript_TeatimeBuffer
 	printfromtable gStatUpStringIds
-	waitmessage 0x40
+	waitmessage B_WAIT_TIME_LONG
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_TeatimeLoop
 	moveendcase MOVEEND_CLEAR_BITS
@@ -577,7 +590,7 @@ BattleScript_Teatimemotor:
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TeatimeBuffer
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0x2, BattleScript_TeatimeBuffer
 	printfromtable gStatUpStringIds
-	waitmessage 0x40
+	waitmessage B_WAIT_TIME_LONG
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_TeatimeLoop
 	moveendcase MOVEEND_CLEAR_BITS
@@ -865,6 +878,7 @@ BattleScript_OctlockTurnDmgEnd:
 
 BattleScript_EffectPoltergeist::
 	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
 	checkpoltergeist BS_TARGET, BattleScript_ButItFailed
@@ -6356,6 +6370,7 @@ BattleScript_StickyWebOnSwitchInPrintStatMsg:
 BattleScript_StickyWebOnSwitchInEnd:
 	restoretarget
 	restoreattacker
+	setbyte sSTICKY_WEB_STAT_DROP, 0
 	return
 
 BattleScript_PerishSongTakesLife::
