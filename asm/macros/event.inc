@@ -1901,6 +1901,12 @@
 	.2byte \quantity
 	.endm
 
+	@ Advances time based on variable passed, 0 = Day, 1 = Night, 2 = Morning, 3 = Dusk
+	.macro advancetime time:req
+	.byte 0xe7
+	.2byte \time
+	.endm
+
 
 @ Supplementary
 

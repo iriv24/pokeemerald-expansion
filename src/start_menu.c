@@ -497,21 +497,24 @@ static void ShowTimeWindow(void)
     const u8 *suffix;
     u8* ptr;
     u8 convertedHours;
+    RtcCalcLocalTime();
+    s8 hours = gLocalTime.hours;
+    s8 minutes = gLocalTime.minutes;
 
     // print window
     sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
     PutWindowTilemap(sStartClockWindowId);
     DrawStdWindowFrame(sStartClockWindowId, FALSE);
 
-    if (gLocalTime.hours < 12)
+    if (hours < 12)
     {
-        if (gLocalTime.hours == 0)
+        if (hours == 0)
             convertedHours = 12;
         else
-            convertedHours = gLocalTime.hours;
+            convertedHours = hours;
         suffix = gText_AM;
     }
-    else if (gLocalTime.hours == 12)
+    else if (hours == 12)
     {
         convertedHours = 12;
         if (suffix == gText_AM);
@@ -519,18 +522,17 @@ static void ShowTimeWindow(void)
     }
     else
     {
-        convertedHours = gLocalTime.hours - 12;
+        convertedHours = hours - 12;
         suffix = gText_PM;
     }
 
-    //StringExpandPlaceholders(gStringVar4, gDayNameStringsTable[(gLocalTime.days % 7)]);
     StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime); // prints "time" word, from version before weekday was added and leaving it here in case anyone would prefer to use it
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL); 
 
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *ptr = 0xF0;
 
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(ptr + 1, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL); // print time
 
     AddTextPrinterParameterized(sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm

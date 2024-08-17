@@ -419,3 +419,72 @@ EventScript_EnableFollowers::
     end
 FollowersEnabled:
     .string "Followers {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
+
+EventScript_TimeChanger::
+	dynmultipush TimeChanger_Text_Day, 0
+	dynmultipush TimeChanger_Text_Night, 1
+	dynmultipush TimeChanger_Text_Morning, 2
+	dynmultipush TimeChanger_Text_Dusk, 3 
+	dynmultipush TimeChanger_Text_Exit, MULTI_B_PRESSED
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq EventScript_TimeChanger_Time_Unchanged
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_TimeChanger_ChangeTimeToDay
+	compare VAR_RESULT, 1
+	goto_if_eq EventScript_TimeChanger_ChangeTimeToNight
+	compare VAR_RESULT, 2
+	goto_if_eq EventScript_TimeChanger_ChangeTimeToMorning
+	compare VAR_RESULT, 3
+	goto_if_eq EventScript_TimeChanger_ChangeTimeToDusk
+	end
+
+EventScript_TimeChanger_Time_Unchanged:
+    end
+
+EventScript_TimeChanger_ChangeTimeToDay:
+	advancetime 0
+	msgbox TimeChanger_Text_ItIsNowDay MSGBOX_SIGN
+    end
+
+EventScript_TimeChanger_ChangeTimeToNight:
+	advancetime 1
+	msgbox TimeChanger_Text_ItIsNowNight MSGBOX_SIGN
+    end
+
+EventScript_TimeChanger_ChangeTimeToMorning:
+	advancetime 2
+	msgbox TimeChanger_Text_ItIsNowMorning MSGBOX_SIGN
+    end
+
+EventScript_TimeChanger_ChangeTimeToDusk:
+	advancetime 3
+	msgbox TimeChanger_Text_ItIsNowDusk MSGBOX_SIGN
+    end
+
+TimeChanger_Text_Day:
+	.string "Day$"
+
+TimeChanger_Text_Night:
+	.string "Night$"
+
+TimeChanger_Text_Morning:
+	.string "Morning$"
+
+TimeChanger_Text_Dusk:
+	.string "Dusk$"
+
+TimeChanger_Text_ItIsNowDay:
+	.string "It is now Day.$"
+
+TimeChanger_Text_ItIsNowNight:
+	.string "It is now Night.$"
+
+TimeChanger_Text_ItIsNowMorning:
+	.string "It is now Morning.$"
+
+TimeChanger_Text_ItIsNowDusk:
+	.string "It is now Dusk.$"
+
+TimeChanger_Text_Exit:
+	.string "Cancel$"

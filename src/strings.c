@@ -1543,6 +1543,7 @@ const u8 gText_MenuExit[] = _("EXIT");
 const u8 gText_MenuRetire[] = _("RETIRE");
 const u8 gText_MenuRest[] = _("REST");
 const u8 gText_MenuDexNav[] = _("DEXNAV");
+const u8 gText_TimeChanger[] = _("TIME");
 const u8 gText_AutoRunOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}AUTO RUN");
 const u8 gText_AutoRunOff[] = _("{COLOR RED}{SHADOW LIGHT_RED}AUTO RUN");
 const u8 gText_FollowersOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FOLLOWER");

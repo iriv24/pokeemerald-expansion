@@ -16,6 +16,7 @@
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
@@ -1134,6 +1135,41 @@ bool8 ScrCmd_setobjectxy(struct ScriptContext *ctx)
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
     TryMoveObjectEventToMapCoords(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
+    return FALSE;
+}
+
+bool8 ScrCmd_advancetime(struct ScriptContext *ctx)
+{
+    u16 timeToAdvanceTo = VarGet(ScriptReadHalfword(ctx));
+    DebugPrintf("time var to switch: %d", timeToAdvanceTo);
+    switch (timeToAdvanceTo)
+    {
+    // Day
+    case 0:
+        FakeRtc_ManuallySetTime(DAY_HOUR_BEGIN, 0, 0);
+        break;
+
+    // Night
+    case 1:
+        FakeRtc_ManuallySetTime(NIGHT_HOUR_BEGIN, 0, 0);
+        break;
+
+    // Morning
+    case 2:
+        FakeRtc_ManuallySetTime(MORNING_HOUR_BEGIN, 0, 0);
+        break;
+
+    // Dusk
+    case 3:
+        FakeRtc_ManuallySetTime(EVENING_HOUR_BEGIN, 0, 0);
+        break;
+    
+    // default to day i guess
+    default:
+        FakeRtc_ManuallySetTime(10, 0, 0);
+        break;
+    }
+
     return FALSE;
 }
 

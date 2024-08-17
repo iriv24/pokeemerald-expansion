@@ -8,6 +8,7 @@
 #include "event_object_movement.h"
 #include "event_object_lock.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "fieldmap.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
@@ -57,6 +58,7 @@ enum
 {
     MENU_ACTION_PC,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_TIME_CHANGER,
     MENU_ACTION_AUTO_RUN_ON,
     MENU_ACTION_AUTO_RUN_OFF,
     MENU_ACTION_FOLLOWERS_ON,
@@ -81,6 +83,7 @@ static bool8 LMenuExitCallback(void);
 static bool8 LMenuDexNavCallback(void);
 static bool8 LMenuAutoRunCallback(void);
 static bool8 LMenuFollowersCallback(void);
+static bool8 LMenuTimeChangerCallback(void);
 
 // Menu callbacks
 static bool8 HandleLMenuInput(void);
@@ -101,13 +104,14 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
 
 static const struct MenuAction sLMenuItems[] =
 {
-    [MENU_ACTION_PC]              = {gText_MenuPC, {.u8_void = LMenuPCCallback}},
-    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = LMenuDexNavCallback}},
-    [MENU_ACTION_AUTO_RUN_ON]          = {gText_AutoRunOn,  {.u8_void = LMenuAutoRunCallback}},
+    [MENU_ACTION_PC]                    = {gText_MenuPC, {.u8_void = LMenuPCCallback}},
+    [MENU_ACTION_DEXNAV]                = {gText_MenuDexNav,  {.u8_void = LMenuDexNavCallback}},
+    [MENU_ACTION_TIME_CHANGER]          = {gText_TimeChanger,  {.u8_void = LMenuTimeChangerCallback}},
+    [MENU_ACTION_AUTO_RUN_ON]           = {gText_AutoRunOn,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_AUTO_RUN_OFF]          = {gText_AutoRunOff,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_FOLLOWERS_ON]          = {gText_FollowersOn,  {.u8_void = LMenuFollowersCallback}},
-    [MENU_ACTION_FOLLOWERS_OFF]          = {gText_FollowersOff,  {.u8_void = LMenuFollowersCallback}},
-    [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = LMenuExitCallback}},
+    [MENU_ACTION_FOLLOWERS_OFF]         = {gText_FollowersOff,  {.u8_void = LMenuFollowersCallback}},
+    [MENU_ACTION_EXIT]                  = {gText_MenuExit,    {.u8_void = LMenuExitCallback}},
 };
 
 // Local functions
@@ -126,6 +130,7 @@ static void CreateLMenuTask(TaskFunc followupFunc);
 static void HideLMenuWindow(void);
 static void HideLMenuWindowAutoRun(void);
 static void HideLMenuWindowFollowers(void);
+static void HideLMenuWindowTimeChanger(void);
 static void ShowTimeWindow(void);
 static void RemoveLMenuTimeWindow(void);
 
@@ -178,7 +183,9 @@ static void BuildNormalLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
+    
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -209,6 +216,7 @@ static void BuildSafariZoneLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -244,6 +252,7 @@ static void BuildLinkModeLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -279,6 +288,7 @@ static void BuildUnionRoomLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -310,6 +320,7 @@ static void BuildBattlePikeLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -341,6 +352,7 @@ static void BuildBattlePyramidLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -372,6 +384,7 @@ static void BuildMultiPartnerRoomLMenu(void)
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
+        AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
     if (FlagGet(FLAG_SYS_B_DASH))
     {
@@ -552,7 +565,7 @@ static bool8 HandleLMenuInput(void)
         
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 
-        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback && gMenuCallback2 != LMenuFollowersCallback)
+        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback && gMenuCallback2 != LMenuFollowersCallback && gMenuCallback2 != LMenuTimeChangerCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -615,6 +628,12 @@ static bool8 LMenuAutoRunCallback(void)
     return TRUE;
 }
 
+void HideLMenuAutoRun(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowAutoRun();
+}
+
 static void HideLMenuWindowAutoRun(void)
 {
     ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
@@ -638,11 +657,30 @@ static void HideLMenuWindowAutoRun(void)
     }
 }
 
-void HideLMenuAutoRun(void)
+extern const u8 EventScript_TimeChanger[];
+static bool8 LMenuTimeChangerCallback(void)
+{
+    HideLMenuTimeChanger(); // Hide start menu
+    return TRUE;
+}
+
+void HideLMenuTimeChanger(void)
 {
     PlaySE(SE_SELECT);
-    HideLMenuWindowAutoRun();
+    HideLMenuWindowTimeChanger();
 }
+
+static void HideLMenuWindowTimeChanger(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    PlaySE(SE_SELECT);
+    ScriptContext_SetupScript(EventScript_TimeChanger);
+}
+
 
 extern const u8 EventScript_DisableFollowers[];
 extern const u8 EventScript_EnableFollowers[];
@@ -726,21 +764,24 @@ static void ShowTimeWindow(void)
     const u8 *suffix;
     u8* ptr;
     u8 convertedHours;
+    RtcCalcLocalTime();
+    s8 hours = gLocalTime.hours;
+    s8 minutes = gLocalTime.minutes;
 
     // print window
     sStartClockWindowId2 = AddWindow(&sWindowTemplate_StartClock);
     PutWindowTilemap(sStartClockWindowId2);
     DrawStdWindowFrame(sStartClockWindowId2, FALSE);
 
-    if (gLocalTime.hours < 12)
+    if (hours < 12)
     {
-        if (gLocalTime.hours == 0)
+        if (hours == 0)
             convertedHours = 12;
         else
-            convertedHours = gLocalTime.hours;
+            convertedHours = hours;
         suffix = gText_AM;
     }
-    else if (gLocalTime.hours == 12)
+    else if (hours == 12)
     {
         convertedHours = 12;
         if (suffix == gText_AM);
@@ -748,7 +789,7 @@ static void ShowTimeWindow(void)
     }
     else
     {
-        convertedHours = gLocalTime.hours - 12;
+        convertedHours = hours - 12;
         suffix = gText_PM;
     }
 
@@ -758,7 +799,7 @@ static void ShowTimeWindow(void)
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *ptr = 0xF0;
 
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(ptr + 1, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized(sStartClockWindowId2, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH2) - (CLOCK_WINDOW_WIDTH2 - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH2) + 3), 1, 0xFF, NULL); // print time
 
     AddTextPrinterParameterized(sStartClockWindowId2, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH2), 1, 0xFF, NULL); // print am/pm

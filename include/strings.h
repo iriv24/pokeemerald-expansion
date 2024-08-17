@@ -259,6 +259,7 @@ extern const u8 gText_MenuExit[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuRest[];
 extern const u8 gText_MenuDexNav[];
+extern const u8 gText_TimeChanger[];
 extern const u8 gText_AutoRunOn[];
 extern const u8 gText_AutoRunOff[];
 extern const u8 gText_FollowersOn[];
