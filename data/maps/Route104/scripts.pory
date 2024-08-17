@@ -1001,7 +1001,7 @@ Route104_EventScript_Darian::
 
 Route104_Text_BrineyLivesInSeasideCottage:
 	.string "That seaside cottage is where\n"
-	.string "MR. BRINEY lives.\p"
+	.string "Mr. Briney lives.\p"
 	.string "He was once a mighty sailor who never\n"
 	.string "feared the sea, however stormy.$"
 
@@ -1011,20 +1011,20 @@ Route104_Text_WhatsItLikeAtBottomOfSea:
 	.string "of the sea?$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
-	.string "If you're going to throw a POKé BALL,\n"
-	.string "weaken the wild POKéMON first.\p"
+	.string "If you're going to throw a Poké Ball,\n"
+	.string "weaken the wild Pokémon first.\p"
 	.string "It will be easier to catch if it's been\n"
 	.string "poisoned, burned, or lulled to sleep.$"
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "You're a thief if you try to steal\n"
-	.string "someone else's POKéMON.\p"
-	.string "You should throw POKé BALLS only at\n"
-	.string "wild POKéMON.$"
+	.string "someone else's Pokémon.\p"
+	.string "You should throw Poké BallS only at\n"
+	.string "wild Pokémon.$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh, no, I'm not a TRAINER.\p"
-	.string "But that's right, if TRAINERS lock eyes,\n"
+	.string "Oh, no, I'm not a trainer.\p"
+	.string "But that's right, if trainers lock eyes,\n"
 	.string "it's a challenge to battle.\p"
 	.string "If you don't want to battle, stay out\n"
 	.string "of their sight.$"
@@ -1033,26 +1033,24 @@ Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "I like filling my mouth with seeds,\n"
 	.string "then spitting them out fast!\p"
 	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
+	.string "Use it on a Pokémon, and it will learn\n"
 	.string "a move for firing seeds rapidly.$"
 
 Route104_Text_TMsAreOneTimeUse:
-	.string "A word of advice!\p"
-	.string "A TM, TECHNICAL MACHINE, is good only\n"
-	.string "for one-time use.\p"
-	.string "Once you use it, it's gone.\n"
-	.string "Think twice before using it!$"
+	.string "And guess what!\n"
+	.string "Now, you can use a TM, as many\l"
+	.string "times as you want! Isn't that great?$"
 
 Route104_Text_DontNeedThisTakeIt:
-	.string "This FLOWER SHOP started selling\n"
+	.string "This Flower Shop started selling\n"
 	.string "saplings recently.\p"
 	.string "It made me so happy, I went overboard\n"
 	.string "shopping.\p"
-	.string "I don't need this WHITE HERB anymore.\n"
+	.string "I don't need this White Herb anymore.\n"
 	.string "Would you take it, please?$"
 
 Route104_Text_FlowerShopSellingSaplings:
-	.string "This FLOWER SHOP started selling\n"
+	.string "This Fower Shop started selling\n"
 	.string "saplings recently.\p"
 	.string "It made me so happy, I went overboard\n"
 	.string "shopping. Where should I put them?$"
@@ -1073,24 +1071,24 @@ Route104_Text_PrettyPetalFlowShop:
 
 Route104_Text_TrainerTipsDoubleBattles:
 	.string "TRAINER TIPS\p"
-	.string "In the HOENN region there are pairs\n"
-	.string "of TRAINERS who challenge others\l"
-	.string "for 2-on-2 POKéMON battles called\l"
+	.string "In the Hoenn region there are pairs\n"
+	.string "of trainers who challenge others\l"
+	.string "for 2-on-2 Pokémon battles called\l"
 	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the TRAINER must\n"
-	.string "send out two POKéMON, the one at the\l"
+	.string "In a DOUBLE BATTLE, the trainer must\n"
+	.string "send out two Pokémon, the one at the\l"
 	.string "left of the list and the top one.\l"
-	.string "Watch how POKéMON are lined up.$"
+	.string "Watch how Pokémon are lined up.$"
 
 Route104_Text_MayWeShouldRegister:
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "DEVON upgraded your POKéNAV with\n"
-	.string "the MATCH CALL system, huh?\p"
+	.string "Devon upgraded your POKéNAV with\n"
+	.string "the Match Call system, huh?\p"
 	.string "We should register each other so we\n"
 	.string "can get in contact anytime.$"
 
 Route104_Text_RegisteredMay:
-	.string "{PLAYER} registered MAY\n"
+	.string "{PLAYER} registered May\n"
 	.string "in the POKéNAV.$"
 
 Route104_Text_MayHowsYourPokedex:
@@ -1105,15 +1103,15 @@ Route104_Text_MayMinesDecentLetsBattle:
 Route104_Text_MayHaventRaisedPokemon:
 	.string "May: Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
-	.string "POKéMON very much?\p"
-	.string "That's not very good for a TRAINER!$"
+	.string "Pokémon very much?\p"
+	.string "That's not very good for a trainer!$"
 
 Route104_Text_MayLetsBattle:
 	.string "May: So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 Route104_Text_MayIntro:
-	.string "May: You just became a TRAINER,\n"
+	.string "May: You just became a trainer,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 Route104_Text_MayDefeat:
@@ -1122,21 +1120,21 @@ Route104_Text_MayDefeat:
 
 Route104_Text_MayPostBattle:
 	.string "May: I can tell you've gotten pretty\n"
-	.string "good with the way you handle POKéMON.\p"
+	.string "good with the way you handle Pokémon.\p"
 	.string "But instead of only making them\n"
-	.string "battle, you should be like MR. BRINEY.\p"
+	.string "battle, you should be like Mr. Briney.\p"
 	.string "It's important to become friends with\n"
-	.string "POKéMON, too.$"
+	.string "Pokémon, too.$"
 
 Route104_Text_BrendanWeShouldRegister:
 	.string "Brendan: Oh, hey, {PLAYER}!\p"
-	.string "Cool, you had DEVON install the MATCH\n"
-	.string "CALL system on your POKéNAV!\p"
+	.string "Cool, you had Devon install the Match\n"
+	.string "Call system on your POKéNAV!\p"
 	.string "Let's register each other in our\n"
 	.string "POKéNAVS so we can keep in touch.$"
 
 Route104_Text_RegisteredBrendan:
-	.string "{PLAYER} registered BRENDAN\n"
+	.string "{PLAYER} registered Brendan\n"
 	.string "in the POKéNAV.$"
 
 Route104_Text_BrendanHowsYourPokedex:
@@ -1150,7 +1148,7 @@ Route104_Text_BrendanDoingGreatLetsBattle:
 
 Route104_Text_BrendanNoConfidence:
 	.string "Brendan: What's the matter? Don't have\n"
-	.string "any confidence in your POKéMON?$"
+	.string "any confidence in your Pokémon?$"
 
 Route104_Text_BrendanLetsBattle:
 	.string "Brendan: What's up?\n"
@@ -1158,7 +1156,7 @@ Route104_Text_BrendanLetsBattle:
 
 Route104_Text_BrendanIntro:
 	.string "Brendan: I know you just became\n"
-	.string "a TRAINER, but I won't go easy!$"
+	.string "a trainer, but I won't go easy!$"
 
 Route104_Text_BrendanDefeat:
 	.string "Hmm…\n"
@@ -1166,11 +1164,11 @@ Route104_Text_BrendanDefeat:
 
 Route104_Text_BrendanPostBattle:
 	.string "Brendan: You've gotten pretty decent\n"
-	.string "at handling POKéMON.\p"
+	.string "at handling Pokémon.\p"
 	.string "But, you know, you shouldn't just be\n"
-	.string "making POKéMON battle.\p"
-	.string "Like MR. BRINEY, it's important to\n"
-	.string "become friends with your POKéMON.$"
+	.string "making Pokémon battle.\p"
+	.string "Like Mr. Briney, it's important to\n"
+	.string "become friends with your Pokémon.$"
 `
 
 script Route104_EventScript_DawnTrigger1{
@@ -1213,32 +1211,35 @@ script Route104_EventScript_DawnRivalBattle{
 
 script Route104_EventScript_DawnDefeated{
 	msgbox(Dawn_TakeThis)
-	giveitem(ITEM_ASPEAR_BERRY, 10)
-	giveitem(ITEM_PERSIM_BERRY, 10)
-	giveitem(ITEM_PECHA_BERRY, 10)
-	giveitem(ITEM_RAWST_BERRY, 10)
-	giveitem(ITEM_CHERI_BERRY, 10)
-	giveitem(ITEM_CHESTO_BERRY, 10)
-	giveitem(ITEM_CHOPLE_BERRY, 10)
-	giveitem(ITEM_COLBUR_BERRY, 10)
-	giveitem(ITEM_WACAN_BERRY, 10)
-	giveitem(ITEM_CHARTI_BERRY, 10)
-	giveitem(ITEM_CHILAN_BERRY, 10)
-	giveitem(ITEM_HABAN_BERRY, 10)
-	giveitem(ITEM_ROSELI_BERRY, 10)
-	giveitem(ITEM_SHUCA_BERRY, 10)
-	giveitem(ITEM_BABIRI_BERRY, 10)
-	giveitem(ITEM_KASIB_BERRY, 10)
-	giveitem(ITEM_COBA_BERRY, 10)
-	giveitem(ITEM_KEBIA_BERRY, 10)
-	giveitem(ITEM_OCCA_BERRY, 10)
-	giveitem(ITEM_PASSHO_BERRY, 10)
-	giveitem(ITEM_PAYAPA_BERRY, 10)
-	giveitem(ITEM_RINDO_BERRY, 10)
-	giveitem(ITEM_YACHE_BERRY, 10)
-	giveitem(ITEM_TANGA_BERRY, 10)
-	giveitem(ITEM_HARBOR_MAIL)
-	giveitem(ITEM_WISE_GLASSES)
+	giveitemfast(ITEM_ASPEAR_BERRY, 10)
+	giveitemfast(ITEM_PERSIM_BERRY, 10)
+	giveitemfast(ITEM_PECHA_BERRY, 10)
+	giveitemfast(ITEM_RAWST_BERRY, 10)
+	giveitemfast(ITEM_CHERI_BERRY, 10)
+	giveitemfast(ITEM_CHESTO_BERRY, 10)
+	giveitemfast(ITEM_CHOPLE_BERRY, 10)
+	giveitemfast(ITEM_COLBUR_BERRY, 10)
+	giveitemfast(ITEM_WACAN_BERRY, 10)
+	giveitemfast(ITEM_CHARTI_BERRY, 10)
+	giveitemfast(ITEM_CHILAN_BERRY, 10)
+	giveitemfast(ITEM_HABAN_BERRY, 10)
+	giveitemfast(ITEM_ROSELI_BERRY, 10)
+	giveitemfast(ITEM_SHUCA_BERRY, 10)
+	giveitemfast(ITEM_BABIRI_BERRY, 10)
+	giveitemfast(ITEM_KASIB_BERRY, 10)
+	giveitemfast(ITEM_COBA_BERRY, 10)
+	giveitemfast(ITEM_KEBIA_BERRY, 10)
+	giveitemfast(ITEM_OCCA_BERRY, 10)
+	giveitemfast(ITEM_PASSHO_BERRY, 10)
+	giveitemfast(ITEM_PAYAPA_BERRY, 10)
+	giveitemfast(ITEM_RINDO_BERRY, 10)
+	giveitemfast(ITEM_YACHE_BERRY, 10)
+	giveitemfast(ITEM_TANGA_BERRY, 10)
+	giveitemfast(ITEM_HARBOR_MAIL)
+	giveitemfast(ITEM_WISE_GLASSES)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT)
+	waitfanfare
 	msgbox(DawnGoodbye)
 	goto(Route104_EventScript_DawnExit)
 	end
@@ -1303,16 +1304,19 @@ script Route104_EventScript_DawnExit1{
 }
 
 text Dawn_Greeting{
-	"Hey! My name is Dawn, I'm a friend of\n"
-	"{RIVAL}'s. I haven't beaten all the\p"
-	"gyms in Hoenn yet, so I'll be making my\n"
-	"way through the region and catching up\p"
-	"with {RIVAL} every once in a while!\n"
-	"{RIVAL} also told me to be on the\p"
-	"lookout for a trainer named {PLAYER}\n"
-	"because it seems like they've got\p"
-	"potential. I'm assuming that trainer is\n"
-	"you? I guess I'll be the judge of that!"
+	"Hey there! Are you {PLAYER}, by\n"
+	"chance?\p"
+	"You are? Great! My name is Dawn, I'm\n"
+	"a friend of {RIVAL}'s.\p"
+	"They actually just passed through here\n"
+	"and told me to be on the lookout for a\l"
+	"trainer named {PLAYER}.\p"
+	"{RIVAL} seems to think you have a lot\n"
+	"of potential, and that you're someone I\l"
+	"should keep my eye on while I'm making\l"
+	"my way through the Hoenn region.\p"
+	"I want to be the judge of that, though,\n"
+	"so what do you say we have a battle!"
 }
 
 text Dawn_Defeated{
@@ -1322,13 +1326,21 @@ text Dawn_Defeated{
 
 text Dawn_TakeThis{
 	"That was a great battle! I'll definitely\n"
-	"be seeing you again, {PLAYER}, so I can\p"
-	"test my strength! Also, here, I have\n"
-	"some extra sets of items taking up\p"
-	"space in my bag that you can have."
+	"be seeing you again, {PLAYER}, so I can\l"
+	"test my strength!\p"
+	"Also, here, I have some extra Items\n"
+	"taking up space in my Bag that you can\l"
+	"have, hopefully they'll be helpful."
 }
 
 text DawnGoodbye{
-	"Alright, I'm off, see you around!"
+	"I gave you a bunch of Berries that can\n"
+	"reduce the damage of super effective\l"
+	"moves, and a handy pair of Wise Glasses\l"
+	"that can raise a Pokémon's Special\l"
+	"Attack. Be sure to check them out!\p"
+	"Alright, I'm off. Nice to meet you\n"
+	"{PLAYER}, I'm sure we'll see each other\l"
+	"again soon!"
 }
 	

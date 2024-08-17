@@ -2047,6 +2047,6 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 # 1024 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 1025 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems:
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems::
 # 1026 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "{PLAYER} received several Items!$"
