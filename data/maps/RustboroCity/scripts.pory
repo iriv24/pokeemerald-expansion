@@ -1334,7 +1334,7 @@ RustboroCity_Text_YouCanHave2On2Battle:
 
 script RustboroCity_Trigger_BlockGymEntrance{
 	lockall
-	msgbox(GoBeatRoark)
+	msgbox(GoBeatRoark, MSGBOX_SIGN)
 	waitmessage
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
@@ -1343,8 +1343,8 @@ script RustboroCity_Trigger_BlockGymEntrance{
 
 text GoBeatRoark{
 	"You should go see if there are any\n"
-	"other strong trainers to fight, perhaps\p"
-	"very far east on Route 116!"
+	"other strong trainers to fight, perhaps\l"
+	"very far east on Route 116."
 }
 
 movement StopPlayer {

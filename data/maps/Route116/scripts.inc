@@ -1035,47 +1035,50 @@ Route116_EventScript_BattleRoark_Text_0:
 
 Roark_ExplainRockTombAndMuscleBand::
 # 534 "data/maps/Route116/scripts.pory"
-	.string "That TECHNICAL MACHINE, TM39,\n"
-	.string "contains ROCK TOMB.\p"
+	.string "That Technical Machine, TM39,\n"
+	.string "contains Rock Tomb.\p"
 	.string "It not only inflicts damage by dropping\n"
-	.string "rocks, it also lowers SPEED.\p"
+	.string "rocks, it also lowers Speed.\p"
 	.string "If you use a TM, it instantly teaches\n"
-	.string "the move to a POKéMON.\p"
-	.string "In this game, you can use a TM as many\n"
-	.string "times as you want!\p"
+	.string "the move to a Pokémon.\p"
+	.string "Thanks to some great advances in\n"
+	.string "technology, now you can use a TM as\l"
+	.string "many times as you want!\p"
 	.string "And the Muscle Band will boost your\n"
 	.string "Attack if held!$"
 
 Roark_Greeting::
-# 547 "data/maps/Route116/scripts.pory"
-	.string "Hi there! I'm Roark, a gym leader from\n"
-	.string "the Sinnoh region. I've heard there are\p"
-	.string "a lot of cool underground areas to\n"
-	.string "explore here in Hoenn, so I had to come\p"
-	.string "check it out. I've also heard that the\n"
-	.string "trainers in this region were weaker\p"
-	.string "than the ones in Sinnoh. I wonder if\n"
-	.string "that's true... $"
+# 548 "data/maps/Route116/scripts.pory"
+	.string "Oh, hello. I'm Roark, a Gym Leader from\n"
+	.string "the Sinnoh region. I've heard there are\l"
+	.string "a lot of cool underground areas to\l"
+	.string "explore here in Hoenn, so I had to come\l"
+	.string "check it out myself.\p"
+	.string "I've also heard that the trainers in\n"
+	.string "this region are weaker than the ones\l"
+	.string "back in Sinnoh.$"
 
 WillYouBattleMe::
-# 558 "data/maps/Route116/scripts.pory"
-	.string "So what do you say, want to\n"
+# 559 "data/maps/Route116/scripts.pory"
+	.string "Hm, what's that? You're a trainer?\n"
+	.string "Well, now I want to find out if the\l"
+	.string "rumors are true! What do you say we\l"
 	.string "have a battle?$"
 
 Roark_Outro::
-# 563 "data/maps/Route116/scripts.pory"
+# 566 "data/maps/Route116/scripts.pory"
 	.string "Looks like the trainers here are\n"
-	.string "pretty strong! Please, take these\p"
+	.string "pretty strong! Please, take these\l"
 	.string "as rewards for beating me.$"
 
 PostBattle_Roark::
-# 570 "data/maps/Route116/scripts.pory"
+# 573 "data/maps/Route116/scripts.pory"
 	.string "Time to explore the underground!$"
 
 Ready_Yet::
-# 574 "data/maps/Route116/scripts.pory"
+# 577 "data/maps/Route116/scripts.pory"
 	.string "Ready for our battle now?$"
 
 Come_Back_When_Ready::
-# 578 "data/maps/Route116/scripts.pory"
+# 581 "data/maps/Route116/scripts.pory"
 	.string "Come back when you're ready.$"

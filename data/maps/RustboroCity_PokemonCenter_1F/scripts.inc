@@ -167,7 +167,7 @@ RustboroCity_PokemonCenter_1F_Text_HaveEggWillYouTakeIt:
 # 84 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	.string "I have an Egg here, but I'm too old to be\n"
 # 85 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
-	.string "running around for long enough for it\p"
+	.string "running around for long enough for it\l"
 # 86 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"
 	.string "to hatch. Will you take it?$"
 # 87 "data/maps/RustboroCity_PokemonCenter_1F/scripts.pory"

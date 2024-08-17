@@ -532,37 +532,40 @@ script Route116_EventScript_RoarkGiveRockTomb{
 }
 
 text Roark_ExplainRockTombAndMuscleBand{
-	"That TECHNICAL MACHINE, TM39,\n"
-	"contains ROCK TOMB.\p"
+	"That Technical Machine, TM39,\n"
+	"contains Rock Tomb.\p"
 	"It not only inflicts damage by dropping\n"
-	"rocks, it also lowers SPEED.\p"
+	"rocks, it also lowers Speed.\p"
 	"If you use a TM, it instantly teaches\n"
-	"the move to a POKéMON.\p"
-	"In this game, you can use a TM as many\n"
-	"times as you want!\p"
+	"the move to a Pokémon.\p"
+	"Thanks to some great advances in\n"
+	"technology, now you can use a TM as\l"
+	"many times as you want!\p"
 	"And the Muscle Band will boost your\n"
 	"Attack if held!"
 }
 
 text Roark_Greeting{
-	"Hi there! I'm Roark, a gym leader from\n"
-	"the Sinnoh region. I've heard there are\p"
-	"a lot of cool underground areas to\n"
-	"explore here in Hoenn, so I had to come\p"
-	"check it out. I've also heard that the\n"
-	"trainers in this region were weaker\p"
-	"than the ones in Sinnoh. I wonder if\n"
-	"that's true... "
+	"Oh, hello. I'm Roark, a Gym Leader from\n"
+	"the Sinnoh region. I've heard there are\l"
+	"a lot of cool underground areas to\l"
+	"explore here in Hoenn, so I had to come\l"
+	"check it out myself.\p"
+	"I've also heard that the trainers in\n"
+	"this region are weaker than the ones\l"
+	"back in Sinnoh."
 }
 
 text WillYouBattleMe{
-	"So what do you say, want to\n"
+	"Hm, what's that? You're a trainer?\n"
+	"Well, now I want to find out if the\l"
+	"rumors are true! What do you say we\l"
 	"have a battle?"
 }
 	
 text Roark_Outro{
 	"Looks like the trainers here are\n"
-	"pretty strong! Please, take these\p"
+	"pretty strong! Please, take these\l"
 	"as rewards for beating me."
 }
 

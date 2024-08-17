@@ -2667,7 +2667,7 @@ RustboroCity_Trigger_BlockGymEntrance::
 # 1336 "data/maps/RustboroCity/scripts.pory"
 	lockall
 # 1337 "data/maps/RustboroCity/scripts.pory"
-	msgbox GoBeatRoark
+	msgbox GoBeatRoark, MSGBOX_SIGN
 # 1338 "data/maps/RustboroCity/scripts.pory"
 	waitmessage
 # 1339 "data/maps/RustboroCity/scripts.pory"
@@ -2688,5 +2688,5 @@ StopPlayer:
 GoBeatRoark::
 # 1344 "data/maps/RustboroCity/scripts.pory"
 	.string "You should go see if there are any\n"
-	.string "other strong trainers to fight, perhaps\p"
-	.string "very far east on Route 116!$"
+	.string "other strong trainers to fight, perhaps\l"
+	.string "very far east on Route 116.$"
