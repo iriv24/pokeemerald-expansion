@@ -893,7 +893,7 @@ PetalburgWoods_Text_TryUsingThisItem:
 # 447 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Oh, neat!\n"
 # 448 "data/maps/PetalburgWoods/scripts.pory"
-	.string "That's the bade from Rustboro Gym!\p"
+	.string "That's the badge from Rustboro Gym!\p"
 # 449 "data/maps/PetalburgWoods/scripts.pory"
 	.string "You must be a trainer.\n"
 # 450 "data/maps/PetalburgWoods/scripts.pory"
@@ -969,7 +969,7 @@ PetalburgWoods_EventScript_Gardenia::
 # 488 "data/maps/PetalburgWoods/scripts.pory"
 	waitmessage
 # 489 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox WillYouBattleMe, MSGBOX_YESNO
+	msgbox Gardenia_WillYouBattleMe, MSGBOX_YESNO
 # 490 "data/maps/PetalburgWoods/scripts.pory"
 	goto PetalburgWoods_EventScript_BattleGardeniaPrompt
 	end
@@ -1054,30 +1054,37 @@ PetalburgWoods_EventScript_BattleGardenia_Text_0:
 Gardenia_ExplainItems::
 # 546 "data/maps/PetalburgWoods/scripts.pory"
 	.string "That TM contains U-turn, it's very\n"
-	.string "useful for getting a hit off while\p"
-	.string "switching out a Pokémon. I also\n"
-	.string "included some useful evolution stones\p"
-	.string "and an item that will be good for a\n"
-	.string "Pokémon you can't evolve quite yet.$"
+	.string "useful for getting a hit off while\l"
+	.string "switching out a Pokémon.\p"
+	.string "I also included some useful\n"
+	.string "evolution stones and an Item that\l"
+	.string "will be good for a Pokémon you can't\l"
+	.string "evolve quite yet.$"
 
 Gardenia_Greeting::
-# 555 "data/maps/PetalburgWoods/scripts.pory"
+# 556 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Aha! I saw you run by through those\n"
-	.string "trees earlier while I was hunting some\p"
-	.string "grass types, but it seemed clear you\n"
-	.string "couldn't cut them. The fact that you\p"
-	.string "can now must mean you're a trainer\n"
-	.string "who's strong enough to beat Roxanne,\p"
-	.string "which means you're a trainer I want to\n"
-	.string "face! If you can beat me I'll make it\p"
+	.string "trees earlier while I was hunting some\l"
+	.string "Grass-types, but it seemed clear you\l"
+	.string "couldn't cut them. The fact that you\l"
+	.string "can now must mean you're a trainer\l"
+	.string "who's strong enough to beat Roxanne,\l"
+	.string "which means you're a trainer I want to\l"
+	.string "face!\p"
+	.string "If you can beat me I'll make it\n"
 	.string "worth your while!$"
 
+Gardenia_WillYouBattleMe::
+# 569 "data/maps/PetalburgWoods/scripts.pory"
+	.string "How does that sound to you?\n"
+	.string "Want to have a battle?$"
+
 Gardenia_Outro::
-# 567 "data/maps/PetalburgWoods/scripts.pory"
+# 574 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Not bad at all! As promised, please take\n"
 	.string "these rewards for beating me.$"
 
 PostBattle_Gardenia::
-# 573 "data/maps/PetalburgWoods/scripts.pory"
+# 580 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Hope there are some cool grass types in\n"
 	.string "this region!$"

@@ -61,7 +61,7 @@ MauvilleCity_House1_Text_ImRockSmashDudeTakeThis:
 # 31 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "I like that!\n"
 # 32 "data/maps/MauvilleCity_House1/scripts.pory"
-	.string "Here, take this HIDDEN MACHINE!$"
+	.string "Here, take this Hidden Machine!$"
 # 33 "data/maps/MauvilleCity_House1/scripts.pory"
 
 # 34 "data/maps/MauvilleCity_House1/scripts.pory"

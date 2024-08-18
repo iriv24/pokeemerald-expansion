@@ -959,7 +959,7 @@ Route116_EventScript_Roark::
 # 483 "data/maps/Route116/scripts.pory"
 	waitmessage
 # 484 "data/maps/Route116/scripts.pory"
-	msgbox WillYouBattleMe, MSGBOX_YESNO
+	msgbox Roark_WillYouBattleMe, MSGBOX_YESNO
 # 485 "data/maps/Route116/scripts.pory"
 	goto Route116_EventScript_BattleRoarkPrompt
 	end
@@ -1058,7 +1058,7 @@ Roark_Greeting::
 	.string "this region are weaker than the ones\l"
 	.string "back in Sinnoh.$"
 
-WillYouBattleMe::
+Roark_WillYouBattleMe::
 # 559 "data/maps/Route116/scripts.pory"
 	.string "Hm, what's that? You're a trainer?\n"
 	.string "Well, now I want to find out if the\l"

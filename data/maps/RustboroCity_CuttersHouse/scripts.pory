@@ -32,22 +32,23 @@ RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
 	.string "Hey, that's the Stone Badge! Nicely\n"
 	.string "done, take this!\p"
 	.string "I'm sure that you can put this\n"
-	.string "HIDDEN MACHINE to good use.\p"
+	.string "Hidden Machine to good use.\p"
 	.string "No need to be modest or shy.\n"
 	.string "Go on, take it!$"
 
 RustboroCity_CuttersHouse_Text_ExplainCut:
-	.string "That HIDDEN MACHINE, or HM for\n"
-	.string "short, is CUT.\p"
+	.string "That Hidden Machine, or HM for\n"
+	.string "short, is Cut.\p"
 	.string "An HM move is one that can be used\n"
-	.string "by POKéMON outside of battle.\p"
-	.string "However, in this game, you don't have to\n"
+	.string "by Pokémon outside of battle.\p"
+	.string "However, now, you don't have to\n"
 	.string "teach a Pokémon an HM to be able to use\l"
-	.string "it outside of battle. As long as you\p"
-	.string "have it in your bag and you have the\n"
-	.string "required badge, you are good to use it!\p"
+	.string "it outside of battle. As long as you\l"
+	.string "have it in your Bag and you have the\l"
+	.string "required Badge, you are good to use it!\p"
 	.string "Also, HMs can be forgotten at any time,\n"
-	.string "just like normal moves! Good luck!$"
+	.string "just like normal moves!\l"
+	.string "Isn't that wonderful?$"
 
 	RustboroCity_CuttersHouse_Text_NoBadge:
 	.string "Come back after you get your first Gym\n"
@@ -55,6 +56,6 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "When they were expanding the city of\n"
-	.string "RUSTBORO, my dad helped out.\p"
-	.string "He made his POKéMON use CUT to clear\n"
+	.string "Rustboro, my dad helped out.\p"
+	.string "He made his Pokémon use Cut to clear\n"
 	.string "the land of trees.$"

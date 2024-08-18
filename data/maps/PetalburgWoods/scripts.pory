@@ -445,7 +445,7 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the bade from Rustboro Gym!\p"
+	.string "That's the badge from Rustboro Gym!\p"
 	.string "You must be a trainer.\n"
 	.string "You should try using this item.$"
 
@@ -486,7 +486,7 @@ script PetalburgWoods_EventScript_Gardenia{
 	goto_if_set(FLAG_DECLINED_GARDENIA_BATTLE, PetalburgWoods_EventScript_GardeniaRequestBattleAgain)
 	msgbox(Gardenia_Greeting, MSGBOX_DEFAULT)
 	waitmessage
-	msgbox(WillYouBattleMe, MSGBOX_YESNO)
+	msgbox(Gardenia_WillYouBattleMe, MSGBOX_YESNO)
 	goto(PetalburgWoods_EventScript_BattleGardeniaPrompt)
 	end
 }
@@ -545,23 +545,30 @@ script PetalburgWoods_EventScript_GardeniaGiveItems{
 
 text Gardenia_ExplainItems{
 	"That TM contains U-turn, it's very\n"
-	"useful for getting a hit off while\p"
-	"switching out a Pokémon. I also\n"
-	"included some useful evolution stones\p"
-	"and an item that will be good for a\n"
-	"Pokémon you can't evolve quite yet."
+	"useful for getting a hit off while\l"
+	"switching out a Pokémon.\p" 
+	"I also included some useful\n"
+	"evolution stones and an Item that\l"
+	"will be good for a Pokémon you can't\l"
+	"evolve quite yet."
 }
 
 text Gardenia_Greeting{
 	"Aha! I saw you run by through those\n"
-	"trees earlier while I was hunting some\p"
-	"grass types, but it seemed clear you\n"
-	"couldn't cut them. The fact that you\p"
-	"can now must mean you're a trainer\n"
-	"who's strong enough to beat Roxanne,\p"
-	"which means you're a trainer I want to\n"
-	"face! If you can beat me I'll make it\p"
+	"trees earlier while I was hunting some\l"
+	"Grass-types, but it seemed clear you\l"
+	"couldn't cut them. The fact that you\l"
+	"can now must mean you're a trainer\l"
+	"who's strong enough to beat Roxanne,\l"
+	"which means you're a trainer I want to\l"
+	"face!\p"
+	"If you can beat me I'll make it\n"
 	"worth your while!"
+}
+
+text Gardenia_WillYouBattleMe{
+	"How does that sound to you?\n"
+	"Want to have a battle?"
 }
 	
 text Gardenia_Outro{

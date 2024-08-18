@@ -481,7 +481,7 @@ script Route116_EventScript_Roark{
 	goto_if_set(FLAG_DECLINED_ROARK_BATTLE_116, Route116_EventScript_RoarkRequestBattleAgain)
 	msgbox(Roark_Greeting, MSGBOX_DEFAULT)
 	waitmessage
-	msgbox(WillYouBattleMe, MSGBOX_YESNO)
+	msgbox(Roark_WillYouBattleMe, MSGBOX_YESNO)
 	goto(Route116_EventScript_BattleRoarkPrompt)
 	end
 }
@@ -556,7 +556,7 @@ text Roark_Greeting{
 	"back in Sinnoh."
 }
 
-text WillYouBattleMe{
+text Roark_WillYouBattleMe{
 	"Hm, what's that? You're a trainer?\n"
 	"Well, now I want to find out if the\l"
 	"rumors are true! What do you say we\l"
