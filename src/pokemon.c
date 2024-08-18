@@ -3696,17 +3696,35 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
     return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE);
 }
 
-#define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                   \
-{                                                                                                       \
-    if ((retVal == 0 || friendshipOnly) && !ShouldSkipFriendshipChange() && friendshipChange == 0)      \
-    {                                                                                                   \
-        if (holdEffect == HOLD_EFFECT_FRIENDSHIP_UP)                                                    \
-            friendship = MAX_FRIENDSHIP;                                                                \
-        else                                                                                            \
-            friendship = MAX_FRIENDSHIP;                                                                \
-        SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);                                              \
-        retVal = FALSE;                                                                                 \
-    }                                                                                                   \
+#define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                       \
+{                                                                                                           \
+    if ((retVal == 0 || friendshipOnly) && !ShouldSkipFriendshipChange() && friendshipChange == 0)          \
+    {                                                                                                       \
+        if((itemEffect[4] & ITEM4_EV_HP) && (itemEffect[7] == 10) && (itemEffect[8] == 5) && (itemEffect[9] == 2)) \
+            friendship = MAX_FRIENDSHIP;                                                                    \
+        else                                                                                                \
+        {                                                                                                   \
+            friendshipChange = itemEffect[itemEffectParam];                                                 \
+            friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);                                        \
+            if (friendshipChange > 0 && holdEffect == HOLD_EFFECT_FRIENDSHIP_UP)                            \
+                friendship += 150 * friendshipChange / 100;                                                 \
+            else                                                                                            \
+                friendship += friendshipChange;                                                             \
+            if (friendshipChange > 0)                                                                       \
+            {                                                                                               \
+                if (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_BALL)                           \
+                    friendship++;                                                                           \
+                if (GetMonData(mon, MON_DATA_MET_LOCATION, NULL) == GetCurrentRegionMapSectionId())         \
+                    friendship++;                                                                           \
+            }                                                                                               \
+            if (friendship < 0)                                                                             \
+                friendship = 0;                                                                             \
+            if (friendship > MAX_FRIENDSHIP)                                                                \
+                friendship = MAX_FRIENDSHIP;                                                                \
+        }                                                                                                   \
+        SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);                                                  \
+        retVal = FALSE;                                                                                     \
+    }                                                                                                       \
 }
 
 // EXP candies store an index for this table in their holdEffectParam.
