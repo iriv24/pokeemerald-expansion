@@ -465,31 +465,35 @@ Route110_EventScript_BrendanDefeated::
 
 Route110_EventScript_GiveItemfinder::
 	giveitem ITEM_HM_FLY
-	giveitem ITEM_DOWSING_MACHINE
-	giveitem ITEM_TM_FIRE_PUNCH
-	giveitem ITEM_TM_ICE_PUNCH
-	giveitem ITEM_TM_THUNDER_PUNCH
-	giveitem ITEM_TM_FIRE_FANG
-	giveitem ITEM_TM_ICE_FANG
-	giveitem ITEM_TM_THUNDER_FANG
-	giveitem ITEM_TM_PSYCHIC_FANGS
-	giveitem ITEM_TM_POISON_FANG
-	giveitem ITEM_GREAT_BALL, 99
-	giveitem ITEM_ULTRA_BALL, 99
-	giveitem ITEM_DIVE_BALL, 99
-	giveitem ITEM_DUSK_BALL, 99
-	giveitem ITEM_SHINY_STONE, 10
-	giveitem ITEM_BLACK_SLUDGE, 10
-	giveitem ITEM_FLAME_ORB, 10
-	giveitem ITEM_SMOKE_BALL, 10
-	giveitem ITEM_THICK_CLUB, 10
-	giveitem ITEM_WEAKNESS_POLICY, 10
-	giveitem ITEM_GRASSY_SEED, 10
-	giveitem ITEM_ELECTRIC_SEED, 10
-	giveitem ITEM_PSYCHIC_SEED, 10
-	giveitem ITEM_MISTY_SEED, 10
-	giveitem ITEM_AIR_BALLOON, 10
-	giveitem ITEM_TERRAIN_EXTENDER, 10
+	giveitemfast ITEM_DOWSING_MACHINE
+	giveitemfast ITEM_TM_FIRE_PUNCH
+	giveitemfast ITEM_TM_ICE_PUNCH
+	giveitemfast ITEM_TM_THUNDER_PUNCH
+	giveitemfast ITEM_TM_FIRE_FANG
+	giveitemfast ITEM_TM_ICE_FANG
+	giveitemfast ITEM_TM_THUNDER_FANG
+	giveitemfast ITEM_TM_PSYCHIC_FANGS
+	giveitemfast ITEM_TM_POISON_FANG
+	giveitemfast ITEM_GREAT_BALL, 99
+	giveitemfast ITEM_ULTRA_BALL, 99
+	giveitemfast ITEM_DIVE_BALL, 99
+	giveitemfast ITEM_DUSK_BALL, 99
+	giveitemfast ITEM_SHINY_STONE, 10
+	giveitemfast ITEM_BLACK_SLUDGE, 10
+	giveitemfast ITEM_TOXIC_ORB, 10
+	giveitemfast ITEM_FLAME_ORB, 10
+	giveitemfast ITEM_SMOKE_BALL, 10
+	giveitemfast ITEM_THICK_CLUB, 10
+	giveitemfast ITEM_WEAKNESS_POLICY, 10
+	giveitemfast ITEM_GRASSY_SEED, 10
+	giveitemfast ITEM_ELECTRIC_SEED, 10
+	giveitemfast ITEM_PSYCHIC_SEED, 10
+	giveitemfast ITEM_MISTY_SEED, 10
+	giveitemfast ITEM_AIR_BALLOON, 10
+	giveitemfast ITEM_TERRAIN_EXTENDER, 10
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
+	waitfanfare
 	setflag FLAG_RIVAL_110
 	return
 
@@ -789,7 +793,7 @@ Route110_Text_AquaActionsBringSmiles:
 Route110_Text_MayLetsBattle:
 	.string "May: Hi, {PLAYER}{KUN}, long time no see!\p"
 	.string "While I was searching for other\n"
-	.string "POKéMON, my POKéMON grew stronger.\p"
+	.string "Pokémon, my Pokémon grew stronger.\p"
 	.string "So…\n"
 	.string "How about a little battle?$"
 
@@ -803,22 +807,39 @@ Route110_Text_MayTakeThis:
 	.string "I think you deserve a reward!\n"
 	.string "These are from me!\p"
 	.string "I've got a whole slew\n"
-	.string "of items for you.$"
+	.string "of Items for you.$"
 
 Route110_Text_MayExplainItemfinder:
-	.string "Whew, I think that's everything. As you\n"
-	.string "can see, I just gave you the HM02 Fly.\p"
+	.string "As you can see, {COLOR GREEN}{SHADOW LIGHT_GREEN}I just gave you the\n"
+	.string "HM02 Fly.\p"
 	.string "Any Pokémon that can learn Fly should\n"
-	.string "now have it in your party menu, and the\p"
-	.string "badge requirement to use it has been\n"
+	.string "now have it in your party menu,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} and the\l"
+	.string "Badge requirement to use it has been\l"
 	.string "removed! If you don't believe me, give\l"
-	.string "it a try!$"
+	.string "it a try!\p"
+	.string "In addition, I gave you the following\n"
+	.string "Items: the Dowsing MCHN, the TMs for\l"
+	.string "Fire Punch, Ice Punch, Thunder Punch,\l"
+	.string "Fire Fang, Ice Fang, Thunder Fang,\l"
+	.string "Psychic Fangs, and Poison Fang, some\l"
+	.string "more types of Poké Balls, Shiny Stones,\l"
+	.string "Black Sludges, Flame Orbs, Toxic Orbs,\l"
+	.string "Smoke Balls, Thick Clubs, Weakness\l"
+	.string "Policies, Air Balloons, Terrain\l"
+	.string "Extenders, and some Terrain Seeds.\p"
+	.string "Whew, I think that's everything, you\n"
+	.string "might want to take a look through your\l"
+	.string "Bag pockets now to see what you've\l"
+	.string "got!\p"
+	.string "I'll be going now, {PLAYER}, keep up the\n"
+	.string "good work!$"
+
 
 Route110_Text_BrendanLetsBattle:
 	.string "Brendan: Hey, {PLAYER}.\n"
 	.string "So this is where you were.\l"
 	.string "How's it going?\p"
-	.string "Have you been raising your POKéMON?\n"
+	.string "Have you been raising your Pokémon?\n"
 	.string "I'll check for you.$"
 
 Route110_Text_BrendanDefeated:
@@ -834,13 +855,29 @@ Route110_Text_BrendanTakeThis:
 	.string "of items for you.$"
 
 Route110_Text_BrendanExplainItemfinder:
-	.string "Whew, I think that's everything. As you\n"
-	.string "can see, I just gave you the HM02 Fly.\p"
+	.string "As you can see, {COLOR GREEN}{SHADOW LIGHT_GREEN}I just gave you the\n"
+	.string "HM02 Fly.\p"
 	.string "Any Pokémon that can learn Fly should\n"
-	.string "now have it in your party menu, and the\p"
-	.string "badge requirement to use it has been\n"
+	.string "now have it in your party menu,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} and the\l"
+	.string "Badge requirement to use it has been\l"
 	.string "removed! If you don't believe me, give\l"
-	.string "it a try!$"
+	.string "it a try!\p"
+	.string "In addition, I gave you the following\n"
+	.string "Items: the Dowsing MCHN, the TMs for\l"
+	.string "Fire Punch, Ice Punch, Thunder Punch,\l"
+	.string "Fire Fang, Ice Fang, Thunder Fang,\l"
+	.string "Psychic Fangs, and Poison Fang, some\l"
+	.string "more types of Poké Balls, Shiny Stones,\l"
+	.string "Black Sludges, Flame Orbs, Toxic Orbs,\l"
+	.string "Smoke Balls, Thick Clubs, Weakness\l"
+	.string "Policies, Air Balloons, Terrain\l"
+	.string "Extenders, and some Terrain Seeds.\p"
+	.string "Whew, I think that's everything, you\n"
+	.string "might want to take a look through your\l"
+	.string "Bag pockets now to see what you've\l"
+	.string "got!\p"
+	.string "I'll be going now, {PLAYER}, keep up the\n"
+	.string "good work!$"
 
 Route110_Text_RideBikeAtFullSpeed:
 	.string "Wouldn't it be great to ride a BIKE\n"
@@ -870,7 +907,7 @@ Route110_Text_YouGotBikeFromRydel:
 
 Route110_Text_TwoRoads:
 	.string "The two roads, one above, one below…\p"
-	.string "A road each for people and POKéMON.\n"
+	.string "A road each for people and Pokémon.\n"
 	.string "Perhaps that is right and fair.$"
 
 Route110_Text_WalkOnTheLowRoad:
@@ -887,7 +924,7 @@ Route110_Text_WhichShouldIChoose:
 	.string "Which should I choose?\p"
 	.string "Make a beeline for MAUVILLE on\n"
 	.string "CYCLING ROAD, or take the low road\l"
-	.string "and look for POKéMON?$"
+	.string "and look for Pokémon?$"
 
 Route110_Text_CyclingChallengeResultSummary:
 	.string "Number of collisions:\n"
@@ -974,7 +1011,7 @@ Route110_Text_TrainerTipsPrlzSleep:
 	.string "The foe can be made helpless by\n"
 	.string "paralyzing it or causing it to sleep.\p"
 	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
+	.string "Pokémon battles.$"
 
 Route110_Text_TrainerTipsRegisterItems:
 	.string "TRAINER TIPS\p"
