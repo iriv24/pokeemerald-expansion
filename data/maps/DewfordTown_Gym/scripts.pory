@@ -401,13 +401,13 @@ DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
     .string "You'll now be able to use the HM move\n"
-	.string "FLASH outside of battle.\p"
+	.string "Flash outside of battle.\p"
 	.string "If you'd like, use this Technical\n"
 	.string "Machine, too.$"
 
 DewfordTown_Gym_Text_ExplainLowSweep:
-	.string "That TM78 contains Low Sweep. It's a\p"
-	.string "move that lowers your opponent's Speed\n"
+	.string "That TM78 contains Low Sweep. It's a\n"
+	.string "move that lowers your opponent's Speed\l"
 	.string "stat. It's pretty gnarly, dude.\p"
 	.string "… … … … … …$"
 
