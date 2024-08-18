@@ -397,7 +397,6 @@ script SlateportCity_OceanicMuseum_1F_EventScript_DrakeTrigger2{
 
 script SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene{
 	lockall
-	addobject(LOCALID_DRAKE)
 	call_if_eq(VAR_0x8008, 1, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1)
 	call_if_eq(VAR_0x8008, 2, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2)
 	msgbox(SlateportCity_OceanicMuseum_1FDrakeIntro, MSGBOX_DEFAULT)
@@ -411,31 +410,29 @@ script SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene{
 }
 
 script SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1{
-	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1)
+	playse(SE_DOOR)
+	addobject(LOCALID_DRAKE)
+	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer)
 	waitmovement(0)
 	return
-}
-	
-	
-script SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1{
-	walk_up
-	step_end
 }
 
 script SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2{
-	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2)
+	playse(SE_DOOR)
+	setobjectxyperm(LOCALID_DRAKE, 10, 8)
+	addobject(LOCALID_DRAKE)
+	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer)
 	waitmovement(0)
 	return
 }
-
-script SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2{
+	
+script SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer{
 	walk_up
-	walk_right
-	face_up
 	step_end
 }
 
 script ApplyMovementDrakeExit{
+	playse(SE_DOOR)
 	applymovement(LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit)
 	waitmovement(0)
 	return
@@ -447,15 +444,26 @@ script SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit{
 }
 
 text SlateportCity_OceanicMuseum_1FDrakeIntro {
-	"Hmph. And you are?\n"
-	"… … … … … …\p"
-	"I see. I'm Drake, of the Elite Four.\p"
+	"Hmph. Oh, I apologize for bumping into\n"
+	"you.\p"
 	"I happened to be in the area and saw\n"
 	"several members of Team Aqua fleeing\l"
 	"from this museum.\p"
-	"I guess that means you took care of\n"
-	"whatever was going on here?\p"
+	"Do you happen to know anything about\n"
+	"why they were fleeing?\p"
 	"… … … … … …\p"
-	"Good to know. I'll leave you to it then."
+	"I see, so they were after some Devon\n"
+	"Parts meant for Capt. Stern, but you\l"
+	"defeated them in battle and scared\l"
+	"them off.\p"
+	"Sounds like you must be quite the\n"
+	"trainer to be able to deal with Team\l"
+	"Aqua all by yourself.\p"
+	"Allow me to introduce myself then, I am\n"
+	"Drake of the Elite Four, and you are?\p"
+	"… … … … … …\p"
+	"I see. Well, excellent work, {PLAYER}.\n"
+	"I'll be going now, but I have a feeling\l"
+	"our paths may cross again sometime."
 }
 

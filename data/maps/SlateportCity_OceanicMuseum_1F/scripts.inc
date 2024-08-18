@@ -779,89 +779,98 @@ SlateportCity_OceanicMuseum_1F_EventScript_DrakeScene::
 # 399 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	lockall
 # 400 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	addobject LOCALID_DRAKE
-# 401 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	call_if_eq VAR_0x8008, 1, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1
-# 402 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 401 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	call_if_eq VAR_0x8008, 2, SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2
-# 403 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 402 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	msgbox SlateportCity_OceanicMuseum_1FDrakeIntro, MSGBOX_DEFAULT
-# 404 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 403 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	closemessage
-# 405 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 404 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	delay 10
-# 406 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 405 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	call ApplyMovementDrakeExit
-# 407 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 406 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	removeobject LOCALID_DRAKE
-# 408 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 407 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	setvar VAR_DRAKE_SLATEPORT, 2
-# 409 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 408 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	releaseall
 	end
 
 
 SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer1::
+# 413 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	playse SE_DOOR
 # 414 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	applymovement LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1
+	addobject LOCALID_DRAKE
 # 415 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	applymovement LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer
+# 416 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	waitmovement 0
-	return
-
-
-SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer1::
-# 421 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	walk_up
-# 422 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	step_end
 	return
 
 
 SlateportCity_OceanicMuseum_1F_EventScript_DrakeApproachPlayer2::
-# 426 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	applymovement LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2
-# 427 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 421 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	playse SE_DOOR
+# 422 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	setobjectxyperm LOCALID_DRAKE, 10, 8
+# 423 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	addobject LOCALID_DRAKE
+# 424 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	applymovement LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer
+# 425 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	waitmovement 0
 	return
 
 
-SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer2::
-# 432 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+SlateportCity_OceanicMuseum_1F_Movement_DrakeApproachPlayer::
+# 430 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	walk_up
-# 433 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	walk_right
-# 434 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	face_up
-# 435 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 431 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	step_end
 	return
 
 
 ApplyMovementDrakeExit::
-# 439 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 435 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	playse SE_DOOR
+# 436 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	applymovement LOCALID_DRAKE, SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit
-# 440 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 437 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	waitmovement 0
 	return
 
 
 SlateportCity_OceanicMuseum_1F_EventScript_DrakeExit::
-# 445 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 442 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	walk_down
-# 446 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+# 443 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	step_end
 	return
 
 
 SlateportCity_OceanicMuseum_1FDrakeIntro::
-# 449 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	.string "Hmph. And you are?\n"
-	.string "… … … … … …\p"
-	.string "I see. I'm Drake, of the Elite Four.\p"
+# 446 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
+	.string "Hmph. Oh, I apologize for bumping into\n"
+	.string "you.\p"
 	.string "I happened to be in the area and saw\n"
 	.string "several members of Team Aqua fleeing\l"
 	.string "from this museum.\p"
-	.string "I guess that means you took care of\n"
-	.string "whatever was going on here?\p"
+	.string "Do you happen to know anything about\n"
+	.string "why they were fleeing?\p"
 	.string "… … … … … …\p"
-	.string "Good to know. I'll leave you to it then.$"
+	.string "I see, so they were after some Devon\n"
+	.string "Parts meant for Capt. Stern, but you\l"
+	.string "defeated them in battle and scared\l"
+	.string "them off.\p"
+	.string "Sounds like you must be quite the\n"
+	.string "trainer to be able to deal with Team\l"
+	.string "Aqua all by yourself.\p"
+	.string "Allow me to introduce myself then, I am\n"
+	.string "Drake of the Elite Four, and you are?\p"
+	.string "… … … … … …\p"
+	.string "I see. Well, excellent work, {PLAYER}.\n"
+	.string "I'll be going now, but I have a feeling\l"
+	.string "our paths may cross again sometime.$"

@@ -1343,10 +1343,11 @@ SlateportCity_Text_ComeBackToTradeBerryPowder:
 	.string "Did you know?$"
 
 SlateportCity_Text_YouDroveTeamAquaAway:
-	.string "Scott: Huh?\n"
-	.string "I'm sure I met you somewhere before.\p"
+	.string "Huh? Oh, I remember you!\n"
+	.string "You're the trainer I gave the Exp. Share\l"
+	.string "to back in Petalburg.\p"
 	.string "Have I introduced myself to you?\n"
-	.string "If not, my name's SCOTT.\p"
+	.string "If not, my name's Scott.\p"
 	.string "I just saw Team Aqua run away from\n"
 	.string "here like they were stung.\p"
 	.string "And even stranger, I think I saw\n"
@@ -1357,7 +1358,7 @@ SlateportCity_Text_YouDroveTeamAquaAway:
 
 SlateportCity_Text_MaybeThisTrainer:
 	.string "Scott: Hmm…\n"
-	.string "Maybe, just maybe, this TRAINER…$"
+	.string "Maybe, just maybe, this trainer…$"
 
 SlateportCity_Text_LetsRegisterEachOther:
 	.string "Scott: All right! I think you're going\n"
@@ -1367,7 +1368,7 @@ SlateportCity_Text_LetsRegisterEachOther:
 	.string "… … … … … …$"
 
 SlateportCity_Text_RegisteredScott:
-	.string "Registered this SCOTT person\n"
+	.string "Registered this Scott person\n"
 	.string "in the POKéNAV.$"
 
 SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
