@@ -154,8 +154,8 @@ Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
 	.string "Those battles blazed!\l"
 	.string "I'm more than just satisfied!\p"
 	.string "As thanks for showing me your hot\n"
-	.string "streak, I want you to take this\p"
-	.string "Pokémon. It's a scorching hot battler,\n"
+	.string "streak, I want you to take this\l"
+	.string "Pokémon. It's a scorching hot battler,\l"
 	.string "I'm sure you'll put it to good use!$"
 
 Route109_SeashoreHouse_Text_BagFull:
@@ -220,8 +220,8 @@ Route109_SeashoreHouse_Text_PlayerReceivedCharcadet:
 
 Route109_SeashoreHouse_Text_PokemonChangesWithStone:
 	.string "That Pokémon can evolve into two\n"
-	.string "different forms. You can use a Sun\p"
-	.string "Stone to turn it into an Armarouge or a\n"
+	.string "different forms. You can use a Sun\l"
+	.string "Stone to turn it into an Armarouge or a\l"
 	.string "Moon Stone to turn it into a Ceruledge.\p"
 	.string "I think both are great options, so you\n"
 	.string "can't go wrong!$"

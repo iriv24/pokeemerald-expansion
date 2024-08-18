@@ -10668,8 +10668,8 @@ static const struct TrainerMon sParty_Johanna[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
     .species = SPECIES_SCYTHER,
-    .heldItem = ITEM_CHARTI_BERRY,
-    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_JOLLY,
     .ability = ABILITY_TECHNICIAN,
     .moves = {MOVE_SWORDS_DANCE, MOVE_AERIAL_ACE, MOVE_BUG_BITE, MOVE_ROCK_SMASH}
     },
