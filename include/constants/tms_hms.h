@@ -160,7 +160,8 @@
     F(CLOSE_COMBAT) \
     F(MOONBLAST) \
     F(BODY_SLAM) \
-    F(PLAY_ROUGH)
+    F(PLAY_ROUGH) \
+    F(WATER_PULSE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

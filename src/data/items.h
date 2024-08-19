@@ -12217,7 +12217,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_PLAY_ROUGH,
     },
 
-    [ITEM_TM160] =
+    [ITEM_TM_WATER_PULSE] =
     {
         .name = _("TM160"),
         .price = 100,
@@ -12226,9 +12226,9 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_WATER_PULSE,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_WaterTMHM,
     },
 
     [ITEM_TM161] =

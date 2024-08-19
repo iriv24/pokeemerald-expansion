@@ -3826,8 +3826,10 @@ static const u8 sTM159Desc[] = _(
     "the target. May\n"
     "lower attack.");
 
-static const u8 sTM160Desc[] = _( // Todo
-    "?????");
+static const u8 sTM160Desc[] = _(
+    "Attacks with\n"
+    "ultrasonic waves.\n"
+    "May confuse.");
 
 static const u8 sTM161Desc[] = _( // Todo
     "?????");
