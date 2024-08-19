@@ -558,3 +558,4 @@ gSpecials::
 	def_special GetLevelCapForText
 	def_special EnterCheatCode
 	def_special GetCheatCodeFeedback
+	def_special GetWhiteOutCountForText

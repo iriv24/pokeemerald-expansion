@@ -72,6 +72,7 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	msgbox(HelloHowCanIHelp)
 	dynmultipush("Nature Change", 0)
 	dynmultipush("Level Cap", 1)
+	dynmultipush("White Out Counter", 2)
     dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -90,6 +91,11 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	if (var(VAR_RESULT) == 1)
 	{
 		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap)	
+	}
+
+	if (var(VAR_RESULT) == 2)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
 	}
 }
 
@@ -174,6 +180,21 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap{
 	specialvar(VAR_RESULT, GetLevelCapForText)
 	buffernumberstring(STR_VAR_1, VAR_RESULT)
 	msgbox("Current Level Cap: {STR_VAR_1}")
+	release
+	end
+}
+
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount{
+	specialvar(VAR_RESULT, GetWhiteOutCountForText)
+	if (var(VAR_RESULT) == 0)
+	{
+		msgbox("Current White Out Count: 0")
+	}
+	else
+	{
+		buffernumberstring(STR_VAR_1, VAR_RESULT)
+		msgbox("Current White Out Count: {STR_VAR_1}")
+	}
 	release
 	end
 }

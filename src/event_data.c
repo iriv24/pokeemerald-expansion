@@ -253,3 +253,8 @@ u32 GetLevelCapForText(void)
 {
     return GetCurrentLevelCap();
 }
+
+u32 GetWhiteOutCountForText(void)
+{
+    return gSaveBlock1Ptr->whiteOuts;
+}

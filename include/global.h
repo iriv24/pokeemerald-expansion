@@ -1104,6 +1104,7 @@ struct SaveBlock1
                u8 registeredItemLastSelected:4; //max 16 items
                u8 registeredItemListCount:4;
                struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
+               u32 whiteOuts;
     // sizeof: 0x3???
     //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
     //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
