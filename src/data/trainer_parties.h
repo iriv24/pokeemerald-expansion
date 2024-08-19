@@ -4376,7 +4376,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .heldItem = ITEM_CHARTI_BERRY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_VOLT_ABSORB,
-    .moves = {MOVE_AIR_CUTTER, MOVE_ELECTROWEB, MOVE_VOLT_SWITCH, MOVE_ROOST}
+    .moves = {MOVE_AIR_SLASH, MOVE_ELECTROWEB, MOVE_VOLT_SWITCH, MOVE_ROOST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -14997,11 +14997,11 @@ static const struct TrainerMon sParty_Fantina[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_PRIMEAPE,
+    .species = SPECIES_GALLADE,
     .nature = NATURE_JOLLY,
-    .ability = ABILITY_DEFIANT,
-    .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_DRAIN_PUNCH, MOVE_SHADOW_PUNCH, MOVE_BULK_UP, MOVE_ROCK_SLIDE}
+    .ability = ABILITY_JUSTIFIED,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_ZEN_HEADBUTT, MOVE_BRICK_BREAK, MOVE_BULK_UP, MOVE_SHADOW_SNEAK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

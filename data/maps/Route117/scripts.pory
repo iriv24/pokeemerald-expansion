@@ -245,19 +245,19 @@ Route117_EventScript_Aisha::
 
 Route117_Text_MelinaDaycare:
 	.string "Yo I actually don't know if the eggs out\n"
-	.string "of the day care will have perfect IVs,\p"
+	.string "of the day care will have perfect IVs,\l"
 	.string "you sure can try though.$"
 
 Route117_Text_DerekYouFoundMe:
 	.string "Wow, you found me! I didn't think anyone\n"
-	.string "ever would! I guess I don't have Hidden\p"
+	.string "ever would! I guess I don't have Hidden\l"
 	.string "Power anymore, so you should have it!$"
 
 Route117_Text_ExplainHP:
 	.string "TM10 contains Hidden Power. That\n"
-	.string "move's type can change depending on\p"
-	.string "how your IVs are set. There's a guy\n"
-	.string "somewhere who can change your IVs for\p"
+	.string "move's type can change depending on\l"
+	.string "how your IVs are set. There's a guy\l"
+	.string "somewhere who can change your IVs for\l"
 	.string "that, I think he's further ahead\l"
 	.string "though.$"
 
@@ -289,17 +289,17 @@ Route117_Text_LittleGirlDancing:
 
 Route117_Text_DanceInstructor:
 	.string "It's such a beautiful day that I\n"
-	.string "thought we'd have class outside! Oh,\p"
-	.string "you must be wondering what the Elite\n"
-	.string "Four member Phoebe is doing way out\p"
-	.string "here...\p"
-	.string "...\p"
+	.string "thought we'd have class outside!\p"
+	.string "Oh, you must be wondering what the\n"
+	.string "Elite Four member Phoebe is doing way\l"
+	.string "out here…\p"
+	.string "… … …\p"
 	.string "Surprise! I'm her twin sister, Ursula! I\n"
-	.string "may not be as good a battler as Phoebe,\p"
-	.string "but I'm a way better dancer! Tell you\n"
-	.string "what, if you can beat Wattson, come see\p"
-	.string "me in Vendanturf Town and I'll give you\n"
-	.string "a lesson!$"
+	.string "may not be as good a battler as Phoebe,\l"
+	.string "but I'm a way better dancer!\p"
+	.string "Tell you what, if you can beat Wattson,\n"
+	.string "come see me in Vendanturf Town and I'll\l"
+	.string "give you a lesson!$"
 
 Route117_Text_RouteSignVerdanturf:
 	.string "ROUTE 117\n"
@@ -376,29 +376,39 @@ script Route117_EventScript_FantinaGiveItems{
 
 text Fantina_ExplainItems{
 	"Those three are some very\n"
-	"powerful moves. In addition, I had\p"
-	"a few spare Mega Stones for some\n"
-	"Ghost-type Pokémon, though you'll need\p"
-	"a Mega Ring if you want to use them.\n"
-	"Finally, the Expert Belt is used for\p"
-	"boosting moves that are super\n"
-	"effective. I'm, sure you'll put it to\p"
+	"powerful moves. In addition, I had\l"
+	"a few spare Mega Stones for some\l"
+	"Ghost-type Pokémon, though you'll need\l"
+	"a Mega Ring if you want to use them.\p"
+	"Finally, the Expert Belt is used for\n"
+	"boosting moves that are super\l"
+	"effective. I'm, sure you'll put it to\l"
 	"good use. Best of luck!"
 }
 
 text Fantina_Greeting{
-	"Oh, hello there, my name is Fantina. Did\n"
-	"you come here to enjoy the flowers,\p"
-	"too? Or were you looking for a battle?"
+	"Oh, hello there, my name is Fantina.\n"
+	"Did you come here to enjoy the\l"
+	"flowers too?\p"
+	"I've heard tales of the wonderful\n"
+	"flower patches here in the Hoenn\l"
+	"region, so I had to come see them\l"
+	"for myself!\p"
+	"Oh, you didn't come to admire the\n"
+	"flowers? That's fine, I also came here\l"
+	"to battle new trainers.\p"
+	"Is that what you came here for?"
 }
 	
 text Fantina_Outro{
 	"My my! To think, there are such strong\n"
-	"trainers here in the Hoenn region. I\p"
+	"trainers here in the Hoenn region. I\l"
 	"think you can make good use of these."
 }
 
 
 text PostBattle_Fantina{
-	"It's much prettier here than back home."
+	"Maybe I'll head to Ever Grande City\n"
+	"after this, I've heard the flowers\l"
+	"there are extraordinary."
 }
