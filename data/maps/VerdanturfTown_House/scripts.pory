@@ -26,6 +26,19 @@ VerdanturfTown_House_EventScript_LittleGirlDancing::
 	msgbox VerdanturfTown_House_Text_LittleGirlDancing, MSGBOX_NPC
 	end
 
+VerdanturfTown_House_EventScript_Oricorio::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ORICORIO, CRY_MODE_NORMAL
+	msgbox VerdanturfTown_House_Text_Oricorio, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+VerdanturfTown_House_Text_Oricorio:
+	.string "Oricorio: Tweeeeeeeet tweet!$"
+
 VerdanturfTown_House_Text_MorePassion:
 	.string "More passion! More passion! More\n"
 	.string "passion! More energy! More energy!$"
@@ -111,13 +124,15 @@ script VerdanturfTown_EventScript_UrsulaGiveItems{
 
 text UrsulaGreeting {
 	"Welcome to my dance studio! I see you\n"
-	"have the Dynamo Badge now, not too\p"
-	"shabby! You may be a good at Pokémon\n"
-	"battles, but let's see how you fare in a\p"
-	"dance battle! And by the way, this is\n"
-	"going to be a double battle, so I'd\p"
-	"recommend bringing more than one\n"
-	"Pokémon to dance!"
+	"have the Dynamo Badge now, not too\l"
+	"shabby!\p"
+	"You may be a good at Pokémon\n"
+	"battles, but let's see how you fare in\l"
+	"a dance battle!\p"
+	"And by the way, this is going to be\n"
+	"a double battle, so I'd recommend \l"
+	"bringing more than one Pokémon\l"
+	"to dance!"
 }
 	
 
@@ -130,7 +145,6 @@ text VerdanturfTown_House_Text_ExplainTms{
 	"Now THOSE are some nice moves! Good\n"
 	"luck against my sister, if you ever make\l"
 	"it far enough to meet her!"
-
 }
 	
 

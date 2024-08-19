@@ -15525,7 +15525,7 @@ static const struct TrainerMon sParty_Ursula[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_ORICORIO_PAU,
+    .species = SPECIES_ORICORIO_BAILE,
     .heldItem = ITEM_CHARTI_BERRY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_DANCER,
@@ -15534,7 +15534,7 @@ static const struct TrainerMon sParty_Ursula[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_ORICORIO_BAILE,
+    .species = SPECIES_ORICORIO_PAU,
     .heldItem = ITEM_CHARTI_BERRY,
     .nature = NATURE_TIMID,
     .ability = ABILITY_DANCER,
