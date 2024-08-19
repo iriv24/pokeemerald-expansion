@@ -1133,7 +1133,7 @@ Route109_Trigger_BlockHotHouse::
 # 569 "data/maps/Route109/scripts.pory"
 	lockall
 # 570 "data/maps/Route109/scripts.pory"
-	msgbox GoBeatBrawly
+	msgbox GoBeatBrawly, MSGBOX_SIGN
 # 571 "data/maps/Route109/scripts.pory"
 	waitmessage
 # 572 "data/maps/Route109/scripts.pory"

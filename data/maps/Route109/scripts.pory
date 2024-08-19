@@ -567,7 +567,7 @@ Route109_Text_TrainerTipsSign:
 
 script Route109_Trigger_BlockHotHouse{
 	lockall
-	msgbox(GoBeatBrawly)
+	msgbox(GoBeatBrawly, MSGBOX_SIGN)
 	waitmessage
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)

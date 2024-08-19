@@ -1125,7 +1125,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         personality = Random32();
 
     // Determine original trainer ID
-    if (otIdType == OT_ID_RANDOM_NO_SHINY) // Pokemon cannot be shiny
+    if (otIdType == OT_ID_RANDOM_NO_SHINY)
     {
         value = Random32();
         isShiny = FALSE;
@@ -1137,40 +1137,47 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
-        #ifdef ITEM_SHINY_CHARM
-        u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? 3 : 1;
-        #else
-        u32 shinyRolls = 1;
-        #endif
-        u32 i;
-        
         value = gSaveBlock2Ptr->playerTrainerId[0]
-                  | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
-                  | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
-                  | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-                  
-        for (i = 0; i < shinyRolls; i++)
-        {
-            if (Random() < SHINY_ODDS)
-            {
-                FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
-            }
-                
-        }
+              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-        if (FlagGet(FLAG_SHINY_CREATION))
+        if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
-            u8 nature = personality % NUM_NATURES;  // keep current nature
-            do {
+            isShiny = FALSE;
+        }
+        else if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
+        {
+            isShiny = TRUE;
+        }
+        else if (P_ONLY_OBTAINABLE_SHINIES && InBattlePyramid())
+        {
+            isShiny = FALSE;
+        }
+        else if (P_NO_SHINIES_WITHOUT_POKEBALLS && !HasAtLeastOnePokeBall())
+        {
+            isShiny = FALSE;
+        }
+        else
+        {
+            u32 totalRerolls = 0;
+            if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+                totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
+            if (LURE_STEP_COUNT != 0)
+                totalRerolls += 1;
+            if (I_FISHING_CHAIN && gIsFishingEncounter)
+                totalRerolls += CalculateChainFishingShinyRolls();
+
+            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
+            {
                 personality = Random32();
-                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
-            } while (nature != GetNatureFromPersonality(personality));
-            
-            // clear the flag after use
-            FlagClear(FLAG_SHINY_CREATION);
+                totalRerolls--;
+            }
+
+            isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
     }
-    
+
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, &value);
 

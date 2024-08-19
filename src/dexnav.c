@@ -2508,47 +2508,39 @@ static void DexNavDrawHiddenIcons(void)
 /////////////////////////
 bool8 DexNavTryMakeShinyMon(void)
 {
-    //u32 i, shinyRolls, chainBonus;
-    // u32 shinyRate = 1;
-    // u32 charmBonus = 0;
-    // u8 chain = gSaveBlock1Ptr->dexNavChain;
-    
-    // #ifdef ITEM_SHINY_CHARM
-    // charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
-    // #endif
-    
-    // chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
-    // shinyRolls = 1 + charmBonus + chainBonus;
+    u32 i, shinyRolls, chainBonus, rndBonus;
+    u32 shinyRate = 0;
+    u32 charmBonus = 0;
+    u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
+    u8 chain = gSaveBlock1Ptr->dexNavChain;
 
-    //if (searchLevel > 200)
-    //{
-    //    shinyRate += searchLevel - 200;
-    //    searchLevel = 200;
-    //}
-    //if (searchLevel > 100)
-    //{
-    //    shinyRate += (searchLevel * 2) - 200;
-    //    searchLevel = 100;
-    // }
-    // if (searchLevel > 0)
-    // {
-    //     shinyRate += searchLevel * 6;
-    // }
-    
-    // shinyRate /= 100;
+    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
+    chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
+    rndBonus = (Random() % 100 < 4 ? 4 : 0);
+    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
 
-    // for (i = 0; i < shinyRolls; i++)
-    // {
-    //     if (Random() % 10000 <= shinyRate)
-    //         return TRUE;
-    // }
-
-    if (Random() % 8192 == 24)
+    if (searchLevel > 200)
     {
-        return TRUE;
+        shinyRate += searchLevel - 200;
+        searchLevel = 200;
     }
-        
-    
+    if (searchLevel > 100)
+    {
+        shinyRate += (searchLevel * 2) - 200;
+        searchLevel = 100;
+    }
+    if (searchLevel > 0)
+    {
+        shinyRate += searchLevel * 6;
+    }
+
+    shinyRate /= 100;
+    for (i = 0; i < shinyRolls; i++)
+    {
+        if (Random() % 10000 < shinyRate)
+            return TRUE;
+    }
+
     return FALSE;
 }
 
