@@ -7,6 +7,9 @@ Std_ObtainItem::
 	additem ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT
 	call_if_eq VAR_0x8007, FALSE, EventScript_TryAddItemToPCObtain
+	specialvar VAR_RESULT, BufferTMHMMoveName
+	copyvar VAR_0x8008, VAR_RESULT
+	call_if_eq VAR_0x8008, TRUE, EventScript_ObtainedTMHM
 	call EventScript_ObtainItemMessage
 	return
 
@@ -188,6 +191,18 @@ EventScript_FoundTMHM::
 	return
 EventScript_FoundTMHMMessage::
 	message gText_PlayerFoundOneTMHM
+	return
+
+EventScript_ObtainedTMHM::
+	bufferitemnameplural STR_VAR_1, VAR_0x8004, VAR_0x8005
+	compare VAR_0x8005, 2
+	goto_if_lt EventScript_ObtainedTMHMMessage
+	buffernumberstring STR_VAR_3, VAR_0x8005
+	message gText_PlayerObtainedTMHMs
+	goto EventScript_BufferTMHMsPocket
+	return
+EventScript_ObtainedTMHMMessage::
+	message gText_PlayerObtainedOneTMHM
 	return
 
 EventScript_FoundItem::
