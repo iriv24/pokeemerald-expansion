@@ -780,7 +780,7 @@
               {
                 "min_level": 19,
                 "max_level": 23,
-                "species": "SPECIES_DARUMAKA"
+                "species": "SPECIES_PONYTA"
               },
               {
                 "min_level": 19,
@@ -2671,7 +2671,7 @@
               {
                 "min_level": 22,
                 "max_level": 24,
-                "species": "SPECIES_PONYTA"
+                "species": "SPECIES_DARUMAKA"
               },
               {
                 "min_level": 22,

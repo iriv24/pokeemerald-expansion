@@ -4,16 +4,18 @@ Route111_Text_MakingRoomUseTMToMakeYourOwn:
 	.string "I'm thinking about making my own room\n"
 	.string "here using a Pokémon move.\p"
 	.string "Or at least, that's what I used to do.\n"
-	.string "Now, I guess I just clear fog out of the\p"
+	.string "Now, I guess I just clear fog out of the\l"
 	.string "air. Want the ability to do the same?$"
 
 Route111_Text_ExplainSecretPower:
 	.string "In a past life, I'd give you the move\n"
-	.string "Secret Power right about now. However,\p"
-	.string "Secret Bases were removed from the\n"
-	.string "game, so I'll give you this instead. You\p"
-	.string "can at least use to clear terrains in\n"
-	.string "battle. Okay, bye!$"
+	.string "Secret Power right about now. However,\l"
+	.string "Secret Bases were removed from the\l"
+	.string "game, so I gave you that instead.\p"
+	.string " You can at least use to clear\n"
+	.string "terrains in battle, which is\l"
+	.string "pretty cool.\p"
+	.string "Okay, bye now!$"
 
 Route111_Text_DontWantThis:
 	.string "Oh, you don't want this?\n"
