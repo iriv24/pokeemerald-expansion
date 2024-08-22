@@ -51,24 +51,26 @@ Route113_GlassWorkshop_House2_Text_WantYouToHaveScopeLens:
 # 26 "data/maps/Route113_GlassWorkshop/scripts.pory"
 	.string "It used to be a fun hobby with all this\n"
 # 27 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "soot around here, but I figured it was\p"
+	.string "soot around here, but I figured it was\l"
 # 28 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "time to move on. Here, you can have this\n"
+	.string "time to move on.\p"
 # 29 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "instead of the Soot Sack.$"
+	.string "Here, you can have this instead\n"
 # 30 "data/maps/Route113_GlassWorkshop/scripts.pory"
-
+	.string "of my old Soot Sack.$"
 # 31 "data/maps/Route113_GlassWorkshop/scripts.pory"
-Route113_GlassWorkshop_House2_Text_ExplainScopeLens:
-# 32 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "The Scope Lens raises the chances of\n"
-# 33 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "getting a Critical Hit. It can be pretty\l"
-# 34 "data/maps/Route113_GlassWorkshop/scripts.pory"
-	.string "wicked!$"
-# 35 "data/maps/Route113_GlassWorkshop/scripts.pory"
 
+# 32 "data/maps/Route113_GlassWorkshop/scripts.pory"
+Route113_GlassWorkshop_House2_Text_ExplainScopeLens:
+# 33 "data/maps/Route113_GlassWorkshop/scripts.pory"
+	.string "The Scope Lens raises the chances of\n"
+# 34 "data/maps/Route113_GlassWorkshop/scripts.pory"
+	.string "getting a Critical Hit. It can be pretty\l"
+# 35 "data/maps/Route113_GlassWorkshop/scripts.pory"
+	.string "wicked!$"
 # 36 "data/maps/Route113_GlassWorkshop/scripts.pory"
-Route113_GlassWorkshop_House2_Text_NoMoreSoot:
+
 # 37 "data/maps/Route113_GlassWorkshop/scripts.pory"
+Route113_GlassWorkshop_House2_Text_NoMoreSoot:
+# 38 "data/maps/Route113_GlassWorkshop/scripts.pory"
 	.string "No more soot! Only crits!$"

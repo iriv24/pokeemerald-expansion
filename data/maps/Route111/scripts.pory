@@ -1125,22 +1125,24 @@ text Route111_Text_PlayerReceivedTyrogue{
 
 text Daisuke_ExplainTyrogue{
 	"Tyrogue can evolve in 3 different ways,\n"
-	"all when it reaches level 20. If its\p"
-	"Attack is less than its Defense, it will\n"
-	"evolve into Hitmonchan, Attack greater\p"
-	"than Defense will result in Hitmonlee,\n"
-	"and Attack equal to Defense will result\p"
-	"in Hitmontop. It's very versatile!"
+	"all when it reaches level 20.\p"
+	"If its Attack is less than its Defense,\n"
+	"it will evolve into Hitmonchan.\p"
+	"Attack greater than Defense will\n"
+	"result in Hitmonlee.\p"
+	"Finally, Attack equal to Defense will\n"
+	"result in Hitmontop.\p"
+	"It's very versatile!"
 }
 
 	
 
 text Daisuke_Greeting{
 	"Yo! I'm working on becoming the karate\n"
-	"master of this region. If you can help\p"
-	"me with my training, I'll reward you with\n"
-	"one of the Pokémon I've been training\l"
-	"up. What do you say?"
+	"master of this region. If you can help\l"
+	"me with my training, I'll reward you with\l"
+	"one of the Pokémon I've been training.\p"
+	"What do you say?"
 }
 	
 text Daisuke_Outro{
@@ -1151,6 +1153,6 @@ text Daisuke_Outro{
 
 text PostBattle_Daisuke{
 	"Looks like I still have a long way to go.\n"
-	"Hope you're taking good care of\p"
+	"Hope you're taking good care of\l"
 	"Tyrogue for me."
 }

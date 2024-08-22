@@ -24,9 +24,10 @@ Route113_GlassWorkshop_EventScript_NinjaBoy::
 Route113_GlassWorkshop_House2_Text_WantYouToHaveScopeLens:
 	.string "I gave up glass-blowing a long time ago.\p"
 	.string "It used to be a fun hobby with all this\n"
-	.string "soot around here, but I figured it was\p"
-	.string "time to move on. Here, you can have this\n"
-	.string "instead of the Soot Sack.$"
+	.string "soot around here, but I figured it was\l"
+	.string "time to move on.\p"
+	.string "Here, you can have this instead\n"
+	.string "of my old Soot Sack.$"
 
 Route113_GlassWorkshop_House2_Text_ExplainScopeLens:
 	.string "The Scope Lens raises the chances of\n"

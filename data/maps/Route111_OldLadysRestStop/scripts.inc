@@ -93,7 +93,7 @@ Route111_OldLadysRestStop_Text_HaveEggWillYouTakeIt:
 # 47 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 	.string "I have an Egg here, but I'm too old to be\n"
 # 48 "data/maps/Route111_OldLadysRestStop/scripts.pory"
-	.string "running around for long enough for it\p"
+	.string "running around for long enough for it\l"
 # 49 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 	.string "to hatch. Will you take it?$"
 # 50 "data/maps/Route111_OldLadysRestStop/scripts.pory"

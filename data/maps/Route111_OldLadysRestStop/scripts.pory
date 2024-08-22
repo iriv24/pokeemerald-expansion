@@ -45,7 +45,7 @@ Route111_OldLadysRestStop_Text_EverySoOftenEggFoundAtDayCare:
 
 Route111_OldLadysRestStop_Text_HaveEggWillYouTakeIt:
 	.string "I have an Egg here, but I'm too old to be\n"
-	.string "running around for long enough for it\p"
+	.string "running around for long enough for it\l"
 	.string "to hatch. Will you take it?$"
 
 Route111_OldLadysRestStop_Text_AsYouWishThen:

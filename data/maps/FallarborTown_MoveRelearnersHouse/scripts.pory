@@ -8,6 +8,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
 	waitmovement 0
+	goto_if_unset FLAG_BADGE04_GET, FallarborTown_MoveRelearnersHouse_EventScript_NeedLavaBadge
 	goto_if_set FLAG_RECEIVED_TMS_FROM_TUTOR, FallarborTown_MoveRelearnersHouse_EventScript_ReceivedTms
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
 	giveitem ITEM_TM_DRAGON_CLAW
@@ -44,6 +45,12 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	release
 	end
 	
+
+FallarborTown_MoveRelearnersHouse_EventScript_NeedLavaBadge::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutorPreLava, MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_MoveRelearnersHouse_EventScript_ReceivedTms::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_NowYoureAMoveTutor, MSGBOX_DEFAULT
 	release
@@ -51,8 +58,19 @@ FallarborTown_MoveRelearnersHouse_EventScript_ReceivedTms::
 
 FallarborTown_MoveRelearnersHouse_Text_ExplainTms:
 	.string "That's all the moves that I knew how to\n"
-	.string "teach. Now you can take them with you\p"
-	.string "and teach them to your Pokémon\n"
+	.string "teach. Here, I'll even list them off, I\l"
+	.string "just gave you the TMs for:\p"
+	.string "Dragon Claw, Thunder, Teleport, Fire\n"
+	.string "Blast, Poltergeist, Thunder Wave, Iron\l"
+	.string "Head, Liquidation, Hydro Pump, Drill Run,\l"
+	.string "Blaze Kick, Zen Headbutt, Weather Ball,\l"
+	.string "Air Slash, Hex, Mystical Fire, Seed Bomb,\l"
+	.string "Leaf Blade, Knock Off, Power Gem, Rock\l"
+	.string "Blast, Pin Missile, Icicle Spear, Tail\l"
+	.string "Slap, Arm Thrust, Foul Play, Iron\l"
+	.string "Defense, Body Slam, and Play Rough.\p"
+	.string "Now you can take those moves with you\n"
+	.string "and teach them to your Pokémon\l"
 	.string "wherever you are!$"
 
 FallarborTown_MoveRelearnersHouse_Text_NowYoureAMoveTutor:
@@ -109,15 +127,26 @@ FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale::
 	releaseall
 	end
 
-FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
+FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutorPreLava:
 	.string "I'm the Move Tutor.\n"
-	.string "Or at least I used to be. I got tired of\p"
-	.string "collecting Heart Scales and teaching\n"
-	.string "Pokémon the same moves over and over\p"
-	.string "again, and trainers got tired of coming\n"
-	.string "all the way out here just to have me\p"
-	.string "teach them moves. So, I solved both\n"
-	.string "problems by making these!$"
+	.string "Or at least I used to be. I got tired of\l"
+	.string "collecting Heart Scales and teaching\l"
+	.string "Pokémon the same moves over and over\l"
+	.string "again, and trainers got tired of coming\l"
+	.string "all the way out here just to have me\l"
+	.string "teach them moves. So, I solved both\l"
+	.string "problems by making these!\p"
+	.string "Hmm, on second thought, you don't even\n"
+	.string "4 Badges yet.\p"
+	.string "I'm not sure you're ready for all of\n"
+	.string "these TMs I've made.\p"
+	.string "Come back once you've got 4 Badges\n"
+	.string "and we'll talk.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
+	.string "Well, well, look at you!\n"
+	.string "I see you've got 4 Badges now, I think\l"
+	.string "that means you're ready for these.$"
 
 FallarborTown_MoveRelearnersHouse_Text_ThatsAHeartScaleWantMeToTeachMove:
 	.string "Oh! That's it! That's an honest to\n"
@@ -271,11 +300,11 @@ script FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg {
 
 text EggManIntro {
 	"Hello, I am a shard collector. If you\n"
-	"give me a Red Shard, I can give you an\p"
-	"Egg for a Fire-type Starter Pokémon. I\n"
-	"can do the same with Blue Shards and\p"
-	"Green Shards for the other types of\n"
-	"starters.\l"
+	"give me a Red Shard, I can give you an\l"
+	"Egg for a Fire-type Starter Pokémon.\p"
+	"I can do the same with Blue Shards and\n"
+	"Green Shards for the other types of\l"
+	"starters.\p"
 	"Which type of Egg do you want?"
 	
 }

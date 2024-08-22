@@ -2804,7 +2804,7 @@ static const struct TrainerMon sParty_Daisuke[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_INTIMIDATE,
     .heldItem = ITEM_EXPERT_BELT,
-    .moves = {MOVE_PLAY_ROUGH, MOVE_ICE_FANG, MOVE_JAW_LOCK, MOVE_CRUNCH}
+    .moves = {MOVE_PLAY_ROUGH, MOVE_ICE_FANG, MOVE_JAW_LOCK, MOVE_ROAR}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11502,7 +11502,7 @@ static const struct TrainerMon sParty_Tisha[] = {
 static const struct TrainerMon sParty_ToriAndTia[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 204,
+    .lvl = 202,
     .species = SPECIES_FLOATZEL,
     .nature = NATURE_HASTY,
     .ability = ABILITY_TECHNICIAN,
@@ -11511,7 +11511,7 @@ static const struct TrainerMon sParty_ToriAndTia[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 204,
+    .lvl = 202,
     .species = SPECIES_RAICHU,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_LIGHTNING_ROD,
@@ -11520,7 +11520,7 @@ static const struct TrainerMon sParty_ToriAndTia[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 204,
+    .lvl = 203,
     .species = SPECIES_RIBOMBEE,
     .nature = NATURE_TIMID,
     .ability = ABILITY_SHIELD_DUST,
@@ -11529,7 +11529,7 @@ static const struct TrainerMon sParty_ToriAndTia[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 204,
+    .lvl = 203,
     .species = SPECIES_GUMSHOOS,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_ADAPTABILITY,
