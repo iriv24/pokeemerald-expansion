@@ -8,8 +8,8 @@ Std_ObtainItem::
 	copyvar VAR_0x8007, VAR_RESULT
 	call_if_eq VAR_0x8007, FALSE, EventScript_TryAddItemToPCObtain
 	specialvar VAR_RESULT, BufferTMHMMoveName
-	copyvar VAR_0x8008, VAR_RESULT
-	call_if_eq VAR_0x8008, TRUE, EventScript_ObtainedTMHM
+	copyvar VAR_0x8009, VAR_RESULT
+	call_if_eq VAR_0x8009, TRUE, EventScript_ObtainedTMHM
 	call EventScript_ObtainItemMessage
 	return
 
