@@ -4,6 +4,7 @@ raw `
 .set LOCALID_VIVI, 3
 .set LOCALID_VICKY, 4
 .set LOCALID_ROCK_SMASH_MAN, 46
+.set LOCALID_DAWN, 47
 
 @ Note: LOCALID_ROUTE111_PLAYER_FALLING is a local id for this map used elsewhere. It's defined in event_objects.h
 
@@ -588,7 +589,7 @@ Route111_Text_IsThatSo:
 	.string "Drop in, if you change your mind!$"
 
 Route111_Text_ShouldGetStronger:
-	.string "Hmm... Maybe you should get a little\n"
+	.string "Hmm… Maybe you should get a little\n"
 	.string "stronger before you take on the family.\p"
 	.string "If you can show me the Heat Badge, then\n"
 	.string "I'll know you're strong enough.$"
@@ -767,11 +768,11 @@ script Route111_EventScript_DawnTrigger4{
 script Route111_EventScript_DawnScene{
 	lockall
 	call(Route110_EventScript_PlayMayMusic)
-	applymovement(47, Common_Movement_WalkInPlaceFasterDown)
+	applymovement(LOCALID_DAWN, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
-	applymovement(47, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_DAWN, Common_Movement_ExclamationMark)
 	waitmovement(0)
-	applymovement(47, Common_Movement_Delay48)
+	applymovement(LOCALID_DAWN, Common_Movement_Delay48)
 	waitmovement(0)
 	delay(30)
 	call_if_eq(VAR_0x8008, 1, Route111_EventScript_DawnApproachPlayer1)
@@ -806,7 +807,7 @@ script Route111_EventScript_DawnDefeated{
 
 
 script Route111_EventScript_DawnApproachPlayer1{
-	applymovement(47, Route111_Movement_DawnApproachPlayer1)
+	applymovement(LOCALID_DAWN, Route111_Movement_DawnApproachPlayer1)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Route111_Movement_FaceDawn1)
 	waitmovement(0)
@@ -831,7 +832,7 @@ script Route111_Movement_DawnApproachPlayer1{
 }
 
 script Route111_EventScript_DawnApproachPlayer2{
-	applymovement(47, Route111_Movement_DawnApproachPlayer2)
+	applymovement(LOCALID_DAWN, Route111_Movement_DawnApproachPlayer2)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Route111_Movement_FaceDawn1)
 	waitmovement(0)
@@ -846,7 +847,7 @@ script Route111_Movement_DawnApproachPlayer2{
 }
 
 script Route111_EventScript_DawnApproachPlayer3{
-	applymovement(47, Route111_Movement_DawnApproachPlayer3)
+	applymovement(LOCALID_DAWN, Route111_Movement_DawnApproachPlayer3)
 	waitmovement(0)
 	return
 }
@@ -857,7 +858,7 @@ script Route111_Movement_DawnApproachPlayer3{
 }
 
 script Route111_EventScript_DawnApproachPlayer4{
-	applymovement(47, Route111_Movement_DawnApproachPlayer4)
+	applymovement(LOCALID_DAWN, Route111_Movement_DawnApproachPlayer4)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Route111_Movement_FaceDawn2)
 	waitmovement(0)
@@ -878,7 +879,7 @@ script Route111_EventScript_DawnExit{
 	call_if_eq(VAR_0x8008, 2, Route111_EventScript_ApplyMovementDawn2)
 	call_if_eq(VAR_0x8008, 3, Route111_EventScript_ApplyMovementDawn3)
 	call_if_eq(VAR_0x8008, 4, Route111_EventScript_ApplyMovementDawn4)
-	removeobject(47)
+	removeobject(LOCALID_DAWN)
 	setflag(FLAG_DAWN_111)
 	setvar(VAR_FOUGHT_DAWN_111, 1)
 	savebgm(MUS_DUMMY)
@@ -889,12 +890,13 @@ script Route111_EventScript_DawnExit{
 
 text Route111_Text_Dawn_Greeting{
 	"Hey, {PLAYER}! Long time no see! Wow,\n"
-	"looks like you got the Dynamo Bade from\p"
-	"Wattson, pretty impressive! I had a\n"
-	"hard time making it to Lavaridge Town\p"
-	"to take on Flannery, so I figured I\n"
-	"would head back this way to train a\p"
-	"little... I guess that makes this some\n"
+	"looks like you got the Dynamo Badge\l"
+	"from Wattson, pretty impressive!\p" 
+	"I had a hard time making it to Lavaridge\n"
+	"Town to take on Flannery, so I figured I\l"
+	"would head back this way to train a\l"
+	"little…\p"
+	"I guess that makes this some\n"
 	"good timing, get ready!"
 }
 
@@ -905,13 +907,14 @@ text Route111_Text_Dawn_Defeated{
 
 text Route111_Text_Dawn_MagmaAndAqua{
 	"Oh by the way, when I was walking\n"
-	"around the mountain up ahead, I heard\p"
-	"some rumblings about Team Aqua\n"
-	"fighting with another team called Team\p"
-	"Magma. I'm not really sure what's going\n"
-	"on, but be careful going ahead. I also\p"
-	"have some spare items you can have,\n"
-	"hope they help!"
+	"around the mountain up ahead, I heard\l"
+	"some rumblings about Team Aqua\l"
+	"fighting with another team called\l"
+	"Team Magma.\p"
+	"I'm not really sure what's going on,\n"
+	"but be careful going ahead.\p"
+	"In the meantime, I have some spare\n"
+	"Items you can have, hope they help!"
 }
 
 text Route111_Text_DawnGoodbye{
@@ -919,7 +922,7 @@ text Route111_Text_DawnGoodbye{
 }
 
 script Route111_EventScript_ApplyMovementDawn1{
-	applymovement(47, Route111_EventScript_DawnExit1)
+	applymovement(LOCALID_DAWN, Route111_EventScript_DawnExit1)
 	waitmovement(0)
 	return
 }
@@ -938,7 +941,7 @@ script Route111_EventScript_DawnExit1{
 }
 
 script Route111_EventScript_ApplyMovementDawn2{
-	applymovement(47, Route111_EventScript_DawnExit2)
+	applymovement(LOCALID_DAWN, Route111_EventScript_DawnExit2)
 	waitmovement(0)
 	return
 }
@@ -957,7 +960,7 @@ script Route111_EventScript_DawnExit2{
 }
 
 script Route111_EventScript_ApplyMovementDawn3{
-	applymovement(47, Route111_EventScript_DawnExit3)
+	applymovement(LOCALID_DAWN, Route111_EventScript_DawnExit3)
 	waitmovement(0)
 	return
 }
@@ -978,7 +981,7 @@ script Route111_EventScript_DawnExit3{
 }
 
 script Route111_EventScript_ApplyMovementDawn4{
-	applymovement(47, Route111_EventScript_DawnExit4)
+	applymovement(LOCALID_DAWN, Route111_EventScript_DawnExit4)
 	waitmovement(0)
 	return
 }
