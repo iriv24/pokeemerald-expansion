@@ -63,8 +63,8 @@ LavaridgeTown_EventScript_RivalGiveGoGoggles::
 
 LavaridgeTown_EventScript_MayGiveGoGoggles::
 	msgbox LavaridgeTown_Text_MayNiceBadgesTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_GO_GOGGLES
 	giveitem ITEM_MEGA_RING
+	giveitem ITEM_GO_GOGGLES
 	giveitem ITEM_SAFETY_GOGGLES
 	setflag FLAG_RECEIVED_GO_GOGGLES
 	msgbox LavaridgeTown_Text_MayExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
@@ -73,8 +73,8 @@ LavaridgeTown_EventScript_MayGiveGoGoggles::
 
 LavaridgeTown_EventScript_BrendanGiveGoGoggles::
 	msgbox LavaridgeTown_Text_BrendanNiceBadgesTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_GO_GOGGLES
 	giveitem ITEM_MEGA_RING
+	giveitem ITEM_GO_GOGGLES
 	giveitem ITEM_SAFETY_GOGGLES
 	setflag FLAG_RECEIVED_GO_GOGGLES
 	msgbox LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
@@ -315,79 +315,98 @@ LavaridgeTown_MiniMart:
 	end
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
-	.string "Hey {PLAYER}! Glad I caught you here, I\p"
-	.string "was just in Petalburg and I've got some\n"
-	.string "gifts and messages to deliver to you.$"
+	.string "Hey {PLAYER}! Glad I caught you here.\p"
+	.string "I arrived from Petalburg a little while\n"
+	.string "ago to see if you'd beaten Flannery\l"
+	.string "yet, and look at that, great timing!\p"
+	.string "I just met your Dad at the Petalburg\n"
+	.string "Gym, and he told me that if I bumped\l"
+	.string "into you, I should give you these.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
 	.string "Those Go-Goggles will let you get\n"
-	.string "through the desert in Route 111. I\p"
-	.string "threw in some Safety Goggles as well,\n"
-	.string "can never have too many goggles, you\p"
-	.string "know? Also, I spoke to your dad in\n"
-	.string "Petalburg, and he said to give you that\p"
-	.string "Mega Ring if you've beaten Flannery. He\n"
-	.string "wants it to be a fair fight when you\p"
-	.string "guys face off. Finally, I spoke with\n"
-	.string "Wally's dad, and he told me he was\p"
-	.string "going to give you the HM03 Surf, but he\n"
-	.string "accidentally dropped it out in the\p"
-	.string "desert somewhere. Okay, I think that's\n"
-	.string "everything, I'll see you around!$"
+	.string "through the desert in Route 111.\p"
+	.string "I threw in some Safety Goggles as well,\n"
+	.string "can never have too many goggles,\l"
+	.string "you know?\p"
+	.string "When I spoke to your Dad, he said to\n"
+	.string "give you that Mega Ring so it would be a\l"
+	.string "fair fight when you decided to\l"
+	.string "challenge him.\p"
+	.string "Oh, and one last thing.\p"
+	.string "I spoke with Wally's dad, and he told me\n"
+	.string "he was going to give you the {COLOR GREEN}{SHADOW LIGHT_GREEN}HM03 Surf,\l"
+	.string "but he accidentally dropped it out in\l"
+	.string "the desert somewhere.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Okay, I think that's everything, I'll see\n"
+	.string "you around, {PLAYER}! Congrats on\l"
+	.string "beating Flannery, but don't get too\l"
+	.string "comfortable because Dawn and I are\l"
+	.string "training hard too!$"
+
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
-	.string "Hey {PLAYER}! Glad I caught you here, I\p"
-	.string "was just in Petalburg and I've got some\n"
-	.string "gifts and messages to deliver to you.$"
+	.string "Hey {PLAYER}! Glad I caught you here.\p"
+	.string "I arrived from Petalburg a little while\n"
+	.string "ago to see if you'd beaten Flannery\l"
+	.string "yet, and look at that, great timing!\p"
+	.string "I just met your Dad at the Petalburg\n"
+	.string "Gym, and he told me that if I bumped\l"
+	.string "into you, I should give you these.$"
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "Those Go-Goggles will let you get\n"
-	.string "through the desert in Route 111. I\p"
-	.string "threw in some Safety Goggles as well,\n"
-	.string "can never have too many goggles, you\p"
-	.string "know? Also, I spoke to your dad in\n"
-	.string "Petalburg, and he said to give you that\p"
-	.string "Mega Ring if you've beaten Flannery. He\n"
-	.string "wants it to be a fair fight when you\p"
-	.string "guys face off. Finally, I spoke with\n"
-	.string "Wally's dad, and he told me he was\p"
-	.string "going to give you the HM03 Surf, but he\n"
-	.string "accidentally dropped it out in the\p"
-	.string "desert somewhere. Okay, I think that's\n"
-	.string "everything, I'll see you around!$"
+	.string "through the desert in Route 111.\p"
+	.string "I threw in some Safety Goggles as well,\n"
+	.string "can never have too many goggles,\l"
+	.string "you know?\p"
+	.string "When I spoke to your Dad, he said to\n"
+	.string "give you that Mega Ring so it would be a\l"
+	.string "fair fight when you decided to\l"
+	.string "challenge him.\p"
+	.string "Oh, and one last thing.\p"
+	.string "I spoke with Wally's dad, and he told me\n"
+	.string "he was going to give you the {COLOR GREEN}{SHADOW LIGHT_GREEN}HM03 Surf,\l"
+	.string "but he accidentally dropped it out in\l"
+	.string "the desert somewhere.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Okay, I think that's everything, I'll see\n"
+	.string "you around, {PLAYER}! Congrats on\l"
+	.string "beating Flannery, but don't get too\l"
+	.string "comfortable because Dawn and I are\l"
+	.string "training hard too!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an EGG.\p"
+	.string "I have here an Egg.\p"
 	.string "I'd hoped to hatch it by covering it in\n"
 	.string "hot sand by the hot springs.\l"
 	.string "But that doesn't seem to be enough…\p"
 	.string "I've heard it would be best if it were\n"
-	.string "kept together with POKéMON and\l"
+	.string "kept together with Pokémon and\l"
 	.string "carried about.\p"
-	.string "You are a TRAINER, yes?\n"
-	.string "And your POKéMON radiate vitality.\p"
+	.string "You are a trainer, yes?\n"
+	.string "And your Pokémon radiate vitality.\p"
 	.string "So, what say you?\n"
-	.string "Will you take this EGG to hatch?$"
+	.string "Will you take this Egg to hatch?$"
 
 LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
 	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here EGG!$"
+	.string "this here Egg!$"
 
 LavaridgeTown_Text_ReceivedTheEgg:
-	.string "{PLAYER} received the EGG.$"
+	.string "{PLAYER} received the Egg.$"
 
 LavaridgeTown_Text_NoRoomForThisEgg:
-	.string "Oh? You've too many POKéMON.\n"
-	.string "There's no room for this EGG…$"
+	.string "Oh? You've too many Pokémon.\n"
+	.string "There's no room for this Egg…$"
 
 LavaridgeTown_Text_AsYouWishThen:
 	.string "As you wish, then…\p"
 	.string "If you have a change of heart about\n"
-	.string "hatching this EGG, I will be here.$"
+	.string "hatching this Egg, I will be here.$"
 
 LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
-	.string "Every so often, an EGG will be found at\n"
-	.string "the POKéMON DAY CARE.\p"
+	.string "Every so often, an Egg will be found at\n"
+	.string "the Pokémon DAY CARE.\p"
 	.string "Or at least that's how the rumor goes.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry:
@@ -404,7 +423,7 @@ LavaridgeTown_Text_PokemonNippedBackside:
 	.string "Sigh…\p"
 	.string "So warm and heavenly…\p"
 	.string "Eh? Gyaah! Ouch!\p"
-	.string "A POKéMON nipped my backside!$"
+	.string "A Pokémon nipped my backside!$"
 
 LavaridgeTown_Text_OhYouLikeHotSprings:
 	.string "Oh, you like hot springs, do you?\p"
@@ -417,7 +436,7 @@ LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "GYM LEADER like FLANNERY.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
-	.string "If people put POKéMON in hot springs,\n"
+	.string "If people put Pokémon in hot springs,\n"
 	.string "it might be seriously strange.\p"
 	.string "Why, it might be an electric bath, or\n"
 	.string "a bubble bath, or even a lava bath…$"
@@ -431,16 +450,16 @@ LavaridgeTown_Text_HotSpringsClaims:
 
 LavaridgeTown_Text_TownSign:
 	.string "LAVARIDGE TOWN\p"
-	.string "“POKéMON CENTER HOT SPRINGS\n"
+	.string "“Pokémon CENTER HOT SPRINGS\n"
 	.string "An excellent place for relaxing!”$"
 
 LavaridgeTown_Text_GymSign:
-	.string "LAVARIDGE TOWN POKéMON GYM\n"
+	.string "LAVARIDGE TOWN Pokémon GYM\n"
 	.string "LEADER: FLANNERY\l"
 	.string "“One with a fiery passion that burns!”$"
 
 LavaridgeTown_Text_HerbShopSign:
-	.string "POKéMON HERB SHOP\n"
+	.string "Pokémon HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
 
 LavaridgeTown_Text_Sandygast:

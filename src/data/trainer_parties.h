@@ -4416,7 +4416,7 @@ static const struct TrainerMon sParty_Flannery1[] = {
     .nature = NATURE_TIMID,
     .ability = ABILITY_DROUGHT,
     .heldItem = ITEM_HEAT_ROCK,
-    .moves = {MOVE_FLAMETHROWER, MOVE_ENERGY_BALL, MOVE_PSYSHOCK, MOVE_SCORCHING_SANDS}
+    .moves = {MOVE_FLAMETHROWER, MOVE_ENERGY_BALL, MOVE_ROAR, MOVE_SCORCHING_SANDS}
     },
     {
         //hp, atk, def, speed, spatk, spdef
