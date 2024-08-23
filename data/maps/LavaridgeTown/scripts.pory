@@ -237,6 +237,16 @@ LavaridgeTown_EventScript_ExpertF::
 	msgbox LavaridgeTown_Text_OhYouLikeHotSprings, MSGBOX_NPC
 	end
 
+LavaridgeTown_EventScript_Sandygast::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SANDYGAST, CRY_MODE_NORMAL
+	msgbox LavaridgeTown_Text_Sandygast, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 LavaridgeTown_EventScript_EggWoman::
 	lock
 	faceplayer
@@ -432,5 +442,8 @@ LavaridgeTown_Text_GymSign:
 LavaridgeTown_Text_HerbShopSign:
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
+
+LavaridgeTown_Text_Sandygast:
+	.string "Sandygast: Sssssssss!$"
 
 `

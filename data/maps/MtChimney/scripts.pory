@@ -677,12 +677,19 @@ MtChimney_Text_ArchieIHaveMyHandsFull:
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou:
-	.string "{PLAYER}, we meet again.\p"
+	.string "Drake: {PLAYER}, we meet again.\p"
 	.string "You're a sharp one. I've been keeping an\n"
-	.string "eye on the activities of Team Magma and\p"
-	.string "Team Aqua since the incident at the\n"
+	.string "eye on the activities of Team Magma and\l"
+	.string "Team Aqua since the incident at the\l"
 	.string "museum, but you were still able to get\l"
 	.string "here before me.\p"
+	.string "… … … … … …\p"
+	.string "What's that? Maxie mentioned something\n"
+	.string "about looking for an Orb of some sort?\p"
+	.string "I think I have some idea of what he's\n"
+	.string "talking about…\p"
+	.string "I'll look into it further. Thanks again\n"
+	.string "for your help, {PLAYER}.\l"
 	.string "I'm sure I'll be seeing you again.$"
 
 MtChimney_Text_MagmaOutnumbersUs:

@@ -2271,21 +2271,22 @@ static const struct TrainerMon sParty_Mark[] = {
 static const struct TrainerMon sParty_CourtneyMtChimney[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 42,
+    .lvl = 43,
     .species = SPECIES_CENTISKORCH,
     .nature = NATURE_JOLLY,
-    .heldItem = ITEM_CHARTI_BERRY,
+    .heldItem = ITEM_CENTISKITE,
     .ability = ABILITY_FLASH_FIRE,
     .moves = {MOVE_X_SCISSOR, MOVE_FIRE_LASH, MOVE_CRUNCH, MOVE_POWER_WHIP}
     },
+    //hp, atk, def, speed, spatk, spdef
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 42,
-    .species = SPECIES_SKUNTANK,
-    .heldItem = ITEM_AIR_BALLOON,
-    .nature = NATURE_JOLLY,
-    .ability = ABILITY_AFTERMATH,
-    .moves = {MOVE_KNOCK_OFF, MOVE_POISON_JAB, MOVE_SUCKER_PUNCH, MOVE_TRAILBLAZE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
+    .lvl = 43,
+    .species = SPECIES_SERPERIOR,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_CONTRARY,
+    .moves = {MOVE_LEAF_STORM, MOVE_DRAGON_PULSE, MOVE_HIDDEN_POWER, MOVE_GLARE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9431,10 +9432,10 @@ static const struct TrainerMon sParty_GruntMtChimney2[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 42,
     .species = SPECIES_CRADILY,
-    .nature = NATURE_RELAXED,
+    .nature = NATURE_MODEST,
     .heldItem = ITEM_CHOPLE_BERRY,
     .ability = ABILITY_STORM_DRAIN,
-    .moves = {MOVE_ANCIENT_POWER, MOVE_SAPPY_SEED, MOVE_BRINE, MOVE_SLUDGE_BOMB}
+    .moves = {MOVE_POWER_GEM, MOVE_GIGA_DRAIN, MOVE_EARTH_POWER, MOVE_SLUDGE_BOMB}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9859,9 +9860,9 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 44,
     .species = SPECIES_GIGALITH,
-    .nature = NATURE_IMPISH,
-    .heldItem = ITEM_SMOOTH_ROCK,
-    .ability = ABILITY_SAND_STREAM,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_CUSTAP_BERRY,
+    .ability = ABILITY_STURDY,
     .moves = {MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_BODY_PRESS}
     },
     {
@@ -9870,7 +9871,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     .species = SPECIES_CACTURNE,
     .heldItem = ITEM_LIFE_ORB,
     .nature = NATURE_MILD,
-    .ability = ABILITY_SAND_RUSH,
+    .ability = ABILITY_WATER_ABSORB,
     .moves = {MOVE_ENERGY_BALL, MOVE_SUCKER_PUNCH, MOVE_DARK_PULSE, MOVE_SCORCHING_SANDS}
     },
     {
@@ -9887,7 +9888,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
     .lvl = 44,
     .species = SPECIES_HAWLUCHA,
     .heldItem = ITEM_WHITE_HERB,
-    .nature = NATURE_ADAMANT,
+    .nature = NATURE_JOLLY,
     .ability = ABILITY_UNBURDEN,
     .moves = {MOVE_CLOSE_COMBAT, MOVE_ACROBATICS, MOVE_SWORDS_DANCE, MOVE_POISON_JAB}
     },
