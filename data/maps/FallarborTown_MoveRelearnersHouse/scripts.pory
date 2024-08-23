@@ -11,36 +11,39 @@ FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	goto_if_unset FLAG_BADGE04_GET, FallarborTown_MoveRelearnersHouse_EventScript_NeedLavaBadge
 	goto_if_set FLAG_RECEIVED_TMS_FROM_TUTOR, FallarborTown_MoveRelearnersHouse_EventScript_ReceivedTms
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
-	giveitem ITEM_TM_DRAGON_CLAW
-	giveitem ITEM_TM_THUNDER
-	giveitem ITEM_TM_TELEPORT
-	giveitem ITEM_TM_FIRE_BLAST
-	giveitem ITEM_TM_POLTERGEIST
-	giveitem ITEM_TM_THUNDER_WAVE
-	giveitem ITEM_TM_IRON_HEAD
-	giveitem ITEM_TM_LIQUIDATION
-	giveitem ITEM_TM_HYDRO_PUMP
-	giveitem ITEM_TM_DRILL_RUN
-	giveitem ITEM_TM_BLAZE_KICK
-	giveitem ITEM_TM_ZEN_HEADBUTT
-	giveitem ITEM_TM_WEATHER_BALL
-	giveitem ITEM_TM_AIR_SLASH
-	giveitem ITEM_TM_HEX
-	giveitem ITEM_TM_MYSTICAL_FIRE
-	giveitem ITEM_TM_SEED_BOMB
-	giveitem ITEM_TM_LEAF_BLADE
-	giveitem ITEM_TM_KNOCK_OFF
-	giveitem ITEM_TM_POWER_GEM
-	giveitem ITEM_TM_ROCK_BLAST
-	giveitem ITEM_TM_PIN_MISSILE
-	giveitem ITEM_TM_ICICLE_SPEAR
-	giveitem ITEM_TM_TAIL_SLAP
-	giveitem ITEM_TM_ARM_THRUST
-	giveitem ITEM_TM_FOUL_PLAY
-	giveitem ITEM_TM_IRON_DEFENSE
-	giveitem ITEM_TM_BODY_SLAM
-	giveitem ITEM_TM_PLAY_ROUGH
+	giveitemfast ITEM_TM_DRAGON_CLAW
+	giveitemfast ITEM_TM_THUNDER
+	giveitemfast ITEM_TM_TELEPORT
+	giveitemfast ITEM_TM_FIRE_BLAST
+	giveitemfast ITEM_TM_POLTERGEIST
+	giveitemfast ITEM_TM_THUNDER_WAVE
+	giveitemfast ITEM_TM_IRON_HEAD
+	giveitemfast ITEM_TM_LIQUIDATION
+	giveitemfast ITEM_TM_HYDRO_PUMP
+	giveitemfast ITEM_TM_DRILL_RUN
+	giveitemfast ITEM_TM_BLAZE_KICK
+	giveitemfast ITEM_TM_ZEN_HEADBUTT
+	giveitemfast ITEM_TM_WEATHER_BALL
+	giveitemfast ITEM_TM_AIR_SLASH
+	giveitemfast ITEM_TM_HEX
+	giveitemfast ITEM_TM_MYSTICAL_FIRE
+	giveitemfast ITEM_TM_SEED_BOMB
+	giveitemfast ITEM_TM_LEAF_BLADE
+	giveitemfast ITEM_TM_KNOCK_OFF
+	giveitemfast ITEM_TM_POWER_GEM
+	giveitemfast ITEM_TM_ROCK_BLAST
+	giveitemfast ITEM_TM_PIN_MISSILE
+	giveitemfast ITEM_TM_ICICLE_SPEAR
+	giveitemfast ITEM_TM_TAIL_SLAP
+	giveitemfast ITEM_TM_ARM_THRUST
+	giveitemfast ITEM_TM_FOUL_PLAY
+	giveitemfast ITEM_TM_IRON_DEFENSE
+	giveitemfast ITEM_TM_BODY_SLAM
+	giveitemfast ITEM_TM_PLAY_ROUGH
 	setflag FLAG_RECEIVED_TMS_FROM_TUTOR
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ReceivedSeveralTMs, MSGBOX_DEFAULT
+	waitfanfare
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ExplainTms, MSGBOX_DEFAULT
 	release
 	end
@@ -74,7 +77,10 @@ FallarborTown_MoveRelearnersHouse_Text_ExplainTms:
 	.string "wherever you are!$"
 
 FallarborTown_MoveRelearnersHouse_Text_NowYoureAMoveTutor:
-	.string "Now you're a Move Tutor! Hah!$"
+	.string "Now YOU'RE a Move Tutor! Hah!$"
+
+FallarborTown_MoveRelearnersHouse_Text_ReceivedSeveralTMs::
+	.string "{PLAYER} received several TMs!$"
 
 
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearnerOriginal::
