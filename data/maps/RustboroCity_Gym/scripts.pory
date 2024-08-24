@@ -104,6 +104,16 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	releaseall
 	end
 
+RustboroCity_Gym_EventScript_Nosepass::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_NOSEPASS, CRY_MODE_NORMAL
+	msgbox RustboroCity_Gym_Text_Nosepass, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going?\p"
 	.string "Listen, my friend!\n"
@@ -278,4 +288,7 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one Pokémon with you?\p"
 	.string "Please return with at least one more\n"
 	.string "Pokémon.$"
+
+RustboroCity_Gym_Text_Nosepass:
+	.string "Nosepass: Bleleleh!$"
 `

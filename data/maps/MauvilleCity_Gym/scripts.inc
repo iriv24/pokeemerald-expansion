@@ -527,332 +527,358 @@ MauvilleCity_Gym_EventScript_GymStatue::
 # 264 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 265 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymGuideAdvice:
+MauvilleCity_Gym_EventScript_Luxray::
 # 266 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hey, how's it going, CHAMPION-\n"
+	lock
 # 267 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "bound {PLAYER}?\p"
+	faceplayer
 # 268 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wattson, the LEADER of MAUVILLE\n"
+	waitse
 # 269 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "GYM, uses ELECTRIC-type Pokémon.\p"
+	playmoncry SPECIES_LUXRAY, CRY_MODE_NORMAL
 # 270 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "If you challenge him with WATER-type\n"
+	msgbox MauvilleCity_Gym_Text_Luxray, MSGBOX_DEFAULT
 # 271 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Pokémon, he'll zap them! Bzzt!\p"
+	waitmoncry
 # 272 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "And, he's put in switch-controlled\n"
+	release
 # 273 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "doors all over his GYM! Eccentric!\p"
+	end
 # 274 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hey, go for it!$"
+
 # 275 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_GymGuideAdvice:
 # 276 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymGuidePostVictory:
+	.string "Hey, how's it going, CHAMPION-\n"
 # 277 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Whoa, you're electrifying!\n"
+	.string "bound {PLAYER}?\p"
 # 278 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You've powered the door open!$"
+	.string "Wattson, the LEADER of MAUVILLE\n"
 # 279 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "GYM, uses ELECTRIC-type Pokémon.\p"
 # 280 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkIntro:
+	.string "If you challenge him with WATER-type\n"
 # 281 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "My electric soul, it'll shatter your\n"
+	.string "Pokémon, he'll zap them! Bzzt!\p"
 # 282 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "dreams whole, whoa-yeahah!$"
+	.string "And, he's put in switch-controlled\n"
 # 283 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "doors all over his GYM! Eccentric!\p"
 # 284 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkDefeat:
+	.string "Hey, go for it!$"
 # 285 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "That was plugged in, amped up,\n"
+
 # 286 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "over-driven electric, man!$"
+MauvilleCity_Gym_Text_GymGuidePostVictory:
 # 287 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "Whoa, you're electrifying!\n"
 # 288 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_KirkPostBattle:
+	.string "You've powered the door open!$"
 # 289 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Pokémon and rock, it's all about heart,\n"
+
 # 290 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "whoa-yeah!$"
+MauvilleCity_Gym_Text_KirkIntro:
 # 291 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "My electric soul, it'll shatter your\n"
 # 292 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnIntro:
+	.string "dreams whole, whoa-yeahah!$"
 # 293 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I trained under Wattson!\n"
+
 # 294 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "There ain't no way I'll lose easily!$"
+MauvilleCity_Gym_Text_KirkDefeat:
 # 295 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "That was plugged in, amped up,\n"
 # 296 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnDefeat:
+	.string "over-driven electric, man!$"
 # 297 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Unplugged and turned off…$"
+
 # 298 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_KirkPostBattle:
 # 299 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ShawnPostBattle:
+	.string "Pokémon and rock, it's all about heart,\n"
 # 300 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wattson, our GYM LEADER, has been\n"
+	.string "whoa-yeah!$"
 # 301 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "around for a long, long time.\p"
-# 302 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He was battling even before your\n"
-# 303 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "daddy was born, that tough coot.$"
-# 304 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 302 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_ShawnIntro:
+# 303 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I trained under Wattson!\n"
+# 304 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "There ain't no way I'll lose easily!$"
 # 305 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenIntro:
+
 # 306 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "This GYM's got puzzles!\n"
+MauvilleCity_Gym_Text_ShawnDefeat:
 # 307 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Isn't it fun?$"
+	.string "Unplugged and turned off…$"
 # 308 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 309 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenDefeat:
+MauvilleCity_Gym_Text_ShawnPostBattle:
 # 310 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "It's no fun to lose…$"
+	.string "Wattson, our GYM LEADER, has been\n"
 # 311 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "around for a long, long time.\p"
 # 312 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_BenPostBattle:
+	.string "He was battling even before your\n"
 # 313 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wattson says he likes setting up\n"
+	.string "daddy was born, that tough coot.$"
 # 314 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "little traps with switches.$"
+
 # 315 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_BenIntro:
 # 316 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianIntro:
+	.string "This GYM's got puzzles!\n"
 # 317 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "With my charm and my Pokémon's moves,\n"
+	.string "Isn't it fun?$"
 # 318 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "you'll be shocked!$"
+
 # 319 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_BenDefeat:
 # 320 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianDefeat:
+	.string "It's no fun to lose…$"
 # 321 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I'm shocked by your power!$"
-# 322 "data/maps/MauvilleCity_Gym/scripts.pory"
 
+# 322 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_BenPostBattle:
 # 323 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_VivianPostBattle:
+	.string "Wattson says he likes setting up\n"
 # 324 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I've heard that MAUVILLE was founded\n"
+	.string "little traps with switches.$"
 # 325 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "by Wattson.\p"
+
 # 326 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He was a TRAINER long before we\n"
+MauvilleCity_Gym_Text_VivianIntro:
 # 327 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "became TRAINERS.\l"
+	.string "With my charm and my Pokémon's moves,\n"
 # 328 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "He must know all sorts of things!$"
+	.string "you'll be shocked!$"
 # 329 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 330 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloIntro:
+MauvilleCity_Gym_Text_VivianDefeat:
 # 331 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I love shiny things!$"
+	.string "I'm shocked by your power!$"
 # 332 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 333 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloDefeat:
+MauvilleCity_Gym_Text_VivianPostBattle:
 # 334 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oh…\n"
+	.string "I've heard that MAUVILLE was founded\n"
 # 335 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "My eyes are frazzled…$"
+	.string "by Wattson.\p"
 # 336 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "He was a TRAINER long before we\n"
 # 337 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_AngeloPostBattle:
+	.string "became TRAINERS.\l"
 # 338 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE GYM's Wattson has a shiny\n"
+	.string "He must know all sorts of things!$"
 # 339 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "forehead. It makes me happy!$"
+
 # 340 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_AngeloIntro:
 # 341 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonIntro:
+	.string "I love shiny things!$"
 # 342 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I've given up on my plans to convert\n"
+
 # 343 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "the city, I have.\p"
+MauvilleCity_Gym_Text_AngeloDefeat:
 # 344 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "And so, I put my time into making\n"
+	.string "Oh…\n"
 # 345 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "door traps in my Gym.\p"
+	.string "My eyes are frazzled…$"
 # 346 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oh? Now, what are you doing here?\p"
+
 # 347 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "What's that? You say you've gotten\n"
+MauvilleCity_Gym_Text_AngeloPostBattle:
 # 348 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "past all my rigged doors?\p"
+	.string "MAUVILLE GYM's Wattson has a shiny\n"
 # 349 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahah!\n"
+	.string "forehead. It makes me happy!$"
 # 350 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Now, that is amusing!\p"
+
 # 351 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Then, I, Wattson, the Leader of\n"
+MauvilleCity_Gym_Text_WattsonIntro:
 # 352 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Mauville Gym, shall electrify you!$"
+	.string "I've given up on my plans to convert\n"
 # 353 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "the city, I have.\p"
 # 354 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonDefeat:
+	.string "And so, I put my time into making\n"
 # 355 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahah!\n"
+	.string "door traps in my Gym.\p"
 # 356 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Fine, I lost!\p"
+	.string "Oh? Now, what are you doing here?\p"
 # 357 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You ended up giving me a thrill!\n"
+	.string "What's that? You say you've gotten\n"
 # 358 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Take this Badge!$"
+	.string "past all my rigged doors?\p"
 # 359 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "Wahahahah!\n"
 # 360 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ReceivedDynamoBadge:
+	.string "Now, that is amusing!\p"
 # 361 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "{PLAYER} received the Dynamo Badge\n"
+	.string "Then, I, Wattson, the Leader of\n"
 # 362 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "from Wattson.$"
+	.string "Mauville Gym, shall electrify you!$"
 # 363 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 364 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
+MauvilleCity_Gym_Text_WattsonDefeat:
 # 365 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "With the Dynamo Badge, Pokémon can\n"
+	.string "Wahahahah!\n"
 # 366 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "use Rock Smash out of battle.\p"
+	.string "Fine, I lost!\p"
 # 367 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Hmm…\n"
+	.string "You ended up giving me a thrill!\n"
 # 368 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You should take this, too!$"
+	.string "Take this Badge!$"
 # 369 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 370 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_ExplainVoltSwitch:
+MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 # 371 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "That TM92 there contains Volt Switch.\n"
+	.string "{PLAYER} received the Dynamo Badge\n"
 # 372 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "It will let you zap an opponent and\l"
+	.string "from Wattson.$"
 # 373 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "then switch out immediately, pretty\l"
+
 # 374 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "handy!\p"
+MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 # 375 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I also included some of my\n"
+	.string "With the Dynamo Badge, Pokémon can\n"
 # 376 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "favorite Mega Stones, hopefully once\l"
+	.string "use Rock Smash out of battle.\p"
 # 377 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "you get the Mega Ring they'll be of\l"
+	.string "Hmm…\n"
 # 378 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "some use to you.\p"
+	.string "You should take this, too!$"
 # 379 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "… … … … … …$"
+
 # 380 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_ExplainVoltSwitch:
 # 381 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_RegisteredWattson:
+	.string "That TM92 there contains Volt Switch.\n"
 # 382 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Registered Gym Leader Wattson\n"
+	.string "It will let you zap an opponent and\l"
 # 383 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "then switch out immediately, pretty\l"
 # 384 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "handy!\p"
 # 385 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPostBattle:
+	.string "I also included some of my\n"
 # 386 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I swell with optimism, seeing a promising\n"
+	.string "favorite Mega Stones, hopefully once\l"
 # 387 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "young trainer like you!$"
+	.string "you get the Mega Ring they'll be of\l"
 # 388 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "some use to you.\p"
 # 389 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
+	.string "… … … … … …$"
 # 390 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahah!\n"
+
 # 391 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Go forth and endeavor, youngster!$"
+MauvilleCity_Gym_Text_RegisteredWattson:
 # 392 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "Registered Gym Leader Wattson\n"
 # 393 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymStatue:
+	.string "in the POKéNAV.$"
 # 394 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM$"
+
 # 395 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+MauvilleCity_Gym_Text_WattsonPostBattle:
 # 396 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_GymStatueCertified:
+	.string "I swell with optimism, seeing a promising\n"
 # 397 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM\p"
+	.string "young trainer like you!$"
 # 398 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
+
 # 399 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "{PLAYER}$"
+MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 # 400 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "Wahahahah!\n"
 # 401 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPreRematch:
+	.string "Go forth and endeavor, youngster!$"
 # 402 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wattson: Ah-ha! Here at last!\n"
+
 # 403 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I know what you want.\l"
+MauvilleCity_Gym_Text_GymStatue:
 # 404 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You want to battle my Pokémon!\p"
+	.string "MAUVILLE CITY POKéMON GYM$"
 # 405 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wahahahaha!\p"
+
 # 406 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "I'll make sparks fly from you!\n"
+MauvilleCity_Gym_Text_GymStatueCertified:
 # 407 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Don't say I didn't warn you!$"
+	.string "MAUVILLE CITY POKéMON GYM\p"
 # 408 "data/maps/MauvilleCity_Gym/scripts.pory"
-
+	.string "WATTSON'S CERTIFIED TRAINERS:\n"
 # 409 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonRematchDefeat:
+	.string "{PLAYER}$"
 # 410 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oof…\n"
+
 # 411 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Our batteries ran dry…$"
+MauvilleCity_Gym_Text_WattsonPreRematch:
 # 412 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 413 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonPostRematch:
-# 414 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Wattson: We'll have to recharge our\n"
-# 415 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "batteries again.\p"
-# 416 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "When we're fully charged up, we'll\n"
-# 417 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "gladly accept your challenge.\p"
-# 418 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "So, come back again sometime,\n"
-# 419 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "won't you?$"
-# 420 "data/maps/MauvilleCity_Gym/scripts.pory"
-
-# 421 "data/maps/MauvilleCity_Gym/scripts.pory"
-MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-# 422 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Wattson: Ah-ha! Here at last!\n"
-# 423 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 413 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "I know what you want.\l"
-# 424 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 414 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "You want to battle my Pokémon!\p"
-# 425 "data/maps/MauvilleCity_Gym/scripts.pory"
+# 415 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Wahahahaha!\p"
+# 416 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I'll make sparks fly from you!\n"
+# 417 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Don't say I didn't warn you!$"
+# 418 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 419 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonRematchDefeat:
+# 420 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Oof…\n"
+# 421 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Our batteries ran dry…$"
+# 422 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 423 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonPostRematch:
+# 424 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Wattson: We'll have to recharge our\n"
+# 425 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "batteries again.\p"
 # 426 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Oops! Wait!\n"
+	.string "When we're fully charged up, we'll\n"
 # 427 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "You've only one Pokémon with you!\p"
+	.string "gladly accept your challenge.\p"
 # 428 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "Come see me with two or more\n"
+	.string "So, come back again sometime,\n"
 # 429 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "won't you?$"
+# 430 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 431 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
+# 432 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Wattson: Ah-ha! Here at last!\n"
+# 433 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "I know what you want.\l"
+# 434 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You want to battle my Pokémon!\p"
+# 435 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Wahahahaha!\p"
+# 436 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Oops! Wait!\n"
+# 437 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "You've only one Pokémon with you!\p"
+# 438 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Come see me with two or more\n"
+# 439 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Pokémon, all right?$"
+# 440 "data/maps/MauvilleCity_Gym/scripts.pory"
+
+# 441 "data/maps/MauvilleCity_Gym/scripts.pory"
+MauvilleCity_Gym_Text_Luxray:
+# 442 "data/maps/MauvilleCity_Gym/scripts.pory"
+	.string "Luxray: Raaaah ah raah!$"

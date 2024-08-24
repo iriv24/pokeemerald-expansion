@@ -262,6 +262,16 @@ MauvilleCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+MauvilleCity_Gym_EventScript_Luxray::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_LUXRAY, CRY_MODE_NORMAL
+	msgbox MauvilleCity_Gym_Text_Luxray, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 MauvilleCity_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
@@ -427,5 +437,8 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "You've only one Pokémon with you!\p"
 	.string "Come see me with two or more\n"
 	.string "Pokémon, all right?$"
+
+MauvilleCity_Gym_Text_Luxray:
+	.string "Luxray: Raaaah ah raah!$"
 
 `

@@ -282,6 +282,16 @@ DewfordTown_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+DewfordTown_Gym_EventScript_Hariyama::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_HARIYAMA, CRY_MODE_NORMAL
+	msgbox DewfordTown_Gym_Text_Hariyama, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
@@ -454,4 +464,7 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "that can battle.\p"
 	.string "I'm sorry, but I'd like you to come back\n"
 	.string "with at least two Pokémon.$"
+
+DewfordTown_Gym_Text_Hariyama:
+	.string "Hariyama: Har- Har- HARIYAMA!$"
 `

@@ -195,6 +195,16 @@ LavaridgeTown_Gym_1F_EventScript_GymStatue::
 	releaseall
 	end
 
+LavaridgeTown_Gym_1F_EventScript_Infernape::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_INFERNAPE, CRY_MODE_NORMAL
+	msgbox LavaridgeTown_Gym_1F_Text_Infernape, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
@@ -409,4 +419,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two Pokémon.$"
+
+LavaridgeTown_Gym_1F_Text_Infernape:
+	.string "Infernape: Ewrrrr eeyee!$"
 `

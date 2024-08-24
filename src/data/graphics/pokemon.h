@@ -9522,7 +9522,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gObjectEventPic_Infernape[] = INCBIN_COMP("graphics/pokemon/infernape/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/overworld_normal.gbapal.lz");
-    const u32 gShinyOverworldPalette_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/overworld_shiny.gbapal.lz");
+    const u32 gShinyOverworldPalette_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/overworld_shiny2.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #if P_MEGA_EVOLUTIONS
