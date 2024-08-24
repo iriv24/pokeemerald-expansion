@@ -2,6 +2,7 @@ raw `
 .set LOCALID_NORMAN, 1
 .set LOCALID_WALLY, 10
 .set LOCALID_WALLYS_DAD, 11
+.set LOCALID_SLAKING, 12
 
 PetalburgCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_OnLoad
@@ -52,6 +53,7 @@ PetalburgCity_Gym_EventScript_MoveWallyToEntrance::
 
 PetalburgCity_Gym_EventScript_MoveNormanToEntrance::
 	setobjectxyperm LOCALID_NORMAN, 4, 107
+	setobjectxyperm LOCALID_SLAKING, 3, 107
 	return
 
 PetalburgCity_Gym_EventScript_CheckNormanForRematch::
@@ -60,6 +62,7 @@ PetalburgCity_Gym_EventScript_CheckNormanForRematch::
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_DontMoveNormanToFront
 	goto_if_eq VAR_PETALBURG_GYM_STATE, 9, PetalburgCity_Gym_EventScript_DontMoveNormanToFront
 	setobjectxyperm LOCALID_NORMAN, 4, 107
+	setobjectxyperm LOCALID_SLAKING, 3, 107
 	return
 
 PetalburgCity_Gym_EventScript_DontMoveNormanToFront::
@@ -1167,6 +1170,16 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+PetalburgCity_Gym_EventScript_Slaking::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SLAKING, CRY_MODE_NORMAL
+	msgbox PetalburgCity_Gym_Text_Slaking, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "Dad: Hm?\p"
 	.string "Well, if it isn't {PLAYER}!\n"
@@ -1287,25 +1300,33 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanGoToTrickHouse:
-	.string "Hey, {PLAYER}, it's great to see you. I\n"
-	.string "can see you've got the 4 badges\p"
-	.string "required to face me in a real gym\n"
-	.string "battle, but there's one more thing I\p"
-	.string "think you should do before challenging\n"
-	.string "me. You should go check out the Trick\p"
-	.string "House on Route 110, I think those\n"
-	.string "puzzles will give you a good chance to\p"
-	.string "test that new Mega Ring.$"
+	.string "Hey, {PLAYER}, it's great to see you.\n"
+	.string "I can see you've got the 4 Badges\l"
+	.string "required to face me in a real Gym\l"
+	.string "battle, but there's one more thing\l"
+	.string "I think you should do before\l"
+	.string "challenging me.\p"
+	.string "You should go check out the Trick\n"
+	.string "House on Route 110, I think those\l"
+	.string "puzzles will give you a good chance to\l"
+	.string "test that new Mega Ring.\p"
+	.string "Oh, and just a heads up before you go.\n"
+	.string "Wally came through here a little while\l"
+	.string "ago, and I gave him a Mega Ring and the\l"
+	.string "same advice.\p"
+	.string "Who knows, maybe you'll run into him at\n"
+	.string "the Trick House?$"
 
 PetalburgCity_Gym_Text_NormanIntro:
-	.string "ALRIGHT!!!\n"
-	.string "It looks like you've got those first 4\p"
-	.string "badges AND you've beaten the first few\n"
-	.string "puzzles at the Trick House! As\p"
-	.string "promised, we will have a Pokémon battle.\n"
+	.string "Alright!!!\p"
+	.string "It looks like you've got those first 4\n"
+	.string "Badges AND you've beaten the first few\l"
+	.string "puzzles at the Trick House!\p"
+	.string "As promised, we can finally have\n"
+	.string "an official Gym battle!\p"
 	.string "{PLAYER}…\p"
-	.string "I'm so happy that I can have\n"
-	.string "a real battle with my own kid.\p"
+	.string "I'm so happy that I can have a real\n"
+	.string "battle with my own kid.\p"
 	.string "But, a battle is a battle!\p"
 	.string "I will do everything in my power as\n"
 	.string "a Gym Leader to win.\p"
@@ -1326,19 +1347,20 @@ PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
 	.string "With that Balance Badge,\n"
-	.string "Pokémon that know the HM move Surf\p"
-	.string "will be able to travel over water.\n"
-	.string "This is my gift to you. {PLAYER}, I'm\l"
+	.string "Pokémon that know the HM move Surf\l"
+	.string "will be able to travel over water.\p"
+	.string "This is my gift to you. {PLAYER}, I'm\n"
 	.string "sure you can use these correctly.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Unfortunately, I am in sole possession\n"
-	.string "of the only Slakite in existence as it\p"
-	.string "currently stands. I need to hold onto\n"
-	.string "it to hold down the fort here at the\p"
-	.string "Gym, but I promise as soon as I get my\n"
-	.string "hands on a second one, I will send it\l"
-	.string "your way with one of your friends.$"
+	.string "of the only Slakite in existence as it\l"
+	.string "currently stands.\p"
+	.string "I need to hold onto it to hold down the\n"
+	.string "fort here at the Gym, but I promise as\l"
+	.string "soon as I get my hands on a second one,\l"
+	.string "I will send it your way with one of\l"
+	.string "your friends.$"
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "As the Gym Leader, I can't\n"
@@ -1634,5 +1656,8 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two Pokémon.$"
+
+PetalburgCity_Gym_Text_Slaking:
+	.string "Slaking: Uuuuurrrrr!$"
 
 `

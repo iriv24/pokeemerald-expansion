@@ -3,6 +3,7 @@ raw `
 .set LOCALID_RIVAL, 28
 .set LOCALID_RIVAL_ON_BIKE, 29
 .set LOCALID_BIRCH, 36
+.set LOCALID_WALLY, 37
 
 Route110_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route110_OnResume
@@ -773,6 +774,127 @@ Route110_Movement_BirchExit4:
 	walk_up
 	walk_up
 	step_end
+
+Route110_EventScript_Wally::
+	lockall
+	msgbox Route110_Text_WallyRoute110Thinking, MSGBOX_DEFAULT
+	closemessage
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
+	waitmovement 0
+	applymovement LOCALID_WALLY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_WALLY, Common_Movement_Delay48
+	waitmovement 0
+	msgbox Route110_Text_WallyLetsBattle, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_WALLY_ROUTE_110, Route110_Text_WallyDefeated
+	goto Route110_EventScript_AfterWallyBattle
+	end
+
+Route110_EventScript_AfterWallyBattle::
+	msgbox Route110_Text_WallyTimeToHeadBack, MSGBOX_DEFAULT
+	goto Route110_EventScript_WallyExit
+	end
+
+Route110_EventScript_WallyExit::
+	closemessage
+	switch VAR_FACING
+	case DIR_NORTH, Route110_EventScript_WallyExitFacingNorth
+	case DIR_WEST, Route110_EventScript_WallyExitFacingEastOrWest
+	case DIR_EAST, Route110_EventScript_WallyExitFacingEastOrWest
+	case DIR_SOUTH, Route110_EventScript_WallyExitFacingNorth
+	end
+
+Route110_EventScript_WallyExitFacingNorth::
+	applymovement LOCALID_WALLY, Route110_Movement_WallyExitFacingNorth
+	waitmovement 0
+	goto Route110_EventScript_WallyEnd
+	end
+
+Route110_EventScript_WallyExitFacingEastOrWest::
+	applymovement LOCALID_WALLY, Route110_Movement_WallyExitFacingEastWest
+	waitmovement 0
+	goto Route110_EventScript_WallyEnd
+	end
+
+Route110_EventScript_WallyEnd::
+	removeobject LOCALID_WALLY
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+Route110_Movement_WallyExitFacingNorth:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route110_Movement_WallyExitFacingEastWest:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route110_Text_WallyRoute110Thinking:
+	.string "Wally: Hmm… Norman said I should try\n"
+	.string "battling in here to get stronger, but\l"
+	.string "will I even be able to hold my own?$"
+
+Route110_Text_WallyLetsBattle:
+	.string "Ahh!\p"
+	.string "Geez, don't sneak up on me like that,\n"
+	.string "{PLAYER}.\p"
+	.string "I've gotten a lot stronger since our\n"
+	.string "battle in Mauville!\p"
+	.string "Norman, I mean um, your Dad, even gave\n"
+	.string "me my own Mega Ring!\p"
+	.string "Gardevoir and I have been working\n"
+	.string "really hard…\p"
+	.string "I've been here contemplating going into\n"
+	.string "the Trick House for a while, but I'm\l"
+	.string "still a little hesitant.\p"
+	.string "I have an idea, let's battle out here,\n"
+	.string "and the winner gets to go into the\l"
+	.string "Trick House first!\p"
+	.string "Ok, here I come!$"
+
+Route110_Text_WallyDefeated:
+	.string "Looks like I still wasn't strong\n"
+	.string "enough…$"
+
+Route110_Text_WallyTimeToHeadBack:
+	.string "Great battle, {PLAYER}. Even though I\n"
+	.string "lost to you again, I can feel myself\l"
+	.string "getting stronger.\p"
+	.string "You can go into the Trick House first\n"
+	.string "since you won, I'll head off to train\l"
+	.string "somewhere else before coming back.\p"
+	.string "Watch your back, {PLAYER}, I'm going to\n"
+	.string "keep training, and I'll catch up to you\l"
+	.string "one day!$"
 
 Route110_Text_WeCantTalkAboutAquaActivities:
 	.string "TEAM AQUA's activities…\n"

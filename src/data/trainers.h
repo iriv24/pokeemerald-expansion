@@ -7858,7 +7858,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR2),
     },
 
-    [TRAINER_WALLY_VR_3] =
+    [TRAINER_WALLY_ROUTE_110] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7867,7 +7867,7 @@
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_WallyVR3),
+        .party = TRAINER_PARTY(sParty_WallyRoute110),
     },
 
     [TRAINER_WALLY_VR_4] =
