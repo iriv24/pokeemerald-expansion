@@ -4285,20 +4285,20 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 14,
-    .species = SPECIES_GEODUDE,
-    .heldItem = ITEM_CUSTAP_BERRY,
-    .nature = NATURE_IMPISH,
-    .ability = ABILITY_STURDY,
-    .moves = {MOVE_SANDSTORM, MOVE_ROCK_TOMB, MOVE_BULLDOZE, MOVE_SELF_DESTRUCT}
+    .species = SPECIES_RHYHORN,
+    .heldItem = ITEM_RINDO_BERRY,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_LIGHTNING_ROD,
+    .moves = {MOVE_ROCK_TOMB, MOVE_HORN_ATTACK, MOVE_BULLDOZE, MOVE_ROCK_SMASH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 15,
-    .species = SPECIES_LILEEP,
+    .species = SPECIES_WOOPER_PALDEA,
     .heldItem = ITEM_ORAN_BERRY,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_STORM_DRAIN,
-    .moves = {MOVE_ANCIENT_POWER, MOVE_MEGA_DRAIN, MOVE_ACID, MOVE_NONE}
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_WATER_ABSORB,
+    .moves = {MOVE_BULLDOZE, MOVE_POISON_TAIL, MOVE_YAWN, MOVE_SANDSTORM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4307,7 +4307,7 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     .heldItem = ITEM_ORAN_BERRY,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_SAND_VEIL,
-    .moves = {MOVE_WING_ATTACK, MOVE_POISON_TAIL, MOVE_BULLDOZE, MOVE_NONE}
+    .moves = {MOVE_WING_ATTACK, MOVE_QUICK_ATTACK, MOVE_BULLDOZE, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
