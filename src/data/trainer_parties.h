@@ -4472,20 +4472,10 @@ static const struct TrainerMon sParty_Norman1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 59,
-    .species = SPECIES_OBSTAGOON,
-    .nature = NATURE_JOLLY,
-    .ability = ABILITY_GUTS,
-    .heldItem = ITEM_FLAME_ORB,
-    .friendship = MAX_FRIENDSHIP,
-    .moves = {MOVE_RETURN, MOVE_KNOCK_OFF, MOVE_PARTING_SHOT, MOVE_OBSTRUCT}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 59,
     .species = SPECIES_ZOROARK_HISUIAN,
     .nature = NATURE_TIMID,
     .ability = ABILITY_ILLUSION,
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_BITTER_MALICE, MOVE_AURA_SPHERE, MOVE_HYPER_VOICE, MOVE_SLUDGE_BOMB}
     },
     {
@@ -4502,10 +4492,20 @@ static const struct TrainerMon sParty_Norman1[] = {
     .iv = TRAINER_PARTY_IVS(31, 30, 30, 31, 31, 31),
     .lvl = 59,
     .species = SPECIES_URSALUNA_BLOODMOON,
-    .nature = NATURE_QUIET,
+    .nature = NATURE_MODEST,
     .ability = ABILITY_SCRAPPY,
     .heldItem = ITEM_EXPERT_BELT,
     .moves = {MOVE_EARTH_POWER, MOVE_BLOOD_MOON, MOVE_HYPER_VOICE, MOVE_HIDDEN_POWER}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 59,
+    .species = SPECIES_CYCLIZAR,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_REGENERATOR,
+    .friendship = MAX_FRIENDSHIP,
+    .moves = {MOVE_SHED_TAIL, MOVE_AQUA_TAIL, MOVE_DRAGON_CLAW, MOVE_RETURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4520,13 +4520,12 @@ static const struct TrainerMon sParty_Norman1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 59,
-    .species = SPECIES_CYCLIZAR,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .species = SPECIES_OBSTAGOON,
     .nature = NATURE_JOLLY,
-    .ability = ABILITY_REGENERATOR,
-    .friendship = MAX_FRIENDSHIP,
-    .moves = {MOVE_SHED_TAIL, MOVE_AQUA_TAIL, MOVE_DRAGON_CLAW, MOVE_RETURN}
-    }
+    .ability = ABILITY_GUTS,
+    .heldItem = ITEM_FLAME_ORB,
+    .moves = {MOVE_FACADE, MOVE_KNOCK_OFF, MOVE_BRICK_BREAK, MOVE_OBSTRUCT}
+    },
 };
 
 static const struct TrainerMon sParty_Winona1[] = {
