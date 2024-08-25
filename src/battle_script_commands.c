@@ -7270,6 +7270,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
             if (!(gBattleMons[battler].status1 & STATUS1_ANY)
                 && !IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
                 && GetBattlerAbility(battler) != ABILITY_IMMUNITY
+                && GetBattlerAbility(battler) != ABILITY_PURIFYING_SALT
                 && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
                 && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
                 && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))

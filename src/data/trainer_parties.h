@@ -3167,11 +3167,11 @@ static const struct TrainerMon sParty_Rusty[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
-    .species = SPECIES_CORVIKNIGHT,
-    .nature = NATURE_IMPISH,
-    .ability = ABILITY_PRESSURE,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_BODY_PRESS, MOVE_BULK_UP, MOVE_IRON_HEAD, MOVE_ROOST}
+    .species = SPECIES_DURALUDON,
+    .nature = NATURE_RELAXED,
+    .ability = ABILITY_HEAVY_METAL,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_FLASH_CANNON, MOVE_DRAGON_PULSE, MOVE_BODY_PRESS, MOVE_DRAGON_TAIL}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4884,7 +4884,7 @@ static const struct TrainerMon sParty_Georgia[] = {
     .nature = NATURE_IMPISH,
     .ability = ABILITY_HARVEST,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_LEECH_SEED, MOVE_SYNTHESIS, MOVE_HORN_LEECH, MOVE_POLTERGEIST}
+    .moves = {MOVE_LEECH_SEED, MOVE_CONFUSE_RAY, MOVE_HORN_LEECH, MOVE_POLTERGEIST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5572,9 +5572,9 @@ static const struct TrainerMon sParty_Eddie[] = {
     .lvl = 202,
     .species = SPECIES_QWILFISH,
     .nature = NATURE_IMPISH,
-    .ability = ABILITY_TOXIC_DEBRIS,
+    .ability = ABILITY_INTIMIDATE,
     .heldItem = ITEM_FOCUS_SASH,
-    .moves = {MOVE_TOXIC_SPIKES, MOVE_FLIP_TURN, MOVE_SPIKES, MOVE_EXPLOSION}
+    .moves = {MOVE_TOXIC_SPIKES, MOVE_FLIP_TURN, MOVE_TAUNT, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10110,6 +10110,15 @@ static const struct TrainerMon sParty_Robin[] = {
     .ability = ABILITY_PUNK_ROCK,
     .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_OVERDRIVE, MOVE_BOOMBURST, MOVE_PSYCHIC_NOISE, MOVE_SLUDGE_BOMB}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 202,
+    .species = SPECIES_GARBODOR,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_WEAK_ARMOR,
+    .heldItem = ITEM_GARBODORITE,
+    .moves = {MOVE_GUNK_SHOT, MOVE_BODY_SLAM, MOVE_DRAIN_PUNCH, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
