@@ -142,6 +142,16 @@ FortreeCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+FortreeCity_Gym_EventScript_Altaria::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ALTARIA, CRY_MODE_NORMAL
+	msgbox FortreeCity_Gym_Text_Altaria, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
@@ -326,4 +336,7 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 	.string "POKéMON with you?\p"
 	.string "Please return with two POKéMON\n"
 	.string "at the very least.$"
+
+FortreeCity_Gym_Text_Altaria:
+	.string "Altaria: Screeeeeeee!$"
 `
