@@ -301,7 +301,6 @@ script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_FOCUS_PUNCH)
 	giveitem(ITEM_TM_FOCUS_BLAST)
 	giveitem(ITEM_TM_DRAIN_PUNCH)
-	giveitem(ITEM_TM_ACROBATICS)
 	giveitem(ITEM_TM_BODY_PRESS)
 	giveitem(ITEM_TM_AURA_SPHERE)
 	giveitem(ITEM_LUCARIONITE)
@@ -313,23 +312,20 @@ script JaggedPass_EventScript_MayleneGiveItems{
 }
 
 text Maylene_ExplainItems{
-	"Drain Punch allows your Pokémon to\n"
-	"absorb health with each strike. The\p"
-	"Life Orb boosts the power of your\n"
-	"Pokémon's moves at the cost of some of\p"
-	"its health with each attack.\n"
-	"The Heavy DutyBoots grant immunity\p"
-	"to hazards on entry. I threw in\n"
-	"some of my favorite Mega Stones\p"
-	"as well. Good luck!"
+	"Those are some of the most powerful\n"
+	"Fighting-type TMs out there, I'm sure\l"
+	"you will be able to make use of them.\p"
+	"I threw in some of my favorite Mega\n"
+	"Stones as well. Good luck, trainer!"
 }
 
 text Maylene_Greeting{
 	"HOO-HAH! Is this finally a worthy\n"
-	"opponent? I can tell that you seem\p"
-	"pretty strong, let's see if my instincts\n"
-	"are correct! What do you say, will you\l"
-	"battle with me?"
+	"opponent? I can tell that you seem\l"
+	"pretty strong, let's see if my instincts\l"
+	"are correct!\p" 
+	"What do you say, will you battle\n"
+	"with me?"
 }
 	
 text Maylene_Outro{

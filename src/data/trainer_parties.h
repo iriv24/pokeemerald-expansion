@@ -3719,7 +3719,7 @@ static const struct TrainerMon sParty_Vanessa[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
     .species = SPECIES_PELIPPER,
-    .nature = NATURE_QUIET,
+    .nature = NATURE_TIMID,
     .ability = ABILITY_DRIZZLE,
     .heldItem = ITEM_SHARP_BEAK,
     .moves = {MOVE_HURRICANE, MOVE_SCALD, MOVE_ROOST, MOVE_ICE_BEAM}
@@ -5329,6 +5329,15 @@ static const struct TrainerMon sParty_Timothy5[] = {
 };
 
 static const struct TrainerMon sParty_Vicky[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 201,
+    .species = SPECIES_DURALUDON,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_HEAVY_METAL,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_FLASH_CANNON, MOVE_DRAGON_PULSE, MOVE_BODY_PRESS, MOVE_THUNDERBOLT}
+    },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
@@ -9950,12 +9959,12 @@ static const struct TrainerMon sParty_Janice[] = {
 static const struct TrainerMon sParty_Vivi[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
-    .species = SPECIES_DURALUDON,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_HEAVY_METAL,
-    .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_FLASH_CANNON, MOVE_DRAGON_PULSE, MOVE_BODY_PRESS, MOVE_THUNDERBOLT}
+    .lvl = 202,
+    .species = SPECIES_PELIPPER,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_DRIZZLE,
+    .heldItem = ITEM_SHARP_BEAK,
+    .moves = {MOVE_HURRICANE, MOVE_SCALD, MOVE_ROOST, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15072,17 +15081,17 @@ static const struct TrainerMon sParty_Maylene[] = {
     .species = SPECIES_PANGORO,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_IRON_FIST,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_PUNCHING_GLOVE,
     .moves = {MOVE_DRAIN_PUNCH, MOVE_KNOCK_OFF, MOVE_FIRE_PUNCH, MOVE_THUNDER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_FALINKS,
-    .nature = NATURE_JOLLY,
-    .ability = ABILITY_DEFIANT,
-    .heldItem = ITEM_COBA_BERRY,
-    .moves = {MOVE_LEECH_LIFE, MOVE_CLOSE_COMBAT, MOVE_ROCK_SLIDE, MOVE_NO_RETREAT}
+    .species = SPECIES_GARGANACL,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_PURIFYING_SALT,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_SALT_CURE, MOVE_EARTHQUAKE, MOVE_HAMMER_ARM, MOVE_RECOVER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

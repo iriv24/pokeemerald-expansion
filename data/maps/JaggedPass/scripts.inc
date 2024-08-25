@@ -573,20 +573,18 @@ JaggedPass_EventScript_MayleneGiveItems::
 # 303 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_TM_DRAIN_PUNCH
 # 304 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_TM_ACROBATICS
-# 305 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_TM_BODY_PRESS
-# 306 "data/maps/JaggedPass/scripts.pory"
+# 305 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_TM_AURA_SPHERE
-# 307 "data/maps/JaggedPass/scripts.pory"
+# 306 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_LUCARIONITE
-# 308 "data/maps/JaggedPass/scripts.pory"
+# 307 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_MACHAMPITE
-# 309 "data/maps/JaggedPass/scripts.pory"
+# 308 "data/maps/JaggedPass/scripts.pory"
 	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
-# 310 "data/maps/JaggedPass/scripts.pory"
+# 309 "data/maps/JaggedPass/scripts.pory"
 	msgbox Maylene_ExplainItems
-# 311 "data/maps/JaggedPass/scripts.pory"
+# 310 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
 
@@ -596,29 +594,26 @@ JaggedPass_EventScript_BattleMaylene_Text_0:
 	.string "You're on!$"
 
 Maylene_ExplainItems::
-# 315 "data/maps/JaggedPass/scripts.pory"
-	.string "Drain Punch allows your Pokémon to\n"
-	.string "absorb health with each strike. The\p"
-	.string "Life Orb boosts the power of your\n"
-	.string "Pokémon's moves at the cost of some of\p"
-	.string "its health with each attack.\n"
-	.string "The Heavy DutyBoots grant immunity\p"
-	.string "to hazards on entry. I threw in\n"
-	.string "some of my favorite Mega Stones\p"
-	.string "as well. Good luck!$"
+# 314 "data/maps/JaggedPass/scripts.pory"
+	.string "Those are some of the most powerful\n"
+	.string "Fighting-type TMs out there, I'm sure\l"
+	.string "you will be able to make use of them.\p"
+	.string "I threw in some of my favorite Mega\n"
+	.string "Stones as well. Good luck, trainer!$"
 
 Maylene_Greeting::
-# 327 "data/maps/JaggedPass/scripts.pory"
+# 322 "data/maps/JaggedPass/scripts.pory"
 	.string "HOO-HAH! Is this finally a worthy\n"
-	.string "opponent? I can tell that you seem\p"
-	.string "pretty strong, let's see if my instincts\n"
-	.string "are correct! What do you say, will you\l"
-	.string "battle with me?$"
+	.string "opponent? I can tell that you seem\l"
+	.string "pretty strong, let's see if my instincts\l"
+	.string "are correct!\p"
+	.string "What do you say, will you battle\n"
+	.string "with me?$"
 
 Maylene_Outro::
-# 335 "data/maps/JaggedPass/scripts.pory"
+# 331 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 340 "data/maps/JaggedPass/scripts.pory"
+# 336 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"

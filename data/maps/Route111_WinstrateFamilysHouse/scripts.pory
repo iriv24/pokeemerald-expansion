@@ -21,34 +21,38 @@ Route111_WinstrateFamilysHouse_EventScript_Victoria::
 	setvar VAR_0x8008, LOCALID_VICTORIA
 	goto_if_set FLAG_RECEIVED_MEGA_STONES, Route111_WinstrateFamilysHouse_EventScript_ReceivedMegaStones
 	msgbox Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMegaStones, MSGBOX_DEFAULT
-	giveitem ITEM_ALAKAZITE
-	giveitem ITEM_KANGASKHANITE
-	giveitem ITEM_AUDINITE
-	giveitem ITEM_GARDEVOIRITE
-	giveitem ITEM_ABSOLITE
-	giveitem ITEM_SHARPEDONITE
-	giveitem ITEM_HERACRONITE
-	giveitem ITEM_LOPUNNITE
-	giveitem ITEM_PIDGEOTITE
-	giveitem ITEM_BEEDRILLITE
-	giveitem ITEM_GLALITITE
-	giveitem ITEM_ABOMASITE
-	giveitem ITEM_MEDICHAMITE
-	giveitem ITEM_AGGRONITE
-	giveitem ITEM_CAMERUPTITE
-	giveitem ITEM_MAWILITE
-	giveitem ITEM_HOUNDOOMINITE
-	giveitem ITEM_PINSIRITE
-	giveitem ITEM_COALOSSITE
-	giveitem ITEM_SLOWBRONITE
-	giveitem ITEM_ORBEETLITE
-	giveitem ITEM_SCIZORITE
-	giveitem ITEM_AERODACTYLITE
-	giveitem ITEM_GALLADITE
-	giveitem ITEM_CENTISKITE
-	giveitem ITEM_SANDACONDITE
-	giveitem ITEM_APPLITE
+	giveitemfast ITEM_ALAKAZITE
+	giveitemfast ITEM_KANGASKHANITE
+	giveitemfast ITEM_AUDINITE
+	giveitemfast ITEM_GARDEVOIRITE
+	giveitemfast ITEM_ABSOLITE
+	giveitemfast ITEM_SHARPEDONITE
+	giveitemfast ITEM_HERACRONITE
+	giveitemfast ITEM_LOPUNNITE
+	giveitemfast ITEM_PIDGEOTITE
+	giveitemfast ITEM_BEEDRILLITE
+	giveitemfast ITEM_GLALITITE
+	giveitemfast ITEM_ABOMASITE
+	giveitemfast ITEM_MEDICHAMITE
+	giveitemfast ITEM_AGGRONITE
+	giveitemfast ITEM_CAMERUPTITE
+	giveitemfast ITEM_MAWILITE
+	giveitemfast ITEM_HOUNDOOMINITE
+	giveitemfast ITEM_PINSIRITE
+	giveitemfast ITEM_COALOSSITE
+	giveitemfast ITEM_SLOWBRONITE
+	giveitemfast ITEM_ORBEETLITE
+	giveitemfast ITEM_SCIZORITE
+	giveitemfast ITEM_AERODACTYLITE
+	giveitemfast ITEM_GALLADITE
+	giveitemfast ITEM_CENTISKITE
+	giveitemfast ITEM_SANDACONDITE
+	giveitemfast ITEM_APPLITE
 	setflag FLAG_RECEIVED_MEGA_STONES
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route111_WinstrateFamilysHouse_Text_ReceivedSeveralMegaStones, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox Route111_WinstrateFamilysHouse_Text_ExplainMegaStones, MSGBOX_DEFAULT
 	goto Route111_WinstrateFamilysHouse_EventScript_FaceOriginalDirection
 	end
 
@@ -88,23 +92,24 @@ Route111_WinstrateFamilysHouse_EventScript_FaceOriginalDirection::
 	end
 
 Route111_WinstrateFamilysHouse_Text_MySonIsStrongerThanYou:
-	.string "You're the first TRAINER I've seen who\n"
-	.string "deploys POKéMON so masterfully.\p"
+	.string "You're the first trainer I've seen who\n"
+	.string "deploys Pokémon so masterfully.\p"
 	.string "But, I should tell you--my son is\n"
 	.string "stronger than you.\p"
-	.string "He even took the POKéMON LEAGUE\n"
+	.string "He even took the Pokémon League\n"
 	.string "challenge, I'll have you know.$"
 
 Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMegaStones:
 	.string "We've got a nice collection of Mega\n"
-	.string "Stones amassed here. We gave one set\p"
-	.string "to my son when he went to go take on\n"
-	.string "the Elite 4. I'm not sure I believe\p"
-	.string "you're as strong as he is, but they may\n"
-	.string "prove helpful to you anyway.$"
+	.string "Stones amassed here.\p"
+	.string "We gave one set to my son when he went\n"
+	.string "to go take on the Elite 4.\p"
+	.string "I'm not sure I believe you're as strong\n"
+	.string "as he is, but they may prove helpful to\l"
+	.string "you anyway.$"
 
 Route111_WinstrateFamilysHouse_Text_PassionateAboutBattles:
-	.string "When it comes to POKéMON battles,\n"
+	.string "When it comes to Pokémon battles,\n"
 	.string "we tend to be pretty passionate.$"
 
 Route111_WinstrateFamilysHouse_Text_StrongerFamilyMembers:
@@ -118,17 +123,35 @@ Route111_WinstrateFamilysHouse_Text_GrandsonStrong:
 	.string "There's no question that you're strong.\p"
 	.string "But if you were to battle my grandson,\n"
 	.string "you'd end up crying in frustration.\p"
-	.string "He's much stronger than any TRAINER\n"
+	.string "He's much stronger than any trainer\n"
 	.string "our family knows.\p"
-	.string "He must be challenging the POKéMON\n"
-	.string "LEAGUE CHAMPION by now.\p"
+	.string "He must be challenging the Pokémon\n"
+	.string "League Champion by now.\p"
 	.string "Knowing my grandson, he could be the\n"
-	.string "CHAMPION already!$"
+	.string "Champion already!$"
 
 Route111_WinstrateFamilysHouse_Text_GrandsonStrongShort:
 	.string "My grandson must be challenging the\n"
-	.string "POKéMON LEAGUE CHAMPION by now.\p"
+	.string "Pokémon League Champion by now.\p"
 	.string "Knowing my grandson, he could be the\n"
-	.string "CHAMPION already!$"
+	.string "Champion already!$"
+
+Route111_WinstrateFamilysHouse_Text_ReceivedSeveralMegaStones::
+	.string "{PLAYER} received several Mega Stones!$"
+
+Route111_WinstrateFamilysHouse_Text_ExplainMegaStones:
+	.string "Those are all the Mega Stones that we\n"
+	.string "have collected, which included the:\p"
+	.string "Alakazite, Kangaskhanite, Audinite,\n"
+	.string "Gardevoirite, Absolite, Sharpedonite,\l"
+	.string "Heracronite, Lopunnite, Pidgeotite,\l"
+	.string "Beedrillite, Glalite, Abomasite,\l"
+	.string "Medichamite, Aggronite, Cameruptite,\l"
+	.string "Mawilite, Houndoominite, Pinsirite,\l"
+	.string "Coalossite, Slowbronite, Orbeetlite,\l"
+	.string "Scizorite, Aerodactylite, Galladite,\l"
+	.string "Centiskite, Sandacondite, and Applite.\p"
+	.string "Surely, those will make you a more\n"
+	.string "powerful trainer.$"
 
 `
