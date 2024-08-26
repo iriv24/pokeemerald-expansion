@@ -156,9 +156,9 @@ void InitRoamer(void)
     TryAddRoamer(SPECIES_SUICUNE, 50);
     TryAddRoamer(SPECIES_LATIAS, 50);
     TryAddRoamer(SPECIES_LATIOS, 50);
-    TryAddRoamer(SPECIES_AZELF, 50);
-    TryAddRoamer(SPECIES_MESPRIT, 50);
-    TryAddRoamer(SPECIES_UXIE, 50);
+    TryAddRoamer(SPECIES_TERRAKION, 50);
+    TryAddRoamer(SPECIES_COBALION, 50);
+    TryAddRoamer(SPECIES_VIRIZION, 50);
     TryAddRoamer(SPECIES_CRESSELIA, 50);
     TryAddRoamer(SPECIES_TORNADUS, 50);
     TryAddRoamer(SPECIES_THUNDURUS, 50);
