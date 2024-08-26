@@ -248,22 +248,30 @@ Route118_EventScript_Deandre::
 	end
 
 Route118_Text_StevenQuestions:
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
-	.string "It's me, STEVEN!\n"
-	.string "We met in the cave near DEWFORD.\p"
-	.string "Have you met many kinds of POKéMON\n"
-	.string "since I last saw you?\p"
-	.string "There are many, many kinds of POKéMON\n"
-	.string "in this wide world of ours.\p"
-	.string "If you wanted to raise only your\n"
-	.string "favorites, that's fine.\p"
-	.string "Perhaps you find it more fun to raise\n"
-	.string "all sorts of POKéMON.\p"
-	.string "As a TRAINER of POKéMON,\n"
-	.string "what do you think?\p"
-	.string "Of course, it's not any of my business.\p"
-	.string "It would be nice if we were to meet\n"
-	.string "again somewhere.$"
+	.string "Hi, {PLAYER}{KUN}, it's me, Steven!\n"
+	.string "We met in the cave near Dewford,\l"
+	.string "I hope you've been doing well\l"
+	.string "since then!\p"
+	.string "I'm glad I bumped into you here.\n"
+	.string "You see, I recently spoke with Drake,\l"
+	.string "and he told me about the increase in\l"
+	.string "nefarious activities by Team Aqua and\l"
+	.string "Team Magma.\p"
+	.string "He also mentioned that he encountered\n"
+	.string "you on more than one occasion, and he\l"
+	.string "was very impressed by how you were able\l"
+	.string "to stop both groups all on your own.\p"
+	.string "I am bringing this up now because there\n"
+	.string "have been reports of more disturbances\l"
+	.string "being caused by both organizations.\p"
+	.string "One such disturbance is a supposed\n"
+	.string "attack on the Weather Institute, which\l"
+	.string "lies further ahead on this route.\p"
+	.string "Would you mind investigating this\n"
+	.string "activity, {PLAYER}?\p"
+	.string "… … … … … …\p"
+	.string "Great, thank you so much!\n"
+	.string "Best of luck, and be careful out there!$"
 
 Route118_Text_YouAgreeGoodRodIsGood:
 	.string "Hmm!\n"
@@ -359,13 +367,21 @@ script Route118_EventScript_WakeDefeated{
 	
 text Wake_Greeting{
 	"GLUB GLUB This better be good if\n"
-	"you're interrupting my training. You\l"
-	"wanna battle or not?"
+	"you're interrupting my training.\p"
+	"… … … … … …\p"
+	"GLUB GLUB Who am I?\n"
+	"I am Crasher Wake of course, ha-ha!\p"
+	"I came over to the Hoenn region\n"
+	"because I heard there was plenty of\l"
+	"water to train in, but honestly, I'd give\l"
+	"it maybe a 7 out of 10.\p"
+	"GLUB GLUB Anyway, you wanna battle\n"
+	"or not?"
 }
 	
 text Wake_Outro{
 	"Wow, what a fight. I know I'll be leaving\n"
-	"these items in good hands."
+	"these Items in good hands."
 }
 
 text Wake_ExplainItems{

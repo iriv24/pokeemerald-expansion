@@ -322,8 +322,14 @@ text Maylene_ExplainItems{
 text Maylene_Greeting{
 	"HOO-HAH! Is this finally a worthy\n"
 	"opponent? I can tell that you seem\l"
-	"pretty strong, let's see if my instincts\l"
-	"are correct!\p" 
+	"pretty strong.\p"
+	"My name is Maylene, and I came over here\n"
+	"from the Sinnoh region because I\l"
+	"needed to reinvigorate my training.\p"
+	"Things had gotten boring back home, so\n"
+	"I came out here to find tough trainers.\p"
+	"Now, let's see if my instincts about you\n"
+	"are correct!\p"
 	"What do you say, will you battle\n"
 	"with me?"
 }

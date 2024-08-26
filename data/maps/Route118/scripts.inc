@@ -499,210 +499,234 @@ Route118_EventScript_Deandre::
 # 250 "data/maps/Route118/scripts.pory"
 Route118_Text_StevenQuestions:
 # 251 "data/maps/Route118/scripts.pory"
-	.string "Steven: Hi, {PLAYER}{KUN}!\p"
+	.string "Hi, {PLAYER}{KUN}, it's me, Steven!\n"
 # 252 "data/maps/Route118/scripts.pory"
-	.string "It's me, STEVEN!\n"
+	.string "We met in the cave near Dewford,\l"
 # 253 "data/maps/Route118/scripts.pory"
-	.string "We met in the cave near DEWFORD.\p"
+	.string "I hope you've been doing well\l"
 # 254 "data/maps/Route118/scripts.pory"
-	.string "Have you met many kinds of POKéMON\n"
+	.string "since then!\p"
 # 255 "data/maps/Route118/scripts.pory"
-	.string "since I last saw you?\p"
+	.string "I'm glad I bumped into you here.\n"
 # 256 "data/maps/Route118/scripts.pory"
-	.string "There are many, many kinds of POKéMON\n"
+	.string "You see, I recently spoke with Drake,\l"
 # 257 "data/maps/Route118/scripts.pory"
-	.string "in this wide world of ours.\p"
+	.string "and he told me about the increase in\l"
 # 258 "data/maps/Route118/scripts.pory"
-	.string "If you wanted to raise only your\n"
+	.string "nefarious activities by Team Aqua and\l"
 # 259 "data/maps/Route118/scripts.pory"
-	.string "favorites, that's fine.\p"
+	.string "Team Magma.\p"
 # 260 "data/maps/Route118/scripts.pory"
-	.string "Perhaps you find it more fun to raise\n"
+	.string "He also mentioned that he encountered\n"
 # 261 "data/maps/Route118/scripts.pory"
-	.string "all sorts of POKéMON.\p"
+	.string "you on more than one occasion, and he\l"
 # 262 "data/maps/Route118/scripts.pory"
-	.string "As a TRAINER of POKéMON,\n"
+	.string "was very impressed by how you were able\l"
 # 263 "data/maps/Route118/scripts.pory"
-	.string "what do you think?\p"
+	.string "to stop both groups all on your own.\p"
 # 264 "data/maps/Route118/scripts.pory"
-	.string "Of course, it's not any of my business.\p"
+	.string "I am bringing this up now because there\n"
 # 265 "data/maps/Route118/scripts.pory"
-	.string "It would be nice if we were to meet\n"
+	.string "have been reports of more disturbances\l"
 # 266 "data/maps/Route118/scripts.pory"
-	.string "again somewhere.$"
+	.string "being caused by both organizations.\p"
 # 267 "data/maps/Route118/scripts.pory"
-
+	.string "One such disturbance is a supposed\n"
 # 268 "data/maps/Route118/scripts.pory"
-Route118_Text_YouAgreeGoodRodIsGood:
+	.string "attack on the Weather Institute, which\l"
 # 269 "data/maps/Route118/scripts.pory"
-	.string "Hmm!\n"
+	.string "lies further ahead on this route.\p"
 # 270 "data/maps/Route118/scripts.pory"
-	.string "A GOOD ROD is really good!\p"
+	.string "Would you mind investigating this\n"
 # 271 "data/maps/Route118/scripts.pory"
-	.string "Wouldn't you agree?$"
+	.string "activity, {PLAYER}?\p"
 # 272 "data/maps/Route118/scripts.pory"
-
+	.string "… … … … … …\p"
 # 273 "data/maps/Route118/scripts.pory"
-Route118_Text_IdenticalMindsTakeThis:
+	.string "Great, thank you so much!\n"
 # 274 "data/maps/Route118/scripts.pory"
-	.string "Hmm!\n"
+	.string "Best of luck, and be careful out there!$"
 # 275 "data/maps/Route118/scripts.pory"
-	.string "We're of identical minds!\p"
+
 # 276 "data/maps/Route118/scripts.pory"
-	.string "Hmm!\n"
+Route118_Text_YouAgreeGoodRodIsGood:
 # 277 "data/maps/Route118/scripts.pory"
-	.string "Take this GOOD ROD!$"
+	.string "Hmm!\n"
 # 278 "data/maps/Route118/scripts.pory"
-
+	.string "A GOOD ROD is really good!\p"
 # 279 "data/maps/Route118/scripts.pory"
-Route118_Text_TryYourLuckFishing:
+	.string "Wouldn't you agree?$"
 # 280 "data/maps/Route118/scripts.pory"
-	.string "Wherever there's water, try your luck\n"
+
 # 281 "data/maps/Route118/scripts.pory"
-	.string "at fishing.$"
+Route118_Text_IdenticalMindsTakeThis:
 # 282 "data/maps/Route118/scripts.pory"
-
+	.string "Hmm!\n"
 # 283 "data/maps/Route118/scripts.pory"
-Route118_Text_DontYouLikeToFish:
+	.string "We're of identical minds!\p"
 # 284 "data/maps/Route118/scripts.pory"
-	.string "Don't you like to fish?$"
+	.string "Hmm!\n"
 # 285 "data/maps/Route118/scripts.pory"
-
+	.string "Take this GOOD ROD!$"
 # 286 "data/maps/Route118/scripts.pory"
-Route118_Text_TryCatchingMonWithGoodRod:
+
 # 287 "data/maps/Route118/scripts.pory"
-	.string "Try catching all sorts of POKéMON\n"
+Route118_Text_TryYourLuckFishing:
 # 288 "data/maps/Route118/scripts.pory"
-	.string "with your GOOD ROD.$"
+	.string "Wherever there's water, try your luck\n"
 # 289 "data/maps/Route118/scripts.pory"
-
+	.string "at fishing.$"
 # 290 "data/maps/Route118/scripts.pory"
-Route118_Text_CanCrossRiversWithSurf:
+
 # 291 "data/maps/Route118/scripts.pory"
-	.string "Even if there isn't a boat, you can\n"
+Route118_Text_DontYouLikeToFish:
 # 292 "data/maps/Route118/scripts.pory"
-	.string "cross rivers and the sea if you have\l"
+	.string "Don't you like to fish?$"
 # 293 "data/maps/Route118/scripts.pory"
-	.string "a POKéMON that knows SURF.\p"
+
 # 294 "data/maps/Route118/scripts.pory"
-	.string "POKéMON can be counted on to do so\n"
+Route118_Text_TryCatchingMonWithGoodRod:
 # 295 "data/maps/Route118/scripts.pory"
-	.string "much!$"
+	.string "Try catching all sorts of POKéMON\n"
 # 296 "data/maps/Route118/scripts.pory"
-
+	.string "with your GOOD ROD.$"
 # 297 "data/maps/Route118/scripts.pory"
-Route118_Text_RouteSignMauville:
-# 298 "data/maps/Route118/scripts.pory"
-	.string "ROUTE 118\n"
-# 299 "data/maps/Route118/scripts.pory"
-	.string "{LEFT_ARROW} MAUVILLE CITY$"
-# 300 "data/maps/Route118/scripts.pory"
 
+# 298 "data/maps/Route118/scripts.pory"
+Route118_Text_CanCrossRiversWithSurf:
+# 299 "data/maps/Route118/scripts.pory"
+	.string "Even if there isn't a boat, you can\n"
+# 300 "data/maps/Route118/scripts.pory"
+	.string "cross rivers and the sea if you have\l"
 # 301 "data/maps/Route118/scripts.pory"
-Route118_Text_RouteSign119:
+	.string "a POKéMON that knows SURF.\p"
 # 302 "data/maps/Route118/scripts.pory"
-	.string "ROUTE 118\n"
+	.string "POKéMON can be counted on to do so\n"
 # 303 "data/maps/Route118/scripts.pory"
+	.string "much!$"
+# 304 "data/maps/Route118/scripts.pory"
+
+# 305 "data/maps/Route118/scripts.pory"
+Route118_Text_RouteSignMauville:
+# 306 "data/maps/Route118/scripts.pory"
+	.string "ROUTE 118\n"
+# 307 "data/maps/Route118/scripts.pory"
+	.string "{LEFT_ARROW} MAUVILLE CITY$"
+# 308 "data/maps/Route118/scripts.pory"
+
+# 309 "data/maps/Route118/scripts.pory"
+Route118_Text_RouteSign119:
+# 310 "data/maps/Route118/scripts.pory"
+	.string "ROUTE 118\n"
+# 311 "data/maps/Route118/scripts.pory"
 	.string "{UP_ARROW} ROUTE 119$"
 
 Route118_EventScript_Wake::
-# 308 "data/maps/Route118/scripts.pory"
+# 316 "data/maps/Route118/scripts.pory"
 	lockall
-# 309 "data/maps/Route118/scripts.pory"
+# 317 "data/maps/Route118/scripts.pory"
 	applymovement LOCALID_WAKE, Common_Movement_FacePlayer
-# 310 "data/maps/Route118/scripts.pory"
+# 318 "data/maps/Route118/scripts.pory"
 	goto_if_set FLAG_RECEIVED_WAKE_ITEMS, Route118_EventScript_WakeDefeated
-# 311 "data/maps/Route118/scripts.pory"
+# 319 "data/maps/Route118/scripts.pory"
 	goto_if_set FLAG_DECLINED_WAKE_BATTLE, Route118_EventScript_WakeRequestBattleAgain
-# 312 "data/maps/Route118/scripts.pory"
+# 320 "data/maps/Route118/scripts.pory"
 	msgbox Wake_Greeting, MSGBOX_YESNO
-# 313 "data/maps/Route118/scripts.pory"
+# 321 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_BattleWakePrompt
 	end
 
 
 Route118_EventScript_WakeRequestBattleAgain::
-# 318 "data/maps/Route118/scripts.pory"
+# 326 "data/maps/Route118/scripts.pory"
 	msgbox Ready_Yet, MSGBOX_YESNO
-# 319 "data/maps/Route118/scripts.pory"
+# 327 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_BattleWakePrompt
 	end
 
 
 Route118_EventScript_BattleWakePrompt::
-# 324 "data/maps/Route118/scripts.pory"
+# 332 "data/maps/Route118/scripts.pory"
 	call_if_eq VAR_RESULT, YES, Route118_EventScript_BattleWake
-# 325 "data/maps/Route118/scripts.pory"
+# 333 "data/maps/Route118/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route118_EventScript_DeclineWakeBattle
-# 326 "data/maps/Route118/scripts.pory"
+# 334 "data/maps/Route118/scripts.pory"
 	closemessage
 	end
 
 
 Route118_EventScript_DeclineWakeBattle::
-# 331 "data/maps/Route118/scripts.pory"
+# 339 "data/maps/Route118/scripts.pory"
 	setflag FLAG_DECLINED_WAKE_BATTLE
-# 332 "data/maps/Route118/scripts.pory"
+# 340 "data/maps/Route118/scripts.pory"
 	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
-# 333 "data/maps/Route118/scripts.pory"
+# 341 "data/maps/Route118/scripts.pory"
 	release
 	end
 
 
 Route118_EventScript_BattleWake::
-# 338 "data/maps/Route118/scripts.pory"
+# 346 "data/maps/Route118/scripts.pory"
 	msgbox Route118_EventScript_BattleWake_Text_0, MSGBOX_DEFAULT
-# 339 "data/maps/Route118/scripts.pory"
+# 347 "data/maps/Route118/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAKE, Wake_Outro
-# 340 "data/maps/Route118/scripts.pory"
+# 348 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_WakeGiveItems
 	return
 
 
 Route118_EventScript_WakeGiveItems::
-# 345 "data/maps/Route118/scripts.pory"
+# 353 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_LAPRASITE
-# 346 "data/maps/Route118/scripts.pory"
+# 354 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_DREDNAWITE
-# 347 "data/maps/Route118/scripts.pory"
+# 355 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_GYARADOSITE
-# 348 "data/maps/Route118/scripts.pory"
+# 356 "data/maps/Route118/scripts.pory"
 	setflag FLAG_RECEIVED_WAKE_ITEMS
-# 349 "data/maps/Route118/scripts.pory"
+# 357 "data/maps/Route118/scripts.pory"
 	msgbox Wake_ExplainItems
-# 350 "data/maps/Route118/scripts.pory"
+# 358 "data/maps/Route118/scripts.pory"
 	release
 	end
 
 
 Route118_EventScript_WakeDefeated::
-# 355 "data/maps/Route118/scripts.pory"
+# 363 "data/maps/Route118/scripts.pory"
 	msgbox PostBattle_Wake, MSGBOX_DEFAULT
-# 356 "data/maps/Route118/scripts.pory"
+# 364 "data/maps/Route118/scripts.pory"
 	releaseall
 	end
 
 
 Route118_EventScript_BattleWake_Text_0:
-# 338 "data/maps/Route118/scripts.pory"
+# 346 "data/maps/Route118/scripts.pory"
 	.string "Let's do this.$"
 
 Wake_Greeting::
-# 360 "data/maps/Route118/scripts.pory"
+# 368 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB This better be good if\n"
-	.string "you're interrupting my training. You\l"
-	.string "wanna battle or not?$"
+	.string "you're interrupting my training.\p"
+	.string "… … … … … …\p"
+	.string "GLUB GLUB Who am I?\n"
+	.string "I am Crasher Wake of course, ha-ha!\p"
+	.string "I came over to the Hoenn region\n"
+	.string "because I heard there was plenty of\l"
+	.string "water to train in, but honestly, I'd give\l"
+	.string "it maybe a 7 out of 10.\p"
+	.string "GLUB GLUB Anyway, you wanna battle\n"
+	.string "or not?$"
 
 Wake_Outro::
-# 366 "data/maps/Route118/scripts.pory"
+# 382 "data/maps/Route118/scripts.pory"
 	.string "Wow, what a fight. I know I'll be leaving\n"
-	.string "these items in good hands.$"
+	.string "these Items in good hands.$"
 
 Wake_ExplainItems::
-# 371 "data/maps/Route118/scripts.pory"
+# 387 "data/maps/Route118/scripts.pory"
 	.string "Those are the best Mega stones I have.\n"
 	.string "Hope you put them to good use.$"
 
 PostBattle_Wake::
-# 376 "data/maps/Route118/scripts.pory"
+# 392 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB What now?!$"

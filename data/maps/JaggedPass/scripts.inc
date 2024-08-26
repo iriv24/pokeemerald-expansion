@@ -605,15 +605,21 @@ Maylene_Greeting::
 # 322 "data/maps/JaggedPass/scripts.pory"
 	.string "HOO-HAH! Is this finally a worthy\n"
 	.string "opponent? I can tell that you seem\l"
-	.string "pretty strong, let's see if my instincts\l"
+	.string "pretty strong.\p"
+	.string "My name is Maylene, and I came over here\n"
+	.string "from the Sinnoh region because I\l"
+	.string "needed to reinvigorate my training.\p"
+	.string "Things had gotten boring back home, so\n"
+	.string "I came out here to find tough trainers.\p"
+	.string "Now, let's see if my instincts about you\n"
 	.string "are correct!\p"
 	.string "What do you say, will you battle\n"
 	.string "with me?$"
 
 Maylene_Outro::
-# 331 "data/maps/JaggedPass/scripts.pory"
+# 337 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 336 "data/maps/JaggedPass/scripts.pory"
+# 342 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"

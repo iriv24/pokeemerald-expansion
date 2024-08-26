@@ -4889,7 +4889,7 @@ static const struct TrainerMon sParty_Georgia[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
     .species = SPECIES_TOEDSCRUEL,
-    .nature = NATURE_IMPISH,
+    .nature = NATURE_TIMID,
     .ability = ABILITY_CLEAR_BODY,
     .heldItem = ITEM_YACHE_BERRY,
     .moves = {MOVE_SPORE, MOVE_LEECH_SEED, MOVE_EARTH_POWER, MOVE_GIGA_DRAIN}
@@ -4916,7 +4916,7 @@ static const struct TrainerMon sParty_Georgia[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
     .species = SPECIES_WO_CHIEN,
-    .nature = NATURE_IMPISH,
+    .nature = NATURE_BOLD,
     .ability = ABILITY_TABLETS_OF_RUIN,
     .heldItem = ITEM_LEFTOVERS,
     .moves = {MOVE_LEECH_SEED, MOVE_STUN_SPORE, MOVE_GIGA_DRAIN, MOVE_RUINATION}
@@ -15138,7 +15138,7 @@ static const struct TrainerMon sParty_Wake[] = {
     .species = SPECIES_GYARADOS,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_MOXIE,
-    .heldItem = ITEM_WACAN_BERRY,
+    .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_BOUNCE, MOVE_DRAGON_DANCE}
     },
     {
@@ -15153,11 +15153,11 @@ static const struct TrainerMon sParty_Wake[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_DECIDUEYE_HISUIAN,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_STRIKER,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_TROP_KICK, MOVE_TRIPLE_ARROWS, MOVE_SUCKER_PUNCH, MOVE_BRAVE_BIRD}
+    .species = SPECIES_TOEDSCRUEL,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_CLEAR_BODY,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_SLUDGE_BOMB, MOVE_FLASH_CANNON, MOVE_EARTH_POWER, MOVE_ENERGY_BALL}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
