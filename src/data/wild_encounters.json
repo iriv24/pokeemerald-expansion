@@ -949,7 +949,7 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_STUNFISK_GALARIAN"
+                "species": "SPECIES_GOLETT"
               },
               {
                 "min_level": 30,
@@ -10933,7 +10933,7 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_GOLETT"
+                "species": "SPECIES_STUNFISK_GALAR"
               },
               {
                 "min_level": 30,
