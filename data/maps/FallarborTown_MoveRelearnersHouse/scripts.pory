@@ -307,7 +307,7 @@ script FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg {
 text EggManIntro {
 	"Hello, I am a shard collector. If you\n"
 	"give me a Red Shard, I can give you an\l"
-	"Egg for a Fire-type Starter Pokémon.\p"
+	"Egg for a Fire-type starter Pokémon.\p"
 	"I can do the same with Blue Shards and\n"
 	"Green Shards for the other types of\l"
 	"starters.\p"

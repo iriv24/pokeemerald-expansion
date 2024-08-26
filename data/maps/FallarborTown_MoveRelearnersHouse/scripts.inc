@@ -587,7 +587,7 @@ EggManIntro::
 # 307 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	.string "Hello, I am a shard collector. If you\n"
 	.string "give me a Red Shard, I can give you an\l"
-	.string "Egg for a Fire-type Starter Pokémon.\p"
+	.string "Egg for a Fire-type starter Pokémon.\p"
 	.string "I can do the same with Blue Shards and\n"
 	.string "Green Shards for the other types of\l"
 	.string "starters.\p"

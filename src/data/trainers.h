@@ -10311,38 +10311,38 @@
         .party = TRAINER_PARTY(sParty_Ursula),
     },
 
-    [TRAINER_XAVIER] =
+    [TRAINER_X] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .trainerName = _("XAVIER"),
+        .trainerName = _("X"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_Xavier),
+        .party = TRAINER_PARTY(sParty_X),
     },
 
-    [TRAINER_ISAAC] =
+    [TRAINER_IRIV24] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .trainerName = _("ISAAC"),
+        .trainerName = _("IRIV24"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_Isaac),
+        .party = TRAINER_PARTY(sParty_Iriv24),
     },
 
-    [TRAINER_JUSTIN] =
+    [TRAINER_CAP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = _("JUSTIN"),
+        .trainerName = _("CAP"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_Justin),
+        .party = TRAINER_PARTY(sParty_Cap),
     },

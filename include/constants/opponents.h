@@ -230,7 +230,7 @@
 #define TRAINER_DONALD                      224
 #define TRAINER_TAYLOR                      225
 #define TRAINER_JEFFREY_1                   226
-#define TRAINER_ISAAC                       227
+#define TRAINER_IRIV24                      227
 #define TRAINER_JEFFREY_2                   228
 #define TRAINER_JEFFREY_3                   229
 #define TRAINER_JEFFREY_4                   230
@@ -758,7 +758,7 @@
 #define TRAINER_MARLENE                     752
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
-#define TRAINER_XAVIER                      755
+#define TRAINER_X                           755
 #define TRAINER_BRANDI                      756
 #define TRAINER_AISHA                       757
 #define TRAINER_MAKAYLA                     758
@@ -860,7 +860,7 @@
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_DAWN_ROUTE_104              855
 #define TRAINER_URSULA                      856
-#define TRAINER_JUSTIN                      857
+#define TRAINER_CAP                         857
 #define TRAINER_DAWN_LILYCOVE               858
 #define TRAINER_DAWN_EVERGRANDE             859
 #define TRAINER_CYNTHIA                     860

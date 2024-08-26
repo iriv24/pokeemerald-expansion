@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeCity_CreatorHouse_EventScript_Xavier",
+      "script": "FortreeCity_CreatorHouse_EventScript_X",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeCity_CreatorHouse_EventScript_Justin",
+      "script": "FortreeCity_CreatorHouse_EventScript_Cap",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeCity_CreatorHouse_EventScript_Isaac",
+      "script": "FortreeCity_CreatorHouse_EventScript_Iriv24",
       "flag": "0"
     }
   ],
@@ -80,7 +80,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_IsaacPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_Iriv24PC"
     },
     {
       "type": "sign",
@@ -88,7 +88,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_IsaacPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_Iriv24PC"
     },
     {
       "type": "sign",
@@ -96,7 +96,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_JustinPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_CapPC"
     },
     {
       "type": "sign",
@@ -104,7 +104,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_XavierPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_XPC"
     },
     {
       "type": "sign",
@@ -112,7 +112,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_XavierPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_XPC"
     },
     {
       "type": "sign",
@@ -120,7 +120,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_IsaacPCTwo"
+      "script": "FortreeCity_CreatorHouse_EventScript_Iriv24PCTwo"
     },
     {
       "type": "sign",
@@ -128,7 +128,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FortreeCity_CreatorHouse_EventScript_JustinPC"
+      "script": "FortreeCity_CreatorHouse_EventScript_CapPC"
     }
   ]
 }
