@@ -1,0 +1,34 @@
+{
+  "id": "MAP_ROCKY_SLAB",
+  "name": "RockySlab",
+  "layout": "LAYOUT_ROCKY_SLAB",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_ROCKY_SLAB",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE115",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

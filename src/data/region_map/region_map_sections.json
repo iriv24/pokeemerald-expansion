@@ -1710,6 +1710,22 @@
       "y": 4,
       "width": 1,
       "height": 1
-    }
+    },
+    {
+      "map_section": "MAPSEC_FLOATING_SLAB",
+      "name": "FLOATING SLAB",
+      "x": 4,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROCKY_SLAB",
+      "name": "ROCKY SLAB",
+      "x": 0,
+      "y": 2,
+      "width": 1,
+      "height": 1
+      }
   ]
 }

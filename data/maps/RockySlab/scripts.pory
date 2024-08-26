@@ -1,0 +1,10 @@
+raw `
+RockySlab_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RockySlab_OnTransition
+	.byte 0
+
+RockySlab_OnTransition:
+	setflag FLAG_LANDMARK_ROCKY_SLAB
+	end
+
+`

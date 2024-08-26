@@ -431,7 +431,9 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "FloatingSlab",
+    "RockySlab"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

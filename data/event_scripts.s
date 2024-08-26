@@ -1163,3 +1163,7 @@ EventScript_VsSeekerChargingDone::
     
 
 	.include "data/maps/FortreeCity_CreatorHouse/scripts.inc"
+
+	.include "data/maps/FloatingSlab/scripts.inc"
+
+	.include "data/maps/RockySlab/scripts.inc"

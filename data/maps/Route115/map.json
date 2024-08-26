@@ -346,6 +346,13 @@
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 54,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKY_SLAB",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
