@@ -215,16 +215,16 @@
         .party = TRAINER_PARTY(sParty_GruntWeatherInst1),
     },
 
-    [TRAINER_GRUNT_WEATHER_INST_2] =
+    [TRAINER_MATT_WEATHER_INST] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_M,
+        .trainerName = _("MATT"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst2),
+        .party = TRAINER_PARTY(sParty_MattWeatherInst),
     },
 
     [TRAINER_GRUNT_WEATHER_INST_3] =

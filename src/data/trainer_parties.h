@@ -221,20 +221,19 @@ static const struct TrainerMon sParty_GruntWeatherInst1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntWeatherInst2[] = {
+static const struct TrainerMon sParty_MattWeatherInst[] = {
     {
-        //hp, atk, def, speed, spatk, spdef
-    .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
-    .lvl = 62,
-    .species = SPECIES_MILOTIC,
-    .heldItem = ITEM_LEFTOVERS,
-    .nature = NATURE_MODEST,
-    .ability = ABILITY_COMPETITIVE,
-    .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_HIDDEN_POWER, MOVE_ALLURING_VOICE}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 64,
+    .species = SPECIES_MACHAMP,
+    .heldItem = ITEM_MACHAMPITE,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_GUTS,
+    .moves = {MOVE_MACH_PUNCH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 64,
     .species = SPECIES_OGERPON_WELLSPRING_MASK,
     .nature = NATURE_JOLLY,
     .heldItem = ITEM_WELLSPRING_MASK,
@@ -243,28 +242,27 @@ static const struct TrainerMon sParty_GruntWeatherInst2[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 63,
-    .species = SPECIES_TAUROS_PALDEAN_AQUA_BREED,
-    .heldItem = ITEM_LIFE_ORB,
-    .nature = NATURE_JOLLY,
-    .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_STONE_EDGE, MOVE_RAGING_BULL, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT}
-    }
+    .lvl = 64,
+    .species = SPECIES_GRENINJA_BATTLE_BOND,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_TIMID,
+    .moves = {MOVE_DARK_PULSE, MOVE_SURF, MOVE_ICE_BEAM, MOVE_GRASS_KNOT}
+    },
 };
 
 static const struct TrainerMon sParty_GruntWeatherInst5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 63,
     .species = SPECIES_ARMALDO,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_EXPERT_BELT,
+    .heldItem = ITEM_PASSHO_BERRY,
     .ability = ABILITY_SKILL_LINK,
-    .moves = {MOVE_ROCK_BLAST, MOVE_PIN_MISSILE, MOVE_SWORDS_DANCE, MOVE_CUT}
+    .moves = {MOVE_ROCK_BLAST, MOVE_PIN_MISSILE, MOVE_SWORDS_DANCE, MOVE_STOMPING_TANTRUM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 62,
+    .lvl = 63,
     .species = SPECIES_STARMIE,
     .heldItem = ITEM_FOCUS_SASH,
     .nature = NATURE_TIMID,
@@ -483,13 +481,14 @@ static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
     .moves = {MOVE_SHELL_SMASH, MOVE_ICE_FANG, MOVE_CRUNCH, MOVE_WAVE_CRASH}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        //hp, atk, def, speed, spatk, spdef
+    .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
     .lvl = 64,
-    .species = SPECIES_MANAPHY,
-    .heldItem = ITEM_LEFTOVERS,
+    .species = SPECIES_KELDEO_RESOLUTE,
+    .heldItem = ITEM_CHOICE_SPECS,
     .nature = NATURE_TIMID,
-    .ability = ABILITY_HYDRATION,
-    .moves = {MOVE_TAIL_GLOW, MOVE_SURF, MOVE_ICE_BEAM, MOVE_ENERGY_BALL}
+    .ability = ABILITY_SHARPNESS,
+    .moves = {MOVE_SECRET_SWORD, MOVE_AIR_SLASH, MOVE_HYDRO_PUMP, MOVE_HIDDEN_POWER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -503,11 +502,11 @@ static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 64,
-    .species = SPECIES_SAMUROTT_HISUIAN,
-    .heldItem = ITEM_EXPERT_BELT,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_SHARPNESS,
-    .moves = {MOVE_NIGHT_SLASH, MOVE_AQUA_CUTTER, MOVE_X_SCISSOR, MOVE_SWORDS_DANCE}
+    .species = SPECIES_DECIDUEYE,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_TINTED_LENS,
+    .moves = {MOVE_SPIRIT_SHACKLE, MOVE_LEAF_BLADE, MOVE_THOUSAND_ARROWS, MOVE_SHADOW_SNEAK}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -521,11 +520,11 @@ static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 64,
-    .species = SPECIES_DREDNAW,
-    .heldItem = ITEM_DREDNAWITE,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_STRONG_JAW,
-    .moves = {MOVE_JAW_LOCK, MOVE_POISON_JAB, MOVE_CRUNCH, MOVE_LIQUIDATION}
+    .species = SPECIES_GYARADOS,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_AQUA_TAIL, MOVE_CRUNCH}
     },
 };
 

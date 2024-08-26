@@ -75,11 +75,11 @@ Route119_WeatherInstitute_2F_EventScript_Grunt5::
 # 38 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
 # 39 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_EventScript_Grunt2::
+Route119_WeatherInstitute_2F_EventScript_AdminMatt::
 # 40 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_MATT_WEATHER_INST, Route119_WeatherInstitute_2F_Text_MattIntro, Route119_WeatherInstitute_2F_Text_MattDefeat
 # 41 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route119_WeatherInstitute_2F_Text_MattPostBattle, MSGBOX_AUTOCLOSE
 # 42 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	end
 # 43 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -425,248 +425,256 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 # 213 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
 # 214 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt2Intro:
+Route119_WeatherInstitute_2F_Text_MattIntro:
 # 215 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "The INSTITUTE created a type of\n"
+	.string "Hehehe…\p"
 # 216 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "POKéMON that has something to do with\l"
+	.string "I'm a cut above the Grunts you've seen\n"
 # 217 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "the weather. We're here to take them!$"
+	.string "so far.\p"
 # 218 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "You know what that means right?\n"
 # 219 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
+	.string "I'm going to pulverize you!$"
 # 220 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Our plan's being spoiled by a kid?$"
+
 # 221 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+Route119_WeatherInstitute_2F_Text_MattDefeat:
 # 222 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
+	.string "Hehehe…\n"
 # 223 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "If the POKéMON they made here can\n"
+	.string "Our plan's being spoiled by a kid?$"
 # 224 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "control the weather freely, then we of\l"
+
 # 225 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "TEAM AQUA definitely need it!$"
+Route119_WeatherInstitute_2F_Text_MattPostBattle:
 # 226 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "Hehehe…\p"
 # 227 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt3Intro:
+	.string "It's fine that I lost here,\n"
 # 228 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We're TEAM AQUA!\n"
+	.string "I'm certain Shelly will take care\l"
 # 229 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We appear wherever anything rare is\l"
+	.string "of you.$"
 # 230 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "found!$"
+
 # 231 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+Route119_WeatherInstitute_2F_Text_Grunt3Intro:
 # 232 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt3Defeat:
+	.string "We're TEAM AQUA!\n"
 # 233 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You got me!$"
+	.string "We appear wherever anything rare is\l"
 # 234 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "found!$"
 # 235 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt3PostBattle:
+
 # 236 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You don't have any idea what we of\n"
+Route119_WeatherInstitute_2F_Text_Grunt3Defeat:
 # 237 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "TEAM AQUA are working towards!\l"
+	.string "You got me!$"
 # 238 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You stay out of our way!$"
+
 # 239 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+Route119_WeatherInstitute_2F_Text_Grunt3PostBattle:
 # 240 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt5Intro:
+	.string "You don't have any idea what we of\n"
 # 241 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Don't tell me you're looking for that\n"
+	.string "TEAM AQUA are working towards!\l"
 # 242 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "weather POKéMON, too?\p"
+	.string "You stay out of our way!$"
 # 243 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "That's a no-no!\n"
+
 # 244 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We were here to get it first!$"
+Route119_WeatherInstitute_2F_Text_Grunt5Intro:
 # 245 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "Don't tell me you're looking for that\n"
 # 246 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt5Defeat:
+	.string "weather POKéMON, too?\p"
 # 247 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Oh, will you look at my POKéMON?$"
+	.string "That's a no-no!\n"
 # 248 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "We were here to get it first!$"
 # 249 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_Grunt5PostBattle:
+
 # 250 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Humph, so what?\n"
+Route119_WeatherInstitute_2F_Text_Grunt5Defeat:
 # 251 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "What we want…\p"
+	.string "Oh, will you look at my POKéMON?$"
 # 252 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "What we really want isn't here…\n"
+
 # 253 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Ihihihihi…$"
+Route119_WeatherInstitute_2F_Text_Grunt5PostBattle:
 # 254 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "Humph, so what?\n"
 # 255 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_ShellyIntro:
+	.string "What we want…\p"
 # 256 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Ahahahaha!\p"
+	.string "What we really want isn't here…\n"
 # 257 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You're going to meddle in TEAM AQUA's\n"
+	.string "Ihihihihi…$"
 # 258 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "affairs?\p"
-# 259 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You're either absolutely fearless,\n"
-# 260 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "simply ignorant, or both!\p"
-# 261 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You're so cute, you're disgusting!\n"
-# 262 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "I'll put you down, kiddy!$"
-# 263 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
+# 259 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_ShellyIntro:
+# 260 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "Ahahahaha!\p"
+# 261 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "You're going to meddle in TEAM AQUA's\n"
+# 262 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "affairs?\p"
+# 263 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "You're either absolutely fearless,\n"
 # 264 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_ShellyDefeat:
+	.string "simply ignorant, or both!\p"
 # 265 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Ahahahaha!\n"
+	.string "You're so cute, you're disgusting!\n"
 # 266 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "You're disgustingly strong!$"
+	.string "I'll put you down, kiddy!$"
 # 267 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
 # 268 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_ShellyPostBattle:
+Route119_WeatherInstitute_2F_Text_ShellyDefeat:
 # 269 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "It's bad enough to have TEAM MAGMA\n"
-# 270 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "blunder about, but now there's you!\p"
-# 271 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "What makes you want to sniff around\n"
-# 272 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "in our business, anyway?$"
-# 273 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
-# 274 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
-# 275 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We have a situation here!\p"
-# 276 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "A TEAM MAGMA mob just passed\n"
-# 277 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "the WEATHER INSTITUTE.\p"
-# 278 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "They appear to be headed for\n"
-# 279 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "MT. PYRE!$"
-# 280 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
-# 281 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
-# 282 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "What?!\p"
-# 283 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We can't waste any more time here!\n"
-# 284 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "We have to hurry to MT. PYRE, too!\p"
-# 285 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Ahahahaha!\n"
+# 270 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "You're disgustingly strong!$"
+# 271 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+
+# 272 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_ShellyPostBattle:
+# 273 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "It's bad enough to have TEAM MAGMA\n"
+# 274 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "blunder about, but now there's you!\p"
+# 275 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "What makes you want to sniff around\n"
+# 276 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "in our business, anyway?$"
+# 277 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+
+# 278 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
+# 279 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "We have a situation here!\p"
+# 280 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "A TEAM MAGMA mob just passed\n"
+# 281 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "the WEATHER INSTITUTE.\p"
+# 282 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "They appear to be headed for\n"
+# 283 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "MT. PYRE!$"
+# 284 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+
+# 285 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
 # 286 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "TEAM MAGMA, just you wait!$"
+	.string "What?!\p"
 # 287 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "We can't waste any more time here!\n"
 # 288 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
+	.string "We have to hurry to MT. PYRE, too!\p"
 # 289 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Thanks!\n"
+	.string "Ahahahaha!\n"
 # 290 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Thanks to you, we're safe!\p"
+	.string "TEAM MAGMA, just you wait!$"
 # 291 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "It might be an odd way of thanking you,\n"
+
 # 292 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "but take this Pokémon.\p"
+Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
 # 293 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Honestly, it's pretty bad, but no way\n"
+	.string "Thanks!\n"
 # 294 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "the creator was putting this idiot out\l"
+	.string "Thanks to you, we're safe!\p"
 # 295 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "in the wild, you know?$"
+	.string "It might be an odd way of thanking you,\n"
 # 296 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "but take this Pokémon.\p"
 # 297 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-@ Unused
+	.string "Honestly, it's pretty bad, but no way\n"
 # 298 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
+	.string "the creator was putting this idiot out\l"
 # 299 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Hm? You don't seem to have any room\n"
+	.string "in the wild, you know?$"
 # 300 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "for this POKéMON.$"
+
 # 301 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+@ Unused
 # 302 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform:
+Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
 # 303 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "{PLAYER} received CASTFORM!$"
+	.string "Hm? You don't seem to have any room\n"
 # 304 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "for this POKéMON.$"
 # 305 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
+
 # 306 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "That POKéMON changes shape according\n"
+Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform:
 # 307 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "to the weather conditions.\p"
+	.string "{PLAYER} received CASTFORM!$"
 # 308 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "There're plenty of them in the\n"
+
 # 309 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "INSTITUTE--go ahead and take it.$"
+Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
 # 310 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+	.string "That POKéMON changes shape according\n"
 # 311 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
+	.string "to the weather conditions.\p"
 # 312 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "I've been researching rain for many\n"
+	.string "There're plenty of them in the\n"
 # 313 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "years, but it's ridiculous to think that\l"
+	.string "INSTITUTE--go ahead and take it.$"
 # 314 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "humans can freely change the weather.$"
+
 # 315 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
+Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
 # 316 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_GroudonWeather:
+	.string "I've been researching rain for many\n"
 # 317 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "I track weather patterns over\n"
+	.string "years, but it's ridiculous to think that\l"
 # 318 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "the HOENN region.\p"
+	.string "humans can freely change the weather.$"
 # 319 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Presently, a drought has been recorded\n"
+
 # 320 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "in {STR_VAR_1}.\p"
+Route119_WeatherInstitute_2F_Text_GroudonWeather:
 # 321 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Could that mean, somewhere near\n"
-# 322 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "{STR_VAR_1}…$"
-# 323 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-
-# 324 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_KyogreWeather:
-# 325 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "I track weather patterns over\n"
-# 326 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 322 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "the HOENN region.\p"
-# 327 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Presently, heavy rainfall has been\n"
-# 328 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "recorded over {STR_VAR_1}.\p"
-# 329 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 323 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "Presently, a drought has been recorded\n"
+# 324 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "in {STR_VAR_1}.\p"
+# 325 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "Could that mean, somewhere near\n"
-# 330 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 326 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "{STR_VAR_1}…$"
-# 331 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+# 327 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
+# 328 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_KyogreWeather:
+# 329 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "I track weather patterns over\n"
+# 330 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "the HOENN region.\p"
+# 331 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "Presently, heavy rainfall has been\n"
 # 332 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-Route119_WeatherInstitute_2F_Text_NoAbnormalWeather:
+	.string "recorded over {STR_VAR_1}.\p"
 # 333 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "Abnormal weather conditions are\n"
+	.string "Could that mean, somewhere near\n"
 # 334 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "no longer being reported.\p"
+	.string "{STR_VAR_1}…$"
 # 335 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	.string "The occasional rainfall is a blessing,\n"
+
 # 336 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_Text_NoAbnormalWeather:
+# 337 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "Abnormal weather conditions are\n"
+# 338 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "no longer being reported.\p"
+# 339 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	.string "The occasional rainfall is a blessing,\n"
+# 340 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	.string "really.$"

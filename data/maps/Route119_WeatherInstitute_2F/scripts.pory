@@ -36,9 +36,9 @@ Route119_WeatherInstitute_2F_EventScript_Grunt5::
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_WeatherInstitute_2F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
+Route119_WeatherInstitute_2F_EventScript_AdminMatt::
+	trainerbattle_single TRAINER_MATT_WEATHER_INST, Route119_WeatherInstitute_2F_Text_MattIntro, Route119_WeatherInstitute_2F_Text_MattDefeat
+	msgbox Route119_WeatherInstitute_2F_Text_MattPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt3::
@@ -211,18 +211,22 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
-Route119_WeatherInstitute_2F_Text_Grunt2Intro:
-	.string "The INSTITUTE created a type of\n"
-	.string "POKéMON that has something to do with\l"
-	.string "the weather. We're here to take them!$"
+Route119_WeatherInstitute_2F_Text_MattIntro:
+	.string "Hehehe…\p"
+	.string "I'm a cut above the Grunts you've seen\n"
+	.string "so far.\p"
+	.string "You know what that means right?\n"
+	.string "I'm going to pulverize you!$"
 
-Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
+Route119_WeatherInstitute_2F_Text_MattDefeat:
+	.string "Hehehe…\n"
 	.string "Our plan's being spoiled by a kid?$"
 
-Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
-	.string "If the POKéMON they made here can\n"
-	.string "control the weather freely, then we of\l"
-	.string "TEAM AQUA definitely need it!$"
+Route119_WeatherInstitute_2F_Text_MattPostBattle:
+	.string "Hehehe…\p"
+	.string "It's fine that I lost here,\n"
+	.string "I'm certain Shelly will take care\l"
+	.string "of you.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Intro:
 	.string "We're TEAM AQUA!\n"
