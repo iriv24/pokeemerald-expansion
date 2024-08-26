@@ -8152,7 +8152,7 @@ static const struct TrainerMon sParty_BrendanRoute119Mudkip[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_SCOPE_LENS,
-    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_LEECH_LIFE, MOVE_U_TURN}
+    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_HAZE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -8264,7 +8264,7 @@ static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_SCOPE_LENS,
-    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_LEECH_LIFE, MOVE_U_TURN}
+    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_HAZE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -8376,7 +8376,7 @@ static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SNIPER,
     .heldItem = ITEM_SCOPE_LENS,
-    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_LEECH_LIFE, MOVE_U_TURN}
+    .moves = {MOVE_BRAVE_BIRD, MOVE_CROSS_POISON, MOVE_HAZE, MOVE_U_TURN}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

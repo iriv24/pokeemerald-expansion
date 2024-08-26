@@ -487,7 +487,7 @@ Route119_Text_MayIntro:
 	.string "Where were you? I was looking for you!\p"
 	.string "How much stronger have you gotten?\n"
 	.string "Let me check for you!\p"
-	.string "Ready with your POKéMON?\n"
+	.string "Ready with your Pokémon?\n"
 	.string "Of course you are! Go!$"
 
 Route119_Text_MayDefeat:
@@ -503,12 +503,12 @@ Route119_Text_MayPresentForYou:
 
 Route119_Text_MayExplainFly:
 	.string "Some pretty decent battle items, if I\n"
-	.string "do say so myself! Keep going, {PLAYER},\p"
+	.string "do say so myself! Keep going, {PLAYER},\l"
 	.string "you're raising your Pokémon really well.$"
 
 Route119_Text_BrendanIntro:
 	.string "Brendan: {PLAYER}! So this is where\n"
-	.string "you've been looking for POKéMON?\p"
+	.string "you've been looking for Pokémon?\p"
 	.string "Let me see how good you got.\n"
 	.string "I'll test you!\p"
 	.string "Now!\n"
@@ -520,27 +520,27 @@ Route119_Text_BrendanDefeat:
 
 Route119_Text_BrendanIllGiveYouThis:
 	.string "Brendan: I'd say you're good enough\n"
-	.string "to search for POKéMON anywhere.\p"
-	.string "Here, I'll give you this.\n"
-	.string "Try it out.$"
+	.string "to search for Pokémon anywhere.\p"
+	.string "Here, I'll give you these.\n"
+	.string "Try them out.$"
 
 Route119_Text_BrendanExplainFly:
 	.string "Some pretty decent battle items, if I\n"
-	.string "do say so myself! Keep going, {PLAYER},\p"
+	.string "do say so myself! Keep going, {PLAYER},\l"
 	.string "you're raising your Pokémon really well.$"
 
 Route119_Text_ScottWayToGoBeSeeingYou:
 	.string "Scott: Hahahah!\n"
 	.string "Way to go, {PLAYER}{KUN}!\p"
-	.string "I just passed by a TRAINER riding\n"
-	.string "a BIKE.\p"
-	.string "You just beat that TRAINER, didn't you?\n"
+	.string "I just passed by a trainer riding\n"
+	.string "a Bike.\p"
+	.string "You just beat that trainer, didn't you?\n"
 	.string "It was pretty obvious that you did.\p"
 	.string "The kid looked really upset with\n"
 	.string "a face all red from anger.\p"
 	.string "I sure seem to run into you often.\n"
-	.string "Are you off to FORTREE GYM next?\p"
-	.string "I expect that you'll do well at the GYM.\n"
+	.string "Are you off to Fortree Gym next?\p"
+	.string "I expect that you'll do well at the Gym.\n"
 	.string "Well, I'll be seeing you!$"
 
 
@@ -549,9 +549,9 @@ Route119_Text_ScottYouWonAtFortreeGym:
 	.string "… … … … … Beep!\p"
 	.string "Scott: Hiya, {PLAYER}{KUN}, it's me!\p"
 	.string "Just as I thought, you won at\n"
-	.string "the FORTREE GYM.\p"
+	.string "the Fortree Gym.\p"
 	.string "Your strength…\n"
-	.string "Perhaps you really are the TRAINER\l"
+	.string "Perhaps you really are the trainer\l"
 	.string "that I've been searching for.\p"
 	.string "Remember, you have a fan in me.\n"
 	.string "I'll be cheering from the sidelines.\l"
@@ -571,7 +571,7 @@ Route119_Text_DontGoNearWeatherInstitute:
 
 Route119_Text_ThoughtFlyByCatchingBirdMons:
 	.string "I thought you FLY by catching a whole\n"
-	.string "flock of BIRD POKéMON, and then\l"
+	.string "flock of BIRD Pokémon, and then\l"
 	.string "hanging on to them somehow.\p"
 	.string "But it turns out there's an HM move\n"
 	.string "called FLY!\p"
@@ -585,7 +585,7 @@ Route119_Text_TallGrassSnaresBikeTires:
 	.string "There's no way you can cycle here.$"
 
 Route119_Text_CanYourMonMakeSecretBase:
-	.string "Can your POKéMON use its SECRET POWER\n"
+	.string "Can your Pokémon use its SECRET POWER\n"
 	.string "on a big pile of grass and make a\l"
 	.string "SECRET BASE? Not anymore!$"
 
