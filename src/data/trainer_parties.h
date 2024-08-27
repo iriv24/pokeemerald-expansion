@@ -4540,11 +4540,11 @@ static const struct TrainerMon sParty_Winona1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 68,
-    .species = SPECIES_MANDIBUZZ,
-    .nature = NATURE_CAREFUL,
-    .ability = ABILITY_OVERCOAT,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_FOUL_PLAY, MOVE_ROOST, MOVE_TOXIC, MOVE_FLY}
+    .species = SPECIES_AGGRON,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_ROCK_HEAD,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_FIRE_PUNCH, MOVE_BODY_PRESS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4561,7 +4561,7 @@ static const struct TrainerMon sParty_Winona1[] = {
     .species = SPECIES_FROSMOTH,
     .nature = NATURE_TIMID,
     .ability = ABILITY_ICE_SCALES,
-    .heldItem = ITEM_FOCUS_SASH,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
     .moves = {MOVE_QUIVER_DANCE, MOVE_BUG_BUZZ, MOVE_GIGA_DRAIN, MOVE_ICE_BEAM}
     },
     {
@@ -4571,7 +4571,7 @@ static const struct TrainerMon sParty_Winona1[] = {
     .species = SPECIES_THUNDURUS_THERIAN,
     .nature = NATURE_TIMID,
     .ability = ABILITY_VOLT_ABSORB,
-    .heldItem = ITEM_ASSAULT_VEST,
+    .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_THUNDERBOLT, MOVE_GRASS_KNOT, MOVE_SLUDGE_WAVE, MOVE_HIDDEN_POWER}
     },
     {
