@@ -127,7 +127,7 @@ AncientTomb_EventScript_Registeel::
 # 64 "data/maps/AncientTomb/scripts.pory"
 	waitmoncry
 # 65 "data/maps/AncientTomb/scripts.pory"
-	setwildbattle SPECIES_REGISTEEL, 40
+	setwildbattle SPECIES_REGISTEEL, 70
 # 66 "data/maps/AncientTomb/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 67 "data/maps/AncientTomb/scripts.pory"

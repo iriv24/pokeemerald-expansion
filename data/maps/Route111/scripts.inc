@@ -35,7 +35,7 @@ Route111_MapScripts::
 # 18 "data/maps/Route111/scripts.pory"
 Route111_OnLoad:
 # 19 "data/maps/Route111/scripts.pory"
-	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
+	call_if_unset FLAG_BADGE06_GET, Route111_EventScript_CloseDesertRuins
 # 20 "data/maps/Route111/scripts.pory"
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
 # 21 "data/maps/Route111/scripts.pory"

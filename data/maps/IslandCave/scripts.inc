@@ -193,7 +193,7 @@ IslandCave_EventScript_Regice::
 # 97 "data/maps/IslandCave/scripts.pory"
 	waitmoncry
 # 98 "data/maps/IslandCave/scripts.pory"
-	setwildbattle SPECIES_REGICE, 40
+	setwildbattle SPECIES_REGICE, 70
 # 99 "data/maps/IslandCave/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 100 "data/maps/IslandCave/scripts.pory"

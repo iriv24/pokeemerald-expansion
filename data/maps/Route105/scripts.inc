@@ -15,7 +15,7 @@ Route105_MapScripts::
 # 8 "data/maps/Route105/scripts.pory"
 Route105_OnLoad:
 # 9 "data/maps/Route105/scripts.pory"
-	call_if_unset FLAG_REGI_DOORS_OPENED, Route105_CloseRegiEntrance
+	call_if_unset FLAG_BADGE06_GET, Route105_CloseRegiEntrance
 # 10 "data/maps/Route105/scripts.pory"
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute105North
 # 11 "data/maps/Route105/scripts.pory"

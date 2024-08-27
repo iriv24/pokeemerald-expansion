@@ -1,10 +1,56 @@
 raw `
 ScorchedSlab_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, ScorchedSlab_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, ScorchedSlab_OnTransition
 	.byte 0
 
+ScorchedSlab_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, ScorchedSlab_EventScript_TryRemoveAzelf
+	end
+
+ScorchedSlab_EventScript_TryRemoveAzelf::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
 ScorchedSlab_OnTransition:
 	setflag FLAG_LANDMARK_SCORCHED_SLAB
+	call_if_unset FLAG_DEFEATED_AZELF, ScorchedSlab_EventScript_ShowAzelf
+	end
+
+ScorchedSlab_EventScript_ShowAzelf::
+	clearflag FLAG_HIDE_AZELF
+	return
+
+ScorchedSlab_EventScript_Azelf::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_AZELF, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_AZELF, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ScorchedSlab_EventScript_DefeatedAzelf
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ScorchedSlab_EventScript_RanFromAzelf
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ScorchedSlab_EventScript_RanFromAzelf
+	setflag FLAG_DEFEATED_AZELF
+	release
+	end
+
+ScorchedSlab_EventScript_DefeatedAzelf::
+	setflag FLAG_DEFEATED_AZELF
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+ScorchedSlab_EventScript_RanFromAzelf::
+	setvar VAR_0x8004, SPECIES_AZELF
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 `

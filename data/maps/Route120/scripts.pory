@@ -36,14 +36,16 @@ Route120_EventScript_RemoveKecleon::
 	return
 
 Route120_OnLoad:
-	call_if_unset FLAG_REGI_DOORS_OPENED, Route120_EventScript_CloseAncientTomb
+	call_if_unset FLAG_BADGE06_GET, Route120_EventScript_CloseCaves
 	call_if_set FLAG_RECEIVED_DEVON_SCOPE, Route120_EventScript_SetBridgeClearMetatiles
 	call_if_unset FLAG_RECEIVED_DEVON_SCOPE, Route120_EventScript_SetBridgeKecleonMovement
 	end
 
-Route120_EventScript_CloseAncientTomb::
+Route120_EventScript_CloseCaves::
 	setmetatile 7, 54, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 7, 55, METATILE_General_RockWall_SandBase, TRUE
+	setmetatile 19, 22, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 19, 23, METATILE_General_RockWall_SandBase, TRUE
 	return
 
 Route120_EventScript_SetBridgeClearMetatiles::

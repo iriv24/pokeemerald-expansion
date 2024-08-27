@@ -1,10 +1,56 @@
 raw `
 RockySlab_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, RockySlab_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, RockySlab_OnTransition
 	.byte 0
 
+RockySlab_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, RockySlab_EventScript_TryRemoveUxie
+	end
+
+RockySlab_EventScript_TryRemoveUxie::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
 RockySlab_OnTransition:
 	setflag FLAG_LANDMARK_ROCKY_SLAB
+	call_if_unset FLAG_DEFEATED_UXIE, RockySlab_EventScript_ShowUxie
+	end
+
+RockySlab_EventScript_ShowUxie::
+	clearflag FLAG_HIDE_UXIE
+	return
+
+RockySlab_EventScript_Uxie::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_UXIE, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_UXIE, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, RockySlab_EventScript_DefeatedUxie
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, RockySlab_EventScript_RanFromUxie
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, RockySlab_EventScript_RanFromUxie
+	setflag FLAG_DEFEATED_UXIE
+	release
+	end
+
+RockySlab_EventScript_DefeatedUxie::
+	setflag FLAG_DEFEATED_UXIE
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+RockySlab_EventScript_RanFromUxie::
+	setvar VAR_0x8004, SPECIES_UXIE
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 `

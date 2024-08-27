@@ -13,11 +13,17 @@ Route103_OnTransition:
 
 Route103_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
+	call_if_unset FLAG_BADGE06_GET, Route103_CloseLakeEntrance
 	end
 
 Route103_EventScript_OpenAlteringCave::
 	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, TRUE
 	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, FALSE
+	return
+
+Route103_CloseLakeEntrance::
+	setmetatile 34, 7, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 34, 8, METATILE_General_RockWall_SandBase, TRUE
 	return
 
 Route103_EventScript_Rival::

@@ -127,7 +127,7 @@ DesertRuins_EventScript_Regirock::
 # 64 "data/maps/DesertRuins/scripts.pory"
 	waitmoncry
 # 65 "data/maps/DesertRuins/scripts.pory"
-	setwildbattle SPECIES_REGIROCK, 40
+	setwildbattle SPECIES_REGIROCK, 70
 # 66 "data/maps/DesertRuins/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 67 "data/maps/DesertRuins/scripts.pory"
