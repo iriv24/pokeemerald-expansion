@@ -119,6 +119,7 @@
 
 // gTileset_Cave
 #define METATILE_Cave_CrackedFloor                       0x22F
+#define METATILE_Cave_NormalFloor                        0x201
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235

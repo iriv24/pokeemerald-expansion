@@ -3,20 +3,36 @@ raw `
 .set LOCALID_WANDAS_BF_OUTSIDE, 21
 
 Route116_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Route116_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route116_OnFrame
 	.byte 0
+
+Route116_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route116_EventScript_TryRemoveTapuBulu
+	end
+
+Route116_EventScript_TryRemoveTapuBulu::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 Route116_OnTransition:
 	call_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_SetWandasBoyfriendPos
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_StartGroudonWeather
+	call_if_unset FLAG_DEFEATED_TAPU_BULU, Route116_EventScript_ShowTapuBulu
 	end
 
 Route116_EventScript_SetWandasBoyfriendPos::
 	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 38, 10
+	return
+
+Route116_EventScript_ShowTapuBulu::
+	clearflag FLAG_HIDE_TAPU_BULU
 	return
 
 Route116_OnLoad:
@@ -35,6 +51,36 @@ Route116_EventScript_WandasBoyfriend::
 	goto_if_set FLAG_DEVON_GOODS_STOLEN, Route116_EventScript_BoyfriendGruntInTunnel
 	msgbox Route116_Text_WantToDigTunnel, MSGBOX_DEFAULT
 	release
+	end
+
+Route116_EventScript_TapuBulu::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_TAPU_BULU, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_TAPU_BULU, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route116_EventScript_DefeatedTapuBulu
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route116_EventScript_RanFromTapuBulu
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route116_EventScript_RanFromTapuBulu
+	setflag FLAG_DEFEATED_TAPU_BULU
+	release
+	end
+
+Route116_EventScript_DefeatedTapuBulu::
+	setflag FLAG_DEFEATED_TAPU_BULU
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+Route116_EventScript_RanFromTapuBulu::
+	setvar VAR_0x8004, SPECIES_TAPU_BULU
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 Route116_EventScript_BoyfriendGruntLeftTunnel::

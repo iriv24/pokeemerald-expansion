@@ -6,9 +6,22 @@ raw `
 .equ LOCALID_WANDA, 10
 
 RusturfTunnel_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, RusturfTunnel_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, RusturfTunnel_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RusturfTunnel_OnFrame
 	.byte 0
+
+RusturfTunnel_OnLoad:
+	call_if_set FLAG_BADGE07_GET, RusturfTunnel_EventScript_ClearCaveIn
+	end
+
+RusturfTunnel_EventScript_ClearCaveIn::
+	setmetatile 20, 16, METATILE_Cave_NormalFloor, FALSE
+	setmetatile 20, 17, METATILE_Cave_NormalFloor, FALSE
+	setmetatile 21, 15, METATILE_Cave_NormalFloor, FALSE
+	setmetatile 21, 16, METATILE_Cave_NormalFloor, FALSE
+	setmetatile 21, 17, METATILE_Cave_NormalFloor, FALSE
+	return
 
 RusturfTunnel_OnFrame:
 	map_script_2 VAR_RUSTURF_TUNNEL_STATE, 4, RusturfTunnel_EventScript_ClearTunnelScene
@@ -425,6 +438,20 @@ RusturfTunnel_EventScript_Mike::
 	msgbox RusturfTunnel_Text_MikePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+RusturfTunnel_EventScript_Hiker::
+	msgbox RusturfTunnel_Text_CaveIn, MSGBOX_NPC
+	end
+
+RusturfTunnel_EventScript_Graveler::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_GRAVELER, CRY_MODE_NORMAL
+	msgbox RustboroCity_Gym_Text_Graveler, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 RusturfTunnel_Text_ComeAndGetSome:
 	.string "What, are you coming?\n"
 	.string "Come and get some, then!$"
@@ -531,5 +558,15 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "They halted development here to\n"
 	.string "protect POKéMON, right?\l"
 	.string "There's a feel-good story!$"
+
+RusturfTunnel_Text_CaveIn:
+	.string "Whoa there! There was a cave-in here a\n"
+	.string "few days ago.\p"
+	.string "Graveler and I are working on getting\n"
+	.string "this cleared up, be careful where you\l"
+	.string "step in the meantime.$"
+
+RustboroCity_Gym_Text_Graveler:
+	.string "Graveler: eeeEEEEEEOOw!$"
 
 `

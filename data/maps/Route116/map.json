@@ -299,17 +299,17 @@
       "flag": "FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 74,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_BULU)",
+      "x": 77,
+      "y": 12,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route116_EventScript_GlassesMan",
-      "flag": "FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN"
+      "script": "Route116_EventScript_TapuBulu",
+      "flag": "FLAG_HIDE_TAPU_BULU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
