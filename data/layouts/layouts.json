@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/RockySlab/border.bin",
       "blockdata_filepath": "data/layouts/RockySlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRASSY_SLAB",
+      "name": "GrassySlab_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GrassySlab/border.bin",
+      "blockdata_filepath": "data/layouts/GrassySlab/map.bin"
     }
   ]
 }

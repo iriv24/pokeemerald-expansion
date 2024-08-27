@@ -399,6 +399,13 @@
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_GRASSY_SLAB",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -451,15 +458,15 @@
     },
     {
       "type": "secret_base",
-      "x": 11,
-      "y": 27,
+      "x": 15,
+      "y": 3,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE3_2"
     },
     {
       "type": "secret_base",
-      "x": 12,
-      "y": 27,
+      "x": 16,
+      "y": 3,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE4_2"
     },
@@ -489,7 +496,7 @@
     {
       "type": "hidden_item",
       "x": 7,
-      "y": 30,
+      "y": 31,
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE"

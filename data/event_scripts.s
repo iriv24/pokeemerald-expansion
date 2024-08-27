@@ -1167,3 +1167,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/FloatingSlab/scripts.inc"
 
 	.include "data/maps/RockySlab/scripts.inc"
+
+	.include "data/maps/GrassySlab/scripts.inc"
