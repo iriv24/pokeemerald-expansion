@@ -8250,7 +8250,7 @@ static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_SPEED_BOOST,
+    .ability = ABILITY_BLAZE,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -8306,10 +8306,10 @@ static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 64,
     .species = SPECIES_BLAZIKEN,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_SPEED_BOOST,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_BLAZIKENITE,
-    .moves = {MOVE_BLAZE_KICK, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_BLAZE_KICK, MOVE_THUNDEROUS_KICK, MOVE_THUNDER_PUNCH, MOVE_BULK_UP}
     }
 };
 
@@ -8586,7 +8586,7 @@ static const struct TrainerMon sParty_MayRoute110Treecko[] = {
     .lvl = 200,
     .species = SPECIES_COMBUSKEN,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_SPEED_BOOST,
+    .ability = ABILITY_BLAZE,
     .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_FLAME_BURST, MOVE_SCORCHING_SANDS, MOVE_QUICK_ATTACK, MOVE_COUNTER}
     }
@@ -8642,10 +8642,10 @@ static const struct TrainerMon sParty_MayRoute119Treecko[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 64,
     .species = SPECIES_BLAZIKEN,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_SPEED_BOOST,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_BLAZIKENITE,
-    .moves = {MOVE_BLAZE_KICK, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_BLAZE_KICK, MOVE_THUNDEROUS_KICK, MOVE_THUNDER_PUNCH, MOVE_BULK_UP}
     }
 };
 
@@ -11167,10 +11167,10 @@ static const struct TrainerMon sParty_BrendanEvergrandeTreecko[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 84,
     .species = SPECIES_BLAZIKEN,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_SPEED_BOOST,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_BLAZIKENITE,
-    .moves = {MOVE_BLAZE_KICK, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_BLAZE_KICK, MOVE_THUNDEROUS_KICK, MOVE_THUNDER_PUNCH, MOVE_BULK_UP}
     }
 };
 
@@ -11339,10 +11339,10 @@ static const struct TrainerMon sParty_MayEvergrandeTreecko[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 84,
     .species = SPECIES_BLAZIKEN,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_SPEED_BOOST,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_STRIKER,
     .heldItem = ITEM_BLAZIKENITE,
-    .moves = {MOVE_BLAZE_KICK, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_BLAZE_KICK, MOVE_THUNDEROUS_KICK, MOVE_THUNDER_PUNCH, MOVE_BULK_UP}
     }
 };
 
