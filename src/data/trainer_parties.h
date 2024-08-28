@@ -15663,15 +15663,15 @@ static const struct TrainerMon sParty_Iriv24[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GRASSY_SURGE,
     .heldItem = ITEM_TERRAIN_EXTENDER,
-    .moves = {MOVE_GRASSY_GLIDE, MOVE_WOOD_HAMMER, MOVE_KNOCK_OFF, MOVE_DRAIN_PUNCH}
+    .moves = {MOVE_HIGH_HORSEPOWER, MOVE_WOOD_HAMMER, MOVE_TAUNT, MOVE_DRAIN_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 200,
     .species = SPECIES_ALAKAZAM,
     .nature = NATURE_TIMID,
-    .ability = ABILITY_MAGIC_GUARD,
-    .heldItem = ITEM_LIFE_ORB,
+    .ability = ABILITY_INNER_FOCUS,
+    .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_GRASS_KNOT, MOVE_FOCUS_BLAST}
     },
     {
@@ -15689,8 +15689,8 @@ static const struct TrainerMon sParty_Iriv24[] = {
     .species = SPECIES_AMPHAROS,
     .nature = NATURE_MODEST,
     .ability = ABILITY_STATIC,
-    .heldItem = ITEM_MAGNET,
-    .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_SIGNAL_BEAM, MOVE_TAIL_GLOW}
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_SIGNAL_BEAM, MOVE_AURA_SPHERE}
     },
     {
         //hp, atk, def, speed, spatk, spdef
