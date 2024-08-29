@@ -536,24 +536,24 @@ Route121_EventScript_ExplainMeltan::
 
 
 Route121_Trigger_BlockPath::
-# 336 "data/maps/Route121/scripts.pory"
+# 344 "data/maps/Route121/scripts.pory"
 	lockall
-# 337 "data/maps/Route121/scripts.pory"
+# 345 "data/maps/Route121/scripts.pory"
 	msgbox GoBeatWinona
-# 338 "data/maps/Route121/scripts.pory"
+# 346 "data/maps/Route121/scripts.pory"
 	waitmessage
-# 339 "data/maps/Route121/scripts.pory"
+# 347 "data/maps/Route121/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, StopPlayerLeft
-# 340 "data/maps/Route121/scripts.pory"
+# 348 "data/maps/Route121/scripts.pory"
 	waitmovement 0
-# 341 "data/maps/Route121/scripts.pory"
+# 349 "data/maps/Route121/scripts.pory"
 	releaseall
 	return
 
 
-# 349 "data/maps/Route121/scripts.pory"
+# 357 "data/maps/Route121/scripts.pory"
 StopPlayerLeft:
-# 350 "data/maps/Route121/scripts.pory"
+# 358 "data/maps/Route121/scripts.pory"
 	walk_left
 	step_end
 
@@ -568,33 +568,41 @@ Route121_Text_PlayerReceivedMeltan::
 Byron_ExplainMeltan::
 # 305 "data/maps/Route121/scripts.pory"
 	.string "Meltan and Melmetal are 2 of my\n"
-	.string "favorite Steel-types, I hope you treat\p"
+	.string "favorite Steel-types, I hope you treat\l"
 	.string "that Meltan kindly and raise it well.$"
 
 Byron_Greeting::
 # 311 "data/maps/Route121/scripts.pory"
 	.string "Well hello there, you look like a well-\n"
-	.string "traveled person. Did you happen to run\p"
-	.string "into a young man named Roark during\n"
-	.string "your journey? Oh, you did! And you were\p"
-	.string "able to defeat him? Excellent, that\n"
-	.string "must mean you are a strong trainer if\p"
-	.string "you were able to beat my son, what do\n"
-	.string "you say to a battle with me then?$"
+	.string "traveled person. Did you happen to run\l"
+	.string "into a young man named Roark during\l"
+	.string "your journey?\p"
+	.string "… … … … … …\p"
+	.string "Oh, you did! And you were able to\n"
+	.string "defeat him?\p"
+	.string "… … … … … …\p"
+	.string "Excellent, that must mean you are a\n"
+	.string "strong trainer if you were able to\l"
+	.string "defeat my son.\p"
+	.string "Oh, where are my manners, I'm Byron, a\n"
+	.string "Gym Leader from the Sinnoh region.\p"
+	.string "Say, since you are a strong trainer, how\n"
+	.string "would you feel about having a battle\l"
+	.string "with me?$"
 
 Byron_Outro::
-# 322 "data/maps/Route121/scripts.pory"
+# 330 "data/maps/Route121/scripts.pory"
 	.string "I see how you were able to defeat my\n"
-	.string "son. I'm confident I'll be leaving this\p"
+	.string "son. I'm confident I'll be leaving this\l"
 	.string "Pokémon in good hands.$"
 
 PostBattle_Byron::
-# 329 "data/maps/Route121/scripts.pory"
+# 337 "data/maps/Route121/scripts.pory"
 	.string "I'm off to find Roark, I'm sure he's\n"
 	.string "going to explore the underground of\l"
 	.string "this region.$"
 
 GoBeatWinona::
-# 344 "data/maps/Route121/scripts.pory"
+# 352 "data/maps/Route121/scripts.pory"
 	.string "You should defeat Winona before\n"
 	.string "moving on to here.$"

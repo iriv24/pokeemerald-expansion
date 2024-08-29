@@ -304,24 +304,32 @@ text Route121_Text_PlayerReceivedMeltan{
 
 text Byron_ExplainMeltan{
 	"Meltan and Melmetal are 2 of my\n"
-	"favorite Steel-types, I hope you treat\p"
+	"favorite Steel-types, I hope you treat\l"
 	"that Meltan kindly and raise it well."
 }
 	
 text Byron_Greeting{
 	"Well hello there, you look like a well-\n"
-	"traveled person. Did you happen to run\p"
-	"into a young man named Roark during\n"
-	"your journey? Oh, you did! And you were\p"
-	"able to defeat him? Excellent, that\n"
-	"must mean you are a strong trainer if\p"
-	"you were able to beat my son, what do\n"
-	"you say to a battle with me then?"
+	"traveled person. Did you happen to run\l"
+	"into a young man named Roark during\l"
+	"your journey?\p"
+	"… … … … … …\p"
+	"Oh, you did! And you were able to\n"
+	"defeat him?\p" 
+	"… … … … … …\p"
+	"Excellent, that must mean you are a\n"
+	"strong trainer if you were able to\l"
+	"defeat my son.\p"
+	"Oh, where are my manners, I'm Byron, a\n"
+	"Gym Leader from the Sinnoh region.\p"
+	"Say, since you are a strong trainer, how\n"
+	"would you feel about having a battle\l"
+	"with me?"
 }
 	
 text Byron_Outro{
 	"I see how you were able to defeat my\n"
-	"son. I'm confident I'll be leaving this\p"
+	"son. I'm confident I'll be leaving this\l"
 	"Pokémon in good hands."
 }
 

@@ -15186,16 +15186,16 @@ static const struct TrainerMon sParty_Byron[] = {
     .nature = NATURE_IMPISH,
     .ability = ABILITY_STURDY,
     .heldItem = ITEM_ROCKY_HELMET,
-    .moves = {MOVE_ROOST, MOVE_STEALTH_ROCK, MOVE_DRILL_PECK, MOVE_IRON_HEAD}
+    .moves = {MOVE_WHIRLWIND, MOVE_STEALTH_ROCK, MOVE_DRILL_PECK, MOVE_IRON_HEAD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_HEATRAN,
-    .nature = NATURE_MODEST,
-    .ability = ABILITY_FLASH_FIRE,
-    .heldItem = ITEM_AIR_BALLOON,
-    .moves = {MOVE_FLAMETHROWER, MOVE_FLASH_CANNON, MOVE_EARTH_POWER, MOVE_POWER_GEM}
+    .species = SPECIES_POLTEAGEIST,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_HEATPROOF,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_SHELL_SMASH, MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN, MOVE_STORED_POWER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15209,11 +15209,11 @@ static const struct TrainerMon sParty_Byron[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
-    .species = SPECIES_BRONZONG,
-    .nature = NATURE_RELAXED,
-    .ability = ABILITY_HEATPROOF,
-    .heldItem = ITEM_AIR_BALLOON,
-    .moves = {MOVE_PSYCHIC, MOVE_GYRO_BALL, MOVE_BODY_PRESS, MOVE_EARTHQUAKE}
+    .species = SPECIES_SCIZOR,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_TECHNICIAN,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_BULLET_PUNCH, MOVE_BUG_BITE, MOVE_DUAL_WINGBEAT, MOVE_SWORDS_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
