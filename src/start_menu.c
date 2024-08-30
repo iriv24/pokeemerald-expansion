@@ -548,17 +548,17 @@ static void RemoveExtraStartMenuWindows(void)
         //CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
         RemoveWindow(sSafariBallsWindowId);
     }
-    else if (InBattlePyramid())
+    if (InBattlePyramid())
     {
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
     }
-    else
-    {
+    //else
+    //{
         ClearStdWindowAndFrameToTransparent(sStartClockWindowId, FALSE);
         // CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
         RemoveWindow(sStartClockWindowId);
-    }
+    //}
 }
 
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
