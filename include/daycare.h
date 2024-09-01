@@ -17,6 +17,7 @@ void InitDaycareMailRecordMixing(struct DayCare *daycare, struct RecordMixingDay
 s8 Daycare_FindEmptySpot(struct DayCare *daycare);
 void StoreSelectedPokemonInDaycare(void);
 u16 TakePokemonFromDaycare(void);
+u16 GetEggSpecies(u16 species);
 void GetDaycareCost(void);
 u8 GetNumLevelsGainedFromDaycare(void);
 void TriggerPendingDaycareEgg(void);

@@ -83,7 +83,11 @@
 enum {
     MENU_SUMMARY,
     MENU_SWITCH,
-    MENU_MOVES,
+    MENU_RELEARN_BOTH,
+    MENU_RELEARN_LVL_UP,
+    MENU_RELEARN_EGG,
+    MENU_LEVEL_UP_MOVES,
+    MENU_EGG_MOVES,
     MENU_NICKNAME,
     MENU_CANCEL1,
     MENU_ITEM,
@@ -131,6 +135,9 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_RELEARN_MOVES_BOTH,
+    ACTIONS_RELEARN_MOVES_LVL_ONLY,
+    ACTIONS_RELEARN_MOVES_EGG_ONLY
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -474,7 +481,11 @@ static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, u8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, u8);
 static void BlitBitmapToPartyWindow_Equal(u8, u8, u8, u8, u8, u8); //Custom party menu
 static void CursorCb_Summary(u8);
-static void CursorCb_Moves(u8);
+static void CursorCb_RelearnBoth(u8);
+static void CursorCb_RelearnLvlUp(u8);
+static void CursorCb_RelearnEgg(u8);
+static void CursorCb_LvlUpMoves(u8);
+static void CursorCb_EggMoves(u8);
 static void CursorCb_Nickname(u8);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
@@ -2811,6 +2822,9 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_APPLIANCE:
             *windowPtr = AddWindow(&sOrderWhichApplianceMsgWindowTemplate);
             break;
+        case PARTY_MSG_WHICH_TYPE_RELEARN:
+            *windowPtr = AddWindow(&sWhichTypeRelearnWindowTemplate);
+            break;
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2872,6 +2886,12 @@ static u8 DisplaySelectionWindow(u8 windowType)
         break;
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_MOVE_RELEARN_BOTH:
+        window = sRelearnBothOptionsWindowTemplate;
+        break;
+    case SELECTWINDOW_MOVE_RELEARN_ONE:
+        window = sRelearnOneOptionsWindowTemplate;
         break;
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
@@ -2996,9 +3016,27 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
-        if (GetNumberOfRelearnableMoves(&mons[slotId]) != 0) {
-			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MOVES);
-		}
+        
+        u16 tempMoveManager = VarGet(VAR_MOVE_MANAGER);
+        VarSet(VAR_MOVE_MANAGER, MOVE_REMINDER_NORMAL);
+        bool32 hasLvlUpMove = (GetNumberOfRelearnableMoves(&mons[slotId]) != 0);
+        
+        if(FlagGet(FLAG_MET_EGG_MOVE_TUTOR))
+        {
+            VarSet(VAR_MOVE_MANAGER, MOVE_TUTOR_EGG_MOVES);
+            bool32 hasEggMoves = (GetNumberOfRelearnableMoves(&mons[slotId]) != 0);
+
+            if (hasLvlUpMove && hasEggMoves)
+			    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_BOTH);
+            else if(hasLvlUpMove && !hasEggMoves)
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP);
+            else if(!hasLvlUpMove && hasEggMoves)
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_EGG);
+        }
+        else if (hasLvlUpMove)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP);
+        
+        VarSet(VAR_MOVE_MANAGER, tempMoveManager);  
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
@@ -3148,9 +3186,59 @@ static void CursorCb_Summary(u8 taskId)
     Task_ClosePartyMenu(taskId);
 }
 
-static void CursorCb_Moves(u8 taskId)
+static void CursorCb_RelearnBoth(u8 taskId)
 {
     PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_RELEARN_MOVES_BOTH);
+    DisplaySelectionWindow(SELECTWINDOW_MOVE_RELEARN_BOTH);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_TYPE_RELEARN);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_RelearnLvlUp(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_RELEARN_MOVES_LVL_ONLY);
+    DisplaySelectionWindow(SELECTWINDOW_MOVE_RELEARN_ONE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_TYPE_RELEARN);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_RelearnEgg(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_RELEARN_MOVES_EGG_ONLY);
+    DisplaySelectionWindow(SELECTWINDOW_MOVE_RELEARN_ONE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_TYPE_RELEARN);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_LvlUpMoves(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    VarSet(VAR_MOVE_MANAGER, MOVE_REMINDER_NORMAL);
+	FlagSet(FLAG_PARTY_MOVES);
+    gSpecialVar_0x8004 = gPartyMenu.slotId;
+	gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(&gPlayerParty[gSpecialVar_0x8004]);
+	DisplayPartyPokemonDataForRelearner(gSpecialVar_0x8004);
+	TeachMoveRelearnerMove();
+    sPartyMenuInternal->exitCallback = TeachMoveRelearnerMove;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CursorCb_EggMoves(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    VarSet(VAR_MOVE_MANAGER, MOVE_TUTOR_EGG_MOVES);
 	FlagSet(FLAG_PARTY_MOVES);
     gSpecialVar_0x8004 = gPartyMenu.slotId;
 	gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(&gPlayerParty[gSpecialVar_0x8004]);

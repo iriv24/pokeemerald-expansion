@@ -12,6 +12,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
+#include "daycare.h"
 #include "dexnav.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -5569,39 +5570,78 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
 {
-    u16 learnedMoves[4];
+    u16 learnedMoves[MAX_MON_MOVES];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
-    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
+    u16 eggSpecies;
+    u16 moveTutorType = VarGet(VAR_MOVE_MANAGER);
+    const struct LevelUpMove *learnset;
+    const u16 *eggMoveLearnset;
     int i, j, k;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
-    for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
+    switch (moveTutorType)
     {
-        u16 moveLevel;
+    case MOVE_REMINDER_NORMAL:
+    case MOVE_REMINDER_LEARN_ALL_MOVES:
+    default:
+        learnset = GetSpeciesLevelUpLearnset(species);
 
-        if (learnset[i].move == LEVEL_UP_MOVE_END)
-            break;
+        if (moveTutorType == MOVE_REMINDER_LEARN_ALL_MOVES)
+            level = MAX_LEVEL;
 
-        moveLevel = learnset[i].level;
-
-        if (moveLevel <= level)
+        for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
         {
-            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
+            u16 moveLevel;
+
+            if (learnset[i].move == LEVEL_UP_MOVE_END)
+                break;
+
+            moveLevel = learnset[i].level;
+
+            if (moveLevel <= level)
+            {
+                for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
+                    ;
+
+                if (j == MAX_MON_MOVES)
+                {
+                    for (k = 0; k < numMoves && moves[k] != learnset[i].move; k++)
+                        ;
+
+                    if (k == numMoves)
+                    {
+                        moves[numMoves++] = learnset[i].move;
+                    }
+                }
+            }
+        }
+        break;
+    case MOVE_TUTOR_EGG_MOVES:
+        eggSpecies = GetEggSpecies(species);
+        eggMoveLearnset = GetSpeciesEggMoves(eggSpecies);
+
+        for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+        {
+            if (eggMoveLearnset[i] == MOVE_UNAVAILABLE)
+                break;
+
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != eggMoveLearnset[i]; j++)
                 ;
 
             if (j == MAX_MON_MOVES)
             {
-                for (k = 0; k < numMoves && moves[k] != learnset[i].move; k++)
+                for (k = 0; k < numMoves && moves[k] != eggMoveLearnset[i]; k++)
                     ;
 
                 if (k == numMoves)
-                    moves[numMoves++] = learnset[i].move;
+                    moves[numMoves++] = eggMoveLearnset[i];
             }
         }
+        break;
     }
 
     return numMoves;
@@ -5623,41 +5663,78 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 {
     u16 learnedMoves[MAX_MON_MOVES];
     u16 moves[MAX_LEVEL_UP_MOVES];
+    u16 eggMoves[EGG_MOVES_ARRAY_COUNT];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+    u16 eggSpecies;
     u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
-    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
+    const struct LevelUpMove *learnset;
+    const u16 *eggMoveLearnset;
+    u16 moveTutorType = VarGet(VAR_MOVE_MANAGER);
     int i, j, k;
 
     if (species == SPECIES_EGG)
         return 0;
-
     for (i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
 
-    for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
+    switch (moveTutorType)
     {
-        u16 moveLevel;
+    case MOVE_REMINDER_NORMAL:
+    case MOVE_REMINDER_LEARN_ALL_MOVES:
+    default:
+        learnset = GetSpeciesLevelUpLearnset(species);
 
-        if (learnset[i].move == LEVEL_UP_MOVE_END)
-            break;
+        if (moveTutorType == MOVE_REMINDER_LEARN_ALL_MOVES)
+            level = MAX_LEVEL;
 
-        moveLevel = learnset[i].level;
-
-        if (moveLevel <= level)
+        for (i = 0; i < MAX_LEVEL_UP_MOVES; i++)
         {
-            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
+            u16 moveLevel;
+
+            if (learnset[i].move == LEVEL_UP_MOVE_END)
+                break;
+
+            moveLevel = learnset[i].level;
+
+            if (moveLevel <= level)
+            {
+                for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != learnset[i].move; j++)
+                    ;
+
+                if (j == MAX_MON_MOVES)
+                {
+                    for (k = 0; k < numMoves && moves[k] != learnset[i].move; k++)
+                        ;
+
+                    if (k == numMoves)
+                        moves[numMoves++] = learnset[i].move;
+                }
+            }
+        }
+        break;
+    case MOVE_TUTOR_EGG_MOVES:
+        eggSpecies = GetEggSpecies(species);
+        eggMoveLearnset = GetSpeciesEggMoves(eggSpecies);
+
+        for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+        {
+            if (eggMoveLearnset[i] == MOVE_UNAVAILABLE)
+                break;
+
+            for (j = 0; j < MAX_MON_MOVES && learnedMoves[j] != eggMoveLearnset[i]; j++)
                 ;
 
             if (j == MAX_MON_MOVES)
             {
-                for (k = 0; k < numMoves && moves[k] != learnset[i].move; k++)
+                for (k = 0; k < numMoves && eggMoves[k] != eggMoveLearnset[i]; k++)
                     ;
 
                 if (k == numMoves)
-                    moves[numMoves++] = learnset[i].move;
+                    eggMoves[numMoves++] = eggMoveLearnset[i];
             }
         }
+        break;
     }
 
     return numMoves;

@@ -1223,7 +1223,7 @@
 #define FLAG_DEFEATED_REGIELEKI                                     0x495
 #define FLAG_HIDE_REGIDRAGO                                         0x496
 #define FLAG_HIDE_REGIELEKI                                         0x497
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define FLAG_MET_EGG_MOVE_TUTOR                                     0x498
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

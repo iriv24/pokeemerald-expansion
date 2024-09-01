@@ -827,9 +827,9 @@ LilycoveCity_Text_DepartmentStoreSign:
 # 414 "data/maps/LilycoveCity/scripts.pory"
 LilycoveCity_Text_MoveDeletersHouseSign:
 # 415 "data/maps/LilycoveCity/scripts.pory"
-	.string "MOVE DELETER'S HOUSE\p"
+	.string "EGG MOVE TUTOR'S HOUSE\p"
 # 416 "data/maps/LilycoveCity/scripts.pory"
-	.string "“Unwanted POKéMON moves deleted.”$"
+	.string "“TEACH POKéMON EGG MOVES.”$"
 # 417 "data/maps/LilycoveCity/scripts.pory"
 
 # 418 "data/maps/LilycoveCity/scripts.pory"

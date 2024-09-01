@@ -2083,6 +2083,7 @@ extern const u8 gText_DoWhatWithPokemon[];
 extern const u8 gText_RestoreWhichMove[];
 extern const u8 gText_BoostPp[];
 extern const u8 gText_DoWhatWithItem[];
+extern const u8 gText_WhichTypeRelearn[];
 extern const u8 gText_DoWhatWithMail[];
 extern const u8 gText_AlreadyHoldingOne[];
 extern const u8 gText_WhichAppliance[];
@@ -2908,7 +2909,9 @@ extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
-extern const u8 gText_Moves_Menu[];
+extern const u8 gText_Relearn_Menu[];
+extern const u8 gText_LvlUpMoves_Menu[];
+extern const u8 gText_EggMoves_Menu[];
 
 extern const u8 gText_Fertilize[];
 extern const u8 gText_PlantBerry[];

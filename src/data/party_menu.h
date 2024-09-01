@@ -568,6 +568,17 @@ static const struct WindowTemplate sDoWhatWithItemMsgWindowTemplate =
     .baseBlock = 0x299,
 };
 
+static const struct WindowTemplate sWhichTypeRelearnWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 1,
+    .tilemapTop = 17,
+    .width = 16,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0x279,
+};
+
 static const struct WindowTemplate sDoWhatWithMailMsgWindowTemplate =
 {
     .bg = 2,
@@ -619,6 +630,28 @@ static const struct WindowTemplate sItemGiveTakeWindowTemplate =
     .tilemapTop = 13,
     .width = 6,
     .height = 6,
+    .paletteNum = 14,
+    .baseBlock = 0x39D,
+};
+
+static const struct WindowTemplate sRelearnBothOptionsWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 19,
+    .tilemapTop = 13,
+    .width = 10,
+    .height = 6,
+    .paletteNum = 14,
+    .baseBlock = 0x39D,
+};
+
+static const struct WindowTemplate sRelearnOneOptionsWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 19,
+    .tilemapTop = 15,
+    .width = 10,
+    .height = 4,
     .paletteNum = 14,
     .baseBlock = 0x39D,
 };
@@ -803,6 +836,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_ALREADY_HOLDING_ONE]    = gText_AlreadyHoldingOne,
     [PARTY_MSG_WHICH_APPLIANCE]        = gText_WhichAppliance,
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
+    [PARTY_MSG_WHICH_TYPE_RELEARN]     = gText_WhichTypeRelearn,
 };
 
 static const u8 *const sDescriptionStringTable[] =
@@ -837,7 +871,11 @@ struct
 } static const sCursorOptions[MENU_FIELD_MOVES] =
 {
     [MENU_SUMMARY] = {gText_Summary5, CursorCb_Summary},
-    [MENU_MOVES] = {gText_Moves_Menu, CursorCb_Moves},
+    [MENU_RELEARN_BOTH] = {gText_Relearn_Menu, CursorCb_RelearnBoth},
+    [MENU_RELEARN_LVL_UP] = {gText_Relearn_Menu, CursorCb_RelearnLvlUp},
+    [MENU_RELEARN_EGG] = {gText_Relearn_Menu, CursorCb_RelearnEgg},
+    [MENU_LEVEL_UP_MOVES] = {gText_LvlUpMoves_Menu, CursorCb_LvlUpMoves},
+    [MENU_EGG_MOVES] = {gText_EggMoves_Menu, CursorCb_EggMoves},
     [MENU_NICKNAME] = {gText_Nickname, CursorCb_Nickname},
     [MENU_SWITCH] = {gText_Switch2, CursorCb_Switch},
     [MENU_CANCEL1] = {gText_Cancel2, CursorCb_Cancel1},
@@ -882,6 +920,9 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
+static const u8 sPartyMenuAction_LvlUpEggCancel[] = {MENU_LEVEL_UP_MOVES, MENU_EGG_MOVES, MENU_CANCEL2};
+static const u8 sPartyMenuAction_LvlUpCancel[] = {MENU_LEVEL_UP_MOVES, MENU_CANCEL2};
+static const u8 sPartyMenuAction_EggCancel[] = {MENU_EGG_MOVES, MENU_CANCEL2};
 
 
 
@@ -903,6 +944,9 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_TAKEITEM_TOSS] = sPartyMenuAction_TakeItemTossCancel,
     [ACTIONS_ROTOM_CATALOG] = sPartyMenuAction_RotomCatalog,
     [ACTIONS_ZYGARDE_CUBE]  = sPartyMenuAction_ZygardeCube,
+    [ACTIONS_RELEARN_MOVES_BOTH] = sPartyMenuAction_LvlUpEggCancel,
+    [ACTIONS_RELEARN_MOVES_LVL_ONLY] = sPartyMenuAction_LvlUpCancel,
+    [ACTIONS_RELEARN_MOVES_EGG_ONLY] = sPartyMenuAction_EggCancel,
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -923,6 +967,9 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
+    [ACTIONS_RELEARN_MOVES_BOTH] = ARRAY_COUNT(sPartyMenuAction_LvlUpEggCancel),
+    [ACTIONS_RELEARN_MOVES_LVL_ONLY] = ARRAY_COUNT(sPartyMenuAction_LvlUpCancel),
+    [ACTIONS_RELEARN_MOVES_EGG_ONLY] = ARRAY_COUNT(sPartyMenuAction_EggCancel),
 };
 
 static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =

@@ -4,7 +4,23 @@ raw `
 LilycoveCity_MoveDeletersHouse_MapScripts::
 	.byte 0
 
-LilycoveCity_MoveDeletersHouse_EventScript_MoveDeleter::
+LilycoveCity_MoveDeletersHouse_EventScript_EggMoveTutor::
+	lock
+	faceplayer
+	call_if_unset FLAG_MET_EGG_MOVE_TUTOR, LilycoveCity_MoveDeletersHouse_EventScript_SetEggMoveFlag
+	msgbox LilycoveCity_MoveDeletersHouse_Text_HowToUseEggMoves, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_MoveDeletersHouse_EventScript_SetEggMoveFlag::
+	setflag FLAG_MET_EGG_MOVE_TUTOR
+	msgbox LilycoveCity_MoveDeletersHouse_Text_ImEggMoveTutor, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LilycoveCity_MoveDeletersHouse_Text_ObtainedEggMoveTutorOption, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+LilycoveCity_MoveDeletersHouse_EventScript_MoveDeleterOriginal::
 	lockall
 	applymovement LOCALID_MOVE_DELETER, Common_Movement_FacePlayer
 	waitmovement 0
@@ -68,6 +84,29 @@ LilycoveCity_MoveDeletersHouse_EventScript_LastMonWithSurf::
 	msgbox LilycoveCity_MoveDeletersHouse_Text_CantForgetSurf, MSGBOX_DEFAULT
 	releaseall
 	end
+
+LilycoveCity_MoveDeletersHouse_Text_ImEggMoveTutor:
+	.string "Oh, hello there young trainer.\n"
+	.string "I've recently undergone a career\l"
+	.string "change.\p"
+	.string "I used to be known as the Move Deleter,\n"
+	.string "but everyone can do that themselves\l"
+	.string "nowadays, so I had to learn a new skill.\p"
+	.string "Now, I can teach you to teach your\n"
+	.string "Pokémon their Egg Moves.\l"
+	.string "Check this out!$"
+
+LilycoveCity_MoveDeletersHouse_Text_ObtainedEggMoveTutorOption:
+	.string "Obtained the option to relearn\n"
+	.string "Egg Moves!$"
+
+LilycoveCity_MoveDeletersHouse_Text_HowToUseEggMoves:
+	.string "If you go to your Party Menu, select a\n"
+	.string "Pokémon, then select “RELEARN”, you\l"
+	.string "will have a new option: “EGG MOVES”,\l"
+	.string "assuming your Pokémon actually has Egg\l"
+	.string "Moves to learn!\p"
+	.string "Isn't that handy?$"
 
 LilycoveCity_MoveDeletersHouse_Text_ICanMakeMonForgetMove:
 	.string "Uh…\n"
