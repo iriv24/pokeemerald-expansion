@@ -2430,7 +2430,7 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_MEW"
+                "species": "SPECIES_POIPOLE"
               }
             ]
           }
@@ -7761,7 +7761,7 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_POIPOLE"
+                "species": "SPECIES_OGERPON"
               }
             ]
           },
@@ -10312,7 +10312,7 @@
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_KELDEO"
+                "species": "SPECIES_GENESECT"
               },
               {
                 "min_level": 40,

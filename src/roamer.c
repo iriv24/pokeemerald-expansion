@@ -148,21 +148,21 @@ bool8 TryAddRoamer(u16 species, u8 level)
 // gSpecialVar_0x8004 here corresponds to the options in the multichoice MULTI_TV_LATI (0 for 'Red', 1 for 'Blue')
 void InitRoamer(void)
 {
-    TryAddRoamer(SPECIES_ARTICUNO, 50);
+    TryAddRoamer(SPECIES_ARTICUNO, 50); //1
     TryAddRoamer(SPECIES_ZAPDOS, 50);
     TryAddRoamer(SPECIES_MOLTRES, 50);
     TryAddRoamer(SPECIES_RAIKOU, 50);
-    TryAddRoamer(SPECIES_ENTEI, 50);
+    TryAddRoamer(SPECIES_ENTEI, 50); //5
     TryAddRoamer(SPECIES_SUICUNE, 50);
-    TryAddRoamer(SPECIES_LATIAS, 50);
-    TryAddRoamer(SPECIES_LATIOS, 50);
+    TryAddRoamer(SPECIES_CALYREX, 50);
+    TryAddRoamer(SPECIES_KELDEO, 50);
     TryAddRoamer(SPECIES_TERRAKION, 50);
-    TryAddRoamer(SPECIES_COBALION, 50);
+    TryAddRoamer(SPECIES_COBALION, 50); //10
     TryAddRoamer(SPECIES_VIRIZION, 50);
     TryAddRoamer(SPECIES_CRESSELIA, 50);
     TryAddRoamer(SPECIES_TORNADUS, 50);
     TryAddRoamer(SPECIES_THUNDURUS, 50);
-    TryAddRoamer(SPECIES_LANDORUS, 50);
+    TryAddRoamer(SPECIES_LANDORUS, 50); //15
     TryAddRoamer(SPECIES_ENAMORUS, 50);
 }
 
