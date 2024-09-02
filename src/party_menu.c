@@ -12,6 +12,7 @@
 #include "bw_summary_screen.h"
 #include "contest.h"
 #include "data.h"
+#include "daycare.h"
 #include "decompress.h"
 #include "easy_chat.h"
 #include "event_data.h"
@@ -2971,6 +2972,14 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
+    // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 8 + MENU_FIELD_MOVES);
+    
+    // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
+    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -2993,14 +3002,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             }
         }
     }
-
-    // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 8 + MENU_FIELD_MOVES);
-    // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
-
+    
     // If Mon can learn Dig and action list consists of < 4 moves, add DIG to action list
     if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_DIG) != 1)) 
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 10 + MENU_FIELD_MOVES);
@@ -3017,14 +3019,14 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
         
-        u16 tempMoveManager = VarGet(VAR_MOVE_MANAGER);
-        VarSet(VAR_MOVE_MANAGER, MOVE_REMINDER_NORMAL);
-        bool32 hasLvlUpMove = (GetNumberOfRelearnableMoves(&mons[slotId]) != 0);
+        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, 0);
+        DebugPrintf("species: %d", species);
+        bool32 hasLvlUpMove = (GetSpeciesLevelUpLearnset(species) != gSpeciesInfo[SPECIES_NONE].levelUpLearnset);
         
         if(FlagGet(FLAG_MET_EGG_MOVE_TUTOR))
         {
-            VarSet(VAR_MOVE_MANAGER, MOVE_TUTOR_EGG_MOVES);
-            bool32 hasEggMoves = (GetNumberOfRelearnableMoves(&mons[slotId]) != 0);
+            u16 eggSpecies = GetEggSpecies(species);
+            bool32 hasEggMoves = (GetSpeciesEggMoves(eggSpecies) != gSpeciesInfo[SPECIES_NONE].eggMoveLearnset);
 
             if (hasLvlUpMove && hasEggMoves)
 			    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_BOTH);
@@ -3034,9 +3036,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_EGG);
         }
         else if (hasLvlUpMove)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP);
-        
-        VarSet(VAR_MOVE_MANAGER, tempMoveManager);  
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP); 
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
