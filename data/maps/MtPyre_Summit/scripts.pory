@@ -427,9 +427,9 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "Oh, yes. Was it Team Aqua who came\n"
 	.string "and took the Blue Orb first?\p"
 	.string "Well, on his way down from the summit, I\n"
-	.string "heard their leader mention something\p"
-	.string "about a submarine in Slateport City...\n"
-	.string "Maybe you should head there and see if\p"
+	.string "heard their leader mention something\l"
+	.string "about a submarine in Slateport City...\p"
+	.string "Maybe you should head there and see if\n"
 	.string "you can stop them.$"
 
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
