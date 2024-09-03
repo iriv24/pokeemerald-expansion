@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_MATT, 1
+.set LOCALID_ARCHIE, 1
 .set LOCALID_SUBMARINE, 4
 
 AquaHideout_B2F_MapScripts::
@@ -7,16 +7,16 @@ AquaHideout_B2F_MapScripts::
 	.byte 0
 
 AquaHideout_B2F_OnTransition:
-	call_if_set FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, AquaHideout_B2F_EventScript_PreventMattNoticing
+	call_if_set FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, AquaHideout_B2F_EventScript_PreventArchieNoticing
 	end
 
-AquaHideout_B2F_EventScript_PreventMattNoticing::
+AquaHideout_B2F_EventScript_PreventArchieNoticing::
 	setvar VAR_TEMP_1, 1
 	return
 
-AquaHideout_B2F_EventScript_MattNoticePlayer::
+AquaHideout_B2F_EventScript_ArchieNoticePlayer::
 	lockall
-	setvar VAR_0x8008, LOCALID_MATT
+	setvar VAR_0x8008, LOCALID_ARCHIE
 	playse SE_PIN
 	applymovement VAR_0x8008, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -26,14 +26,13 @@ AquaHideout_B2F_EventScript_MattNoticePlayer::
 	releaseall
 	end
 
-AquaHideout_B2F_EventScript_Matt::
-	trainerbattle_single TRAINER_MATT, AquaHideout_B2F_Text_MattIntro, AquaHideout_B2F_Text_MattDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
-	msgbox AquaHideout_B2F_Text_MattPostBattle, MSGBOX_DEFAULT
+AquaHideout_B2F_EventScript_Archie::
+	trainerbattle_single TRAINER_ARCHIE_HIDEOUT, AquaHideout_B2F_Text_ArchieIntro, AquaHideout_B2F_Text_ArchieDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
 	release
 	end
 
 AquaHideout_B2F_EventScript_SubmarineEscape::
-	setvar VAR_0x8008, LOCALID_MATT
+	setvar VAR_0x8008, LOCALID_ARCHIE
 	setvar VAR_0x8009, LOCALID_SUBMARINE
 	applymovement VAR_0x8008, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
@@ -43,20 +42,31 @@ AquaHideout_B2F_EventScript_SubmarineEscape::
 	msgbox AquaHideout_B2F_Text_OurBossGotThroughHisPreparations, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8008, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement VAR_0x8008, AquaHideout_B2F_Movement_AquaBoardSub
+	waitmovement 0
 	applymovement VAR_0x8009, AquaHideout_B2F_Movement_SumbarineDepartLeft
 	waitmovement 0
+	removeobject VAR_0x8008
 	removeobject VAR_0x8009
-	delay 20
-	applymovement VAR_0x8008, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox AquaHideout_B2F_Text_MattPostBattle, MSGBOX_DEFAULT
 	setflag FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE
 	setflag FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
 	release
 	end
 
+AquaHideout_B2F_Movement_AquaBoardSub:
+	delay_16
+	delay_16
+	jump_left
+	set_invisible
+	step_end
+
 AquaHideout_B2F_Movement_SumbarineDepartLeft:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_left
 	walk_left
 	walk_left
@@ -91,26 +101,45 @@ AquaHideout_B2F_EventScript_Grunt8::
 	msgbox AquaHideout_B2F_Text_Grunt8PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-AquaHideout_B2F_Text_MattIntro:
-	.string "Hehehe…\p"
-	.string "Got here already, did you?\n"
-	.string "We underestimated you!\p"
-	.string "But this is it!\p"
-	.string "I'm a cut above the Grunts you've seen\n"
-	.string "so far.\p"
-	.string "I'm not stalling for time.\n"
-	.string "I'm going to pulverize you!$"
+AquaHideout_B2F_Text_ArchieIntro:
+	.string "{PLAYER}…\p"
+	.string "To think you caught up to us this\n"
+	.string "quickly.\p"
+	.string "No matter, our final preparations have\n"
+	.string "been completed, and you won't be able\l"
+	.string "to stop me from getting onto that\l"
+	.string "submarine.\p"
+	.string "But before I go, {PLAYER}, I do have to\n"
+	.string "admit, I am curious about your power as\l"
+	.string "a trainer.\p"
+	.string "You've been giving my Grunts, and even\n"
+	.string "my Admins, quite a bit of trouble, so I\l"
+	.string "think it's time for me to see what kind\l"
+	.string "of trainer you are!$"
 
-AquaHideout_B2F_Text_MattDefeat:
-	.string "Hehehe…\n"
-	.string "So, I lost, too…$"
+AquaHideout_B2F_Text_ArchieDefeat:
+	.string "That was quite the battle! I see how\n"
+	.string "you've been giving us so much trouble\l"
+	.string "all this time.$"
 
 AquaHideout_B2F_Text_OurBossGotThroughHisPreparations:
-	.string "Hehehe!\p"
-	.string "While I was toying with you, our Boss\n"
-	.string "got through his preparations!$"
+	.string "Well {PLAYER}, looks like it is time for\n"
+	.string "me to depart.\n"
+	.string "I'm glad I was able to see what kind of\n"
+	.string "trainer you are firsthand.\p"
+	.string "I only wish you'd reconsider joining our\n"
+	.string "cause, we could really use someone like\l"
+	.string "you on our side.\p"
+	.string "This is my final warning to you,\n"
+	.string "{PLAYER}, because I know you have\l"
+	.string "potential as a trainer.\p"
+	.string "If our paths must cross again as\n"
+	.string "opponents, I won't hold back.\p"
+	.string "I sincerely hope it doesn't come\n"
+	.string "to that.$"
 
-AquaHideout_B2F_Text_MattPostBattle:
+
+AquaHideout_B2F_Text_ArchiePostBattle:
 	.string "Hehehe!\p"
 	.string "Our Boss has already gone on his way to\n"
 	.string "some cave under the sea!\p"

@@ -406,7 +406,7 @@ static const struct TrainerMon sParty_Fredrick[] = {
     }
 };
 
-static const struct TrainerMon sParty_Matt[] = {
+static const struct TrainerMon sParty_ArchieHideout[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
@@ -428,19 +428,19 @@ static const struct TrainerMon sParty_Matt[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
-    .species = SPECIES_HYDRAPPLE,
-    .heldItem = ITEM_YACHE_BERRY,
-    .nature = NATURE_MODEST,
-    .ability = ABILITY_REGENERATOR,
-    .moves = {MOVE_ENERGY_BALL, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_SUCKER_PUNCH}
+    .species = SPECIES_EELEKTROSS,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_LEVITATE,
+    .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_FLAMETHROWER, MOVE_THUNDERCLAP}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
-    .species = SPECIES_GRENINJA_BATTLE_BOND,
-    .heldItem = ITEM_EXPERT_BELT,
-    .nature = NATURE_TIMID,
-    .moves = {MOVE_DARK_PULSE, MOVE_SURF, MOVE_ICE_BEAM, MOVE_GRASS_KNOT}
+    .species = SPECIES_TAUROS_PALDEA_AQUA,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves = {MOVE_STONE_EDGE, MOVE_RAGING_BULL, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT}
     },
     {
         //hp, atk, def, speed, spatk, spdef
@@ -455,11 +455,11 @@ static const struct TrainerMon sParty_Matt[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
-    .species = SPECIES_MACHAMP,
-    .heldItem = ITEM_MACHAMPITE,
-    .nature = NATURE_ADAMANT,
-    .ability = ABILITY_GUTS,
-    .moves = {MOVE_MACH_PUNCH, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH}
+    .species = SPECIES_SHARPEDO,
+    .heldItem = ITEM_SHARPEDONITE,
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_SPEED_BOOST,
+    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_AQUA_JET, MOVE_AQUA_FANG}
     },
 };
 

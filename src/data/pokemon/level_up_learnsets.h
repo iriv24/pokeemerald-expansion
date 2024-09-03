@@ -12362,6 +12362,7 @@ static const struct LevelUpMove sEelektrossLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_HEADBUTT),
 	LEVEL_UP_MOVE( 1, MOVE_ACID),
 	LEVEL_UP_MOVE( 1, MOVE_DISCHARGE),
+	LEVEL_UP_MOVE( 1, MOVE_THUNDERCLAP),
 	LEVEL_UP_END
 };
 
