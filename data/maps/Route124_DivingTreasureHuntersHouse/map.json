@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route124_DivingTreasureHuntersHouse_EventScript_TreasureHunter",
+      "script": "Route124_DivingTreasureHuntersHouse_EventScript_Man",
       "flag": "0"
     },
     {
@@ -61,13 +61,6 @@
 
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 7,
-      "y": 1,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route124_DivingTreasureHuntersHouse_EventScript_ShardTradeBoard"
-    }
+
   ]
 }

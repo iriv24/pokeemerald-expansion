@@ -9,6 +9,10 @@ Route124_DivingTreasureHuntersHouse_OnTransition:
 	setflag FLAG_LANDMARK_HUNTERS_HOUSE
 	end
 
+Route124_DivingTreasureHuntersHouse_EventScript_Man::
+	msgbox Route124_DivingTreasureHuntersHouse_Text_GreetingMan, MSGBOX_NPC
+	end
+
 Route124_DivingTreasureHuntersHouse_EventScript_TreasureHunter::
 	lock
 	faceplayer
@@ -285,6 +289,10 @@ Route124_DivingTreasureHuntersHouse_EventScript_EndTrade::
 Route124_DivingTreasureHuntersHouse_EventScript_ShardTradeBoard::
 	msgbox Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard, MSGBOX_SIGN
 	end
+
+Route124_DivingTreasureHuntersHouse_Text_GreetingMan:
+	.string "My wife was quite the strong trainer\n"
+	.string "back in our youth.$"
 
 Route124_DivingTreasureHuntersHouse_Text_Greeting:
 	.string "I'm the DIVING TREASURE HUNTER!\p"
