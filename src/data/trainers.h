@@ -359,7 +359,6 @@
         .party = TRAINER_PARTY(sParty_ArchieHideout),
     },
     
-
     [TRAINER_ZANDER] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
