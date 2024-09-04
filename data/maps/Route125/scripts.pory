@@ -178,21 +178,28 @@ script SetCandicePermLoc {
 
 text Candice_ExplainItems{
 	"Those are some of my favorite Ice-type\n"
-	"moves, they may not be the most\p"
-	"accurate, but they sure do deal damage\n"
-	"if they land! I'll step out of the way\l"
-	"now and let you through."
+	"moves, they may not be the most\l"
+	"accurate, but they sure do deal damage\l"
+	"if they land!\p"
+	"I'll step out of the way now and\n"
+	"let you through."
 }
 
 text Candice_Greeting{
 	"Oh, hello there. I take it you're a\n"
-	"trainer who wants to get into this\p"
-	"cave? Well, there are a lot of strong\n"
-	"Pokémon inside, so I've decided to stay\p"
-	"out here and make sure no weak trainers\n"
-	"enter. So if you want to go in, you'll\p"
-	"have to beat me. Are you here to\n"
-	"challenge me then?"
+	"trainer who wants to get into this\l"
+	"cave?\p"
+	"Well, there are a lot of strong Pokémon\n"
+	"inside, so I've decided to stay out here\l"
+	"and make sure no weak trainers enter.\p"
+	"So if you want to go in, you'll have to\n"
+	"go through me.\p"
+	"… … … … … …\p"
+	"Who am I to have such authority?\n"
+	"I'm Candice, the 7th Gym Leader from\l"
+	"the Sinnoh region, of course!\p"
+	"But enough talk, are you here to\n"
+	"challenge me or not?"
 }
 	
 text Candice_Outro{
