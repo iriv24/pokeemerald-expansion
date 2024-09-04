@@ -687,6 +687,7 @@ script MauvilleCity_Trigger_BlockGameCornerEntrance{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text GoBeatWattson{

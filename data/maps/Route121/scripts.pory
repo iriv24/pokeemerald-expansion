@@ -347,6 +347,7 @@ script Route121_Trigger_BlockPath{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayerLeft)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text GoBeatWinona{

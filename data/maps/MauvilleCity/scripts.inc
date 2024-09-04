@@ -1372,10 +1372,10 @@ MauvilleCity_Trigger_BlockGameCornerEntrance::
 	waitmovement 0
 # 689 "data/maps/MauvilleCity/scripts.pory"
 	releaseall
-	return
+	end
 
 
 GoBeatWattson::
-# 692 "data/maps/MauvilleCity/scripts.pory"
+# 693 "data/maps/MauvilleCity/scripts.pory"
 	.string "You should probably beat Wattson\n"
 	.string "before trying your hand at the slots.$"

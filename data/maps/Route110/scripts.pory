@@ -1191,6 +1191,7 @@ script Route110_Trigger_BlockTrickHouse{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text TrickHouseMessage {

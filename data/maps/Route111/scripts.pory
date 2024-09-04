@@ -1006,6 +1006,7 @@ script Route111_Trigger_BlockTrainerHillEntrance{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text TrainerHillDev{

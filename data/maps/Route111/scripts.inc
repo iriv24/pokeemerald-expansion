@@ -1846,157 +1846,157 @@ Route111_Trigger_BlockTrainerHillEntrance::
 	waitmovement 0
 # 1008 "data/maps/Route111/scripts.pory"
 	releaseall
-	return
+	end
 
 
 Route111_EventScript_Daisuke::
-# 1019 "data/maps/Route111/scripts.pory"
-	lockall
 # 1020 "data/maps/Route111/scripts.pory"
-	applymovement 30, Common_Movement_FacePlayer
+	lockall
 # 1021 "data/maps/Route111/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TYROGUE, Route111_EventScript_DaisukeDefeated
+	applymovement 30, Common_Movement_FacePlayer
 # 1022 "data/maps/Route111/scripts.pory"
-	goto_if_set FLAG_DECLINED_DAISUKE_BATTLE, Route111_EventScript_DaisukeRequestBattleAgain
+	goto_if_set FLAG_RECEIVED_TYROGUE, Route111_EventScript_DaisukeDefeated
 # 1023 "data/maps/Route111/scripts.pory"
-	msgbox Daisuke_Greeting, MSGBOX_YESNO
+	goto_if_set FLAG_DECLINED_DAISUKE_BATTLE, Route111_EventScript_DaisukeRequestBattleAgain
 # 1024 "data/maps/Route111/scripts.pory"
+	msgbox Daisuke_Greeting, MSGBOX_YESNO
+# 1025 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_BattleDaisukePrompt
 	end
 
 
 Route111_EventScript_DaisukeRequestBattleAgain::
-# 1029 "data/maps/Route111/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
 # 1030 "data/maps/Route111/scripts.pory"
+	msgbox Ready_Yet, MSGBOX_YESNO
+# 1031 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_BattleDaisukePrompt
 	end
 
 
 Route111_EventScript_BattleDaisukePrompt::
-# 1035 "data/maps/Route111/scripts.pory"
-	call_if_eq VAR_RESULT, YES, Route111_EventScript_BattleDaisuke
 # 1036 "data/maps/Route111/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route111_EventScript_DeclineDaisukeBattle
+	call_if_eq VAR_RESULT, YES, Route111_EventScript_BattleDaisuke
 # 1037 "data/maps/Route111/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, Route111_EventScript_DeclineDaisukeBattle
+# 1038 "data/maps/Route111/scripts.pory"
 	closemessage
 	end
 
 
 Route111_EventScript_DeclineDaisukeBattle::
-# 1042 "data/maps/Route111/scripts.pory"
-	setflag FLAG_DECLINED_DAISUKE_BATTLE
 # 1043 "data/maps/Route111/scripts.pory"
-	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+	setflag FLAG_DECLINED_DAISUKE_BATTLE
 # 1044 "data/maps/Route111/scripts.pory"
+	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+# 1045 "data/maps/Route111/scripts.pory"
 	release
 	end
 
 
 Route111_EventScript_BattleDaisuke::
-# 1049 "data/maps/Route111/scripts.pory"
-	msgbox Route111_EventScript_BattleDaisuke_Text_0, MSGBOX_DEFAULT
 # 1050 "data/maps/Route111/scripts.pory"
-	trainerbattle_no_intro TRAINER_DAISUKE, Daisuke_Outro
+	msgbox Route111_EventScript_BattleDaisuke_Text_0, MSGBOX_DEFAULT
 # 1051 "data/maps/Route111/scripts.pory"
-	giveitem ITEM_FOCUS_SASH
+	trainerbattle_no_intro TRAINER_DAISUKE, Daisuke_Outro
 # 1052 "data/maps/Route111/scripts.pory"
-	giveitem ITEM_PUNCHING_GLOVE
+	giveitem ITEM_FOCUS_SASH
 # 1053 "data/maps/Route111/scripts.pory"
-	giveitem ITEM_KICKING_SHOES
+	giveitem ITEM_PUNCHING_GLOVE
 # 1054 "data/maps/Route111/scripts.pory"
+	giveitem ITEM_KICKING_SHOES
+# 1055 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_DaisukeGiveTyrogue
 	return
 
 
 Route111_EventScript_DaisukeDefeated::
-# 1060 "data/maps/Route111/scripts.pory"
-	msgbox PostBattle_Daisuke, MSGBOX_DEFAULT
 # 1061 "data/maps/Route111/scripts.pory"
+	msgbox PostBattle_Daisuke, MSGBOX_DEFAULT
+# 1062 "data/maps/Route111/scripts.pory"
 	releaseall
 	end
 
 
 Route111_EventScript_DaisukeGiveTyrogue::
-# 1066 "data/maps/Route111/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
 # 1067 "data/maps/Route111/scripts.pory"
-	givemon SPECIES_TYROGUE, 15
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
 # 1068 "data/maps/Route111/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty
+	givemon SPECIES_TYROGUE, 15
 # 1069 "data/maps/Route111/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route111_EventScript_ReceiveTyroguePC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty
 # 1070 "data/maps/Route111/scripts.pory"
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route111_EventScript_ReceiveTyroguePC
 # 1071 "data/maps/Route111/scripts.pory"
+	goto Common_EventScript_NoMoreRoomForPokemon
+# 1072 "data/maps/Route111/scripts.pory"
 	release
 	end
 
 
 Route111_EventScript_ReceiveTyrogueParty::
-# 1076 "data/maps/Route111/scripts.pory"
-	call Route111_EventScript_ReceivedTyrogueFanfare
 # 1077 "data/maps/Route111/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	call Route111_EventScript_ReceivedTyrogueFanfare
 # 1078 "data/maps/Route111/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route111_EventScript_ExplainTyrogue
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 1079 "data/maps/Route111/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
+	goto_if_eq VAR_RESULT, NO, Route111_EventScript_ExplainTyrogue
 # 1080 "data/maps/Route111/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
+	call Common_EventScript_GetGiftMonPartySlot
 # 1081 "data/maps/Route111/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 1082 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_ExplainTyrogue
 	end
 
 
 Route111_EventScript_ReceiveTyroguePC::
-# 1087 "data/maps/Route111/scripts.pory"
-	call Route111_EventScript_ReceivedTyrogueFanfare
 # 1088 "data/maps/Route111/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	call Route111_EventScript_ReceivedTyrogueFanfare
 # 1089 "data/maps/Route111/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route111_EventScript_SendTyrogueToPC
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 1090 "data/maps/Route111/scripts.pory"
-	call Common_EventScript_NameReceivedBoxMon
+	goto_if_eq VAR_RESULT, NO, Route111_EventScript_SendTyrogueToPC
 # 1091 "data/maps/Route111/scripts.pory"
+	call Common_EventScript_NameReceivedBoxMon
+# 1092 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_SendTyrogueToPC
 	end
 
 
 Route111_EventScript_SendTyrogueToPC::
-# 1097 "data/maps/Route111/scripts.pory"
-	call Common_EventScript_TransferredToPC
 # 1098 "data/maps/Route111/scripts.pory"
+	call Common_EventScript_TransferredToPC
+# 1099 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_ExplainTyrogue
 	end
 
 
 Route111_EventScript_ReceivedTyrogueFanfare::
-# 1104 "data/maps/Route111/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 1105 "data/maps/Route111/scripts.pory"
-	message Route111_Text_PlayerReceivedTyrogue
+	playfanfare MUS_OBTAIN_ITEM
 # 1106 "data/maps/Route111/scripts.pory"
-	waitmessage
+	message Route111_Text_PlayerReceivedTyrogue
 # 1107 "data/maps/Route111/scripts.pory"
-	waitfanfare
+	waitmessage
 # 1108 "data/maps/Route111/scripts.pory"
+	waitfanfare
+# 1109 "data/maps/Route111/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
 	return
 
 
 Route111_EventScript_ExplainTyrogue::
-# 1114 "data/maps/Route111/scripts.pory"
-	msgbox Daisuke_ExplainTyrogue, MSGBOX_DEFAULT
 # 1115 "data/maps/Route111/scripts.pory"
-	setflag FLAG_RECEIVED_TYROGUE
+	msgbox Daisuke_ExplainTyrogue, MSGBOX_DEFAULT
 # 1116 "data/maps/Route111/scripts.pory"
+	setflag FLAG_RECEIVED_TYROGUE
+# 1117 "data/maps/Route111/scripts.pory"
 	release
 	end
 
 
 Route111_EventScript_BattleDaisuke_Text_0:
-# 1049 "data/maps/Route111/scripts.pory"
+# 1050 "data/maps/Route111/scripts.pory"
 	.string "Bring it on!$"
 
 Route111_Text_Dawn_Greeting::
@@ -2033,16 +2033,16 @@ Route111_Text_DawnGoodbye::
 	.string "Back to training, see you later!$"
 
 TrainerHillDev::
-# 1011 "data/maps/Route111/scripts.pory"
+# 1012 "data/maps/Route111/scripts.pory"
 	.string "TRAINER HILL\n"
 	.string "UNDER DEVELOPMENT$"
 
 Route111_Text_PlayerReceivedTyrogue::
-# 1120 "data/maps/Route111/scripts.pory"
+# 1121 "data/maps/Route111/scripts.pory"
 	.string "{PLAYER} received Tyrogue!$"
 
 Daisuke_ExplainTyrogue::
-# 1126 "data/maps/Route111/scripts.pory"
+# 1127 "data/maps/Route111/scripts.pory"
 	.string "Tyrogue can evolve in 3 different ways,\n"
 	.string "all when it reaches level 20.\p"
 	.string "If its Attack is less than its Defense,\n"
@@ -2054,7 +2054,7 @@ Daisuke_ExplainTyrogue::
 	.string "It's very versatile!$"
 
 Daisuke_Greeting::
-# 1140 "data/maps/Route111/scripts.pory"
+# 1141 "data/maps/Route111/scripts.pory"
 	.string "Yo! I'm working on becoming the karate\n"
 	.string "master of this region. If you can help\l"
 	.string "me with my training, I'll reward you with\l"
@@ -2062,12 +2062,12 @@ Daisuke_Greeting::
 	.string "What do you say?$"
 
 Daisuke_Outro::
-# 1148 "data/maps/Route111/scripts.pory"
+# 1149 "data/maps/Route111/scripts.pory"
 	.string "Great battle! I know I'll be leaving this\n"
 	.string "Pokémon in good hands.$"
 
 PostBattle_Daisuke::
-# 1154 "data/maps/Route111/scripts.pory"
+# 1155 "data/maps/Route111/scripts.pory"
 	.string "Looks like I still have a long way to go.\n"
 	.string "Hope you're taking good care of\l"
 	.string "Tyrogue for me.$"

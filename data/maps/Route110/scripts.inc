@@ -2378,10 +2378,10 @@ Route110_Trigger_BlockTrickHouse::
 	waitmovement 0
 # 1193 "data/maps/Route110/scripts.pory"
 	releaseall
-	return
+	end
 
 
 TrickHouseMessage::
-# 1196 "data/maps/Route110/scripts.pory"
+# 1197 "data/maps/Route110/scripts.pory"
 	.string "The Trick Master says he'll be ready\n"
 	.string "once you beat Flannery.$"

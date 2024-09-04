@@ -1142,10 +1142,10 @@ Route109_Trigger_BlockHotHouse::
 	waitmovement 0
 # 574 "data/maps/Route109/scripts.pory"
 	releaseall
-	return
+	end
 
 
 GoBeatBrawly::
-# 577 "data/maps/Route109/scripts.pory"
+# 578 "data/maps/Route109/scripts.pory"
 	.string "You should defeat Brawly before\n"
 	.string "entering here.$"

@@ -548,12 +548,12 @@ Route121_Trigger_BlockPath::
 	waitmovement 0
 # 349 "data/maps/Route121/scripts.pory"
 	releaseall
-	return
+	end
 
 
-# 357 "data/maps/Route121/scripts.pory"
-StopPlayerLeft:
 # 358 "data/maps/Route121/scripts.pory"
+StopPlayerLeft:
+# 359 "data/maps/Route121/scripts.pory"
 	walk_left
 	step_end
 
@@ -603,6 +603,6 @@ PostBattle_Byron::
 	.string "this region.$"
 
 GoBeatWinona::
-# 352 "data/maps/Route121/scripts.pory"
+# 353 "data/maps/Route121/scripts.pory"
 	.string "You should defeat Winona before\n"
 	.string "moving on to here.$"

@@ -572,6 +572,7 @@ script Route109_Trigger_BlockHotHouse{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text GoBeatBrawly{
