@@ -11,3 +11,20 @@ GraniteCave_B1F_SetHoleWarp:
 	end
 
 `
+
+script GraniteCave_B1F_Trigger_NeedEightBadges{
+	lockall
+	msgbox(GraniteCave_B1F_FeelDarkForce, MSGBOX_SIGN)
+	waitmessage
+	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+text GraniteCave_B1F_FeelDarkForce{
+	"You feel a strong, dark presence coming\n"
+	"from the bottom of the ladder.\p"
+	"It would be wise to wait until you have\n"
+	"more Badges before proceeding."
+}

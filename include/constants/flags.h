@@ -872,7 +872,7 @@
 #define FLAG_DEFEATED_TAPU_BULU                                     0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C // unused
+#define FLAG_HIDE_TAPU_LELE                                         0x33C
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAXIE                      0x33D
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD                         0x33E
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS               0x33F
@@ -1151,7 +1151,7 @@
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_RAIN_DANCE  0x44E
 #define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
 #define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
-#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
+#define FLAG_HIDE_TAPU_KOKO                                         0x451
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452
 #define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
 #define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
@@ -1173,25 +1173,25 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
 #define FLAG_HIDE_UXIE                                              0x465
 #define FLAG_HIDE_MESPRIT                                           0x466
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_DEFEATED_TAPU_LELE                                     0x467
 #define FLAG_DEFEATED_DRAKE                                         0x468
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_DEFEATED_TAPU_FINI                                     0x46D
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_HIDE_TAPU_FINI                                         0x470
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_DEFEATED_TAPU_KOKO                                     0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_HIDE_ARTICUNO_GALARIAN                                    0x479
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1224,13 +1224,13 @@
 #define FLAG_HIDE_REGIDRAGO                                         0x496
 #define FLAG_HIDE_REGIELEKI                                         0x497
 #define FLAG_MET_EGG_MOVE_TUTOR                                     0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_HIDE_ZAPDOS_GALARIAN                                   0x499
+#define FLAG_HIDE_MOLTRES_GALARIAN                                  0x49A
+#define FLAG_HIDE_KYUREM                                            0x49B
+#define FLAG_DEFEATED_ARTICUNO_GALARIAN                             0x49C
+#define FLAG_DEFEATED_ZAPDOS_GALARIAN                               0x49D
+#define FLAG_DEFEATED_MOLTRES_GALARIAN                              0x49E
+#define FLAG_DEFEATED_KYUREM                                        0x49F
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag

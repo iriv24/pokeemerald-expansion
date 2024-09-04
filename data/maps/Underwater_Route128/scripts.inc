@@ -18,10 +18,10 @@ Underwater_Route128__Trigger_BlockCavernEntrance::
 	waitmovement 0
 # 13 "data/maps/Underwater_Route128/scripts.pory"
 	releaseall
-	return
+	end
 
 
 GoBeatMagma::
-# 16 "data/maps/Underwater_Route128/scripts.pory"
+# 17 "data/maps/Underwater_Route128/scripts.pory"
 	.string "You should focus on taking Team Magma\n"
 	.string "down in Jagged Pass first.$"

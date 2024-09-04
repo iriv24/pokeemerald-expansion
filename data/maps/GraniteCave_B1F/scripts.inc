@@ -20,3 +20,26 @@ GraniteCave_B1F_SetHoleWarp:
 	setholewarp MAP_GRANITE_CAVE_B2F
 # 11 "data/maps/GraniteCave_B1F/scripts.pory"
 	end
+
+GraniteCave_B1F_Trigger_NeedEightBadges::
+# 16 "data/maps/GraniteCave_B1F/scripts.pory"
+	lockall
+# 17 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_FeelDarkForce, MSGBOX_SIGN
+# 18 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmessage
+# 19 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 20 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement 0
+# 21 "data/maps/GraniteCave_B1F/scripts.pory"
+	releaseall
+	end
+
+
+GraniteCave_B1F_FeelDarkForce::
+# 25 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "You feel a strong, dark presence coming\n"
+	.string "from the bottom of the ladder.\p"
+	.string "It would be wise to wait until you have\n"
+	.string "more Badges before proceeding.$"

@@ -11,6 +11,7 @@ script Underwater_Route128__Trigger_BlockCavernEntrance{
 	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
 	waitmovement(0)
 	releaseall
+	end
 }
 
 text GoBeatMagma{

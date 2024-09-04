@@ -206,8 +206,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route124_EventScript_TapuLele",
+      "flag": "FLAG_HIDE_TAPU_LELE"
     }
   ],
   "warp_events": [

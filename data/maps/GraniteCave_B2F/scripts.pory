@@ -1,5 +1,55 @@
 raw `
 GraniteCave_B2F_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, GraniteCave_B2F_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, GraniteCave_B2F_OnTransition
 	.byte 0
+
+GraniteCave_B2F_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, GraniteCave_B2F_EventScript_TryRemoveMoltresGalar
+	end
+
+GraniteCave_B2F_EventScript_TryRemoveMoltresGalar::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+GraniteCave_B2F_OnTransition:
+	call_if_unset FLAG_DEFEATED_MOLTRES_GALARIAN, GraniteCave_B2F_EventScript_ShowMoltresGalar
+	end
+
+GraniteCave_B2F_EventScript_ShowMoltresGalar::
+	clearflag FLAG_HIDE_MOLTRES_GALARIAN
+	return
+
+GraniteCave_B2F_EventScript_MoltresGalar::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MOLTRES_GALARIAN, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MOLTRES_GALARIAN, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GraniteCave_B2F_EventScript_DefeatedMoltresGalar
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, GraniteCave_B2F_EventScript_RanFromMoltresGalar
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, GraniteCave_B2F_EventScript_RanFromMoltresGalar
+	setflag FLAG_DEFEATED_MOLTRES_GALARIAN
+	release
+	end
+
+GraniteCave_B2F_EventScript_DefeatedMoltresGalar::
+	setflag FLAG_DEFEATED_MOLTRES_GALARIAN
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+GraniteCave_B2F_EventScript_RanFromMoltresGalar::
+	setvar VAR_0x8004, SPECIES_MOLTRES_GALARIAN
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 `

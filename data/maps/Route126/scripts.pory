@@ -1,10 +1,56 @@
 raw `
 Route126_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Route126_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route126_OnTransition
 	.byte 0
 
+Route126_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route126_EventScript_TryRemoveTapuKoko
+	end
+
+Route126_EventScript_TryRemoveTapuKoko::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
 Route126_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_unset FLAG_DEFEATED_TAPU_KOKO, Route126_EventScript_ShowTapuKoko
+	end
+
+Route126_EventScript_ShowTapuKoko::
+	clearflag FLAG_HIDE_TAPU_KOKO
+	return
+
+Route126_EventScript_TapuKoko::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_TAPU_KOKO, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_TAPU_KOKO, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route126_EventScript_DefeatedTapuKoko
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route126_EventScript_RanFromTapuKoko
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route126_EventScript_RanFromTapuKoko
+	setflag FLAG_DEFEATED_TAPU_KOKO
+	release
+	end
+
+Route126_EventScript_DefeatedTapuKoko::
+	setflag FLAG_DEFEATED_TAPU_KOKO
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+Route126_EventScript_RanFromTapuKoko::
+	setvar VAR_0x8004, SPECIES_TAPU_KOKO
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 Route126_EventScript_Barry::

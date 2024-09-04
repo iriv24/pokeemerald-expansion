@@ -80,7 +80,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 3,
+      "elevation": 0,
+      "var": "FLAG_BADGE08_GET",
+      "var_value": "0",
+      "script": "GraniteCave_B1F_Trigger_NeedEightBadges"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 3,
+      "elevation": 0,
+      "var": "FLAG_BADGE08_GET",
+      "var_value": "0",
+      "script": "GraniteCave_B1F_Trigger_NeedEightBadges"
+    }
   ],
   "bg_events": [
 
