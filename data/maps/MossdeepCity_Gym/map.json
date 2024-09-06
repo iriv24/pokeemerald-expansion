@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_TATE",
-      "x": 24,
+      "x": 23,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -81,7 +81,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 6,
+      "x": 4,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -94,7 +94,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 6,
+      "x": 4,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -120,7 +120,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIZA",
-      "x": 23,
+      "x": 22,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -198,7 +198,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 7,
+      "x": 5,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -211,7 +211,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 10,
+      "x": 8,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -224,7 +224,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 9,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -237,7 +237,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 7,
+      "x": 5,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -250,7 +250,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 6,
+      "x": 4,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -263,7 +263,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 12,
+      "x": 10,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -276,7 +276,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 11,
+      "x": 9,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -458,7 +458,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",
-      "x": 6,
+      "x": 4,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -480,6 +480,32 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KANGASKHAN)",
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_Gym_EventScript_Kangaskhan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM)",
+      "x": 21,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_Gym_EventScript_Alakazam",
       "flag": "0"
     }
   ],
@@ -520,7 +546,7 @@
       "dest_warp_id": "5"
     },
     {
-      "x": 8,
+      "x": 6,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
@@ -555,7 +581,7 @@
       "dest_warp_id": "8"
     },
     {
-      "x": 11,
+      "x": 9,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
@@ -576,7 +602,7 @@
       "dest_warp_id": "13"
     },
     {
-      "x": 21,
+      "x": 19,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
@@ -595,7 +621,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 6,
       "y": 10,
       "elevation": 3,
       "var": "VAR_TEMP_1",
@@ -604,7 +630,7 @@
     },
     {
       "type": "trigger",
-      "x": 6,
+      "x": 4,
       "y": 7,
       "elevation": 3,
       "var": "VAR_TEMP_1",
@@ -640,7 +666,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 6,
       "y": 6,
       "elevation": 3,
       "var": "VAR_TEMP_1",
@@ -649,7 +675,7 @@
     },
     {
       "type": "trigger",
-      "x": 21,
+      "x": 19,
       "y": 6,
       "elevation": 0,
       "var": "VAR_TEMP_1",

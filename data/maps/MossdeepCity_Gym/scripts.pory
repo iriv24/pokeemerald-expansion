@@ -377,6 +377,26 @@ MossdeepCity_Gym_EventScript_RedFloorSwitch::
 	freerotatingtilepuzzle
 	end
 
+MossdeepCity_Gym_EventScript_Alakazam::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ALAKAZAM, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Gym_Text_Alakazam, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+MossdeepCity_Gym_EventScript_Kangaskhan::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KANGASKHAN, CRY_MODE_NORMAL
+	msgbox MossdeepCity_Gym_Text_Kangaskhan, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 MossdeepCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, CHAMPION-bound\n"
 	.string "{PLAYER}?\p"
@@ -672,4 +692,10 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 	.string "Liza: You brought just one Pokémon!\p"
 	.string "Tate: We need you to bring at least…\n"
 	.string "Liza: Two Pokémon when you come back.$"
+
+MossdeepCity_Gym_Text_Alakazam:
+	.string "Alakazam: Pishhhhhh bmmmmmm!$"
+
+MossdeepCity_Gym_Text_Kangaskhan:
+	.string "Kangaskhan: Berrrrr rerhhhh!$"
 `
