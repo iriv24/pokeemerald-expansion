@@ -371,10 +371,10 @@ MossdeepCity_SpaceCenter_2F_Text_StevenMagmaEmblem:
 	.string "Steven: As I was saying, unfortunately,\n"
 	.string "Maxie escaped us.\p"
 	.string "However, we were able to gather that\n"
-	.string "Team Magma is planning something big at\l"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Team Magma is planning something big at\l"
 	.string "their hideout in Jagged Pass near\l"
 	.string "Lavaridge Town.\p"
-	.string "We were also able to obtain one of\n"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}We were also able to obtain one of\n"
 	.string "these from one of the grunts, which we\l"
 	.string "suspect will get us into their hideout.$"
 
