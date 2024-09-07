@@ -7065,6 +7065,11 @@ static void ObjectEventSetPokeballGfx(struct ObjectEvent *objEvent)
             ball = ItemIdToBallId(GetMonData(mon, MON_DATA_POKEBALL));
     }
 
+    //else if (FlagGet(FLAG_FORCE_MASTER_BALL)) (objEvent->spriteId == OBJ_EVENT_GFX_GROUDON_FRONT || objEvent->spriteId == OBJ_EVENT_GFX_KYOGRE_FRONT || objEvent->spriteId == OBJ_EVENT_GFX_RAYQUAZA)
+    //{
+    //    ball = BALL_MASTER;
+    //}
+
     if (ball != BALL_POKE && ball < POKEBALL_COUNT)
     {
         const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];

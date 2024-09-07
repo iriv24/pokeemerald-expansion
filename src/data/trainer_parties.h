@@ -9808,19 +9808,10 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 80,
     .species = SPECIES_INCINEROAR,
-    .nature = NATURE_CAREFUL,
-    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_JOLLY,
+    .heldItem = ITEM_ASSAULT_VEST,
     .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_FAKE_OUT, MOVE_DARKEST_LARIAT, MOVE_FLARE_BLITZ, MOVE_PARTING_SHOT}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 80,
-    .species = SPECIES_CACTURNE,
-    .heldItem = ITEM_LIFE_ORB,
-    .nature = NATURE_TIMID,
-    .ability = ABILITY_WATER_ABSORB,
-    .moves = {MOVE_ENERGY_BALL, MOVE_SUCKER_PUNCH, MOVE_DARK_PULSE, MOVE_SCORCHING_SANDS}
+    .moves = {MOVE_FAKE_OUT, MOVE_DARKEST_LARIAT, MOVE_FLARE_BLITZ, MOVE_BULLDOZE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9832,6 +9823,15 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .moves = {MOVE_CLOSE_COMBAT, MOVE_ACROBATICS, MOVE_SWORDS_DANCE, MOVE_POISON_JAB}
     },
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 80,
+    .species = SPECIES_CACTURNE,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .ability = ABILITY_WATER_ABSORB,
+    .moves = {MOVE_ENERGY_BALL, MOVE_SUCKER_PUNCH, MOVE_DARK_PULSE, MOVE_SCORCHING_SANDS}
+    },
+    {
         //hp, atk, def, speed, spatk, spdef
     .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 30, 31),
     .lvl = 80,
@@ -9839,7 +9839,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .heldItem = ITEM_CHOICE_SPECS,
     .nature = NATURE_TIMID,
     .ability = ABILITY_BEADS_OF_RUIN,
-    .moves = {MOVE_FLAMETHROWER, MOVE_DARK_PULSE, MOVE_PSYCHIC, MOVE_HIDDEN_POWER}
+    .moves = {MOVE_HEAT_WAVE, MOVE_DARK_PULSE, MOVE_PSYCHIC, MOVE_HIDDEN_POWER}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9848,7 +9848,7 @@ static const struct TrainerMon sParty_MaxieMagmaHideout[] = {
     .heldItem = ITEM_CAMERUPTITE,
     .nature = NATURE_MODEST,
     .ability = ABILITY_SOLID_ROCK,
-    .moves = {MOVE_FLAMETHROWER, MOVE_ANCIENT_POWER, MOVE_EARTH_POWER, MOVE_SLACK_OFF}
+    .moves = {MOVE_HEAT_WAVE, MOVE_ANCIENT_POWER, MOVE_EARTH_POWER, MOVE_ERUPTION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -12226,14 +12226,15 @@ static const struct TrainerMon sParty_Courtney[] = {
     .ability = ABILITY_GALE_WINGS,
     .moves = {MOVE_TAILWIND, MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_U_TURN}
     },
+    //hp, atk, def, speed, spatk, spdef
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 31, 31),
     .lvl = 80,
-    .species = SPECIES_NIDOQUEEN,
+    .species = SPECIES_SERPERIOR,
     .heldItem = ITEM_LIFE_ORB,
     .nature = NATURE_TIMID,
-    .ability = ABILITY_SHEER_FORCE,
-    .moves = {MOVE_SLUDGE_WAVE, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_THUNDERBOLT}
+    .ability = ABILITY_CONTRARY,
+    .moves = {MOVE_LEAF_STORM, MOVE_DRAGON_PULSE, MOVE_HIDDEN_POWER, MOVE_GLARE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -12268,11 +12269,11 @@ static const struct TrainerMon sParty_TabithaMagmaHideout[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 80,
-    .species = SPECIES_NIDOKING,
+    .species = SPECIES_EMBOAR,
     .heldItem = ITEM_LIFE_ORB,
-    .nature = NATURE_TIMID,
-    .ability = ABILITY_SHEER_FORCE,
-    .moves = {MOVE_SLUDGE_WAVE, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_THUNDERBOLT}
+    .nature = NATURE_JOLLY,
+    .ability = ABILITY_BULL_RUSH,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_EARTHQUAKE, MOVE_HEAD_SMASH, MOVE_CLOSE_COMBAT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

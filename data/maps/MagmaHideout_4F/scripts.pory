@@ -152,8 +152,8 @@ MagmaHideout_4F_EventScript_Tabitha::
 
 MagmaHideout_4F_Text_GruntScared:
 	.string "I've had enough! I quit! I don't know\n"
-	.string "what Maxie's doing back there, but he's\p"
-	.string "going to bring this whole mountain down\n"
+	.string "what Maxie's doing back there, but he's\l"
+	.string "going to bring this whole mountain down\l"
 	.string "on top of us!$"
 
 MagmaHideout_4F_Text_GruntScared2:
@@ -174,7 +174,8 @@ MagmaHideout_4F_Text_Grunt13Defeat:
 	.string "I can't believe I lost to you again…$"
 
 MagmaHideout_4F_Text_Grunt13PostBattle:
-	.string "Argh, I lost again. You're up, Tabitha.$"
+	.string "Courtney: {PLAYER} is weakened now,\n"
+	.string "finish them off, Tabitha.$"
 
 MagmaHideout_4F_Text_TabithaIntro:
 	.string "Hehehe!\n"
@@ -238,8 +239,8 @@ MagmaHideout_4F_Text_MaxieDefeat:
 
 MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 	.string "What?! Groudon escaped my Master Ball?\n"
-	.string "That's impossible! Perhaps its power\p"
-	.string "cannot be contained after all…\n"
+	.string "That's impossible! Perhaps its power\l"
+	.string "cannot be contained after all…\p"
 	.string "… … … … … …\p"
 	.string "Does this mean Groudon will start to\n"
 	.string "rampage out of control?\p"
@@ -377,8 +378,8 @@ script TabithaLost {
 
 text DelayForMaxie {
 	"Tabitha: Listen up, Courtney! We have\n"
-	"to do everything we can to stall the\l"
-	"brat!\p"
+	"to do everything we can to stall\l"
+	"that brat!\p"
 	"We know {PLAYER} is on their way here\n"
 	"right now, and even though our coward\l"
 	"comrades quit on us, we need to buy\l"
@@ -386,8 +387,8 @@ text DelayForMaxie {
 }
 
 text GetThem {
-	"It's {PLAYER}! Don't just stand there,\n"
-	"get them!"
+	"Tabitha: It's {PLAYER}! Don't just\n"
+	"stand there, get them!"
 }
 
 text YesSir {
@@ -398,8 +399,8 @@ text YesSir {
 }
 
 text DealWithYouMyself{
-	"Looks like I'll have to deal with you\n"
-	"myself!"
+	"Tabitha: Looks like I get to deal the\n"
+	"final blow myself!"
 }
 
 text ThinkWeDidOurJobs{

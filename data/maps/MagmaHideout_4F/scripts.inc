@@ -307,9 +307,9 @@ MagmaHideout_4F_Text_GruntScared:
 # 154 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "I've had enough! I quit! I don't know\n"
 # 155 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "what Maxie's doing back there, but he's\p"
+	.string "what Maxie's doing back there, but he's\l"
 # 156 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "going to bring this whole mountain down\n"
+	.string "going to bring this whole mountain down\l"
 # 157 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "on top of us!$"
 # 158 "data/maps/MagmaHideout_4F/scripts.pory"
@@ -351,422 +351,424 @@ MagmaHideout_4F_Text_Grunt13Defeat:
 # 176 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_Grunt13PostBattle:
 # 177 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Argh, I lost again. You're up, Tabitha.$"
+	.string "Courtney: {PLAYER} is weakened now,\n"
 # 178 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "finish them off, Tabitha.$"
 # 179 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_TabithaIntro:
+
 # 180 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Hehehe!\n"
+MagmaHideout_4F_Text_TabithaIntro:
 # 181 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "You made it this far, so I'll tell you!\p"
+	.string "Hehehe!\n"
 # 182 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "That's right!\n"
+	.string "You made it this far, so I'll tell you!\p"
 # 183 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Up ahead, GROUDON is sleeping!\p"
+	.string "That's right!\n"
 # 184 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "MAXIE went to GROUDON just seconds\n"
+	.string "Up ahead, GROUDON is sleeping!\p"
 # 185 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "ago!\p"
+	.string "MAXIE went to GROUDON just seconds\n"
 # 186 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "It's going to awaken real soon!\n"
+	.string "ago!\p"
 # 187 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Hehe! Hehehe!$"
+	.string "It's going to awaken real soon!\n"
 # 188 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "Hehe! Hehehe!$"
 # 189 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_TabithaDefeat:
+
 # 190 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I may not have been able to defeat you,\n"
+MagmaHideout_4F_Text_TabithaDefeat:
 # 191 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "but I bet I still accomplished the\l"
+	.string "I may not have been able to defeat you,\n"
 # 192 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "mission…$"
+	.string "but I bet I still accomplished the\l"
 # 193 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "mission…$"
 # 194 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_TabithaPostBattle:
+
 # 195 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "…And while you wasted time with me,\n"
+MagmaHideout_4F_Text_TabithaPostBattle:
 # 196 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "MAXIE should have awakened GROUDON…$"
+	.string "…And while you wasted time with me,\n"
 # 197 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "MAXIE should have awakened GROUDON…$"
 # 198 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieAwakenGroudon:
+
 # 199 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Groudon…\p"
+MagmaHideout_4F_Text_MaxieAwakenGroudon:
 # 200 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Nothing could awaken you from your\n"
+	.string "Groudon…\p"
 # 201 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "sleep bathed in magma…\p"
+	.string "Nothing could awaken you from your\n"
 # 202 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "This Red Orb though… This will awaken\n"
+	.string "sleep bathed in magma…\p"
 # 203 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "your Primal powers, won't it?\p"
+	.string "This Red Orb though… This will awaken\n"
 # 204 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I have brought you the Red Orb.\n"
+	.string "your Primal powers, won't it?\p"
 # 205 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Let its shine awaken you!\p"
+	.string "I have brought you the Red Orb.\n"
 # 206 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "And finally…\n"
+	.string "Let its shine awaken you!\p"
 # 207 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "You will be mine!$"
+	.string "And finally…\n"
 # 208 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "You will be mine!$"
 # 209 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieMasterBall:
+
 # 210 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Master Ball, go!$"
+MagmaHideout_4F_Text_MaxieMasterBall:
 # 211 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "Master Ball, go!$"
 # 212 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieCaputredGroudon:
+
 # 213 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "YES! Groudon is mine! And with this Red\n"
+MagmaHideout_4F_Text_MaxieCaputredGroudon:
 # 214 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Orb to unleash its Primal powers, there\l"
+	.string "YES! Groudon is mine! And with this Red\n"
 # 215 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "is no one that can stop me…$"
+	.string "Orb to unleash its Primal powers, there\l"
 # 216 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "is no one that can stop me…$"
 # 217 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_NotEvenYou:
+
 # 218 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Not even you, {PLAYER}. Prepare to\n"
+MagmaHideout_4F_Text_NotEvenYou:
 # 219 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "become the first witness of the\l"
+	.string "Not even you, {PLAYER}. Prepare to\n"
 # 220 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "terrible power of Primal Groudon!$"
+	.string "become the first witness of the\l"
 # 221 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "terrible power of Primal Groudon!$"
 # 222 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
+
 # 223 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Maxie: GROUDON!\n"
+MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
 # 224 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "What's wrong?\p"
+	.string "Maxie: GROUDON!\n"
 # 225 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Wasn't the BLUE ORB the key?\p"
+	.string "What's wrong?\p"
 # 226 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "GROUDON!\n"
+	.string "Wasn't the BLUE ORB the key?\p"
 # 227 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Where have you gone…$"
+	.string "GROUDON!\n"
 # 228 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "Where have you gone…$"
 # 229 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieOhItWasYou:
+
 # 230 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Maxie: Oh, so it was you?\p"
+MagmaHideout_4F_Text_MaxieOhItWasYou:
 # 231 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I've seen you poking around uninvited\n"
+	.string "Maxie: Oh, so it was you?\p"
 # 232 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "here and there…\p"
+	.string "I've seen you poking around uninvited\n"
 # 233 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I get it now!\n"
+	.string "here and there…\p"
 # 234 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "You must have pulled a cheap stunt!$"
+	.string "I get it now!\n"
 # 235 "data/maps/MagmaHideout_4F/scripts.pory"
-
+	.string "You must have pulled a cheap stunt!$"
 # 236 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieDefeat:
-# 237 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "NO! No, no, no, no, NO!$"
-# 238 "data/maps/MagmaHideout_4F/scripts.pory"
 
+# 237 "data/maps/MagmaHideout_4F/scripts.pory"
+MagmaHideout_4F_Text_MaxieDefeat:
+# 238 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "NO! No, no, no, no, NO!$"
 # 239 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
+
 # 240 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "What?! Groudon escaped my Master Ball?\n"
+MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 # 241 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "That's impossible! Perhaps its power\p"
+	.string "What?! Groudon escaped my Master Ball?\n"
 # 242 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "cannot be contained after all…\n"
+	.string "That's impossible! Perhaps its power\l"
 # 243 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "… … … … … …\p"
+	.string "cannot be contained after all…\p"
 # 244 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Does this mean Groudon will start to\n"
-# 245 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "rampage out of control?\p"
-# 246 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "… … … … … …\p"
+# 245 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "Does this mean Groudon will start to\n"
+# 246 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "rampage out of control?\p"
 # 247 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "This wasn't a part of my plan…\p"
+	.string "… … … … … …\p"
 # 248 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I never intended for things to go this\n"
+	.string "This wasn't a part of my plan…\p"
 # 249 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "way, I wanted to be in full control of\l"
+	.string "I never intended for things to go this\n"
 # 250 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Groudon to reshape the Earth, but now…\p"
+	.string "way, I wanted to be in full control of\l"
 # 251 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I have to go, I fear I may have made a\n"
+	.string "Groudon to reshape the Earth, but now…\p"
 # 252 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "I have to go, I fear I may have made a\n"
+# 253 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "grave mistake.$"
 
 MagmaHideout_EventScript_MaxieTrigger1::
-# 256 "data/maps/MagmaHideout_4F/scripts.pory"
-	lockall
 # 257 "data/maps/MagmaHideout_4F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	lockall
 # 258 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ApproachMaxie1
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 # 259 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, ApproachMaxie1
 # 260 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 261 "data/maps/MagmaHideout_4F/scripts.pory"
 	goto MagmaHideout_4F_EventScript_Maxie
 	end
 
 
 MagmaHideout_EventScript_MaxieTrigger2::
-# 264 "data/maps/MagmaHideout_4F/scripts.pory"
-	lockall
 # 265 "data/maps/MagmaHideout_4F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	lockall
 # 266 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ApproachMaxie2
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 # 267 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, ApproachMaxie2
 # 268 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 269 "data/maps/MagmaHideout_4F/scripts.pory"
 	goto MagmaHideout_4F_EventScript_Maxie
 	end
 
 
 ApproachMaxie1::
-# 273 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_right
 # 274 "data/maps/MagmaHideout_4F/scripts.pory"
 	walk_right
 # 275 "data/maps/MagmaHideout_4F/scripts.pory"
+	walk_right
+# 276 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 ApproachMaxie2::
-# 278 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_right
 # 279 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_up
-# 280 "data/maps/MagmaHideout_4F/scripts.pory"
 	walk_right
+# 280 "data/maps/MagmaHideout_4F/scripts.pory"
+	walk_up
 # 281 "data/maps/MagmaHideout_4F/scripts.pory"
+	walk_right
+# 282 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 MagmaHideout_EventScript_BackToBackTrigger::
-# 285 "data/maps/MagmaHideout_4F/scripts.pory"
+# 286 "data/maps/MagmaHideout_4F/scripts.pory"
 	goto MagmaHideout_EventScript_BackToBackScene
 	end
 
 
 MagmaHideout_EventScript_BackToBackScene::
-# 290 "data/maps/MagmaHideout_4F/scripts.pory"
-	lockall
 # 291 "data/maps/MagmaHideout_4F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	lockall
 # 292 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 # 293 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha
 # 294 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown
-# 295 "data/maps/MagmaHideout_4F/scripts.pory"
 	waitmovement 0
+# 295 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterDown
 # 296 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox DelayForMaxie
+	waitmovement 0
 # 297 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmessage
+	msgbox DelayForMaxie
 # 298 "data/maps/MagmaHideout_4F/scripts.pory"
-	playse SE_PIN
+	waitmessage
 # 299 "data/maps/MagmaHideout_4F/scripts.pory"
 	playse SE_PIN
 # 300 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCALID_TABITHA, Common_Movement_ExclamationMark
+	playse SE_PIN
 # 301 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCAL_ID_COURTNEY, Common_Movement_ExclamationMark
+	applymovement LOCALID_TABITHA, Common_Movement_ExclamationMark
 # 302 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement LOCAL_ID_COURTNEY, Common_Movement_ExclamationMark
 # 303 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
 # 304 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCAL_ID_COURTNEY, Common_Movement_WalkInPlaceFasterRight
-# 305 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
-# 306 "data/maps/MagmaHideout_4F/scripts.pory"
 	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
-# 307 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
-# 308 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox GetThem
-# 309 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmessage
-# 310 "data/maps/MagmaHideout_4F/scripts.pory"
+# 305 "data/maps/MagmaHideout_4F/scripts.pory"
 	applymovement LOCAL_ID_COURTNEY, Common_Movement_WalkInPlaceFasterRight
-# 311 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox YesSir
-# 312 "data/maps/MagmaHideout_4F/scripts.pory"
+# 306 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 307 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
+# 308 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 309 "data/maps/MagmaHideout_4F/scripts.pory"
+	msgbox GetThem
+# 310 "data/maps/MagmaHideout_4F/scripts.pory"
 	waitmessage
+# 311 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCAL_ID_COURTNEY, Common_Movement_WalkInPlaceFasterRight
+# 312 "data/maps/MagmaHideout_4F/scripts.pory"
+	msgbox YesSir
 # 313 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCAL_ID_COURTNEY, MagmaHideout_Movement_BackToBackGruntApproachPlayer
+	waitmessage
 # 314 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement LOCAL_ID_COURTNEY, MagmaHideout_Movement_BackToBackGruntApproachPlayer
 # 315 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtGrunt
+	waitmovement 0
 # 316 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtGrunt
 # 317 "data/maps/MagmaHideout_4F/scripts.pory"
-	trainerbattle_no_intro TRAINER_COURTNEY, MagmaHideout_4F_Text_Grunt13Defeat
+	waitmovement 0
 # 318 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_COURTNEY, MagmaHideout_4F_Text_Grunt13Defeat
 # 319 "data/maps/MagmaHideout_4F/scripts.pory"
-	closemessage
+	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_DEFAULT
 # 320 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCAL_ID_COURTNEY, GruntLost
-# 321 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
-# 322 "data/maps/MagmaHideout_4F/scripts.pory"
-	copyobjectxytoperm LOCAL_ID_COURTNEY
-# 323 "data/maps/MagmaHideout_4F/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
-# 324 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCALID_TABITHA, MagmaHideout_Movement_BackToBackTabithaApproachPlayer
-# 325 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
-# 326 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha
-# 327 "data/maps/MagmaHideout_4F/scripts.pory"
-	waitmovement 0
-# 328 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox DealWithYouMyself, MSGBOX_DEFAULT
-# 329 "data/maps/MagmaHideout_4F/scripts.pory"
-	trainerbattle_no_intro TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaDefeat
-# 330 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox ThinkWeDidOurJobs, MSGBOX_DEFAULT
-# 331 "data/maps/MagmaHideout_4F/scripts.pory"
 	closemessage
-# 332 "data/maps/MagmaHideout_4F/scripts.pory"
-	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
-# 333 "data/maps/MagmaHideout_4F/scripts.pory"
-	applymovement LOCALID_TABITHA, TabithaLost
-# 334 "data/maps/MagmaHideout_4F/scripts.pory"
+# 321 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCAL_ID_COURTNEY, GruntLost
+# 322 "data/maps/MagmaHideout_4F/scripts.pory"
 	waitmovement 0
+# 323 "data/maps/MagmaHideout_4F/scripts.pory"
+	copyobjectxytoperm LOCAL_ID_COURTNEY
+# 324 "data/maps/MagmaHideout_4F/scripts.pory"
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+# 325 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCALID_TABITHA, MagmaHideout_Movement_BackToBackTabithaApproachPlayer
+# 326 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 327 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MagmaHideout_LookAtTabitha
+# 328 "data/maps/MagmaHideout_4F/scripts.pory"
+	waitmovement 0
+# 329 "data/maps/MagmaHideout_4F/scripts.pory"
+	msgbox DealWithYouMyself, MSGBOX_DEFAULT
+# 330 "data/maps/MagmaHideout_4F/scripts.pory"
+	trainerbattle_no_intro TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaDefeat
+# 331 "data/maps/MagmaHideout_4F/scripts.pory"
+	msgbox ThinkWeDidOurJobs, MSGBOX_DEFAULT
+# 332 "data/maps/MagmaHideout_4F/scripts.pory"
+	closemessage
+# 333 "data/maps/MagmaHideout_4F/scripts.pory"
+	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
+# 334 "data/maps/MagmaHideout_4F/scripts.pory"
+	applymovement LOCALID_TABITHA, TabithaLost
 # 335 "data/maps/MagmaHideout_4F/scripts.pory"
-	copyobjectxytoperm LOCALID_TABITHA
+	waitmovement 0
 # 336 "data/maps/MagmaHideout_4F/scripts.pory"
-	setobjectmovementtype LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT
+	copyobjectxytoperm LOCALID_TABITHA
 # 337 "data/maps/MagmaHideout_4F/scripts.pory"
-	setvar VAR_BEAT_MAGMA_BACK_TO_BACK, 1
+	setobjectmovementtype LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT
 # 338 "data/maps/MagmaHideout_4F/scripts.pory"
+	setvar VAR_BEAT_MAGMA_BACK_TO_BACK, 1
+# 339 "data/maps/MagmaHideout_4F/scripts.pory"
 	releaseall
 	end
 
 
 MagmaHideout_Movement_BackToBackGruntApproachPlayer::
-# 343 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_right
 # 344 "data/maps/MagmaHideout_4F/scripts.pory"
 	walk_right
 # 345 "data/maps/MagmaHideout_4F/scripts.pory"
-	face_up
+	walk_right
 # 346 "data/maps/MagmaHideout_4F/scripts.pory"
+	face_up
+# 347 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 MagmaHideout_LookAtGrunt::
-# 350 "data/maps/MagmaHideout_4F/scripts.pory"
-	face_down
 # 351 "data/maps/MagmaHideout_4F/scripts.pory"
+	face_down
+# 352 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 MagmaHideout_Movement_BackToBackTabithaApproachPlayer::
-# 355 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_right
 # 356 "data/maps/MagmaHideout_4F/scripts.pory"
+	walk_right
+# 357 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 MagmaHideout_LookAtTabitha::
-# 360 "data/maps/MagmaHideout_4F/scripts.pory"
-	face_left
 # 361 "data/maps/MagmaHideout_4F/scripts.pory"
+	face_left
+# 362 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 GruntLost::
-# 365 "data/maps/MagmaHideout_4F/scripts.pory"
-	lock_facing_direction
 # 366 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_down
+	lock_facing_direction
 # 367 "data/maps/MagmaHideout_4F/scripts.pory"
-	unlock_facing_direction
+	walk_down
 # 368 "data/maps/MagmaHideout_4F/scripts.pory"
+	unlock_facing_direction
+# 369 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 TabithaLost::
-# 372 "data/maps/MagmaHideout_4F/scripts.pory"
-	lock_facing_direction
 # 373 "data/maps/MagmaHideout_4F/scripts.pory"
-	walk_left
+	lock_facing_direction
 # 374 "data/maps/MagmaHideout_4F/scripts.pory"
-	unlock_facing_direction
+	walk_left
 # 375 "data/maps/MagmaHideout_4F/scripts.pory"
+	unlock_facing_direction
+# 376 "data/maps/MagmaHideout_4F/scripts.pory"
 	step_end
 	return
 
 
 SetMagmaAdminsPermLoc::
-# 411 "data/maps/MagmaHideout_4F/scripts.pory"
-	setobjectxyperm LOCAL_ID_COURTNEY, 38, 24
 # 412 "data/maps/MagmaHideout_4F/scripts.pory"
-	setobjectxyperm LOCALID_TABITHA, 36, 22
+	setobjectxyperm LOCAL_ID_COURTNEY, 38, 24
 # 413 "data/maps/MagmaHideout_4F/scripts.pory"
+	setobjectxyperm LOCALID_TABITHA, 36, 22
+# 414 "data/maps/MagmaHideout_4F/scripts.pory"
 	setobjectmovementtype LOCALID_TABITHA, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 
 AddSleepingGroudon::
-# 417 "data/maps/MagmaHideout_4F/scripts.pory"
-	clearflag FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP
 # 418 "data/maps/MagmaHideout_4F/scripts.pory"
+	clearflag FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP
+# 419 "data/maps/MagmaHideout_4F/scripts.pory"
 	addobject LOCALID_GROUDON_SLEEPING
 	return
 
 
 DelayForMaxie::
-# 378 "data/maps/MagmaHideout_4F/scripts.pory"
+# 379 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "Tabitha: Listen up, Courtney! We have\n"
-	.string "to do everything we can to stall the\l"
-	.string "brat!\p"
+	.string "to do everything we can to stall\l"
+	.string "that brat!\p"
 	.string "We know {PLAYER} is on their way here\n"
 	.string "right now, and even though our coward\l"
 	.string "comrades quit on us, we need to buy\l"
 	.string "time for Maxie to capture Groudon!$"
 
 GetThem::
-# 388 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "It's {PLAYER}! Don't just stand there,\n"
-	.string "get them!$"
+# 389 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "Tabitha: It's {PLAYER}! Don't just\n"
+	.string "stand there, get them!$"
 
 YesSir::
-# 393 "data/maps/MagmaHideout_4F/scripts.pory"
+# 394 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "Courtney: You're not my boss anymore,\n"
 	.string "Tabitha. We're equals.\p"
 	.string "But I'll pummel this brat as revenge for\n"
 	.string "Mt. Chimney!$"
 
 DealWithYouMyself::
-# 400 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Looks like I'll have to deal with you\n"
-	.string "myself!$"
+# 401 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "Tabitha: Looks like I get to deal the\n"
+	.string "final blow myself!$"
 
 ThinkWeDidOurJobs::
-# 405 "data/maps/MagmaHideout_4F/scripts.pory"
+# 406 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "Something tells me we did our jobs… Do\n"
 	.string "you feel that aura of power in the air?$"
