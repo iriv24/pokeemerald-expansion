@@ -68,7 +68,7 @@ Route128_EventScript_KyogreAwakenedScene::
 	msgbox Route128_Text_StevenWholeWorldWillDrown, MSGBOX_DEFAULT
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	msgbox Route128_Text_StevenImGoingToSootopolis, MSGBOX_DEFAULT
+	msgbox Route128_Text_StevenWhereIsDrake, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -259,7 +259,8 @@ Route128_Text_MaxieDoYouUnderstandNow:
 	.string "Maxie: Do you understand now,\n"
 	.string "Archie?\p"
 	.string "Do you finally see how disastrous\n"
-	.string "your dream turned out to be?\p"
+	.string "your dream… no, OUR dreams, turned out\l"
+	.string "to be?\p"
 	.string "We have to hurry! We have to do\n"
 	.string "something before the situation goes\l"
 	.string "completely out of control!$"
@@ -293,17 +294,17 @@ Route128_Text_StevenWholeWorldWillDrown:
 	.string "If this doesn't stop, all of Hoenn…\n"
 	.string "No, the whole world will drown.\p"
 	.string "This huge rain cloud is spreading\n"
-	.string "from above Sootopolis…\p"
-	.string "What in the world is taking place there?\n"
-	.string "And where in the world is Drake? Did you\p"
-	.string "happen to see him when you pursued\n"
-	.string "Team Aqua? I haven't heard anything\p"
-	.string "from him since we you both left\n"
-	.string "Mossdeep…\p"
-	.string "There's no point discussing here,\n"
-	.string "Sootopolis might give us some answers.$"
+	.string "from above Sootopolis…$"
 
-Route128_Text_StevenImGoingToSootopolis:
+Route128_Text_StevenWhereIsDrake:
+	.string "What in the world is taking place there?\n"
+	.string "And where in the world is Drake? Did you\l"
+	.string "happen to see him when you pursued\l"
+	.string "Team Aqua?\p"
+	.string "I haven't heard anything from him since\n"
+	.string "we you both left Mossdeep…\p"
+	.string "There's no point discussing here,\n"
+	.string "Sootopolis might give us some answers.\p"
 	.string "{PLAYER}{KUN}…\n"
 	.string "I don't know what you intend to do,\l"
 	.string "but don't do anything reckless.\p"

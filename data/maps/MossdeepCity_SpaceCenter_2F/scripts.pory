@@ -372,11 +372,11 @@ MossdeepCity_SpaceCenter_2F_Text_StevenMagmaEmblem:
 	.string "Maxie escaped us.\p"
 	.string "However, we were able to gather that\n"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Team Magma is planning something big at\l"
-	.string "their hideout in Jagged Pass near\l"
+	.string "their Hideout in Jagged Pass near\l"
 	.string "Lavaridge Town.\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}We were also able to obtain one of\n"
 	.string "these from one of the grunts, which we\l"
-	.string "suspect will get us into their hideout.$"
+	.string "suspect will get us into their Hideout.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenPursueMagma:
 	.string "Steven: This may be where we part ways\n"
@@ -385,7 +385,7 @@ MossdeepCity_SpaceCenter_2F_Text_StevenPursueMagma:
 	.string "to make sure things recover from this\l"
 	.string "incident and get back to normal.\p"
 	.string "I think you should pursue Team Magma\n"
-	.string "to their hideout and see what you can\l"
+	.string "to their Hideout and see what you can\l"
 	.string "find, but be very careful, {PLAYER}.$"
 
 MossdeepCity_SpaceCenter_2F_Text_DrakePursueAqua:
@@ -393,7 +393,7 @@ MossdeepCity_SpaceCenter_2F_Text_DrakePursueAqua:
 	.string "on Team Aqua's activity with the\l"
 	.string "submarine they stole.\p"
 	.string "{PLAYER}, after your investigation\n"
-	.string "into Team Magma's hideout is complete,\l"
+	.string "into Team Magma's Hideout is complete,\l"
 	.string "check in with Steven to see if I've\l"
 	.string "given any updates to him.\p"
 	.string "If you haven't heard from me by then,\n"

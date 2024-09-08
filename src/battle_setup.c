@@ -1166,6 +1166,11 @@ void SetMapVarsToTrainer(void)
         gSpecialVar_LastTalked = sTrainerObjectEventLocalId;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(sTrainerObjectEventLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     }
+    else if (FlagGet(FLAG_HACKY_DOUBLE_BATTLE))
+    {
+        sTrainerObjectEventLocalId = gSpecialVar_LastTalked;
+        gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(sTrainerObjectEventLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    }
 }
 
 const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)

@@ -663,6 +663,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 	clearflag FLAG_DEFEATED_ELITE_4_GLACIA
 	clearflag FLAG_DEFEATED_ELITE_4_CYNTHIA
 	clearflag FLAG_ENTERED_ELITE_4
+	clearflag FLAG_HACKY_DOUBLE_BATTLE
 	setvar VAR_ELITE_4_STATE, 0
 	return
 

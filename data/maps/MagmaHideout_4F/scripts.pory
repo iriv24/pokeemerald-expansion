@@ -63,9 +63,14 @@ MagmaHideout_4F_EventScript_Maxie::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	msgbox MagmaHideout_4F_Text_NotEvenYou, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
+	setvar VAR_LAST_TALKED, LOCALID_MAXIE
+	setflag FLAG_HACKY_DOUBLE_BATTLE
+	trainerbattle_double TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_NotEvenYou, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_EventScript_MaxieContinued
+	releaseall
+	end
+
+MagmaHideout_4F_EventScript_MaxieContinued::
+	clearflag FLAG_HACKY_DOUBLE_BATTLE
 	delay 30
 	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	addobject LOCALID_GROUDON

@@ -65,9 +65,14 @@ SeafloorCavern_EventScript_Archie::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	msgbox SeafloorCavern_Room9_Text_YouObstacle, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_4F_Text_NotSurprised
+	setvar VAR_LAST_TALKED, LOCALID_ARCHIE
+	setflag FLAG_HACKY_DOUBLE_BATTLE
+	trainerbattle_double TRAINER_ARCHIE, SeafloorCavern_Room9_Text_YouObstacle, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_EventScript_ArchieContinued
+	releaseall
+	end
+
+SeafloorCavern_EventScript_ArchieContinued::
+	clearflag FLAG_HACKY_DOUBLE_BATTLE
 	delay 30
 	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	addobject LOCALID_KYOGRE
@@ -263,23 +268,26 @@ SeafloorCavern_Room9_Text_ArchieAwakenKyogre:
 	.string "Finally, the time has come for you to\n"
 	.string "awaken from your slumber.\p"
 	.string "You should react to the power within\n"
-	.string "this Blue Orb… awaken, Kyogre, and join\l"
-	.string "me, so that we may expand the sea!$"
+	.string "this Blue Orb…\p"
+	.string "Awaken, Kyogre, and join me, so that\n"
+	.string "we may expand the sea!$"
 
 SeafloorCavern_Room9_Text_YouObstacle:
 	.string "You, {PLAYER}. I respect your abilities\n"
-	.string "as a Pokémon trainer, as\l"
-	.string "you've proven to be a thorn in my side\l"
-	.string "for quite some time now…\p"
+	.string "as a Pokémon trainer, as you've\l"
+	.string "proven to be a thorn in my side\l"
+	.string "for quite some time now.\p"
 	.string "I only wish that you would have joined\n"
 	.string "us instead…\p"
 	.string "But now, you are nothing but an\n"
 	.string "obstacle that stands between Team\l"
 	.string "Aqua and our dream of expanding the\l"
-	.string "sea.\p" 
-	.string "I'm sorry, {PLAYER}, but you've\n"
-	.string "left me with no choice… Prepare to\l"
-	.string "face the wrath of Primal Kyogre!$"
+	.string "sea!\p" 
+	.string "I'm sorry, {PLAYER}, but I warned you\n"
+	.string "back at our Hideout that if we had to\l"
+	.string "battle again, I wouldn't hold back.\p"
+	.string "Now, prepare to face the wrath of\n"
+	.string "Primal Kyogre!$"
 
 SeafloorCavern_4F_Text_NotSurprised:
 	.string "I really shouldn't be surprised at this\n"
@@ -372,8 +380,8 @@ SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear:
 	.string "the Blue Orb and the Master ball I…$"
 
 SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought:
-	.string "Maxie: What have you wrought?\p"
-	.string "Archie… You've finally awoken Kyogre,\n"
+	.string "Maxie: What have you wrought Archie?\n"
+	.string "You've finally awoken Kyogre,\l"
 	.string "haven't you?\p"
 	.string "What will happen to the world if this\n"
 	.string "downpour continues for all eternity?\p"
@@ -557,7 +565,7 @@ script MattLost {
 }
 
 text CantStopArchie {
-	"Matt: Hehehe.. Once Archie has control\n"
+	"Matt: Hehehe… Once Archie has control\n"
 	"of Primal Kyogre, there's no one in the\l"
 	"world that will be able to stop him…"
 }
@@ -573,8 +581,9 @@ text GoingDown {
 }
 
 text MattRevenge{
-	"Matt: And this is revenge for beating\n"
-	"me at the Hideout in Lilycove!"
+	"Matt: Hehehe… I've been waiting to get\n"
+	"you back, punk.\l"
+	"There's no way you're getting past me!"
 }
 
 script SetAquaAdminsPermLoc {
