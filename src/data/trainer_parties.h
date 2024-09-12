@@ -437,10 +437,11 @@ static const struct TrainerMon sParty_ArchieHideout[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 74,
-    .species = SPECIES_TAUROS_PALDEA_AQUA,
-    .heldItem = ITEM_LIFE_ORB,
+    .species = SPECIES_POLIWRATH,
     .nature = NATURE_JOLLY,
-    .moves = {MOVE_STONE_EDGE, MOVE_RAGING_BULL, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT}
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = ABILITY_WATER_ABSORB,
+    .moves = {MOVE_SURGING_STRIKES, MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_JET_PUNCH}
     },
     {
         //hp, atk, def, speed, spatk, spdef
@@ -4245,19 +4246,19 @@ static const struct TrainerMon sParty_Drake[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 82,
     .species = SPECIES_ARCHALUDON,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_STAMINA,
-    .heldItem = ITEM_ASSAULT_VEST,
-    .moves = {MOVE_DRAGON_PULSE, MOVE_FLASH_CANNON, MOVE_BODY_PRESS, MOVE_DARK_PULSE}
+    .nature = NATURE_MODEST,
+    .ability = ABILITY_BAD_COMPANY,
+    .heldItem = ITEM_POWER_HERB,
+    .moves = {MOVE_DRACO_METEOR, MOVE_STEEL_BEAM, MOVE_ELECTRO_SHOT, MOVE_DARK_PULSE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 82,
-    .species = SPECIES_GYARADOS,
-    .heldItem = ITEM_FOCUS_SASH,
+    .species = SPECIES_TAUROS_PALDEA_AQUA,
+    .heldItem = ITEM_ASSAULT_VEST,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_INTIMIDATE,
-    .moves = {MOVE_AQUA_TAIL, MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_WAVE_CRASH, MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_ROCK_SLIDE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4266,17 +4267,17 @@ static const struct TrainerMon sParty_Drake[] = {
     .heldItem = ITEM_BOOSTER_ENERGY,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_PROTOSYNTHESIS,
-    .moves = {MOVE_FLARE_BLITZ, MOVE_BREAKING_SWIPE, MOVE_PSYCHIC_FANGS, MOVE_STOMPING_TANTRUM}
+    .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_STOMPING_TANTRUM, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 82,
     .species = SPECIES_RAYQUAZA,
-    .heldItem = ITEM_YACHE_BERRY,
+    .heldItem = ITEM_FOCUS_SASH,
     .nature = NATURE_NAIVE,
     .ability = ABILITY_AIR_LOCK,
     .ball = ITEM_MASTER_BALL,
-    .moves = {MOVE_DRAGON_ASCENT, MOVE_DRAGON_PULSE, MOVE_ROCK_SLIDE, MOVE_EXTREME_SPEED}
+    .moves = {MOVE_DRAGON_ASCENT, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_EXTREME_SPEED}
     },
 };
 

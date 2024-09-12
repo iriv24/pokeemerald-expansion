@@ -99,11 +99,18 @@ SkyPillar_Top_EventScript_Drake::
 	delay 30
 	applymovement LOCALID_DRAKE, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_DRAKE, WalkTowardsPlayer
-	waitmovement 0
 	msgbox SkyPillar_Top_Text_DrakesPlan, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_DRAKE, SkyPillar_Top_Text_DrakeDefeat
+	applymovement LOCALID_DRAKE, WalkTowardsPlayer
+	waitmovement 0
+	setvar VAR_LAST_TALKED, LOCALID_DRAKE
+	setflag FLAG_HACKY_DOUBLE_BATTLE
+	trainerbattle_double TRAINER_DRAKE, SkyPillar_Top_Text_DrakeIntro, SkyPillar_Top_Text_DrakeDefeat, SkyPillar_Top_Text_DrakeDefeat, SkyPillar_Top_EventScript_DrakeContinued
+	releaseall
+	end
+
+SkyPillar_Top_EventScript_DrakeContinued::
+	clearflag FLAG_HACKY_DOUBLE_BATTLE
 	delay 30
 	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
@@ -280,21 +287,36 @@ SkyPillar_Top_Text_DrakesPlan:
 	.string "them and thwarting all of their plans,\l"
 	.string "{PLAYER}…\p"
 	.string "Unfortunately, that was all a part of\n"
-	.string "MY plan.\p"
-	.string "I'm sorry I had to use you, but\n"
-	.string "I assure you, the destruction of this\l"
-	.string "world will be for the best in the long\l"
-	.string "run…\p"
-	.string "The weak won't be able to survive\n"
-	.string "the coming events, leaving only the\l"
-	.string "strong to get stronger…\p" 
-	.string "You are the strongest trainer I've seen\n"
-	.string "in a long time, {PLAYER}, which is why\l"
-	.string "it's such a shame you won't be around to\l"
-	.string "see that new world…\p"
-	.string "I know you are going to try and stop me,\n"
-	.string "which is why I have to take care of you\l"
-	.string "here and now!$"
+	.string "MY plan.$"
+
+SkyPillar_Top_Text_DrakeIntro:
+	.string "Somewhere along the line, I started to\n"
+	.string "find the order of our world stifling.\p"
+	.string "Maybe it's because I've been in the\n"
+	.string "Elite Four for so long, and have seen so\l"
+	.string "many trainers come and go with the same\l"
+	.string "ambitions, and have the same failures…\p"
+	.string "These experiences have caused me to\n"
+	.string "question the way our world works, doubt\l"
+	.string "the goals we set for ourselves as\l"
+	.string "trainers, and ultimately conclude that\l"
+	.string "what we need most is pure chaos to\l"
+	.string "upset the balance of all things!\p"
+	.string "My experiences also have allowed me to\n"
+	.string "see that you were not just any trainer,\l"
+	.string "{PLAYER}, and I tried to see how you\l"
+	.string "felt about the order of our world.\p"
+	.string "However, I quickly saw you did not\n"
+	.string "share my vision for the future, a\l"
+	.string "future that is shaken up by more chaos!\p"
+	.string "It seems now you are the only one that\n"
+	.string "can stop me from leaving here with\l"
+	.string "Rayquaza, which would allow Groudon and\l"
+	.string "Kyogre to unleash chaos onto the world.\p"
+	.string "{PLAYER}, let's see if you really are\n"
+	.string "different from all the trainers I've\l"
+	.string "seen fall victim to the suffocating\l"
+	.string "order of this world!$"
 
 SkyPillar_Top_Text_DrakeDefeat:
 	.string "I can't believe it… even with Mega\n"
@@ -307,17 +329,24 @@ SkyPillar_Top_Text_DrakeFarewell:
 	.string "It must not have seen me as a worthy\n"
 	.string "trainer, and perhaps it was right…\p"
 	.string "You defeated me, and now Rayquaza has\n"
-	.string "escaped…\p"
-	.string "It all fell apart here at the end. I\n"
-	.string "suppose I won't be able to show my face\l"
-	.string "at the Elite Four anymore…\p"
-	.string "Farewell, {PLAYER}. You were stronger\n"
-	.string "than even I could anticipate…\p"
-	.string "At least in the end, the strongest\n"
-	.string "trainer did prevail.$"
+	.string "escaped, probably to go stop Groudon\l"
+	.string "and Kyogre from battling and\l"
+	.string "restore order…\p"
+	.string "What a waste. The disintegration of\n"
+	.string "that order was right within reach…\p"
+	.string "I suppose I won't be able to show my\n"
+	.string "face at the Elite Four anymore, not\l"
+	.string "that I would want to.\p"
+	.string "I had decided to abandon the way this\n"
+	.string "world was ordered when I came here\l"
+	.string "to the Sky Pillar, and I will stand by\l"
+	.string "that decision.\p"
+	.string "That means this is farewell, {PLAYER},\n"
+	.string "enjoy the rewards for preserving order\l"
+	.string "in this rigid world.$"
 
 SkyPillar_Top_Text_RayquazaFlewOff:
-	.string "The awakened RAYQUAZA flew off…$"
+	.string "The awakened Rayquaza flew off…$"
 
 `
 

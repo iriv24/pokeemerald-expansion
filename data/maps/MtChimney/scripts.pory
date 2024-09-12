@@ -676,7 +676,7 @@ MtChimney_Text_ArchieIHaveMyHandsFull:
 	.string "Not when I have my hands full battling\n"
 	.string "three opponents at once!$"
 
-MtChimney_Text_ArchieThankYou:
+MtChimney_Text_ArchieThankYou::
 	.string "Drake: {PLAYER}, we meet again.\p"
 	.string "You're a sharp one. I've been keeping an\n"
 	.string "eye on the activities of Team Magma and\l"
@@ -688,9 +688,17 @@ MtChimney_Text_ArchieThankYou:
 	.string "about looking for an Orb of some sort?\p"
 	.string "I think I have some idea of what he's\n"
 	.string "talking about…\p"
-	.string "I'll look into it further. Thanks again\n"
-	.string "for your help, {PLAYER}.\l"
-	.string "I'm sure I'll be seeing you again.$"
+	.string "Say, {PLAYER}, what do you think about\n"
+	.string "the way our world operates?\p"
+	.string "… … … … … …\p"
+	.string "What do I mean by that?\n"
+	.string "Well…\p"
+	.string "Never mind, just think on that question\n"
+	.string "for the next time we meet.\p"
+	.string "In the meantime, I'll look into this\n"
+	.string "matter further. Thanks again for your\l"
+	.string "help, {PLAYER}. I'm sure I'll be seeing\l"
+	.string "you again.$"
 
 MtChimney_Text_MagmaOutnumbersUs:
 	.string "Darn… TEAM MAGMA outnumbers us!\n"

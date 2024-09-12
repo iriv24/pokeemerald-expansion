@@ -1504,8 +1504,8 @@ SootopolisCity_Text_GreatWork:
 SootopolisCity_Text_ThisIsCrazy:
 	.string "{PLAYER}! I bumped into Steven in\n"
 	.string "Mossdeep soon after you left, and he\l"
-	.string "asked that I head here to Sootopolis\p"
-	.string "while you went after Team Magma and\n"
+	.string "asked that I head here to Sootopolis\l"
+	.string "while you went after Team Magma and\l"
 	.string "Drake went after Team Aqua.\p"
 	.string "By the time I got here, Groudon and\n"
 	.string "Kyogre were already facing off!\p"

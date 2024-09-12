@@ -348,13 +348,21 @@ MossdeepCity_SpaceCenter_2F_Text_Grunt7PostBattle:
 MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
 	.string "I can't believe how strong they were...$"
 
-MossdeepCity_SpaceCenter_2F_Text_Drake:
+MossdeepCity_SpaceCenter_2F_Text_Drake::
 	.string "Drake: {PLAYER}. Nice of you to join us.\n"
 	.string "The grunts were quite weak, but Maxie\l"
 	.string "managed to escape us.\p"
 	.string "We were able to get some\n"
 	.string "information about their plan from the\l"
-	.string "Team Magma members here, though.$"
+	.string "Team Magma members here, though.\p"
+	.string "Did you happen to think any more on\n"
+	.string "what I asked you about on Mt. Chimney?\p"
+	.string "I've been thinking about it, and\n"
+	.string "sometimes our world feels too orderly,\l"
+	.string "too black and white…\p"
+	.string "It's hard to explain, but from the look\n"
+	.string "on your face, it doesn't seem like what\l"
+	.string "I'm saying is making any sense to you.$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenRoundUp:
 	.string "Steven: Oh, hello again, {PLAYER}. I see\n"
