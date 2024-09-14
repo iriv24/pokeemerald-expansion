@@ -191,6 +191,7 @@ SootopolisCity_OnResume:
 SootopolisCity_OnFrame:
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_StartLegendariesScene
 	map_script_2 VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_StartRayquazaScene
+	map_script_2 VAR_START_POST_RAYQUAZA_SCENE, 1, SootopolisCity_EventScript_PostRayquazaScene
 	.2byte 0
 
 @ If not at PokeCenter, assumed to have arrived via Dive
@@ -540,8 +541,8 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	warpwhitefade MAP_SOOTOPOLIS_CITY, 43, 32
+	setvar VAR_START_POST_RAYQUAZA_SCENE, 1
+	warpwhitefade MAP_SOOTOPOLIS_CITY, 31, 35
 	waitstate
 	end
 
@@ -591,11 +592,56 @@ SootopolisCity_EventScript_RayquazaSceneFromDive::
 	clearflag FLAG_SYS_WEATHER_CTRL
 	setvar VAR_SKY_PILLAR_STATE, 2
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
-	fadenewbgm MUS_SURF
+	setvar VAR_START_POST_RAYQUAZA_SCENE, 1
+	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	warpwhitefade MAP_SOOTOPOLIS_CITY, 29, 53
+	warpwhitefade MAP_SOOTOPOLIS_CITY, 31, 35
 	waitstate
+	end
+
+SootopolisCity_EventScript_PostRayquazaScene::
+	lockall
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	delay 60
+	applymovement LOCALID_WALLACE, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox SootopolisCity_Text_WelcomeBack, MSGBOX_DEFAULT
+	delay 15
+	msgbox SootopolisCity_Text_PlayerAnswers, MSGBOX_DEFAULT
+	closemessage
+	delay 15
+	playse SE_PIN
+	applymovement LOCALID_DAWN, Common_Movement_ExclamationMark
+	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
+	applymovement LOCALID_ARCHIE, Common_Movement_ExclamationMark
+	applymovement LOCALID_MAXIE, Common_Movement_ExclamationMark
+	applymovement LOCALID_WALLACE, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 15
+	applymovement LOCALID_DAWN, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	delay 120
+	applymovement LOCALID_DAWN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	delay 15
+	msgbox SootopolisCity_Text_WallaceCantBelieve, MSGBOX_DEFAULT
+	message SootopolisCity_Text_YouAreAHero
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox SootopolisCity_TextRambled, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_START_POST_RAYQUAZA_SCENE, 2
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	delay 30
+	releaseall
 	end
 
 SootopolisCity_EventScript_SetRoughWater::
@@ -1394,7 +1440,7 @@ SootopolisCity_EventScript_Maxie::
 	end
 
 SootopolisCity_EventScript_MaxieRayquaza::
-	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_NPC
 	setflag FLAG_MET_MAXIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_ARCHIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
@@ -1409,7 +1455,7 @@ SootopolisCity_EventScript_Archie::
 	end
 
 SootopolisCity_EventScript_ArchieRayquaza::
-	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_NPC
 	setflag FLAG_MET_ARCHIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_MAXIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
@@ -1494,12 +1540,14 @@ SootopolisCity_Text_GreatWork:
 	.string "Anyway, you were pretty incredible\n"
 	.string "yourself! I can't believe Drake turned\l"
 	.string "out to have his own evil plan all along…\p"
-	.string "At least you were there to stop him!\p"
+	.string "Thank goodness you were there to\n"
+	.string "stop him!\p"
 	.string "And I think that friend of mine from\n"
-	.string "the Sinnoh region might be a good\p"
-	.string "candidate to take his place in the Elite\n"
-	.string "Four temporarily, I'll have to talk to\l"
-	.string "Steven and Wallace about that.$"
+	.string "the Sinnoh region might be a good\l"
+	.string "candidate to take his place in the Elite\l"
+	.string "Four temporarily.\p" 
+	.string "I'll have to talk to Steven and Wallace\n"
+	.string "about that.$"
 
 SootopolisCity_Text_ThisIsCrazy:
 	.string "{PLAYER}! I bumped into Steven in\n"
@@ -1671,8 +1719,11 @@ SootopolisCity_Text_AfterAllOurScheming:
 	.string "frantic efforts, that one Pokémon's\l"
 	.string "simple action puts everything right\l"
 	.string "again as if nothing had happened…\p"
-	.string "Fu…\n"
-	.string "Fuhahaha…$"
+	.string "Well, I guess it wasn't just Rayquaza, it\n"
+	.string "was you too, {PLAYER}.\p"
+	.string "I feel like a fool, having played a part\n"
+	.string "in this scheme that spiraled so far out\l"
+	.string "of control…$"
 
 SootopolisCity_Text_KyogreCalmDown:
 	.string "Kyogre! What's wrong?!\n"
@@ -1687,11 +1738,15 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "flew off to who knows where.\p"
 	.string "The weather in Hoenn has returned\n"
 	.string "to its normal state…\p"
-	.string "Haha…\n"
-	.string "Hahaha…\p"
-	.string "Maybe what we were trying to do was\n"
-	.string "something small, even meaningless,\l"
-	.string "to Pokémon…$"
+	.string "I was blinded by my ambition, {PLAYER}.\p"
+	.string "I got far too carried away with my\n"
+	.string "dream of expanding the sea, I did not\l"
+	.string "mean to unleash that much chaos onto\l"
+	.string "the world…\p"
+	.string "I know we've had many differences in\n"
+	.string "such a short time, but I am truly sorry\l"
+	.string "for my actions, and am grateful that\l"
+	.string "you were able to stop me, {PLAYER}.$"
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
 	.string "Those Pokémon fighting…\n"
@@ -1702,8 +1757,8 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
 	.string "with their uncontrollable energy…\p"
 	.string "…{PLAYER}{KUN}.\p"
 	.string "You being here now I'll take to mean\n"
-	.string "that you're prepared to become\l"
-	.string "involved in this crisis.\p"
+	.string "that you're prepared to become even\l"
+	.string "more involved in this crisis.\p"
 	.string "Well, then, there's someone that\n"
 	.string "I'd like you to meet.\p"
 	.string "Come with me, please.$"
@@ -1741,12 +1796,13 @@ SootopolisCity_Text_SoThatsRayquaza:
 	.string "and I wasn't even there to help when he\l"
 	.string "captured and utilized Mega Rayquaza…\p"
 	.string "It is truly remarkable that you were\n"
-	.string "able to defeat him all on your own. You\p"
-	.string "are a hero to the people of Hoenn… no,\n"
-	.string "to people everywhere!\p"
+	.string "able to defeat him all on your own.\p"
+	.string "It's just as Wallace said, you are a hero\n"
+	.string "to the people of Hoenn… no, to people\l"
+	.string "everywhere!\p"
 	.string "Who knows how much destruction could\n"
-	.string "have been caused if you hadn't stopped\p"
-	.string "Drake and gotten Rayquaza to come\n"
+	.string "have been caused if you hadn't stopped\l"
+	.string "Drake and gotten Rayquaza to come\l"
 	.string "here?\p"
 	.string "You really are a special trainer,\n"
 	.string "{PLAYER}, and I sincerely thank you.$"
@@ -1757,14 +1813,14 @@ SootopolisCity_Text_MaxieArchieLeft:
 	.string "Perhaps they've gone to Mt. Pyre to\n"
 	.string "return those Orbs…\p"
 	.string "Anyway! I guess we'll need someone to\n"
-	.string "replace Drake in the Elite Four for now,\p"
-	.string "and it sounds like your friend Dawn has\n"
+	.string "replace Drake in the Elite Four for now,\l"
+	.string "and it sounds like your friend Dawn has\l"
 	.string "someone in mind who could help us.$"
 
 SootopolisCity_Text_DawnMaxieArchieLeft:
 	.string "Good luck against Juan, {PLAYER}!\n"
-	.string "Hopefully my friend from Sinnoh arrives\p"
-	.string "before you beat him and blaze your way\n"
+	.string "Hopefully my friend from Sinnoh arrives\l"
+	.string "before you beat him and blaze your way\l"
 	.string "to the Elite Four!$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar:
@@ -1776,7 +1832,6 @@ SootopolisCity_Text_HaventYouScaledSkyPillar:
 	.string "the top of the Sky Pillar…$"
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm:
-	.string "{PLAYER}{KUN}…\p"
 	.string "The leaders of Team Magma and Aqua,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
@@ -1815,4 +1870,41 @@ SootopolisCity_Text_DazzledByMentor:
 	.string "elegant battle style.\p"
 	.string "His Fairy types are already stronger\n"
 	.string "than his Water types were!$"
+
+	SootopolisCity_Text_WelcomeBack:
+	.string "Wallace: {PLAYER}! You made it back\n"
+	.string "safely, I'm so relieved.\p"
+	.string "What happened when you made it to the\n"
+	.string "top of Sky Pillar?$"
+
+
+SootopolisCity_Text_PlayerAnswers:
+	.string "… … … … … …\n"
+	.string "… … … … … …$"
+
+SootopolisCity_Text_WallaceCantBelieve:
+	.string "Wallace: Oh my…\p"
+	.string "I haven't been as involved in this\n"
+	.string "crisis as the rest of you, but I do go\l"
+	.string "back quite some time with Drake.\p"
+	.string "I can't believe he tried to do something\n"
+	.string "like that, and I can't believe I wasn't\l"
+	.string "there to help you, {PLAYER}.\p"
+	.string "However, it appears that you didn't\n"
+	.string "need my help, as you foiled his plans all\l"
+	.string "on your own!\p"
+	.string "For stopping Drake and for bringing\n"
+	.string "Rayquaza here to quell the rage of the\l"
+	.string "other super-ancient Pokémon, you have\l"
+	.string "my sincere gratitude, {PLAYER}!$"
+
+SootopolisCity_Text_YouAreAHero:
+	.string "You are nothing short of a hero to the\n"
+	.string "entire Hoenn region!$"
+
+
+SootopolisCity_TextRambled:
+	.string "Wallace: I've rambled long enough, I'm\n"
+	.string "sure you're curious to hear what\l"
+	.string "everyone else here has to say!$"
 `
