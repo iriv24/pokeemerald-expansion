@@ -56,12 +56,8 @@ MossdeepCity_Gym_EventScript_SetSwitch4Metatiles::
 MossdeepCity_Gym_EventScript_TateAndLiza::
 	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymLeadersPostVictory
 	msgbox MossdeepCity_Gym_Text_TateAndLizaIntro, MSGBOX_DEFAULT
-	multi_player_vs_2 TRAINER_TATE, MossdeepCity_Gym_Text_TateDefeat, TRAINER_LIZA, MossdeepCity_Gym_Text_LizaDefeat
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MossdeepCity_Gym_EventScript_TateAndLizaDefeated
-	fadescreen FADE_TO_BLACK
-	special SetCB2WhiteOut
-	waitstate
+	trainerbattle_two_trainers TRAINER_TATE, MossdeepCity_Gym_Text_TateDefeat, TRAINER_LIZA, MossdeepCity_Gym_Text_LizaDefeat
+	goto MossdeepCity_Gym_EventScript_TateAndLizaDefeated
 	release
 	end
 
