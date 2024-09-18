@@ -7,6 +7,7 @@ EverGrandeCity_MapScripts::
 
 EverGrandeCity_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_unset FLAG_BEAT_BOTH_RIVALS, Common_EventScript_SetupRivalGfxId
 	end
 
 EverGrandeCity_EventScript_VictoryRoadSign::
@@ -152,15 +153,15 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 EverGrandeCity_Text_MayShoppingLetsBattle:
 	.string "{PLAYER}! Dawn told me about\n"
-	.string "everything that happened with Team\p"
-	.string "Aqua, Team Magma, and Drake! I can't\n"
-	.string "believe what he did, but I'm more\p"
-	.string "impressed with how you were able to\n"
-	.string "stop all of them by yourself! It feels\p"
-	.string "silly to even say this, but we wanted to\n"
-	.string "give you one final test before you head\p"
-	.string "into Victory Road! We are rivals after\n"
-	.string "all!\p"
+	.string "everything that happened with Team\l"
+	.string "Aqua, Team Magma, and Drake!\p"
+	.string "I can't believe what he did, but I'm\n"
+	.string "more impressed with how you were able\l"
+	.string "to stop all of them by yourself!\p"
+	.string "It feels silly to even say this, but we\n"
+	.string "wanted to give you one final test\l"
+	.string "before you head into Victory Road!\l"
+	.string "We are rivals after all!\p"
 	.string "Don't worry, we won't make you fight us\n"
 	.string "both at once. But you will have to beat\l"
 	.string "us both to get through! So…\p"
@@ -183,7 +184,7 @@ EverGrandeCity_Text_MayDefeat:
 	.string "I remember the battle I had with you,\n"
 	.string "{PLAYER}{KUN}, on Route 103.\p"
 	.string "That battle helped you become this\n"
-	.string "strong, {PLAYER}{KUN}, didn't it?$"
+	.string "strong, didn't it?$"
 
 EverGrandeCity_Text_MayGoingBackToLittleroot:
 	.string "Anyway, I'm thinking of going back to\n"
@@ -211,15 +212,15 @@ EverGrandeCity_Text_RivalTakeKubfu:
 
 EverGrandeCity_Text_BrendanShoppingLetsBattle:
 	.string "{PLAYER}! Dawn told me about\n"
-	.string "everything that happened with Team\p"
-	.string "Aqua, Team Magma, and Drake! I can't\n"
-	.string "believe what he did, but I'm more\p"
-	.string "impressed with how you were able to\n"
-	.string "stop all of them by yourself! It feels\p"
-	.string "silly to even say this, but we wanted to\n"
-	.string "give you one final test before you head\p"
-	.string "into Victory Road! We are rivals after\n"
-	.string "all!\p"
+	.string "everything that happened with Team\l"
+	.string "Aqua, Team Magma, and Drake!\p"
+	.string "I can't believe what he did, but I'm\n"
+	.string "more impressed with how you were able\l"
+	.string "to stop all of them by yourself!\p"
+	.string "It feels silly to even say this, but we\n"
+	.string "wanted to give you one final test\l"
+	.string "before you head into Victory Road!\l"
+	.string "We are rivals after all!\p"
 	.string "Don't worry, we won't make you fight us\n"
 	.string "both at once. But you will have to beat\l"
 	.string "us both to get through! So…\p"
@@ -242,7 +243,7 @@ EverGrandeCity_Text_BrendanDefeat:
 	.string "I remember the battle I had with you,\n"
 	.string "{PLAYER}{KUN}, on Route 103.\p"
 	.string "That battle helped you become this\n"
-	.string "strong, {PLAYER}{KUN}, didn't it?$"
+	.string "strong, didn't it?$"
 
 EverGrandeCity_Text_BrendanGoingBackToLittleroot:
 	.string "Anyway, I…\n"
@@ -654,8 +655,12 @@ text Volkner_Greeting{
 	"Wow, another trainer showed up here. It\n"
 	"gets pretty boring being the strongest\l"
 	"Gym Leader in a given region…\p"
-	"The weak trainers get weeded out\n"
-	"before they can make it to me, usually.\p"
+	"… … … … … …\p"
+	"How would I know? Well, my name's\n"
+	"Volkner, and I'm the 8th Gym Leader in\l"
+	"the Sinnoh region.\p"
+	"Usually, the weak trainers get weeded\n"
+	"out before they can make it to me.\p"
 	"But you're now the fourth strong-\n"
 	"looking trainer I've seen come through\l"
 	"here, it's really got me itching for a\l"
