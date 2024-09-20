@@ -6,6 +6,7 @@
 #include "clear_save_data_menu.h"
 #include "decompress.h"
 #include "event_data.h"
+#include "field_weather.h"
 #include "intro.h"
 #include "m4a.h"
 #include "main.h"
@@ -54,7 +55,7 @@ static void CB2_GoToCopyrightScreen(void);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
 static void SpriteCB_VersionBannerRight(struct Sprite *sprite);
-static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite);
+//static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite);
 static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 
 // const rom data
@@ -68,6 +69,7 @@ const u32 gTest_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaempoleo
 const u32 gTestPal_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaonormal.gbapal.lz");
 const u32 gTest_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megaempoleondflip.4bpp.lz");
 const u32 gTestPal_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megadnormal.gbapal.lz");
+const u32 gTestPal_Snow[] = INCBIN_U32("graphics/title_screen/snow.gbapal.lz");
 
 static const struct CompressedSpriteSheet sSpriteSheet_Mon[] =
 {
@@ -93,6 +95,12 @@ static const struct CompressedSpritePalette sSpritePal_Mon2[] =
     {NULL},
 };
 
+static const struct CompressedSpritePalette sSpritePal_Snow[] =
+{
+    {gTestPal_Snow, PALTAG_WEATHER_2},
+    {NULL},
+};
+
 static const struct OamData sMonOamData =
 {
     .y = 0,
@@ -105,7 +113,7 @@ static const struct OamData sMonOamData =
     .matrixNum = 0,
     .size = 3,
     .tileNum = 0,
-    .priority = 0,
+    .priority = 1,
     .paletteNum = 0,
     .affineParam = 0,
 };
@@ -185,7 +193,7 @@ static const struct OamData sVersionBannerLeftOamData =
     .matrixNum = 0,
     .size = SPRITE_SIZE(64x32),
     .tileNum = 0,
-    .priority = 0,
+    .priority = 1,
     .paletteNum = 0,
     .affineParam = 0,
 };
@@ -202,7 +210,7 @@ static const struct OamData sVersionBannerRightOamData =
     .matrixNum = 0,
     .size = SPRITE_SIZE(64x32),
     .tileNum = 0,
-    .priority = 0,
+    .priority = 1,
     .paletteNum = 0,
     .affineParam = 0,
 };
@@ -261,22 +269,22 @@ static const struct CompressedSpriteSheet sSpriteSheet_EmeraldVersion[] =
     {},
 };
 
-static const struct OamData sOamData_CopyrightBanner =
-{
-    .y = DISPLAY_HEIGHT,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(32x8),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(32x8),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0,
-};
+// static const struct OamData sOamData_CopyrightBanner =
+// {
+//     .y = DISPLAY_HEIGHT,
+//     .affineMode = ST_OAM_AFFINE_OFF,
+//     .objMode = ST_OAM_OBJ_NORMAL,
+//     .mosaic = FALSE,
+//     .bpp = ST_OAM_4BPP,
+//     .shape = SPRITE_SHAPE(32x8),
+//     .x = 0,
+//     .matrixNum = 0,
+//     .size = SPRITE_SIZE(32x8),
+//     .tileNum = 0,
+//     .priority = 0,
+//     .paletteNum = 0,
+//     .affineParam = 0,
+// };
 
 static const union AnimCmd sAnim_PressStart_0[] =
 {
@@ -330,53 +338,53 @@ static const union AnimCmd sAnim_Copyright_4[] =
 };
 
 // The "Press Start" and copyright graphics are each 5 32x8 segments long
-#define NUM_PRESS_START_FRAMES 5
-#define NUM_COPYRIGHT_FRAMES 5
+// #define NUM_PRESS_START_FRAMES 5
+// #define NUM_COPYRIGHT_FRAMES 5
 
-static const union AnimCmd *const sStartCopyrightBannerAnimTable[NUM_PRESS_START_FRAMES + NUM_COPYRIGHT_FRAMES] =
-{
-    sAnim_PressStart_0,
-    sAnim_PressStart_1,
-    sAnim_PressStart_2,
-    sAnim_PressStart_3,
-    sAnim_PressStart_4,
-    [NUM_PRESS_START_FRAMES] =
-    sAnim_Copyright_0,
-    sAnim_Copyright_1,
-    sAnim_Copyright_2,
-    sAnim_Copyright_3,
-    sAnim_Copyright_4,
-};
+// static const union AnimCmd *const sStartCopyrightBannerAnimTable[NUM_PRESS_START_FRAMES + NUM_COPYRIGHT_FRAMES] =
+// {
+//     sAnim_PressStart_0,
+//     sAnim_PressStart_1,
+//     sAnim_PressStart_2,
+//     sAnim_PressStart_3,
+//     sAnim_PressStart_4,
+//     [NUM_PRESS_START_FRAMES] =
+//     sAnim_Copyright_0,
+//     sAnim_Copyright_1,
+//     sAnim_Copyright_2,
+//     sAnim_Copyright_3,
+//     sAnim_Copyright_4,
+// };
 
-static const struct SpriteTemplate sStartCopyrightBannerSpriteTemplate =
-{
-    .tileTag = TAG_PRESS_START_COPYRIGHT,
-    .paletteTag = TAG_PRESS_START_COPYRIGHT,
-    .oam = &sOamData_CopyrightBanner,
-    .anims = sStartCopyrightBannerAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_PressStartCopyrightBanner,
-};
+// static const struct SpriteTemplate sStartCopyrightBannerSpriteTemplate =
+// {
+//     .tileTag = TAG_PRESS_START_COPYRIGHT,
+//     .paletteTag = TAG_PRESS_START_COPYRIGHT,
+//     .oam = &sOamData_CopyrightBanner,
+//     .anims = sStartCopyrightBannerAnimTable,
+//     .images = NULL,
+//     .affineAnims = gDummySpriteAffineAnimTable,
+//     .callback = SpriteCB_PressStartCopyrightBanner,
+// };
 
-static const struct CompressedSpriteSheet sSpriteSheet_PressStart[] =
-{
-    {
-        .data = gTitleScreenPressStartGfx,
-        .size = 0x520,
-        .tag = TAG_PRESS_START_COPYRIGHT
-    },
-    {},
-};
+// static const struct CompressedSpriteSheet sSpriteSheet_PressStart[] =
+// {
+//     {
+//         .data = gTitleScreenPressStartGfx,
+//         .size = 0x520,
+//         .tag = TAG_PRESS_START_COPYRIGHT
+//     },
+//     {},
+// };
 
-static const struct SpritePalette sSpritePalette_PressStart[] =
-{
-    {
-        .data = gTitleScreenPressStartPal,
-        .tag = TAG_PRESS_START_COPYRIGHT
-    },
-    {},
-};
+// static const struct SpritePalette sSpritePalette_PressStart[] =
+// {
+//     {
+//         .data = gTitleScreenPressStartPal,
+//         .tag = TAG_PRESS_START_COPYRIGHT
+//     },
+//     {},
+// };
 
 static const struct OamData sPokemonLogoShineOamData =
 {
@@ -470,54 +478,54 @@ static void SpriteCB_VersionBannerRight(struct Sprite *sprite)
 }
 
 // Sprite data for SpriteCB_PressStartCopyrightBanner
-#define sAnimate data[0]
-#define sTimer   data[1]
+// #define sAnimate data[0]
+// #define sTimer   data[1]
 
-static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite)
-{
-    if (sprite->sAnimate == TRUE)
-    {
-        // Alternate between hidden and shown every 16th frame
-        if (++sprite->sTimer & 16)
-            sprite->invisible = FALSE;
-        else
-            sprite->invisible = TRUE;
-    }
-    else
-    {
-        sprite->invisible = FALSE;
-    }
-}
+// static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite)
+// {
+//     if (sprite->sAnimate == TRUE)
+//     {
+//         // Alternate between hidden and shown every 16th frame
+//         if (++sprite->sTimer & 16)
+//             sprite->invisible = FALSE;
+//         else
+//             sprite->invisible = TRUE;
+//     }
+//     else
+//     {
+//         sprite->invisible = FALSE;
+//     }
+// }
 
-static void CreatePressStartBanner(s16 x, s16 y)
-{
-    u8 i;
-    u8 spriteId;
+// static void CreatePressStartBanner(s16 x, s16 y)
+// {
+//     u8 i;
+//     u8 spriteId;
 
-    x -= 64;
-    for (i = 0; i < NUM_PRESS_START_FRAMES; i++, x += 32)
-    {
-        spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
-        StartSpriteAnim(&gSprites[spriteId], i);
-        gSprites[spriteId].sAnimate = TRUE;
-    }
-}
+//     x -= 64;
+//     for (i = 0; i < NUM_PRESS_START_FRAMES; i++, x += 32)
+//     {
+//         spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
+//         StartSpriteAnim(&gSprites[spriteId], i);
+//         gSprites[spriteId].sAnimate = TRUE;
+//     }
+// }
 
-static void CreateCopyrightBanner(s16 x, s16 y)
-{
-    u8 i;
-    u8 spriteId;
+// static void CreateCopyrightBanner(s16 x, s16 y)
+// {
+//     u8 i;
+//     u8 spriteId;
 
-    x -= 64;
-    for (i = 0; i < NUM_COPYRIGHT_FRAMES; i++, x += 32)
-    {
-        spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
-        StartSpriteAnim(&gSprites[spriteId], i + NUM_PRESS_START_FRAMES);
-    }
-}
+//     x -= 64;
+//     for (i = 0; i < NUM_COPYRIGHT_FRAMES; i++, x += 32)
+//     {
+//         spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
+//         StartSpriteAnim(&gSprites[spriteId], i + NUM_PRESS_START_FRAMES);
+//     }
+// }
 
-#undef sAnimate
-#undef sTimer
+// #undef sAnimate
+// #undef sTimer
 
 // Defines for SpriteCB_PokemonLogoShine
 enum {
@@ -678,14 +686,15 @@ void CB2_InitTitleScreen(void)
         FreeAllSpritePalettes();
         gReservedSpritePaletteCount = 9;
         LoadCompressedSpriteSheet(&sSpriteSheet_EmeraldVersion[0]);
-        LoadCompressedSpriteSheet(&sSpriteSheet_PressStart[0]);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_PressStart[0]);
         LoadCompressedSpriteSheet(&sPokemonLogoShineSpriteSheet[0]);
-        LoadPalette(gTitleScreenEmeraldVersionPal, OBJ_PLTT_ID(0), PLTT_SIZE_4BPP);
-        LoadSpritePalette(&sSpritePalette_PressStart[0]);
+        LoadPalette(gTitleScreenEmeraldImperiumPal, OBJ_PLTT_ID(0), PLTT_SIZE_4BPP);
+        //LoadSpritePalette(&sSpritePalette_PressStart[0]);
         LoadCompressedSpriteSheet(sSpriteSheet_Mon);
         LoadCompressedSpritePalette(sSpritePal_Mon);
         LoadCompressedSpriteSheet(sSpriteSheet_Mon2);
         LoadCompressedSpritePalette(sSpritePal_Mon2);
+        LoadCompressedSpritePalette(sSpritePal_Snow);
         gMain.state = 2;
         break;
     case 2:
@@ -827,10 +836,11 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 108);
-        CreateCopyrightBanner(START_BANNER_X, 148);
-        CreateSprite(&sMonSpriteTemplate, 200, 110, 0);
-        CreateSprite(&sMonSpriteTemplate2, 40, 110, 0);
+        //CreatePressStartBanner(START_BANNER_X, 108);
+        //CreateCopyrightBanner(START_BANNER_X, 148);
+        CreateSprite(&sMonSpriteTemplate, 150, 125, 0);
+        CreateSprite(&sMonSpriteTemplate2, 90, 125, 0);
+        ConstantWeather_Snow_InitAll();
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }

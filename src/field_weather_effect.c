@@ -3,6 +3,7 @@
 #include "event_object_movement.h"
 #include "fieldmap.h"
 #include "field_weather.h"
+#include "malloc.h"
 #include "overworld.h"
 #include "random.h"
 #include "script.h"
@@ -2605,3 +2606,190 @@ static void UpdateRainCounter(u8 newWeather, u8 oldWeather)
      && (newWeather == WEATHER_RAIN || newWeather == WEATHER_RAIN_THUNDERSTORM))
         IncrementGameStat(GAME_STAT_GOT_RAINED_ON);
 }
+
+//------------------------------------------------------------------------------
+// Constant Snow
+//------------------------------------------------------------------------------
+
+struct ConstantSnow {
+    u16 snowflakeVisibleCounter;
+    u16 snowflakeTimer;
+    u8 snowflakeSpriteCount;
+    u8 targetSnowflakeSpriteCount;
+    struct Sprite *snowflakeSprites[101];
+};
+
+static EWRAM_DATA struct ConstantSnow *sConstantSnow = NULL;
+
+static void ConstantWeather_UpdateSnowflakes(struct Sprite *);
+static bool8 ConstantWeather_UpdateVisibleSnowflakes(void);
+static bool8 ConstantWeather_CreateSnowflakes(void);
+static bool8 ConstantWeather_DestroySnowflakes(void);
+static void ConstantWeather_InitSnowflakes(struct Sprite *);
+
+#define NUM_CONSTANT_SNOWFLAKE_SPRITES        22
+
+void ConstantWeather_Snow_InitVars(void)
+{
+    if ((sConstantSnow = AllocZeroed(sizeof(struct ConstantSnow))) == NULL)
+    {
+        return;
+    }
+    sConstantSnow->targetSnowflakeSpriteCount = NUM_CONSTANT_SNOWFLAKE_SPRITES;
+    sConstantSnow->snowflakeVisibleCounter = 0;
+}
+
+void ConstantWeather_Snow_InitAll(void)
+{
+    u16 i;
+
+    ConstantWeather_Snow_InitVars();
+    while (TRUE)
+    {
+        if (!ConstantWeather_UpdateVisibleSnowflakes())
+        {
+            return;
+        }
+        for (i = 0; i < sConstantSnow->snowflakeSpriteCount; i++)
+            ConstantWeather_UpdateSnowflakes(sConstantSnow->snowflakeSprites[i]);
+    }
+}
+
+
+bool8 ConstantWeather_Snow_Finish(void)
+{
+    sConstantSnow->targetSnowflakeSpriteCount = 0;
+    sConstantSnow->snowflakeVisibleCounter = 0;
+    if (!UpdateVisibleSnowflakeSprites())
+    {
+        try_free(sConstantSnow);
+        return FALSE;
+    }
+    return TRUE;
+}
+
+static bool8 ConstantWeather_UpdateVisibleSnowflakes(void)
+{
+    if (sConstantSnow->snowflakeSpriteCount == sConstantSnow->targetSnowflakeSpriteCount)
+        return FALSE;
+
+    if (++sConstantSnow->snowflakeVisibleCounter > 36)
+    {
+        sConstantSnow->snowflakeVisibleCounter = 0;
+        if (sConstantSnow->snowflakeSpriteCount < sConstantSnow->targetSnowflakeSpriteCount)
+            ConstantWeather_CreateSnowflakes();
+        else
+            ConstantWeather_DestroySnowflakes();
+    }
+
+    return sConstantSnow->snowflakeSpriteCount != sConstantSnow->targetSnowflakeSpriteCount;
+}
+
+static const struct OamData sConstSnowflakeSpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteTemplate sConstantWeather_SnowflakeSpriteTemplate =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = PALTAG_WEATHER_2,
+    .oam = &sConstSnowflakeSpriteOamData,
+    .anims = sSnowflakeAnimCmds,
+    .images = sSnowflakeSpriteImages,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = ConstantWeather_UpdateSnowflakes,
+};
+
+#define tPosY         data[0]
+#define tDeltaY       data[1]
+#define tWaveDelta    data[2]
+#define tWaveIndex    data[3]
+#define tSnowflakeId  data[4]
+#define tFallCounter  data[5]
+#define tFallDuration data[6]
+#define tDeltaY2      data[7]
+
+static bool8 ConstantWeather_CreateSnowflakes(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sConstantWeather_SnowflakeSpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    gSprites[spriteId].tSnowflakeId = sConstantSnow->snowflakeSpriteCount;
+    ConstantWeather_InitSnowflakes(&gSprites[spriteId]);
+    gSprites[spriteId].coordOffsetEnabled = TRUE;
+    sConstantSnow->snowflakeSprites[sConstantSnow->snowflakeSpriteCount++] = &gSprites[spriteId];
+    return TRUE;
+}
+
+static bool8 ConstantWeather_DestroySnowflakes(void)
+{
+    if (sConstantSnow->snowflakeSpriteCount)
+    {
+        DestroySprite(sConstantSnow->snowflakeSprites[--sConstantSnow->snowflakeSpriteCount]);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void ConstantWeather_InitSnowflakes(struct Sprite *sprite)
+{
+    u16 rand;
+    u16 x = ((sprite->tSnowflakeId * 5) & 7) * 30 + (Random() % 30);
+
+    sprite->y = -3 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
+    sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    sprite->tPosY = sprite->y * 128;
+    sprite->x2 = 0;
+    rand = Random();
+    sprite->tDeltaY = (rand & 3) * 5 + 64;
+    sprite->tDeltaY2 = sprite->tDeltaY;
+    StartSpriteAnim(sprite, (rand & 1) ? 0 : 1);
+    sprite->tWaveIndex = 0;
+    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    sprite->tFallDuration = (rand & 0x1F) + 210;
+    sprite->tFallCounter = 0;
+}
+
+static void ConstantWeather_UpdateSnowflakes(struct Sprite *sprite)
+{
+    s16 x;
+
+    sprite->tPosY += sprite->tDeltaY;
+    sprite->y = sprite->tPosY >> 7;
+    sprite->tWaveIndex += sprite->tWaveDelta;
+    sprite->tWaveIndex &= 0xFF;
+    sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+
+    x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
+    if (x & 0x100)
+        x |= -0x100;
+
+    if (x < -3)
+        sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    else if (x > 242)
+        sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+}
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tSnowflakeId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2

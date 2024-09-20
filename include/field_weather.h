@@ -4,6 +4,12 @@
 #include "sprite.h"
 #include "constants/field_weather.h"
 
+#define try_free(ptr) ({        \
+    void ** ptr__ = (void **)&(ptr);   \
+    if (*ptr__ != NULL)                \
+        Free(*ptr__);                  \
+})
+
 #define TAG_WEATHER_START 0x1200
 enum {
     GFXTAG_CLOUD = TAG_WEATHER_START,
@@ -231,5 +237,6 @@ void SetWeather(u32 weather);
 void DoCurrentWeather(void);
 void UpdateWeatherPerDay(u16 increment);
 void ResumePausedWeather(void);
+void ConstantWeather_Snow_InitAll(void);
 
 #endif // GUARD_WEATHER_H
