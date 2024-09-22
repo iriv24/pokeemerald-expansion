@@ -467,6 +467,7 @@ extern const u8 Move_LUNAR_DANCE[];
 extern const u8 Move_CRUSH_GRIP[];
 extern const u8 Move_MAGMA_STORM[];
 extern const u8 Move_DARK_VOID[];
+extern const u8 Move_DARK_HOLE[];
 extern const u8 Move_SEED_FLARE[];
 extern const u8 Move_OMINOUS_WIND[];
 extern const u8 Move_SHADOW_FORCE[];

@@ -12795,7 +12795,8 @@
       "MOVE_DRAGON_CHEER",
       "MOVE_ALLURING_VOICE",
       "MOVE_PSYCHIC_NOISE",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -20777,7 +20778,8 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_TEMPER_FLARE",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_COUNTER",
@@ -22780,7 +22782,8 @@
       "MOVE_MUDDY_WATER",
       "MOVE_BREAKING_SWIPE",
       "MOVE_CURSE",
-      "MOVE_HARD_PRESS"
+      "MOVE_HARD_PRESS",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
@@ -28713,7 +28716,9 @@
   "SHARPEDO": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -30090,7 +30095,8 @@
       "MOVE_ENDEAVOR",
       "MOVE_SKITTER_SMACK",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -31145,7 +31151,8 @@
       "MOVE_WHIRLPOOL",
       "MOVE_MUDDY_WATER",
       "MOVE_SLUDGE_WAVE",
-      "MOVE_HARD_PRESS"
+      "MOVE_HARD_PRESS",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
@@ -32137,7 +32144,9 @@
   "ABSOL": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -32407,7 +32416,9 @@
   "HUNTAIL": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -36345,7 +36356,8 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_SUPERCELL_SLAM",
       "MOVE_ELECTROWEB",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",
@@ -38222,7 +38234,8 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_FEATHER_DANCE",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_BRAVE_BIRD",
@@ -38583,7 +38596,8 @@
       "MOVE_ENDEAVOR",
       "MOVE_TEMPER_FLARE",
       "MOVE_SLUDGE_WAVE",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ASTONISH",
@@ -39144,7 +39158,8 @@
       "MOVE_POLTERGEIST",
       "MOVE_LASH_OUT",
       "MOVE_PAIN_SPLIT",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ALLY_SWITCH",
@@ -44750,7 +44765,8 @@
       "MOVE_LASH_OUT",
       "MOVE_PSYCH_UP",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -45016,7 +45032,8 @@
       "MOVE_SUPERCELL_SLAM",
       "MOVE_SCORCHING_SANDS",
       "MOVE_FUTURE_SIGHT",
-      "MOVE_METEOR_BEAM"
+      "MOVE_METEOR_BEAM",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -46136,7 +46153,9 @@
   "LIEPARD": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -48315,7 +48334,8 @@
       "MOVE_SKITTER_SMACK",
       "MOVE_THROAT_CHOP",
       "MOVE_BREAKING_SWIPE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_AQUA_TAIL",
@@ -48935,7 +48955,8 @@
       "MOVE_PAIN_SPLIT",
       "MOVE_PSYCH_UP",
       "MOVE_SKITTER_SMACK",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_COPYCAT",
@@ -53968,7 +53989,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_THROAT_CHOP",
       "MOVE_BREAKING_SWIPE",
-      "MOVE_DRAGON_CHEER"
+      "MOVE_DRAGON_CHEER",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ASTONISH",
@@ -56740,7 +56762,8 @@
       "MOVE_SMACK_DOWN",
       "MOVE_WEATHER_BALL",
       "MOVE_SLUDGE_WAVE",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_COUNTER",
@@ -60747,7 +60770,9 @@
   "YVELTAL": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -61013,7 +61038,8 @@
       "MOVE_EXPANDING_FORCE",
       "MOVE_SKITTER_SMACK",
       "MOVE_THROAT_CHOP",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -61879,7 +61905,8 @@
       "MOVE_ENDEAVOR",
       "MOVE_TEMPER_FLARE",
       "MOVE_SCORCHING_SANDS",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -67107,7 +67134,9 @@
   "GUZZLORD": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -68913,7 +68942,9 @@
   "THIEVUL": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_HOLE"
+    ],
     "EggMoves": [],
     "TutorMoves": []
   },
@@ -71275,7 +71306,8 @@
       "MOVE_BURNING_JEALOUSY",
       "MOVE_LASH_OUT",
       "MOVE_THROAT_CHOP",
-      "MOVE_MOONBLAST"
+      "MOVE_MOONBLAST",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_PARTING_SHOT"
@@ -72402,7 +72434,8 @@
       "MOVE_LASH_OUT",
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
-      "MOVE_ELECTROWEB"
+      "MOVE_ELECTROWEB",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_CHARGE",
@@ -73773,7 +73806,8 @@
       "MOVE_LASH_OUT",
       "MOVE_DOUBLE_EDGE",
       "MOVE_PETAL_BLIZZARD",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -75093,7 +75127,8 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_SLUDGE_WAVE",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ACID_SPRAY",
@@ -75585,7 +75620,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_PETAL_BLIZZARD",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_ALLY_SWITCH",
@@ -76867,7 +76903,8 @@
       "MOVE_LASH_OUT",
       "MOVE_DOUBLE_EDGE",
       "MOVE_SKITTER_SMACK",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_COUNTER",
@@ -81590,7 +81627,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_ENDEAVOR",
       "MOVE_FEATHER_DANCE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [
       "MOVE_FEATHER_DANCE",
@@ -84497,7 +84535,8 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_TERA_BLAST",
       "MOVE_LASH_OUT",
-      "MOVE_DOUBLE_EDGE"
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -85358,7 +85397,8 @@
       "MOVE_METEOR_BEAM",
       "MOVE_THROAT_CHOP",
       "MOVE_METAL_SOUND",
-      "MOVE_DRAGON_CHEER"
+      "MOVE_DRAGON_CHEER",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -86207,7 +86247,8 @@
       "MOVE_SPITE",
       "MOVE_KNOCK_OFF",
       "MOVE_SOLAR_BLADE",
-      "MOVE_LASH_OUT"
+      "MOVE_LASH_OUT",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -86325,7 +86366,8 @@
       "MOVE_HAZE",
       "MOVE_SPITE",
       "MOVE_LASH_OUT",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -86444,7 +86486,8 @@
       "MOVE_SPITE",
       "MOVE_LASH_OUT",
       "MOVE_DOUBLE_EDGE",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -86560,7 +86603,8 @@
       "MOVE_SPITE",
       "MOVE_BURNING_JEALOUSY",
       "MOVE_LASH_OUT",
-      "MOVE_TEMPER_FLARE"
+      "MOVE_TEMPER_FLARE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -91008,6 +91052,7 @@
       "MOVE_LASH_OUT",
       "MOVE_PAIN_SPLIT",
       "MOVE_SLUDGE_WAVE",
+      "MOVE_DARK_HOLE",
       "MOVE_CURSE"
     ],
     "EggMoves": [
@@ -92100,7 +92145,8 @@
       "MOVE_DUAL_WINGBEAT",
       "MOVE_LASH_OUT",
       "MOVE_PAIN_SPLIT",
-      "MOVE_TRICK_ROOM"
+      "MOVE_TRICK_ROOM",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -96656,7 +96702,8 @@
       "MOVE_EXPANDING_FORCE",
       "MOVE_SKITTER_SMACK",
       "MOVE_THROAT_CHOP",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_DARK_HOLE"
     ],
     "EggMoves": [],
     "TutorMoves": []

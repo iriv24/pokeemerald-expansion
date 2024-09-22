@@ -12231,7 +12231,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_WaterTMHM,
     },
 
-    [ITEM_TM161] =
+    [ITEM_TM_DARK_HOLE] =
     {
         .name = _("TM161"),
         .price = 100,
@@ -12240,9 +12240,9 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_DARK_HOLE,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_DarkTMHM,
     },
 
     [ITEM_TM162] =

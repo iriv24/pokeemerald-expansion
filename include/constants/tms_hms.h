@@ -161,7 +161,8 @@
     F(MOONBLAST) \
     F(BODY_SLAM) \
     F(PLAY_ROUGH) \
-    F(WATER_PULSE)
+    F(WATER_PULSE) \
+    F(DARK_HOLE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

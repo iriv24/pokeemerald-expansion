@@ -11586,6 +11586,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .battleAnimScript = Move_DARK_VOID,
     },
 
+    [MOVE_DARK_HOLE] =
+    {
+        .name = COMPOUND_STRING("Dark Hole"),
+        .description = COMPOUND_STRING(
+            "Sends the foe to the\n"
+            "abyss. May induce sleep."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = STATUS1_SLEEP,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 40,
+        }),
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_DARK_HOLE,
+    },
+
     [MOVE_SEED_FLARE] =
     {
         .name = COMPOUND_STRING("Seed Flare"),
