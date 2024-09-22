@@ -189,6 +189,33 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 25,
+      "elevation": 0,
+      "var": "FLAG_ROAMER_MATCH_CALL",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_MomRoamerCall"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 25,
+      "elevation": 0,
+      "var": "FLAG_ROAMER_MATCH_CALL",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_MomRoamerCall"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 25,
+      "elevation": 0,
+      "var": "FLAG_ROAMER_MATCH_CALL",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_MomRoamerCall"
     }
   ],
   "bg_events": [

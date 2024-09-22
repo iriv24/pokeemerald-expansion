@@ -1232,7 +1232,7 @@
 #define FLAG_DEFEATED_MOLTRES_GALARIAN                              0x49E
 #define FLAG_DEFEATED_KYUREM                                        0x49F
 #define FLAG_HACKY_DOUBLE_BATTLE                                    0x4A0
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
+#define FLAG_ROAMER_MATCH_CALL                                      0x4A1
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag

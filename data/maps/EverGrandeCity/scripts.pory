@@ -150,6 +150,15 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
+EverGrandeCity_EventScript_MomRoamerCall::
+	lockall
+	pokenavcall MatchCall_Text_MomRoamers
+	waitmessage
+	closemessage
+	special InitRoamer
+	setflag FLAG_ROAMER_MATCH_CALL
+	releaseall
+	end
 
 EverGrandeCity_Text_MayShoppingLetsBattle:
 	.string "{PLAYER}! Dawn told me about\n"

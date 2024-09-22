@@ -22,6 +22,7 @@ VictoryRoad_1F_EventScript_SetEntranceWallyPos2::
 
 VictoryRoad_1F_EventScript_WallyBattleTrigger1::
 	lockall
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	setvar VAR_0x8008, 1
 	addobject LOCALID_WALLY_ENTRANCE
 	applymovement LOCALID_WALLY_ENTRANCE, VictoryRoad_1F_Movement_WallyApproachPlayer1
@@ -31,6 +32,7 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger1::
 
 VictoryRoad_1F_EventScript_WallyBattleTrigger2::
 	lockall
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	setvar VAR_0x8008, 2
 	addobject LOCALID_WALLY_ENTRANCE
 	applymovement LOCALID_WALLY_ENTRANCE, VictoryRoad_1F_Movement_WallyApproachPlayer2
@@ -128,23 +130,24 @@ VictoryRoad_1F_EventScript_Katelynn::
 	end
 
 VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore:
-	.string "{PLAYER}! You made it here! I've been\n"
-	.string "wandering around here doing more\p"
-	.string "training, I knew you'd show up\n"
+	.string "{PLAYER}! You made it! I've been\n"
+	.string "wandering around here doing more\l"
+	.string "training, and I knew you'd show up\l"
 	.string "eventually.\p"
-	.string "After you beat me in Mauville, I\n"
-	.string "realized how weak I was, how little I\l"
-	.string "knew about Pokémon…\p"
+	.string "After you beat me in Mauville and on\n"
+	.string "Route 110, I realized how weak I was,\l"
+	.string "how little I knew about Pokémon…\p"
 	.string "Since then, I've become so much\n"
-	.string "stronger. After I lost to you, I trained\p"
-	.string "extremely hard in hopes of beating you\n"
-	.string "one day. I even defeated all of the Gym\l"
-	.string "Leaders here in Hoenn!\p"
+	.string "stronger.\p"
+	.string "I've trained extremely hard in hopes of\n"
+	.string "beating you one day, I even defeated\l"
+	.string "all of the Gym Leaders here in Hoenn!\p"
 	.string "However, I have one more goal before I\n"
 	.string "can move on to the Pokémon League…\p"
-	.string "I have to beat you, {PLAYER}! You\n"
-	.string "inspired me to get stronger, so now I'll\l"
-	.string "show you the results of my training!$"
+	.string "I have to beat you, {PLAYER}!\n"
+	.string "You inspired me to get stronger, so now\l"
+	.string "I'll show you the results of my\l"
+	.string "hard work!$"
 
 VictoryRoad_1F_Text_WallyEntranceDefeat:
 	.string "All my training, and it still wasn't\n"
@@ -166,9 +169,9 @@ VictoryRoad_1F_Text_WallyGiftFromDad:
 	.string "a package with some items to give to\l"
 	.string "you, {PLAYER}.\p"
 	.string "He said to tell you he was sorry he\n"
-	.string "didn't have that one Mega Stone ready\p"
-	.string "when you defeated him, so he threw in\n"
-	.string "some extras to make up for it.\l"
+	.string "didn't have that one Mega Stone ready\l"
+	.string "when you defeated him, so he threw in\l"
+	.string "some extras to make up for it.\p"
 	.string "Here you go, {PLAYER}.$"
 
 VictoryRoad_1F_Text_WallyIntro:
