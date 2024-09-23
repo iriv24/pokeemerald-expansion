@@ -3020,7 +3020,6 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
         
         u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, 0);
-        DebugPrintf("species: %d", species);
         bool32 hasLvlUpMove = (GetSpeciesLevelUpLearnset(species) != gSpeciesInfo[SPECIES_NONE].levelUpLearnset);
         
         if(FlagGet(FLAG_MET_EGG_MOVE_TUTOR))

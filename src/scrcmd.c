@@ -1142,7 +1142,6 @@ bool8 ScrCmd_setobjectxy(struct ScriptContext *ctx)
 bool8 ScrCmd_advancetime(struct ScriptContext *ctx)
 {
     u16 timeToAdvanceTo = VarGet(ScriptReadHalfword(ctx));
-    DebugPrintf("time var to switch: %d", timeToAdvanceTo);
     switch (timeToAdvanceTo)
     {
     // Day
