@@ -753,6 +753,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .iconPalIndex = 2,
             FOOTPRINT(Dialga)
             .isLegendary = TRUE,
+            .isPrimalReversion = TRUE,
             .levelUpLearnset = sDialgaLevelUpLearnset,
             .teachableLearnset = sDialgaTeachableLearnset,
             .formSpeciesIdTable = sDialgaFormSpeciesIdTable,
@@ -808,6 +809,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .iconPalIndex = 2,
             FOOTPRINT(Palkia)
             .isLegendary = TRUE,
+            .isPrimalReversion = TRUE,
             .levelUpLearnset = sPalkiaLevelUpLearnset,
             .teachableLearnset = sPalkiaTeachableLearnset,
             .formSpeciesIdTable = sPalkiaFormSpeciesIdTable,
