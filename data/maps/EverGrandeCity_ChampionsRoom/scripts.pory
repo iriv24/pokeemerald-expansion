@@ -3,6 +3,7 @@ raw `
 .set LOCALID_RIVAL, 2
 .set LOCALID_BIRCH, 3
 .set LOCALID_STEVEN, 4
+.set LOCALID_DAWN, 5
 
 EverGrandeCity_ChampionsRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ChampionsRoom_OnTransition
@@ -46,7 +47,11 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace:
 EverGrandeCity_ChampionsRoom_EventScript_Wallace::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
 	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceIntroSpeech, MSGBOX_DEFAULT
+	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_StevenIntroSpeech, MSGBOX_DEFAULT
+	applymovement LOCALID_WALLACE, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceAndISaidYes, MSGBOX_DEFAULT
 	trainerbattle_two_trainers TRAINER_STEVEN_WITH_WALLACE, EverGrandeCity_ChampionsRoom_Text_StevenDefeat, TRAINER_WALLACE_WITH_STEVEN, EverGrandeCity_ChampionsRoom_Text_WallaceDefeat
 	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
@@ -84,11 +89,13 @@ EverGrandeCity_ChampionsRoom_EventScript_MayAdvice::
 	delay 40
 	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_DAWN, Common_Movement_Delay48
 	waitmovement 0
 	call EverGrandeCity_ChampionsRoom_EventScript_RivalLookBackAndForth
-	msgbox EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver, MSGBOX_DEFAULT
+	msgbox EverGrandeCity_ChampionsRoom_Text_DawnYouveWon, MSGBOX_DEFAULT
 	goto EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF
 	end
 
@@ -97,11 +104,13 @@ EverGrandeCity_ChampionsRoom_EventScript_BrendanAdvice::
 	delay 40
 	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_DAWN, Common_Movement_Delay48
 	waitmovement 0
 	call EverGrandeCity_ChampionsRoom_EventScript_RivalLookBackAndForth
-	msgbox EverGrandeCity_ChampionsRoom_Text_BrendanYouveWon, MSGBOX_DEFAULT
+	msgbox EverGrandeCity_ChampionsRoom_Text_DawnYouveWon, MSGBOX_DEFAULT
 	goto EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF
 	end
 
@@ -127,6 +136,7 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DAWN, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalFollows
 	waitmovement 0
 	delay 20
@@ -155,7 +165,12 @@ EverGrandeCity_ChampionsRoom_EventScript_BrendanCongratulations::
 	return
 
 EverGrandeCity_ChampionsRoom_EventScript_RivalApproachPlayer::
-	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer
+	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer1
+	waitmovement 0
+	addobject LOCALID_DAWN
+	delay 15
+	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer2
+	applymovement LOCALID_DAWN, EverGrandeCity_ChampionsRoom_Movement_DawnApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
@@ -163,6 +178,7 @@ EverGrandeCity_ChampionsRoom_EventScript_RivalApproachPlayer::
 
 EverGrandeCity_ChampionsRoom_EventScript_RivalLookBackAndForth::
 	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth
+	applymovement LOCALID_DAWN, EverGrandeCity_ChampionsRoom_Movement_DawnLookBackAndForth
 	waitmovement 0
 	return
 
@@ -179,8 +195,11 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerExit:
 	set_invisible
 	step_end
 
-EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer:
+EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer1:
 	walk_up
+	step_end
+
+EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer2:
 	walk_up
 	walk_up
 	walk_up
@@ -190,7 +209,28 @@ EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer:
 	walk_in_place_faster_right
 	step_end
 
+EverGrandeCity_ChampionsRoom_Movement_DawnApproachPlayer:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_in_place_faster_right
+	step_end
+
 EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth:
+	walk_in_place_faster_down
+	delay_16
+	walk_in_place_faster_right
+	delay_16
+	walk_in_place_faster_down
+	delay_8
+	walk_in_place_faster_right
+	delay_16
+	step_end
+
+EverGrandeCity_ChampionsRoom_Movement_DawnLookBackAndForth:
 	walk_in_place_faster_up
 	delay_16
 	walk_in_place_faster_right
@@ -275,8 +315,9 @@ EverGrandeCity_ChampionsRoom_Text_WallaceDefeat:
 	.string "And yet it was utterly glorious!\p"
 	.string "Kudos to you, {PLAYER}{KUN}!\p"
 	.string "You are truly the strongest Pokémon\n"
-	.string "trainer in the region, and certainly\l"
-	.string "the strongest I've ever faced.$"
+	.string "trainer in the Hoenn region, and\l"
+	.string "certainly the strongest I've ever\l"
+	.string "faced.$"
 
 EverGrandeCity_ChampionsRoom_Text_StevenDefeat:
 	.string "Haha! That was incredible, {PLAYER}.\n"
@@ -306,26 +347,23 @@ EverGrandeCity_ChampionsRoom_Text_MayAdvice:
 	.string "Here's some advice before you challenge\n"
 	.string "the Champion…$"
 
-EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver:
-	.string "May: Huh?\n"
-	.string "What, what, what?\p"
-	.string "{PLAYER}{KUN}…\n"
-	.string "Could it be that…\l"
-	.string "It's already over?$"
-
 EverGrandeCity_ChampionsRoom_Text_BrendanAdvice:
 	.string "Brendan: {PLAYER}!\p"
 	.string "How would you like some advice before\n"
 	.string "you challenge the Champion?…$"
 
-EverGrandeCity_ChampionsRoom_Text_BrendanYouveWon:
-	.string "Brendan: {PLAYER}…\p"
-	.string "Are you trying to tell me…\n"
-	.string "You've beaten the Champion?$"
+EverGrandeCity_ChampionsRoom_Text_DawnYouveWon:
+	.string "Dawn: Huh?\n"
+	.string "What, what, what?\p"
+	.string "{PLAYER}{KUN}…\n"
+	.string "Could it be that…\l"
+	.string "It's already over?\p"
+	.string "I couldn't even believe you'd made it\n"
+	.string "past Cynthia already, but this…$"
 
 EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex:
 	.string "Prof. Birch: See?\n"
-	.string "What did I tell you, {RIVAL}?\p"
+	.string "What did I tell you two?\p"
 	.string "Didn't I tell you that you don't need\n"
 	.string "to worry about {PLAYER}{KUN}?\p"
 	.string "… … … … … … … …\n"

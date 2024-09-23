@@ -74,8 +74,8 @@ EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
 	.string "But in my travels, I learned to expand\n"
 	.string "my strategies beyond just Ice-types.\p"
 	.string "You see, though I originally thought\n"
-	.string "Fire to be the complete opposite of\p"
-	.string "Ice, I learned that several Ice-types\n"
+	.string "Fire to be the complete opposite of\l"
+	.string "Ice, I learned that several Ice-types\l"
 	.string "have Fire-type counterparts.\p"
 	.string "This knowledge has expanded my\n"
 	.string "skillset, now see how strong I have\l"
@@ -85,13 +85,13 @@ EverGrandeCity_GlaciasRoom_Text_Defeat:
 	.string "You and your Pokémon…\n"
 	.string "How hot your spirits burn!\p"
 	.string "The all-consuming heat overwhelms.\p"
-	.string "It's no surprise that my fiery and icy\n"
-	.string "skills failed to harm you.$"
+	.string "It's no surprise that both my fiery and\n"
+	.string "icy skills failed to harm you.$"
 
 EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
 	.string "Advance to the next room.\n"
-	.string "Though Drake is no longer there waiting\p"
-	.string "for you, I think you'll find his\n"
+	.string "Though Drake is no longer there waiting\l"
+	.string "for you, I think you'll find his\l"
 	.string "replacement to be equally formidable.$"
 
 `

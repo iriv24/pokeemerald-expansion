@@ -1233,7 +1233,7 @@
 #define FLAG_DEFEATED_KYUREM                                        0x49F
 #define FLAG_HACKY_DOUBLE_BATTLE                                    0x4A0
 #define FLAG_ROAMER_MATCH_CALL                                      0x4A1
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_HIDE_CHAMPIONS_ROOM_DAWN                               0x4A2
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag

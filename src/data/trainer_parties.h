@@ -3865,7 +3865,7 @@ static const struct TrainerMon sParty_Sidney1[] = {
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_PROTOSYNTHESIS,
     .heldItem = ITEM_BOOSTER_ENERGY,
-    .moves = {MOVE_JAW_LOCK, MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_KNOCK_OFF}
+    .moves = {MOVE_DRAGON_DANCE, MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_KNOCK_OFF}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3874,7 +3874,7 @@ static const struct TrainerMon sParty_Sidney1[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_JUSTIFIED,
     .heldItem = ITEM_ABSOLITE,
-    .moves = {MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_PLAY_ROUGH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_NIGHT_SLASH, MOVE_CLOSE_COMBAT, MOVE_PLAY_ROUGH, MOVE_SWORDS_DANCE}
     },
 };
 
@@ -4150,8 +4150,8 @@ static const struct TrainerMon sParty_Glacia2[] = {
     .species = SPECIES_KYUREM_BLACK,
     .nature = NATURE_JOLLY,
     .ability = ABILITY_TERAVOLT,
-    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
-    .moves = {MOVE_ZEN_HEADBUTT, MOVE_SCALE_SHOT, MOVE_ICICLE_SPEAR, MOVE_DRAGON_DANCE}
+    .heldItem = ITEM_LOADED_DICE,
+    .moves = {MOVE_FUSION_BOLT, MOVE_SCALE_SHOT, MOVE_ICICLE_SPEAR, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4168,21 +4168,20 @@ static const struct TrainerMon sParty_Cynthia[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_GLIMMORA,
-    .nature = NATURE_BOLD,
-    .ability = ABILITY_TOXIC_DEBRIS,
-    .heldItem = ITEM_AIR_BALLOON,
-    .moves = {MOVE_POWER_GEM, MOVE_SLUDGE_WAVE, MOVE_MORTAL_SPIN, MOVE_STEALTH_ROCK}
+    .species = SPECIES_SPIRITOMB,
+    .nature = NATURE_SASSY,
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_DARK_HOLE, MOVE_TAUNT, MOVE_DREAM_EATER, MOVE_POLTERGEIST}
     },
     {
-        //hp, atk, def, speed, spatk, spdef
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 30, 30, 30),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_IRON_BUNDLE,
-    .heldItem = ITEM_BOOSTER_ENERGY,
-    .nature = NATURE_TIMID,
-    .ability = ABILITY_QUARK_DRIVE,
-    .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_FREEZE_DRY, MOVE_HIDDEN_POWER}
+    .species = SPECIES_GENESECT,
+    .heldItem = ITEM_DOUSE_DRIVE,
+    .nature = NATURE_NAIVE,
+    .ability = ABILITY_DOWNLOAD,
+    .moves = {MOVE_TECHNO_BLAST, MOVE_U_TURN, MOVE_IRON_HEAD, MOVE_EXTREME_SPEED}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4219,7 +4218,7 @@ static const struct TrainerMon sParty_Cynthia[] = {
     .nature = NATURE_JOLLY,
     .ability = ABILITY_SAND_VEIL,
     .heldItem = ITEM_GARCHOMPITE,
-    .moves = {MOVE_SCALE_SHOT, MOVE_EARTHQUAKE, MOVE_IRON_HEAD, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_SCALE_SHOT, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_SWORDS_DANCE}
     }
 };
 
