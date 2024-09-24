@@ -2042,7 +2042,7 @@ const u16 gMonIconPalettes[][16] =
 };
 
 const u16 gTitleScreenBgPalettes[]         = INCBIN_U16("graphics/title_screen/pokemon_logo.gbapal",
-                                                        "graphics/title_screen/icefalls.gbapal");
+                                                        "graphics/title_screen/icecastletiles.gbapal");
 const u16 gTitleScreenEmeraldImperiumPal[]  = INCBIN_U16("graphics/title_screen/emerald_version.gbapal");
 //const u32 gTitleScreenCloudsTilemap[]      = INCBIN_U32("graphics/title_screen/clouds.bin.lz");
 const u32 gTitleScreenPokemonLogoGfx[]     = INCBIN_U32("graphics/title_screen/pokemon_logo.8bpp.lz");

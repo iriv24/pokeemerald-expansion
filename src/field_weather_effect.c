@@ -29,6 +29,8 @@ const u8 gWeatherBubbleTiles[] = INCBIN_U8("graphics/weather/bubble.4bpp");
 const u8 gWeatherAshTiles[] = INCBIN_U8("graphics/weather/ash.4bpp");
 const u8 gWeatherRainTiles[] = INCBIN_U8("graphics/weather/rain.4bpp");
 const u8 gWeatherSandstormTiles[] = INCBIN_U8("graphics/weather/sandstorm.4bpp");
+const u8 gTitleScreenSnow1Tiles[] = INCBIN_U8("graphics/title_screen/snow0.4bpp");
+const u8 gTitleScreenSnow2Tiles[] = INCBIN_U8("graphics/title_screen/snow1.4bpp");
 
 //------------------------------------------------------------------------------
 // WEATHER_SUNNY_CLOUDS
@@ -857,6 +859,12 @@ static const struct SpriteFrameImage sSnowflakeSpriteImages[] =
 {
     {gWeatherSnow1Tiles, sizeof(gWeatherSnow1Tiles)},
     {gWeatherSnow2Tiles, sizeof(gWeatherSnow2Tiles)},
+};
+
+static const struct SpriteFrameImage sSnowflakeSpriteImagesTitleScreen[] =
+{
+    {gTitleScreenSnow1Tiles, sizeof(gTitleScreenSnow1Tiles)},
+    {gTitleScreenSnow2Tiles, sizeof(gTitleScreenSnow2Tiles)},
 };
 
 static const union AnimCmd sSnowflakeAnimCmd0[] =
@@ -2708,7 +2716,7 @@ static const struct SpriteTemplate sConstantWeather_SnowflakeSpriteTemplate =
     .paletteTag = PALTAG_WEATHER_2,
     .oam = &sConstSnowflakeSpriteOamData,
     .anims = sSnowflakeAnimCmds,
-    .images = sSnowflakeSpriteImages,
+    .images = sSnowflakeSpriteImagesTitleScreen,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = ConstantWeather_UpdateSnowflakes,
 };
