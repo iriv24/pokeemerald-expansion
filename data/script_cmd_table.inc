@@ -232,6 +232,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_buffernaturename 					@ 0xe5
 	.4byte ScrCmd_checkpcspace                      @ 0xe6
 	.4byte ScrCmd_advancetime                       @ 0xe7
+	.4byte ScrCmd_checkpartymon						@ 0xe8
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

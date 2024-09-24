@@ -1907,6 +1907,13 @@
 	.2byte \time
 	.endm
 
+	@ Checks if the specified Pokemon is in the player's party. If so, VAR_RESULT is set to TRUE, FALSE if not.
+	@ Also stores the (zero-indexed) slot number of that Pokemon in VAR_0x8004, set as PARTY_SIZE if not found.
+	.macro checkpartymon species:req
+	.byte 0xe8
+	.2byte \species
+	.endm
+
 
 @ Supplementary
 
