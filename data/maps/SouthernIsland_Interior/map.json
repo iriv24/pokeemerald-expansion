@@ -12,33 +12,33 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 13,
-      "y": 12,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LATIOS)",
+      "x": 11,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE"
+      "script": "SouthernIsland_Interior_EventScript_Latios",
+      "flag": "FLAG_HIDE_LATIOS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 13,
-      "y": 2,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LATIAS)",
+      "x": 15,
+      "y": 8,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON"
+      "script": "SouthernIsland_Interior_EventScript_Latias",
+      "flag": "FLAG_HIDE_LATIAS"
     }
   ],
   "warp_events": [
@@ -57,15 +57,17 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
       "x": 13,
       "y": 11,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "SouthernIsland_Interior_EventScript_TryLatiEncounter"
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SouthernIsland_Interior_EventScript_Sign"
     }
   ]
 }

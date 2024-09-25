@@ -175,7 +175,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 # 88 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_DEOXYS
 # 89 "data/maps/BirthIsland_Exterior/scripts.pory"
-	seteventmon SPECIES_DEOXYS_NORMAL, 30
+	seteventmon SPECIES_DEOXYS_NORMAL, 70
 # 90 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 91 "data/maps/BirthIsland_Exterior/scripts.pory"

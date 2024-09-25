@@ -6,9 +6,8 @@ raw `
 # 3 "data/maps/LittlerootTown/scripts.pory"
 .set LOCALID_MOM, 4
 # 4 "data/maps/LittlerootTown/scripts.pory"
-.set LOCALID_RIVAL, 7
 # 5 "data/maps/LittlerootTown/scripts.pory"
-.set LOCALID_BIRCH, 8
+.set LOCALID_BIRCH, 7
 # 6 "data/maps/LittlerootTown/scripts.pory"
 
 # 7 "data/maps/LittlerootTown/scripts.pory"
@@ -104,7 +103,7 @@ LittlerootTown_OnTransition:
 # 52 "data/maps/LittlerootTown/scripts.pory"
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 # 53 "data/maps/LittlerootTown/scripts.pory"
-	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
+	call_if_eq VAR_GIVE_BIRTH_ISLAND_TICKET, 1, LittlerootTown_EventScript_HideMapNamePopup
 # 54 "data/maps/LittlerootTown/scripts.pory"
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
 # 55 "data/maps/LittlerootTown/scripts.pory"
@@ -224,7 +223,7 @@ LittlerootTown_OnFrame:
 # 112 "data/maps/LittlerootTown/scripts.pory"
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
 # 113 "data/maps/LittlerootTown/scripts.pory"
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
+	map_script_2 VAR_GIVE_BIRTH_ISLAND_TICKET, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
 # 114 "data/maps/LittlerootTown/scripts.pory"
 	.2byte 0
 # 115 "data/maps/LittlerootTown/scripts.pory"
@@ -436,7 +435,6 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 # 218 "data/maps/LittlerootTown/scripts.pory"
 	closemessage
 # 219 "data/maps/LittlerootTown/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
 # 220 "data/maps/LittlerootTown/scripts.pory"
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
 # 221 "data/maps/LittlerootTown/scripts.pory"
@@ -444,7 +442,7 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 # 222 "data/maps/LittlerootTown/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 223 "data/maps/LittlerootTown/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
+	warp MAP_NEW_BIRCHS_LAB, 6, 6
 # 224 "data/maps/LittlerootTown/scripts.pory"
 	waitstate
 # 225 "data/maps/LittlerootTown/scripts.pory"
@@ -456,7 +454,7 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 # 228 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_OnWarp:
 # 229 "data/maps/LittlerootTown/scripts.pory"
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade
+	map_script_2 VAR_GIVE_BIRTH_ISLAND_TICKET, 1, LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade
 # 230 "data/maps/LittlerootTown/scripts.pory"
 	.2byte 0
 # 231 "data/maps/LittlerootTown/scripts.pory"
@@ -466,7 +464,6 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
 # 233 "data/maps/LittlerootTown/scripts.pory"
 	addobject LOCALID_BIRCH
 # 234 "data/maps/LittlerootTown/scripts.pory"
-	addobject LOCALID_RIVAL
 # 235 "data/maps/LittlerootTown/scripts.pory"
 	checkplayergender
 # 236 "data/maps/LittlerootTown/scripts.pory"
@@ -480,7 +477,6 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
 # 240 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale::
 # 241 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_RIVAL, 6, 10
 # 242 "data/maps/LittlerootTown/scripts.pory"
 	setobjectxy LOCALID_BIRCH, 5, 10
 # 243 "data/maps/LittlerootTown/scripts.pory"
@@ -490,7 +486,6 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale::
 # 245 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
 # 246 "data/maps/LittlerootTown/scripts.pory"
-	setobjectxy LOCALID_RIVAL, 13, 10
 # 247 "data/maps/LittlerootTown/scripts.pory"
 	setobjectxy LOCALID_BIRCH, 14, 10
 # 248 "data/maps/LittlerootTown/scripts.pory"
@@ -2025,11 +2020,12 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1017 "data/maps/LittlerootTown/scripts.pory"
 	.string "but I never expected this.\p"
 # 1018 "data/maps/LittlerootTown/scripts.pory"
-	.string "Oh, yes. Do you still have the POKéDEX\n"
+	.string "Oh, by the way, I have something to give\n"
 # 1019 "data/maps/LittlerootTown/scripts.pory"
-	.string "I gave you?\p"
+	.string "to you.\p"
+	.string "I always planned on giving this to the\n"
+	.string "next Hoenn Champion.\l"
 # 1020 "data/maps/LittlerootTown/scripts.pory"
-	.string "I have something to show you.\n"
 # 1021 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
 `

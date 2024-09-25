@@ -66,6 +66,10 @@ LittlerootTown_ProfessorBirchsLab_OnWarp:
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
 	.2byte 0
 
+NewBirchsLab_OnWarp::
+	map_script_2 VAR_GIVE_BIRTH_ISLAND_TICKET, 1, NewBirchsLab_EventScript_SetObjectPosBirthIsland
+	.2byte 0
+
 LittlerootTown_ProfessorBirchsLab_EventScript_SetPlayerPosForReceiveStarter::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
@@ -80,6 +84,12 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade::
 	setobjectxy LOCALID_BIRCH, 6, 4
 	turnobject LOCALID_AIDE, DIR_EAST
 	setobjectxy LOCALID_AIDE, 10, 10
+	end
+
+NewBirchsLab_EventScript_SetObjectPosBirthIsland::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	turnobject 4, DIR_SOUTH
+	setobjectxy 4, 6, 5
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject::
@@ -105,6 +115,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters::
 
 LittlerootTown_ProfessorBirchsLab_OnFrame:
 	map_script_2 VAR_BIRCH_LAB_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
+	map_script_2 VAR_GIVE_BIRTH_ISLAND_TICKET, 1, LittlerootTown_ProfessorBirchsLab_EventScript_GiveBirthIslandTicket
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
 	.2byte 0
@@ -204,8 +215,21 @@ LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
+	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
+	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
+	releaseall
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveBirthIslandTicket::
+	lockall
+	delay 30
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_TakeTicket, MSGBOX_DEFAULT
+	giveitem ITEM_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	setvar VAR_GIVE_BIRTH_ISLAND_TICKET, 2
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeadToLilyCove, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
 	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
 	releaseall
@@ -1024,4 +1048,17 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems::
 	.string "{PLAYER} received several Items!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_TakeTicket:
+	.string "I've had this ticket for a long time, but\n"
+	.string "I knew I had to wait to give it to a\l"
+	.string "strong trainer.\p"
+	.string "Since you are the Champion, I know I'll\n"
+	.string "be leaving it in good hands.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_HeadToLilyCove:
+	.string "I can see you've received some tickets\n"
+	.string "from your parents already.\p"
+	.string "You'll sure be busy sailing to all new\n"
+	.string "parts of the region!$"
 `
