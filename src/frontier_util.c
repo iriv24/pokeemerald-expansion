@@ -94,71 +94,155 @@ static void ShowPyramidResultsWindow(void);
 static void ShowLinkContestResultsWindow(void);
 static void CopyFrontierBrainText(bool8 playerWonText);
 
-#define FRONTIER_BRAIN_SPRITES(Brain) \
-    .trainerId = TRAINER_##Brain,     \
-    .objEventGfx = OBJ_EVENT_GFX_##Brain
-
-#define FRONTIER_BRAIN_TEXTS(Brain)                                        \
-    .lostTexts = {gText_##Brain##DefeatSilver, gText_##Brain##DefeatGold}, \
-    .wonTexts = {gText_##Brain##WonSilver, gText_##Brain##WonGold}
-
 // battledBit: Flags to change the conversation when the Frontier Brain is encountered for a battle
 // First bit is has battled them before and not won yet, second bit is has battled them and won (obtained a Symbol)
 const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
 {
     [FRONTIER_FACILITY_TOWER] =
     {
-        FRONTIER_BRAIN_SPRITES(ANABEL),
+        .trainerId = TRAINER_ANABEL,
+        .objEventGfx = OBJ_EVENT_GFX_ANABEL,
         .isFemale = TRUE,
-        FRONTIER_BRAIN_TEXTS(Anabel),
+        .lostTexts = {
+            COMPOUND_STRING("Okay, I understand…"), //Silver
+            COMPOUND_STRING("Thank you…")           //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING("It's very disappointing…"), //Silver
+            COMPOUND_STRING("I'm terribly sorry…")       //Gold
+        },
         .battledBit = {1 << 0, 1 << 1},
         .streakAppearances = {35, 70, 35, 1},
     },
     [FRONTIER_FACILITY_DOME] =
     {
-        FRONTIER_BRAIN_SPRITES(TUCKER),
+        .trainerId = TRAINER_TUCKER,
+        .objEventGfx = OBJ_EVENT_GFX_TUCKER,
         .isFemale = FALSE,
-        FRONTIER_BRAIN_TEXTS(Tucker),
+        .lostTexts = {
+            COMPOUND_STRING(
+                "Grr…\n"
+                "What the…"),        //Silver
+            COMPOUND_STRING(
+                "Ahahaha!\n"
+                "You're inspiring!") //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING(
+                "Ahahaha! Aren't you embarrassed?\n"
+                "Everyone's watching!"),                              //Silver
+            COMPOUND_STRING("My DOME ACE title isn't just for show!") //Gold
+        },
         .battledBit = {1 << 2, 1 << 3},
         .streakAppearances = {1, 2, 5, 0},
     },
     [FRONTIER_FACILITY_PALACE] =
     {
-        FRONTIER_BRAIN_SPRITES(SPENSER),
+        .trainerId = TRAINER_SPENSER,
+        .objEventGfx = OBJ_EVENT_GFX_SPENSER,
         .isFemale = FALSE,
-        FRONTIER_BRAIN_TEXTS(Spenser),
+        .lostTexts = {
+            COMPOUND_STRING(
+                "Ah…\n"
+                "Now this is something else…"), //Silver
+            COMPOUND_STRING(
+                "Gwah!\n"
+                "Hahahaha!")                    //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING(
+                "Your POKéMON are wimpy because\n"
+                "you're wimpy as a TRAINER!"),           //Silver
+            COMPOUND_STRING(
+                "Gwahahaha!\n"
+                "My brethren, we have nothing to fear!") //Gold
+        },
         .battledBit = {1 << 4, 1 << 5},
         .streakAppearances = {21, 42, 21, 1},
     },
     [FRONTIER_FACILITY_ARENA] =
     {
-        FRONTIER_BRAIN_SPRITES(GRETA),
+        .trainerId = TRAINER_GRETA,
+        .objEventGfx = OBJ_EVENT_GFX_GRETA,
         .isFemale = TRUE,
-        FRONTIER_BRAIN_TEXTS(Greta),
+        .lostTexts = {
+            COMPOUND_STRING(
+                "No way!\n"
+                "Good job!"),        //Silver
+            COMPOUND_STRING(
+                "Huh?\n"
+                "Are you serious?!") //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING(
+                "Oh, come on!\n"
+                "You have to try harder than that!"), //Silver
+            COMPOUND_STRING(
+                "Heheh!\n"
+                "What did you expect?")               //Gold
+        },
         .battledBit = {1 << 6, 1 << 7},
         .streakAppearances = {28, 56, 28, 1},
     },
     [FRONTIER_FACILITY_FACTORY] =
     {
-        FRONTIER_BRAIN_SPRITES(NOLAND),
+        .trainerId = TRAINER_NOLAND,
+        .objEventGfx = OBJ_EVENT_GFX_NOLAND,
         .isFemale = FALSE,
-        FRONTIER_BRAIN_TEXTS(Noland),
+        .lostTexts = {
+            COMPOUND_STRING(
+                "Good job!\n"
+                "You know what you're doing!"),    //Silver
+            COMPOUND_STRING("What happened here?") //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING(
+                "Way to work!\n"
+                "That was a good lesson, eh?"), //Silver
+            COMPOUND_STRING(
+                "Hey, hey, hey!\n"
+                "You're finished already?")     //Gold
+        },
         .battledBit = {1 << 8, 1 << 9},
         .streakAppearances = {21, 42, 21, 1},
     },
     [FRONTIER_FACILITY_PIKE] =
     {
-        FRONTIER_BRAIN_SPRITES(LUCY),
+        .trainerId = TRAINER_LUCY,
+        .objEventGfx = OBJ_EVENT_GFX_LUCY,
         .isFemale = TRUE,
-        FRONTIER_BRAIN_TEXTS(Lucy),
+        .lostTexts = {
+            COMPOUND_STRING("Urk…"), //Silver
+            COMPOUND_STRING("Darn!") //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING("Humph…"), //Silver
+            COMPOUND_STRING("Hah!")    //Gold
+        },
         .battledBit = {1 << 10, 1 << 11},
         .streakAppearances = {28, 140, 56, 1},
     },
     [FRONTIER_FACILITY_PYRAMID] =
     {
-        FRONTIER_BRAIN_SPRITES(BRANDON),
+        .trainerId = TRAINER_BRANDON,
+        .objEventGfx = OBJ_EVENT_GFX_BRANDON,
         .isFemale = FALSE,
-        FRONTIER_BRAIN_TEXTS(Brandon),
+        .lostTexts = {
+            COMPOUND_STRING(
+                "That's it! You've done great!\n"
+                "You've worked hard for this!"), //Silver
+            COMPOUND_STRING(
+                "That's it! You've done it!\n"
+                "You kept working for this!")    //Gold
+        },
+        .wonTexts = {
+            COMPOUND_STRING(
+                "Hey! What's wrong with you!\n"
+                "Let's see some effort! Get up!"),       //Silver
+            COMPOUND_STRING(
+                "Hey! Don't you give up now!\n"
+                "Get up! Don't lose faith in yourself!") //Gold
+        },
         .battledBit = {1 << 12, 1 << 13},
         .streakAppearances = {21, 70, 35, 0},
     },
@@ -2552,5 +2636,16 @@ static void CopyFrontierBrainText(bool8 playerWonText)
     case TRUE:
         StringCopy(gStringVar4, gFrontierBrainInfo[facility].lostTexts[symbol]);
         break;
+    }
+}
+
+void ClearEnemyPartyAfterChallenge()
+{
+    // We zero out the Enemy's party here when the player either wins or loses the challenge since we
+    // can't do it the usual way in FreeResetData_ReturnToOvOrDoEvolutions() in battle_main.c due to the
+    // way facilities like the Battle Factory and the Slateport Battle Tent work
+    if (gSpecialVar_0x8005 == 0)
+    {
+        ZeroEnemyPartyMons();
     }
 }

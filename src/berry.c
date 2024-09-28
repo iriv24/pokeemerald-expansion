@@ -1817,6 +1817,8 @@ bool32 BerryTreeGrow(struct BerryTree *tree)
         tree->stage = BERRY_STAGE_BERRIES;
         break;
     case BERRY_STAGE_BERRIES:
+        if (OW_BERRY_IMMORTAL)
+            break;
         tree->watered = 0;
         tree->berryYield = 0;
         tree->stage = BERRY_STAGE_SPROUTED;
@@ -1842,16 +1844,16 @@ static u16 GetMulchAffectedGrowthRate(u16 berryDuration, u8 mulch, u8 stage)
 void BerryTreeTimeUpdate(s32 minutes)
 {
     int i;
-    u8 drainVal;
+    u32 drainVal;
     struct BerryTree *tree;
 
     for (i = 0; i < BERRY_TREES_COUNT; i++)
     {
         tree = &gSaveBlock1Ptr->berryTrees[i];
 
-        if (tree->berry && tree->stage && !tree->stopGrowth)
+        if (tree->berry && tree->stage && !tree->stopGrowth && (!OW_BERRY_IMMORTAL || tree->stage != BERRY_STAGE_BERRIES))
         {
-            if (minutes >= GetStageDurationByBerryType(tree->berry) * 71)
+            if ((!OW_BERRY_IMMORTAL) && (minutes >= GetStageDurationByBerryType(tree->berry) * 71))
             {
                 *tree = gBlankBerryTree;
             }
@@ -2142,6 +2144,7 @@ void ObjectEventInteractionGetBerryCountString(void)
     u8 treeId = GetObjectEventBerryTreeId(gSelectedObjectEvent);
     u8 berry = GetBerryTypeByBerryTreeId(treeId);
     u8 count = GetBerryCountByBerryTreeId(treeId);
+    
     CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar1, count);
     berry = GetTreeMutationValue(treeId);
     if (berry > 0)

@@ -116,11 +116,7 @@ u8 GetBattlerSpriteCoord(u8 battlerId, u8 coordType)
         }
         else
         {
-            if (GetBattlerSide(battlerId) != B_SIDE_PLAYER)
-                mon = &gEnemyParty[gBattlerPartyIndexes[battlerId]];
-            else
-                mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
-
+            mon = GetPartyBattlerData(battlerId);
             illusionMon = GetIllusionMonPtr(battlerId);
             if (illusionMon != NULL)
                 mon = illusionMon;

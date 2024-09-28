@@ -33,7 +33,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/items.h"
-#include "level_caps.h"
+#include "caps.h"
 
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c

@@ -313,6 +313,8 @@ void MoveSelectionDestroyCursorAt(u8 cursorPosition);
 void PlayerHandleChooseMove(u32 battler);
 void HandleInputChooseMove(u32 battler);
 void HandleInputChooseTarget(u32 battler);
+void HandleInputShowEntireFieldTargets(u32 battler);
+void HandleInputShowTargets(u32 battler);
 void HandleMoveSwitching(u32 battler);
 void HandleChooseMoveAfterDma3(u32 battler);
 

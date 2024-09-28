@@ -1,6 +1,6 @@
 #include "global.h"
 #include "event_data.h"
-#include "level_caps.h"
+#include "caps.h"
 #include "pokedex.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte

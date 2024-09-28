@@ -1147,7 +1147,7 @@ static const u16 sMarkings_Pal[] = INCBIN_U16("graphics/summary_screen/markings.
 static u8 ShowCategoryIcon(u32 category)
 {
     if (sMonSummaryScreen->categoryIconSpriteId == 0xFF)
-        sMonSummaryScreen->categoryIconSpriteId = CreateSprite(&gSpriteTemplate_CategoryIcons, 48, 129, 0);
+        sMonSummaryScreen->categoryIconSpriteId = CreateSprite(&gSpriteTemplate_CategoryIcons, 48, 128, 0);
 
     gSprites[sMonSummaryScreen->categoryIconSpriteId].invisible = FALSE;
     StartSpriteAnim(&gSprites[sMonSummaryScreen->categoryIconSpriteId], category);
@@ -1667,15 +1667,13 @@ static void Task_HandleInput(u8 taskId)
         }
 
         
-    #if DEBUG_POKEMON_SPRITE_VISUALIZER == TRUE
-        else if (JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
+        else if (DEBUG_POKEMON_SPRITE_VISUALIZER && JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
         {
             sMonSummaryScreen->callback = CB2_Pokemon_Sprite_Visualizer;
             StopPokemonAnimations();
             PlaySE(SE_SELECT);
             CloseSummaryScreen(taskId);
         }
-    #endif
     }
 }
 
@@ -4065,28 +4063,23 @@ static void SetMonTypeIcons(void)
 static void SetMoveTypeIcons(void)
 {
     u32 i;
-    u32 type;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    u32 type;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
         {
+            type = gMovesInfo[summary->moves[i]].type;
             if (P_SHOW_DYNAMIC_TYPES)
-            {
                 type = CheckDynamicMoveType(mon, summary->moves[i], 0);
-                SetTypeSpritePosAndPal(type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);  
-            }
-            else
-            {
-                SetTypeSpritePosAndPal(gMovesInfo[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE); 
-            }
+            SetTypeSpritePosAndPal(type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
         }
         else
         {
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
-        }     
+        }
     }
 }
 

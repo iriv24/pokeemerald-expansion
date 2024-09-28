@@ -5661,9 +5661,9 @@ static const struct TrainerMon sParty_WallaceWithSteven[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_PALKIA_PRIMAL,
+    .species = SPECIES_PALKIA,
     .nature = NATURE_TIMID,
-    .ability = ABILITY_PRIMAL_ARMOR,
+    .ability = ABILITY_TELEPATHY,
     .heldItem = ITEM_LUSTROUS_ORB,
     .moves = {MOVE_SPACIAL_REND, MOVE_EARTH_POWER, MOVE_AURA_SPHERE, MOVE_HYDRO_PUMP}
     },
@@ -5692,9 +5692,9 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_DIALGA_PRIMAL,
+    .species = SPECIES_DIALGA,
     .nature = NATURE_TIMID,
-    .ability = ABILITY_PRIMAL_ARMOR,
+    .ability = ABILITY_TELEPATHY,
     .heldItem = ITEM_ADAMANT_ORB,
     .moves = {MOVE_ROAR_OF_TIME, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
     },

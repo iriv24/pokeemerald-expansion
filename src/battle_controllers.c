@@ -75,7 +75,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     gBattleControllerExecFlags = 0;
     ClearBattleAnimationVars();
     BattleAI_SetupItems();
-	BattleAI_SetupFlags();
+    BattleAI_SetupFlags();
 
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
@@ -611,7 +611,7 @@ bool32 IsValidForBattle(struct Pokemon *mon)
 {
     u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
     return (species != SPECIES_NONE
-	 && species != SPECIES_EGG
+         && species != SPECIES_EGG
          && GetMonData(mon, MON_DATA_HP) != 0
          && GetMonData(mon, MON_DATA_IS_EGG) == FALSE);
 }
@@ -2903,7 +2903,7 @@ void BtlController_HandleIntroTrainerBallThrow(u32 battler, u16 tagTrainerPal, c
     if (side == B_SIDE_PLAYER)
     {
         StoreSpriteCallbackInData6(&gSprites[gBattlerSpriteIds[battler]], SpriteCB_FreePlayerSpriteLoadMonSprite);
-        StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 1);
+        StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], ShouldDoSlideInAnim() ? 2 : 1);
 
         paletteNum = AllocSpritePalette(tagTrainerPal);
         LoadCompressedPalette(trainerPal, OBJ_PLTT_ID(paletteNum), PLTT_SIZE_4BPP);

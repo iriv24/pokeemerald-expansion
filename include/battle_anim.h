@@ -557,4 +557,7 @@ void CoreEnforcerLoadBeamTarget(struct Sprite *sprite);
 void SpriteCB_RandomCentredHits(struct Sprite *sprite);
 void InitSpritePosToAnimTargetsCentre(struct Sprite *sprite, bool32 respectMonPicOffsets);
 
+// battle_anim_bug.c
+void AnimTranslateStinger(struct Sprite *sprite);
+
 #endif // GUARD_BATTLE_ANIM_H

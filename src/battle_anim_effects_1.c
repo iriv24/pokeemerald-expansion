@@ -2535,13 +2535,13 @@ const struct SpriteTemplate gTauntFingerSpriteTemplate =
 
 const struct SpriteTemplate gPowerOrbs_Float =
 {
-	.tileTag = ANIM_TAG_RED_ORB,
-	.paletteTag = ANIM_TAG_RED_ORB,
-	.oam = &gOamData_AffineOff_ObjNormal_16x16,
-	.anims = gSporeParticleAnimTable,
-	.images = NULL,
-	.affineAnims = gDummySpriteAffineAnimTable,
-	.callback = AnimSporeParticle,
+    .tileTag = ANIM_TAG_RED_ORB,
+    .paletteTag = ANIM_TAG_RED_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gSporeParticleAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSporeParticle,
 };
 
 const union AnimCmd gRockPolishStreak_AnimCmd[] =
@@ -5495,8 +5495,8 @@ static void AnimMilkBottle_Step2(struct Sprite *sprite, int unk1, int unk2)
 
 void AnimGrantingStars(struct Sprite *sprite)
 {
-    if (!gBattleAnimArgs[2])
-        SetSpriteCoordsToAnimAttackerCoords(sprite);
+    if (!InitSpritePosToAnimBattler(gBattleAnimArgs[2], sprite, FALSE))
+        return;
 
     SetAnimSpriteInitialXOffset(sprite, gBattleAnimArgs[0]);
     sprite->y += gBattleAnimArgs[1];
@@ -6616,12 +6616,29 @@ static void ReloadBattlerSprites(u32 battler, struct Pokemon *party)
     UpdateIndicatorVisibilityAndType(gHealthboxSpriteIds[battler], TRUE);
 
     // Try to recreate shadow sprite
-    if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteId < MAX_SPRITES)
+    if (B_ENEMY_MON_SHADOW_STYLE >= GEN_4)
     {
-        DestroySprite(&gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteId]);
-        gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteId = MAX_SPRITES;
-        CreateEnemyShadowSprite(battler);
-        SetBattlerShadowSpriteCallback(battler, GetMonData(mon, MON_DATA_SPECIES));
+        // Both of these *should* be true, but use an OR just to be certain
+        if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary < MAX_SPRITES
+            || gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary < MAX_SPRITES)
+        {
+            DestroySprite(&gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary]);
+            DestroySprite(&gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary]);
+            gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary = MAX_SPRITES;
+            gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary = MAX_SPRITES;
+            CreateEnemyShadowSprite(battler);
+            SetBattlerShadowSpriteCallback(battler, GetMonData(mon, MON_DATA_SPECIES));
+        }
+    }
+    else
+    {
+        if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary < MAX_SPRITES)
+        {
+            DestroySprite(&gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary]);
+            gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary = MAX_SPRITES;
+            CreateEnemyShadowSprite(battler);
+            SetBattlerShadowSpriteCallback(battler, GetMonData(mon, MON_DATA_SPECIES));
+        }
     }
 }
 
@@ -7234,42 +7251,42 @@ static void AnimNightSlash(struct Sprite *sprite)
 
 static const union AffineAnimCmd sCompressTargetHorizontallyAffineAnimCmds[] =
 {
-	AFFINEANIMCMD_FRAME(64, 0, 0, 16), //Compress
-	AFFINEANIMCMD_FRAME(0, 0, 0, 64),
-	AFFINEANIMCMD_FRAME(-64, 0, 0, 16),
-	AFFINEANIMCMD_END,
+    AFFINEANIMCMD_FRAME(64, 0, 0, 16), //Compress
+    AFFINEANIMCMD_FRAME(0, 0, 0, 64),
+    AFFINEANIMCMD_FRAME(-64, 0, 0, 16),
+    AFFINEANIMCMD_END,
 };
 
 static const union AffineAnimCmd sCompressTargetHorizontallyAffineAnimCmdsFast[] =
 {
-	AFFINEANIMCMD_FRAME(32, 0, 0, 16), //Compress
-	AFFINEANIMCMD_FRAME(0, 0, 0, 32),
-	AFFINEANIMCMD_FRAME(-32, 0, 0, 16),
-	AFFINEANIMCMD_END,
+    AFFINEANIMCMD_FRAME(32, 0, 0, 16), //Compress
+    AFFINEANIMCMD_FRAME(0, 0, 0, 32),
+    AFFINEANIMCMD_FRAME(-32, 0, 0, 16),
+    AFFINEANIMCMD_END,
 };
 
 static void AnimTask_CompressTargetStep(u8 taskId)
 {
-	struct Task* task = &gTasks[taskId];
+    struct Task* task = &gTasks[taskId];
 
-	if (!RunAffineAnimFromTaskData(task))
-		DestroyAnimVisualTask(taskId);
+    if (!RunAffineAnimFromTaskData(task))
+        DestroyAnimVisualTask(taskId);
 }
 
 void AnimTask_CompressTargetHorizontally(u8 taskId)
 {
-	struct Task* task = &gTasks[taskId];
-	u8 spriteId = GetAnimBattlerSpriteId(ANIM_TARGET);
-	PrepareAffineAnimInTaskData(task, spriteId, sCompressTargetHorizontallyAffineAnimCmds);
-	task->func = AnimTask_CompressTargetStep;
+    struct Task* task = &gTasks[taskId];
+    u8 spriteId = GetAnimBattlerSpriteId(ANIM_TARGET);
+    PrepareAffineAnimInTaskData(task, spriteId, sCompressTargetHorizontallyAffineAnimCmds);
+    task->func = AnimTask_CompressTargetStep;
 }
 
 void AnimTask_CompressTargetHorizontallyFast(u8 taskId)
 {
-	struct Task* task = &gTasks[taskId];
-	u8 spriteId = GetAnimBattlerSpriteId(ANIM_TARGET);
-	PrepareAffineAnimInTaskData(task, spriteId, sCompressTargetHorizontallyAffineAnimCmdsFast);
-	task->func = AnimTask_CompressTargetStep;
+    struct Task* task = &gTasks[taskId];
+    u8 spriteId = GetAnimBattlerSpriteId(ANIM_TARGET);
+    PrepareAffineAnimInTaskData(task, spriteId, sCompressTargetHorizontallyAffineAnimCmdsFast);
+    task->func = AnimTask_CompressTargetStep;
 }
 
 void AnimTask_CreateSmallSteelBeamOrbs(u8 taskId)

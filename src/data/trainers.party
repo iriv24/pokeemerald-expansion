@@ -13,7 +13,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Geodude
 Level: 21
@@ -1596,7 +1596,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Swellow
 Level: 26
@@ -1612,7 +1612,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Spinda
 Level: 26
@@ -1628,7 +1628,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Slakoth @ Sitrus Berry
 Level: 26
@@ -1644,7 +1644,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Vigoroth
 Level: 26
@@ -1680,7 +1680,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Sableye
 Level: 44
@@ -1701,7 +1701,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Mawile
 Level: 46
@@ -1916,7 +1916,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Electrike
 Level: 26
@@ -1937,7 +1937,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 29
@@ -1958,7 +1958,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 32
@@ -1979,7 +1979,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 35
@@ -2017,7 +2017,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Delcatty
 Level: 26
@@ -2032,7 +2032,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Wigglytuff
 Level: 26
@@ -2048,7 +2048,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Zangoose
 Level: 26
@@ -2063,7 +2063,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Emolga
 Level: 57
@@ -2084,7 +2084,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Lairon
 Level: 45
@@ -2350,7 +2350,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Wingull
 Level: 26
@@ -2371,7 +2371,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Pelipper
 Level: 29
@@ -2392,7 +2392,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Pelipper
 Level: 32
@@ -2413,7 +2413,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Pelipper
 Level: 34
@@ -7349,7 +7349,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hariyama
 Level: 33
@@ -7366,7 +7366,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hariyama
 Level: 36
@@ -7383,7 +7383,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hariyama
 Level: 39
@@ -7400,7 +7400,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hariyama
 Level: 42
@@ -7453,7 +7453,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Meditite
 Level: 30
@@ -7470,7 +7470,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 33
@@ -7487,7 +7487,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 36
@@ -7504,7 +7504,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 39
@@ -10936,7 +10936,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Absol
 Level: 57
@@ -10949,7 +10949,7 @@ Pic: Ninja Boy
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Weezing
 Level: 55
@@ -11291,7 +11291,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Treecko
 Level: 5
@@ -11432,7 +11432,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Torchic
 Level: 5
@@ -11573,7 +11573,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Mudkip
 Level: 5
@@ -11714,7 +11714,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Treecko
 Level: 5
@@ -11855,7 +11855,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Torchic
 Level: 5
@@ -11996,7 +11996,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Mudkip
 Level: 5
@@ -12209,7 +12209,7 @@ Pic: Pokemon Breeder M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Lokix
 Level: 75
@@ -12417,7 +12417,7 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Snorlax
 Level: 75
@@ -12583,7 +12583,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Breloom
 Level: 60
@@ -12617,7 +12617,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Cacturne
 Level: 39
@@ -12630,7 +12630,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Breloom
 Level: 31
@@ -12643,7 +12643,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Breloom
 Level: 34
@@ -12656,7 +12656,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Breloom
 Level: 37
@@ -12669,7 +12669,7 @@ Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Kecleon
 Level: 39
@@ -12686,7 +12686,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Bellossom
 Level: 58
@@ -12703,7 +12703,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Ludicolo
 Level: 62
@@ -12724,7 +12724,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Swablu
 Level: 38
@@ -12741,7 +12741,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Gloom
 Level: 30
@@ -12758,7 +12758,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Gloom
 Level: 33
@@ -12775,7 +12775,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Gloom
 Level: 36
@@ -12792,7 +12792,7 @@ Pic: Pokemon Ranger F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Bellossom
 Level: 39
@@ -12925,7 +12925,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 62
@@ -13187,7 +13187,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Staraptor
 Level: 70
@@ -13315,7 +13315,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Aggron
 Level: 70
@@ -14581,7 +14581,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Kecleon
 Level: 40
@@ -15759,7 +15759,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 43
@@ -15784,7 +15784,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 46
@@ -15809,7 +15809,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Medicham
 Level: 49
@@ -15834,7 +15834,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Medicham
 Level: 52
@@ -16747,7 +16747,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Greedent
 Level: 70
@@ -16764,7 +16764,7 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Mightyena
 Level: 42
@@ -16879,7 +16879,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 54
@@ -17188,7 +17188,7 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Kilowattrel
 Level: 70
@@ -17248,7 +17248,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Manectric
 Level: 64
@@ -17452,7 +17452,7 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Golem
 Level: 32
@@ -17493,7 +17493,7 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Omanyte
 Level: 37
@@ -17542,7 +17542,7 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Omastar
 Level: 42
@@ -17591,7 +17591,7 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Aerodactyl
 Level: 47
@@ -17648,7 +17648,7 @@ Pic: Leader Brawly
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Machamp @ Sitrus Berry
 Level: 33
@@ -17689,7 +17689,7 @@ Pic: Leader Brawly
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Machamp @ Sitrus Berry
 Level: 38
@@ -17730,7 +17730,7 @@ Pic: Leader Brawly
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hitmonchan
 Level: 40
@@ -17779,7 +17779,7 @@ Pic: Leader Brawly
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hitmonlee
 Level: 46
@@ -17836,7 +17836,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Mareep
 Level: 36
@@ -17877,7 +17877,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Pikachu
 Level: 39
@@ -17926,7 +17926,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Raichu
 Level: 44
@@ -17975,7 +17975,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Electabuzz
 Level: 50
@@ -18032,7 +18032,7 @@ Pic: Leader Flannery
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Magcargo @ White Herb
 Level: 38
@@ -18073,7 +18073,7 @@ Pic: Leader Flannery
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Growlithe
 Level: 41
@@ -18122,7 +18122,7 @@ Pic: Leader Flannery
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Houndour
 Level: 46
@@ -18179,7 +18179,7 @@ Pic: Leader Flannery
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Arcanine
 Level: 51
@@ -18236,7 +18236,7 @@ Pic: Leader Norman
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Chansey
 Level: 42
@@ -18277,7 +18277,7 @@ Pic: Leader Norman
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Slaking @ Sitrus Berry
 Level: 47
@@ -18326,7 +18326,7 @@ Pic: Leader Norman
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Slaking @ Sitrus Berry
 Level: 52
@@ -18375,7 +18375,7 @@ Pic: Leader Norman
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Slaking @ Sitrus Berry
 Level: 57
@@ -18432,7 +18432,7 @@ Pic: Leader Winona
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Risky
+AI: Basic Trainer / Risky
 
 Dratini @ Sitrus Berry
 Level: 40
@@ -18481,7 +18481,7 @@ Pic: Leader Winona
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Risky
+AI: Basic Trainer / Risky
 
 Hoothoot
 Level: 43
@@ -18538,7 +18538,7 @@ Pic: Leader Winona
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Risky
+AI: Basic Trainer / Risky
 
 Noctowl
 Level: 48
@@ -18595,7 +18595,7 @@ Pic: Leader Winona
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Risky
+AI: Basic Trainer / Risky
 
 Noctowl
 Level: 53
@@ -18652,7 +18652,7 @@ Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Slowpoke
 Level: 48
@@ -18701,7 +18701,7 @@ Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Drowzee
 Level: 53
@@ -18758,7 +18758,7 @@ Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hypno
 Level: 58
@@ -18815,7 +18815,7 @@ Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Hypno
 Level: 63
@@ -18872,7 +18872,7 @@ Pic: Leader Juan
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Poliwag
 Level: 46
@@ -18921,7 +18921,7 @@ Pic: Leader Juan
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Poliwhirl
 Level: 50
@@ -18970,7 +18970,7 @@ Pic: Leader Juan
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Lapras
 Level: 56
@@ -19027,7 +19027,7 @@ Pic: Leader Juan
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Lapras
 Level: 61
@@ -19084,7 +19084,7 @@ Pic: Bug Maniac
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Illumise
 Level: 28
@@ -19114,7 +19114,7 @@ Pic: Steven
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Skarmory
 Level: 77
@@ -19171,7 +19171,7 @@ Pic: Salon Maiden Anabel
 Gender: Female
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19184,7 +19184,7 @@ Pic: Dome Ace Tucker
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19197,7 +19197,7 @@ Pic: Palace Maven Spenser
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19210,7 +19210,7 @@ Pic: Arena Tycoon Greta
 Gender: Female
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19223,7 +19223,7 @@ Pic: Factory Head Noland
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19236,7 +19236,7 @@ Pic: Pike Queen Lucy
 Gender: Female
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19249,7 +19249,7 @@ Pic: Pyramid King Brandon
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Beldum
 Level: 5
@@ -19586,7 +19586,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Loudred
 Level: 35
@@ -19603,7 +19603,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Spinda
 Level: 37
@@ -19624,7 +19624,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Spinda
 Level: 39
@@ -19645,7 +19645,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Spinda
 Level: 41
@@ -19767,7 +19767,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Machop
 Level: 28
@@ -19788,7 +19788,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Machop
 Level: 30
@@ -19809,7 +19809,7 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Basic Trainer
 
 Machoke
 Level: 33

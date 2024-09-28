@@ -1338,6 +1338,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
 
@@ -1356,6 +1357,7 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
 
