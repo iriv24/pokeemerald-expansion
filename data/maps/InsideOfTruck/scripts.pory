@@ -32,6 +32,13 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1
 	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	message InsideOfTruck_Text_ReadCarefully
+	waitmessage
+	delay 100
+	delay 100
+	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_SetDefaultSettings
+	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_StartSettingsMenu
 	releaseall
 	end
 
@@ -45,8 +52,21 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 1
 	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
+	message InsideOfTruck_Text_ReadCarefully
+	waitmessage
+	delay 100
+	delay 100
+	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_SetDefaultSettings
+	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_StartSettingsMenu
 	releaseall
 	end
+
+InsideOfTruck_EventScript_SetDefaultSettings:
+	msgbox InsideOfTruck_Text_DefaultSettingsSaved, MSGBOX_DEFAULT
+	setvar VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_NORMAL_MODE
+	setflag FLAG_MIN_GRINDING_MODE
+	return
 
 InsideOfTruck_EventScript_MovingBox::
 	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
@@ -57,4 +77,307 @@ InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "It's a POKéMON brand moving and\n"
 	.string "delivery service.$"
 
+InsideOfTruck_Text_ReadCarefully:
+	.string "{COLOR RED}{SHADOW LIGHT_RED}Please take a moment to read the\n"
+	.string "following carefully.$"
+
+InsideOfTruck_Text_WantToUseDefaultSettings:
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like to play Pokémon Emerald\n"
+	.string "Imperium with the default settings?\p"
+	.string "The default settings are as follows:\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal difficulty{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} - challenging boss\n"
+	.string "battles with hard level caps enforced.\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode is ON{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} - this\n"
+	.string "guarantees all Pokémon will have\l"
+	.string "perfect IVs, and EVs cannot be\l"
+	.string "obtained.  Boss Pokémon will not have\l"
+	.string "EVs either.\p"
+	.string "Randomizer {COLOR RED}{SHADOW LIGHT_RED}OFF{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} - no additional\n"
+	.string "randomization will be enabled.\p"
+	.string "With this information in mind:\n"
+	.string "Would you like to play Pokémon Emerald\l"
+	.string "Imperium with the default settings?$"
+
+InsideOfTruck_Text_DefaultSettingsSaved:
+	.string "Default settings saved.\n"
+	.string "Good luck!$"
 `
+
+script InsideOfTruck_EventScript_StartSettingsMenu {
+	msgbox(WhichOption)
+	if(flag(FLAG_MIN_GRINDING_MODE))
+	{
+		dynmultipush("Difficulty Options", 0)
+		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode", 1)
+		dynmultipush("Randomizer Options", 2)
+		dynmultipush("Done", 3)
+	}
+	else
+	{
+		dynmultipush("Difficulty Options", 0)
+		dynmultipush("{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode", 1)
+		dynmultipush("Randomizer Options", 2)
+		dynmultipush("Done", 3)
+	}
+	
+    // setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == 0)
+	{
+		goto(InsideOfTruck_EventScript_DifficultyOptions)
+	}
+
+	if (var(VAR_RESULT) == 1)
+	{
+		goto(InsideOfTruck_EventScript_MinGrindingMode)	
+	}
+
+	if (var(VAR_RESULT) == 2)
+	{
+		goto(InsideOfTruck_EventScript_RandomzierOptions)	
+	}
+
+	if (var(VAR_RESULT) == 3) 
+	{
+		goto(InsideOfTruck_EventScript_SaveSettingsDone)
+	}
+}
+
+script InsideOfTruck_EventScript_DifficultyOptions {
+	msgbox(WhichDifficulty)
+	switch(var(VAR_GAME_SETTING_DIFFICULTY_MODE))
+	{
+		case GAME_SETTING_DIFFICULTY_NORMAL_MODE:
+            dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal", GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+			dynmultipush("Easy", GAME_SETTING_DIFFICULTY_EASY_MODE)
+			dynmultipush("Done", MULTI_B_PRESSED)
+
+        case GAME_SETTING_DIFFICULTY_EASY_MODE:
+			dynmultipush("Normal", GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+			dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Easy", GAME_SETTING_DIFFICULTY_EASY_MODE)
+			dynmultipush("Done", MULTI_B_PRESSED)
+		
+		default:
+			dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal", GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+			dynmultipush("Easy", GAME_SETTING_DIFFICULTY_EASY_MODE)
+			dynmultipush("Done", MULTI_B_PRESSED)
+	}
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(InsideOfTruck_EventScript_StartSettingsMenu)
+	}
+
+	if(var(VAR_RESULT) == GAME_SETTING_DIFFICULTY_NORMAL_MODE) 
+	{
+		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+		{
+			msgbox(NormalDifficultyCurrentlySelected)
+			goto(InsideOfTruck_EventScript_DifficultyOptions)
+		}
+		else
+		{
+			msgbox(NormalDifficultyYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setvar(VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+				msgbox(NormalDifficultyEnabled)
+			}
+			goto(InsideOfTruck_EventScript_DifficultyOptions)
+
+		}
+	}
+
+	if(var(VAR_RESULT) == GAME_SETTING_DIFFICULTY_EASY_MODE) 
+	{
+		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+		{
+			msgbox(EasyDifficultyCurrentlySelected)
+			goto(InsideOfTruck_EventScript_DifficultyOptions)
+		}
+		else
+		{
+			msgbox(EasyDifficultyYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setvar(VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_EASY_MODE)
+				msgbox(EasyDifficultyEnabled)
+			}
+			goto(InsideOfTruck_EventScript_DifficultyOptions)
+		}
+	}
+}
+
+script InsideOfTruck_EventScript_MinGrindingMode {
+	if(flag(FLAG_MIN_GRINDING_MODE))
+	{
+		msgbox(MinGrindingAlreadyOnYesNo, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == YES)
+		{
+			clearflag(FLAG_MIN_GRINDING_MODE)
+			msgbox(MinGrindingDisabled)
+		}
+	}
+	else
+	{
+		msgbox(MinGrindingAlreadyOffYesNo, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == YES)
+		{
+			setflag(FLAG_MIN_GRINDING_MODE)
+			msgbox(MinGrindingEnabled)
+		}
+	}
+	goto(InsideOfTruck_EventScript_StartSettingsMenu)
+		
+}
+
+
+script InsideOfTruck_EventScript_RandomzierOptions {
+	msgbox("todo")
+	goto(InsideOfTruck_EventScript_StartSettingsMenu)
+}
+
+
+script InsideOfTruck_EventScript_SaveSettingsDone {
+	msgbox(CustomSettingsSaved)
+	releaseall
+	end
+}
+
+
+text WhichOption
+{
+	"Which option would you like\n"
+	"to customize?"
+}
+
+text WhichDifficulty
+{
+	"Which difficulty mode would you\n"
+	"like to play on?"
+}
+
+text NormalDifficultyCurrentlySelected
+{
+	"This is the recommended difficulty\n"
+	"mode and is what this game is primarily\l"
+	"balanced around.\p"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} has challenging boss\n"
+	"battles with hard level caps enforced.\p"
+	"The player cannot access the Bag\n"
+	"during trainer battles, and the battle\l"
+	"style is forced to Set.\p"
+	"You currently have {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.\n"
+	"Please select a different difficulty\l"
+	"mode if you wish to change it."
+}
+
+text EasyDifficultyCurrentlySelected
+{
+	"There are still level caps in {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\n"
+	"however, the Boss Pokémon will be 2\l"
+	"levels lower than in Normal.\l"
+	"Boss teams are otherwise unchanged.\p"
+	"The player is allowed to access the\n"
+	"Bag during any battle.\p"
+	"Additionally, the player can change the\n"
+	"battle style from Set to Shift.\p"
+	"This will still be more difficult than a\n"
+	"vanilla Pokémon game.\p"
+	"You currently have {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.\n"
+	"Please select a different difficulty\l"
+	"mode if you wish to change it."
+}
+
+text NormalDifficultyYesNo
+{
+	"This is the recommended difficulty\n"
+	"mode and is what this game is primarily\l"
+	"balanced around.\p"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} has challenging boss\n"
+	"battles with hard level caps enforced.\p"
+	"The player cannot access the Bag\n"
+	"during trainer battles, and the battle\l"
+	"style is forced to Set.\p"
+	"Do you want to turn on\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode?"
+}
+
+text EasyDifficultyYesNo
+{
+	"There are still level caps in {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\n"
+	"however, the Boss Pokémon will be 2\l"
+	"levels lower than in Normal.\l"
+	"Boss teams are otherwise unchanged.\p"
+	"The player is allowed to access the\n"
+	"Bag during any battle.\p"
+	"Additionally, the player can change the\n"
+	"battle style from Set to Shift.\p"
+	"This will still be more difficult than a\n"
+	"vanilla Pokémon game.\p"
+	"Do you want to turn on\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode?"
+}
+
+text NormalDifficultyEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled."
+}
+
+text EasyDifficultyEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled."
+}
+
+text MinGrindingAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} guarantees all\n"
+	"Pokémon to have perfect IVs,\l"
+	"and EVs cannot be obtained.\l"
+	"Boss Pokémon will not have EVs either.\p"
+	"If this mode is disabled, obtainable\n"
+	"Pokémon will have random IVs and can be\l"
+	"EV trained.\p"
+	"Boss Pokémon will still have perfect\n"
+	"IVs and will be EV trained.\p"
+	"Do you want to turn\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode off?"
+}
+
+text MinGrindingAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} guarantees all\n"
+	"Pokémon to have perfect IVs,\l"
+	"and EVs cannot be obtained.\l"
+	"Boss Pokémon will not have EVs either.\p"
+	"If this mode is disabled, obtainable\n"
+	"Pokémon will have random IVs and can be\l"
+	"EV trained.\p"
+	"Boss Pokémon will still have perfect\n"
+	"IVs and will be EV trained.\p"
+	"Do you want to turn\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode on?"
+}
+
+text MinGrindingEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode enabled."
+}
+
+text MinGrindingDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode disabled."
+}
+
+
+text CustomSettingsSaved
+{
+	"Custom settings saved.\n"
+	"Good luck!"
+}

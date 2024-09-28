@@ -3648,6 +3648,13 @@ static u32 GetDebugPokemonTotalEV(void)
 static void DebugAction_Give_Pokemon_SelectEVs(u8 taskId)
 {
     u16 totalEV = GetDebugPokemonTotalEV();
+    u16 evPerStatToUseInCalc = MAX_PER_STAT_EVS;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        evPerStatToUseInCalc = 0;
+        maxTotalEvToUseInCalc = 0;
+    }
 
     if (JOY_NEW(DPAD_ANY))
     {
@@ -3656,8 +3663,8 @@ static void DebugAction_Give_Pokemon_SelectEVs(u8 taskId)
         if (JOY_NEW(DPAD_UP))
         {
             gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
-            if (gTasks[taskId].tInput > MAX_PER_STAT_EVS)
-                gTasks[taskId].tInput = MAX_PER_STAT_EVS;
+            if (gTasks[taskId].tInput > evPerStatToUseInCalc)
+                gTasks[taskId].tInput = evPerStatToUseInCalc;
         }
         if (JOY_NEW(DPAD_DOWN))
         {
@@ -3769,7 +3776,7 @@ static void DebugAction_Give_Pokemon_SelectEVs(u8 taskId)
             gTasks[taskId].tDigit = 0;
             gTasks[taskId].tIterator = 0;
 
-            if (totalEV > MAX_TOTAL_EVS)
+            if (totalEV > maxTotalEvToUseInCalc)
             {
                 sDebugMonData->mon_ev_hp = 0;
                 sDebugMonData->mon_ev_atk = 0;

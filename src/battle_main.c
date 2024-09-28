@@ -61,6 +61,7 @@
 #include "constants/battle_move_effects.h"
 #include "constants/battle_string_ids.h"
 #include "constants/battle_partner.h"
+#include "constants/game_settings.h"
 #include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
@@ -1919,6 +1920,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u32 personalityValue;
     s32 i;
     u8 monsCount;
+    bool32 isTrainerBossTrainer = trainer->isBossTrainer;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1980,6 +1982,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                     decidedLevel = TRUE;
                 }
                 finalLevel = maxLevel - playerLevelMinus;
+                if(isTrainerBossTrainer && VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+                    finalLevel -=2;
+
                 if(finalLevel <= 0 || finalLevel > 100)
                 {
                     finalLevel = maxLevel;
@@ -1989,8 +1994,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
             else
             {
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
-                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                if(isTrainerBossTrainer && VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+                {
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl-2, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                    SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                }
+                else
+                {
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                    SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                }
             }
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
@@ -4319,7 +4332,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) != GAME_SETTING_DIFFICULTY_EASY_MODE)
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

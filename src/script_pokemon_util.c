@@ -205,12 +205,15 @@ bool8 DoesPartyHaveEnigmaBerry(void)
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
+    u8 ivToMakeMon = USE_RANDOM_IVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+        ivToMakeMon = MAX_PER_STAT_IVS;
 
     ZeroEnemyPartyMons();
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species, level, MAX_PER_STAT_IVS, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[0], species, level, ivToMakeMon, PickWildMonNature());
     else
-        CreateMon(&gEnemyParty[0], species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMon(&gEnemyParty[0], species, level, ivToMakeMon, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item)
     {
         heldItem[0] = item;
@@ -222,13 +225,16 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
 {
     u8 heldItem1[2];
     u8 heldItem2[2];
+    u8 ivToMakeMon = USE_RANDOM_IVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+        ivToMakeMon = MAX_PER_STAT_IVS;
 
     ZeroEnemyPartyMons();
 
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[0], species1, level1, MAX_PER_STAT_IVS, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[0], species1, level1, ivToMakeMon, PickWildMonNature());
     else
-        CreateMon(&gEnemyParty[0], species1, level1, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMon(&gEnemyParty[0], species1, level1, ivToMakeMon, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item1)
     {
         heldItem1[0] = item1;
@@ -237,9 +243,9 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     }
 
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
-        CreateMonWithNature(&gEnemyParty[1], species2, level2, MAX_PER_STAT_IVS, PickWildMonNature());
+        CreateMonWithNature(&gEnemyParty[1], species2, level2, ivToMakeMon, PickWildMonNature());
     else
-        CreateMon(&gEnemyParty[1], species2, level2, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMon(&gEnemyParty[1], species2, level2, ivToMakeMon, 0, 0, OT_ID_PLAYER_ID, 0);
     if (item2)
     {
         heldItem2[0] = item2;
@@ -416,7 +422,14 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     u32 i;
     u8 genderRatio = gSpeciesInfo[species].genderRatio;
     u16 targetSpecies;
-
+    u16 evToUseInCalc = MAX_PER_STAT_EVS;
+    u8 ivToMakeMon = USE_RANDOM_IVS;
+        
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        evToUseInCalc = 0;
+        ivToMakeMon = MAX_PER_STAT_IVS;
+    }
     // check whether to use a specific nature or a random one
     if (nature >= NUM_NATURES)
     {
@@ -431,9 +444,9 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     if ((gender == MON_MALE && genderRatio != MON_FEMALE && genderRatio != MON_GENDERLESS)
      || (gender == MON_FEMALE && genderRatio != MON_MALE && genderRatio != MON_GENDERLESS)
      || (gender == MON_GENDERLESS && genderRatio == MON_GENDERLESS))
-        CreateMonWithGenderNatureLetter(&mon, species, level, MAX_PER_STAT_IVS, gender, nature, 0);
+        CreateMonWithGenderNatureLetter(&mon, species, level, ivToMakeMon, gender, nature, 0);
     else
-        CreateMonWithNature(&mon, species, level, MAX_PER_STAT_IVS, nature);
+        CreateMonWithNature(&mon, species, level, ivToMakeMon, nature);
 
     // shininess
     if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
@@ -454,7 +467,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     for (i = 0; i < NUM_STATS; i++)
     {
         // EV
-        if (evs[i] <= MAX_PER_STAT_EVS)
+        if (evs[i] <= evToUseInCalc)
             SetMonData(&mon, MON_DATA_HP_EV + i, &evs[i]);
 
         // IV
@@ -547,9 +560,13 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
 
 u32 ScriptGiveMon(u16 species, u8 level, u16 item)
 {
+    u8 ivToMakeMon = USE_RANDOM_IVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+        ivToMakeMon = MAX_PER_STAT_IVS;
+
     u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
-    u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS, MAX_PER_STAT_IVS, MAX_PER_STAT_IVS,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
-                                MAX_PER_STAT_IVS, MAX_PER_STAT_IVS, MAX_PER_STAT_IVS};  // ScriptGiveMonParameterized won't touch the stats' IV.
+    u8 ivs[NUM_STATS]        = {ivToMakeMon, ivToMakeMon, ivToMakeMon,   // We pass USE_RANDOM_IVS, which is "MAX_PER_STAT_IVS + 1" here to ensure that
+                                ivToMakeMon, ivToMakeMon, ivToMakeMon};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
 
     return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, FALSE, FALSE, NUMBER_OF_MON_TYPES);
@@ -578,12 +595,12 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 speedEv        = PARSE_FLAG(8, 0);
     u8 spAtkEv        = PARSE_FLAG(9, 0);
     u8 spDefEv        = PARSE_FLAG(10, 0);
-    u8 hpIv           = PARSE_FLAG(11, MAX_PER_STAT_IVS);
-    u8 atkIv          = PARSE_FLAG(12, MAX_PER_STAT_IVS);
-    u8 defIv          = PARSE_FLAG(13, MAX_PER_STAT_IVS);
-    u8 speedIv        = PARSE_FLAG(14, MAX_PER_STAT_IVS);
-    u8 spAtkIv        = PARSE_FLAG(15, MAX_PER_STAT_IVS);
-    u8 spDefIv        = PARSE_FLAG(16, MAX_PER_STAT_IVS);
+    u8 hpIv           = PARSE_FLAG(11, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 atkIv          = PARSE_FLAG(12, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 defIv          = PARSE_FLAG(13, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 speedIv        = PARSE_FLAG(14, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spAtkIv        = PARSE_FLAG(15, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spDefIv        = PARSE_FLAG(16, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
     u16 move1         = PARSE_FLAG(17, MOVE_NONE);
     u16 move2         = PARSE_FLAG(18, MOVE_NONE);
     u16 move3         = PARSE_FLAG(19, MOVE_NONE);

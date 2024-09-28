@@ -1367,6 +1367,11 @@ void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedI
     s32 statCount = 0;
     u16 evAmount;
     u8 evsBits;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        maxTotalEvToUseInCalc = 0;
+    }
 
     CreateMon(mon, species, level, fixedIV, FALSE, 0, OT_ID_PLAYER_ID, 0);
 
@@ -1379,7 +1384,7 @@ void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedI
         evsBits >>= 1;
     }
 
-    evAmount = MAX_TOTAL_EVS / statCount;
+    evAmount = maxTotalEvToUseInCalc / statCount;
 
     evsBits = 1;
 
@@ -1517,6 +1522,11 @@ void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 m
     u32 otId = gApprentices[src->id].otId;
     u32 personality = ((gApprentices[src->id].otId >> 8) | ((gApprentices[src->id].otId & 0xFF) << 8))
                     + src->party[monId].species + src->number;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        maxTotalEvToUseInCalc = 0;
+    }
 
     CreateMon(mon,
               src->party[monId].species,
@@ -1531,7 +1541,7 @@ void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 m
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, src->party[monId].moves[i], i);
 
-    evAmount = MAX_TOTAL_EVS / NUM_STATS;
+    evAmount = maxTotalEvToUseInCalc / NUM_STATS;
     for (i = 0; i < NUM_STATS; i++)
         SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
 
@@ -1547,6 +1557,11 @@ void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level,
     s32 statCount = 0;
     u8 evsBits;
     u16 evAmount;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        maxTotalEvToUseInCalc = 0;
+    }
 
     // i is reused as personality value
     do
@@ -1563,7 +1578,7 @@ void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level,
         evsBits >>= 1;
     }
 
-    evAmount = MAX_TOTAL_EVS / statCount;
+    evAmount = maxTotalEvToUseInCalc / statCount;
     evsBits = 1;
     for (i = 0; i < NUM_STATS; i++)
     {
@@ -1751,7 +1766,11 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 #define CALC_STAT(base, iv, ev, statIndex, field)               \
 {                                                               \
     u8 baseStat = gSpeciesInfo[species].base;                   \
-    s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
+    s32 n;                                                      \
+    if (FlagGet(FLAG_MIN_GRINDING_MODE))                        \
+        n = (((2 * baseStat + iv) * level) / 100) + 5;          \
+    else                                                        \
+        n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
     n = ModifyStatByNature(nature, n, statIndex);               \
     if (B_FRIENDSHIP_BOOST == TRUE)                             \
         n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));\
@@ -3763,6 +3782,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
+    s32 evPerStatToUseInCalc = MAX_PER_STAT_EVS;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        evPerStatToUseInCalc = 0;
+        maxTotalEvToUseInCalc = 0;
+    }
 
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
@@ -3892,13 +3918,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
                             // Has EV increase limit already been reached?
-                            if (evCount >= MAX_TOTAL_EVS)
+                            if (evCount >= maxTotalEvToUseInCalc)
                                 return TRUE;
 
                             if (itemEffect[10] & ITEM10_IS_VITAMIN)
                                 evCap = EV_ITEM_RAISE_LIMIT;
                             else
-                                evCap = MAX_PER_STAT_EVS;
+                                evCap = evPerStatToUseInCalc;
 
                             if (dataSigned >= evCap)
                                 break;
@@ -3909,8 +3935,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             else
                                 temp2 = evChange;
 
-                            if (evCount + temp2 > MAX_TOTAL_EVS)
-                                temp2 += MAX_TOTAL_EVS - (evCount + temp2);
+                            if (evCount + temp2 > maxTotalEvToUseInCalc)
+                                temp2 += maxTotalEvToUseInCalc - (evCount + temp2);
 
                             dataSigned += temp2;
                         }
@@ -4077,13 +4103,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         if (evChange > 0) // Increasing EV
                         {
                             // Has EV increase limit already been reached?
-                            if (evCount >= MAX_TOTAL_EVS)
+                            if (evCount >= maxTotalEvToUseInCalc)
                                 return TRUE;
 
                             if (itemEffect[10] & ITEM10_IS_VITAMIN)
                                 evCap = EV_ITEM_RAISE_LIMIT;
                             else
-                                evCap = MAX_PER_STAT_EVS;
+                                evCap = evPerStatToUseInCalc;
 
                             if (dataSigned >= evCap)
                                 break;
@@ -4094,8 +4120,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             else
                                 temp2 = evChange;
 
-                            if (evCount + temp2 > MAX_TOTAL_EVS)
-                                temp2 += MAX_TOTAL_EVS - (evCount + temp2);
+                            if (evCount + temp2 > maxTotalEvToUseInCalc)
+                                temp2 += maxTotalEvToUseInCalc - (evCount + temp2);
 
                             dataSigned += temp2;
                         }
@@ -5207,6 +5233,13 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
     int i, multiplier;
     u8 stat;
     u8 bonus;
+    s16 evPerStatToUseInCalc = MAX_PER_STAT_EVS;
+    u16 maxTotalEvToUseInCalc = MAX_TOTAL_EVS;
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        evPerStatToUseInCalc = 0;
+        maxTotalEvToUseInCalc = 0;
+    }
 
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
@@ -5236,7 +5269,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 
     for (i = 0; i < NUM_STATS; i++)
     {
-        if (totalEVs >= MAX_TOTAL_EVS)
+        if (totalEVs >= maxTotalEvToUseInCalc)
             break;
 
         if (CheckPartyHasHadPokerus(mon, 0))
@@ -5287,12 +5320,12 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
             evIncrease *= 2;
 
-        if (totalEVs + (s16)evIncrease > MAX_TOTAL_EVS)
-            evIncrease = ((s16)evIncrease + MAX_TOTAL_EVS) - (totalEVs + evIncrease);
+        if (totalEVs + (s16)evIncrease > maxTotalEvToUseInCalc)
+            evIncrease = ((s16)evIncrease + maxTotalEvToUseInCalc) - (totalEVs + evIncrease);
 
-        if (evs[i] + (s16)evIncrease > MAX_PER_STAT_EVS)
+        if (evs[i] + (s16)evIncrease > evPerStatToUseInCalc)
         {
-            int val1 = (s16)evIncrease + MAX_PER_STAT_EVS;
+            int val1 = (s16)evIncrease + evPerStatToUseInCalc;
             int val2 = evs[i] + evIncrease;
             evIncrease = val1 - val2;
         }
