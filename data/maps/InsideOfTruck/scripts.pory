@@ -66,6 +66,10 @@ InsideOfTruck_EventScript_SetDefaultSettings:
 	msgbox InsideOfTruck_Text_DefaultSettingsSaved, MSGBOX_DEFAULT
 	setvar VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_NORMAL_MODE
 	setflag FLAG_MIN_GRINDING_MODE
+	clearflag FLAG_RANDOMIZER_ENABLED
+	clearflag FLAG_RANDOM_ABILITIES_ENABLED
+	clearflag FLAG_RANDOM_ABILITIES_ENABLED
+	setvar VAR_RANDOMIZER_MODE, MAX_MON_MODE
 	return
 
 InsideOfTruck_EventScript_MovingBox::
@@ -239,8 +243,236 @@ script InsideOfTruck_EventScript_MinGrindingMode {
 
 
 script InsideOfTruck_EventScript_RandomzierOptions {
-	msgbox("todo")
-	goto(InsideOfTruck_EventScript_StartSettingsMenu)
+	msgbox(WhichRandomizerOption)
+	if(flag(FLAG_RANDOMIZER_ENABLED))
+	{
+		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Species", 0)
+	}
+		
+	else
+	{
+		dynmultipush("Species", 0)
+	}
+		
+
+	if(flag(FLAG_RANDOM_ABILITIES_ENABLED))
+	{
+		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability", 1)
+	}
+		
+	else
+	{
+		dynmultipush("Ability", 1)
+	}
+		
+
+	if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+	{
+		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset", 2)
+	}
+		
+	else
+	{
+		dynmultipush("Learnset", 2)
+	}
+
+	dynmultipush("Done", MULTI_B_PRESSED)
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(InsideOfTruck_EventScript_StartSettingsMenu)
+	}
+
+	// Species
+	if(var(VAR_RESULT) == 0) 
+	{
+		goto(InsideOfTruck_EventScript_SpeciesRandomizerOptions)
+	}
+
+	// Ability
+	if(var(VAR_RESULT) == 1) 
+	{
+		if(flag(FLAG_RANDOM_ABILITIES_ENABLED))
+		{
+			msgbox(RandomAbilitiesAlreadyOnYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				clearflag(FLAG_RANDOM_ABILITIES_ENABLED)
+				msgbox(RandomAbilitiesDisabled)
+			}
+		}
+		else
+		{
+			msgbox(RandomAbilitiesAlreadyOffYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setflag(FLAG_RANDOM_ABILITIES_ENABLED)
+				msgbox(RandomAbilitiesEnabled)
+			}
+		}
+		goto(InsideOfTruck_EventScript_RandomzierOptions)
+	}
+
+	// Learnset
+	if(var(VAR_RESULT) == 2) 
+	{
+		if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+		{
+			msgbox(RandomLearnsetsAlreadyOnYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				clearflag(FLAG_RANDOM_LEARNSETS_ENABLED)
+				msgbox(RandomLearnsetsDisabled)
+			}
+		}
+		else
+		{
+			msgbox(RandomLearnsetsAlreadyOffYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setflag(FLAG_RANDOM_LEARNSETS_ENABLED)
+				msgbox(RandomLearnsetsEnabled)
+			}
+		}
+		goto(InsideOfTruck_EventScript_RandomzierOptions)
+	}
+}
+
+script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
+	msgbox(WhichSpeciesRandomizerOption)
+	if(!flag(FLAG_RANDOMIZER_ENABLED))
+	{
+		dynmultipush("Normal species", MON_RANDOM)
+		dynmultipush("Scaled species", MON_RANDOM_BST)
+		dynmultipush("Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+		dynmultipush("Done", MULTI_B_PRESSED)
+	}
+	else
+	{
+		switch(var(VAR_RANDOMIZER_MODE))
+		{
+			case MON_RANDOM:
+				dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal species", MON_RANDOM)
+				dynmultipush("Scaled species", MON_RANDOM_BST)
+				dynmultipush("Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+				dynmultipush("Done", MULTI_B_PRESSED)
+
+			case MON_RANDOM_BST:
+				dynmultipush("Normal species", MON_RANDOM)
+				dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled species", MON_RANDOM_BST)
+				dynmultipush("Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+				dynmultipush("Done", MULTI_B_PRESSED)
+
+			case MON_RANDOM_LEGEND_AWARE:
+				dynmultipush("Normal species", MON_RANDOM)
+				dynmultipush("Scaled species", MON_RANDOM_BST)
+				dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+				dynmultipush("Done", MULTI_B_PRESSED)
+
+			case MAX_MON_MODE:
+				dynmultipush("Normal species", MON_RANDOM)
+				dynmultipush("Scaled species", MON_RANDOM_BST)
+				dynmultipush("Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+				dynmultipush("Done", MULTI_B_PRESSED)
+			
+			default:
+				dynmultipush("Normal species", MON_RANDOM)
+				dynmultipush("Scaled species", MON_RANDOM_BST)
+				dynmultipush("Legendary-aware species", MON_RANDOM_LEGEND_AWARE)
+				dynmultipush("Done", MULTI_B_PRESSED)
+		}
+
+	}
+	
+
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(InsideOfTruck_EventScript_RandomzierOptions)
+	}
+
+	if(var(VAR_RESULT) == MON_RANDOM) 
+	{
+		if(var(VAR_RANDOMIZER_MODE) == MON_RANDOM)
+		{
+			msgbox(NormalSpeciesRandomizerAlreadyOnYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				clearflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MAX_MON_MODE)
+				msgbox(NormalSpeciesRandomizerDisabled)
+			}
+		}
+		else
+		{
+			msgbox(NormalSpeciesRandomizerAlreadyOffYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MON_RANDOM)
+				msgbox(NormalSpeciesRandomizerEnabled)
+			}
+		}
+		goto(InsideOfTruck_EventScript_SpeciesRandomizerOptions)
+	}
+
+	if(var(VAR_RESULT) == MON_RANDOM_BST) 
+	{
+		if(var(VAR_RANDOMIZER_MODE) == MON_RANDOM_BST)
+		{
+			msgbox(ScaledSpeciesRandomizerAlreadyOnYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				clearflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MAX_MON_MODE)
+				msgbox(ScaledSpeciesRandomizerDisabled)
+			}
+		}
+		else
+		{
+			msgbox(ScaledSpeciesRandomizerAlreadyOffYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MON_RANDOM_BST)
+				msgbox(ScaledSpeciesRandomizerEnabled)
+			}
+		}
+		goto(InsideOfTruck_EventScript_SpeciesRandomizerOptions)
+	}
+
+	if(var(VAR_RESULT) == MON_RANDOM_LEGEND_AWARE) 
+	{
+		if(var(VAR_RANDOMIZER_MODE) == MON_RANDOM_LEGEND_AWARE)
+		{
+			msgbox(LegendsAwareRandomizerAlreadyOnYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				clearflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MAX_MON_MODE)
+				msgbox(LegendsAwareRandomizerDisabled)
+			}
+		}
+		else
+		{
+			msgbox(LegendsAwareRandomizerAlreadyOffYesNo, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES)
+			{
+				setflag(FLAG_RANDOMIZER_ENABLED)
+				setvar(VAR_RANDOMIZER_MODE, MON_RANDOM_LEGEND_AWARE)
+				msgbox(LegendsAwareRandomizerEnabled)
+			}
+		}
+		goto(InsideOfTruck_EventScript_SpeciesRandomizerOptions)
+	}
+
 }
 
 
@@ -261,6 +493,18 @@ text WhichDifficulty
 {
 	"Which difficulty mode would you\n"
 	"like to play on?"
+}
+
+text WhichRandomizerOption
+{
+	"Which randomizer option would you\n"
+	"like to customize?"
+}
+
+text WhichSpeciesRandomizerOption
+{
+	"Which Species Randomizer option would\n"
+	"you like to customize?"
 }
 
 text NormalDifficultyCurrentlySelected
@@ -373,6 +617,181 @@ text MinGrindingEnabled
 text MinGrindingDisabled
 {
 	"{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode disabled."
+}
+
+
+text RandomAbilitiesAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes abilities\n"
+	"for the player, but doesn't affect\l"
+	"abilities on Boss Pokémon.\p"
+	"Do you want to turn off the\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Ability Randomizer?"
+}
+
+text RandomAbilitiesAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes abilities\n"
+	"for the player, but doesn't affect\l"
+	"abilities on Boss Pokémon.\p"
+	"Do you want to turn on the\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer?"
+}
+
+
+text RandomAbilitiesEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer enabled."
+}
+
+text RandomAbilitiesDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Ability Randomizer disabled."
+}
+
+
+text RandomLearnsetsAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
+	"Pokémon learnsets.\p"
+	"It does not randomize TMs or\n"
+	"move tutors.\p"
+	"Boss Pokémon also keep their normal\n"
+	"movesets.\p"
+	"Do you want to turn off the\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Learnset Randomizer?"
+}
+
+text RandomLearnsetsAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
+	"Pokémon learnsets.\p"
+	"It does not randomize TMs or\n"
+	"move tutors.\p"
+	"Boss Pokémon also keep their normal\n"
+	"movesets.\p"
+	"Do you want to turn on the\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer?"
+}
+
+
+text RandomLearnsetsEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer enabled."
+}
+
+text RandomLearnsetsDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Learnset Randomizer disabled."
+}
+
+
+text NormalSpeciesRandomizerAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
+	"encounters, trainers, and gifts.\l"
+	"It does not randomize boss battles.\p"
+	"Many legendaries cannot be\n"
+	"encountered.\p"
+	"Do you want to turn off the\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Species Randomizer?"
+}
+
+text NormalSpeciesRandomizerAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
+	"encounters, trainers, and gifts.\l"
+	"It does not randomize boss battles.\p"
+	"Many legendaries cannot be\n"
+	"encountered.\p"
+	"Do you want to turn on the\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer?"
+}
+
+
+text NormalSpeciesRandomizerEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer enabled."
+}
+
+text NormalSpeciesRandomizerDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Species Randomizer disabled."
+}
+
+
+text ScaledSpeciesRandomizerAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} only gives\n"
+	"reasonable Pokémon for your location\l"
+	"in the game.\p"
+	"This randomization is based off the\n"
+	"base stat total of the original\l"
+	"encounter.\l"
+	"It does not randomize boss battles.\p"
+	"Do you want to turn off the\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Scaled Randomizer?"
+}
+
+text ScaledSpeciesRandomizerAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} only gives\n"
+	"reasonable Pokémon for your location\l"
+	"in the game.\p"
+	"This randomization is based off the\n"
+	"base stat total of the original\l"
+	"encounter.\l"
+	"It does not randomize boss battles.\p"
+	"Do you want to turn on the\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer?"
+}
+
+
+text ScaledSpeciesRandomizerEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer enabled."
+}
+
+text ScaledSpeciesRandomizerDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Scaled Randomizer disabled."
+}
+
+text LegendsAwareRandomizerAlreadyOnYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} is\n"
+	"the same thing as the Species\l"
+	"Randomizer, with the only difference\l"
+	"being that legendary Pokémon will be\l"
+	"guaranteed to be randomized into\l"
+	"legendary Pokémon.\p"
+	"Do you want to turn off the\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Legendary-aware Species Randomizer?"
+}
+
+text LegendsAwareRandomizerAlreadyOffYesNo
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} is\n"
+	"the same thing as the Species\l"
+	"Randomizer, with the only difference\l"
+	"being that legendary Pokémon will be\l"
+	"guaranteed to be randomized into\l"
+	"legendary Pokémon.\p"
+	"Do you want to turn on the\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer?"
+}
+
+
+text LegendsAwareRandomizerEnabled
+{
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer\n"
+	"enabled."
+}
+
+text LegendsAwareRandomizerDisabled
+{
+	"{COLOR RED}{SHADOW LIGHT_RED}Legendary-aware Species Randomizer\n" 
+	"disabled."
 }
 
 
