@@ -65,33 +65,33 @@ static const u32 sTitleScreenIceCastleGfx[] = INCBIN_U32("graphics/title_screen/
 static const u32 sTitleScreenIceCastleTilemap[] = INCBIN_U32("graphics/title_screen/icecastletiles.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 //static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
-const u32 gTest_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaempoleono.4bpp.lz");
-const u32 gTestPal_Mon[] = INCBIN_U32("graphics/pokemon/empoleon/mega_o/megaonormal.gbapal.lz");
-const u32 gTest_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megaempoleondflip.4bpp.lz");
-const u32 gTestPal_Mon2[] = INCBIN_U32("graphics/pokemon/empoleon/mega_d/megadnormal.gbapal.lz");
+const u32 gEmpoleonO[] = INCBIN_U32("graphics/title_screen/megaempoleonosnow.4bpp.lz");
+const u32 gPalEmpoleonO[] = INCBIN_U32("graphics/title_screen/megaempoleonosnow.gbapal.lz");
+const u32 gEmpoleonD[] = INCBIN_U32("graphics/title_screen/megaempoleondsnow.4bpp.lz");
+const u32 gPalEmpoleonD[] = INCBIN_U32("graphics/title_screen/megaempoleondsnow.gbapal.lz");
 const u32 gTestPal_Snow[] = INCBIN_U32("graphics/title_screen/snow.gbapal.lz");
 
 static const struct CompressedSpriteSheet sSpriteSheet_Mon[] =
 {
-    {gTest_Mon, 4096, 777},
+    {gEmpoleonO, 4096, 777},
     {NULL},
 };
 
 static const struct CompressedSpritePalette sSpritePal_Mon[] =
 {
-    {gTestPal_Mon, 777},
+    {gPalEmpoleonO, 777},
     {NULL},
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Mon2[] =
 {
-    {gTest_Mon2, 4096, 778},
+    {gEmpoleonD, 4096, 778},
     {NULL},
 };
 
 static const struct CompressedSpritePalette sSpritePal_Mon2[] =
 {
-    {gTestPal_Mon2, 778},
+    {gPalEmpoleonD, 778},
     {NULL},
 };
 
