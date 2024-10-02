@@ -132,16 +132,18 @@ OldDaleTown_PokemonCenter_EventScript_SecondNurse::
 	lock
 # 70 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	faceplayer
-# 72 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 71 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox HelloHowCanIHelp
-# 73 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 72 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_0, 0
-# 74 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 73 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_1, 1
-# 75 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 74 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_2, 2
+# 75 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_3, 3
 # 76 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_3, MULTI_B_PRESSED
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_4, MULTI_B_PRESSED
 # 79 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 # 81 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -158,7 +160,11 @@ OldDaleTown_PokemonCenter_EventScript_SecondNurse_4:
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_7:
 # 96 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 2
-	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_10
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_11
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_10:
+# 101 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_13
 	return
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_2:
@@ -173,344 +179,449 @@ OldDaleTown_PokemonCenter_EventScript_SecondNurse_5:
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_8:
 # 93 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_7
 
-OldDaleTown_PokemonCenter_EventScript_SecondNurse_10:
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_11:
 # 98 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_10
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_13:
+# 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount
 	return
 
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature::
-# 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_0
-# 104 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 109 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	special ChoosePartyMon
-# 105 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 110 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	waitstate
-# 106 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 111 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_2
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_1:
-# 110 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 115 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-# 111 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 116 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_5
-# 116 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	special BufferMonNickname
-# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_2
-# 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_3, NATURE_ADAMANT
-# 119 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_4, NATURE_BASHFUL
-# 120 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_5, NATURE_BOLD
 # 121 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_6, NATURE_BRAVE
+	special BufferMonNickname
 # 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_7, NATURE_CALM
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_2
 # 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_8, NATURE_CAREFUL
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_3, NATURE_ADAMANT
 # 124 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_9, NATURE_DOCILE
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_4, NATURE_BASHFUL
 # 125 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_10, NATURE_GENTLE
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_5, NATURE_BOLD
 # 126 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_11, NATURE_HARDY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_6, NATURE_BRAVE
 # 127 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_12, NATURE_HASTY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_7, NATURE_CALM
 # 128 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_13, NATURE_IMPISH
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_8, NATURE_CAREFUL
 # 129 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_14, NATURE_JOLLY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_9, NATURE_DOCILE
 # 130 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_15, NATURE_LAX
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_10, NATURE_GENTLE
 # 131 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_16, NATURE_LONELY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_11, NATURE_HARDY
 # 132 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_17, NATURE_MILD
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_12, NATURE_HASTY
 # 133 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_18, NATURE_MODEST
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_13, NATURE_IMPISH
 # 134 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_19, NATURE_NAIVE
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_14, NATURE_JOLLY
 # 135 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_20, NATURE_NAUGHTY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_15, NATURE_LAX
 # 136 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_21, NATURE_QUIET
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_16, NATURE_LONELY
 # 137 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_22, NATURE_QUIRKY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_17, NATURE_MILD
 # 138 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_23, NATURE_RASH
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_18, NATURE_MODEST
 # 139 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_24, NATURE_RELAXED
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_19, NATURE_NAIVE
 # 140 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_25, NATURE_SASSY
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_20, NATURE_NAUGHTY
 # 141 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_26, NATURE_SERIOUS
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_21, NATURE_QUIET
 # 142 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_27, NATURE_TIMID
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_22, NATURE_QUIRKY
 # 143 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_3, MULTI_B_PRESSED
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_23, NATURE_RASH
+# 144 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_24, NATURE_RELAXED
 # 145 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_25, NATURE_SASSY
+# 146 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_26, NATURE_SERIOUS
 # 147 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_27, NATURE_TIMID
+# 148 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultipush OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_4, MULTI_B_PRESSED
+# 150 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE
+# 152 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_8
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_7:
-# 152 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 157 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	copyvar VAR_0x8005, VAR_RESULT
-# 153 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 158 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	buffernaturename STR_VAR_2, VAR_RESULT
-# 154 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 159 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_28, MSGBOX_YESNO
-# 156 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 161 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_11
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_10:
-# 161 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29
-# 162 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 163 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	special ChangeMonNature
-# 164 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 165 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	waitfanfare
 # 166 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	closemessage
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29
 # 167 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreen FADE_TO_BLACK
 # 168 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_30
+	special ChangeMonNature
 # 169 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 170 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitfanfare
+# 171 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	closemessage
+# 172 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 173 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_30
+# 174 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_2:
-# 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 113 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurseNo
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_1
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_5:
-# 112 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_1
-# 113 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_8:
-# 149 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 154 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurseNo
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_7
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_11:
-# 158 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 163 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurseNo
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_10
 
 
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender::
+# 180 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox GenderSwapInfo
+# 181 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special ChoosePartyMon
+# 182 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitstate
+# 183 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_2
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_1:
+# 187 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 188 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	switch VAR_RESULT
+# 189 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_SNORUNT, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 190 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_RALTS, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 191 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_KIRLIA, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 192 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_SALANDIT, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 193 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_BURMY, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 194 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_COMBEE, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 195 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ESPURR, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 196 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_BASCULIN, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 197 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_LECHONK, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6
+# 208 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	case SPECIES_EGG, OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_7
+# 212 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_2
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_4:
+# 214 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_2:
+# 185 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurseNo
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_1
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_6:
+# 198 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special BufferMonNickname
+# 199 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29
+# 200 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 201 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	special ChangeMonGender
+# 202 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 203 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	waitfanfare
+# 204 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	closemessage
+# 205 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 206 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_0
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_4
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_7:
+# 209 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_1
+	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_4
+
+
 OldDaleTown_PokemonCenter_EventScript_SecondNurseNo::
-# 174 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 219 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurseNo_Text_0
-# 175 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 220 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap::
-# 180 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 225 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	specialvar VAR_RESULT, GetLevelCapForText
-# 181 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 226 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	buffernumberstring STR_VAR_1, VAR_RESULT
-# 182 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 227 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap_Text_0
-# 183 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 228 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount::
-# 188 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 233 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	specialvar VAR_RESULT, GetWhiteOutCountForText
-# 189 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 234 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_2
-# 195 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 240 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	buffernumberstring STR_VAR_1, VAR_RESULT
-# 196 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 241 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_Text_1
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_1:
-# 198 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 243 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_2:
-# 191 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 236 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	msgbox OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_Text_0
 	goto OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_1
 
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_0:
-# 73 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 72 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Nature Change$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_1:
+# 73 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Gender Swap$"
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_2:
 # 74 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Level Cap$"
 
-OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_2:
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_3:
 # 75 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "White Out Counter$"
 
-OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_3:
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_Text_4:
 # 76 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Cancel$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_0:
-# 103 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 108 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Which Pokémon?$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_1:
-# 112 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "I can't change the Nature of an egg.$"
+# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "I can't change the Nature of an Egg.$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_2:
-# 117 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Which new Nature suits {STR_VAR_1}\nbest?$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_3:
-# 118 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Adamant       {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_4:
-# 119 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 124 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Bashful        Neutral         $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_5:
-# 120 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 125 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Bold             {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk       $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_6:
-# 121 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 126 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Brave           {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed     $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_7:
-# 122 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 127 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Calm             {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk     $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_8:
-# 123 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 128 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Careful       {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_9:
-# 124 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 129 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Docile          Neutral         $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_10:
-# 125 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 130 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_11:
-# 126 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 131 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Hardy           Neutral         $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_12:
-# 127 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 132 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_13:
-# 128 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 133 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_14:
-# 129 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 134 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Jolly           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_15:
-# 130 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 135 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Lax              {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_16:
-# 131 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 136 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_17:
-# 132 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 137 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Mild             {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_18:
-# 133 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 138 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Modest        {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_19:
-# 134 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 139 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_20:
-# 135 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 140 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Naughty      {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_21:
-# 136 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 141 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_22:
-# 137 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 142 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Quirky          Neutral         $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_23:
-# 138 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 143 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Rash            {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_24:
-# 139 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 144 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Relaxed       {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_25:
-# 140 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 145 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_26:
-# 141 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 146 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Serious       Neutral         $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_27:
-# 142 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 147 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Timid           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   $"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_28:
-# 154 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 159 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29:
-# 161 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 166 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Excellent. We shall begin at once!$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_30:
-# 168 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "{STR_VAR_1}'s nature has been\nchanged. Come again if you need\lsomething else.$"
+# 173 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "{STR_VAR_1}'s Nature has been\nchanged. Come again if you need\lsomething else.$"
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_0:
+# 206 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "{STR_VAR_1}'s Gender has been\nchanged. Come again if you need\lsomething else.$"
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_1:
+# 209 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "I can't change the Gender of an Egg.$"
+
+OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_2:
+# 212 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "Sorry, I can't change the Gender of\nthat Pokémon.$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurseNo_Text_0:
-# 174 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 219 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "I see. Come back if you need\nsomething else.$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap_Text_0:
-# 182 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 227 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Current Level Cap: {STR_VAR_1}$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_Text_0:
-# 191 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 236 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Current White Out Count: 0$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount_Text_1:
-# 196 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 241 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Current White Out Count: {STR_VAR_1}$"
 
 HelloHowCanIHelp::
-# 202 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+# 247 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Hello there, what can I help you\n"
 	.string "with today?$"
+
+GenderSwapInfo::
+# 254 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "I can swap the Gender of the\n"
+	.string "following Pokémon:\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Snorunt, Ralts, Kirlia, Salandit, Burmy,\n"
+	.string "Combee, Espurr, Basculin, and Lechonk.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This is because these Pokémon have\n"
+	.string "Gender-based evolutions.\p"
+	.string "Which Pokémon's Gender should I swap?$"

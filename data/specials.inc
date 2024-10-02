@@ -542,6 +542,7 @@ gSpecials::
 	def_special VsSeekerResetObjectMovementAfterChargeComplete
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
 	def_special ChangeMonNature
+	def_special ChangeMonGender
 	def_special PlayerHasMulch
 	def_special Bag_ChooseMulch
 	def_special ObjectEventInteractionApplyMulch

@@ -68,11 +68,11 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
     lock
     faceplayer
-
 	msgbox(HelloHowCanIHelp)
 	dynmultipush("Nature Change", 0)
-	dynmultipush("Level Cap", 1)
-	dynmultipush("White Out Counter", 2)
+	dynmultipush("Gender Swap", 1)
+	dynmultipush("Level Cap", 2)
+	dynmultipush("White Out Counter", 3)
     dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -90,10 +90,15 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 
 	if (var(VAR_RESULT) == 1)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender)
 	}
 
 	if (var(VAR_RESULT) == 2)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap)	
+	}
+
+	if (var(VAR_RESULT) == 3)
 	{
 		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
 	}
@@ -101,73 +106,113 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature{
 	msgbox("Which Pokémon?")
-		special(ChoosePartyMon)
-		waitstate
-		if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
-		{
-			goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
-		}
-		specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-		if(var(VAR_RESULT) == SPECIES_EGG) {
-			msgbox("I can't change the Nature of an egg.")
-			release
-			end
-		}
-		special(BufferMonNickname)
-		msgbox("Which new Nature suits {STR_VAR_1}\nbest?")
-		dynmultipush("Adamant       {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_ADAMANT)
-		dynmultipush("Bashful        Neutral         ", NATURE_BASHFUL)
-		dynmultipush("Bold             {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk       ", NATURE_BOLD)
-		dynmultipush("Brave           {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed     ", NATURE_BRAVE)
-		dynmultipush("Calm             {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk     ", NATURE_CALM)
-		dynmultipush("Careful       {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_CAREFUL)
-		dynmultipush("Docile          Neutral         ", NATURE_DOCILE)
-		dynmultipush("Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_GENTLE)
-		dynmultipush("Hardy           Neutral         ", NATURE_HARDY)
-		dynmultipush("Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_HASTY)
-		dynmultipush("Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_IMPISH)
-		dynmultipush("Jolly           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_JOLLY)
-		dynmultipush("Lax              {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   ", NATURE_LAX)
-		dynmultipush("Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_LONELY)
-		dynmultipush("Mild             {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def   ", NATURE_MILD)
-		dynmultipush("Modest        {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   ", NATURE_MODEST)
-		dynmultipush("Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef ", NATURE_NAIVE)
-		dynmultipush("Naughty      {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   ", NATURE_NAUGHTY)
-		dynmultipush("Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed ", NATURE_QUIET)
-		dynmultipush("Quirky          Neutral         ", NATURE_QUIRKY)
-		dynmultipush("Rash            {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef ", NATURE_RASH)
-		dynmultipush("Relaxed       {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed   ", NATURE_RELAXED)
-		dynmultipush("Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed ", NATURE_SASSY)
-		dynmultipush("Serious       Neutral         ", NATURE_SERIOUS)
-		dynmultipush("Timid           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   ", NATURE_TIMID)
-		dynmultipush("Cancel", MULTI_B_PRESSED)
-		// // setting initial selected to a non-existant ID will always have it point to the first option
-		dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
-
-		if (var(VAR_RESULT) == MULTI_B_PRESSED) 
-		{
-			goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
-		}
-
-		copyvar(VAR_0x8005, VAR_RESULT)
-		buffernaturename(STR_VAR_2, VAR_RESULT)
-		msgbox("So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?", MSGBOX_YESNO)
-
-		if(var(VAR_RESULT) == NO) 
-		{
-			goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
-		}
-
-		msgbox("Excellent. We shall begin at once!")
-		fadescreen(FADE_TO_BLACK)
-		special(ChangeMonNature)
-		playfanfare(MUS_OBTAIN_ITEM)
-		waitfanfare
-		closemessage
-		fadescreen(FADE_FROM_BLACK)
-		msgbox("{STR_VAR_1}'s nature has been\nchanged. Come again if you need\lsomething else.")
+	special(ChoosePartyMon)
+	waitstate
+	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if(var(VAR_RESULT) == SPECIES_EGG) {
+		msgbox("I can't change the Nature of an Egg.")
 		release
 		end
+	}
+	special(BufferMonNickname)
+	msgbox("Which new Nature suits {STR_VAR_1}\nbest?")
+	dynmultipush("Adamant       {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk", NATURE_ADAMANT)
+	dynmultipush("Bashful        Neutral         ", NATURE_BASHFUL)
+	dynmultipush("Bold             {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk       ", NATURE_BOLD)
+	dynmultipush("Brave           {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed     ", NATURE_BRAVE)
+	dynmultipush("Calm             {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk     ", NATURE_CALM)
+	dynmultipush("Careful       {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_CAREFUL)
+	dynmultipush("Docile          Neutral         ", NATURE_DOCILE)
+	dynmultipush("Gentle         {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_GENTLE)
+	dynmultipush("Hardy           Neutral         ", NATURE_HARDY)
+	dynmultipush("Hasty          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_HASTY)
+	dynmultipush("Impish         {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_IMPISH)
+	dynmultipush("Jolly           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpAtk   ", NATURE_JOLLY)
+	dynmultipush("Lax              {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   ", NATURE_LAX)
+	dynmultipush("Lonely         {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def     ", NATURE_LONELY)
+	dynmultipush("Mild             {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Def   ", NATURE_MILD)
+	dynmultipush("Modest        {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   ", NATURE_MODEST)
+	dynmultipush("Naive          {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef ", NATURE_NAIVE)
+	dynmultipush("Naughty      {COLOR RED}{SHADOW LIGHT_RED}+Atk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef   ", NATURE_NAUGHTY)
+	dynmultipush("Quiet          {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed ", NATURE_QUIET)
+	dynmultipush("Quirky          Neutral         ", NATURE_QUIRKY)
+	dynmultipush("Rash            {COLOR RED}{SHADOW LIGHT_RED}+SpAtk{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-SpDef ", NATURE_RASH)
+	dynmultipush("Relaxed       {COLOR RED}{SHADOW LIGHT_RED}+Def{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed   ", NATURE_RELAXED)
+	dynmultipush("Sassy          {COLOR RED}{SHADOW LIGHT_RED}+SpDef{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Speed ", NATURE_SASSY)
+	dynmultipush("Serious       Neutral         ", NATURE_SERIOUS)
+	dynmultipush("Timid           {COLOR RED}{SHADOW LIGHT_RED}+Speed{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/{COLOR BLUE}{SHADOW LIGHT_BLUE}-Atk   ", NATURE_TIMID)
+	dynmultipush("Cancel", MULTI_B_PRESSED)
+	// // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	buffernaturename(STR_VAR_2, VAR_RESULT)
+	msgbox("So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?", MSGBOX_YESNO)
+
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+
+	msgbox("Excellent. We shall begin at once!")
+	fadescreen(FADE_TO_BLACK)
+	special(ChangeMonNature)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
+	msgbox("{STR_VAR_1}'s Nature has been\nchanged. Come again if you need\lsomething else.")
+	release
+	end
+}
+
+
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
+	msgbox(GenderSwapInfo)
+	special(ChoosePartyMon)
+	waitstate
+	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_SNORUNT:
+		case SPECIES_RALTS:
+        case SPECIES_KIRLIA:
+		case SPECIES_SALANDIT:
+        case SPECIES_BURMY:
+		case SPECIES_COMBEE:
+        case SPECIES_ESPURR:
+		case SPECIES_BASCULIN:
+        case SPECIES_LECHONK:
+			special(BufferMonNickname)
+            msgbox("Excellent. We shall begin at once!")
+			fadescreen(FADE_TO_BLACK)
+			special(ChangeMonGender)
+			playfanfare(MUS_OBTAIN_ITEM)
+			waitfanfare
+			closemessage
+			fadescreen(FADE_FROM_BLACK)
+			msgbox("{STR_VAR_1}'s Gender has been\nchanged. Come again if you need\lsomething else.")
+
+		case SPECIES_EGG:
+			msgbox("I can't change the Gender of an Egg.")
+
+        default:
+            msgbox("Sorry, I can't change the Gender of\nthat Pokémon.")
+    }
+	release
+	end
 }
 
 script OldDaleTown_PokemonCenter_EventScript_SecondNurseNo {
@@ -203,4 +248,16 @@ text HelloHowCanIHelp
 {
 	"Hello there, what can I help you\n"
 	"with today?"
+}
+
+
+text GenderSwapInfo
+{
+	"I can swap the Gender of the\n"
+	"following Pokémon:\p"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Snorunt, Ralts, Kirlia, Salandit, Burmy,\n"
+	"Combee, Espurr, Basculin, and Lechonk.\p"
+	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This is because these Pokémon have\n"
+	"Gender-based evolutions.\p"
+	"Which Pokémon's Gender should I swap?"
 }

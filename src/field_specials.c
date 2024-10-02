@@ -4292,7 +4292,6 @@ void UseBlankMessageToCancelPokemonPic(void)
 void ChangeMonNature(void) 
 {
     struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
-    u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 gender = GetMonGender(mon);
     bool8 isShiny = IsMonShiny(mon);
@@ -4303,14 +4302,36 @@ void ChangeMonNature(void)
     do
     {
         newPersonality = Random32();
-
     }
     while ((GetNatureFromPersonality(newPersonality) != newNature) ||
-           (GetGenderFromSpeciesAndPersonality(species, newPersonality) != gender) ||
-           (IsShinyOtIdPersonality(otId, newPersonality) != isShiny));
+           (GetGenderFromSpeciesAndPersonality(species, newPersonality) != gender));
 
     UpdateMonPersonality(&mon->box, newPersonality);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, &isShiny);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &newNature);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+
+void ChangeMonGender(void) 
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 gender = GetMonGender(mon);
+    bool8 isShiny = IsMonShiny(mon);
+    u8 nature = GetNature(mon);
+
+    u8 newGender = gender == MON_FEMALE ? MON_MALE : MON_FEMALE;
+    u32 newPersonality;
+    do
+    {
+        newPersonality = Random32();
+    }
+    while ((GetNatureFromPersonality(newPersonality) != nature) ||
+           (GetGenderFromSpeciesAndPersonality(species, newPersonality) != newGender));
+
+    UpdateMonPersonality(&mon->box, newPersonality);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, &isShiny);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
