@@ -73,6 +73,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "cable_club.h"
+#include "randomizer.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1908,7 +1909,7 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
+u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags, u16 seed)
 {
     u32 personalityValue;
     s32 i;
@@ -1945,6 +1946,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 ability = 0;
+            u16 species = partyData[i].species;
+            if (RANDOMIZER_AVAILABLE && !isTrainerBossTrainer)
+                species = RandomizeTrainerMon(seed, i, monsCount, species);
 
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
@@ -1982,19 +1986,19 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 {
                     finalLevel = maxLevel;
                 }
-                CreateMon(&party[i], partyData[i].species, finalLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                CreateMon(&party[i], species, finalLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);  
             }
             else
             {
                 if(isTrainerBossTrainer && VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
                 {
-                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl-2, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                    CreateMon(&party[i], species, partyData[i].lvl-2, 0, TRUE, personalityValue, otIdType, fixedOtId);
                     SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 }
                 else
                 {
-                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                    CreateMon(&party[i], species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
                     SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 }
             }
@@ -2093,7 +2097,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
-    retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags);
+    retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags, trainerNum);
     return retVal;
 }
 
@@ -2101,7 +2105,7 @@ void CreateTrainerPartyForPlayer(void)
 {
     ZeroPlayerPartyMons();
     gPartnerTrainerId = gSpecialVar_0x8004;
-    CreateNPCTrainerPartyFromTrainer(gPlayerParty, GetTrainerStructFromId(gSpecialVar_0x8004), TRUE, BATTLE_TYPE_TRAINER);
+    CreateNPCTrainerPartyFromTrainer(gPlayerParty, GetTrainerStructFromId(gSpecialVar_0x8004), TRUE, BATTLE_TYPE_TRAINER, gSpecialVar_0x8004);
 }
 
 void VBlankCB_Battle(void)
