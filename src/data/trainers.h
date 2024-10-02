@@ -93,6 +93,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MattSeafloorCavern),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_SEAFLOOR_CAVERN_3] =
@@ -129,6 +130,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntPetalburgWoods),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MARCEL] =
@@ -189,6 +191,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY  | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Declan),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_RUSTURF_TUNNEL] =
@@ -201,6 +204,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntRusturfTunnel),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_WEATHER_INST_1] =
@@ -225,6 +229,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MattWeatherInst),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_WEATHER_INST_3] =
@@ -249,6 +254,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntMuseum1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_MUSEUM_2] =
@@ -261,6 +267,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntMuseum2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_SPACE_CENTER_1] =
@@ -357,6 +364,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_ArchieHideout),
+        .isBossTrainer = TRUE,
     },
     
     [TRAINER_ZANDER] =
@@ -381,6 +389,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_ShellyWeatherInstitute),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SHELLY_SEAFLOOR_CAVERN] =
@@ -393,6 +402,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_ShellySeafloorCavern),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ARCHIE] =
@@ -405,6 +415,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Archie),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_LEAH] =
@@ -453,6 +464,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Felix),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_VIOLET] =
@@ -525,6 +537,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Dusty1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SHADY] =
@@ -777,6 +790,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Simon),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CHARLIE] =
@@ -957,6 +971,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Albert),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SAMUEL] =
@@ -969,6 +984,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Samuel),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_VITO] =
@@ -1149,6 +1165,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Hope),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SHANNON] =
@@ -1173,6 +1190,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Michelle),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CAROLINE] =
@@ -1185,6 +1203,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Caroline),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JULIE] =
@@ -1281,6 +1300,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Tammy),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_VALERIE_1] =
@@ -1521,6 +1541,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Jessica1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CONNIE] =
@@ -1749,6 +1770,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_CourtneyMtChimney),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_STEVE_2] =
@@ -1905,6 +1927,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Spencer),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROLAND] =
@@ -2265,6 +2288,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Daisuke),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ATSUSHI] =
@@ -2529,6 +2553,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Drew),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BEAU] =
@@ -2577,6 +2602,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Rusty),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ETHAN_1] =
@@ -2769,6 +2795,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY  | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Edward),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_PRESTON] =
@@ -3033,6 +3060,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Walter1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MICAH] =
@@ -3119,6 +3147,7 @@
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_POWERFUL_STATUS | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Sidney1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SIDNEY2] =
@@ -3133,6 +3162,7 @@
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_POWERFUL_STATUS | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Sidney2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_PHOEBE1] =
@@ -3147,6 +3177,7 @@
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Phoebe1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_PHOEBE2] =
@@ -3161,6 +3192,7 @@
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Phoebe2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GLACIA1] =
@@ -3175,6 +3207,7 @@
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Glacia1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GLACIA2] =
@@ -3189,6 +3222,7 @@
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Glacia2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CYNTHIA] =
@@ -3203,6 +3237,7 @@
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Cynthia),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLACE] =
@@ -3217,6 +3252,7 @@
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallaceSolo),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLACE_WITH_STEVEN] =
@@ -3229,6 +3265,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallaceWithSteven),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_STEVEN_WITH_WALLACE] =
@@ -3243,6 +3280,7 @@
         .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .party = TRAINER_PARTY(sParty_StevenWithWallace),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DRAKE] =
@@ -3257,6 +3295,7 @@
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Drake),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROXANNE_1] =
@@ -3269,6 +3308,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Roxanne1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRAWLY_1] =
@@ -3281,6 +3321,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Brawly1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WATTSON_1] =
@@ -3293,6 +3334,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Wattson1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FLANNERY_1] =
@@ -3305,6 +3347,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Flannery1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_NORMAN_1] =
@@ -3317,6 +3360,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Norman1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WINONA_1] =
@@ -3329,6 +3373,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Winona1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TATE] =
@@ -3341,6 +3386,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Tate),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_LIZA] =
@@ -3353,6 +3399,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Liza),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JUAN_1] =
@@ -3365,6 +3412,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Juan1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JERRY_1] =
@@ -3389,6 +3437,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Ted),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_RACHEL] =
@@ -3401,6 +3450,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Rachel),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JERRY_2] =
@@ -3473,6 +3523,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Georgia),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_KAREN_2] =
@@ -3605,6 +3656,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Victor),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MIGUEL_1] =
@@ -3689,6 +3741,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Victoria),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_VANESSA] =
@@ -3701,6 +3754,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Vanessa),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BETHANY] =
@@ -3725,6 +3779,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Isabel1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ISABEL_2] =
@@ -3845,6 +3900,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Vicky),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_SHELBY_1] =
@@ -4085,6 +4141,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Eddie),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ALLEN] =
@@ -4133,6 +4190,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Claude),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ELLIOT_1] =
@@ -5285,6 +5343,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Madeline1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CLARISSA] =
@@ -5465,6 +5524,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Jenny1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRACE] =
@@ -5477,6 +5537,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Grace),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TANYA] =
@@ -5753,6 +5814,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Martha),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DIANA_1] =
@@ -5993,6 +6055,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Dwayne),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_PHILLIP] =
@@ -6221,6 +6284,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Edwin1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_HECTOR] =
@@ -6305,6 +6369,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyVR1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
@@ -6329,6 +6394,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute110Mudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_119_MUDKIP] =
@@ -6341,6 +6407,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute119Mudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
@@ -6365,6 +6432,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute110Treecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_119_TREECKO] =
@@ -6377,6 +6445,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute119Treecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
@@ -6401,6 +6470,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute110Torchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_ROUTE_119_TORCHIC] =
@@ -6413,6 +6483,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRoute119Torchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_103_MUDKIP] =
@@ -6437,6 +6508,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute110Mudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_119_MUDKIP] =
@@ -6449,6 +6521,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute119Mudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_103_TREECKO] =
@@ -6473,6 +6546,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute110Treecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_119_TREECKO] =
@@ -6485,6 +6559,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute119Treecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_103_TORCHIC] =
@@ -6509,6 +6584,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute110Torchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_ROUTE_119_TORCHIC] =
@@ -6521,6 +6597,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRoute119Torchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_EZEKIEL_1] =
@@ -6533,6 +6610,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Ezekiel1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DAVIS] =
@@ -6617,6 +6695,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Lydia1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_HALLE] =
@@ -6989,6 +7068,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntMtChimney2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CLARENCE] =
@@ -7086,6 +7166,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRustboroTreecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_RUSTBORO_MUDKIP] =
@@ -7098,6 +7179,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRustboroMudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_PAXTON] =
@@ -7134,6 +7216,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_GruntWeatherInst5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TABITHA_MT_CHIMNEY] =
@@ -7146,6 +7229,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_TabithaMtChimney),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JONATHAN] =
@@ -7170,6 +7254,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanRustboroTorchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_RUSTBORO_MUDKIP] =
@@ -7182,6 +7267,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRustboroMudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAXIE_MAGMA_HIDEOUT] =
@@ -7194,6 +7280,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MaxieMagmaHideout),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAXIE_MT_CHIMNEY] =
@@ -7206,6 +7293,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MaxieMtChimney),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TIANA] =
@@ -7254,6 +7342,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Vivi),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_HALEY_2] =
@@ -7314,6 +7403,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Sally),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROBIN] =
@@ -7326,6 +7416,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Robin),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ANDREA] =
@@ -7496,6 +7587,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Trent1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_LENNY] =
@@ -7520,6 +7612,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Lucas1),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ALAN] =
@@ -7532,6 +7625,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Alan),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CLARK] =
@@ -7736,6 +7830,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Johanna),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GERALD] =
@@ -7844,6 +7939,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyMauville),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLY_VR_2] =
@@ -7856,6 +7952,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyVR2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLY_ROUTE_110] =
@@ -7868,6 +7965,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyRoute110),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLY_VR_4] =
@@ -7880,6 +7978,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyVR4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WALLY_VR_5] =
@@ -7892,6 +7991,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_WallyVR5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_EVERGRANDE_MUDKIP] =
@@ -7904,6 +8004,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanEvergrandeMudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_EVERGRANDE_TREECKO] =
@@ -7916,6 +8017,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanEvergrandeTreecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_EVERGRANDE_TORCHIC] =
@@ -7928,6 +8030,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_BrendanEvergrandeTorchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_EVERGRANDE_MUDKIP] =
@@ -7940,6 +8043,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayEvergrandeMudkip),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_EVERGRANDE_TREECKO] =
@@ -7952,6 +8056,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayEvergrandeTreecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_EVERGRANDE_TORCHIC] =
@@ -7964,6 +8069,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayEvergrandeTorchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JONAH] =
@@ -8096,6 +8202,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_ToriAndTia),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_KIM_AND_IRIS] =
@@ -8360,6 +8467,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Kaleb),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JOSEPH] =
@@ -8372,6 +8480,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Joseph),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ALYSSA] =
@@ -8384,6 +8493,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Alyssa),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MARCOS] =
@@ -8495,6 +8605,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Kai),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CHARLOTTE] =
@@ -8507,6 +8618,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Charlotte),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DEANDRE] =
@@ -8675,6 +8787,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Courtney),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GRUNT_MAGMA_HIDEOUT_14] =
@@ -8723,6 +8836,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_TabithaMagmaHideout),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DARCY] =
@@ -8855,6 +8969,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Celia),
+        .isBossTrainer = TRUE,
     },
 
     
@@ -8869,6 +8984,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Branden),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRYANT] =
@@ -9085,6 +9201,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Cale),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MYLES] =
@@ -9133,6 +9250,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRustboroTreecko),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAY_RUSTBORO_TORCHIC] =
@@ -9145,6 +9263,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_MayRustboroTorchic),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROXANNE_2] =
@@ -9157,6 +9276,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Roxanne2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROXANNE_3] =
@@ -9169,6 +9289,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Roxanne3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROXANNE_4] =
@@ -9181,6 +9302,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Roxanne4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ROXANNE_5] =
@@ -9193,6 +9315,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Roxanne5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRAWLY_2] =
@@ -9205,6 +9328,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Brawly2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRAWLY_3] =
@@ -9217,6 +9341,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Brawly3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRAWLY_4] =
@@ -9229,6 +9354,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Brawly4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRAWLY_5] =
@@ -9241,6 +9367,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Brawly5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WATTSON_2] =
@@ -9253,6 +9380,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wattson2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WATTSON_3] =
@@ -9265,6 +9393,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wattson3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WATTSON_4] =
@@ -9277,6 +9406,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wattson4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WATTSON_5] =
@@ -9289,6 +9419,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wattson5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FLANNERY_2] =
@@ -9301,6 +9432,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Flannery2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FLANNERY_3] =
@@ -9313,6 +9445,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Flannery3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FLANNERY_4] =
@@ -9325,6 +9458,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Flannery4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FLANNERY_5] =
@@ -9337,6 +9471,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Flannery5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_NORMAN_2] =
@@ -9349,6 +9484,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Norman2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_NORMAN_3] =
@@ -9361,6 +9497,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Norman3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_NORMAN_4] =
@@ -9373,6 +9510,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Norman4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_NORMAN_5] =
@@ -9385,6 +9523,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Norman5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WINONA_2] =
@@ -9397,6 +9536,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
         .party = TRAINER_PARTY(sParty_Winona2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WINONA_3] =
@@ -9409,6 +9549,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
         .party = TRAINER_PARTY(sParty_Winona3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WINONA_4] =
@@ -9421,6 +9562,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
         .party = TRAINER_PARTY(sParty_Winona4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WINONA_5] =
@@ -9433,6 +9575,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
         .party = TRAINER_PARTY(sParty_Winona5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TATE_AND_LIZA_2] =
@@ -9445,6 +9588,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_TateAndLiza2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TATE_AND_LIZA_3] =
@@ -9457,6 +9601,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_TateAndLiza3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TATE_AND_LIZA_4] =
@@ -9469,6 +9614,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_TateAndLiza4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_TATE_AND_LIZA_5] =
@@ -9481,6 +9627,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_TateAndLiza5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JUAN_2] =
@@ -9493,6 +9640,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Juan2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JUAN_3] =
@@ -9505,6 +9653,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Juan3),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JUAN_4] =
@@ -9517,6 +9666,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Juan4),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_JUAN_5] =
@@ -9529,6 +9679,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Juan5),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_ANGELO] =
@@ -10129,6 +10280,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Roark),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GARDENIA] =
@@ -10141,6 +10293,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Gardenia),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_GARDENIA2] =
@@ -10153,6 +10306,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Gardenia2),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_FANTINA] =
@@ -10165,6 +10319,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Fantina),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_MAYLENE] =
@@ -10177,6 +10332,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Maylene),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_WAKE] =
@@ -10189,6 +10345,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Wake),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BYRON] =
@@ -10201,6 +10358,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Byron),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CANDICE] =
@@ -10213,6 +10371,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Candice),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_VOLKNER] =
@@ -10225,6 +10384,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Volkner),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_BRENDAN_PLACEHOLDER] =
@@ -10261,6 +10421,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_DawnRoute104),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DAWN_ROUTE_111] =
@@ -10273,6 +10434,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_DawnRoute111),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DAWN_LILYCOVE] =
@@ -10285,6 +10447,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_DawnLilycove),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_DAWN_EVERGRANDE] =
@@ -10297,6 +10460,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_DawnEvergrande),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_URSULA] =
@@ -10309,6 +10473,7 @@
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Ursula),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_X] =
@@ -10321,6 +10486,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_X),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_IRIV24] =
@@ -10333,6 +10499,7 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Iriv24),
+        .isBossTrainer = TRUE,
     },
 
     [TRAINER_CAP] =
@@ -10345,4 +10512,5 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES,
         .party = TRAINER_PARTY(sParty_Cap),
+        .isBossTrainer = TRUE,
     },

@@ -260,4 +260,9 @@ static inline const bool32 GetTrainerAIFlagsFromId(u16 trainerId)
     return gTrainers[SanitizeTrainerId(trainerId)].aiFlags;
 }
 
+static inline const bool32 IsBossTrainerBattle(u16 trainerId)
+{
+    return gTrainers[SanitizeTrainerId(trainerId)].isBossTrainer;
+}
+
 #endif // GUARD_DATA_H
