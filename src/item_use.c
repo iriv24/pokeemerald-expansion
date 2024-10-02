@@ -230,7 +230,6 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
 #endif
 }
 
-extern u8 PokeVialHealScript[];
 void ItemUseOutOfBattle_PokeVial(u8 taskId)
 {
     if(!gTasks[taskId].tUsingRegisteredKeyItem)
@@ -247,10 +246,11 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     }
 }
 
+extern u8 PokeVialHealScriptItem[];
 void ItemUseCB_PokeVial(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(PokeVialHealScript);
+    ScriptContext_SetupScript(PokeVialHealScriptItem);
     DestroyTask(taskId);
 }
 

@@ -125,6 +125,12 @@ Movement_PkmnCenterNurse_Bow:
 PokeVialHealScript::
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
+	msgbox PokeVialText, MSGBOX_SIGN
+	end
+
+PokeVialHealScriptItem::
+	special HealPlayerParty
+	callnative UpdateFollowingPokemon
 	msgbox PokeVialText, MSGBOX_DEFAULT
 	releaseall
 	end

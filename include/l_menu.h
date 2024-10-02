@@ -10,6 +10,8 @@ void HideLMenu(void);
 void HideLMenuAutoRun(void);
 void HideLMenuFollowers(void);
 void HideLMenuTimeChanger(void);
+void HideLMenuInfiniteRepel(void);
+void HideLMenuPokeVial(void);
 void AppendToLList(u8 *list, u8 *pos, u8 newEntry);
 
 #endif // GUARD_L_MENU_H

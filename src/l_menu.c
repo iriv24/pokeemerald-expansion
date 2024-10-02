@@ -20,6 +20,7 @@
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "item_menu.h"
+#include "item_use.h"
 #include "l_menu.h"
 #include "link.h"
 #include "load_save.h"
@@ -56,9 +57,12 @@
 // Menu actions
 enum
 {
+    MENU_ACTION_POKEVIAL,
     MENU_ACTION_PC,
     MENU_ACTION_DEXNAV,
     MENU_ACTION_TIME_CHANGER,
+    MENU_ACTION_INFINITE_REPEL_ON,
+    MENU_ACTION_INFINITE_REPEL_OFF,
     MENU_ACTION_AUTO_RUN_ON,
     MENU_ACTION_AUTO_RUN_OFF,
     MENU_ACTION_FOLLOWERS_ON,
@@ -76,6 +80,8 @@ EWRAM_DATA static u8 sNumLMenuActions = 0;
 EWRAM_DATA static u8 sCurrentLMenuActions[9] = {0};
 EWRAM_DATA static s8 sInitLMenuData[2] = {0};
 
+static bool8 ShouldCallbackFadeToBlack(void);
+
 // Menu action callbacks
 static bool8 LMenuPCCallback(void);
 static bool8 LMenuPlayerNameCallback(void);
@@ -84,6 +90,8 @@ static bool8 LMenuDexNavCallback(void);
 static bool8 LMenuAutoRunCallback(void);
 static bool8 LMenuFollowersCallback(void);
 static bool8 LMenuTimeChangerCallback(void);
+static bool8 LMenuInfiniteRepelCallback(void);
+static bool8 LMenuPokeVialCallback(void);
 
 // Menu callbacks
 static bool8 HandleLMenuInput(void);
@@ -104,9 +112,12 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
 
 static const struct MenuAction sLMenuItems[] =
 {
+    [MENU_ACTION_POKEVIAL]              = {gText_MenuPokeVial, {.u8_void = LMenuPokeVialCallback}},
     [MENU_ACTION_PC]                    = {gText_MenuPC, {.u8_void = LMenuPCCallback}},
     [MENU_ACTION_DEXNAV]                = {gText_MenuDexNav,  {.u8_void = LMenuDexNavCallback}},
     [MENU_ACTION_TIME_CHANGER]          = {gText_TimeChanger,  {.u8_void = LMenuTimeChangerCallback}},
+    [MENU_ACTION_INFINITE_REPEL_ON]     = {gText_InfiniteRepelOn,  {.u8_void = LMenuInfiniteRepelCallback}},
+    [MENU_ACTION_INFINITE_REPEL_OFF]    = {gText_InfiniteRepelOff,  {.u8_void = LMenuInfiniteRepelCallback}},
     [MENU_ACTION_AUTO_RUN_ON]           = {gText_AutoRunOn,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_AUTO_RUN_OFF]          = {gText_AutoRunOff,  {.u8_void = LMenuAutoRunCallback}},
     [MENU_ACTION_FOLLOWERS_ON]          = {gText_FollowersOn,  {.u8_void = LMenuFollowersCallback}},
@@ -131,6 +142,8 @@ static void HideLMenuWindow(void);
 static void HideLMenuWindowAutoRun(void);
 static void HideLMenuWindowFollowers(void);
 static void HideLMenuWindowTimeChanger(void);
+static void HideLMenuWindowInfiniteRepel(void);
+static void HideLMenuWindowPokeVial(void);
 static void ShowTimeWindow(void);
 static void RemoveLMenuTimeWindow(void);
 
@@ -176,14 +189,41 @@ static void AddLMenuAction(u8 action)
 
 static void BuildNormalLMenu(void)
 {
-    if(FlagGet(FLAG_SYS_POKEMON_GET) && !FlagGet(FLAG_ENTERED_ELITE_4))
+    if(FlagGet(FLAG_SYS_POKEMON_GET))
     {
-        AddLMenuAction(MENU_ACTION_PC);
+        if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        {
+            AddLMenuAction(MENU_ACTION_POKEVIAL);
+        }
+        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        {
+            AddLMenuAction(MENU_ACTION_PC);
+        }
     }
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
+    }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
     }
     
     if (FlagGet(FLAG_SYS_B_DASH))
@@ -197,17 +237,7 @@ static void BuildNormalLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -217,7 +247,28 @@ static void BuildSafariZoneLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -229,17 +280,7 @@ static void BuildSafariZoneLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -247,13 +288,41 @@ static void BuildLinkModeLMenu(void)
 {
     if(FlagGet(FLAG_SYS_POKEMON_GET))
     {
-        AddLMenuAction(MENU_ACTION_PC);
+        if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        {
+            AddLMenuAction(MENU_ACTION_POKEVIAL);
+        }
+        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        {
+            AddLMenuAction(MENU_ACTION_PC);
+        }
     }
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -265,17 +334,7 @@ static void BuildLinkModeLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -283,13 +342,41 @@ static void BuildUnionRoomLMenu(void)
 {
     if(FlagGet(FLAG_SYS_POKEMON_GET))
     {
-        AddLMenuAction(MENU_ACTION_PC);
+        if (FlagGet(FLAG_SYS_DEXNAV_GET))
+        {
+            AddLMenuAction(MENU_ACTION_POKEVIAL);
+        }
+        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        {
+            AddLMenuAction(MENU_ACTION_PC);
+        }
     }
     if (FlagGet(FLAG_SYS_DEXNAV_GET))
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -301,17 +388,7 @@ static void BuildUnionRoomLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -321,7 +398,28 @@ static void BuildBattlePikeLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -333,17 +431,7 @@ static void BuildBattlePikeLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -353,7 +441,28 @@ static void BuildBattlePyramidLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -365,17 +474,7 @@ static void BuildBattlePyramidLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -385,7 +484,28 @@ static void BuildMultiPartnerRoomLMenu(void)
     {
         AddLMenuAction(MENU_ACTION_DEXNAV);
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
+        if(FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_ON);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_INFINITE_REPEL_OFF);   
+        }
     }
+
+    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER) && FlagGet(FLAG_SYS_POKEMON_GET))
+    {
+        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
+        }
+        else
+        {
+            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
+        }
+    }
+
     if (FlagGet(FLAG_SYS_B_DASH))
     {
         if (gSaveBlock2Ptr->autoRun)
@@ -397,17 +517,7 @@ static void BuildMultiPartnerRoomLMenu(void)
             AddLMenuAction(MENU_ACTION_AUTO_RUN_OFF);
         }
     }
-    if (OW_FOLLOWERS_ENABLED && !FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
-    {
-        if (FlagGet(FLAG_DISABLE_FOLLOWERS))
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_OFF);
-        }
-        else
-        {
-            AddLMenuAction(MENU_ACTION_FOLLOWERS_ON);
-        }
-    }
+    
     AddLMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -565,7 +675,7 @@ static bool8 HandleLMenuInput(void)
         
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 
-        if (gMenuCallback2 != LMenuExitCallback && gMenuCallback2 != LMenuAutoRunCallback && gMenuCallback2 != LMenuFollowersCallback && gMenuCallback2 != LMenuTimeChangerCallback)
+        if (ShouldCallbackFadeToBlack())
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -582,6 +692,24 @@ static bool8 HandleLMenuInput(void)
     }
 
     return FALSE;
+}
+
+static bool8 ShouldCallbackFadeToBlack(void)
+{
+    if(gMenuCallback2 == LMenuExitCallback)
+        return FALSE;
+    if(gMenuCallback2 == LMenuAutoRunCallback)
+        return FALSE;
+    if(gMenuCallback2 == LMenuFollowersCallback)
+        return FALSE;
+    if(gMenuCallback2 == LMenuTimeChangerCallback)
+        return FALSE;
+    if(gMenuCallback2 == LMenuInfiniteRepelCallback)
+        return FALSE;
+    if(gMenuCallback2 == LMenuPokeVialCallback)
+        return FALSE;
+    
+    return TRUE;
 }
 
 
@@ -714,6 +842,66 @@ static void HideLMenuWindowFollowers(void)
         FlagSet(FLAG_DISABLE_FOLLOWERS);
         ScriptContext_SetupScript(EventScript_DisableFollowers);
     }
+}
+
+
+extern const u8 EventScript_DisableInfiniteRepel[];
+extern const u8 EventScript_EnableInfiniteRepel[];
+static bool8 LMenuInfiniteRepelCallback(void)
+{
+    HideLMenuInfiniteRepel(); // Hide start menu
+    return TRUE;
+}
+
+void HideLMenuInfiniteRepel(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowInfiniteRepel();
+}
+
+static void HideLMenuWindowInfiniteRepel(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    if (FlagGet(FLAG_SYS_DEXNAV_GET))
+    {
+        PlaySE(SE_SELECT);
+        if (FlagGet(OW_FLAG_NO_ENCOUNTER))
+        {
+            FlagClear(OW_FLAG_NO_ENCOUNTER);
+            ScriptContext_SetupScript(EventScript_DisableInfiniteRepel);
+        }
+        else
+        {
+            FlagSet(OW_FLAG_NO_ENCOUNTER);
+            ScriptContext_SetupScript(EventScript_EnableInfiniteRepel);
+        }
+    }
+}
+
+static bool8 LMenuPokeVialCallback(void)
+{
+    HideLMenuPokeVial(); // Hide start menu
+    return TRUE;
+}
+
+void HideLMenuPokeVial(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowPokeVial();
+}
+
+static void HideLMenuWindowPokeVial(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    ScriptContext_SetupScript(PokeVialHealScript);
 }
 
 static bool8 LMenuExitCallback(void)

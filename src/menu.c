@@ -617,7 +617,7 @@ u8 AddStartMenuWindow(u8 numActions)
 u8 AddLMenuWindow(u8 numActions)
 {
     if (sLMenuWindowId == WINDOW_NONE)
-        sLMenuWindowId = AddWindowParameterized(0, 1, 1, 7, (numActions * 2) + 2, 15, 0x139);
+        sLMenuWindowId = AddWindowParameterized(0, 1, 1, 8, (numActions * 2) + 2, 15, 0x139);
     return sLMenuWindowId;
 }
 

@@ -1801,10 +1801,14 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 906 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 # 907 "data/maps/LittlerootTown/scripts.pory"
-	giveitem ITEM_POKE_VIAL
 	giveitem ITEM_INFINITE_CANDY
-	giveitem ITEM_INFINITE_REPEL
 	setflag FLAG_SYS_DEXNAV_GET
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_Text_ReceivedPokeVial, MSGBOX_DEFAULT
+	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_Text_ReceivedInfiniteRepel, MSGBOX_DEFAULT
+	waitfanfare
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_Text_ReceivedDexNav, MSGBOX_DEFAULT
 	waitfanfare
@@ -1869,22 +1873,28 @@ LittlerootTown_Text_WearTheseRunningShoes:
 
 # 950 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ExplainNewGear:
-	.string "I gave you a PokéVial that will\n"
-	.string "heal your party from anywhere, an\l"
-	.string "Infinite Candy, which is basically a\l"
+	.string "That Infinite Candy is basically a\n"
 	.string "Rare Candy that will never run out,\l"
-	.string "and an Infinite Repel, which is a\l"
-	.string "Repel that will never run out!\p"
-	.string "They are all in your Key Items!\n"
-	.string "I also gave you a brand new DexNav, it's\l"
-	.string "top of the line!\p"
+	.string "it's in your Key Items!\p"
+	.string "I also gave you a PokéVial that will\n"
+	.string "heal your party from anywhere, an\l"
+	.string "Infinite Repel, which is a Repel that\l"
+	.string "will never run out, and a brand new\l"
+	.string "DexNav to help you find Pokémon!\p"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}If you press the “L” button, you can\n"
-	.string "see a second Menu.\p"
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This Menu will have new options on it,\n"
-	.string "including the DexNav!$"
+	.string "see a second menu.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This menu will have new options on it,\n"
+	.string "including the PokéVial, the Infinite\l"
+	.string "Repel, and the DexNav!$"
 
 LittlerootTown_Text_ReceivedDexNav:
 	.string "Obtained the DexNav!$"
+
+LittlerootTown_Text_ReceivedInfiniteRepel:
+	.string "Obtained the Infinite Repel!$"
+
+LittlerootTown_Text_ReceivedPokeVial:
+	.string "Obtained the PokéVial!$"
 
 # 951 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
