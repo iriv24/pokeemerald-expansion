@@ -3672,7 +3672,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_INDEEDEE_F"
+                "species": "SPECIES_INDEEDEE_M"
               },
               {
                 "min_level": 27,
@@ -5456,7 +5456,7 @@
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_BASCULEGION_F"
+                "species": "SPECIES_BASCULEGION_M"
               },
               {
                 "min_level": 40,
