@@ -201,10 +201,13 @@ struct ProtectStruct
     u16 eatMirrorHerb:1;
     u16 activateOpportunist:2; // 2 - to copy stats. 1 - stats copied (do not repeat). 0 - no stats to copy
     u16 usedAllySwitch:1;
+    u16 padding:2;
+    // End of 16-bit bitfield
     u32 physicalDmg;
     u32 specialDmg;
     u8 physicalBattlerId;
     u8 specialBattlerId;
+
 };
 
 struct SpecialStatus
@@ -367,11 +370,14 @@ struct AiLogicData
     u8 effectiveness[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
     u8 moveAccuracy[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
     u8 moveLimitations[MAX_BATTLERS_COUNT];
-    bool8 shouldSwitchMon; // Because all available moves have no/little effect. Each bit per battler.
+    u8 shouldSwitchIfBadMoves; // Because all available moves have no/little effect. Each bit per battler.
     u8 monToSwitchId[MAX_BATTLERS_COUNT]; // ID of the mon to switch.
     bool8 weatherHasEffect; // The same as WEATHER_HAS_EFFECT. Stored here, so it's called only once.
     u8 mostSuitableMonId[MAX_BATTLERS_COUNT]; // Stores result of GetMostSuitableMonToSwitchInto, which decides which generic mon the AI would switch into if they decide to switch. This can be overruled by specific mons found in ShouldSwitch; the final resulting mon is stored in AI_monToSwitchIntoId.
     struct SwitchinCandidate switchinCandidate; // Struct used for deciding which mon to switch to in battle_ai_switch_items.c
+    bool8 ejectButtonSwitch; // Tracks whether current switch out was from Eject Button
+    bool8 ejectPackSwitch; // Tracks whether current switch out was from Eject Pack
+    u8 shouldSwitch; // Stores result of ShouldSwitch, which decides whether a mon should be switched out
 };
 
 struct AI_ThinkingStruct
@@ -818,9 +824,13 @@ struct BattleStruct
     u8 boosterEnergyActivates;
     u8 distortedTypeMatchups;
     u8 categoryOverride; // for Z-Moves and Max Moves
+    u8 commandingDondozo;
+    u16 commanderActive[NUM_BATTLE_SIDES];
     u32 stellarBoostFlags[NUM_BATTLE_SIDES]; // stored as a bitfield of flags for all types for each side
     u8 fickleBeamBoosted:1;
     u8 obedienceResult:3;
+    u8 padding:4;
+    u8 usedEjectItem;
     u8 usedMicleBerry;
 };
 

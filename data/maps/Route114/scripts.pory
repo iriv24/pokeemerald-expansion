@@ -31,10 +31,10 @@ Route114_EventScript_ArticunoGalar::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_ARTICUNO_GALARIAN, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_ARTICUNO_GALARIAN, 70
+	setwildbattle SPECIES_ARTICUNO_GALAR, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
@@ -53,7 +53,7 @@ Route114_EventScript_DefeatedArticunoGalar::
 	end
 
 Route114_EventScript_RanFromArticunoGalar::
-	setvar VAR_0x8004, SPECIES_ARTICUNO_GALARIAN
+	setvar VAR_0x8004, SPECIES_ARTICUNO_GALAR
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

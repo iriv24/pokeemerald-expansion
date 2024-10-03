@@ -128,7 +128,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sDartrixLevelUpLearnset,
         .teachableLearnset = sDartrixTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL_NIGHT, 36, SPECIES_DECIDUEYE},
-                                {EVO_LEVEL_DAY, 36, SPECIES_DECIDUEYE_HISUIAN}),
+                                {EVO_LEVEL_DAY, 36, SPECIES_DECIDUEYE_HISUI}),
     },
 
     [SPECIES_DECIDUEYE] =
@@ -194,7 +194,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     },
 
 #if P_HISUIAN_FORMS
-    [SPECIES_DECIDUEYE_HISUIAN] =
+    [SPECIES_DECIDUEYE_HISUI] =
     {
         .baseHP        = 98,
         .baseAttack    = 112,
@@ -4766,7 +4766,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
-    [SPECIES_MIMIKYU_TOTEM_BUSTED] =
+    [SPECIES_MIMIKYU_BUSTED_TOTEM] =
     {
         .baseHP        = 55,
         .baseAttack    = 90,
@@ -6604,7 +6604,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sMagearnaFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM
     },
-    [SPECIES_MAGEARNA_ORIGINAL_COLOR] =
+    [SPECIES_MAGEARNA_ORIGINAL] =
     {
         .baseHP        = 80,
         .baseAttack    = 95,
@@ -7194,7 +7194,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_MELMETAL_GIGANTAMAX] =
+    [SPECIES_MELMETAL_GMAX] =
     {
         .baseHP        = 135,
         .baseAttack    = 143,

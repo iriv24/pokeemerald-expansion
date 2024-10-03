@@ -69,13 +69,13 @@ Route119_EventScript_ZapdosGalar::
 # 35 "data/maps/Route119/scripts.pory"
 	waitse
 # 36 "data/maps/Route119/scripts.pory"
-	playmoncry SPECIES_ZAPDOS_GALARIAN, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
 # 37 "data/maps/Route119/scripts.pory"
 	delay 40
 # 38 "data/maps/Route119/scripts.pory"
 	waitmoncry
 # 39 "data/maps/Route119/scripts.pory"
-	setwildbattle SPECIES_ZAPDOS_GALARIAN, 70
+	setwildbattle SPECIES_ZAPDOS_GALAR, 70
 # 40 "data/maps/Route119/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 41 "data/maps/Route119/scripts.pory"
@@ -113,7 +113,7 @@ Route119_EventScript_DefeatedZapdosGalar::
 # 57 "data/maps/Route119/scripts.pory"
 Route119_EventScript_RanFromZapdosGalar::
 # 58 "data/maps/Route119/scripts.pory"
-	setvar VAR_0x8004, SPECIES_ZAPDOS_GALARIAN
+	setvar VAR_0x8004, SPECIES_ZAPDOS_GALAR
 # 59 "data/maps/Route119/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 60 "data/maps/Route119/scripts.pory"

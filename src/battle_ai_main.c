@@ -389,7 +389,7 @@ void Ai_UpdateFaintData(u32 battler)
     aiMon->isFainted = TRUE;
 }
 
-static void SetBattlerAiData(u32 battler, struct AiLogicData *aiData)
+void SetBattlerAiData(u32 battler, struct AiLogicData *aiData)
 {
     u32 ability, holdEffect;
 
@@ -504,12 +504,12 @@ static bool32 AI_SwitchMonIfSuitable(u32 battler, bool32 doubleBattle)
         if (doubleBattle)
         {
             u32 partner = BATTLE_PARTNER(battler);
-            if (AI_DATA->shouldSwitchMon & (1u << partner) && AI_DATA->monToSwitchId[partner] == monToSwitchId)
+            if (AI_DATA->shouldSwitchIfBadMoves & (1u << partner) && AI_DATA->monToSwitchId[partner] == monToSwitchId)
             {
                 return FALSE;
             }
         }
-        AI_DATA->shouldSwitchMon |= 1 << battler;
+        AI_DATA->shouldSwitchIfBadMoves |= 1 << battler;
         AI_DATA->monToSwitchId[battler] = monToSwitchId;
         return TRUE;
     }
@@ -834,6 +834,9 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
     if (IsTwoTurnNotSemiInvulnerableMove(battlerAtk, move) && CanTargetFaintAi(battlerDef, battlerAtk))
         RETURN_SCORE_MINUS(10);
+
+    if (gBattleStruct->commandingDondozo & (1u << battlerDef))
+        RETURN_SCORE_MINUS(20);
 
     // check if negates type
     switch (effectiveness)
@@ -3690,7 +3693,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         }
         break;
     case EFFECT_BATON_PASS:
-        if (ShouldSwitch(battlerAtk, FALSE) && (gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE
+        if ((AI_DATA->shouldSwitch & (1u << battlerAtk)) && (gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE
           || (gStatuses3[battlerAtk] & (STATUS3_ROOTED | STATUS3_AQUA_RING | STATUS3_MAGNET_RISE | STATUS3_POWER_TRICK))
           || AnyStatIsRaised(battlerAtk)))
             ADJUST_SCORE(BEST_EFFECT);

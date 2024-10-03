@@ -31,6 +31,7 @@ void RecordItemEffectBattle(u32 battlerId, u32 itemEffect);
 void ClearBattlerItemEffectHistory(u32 battlerId);
 void SaveBattlerData(u32 battlerId);
 void SetBattlerData(u32 battlerId);
+void SetBattlerAiData(u32 battlerId, struct AiLogicData *aiData);
 void RestoreBattlerData(u32 battlerId);
 u32 GetAIChosenMove(u32 battlerId);
 u32 GetTotalBaseStat(u32 species);
@@ -140,6 +141,7 @@ bool32 HasThawingMove(u32 battler);
 bool32 IsStatRaisingEffect(u32 effect);
 bool32 IsStatLoweringEffect(u32 effect);
 bool32 IsSelfStatLoweringEffect(u32 effect);
+bool32 IsSwitchOutEffect(u32 effect);
 bool32 IsAttackBoostMoveEffect(u32 effect);
 bool32 IsUngroundingEffect(u32 effect);
 bool32 IsSemiInvulnerable(u32 battlerDef, u32 move);
@@ -202,6 +204,7 @@ void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
 void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 
 s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, bool32 isPartyMonAttacker, enum DamageRollType rollType);
+u32 AI_WhoStrikesFirstPartyMon(u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 moveConsidered);
 s32 AI_TryToClearStats(u32 battlerAtk, u32 battlerDef, bool32 isDoubleBattle);
 bool32 AI_ShouldCopyStatChanges(u32 battlerAtk, u32 battlerDef);
 bool32 AI_ShouldSetUpHazards(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData);

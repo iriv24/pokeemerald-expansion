@@ -191,7 +191,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_RILLABOOM_GIGANTAMAX] =
+    [SPECIES_RILLABOOM_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 125,
@@ -438,7 +438,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_CINDERACE_GIGANTAMAX] =
+    [SPECIES_CINDERACE_GMAX] =
     {
         .baseHP        = 80,
         .baseAttack    = 116,
@@ -687,7 +687,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_INTELEON_GIGANTAMAX] =
+    [SPECIES_INTELEON_GMAX] =
     {
         .baseHP        = 70,
         .baseAttack    = 85,
@@ -1064,7 +1064,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_CORVIKNIGHT_GIGANTAMAX] =
+    [SPECIES_CORVIKNIGHT_GMAX] =
     {
         .baseHP        = 98,
         .baseAttack    = 87,
@@ -4243,7 +4243,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_HATTERENE_GIGANTAMAX] =
+    [SPECIES_HATTERENE_GMAX] =
     {
         .baseHP        = 57,
         .baseAttack    = 90,
@@ -4749,7 +4749,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     CaramelSwirl, BODY_COLOR_BROWN, MON_RANDOMIZER_INVALID),
     [SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RainbowSwirl, BODY_COLOR_YELLOW, MON_RANDOMIZER_INVALID),
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_ALCREMIE_GIGANTAMAX] =
+    [SPECIES_ALCREMIE_GMAX] =
     {
         ALCREMIE_MISC_INFO(BODY_COLOR_YELLOW),
         .speciesName = _("Alcremie"),
@@ -5110,7 +5110,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #endif //P_FAMILY_STONJOURNER
 
 #if P_FAMILY_EISCUE
-    [SPECIES_EISCUE_ICE_FACE] =
+    [SPECIES_EISCUE_ICE] =
     {
         .baseHP        = 75,
         .baseAttack    = 100,
@@ -5130,7 +5130,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_ICE_FACE, ABILITY_NONE, ABILITY_NONE, ABILITY_ICE_FACE, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Eiscue"),
-        .cryId = CRY_EISCUE_ICE_FACE,
+        .cryId = CRY_EISCUE_ICE,
         .natDexNum = NATIONAL_DEX_EISCUE,
         .categoryName = _("Penguin"),
         .height = 14,
@@ -5174,7 +5174,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sEiscueFormChangeTable,
     },
 
-    [SPECIES_EISCUE_NOICE_FACE] =
+    [SPECIES_EISCUE_NOICE] =
     {
         .baseHP        = 75,
         .baseAttack    = 100,
@@ -5233,7 +5233,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #endif //P_FAMILY_EISCUE
 
 #if P_FAMILY_INDEEDEE
-    [SPECIES_INDEEDEE_MALE] =
+    [SPECIES_INDEEDEE_M] =
     {
         .baseHP        = 60,
         .baseAttack    = 65,
@@ -5253,7 +5253,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE, ABILITY_INNER_FOCUS, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE},
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Indeedee"),
-        .cryId = CRY_INDEEDEE_MALE,
+        .cryId = CRY_INDEEDEE_M,
         .natDexNum = NATIONAL_DEX_INDEEDEE,
         .categoryName = _("Emotion"),
         .height = 9,
@@ -5296,7 +5296,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
     },
 
-    [SPECIES_INDEEDEE_FEMALE] =
+    [SPECIES_INDEEDEE_F] =
     {
         .baseHP        = 70,
         .baseAttack    = 55,
@@ -5316,7 +5316,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_OWN_TEMPO, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE, ABILITY_OWN_TEMPO, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE},
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Indeedee"),
-        .cryId = CRY_INDEEDEE_FEMALE,
+        .cryId = CRY_INDEEDEE_F,
         .natDexNum = NATIONAL_DEX_INDEEDEE,
         .categoryName = _("Emotion"),
         .height = 9,
@@ -5991,7 +5991,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_DURALUDON_GIGANTAMAX] =
+    [SPECIES_DURALUDON_GMAX] =
     {
         .baseHP        = 70,
         .baseAttack    = 95,
@@ -6305,7 +6305,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #endif //P_FAMILY_DREEPY
 
 #if P_FAMILY_ZACIAN
-    [SPECIES_ZACIAN_HERO_OF_MANY_BATTLES] =
+    [SPECIES_ZACIAN_HERO] =
     {
         .baseHP        = 92,
         .baseAttack    = 120,
@@ -6325,7 +6325,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_INTREPID_SWORD, ABILITY_NONE, ABILITY_NONE, ABILITY_INTREPID_SWORD, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Zacian"),
-        .cryId = CRY_ZACIAN_HERO_OF_MANY_BATTLES,
+        .cryId = CRY_ZACIAN_HERO,
         .natDexNum = NATIONAL_DEX_ZACIAN,
         .categoryName = _("Warrior"),
         .height = 28,
@@ -6370,7 +6370,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sZacianFormChangeTable,
     },
 
-    [SPECIES_ZACIAN_CROWNED_SWORD] =
+    [SPECIES_ZACIAN_CROWNED] =
     {
         .baseHP        = 92,
         .baseAttack    = 150,
@@ -6439,7 +6439,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #endif //P_FAMILY_ZACIAN
 
 #if P_FAMILY_ZAMAZENTA
-    [SPECIES_ZAMAZENTA_HERO_OF_MANY_BATTLES] =
+    [SPECIES_ZAMAZENTA_HERO] =
     {
         .baseHP        = 92,
         .baseAttack    = 120,
@@ -6459,7 +6459,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_DAUNTLESS_SHIELD, ABILITY_NONE, ABILITY_NONE, ABILITY_DAUNTLESS_SHIELD, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Zamazenta"),
-        .cryId = CRY_ZAMAZENTA_HERO_OF_MANY_BATTLES,
+        .cryId = CRY_ZAMAZENTA_HERO,
         .natDexNum = NATIONAL_DEX_ZAMAZENTA,
         .categoryName = _("Warrior"),
         .height = 29,
@@ -6505,7 +6505,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sZamazentaFormChangeTable,
     },
 
-    [SPECIES_ZAMAZENTA_CROWNED_SHIELD] =
+    [SPECIES_ZAMAZENTA_CROWNED] =
     {
         .baseHP        = 92,
         .baseAttack    = 120,
@@ -6761,11 +6761,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKubfuLevelUpLearnset,
         .teachableLearnset = sKubfuTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_URSHIFU_SINGLE_STRIKE_STYLE},
-                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_URSHIFU_RAPID_STRIKE_STYLE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_URSHIFU_SINGLE_STRIKE},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_URSHIFU_RAPID_STRIKE}),
     },
 
-    [SPECIES_URSHIFU_SINGLE_STRIKE_STYLE] =
+    [SPECIES_URSHIFU_SINGLE_STRIKE] =
     {
         .baseHP        = 100,
         .baseAttack    = 130,
@@ -6831,7 +6831,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GIGANTAMAX] =
+    [SPECIES_URSHIFU_SINGLE_STRIKE_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 130,
@@ -6890,7 +6890,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 
-    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] =
+    [SPECIES_URSHIFU_RAPID_STRIKE] =
     {
         .baseHP        = 100,
         .baseAttack    = 130,
@@ -6956,7 +6956,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_GIGANTAMAX_FORMS
-    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX] =
+    [SPECIES_URSHIFU_RAPID_STRIKE_GMAX] =
     {
         .baseHP        = 100,
         .baseAttack    = 130,
@@ -7470,7 +7470,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     },
 
 #if P_FUSION_FORMS
-    [SPECIES_CALYREX_ICE_RIDER] =
+    [SPECIES_CALYREX_ICE] =
     {
         .baseHP        = 100,
         .baseAttack    = 165,
@@ -7537,7 +7537,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
-    [SPECIES_CALYREX_SHADOW_RIDER] =
+    [SPECIES_CALYREX_SHADOW] =
     {
         .baseHP        = 100,
         .baseAttack    = 85,

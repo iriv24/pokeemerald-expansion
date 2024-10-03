@@ -3293,6 +3293,10 @@ void SwitchInClearSetData(u32 battler)
     gSpecialStatuses[battler].specialDmg = 0;
     gBattleStruct->enduredDamage &= ~(1u << battler);
 
+    // Reset Eject Button / Eject Pack switch detection
+    AI_DATA->ejectButtonSwitch = FALSE;
+    AI_DATA->ejectPackSwitch = FALSE;
+
     // Reset G-Max Chi Strike boosts.
     gBattleStruct->bonusCritStages[battler] = 0;
 
@@ -3396,6 +3400,16 @@ const u8* FaintClearSetData(u32 battler)
 
     gBattleStruct->palaceFlags &= ~(1u << battler);
     gBattleStruct->boosterEnergyActivates &= ~(1u << battler);
+
+    if (gBattleStruct->commanderActive[battler] != SPECIES_NONE)
+    {
+        u32 partner = BATTLE_PARTNER(battler);
+        if (IsBattlerAlive(partner))
+        {
+            BtlController_EmitSpriteInvisibility(partner, BUFFER_A, FALSE);
+            MarkBattlerForControllerExec(partner);
+        }
+    }
 
     for (i = 0; i < ARRAY_COUNT(gSideTimers); i++)
     {
@@ -4232,6 +4246,8 @@ static void HandleTurnActionSelectionState(void)
             if ((gBattleTypeFlags & BATTLE_TYPE_HAS_AI || IsWildMonSmart())
                     && (BattlerHasAi(battler) && !(gBattleTypeFlags & BATTLE_TYPE_PALACE)))
             {
+                if (ShouldSwitch(battler, FALSE))
+                    AI_DATA->shouldSwitch |= (1u << battler);
                 if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_RISKY) // Risky AI switches aggressively even mid battle
                     AI_DATA->mostSuitableMonId[battler] = GetMostSuitableMonToSwitchInto(battler, TRUE);
                 else
@@ -4246,7 +4262,7 @@ static void HandleTurnActionSelectionState(void)
                 || gBattleStruct->absentBattlerFlags & (1u << GetBattlerAtPosition(BATTLE_PARTNER(position)))
                 || gBattleCommunication[GetBattlerAtPosition(BATTLE_PARTNER(position))] == STATE_WAIT_ACTION_CONFIRMED)
             {
-                if (gBattleStruct->absentBattlerFlags & (1u << battler))
+                if ((gBattleStruct->absentBattlerFlags & (1u << battler)) || (gBattleStruct->commandingDondozo & (1u << battler)))
                 {
                     gChosenActionByBattler[battler] = B_ACTION_NOTHING_FAINTED;
                     if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI))
@@ -5174,6 +5190,9 @@ static void TurnValuesCleanUp(bool8 var0)
         if (gDisableStructs[i].substituteHP == 0)
             gBattleMons[i].status2 &= ~STATUS2_SUBSTITUTE;
 
+        if (!(gStatuses3[i] & STATUS3_COMMANDER))
+            gBattleStruct->commandingDondozo &= ~(1u << i);
+
         gSpecialStatuses[i].parentalBondState = PARENTAL_BOND_OFF;
         gSpecialStatuses[i].oraoraoraoraState = ORAORAORAORA_OFF;
     }
@@ -5183,6 +5202,7 @@ static void TurnValuesCleanUp(bool8 var0)
     gSideTimers[B_SIDE_PLAYER].followmeTimer = 0;
     gSideTimers[B_SIDE_OPPONENT].followmeTimer = 0;
 
+    gBattleStruct->usedEjectItem = 0;
     gBattleStruct->pledgeMove = FALSE; // combined pledge move may not have been used due to a canceller
 }
 
@@ -5876,8 +5896,9 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
         type3 = TYPE_MYSTERY;
     }
 
-    if (moveEffect == EFFECT_WEATHER_BALL)
+    switch (moveEffect)
     {
+    case EFFECT_WEATHER_BALL:
         if (gMain.inBattle && WEATHER_HAS_EFFECT)
         {
             if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
@@ -5911,79 +5932,86 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
             }
             return moveType;
         }
-    }
-    else if (moveEffect == EFFECT_HIDDEN_POWER)
-    {
-        u8 typeBits;
-        if (gMain.inBattle)
+        break;
+    case EFFECT_HIDDEN_POWER:
         {
-            typeBits = ((gBattleMons[battler].hpIV & 1) << 0)
-                     | ((gBattleMons[battler].attackIV & 1) << 1)
-                     | ((gBattleMons[battler].defenseIV & 1) << 2)
-                     | ((gBattleMons[battler].speedIV & 1) << 3)
-                     | ((gBattleMons[battler].spAttackIV & 1) << 4)
-                     | ((gBattleMons[battler].spDefenseIV & 1) << 5);
-        }
-        else
-        {
-            typeBits = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
-                     | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
-                     | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
-                     | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
-                     | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
-                     | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
-        }
+            u32 typeBits = 0;
+            if (gMain.inBattle)
+            {
+                typeBits = ((gBattleMons[battler].hpIV & 1) << 0)
+                        | ((gBattleMons[battler].attackIV & 1) << 1)
+                        | ((gBattleMons[battler].defenseIV & 1) << 2)
+                        | ((gBattleMons[battler].speedIV & 1) << 3)
+                        | ((gBattleMons[battler].spAttackIV & 1) << 4)
+                        | ((gBattleMons[battler].spDefenseIV & 1) << 5);
+            }
+            else
+            {
+                typeBits = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+                        | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+                        | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+                        | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+                        | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+                        | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+            }
 
-        // Subtract 6 instead of 1 below because 5 types are excluded (TYPE_NONE, TYPE_NORMAL, TYPE_MYSTERY, TYPE_FAIRY and TYPE_STELLAR)
-        // The final + 2 skips past TYPE_NONE and Normal.
-        moveType = ((NUMBER_OF_MON_TYPES - 6) * typeBits) / 63 + 2;
-        if (moveType >= TYPE_MYSTERY)
-            moveType++;
-        return (moveType | F_DYNAMIC_TYPE_IGNORE_PHYSICALITY);
-    }
-    else if (moveEffect == EFFECT_CHANGE_TYPE_ON_ITEM && holdEffect == gMovesInfo[move].argument)
-    {
-        return ItemId_GetSecondaryId(heldItem);
-    }
-    else if (moveEffect == EFFECT_REVELATION_DANCE && GetActiveGimmick(battler) != GIMMICK_Z_MOVE)
-    {
-        u8 teraType;
-        if (GetActiveGimmick(battler) == GIMMICK_TERA && ((teraType = GetMonData(mon, MON_DATA_TERA_TYPE)) != TYPE_STELLAR))
-            return teraType;
-        else if (type1 != TYPE_MYSTERY && !(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST && type1 == TYPE_FLYING))
-            return type1;
-        else if (type2 != TYPE_MYSTERY && !(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST && type2 == TYPE_FLYING))
+            // Subtract 6 instead of 1 below because 5 types are excluded (TYPE_NONE, TYPE_NORMAL, TYPE_MYSTERY, TYPE_FAIRY and TYPE_STELLAR)
+            // The final + 2 skips past TYPE_NONE and Normal.
+            moveType = ((NUMBER_OF_MON_TYPES - 6) * typeBits) / 63 + 2;
+            if (moveType >= TYPE_MYSTERY)
+                moveType++;
+            return ((moveType | F_DYNAMIC_TYPE_IGNORE_PHYSICALITY) & 0x3F);
+        }
+        break;
+    case EFFECT_CHANGE_TYPE_ON_ITEM:
+        if (holdEffect == gMovesInfo[move].argument)
+            return ItemId_GetSecondaryId(heldItem);
+        break;
+    case EFFECT_REVELATION_DANCE:
+        if (GetActiveGimmick(battler) != GIMMICK_Z_MOVE)
+        {
+            u32 teraType;
+            if (GetActiveGimmick(battler) == GIMMICK_TERA && ((teraType = GetMonData(mon, MON_DATA_TERA_TYPE)) != TYPE_STELLAR))
+                return teraType;
+            else if (type1 != TYPE_MYSTERY && !(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST && type1 == TYPE_FLYING))
+                return type1;
+            else if (type2 != TYPE_MYSTERY && !(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST && type2 == TYPE_FLYING))
+                return type2;
+            else if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST)
+                return (B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_NORMAL : TYPE_MYSTERY);
+            else if (type3 != TYPE_MYSTERY)
+                return type3;
+            else
+                return TYPE_MYSTERY;
+        }
+        break;
+    case EFFECT_RAGING_BULL:
+        switch (species)
+        {
+        case SPECIES_TAUROS_PALDEA_COMBAT:
+        case SPECIES_TAUROS_PALDEA_BLAZE:
+        case SPECIES_TAUROS_PALDEA_AQUA:
             return type2;
-        else if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST)
-            return (B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_NORMAL : TYPE_MYSTERY);
-        else if (type3 != TYPE_MYSTERY)
-            return type3;
-        else
-            return TYPE_MYSTERY;
-    }
-    else if (moveEffect == EFFECT_RAGING_BULL
-             && (species == SPECIES_TAUROS_PALDEAN_COMBAT_BREED
-              || species == SPECIES_TAUROS_PALDEAN_BLAZE_BREED
-              || species == SPECIES_TAUROS_PALDEAN_AQUA_BREED))
-    {
-        return type2;
-    }
-    else if (moveEffect == EFFECT_IVY_CUDGEL
-            && (species == SPECIES_OGERPON_WELLSPRING_MASK || species == SPECIES_OGERPON_WELLSPRING_MASK_TERA
-             || species == SPECIES_OGERPON_HEARTHFLAME_MASK || species == SPECIES_OGERPON_HEARTHFLAME_MASK_TERA
-             || species == SPECIES_OGERPON_CORNERSTONE_MASK || species == SPECIES_OGERPON_CORNERSTONE_MASK_TERA))
-    {
-        return type2;
-    }
-    else if (moveEffect == EFFECT_NATURAL_GIFT)
-    {
+        }
+        break;
+    case EFFECT_IVY_CUDGEL:
+        switch (species)
+        {
+        case SPECIES_OGERPON_WELLSPRING:
+        case SPECIES_OGERPON_HEARTHFLAME:
+        case SPECIES_OGERPON_CORNERSTONE:
+        case SPECIES_OGERPON_WELLSPRING_TERA:
+        case SPECIES_OGERPON_HEARTHFLAME_TERA:
+        case SPECIES_OGERPON_CORNERSTONE_TERA:
+            return type2;
+        }
+        break;
+    case EFFECT_NATURAL_GIFT:
         if (ItemId_GetPocket(heldItem) == POCKET_BERRIES)
             return gNaturalGiftTable[ITEM_TO_BERRY(heldItem)].type;
         else
             return moveType;
-    }
-    else if (moveEffect == EFFECT_TERRAIN_PULSE)
-    {
+    case EFFECT_TERRAIN_PULSE:
         if (gMain.inBattle)
         {
             if (IsBattlerTerrainAffected(battler, STATUS_FIELD_TERRAIN_ANY))
@@ -6016,14 +6044,15 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
             }
             return moveType;
         }
-    }
-    else if (moveEffect == EFFECT_TERA_BLAST && GetActiveGimmick(battler) == GIMMICK_TERA)
-    {
-        return GetMonData(mon, MON_DATA_TERA_TYPE);
-    }
-    else if (moveEffect == EFFECT_TERA_STARSTORM && species == SPECIES_TERAPAGOS_STELLAR)
-    {
-        return TYPE_STELLAR;
+        break;
+    case EFFECT_TERA_BLAST:
+        if (GetActiveGimmick(battler) == GIMMICK_TERA)
+            return GetMonData(mon, MON_DATA_TERA_TYPE);
+        break;
+    case EFFECT_TERA_STARSTORM:
+        if (species == SPECIES_TERAPAGOS_STELLAR)
+            return TYPE_STELLAR;
+        break;
     }
 
     if (moveType == TYPE_NORMAL

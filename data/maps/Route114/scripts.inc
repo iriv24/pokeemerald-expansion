@@ -65,13 +65,13 @@ Route114_EventScript_ArticunoGalar::
 # 33 "data/maps/Route114/scripts.pory"
 	waitse
 # 34 "data/maps/Route114/scripts.pory"
-	playmoncry SPECIES_ARTICUNO_GALARIAN, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
 # 35 "data/maps/Route114/scripts.pory"
 	delay 40
 # 36 "data/maps/Route114/scripts.pory"
 	waitmoncry
 # 37 "data/maps/Route114/scripts.pory"
-	setwildbattle SPECIES_ARTICUNO_GALARIAN, 70
+	setwildbattle SPECIES_ARTICUNO_GALAR, 70
 # 38 "data/maps/Route114/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 39 "data/maps/Route114/scripts.pory"
@@ -109,7 +109,7 @@ Route114_EventScript_DefeatedArticunoGalar::
 # 55 "data/maps/Route114/scripts.pory"
 Route114_EventScript_RanFromArticunoGalar::
 # 56 "data/maps/Route114/scripts.pory"
-	setvar VAR_0x8004, SPECIES_ARTICUNO_GALARIAN
+	setvar VAR_0x8004, SPECIES_ARTICUNO_GALAR
 # 57 "data/maps/Route114/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 58 "data/maps/Route114/scripts.pory"

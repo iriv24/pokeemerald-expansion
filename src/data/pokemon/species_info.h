@@ -684,7 +684,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif //P_MEGA_EVOLUTIONS
 
-        [SPECIES_DARMANITAN_GALARIAN_ZEN_MODE_TWO] =
+        [SPECIES_DARMANITAN_GALAR_ZEN_MODE_TWO] =
         {
             .baseHP        = 105,
             .baseAttack    = 160,

@@ -7059,25 +7059,6 @@ void UpdateDaysPassedSinceFormChange(u16 days)
     }
 }
 
-static inline u32 CalculateHiddenPowerType(struct Pokemon *mon)
-{
-    u32 typehp;
-    u32 type;
-    u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
-                 | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
-                 | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
-                 | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
-                 | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
-                 | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
-
-    type = (15 * typeBits) / 63 + 2;
-    if (type >= TYPE_MYSTERY)
-        type++;
-    type |= 0xC0;
-    typehp = type & 0x3F;
-    return typehp;
-}
-
 u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
 {
     u32 moveType = GetDynamicMoveType(mon, move, battler, NULL);

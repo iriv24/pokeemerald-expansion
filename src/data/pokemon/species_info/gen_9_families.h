@@ -628,11 +628,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sLechonkLevelUpLearnset,
         .teachableLearnset = sLechonkTeachableLearnset,
         .eggMoveLearnset = sLechonkEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 16, SPECIES_OINKOLOGNE_MALE},
-                                {EVO_LEVEL_FEMALE, 16, SPECIES_OINKOLOGNE_FEMALE}),
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 16, SPECIES_OINKOLOGNE_M},
+                                {EVO_LEVEL_FEMALE, 16, SPECIES_OINKOLOGNE_F}),
     },
 
-    [SPECIES_OINKOLOGNE_MALE] =
+    [SPECIES_OINKOLOGNE_M] =
     {
         .baseHP        = 110,
         .baseAttack    = 100,
@@ -652,7 +652,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .abilities = { ABILITY_LINGERING_AROMA, ABILITY_GLUTTONY, ABILITY_THICK_FAT, ABILITY_LINGERING_AROMA, ABILITY_GLUTTONY, ABILITY_THICK_FAT},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Oinkologne"),
-        .cryId = CRY_OINKOLOGNE_MALE,
+        .cryId = CRY_OINKOLOGNE_M,
         .natDexNum = NATIONAL_DEX_OINKOLOGNE,
         .categoryName = _("Hog"),
         .height = 10,
@@ -694,7 +694,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM
     },
 
-    [SPECIES_OINKOLOGNE_FEMALE] =
+    [SPECIES_OINKOLOGNE_F] =
     {
         .baseHP        = 115,
         .baseAttack    = 90,
@@ -714,7 +714,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .abilities = { ABILITY_AROMA_VEIL, ABILITY_GLUTTONY, ABILITY_THICK_FAT, ABILITY_AROMA_VEIL, ABILITY_GLUTTONY, ABILITY_THICK_FAT},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Oinkologne"),
-        .cryId = CRY_OINKOLOGNE_FEMALE,
+        .cryId = CRY_OINKOLOGNE_F,
         .natDexNum = NATIONAL_DEX_OINKOLOGNE,
         .categoryName = _("Hog"),
         .height = 10,
@@ -1259,11 +1259,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sTandemausLevelUpLearnset,
         .teachableLearnset = sTandemausTeachableLearnset,
         .eggMoveLearnset = sTandemausEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_FAMILY_OF_FOUR, 25, SPECIES_MAUSHOLD_FAMILY_OF_FOUR},
-                                {EVO_LEVEL_FAMILY_OF_THREE, 25, SPECIES_MAUSHOLD_FAMILY_OF_THREE}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FAMILY_OF_FOUR, 25, SPECIES_MAUSHOLD_FOUR},
+                                {EVO_LEVEL_FAMILY_OF_THREE, 25, SPECIES_MAUSHOLD_THREE}),
     },
 
-    [SPECIES_MAUSHOLD_FAMILY_OF_THREE] =
+    [SPECIES_MAUSHOLD_THREE] =
     {
         .baseHP        = 74,
         .baseAttack    = 75,
@@ -1325,7 +1325,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sMausholdFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
     },
-    [SPECIES_MAUSHOLD_FAMILY_OF_FOUR] =
+    [SPECIES_MAUSHOLD_FOUR] =
     {
         .baseHP        = 74,
         .baseAttack    = 75,
@@ -1704,7 +1704,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #endif //P_FAMILY_SMOLIV
 
 #if P_FAMILY_SQUAWKABILLY
-    [SPECIES_SQUAWKABILLY_GREEN_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_GREEN] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1768,7 +1768,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM
     },
 
-    [SPECIES_SQUAWKABILLY_BLUE_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_BLUE] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1832,7 +1832,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
-    [SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_YELLOW] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1896,7 +1896,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
-    [SPECIES_SQUAWKABILLY_WHITE_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_WHITE] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -7373,7 +7373,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             TRACKS_FOOT,
             gOverworldPalette_Fezandipiti,
             gShinyOverworldPalette_Fezandipiti
-        )        
+        )
         .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sFezandipitiLevelUpLearnset,
@@ -7446,15 +7446,15 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .randomizerMode = rzMode \
     }
 
-    [SPECIES_OGERPON_TEAL_MASK]             = OGERPON_SPECIES_INFO(Teal,        Mask,     TYPE_GRASS, ABILITY_DEFIANT,                        BODY_COLOR_GREEN, 1, FALSE, MON_RANDOMIZER_NORMAL),
-    [SPECIES_OGERPON_WELLSPRING_MASK]       = OGERPON_SPECIES_INFO(Wellspring,  Mask,     TYPE_WATER, ABILITY_WATER_ABSORB,                   BODY_COLOR_BLUE,  0, FALSE, MON_RANDOMIZER_INVALID),
-    [SPECIES_OGERPON_HEARTHFLAME_MASK]      = OGERPON_SPECIES_INFO(Hearthflame, Mask,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   BODY_COLOR_RED,   0, FALSE, MON_RANDOMIZER_INVALID),
-    [SPECIES_OGERPON_CORNERSTONE_MASK]      = OGERPON_SPECIES_INFO(Cornerstone, Mask,     TYPE_ROCK,  ABILITY_STURDY,                         BODY_COLOR_GRAY,  0, FALSE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_TEAL]             = OGERPON_SPECIES_INFO(Teal,        Mask,     TYPE_GRASS, ABILITY_DEFIANT,                        BODY_COLOR_GREEN, 1, FALSE, MON_RANDOMIZER_NORMAL),
+    [SPECIES_OGERPON_WELLSPRING]       = OGERPON_SPECIES_INFO(Wellspring,  Mask,     TYPE_WATER, ABILITY_WATER_ABSORB,                   BODY_COLOR_BLUE,  0, FALSE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_HEARTHFLAME]      = OGERPON_SPECIES_INFO(Hearthflame, Mask,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   BODY_COLOR_RED,   0, FALSE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_CORNERSTONE]      = OGERPON_SPECIES_INFO(Cornerstone, Mask,     TYPE_ROCK,  ABILITY_STURDY,                         BODY_COLOR_GRAY,  0, FALSE, MON_RANDOMIZER_INVALID),
 #if P_TERA_FORMS
-    [SPECIES_OGERPON_TEAL_MASK_TERA]        = OGERPON_SPECIES_INFO(Teal,        MaskTera, TYPE_GRASS, ABILITY_EMBODY_ASPECT_TEAL_MASK,        BODY_COLOR_GREEN, 1, TRUE, MON_RANDOMIZER_INVALID),
-    [SPECIES_OGERPON_WELLSPRING_MASK_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  MaskTera, TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  BODY_COLOR_BLUE,  0, TRUE, MON_RANDOMIZER_INVALID),
-    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = OGERPON_SPECIES_INFO(Hearthflame, MaskTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, BODY_COLOR_RED,   0, TRUE, MON_RANDOMIZER_INVALID),
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = OGERPON_SPECIES_INFO(Cornerstone, MaskTera, TYPE_ROCK,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, BODY_COLOR_GRAY,  0, TRUE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_TEAL_TERA]        = OGERPON_SPECIES_INFO(Teal,        MaskTera, TYPE_GRASS, ABILITY_EMBODY_ASPECT_TEAL_MASK,        BODY_COLOR_GREEN, 1, TRUE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_WELLSPRING_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  MaskTera, TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  BODY_COLOR_BLUE,  0, TRUE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_HEARTHFLAME_TERA] = OGERPON_SPECIES_INFO(Hearthflame, MaskTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, BODY_COLOR_RED,   0, TRUE, MON_RANDOMIZER_INVALID),
+    [SPECIES_OGERPON_CORNERSTONE_TERA] = OGERPON_SPECIES_INFO(Cornerstone, MaskTera, TYPE_ROCK,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, BODY_COLOR_GRAY,  0, TRUE, MON_RANDOMIZER_INVALID),
 #endif //P_TERA_FORMS
 
 #endif //P_FAMILY_OGERPON

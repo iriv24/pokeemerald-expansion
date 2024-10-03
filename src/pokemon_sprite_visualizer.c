@@ -1621,7 +1621,7 @@ static void UpdateShadowSizeValue(u8 taskId, bool8 increment)
         else
         {
             update = 1;
-            data->shadowSettings.overrideSize += 1;   
+            data->shadowSettings.overrideSize += 1;
         }
     }
     else

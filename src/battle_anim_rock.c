@@ -479,7 +479,7 @@ void AnimRockFragment(struct Sprite *sprite)
 void AnimParticleInVortex(struct Sprite *sprite)
 {
     if (IsDoubleBattle() //got a little lazy here will fix later
-    && (gAnimMoveIndex == MOVE_BLEAKWIND_STORM 
+    && (gAnimMoveIndex == MOVE_BLEAKWIND_STORM
      || gAnimMoveIndex == MOVE_SANDSEAR_STORM
      || gAnimMoveIndex == MOVE_SPRINGTIDE_STORM
      || gAnimMoveIndex == MOVE_WILDBOLT_STORM))

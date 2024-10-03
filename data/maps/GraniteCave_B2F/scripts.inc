@@ -55,13 +55,13 @@ GraniteCave_B2F_EventScript_MoltresGalar::
 # 28 "data/maps/GraniteCave_B2F/scripts.pory"
 	waitse
 # 29 "data/maps/GraniteCave_B2F/scripts.pory"
-	playmoncry SPECIES_MOLTRES_GALARIAN, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_MOLTRES_GALAR, CRY_MODE_ENCOUNTER
 # 30 "data/maps/GraniteCave_B2F/scripts.pory"
 	delay 40
 # 31 "data/maps/GraniteCave_B2F/scripts.pory"
 	waitmoncry
 # 32 "data/maps/GraniteCave_B2F/scripts.pory"
-	setwildbattle SPECIES_MOLTRES_GALARIAN, 70
+	setwildbattle SPECIES_MOLTRES_GALAR, 70
 # 33 "data/maps/GraniteCave_B2F/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 34 "data/maps/GraniteCave_B2F/scripts.pory"
@@ -99,7 +99,7 @@ GraniteCave_B2F_EventScript_DefeatedMoltresGalar::
 # 50 "data/maps/GraniteCave_B2F/scripts.pory"
 GraniteCave_B2F_EventScript_RanFromMoltresGalar::
 # 51 "data/maps/GraniteCave_B2F/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MOLTRES_GALARIAN
+	setvar VAR_0x8004, SPECIES_MOLTRES_GALAR
 # 52 "data/maps/GraniteCave_B2F/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 53 "data/maps/GraniteCave_B2F/scripts.pory"

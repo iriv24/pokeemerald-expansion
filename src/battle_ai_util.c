@@ -412,6 +412,9 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
     if (battlerDef == BATTLE_PARTNER(battlerAtk))
         battlerDefAbility = aiData->abilities[battlerDef];
 
+    if (gBattleStruct->commandingDondozo & (1u << battlerDef))
+        return TRUE;
+
     switch (battlerDefAbility)
     {
     case ABILITY_LIGHTNING_ROD:
@@ -1512,6 +1515,8 @@ bool32 IsSemiInvulnerable(u32 battlerDef, u32 move)
 {
     if (gStatuses3[battlerDef] & STATUS3_PHANTOM_FORCE)
         return TRUE;
+    else if (gBattleStruct->commandingDondozo & (1u << battlerDef))
+        return TRUE;
     else if (!gMovesInfo[move].damagesAirborne && gStatuses3[battlerDef] & STATUS3_ON_AIR)
         return TRUE;
     else if (!gMovesInfo[move].damagesUnderwater && gStatuses3[battlerDef] & STATUS3_UNDERWATER)
@@ -2377,6 +2382,22 @@ bool32 IsSelfStatLoweringEffect(u32 effect)
     }
 }
 
+bool32 IsSwitchOutEffect(u32 effect)
+{
+    // Switch out effects like U-Turn, Volt Switch, etc.
+    switch (effect)
+    {
+    case EFFECT_HIT_ESCAPE:
+    case EFFECT_PARTING_SHOT:
+    case EFFECT_BATON_PASS:
+    case EFFECT_CHILLY_RECEPTION:
+    case EFFECT_SHED_TAIL:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 bool32 HasDamagingMove(u32 battlerId)
 {
     u32 i;
@@ -2706,10 +2727,8 @@ enum {
 bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 moveIndex)
 {
     bool32 hasStatBoost = AnyUsefulStatIsRaised(battlerAtk) || gBattleMons[battlerDef].statStages[STAT_EVASION] >= 9; //Significant boost in evasion for any class
-    bool32 shouldSwitch;
     u32 battlerToSwitch;
 
-    shouldSwitch = ShouldSwitch(battlerAtk, FALSE);
     battlerToSwitch = gBattleStruct->AI_monToSwitchIntoId[battlerAtk];
 
     if (PartyBattlerShouldAvoidHazards(battlerAtk, battlerToSwitch))
@@ -2734,7 +2753,7 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
                     if (CanTargetFaintAi(battlerDef, battlerAtk))
                         return PIVOT;   // Won't get the two turns, pivot
 
-                    if (!IS_MOVE_STATUS(move) && (shouldSwitch
+                    if (!IS_MOVE_STATUS(move) && ((AI_DATA->shouldSwitch & (1u << battlerAtk))
                         || (AtMaxHp(battlerDef) && (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
                         || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
@@ -2749,7 +2768,7 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
                         || defAbility == ABILITY_SHADOW_SHIELD)))
                         return PIVOT;   // pivot to break sash/sturdy/multiscale
 
-                    if (shouldSwitch)
+                    if (AI_DATA->shouldSwitch & (1u << battlerAtk))
                         return PIVOT;
 
                     /* TODO - check if switchable mon unafffected by/will remove hazards
@@ -2820,7 +2839,7 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
                 else if (CanAIFaintTarget(battlerAtk, battlerDef, 2))
                 {
                     // can knock out foe in 2 hits
-                    if (IS_MOVE_STATUS(move) && (shouldSwitch //Damaging move
+                    if (IS_MOVE_STATUS(move) && ((AI_DATA->shouldSwitch & (1u << battlerAtk)) //Damaging move
                       //&& (switchScore >= SWITCHING_INCREASE_RESIST_ALL_MOVES + SWITCHING_INCREASE_KO_FOE //remove hazards
                      || (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH && AtMaxHp(battlerDef))))
                         return DONT_PIVOT; // Pivot to break the sash
@@ -3515,14 +3534,14 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
     {
         gBattleMons[battlerAtk] = switchinCandidate;
         AI_THINKING_STRUCT->saved[battlerDef].saved = TRUE;
-        SetBattlerData(battlerDef); // set known opposing battler data
+        SetBattlerAiData(battlerDef, AI_DATA); // set known opposing battler data
         AI_THINKING_STRUCT->saved[battlerDef].saved = FALSE;
     }
     else
     {
         gBattleMons[battlerDef] = switchinCandidate;
         AI_THINKING_STRUCT->saved[battlerAtk].saved = TRUE;
-        SetBattlerData(battlerAtk); // set known opposing battler data
+        SetBattlerAiData(battlerAtk, AI_DATA); // set known opposing battler data
         AI_THINKING_STRUCT->saved[battlerAtk].saved = FALSE;
     }
 
@@ -3530,6 +3549,18 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
     // restores original gBattleMon struct
     FreeRestoreBattleMons(savedBattleMons);
     return dmg.expected;
+}
+
+u32 AI_WhoStrikesFirstPartyMon(u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 moveConsidered)
+{
+    struct BattlePokemon *savedBattleMons = AllocSaveBattleMons();
+    gBattleMons[battlerAtk] = switchinCandidate;
+
+    SetBattlerAiData(battlerAtk, AI_DATA);
+    u32 aiMonFaster = AI_IsFaster(battlerAtk, battlerDef, moveConsidered);
+    FreeRestoreBattleMons(savedBattleMons);
+
+    return aiMonFaster;
 }
 
 s32 CountUsablePartyMons(u32 battlerId)
@@ -3976,7 +4007,7 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
             return FALSE; // Don't waste a Z-Move busting disguise
         if (gBattleMons[battlerDef].ability == ABILITY_ICE_FACE
             && !gMovesInfo[zMove].ignoresTargetAbility
-            && gBattleMons[battlerDef].species == SPECIES_EISCUE_ICE_FACE && IS_MOVE_PHYSICAL(chosenMove))
+            && gBattleMons[battlerDef].species == SPECIES_EISCUE_ICE && IS_MOVE_PHYSICAL(chosenMove))
             return FALSE; // Don't waste a Z-Move busting Ice Face
 
         if (IS_MOVE_STATUS(chosenMove) && !IS_MOVE_STATUS(zMove))
