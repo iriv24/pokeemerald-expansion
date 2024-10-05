@@ -71,8 +71,9 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	msgbox(HelloHowCanIHelp)
 	dynmultipush("Nature Change", 0)
 	dynmultipush("Gender Swap", 1)
-	dynmultipush("White Out Counter", 2)
-	dynmultipush("Set Mon to Lvl Cap", 3)
+	dynmultipush("Set Mon to Lvl Cap", 2)
+	dynmultipush("White Out Counter", 3)
+	dynmultipush("Mode Info", 4)
     dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -95,12 +96,17 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 
 	if (var(VAR_RESULT) == 2)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap)	
 	}
 
 	if (var(VAR_RESULT) == 3)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
+	}
+
+	if (var(VAR_RESULT) == 4)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_ModeInfo)	
 	}
 }
 
@@ -289,6 +295,60 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount{
 	end
 }
 
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ModeInfo{
+	if(flag(FLAG_MIN_GRINDING_MODE))
+	{
+		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+		{
+			msgbox(EasyModeWithMgm)
+		}
+		else
+		{
+			msgbox(NormalModeWithMgm)
+		}
+	}
+	else
+	{
+		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+		{
+			msgbox(EasyMode)
+		}
+		else
+		{
+			msgbox(NormalMode)
+		}
+	}
+	msgbox("Randomizer options:")
+	if(flag(FLAG_RANDOMIZER_ENABLED))
+	{
+		switch(var(VAR_RANDOMIZER_MODE))
+		{
+			case MON_RANDOM:
+				msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Species")
+			case MON_RANDOM_BST:
+				msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Species")
+			case MON_RANDOM_LEGEND_AWARE:
+				msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species")
+			default:
+				msgbox("Species not randomized")
+		}
+	}
+	if(flag(FLAG_RANDOM_ABILITIES_ENABLED))
+	{
+		msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}Abilities")
+	}
+	if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+	{
+		msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnsets")
+	}
+	if(!flag(FLAG_RANDOMIZER_ENABLED) && !flag(FLAG_RANDOM_ABILITIES_ENABLED) && !flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+	{
+		msgbox("{COLOR RED}{SHADOW LIGHT_RED}None")
+	}
+	release
+	end
+}
+
 text HelloHowCanIHelp
 {
 	"Hello there, what can I help you\n"
@@ -340,4 +400,26 @@ text MonHasBeenSetToLevelCap
 	"{STR_VAR_1} has been set\n"
 	"to level {STR_VAR_3}.\p"
 	"Come again if you need something else."
+}
+
+text EasyMode
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode"
+}
+
+text EasyModeWithMgm
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode\n"
+	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode"
+}
+
+text NormalMode
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode"
+}
+
+text NormalModeWithMgm
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode\n"
+	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode"
 }
