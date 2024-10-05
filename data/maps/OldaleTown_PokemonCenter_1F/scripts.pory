@@ -71,8 +71,8 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	msgbox(HelloHowCanIHelp)
 	dynmultipush("Nature Change", 0)
 	dynmultipush("Gender Swap", 1)
-	dynmultipush("Level Cap", 2)
-	dynmultipush("White Out Counter", 3)
+	dynmultipush("White Out Counter", 2)
+	dynmultipush("Set Mon to Lvl Cap", 3)
     dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -95,12 +95,12 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 
 	if (var(VAR_RESULT) == 2)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
 	}
 
 	if (var(VAR_RESULT) == 3)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap)	
 	}
 }
 
@@ -156,7 +156,7 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature{
 
 	copyvar(VAR_0x8005, VAR_RESULT)
 	buffernaturename(STR_VAR_2, VAR_RESULT)
-	msgbox("So {STR_VAR_1} should acquire the\n{STR_VAR_2} Nature?", MSGBOX_YESNO)
+	msgbox(AreYouSureNatureChange, MSGBOX_YESNO)
 
 	if(var(VAR_RESULT) == NO) 
 	{
@@ -196,6 +196,11 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
 		case SPECIES_BASCULIN:
         case SPECIES_LECHONK:
 			special(BufferMonNickname)
+			msgbox(AreYouSureGenderSwap, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == NO) 
+			{
+				goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+			}
             msgbox("Excellent. We shall begin at once!")
 			fadescreen(FADE_TO_BLACK)
 			special(ChangeMonGender)
@@ -203,13 +208,13 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
 			waitfanfare
 			closemessage
 			fadescreen(FADE_FROM_BLACK)
-			msgbox("{STR_VAR_1}'s Gender has been\nchanged. Come again if you need\lsomething else.")
+			msgbox("{STR_VAR_1}'s Gender has been\nswapped. Come again if you need\lsomething else.")
 
 		case SPECIES_EGG:
-			msgbox("I can't change the Gender of an Egg.")
+			msgbox("I can't swap the Gender of an Egg.")
 
         default:
-            msgbox("Sorry, I can't change the Gender of\nthat Pokémon.")
+            msgbox("Sorry, I can't swap the Gender of\nthat Pokémon.")
     }
 	release
 	end
@@ -221,10 +226,50 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurseNo {
     end
 }
 
-script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetLevelCap{
-	specialvar(VAR_RESULT, GetLevelCapForText)
-	buffernumberstring(STR_VAR_1, VAR_RESULT)
-	msgbox("Current Level Cap: {STR_VAR_1}")
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap{
+	specialvar(VAR_0x8006, GetLevelCapForText)
+	buffernumberstring(STR_VAR_3, VAR_0x8006)
+	msgbox(TellLevelCapAndAsk, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	msgbox("Which Pokémon?")
+	special(ChoosePartyMon)
+	waitstate
+	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if(var(VAR_RESULT) == SPECIES_EGG) {
+		msgbox("I can't level up an Egg.")
+		release
+		end
+	}
+	specialvar(VAR_0x8007, ScriptGetPartyMonLevel)
+	compare(VAR_0x8007, VAR_0x8006)
+	goto_if_eq(OldDaleTown_PokemonCenter_EventScript_SecondNurse_MonAlreadyAtCap)
+	special(BufferMonNickname)
+	msgbox(AreYouSureLevelCap, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	msgbox("Excellent. We shall begin at once!")
+	fadescreen(FADE_TO_BLACK)
+	special(SetMonToLevelCap)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
+	msgbox(MonHasBeenSetToLevelCap)
+	release
+	end
+}
+
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_MonAlreadyAtCap{
+	msgbox("That Pokémon is already level {STR_VAR_3}.")
 	release
 	end
 }
@@ -250,6 +295,13 @@ text HelloHowCanIHelp
 	"with today?"
 }
 
+text AreYouSureNatureChange
+{
+	"I will now change\n"
+	"{STR_VAR_1}'s Nature to {STR_VAR_2}.\p"
+	"Is that okay?"
+}
+
 
 text GenderSwapInfo
 {
@@ -260,4 +312,32 @@ text GenderSwapInfo
 	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This is because these Pokémon have\n"
 	"Gender-based evolutions.\p"
 	"Which Pokémon's Gender should I swap?"
+}
+
+text AreYouSureGenderSwap
+{
+	"I will now swap\n"
+	"{STR_VAR_1}'s Gender.\p"
+	"Is that okay?"
+}
+
+text TellLevelCapAndAsk
+{
+	"Current Level Cap: {STR_VAR_3}.\p"
+	"Would you like to set a Pokémon\n"
+	"to level {STR_VAR_3}?"
+}
+
+text AreYouSureLevelCap
+{
+	"I will now set {STR_VAR_1}\n"
+	"to level {STR_VAR_3}.\p"
+	"Is that okay?"
+}
+
+text MonHasBeenSetToLevelCap
+{
+	"{STR_VAR_1} has been set\n"
+	"to level {STR_VAR_3}.\p"
+	"Come again if you need something else."
 }

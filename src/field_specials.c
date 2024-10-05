@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "battle_tower.h"
 #include "cable_club.h"
+#include "caps.h"
 #include "data.h"
 #include "decoration.h"
 #include "diploma.h"
@@ -1574,6 +1575,11 @@ u8 GetLeadMonIndex(void)
 u16 ScriptGetPartyMonSpecies(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
+}
+
+u16 ScriptGetPartyMonLevel(void)
+{
+    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
 }
 
 // Removed for Emerald
@@ -4332,6 +4338,17 @@ void ChangeMonGender(void)
 
     UpdateMonPersonality(&mon->box, newPersonality);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, &isShiny);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetMonToLevelCap(void) 
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u32 level = GetCurrentLevelCap();
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL, &level);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
