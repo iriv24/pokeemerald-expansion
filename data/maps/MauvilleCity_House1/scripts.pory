@@ -222,6 +222,94 @@ script MauvilleCity_House1_EventScript_HPChangerNo {
 }
 
 
+script MauvilleCity_House1_EventScript_IVPerfecterDude {
+    lock
+    faceplayer
+	if(flag(FLAG_MIN_GRINDING_MODE))
+	{
+		msgbox(IVPerfectHelloInMGM)
+		release
+		end
+	}
+	if(!flag(FLAG_MET_IV_PERFECTER))
+	{
+		setflag(FLAG_MET_IV_PERFECTER)
+		msgbox(IVPerfecterFirstTimeExplain)
+	}
+	if(flag(FLAG_BADGE08_GET))
+	{
+		msgbox(IVPerfecterHas8Badges)
+		goto(MauvilleCity_House1_EventScript_PerfectIV)
+	}
+	if(var(VAR_IV_PERFECTER_COUNTER) > 0)
+	{
+		buffernumberstring(STR_VAR_2, VAR_IV_PERFECTER_COUNTER)
+		msgbox(IVPerfecterCanPerfectAMon)
+		goto(MauvilleCity_House1_EventScript_PerfectIV)
+	}
+	msgbox(IVPerfecterNoneRemaining)
+	release
+	end
+}
+
+script MauvilleCity_House1_EventScript_PerfectIV{
+	msgbox(IVPerfecterShouldIPerfect, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO)
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+	msgbox("Which Pokémon?")
+	special(ChoosePartyMon)
+	waitstate
+	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if(var(VAR_RESULT) == SPECIES_EGG) {
+		msgbox("I can't perfect the IVs\nof an Egg.")
+		release
+		end
+	}
+	special(BufferMonNickname)
+	msgbox(IVPerfecterAreYouSure, MSGBOX_YESNO)
+
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+
+	setvar(VAR_0x8005, TYPE_DARK)
+	msgbox("I shall begin at once.")
+	fadescreen(FADE_TO_BLACK)
+	special(ChangeMonIVsForHP)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
+	
+	if(flag(FLAG_BADGE08_GET))
+	{
+		msgbox(IVPerfecterComeBackSoon8Badges)
+		release
+		end
+	}
+	
+	subvar(VAR_IV_PERFECTER_COUNTER, 1)
+	if(var(VAR_IV_PERFECTER_COUNTER) > 0)
+	{
+		buffernumberstring(STR_VAR_2, VAR_IV_PERFECTER_COUNTER)
+		msgbox(IVPerfecterComeBackSoonSomeRemaining)
+		release
+		end
+	}
+
+	msgbox(IVPerfecterComeBackSoonNoneRemaining)
+	release
+	end
+}
+
+
 text HpChangerHelloCantChange
 {
 	"Hello, I am the Hidden Power type\n"
@@ -261,4 +349,89 @@ text HPTypeChangedComeBackSoon
 	"Come back if you need me to change\n"
 	"the Hidden Power type of\l"
 	"another Pokémon."
+}
+
+text IVPerfectHelloInMGM
+{
+	"Hello, I am the IV Perfecter.\p"
+	"It looks like you have\n"
+	"Minimal Grinding Mode enabled, so you\l"
+	"should have no use for me.\p"
+	"If you need to perfect your Pokémon's\n"
+	"IVs, just use the Stat Editor\l"
+	"you lazy bum.\p"
+	"Or have my colleague there change your\n"
+	"Pokémon's Hidden Power type to be Dark,\l"
+	"that uses perfect IVs."
+}
+
+text IVPerfecterFirstTimeExplain
+{
+	"Hello, I am the IV Perfecter.\p"
+	"I can perfect one of your Pokémon's\n"
+	"IVs, but I have certain conditions.\p"
+	"I can only perfect up to 5 Pokémon's\n"
+	"IVs per Gym Badge that you have.\p"
+	"After you get 8 Badges, this limit will\n"
+	"no longer apply."
+}
+
+text IVPerfecterHas8Badges
+{
+	"Since you have 8 Badges, I can\n"
+	"perfect the IVs of any of your Pokémon\l"
+	"without limitation."
+}
+
+text IVPerfecterCanPerfectAMon
+{
+	"It looks like I can perfect the IVs of\n"
+	"up to {STR_VAR_2} Pokémon for you."
+}
+
+text IVPerfecterShouldIPerfect
+{
+	"Would you like me to perfect one of\n"
+	"you Pokémon's IVs?"
+}
+
+text IVPerfecterAreYouSure
+{
+	"So you want me to perfect\n"
+	"{STR_VAR_1}'s IVs?"
+}
+
+text IVPerfecterComeBackSoon8Badges
+{
+	"{STR_VAR_1}'s IVs have been\n"
+	"perfected.\p"
+	"Come back if you need me to perfect\n"
+	"the IVs of another Pokémon."
+}
+
+text IVPerfecterComeBackSoonSomeRemaining
+{
+	"{STR_VAR_1}'s IVs have been\n"
+	"perfected.\p"
+	"I can now perfect the IVs of\n"
+	"{STR_VAR_2} more Pokémon until you\l"
+	"obtain your next Gym Badge.\p"
+	"Come back if you need me to perfect\n"
+	"the IVs of another Pokémon."
+}
+
+text IVPerfecterComeBackSoonNoneRemaining
+{
+	"{STR_VAR_1}'s IVs have been\n"
+	"perfected.\p"
+	"I can not perfect the IVs of any more\n"
+	"of your Pokémon until you obtain your\l"
+	"next Gym Badge."
+}
+
+text IVPerfecterNoneRemaining
+{
+	"I can not perfect the IVs of any more\n"
+	"of your Pokémon until you obtain your\l"
+	"next Gym Badge."
 }

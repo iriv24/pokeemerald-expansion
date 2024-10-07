@@ -278,5 +278,7 @@ EventScript_ResetAllMapFlags::
 	clearflag FLAG_RANDOM_ABILITIES_ENABLED
 	clearflag FLAG_RANDOM_ABILITIES_ENABLED
 	setvar VAR_RANDOMIZER_MODE, MAX_MON_MODE
+	clearflag FLAG_MET_IV_PERFECTER
+	setvar VAR_IV_PERFECTER_COUNTER, 0
 	call EventScript_ResetAllBerries
 	end

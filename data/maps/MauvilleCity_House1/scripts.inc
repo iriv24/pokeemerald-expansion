@@ -423,6 +423,158 @@ MauvilleCity_House1_EventScript_HPChangerNo::
 	end
 
 
+MauvilleCity_House1_EventScript_IVPerfecterDude::
+# 226 "data/maps/MauvilleCity_House1/scripts.pory"
+	lock
+# 227 "data/maps/MauvilleCity_House1/scripts.pory"
+	faceplayer
+# 228 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_set FLAG_MIN_GRINDING_MODE, MauvilleCity_House1_EventScript_IVPerfecterDude_2
+# 234 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_unset FLAG_MET_IV_PERFECTER, MauvilleCity_House1_EventScript_IVPerfecterDude_5
+MauvilleCity_House1_EventScript_IVPerfecterDude_4:
+# 239 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, MauvilleCity_House1_EventScript_IVPerfecterDude_8
+MauvilleCity_House1_EventScript_IVPerfecterDude_7:
+# 244 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_IV_PERFECTER_COUNTER, 0
+	goto_if_gt MauvilleCity_House1_EventScript_IVPerfecterDude_11
+MauvilleCity_House1_EventScript_IVPerfecterDude_10:
+# 250 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterNoneRemaining
+# 251 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_IVPerfecterDude_2:
+# 230 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfectHelloInMGM
+# 231 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_IVPerfecterDude_5:
+# 236 "data/maps/MauvilleCity_House1/scripts.pory"
+	setflag FLAG_MET_IV_PERFECTER
+# 237 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterFirstTimeExplain
+	goto MauvilleCity_House1_EventScript_IVPerfecterDude_4
+
+MauvilleCity_House1_EventScript_IVPerfecterDude_8:
+# 241 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterHas8Badges
+# 242 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_PerfectIV
+	goto MauvilleCity_House1_EventScript_IVPerfecterDude_7
+
+MauvilleCity_House1_EventScript_IVPerfecterDude_11:
+# 246 "data/maps/MauvilleCity_House1/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_IV_PERFECTER_COUNTER
+# 247 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterCanPerfectAMon
+# 248 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_PerfectIV
+	goto MauvilleCity_House1_EventScript_IVPerfecterDude_10
+
+
+MauvilleCity_House1_EventScript_PerfectIV::
+# 256 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterShouldIPerfect, MSGBOX_YESNO
+# 257 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_House1_EventScript_PerfectIV_2
+MauvilleCity_House1_EventScript_PerfectIV_1:
+# 261 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_0
+# 262 "data/maps/MauvilleCity_House1/scripts.pory"
+	special ChoosePartyMon
+# 263 "data/maps/MauvilleCity_House1/scripts.pory"
+	waitstate
+# 264 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq MauvilleCity_House1_EventScript_PerfectIV_5
+MauvilleCity_House1_EventScript_PerfectIV_4:
+# 268 "data/maps/MauvilleCity_House1/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 269 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq MauvilleCity_House1_EventScript_PerfectIV_8
+# 274 "data/maps/MauvilleCity_House1/scripts.pory"
+	special BufferMonNickname
+# 275 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterAreYouSure, MSGBOX_YESNO
+# 277 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_House1_EventScript_PerfectIV_11
+MauvilleCity_House1_EventScript_PerfectIV_10:
+# 282 "data/maps/MauvilleCity_House1/scripts.pory"
+	setvar VAR_0x8005, TYPE_DARK
+# 283 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_20
+# 284 "data/maps/MauvilleCity_House1/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 285 "data/maps/MauvilleCity_House1/scripts.pory"
+	special ChangeMonIVsForHP
+# 286 "data/maps/MauvilleCity_House1/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 287 "data/maps/MauvilleCity_House1/scripts.pory"
+	waitfanfare
+# 288 "data/maps/MauvilleCity_House1/scripts.pory"
+	closemessage
+# 289 "data/maps/MauvilleCity_House1/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 291 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, MauvilleCity_House1_EventScript_PerfectIV_14
+# 298 "data/maps/MauvilleCity_House1/scripts.pory"
+	subvar VAR_IV_PERFECTER_COUNTER, 1
+# 299 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_IV_PERFECTER_COUNTER, 0
+	goto_if_gt MauvilleCity_House1_EventScript_PerfectIV_17
+# 307 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterComeBackSoonNoneRemaining
+# 308 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_PerfectIV_2:
+# 259 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_PerfectIV_1
+
+MauvilleCity_House1_EventScript_PerfectIV_5:
+# 266 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_PerfectIV_4
+
+MauvilleCity_House1_EventScript_PerfectIV_8:
+# 270 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_PerfectIV_Text_0
+# 271 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_PerfectIV_11:
+# 279 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_PerfectIV_10
+
+MauvilleCity_House1_EventScript_PerfectIV_14:
+# 293 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterComeBackSoon8Badges
+# 294 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_PerfectIV_17:
+# 301 "data/maps/MauvilleCity_House1/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_IV_PERFECTER_COUNTER
+# 302 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox IVPerfecterComeBackSoonSomeRemaining
+# 303 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+
 MauvilleCity_House1_EventScript_ChangeHP_Text_0:
 # 157 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Which Pokémon?$"
@@ -511,8 +663,12 @@ MauvilleCity_House1_EventScript_HPChangerNo_Text_0:
 # 219 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "I see. Come back if you change\nyour mind.$"
 
+MauvilleCity_House1_EventScript_PerfectIV_Text_0:
+# 270 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "I can't perfect the IVs\nof an Egg.$"
+
 HpChangerHelloCantChange::
-# 225 "data/maps/MauvilleCity_House1/scripts.pory"
+# 313 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Hello, I am the Hidden Power type\n"
 	.string "changer.\p"
 	.string "Oh, it looks like you are not in\n"
@@ -521,7 +677,7 @@ HpChangerHelloCantChange::
 	.string "you have 8 Badges in that case.$"
 
 HpChangerHelloCanChange::
-# 235 "data/maps/MauvilleCity_House1/scripts.pory"
+# 323 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Hello, I am the Hidden Power type\n"
 	.string "changer.\p"
 	.string "You can choose a Pokémon and I can\n"
@@ -531,7 +687,7 @@ HpChangerHelloCanChange::
 	.string "one of your Pokémon's Hidden Power?$"
 
 AreYouSureHPTypeChange::
-# 246 "data/maps/MauvilleCity_House1/scripts.pory"
+# 334 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "So you want me to change\n"
 	.string "{STR_VAR_1}'s Hidden Power type\l"
 	.string "to {STR_VAR_2}?\p"
@@ -541,9 +697,84 @@ AreYouSureHPTypeChange::
 	.string "{STR_VAR_3}$"
 
 HPTypeChangedComeBackSoon::
-# 257 "data/maps/MauvilleCity_House1/scripts.pory"
+# 345 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "{STR_VAR_1}'s Hidden Power type\n"
 	.string "has been changed to {STR_VAR_2}.\p"
 	.string "Come back if you need me to change\n"
 	.string "the Hidden Power type of\l"
 	.string "another Pokémon.$"
+
+IVPerfectHelloInMGM::
+# 354 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Hello, I am the IV Perfecter.\p"
+	.string "It looks like you have\n"
+	.string "Minimal Grinding Mode enabled, so you\l"
+	.string "should have no use for me.\p"
+	.string "If you need to perfect your Pokémon's\n"
+	.string "IVs, just use the Stat Editor\l"
+	.string "you lazy bum.\p"
+	.string "Or have my colleague there change your\n"
+	.string "Pokémon's Hidden Power type to be Dark,\l"
+	.string "that uses perfect IVs.$"
+
+IVPerfecterFirstTimeExplain::
+# 368 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Hello, I am the IV Perfecter.\p"
+	.string "I can perfect one of your Pokémon's\n"
+	.string "IVs, but I have certain conditions.\p"
+	.string "I can only perfect up to 5 Pokémon's\n"
+	.string "IVs per Gym Badge that you have.\p"
+	.string "After you get 8 Badges, this limit will\n"
+	.string "no longer apply.$"
+
+IVPerfecterHas8Badges::
+# 379 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Since you have 8 Badges, I can\n"
+	.string "perfect the IVs of any of your Pokémon\l"
+	.string "without limitation.$"
+
+IVPerfecterCanPerfectAMon::
+# 386 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "It looks like I can perfect the IVs of\n"
+	.string "up to {STR_VAR_2} Pokémon for you.$"
+
+IVPerfecterShouldIPerfect::
+# 392 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Would you like me to perfect one of\n"
+	.string "you Pokémon's IVs?$"
+
+IVPerfecterAreYouSure::
+# 398 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "So you want me to perfect\n"
+	.string "{STR_VAR_1}'s IVs?$"
+
+IVPerfecterComeBackSoon8Badges::
+# 404 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "{STR_VAR_1}'s IVs have been\n"
+	.string "perfected.\p"
+	.string "Come back if you need me to perfect\n"
+	.string "the IVs of another Pokémon.$"
+
+IVPerfecterComeBackSoonSomeRemaining::
+# 412 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "{STR_VAR_1}'s IVs have been\n"
+	.string "perfected.\p"
+	.string "I can now perfect the IVs of\n"
+	.string "{STR_VAR_2} more Pokémon until you\l"
+	.string "obtain your next Gym Badge.\p"
+	.string "Come back if you need me to perfect\n"
+	.string "the IVs of another Pokémon.$"
+
+IVPerfecterComeBackSoonNoneRemaining::
+# 423 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "{STR_VAR_1}'s IVs have been\n"
+	.string "perfected.\p"
+	.string "I can not perfect the IVs of any more\n"
+	.string "of your Pokémon until you obtain your\l"
+	.string "next Gym Badge.$"
+
+IVPerfecterNoneRemaining::
+# 432 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "I can not perfect the IVs of any more\n"
+	.string "of your Pokémon until you obtain your\l"
+	.string "next Gym Badge.$"
