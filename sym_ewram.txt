@@ -154,3 +154,4 @@
 	.include "src/pokedex_plus_hgss.o"
 	.include "src/dexnav.o"
 	.include "src/l_menu.o"
+	.include "src/ui_stat_editor.o"

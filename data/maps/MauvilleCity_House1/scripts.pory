@@ -19,6 +19,48 @@ MauvilleCity_House1_EventScript_ReceivedRockSmash::
 	release
 	end
 
+
+MauvilleCity_House1_EventScript_StatEditorDude::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_STAT_EDITOR_GET, MauvilleCity_House1_EventScript_ReceivedStatEditor
+	msgbox MauvilleCity_House1_Text_ImStatEditorDudeTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_SYS_STAT_EDITOR_GET
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox MauvilleCity_House1_Text_ObtainedStatEditor, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox MauvilleCity_House1_Text_ExplainStatEditorStart, MSGBOX_DEFAULT
+	goto_if_set FLAG_MIN_GRINDING_MODE, MauvilleCity_House1_EventScript_ExplainStatEditorInMGM
+	goto MauvilleCity_House1_EventScript_ExplainStatEditorNotInMGM
+	release
+	end
+
+MauvilleCity_House1_EventScript_ExplainStatEditorInMGM::
+	msgbox MauvilleCity_House1_Text_ExplainStatEditorInMGM, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House1_EventScript_ExplainStatEditorNotInMGM::
+	msgbox MauvilleCity_House1_Text_ExplainStatEditorNotInMGM, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House1_EventScript_ReceivedStatEditor::
+	goto_if_set FLAG_MIN_GRINDING_MODE, MauvilleCity_House1_EventScript_ReceivedStatEditorInMGM
+	goto MauvilleCity_House1_EventScript_ReceivedStatEditorNotInMGM
+	release
+	end
+
+MauvilleCity_House1_EventScript_ReceivedStatEditorInMGM::
+	msgbox MauvilleCity_House1_Text_ReceivedStatEditorInMGM, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House1_EventScript_ReceivedStatEditorNotInMGM::
+	msgbox MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM, MSGBOX_DEFAULT
+	release
+	end
+
 MauvilleCity_House1_Text_ImRockSmashDudeTakeThis:
 	.string "Woohoo!\p"
 	.string "I hear people call me the ROCK SMASH\n"
@@ -45,4 +87,50 @@ MauvilleCity_House1_Text_MonCanFlyOutOfSmashedRock:
 	.string "could come flying out of hiding.\p"
 	.string "Woohoo!$"
 
+MauvilleCity_House1_Text_ImStatEditorDudeTakeThis:
+	.string "Hello there.\p"
+	.string "I'm not quite as outspoken as my\n"
+	.string "colleague there, but I have something\l"
+	.string "you may find useful.\l"
+	.string "Here, take this device.$"
+
+MauvilleCity_House1_Text_ExplainStatEditorStart:
+	.string "I call that device the Stat Editor,\n"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}you can access it from your “L menu”.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}It will allow you to edit the EVs or IVs\n"
+	.string "of your Pokémon, depending on your\l"
+	.string "current game mode.\l"
+	.string "Hmm, let's see here…$"
+
+
+MauvilleCity_House1_Text_ExplainStatEditorInMGM:
+	.string "Since you have Minimal Grinding Mode\n"
+	.string "enabled, you can't change your\l"
+	.string "Pokémon's EVs with that device.\p"
+	.string "I'm sure you'll still find it useful,\n"
+	.string "though.$"
+
+MauvilleCity_House1_Text_ExplainStatEditorNotInMGM:
+	.string "Since you have Minimal Grinding Mode\n"
+	.string "disabled, you can't change your\l"
+	.string "Pokémon's IVs with that device.\p"
+	.string "I'm sure you'll still find it useful,\n"
+	.string "though.$"
+
+MauvilleCity_House1_Text_ReceivedStatEditorInMGM:
+	.string "Remember, you can access the Stat\n"
+	.string "Editor from your “L menu”.\p"
+	.string "However, since you have\n"
+	.string "Minimal Grinding Mode enabled, you\l"
+	.string "can't change your Pokémon's EVs.$"
+
+MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
+	.string "Remember, you can access the Stat\n"
+	.string "Editor from your “L menu”.\p"
+	.string "However, since you have\n"
+	.string "Minimal Grinding Mode disabled, you\l"
+	.string "can't change your Pokémon's IVs.$"
+
+MauvilleCity_House1_Text_ObtainedStatEditor:
+	.string "Obtained the Stat Editor!$"
 `
