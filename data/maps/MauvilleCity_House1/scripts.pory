@@ -134,3 +134,131 @@ MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
 MauvilleCity_House1_Text_ObtainedStatEditor:
 	.string "Obtained the Stat Editor!$"
 `
+
+
+script MauvilleCity_House1_EventScript_HPChangerDude {
+    lock
+    faceplayer
+	if(flag(FLAG_MIN_GRINDING_MODE) || flag(FLAG_BADGE08_GET))
+	{
+		goto(MauvilleCity_House1_EventScript_ChangeHP)
+	}
+	msgbox(HpChangerHelloCantChange)
+	release
+	end
+}
+
+script MauvilleCity_House1_EventScript_ChangeHP{
+	msgbox(HpChangerHelloCanChange, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO)
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+	msgbox("Which Pokémon?")
+	special(ChoosePartyMon)
+	waitstate
+	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if(var(VAR_RESULT) == SPECIES_EGG) {
+		msgbox("I can't change the Hidden Power\nof an Egg.")
+		release
+		end
+	}
+	special(BufferMonNickname)
+	msgbox("Which new Hidden Power type would\nyou like for {STR_VAR_1}?")
+	dynmultipush("Fighting", TYPE_FIGHTING)
+	dynmultipush("Flying", TYPE_FLYING)
+	dynmultipush("Poison", TYPE_POISON)
+	dynmultipush("Ground", TYPE_GROUND)
+	dynmultipush("Rock", TYPE_ROCK)
+	dynmultipush("Bug", TYPE_BUG)
+	dynmultipush("Ghost", TYPE_GHOST)
+	dynmultipush("Steel", TYPE_STEEL)
+	dynmultipush("Fire", TYPE_FIRE)
+	dynmultipush("Water", TYPE_WATER)
+	dynmultipush("Grass", TYPE_GRASS)
+	dynmultipush("Electric", TYPE_ELECTRIC)
+	dynmultipush("Psychic", TYPE_PSYCHIC)
+	dynmultipush("Ice", TYPE_ICE)
+	dynmultipush("Dragon", TYPE_DRAGON)
+	dynmultipush("Dark", TYPE_DARK)
+	dynmultipush("Cancel", MULTI_B_PRESSED)
+	// // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, TYPE_FIGHTING, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	bufferhptypeinfo(STR_VAR_2, STR_VAR_3, VAR_RESULT)
+	msgbox(AreYouSureHPTypeChange, MSGBOX_YESNO)
+
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(MauvilleCity_House1_EventScript_HPChangerNo)
+	}
+
+	msgbox("I shall begin at once.")
+	fadescreen(FADE_TO_BLACK)
+	special(ChangeMonIVsForHP)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
+	msgbox(HPTypeChangedComeBackSoon)
+	release
+	end
+}
+
+script MauvilleCity_House1_EventScript_HPChangerNo {
+    msgbox("I see. Come back if you change\nyour mind.")
+    release
+    end
+}
+
+
+text HpChangerHelloCantChange
+{
+	"Hello, I am the Hidden Power type\n"
+	"changer.\p"
+	"Oh, it looks like you are not in\n"
+	"Minimal Grinding Mode.\p"
+	"I can't modify your Pokémon's IVs until\n"
+	"you have 8 Badges in that case."
+}
+
+text HpChangerHelloCanChange
+{
+	"Hello, I am the Hidden Power type\n"
+	"changer.\p"
+	"You can choose a Pokémon and I can\n"
+	"quickly modify its IVs to change\l"
+	"the type of its Hidden Power.\p"
+	"Would you like me to change the type of\n"
+	"one of your Pokémon's Hidden Power?"
+}
+
+text AreYouSureHPTypeChange
+{
+	"So you want me to change\n"
+	"{STR_VAR_1}'s Hidden Power type\l"
+	"to {STR_VAR_2}?\p"
+	"This will modify {STR_VAR_1}'s\n"
+	"IVs to be the following:\p"
+	"HP   Atk   Def   SpAtk   SpDef   Spd\n"
+	"{STR_VAR_3}"
+}
+
+text HPTypeChangedComeBackSoon
+{
+	"{STR_VAR_1}'s Hidden Power type\n"
+	"has been changed to {STR_VAR_2}.\p"
+	"Come back if you need me to change\n"
+	"the Hidden Power type of\l"
+	"another Pokémon."
+}

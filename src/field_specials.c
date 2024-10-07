@@ -4341,6 +4341,20 @@ void ChangeMonGender(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
+void ChangeMonIVsForHP(void) 
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u8 newHiddenPowerType = gSpecialVar_0x8005;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivHp);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivAtk);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivDef);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivSpatk);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivSpdef);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivSpeed);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
 void SetMonToLevelCap(void) 
 {
     struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];

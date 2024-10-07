@@ -644,6 +644,18 @@ struct NatureInfo
     const u8 *natureGirlMessage;
 };
 
+struct HiddenPowerTypeInfo
+{
+    const u8 *typeName;
+    const u8 *ivsListed;
+    u8 ivHp;
+    u8 ivAtk;
+    u8 ivDef;
+    u8 ivSpatk;
+    u8 ivSpdef;
+    u8 ivSpeed;
+};
+
 #define SPINDA_SPOT_WIDTH 16
 #define SPINDA_SPOT_HEIGHT 16
 
@@ -713,6 +725,7 @@ extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const u32 sExpCandyExperienceTable[];
 extern const struct Ability gAbilitiesInfo[];
 extern const struct NatureInfo gNaturesInfo[];
+extern const struct HiddenPowerTypeInfo gHiddenPowerTypeInfo[];
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);

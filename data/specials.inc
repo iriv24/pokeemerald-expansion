@@ -544,6 +544,7 @@ gSpecials::
 	def_special VsSeekerFreezeObjectsAfterChargeComplete
 	def_special ChangeMonNature
 	def_special ChangeMonGender
+	def_special ChangeMonIVsForHP
 	def_special SetMonToLevelCap
 	def_special PlayerHasMulch
 	def_special Bag_ChooseMulch

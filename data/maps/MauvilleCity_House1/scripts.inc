@@ -268,3 +268,282 @@ MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
 MauvilleCity_House1_Text_ObtainedStatEditor:
 # 135 "data/maps/MauvilleCity_House1/scripts.pory"
 	.string "Obtained the Stat Editor!$"
+
+MauvilleCity_House1_EventScript_HPChangerDude::
+# 140 "data/maps/MauvilleCity_House1/scripts.pory"
+	lock
+# 141 "data/maps/MauvilleCity_House1/scripts.pory"
+	faceplayer
+# 142 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_set FLAG_MIN_GRINDING_MODE, MauvilleCity_House1_EventScript_HPChangerDude_2
+# 142 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, MauvilleCity_House1_EventScript_HPChangerDude_2
+MauvilleCity_House1_EventScript_HPChangerDude_1:
+# 146 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox HpChangerHelloCantChange
+# 147 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_HPChangerDude_2:
+# 144 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_ChangeHP
+	goto MauvilleCity_House1_EventScript_HPChangerDude_1
+
+
+MauvilleCity_House1_EventScript_ChangeHP::
+# 152 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox HpChangerHelloCanChange, MSGBOX_YESNO
+# 153 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_House1_EventScript_ChangeHP_2
+MauvilleCity_House1_EventScript_ChangeHP_1:
+# 157 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_0
+# 158 "data/maps/MauvilleCity_House1/scripts.pory"
+	special ChoosePartyMon
+# 159 "data/maps/MauvilleCity_House1/scripts.pory"
+	waitstate
+# 160 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq MauvilleCity_House1_EventScript_ChangeHP_5
+MauvilleCity_House1_EventScript_ChangeHP_4:
+# 164 "data/maps/MauvilleCity_House1/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 165 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq MauvilleCity_House1_EventScript_ChangeHP_8
+# 170 "data/maps/MauvilleCity_House1/scripts.pory"
+	special BufferMonNickname
+# 171 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_2
+# 172 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_3, TYPE_FIGHTING
+# 173 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_4, TYPE_FLYING
+# 174 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_5, TYPE_POISON
+# 175 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_6, TYPE_GROUND
+# 176 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_7, TYPE_ROCK
+# 177 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_8, TYPE_BUG
+# 178 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_9, TYPE_GHOST
+# 179 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_10, TYPE_STEEL
+# 180 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_11, TYPE_FIRE
+# 181 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_12, TYPE_WATER
+# 182 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_13, TYPE_GRASS
+# 183 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_14, TYPE_ELECTRIC
+# 184 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_15, TYPE_PSYCHIC
+# 185 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_16, TYPE_ICE
+# 186 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_17, TYPE_DRAGON
+# 187 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_18, TYPE_DARK
+# 188 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultipush MauvilleCity_House1_EventScript_ChangeHP_Text_19, MULTI_B_PRESSED
+# 190 "data/maps/MauvilleCity_House1/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, TYPE_FIGHTING, DYN_MULTICHOICE_CB_NONE
+# 192 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq MauvilleCity_House1_EventScript_ChangeHP_11
+MauvilleCity_House1_EventScript_ChangeHP_10:
+# 197 "data/maps/MauvilleCity_House1/scripts.pory"
+	copyvar VAR_0x8005, VAR_RESULT
+# 198 "data/maps/MauvilleCity_House1/scripts.pory"
+	bufferhptypeinfo STR_VAR_2, STR_VAR_3, VAR_RESULT
+# 199 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox AreYouSureHPTypeChange, MSGBOX_YESNO
+# 201 "data/maps/MauvilleCity_House1/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_House1_EventScript_ChangeHP_14
+MauvilleCity_House1_EventScript_ChangeHP_13:
+# 206 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_20
+# 207 "data/maps/MauvilleCity_House1/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 208 "data/maps/MauvilleCity_House1/scripts.pory"
+	special ChangeMonIVsForHP
+# 209 "data/maps/MauvilleCity_House1/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 210 "data/maps/MauvilleCity_House1/scripts.pory"
+	waitfanfare
+# 211 "data/maps/MauvilleCity_House1/scripts.pory"
+	closemessage
+# 212 "data/maps/MauvilleCity_House1/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 213 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox HPTypeChangedComeBackSoon
+# 214 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_ChangeHP_2:
+# 155 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_ChangeHP_1
+
+MauvilleCity_House1_EventScript_ChangeHP_5:
+# 162 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_ChangeHP_4
+
+MauvilleCity_House1_EventScript_ChangeHP_8:
+# 166 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_ChangeHP_Text_1
+# 167 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+MauvilleCity_House1_EventScript_ChangeHP_11:
+# 194 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_ChangeHP_10
+
+MauvilleCity_House1_EventScript_ChangeHP_14:
+# 203 "data/maps/MauvilleCity_House1/scripts.pory"
+	goto MauvilleCity_House1_EventScript_HPChangerNo
+	goto MauvilleCity_House1_EventScript_ChangeHP_13
+
+
+MauvilleCity_House1_EventScript_HPChangerNo::
+# 219 "data/maps/MauvilleCity_House1/scripts.pory"
+	msgbox MauvilleCity_House1_EventScript_HPChangerNo_Text_0
+# 220 "data/maps/MauvilleCity_House1/scripts.pory"
+	release
+	end
+
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_0:
+# 157 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Which Pokémon?$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_1:
+# 166 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "I can't change the Hidden Power\nof an Egg.$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_2:
+# 171 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Which new Hidden Power type would\nyou like for {STR_VAR_1}?$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_3:
+# 172 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Fighting$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_4:
+# 173 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Flying$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_5:
+# 174 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Poison$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_6:
+# 175 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Ground$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_7:
+# 176 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Rock$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_8:
+# 177 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Bug$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_9:
+# 178 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Ghost$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_10:
+# 179 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Steel$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_11:
+# 180 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Fire$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_12:
+# 181 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Water$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_13:
+# 182 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Grass$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_14:
+# 183 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Electric$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_15:
+# 184 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Psychic$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_16:
+# 185 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Ice$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_17:
+# 186 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Dragon$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_18:
+# 187 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Dark$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_19:
+# 188 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Cancel$"
+
+MauvilleCity_House1_EventScript_ChangeHP_Text_20:
+# 206 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "I shall begin at once.$"
+
+MauvilleCity_House1_EventScript_HPChangerNo_Text_0:
+# 219 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "I see. Come back if you change\nyour mind.$"
+
+HpChangerHelloCantChange::
+# 225 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Hello, I am the Hidden Power type\n"
+	.string "changer.\p"
+	.string "Oh, it looks like you are not in\n"
+	.string "Minimal Grinding Mode.\p"
+	.string "I can't modify your Pokémon's IVs until\n"
+	.string "you have 8 Badges in that case.$"
+
+HpChangerHelloCanChange::
+# 235 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "Hello, I am the Hidden Power type\n"
+	.string "changer.\p"
+	.string "You can choose a Pokémon and I can\n"
+	.string "quickly modify its IVs to change\l"
+	.string "the type of its Hidden Power.\p"
+	.string "Would you like me to change the type of\n"
+	.string "one of your Pokémon's Hidden Power?$"
+
+AreYouSureHPTypeChange::
+# 246 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "So you want me to change\n"
+	.string "{STR_VAR_1}'s Hidden Power type\l"
+	.string "to {STR_VAR_2}?\p"
+	.string "This will modify {STR_VAR_1}'s\n"
+	.string "IVs to be the following:\p"
+	.string "HP   Atk   Def   SpAtk   SpDef   Spd\n"
+	.string "{STR_VAR_3}$"
+
+HPTypeChangedComeBackSoon::
+# 257 "data/maps/MauvilleCity_House1/scripts.pory"
+	.string "{STR_VAR_1}'s Hidden Power type\n"
+	.string "has been changed to {STR_VAR_2}.\p"
+	.string "Come back if you need me to change\n"
+	.string "the Hidden Power type of\l"
+	.string "another Pokémon.$"

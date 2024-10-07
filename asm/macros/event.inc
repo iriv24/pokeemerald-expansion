@@ -1914,6 +1914,14 @@
 	.2byte \species
 	.endm
 
+	@ Writes the name of the given type to the specified buffer
+	.macro bufferhptypeinfo stringVarId1:req, stringVarId2:req, type:req
+	.byte 0xe9
+	stringvar \stringVarId1
+	stringvar \stringVarId2
+	.2byte \type
+	.endm
+
 
 @ Supplementary
 
