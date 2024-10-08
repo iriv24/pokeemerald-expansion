@@ -1,14 +1,17 @@
 raw `
+.set LOCALID_HO_OH, 5
+
 Route130_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route130_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route130_OnResume
 	.byte 0
 
 Route130_OnTransition:
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route130_EventScript_CheckSetAbnormalWeather
-	specialvar VAR_RESULT, IsMirageIslandPresent
-	goto_if_eq VAR_RESULT, TRUE, Route130_EventScript_SetMirageIslandLayout
+	goto_if_set FLAG_IS_CHAMPION, Route130_EventScript_SetMirageIslandLayout
 @ Mirage Island isn't currently visible, hide any objects on the island. Only the first flag is actually associated with anything.
 	setflag FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE
+	setflag FLAG_HIDE_HO_OH
 	setflag FLAG_TEMP_12
 	setflag FLAG_TEMP_13
 	setflag FLAG_TEMP_14
@@ -28,6 +31,58 @@ Route130_OnTransition:
 
 Route130_EventScript_SetMirageIslandLayout::
 	setmaplayoutindex LAYOUT_ROUTE130_MIRAGE_ISLAND
+	call_if_set FLAG_CAUGHT_HO_OH, Route130_EventScript_HideHo_Oh
+	call_if_unset FLAG_CAUGHT_HO_OH, Route130_EventScript_TryShowHo_Oh
+	end
+
+Route130_EventScript_HideHo_Oh::
+	setflag FLAG_HIDE_HO_OH
+	return
+
+Route130_EventScript_TryShowHo_Oh::
+	goto_if_set FLAG_DEFEATED_HO_OH, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_HO_OH
+	return
+
+Route130_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route130_EventScript_TryRemoveHo_Oh
+	end
+
+Route130_EventScript_TryRemoveHo_Oh::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject LOCALID_HO_OH
+	return
+
+Route130_EventScript_Ho_Oh::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
+	waitmoncry
+	delay 20
+	seteventmon SPECIES_HO_OH, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route130_EventScript_DefeatedHo_Oh
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route130_EventScript_RanFromHo_Oh
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route130_EventScript_RanFromHo_Oh
+	setflag FLAG_CAUGHT_HO_OH
+	release
+	end
+
+Route130_EventScript_DefeatedHo_Oh::
+	setflag FLAG_DEFEATED_HO_OH
+	setvar VAR_0x8004, SPECIES_HO_OH
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+Route130_EventScript_RanFromHo_Oh::
+	setvar VAR_0x8004, SPECIES_HO_OH
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 Route130_EventScript_CheckSetAbnormalWeather::

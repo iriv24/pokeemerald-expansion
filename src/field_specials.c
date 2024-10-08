@@ -4343,7 +4343,6 @@ void ChangeMonGender(void)
 
 void ChangeMonIVsForHP(void) 
 {
-    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
     u8 newHiddenPowerType = gSpecialVar_0x8005;
 
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &gHiddenPowerTypeInfo[newHiddenPowerType].ivHp);

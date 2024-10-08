@@ -1236,12 +1236,12 @@
 #define FLAG_HIDE_CHAMPIONS_ROOM_DAWN                               0x4A2
 #define FLAG_SYS_STAT_EDITOR_GET                                    0x4A3
 #define FLAG_MET_IV_PERFECTER                                       0x4A4
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_HIDE_LUGIA                                             0x4A5
+#define FLAG_DEFEATED_LUGIA                                         0x4A6
+#define FLAG_CAUGHT_LUGIA                                           0x4A7
+#define FLAG_HIDE_HO_OH                                             0x4A8
+#define FLAG_DEFEATED_HO_OH                                         0x4A9
+#define FLAG_CAUGHT_HO_OH                                           0x4AA
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag

@@ -1,34 +1,93 @@
 raw `
+.set LOCALID_LUGIA, 1
+
 SealedChamber_InnerRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SealedChamber_InnerRoom_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, SealedChamber_InnerRoom_OnResume
 	.byte 0
+
+SealedChamber_InnerRoom_OnTransition:
+	call_if_set FLAG_CAUGHT_LUGIA, SealedChamber_InnerRoom_EventScript_HideLugia
+	call_if_unset FLAG_CAUGHT_LUGIA, SealedChamber_InnerRoom_EventScript_TryShowLugia
+	end
+
+SealedChamber_InnerRoom_EventScript_HideLugia::
+	setflag FLAG_HIDE_LUGIA
+	return
+
+SealedChamber_InnerRoom_EventScript_TryShowLugia::
+	goto_if_set FLAG_DEFEATED_LUGIA, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_LUGIA
+	return
+
+SealedChamber_InnerRoom_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SealedChamber_InnerRoom_EventScript_TryRemoveLugia
+	end
+
+SealedChamber_InnerRoom_EventScript_TryRemoveLugia::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject LOCALID_LUGIA
+	return
+
+SealedChamber_InnerRoom_EventScript_Lugia::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	delay 20
+	seteventmon SPECIES_LUGIA, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SealedChamber_InnerRoom_EventScript_DefeatedLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SealedChamber_InnerRoom_EventScript_RanFromLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SealedChamber_InnerRoom_EventScript_RanFromLugia
+	setflag FLAG_CAUGHT_LUGIA
+	release
+	end
+
+SealedChamber_InnerRoom_EventScript_DefeatedLugia::
+	setflag FLAG_DEFEATED_LUGIA
+	setvar VAR_0x8004, SPECIES_LUGIA
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+SealedChamber_InnerRoom_EventScript_RanFromLugia::
+	setvar VAR_0x8004, SPECIES_LUGIA
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	lockall
 	braillemsgbox SealedChamber_InnerRoom_Braille_FirstWailordLastRelicanth
-	goto_if_set FLAG_REGI_DOORS_OPENED, SealedChamber_InnerRoom_EventScript_NoEffect
-	specialvar VAR_RESULT, CheckRelicanthWailord
-	goto_if_eq VAR_RESULT, FALSE, SealedChamber_InnerRoom_EventScript_NoEffect
-	fadeoutbgm 0
-	playse SE_TRUCK_MOVE
-	special DoSealedChamberShakingEffect_Long
-	waitstate
-	delay 40
-	special DoSealedChamberShakingEffect_Short
-	waitstate
-	playse SE_DOOR
-	delay 40
-	special DoSealedChamberShakingEffect_Short
-	waitstate
-	playse SE_DOOR
-	delay 40
-	special DoSealedChamberShakingEffect_Short
-	waitstate
-	playse SE_DOOR
-	delay 40
-	msgbox gText_DoorOpenedFarAway, MSGBOX_DEFAULT
-	closemessage
-	fadeinbgm 0
-	setflag FLAG_REGI_DOORS_OPENED
+	@goto_if_set FLAG_REGI_DOORS_OPENED, SealedChamber_InnerRoom_EventScript_NoEffect
+	@specialvar VAR_RESULT, CheckRelicanthWailord
+	@goto_if_eq VAR_RESULT, FALSE, SealedChamber_InnerRoom_EventScript_NoEffect
+	@fadeoutbgm 0
+	@playse SE_TRUCK_MOVE
+	@special DoSealedChamberShakingEffect_Long
+	@waitstate
+	@delay 40
+	@special DoSealedChamberShakingEffect_Short
+	@waitstate
+	@playse SE_DOOR
+	@delay 40
+	@special DoSealedChamberShakingEffect_Short
+	@waitstate
+	@playse SE_DOOR
+	@delay 40
+	@special DoSealedChamberShakingEffect_Short
+	@waitstate
+	@playse SE_DOOR
+	@delay 40
+	@msgbox gText_DoorOpenedFarAway, MSGBOX_DEFAULT
+	@closemessage
+	@fadeinbgm 0
+	@setflag FLAG_REGI_DOORS_OPENED
 	releaseall
 	end
 
