@@ -1,5 +1,6 @@
 #include "global.h"
 #include "event_data.h"
+#include "event_object_movement.h"
 #include "field_camera.h"
 #include "field_effect.h"
 #include "script.h"
@@ -86,6 +87,7 @@ void DoBrailleDigEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_BRAILLE_DIG);
+    UnfreezeObjectEvents();
     UnlockPlayerFieldControls();
 }
 
