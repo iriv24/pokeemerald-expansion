@@ -215,6 +215,7 @@ static void DoBrailleRegirockEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED);
+    UnfreezeObjectEvents();
     UnlockPlayerFieldControls();
 }
 
@@ -254,6 +255,7 @@ static void DoBrailleRegisteelEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED);
+    UnfreezeObjectEvents();
     UnlockPlayerFieldControls();
 }
 
