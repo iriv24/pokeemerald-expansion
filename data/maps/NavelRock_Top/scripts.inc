@@ -1,7 +1,7 @@
 # 1 "data/maps/NavelRock_Top/scripts.pory"
 
 # 2 "data/maps/NavelRock_Top/scripts.pory"
-.set LOCALID_HO_OH, 1
+.set LOCALID_RESHIRAM, 1
 # 3 "data/maps/NavelRock_Top/scripts.pory"
 
 # 4 "data/maps/NavelRock_Top/scripts.pory"
@@ -17,33 +17,33 @@ NavelRock_Top_MapScripts::
 # 9 "data/maps/NavelRock_Top/scripts.pory"
 NavelRock_Top_OnTransition:
 # 10 "data/maps/NavelRock_Top/scripts.pory"
-	call_if_set FLAG_CAUGHT_HO_OH, NavelRock_Top_EventScript_HideHoOh
+	call_if_set FLAG_CAUGHT_RESHIRAM, NavelRock_Top_EventScript_HideReshiram
 # 11 "data/maps/NavelRock_Top/scripts.pory"
-	call_if_unset FLAG_CAUGHT_HO_OH, NavelRock_Top_EventScript_TryShowHoOh
+	call_if_unset FLAG_CAUGHT_RESHIRAM, NavelRock_Top_EventScript_TryShowReshiram
 # 12 "data/maps/NavelRock_Top/scripts.pory"
 	end
 # 13 "data/maps/NavelRock_Top/scripts.pory"
 
 # 14 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_HideHoOh::
+NavelRock_Top_EventScript_HideReshiram::
 # 15 "data/maps/NavelRock_Top/scripts.pory"
 	setvar VAR_TEMP_1, 1
 # 16 "data/maps/NavelRock_Top/scripts.pory"
-	setflag FLAG_HIDE_HO_OH
+	setflag FLAG_HIDE_RESHIRAM
 # 17 "data/maps/NavelRock_Top/scripts.pory"
 	return
 # 18 "data/maps/NavelRock_Top/scripts.pory"
 
 # 19 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_TryShowHoOh::
+NavelRock_Top_EventScript_TryShowReshiram::
 # 20 "data/maps/NavelRock_Top/scripts.pory"
 	setvar VAR_TEMP_1, 1
 # 21 "data/maps/NavelRock_Top/scripts.pory"
-	goto_if_set FLAG_DEFEATED_HO_OH, Common_EventScript_NopReturn
+	goto_if_set FLAG_DEFEATED_RESHIRAM, Common_EventScript_NopReturn
 # 22 "data/maps/NavelRock_Top/scripts.pory"
 	setvar VAR_TEMP_1, 0
 # 23 "data/maps/NavelRock_Top/scripts.pory"
-	clearflag FLAG_HIDE_HO_OH
+	clearflag FLAG_HIDE_RESHIRAM
 # 24 "data/maps/NavelRock_Top/scripts.pory"
 	return
 # 25 "data/maps/NavelRock_Top/scripts.pory"
@@ -51,25 +51,25 @@ NavelRock_Top_EventScript_TryShowHoOh::
 # 26 "data/maps/NavelRock_Top/scripts.pory"
 NavelRock_Top_OnResume:
 # 27 "data/maps/NavelRock_Top/scripts.pory"
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NavelRock_Top_EventScript_TryRemoveHoOh
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NavelRock_Top_EventScript_TryRemoveReshiram
 # 28 "data/maps/NavelRock_Top/scripts.pory"
 	end
 # 29 "data/maps/NavelRock_Top/scripts.pory"
 
 # 30 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_TryRemoveHoOh::
+NavelRock_Top_EventScript_TryRemoveReshiram::
 # 31 "data/maps/NavelRock_Top/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 32 "data/maps/NavelRock_Top/scripts.pory"
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 # 33 "data/maps/NavelRock_Top/scripts.pory"
-	removeobject LOCALID_HO_OH
+	removeobject LOCALID_RESHIRAM
 # 34 "data/maps/NavelRock_Top/scripts.pory"
 	return
 # 35 "data/maps/NavelRock_Top/scripts.pory"
 
 # 36 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_HoOh::
+NavelRock_Top_EventScript_Reshiram::
 # 37 "data/maps/NavelRock_Top/scripts.pory"
 	lockall
 # 38 "data/maps/NavelRock_Top/scripts.pory"
@@ -83,7 +83,7 @@ NavelRock_Top_EventScript_HoOh::
 # 42 "data/maps/NavelRock_Top/scripts.pory"
 	special LoopWingFlapSE
 # 43 "data/maps/NavelRock_Top/scripts.pory"
-	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhAppear
+	applymovement LOCALID_RESHIRAM, NavelRock_Top_Movement_ReshiramAppear
 # 44 "data/maps/NavelRock_Top/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, NavelRock_Top_Movement_CameraPanUp
 # 45 "data/maps/NavelRock_Top/scripts.pory"
@@ -97,7 +97,7 @@ NavelRock_Top_EventScript_HoOh::
 # 49 "data/maps/NavelRock_Top/scripts.pory"
 	waitse
 # 50 "data/maps/NavelRock_Top/scripts.pory"
-	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_RESHIRAM, CRY_MODE_ENCOUNTER
 # 51 "data/maps/NavelRock_Top/scripts.pory"
 	delay 30
 # 52 "data/maps/NavelRock_Top/scripts.pory"
@@ -113,13 +113,13 @@ NavelRock_Top_EventScript_HoOh::
 # 57 "data/maps/NavelRock_Top/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, NavelRock_Top_Movement_CameraPanDown
 # 58 "data/maps/NavelRock_Top/scripts.pory"
-	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhApproach
+	applymovement LOCALID_RESHIRAM, NavelRock_Top_Movement_ReshiramApproach
 # 59 "data/maps/NavelRock_Top/scripts.pory"
 	waitmovement 0
 # 60 "data/maps/NavelRock_Top/scripts.pory"
 	special RemoveCameraObject
 # 61 "data/maps/NavelRock_Top/scripts.pory"
-	seteventmon SPECIES_HO_OH, 70
+	seteventmon SPECIES_RESHIRAM, 70
 # 62 "data/maps/NavelRock_Top/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 63 "data/maps/NavelRock_Top/scripts.pory"
@@ -129,17 +129,17 @@ NavelRock_Top_EventScript_HoOh::
 # 65 "data/maps/NavelRock_Top/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 66 "data/maps/NavelRock_Top/scripts.pory"
-	setvar VAR_LAST_TALKED, LOCALID_HO_OH
+	setvar VAR_LAST_TALKED, LOCALID_RESHIRAM
 # 67 "data/maps/NavelRock_Top/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 68 "data/maps/NavelRock_Top/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedHoOh
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedReshiram
 # 69 "data/maps/NavelRock_Top/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Top_EventScript_RanFromHoOh
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Top_EventScript_RanFromReshiram
 # 70 "data/maps/NavelRock_Top/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Top_EventScript_RanFromHoOh
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Top_EventScript_RanFromReshiram
 # 71 "data/maps/NavelRock_Top/scripts.pory"
-	setflag FLAG_CAUGHT_HO_OH
+	setflag FLAG_CAUGHT_RESHIRAM
 # 72 "data/maps/NavelRock_Top/scripts.pory"
 	releaseall
 # 73 "data/maps/NavelRock_Top/scripts.pory"
@@ -147,11 +147,11 @@ NavelRock_Top_EventScript_HoOh::
 # 74 "data/maps/NavelRock_Top/scripts.pory"
 
 # 75 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_DefeatedHoOh::
+NavelRock_Top_EventScript_DefeatedReshiram::
 # 76 "data/maps/NavelRock_Top/scripts.pory"
-	setflag FLAG_DEFEATED_HO_OH
+	setflag FLAG_DEFEATED_RESHIRAM
 # 77 "data/maps/NavelRock_Top/scripts.pory"
-	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8004, SPECIES_RESHIRAM
 # 78 "data/maps/NavelRock_Top/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 79 "data/maps/NavelRock_Top/scripts.pory"
@@ -159,9 +159,9 @@ NavelRock_Top_EventScript_DefeatedHoOh::
 # 80 "data/maps/NavelRock_Top/scripts.pory"
 
 # 81 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_EventScript_RanFromHoOh::
+NavelRock_Top_EventScript_RanFromReshiram::
 # 82 "data/maps/NavelRock_Top/scripts.pory"
-	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8004, SPECIES_RESHIRAM
 # 83 "data/maps/NavelRock_Top/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 84 "data/maps/NavelRock_Top/scripts.pory"
@@ -197,7 +197,7 @@ NavelRock_Top_Movement_CameraPanDown:
 # 99 "data/maps/NavelRock_Top/scripts.pory"
 
 # 100 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_Movement_HoOhApproach:
+NavelRock_Top_Movement_ReshiramApproach:
 # 101 "data/maps/NavelRock_Top/scripts.pory"
 	walk_down
 # 102 "data/maps/NavelRock_Top/scripts.pory"
@@ -219,7 +219,7 @@ NavelRock_Top_Movement_HoOhApproach:
 # 110 "data/maps/NavelRock_Top/scripts.pory"
 
 # 111 "data/maps/NavelRock_Top/scripts.pory"
-NavelRock_Top_Movement_HoOhAppear:
+NavelRock_Top_Movement_ReshiramAppear:
 # 112 "data/maps/NavelRock_Top/scripts.pory"
 	delay_16
 # 113 "data/maps/NavelRock_Top/scripts.pory"

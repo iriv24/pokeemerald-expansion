@@ -24,8 +24,8 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_DEFEATED_DEOXYS
-	clearflag FLAG_DEFEATED_LUGIA
-	clearflag FLAG_DEFEATED_HO_OH
+	clearflag FLAG_DEFEATED_ZEKROM
+	clearflag FLAG_DEFEATED_RESHIRAM
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::

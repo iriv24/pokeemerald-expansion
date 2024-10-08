@@ -1,7 +1,7 @@
 # 1 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 2 "data/maps/NavelRock_Bottom/scripts.pory"
-.set LOCALID_LUGIA, 1
+.set LOCALID_ZEKROM, 1
 # 3 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 4 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -17,27 +17,27 @@ NavelRock_Bottom_MapScripts::
 # 9 "data/maps/NavelRock_Bottom/scripts.pory"
 NavelRock_Bottom_OnTransition:
 # 10 "data/maps/NavelRock_Bottom/scripts.pory"
-	call_if_set FLAG_CAUGHT_LUGIA, NavelRock_Bottom_EventScript_HideLugia
+	call_if_set FLAG_CAUGHT_ZEKROM, NavelRock_Bottom_EventScript_HideZekrom
 # 11 "data/maps/NavelRock_Bottom/scripts.pory"
-	call_if_unset FLAG_CAUGHT_LUGIA, NavelRock_Bottom_EventScript_TryShowLugia
+	call_if_unset FLAG_CAUGHT_ZEKROM, NavelRock_Bottom_EventScript_TryShowZekrom
 # 12 "data/maps/NavelRock_Bottom/scripts.pory"
 	end
 # 13 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 14 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_HideLugia::
+NavelRock_Bottom_EventScript_HideZekrom::
 # 15 "data/maps/NavelRock_Bottom/scripts.pory"
-	setflag FLAG_HIDE_LUGIA
+	setflag FLAG_HIDE_ZEKROM
 # 16 "data/maps/NavelRock_Bottom/scripts.pory"
 	return
 # 17 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 18 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_TryShowLugia::
+NavelRock_Bottom_EventScript_TryShowZekrom::
 # 19 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LUGIA, Common_EventScript_NopReturn
+	goto_if_set FLAG_DEFEATED_ZEKROM, Common_EventScript_NopReturn
 # 20 "data/maps/NavelRock_Bottom/scripts.pory"
-	clearflag FLAG_HIDE_LUGIA
+	clearflag FLAG_HIDE_ZEKROM
 # 21 "data/maps/NavelRock_Bottom/scripts.pory"
 	return
 # 22 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -45,25 +45,25 @@ NavelRock_Bottom_EventScript_TryShowLugia::
 # 23 "data/maps/NavelRock_Bottom/scripts.pory"
 NavelRock_Bottom_OnResume:
 # 24 "data/maps/NavelRock_Bottom/scripts.pory"
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NavelRock_Bottom_EventScript_TryRemoveLugia
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NavelRock_Bottom_EventScript_TryRemoveZekrom
 # 25 "data/maps/NavelRock_Bottom/scripts.pory"
 	end
 # 26 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 27 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_TryRemoveLugia::
+NavelRock_Bottom_EventScript_TryRemoveZekrom::
 # 28 "data/maps/NavelRock_Bottom/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 29 "data/maps/NavelRock_Bottom/scripts.pory"
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 # 30 "data/maps/NavelRock_Bottom/scripts.pory"
-	removeobject LOCALID_LUGIA
+	removeobject LOCALID_ZEKROM
 # 31 "data/maps/NavelRock_Bottom/scripts.pory"
 	return
 # 32 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 33 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_Lugia::
+NavelRock_Bottom_EventScript_Zekrom::
 # 34 "data/maps/NavelRock_Bottom/scripts.pory"
 	lock
 # 35 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -105,13 +105,13 @@ NavelRock_Bottom_EventScript_Lugia::
 # 53 "data/maps/NavelRock_Bottom/scripts.pory"
 	waitse
 # 54 "data/maps/NavelRock_Bottom/scripts.pory"
-	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_ZEKROM, CRY_MODE_ENCOUNTER
 # 55 "data/maps/NavelRock_Bottom/scripts.pory"
 	waitmoncry
 # 56 "data/maps/NavelRock_Bottom/scripts.pory"
 	delay 20
 # 57 "data/maps/NavelRock_Bottom/scripts.pory"
-	seteventmon SPECIES_LUGIA, 70
+	seteventmon SPECIES_ZEKROM, 70
 # 58 "data/maps/NavelRock_Bottom/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 59 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -123,13 +123,13 @@ NavelRock_Bottom_EventScript_Lugia::
 # 62 "data/maps/NavelRock_Bottom/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
 # 63 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_DefeatedLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_DefeatedZekrom
 # 64 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromZekrom
 # 65 "data/maps/NavelRock_Bottom/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Bottom_EventScript_RanFromLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Bottom_EventScript_RanFromZekrom
 # 66 "data/maps/NavelRock_Bottom/scripts.pory"
-	setflag FLAG_CAUGHT_LUGIA
+	setflag FLAG_CAUGHT_ZEKROM
 # 67 "data/maps/NavelRock_Bottom/scripts.pory"
 	release
 # 68 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -137,11 +137,11 @@ NavelRock_Bottom_EventScript_Lugia::
 # 69 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 70 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_DefeatedLugia::
+NavelRock_Bottom_EventScript_DefeatedZekrom::
 # 71 "data/maps/NavelRock_Bottom/scripts.pory"
-	setflag FLAG_DEFEATED_LUGIA
+	setflag FLAG_DEFEATED_ZEKROM
 # 72 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_ZEKROM
 # 73 "data/maps/NavelRock_Bottom/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 74 "data/maps/NavelRock_Bottom/scripts.pory"
@@ -149,9 +149,9 @@ NavelRock_Bottom_EventScript_DefeatedLugia::
 # 75 "data/maps/NavelRock_Bottom/scripts.pory"
 
 # 76 "data/maps/NavelRock_Bottom/scripts.pory"
-NavelRock_Bottom_EventScript_RanFromLugia::
+NavelRock_Bottom_EventScript_RanFromZekrom::
 # 77 "data/maps/NavelRock_Bottom/scripts.pory"
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_ZEKROM
 # 78 "data/maps/NavelRock_Bottom/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 79 "data/maps/NavelRock_Bottom/scripts.pory"
