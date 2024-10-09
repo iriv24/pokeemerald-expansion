@@ -113,7 +113,8 @@ MauvilleCity_House1_Text_ExplainStatEditorInMGM:
 MauvilleCity_House1_Text_ExplainStatEditorNotInMGM:
 	.string "Since you have Minimal Grinding Mode\n"
 	.string "disabled, you can't change your\l"
-	.string "Pokémon's IVs with that device.\p"
+	.string "Pokémon's IVs with that device until\l"
+	.string "you have all 8 Gym Badges.\p"
 	.string "I'm sure you'll still find it useful,\n"
 	.string "though.$"
 
@@ -129,7 +130,8 @@ MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
 	.string "Editor from your “L menu”.\p"
 	.string "However, since you have\n"
 	.string "Minimal Grinding Mode disabled, you\l"
-	.string "can't change your Pokémon's IVs.$"
+	.string "can't change your Pokémon's IVs until\l"
+	.string "you have all 8 Gym Badges.$"
 
 MauvilleCity_House1_Text_ObtainedStatEditor:
 	.string "Obtained the Stat Editor!$"
