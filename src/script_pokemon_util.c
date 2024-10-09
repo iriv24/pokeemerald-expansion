@@ -31,7 +31,6 @@
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
-static u16 PickRustboroEgg(void);
 static u16 PickWaterStarterEgg(void);
 static u16 PickGrassStarterEgg(void);
 static u16 PickFireStarterEgg(void);
@@ -70,51 +69,36 @@ u8 ScriptGiveEgg(u16 species)
 {
     struct Pokemon mon;
     u8 isEgg;
-    bool8 fromHotSprings = TRUE;
+    bool8 fromHotSprings = (species == SPECIES_EEVEE);
 
-    if(species == SPECIES_OMANYTE)
-    {
-        species = PickRustboroEgg();
-        fromHotSprings = FALSE;
-    }
-    else if(species == SPECIES_SQUIRTLE)
+    if(species == SPECIES_SQUIRTLE)
     {
         species = PickWaterStarterEgg();
-        fromHotSprings = FALSE;
     }
     else if(species == SPECIES_BULBASAUR)
     {
         species = PickGrassStarterEgg();
-        fromHotSprings = FALSE;
     }
     else if(species == SPECIES_CHARMANDER)
     {
         species = PickFireStarterEgg();
-        fromHotSprings = FALSE;
     }
+
+    #if RANDOMIZER_AVAILABLE == TRUE
+        u16 i = 0;
+        for(i = 0; i < MY_EGG_MON_COUNT; i++)
+        {
+            if(gEggMonTable[i] == species)
+                break;
+        }
+        species = RandomizeEggMon(i, gEggMonTable);
+    #endif
 
     CreateEgg(&mon, species, fromHotSprings);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
 
     return GiveMonToPlayer(&mon);
-}
-
-static u16 PickRustboroEgg(void)
-{
-    u16 pokes[10];
-    u16 rand = Random() % 10;
-    pokes[0] = SPECIES_OMANYTE;
-    pokes[1] = SPECIES_KABUTO;
-    pokes[2] = SPECIES_LILEEP;
-    pokes[3] = SPECIES_ANORITH;
-    pokes[4] = SPECIES_CRANIDOS;
-    pokes[5] = SPECIES_SHIELDON;
-    pokes[6] = SPECIES_ARCHEN;
-    pokes[7] = SPECIES_TIRTOUGA;
-    pokes[8] = SPECIES_AMAURA;
-    pokes[9] = SPECIES_TYRUNT;
-    return pokes[rand];
 }
 
 static u16 PickWaterStarterEgg(void)

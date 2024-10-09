@@ -39,6 +39,7 @@
 //#define FORCE_RANDOMIZE_TRAINER_MON   TRUE
 //#define FORCE_RANDOMIZE_FIXED_MON     TRUE
 //#define FORCE_RANDOMIZE_STARTER_AND_GIFT_MON      TRUE
+//#define FORCE_RANDOMIZE_EGG_MON      TRUE
 //#define FORCE_RANDOMIZE_ABILITIES     TRUE
 //#define FORCE_RANDOMIZE_LEARNSETS     TRUE
 
@@ -62,6 +63,10 @@
 
 #ifndef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
 #define RANDOMIZER_FLAG_STARTER_AND_GIFT_MON            FLAG_RANDOMIZER_ENABLED
+#endif
+
+#ifndef FORCE_RANDOMIZE_EGG_MON
+#define RANDOMIZER_FLAG_EGG_MON            FLAG_RANDOMIZER_ENABLED
 #endif
 
 #ifndef FORCE_RANDOMIZE_ABILITIES
@@ -100,6 +105,8 @@ enum RandomizerFeature
     RANDOMIZE_FIXED_MON,
     // Randomization of starter Pokémon species.
     RANDOMIZE_STARTERS_AND_GIFTS,
+    // Randomization of given egg Pokémon species.
+    RANDOMIZE_EGG_MON,
 };
 
 enum RandomizerReason
@@ -112,6 +119,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_LEARNSET,
     RANDOMIZER_REASON_FIELD_ITEM,
     RANDOMIZER_REASON_STARTER_AND_GIFT,
+    RANDOMIZER_REASON_EGG,
 };
 
 enum RandomizerOption {

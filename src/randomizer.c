@@ -51,6 +51,41 @@ const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
     SPECIES_MELTAN
 };
 
+const u16 gEggMonTable[MY_EGG_MON_COUNT] =
+{
+    SPECIES_SQUIRTLE,
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_TOTODILE,
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_MUDKIP,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_PIPLUP,
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_OSHAWOTT,
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_FROAKIE,
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_POPPLIO,
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_SOBBLE,
+    SPECIES_GROOKEY,
+    SPECIES_SCORBUNNY,
+    SPECIES_QUAXLY,
+    SPECIES_SPRIGATITO,
+    SPECIES_FUECOCO,
+    SPECIES_EEVEE,
+    SPECIES_TYPE_NULL,
+    SPECIES_RIOLU,
+    SPECIES_TOGEPI,
+};
+
 bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 {
     switch(feature)
@@ -84,6 +119,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
                 return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
             #else
                 return FlagGet(RANDOMIZER_FLAG_STARTER_AND_GIFT_MON);
+            #endif
+        case RANDOMIZE_EGG_MON:
+            #ifdef FORCE_RANDOMIZE_EGG_MON
+                return FORCE_RANDOMIZE_EGG_MON;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_EGG_MON);
             #endif
         default:
             return FALSE;
@@ -930,7 +971,7 @@ u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId)
 EWRAM_DATA static u32 sLastGiftMonRandomizerSeed = 0;
 EWRAM_DATA static u16 sRandomizedGiftMons[MY_STARTER_AND_GIFT_MON_COUNT] = {0};
 
-u16 RandomizeStarterAndGiftMon(u16 starterSlot, const u16* originalGiftMonsAndStarters)
+u16 RandomizeStarterAndGiftMon(u16 originalSlot, const u16* originalGiftMonsAndStarters)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_STARTERS_AND_GIFTS))
     {
@@ -951,10 +992,40 @@ u16 RandomizeStarterAndGiftMon(u16 starterSlot, const u16* originalGiftMonsAndSt
             GetUniqueMonList(RANDOMIZER_REASON_STARTER_AND_GIFT, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
                 starterHash, 0, MY_STARTER_AND_GIFT_MON_COUNT, originalGiftMonsAndStarters, sRandomizedGiftMons);
         }
-        return sRandomizedGiftMons[starterSlot];
+        return sRandomizedGiftMons[originalSlot];
     }
 
-    return originalGiftMonsAndStarters[starterSlot];
+    return originalGiftMonsAndStarters[originalSlot];
+}
+
+EWRAM_DATA static u32 sLastEggMonRandomizerSeed = 0;
+EWRAM_DATA static u16 sRandomizedEggMons[MY_EGG_MON_COUNT] = {0};
+
+u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_EGG_MON))
+    {
+        if (sLastEggMonRandomizerSeed != GetRandomizerSeed() || sRandomizedEggMons[0] == SPECIES_NONE)
+        {
+            // The randomized starter table is stale or uninitialized. Fix that!
+
+            // Hash the starter list so that which starters there are influences the seed.
+            u32 eggHash = 5381;
+            u32 i;
+            for (i = 0; i < MY_EGG_MON_COUNT; i++)
+            {
+                u16 originalEgg = originalEggMons[i];
+                eggHash = ((eggHash << 5) + eggHash) ^ (u8)originalEgg;
+                eggHash = ((eggHash << 5) + eggHash) ^ (u8)(originalEgg >> 8);
+            }
+
+            GetUniqueMonList(RANDOMIZER_REASON_EGG, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
+                eggHash, 0, MY_EGG_MON_COUNT, originalEggMons, sRandomizedEggMons);
+        }
+        return sRandomizedEggMons[originalSlot];
+    }
+
+    return originalEggMons[originalSlot];
 }
 
 #endif // RANDOMIZER_AVAILABLE
