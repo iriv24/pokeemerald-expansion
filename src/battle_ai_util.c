@@ -2691,7 +2691,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
     if (flags == 0)
         return FALSE;
 
-    if (ability == ABILITY_MAGIC_GUARD)
+    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_SHIELD_DUST)
         return FALSE;
     if (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM || ability == ABILITY_KLUTZ)
         holdEffect = HOLD_EFFECT_NONE;

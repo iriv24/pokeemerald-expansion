@@ -7426,6 +7426,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].spikesDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SPIKES)
         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && GetBattlerAbility(battler) != ABILITY_SHIELD_DUST
         && IsBattlerAffectedByHazards(battler, FALSE)
         && IsBattlerGrounded(battler))
     {
@@ -7441,6 +7442,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
         && IsBattlerAffectedByHazards(battler, FALSE)
         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && GetBattlerAbility(battler) != ABILITY_SHIELD_DUST
         && GetBattlerAbility(battler) != ABILITY_MOUNTAINEER)
     {
         gDisableStructs[battler].stealthRockDone = TRUE;
@@ -7500,7 +7502,8 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].steelSurgeDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEELSURGE)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && GetBattlerAbility(battler) != ABILITY_SHIELD_DUST)
     {
         gDisableStructs[battler].steelSurgeDone = TRUE;
         gBattleMoveDamage = GetStealthHazardDamage(gMovesInfo[MOVE_G_MAX_STEELSURGE].type, battler);
