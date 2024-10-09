@@ -272,7 +272,7 @@
 #define VAR_FOUGHT_DAWN_111                              0x40FC 
 #define VAR_DEXNAV_SPECIES                               0x40FD // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER                          0x40FE // steps for finding hidden pokemon
-#define VAR_BEAT_BRAWLY                                  0x40FF
+#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

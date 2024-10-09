@@ -353,7 +353,7 @@
       "x": 12,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_BEAT_BRAWLY",
+      "var": "FLAG_BADGE02_GET",
       "var_value": "0",
       "script": "Route109_Trigger_BlockHotHouse"
     }
