@@ -11,6 +11,46 @@
 #include "data.h"
 #include "data/randomizer/special_form_tables.h"
 
+
+const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
+{
+    SPECIES_SQUIRTLE,
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_TOTODILE,
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_MUDKIP,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_PIPLUP,
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_OSHAWOTT,
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_FROAKIE,
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_POPPLIO,
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_SOBBLE,
+    SPECIES_GROOKEY,
+    SPECIES_SCORBUNNY,
+    SPECIES_QUAXLY,
+    SPECIES_SPRIGATITO,
+    SPECIES_FUECOCO,
+    SPECIES_KUBFU,
+    SPECIES_ZERAORA,
+    SPECIES_CHARCADET,
+    SPECIES_TYROGUE,
+    SPECIES_CASTFORM_NORMAL,
+    SPECIES_LILEEP,
+    SPECIES_ANORITH,
+    SPECIES_MELTAN
+};
+
 bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 {
     switch(feature)
@@ -39,11 +79,11 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #else
                 return FlagGet(RANDOMIZER_FLAG_FIXED_MON);
             #endif
-        case RANDOMIZE_STARTERS:
-            #ifdef FORCE_RANDOMIZE_STARTERS
-                return FORCE_RANDOMIZE_STARTERS;
+        case RANDOMIZE_STARTERS_AND_GIFTS:
+            #ifdef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
+                return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
             #else
-                return FlagGet(RANDOMIZER_FLAG_STARTERS);
+                return FlagGet(RANDOMIZER_FLAG_STARTER_AND_GIFT_MON);
             #endif
         default:
             return FALSE;
@@ -857,34 +897,64 @@ u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId)
     return species;
 }
 
-EWRAM_DATA static u32 sLastStarterRandomizerSeed = 0;
-EWRAM_DATA static u16 sRandomizedStarters[3] = {0};
+// EWRAM_DATA static u32 sLastStarterRandomizerSeed = 0;
+// EWRAM_DATA static u16 sRandomizedStarters[3] = {0};
 
-u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters)
+// u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters)
+// {
+//     if (RandomizerFeatureEnabled(RANDOMIZE_STARTERS))
+//     {
+//         if (sLastStarterRandomizerSeed != GetRandomizerSeed() || sRandomizedStarters[0] == SPECIES_NONE)
+//         {
+//             // The randomized starter table is stale or uninitialized. Fix that!
+
+//             // Hash the starter list so that which starters there are influences the seed.
+//             u32 starterHash = 5381;
+//             u32 i;
+//             for (i = 0; i < 3; i++)
+//             {
+//                 u16 originalStarter = originalStarters[i];
+//                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)originalStarter;
+//                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)(originalStarter >> 8);
+//             }
+
+//             GetUniqueMonList(RANDOMIZER_REASON_STARTER, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
+//                 starterHash, 0, 3, originalStarters, sRandomizedStarters);
+//         }
+//         return sRandomizedStarters[starterSlot];
+//     }
+
+//     return originalStarters[starterSlot];
+// }
+
+EWRAM_DATA static u32 sLastGiftMonRandomizerSeed = 0;
+EWRAM_DATA static u16 sRandomizedGiftMons[MY_STARTER_AND_GIFT_MON_COUNT] = {0};
+
+u16 RandomizeStarterAndGiftMon(u16 starterSlot, const u16* originalGiftMonsAndStarters)
 {
-    if (RandomizerFeatureEnabled(RANDOMIZE_STARTERS))
+    if (RandomizerFeatureEnabled(RANDOMIZE_STARTERS_AND_GIFTS))
     {
-        if (sLastStarterRandomizerSeed != GetRandomizerSeed() || sRandomizedStarters[0] == SPECIES_NONE)
+        if (sLastGiftMonRandomizerSeed != GetRandomizerSeed() || sRandomizedGiftMons[0] == SPECIES_NONE)
         {
             // The randomized starter table is stale or uninitialized. Fix that!
 
             // Hash the starter list so that which starters there are influences the seed.
             u32 starterHash = 5381;
             u32 i;
-            for (i = 0; i < 3; i++)
+            for (i = 0; i < MY_STARTER_AND_GIFT_MON_COUNT; i++)
             {
-                u16 originalStarter = originalStarters[i];
+                u16 originalStarter = originalGiftMonsAndStarters[i];
                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)originalStarter;
                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)(originalStarter >> 8);
             }
 
-            GetUniqueMonList(RANDOMIZER_REASON_STARTER, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
-                starterHash, 0, 3, originalStarters, sRandomizedStarters);
+            GetUniqueMonList(RANDOMIZER_REASON_STARTER_AND_GIFT, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
+                starterHash, 0, MY_STARTER_AND_GIFT_MON_COUNT, originalGiftMonsAndStarters, sRandomizedGiftMons);
         }
-        return sRandomizedStarters[starterSlot];
+        return sRandomizedGiftMons[starterSlot];
     }
 
-    return originalStarters[starterSlot];
+    return originalGiftMonsAndStarters[starterSlot];
 }
 
 #endif // RANDOMIZER_AVAILABLE

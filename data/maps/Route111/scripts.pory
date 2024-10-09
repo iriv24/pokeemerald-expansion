@@ -1065,7 +1065,7 @@ script Route111_EventScript_DaisukeDefeated{
 
 script Route111_EventScript_DaisukeGiveTyrogue{
 	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
-	givemon(SPECIES_TYROGUE, 15)
+	givemonrandom(SPECIES_TYROGUE, 15)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route111_EventScript_ReceiveTyroguePC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)

@@ -177,7 +177,7 @@ MossdeepCity_StevensHouse_EventScript_GiveBeldum::
 # 89 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELDUM
 # 90 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	givemon SPECIES_BELDUM, 5
+	givemonrandom SPECIES_BELDUM, 5
 # 91 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_StevensHouse_EventScript_SendBeldumParty
 # 92 "data/maps/MossdeepCity_StevensHouse/scripts.pory"

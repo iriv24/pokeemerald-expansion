@@ -295,7 +295,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
 # 148 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILEEP
 # 149 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	givemon SPECIES_LILEEP, 20
+	givemonrandom SPECIES_LILEEP, 20
 # 150 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty
 # 151 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -385,7 +385,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith::
 # 193 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH
 # 194 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	givemon SPECIES_ANORITH, 20
+	givemonrandom SPECIES_ANORITH, 20
 # 195 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty
 # 196 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"

@@ -407,7 +407,7 @@ script EverGrandeCity_EventScript_BrendanFarewell{
 
 script EverGrandeCity_EventScript_RivalGiveKubfu{
 	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU)
-	givemon(SPECIES_KUBFU, 40)
+	givemonrandom(SPECIES_KUBFU, 40)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveKubfuParty)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveKubfuPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)
@@ -596,7 +596,7 @@ script EverGrandeCity_EventScript_VolknerDefeated{
 
 script EverGrandeCity_EventScript_VolknerGiveZeraora{
 	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA)
-	givemon(SPECIES_ZERAORA, 50)
+	givemonrandom(SPECIES_ZERAORA, 50)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveZeraoraPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)

@@ -763,7 +763,7 @@ EverGrandeCity_EventScript_RivalGiveKubfu::
 # 409 "data/maps/EverGrandeCity/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
 # 410 "data/maps/EverGrandeCity/scripts.pory"
-	givemon SPECIES_KUBFU, 40
+	givemonrandom SPECIES_KUBFU, 40
 # 411 "data/maps/EverGrandeCity/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveKubfuParty
 # 412 "data/maps/EverGrandeCity/scripts.pory"
@@ -911,7 +911,7 @@ EverGrandeCity_EventScript_VolknerGiveZeraora::
 # 598 "data/maps/EverGrandeCity/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA
 # 599 "data/maps/EverGrandeCity/scripts.pory"
-	givemon SPECIES_ZERAORA, 50
+	givemonrandom SPECIES_ZERAORA, 50
 # 600 "data/maps/EverGrandeCity/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty
 # 601 "data/maps/EverGrandeCity/scripts.pory"

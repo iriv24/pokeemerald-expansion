@@ -55,7 +55,7 @@ Route109_SeashoreHouse_EventScript_DefeatedTrainers::
 # 28 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARCADET
 # 29 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	givemon SPECIES_CHARCADET, 25
+	givemonrandom SPECIES_CHARCADET, 25
 # 30 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route109_SeashoreHouse_EventScript_ReceiveCharcadetParty
 # 31 "data/maps/Route109_SeashoreHouse/scripts.pory"

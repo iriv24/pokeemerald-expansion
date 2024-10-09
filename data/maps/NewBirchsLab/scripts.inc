@@ -573,7 +573,7 @@ NewBirchsLab_EventScript_Squirtle::
 
 NewBirchsLab_EventScript_Squirtle_1:
 # 245 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_SQUIRTLE, 5
+	givemonrandom SPECIES_SQUIRTLE, 5
 # 246 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Squirtle_5
@@ -660,7 +660,7 @@ NewBirchsLab_EventScript_Totodile::
 
 NewBirchsLab_EventScript_Totodile_1:
 # 294 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_TOTODILE, 5
+	givemonrandom SPECIES_TOTODILE, 5
 # 295 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Totodile_5
@@ -747,7 +747,7 @@ NewBirchsLab_EventScript_Mudkip::
 
 NewBirchsLab_EventScript_Mudkip_1:
 # 343 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_MUDKIP, 5
+	givemonrandom SPECIES_MUDKIP, 5
 # 344 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Mudkip_5
@@ -834,7 +834,7 @@ NewBirchsLab_EventScript_Piplup::
 
 NewBirchsLab_EventScript_Piplup_1:
 # 392 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_PIPLUP, 5
+	givemonrandom SPECIES_PIPLUP, 5
 # 393 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Piplup_5
@@ -921,7 +921,7 @@ NewBirchsLab_EventScript_Oshawott::
 
 NewBirchsLab_EventScript_Oshawott_1:
 # 441 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_OSHAWOTT, 5
+	givemonrandom SPECIES_OSHAWOTT, 5
 # 442 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Oshawott_5
@@ -1008,7 +1008,7 @@ NewBirchsLab_EventScript_Froakie::
 
 NewBirchsLab_EventScript_Froakie_1:
 # 490 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_FROAKIE, 5
+	givemonrandom SPECIES_FROAKIE, 5
 # 491 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Froakie_5
@@ -1095,7 +1095,7 @@ NewBirchsLab_EventScript_Popplio::
 
 NewBirchsLab_EventScript_Popplio_1:
 # 539 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_POPPLIO, 5
+	givemonrandom SPECIES_POPPLIO, 5
 # 540 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Popplio_5
@@ -1182,7 +1182,7 @@ NewBirchsLab_EventScript_Sobble::
 
 NewBirchsLab_EventScript_Sobble_1:
 # 588 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_SOBBLE, 5
+	givemonrandom SPECIES_SOBBLE, 5
 # 589 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Sobble_5
@@ -1269,7 +1269,7 @@ NewBirchsLab_EventScript_Quaxly::
 
 NewBirchsLab_EventScript_Quaxly_1:
 # 637 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_QUAXLY, 5
+	givemonrandom SPECIES_QUAXLY, 5
 # 638 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Quaxly_5
@@ -1356,7 +1356,7 @@ NewBirchsLab_EventScript_Bulbasaur::
 
 NewBirchsLab_EventScript_Bulbasaur_1:
 # 686 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_BULBASAUR, 5
+	givemonrandom SPECIES_BULBASAUR, 5
 # 687 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Bulbasaur_5
@@ -1443,7 +1443,7 @@ NewBirchsLab_EventScript_Chikorita::
 
 NewBirchsLab_EventScript_Chikorita_1:
 # 735 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_CHIKORITA, 5
+	givemonrandom SPECIES_CHIKORITA, 5
 # 736 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Chikorita_5
@@ -1530,7 +1530,7 @@ NewBirchsLab_EventScript_Treecko::
 
 NewBirchsLab_EventScript_Treecko_1:
 # 784 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_TREECKO, 5
+	givemonrandom SPECIES_TREECKO, 5
 # 785 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Treecko_5
@@ -1617,7 +1617,7 @@ NewBirchsLab_EventScript_Turtwig::
 
 NewBirchsLab_EventScript_Turtwig_1:
 # 833 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_TURTWIG, 5
+	givemonrandom SPECIES_TURTWIG, 5
 # 834 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Turtwig_5
@@ -1704,7 +1704,7 @@ NewBirchsLab_EventScript_Snivy::
 
 NewBirchsLab_EventScript_Snivy_1:
 # 882 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_SNIVY, 5
+	givemonrandom SPECIES_SNIVY, 5
 # 883 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Snivy_5
@@ -1791,7 +1791,7 @@ NewBirchsLab_EventScript_Chespin::
 
 NewBirchsLab_EventScript_Chespin_1:
 # 931 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_CHESPIN, 5
+	givemonrandom SPECIES_CHESPIN, 5
 # 932 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Chespin_5
@@ -1878,7 +1878,7 @@ NewBirchsLab_EventScript_Rowlet::
 
 NewBirchsLab_EventScript_Rowlet_1:
 # 980 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_ROWLET, 5
+	givemonrandom SPECIES_ROWLET, 5
 # 981 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Rowlet_5
@@ -1965,7 +1965,7 @@ NewBirchsLab_EventScript_Grookey::
 
 NewBirchsLab_EventScript_Grookey_1:
 # 1029 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_GROOKEY, 5
+	givemonrandom SPECIES_GROOKEY, 5
 # 1030 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Grookey_5
@@ -2052,7 +2052,7 @@ NewBirchsLab_EventScript_Sprigatito::
 
 NewBirchsLab_EventScript_Sprigatito_1:
 # 1078 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_SPRIGATITO, 5
+	givemonrandom SPECIES_SPRIGATITO, 5
 # 1079 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Sprigatito_5
@@ -2139,7 +2139,7 @@ NewBirchsLab_EventScript_Charmander::
 
 NewBirchsLab_EventScript_Charmander_1:
 # 1127 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_CHARMANDER, 5
+	givemonrandom SPECIES_CHARMANDER, 5
 # 1128 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Charmander_5
@@ -2226,7 +2226,7 @@ NewBirchsLab_EventScript_Cyndaquil::
 
 NewBirchsLab_EventScript_Cyndaquil_1:
 # 1176 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_CYNDAQUIL, 5
+	givemonrandom SPECIES_CYNDAQUIL, 5
 # 1177 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Cyndaquil_5
@@ -2313,7 +2313,7 @@ NewBirchsLab_EventScript_Torchic::
 
 NewBirchsLab_EventScript_Torchic_1:
 # 1225 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_TORCHIC, 5
+	givemonrandom SPECIES_TORCHIC, 5
 # 1226 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Torchic_5
@@ -2400,7 +2400,7 @@ NewBirchsLab_EventScript_Chimchar::
 
 NewBirchsLab_EventScript_Chimchar_1:
 # 1274 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_CHIMCHAR, 5
+	givemonrandom SPECIES_CHIMCHAR, 5
 # 1275 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Chimchar_5
@@ -2487,7 +2487,7 @@ NewBirchsLab_EventScript_Tepig::
 
 NewBirchsLab_EventScript_Tepig_1:
 # 1323 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_TEPIG, 5
+	givemonrandom SPECIES_TEPIG, 5
 # 1324 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Tepig_5
@@ -2574,7 +2574,7 @@ NewBirchsLab_EventScript_Fennekin::
 
 NewBirchsLab_EventScript_Fennekin_1:
 # 1372 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5
+	givemonrandom SPECIES_FENNEKIN, 5
 # 1373 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Fennekin_5
@@ -2661,7 +2661,7 @@ NewBirchsLab_EventScript_Litten::
 
 NewBirchsLab_EventScript_Litten_1:
 # 1421 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_LITTEN, 5
+	givemonrandom SPECIES_LITTEN, 5
 # 1422 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Litten_5
@@ -2748,7 +2748,7 @@ NewBirchsLab_EventScript_Scorbunny::
 
 NewBirchsLab_EventScript_Scorbunny_1:
 # 1470 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_SCORBUNNY, 5
+	givemonrandom SPECIES_SCORBUNNY, 5
 # 1471 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Scorbunny_5
@@ -2835,7 +2835,7 @@ NewBirchsLab_EventScript_Fuecoco::
 
 NewBirchsLab_EventScript_Fuecoco_1:
 # 1519 "data/maps/NewBirchsLab/scripts.pory"
-	givemon SPECIES_FUECOCO, 5
+	givemonrandom SPECIES_FUECOCO, 5
 # 1520 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchsLab_EventScript_Fuecoco_5

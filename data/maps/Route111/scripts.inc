@@ -1921,7 +1921,7 @@ Route111_EventScript_DaisukeGiveTyrogue::
 # 1067 "data/maps/Route111/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
 # 1068 "data/maps/Route111/scripts.pory"
-	givemon SPECIES_TYROGUE, 15
+	givemonrandom SPECIES_TYROGUE, 15
 # 1069 "data/maps/Route111/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty
 # 1070 "data/maps/Route111/scripts.pory"

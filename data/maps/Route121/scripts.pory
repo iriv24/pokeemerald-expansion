@@ -245,7 +245,7 @@ script Route121_EventScript_ByronDefeated{
 
 script Route121_EventScript_ByronGiveMeltan{
 	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN)
-	givemon(SPECIES_MELTAN, 30)
+	givemonrandom(SPECIES_MELTAN, 30)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveMeltanParty)
 	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveMeltanPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)

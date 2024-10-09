@@ -19,6 +19,7 @@
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
+#include "randomizer.h"
 #include "script.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -582,6 +583,61 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 slot           = ScriptReadByte(ctx);
     u16 species       = VarGet(ScriptReadHalfword(ctx));
     u8 level          = VarGet(ScriptReadHalfword(ctx));
+
+    u32 flags         = ScriptReadWord(ctx);
+    u16 item          = PARSE_FLAG(0, ITEM_NONE);
+    u8 ball           = PARSE_FLAG(1, ITEM_POKE_BALL);
+    u8 nature         = PARSE_FLAG(2, NUM_NATURES);
+    u8 abilityNum     = PARSE_FLAG(3, NUM_ABILITY_PERSONALITY);
+    u8 gender         = PARSE_FLAG(4, MON_GENDERLESS); // TODO: Find a better way to assign a random gender.
+    u8 hpEv           = PARSE_FLAG(5, 0);
+    u8 atkEv          = PARSE_FLAG(6, 0);
+    u8 defEv          = PARSE_FLAG(7, 0);
+    u8 speedEv        = PARSE_FLAG(8, 0);
+    u8 spAtkEv        = PARSE_FLAG(9, 0);
+    u8 spDefEv        = PARSE_FLAG(10, 0);
+    u8 hpIv           = PARSE_FLAG(11, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 atkIv          = PARSE_FLAG(12, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 defIv          = PARSE_FLAG(13, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 speedIv        = PARSE_FLAG(14, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spAtkIv        = PARSE_FLAG(15, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spDefIv        = PARSE_FLAG(16, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u16 move1         = PARSE_FLAG(17, MOVE_NONE);
+    u16 move2         = PARSE_FLAG(18, MOVE_NONE);
+    u16 move3         = PARSE_FLAG(19, MOVE_NONE);
+    u16 move4         = PARSE_FLAG(20, MOVE_NONE);
+    bool8 isShiny     = PARSE_FLAG(21, FALSE);
+    bool8 ggMaxFactor = PARSE_FLAG(22, FALSE);
+    u8 teraType       = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
+
+    u8 evs[NUM_STATS]        = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
+    u8 ivs[NUM_STATS]        = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
+    u16 moves[MAX_MON_MOVES] = {move1, move2, move3, move4};
+
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, ggMaxFactor, teraType);
+}
+
+
+/* Give or create a mon to either player or opponent
+ */
+void ScrCmd_createrandommon(struct ScriptContext *ctx)
+{
+    
+    u8 side           = ScriptReadByte(ctx);
+    u8 slot           = ScriptReadByte(ctx);
+    u16 species       = VarGet(ScriptReadHalfword(ctx));
+    u8 level          = VarGet(ScriptReadHalfword(ctx));
+
+    
+    #if RANDOMIZER_AVAILABLE == TRUE
+        u16 i = 0;
+        for(i = 0; i < MY_STARTER_AND_GIFT_MON_COUNT; i++)
+        {
+            if(gStarterAndGiftMonTable[i] == species)
+                break;
+        }
+        species = RandomizeStarterAndGiftMon(i, gStarterAndGiftMonTable);
+    #endif
 
     u32 flags         = ScriptReadWord(ctx);
     u16 item          = PARSE_FLAG(0, ITEM_NONE);

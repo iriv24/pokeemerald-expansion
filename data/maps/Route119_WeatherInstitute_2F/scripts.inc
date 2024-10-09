@@ -183,7 +183,7 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 # 92 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
 # 93 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	givemon SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
+	givemonrandom SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
 # 94 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
 # 95 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"

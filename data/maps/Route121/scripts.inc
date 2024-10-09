@@ -461,7 +461,7 @@ Route121_EventScript_ByronGiveMeltan::
 # 247 "data/maps/Route121/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN
 # 248 "data/maps/Route121/scripts.pory"
-	givemon SPECIES_MELTAN, 30
+	givemonrandom SPECIES_MELTAN, 30
 # 249 "data/maps/Route121/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveMeltanParty
 # 250 "data/maps/Route121/scripts.pory"

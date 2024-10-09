@@ -36,6 +36,7 @@
 #include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "random.h"
+#include "randomizer.h"
 #include "overworld.h"
 #include "rotating_tile_puzzle.h"
 #include "rtc.h"
@@ -1667,6 +1668,16 @@ bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
     u16 species = VarGet(ScriptReadHalfword(ctx));
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
+
+    #if RANDOMIZER_AVAILABLE == TRUE
+        u16 i = 0;
+        for(i = 0; i < MY_STARTER_AND_GIFT_MON_COUNT; i++)
+        {
+            if(gStarterAndGiftMonTable[i] == species)
+                break;
+        }
+        species = RandomizeStarterAndGiftMon(i, gStarterAndGiftMonTable);
+    #endif
 
     ScriptMenu_ShowPokemonPic(species, x, y);
     return FALSE;

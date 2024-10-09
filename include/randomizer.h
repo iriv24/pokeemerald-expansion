@@ -12,8 +12,11 @@
 //#include "constants/moves.h"
 
 #define RANDOMIZER_STREAM 17
+#define MY_STARTER_AND_GIFT_MON_COUNT 35
 
 
+
+extern const u16 gStarterAndGiftMonTable[];
 
 // This object can be passed to IsRandomizationPossible to speed up queries.
 struct RandomizerGroupSet {
@@ -61,7 +64,10 @@ u16 RandomizeTrainerMon(u16 trainerId, u8 slot, u8 totalMons, u16 species);
 u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId);
 
 // Given a starter slot and the list of original starters, returns the starter in that slot.
-u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters);
+//u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters);
+
+// Given a slot and the list of my original gifts/starters, returns the random mon in that slot.
+u16 RandomizeStarterAndGiftMon(u16 starterSlot, const u16* originalStarters);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {
