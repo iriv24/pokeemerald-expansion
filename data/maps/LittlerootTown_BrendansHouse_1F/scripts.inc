@@ -715,7 +715,7 @@ PlayersHouse_1F_Text_DontPushYourselfTooHard:
 # 358 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 PlayersHouse_1F_Text_IsThatAPokenav:
 # 359 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "What is that, honey? A POKéNAV?\n"
+	.string "What is that, honey? A PokéNav?\n"
 # 360 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Someone from Devon gave it to you?\p"
 # 361 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
@@ -731,7 +731,7 @@ PlayersHouse_1F_Text_RegisteredMom:
 # 366 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Registered Mom\n"
 # 367 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 368 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
 # 369 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"

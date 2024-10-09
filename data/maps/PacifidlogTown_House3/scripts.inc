@@ -169,7 +169,7 @@ PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 # 85 "data/maps/PacifidlogTown_House3/scripts.pory"
 PacifidlogTown_House3_Text_IsThatAPokedex:
 # 86 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Is that a POKéDEX?\p"
+	.string "Is that a Pokédex?\p"
 # 87 "data/maps/PacifidlogTown_House3/scripts.pory"
 	.string "Did you get to meet a lot of different\n"
 # 88 "data/maps/PacifidlogTown_House3/scripts.pory"

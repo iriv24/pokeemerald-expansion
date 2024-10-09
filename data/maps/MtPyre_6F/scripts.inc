@@ -89,7 +89,7 @@ MtPyre_6F_Text_ValerieRegister:
 # 45 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Without ever laying my hands on\n"
 # 46 "data/maps/MtPyre_6F/scripts.pory"
-	.string "your POKéNAV… Hiyah!$"
+	.string "your PokéNav… Hiyah!$"
 # 47 "data/maps/MtPyre_6F/scripts.pory"
 
 # 48 "data/maps/MtPyre_6F/scripts.pory"

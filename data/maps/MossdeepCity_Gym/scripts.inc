@@ -1253,7 +1253,7 @@ MossdeepCity_Gym_Text_RegisteredTateAndLiza:
 # 627 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "Registered Gym Leaders Tate & Liza\n"
 # 628 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 629 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 630 "data/maps/MossdeepCity_Gym/scripts.pory"

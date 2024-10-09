@@ -159,7 +159,7 @@ MeteorFalls_1F_2R_Text_NicolasRegister:
 # 80 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 	.string "I want to know more about your power.\n"
 # 81 "data/maps/MeteorFalls_1F_2R/scripts.pory"
-	.string "Let me register you in my POKéNAV.$"
+	.string "Let me register you in my PokéNav.$"
 # 82 "data/maps/MeteorFalls_1F_2R/scripts.pory"
 
 # 83 "data/maps/MeteorFalls_1F_2R/scripts.pory"

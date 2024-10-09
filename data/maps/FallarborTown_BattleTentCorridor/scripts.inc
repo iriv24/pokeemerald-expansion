@@ -113,7 +113,7 @@ FallarborTown_ContestHall_Text_MonAllTheseRibbons:
 # 57 "data/maps/FallarborTown_BattleTentCorridor/scripts.pory"
 	.string "Have your Pokémon earned any Ribbons?\n"
 # 58 "data/maps/FallarborTown_BattleTentCorridor/scripts.pory"
-	.string "You can check them on your POKéNAV.$"
+	.string "You can check them on your PokéNav.$"
 # 59 "data/maps/FallarborTown_BattleTentCorridor/scripts.pory"
 
 # 60 "data/maps/FallarborTown_BattleTentCorridor/scripts.pory"

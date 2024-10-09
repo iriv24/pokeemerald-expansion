@@ -289,4 +289,4 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay:
 # 145 "data/maps/RustboroCity_DevonCorp_1F/scripts.pory"
 	.string "tools for POKéMON TRAINERS, including\l"
 # 146 "data/maps/RustboroCity_DevonCorp_1F/scripts.pory"
-	.string "POKé BALLS and POKéNAV systems.”$"
+	.string "POKé BALLS and PokéNav systems.”$"

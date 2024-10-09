@@ -535,7 +535,7 @@ SootopolisCity_Gym_1F_Text_RegisteredJuan:
 # 268 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "Registered Gym Leader Juan\n"
 # 269 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 270 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
 # 271 "data/maps/SootopolisCity_Gym_1F/scripts.pory"

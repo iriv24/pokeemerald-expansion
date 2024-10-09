@@ -1127,7 +1127,7 @@ MauvilleCity_Text_WallyPokenavCall:
 # 564 "data/maps/MauvilleCity/scripts.pory"
 	.string "I just wanted to tell you that\n"
 # 565 "data/maps/MauvilleCity/scripts.pory"
-	.string "my uncle bought me a POKéNAV!\p"
+	.string "my uncle bought me a PokéNav!\p"
 # 566 "data/maps/MauvilleCity/scripts.pory"
 	.string "Now I can get in touch with you\n"
 # 567 "data/maps/MauvilleCity/scripts.pory"
@@ -1143,7 +1143,7 @@ MauvilleCity_Text_RegisteredWally:
 # 572 "data/maps/MauvilleCity/scripts.pory"
 	.string "Registered Wally\n"
 # 573 "data/maps/MauvilleCity/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 574 "data/maps/MauvilleCity/scripts.pory"
 
 # 575 "data/maps/MauvilleCity/scripts.pory"

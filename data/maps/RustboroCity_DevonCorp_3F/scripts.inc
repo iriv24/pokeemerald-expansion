@@ -449,7 +449,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
 # 225 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 RustboroCity_DevonCorp_3F_Text_ReceivedPokenav:
 # 226 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "{PLAYER} received a POKéNAV.$"
+	.string "{PLAYER} received a PokéNav.$"
 # 227 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 
 # 228 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
@@ -457,7 +457,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 # 229 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	.string "Mr. Stone: That device…\p"
 # 230 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "It's a POKéMON NAVIGATOR, or POKéNAV\n"
+	.string "It's a POKéMON NAVIGATOR, or PokéNav\n"
 # 231 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	.string "for short.\p"
 # 232 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"

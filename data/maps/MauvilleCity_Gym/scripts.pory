@@ -391,7 +391,7 @@ MauvilleCity_Gym_Text_ExplainVoltSwitch:
 
 MauvilleCity_Gym_Text_RegisteredWattson:
 	.string "Registered Gym Leader Wattson\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
 	.string "I swell with optimism, seeing a promising\n"

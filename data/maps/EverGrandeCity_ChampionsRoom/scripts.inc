@@ -751,7 +751,7 @@ EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex:
 # 376 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Ah, yes!\p"
 # 377 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "What became of your POKéDEX?\n"
+	.string "What became of your Pokédex?\n"
 # 378 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Here, let me see.$"
 # 379 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"

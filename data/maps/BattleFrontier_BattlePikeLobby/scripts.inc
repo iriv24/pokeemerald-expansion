@@ -845,7 +845,7 @@ BattleFrontier_BattlePikeLobby_Text_ReadWhichHeading:
 # 423 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 BattleFrontier_BattlePikeLobby_Text_ExplainPokenavBagRules:
 # 424 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
-	.string "The BAG and POKéNAV may not be used\n"
+	.string "The BAG and PokéNav may not be used\n"
 # 425 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	.string "during a Battle Choice challenge.$"
 # 426 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"

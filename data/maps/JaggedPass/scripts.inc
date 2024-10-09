@@ -411,7 +411,7 @@ JaggedPass_Text_EthanRegister:
 # 206 "data/maps/JaggedPass/scripts.pory"
 	.string "I'll be sure to win!\p"
 # 207 "data/maps/JaggedPass/scripts.pory"
-	.string "Can you register me in your POKéNAV?$"
+	.string "Can you register me in your PokéNav?$"
 # 208 "data/maps/JaggedPass/scripts.pory"
 
 # 209 "data/maps/JaggedPass/scripts.pory"

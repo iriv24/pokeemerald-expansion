@@ -1691,7 +1691,7 @@ MtChimney_Text_SawyerRegister:
 # 846 "data/maps/MtChimney/scripts.pory"
 	.string "I like little fireballs like you.\n"
 # 847 "data/maps/MtChimney/scripts.pory"
-	.string "Let me register you in my POKéNAV.$"
+	.string "Let me register you in my PokéNav.$"
 # 848 "data/maps/MtChimney/scripts.pory"
 
 # 849 "data/maps/MtChimney/scripts.pory"

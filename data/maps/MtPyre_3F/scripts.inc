@@ -161,7 +161,7 @@ MtPyre_3F_Text_GabrielleRegister:
 # 81 "data/maps/MtPyre_3F/scripts.pory"
 	.string "when they grow up some more…\p"
 # 82 "data/maps/MtPyre_3F/scripts.pory"
-	.string "Please, I need to see your POKéNAV.$"
+	.string "Please, I need to see your PokéNav.$"
 # 83 "data/maps/MtPyre_3F/scripts.pory"
 
 # 84 "data/maps/MtPyre_3F/scripts.pory"

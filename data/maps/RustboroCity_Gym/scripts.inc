@@ -519,7 +519,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne:
 # 260 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Registered Gym Leader Roxanne\n"
 # 261 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 262 "data/maps/RustboroCity_Gym/scripts.pory"
 
 # 263 "data/maps/RustboroCity_Gym/scripts.pory"

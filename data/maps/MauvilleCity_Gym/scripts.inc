@@ -785,7 +785,7 @@ MauvilleCity_Gym_Text_RegisteredWattson:
 # 393 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "Registered Gym Leader Wattson\n"
 # 394 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 395 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 396 "data/maps/MauvilleCity_Gym/scripts.pory"

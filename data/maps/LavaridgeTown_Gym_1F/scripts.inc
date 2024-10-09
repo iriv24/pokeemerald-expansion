@@ -749,7 +749,7 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 # 375 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	.string "Registered Gym Leader Flannery\n"
 # 376 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 377 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 
 # 378 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"

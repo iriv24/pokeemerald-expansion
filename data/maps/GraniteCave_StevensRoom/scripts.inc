@@ -237,7 +237,7 @@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 # 119 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "other, let's register one another in\l"
 # 120 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "our POKéNAVS.\p"
+	.string "our PokéNavs.\p"
 # 121 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "… … … … … …$"
 # 122 "data/maps/GraniteCave_StevensRoom/scripts.pory"
@@ -247,7 +247,7 @@ GraniteCave_StevensRoom_Text_RegisteredSteven:
 # 124 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "Registered Steven\n"
 # 125 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 126 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 
 # 127 "data/maps/GraniteCave_StevensRoom/scripts.pory"

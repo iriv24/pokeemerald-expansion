@@ -825,7 +825,7 @@ PetalburgWoods_Text_IWantRematch1:
 # 413 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Pokémon grow up!\p"
 # 414 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "I'm registering you in my PokéNav!$"
 # 415 "data/maps/PetalburgWoods/scripts.pory"
 
 # 416 "data/maps/PetalburgWoods/scripts.pory"
@@ -835,7 +835,7 @@ PetalburgWoods_Text_IWantRematch2:
 # 418 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Pokémon grow up!\p"
 # 419 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I'm registering you in my POKéNAV!$"
+	.string "I'm registering you in my PokéNav!$"
 # 420 "data/maps/PetalburgWoods/scripts.pory"
 
 # 421 "data/maps/PetalburgWoods/scripts.pory"

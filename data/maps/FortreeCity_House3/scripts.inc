@@ -25,7 +25,7 @@ FortreeCity_House3_EventScript_SchoolKidM::
 # 13 "data/maps/FortreeCity_House3/scripts.pory"
 FortreeCity_House3_Text_MetStevenHadAmazingPokemon:
 # 14 "data/maps/FortreeCity_House3/scripts.pory"
-	.string "While speaking about POKéDEXES,\n"
+	.string "While speaking about Pokédex,\n"
 # 15 "data/maps/FortreeCity_House3/scripts.pory"
 	.string "I remembered something.\p"
 # 16 "data/maps/FortreeCity_House3/scripts.pory"
@@ -53,6 +53,6 @@ FortreeCity_House3_Text_OhYouHavePokedex:
 # 27 "data/maps/FortreeCity_House3/scripts.pory"
 	.string "… … … … … …\p"
 # 28 "data/maps/FortreeCity_House3/scripts.pory"
-	.string "Oh, it's called a POKéDEX?\n"
+	.string "Oh, it's called a Pokédex?\n"
 # 29 "data/maps/FortreeCity_House3/scripts.pory"
 	.string "It's really awesome!$"

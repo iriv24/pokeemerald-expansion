@@ -301,7 +301,7 @@ FortreeCity_Gym_Text_ExplainAerialAce:
 
 FortreeCity_Gym_Text_RegisteredWinona:
 	.string "Registered Gym Leader Winona\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 FortreeCity_Gym_Text_WhatOnEarth:
 	.string "Wh- what on earth was that?\p"

@@ -605,7 +605,7 @@ FortreeCity_Gym_Text_RegisteredWinona:
 # 303 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "Registered Gym Leader Winona\n"
 # 304 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 305 "data/maps/FortreeCity_Gym/scripts.pory"
 
 # 306 "data/maps/FortreeCity_Gym/scripts.pory"

@@ -563,7 +563,7 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier:
 # 282 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "I think I remember you working on\n"
 # 283 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "a POKéDEX as well.\p"
+	.string "a Pokédex as well.\p"
 # 284 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "Well, guess what?\p"
 # 285 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"

@@ -2731,7 +2731,7 @@ SlateportCity_Text_LetsRegisterEachOther:
 # 1366 "data/maps/SlateportCity/scripts.pory"
 	.string "So, let's register each other in our\n"
 # 1367 "data/maps/SlateportCity/scripts.pory"
-	.string "POKéNAVS.\p"
+	.string "PokéNavs.\p"
 # 1368 "data/maps/SlateportCity/scripts.pory"
 	.string "… … … … … …$"
 # 1369 "data/maps/SlateportCity/scripts.pory"
@@ -2741,7 +2741,7 @@ SlateportCity_Text_RegisteredScott:
 # 1371 "data/maps/SlateportCity/scripts.pory"
 	.string "Registered this Scott person\n"
 # 1372 "data/maps/SlateportCity/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 1373 "data/maps/SlateportCity/scripts.pory"
 
 # 1374 "data/maps/SlateportCity/scripts.pory"

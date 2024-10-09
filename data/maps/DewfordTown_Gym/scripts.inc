@@ -851,7 +851,7 @@ DewfordTown_Gym_Text_RegisteredBrawly:
 # 426 "data/maps/DewfordTown_Gym/scripts.pory"
 	.string "Registered Gym Leader Brawly\n"
 # 427 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 # 428 "data/maps/DewfordTown_Gym/scripts.pory"
 
 # 429 "data/maps/DewfordTown_Gym/scripts.pory"
