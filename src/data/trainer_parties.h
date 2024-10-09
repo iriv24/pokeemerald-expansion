@@ -4492,7 +4492,7 @@ static const struct TrainerMon sParty_Norman1[] = {
     .lvl = 59,
     .species = SPECIES_URSALUNA_BLOODMOON,
     .nature = NATURE_MODEST,
-    .ability = ABILITY_SCRAPPY,
+    .ability = ABILITY_MINDS_EYE,
     .heldItem = ITEM_EXPERT_BELT,
     .moves = {MOVE_EARTH_POWER, MOVE_BLOOD_MOON, MOVE_HYPER_VOICE, MOVE_HIDDEN_POWER}
     },
