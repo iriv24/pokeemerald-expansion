@@ -280,5 +280,6 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_RANDOMIZER_MODE, MAX_MON_MODE
 	clearflag FLAG_MET_IV_PERFECTER
 	setvar VAR_IV_PERFECTER_COUNTER, 0
+	setvar VAR_START_POST_RAYQUAZA_SCENE, 0
 	call EventScript_ResetAllBerries
 	end

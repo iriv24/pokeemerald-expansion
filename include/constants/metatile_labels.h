@@ -388,6 +388,8 @@
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalRight      0x255
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
+#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Bottom         0x2CA
+#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Top            0x2C2
 
 // gTileset_Petalburg
 #define METATILE_Petalburg_Door_BirchsLab   0x249

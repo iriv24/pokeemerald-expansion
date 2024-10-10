@@ -162,9 +162,6 @@ SootopolisCity_EventScript_SetWallaceLeft::
 	setobjectmovementtype LOCALID_WALLACE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
-SootopolisCity_EventScript_SetExpertBlockCaveEntrance::
-	setobjectxyperm LOCALID_EXPERT, 31, 18
-	return
 
 SootopolisCity_OnWarp:
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_PlayerFaceLegendaries
@@ -739,6 +736,7 @@ SootopolisCity_Movement_UnusedPanBack:
 SootopolisCity_EventScript_CaveOfOriginExpert::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, SootopolisCity_EventScript_ExpertPostChampion
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_ExpertPostLegendaries
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_ExpertLegendaries
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_ExpertLeadToCave
@@ -753,6 +751,11 @@ SootopolisCity_EventScript_ExpertLeadToCave::
 
 SootopolisCity_EventScript_ExpertPostLegendaries::
 	msgbox SootopolisCity_Text_CaveOfOriginSleepsToo, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_EventScript_ExpertPostChampion::
+	msgbox SootopolisCity_Text_CaveOfOriginOpen, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1663,6 +1666,11 @@ SootopolisCity_Text_CaveOfOriginSleepsToo:
 	.string "With the passing of the crisis,\n"
 	.string "the cave, too, shall sleep…$"
 
+SootopolisCity_Text_CaveOfOriginOpen:
+	.string "This is the Cave of Origin…\p"
+	.string "Now that you are the Champion, you\n"
+	.string "can go inside anytime.$"
+
 SootopolisCity_Text_SootopolisSkyBeautiful:
 	.string "Sootopolis sprang up as a town in\n"
 	.string "the crater of a volcano.\p"
@@ -1908,3 +1916,16 @@ SootopolisCity_TextRambled:
 	.string "sure you're curious to hear what\l"
 	.string "everyone else here has to say!$"
 `
+
+script SootopolisCity_EventScript_SetExpertBlockCaveEntrance {
+	if(!flag(FLAG_IS_CHAMPION))
+	{
+		setobjectxyperm(LOCALID_EXPERT, 31, 18)
+	}
+	else
+	{
+		setobjectxyperm(LOCALID_EXPERT, 30, 18)
+		setobjectmovementtype(LOCALID_EXPERT, MOVEMENT_TYPE_FACE_RIGHT)
+	}
+	return
+}
