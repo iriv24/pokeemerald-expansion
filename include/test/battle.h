@@ -840,7 +840,7 @@ struct moveWithPP {
 #define DynamaxLevel(dynamaxLevel) DynamaxLevel_(__LINE__, dynamaxLevel)
 #define GigantamaxFactor(gigantamaxFactor) GigantamaxFactor_(__LINE__, gigantamaxFactor)
 #define TeraType(teraType) TeraType_(__LINE__, teraType)
-#define Shadow(isShadow) Shadow_(__LINE__, shadow)
+// #define Shadow(isShadow) Shadow_(__LINE__, shadow)
 
 void SetFlagForTest(u32 sourceLine, u16 flagId);
 void ClearFlagAfterTest(void);
@@ -876,7 +876,7 @@ void OTName_(u32 sourceLine, const u8 *otName);
 void DynamaxLevel_(u32 sourceLine, u32 dynamaxLevel);
 void GigantamaxFactor_(u32 sourceLine, bool32 gigantamaxFactor);
 void TeraType_(u32 sourceLine, u32 teraType);
-void Shadow_(u32 sourceLine, bool32 isShadow);
+// void Shadow_(u32 sourceLine, bool32 isShadow);
 
 // Created for easy use of EXPECT_MOVES, so the user can provide 1, 2, 3 or 4 moves for AI which can pass the test.
 struct FourMoves

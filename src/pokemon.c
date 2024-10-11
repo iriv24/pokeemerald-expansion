@@ -2907,6 +2907,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_ABILITY_NUM:
             retVal = substruct3->abilityNum;
             break;
+        case MON_DATA_RANDOM_ABILITY_NUM:
+            retVal = substruct3->randomAbility;
+            break;
         case MON_DATA_COOL_RIBBON:
             retVal = substruct3->coolRibbon;
             break;
@@ -3056,9 +3059,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_HYPER_TRAINED_SPDEF:
             retVal = substruct1->hyperTrainedSpDefense;
             break;
-        case MON_DATA_IS_SHADOW:
-            retVal = substruct3->isShadow;
-            break;
+        // case MON_DATA_IS_SHADOW:
+        //     retVal = substruct3->isShadow;
+        //     break;
         case MON_DATA_DYNAMAX_LEVEL:
             retVal = substruct3->dynamaxLevel;
             break;
@@ -3412,6 +3415,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_ABILITY_NUM:
             SET8(substruct3->abilityNum);
             break;
+        case MON_DATA_RANDOM_ABILITY_NUM:
+            SET8(substruct3->randomAbility);
+            break;
         case MON_DATA_COOL_RIBBON:
             SET8(substruct3->coolRibbon);
             break;
@@ -3495,9 +3501,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_HYPER_TRAINED_SPDEF:
             SET8(substruct1->hyperTrainedSpDefense);
             break;
-        case MON_DATA_IS_SHADOW:
-            SET8(substruct3->isShadow);
-            break;
+        // case MON_DATA_IS_SHADOW:
+        //     SET8(substruct3->isShadow);
+        //     break;
         case MON_DATA_DYNAMAX_LEVEL:
             SET8(substruct3->dynamaxLevel);
             break;
@@ -3730,7 +3736,7 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
+u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 randomAbilityNum)
 {
     int i;
 
@@ -3751,6 +3757,8 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     {
         gLastUsedAbility = gSpeciesInfo[species].abilities[i];
     }
+    //TODO add the randomization call here i think
+    // use species and slot as unique ID?
 
     return gLastUsedAbility;
 }

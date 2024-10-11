@@ -1810,11 +1810,11 @@ void TeraType_(u32 sourceLine, u32 teraType)
     SetMonData(DATA.currentMon, MON_DATA_TERA_TYPE, &teraType);
 }
 
-void Shadow_(u32 sourceLine, bool32 isShadow)
-{
-    INVALID_IF(!DATA.currentMon, "Shadow outside of PLAYER/OPPONENT");
-    SetMonData(DATA.currentMon, MON_DATA_IS_SHADOW, &isShadow);
-}
+// void Shadow_(u32 sourceLine, bool32 isShadow)
+// {
+//     INVALID_IF(!DATA.currentMon, "Shadow outside of PLAYER/OPPONENT");
+//     SetMonData(DATA.currentMon, MON_DATA_IS_SHADOW, &isShadow);
+// }
 
 static const char *const sBattlerIdentifiersSingles[] =
 {
