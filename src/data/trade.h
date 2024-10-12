@@ -986,7 +986,7 @@ static const struct InGameTrade sIngameTrades[] =
 {
     [INGAME_TRADE_MIMR_JR] =
     {
-        .nickname = _("MARCEL"),
+        .nickname = _("Marcel"),
         .species = SPECIES_MIME_JR,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 1,
@@ -1002,7 +1002,7 @@ static const struct InGameTrade sIngameTrades[] =
     },
     [INGAME_TRADE_FIDOUGH] =
     {
-        .nickname = _("BORKER"),
+        .nickname = _("Borker"),
         .species = SPECIES_FIDOUGH,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
@@ -1016,21 +1016,21 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_MASCHIFF
     },
-    [INGAME_TRADE_HORSEA] =
+    [INGAME_TRADE_IRON_BUNDLE] =
     {
-        .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
+        .nickname = _("BirdBot"),
+        .species = SPECIES_IRON_BUNDLE,
+        .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
+        .heldItem = ITEM_BOOSTER_ENERGY,
         .mailNum = 1,
         .otName = _("SKYLAR"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_DELIBIRD
     },
     [INGAME_TRADE_MEOWTH] =
     {

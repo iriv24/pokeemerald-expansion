@@ -15,7 +15,7 @@ PacifidlogTown_House3_EventScript_Trader::
 # 8 "data/maps/PacifidlogTown_House3/scripts.pory"
 	goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, PacifidlogTown_House3_EventScript_TradeCompleted
 # 9 "data/maps/PacifidlogTown_House3/scripts.pory"
-	setvar VAR_0x8008, INGAME_TRADE_HORSEA
+	setvar VAR_0x8008, INGAME_TRADE_IRON_BUNDLE
 # 10 "data/maps/PacifidlogTown_House3/scripts.pory"
 	copyvar VAR_0x8004, VAR_0x8008
 # 11 "data/maps/PacifidlogTown_House3/scripts.pory"
@@ -107,63 +107,63 @@ PacifidlogTown_House3_EventScript_Girl::
 # 54 "data/maps/PacifidlogTown_House3/scripts.pory"
 PacifidlogTown_House3_Text_WillingToTradeIt:
 # 55 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Check out this {STR_VAR_2}!\p"
+	.string "I found this weird robot bird thing…\n"
 # 56 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "It's the {STR_VAR_2} that I caught\n"
+	.string "I'm not a huge fan, I kind of wanted to\l"
 # 57 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "yesterday to celebrate my birthday!\p"
+	.string "find the original.\p"
 # 58 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Oh, I can see that you want it!\n"
+	.string "Say, you wouldn't happen to have a\n"
 # 59 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "After all, it's priceless!\p"
+	.string "Delibird would you?\p"
 # 60 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "I'll tell you what. I might be willing\n"
+	.string "I'll trade you this Iron Bundle for it\n"
 # 61 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "to trade it for a {STR_VAR_1}.$"
+	.string "if you do!$"
 # 62 "data/maps/PacifidlogTown_House3/scripts.pory"
 
 # 63 "data/maps/PacifidlogTown_House3/scripts.pory"
 PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou:
 # 64 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Oh, so this is a {STR_VAR_1}?\p"
+	.string "Awesome, it's the original thing!\n"
 # 65 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "It's sort of like a {STR_VAR_2},\n"
+	.string "I don't know where this cheap knock off\l"
 # 66 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "and yet it's subtly different.\p"
+	.string "came from, but you can never beat the\l"
 # 67 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Thank you!$"
+	.string "real deal.\p"
 # 68 "data/maps/PacifidlogTown_House3/scripts.pory"
-
+	.string "Thank you so much!$"
 # 69 "data/maps/PacifidlogTown_House3/scripts.pory"
-PacifidlogTown_House3_Text_WontAcceptAnyLessThanRealMon:
+
 # 70 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "No, no, no! I won't accept any\n"
+PacifidlogTown_House3_Text_WontAcceptAnyLessThanRealMon:
 # 71 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "less than a real {STR_VAR_1}!$"
+	.string "Hey that's not a Delibird!\n"
 # 72 "data/maps/PacifidlogTown_House3/scripts.pory"
-
+	.string "What are you trying to pull here?$"
 # 73 "data/maps/PacifidlogTown_House3/scripts.pory"
-PacifidlogTown_House3_Text_NotDesperateOrAnything:
-# 74 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "Oh, so you're not going to go through\n"
-# 75 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "with this?\p"
-# 76 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "That's cool. I'm not desperate to make\n"
-# 77 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "a trade or anything.$"
-# 78 "data/maps/PacifidlogTown_House3/scripts.pory"
 
+# 74 "data/maps/PacifidlogTown_House3/scripts.pory"
+PacifidlogTown_House3_Text_NotDesperateOrAnything:
+# 75 "data/maps/PacifidlogTown_House3/scripts.pory"
+	.string "Oh, so you're not going to go through\n"
+# 76 "data/maps/PacifidlogTown_House3/scripts.pory"
+	.string "with this?\p"
+# 77 "data/maps/PacifidlogTown_House3/scripts.pory"
+	.string "That's cool. I'm not desperate to make\n"
+# 78 "data/maps/PacifidlogTown_House3/scripts.pory"
+	.string "a trade or anything.$"
 # 79 "data/maps/PacifidlogTown_House3/scripts.pory"
-PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
+
 # 80 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "I know I could go looking for one\n"
+PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 # 81 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "on my own, but…\p"
+	.string "I don't even know where you found\n"
 # 82 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "But I really wanted to get a BAGON\n"
+	.string "this Delibird, I searched high and low\l"
 # 83 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "that another TRAINER caught…$"
+	.string "and all I found was that weird robot.$"
 # 84 "data/maps/PacifidlogTown_House3/scripts.pory"
 
 # 85 "data/maps/PacifidlogTown_House3/scripts.pory"
@@ -173,6 +173,6 @@ PacifidlogTown_House3_Text_IsThatAPokedex:
 # 87 "data/maps/PacifidlogTown_House3/scripts.pory"
 	.string "Did you get to meet a lot of different\n"
 # 88 "data/maps/PacifidlogTown_House3/scripts.pory"
-	.string "POKéMON?\p"
+	.string "Pokémon?\p"
 # 89 "data/maps/PacifidlogTown_House3/scripts.pory"
 	.string "I wish I was like you.$"
