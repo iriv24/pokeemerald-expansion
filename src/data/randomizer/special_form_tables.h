@@ -1,8 +1,6 @@
 #include "global.h"
 #include "constants/species.h"
 
-
-
 const u16 sPaldeanTaurosFormChoices[] = {
     SPECIES_TAUROS_PALDEA_AQUA,
     SPECIES_TAUROS_PALDEA_BLAZE,
@@ -15,6 +13,16 @@ const u16 sFloetteFormChoices[] = {
     SPECIES_FLOETTE_RED,
     SPECIES_FLOETTE_WHITE,
     SPECIES_FLOETTE_YELLOW,
+};
+
+const u16 sMiniorFormChoices[] = {
+    SPECIES_MINIOR_METEOR_GREEN,
+    SPECIES_MINIOR_METEOR_INDIGO,
+    SPECIES_MINIOR_METEOR_BLUE,
+    SPECIES_MINIOR_METEOR_ORANGE,
+    SPECIES_MINIOR_METEOR_VIOLET,
+    SPECIES_MINIOR_METEOR_RED,
+    SPECIES_MINIOR_METEOR_YELLOW,
 };
 
 struct RandomizerRareFormInfo {
@@ -55,5 +63,12 @@ const struct RandomizerRareFormInfo sPolteageistRareFormInfo =
 {
     .commonForm = SPECIES_POLTEAGEIST_PHONY,
     .rareForm = SPECIES_POLTEAGEIST_ANTIQUE,
+    .inverseRareFormChance = 100
+};
+
+const struct RandomizerRareFormInfo sDudunsparceRareFormInfo =
+{
+    .commonForm = SPECIES_DUDUNSPARCE_TWO_SEGMENT,
+    .rareForm = SPECIES_DUDUNSPARCE_THREE_SEGMENT,
     .inverseRareFormChance = 100
 };
