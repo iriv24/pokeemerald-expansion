@@ -49,7 +49,21 @@ struct TrainerBacksprite
 #define GET_MON_COORDS_WIDTH(size)((size >> 4) * 8)
 #define GET_MON_COORDS_HEIGHT(size)((size & 0xF) * 8)
 #define TRAINER_PARTY_IVS(hp, atk, def, speed, spatk, spdef) (hp | (atk << 5) | (def << 10) | (speed << 15) | (spatk << 20) | (spdef << 25))
-#define TRAINER_PARTY_EVS(hp, atk, def, speed, spatk, spdef) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
+#define TRAINER_PARTY_EVS(hp, atk, def, spatk, spdef, speed) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
+
+//                                                    hp,atk,def,spatk,spdef,speed
+#define TRAINER_PARTY_EVS_TIMID()                    ((const u8[6]){6,0,0,252,0,252})
+#define TRAINER_PARTY_EVS_MODEST()                   ((const u8[6]){6,0,0,252,0,252})
+#define TRAINER_PARTY_EVS_JOLLY()                    ((const u8[6]){6,252,0,0,0,252})
+#define TRAINER_PARTY_EVS_ADAMANT()                  ((const u8[6]){6,252,0,0,0,252})
+#define TRAINER_PARTY_EVS_BOLD()                     ((const u8[6]){252,0,252,6,0,0})
+#define TRAINER_PARTY_EVS_IMPISH()                   ((const u8[6]){252,6,252,0,0,0})
+#define TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK()       ((const u8[6]){0,252,0,6,0,252})
+#define TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK()    ((const u8[6]){0,6,0,252,0,252})
+#define TRAINER_PARTY_EVS_MILD()                     ((const u8[6]){0,6,0,252,0,252})
+#define TRAINER_PARTY_EVS_QUIET()                    ((const u8[6]){252,6,0,252,0,0})
+#define TRAINER_PARTY_EVS_CALM()                     ((const u8[6]){252,0,0,6,252,0})
+
 
 // Shared by both trainer and frontier mons
 // See CreateNPCTrainerPartyFromTrainer and CreateFacilityMon
