@@ -2155,7 +2155,10 @@ static void CalcDomeMonStats(const struct TrainerMon *fmon, int level, u8 ivs, i
     else
     {
         int n = 2 * gSpeciesInfo[fmon->species].baseHP;
-        stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
+        if (FlagGet(FLAG_MIN_GRINDING_MODE))
+            stats[STAT_HP] = (((n + ivs) * level) / 100) + level + 10;
+        else
+            stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
     }
 
     CALC_STAT(baseAttack, STAT_ATK);
