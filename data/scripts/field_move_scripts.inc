@@ -500,3 +500,9 @@ TimeChanger_Text_ItIsNowDusk:
 
 TimeChanger_Text_Exit:
 	.string "Cancel$"
+
+EventScript_NoWildMonsFound::
+    msgbox NoWildMonsFound MSGBOX_SIGN
+    end
+NoWildMonsFound:
+    .string "There are no wild Pokémon in this area!$"

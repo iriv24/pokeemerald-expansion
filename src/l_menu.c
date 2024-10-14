@@ -145,6 +145,7 @@ static void HideLMenuWindowFollowers(void);
 static void HideLMenuWindowTimeChanger(void);
 static void HideLMenuWindowInfiniteRepel(void);
 static void HideLMenuWindowPokeVial(void);
+static void HideLMenuWindowNoWildMons(void);
 static void ShowTimeWindow(void);
 static void RemoveLMenuTimeWindow(void);
 
@@ -690,6 +691,12 @@ static bool8 HandleLMenuInput(void)
     {
         PlaySE(SE_SELECT);
         
+        if (sCurrentLMenuActions[sLMenuCursorPos] == MENU_ACTION_DEXNAV && MapHasNoEncounterData())
+        {
+            HideLMenuNoWildMons();
+            return TRUE;
+        }
+            
         gMenuCallback2 = sLMenuItems[sCurrentLMenuActions[sLMenuCursorPos]].func.u8_void;
 
         if (ShouldCallbackFadeToBlack())
@@ -917,6 +924,24 @@ static void HideLMenuWindowPokeVial(void)
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     ScriptContext_SetupScript(PokeVialHealScript);
+}
+
+extern const u8 EventScript_NoWildMonsFound[];
+
+void HideLMenuNoWildMons(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowNoWildMons();
+}
+
+static void HideLMenuWindowNoWildMons(void)
+{
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_NoWildMonsFound);
 }
 
 static void HideLMenuWindow(void)
