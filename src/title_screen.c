@@ -805,6 +805,7 @@ static void Task_TitleScreenPhase1(u8 taskId)
 
         gTasks[taskId].tCounter = 144;
         gTasks[taskId].func = Task_TitleScreenPhase2;
+        ConstantWeather_Snow_InitAll();
     }
 }
 
@@ -843,7 +844,6 @@ static void Task_TitleScreenPhase2(u8 taskId)
         //CreateCopyrightBanner(START_BANNER_X, 148);
         CreateSprite(&sMonSpriteTemplate, 150, 125, 0);
         CreateSprite(&sMonSpriteTemplate2, 90, 125, 0);
-        ConstantWeather_Snow_InitAll();
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
