@@ -1172,12 +1172,16 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
     
     CreateWildMon(species, level);  // shiny rate bonus handled in CreateBoxMon
     
-    SetMonData(mon, MON_DATA_HP_IV, &perfectIv);
-    SetMonData(mon, MON_DATA_ATK_IV, &perfectIv);
-    SetMonData(mon, MON_DATA_DEF_IV, &perfectIv);
-    SetMonData(mon, MON_DATA_SPEED_IV, &perfectIv);
-    SetMonData(mon, MON_DATA_SPATK_IV, &perfectIv);
-    SetMonData(mon, MON_DATA_SPDEF_IV, &perfectIv);
+    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    {
+        SetMonData(mon, MON_DATA_HP_IV, &perfectIv);
+        SetMonData(mon, MON_DATA_ATK_IV, &perfectIv);
+        SetMonData(mon, MON_DATA_DEF_IV, &perfectIv);
+        SetMonData(mon, MON_DATA_SPEED_IV, &perfectIv);
+        SetMonData(mon, MON_DATA_SPATK_IV, &perfectIv);
+        SetMonData(mon, MON_DATA_SPDEF_IV, &perfectIv);
+    }
+    
     
     //Set ability
     SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
