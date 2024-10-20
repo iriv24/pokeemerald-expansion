@@ -155,3 +155,4 @@
 	.include "src/dexnav.o"
 	.include "src/l_menu.o"
 	.include "src/ui_stat_editor.o"
+	.include "src/sound_check_menu.o"

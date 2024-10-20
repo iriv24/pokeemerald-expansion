@@ -933,7 +933,7 @@ LilycoveCity_EventScript_DawnScene::
 # 476 "data/maps/LilycoveCity/scripts.pory"
 	lockall
 # 477 "data/maps/LilycoveCity/scripts.pory"
-	call Route110_EventScript_PlayMayMusic
+	call Route104_EventScript_PlayDawnMusic
 # 478 "data/maps/LilycoveCity/scripts.pory"
 	applymovement 22, Common_Movement_WalkInPlaceFasterDown
 # 479 "data/maps/LilycoveCity/scripts.pory"

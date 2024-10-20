@@ -2361,7 +2361,7 @@ Route104_EventScript_DawnScene::
 # 1189 "data/maps/Route104/scripts.pory"
 	lockall
 # 1190 "data/maps/Route104/scripts.pory"
-	call Route110_EventScript_PlayMayMusic
+	call Route104_EventScript_PlayDawnMusic
 # 1191 "data/maps/Route104/scripts.pory"
 	applymovement 35, Common_Movement_WalkInPlaceFasterDown
 # 1192 "data/maps/Route104/scripts.pory"
@@ -2553,8 +2553,14 @@ Route104_EventScript_DawnExit1::
 	return
 
 
+Route104_EventScript_PlayDawnMusic::
+# 1307 "data/maps/Route104/scripts.pory"
+	playbgm MUS_DP_DAWN, TRUE
+	return
+
+
 Dawn_Greeting::
-# 1306 "data/maps/Route104/scripts.pory"
+# 1311 "data/maps/Route104/scripts.pory"
 	.string "Hey there! Are you {PLAYER}, by\n"
 	.string "chance?\p"
 	.string "You are? Great! My name is Dawn, I'm\n"
@@ -2570,11 +2576,11 @@ Dawn_Greeting::
 	.string "so what do you say we have a battle!$"
 
 Dawn_Defeated::
-# 1322 "data/maps/Route104/scripts.pory"
+# 1327 "data/maps/Route104/scripts.pory"
 	.string "Looks like {RIVAL} was right!$"
 
 Dawn_TakeThis::
-# 1327 "data/maps/Route104/scripts.pory"
+# 1332 "data/maps/Route104/scripts.pory"
 	.string "That was a great battle! I'll definitely\n"
 	.string "be seeing you again, {PLAYER}, so I can\l"
 	.string "test my strength!\p"
@@ -2583,7 +2589,7 @@ Dawn_TakeThis::
 	.string "have, hopefully they'll be helpful.$"
 
 DawnGoodbye::
-# 1336 "data/maps/Route104/scripts.pory"
+# 1341 "data/maps/Route104/scripts.pory"
 	.string "I gave you a bunch of Berries that can\n"
 	.string "reduce the damage of super effective\l"
 	.string "moves, and a handy pair of Wise Glasses\l"

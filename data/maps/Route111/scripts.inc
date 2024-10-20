@@ -1509,7 +1509,7 @@ Route111_EventScript_DawnScene::
 # 769 "data/maps/Route111/scripts.pory"
 	lockall
 # 770 "data/maps/Route111/scripts.pory"
-	call Route110_EventScript_PlayMayMusic
+	call Route104_EventScript_PlayDawnMusic
 # 771 "data/maps/Route111/scripts.pory"
 	applymovement LOCALID_DAWN, Common_Movement_WalkInPlaceFasterDown
 # 772 "data/maps/Route111/scripts.pory"

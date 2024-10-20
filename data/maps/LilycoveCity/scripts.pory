@@ -474,7 +474,7 @@ script LilycoveCity_EventScript_DawnTrigger2{
 
 script LilycoveCity_EventScript_DawnScene{
 	lockall
-	call(Route110_EventScript_PlayMayMusic)
+	call(Route104_EventScript_PlayDawnMusic)
 	applymovement(22, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	applymovement(22, Common_Movement_ExclamationMark)

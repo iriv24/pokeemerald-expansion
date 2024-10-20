@@ -767,7 +767,7 @@ script Route111_EventScript_DawnTrigger4{
 
 script Route111_EventScript_DawnScene{
 	lockall
-	call(Route110_EventScript_PlayMayMusic)
+	call(Route104_EventScript_PlayDawnMusic)
 	applymovement(LOCALID_DAWN, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	applymovement(LOCALID_DAWN, Common_Movement_ExclamationMark)

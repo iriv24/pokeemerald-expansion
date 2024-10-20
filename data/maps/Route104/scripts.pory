@@ -1187,7 +1187,7 @@ script Route104_EventScript_DawnTrigger2{
 
 script Route104_EventScript_DawnScene{
 	lockall
-	call(Route110_EventScript_PlayMayMusic)
+	call(Route104_EventScript_PlayDawnMusic)
 	applymovement(35, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
 	applymovement(35, Common_Movement_ExclamationMark)
@@ -1301,6 +1301,11 @@ script Route104_EventScript_DawnExit1{
 	walk_up
 	walk_up
 	step_end
+}
+
+script Route104_EventScript_PlayDawnMusic{
+	playbgm(MUS_DP_DAWN, TRUE)
+	return
 }
 
 text Dawn_Greeting{
