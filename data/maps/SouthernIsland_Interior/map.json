@@ -39,6 +39,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SouthernIsland_Interior_EventScript_Latias",
       "flag": "FLAG_HIDE_LATIAS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 11,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LATIOSITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOUTHERN_ISLAND_LATIOSITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LATIASITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOUTHERN_ISLAND_LATIASITE"
     }
   ],
   "warp_events": [

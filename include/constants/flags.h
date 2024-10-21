@@ -1242,11 +1242,11 @@
 #define FLAG_HIDE_HO_OH                                             0x4A8
 #define FLAG_DEFEATED_HO_OH                                         0x4A9
 #define FLAG_CAUGHT_HO_OH                                           0x4AA
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
+#define FLAG_ITEM_STEVENS_CAVE_MEWTWONITE_X                         0x4AB
+#define FLAG_ITEM_STEVENS_CAVE_MEWTWONITE_Y                         0x4AC
+#define FLAG_ITEM_SOUTHERN_ISLAND_LATIOSITE                         0x4AD
+#define FLAG_ITEM_SOUTHERN_ISLAND_LATIASITE                         0x4AE
+#define FLAG_ITEM_NAVEL_ROCK_DIANCITE                               0x4AF
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
@@ -1320,10 +1320,10 @@
 #define FLAG_DEFEATED_FORTREE_GYM                                   0x4F5
 #define FLAG_DEFEATED_MOSSDEEP_GYM                                  0x4F6
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
-#define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
+#define FLAG_DEFEATED_MEWTWO                                        0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_HIDE_MEWTWO                                            0x4F9
+#define FLAG_CAUGHT_MEWTWO                                          0x4FA
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC

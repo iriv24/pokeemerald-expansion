@@ -1,61 +1,63 @@
 raw `
-.set LOCALID_STEVEN, 1
+.set LOCALID_MEWTWO, 1
 
 MeteorFalls_StevensCave_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MeteorFalls_StevensCave_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, MeteorFalls_StevensCave_OnResume
 	.byte 0
 
-MeteorFalls_StevensCave_EventScript_Steven::
+MeteorFalls_StevensCave_OnTransition:
+	call_if_set FLAG_CAUGHT_MEWTWO, MeteorFalls_StevensCave_EventScript_HideMewtwo
+	call_if_unset FLAG_CAUGHT_MEWTWO, MeteorFalls_StevensCave_EventScript_TryShowMewtwo
+	end
+
+MeteorFalls_StevensCave_EventScript_HideMewtwo::
+	setflag FLAG_HIDE_MEWTWO
+	return
+
+MeteorFalls_StevensCave_EventScript_TryShowMewtwo::
+	goto_if_set FLAG_DEFEATED_MEWTWO, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MEWTWO
+	return
+
+MeteorFalls_StevensCave_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, MeteorFalls_StevensCave_EventScript_TryRemoveMewtwo
+	end
+
+MeteorFalls_StevensCave_EventScript_TryRemoveMewtwo::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject LOCALID_MEWTWO
+	return
+
+MeteorFalls_StevensCave_EventScript_Mewtwo::
 	lock
-	goto_if_set FLAG_DEFEATED_METEOR_FALLS_STEVEN, MeteorFalls_StevensCave_EventScript_Defeated
+	faceplayer
 	waitse
-	playse SE_PIN
-	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_STEVEN, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_STEVEN, MeteorFalls_StevensCave_Text_StevenDefeat
-	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
-	setflag FLAG_DEFEATED_METEOR_FALLS_STEVEN
+	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
+	waitmoncry
+	delay 20
+	seteventmon SPECIES_MEWTWO, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MeteorFalls_StevensCave_EventScript_DefeatedMewtwo
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MeteorFalls_StevensCave_EventScript_RanFromMewtwo
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MeteorFalls_StevensCave_EventScript_RanFromMewtwo
+	setflag FLAG_CAUGHT_MEWTWO
 	release
 	end
 
-MeteorFalls_StevensCave_EventScript_Defeated::
-	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
-	release
+MeteorFalls_StevensCave_EventScript_DefeatedMewtwo::
+	setflag FLAG_DEFEATED_MEWTWO
+	setvar VAR_0x8004, SPECIES_MEWTWO
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
-MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst:
-	.string "Steven: Oh, wow, {PLAYER}{KUN}.\n"
-	.string "I'm amazed you knew where to find me.\p"
-	.string "Do you, uh…maybe think of me as\n"
-	.string "just a rock maniac?\p"
-	.string "No, that can't be right.\p"
-	.string "We battled alongside each other at\n"
-	.string "the SOOTOPOLIS SPACE CENTER.\p"
-	.string "You should have a very good idea\n"
-	.string "about how good I am.\p"
-	.string "Okay, {PLAYER}{KUN}, if you're going to mount\n"
-	.string "a serious challenge, expect the worst!$"
-
-MeteorFalls_StevensCave_Text_StevenDefeat:
-	.string "You…\n"
-	.string "I had no idea you'd become so strong…$"
-
-MeteorFalls_StevensCave_Text_MyPredictionCameTrue:
-	.string "Steven: Come to think of it, ever since\n"
-	.string "our paths first crossed in GRANITE\l"
-	.string "CAVE in DEWFORD, I had this feeling.\p"
-	.string "I thought that you would eventually\n"
-	.string "become the CHAMPION.\p"
-	.string "My predictions usually come true.\p"
-	.string "And where will you go from here?\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "Fufufu, even I couldn't tell you that.$"
-
+MeteorFalls_StevensCave_EventScript_RanFromMewtwo::
+	setvar VAR_0x8004, SPECIES_MEWTWO
+	goto Common_EventScript_LegendaryFlewAway
+	end
 `
