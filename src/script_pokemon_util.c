@@ -476,11 +476,11 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     {
         abilityNum = GetMonData(&mon, MON_DATA_PERSONALITY) & 1;
     }
-    else if (abilityNum > NUM_NORMAL_ABILITY_SLOTS || GetAbilityBySpecies(species, abilityNum) == ABILITY_NONE)
+    else if (abilityNum > NUM_NORMAL_ABILITY_SLOTS || GetAbilityBySpecies(species, abilityNum, FALSE) == ABILITY_NONE)
     {
         do {
             abilityNum = Random() % NUM_ABILITY_SLOTS; // includes hidden abilities
-        } while (GetAbilityBySpecies(species, abilityNum) == ABILITY_NONE);
+        } while (GetAbilityBySpecies(species, abilityNum, FALSE) == ABILITY_NONE);
     }
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &abilityNum);
 

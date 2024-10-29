@@ -74,6 +74,9 @@ u16 RandomizeStarterAndGiftMon(u16 originalSlot, const u16* originalGiftMonsAndS
 // Given a slot and the list of my original egg mons, returns the random mon in that slot.
 u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons);
 
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
+
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {
     return originalCache->maxGroup >= targetCache->minGroup

@@ -1,4 +1,5 @@
 #include "randomizer.h"
+#include "constants/abilities.h"
 
 #if RANDOMIZER_AVAILABLE == TRUE
 #include "main.h"
@@ -125,6 +126,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
                 return FORCE_RANDOMIZE_EGG_MON;
             #else
                 return FlagGet(RANDOMIZER_FLAG_EGG_MON);
+            #endif
+        case RANDOMIZE_ABILITIES:
+            #ifdef FORCE_RANDOMIZE_ABILITIES
+                return FORCE_RANDOMIZE_ABILITIES;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_ABILITIES);
             #endif
         default:
             return FALSE;
@@ -1030,6 +1037,42 @@ u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons)
     }
 
     return originalEggMons[originalSlot];
+}
+
+// Utility functions for the field item randomizer.
+static inline bool32 IsAbilityIllegal(u16 ability)
+{
+    if (ability == ABILITY_NONE || ability == ABILITY_WONDER_GUARD)
+        return TRUE;
+    return FALSE;
+}
+
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_ABILITIES))
+    {
+        struct Sfc32State state;
+        u16 result;
+        u32 seed;
+
+        //if (!ShouldRandomizeItem(itemId))
+        //    return abilityNum;
+
+        // Seed the generator using the species and the original abilityNum 
+        seed = ((u32)species) << 8;
+        seed |= abilityNum;
+
+        state = RandomizerRandSeed(RANDOMIZER_REASON_ABILITIES, seed, species);
+
+        // Randomize abilities to anything but wonder guard and NONE
+        do {
+            result = RandomizerNextRange(&state, ABILITIES_COUNT);
+        } while(IsAbilityIllegal(result));
+
+        return result;
+    }
+    return originalAbility;
 }
 
 #endif // RANDOMIZER_AVAILABLE

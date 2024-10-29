@@ -6753,7 +6753,7 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[battler].types[0] = gSpeciesInfo[gBattleMons[battler].species].types[0];
     gBattleMons[battler].types[1] = gSpeciesInfo[gBattleMons[battler].species].types[1];
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
-    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
+    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum, gBattleMons[battler].cantRandomizeAbility);
     #if TESTING
     if (gTestRunnerEnabled)
     {
@@ -13393,6 +13393,7 @@ static void Cmd_healpartystatus(void)
         {
             u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
             u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
+            u8 cantRandomizeAbility = GetMonData(&party[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
 
             if (species != SPECIES_NONE && species != SPECIES_EGG)
             {
@@ -13410,7 +13411,7 @@ static void Cmd_healpartystatus(void)
                     ability = GetBattlerAbility(partner);
                 else
                 {
-                    ability = GetAbilityBySpecies(species, abilityNum);
+                    ability = GetAbilityBySpecies(species, abilityNum, cantRandomizeAbility);
                     #if TESTING
                     if (gTestRunnerEnabled)
                     {
@@ -17514,7 +17515,7 @@ void BS_JumpIfCommanderActive(void)
 static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
 {
     s32 i;
-    u8 battler;
+    u8 battler, cantRandomizeAbility;
     u32 monToCheck, status;
     u16 species, abilityNum;
     monToCheck = 0;
@@ -17523,10 +17524,11 @@ static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
         species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
         abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&party[i], MON_DATA_STATUS);
+        cantRandomizeAbility = GetMonData(&party[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
         if (species != SPECIES_NONE
             && species != SPECIES_EGG
             && status & AILMENT_FNT
-            && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            && GetAbilityBySpecies(species, abilityNum, cantRandomizeAbility) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)

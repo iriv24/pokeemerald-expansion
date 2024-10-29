@@ -107,6 +107,8 @@ enum RandomizerFeature
     RANDOMIZE_STARTERS_AND_GIFTS,
     // Randomization of given egg Pokémon species.
     RANDOMIZE_EGG_MON,
+    // Randomization of Pokémon abilities.
+    RANDOMIZE_ABILITIES,
 };
 
 enum RandomizerReason
@@ -120,6 +122,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_FIELD_ITEM,
     RANDOMIZER_REASON_STARTER_AND_GIFT,
     RANDOMIZER_REASON_EGG,
+    RANDOMIZER_REASON_ABILITIES,
 };
 
 enum RandomizerOption {

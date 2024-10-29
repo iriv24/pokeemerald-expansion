@@ -4810,9 +4810,9 @@ static void SaveMonDataInStruct(void)
     sPokedexView->sPokemonStats.eggCycles           = gSpeciesInfo[species].eggCycles;
     sPokedexView->sPokemonStats.expYield            = gSpeciesInfo[species].expYield;
     sPokedexView->sPokemonStats.friendship          = gSpeciesInfo[species].friendship;
-    sPokedexView->sPokemonStats.ability0            = GetAbilityBySpecies(species, 0);
-    sPokedexView->sPokemonStats.ability1            = GetAbilityBySpecies(species, 1);
-    sPokedexView->sPokemonStats.abilityHidden       = GetAbilityBySpecies(species, 2);
+    sPokedexView->sPokemonStats.ability0            = GetAbilityBySpecies(species, 0, FALSE);
+    sPokedexView->sPokemonStats.ability1            = GetAbilityBySpecies(species, 1, FALSE);
+    sPokedexView->sPokemonStats.abilityHidden       = GetAbilityBySpecies(species, 2, FALSE);
 }
 
 #define tMonSpriteId data[4]
