@@ -561,10 +561,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 17,
         .weight = 845,
         .description = COMPOUND_STRING(
-            "The three horns that extend from its beak\n"
-            "attest to its power. It avoids unnecessary\n"
-            "disputes, but it will decimate anything\n"
-            "that threatens its pride."),
+            "The three horns that extend from its\n"
+            "beak attest to its power. It avoids\n"
+            "unnecessary disputes, but it will decimate\n"
+            "anything that threatens its pride."),
         .pokemonScale = 259,
         .pokemonOffset = 0,
         .trainerScale = 290,
@@ -661,6 +661,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Starly,
             gShinyOverworldPalette_Starly
         )
+        OVERWORLD_FEMALE(
+            sPicTable_StarlyF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sStarlyLevelUpLearnset,
         .teachableLearnset = sStarlyTeachableLearnset,
         .eggMoveLearnset = sStarlyEggMoveLearnset,
@@ -727,6 +733,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Staravia,
             gShinyOverworldPalette_Staravia
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_StaraviaF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sStaraviaLevelUpLearnset,
         .teachableLearnset = sStaraviaTeachableLearnset,
@@ -800,6 +812,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Staraptor,
             gShinyOverworldPalette_Staraptor
         )
+        OVERWORLD_FEMALE(
+            sPicTable_StaraptorF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sStaraptorLevelUpLearnset,
         .teachableLearnset = sStaraptorTeachableLearnset,
     },
@@ -867,6 +885,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Bidoof,
             gShinyOverworldPalette_Bidoof
         )
+        OVERWORLD_FEMALE(
+            sPicTable_BidoofF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sBidoofLevelUpLearnset,
         .teachableLearnset = sBidoofTeachableLearnset,
         .eggMoveLearnset = sBidoofEggMoveLearnset,
@@ -931,6 +955,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Bibarel,
             gShinyOverworldPalette_Bibarel
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_BibarelF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sBibarelLevelUpLearnset,
         .teachableLearnset = sBibarelTeachableLearnset,
@@ -1000,6 +1030,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Kricketot,
             gShinyOverworldPalette_Kricketot
         )
+        OVERWORLD_FEMALE(
+            sPicTable_KricketotF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sKricketotLevelUpLearnset,
         .teachableLearnset = sKricketotTeachableLearnset,
@@ -1068,6 +1104,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Kricketune,
             gShinyOverworldPalette_Kricketune
         )
+        OVERWORLD_FEMALE(
+            sPicTable_KricketuneF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sKricketuneLevelUpLearnset,
         .teachableLearnset = sKricketuneTeachableLearnset,
     },
@@ -1135,6 +1177,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Shinx,
             gShinyOverworldPalette_Shinx
         )
+        OVERWORLD_FEMALE(
+            sPicTable_ShinxF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sShinxLevelUpLearnset,
         .teachableLearnset = sShinxTeachableLearnset,
         .eggMoveLearnset = sShinxEggMoveLearnset,
@@ -1201,6 +1249,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Luxio,
             gShinyOverworldPalette_Luxio
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_LuxioF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sLuxioLevelUpLearnset,
         .teachableLearnset = sLuxioTeachableLearnset,
@@ -1273,6 +1327,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Luxray,
             gShinyOverworldPalette_Luxray
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_LuxrayF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sLuxrayLevelUpLearnset,
         .teachableLearnset = sLuxrayTeachableLearnset,
@@ -1636,29 +1696,29 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 24,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_BurmySandyCloak,
+        .frontPic = gMonFrontPic_BurmySandy,
         .frontPicSize = MON_COORDS_SIZE(32, 56),
         .frontPicYOffset = 12,
         .frontAnimFrames = sAnims_Burmy,
         .frontAnimId = ANIM_V_STRETCH,
         .enemyMonElevation = 10,
-        .backPic = gMonBackPic_BurmySandyCloak,
+        .backPic = gMonBackPic_BurmySandy,
         .backPicSize = MON_COORDS_SIZE(32, 56),
         .backPicYOffset = 7,
         .backAnimId = BACK_ANIM_H_SHAKE,
-        .palette = gMonPalette_BurmySandyCloak,
-        .shinyPalette = gMonShinyPalette_BurmySandyCloak,
-        .iconSprite = gMonIcon_BurmySandyCloak,
+        .palette = gMonPalette_BurmySandy,
+        .shinyPalette = gMonShinyPalette_BurmySandy,
+        .iconSprite = gMonIcon_BurmySandy,
         .iconPalIndex = 1,
         SHADOW(-1, 9, SHADOW_SIZE_S)
         FOOTPRINT(Burmy)
         OVERWORLD(
-            sPicTable_BurmySandyCloak,
+            sPicTable_BurmySandy,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_BurmySandyCloak,
-            gShinyOverworldPalette_BurmySandyCloak
+            gOverworldPalette_BurmySandy,
+            gShinyOverworldPalette_BurmySandy
         )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sBurmyLevelUpLearnset,
@@ -1704,29 +1764,29 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 24,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_BurmyTrashCloak,
+        .frontPic = gMonFrontPic_BurmyTrash,
         .frontPicSize = MON_COORDS_SIZE(32, 56),
         .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_Burmy,
         .frontAnimId = ANIM_V_STRETCH,
         .enemyMonElevation = 10,
-        .backPic = gMonBackPic_BurmyTrashCloak,
+        .backPic = gMonBackPic_BurmyTrash,
         .backPicSize = MON_COORDS_SIZE(40, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_H_SHAKE,
-        .palette = gMonPalette_BurmyTrashCloak,
-        .shinyPalette = gMonShinyPalette_BurmyTrashCloak,
-        .iconSprite = gMonIcon_BurmyTrashCloak,
+        .palette = gMonPalette_BurmyTrash,
+        .shinyPalette = gMonShinyPalette_BurmyTrash,
+        .iconSprite = gMonIcon_BurmyTrash,
         .iconPalIndex = 0,
         SHADOW(-1, 13, SHADOW_SIZE_S)
         FOOTPRINT(Burmy)
         OVERWORLD(
-            sPicTable_BurmyTrashCloak,
+            sPicTable_BurmyTrash,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_BurmyTrashCloak,
-            gShinyOverworldPalette_BurmyTrashCloak
+            gOverworldPalette_BurmyTrash,
+            gShinyOverworldPalette_BurmyTrash
         )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sBurmyLevelUpLearnset,
@@ -1838,32 +1898,32 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 13,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_WormadamSandyCloak,
+        .frontPic = gMonFrontPic_WormadamSandy,
         .frontPicSize = MON_COORDS_SIZE(40, 56),
         .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Wormadam,
         .frontAnimId = ANIM_SWING_CONVEX_FAST_SHORT,
         .enemyMonElevation = 8,
-        .backPic = gMonBackPic_WormadamSandyCloak,
+        .backPic = gMonBackPic_WormadamSandy,
         .backPicSize = MON_COORDS_SIZE(56, 64),
         .backPicYOffset = 2,
         .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_WormadamSandyCloak,
-        .shinyPalette = gMonShinyPalette_WormadamSandyCloak,
-        .iconSprite = gMonIcon_WormadamSandyCloak,
+        .palette = gMonPalette_WormadamSandy,
+        .shinyPalette = gMonShinyPalette_WormadamSandy,
+        .iconSprite = gMonIcon_WormadamSandy,
         .iconPalIndex = 1,
         SHADOW(-1, 9, SHADOW_SIZE_S)
         FOOTPRINT(Wormadam)
         OVERWORLD(
-            sPicTable_WormadamSandyCloak,
+            sPicTable_WormadamSandy,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_WormadamSandyCloak,
-            gShinyOverworldPalette_WormadamSandyCloak
+            gOverworldPalette_WormadamSandy,
+            gShinyOverworldPalette_WormadamSandy
         )
-        .levelUpLearnset = sWormadamSandyCloakLevelUpLearnset,
-        .teachableLearnset = sWormadamSandyCloakTeachableLearnset,
+        .levelUpLearnset = sWormadamSandyLevelUpLearnset,
+        .teachableLearnset = sWormadamSandyTeachableLearnset,
         .formSpeciesIdTable = sWormadamFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
@@ -1904,32 +1964,32 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 13,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_WormadamTrashCloak,
+        .frontPic = gMonFrontPic_WormadamTrash,
         .frontPicSize = MON_COORDS_SIZE(48, 56),
         .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Wormadam,
         .frontAnimId = ANIM_SWING_CONVEX_FAST_SHORT,
         .enemyMonElevation = 8,
-        .backPic = gMonBackPic_WormadamTrashCloak,
+        .backPic = gMonBackPic_WormadamTrash,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 2,
         .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_WormadamTrashCloak,
-        .shinyPalette = gMonShinyPalette_WormadamTrashCloak,
-        .iconSprite = gMonIcon_WormadamTrashCloak,
+        .palette = gMonPalette_WormadamTrash,
+        .shinyPalette = gMonShinyPalette_WormadamTrash,
+        .iconSprite = gMonIcon_WormadamTrash,
         .iconPalIndex = 0,
         SHADOW(0, 9, SHADOW_SIZE_S)
         FOOTPRINT(Wormadam)
         OVERWORLD(
-            sPicTable_WormadamTrashCloak,
+            sPicTable_WormadamTrash,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_WormadamTrashCloak,
-            gShinyOverworldPalette_WormadamTrashCloak
+            gOverworldPalette_WormadamTrash,
+            gShinyOverworldPalette_WormadamTrash
         )
-        .levelUpLearnset = sWormadamTrashCloakLevelUpLearnset,
-        .teachableLearnset = sWormadamTrashCloakTeachableLearnset,
+        .levelUpLearnset = sWormadamTrashLevelUpLearnset,
+        .teachableLearnset = sWormadamTrashTeachableLearnset,
         .formSpeciesIdTable = sWormadamFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
@@ -2063,6 +2123,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Combee,
             gShinyOverworldPalette_Combee
         )
+        OVERWORLD_FEMALE(
+            sPicTable_CombeeF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeLevelUpLearnset,
         .teachableLearnset = sCombeeTeachableLearnset,
@@ -2194,6 +2260,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Pachirisu,
             gShinyOverworldPalette_Pachirisu
         )
+        OVERWORLD_FEMALE(
+            sPicTable_PachirisuF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sPachirisuLevelUpLearnset,
         .teachableLearnset = sPachirisuTeachableLearnset,
         .eggMoveLearnset = sPachirisuEggMoveLearnset,
@@ -2260,6 +2332,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Buizel,
             gShinyOverworldPalette_Buizel
         )
+        OVERWORLD_FEMALE(
+            sPicTable_BuizelF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sBuizelLevelUpLearnset,
         .teachableLearnset = sBuizelTeachableLearnset,
         .eggMoveLearnset = sBuizelEggMoveLearnset,
@@ -2324,6 +2402,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Floatzel,
             gShinyOverworldPalette_Floatzel
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_FloatzelF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sFloatzelLevelUpLearnset,
         .teachableLearnset = sFloatzelTeachableLearnset,
@@ -2617,28 +2701,28 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 13,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_ShellosEastSea,
+        .frontPic = gMonFrontPic_ShellosEast,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 14,
         .frontAnimFrames = sAnims_Shellos,
         .frontAnimId = ANIM_V_STRETCH,
-        .backPic = gMonBackPic_ShellosEastSea,
+        .backPic = gMonBackPic_ShellosEast,
         .backPicSize = MON_COORDS_SIZE(56, 48),
         .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_H_SPRING,
-        .palette = gMonPalette_ShellosEastSea,
-        .shinyPalette = gMonShinyPalette_ShellosEastSea,
-        .iconSprite = gMonIcon_ShellosEastSea,
+        .palette = gMonPalette_ShellosEast,
+        .shinyPalette = gMonShinyPalette_ShellosEast,
+        .iconSprite = gMonIcon_ShellosEast,
         .iconPalIndex = 0,
         SHADOW(2, -1, SHADOW_SIZE_S)
         FOOTPRINT(Shellos)
         OVERWORLD(
-            sPicTable_ShellosEastSea,
+            sPicTable_ShellosEast,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_ShellosEastSea,
-            gShinyOverworldPalette_ShellosEastSea
+            gOverworldPalette_ShellosEast,
+            gShinyOverworldPalette_ShellosEast
         )
         .levelUpLearnset = sShellosLevelUpLearnset,
         .teachableLearnset = sShellosTeachableLearnset,
@@ -2745,28 +2829,28 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .pokemonOffset = 8,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_GastrodonEastSea,
+        .frontPic = gMonFrontPic_GastrodonEast,
         .frontPicSize = MON_COORDS_SIZE(56, 48),
         .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_Gastrodon,
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
-        .backPic = gMonBackPic_GastrodonEastSea,
+        .backPic = gMonBackPic_GastrodonEast,
         .backPicSize = MON_COORDS_SIZE(56, 64),
         .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
-        .palette = gMonPalette_GastrodonEastSea,
-        .shinyPalette = gMonShinyPalette_GastrodonEastSea,
-        .iconSprite = gMonIcon_GastrodonEastSea,
+        .palette = gMonPalette_GastrodonEast,
+        .shinyPalette = gMonShinyPalette_GastrodonEast,
+        .iconSprite = gMonIcon_GastrodonEast,
         .iconPalIndex = 0,
         SHADOW(2, 4, SHADOW_SIZE_M)
         FOOTPRINT(Gastrodon)
         OVERWORLD(
-            sPicTable_GastrodonEastSea,
+            sPicTable_GastrodonEast,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_GastrodonEastSea,
-            gShinyOverworldPalette_GastrodonEastSea
+            gOverworldPalette_GastrodonEast,
+            gShinyOverworldPalette_GastrodonEast
         )
         .levelUpLearnset = sGastrodonLevelUpLearnset,
         .teachableLearnset = sGastrodonTeachableLearnset,
@@ -3664,6 +3748,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Gible,
             gShinyOverworldPalette_Gible
         )
+        OVERWORLD_FEMALE(
+            sPicTable_GibleF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sGibleLevelUpLearnset,
         .teachableLearnset = sGibleTeachableLearnset,
         .eggMoveLearnset = sGibleEggMoveLearnset,
@@ -3730,6 +3820,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Gabite,
             gShinyOverworldPalette_Gabite
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_GabiteF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sGabiteLevelUpLearnset,
         .teachableLearnset = sGabiteTeachableLearnset,
@@ -3800,6 +3896,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Garchomp,
             gShinyOverworldPalette_Garchomp
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_GarchompF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sGarchompLevelUpLearnset,
         .teachableLearnset = sGarchompTeachableLearnset,
@@ -4120,6 +4222,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Hippopotas,
             gShinyOverworldPalette_Hippopotas
         )
+        OVERWORLD_FEMALE(
+            sPicTable_HippopotasF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sHippopotasLevelUpLearnset,
         .teachableLearnset = sHippopotasTeachableLearnset,
         .eggMoveLearnset = sHippopotasEggMoveLearnset,
@@ -4188,6 +4296,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Hippowdon,
             gShinyOverworldPalette_Hippowdon
+        )
+        OVERWORLD_PAL_FEMALE(
+            gOverworldPalette_HippowdonF,
+            gShinyOverworldPalette_HippowdonF
         )
         .levelUpLearnset = sHippowdonLevelUpLearnset,
         .teachableLearnset = sHippowdonTeachableLearnset,
@@ -4385,6 +4497,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Croagunk,
             gShinyOverworldPalette_Croagunk
         )
+        OVERWORLD_FEMALE(
+            sPicTable_CroagunkF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sCroagunkLevelUpLearnset,
         .teachableLearnset = sCroagunkTeachableLearnset,
         .eggMoveLearnset = sCroagunkEggMoveLearnset,
@@ -4452,6 +4570,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Toxicroak,
             gShinyOverworldPalette_Toxicroak
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_ToxicroakF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sToxicroakLevelUpLearnset,
         .teachableLearnset = sToxicroakTeachableLearnset,
@@ -4585,6 +4709,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Finneon,
             gShinyOverworldPalette_Finneon
         )
+        OVERWORLD_FEMALE(
+            sPicTable_FinneonF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sFinneonLevelUpLearnset,
         .teachableLearnset = sFinneonTeachableLearnset,
         .eggMoveLearnset = sFinneonEggMoveLearnset,
@@ -4651,6 +4781,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Lumineon,
             gShinyOverworldPalette_Lumineon
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_LumineonF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sLumineonLevelUpLearnset,
         .teachableLearnset = sLumineonTeachableLearnset,
@@ -4720,6 +4856,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Snover,
             gShinyOverworldPalette_Snover
         )
+        OVERWORLD_FEMALE(
+            sPicTable_SnoverF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sSnoverLevelUpLearnset,
         .teachableLearnset = sSnoverTeachableLearnset,
         .eggMoveLearnset = sSnoverEggMoveLearnset,
@@ -4786,6 +4928,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Abomasnow,
             gShinyOverworldPalette_Abomasnow
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_AbomasnowF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sAbomasnowLevelUpLearnset,
         .teachableLearnset = sAbomasnowTeachableLearnset,
@@ -4957,10 +5105,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 3,
         .weight = 3,
         .description = COMPOUND_STRING(
-            "If the convection microwave oven is not\n"
-            "working properly, then the Rotom inhabiting\n"
-            "it will become lethargic. It will gleefully\n"
-            "burn your favorite outfit in mischief."),
+            "If the convection microwave oven is\n"
+            "not working properly, then the Rotom\n"
+            "inhabiting it will become lethargic. It\n"
+            "makes mischief by turning up the heat."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,

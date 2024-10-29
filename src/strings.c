@@ -1521,7 +1521,7 @@ const u8 gText_ElectricFan[] = _("Electric fan");
 const u8 gText_LawnMower[] = _("Lawn mower");
 const u8 gText_ChangeForm[] = _("Change form");
 const u8 gText_ChangeAbility[] = _("Change Ability");
-const u8 gText_TeachWhichMoveToPkmn[] = _("Teach which move to {STR_VAR_1}?");
+const u8 gText_TeachWhichMoveToPkmn[] = _("Teach which move to\n{STR_VAR_1}?");
 const u8 gText_MoveRelearnerTeachMoveConfirm[] = _("Teach {STR_VAR_2}?");
 const u8 gText_MoveRelearnerPkmnLearnedMove[] = _("{STR_VAR_1} learned\n{STR_VAR_2}!");
 const u8 gText_MoveRelearnerPkmnTryingToLearnMove[] = _("{STR_VAR_1} is trying to learn\n{STR_VAR_2}.\pBut {STR_VAR_1} can't learn more\nthan four moves.\pDelete an older move to make\nroom for {STR_VAR_2}?");
@@ -1588,3 +1588,7 @@ const u8 gText_Nickname[] = _("Nickname");
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
 const u8 gText_StatEditor[] = _("Stats");
+
+
+const u8 gText_Relearn[] = _("RELEARN");
+const u8 gText_Rename[] = _("RENAME");

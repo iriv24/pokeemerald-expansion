@@ -414,6 +414,10 @@ B_DEF_TEAM2 = FD 3B
 B_CHEAT_CODE = FD 3C
 @ FD 3C - preiously gActiveBattler
 @ FD 3D - preiously gActiveBattler without Illusion Check
+B_ATK_NAME_WITH_PREFIX2 = FD 3E
+B_DEF_NAME_WITH_PREFIX2 = FD 3F
+B_EFF_NAME_WITH_PREFIX2 = FD 40
+B_SCR_ACTIVE_NAME_WITH_PREFIX2 = FD 41
 
 @ indicates the end of a town/city name (before " TOWN" or " CITY")
 NAME_END = FC 00
