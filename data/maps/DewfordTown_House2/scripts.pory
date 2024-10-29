@@ -5,48 +5,49 @@ DewfordTown_House2_MapScripts::
 DewfordTown_House2_EventScript_Man::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_SILK_SCARF, DewfordTown_House2_EventScript_ExplainSilkScarf
-	msgbox DewfordTown_House2_Text_WantYouToHaveSilkScarf, MSGBOX_DEFAULT
-	giveitem ITEM_SILK_SCARF
-	goto_if_eq VAR_RESULT, FALSE, DewfordTown_House2_EventScript_NoRoomForScarf
-	setflag FLAG_RECEIVED_SILK_SCARF
+	call_if_unset FLAG_MET_REGULAR_MOVE_TUTOR, DewfordTown_House2_EventScript_SetEggMoveFlag
+	msgbox DewfordTown_House2_Text_HowToUseRelearnMoves, MSGBOX_DEFAULT
 	release
 	end
 
-DewfordTown_House2_EventScript_NoRoomForScarf::
-	msgbox DewfordTown_House2_Text_NoRoom, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_House2_EventScript_ExplainSilkScarf::
-	msgbox DewfordTown_House2_Text_ExplainSilkScarf, MSGBOX_DEFAULT
-	release
-	end
+DewfordTown_House2_EventScript_SetEggMoveFlag::
+	setflag FLAG_MET_REGULAR_MOVE_TUTOR
+	msgbox DewfordTown_House2_Text_ImEggMoveTutor, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_House2_Text_ObtainedMoveTutorOption, MSGBOX_DEFAULT
+	waitfanfare
+	return
 
 DewfordTown_House2_EventScript_Boy::
 	msgbox DewfordTown_House2_Text_BrawlySoCool, MSGBOX_NPC
 	end
 
-DewfordTown_House2_Text_WantYouToHaveSilkScarf:
-	.string "Gorge your eyes on this!\p"
-	.string "It's a Silk Scarf. It's right at the\n"
-	.string "cutting edge of fashion, yeah!\p"
-	.string "Oh, I can see your eyes twinkling!\n"
-	.string "You appreciate my dazzling style!\p"
-	.string "Oh, you're a delight!\n"
-	.string "Here you go. I want you to have it!$"
+DewfordTown_House2_Text_ImEggMoveTutor:
+	.string "Yo!\p"
+	.string "Everyone always tells me that I have\n"
+	.string "such a great memory, and it even rubs\l"
+	.string "off on my Pokémon!\p"
+	.string "Here, I'll teach you the secret to\n"
+	.string "having a great memory too.$"
 
-DewfordTown_House2_Text_NoRoom:
-	.string "Oh, you don't have room?\p"
-	.string "Now, listen tight, this Scarf is a must-\n"
-	.string "have! Why, I would sell all my items\l"
-	.string "in order to get it!$"
+DewfordTown_House2_Text_ObtainedMoveTutorOption:
+	.string "Obtained the option to relearn\n"
+	.string "Level-Up Moves!$"
 
-DewfordTown_House2_Text_ExplainSilkScarf:
-	.string "The Silk Scarf raises the power of\n"
-	.string "Normal-type moves.\p"
-	.string "It's a marvelous Scarf that will go\n"
-	.string "with almost all Pokémon!$"
+DewfordTown_House2_Text_HowToUseRelearnMoves:
+	.string "If you go to your Party Menu and select\n"
+	.string "a Pokémon, you should have a new option\l"
+	.string "called “Relearn”.\p"
+	.string "I've heard there are other people out\n"
+	.string "there who know how to relearn other\l"
+	.string "types of moves, but I only know how to\l"
+	.string "relearn moves that a  Pokémon gets by\l"
+	.string "leveling up.\p"
+	.string "If you don't see the new option, that\n"
+	.string "means your Pokémon doesn't have any\l"
+	.string "moves to relearn, what a bummer!\p"
+	.string "I hope you remember me when you\n"
+	.string "make it  big!$"
 
 DewfordTown_House2_Text_BrawlySoCool:
 	.string "Wow, you bothered to cross the sea\n"

@@ -13,102 +13,104 @@ DewfordTown_House2_EventScript_Man::
 # 7 "data/maps/DewfordTown_House2/scripts.pory"
 	faceplayer
 # 8 "data/maps/DewfordTown_House2/scripts.pory"
-	goto_if_set FLAG_RECEIVED_SILK_SCARF, DewfordTown_House2_EventScript_ExplainSilkScarf
+	call_if_unset FLAG_MET_REGULAR_MOVE_TUTOR, DewfordTown_House2_EventScript_SetEggMoveFlag
 # 9 "data/maps/DewfordTown_House2/scripts.pory"
-	msgbox DewfordTown_House2_Text_WantYouToHaveSilkScarf, MSGBOX_DEFAULT
+	msgbox DewfordTown_House2_Text_HowToUseRelearnMoves, MSGBOX_DEFAULT
 # 10 "data/maps/DewfordTown_House2/scripts.pory"
-	giveitem ITEM_SILK_SCARF
+	release
 # 11 "data/maps/DewfordTown_House2/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, DewfordTown_House2_EventScript_NoRoomForScarf
+	end
 # 12 "data/maps/DewfordTown_House2/scripts.pory"
-	setflag FLAG_RECEIVED_SILK_SCARF
-# 13 "data/maps/DewfordTown_House2/scripts.pory"
-	release
-# 14 "data/maps/DewfordTown_House2/scripts.pory"
-	end
-# 15 "data/maps/DewfordTown_House2/scripts.pory"
 
+# 13 "data/maps/DewfordTown_House2/scripts.pory"
+DewfordTown_House2_EventScript_SetEggMoveFlag::
+# 14 "data/maps/DewfordTown_House2/scripts.pory"
+	setflag FLAG_MET_REGULAR_MOVE_TUTOR
+# 15 "data/maps/DewfordTown_House2/scripts.pory"
+	msgbox DewfordTown_House2_Text_ImEggMoveTutor, MSGBOX_DEFAULT
 # 16 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_EventScript_NoRoomForScarf::
+	playfanfare MUS_OBTAIN_ITEM
 # 17 "data/maps/DewfordTown_House2/scripts.pory"
-	msgbox DewfordTown_House2_Text_NoRoom, MSGBOX_DEFAULT
+	msgbox DewfordTown_House2_Text_ObtainedMoveTutorOption, MSGBOX_DEFAULT
 # 18 "data/maps/DewfordTown_House2/scripts.pory"
-	release
+	waitfanfare
 # 19 "data/maps/DewfordTown_House2/scripts.pory"
-	end
+	return
 # 20 "data/maps/DewfordTown_House2/scripts.pory"
 
 # 21 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_EventScript_ExplainSilkScarf::
-# 22 "data/maps/DewfordTown_House2/scripts.pory"
-	msgbox DewfordTown_House2_Text_ExplainSilkScarf, MSGBOX_DEFAULT
-# 23 "data/maps/DewfordTown_House2/scripts.pory"
-	release
-# 24 "data/maps/DewfordTown_House2/scripts.pory"
-	end
-# 25 "data/maps/DewfordTown_House2/scripts.pory"
-
-# 26 "data/maps/DewfordTown_House2/scripts.pory"
 DewfordTown_House2_EventScript_Boy::
-# 27 "data/maps/DewfordTown_House2/scripts.pory"
+# 22 "data/maps/DewfordTown_House2/scripts.pory"
 	msgbox DewfordTown_House2_Text_BrawlySoCool, MSGBOX_NPC
-# 28 "data/maps/DewfordTown_House2/scripts.pory"
+# 23 "data/maps/DewfordTown_House2/scripts.pory"
 	end
+# 24 "data/maps/DewfordTown_House2/scripts.pory"
+
+# 25 "data/maps/DewfordTown_House2/scripts.pory"
+DewfordTown_House2_Text_ImEggMoveTutor:
+# 26 "data/maps/DewfordTown_House2/scripts.pory"
+	.string "Yo!\p"
+# 27 "data/maps/DewfordTown_House2/scripts.pory"
+	.string "Everyone always tells me that I have\n"
+# 28 "data/maps/DewfordTown_House2/scripts.pory"
+	.string "such a great memory, and it even rubs\l"
 # 29 "data/maps/DewfordTown_House2/scripts.pory"
-
+	.string "off on my Pokémon!\p"
 # 30 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_Text_WantYouToHaveSilkScarf:
+	.string "Here, I'll teach you the secret to\n"
 # 31 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Gorge your eyes on this!\p"
+	.string "having a great memory too.$"
 # 32 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "It's a Silk Scarf. It's right at the\n"
+
 # 33 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "cutting edge of fashion, yeah!\p"
+DewfordTown_House2_Text_ObtainedMoveTutorOption:
 # 34 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Oh, I can see your eyes twinkling!\n"
+	.string "Obtained the option to relearn\n"
 # 35 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "You appreciate my dazzling style!\p"
+	.string "Level-Up Moves!$"
 # 36 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Oh, you're a delight!\n"
+
 # 37 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Here you go. I want you to have it!$"
+DewfordTown_House2_Text_HowToUseRelearnMoves:
 # 38 "data/maps/DewfordTown_House2/scripts.pory"
-
+	.string "If you go to your Party Menu and select\n"
 # 39 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_Text_NoRoom:
+	.string "a Pokémon, you should have a new option\l"
 # 40 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Oh, you don't have room?\p"
+	.string "called “Relearn”.\p"
 # 41 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Now, listen tight, this Scarf is a must-\n"
+	.string "I've heard there are other people out\n"
 # 42 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "have! Why, I would sell all my items\l"
+	.string "there who know how to relearn other\l"
 # 43 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "in order to get it!$"
+	.string "types of moves, but I only know how to\l"
 # 44 "data/maps/DewfordTown_House2/scripts.pory"
-
+	.string "relearn moves that a  Pokémon gets by\l"
 # 45 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_Text_ExplainSilkScarf:
+	.string "leveling up.\p"
 # 46 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "The Silk Scarf raises the power of\n"
+	.string "If you don't see the new option, that\n"
 # 47 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Normal-type moves.\p"
+	.string "means your Pokémon doesn't have any\l"
 # 48 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "It's a marvelous Scarf that will go\n"
+	.string "moves to relearn, what a bummer!\p"
 # 49 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "with almost all Pokémon!$"
+	.string "I hope you remember me when you\n"
 # 50 "data/maps/DewfordTown_House2/scripts.pory"
-
+	.string "make it  big!$"
 # 51 "data/maps/DewfordTown_House2/scripts.pory"
-DewfordTown_House2_Text_BrawlySoCool:
+
 # 52 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Wow, you bothered to cross the sea\n"
+DewfordTown_House2_Text_BrawlySoCool:
 # 53 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "to visit Dewford?\p"
+	.string "Wow, you bothered to cross the sea\n"
 # 54 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "Did you maybe come here because you\n"
+	.string "to visit Dewford?\p"
 # 55 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "heard about Brawly?\p"
+	.string "Did you maybe come here because you\n"
 # 56 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "He's so cool…\n"
+	.string "heard about Brawly?\p"
 # 57 "data/maps/DewfordTown_House2/scripts.pory"
+	.string "He's so cool…\n"
+# 58 "data/maps/DewfordTown_House2/scripts.pory"
 	.string "Everyone idolizes him.$"

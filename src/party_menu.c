@@ -3018,23 +3018,29 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
         
-        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, 0);
-        bool32 hasLvlUpMove = (GetSpeciesLevelUpLearnset(species) != gSpeciesInfo[SPECIES_NONE].levelUpLearnset);
-        
-        if(FlagGet(FLAG_MET_EGG_MOVE_TUTOR))
+        if (FlagGet(FLAG_MET_REGULAR_MOVE_TUTOR))
         {
-            u16 eggSpecies = GetEggSpecies(species);
-            bool32 hasEggMoves = (GetSpeciesEggMoves(eggSpecies) != gSpeciesInfo[SPECIES_NONE].eggMoveLearnset);
+            u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, 0);
+            bool32 hasLvlUpMove = (GetSpeciesLevelUpLearnset(species) != gSpeciesInfo[SPECIES_NONE].levelUpLearnset);
+            u16 relearnOptionToAppend = 0;
+            
+            if (hasLvlUpMove)
+                relearnOptionToAppend = MENU_RELEARN_LVL_UP;
 
-            if (hasLvlUpMove && hasEggMoves)
-			    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_BOTH);
-            else if(hasLvlUpMove && !hasEggMoves)
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP);
-            else if(!hasLvlUpMove && hasEggMoves)
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_EGG);
+            if (FlagGet(FLAG_MET_EGG_MOVE_TUTOR))
+            {
+                u16 eggSpecies = GetEggSpecies(species);
+                bool32 hasEggMoves = (GetSpeciesEggMoves(eggSpecies) != gSpeciesInfo[SPECIES_NONE].eggMoveLearnset);
+
+                if (hasLvlUpMove && hasEggMoves)
+                    relearnOptionToAppend = MENU_RELEARN_BOTH;
+
+                else if (!hasLvlUpMove && hasEggMoves)
+                    relearnOptionToAppend =MENU_RELEARN_EGG;
+            }
+            if (relearnOptionToAppend > 0)
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, relearnOptionToAppend);
         }
-        else if (hasLvlUpMove)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_LVL_UP); 
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
