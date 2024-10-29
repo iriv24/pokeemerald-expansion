@@ -670,6 +670,7 @@ void StartRegiBattle(void)
 {
     u8 transitionId;
     u16 species;
+    u16 song;
 
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
@@ -680,18 +681,42 @@ void StartRegiBattle(void)
     {
     case SPECIES_REGIROCK:
         transitionId = B_TRANSITION_REGIROCK;
+        song = MUS_VS_REGI;
         break;
     case SPECIES_REGICE:
         transitionId = B_TRANSITION_REGICE;
+        song = MUS_VS_REGI;
         break;
     case SPECIES_REGISTEEL:
         transitionId = B_TRANSITION_REGISTEEL;
+        song = MUS_VS_REGI;
+        break;
+    case SPECIES_REGIDRAGO:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_VS_REGI;
+        break;
+    case SPECIES_REGIELEKI:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_VS_REGI;
+        break;
+    case SPECIES_UXIE:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_DP_VS_UXIE_MESPRIT_AZELF;
+        break;
+    case SPECIES_MESPRIT:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_DP_VS_UXIE_MESPRIT_AZELF;
+        break;
+    case SPECIES_AZELF:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_DP_VS_UXIE_MESPRIT_AZELF;
         break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_DP_VS_LEGEND;
         break;
     }
-    CreateBattleStartTask(transitionId, MUS_VS_REGI);
+    CreateBattleStartTask(transitionId, song);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

@@ -2,7 +2,7 @@
   "id": "MAP_ROCKY_SLAB",
   "name": "RockySlab",
   "layout": "LAYOUT_ROCKY_SLAB",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_DP_LAKE",
   "region_map_section": "MAPSEC_ROCKY_SLAB",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

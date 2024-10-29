@@ -2,7 +2,7 @@
   "id": "MAP_FLOATING_SLAB",
   "name": "FloatingSlab",
   "layout": "LAYOUT_FLOATING_SLAB",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_DP_LAKE",
   "region_map_section": "MAPSEC_FLOATING_SLAB",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
