@@ -11,6 +11,7 @@
 #include "script.h"
 #include "data.h"
 #include "data/randomizer/special_form_tables.h"
+#include "data/randomizer/ability_whitelist.h"
 
 
 const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
@@ -1065,10 +1066,8 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
 
         state = RandomizerRandSeed(RANDOMIZER_REASON_ABILITIES, seed, species);
 
-        // Randomize abilities to anything but wonder guard and NONE
-        do {
-            result = RandomizerNextRange(&state, ABILITIES_COUNT);
-        } while(IsAbilityIllegal(result));
+        // Randomize abilities
+        result = sRandomizerAbilityWhitelist[RandomizerNextRange(&state, ABILITY_WHITELIST_SIZE)];
 
         return result;
     }
