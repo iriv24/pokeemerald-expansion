@@ -1315,7 +1315,7 @@ s32 AI_DecideKnownAbilityForTurn(u32 battlerId)
     for (i = 0; i < NUM_ABILITY_SLOTS; i++)
     {
         if (gSpeciesInfo[gBattleMons[battlerId].species].abilities[i] != ABILITY_NONE)
-            validAbilities[numValidAbilities++] = gSpeciesInfo[gBattleMons[battlerId].species].abilities[i];
+            validAbilities[numValidAbilities++] = GetAbilityBySpecies(gBattleMons[battlerId].species, gBattleMons[battlerId].abilityNum, gBattleMons[battlerId].cantRandomizeAbility);
     }
 
     if (numValidAbilities > 0)
