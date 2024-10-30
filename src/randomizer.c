@@ -10,6 +10,8 @@
 #include "script.h"
 #include "data.h"
 #include "data/randomizer/special_form_tables.h"
+#include "constants/abilities.h"
+#include "data/randomizer/ability_whitelist.h"
 
 bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 {
@@ -44,6 +46,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
                 return FORCE_RANDOMIZE_STARTERS;
             #else
                 return FlagGet(RANDOMIZER_FLAG_STARTERS);
+            #endif
+        case RANDOMIZE_ABILITIES:
+            #ifdef FORCE_RANDOMIZE_ABILITIES
+                return FORCE_RANDOMIZE_ABILITIES;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_ABILITIES);
             #endif
         default:
             return FALSE;
@@ -894,6 +902,30 @@ u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters)
     }
 
     return originalStarters[starterSlot];
+}
+
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_ABILITIES) && originalAbility != ABILITY_NONE)
+    {  
+        struct Sfc32State state;
+        u16 result;
+        u32 seed;
+
+        // Seed the generator using the species and the abilityNum 
+        seed = ((u32)species) << 8;
+        seed |= abilityNum;
+
+        state = RandomizerRandSeed(RANDOMIZER_REASON_ABILITIES, seed, species);
+
+        // Randomize abilities
+        result = sRandomizerAbilityWhitelist[RandomizerNextRange(&state, ABILITY_WHITELIST_SIZE)];
+
+        return result;
+    }
+
+    return originalAbility;
 }
 
 #endif // RANDOMIZER_AVAILABLE

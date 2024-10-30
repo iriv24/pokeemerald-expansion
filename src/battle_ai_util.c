@@ -1270,18 +1270,19 @@ bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability)
 
 u32 AI_GetBattlerAbility(u32 battler)
 {
-    if (gAbilitiesInfo[gBattleMons[battler].ability].cantBeSuppressed)
-        return gBattleMons[battler].ability;
+    u16 abilityToUse = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
+    if (gAbilitiesInfo[abilityToUse].cantBeSuppressed)
+        return abilityToUse;
 
     if (gStatuses3[battler] & STATUS3_GASTRO_ACID)
         return ABILITY_NONE;
 
     if (IsNeutralizingGasOnField()
-     && gBattleMons[battler].ability != ABILITY_NEUTRALIZING_GAS
+     && abilityToUse != ABILITY_NEUTRALIZING_GAS
      && GetBattlerHoldEffectIgnoreAbility(battler, TRUE) != HOLD_EFFECT_ABILITY_SHIELD)
         return ABILITY_NONE;
 
-    return gBattleMons[battler].ability;
+    return abilityToUse;
 }
 
 // does NOT include ability suppression checks

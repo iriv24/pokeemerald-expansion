@@ -60,6 +60,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "randomizer.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -3446,6 +3447,10 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
         gLastUsedAbility = gSpeciesInfo[species].abilities[i];
     }
 
+    #if RANDOMIZER_AVAILABLE == TRUE
+        gLastUsedAbility = RandomizeAbility(species, abilityNum, gLastUsedAbility);
+    #endif
+    
     return gLastUsedAbility;
 }
 

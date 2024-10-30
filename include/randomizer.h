@@ -33,6 +33,8 @@ enum RandomizerFeature
     RANDOMIZE_FIXED_MON,
     // Randomization of starter Pokémon species.
     RANDOMIZE_STARTERS,
+    // Randomization of species' abilities.
+    RANDOMIZE_ABILITIES,
 };
 
 enum RandomizerReason
@@ -45,6 +47,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_LEARNSET,
     RANDOMIZER_REASON_FIELD_ITEM,
     RANDOMIZER_REASON_STARTER,
+    RANDOMIZER_REASON_ABILITIES,
 };
 
 enum RandomizerOption {
@@ -111,6 +114,9 @@ u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId);
 
 // Given a starter slot and the list of original starters, returns the starter in that slot.
 u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters);
+
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {

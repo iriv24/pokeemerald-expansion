@@ -40,6 +40,7 @@
 //#define FORCE_RANDOMIZE_TRAINER_MON   TRUE
 //#define FORCE_RANDOMIZE_FIXED_MON     TRUE
 //#define FORCE_RANDOMIZE_STARTERS      TRUE
+//#define FORCE_RANDOMIZE_ABILITIES     TRUE
 
 // These flags control whether a particular randomization feature is active.
 // They are ignored and disabled if the flags above are set.
@@ -61,6 +62,10 @@
 
 #ifndef FORCE_RANDOMIZE_STARTERS
 #define RANDOMIZER_FLAG_STARTERS            FLAG_UNUSED_0x024
+#endif
+
+#ifndef FORCE_RANDOMIZE_ABILITIES
+#define RANDOMIZER_FLAG_ABILITIES           FLAG_UNUSED_0x025
 #endif
 
 #define RANDOMIZER_VAR_SPECIES_MODE         VAR_UNUSED_0x404E
