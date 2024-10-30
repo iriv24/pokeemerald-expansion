@@ -459,23 +459,18 @@ PetalburgWoods_Text_MiracleSeedExplanation:
 
 PetalburgWoods_Text_TrainerTipsExperience:
 	.string "TRAINER TIPS\p"
-	.string "Any Pokémon that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak Pokémon, put it at the\n"
-	.string "left of the team list.\p"
-	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
-	.string "being exposed to any harm.\p"
-	.string "Alternatively, turn on your Exp. Share,\n"
-	.string "you bum.$"
+	.string "You can sort the Items in you Bag by\n"
+	.string "pressing the “Start” button when\l"
+	.string "inside one of the pockets.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
 	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), Pokémon\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a Pokémon runs out of PP, it must be\n"
-	.string "taken to a Pokémon CENTER.$"
+	.string "You can register multiple Key Items,\n"
+	.string "and then see them all in a list by\l"
+	.string "pressing the “Select” button.\p"
+	.string "If only one Item is registered, you will\n"
+	.string "not be taken to the list, as it will just\l"
+	.string "activate instead.$"
 
 `
 

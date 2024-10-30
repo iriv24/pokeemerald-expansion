@@ -1071,14 +1071,11 @@ Route104_Text_PrettyPetalFlowShop:
 
 Route104_Text_TrainerTipsDoubleBattles:
 	.string "TRAINER TIPS\p"
-	.string "In the Hoenn region there are pairs\n"
-	.string "of trainers who challenge others\l"
-	.string "for 2-on-2 Pokémon battles called\l"
-	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the trainer must\n"
-	.string "send out two Pokémon, the one at the\l"
-	.string "left of the list and the top one.\l"
-	.string "Watch how Pokémon are lined up.$"
+	.string "You can rearrange your Pokémon party\n"
+	.string "more efficiently by using the “Select”\l"
+	.string "button or the “R” button while\l"
+	.string "hovering over a Pokémon in\l"
+	.string "the party menu.$"
 
 Route104_Text_MayWeShouldRegister:
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
