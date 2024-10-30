@@ -438,30 +438,21 @@ InsideOfTruck_EventScript_RandomzierOptions_1:
 # 265 "data/maps/InsideOfTruck/scripts.pory"
 	dynmultipush InsideOfTruck_EventScript_RandomzierOptions_Text_3, 1
 InsideOfTruck_EventScript_RandomzierOptions_5:
-# 269 "data/maps/InsideOfTruck/scripts.pory"
-	goto_if_set FLAG_RANDOM_LEARNSETS_ENABLED, InsideOfTruck_EventScript_RandomzierOptions_10
-# 276 "data/maps/InsideOfTruck/scripts.pory"
-	dynmultipush InsideOfTruck_EventScript_RandomzierOptions_Text_5, 2
-InsideOfTruck_EventScript_RandomzierOptions_9:
 # 279 "data/maps/InsideOfTruck/scripts.pory"
 	dynmultipush InsideOfTruck_EventScript_StartSettingsMenu_Text_3, MULTI_B_PRESSED
 # 283 "data/maps/InsideOfTruck/scripts.pory"
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 # 285 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_14
-InsideOfTruck_EventScript_RandomzierOptions_13:
+	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_10
+InsideOfTruck_EventScript_RandomzierOptions_9:
 # 291 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_17
-InsideOfTruck_EventScript_RandomzierOptions_16:
+	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_13
+InsideOfTruck_EventScript_RandomzierOptions_12:
 # 297 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_RESULT, 1
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_20
-InsideOfTruck_EventScript_RandomzierOptions_19:
-# 321 "data/maps/InsideOfTruck/scripts.pory"
-	compare VAR_RESULT, 2
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_22
+	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_15
 	return
 
 InsideOfTruck_EventScript_RandomzierOptions_2:
@@ -475,89 +466,49 @@ InsideOfTruck_EventScript_RandomzierOptions_6:
 	goto InsideOfTruck_EventScript_RandomzierOptions_5
 
 InsideOfTruck_EventScript_RandomzierOptions_10:
-# 271 "data/maps/InsideOfTruck/scripts.pory"
-	dynmultipush InsideOfTruck_EventScript_RandomzierOptions_Text_4, 2
-	goto InsideOfTruck_EventScript_RandomzierOptions_9
-
-InsideOfTruck_EventScript_RandomzierOptions_14:
 # 287 "data/maps/InsideOfTruck/scripts.pory"
 	goto InsideOfTruck_EventScript_StartSettingsMenu
-	goto InsideOfTruck_EventScript_RandomzierOptions_13
+	goto InsideOfTruck_EventScript_RandomzierOptions_9
 
-InsideOfTruck_EventScript_RandomzierOptions_17:
+InsideOfTruck_EventScript_RandomzierOptions_13:
 # 293 "data/maps/InsideOfTruck/scripts.pory"
 	goto InsideOfTruck_EventScript_SpeciesRandomizerOptions
-	goto InsideOfTruck_EventScript_RandomzierOptions_16
+	goto InsideOfTruck_EventScript_RandomzierOptions_12
 
-InsideOfTruck_EventScript_RandomzierOptions_20:
+InsideOfTruck_EventScript_RandomzierOptions_15:
 # 299 "data/maps/InsideOfTruck/scripts.pory"
-	goto_if_set FLAG_RANDOM_ABILITIES_ENABLED, InsideOfTruck_EventScript_RandomzierOptions_25
+	goto_if_set FLAG_RANDOM_ABILITIES_ENABLED, InsideOfTruck_EventScript_RandomzierOptions_18
 # 310 "data/maps/InsideOfTruck/scripts.pory"
 	msgbox RandomAbilitiesAlreadyOffYesNo, MSGBOX_YESNO
 # 311 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_34
-InsideOfTruck_EventScript_RandomzierOptions_24:
+	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_23
+InsideOfTruck_EventScript_RandomzierOptions_17:
 # 317 "data/maps/InsideOfTruck/scripts.pory"
-	goto InsideOfTruck_EventScript_RandomzierOptions
-	goto InsideOfTruck_EventScript_RandomzierOptions_19
-
-InsideOfTruck_EventScript_RandomzierOptions_22:
-# 323 "data/maps/InsideOfTruck/scripts.pory"
-	goto_if_set FLAG_RANDOM_LEARNSETS_ENABLED, InsideOfTruck_EventScript_RandomzierOptions_29
-# 334 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox RandomLearnsetsAlreadyOffYesNo, MSGBOX_YESNO
-# 335 "data/maps/InsideOfTruck/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_38
-InsideOfTruck_EventScript_RandomzierOptions_28:
-# 341 "data/maps/InsideOfTruck/scripts.pory"
 	goto InsideOfTruck_EventScript_RandomzierOptions
 	return
 
-InsideOfTruck_EventScript_RandomzierOptions_25:
+InsideOfTruck_EventScript_RandomzierOptions_18:
 # 301 "data/maps/InsideOfTruck/scripts.pory"
 	msgbox RandomAbilitiesAlreadyOnYesNo, MSGBOX_YESNO
 # 302 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_32
-	goto InsideOfTruck_EventScript_RandomzierOptions_24
+	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_21
+	goto InsideOfTruck_EventScript_RandomzierOptions_17
 
-InsideOfTruck_EventScript_RandomzierOptions_29:
-# 325 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox RandomLearnsetsAlreadyOnYesNo, MSGBOX_YESNO
-# 326 "data/maps/InsideOfTruck/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq InsideOfTruck_EventScript_RandomzierOptions_36
-	goto InsideOfTruck_EventScript_RandomzierOptions_28
-
-InsideOfTruck_EventScript_RandomzierOptions_32:
+InsideOfTruck_EventScript_RandomzierOptions_21:
 # 304 "data/maps/InsideOfTruck/scripts.pory"
 	clearflag FLAG_RANDOM_ABILITIES_ENABLED
 # 305 "data/maps/InsideOfTruck/scripts.pory"
 	msgbox RandomAbilitiesDisabled
-	goto InsideOfTruck_EventScript_RandomzierOptions_24
+	goto InsideOfTruck_EventScript_RandomzierOptions_17
 
-InsideOfTruck_EventScript_RandomzierOptions_34:
+InsideOfTruck_EventScript_RandomzierOptions_23:
 # 313 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_RANDOM_ABILITIES_ENABLED
 # 314 "data/maps/InsideOfTruck/scripts.pory"
 	msgbox RandomAbilitiesEnabled
-	goto InsideOfTruck_EventScript_RandomzierOptions_24
-
-InsideOfTruck_EventScript_RandomzierOptions_36:
-# 328 "data/maps/InsideOfTruck/scripts.pory"
-	clearflag FLAG_RANDOM_LEARNSETS_ENABLED
-# 329 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox RandomLearnsetsDisabled
-	goto InsideOfTruck_EventScript_RandomzierOptions_28
-
-InsideOfTruck_EventScript_RandomzierOptions_38:
-# 337 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_RANDOM_LEARNSETS_ENABLED
-# 338 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox RandomLearnsetsEnabled
-	goto InsideOfTruck_EventScript_RandomzierOptions_28
+	goto InsideOfTruck_EventScript_RandomzierOptions_17
 
 
 InsideOfTruck_EventScript_SpeciesRandomizerOptions::
@@ -843,14 +794,6 @@ InsideOfTruck_EventScript_RandomzierOptions_Text_2:
 InsideOfTruck_EventScript_RandomzierOptions_Text_3:
 # 265 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Ability$"
-
-InsideOfTruck_EventScript_RandomzierOptions_Text_4:
-# 271 "data/maps/InsideOfTruck/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset$"
-
-InsideOfTruck_EventScript_RandomzierOptions_Text_5:
-# 276 "data/maps/InsideOfTruck/scripts.pory"
-	.string "Learnset$"
 
 InsideOfTruck_EventScript_SpeciesRandomizerOptions_Text_0:
 # 349 "data/maps/InsideOfTruck/scripts.pory"

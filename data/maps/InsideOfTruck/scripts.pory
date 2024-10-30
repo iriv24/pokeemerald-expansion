@@ -266,15 +266,15 @@ script InsideOfTruck_EventScript_RandomzierOptions {
 	}
 		
 
-	if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
-	{
-		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset", 2)
-	}
+	// if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+	// {
+	// 	dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset", 2)
+	// }
 		
-	else
-	{
-		dynmultipush("Learnset", 2)
-	}
+	// else
+	// {
+	// 	dynmultipush("Learnset", 2)
+	// }
 
 	dynmultipush("Done", MULTI_B_PRESSED)
 	
@@ -318,28 +318,28 @@ script InsideOfTruck_EventScript_RandomzierOptions {
 	}
 
 	// Learnset
-	if(var(VAR_RESULT) == 2) 
-	{
-		if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
-		{
-			msgbox(RandomLearnsetsAlreadyOnYesNo, MSGBOX_YESNO)
-			if(var(VAR_RESULT) == YES)
-			{
-				clearflag(FLAG_RANDOM_LEARNSETS_ENABLED)
-				msgbox(RandomLearnsetsDisabled)
-			}
-		}
-		else
-		{
-			msgbox(RandomLearnsetsAlreadyOffYesNo, MSGBOX_YESNO)
-			if(var(VAR_RESULT) == YES)
-			{
-				setflag(FLAG_RANDOM_LEARNSETS_ENABLED)
-				msgbox(RandomLearnsetsEnabled)
-			}
-		}
-		goto(InsideOfTruck_EventScript_RandomzierOptions)
-	}
+	// if(var(VAR_RESULT) == 2) 
+	// {
+	// 	if(flag(FLAG_RANDOM_LEARNSETS_ENABLED))
+	// 	{
+	// 		msgbox(RandomLearnsetsAlreadyOnYesNo, MSGBOX_YESNO)
+	// 		if(var(VAR_RESULT) == YES)
+	// 		{
+	// 			clearflag(FLAG_RANDOM_LEARNSETS_ENABLED)
+	// 			msgbox(RandomLearnsetsDisabled)
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		msgbox(RandomLearnsetsAlreadyOffYesNo, MSGBOX_YESNO)
+	// 		if(var(VAR_RESULT) == YES)
+	// 		{
+	// 			setflag(FLAG_RANDOM_LEARNSETS_ENABLED)
+	// 			msgbox(RandomLearnsetsEnabled)
+	// 		}
+	// 	}
+	// 	goto(InsideOfTruck_EventScript_RandomzierOptions)
+	// }
 }
 
 script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
