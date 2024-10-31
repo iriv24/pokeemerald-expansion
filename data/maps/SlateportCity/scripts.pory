@@ -137,24 +137,34 @@ SlateportCity_Movement_ScottExit:
 	walk_left
 	step_end
 
-SlateportCity_EventScript_EnergyGuru::
+SlateportCity_EventScript_AbilityGuru::
 	lock
 	faceplayer
-	message SlateportCity_Text_EnergyGuruSellWhatYouNeed
+	message SlateportCity_Text_AbilityGuruSellWhatYouNeed
 	waitmessage
-	pokemart SlateportCity_Pokemart_EnergyGuru
+	goto_if_set FLAG_DAWN_111, SlateportCity_EventScript_AbilityGuru2
+	pokemart SlateportCity_Pokemart_AbilityGuru
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_Pokemart_EnergyGuru:
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_IRON
-	.2byte ITEM_CARBOS
-	.2byte ITEM_ZINC
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_HP_UP
+SlateportCity_Pokemart_AbilityGuru:
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_AbilityGuru2::
+	pokemart SlateportCity_Pokemart_AbilityGuru2
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_AbilityGuru2:
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
 	.2byte ITEM_NONE
 	release
 	end
@@ -500,22 +510,23 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
-SlateportCity_EventScript_DollClerk::
+SlateportCity_EventScript_ShardClerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor_Dolls
+	pokemart SlateportCity_PokemartDecor_Shards
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor_Dolls:
-	.2byte DECOR_AZURILL_DOLL
-	.2byte DECOR_MARILL_DOLL
-	.2byte DECOR_SKITTY_DOLL
-	.2byte DECOR_NONE
+SlateportCity_PokemartDecor_Shards:
+	.2byte ITEM_BLUE_SHARD
+	.2byte ITEM_RED_SHARD
+	.2byte ITEM_GREEN_SHARD
+	.2byte ITEM_YELLOW_SHARD
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -524,34 +535,37 @@ SlateportCity_EventScript_ComeBackWithSecretPower::
 	release
 	end
 
-SlateportCity_EventScript_DecorClerk::
+SlateportCity_EventScript_BerryClerk::
 	lock
 	faceplayer
-	goto_if_unset FLAG_RECEIVED_SECRET_POWER, SlateportCity_EventScript_ComeBackWithSecretPower
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor
+	pokemart SlateportCity_PokemartBerries
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor:
-	.2byte DECOR_RED_BRICK
-	.2byte DECOR_BLUE_BRICK
-	.2byte DECOR_YELLOW_BRICK
-	.2byte DECOR_RED_BALLOON
-	.2byte DECOR_BLUE_BALLOON
-	.2byte DECOR_YELLOW_BALLOON
-	.2byte DECOR_C_LOW_NOTE_MAT
-	.2byte DECOR_D_NOTE_MAT
-	.2byte DECOR_E_NOTE_MAT
-	.2byte DECOR_F_NOTE_MAT
-	.2byte DECOR_G_NOTE_MAT
-	.2byte DECOR_A_NOTE_MAT
-	.2byte DECOR_B_NOTE_MAT
-	.2byte DECOR_C_HIGH_NOTE_MAT
-	.2byte DECOR_NONE
+SlateportCity_PokemartBerries:
+	.2byte ITEM_CHOPLE_BERRY
+	.2byte ITEM_COLBUR_BERRY
+	.2byte ITEM_WACAN_BERRY
+	.2byte ITEM_CHARTI_BERRY
+	.2byte ITEM_CHILAN_BERRY
+	.2byte ITEM_HABAN_BERRY
+	.2byte ITEM_ROSELI_BERRY
+	.2byte ITEM_SHUCA_BERRY
+	.2byte ITEM_BABIRI_BERRY
+	.2byte ITEM_KASIB_BERRY
+	.2byte ITEM_COBA_BERRY
+	.2byte ITEM_KEBIA_BERRY
+	.2byte ITEM_OCCA_BERRY
+	.2byte ITEM_PASSHO_BERRY
+	.2byte ITEM_PAYAPA_BERRY
+	.2byte ITEM_RINDO_BERRY
+	.2byte ITEM_YACHE_BERRY
+	.2byte ITEM_TANGA_BERRY
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -951,9 +965,9 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
-SlateportCity_Text_EnergyGuruSellWhatYouNeed:
-	.string "I'm the ENERGY GURU! I'll go for it and\n"
-	.string "sell you what you need!$"
+SlateportCity_Text_AbilityGuruSellWhatYouNeed:
+	.string "I'm the Ability Guru! I'll go for it\n"
+	.string "and sell you what you need!$"
 
 SlateportCity_Text_OhYourPokemon:
 	.string "Oh?\n"
