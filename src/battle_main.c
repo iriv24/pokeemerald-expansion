@@ -1961,8 +1961,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 fixedOtId = 0;
             u32 ability = 0;
             u16 species = partyData[i].species;
-            if (RANDOMIZER_AVAILABLE && !isTrainerBossTrainer)
-                species = RandomizeTrainerMon(seed, i, monsCount, species);
+            #if (RANDOMIZER_AVAILABLE == TRUE)
+                if(!isTrainerBossTrainer)
+                    species = RandomizeTrainerMon(seed, i, monsCount, species);
+            #endif
 
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
