@@ -1528,7 +1528,7 @@ const u8 gText_MoveRelearnerPkmnTryingToLearnMove[] = _("{STR_VAR_1} is trying t
 const u8 gText_MoveRelearnerStopTryingToTeachMove[] = _("Stop trying to teach\n{STR_VAR_2}?");
 const u8 gText_MoveRelearnerAndPoof[] = _("{PAUSE 32}1, {PAUSE 15}2, and {PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!\p");
 const u8 gText_MoveRelearnerPkmnForgotMoveAndLearnedNew[] = _("{STR_VAR_1} forgot {STR_VAR_3}.\pAnd…\p{STR_VAR_1} learned {STR_VAR_2}.");
-const u8 gText_MoveRelearnedPkmnDidNotLearnMove[] = _("{STR_VAR_1} did not learn the\nmove {STR_VAR_2}."); // Unused
+const u8 gText_MoveRelearnedPkmnDidNotLearnMove[] = _("{STR_VAR_1} did not learn the\nmove {STR_VAR_2}."); // Unusedpokemon_summar
 const u8 gText_MoveRelearnerGiveUp[] = _("Give up trying to teach a new\nmove to {STR_VAR_1}?");
 const u8 gText_MoveRelearnerWhichMoveToForget[] = _("Which move should be\nforgotten?\p");
 const u8 gText_MoveRelearnerBattleMoves[] = _("BATTLE Moves");
@@ -1588,7 +1588,3 @@ const u8 gText_Nickname[] = _("Nickname");
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
 const u8 gText_StatEditor[] = _("Stats");
-
-
-const u8 gText_Relearn[] = _("RELEARN");
-const u8 gText_Rename[] = _("RENAME");

@@ -54,14 +54,14 @@
 #if BW_SUMMARY_SCREEN == TRUE
 enum BWPSSPage
 {
-    BW_PSS_PAGE_INFO,
-    BW_PSS_PAGE_SKILLS,
-    BW_PSS_PAGE_BATTLE_MOVES,
-    BW_PSS_PAGE_CONTEST_MOVES,
-    BW_PSS_PAGE_COUNT,
-    BW_PSS_BUFFER_BATTLE_EFFECTS = BW_PSS_PAGE_COUNT,
-    BW_PSS_BUFFER_CONTEST_EFFECTS,
-    BW_PSS_BUFFER_COUNT
+    PSS_PAGE_INFO,
+    PSS_PAGE_SKILLS,
+    PSS_PAGE_BATTLE_MOVES,
+    PSS_PAGE_CONTEST_MOVES,
+    PSS_PAGE_COUNT,
+    PSS_BUFFER_BATTLE_EFFECTS = PSS_PAGE_COUNT,
+    PSS_BUFFER_CONTEST_EFFECTS,
+    PSS_BUFFER_COUNT
 };
 
 enum BWSkillsPageState
@@ -200,7 +200,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 evSpdef;
         u8 evSpeed; // 0x56
     } summary;
-    u16 bgTilemapBuffers[BW_PSS_BUFFER_COUNT][2][0x400];
+    u16 bgTilemapBuffers[PSS_BUFFER_COUNT][2][0x400];
     u8 mode;
     bool8 isBoxMon;
     u8 curMonIndex;
@@ -740,18 +740,18 @@ static const u8 sTextColors[][3] =
 
 static void (*const sTextPrinterFunctions[])(void) =
 {
-    [BW_PSS_PAGE_INFO] = PrintInfoPageText,
-    [BW_PSS_PAGE_SKILLS] = PrintSkillsPageText,
-    [BW_PSS_PAGE_BATTLE_MOVES] = PrintBattleMoves,
-    [BW_PSS_PAGE_CONTEST_MOVES] = PrintContestMoves
+    [PSS_PAGE_INFO] = PrintInfoPageText,
+    [PSS_PAGE_SKILLS] = PrintSkillsPageText,
+    [PSS_PAGE_BATTLE_MOVES] = PrintBattleMoves,
+    [PSS_PAGE_CONTEST_MOVES] = PrintContestMoves
 };
 
 static void (*const sTextPrinterTasks[])(u8 taskId) =
 {
-    [BW_PSS_PAGE_INFO] = Task_PrintInfoPage,
-    [BW_PSS_PAGE_SKILLS] = Task_PrintSkillsPage,
-    [BW_PSS_PAGE_BATTLE_MOVES] = Task_PrintBattleMoves,
-    [BW_PSS_PAGE_CONTEST_MOVES] = Task_PrintContestMoves
+    [PSS_PAGE_INFO] = Task_PrintInfoPage,
+    [PSS_PAGE_SKILLS] = Task_PrintSkillsPage,
+    [PSS_PAGE_BATTLE_MOVES] = Task_PrintBattleMoves,
+    [PSS_PAGE_CONTEST_MOVES] = Task_PrintContestMoves
 };
 
 #define TAG_MOVE_SELECTOR 30000
@@ -1656,16 +1656,16 @@ void ShowPokemonSummaryScreen_BW(u8 mode, void *mons, u8 monIndex, u8 maxMonInde
     case BW_SUMMARY_MODE_NORMAL:
     case BW_SUMMARY_MODE_BOX:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = BW_PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
         break;
     case BW_SUMMARY_MODE_LOCK_MOVES:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = BW_PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
         sMonSummaryScreen->lockMovesFlag = TRUE;
         break;
     case BW_SUMMARY_MODE_SELECT_MOVE:
-        sMonSummaryScreen->minPageIndex = BW_PSS_PAGE_BATTLE_MOVES;
-        sMonSummaryScreen->maxPageIndex = BW_PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->minPageIndex = PSS_PAGE_BATTLE_MOVES;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
         sMonSummaryScreen->lockMonFlag = TRUE;
         break;
     }
@@ -1853,9 +1853,9 @@ static void InitBGs(void)
 {
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-    SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][0]);
-    SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][0]);
-    SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0]);
+    SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0]);
+    SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0]);
+    SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0]);
     ResetAllBgsCoordinates();
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -1880,32 +1880,32 @@ static bool8 DecompressGraphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != 1)
         {
-            LZDecompressWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0]);
+            LZDecompressWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0]);
             sMonSummaryScreen->switchCounter++;
         }
         break;
     case 2:
-        LZDecompressWram(sSummaryPage_InfoEgg_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][1]);
+        LZDecompressWram(sSummaryPage_InfoEgg_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][1]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 3:
-        LZDecompressWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][1]);
+        LZDecompressWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 4:
-        LZDecompressWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][1]);
+        LZDecompressWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][1]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 5:
-        LZDecompressWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][1]);
+        LZDecompressWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][1]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LZDecompressWram(sSummaryPage_EffectBattle_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_BATTLE_EFFECTS][0]);
+        LZDecompressWram(sSummaryPage_EffectBattle_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_BATTLE_EFFECTS][0]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 7:
-        LZDecompressWram(sSummaryPage_EffectContest_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0]);
+        LZDecompressWram(sSummaryPage_EffectContest_Tilemap_BW, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 8:
@@ -2098,9 +2098,9 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
 
 static void SetSelectMoveTilemaps(void)
 {
-    SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][0]);
-    SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][0]);
-    SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_BATTLE_EFFECTS][0]);
+    SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][0]);
+    SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0]);
+    SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_BATTLE_EFFECTS][0]);
     HideInactivePageDots();
     ChangeBgX(2, 0x10000, BG_COORD_ADD);
     SetBgAttribute(3, BG_ATTR_PRIORITY, 1);
@@ -2126,36 +2126,36 @@ static void HideInactivePageDots(void)
     u32 i;
     for (i = 0; i < 2; i++)
     {
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_1] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_2] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_1] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_2] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
-        sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_1] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_2] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_1] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_1_TILE_2] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
+        sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][i][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
     }
 }
 
 static void LimitEggSummaryPageDisplay(void)
 {
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_1] = TILE_BLACK_SQUARE;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_2] = TILE_BLACK_SQUARE;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_1] = TILE_BLACK_SQUARE;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_2] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_1] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_2] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_1] = TILE_BLACK_SQUARE;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_2] = TILE_BLACK_SQUARE;
     ScheduleBgCopyTilemapToVram(3);
 }
 
 static void RestoreSummaryPageDisplay(void)
 {
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
-    sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_2_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_3_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_1] = TILE_INACTIVE_SQUARE_TOP;
+    sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][TILEMAP_PAGE_DOT_4_TILE_2] = TILE_INACTIVE_SQUARE_BOTTOM;
     ScheduleBgCopyTilemapToVram(3);
 }
 
@@ -2271,9 +2271,9 @@ static void Task_HandleInput(u8 taskId)
         }
         else if (JOY_NEW(A_BUTTON))
         {
-            if (sMonSummaryScreen->currPageIndex != BW_PSS_PAGE_SKILLS)
+            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_SKILLS)
             {
-                if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_INFO)
+                if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
                 {
                     StopPokemonAnimations();
                     PlaySE(SE_SELECT);
@@ -2327,7 +2327,7 @@ static void ChangeSummaryPokemon(u8 taskId, s8 delta)
     {
         if (sMonSummaryScreen->isBoxMon == TRUE)
         {
-            if (sMonSummaryScreen->currPageIndex != BW_PSS_PAGE_INFO)
+            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_INFO)
             {
                 if (delta == 1)
                     delta = 0;
@@ -2419,14 +2419,14 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 11:
         PrintPageSpecificText(sMonSummaryScreen->currPageIndex);
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_INFO)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
         { 
             if (sMonSummaryScreen->summary.isEgg)
                 LimitEggSummaryPageDisplay();
             else
                 RestoreSummaryPageDisplay();
         } 
-        else if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS)
+        else if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
         {
             if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_PRECISE)
                 DrawNextSkillsButtonPrompt(SKILL_STATE_STATS);
@@ -2435,7 +2435,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         }
         break;
     case 12:
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
             ShowGradeIcons(SKILL_STATE_IVS);
         break;
     case 13:
@@ -2462,7 +2462,7 @@ static s8 AdvanceMonIndex(s8 delta)
     index = (index + delta) % numMons;
 
     // skip over any Eggs unless on the Info Page
-    if (sMonSummaryScreen->currPageIndex != BW_PSS_PAGE_INFO)
+    if (sMonSummaryScreen->currPageIndex != PSS_PAGE_INFO)
         while (GetMonData(&mon[index], MON_DATA_IS_EGG))
             index = (index + delta) % numMons;
 
@@ -2589,7 +2589,7 @@ static void PssScrollRightEnd(u8 taskId) // display right
     data[0] = 0;
     if (sMonSummaryScreen->mode == BW_SUMMARY_MODE_SELECT_MOVE)
     {
-        SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0]);
+        SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0]);
         ScheduleBgCopyTilemapToVram(3);
         HandleAppealJamTilemap(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]);
     }
@@ -2599,7 +2599,7 @@ static void PssScrollRightEnd(u8 taskId) // display right
     TrySetInfoPageIcons();
     TryDrawHPBar();
     TryDrawExperienceProgressBar();
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
         ShowGradeIcons(SKILL_STATE_IVS);
     SwitchTaskToFollowupFunc(taskId);
 }
@@ -2665,7 +2665,7 @@ static void PssScrollLeftEnd(u8 taskId) // display left
 
     if (sMonSummaryScreen->mode == BW_SUMMARY_MODE_SELECT_MOVE)
     {
-        SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_BATTLE_EFFECTS][0]);
+        SetBgTilemapBuffer(3, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_BATTLE_EFFECTS][0]);
         ScheduleBgCopyTilemapToVram(3);
     }
 
@@ -2674,21 +2674,21 @@ static void PssScrollLeftEnd(u8 taskId) // display left
     TrySetInfoPageIcons();
     TryDrawHPBar();
     TryDrawExperienceProgressBar();
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
         ShowGradeIcons(SKILL_STATE_IVS);
     SwitchTaskToFollowupFunc(taskId);
 }
 
 static void TryDrawExperienceProgressBar(void)
 {
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
         DrawExperienceProgressBar(&sMonSummaryScreen->currentMon);
 }
 
 static void TryDrawHPBar(void)
 {
     OverrideHPBarPalette();
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_SKILLS)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
         DrawHPBar(&sMonSummaryScreen->currentMon);
 }
 
@@ -2702,7 +2702,7 @@ static void SwitchToMoveSelection(u8 taskId)
         PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
     }
 
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
     {
         CreateTask(Task_ShowBattleMovesTilemap, 1);
     }
@@ -2811,7 +2811,7 @@ static void CloseMoveSelectMode(u8 taskId)
     PrintMoveDetails(MOVE_NONE);
     sMonSummaryScreen->mode = BW_SUMMARY_MODE_NORMAL;
 
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
         CreateTask(Task_HideBattleMovesTilemap, 1);
     else
         CreateTask(Task_HideContestMovesTilemap, 1);
@@ -3068,7 +3068,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
         }
         else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
         {
-            if (sMonSummaryScreen->currPageIndex != BW_PSS_PAGE_BATTLE_MOVES)
+            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
             {
                 move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
                 gTasks[taskId].func = Task_HandleReplaceMoveInput;
@@ -3077,7 +3077,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
         }
         else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
         {
-            if (sMonSummaryScreen->currPageIndex != BW_PSS_PAGE_CONTEST_MOVES)
+            if (sMonSummaryScreen->currPageIndex != PSS_PAGE_CONTEST_MOVES)
             {
                 move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
                 gTasks[taskId].func = Task_HandleReplaceMoveInput;
@@ -3107,7 +3107,7 @@ static void Task_ShowBattleMovesTilemap(u8 taskId)
     // switch new map into buffer
     if (tMoveTaskState == 0)
     {
-        SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_BATTLE_EFFECTS][0]);
+        SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_BATTLE_EFFECTS][0]);
         ShowBg(1);
         ScheduleBgCopyTilemapToVram(1);
         tMoveTaskState++;
@@ -3170,7 +3170,7 @@ static void Task_HideBattleMovesTilemap(u8 taskId)
     // finish sliding out, buffer tilemap and reset priorities
     else if (tMoveTaskState == 8)
     {
-        SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][0]);
+        SetBgTilemapBuffer(1, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0]);
         ChangeBgX(1, 0x10000, BG_COORD_SET);
         SetBgAttribute(1, BG_ATTR_PRIORITY, 2);
         SetBgAttribute(2, BG_ATTR_PRIORITY, 1);
@@ -3193,7 +3193,7 @@ static void Task_ShowContestMovesTilemap(u8 taskId)
     // switch new map into buffer
     if (tMoveTaskState == 0)
     {
-        SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0]);
+        SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0]);
         ShowBg(2);
         ScheduleBgCopyTilemapToVram(2);
         tMoveTaskState++;
@@ -3252,7 +3252,7 @@ static void Task_HideContestMovesTilemap(u8 taskId)
     // change bg offset and priorities
     else if (tMoveTaskState == 8)
     {
-        SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_BATTLE_MOVES][0]);
+        SetBgTilemapBuffer(2, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0]);
         ChangeBgX(2, 0x10000, BG_COORD_SET);
         SetBgAttribute(2, BG_ATTR_PRIORITY, 2);
         SetBgAttribute(1, BG_ATTR_PRIORITY, 1);
@@ -3301,7 +3301,7 @@ static void HandleAppealJamTilemap(u16 move)
     }
 
     // handle appeal
-    dst1 = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_APPEAL_ROW_START];
+    dst1 = &sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_APPEAL_ROW_START];
     for (i = 0; i < MAX_CONTEST_MOVE_HEARTS; i++)
     {
         if (appeal > 0)
@@ -3316,8 +3316,8 @@ static void HandleAppealJamTilemap(u16 move)
     }
 
     // handle jam
-    dst1 = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_JAM_ROW_1_START];
-    dst2 = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_JAM_ROW_2_START];
+    dst1 = &sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_JAM_ROW_1_START];
+    dst2 = &sMonSummaryScreen->bgTilemapBuffers[PSS_BUFFER_CONTEST_EFFECTS][0][TILEMAP_JAM_ROW_2_START];
     for (i = 0; i < MAX_CONTEST_MOVE_HEARTS; i++)
     {
         if (jam > 0)
@@ -3366,8 +3366,8 @@ static void DrawHPBar(struct Pokemon *unused)
         numHPBarTicks = 0;
     }
 
-    dst1 = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][1][HP_BAR_TILEMAP_START_ROW_1];
-    dst2 = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][1][HP_BAR_TILEMAP_START_ROW_2];
+    dst1 = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][HP_BAR_TILEMAP_START_ROW_1];
+    dst2 = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][HP_BAR_TILEMAP_START_ROW_2];
     for (i = 0; i < 8; i++)
     {
         if (numHPBarTicks > 7)
@@ -3386,7 +3386,7 @@ static void DrawHPBar(struct Pokemon *unused)
             numHPBarTicks = 0;
     }
 
-    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][0])
+    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
         ScheduleBgCopyTilemapToVram(1);
     else
         ScheduleBgCopyTilemapToVram(2);
@@ -3457,7 +3457,7 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
         numExpProgressBarTicks = 0;
     }
 
-    dst = &sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][1][EXP_BAR_TILEMAP_START];
+    dst = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][EXP_BAR_TILEMAP_START];
     for (i = 0; i < 8; i++)
     {
         if (numExpProgressBarTicks > 7)
@@ -3469,7 +3469,7 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
             numExpProgressBarTicks = 0;
     }
 
-    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[BW_PSS_PAGE_SKILLS][0])
+    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
         ScheduleBgCopyTilemapToVram(1);
     else
         ScheduleBgCopyTilemapToVram(2);
@@ -3670,11 +3670,11 @@ static void PutPageWindowTilemaps(u8 page)
 
     switch (page)
     {
-    case BW_PSS_PAGE_INFO:
+    case PSS_PAGE_INFO:
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TITLE);
         PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
         break;
-    case BW_PSS_PAGE_SKILLS:
+    case PSS_PAGE_SKILLS:
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
         if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_PRECISE)
@@ -3682,7 +3682,7 @@ static void PutPageWindowTilemaps(u8 page)
         else if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
             PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_EVS);
         break;
-    case BW_PSS_PAGE_BATTLE_MOVES:
+    case PSS_PAGE_BATTLE_MOVES:
         PutWindowTilemap(PSS_LABEL_WINDOW_BATTLE_MOVES_TITLE);
         if (sMonSummaryScreen->mode == BW_SUMMARY_MODE_SELECT_MOVE)
         {
@@ -3694,7 +3694,7 @@ static void PutPageWindowTilemaps(u8 page)
             PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
         }
         break;
-    case BW_PSS_PAGE_CONTEST_MOVES:
+    case PSS_PAGE_CONTEST_MOVES:
         PutWindowTilemap(PSS_LABEL_WINDOW_CONTEST_MOVES_TITLE);
         if (sMonSummaryScreen->mode != BW_SUMMARY_MODE_SELECT_MOVE)
             PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
@@ -3713,10 +3713,10 @@ static void ClearPageWindowTilemaps(u8 page)
 
     switch (page)
     {
-    case BW_PSS_PAGE_INFO:
+    case PSS_PAGE_INFO:
         ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
         break;
-    case BW_PSS_PAGE_SKILLS:
+    case PSS_PAGE_SKILLS:
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
         if (BW_SUMMARY_IV_EV_DISPLAY != BW_IV_EV_HIDDEN)
         {
@@ -3725,7 +3725,7 @@ static void ClearPageWindowTilemaps(u8 page)
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_IVS);
         }
         break;
-    case BW_PSS_PAGE_BATTLE_MOVES:
+    case PSS_PAGE_BATTLE_MOVES:
         if (sMonSummaryScreen->mode == BW_SUMMARY_MODE_SELECT_MOVE)
         {
             if (sMonSummaryScreen->newMove != MOVE_NONE || sMonSummaryScreen->firstMoveIndex != MAX_MON_MOVES)
@@ -3736,7 +3736,7 @@ static void ClearPageWindowTilemaps(u8 page)
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
         }
         break;
-    case BW_PSS_PAGE_CONTEST_MOVES:
+    case PSS_PAGE_CONTEST_MOVES:
         if (sMonSummaryScreen->mode != BW_SUMMARY_MODE_SELECT_MOVE)
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
         break;
@@ -4110,7 +4110,7 @@ static void PrintEggMemo(void)
         else if (sum->metLocation == METLOC_SPECIAL_EGG)
             text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
         else
-            text = gText_OddEggFoundByCouple;
+            text = gText_EggFromOldMan;
     }
     else
     {
@@ -4607,7 +4607,7 @@ static void PrintMoveDetails(u16 move)
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     if (move != MOVE_NONE)
     {
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
         {
             if (BW_SUMMARY_CATEGORY_ICONS)
                 ShowCategoryIcon(move);
@@ -4653,7 +4653,7 @@ static void PrintMoveDetails(u16 move)
             DestroyCategoryIcon();
 
         ClearWindowTilemap(windowId);
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             PrintMovePowerAndAccuracy(MOVE_NONE);
         else
             HandleAppealJamTilemap(MOVE_NONE);
@@ -4675,7 +4675,7 @@ static void PrintNewMoveDetailsOrCancelText(void)
     {
         u16 move = sMonSummaryScreen->newMove;
 
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             PrintTextOnWindowToFitPx_WithFont(windowId1, GetMoveName(move), 3, 114, 0, 12, fontId, WindowWidthPx(windowId1) - 3);
         else
             PrintTextOnWindowToFitPx_WithFont(windowId1, GetMoveName(move), 3, 114, 0, 12, fontId, WindowWidthPx(windowId1) - 3);
@@ -4837,14 +4837,14 @@ static void SetTypeIcons(void)
 {
     switch (sMonSummaryScreen->currPageIndex)
     {
-    case BW_PSS_PAGE_INFO:
+    case PSS_PAGE_INFO:
         SetMonTypeIcons();
         break;
-    case BW_PSS_PAGE_BATTLE_MOVES:
+    case PSS_PAGE_BATTLE_MOVES:
         SetMoveTypeIcons();
         SetNewMoveTypeIcon();
         break;
-    case BW_PSS_PAGE_CONTEST_MOVES:
+    case PSS_PAGE_CONTEST_MOVES:
         SetContestMoveTypeIcons();
         SetNewMoveTypeIcon();
         break;
@@ -4853,7 +4853,7 @@ static void SetTypeIcons(void)
 
 static void TrySetInfoPageIcons(void)
 {
-    if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_INFO)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     { 
         SetPokerusCuredSprite();
         if (BW_SUMMARY_SHOW_FRIENDSHIP)
@@ -4975,7 +4975,7 @@ static void SetNewMoveTypeIcon(void)
     }
     else
     {
-        if (sMonSummaryScreen->currPageIndex == BW_PSS_PAGE_BATTLE_MOVES)
+        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             SetTypeSpritePosAndPal(type, 8, 128, SPRITE_ARR_ID_TYPE + 4);
         else
             SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gMovesInfo[sMonSummaryScreen->newMove].contestCategory, 8, 128, SPRITE_ARR_ID_TYPE + 4);
@@ -5242,7 +5242,7 @@ static void CreateMoveSelectorSprites(u8 idArrayStart)
     u8 i;
     u8 *spriteIds = &sMonSummaryScreen->spriteIds[idArrayStart];
 
-    if (sMonSummaryScreen->currPageIndex >= BW_PSS_PAGE_BATTLE_MOVES)
+    if (sMonSummaryScreen->currPageIndex >= PSS_PAGE_BATTLE_MOVES)
     {
         u8 subpriority = 0;
         if (idArrayStart == SPRITE_ARR_ID_MOVE_SELECTOR1)
