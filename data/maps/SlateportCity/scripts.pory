@@ -1134,9 +1134,9 @@ SlateportCity_Text_BuyTooMuch:
 	.string "away and buy too much.$"
 
 SlateportCity_Text_GetNameRaterToHelpYou:
-	.string "If you want to change your POKéMON's\n"
-	.string "nickname, you'll have to get the NAME\l"
-	.string "RATER to help you.$"
+	.string "If you want to change your Pokémon's\n"
+	.string "nickname, check the options in the\l"
+	.string "party menu.$"
 
 SlateportCity_Text_CantChangeTradeMonName:
 	.string "Any POKéMON you get in a trade,\n"

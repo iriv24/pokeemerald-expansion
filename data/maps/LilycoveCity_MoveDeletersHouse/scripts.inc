@@ -233,7 +233,7 @@ LilycoveCity_MoveDeletersHouse_Text_ObtainedEggMoveTutorOption:
 # 117 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
 LilycoveCity_MoveDeletersHouse_Text_HowToUseEggMoves:
 # 118 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
-	.string "If you go to your Party Menu, select a\n"
+	.string "If you go to your party menu, select a\n"
 # 119 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
 	.string "Pokémon, then select “Relearn”, you\l"
 # 120 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"

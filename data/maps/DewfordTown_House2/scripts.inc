@@ -73,7 +73,7 @@ DewfordTown_House2_Text_ObtainedMoveTutorOption:
 # 37 "data/maps/DewfordTown_House2/scripts.pory"
 DewfordTown_House2_Text_HowToUseRelearnMoves:
 # 38 "data/maps/DewfordTown_House2/scripts.pory"
-	.string "If you go to your Party Menu and select\n"
+	.string "If you go to your party menu and select\n"
 # 39 "data/maps/DewfordTown_House2/scripts.pory"
 	.string "a Pokémon, you should have a new option\l"
 # 40 "data/maps/DewfordTown_House2/scripts.pory"

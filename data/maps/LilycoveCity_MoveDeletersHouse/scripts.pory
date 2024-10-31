@@ -115,7 +115,7 @@ LilycoveCity_MoveDeletersHouse_Text_ObtainedEggMoveTutorOption:
 	.string "Egg Moves!$"
 
 LilycoveCity_MoveDeletersHouse_Text_HowToUseEggMoves:
-	.string "If you go to your Party Menu, select a\n"
+	.string "If you go to your party menu, select a\n"
 	.string "Pokémon, then select “Relearn”, you\l"
 	.string "will have a new option: “Egg Moves”,\l"
 	.string "assuming your Pokémon actually has Egg\l"

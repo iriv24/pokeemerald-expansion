@@ -2271,11 +2271,11 @@ SlateportCity_Text_BuyTooMuch:
 # 1136 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_GetNameRaterToHelpYou:
 # 1137 "data/maps/SlateportCity/scripts.pory"
-	.string "If you want to change your POKéMON's\n"
+	.string "If you want to change your Pokémon's\n"
 # 1138 "data/maps/SlateportCity/scripts.pory"
-	.string "nickname, you'll have to get the NAME\l"
+	.string "nickname, check the options in the\l"
 # 1139 "data/maps/SlateportCity/scripts.pory"
-	.string "RATER to help you.$"
+	.string "party menu.$"
 # 1140 "data/maps/SlateportCity/scripts.pory"
 
 # 1141 "data/maps/SlateportCity/scripts.pory"
