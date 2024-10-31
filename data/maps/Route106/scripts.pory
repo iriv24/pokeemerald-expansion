@@ -44,7 +44,8 @@ Route106_EventScript_Ned::
 
 Route106_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
-	.string "Advice on catching POKéMON with a ROD:\n"
-	.string "Press the A Button if you get a bite.$"
+	.string "The nurse in front of the counter\n"
+	.string "inside of Pokémon centers can perform\l"
+	.string "many useful functions.$"
 
 `
