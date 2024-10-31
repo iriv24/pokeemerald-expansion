@@ -1101,7 +1101,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 # 551 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
 # 552 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_POKE_BALL, 10
+	giveitemfast ITEM_POKE_BALL, 99
 # 553 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_ORAN_BERRY, 20
 # 554 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
