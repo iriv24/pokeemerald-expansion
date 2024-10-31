@@ -62,6 +62,7 @@ static u32 GetFlingPowerFromItemId(u32 itemId);
 static void SetRandomMultiHitCounter();
 static u32 GetBattlerItemHoldEffectParam(u32 battler, u32 item);
 static bool32 CanBeInfinitelyConfused(u32 battler);
+static bool32 IsPikachu(u16 species);
 
 extern const u8 *const gBattlescriptsForRunningByItem[];
 extern const u8 *const gBattlescriptsForUsingItem[];
@@ -9685,7 +9686,7 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_LIGHT_BALL:
-        if (atkBaseSpeciesId == SPECIES_PIKACHU && (B_LIGHT_BALL_ATTACK_BOOST >= GEN_4 || IS_MOVE_SPECIAL(move)))
+        if (IsPikachu(atkBaseSpeciesId) && (B_LIGHT_BALL_ATTACK_BOOST >= GEN_4 || IS_MOVE_SPECIAL(move)))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_CHOICE_BAND:
@@ -11888,4 +11889,23 @@ u32 GetMoveType(u32 move)
           || move == MOVE_DOOM_DESIRE))
           return TYPE_MYSTERY;
     return gMovesInfo[move].type;
+}
+
+static bool32 IsPikachu(u16 species)
+{
+    return (species == SPECIES_PIKACHU
+         || species == SPECIES_PIKACHU_ALOLA
+         || species == SPECIES_PIKACHU_BELLE
+         || species == SPECIES_PIKACHU_COSPLAY
+         || species == SPECIES_PIKACHU_HOENN
+         || species == SPECIES_PIKACHU_KALOS
+         || species == SPECIES_PIKACHU_LIBRE
+         || species == SPECIES_PIKACHU_ORIGINAL
+         || species == SPECIES_PIKACHU_PARTNER
+         || species == SPECIES_PIKACHU_PHD
+         || species == SPECIES_PIKACHU_POP_STAR
+         || species == SPECIES_PIKACHU_ROCK_STAR
+         || species == SPECIES_PIKACHU_SINNOH
+         || species == SPECIES_PIKACHU_UNOVA
+         || species == SPECIES_PIKACHU_WORLD);
 }
