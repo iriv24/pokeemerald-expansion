@@ -3095,6 +3095,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_CANT_RANDOMIZE_ABILITY:
             retVal = substruct3->cantRandomizeAbility;
             break;
+        case MON_DATA_IVS_WERE_PERFECTED:
+            retVal = substruct0->ivsWerePerfected;
+            break;
         default:
             break;
         }
@@ -3532,6 +3535,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         }
         case MON_DATA_CANT_RANDOMIZE_ABILITY:
             SET8(substruct3->cantRandomizeAbility);
+            break;
+        case MON_DATA_IVS_WERE_PERFECTED:
+            SET8(substruct0->ivsWerePerfected);
             break;
         default:
             break;

@@ -107,31 +107,35 @@ MauvilleCity_House1_Text_ExplainStatEditorInMGM:
 	.string "Since you have Minimal Grinding Mode\n"
 	.string "enabled, you can't change your\l"
 	.string "Pokémon's EVs with that device.\p"
-	.string "I'm sure you'll still find it useful,\n"
-	.string "though.$"
+	.string "You can edit IVs freely though.$"
 
 MauvilleCity_House1_Text_ExplainStatEditorNotInMGM:
 	.string "Since you have Minimal Grinding Mode\n"
-	.string "disabled, you can't change your\l"
-	.string "Pokémon's IVs with that device until\l"
+	.string "disabled, you can only edit the IVs\l"
+	.string "of the Pokémon whose IVs you have\l"
+	.string "perfected.\p"
+	.string "That limitation will be in place until\n"
 	.string "you have all 8 Gym Badges.\p"
-	.string "I'm sure you'll still find it useful,\n"
-	.string "though.$"
+	.string "You can edit EVs freely though.$"
 
 MauvilleCity_House1_Text_ReceivedStatEditorInMGM:
 	.string "Remember, you can access the Stat\n"
 	.string "Editor from your “L menu”.\p"
 	.string "However, since you have\n"
 	.string "Minimal Grinding Mode enabled, you\l"
-	.string "can't change your Pokémon's EVs.$"
+	.string "can't change your Pokémon's EVs.\p"
+	.string "You can edit IVs freely though.$"
 
 MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
 	.string "Remember, you can access the Stat\n"
 	.string "Editor from your “L menu”.\p"
 	.string "However, since you have\n"
 	.string "Minimal Grinding Mode disabled, you\l"
-	.string "can't change your Pokémon's IVs until\l"
-	.string "you have all 8 Gym Badges.$"
+	.string "can only edit the IVs of the\l"
+	.string "Pokémon whose IVs you have perfected.\p"
+	.string "That limitation will be in place until\n"
+	.string "you have all 8 Gym Badges.\p"
+	.string "You can edit EVs freely though.$"
 
 MauvilleCity_House1_Text_ObtainedStatEditor:
 	.string "Obtained the Stat Editor!$"
@@ -141,17 +145,12 @@ MauvilleCity_House1_Text_ObtainedStatEditor:
 script MauvilleCity_House1_EventScript_HPChangerDude {
     lock
     faceplayer
-	if(flag(FLAG_MIN_GRINDING_MODE) || flag(FLAG_BADGE08_GET))
+	msgbox(HpChangerHelloCanChange)
+	if(!flag(FLAG_MIN_GRINDING_MODE) && !flag(FLAG_BADGE08_GET))
 	{
-		goto(MauvilleCity_House1_EventScript_ChangeHP)
+		msgbox(HpChangerNotInMgm)
 	}
-	msgbox(HpChangerHelloCantChange)
-	release
-	end
-}
-
-script MauvilleCity_House1_EventScript_ChangeHP{
-	msgbox(HpChangerHelloCanChange, MSGBOX_YESNO)
+	msgbox(HpChangerShouldIChange, MSGBOX_YESNO)
 	if(var(VAR_RESULT) == NO)
 	{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
@@ -169,6 +168,16 @@ script MauvilleCity_House1_EventScript_ChangeHP{
 		release
 		end
 	}
+	if(!flag(FLAG_MIN_GRINDING_MODE) && !flag(FLAG_BADGE08_GET))
+	{
+		specialvar(VAR_RESULT, ScriptGetPartyMonPerfectedIVs)
+		if(var(VAR_RESULT) != 1) {
+			msgbox("I can't change the Hidden Power of\nthat Pokémon since you haven't\lperfected its IVs.")
+			release
+			end
+		}
+	}
+	
 	special(BufferMonNickname)
 	msgbox("Which new Hidden Power type would\nyou like for {STR_VAR_1}?")
 	dynmultipush("Fighting", TYPE_FIGHTING)
@@ -273,6 +282,12 @@ script MauvilleCity_House1_EventScript_PerfectIV{
 		release
 		end
 	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonPerfectedIVs)
+	if(var(VAR_RESULT) == 1) {
+		msgbox("I've already perfected that\nPokémon's IVs.")
+		release
+		end
+	}
 	special(BufferMonNickname)
 	msgbox(IVPerfecterAreYouSure, MSGBOX_YESNO)
 
@@ -281,10 +296,9 @@ script MauvilleCity_House1_EventScript_PerfectIV{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
 	}
 
-	setvar(VAR_0x8005, TYPE_DARK)
 	msgbox("I shall begin at once.")
 	fadescreen(FADE_TO_BLACK)
-	special(ChangeMonIVsForHP)
+	special(PerfectMonIVs)
 	playfanfare(MUS_OBTAIN_ITEM)
 	waitfanfare
 	closemessage
@@ -312,23 +326,28 @@ script MauvilleCity_House1_EventScript_PerfectIV{
 }
 
 
-text HpChangerHelloCantChange
-{
-	"Hello, I am the Hidden Power type\n"
-	"changer.\p"
-	"Oh, it looks like you are not in\n"
-	"Minimal Grinding Mode.\p"
-	"I can't modify your Pokémon's IVs until\n"
-	"you have 8 Badges in that case."
-}
-
 text HpChangerHelloCanChange
 {
 	"Hello, I am the Hidden Power type\n"
 	"changer.\p"
 	"You can choose a Pokémon and I can\n"
 	"quickly modify its IVs to change\l"
-	"the type of its Hidden Power.\p"
+	"the type of its Hidden Power."
+}
+
+text HpChangerNotInMgm
+{
+	"Oh, it looks like you are not in\n"
+	"Minimal Grinding Mode.\p"
+	"I can only change the Hidden Power\n"
+	"type of a Pokémon whose IVs have been\l"
+	"perfected.\p"
+	"That limitation will be in place until\n"
+	"you have all 8 Gym Badges."
+}
+
+text HpChangerShouldIChange 
+{
 	"Would you like me to change the type of\n"
 	"one of your Pokémon's Hidden Power?"
 }
@@ -394,7 +413,7 @@ text IVPerfecterCanPerfectAMon
 text IVPerfecterShouldIPerfect
 {
 	"Would you like me to perfect one of\n"
-	"you Pokémon's IVs?"
+	"your Pokémon's IVs?"
 }
 
 text IVPerfecterAreYouSure
