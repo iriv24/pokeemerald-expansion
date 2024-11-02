@@ -2009,11 +2009,13 @@ static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, 
         graphicsInfo = &gSpeciesInfo[form ? SPECIES_UNOWN_B + form - 1 : species].overworldData;
         break;
     default:
+    #if P_GENDER_DIFFERENCES
         if (form == 1 && gSpeciesInfo[species].overworldDataFemale.paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC)
         {
             graphicsInfo = &gSpeciesInfo[species].overworldDataFemale;
         }
         else
+    #endif
         {
             graphicsInfo = &gSpeciesInfo[species].overworldData;
         }
@@ -2047,6 +2049,7 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
         if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16)
             return paletteNum;
         spritePalette.tag = palTag;
+    #if P_GENDER_DIFFERENCES
         if (female && gSpeciesInfo[species].overworldPaletteFemale != NULL)
         {
             if (shiny)
@@ -2055,6 +2058,7 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
                 spritePalette.data = gSpeciesInfo[species].overworldPaletteFemale;
         }
         else
+    #endif
         {
             if (shiny)
                 spritePalette.data = gSpeciesInfo[species].overworldShinyPalette;

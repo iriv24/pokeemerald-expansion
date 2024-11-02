@@ -1520,24 +1520,26 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .trainerScale = 271,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Pyroar,
-        .frontPicFemale = gMonFrontPic_PyroarF,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Pyroar,
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_Pyroar,
-        .backPicFemale = gMonBackPic_PyroarF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_H_STRETCH,
         .palette = gMonPalette_Pyroar,
         .shinyPalette = gMonShinyPalette_Pyroar,
         .iconSprite = gMonIcon_Pyroar,
-        .iconSpriteFemale = gMonIcon_PyroarF,
         .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_PyroarF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_PyroarF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .iconSpriteFemale = gMonIcon_PyroarF,
         .iconPalIndexFemale = 2,
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Pyroar)
         OVERWORLD(

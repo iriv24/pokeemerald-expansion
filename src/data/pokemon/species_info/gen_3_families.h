@@ -299,15 +299,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .frontAnimFrames = sAnims_Torchic,
         .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_H_STRETCH : ANIM_V_JUMPS_SMALL,
         .backPic = gMonBackPic_Torchic,
-        .backPicFemale = gMonBackPic_TorchicF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 56) : MON_COORDS_SIZE(40, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(40, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 5 : 10,
         .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
         .palette = gMonPalette_Torchic,
         .shinyPalette = gMonShinyPalette_Torchic,
         .iconSprite = gMonIcon_Torchic,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .backPicFemale = gMonBackPic_TorchicF,
+        .backPicSizeFemale = MON_COORDS_SIZE(40, 48),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-1, 1, SHADOW_SIZE_S)
         FOOTPRINT(Torchic)
         OVERWORLD(
@@ -366,22 +368,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Combusken,
-        .frontPicFemale = gMonFrontPic_CombuskenF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(48, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(48, 64),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 3,
         .frontAnimFrames = sAnims_Combusken,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
         .backPic = gMonBackPic_Combusken,
-        .backPicFemale = gMonBackPic_CombuskenF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 1,
         .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
         .palette = gMonPalette_Combusken,
         .shinyPalette = gMonShinyPalette_Combusken,
         .iconSprite = gMonIcon_Combusken,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_CombuskenF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(48, 64),
+        .backPicFemale = gMonBackPic_CombuskenF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-1, 8, SHADOW_SIZE_M)
         FOOTPRINT(Combusken)
         OVERWORLD(
@@ -444,22 +448,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 301,
         .trainerOffset = 4,
         .frontPic = gMonFrontPic_Blaziken,
-        .frontPicFemale = gMonFrontPic_BlazikenF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(56, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Blaziken,
         .frontAnimId = ANIM_H_SHAKE,
         .backPic = gMonBackPic_Blaziken,
-        .backPicFemale = gMonBackPic_BlazikenF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
         .palette = gMonPalette_Blaziken,
         .shinyPalette = gMonShinyPalette_Blaziken,
         .iconSprite = gMonIcon_Blaziken,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_BlazikenF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 64),
+        .backPicFemale = gMonBackPic_BlazikenF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(4, 8, SHADOW_SIZE_M)
         FOOTPRINT(Blaziken)
         OVERWORLD(
@@ -1441,23 +1447,25 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Beautifly,
-        .frontPicFemale = gMonFrontPic_BeautiflyF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .frontPicYOffset = 9,
         .frontAnimFrames = sAnims_Beautifly,
         .frontAnimId = ANIM_V_SLIDE,
         .enemyMonElevation = P_GBA_STYLE_SPECIES_GFX ? 8 : 10,
         .backPic = gMonBackPic_Beautifly,
-        .backPicFemale = gMonBackPic_BeautiflyF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
         .palette = gMonPalette_Beautifly,
         .shinyPalette = gMonShinyPalette_Beautifly,
         .iconSprite = gMonIcon_Beautifly,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_BeautiflyF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
+        .backPicFemale = gMonBackPic_BeautiflyF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-5, 12, SHADOW_SIZE_S)
         FOOTPRINT(Beautifly)
         OVERWORLD(
@@ -1593,23 +1601,25 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Dustox,
-        .frontPicFemale = gMonFrontPic_DustoxF,
         .frontPicSize = MON_COORDS_SIZE(64, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 48),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 15 : 12,
         .frontAnimFrames = sAnims_Dustox,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
         .enemyMonElevation = P_GBA_STYLE_SPECIES_GFX ? 10 : 12,
         .backPic = gMonBackPic_Dustox,
-        .backPicFemale = gMonBackPic_DustoxF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 24) : MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 20 : 1,
         .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
         .palette = gMonPalette_Dustox,
         .shinyPalette = gMonShinyPalette_Dustox,
         .iconSprite = gMonIcon_Dustox,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 5,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_DustoxF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 48),
+        .backPicFemale = gMonBackPic_DustoxF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 11, SHADOW_SIZE_S)
         FOOTPRINT(Dustox)
         OVERWORLD(
@@ -1801,22 +1811,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 268,
         .trainerOffset = -1,
         .frontPic = gMonFrontPic_Ludicolo,
-        .frontPicFemale = gMonFrontPic_LudicoloF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(56, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Ludicolo,
         .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
         .backPic = gMonBackPic_Ludicolo,
-        .backPicFemale = gMonBackPic_LudicoloF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 6,
         .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
         .palette = gMonPalette_Ludicolo,
         .shinyPalette = gMonShinyPalette_Ludicolo,
         .iconSprite = gMonIcon_Ludicolo,
         .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_LudicoloF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 64),
+        .backPicFemale = gMonBackPic_LudicoloF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-3, 14, SHADOW_SIZE_M)
         FOOTPRINT(Ludicolo)
         OVERWORLD(
@@ -1939,22 +1951,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Nuzleaf,
-        .frontPicFemale = gMonFrontPic_NuzleafF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 48) : MON_COORDS_SIZE(40, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(40, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 7,
         .frontAnimFrames = sAnims_Nuzleaf,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Nuzleaf,
-        .backPicFemale = gMonBackPic_NuzleafF,
         .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
         .backAnimId = BACK_ANIM_V_SHAKE,
         .palette = gMonPalette_Nuzleaf,
         .shinyPalette = gMonShinyPalette_Nuzleaf,
         .iconSprite = gMonIcon_Nuzleaf,
         .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_NuzleafF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(40, 56),
+        .backPicFemale = gMonBackPic_NuzleafF,
+        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-3, 5, SHADOW_SIZE_S)
         FOOTPRINT(Nuzleaf)
         OVERWORLD(
@@ -2018,22 +2032,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Shiftry,
-        .frontPicFemale = gMonFrontPic_ShiftryF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(64, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 2 : 7,
         .frontAnimFrames = sAnims_Shiftry,
         .frontAnimId = ANIM_H_VIBRATE,
         .backPic = gMonBackPic_Shiftry,
-        .backPicFemale = gMonBackPic_ShiftryF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 9,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Shiftry,
         .shinyPalette = gMonShinyPalette_Shiftry,
         .iconSprite = gMonIcon_Shiftry,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 5,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_ShiftryF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
+        .backPicFemale = gMonBackPic_ShiftryF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-5, 5, SHADOW_SIZE_M)
         FOOTPRINT(Shiftry)
         OVERWORLD(
@@ -4517,22 +4533,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Meditite,
-        .frontPicFemale = gMonFrontPic_MedititeF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 40) : MON_COORDS_SIZE(48, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 12 : 10,
         .frontAnimFrames = sAnims_Meditite,
         .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES,
         .backPic = gMonBackPic_Meditite,
-        .backPicFemale = gMonBackPic_MedititeF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 48) : MON_COORDS_SIZE(48, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(48, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 9,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Meditite,
         .shinyPalette = gMonShinyPalette_Meditite,
         .iconSprite = gMonIcon_Meditite,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_MedititeF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(48, 48),
+        .backPicFemale = gMonBackPic_MedititeF,
+        .backPicSizeFemale = MON_COORDS_SIZE(48, 48),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(0, 1, SHADOW_SIZE_S)
         FOOTPRINT(Meditite)
         OVERWORLD(
@@ -4590,22 +4608,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Medicham,
-        .frontPicFemale = gMonFrontPic_MedichamF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 64) : MON_COORDS_SIZE(40, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(40, 64),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 0,
         .frontAnimFrames = sAnims_Medicham,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
         .backPic = gMonBackPic_Medicham,
-        .backPicFemale = gMonBackPic_MedichamF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 64) : MON_COORDS_SIZE(56, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(56, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 3 : 0,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Medicham,
         .shinyPalette = gMonShinyPalette_Medicham,
         .iconSprite = gMonIcon_Medicham,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_MedichamF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(40, 64),
+        .backPicFemale = gMonBackPic_MedichamF,
+        .backPicSizeFemale = MON_COORDS_SIZE(56, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 13, SHADOW_SIZE_S)
         FOOTPRINT(Medicham)
         OVERWORLD(
@@ -5249,22 +5269,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Roselia,
-        .frontPicFemale = gMonFrontPic_RoseliaF,
         .frontPicSize = MON_COORDS_SIZE(56, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 48),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 11,
         .frontAnimFrames = sAnims_Roselia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
         .backPic = gMonBackPic_Roselia,
-        .backPicFemale = gMonBackPic_RoseliaF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 8,
         .backAnimId = BACK_ANIM_SHAKE_GLOW_GREEN,
         .palette = gMonPalette_Roselia,
         .shinyPalette = gMonShinyPalette_Roselia,
         .iconSprite = gMonIcon_Roselia,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 4,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_RoseliaF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 48),
+        .backPicFemale = gMonBackPic_RoseliaF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 3, SHADOW_SIZE_S)
         FOOTPRINT(Roselia)
         OVERWORLD(
@@ -5333,22 +5355,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Roserade,
-        .frontPicFemale = gMonFrontPic_RoseradeF,
         .frontPicSize = MON_COORDS_SIZE(48, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(48, 56),
         .frontPicYOffset = 7,
         .frontAnimFrames = sAnims_Roserade,
         .frontAnimId = ANIM_H_VIBRATE,
         .backPic = gMonBackPic_Roserade,
-        .backPicFemale = gMonBackPic_RoseradeF,
         .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Roserade,
         .shinyPalette = gMonShinyPalette_Roserade,
         .iconSprite = gMonIcon_Roserade,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_RoseradeF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(48, 56),
+        .backPicFemale = gMonBackPic_RoseradeF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(0, 6, SHADOW_SIZE_S)
         FOOTPRINT(Roserade)
         OVERWORLD(
@@ -5411,22 +5435,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Gulpin,
-        .frontPicFemale = gMonFrontPic_GulpinF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 40) : MON_COORDS_SIZE(40, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 18 : 15,
         .frontAnimFrames = sAnims_Gulpin,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Gulpin,
-        .backPicFemale = gMonBackPic_GulpinF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 9,
         .backAnimId = BACK_ANIM_V_STRETCH,
         .palette = gMonPalette_Gulpin,
         .shinyPalette = gMonShinyPalette_Gulpin,
         .iconSprite = gMonIcon_Gulpin,
         .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_GulpinF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
+        .backPicFemale = gMonBackPic_GulpinF,
+        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(1, -2, SHADOW_SIZE_S)
         FOOTPRINT(Gulpin)
         OVERWORLD(
@@ -5486,22 +5512,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 345,
         .trainerOffset = 3,
         .frontPic = gMonFrontPic_Swalot,
-        .frontPicFemale = gMonFrontPic_SwalotF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 5,
         .frontAnimFrames = sAnims_Swalot,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
         .backPic = gMonBackPic_Swalot,
-        .backPicFemale = gMonBackPic_SwalotF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 2,
         .backAnimId = BACK_ANIM_V_STRETCH,
         .palette = gMonPalette_Swalot,
         .shinyPalette = gMonShinyPalette_Swalot,
         .iconSprite = gMonIcon_Swalot,
         .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_SwalotF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 56),
+        .backPicFemale = gMonBackPic_SwalotF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(4, 3, SHADOW_SIZE_L)
         FOOTPRINT(Swalot)
         OVERWORLD(
@@ -5877,22 +5905,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Numel,
-        .frontPicFemale = gMonFrontPic_NumelF,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 40) : MON_COORDS_SIZE(40, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 15 : 9,
         .frontAnimFrames = sAnims_Numel,
         .frontAnimId = ANIM_V_SLIDE,
         .backPic = gMonBackPic_Numel,
-        .backPicFemale = gMonBackPic_NumelF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(56, 56),
-        .backPicSizeFemale = MON_COORDS_SIZE(56, 56),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 6,
         .backAnimId = BACK_ANIM_V_SHAKE_LOW,
         .palette = gMonPalette_Numel,
         .shinyPalette = gMonShinyPalette_Numel,
         .iconSprite = gMonIcon_Numel,
         .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_NumelF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
+        .backPicFemale = gMonBackPic_NumelF,
+        .backPicSizeFemale = MON_COORDS_SIZE(56, 56),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(4, 2, SHADOW_SIZE_S)
         FOOTPRINT(Numel)
         OVERWORLD(
@@ -5951,22 +5981,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 345,
         .trainerOffset = 6,
         .frontPic = gMonFrontPic_Camerupt,
-        .frontPicFemale = gMonFrontPic_CameruptF,
         .frontPicSize = MON_COORDS_SIZE(64, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 6,
         .frontAnimFrames = sAnims_Camerupt,
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_Camerupt,
-        .backPicFemale = gMonBackPic_CameruptF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 32) : MON_COORDS_SIZE(64, 40),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 40),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 19 : 13,
         .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
         .palette = gMonPalette_Camerupt,
         .shinyPalette = gMonShinyPalette_Camerupt,
         .iconSprite = gMonIcon_Camerupt,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_CameruptF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
+        .backPicFemale = gMonBackPic_CameruptF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 40),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(2, 4, SHADOW_SIZE_L)
         FOOTPRINT(Camerupt)
         OVERWORLD(
@@ -6619,9 +6651,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Cacturne,
-        .frontPicFemale = gMonFrontPic_CacturneF,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Cacturne,
         .frontAnimId = ANIM_V_SLIDE,
@@ -6633,6 +6663,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .shinyPalette = gMonShinyPalette_Cacturne,
         .iconSprite = gMonIcon_Cacturne,
         .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_CacturneF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-1, 14, SHADOW_SIZE_M)
         FOOTPRINT(Cacturne)
         OVERWORLD(
@@ -7882,23 +7916,25 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 360,
         .trainerOffset = 7,
         .frontPic = gMonFrontPic_Milotic,
-        .frontPicFemale = gMonFrontPic_MiloticF,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 0 : 2,
         .frontAnimFrames = sAnims_Milotic,
         .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_GLOW_BLUE : ANIM_CIRCULAR_STRETCH_TWICE,
         .frontAnimDelay = 45,
         .backPic = gMonBackPic_Milotic,
-        .backPicFemale = gMonBackPic_MiloticF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 64) : MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 2 : 0,
         .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
         .palette = gMonPalette_Milotic,
         .shinyPalette = gMonShinyPalette_Milotic,
         .iconSprite = gMonIcon_Milotic,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 2,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_MiloticF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_MiloticF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Milotic)
         OVERWORLD(
@@ -9669,22 +9705,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Relicanth,
-        .frontPicFemale = gMonFrontPic_RelicanthF,
         .frontPicSize = MON_COORDS_SIZE(56, 56),
-        .frontPicSizeFemale = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 8,
         .frontAnimFrames = sAnims_Relicanth,
         .frontAnimId = ANIM_TIP_MOVE_FORWARD,
         .backPic = gMonBackPic_Relicanth,
-        .backPicFemale = gMonBackPic_RelicanthF,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 40),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 40),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 12,
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Relicanth,
         .shinyPalette = gMonShinyPalette_Relicanth,
         .iconSprite = gMonIcon_Relicanth,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 2,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_RelicanthF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(56, 56),
+        .backPicFemale = gMonBackPic_RelicanthF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 40),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(0, 3, SHADOW_SIZE_M)
         FOOTPRINT(Relicanth)
         OVERWORLD(

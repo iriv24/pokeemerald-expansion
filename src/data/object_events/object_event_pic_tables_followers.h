@@ -13,9 +13,11 @@ static const struct SpriteFrameImage sPicTable_Ivysaur[] = {
 static const struct SpriteFrameImage sPicTable_Venusaur[] = {
     overworld_ascending_frames(gObjectEventPic_Venusaur, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_VenusaurF[] = {
     overworld_ascending_frames(gObjectEventPic_VenusaurF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_VenusaurMega[] = {
     overworld_ascending_frames(gObjectEventPic_VenusaurMega, 4, 4),
@@ -85,9 +87,11 @@ static const struct SpriteFrameImage sPicTable_Metapod[] = {
 static const struct SpriteFrameImage sPicTable_Butterfree[] = {
     overworld_ascending_frames(gObjectEventPic_Butterfree, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ButterfreeF[] = {
     overworld_ascending_frames(gObjectEventPic_ButterfreeF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GIGANTAMAX_FORMS
 /*static const struct SpriteFrameImage sPicTable_ButterfreeGmax[] = {
     overworld_ascending_frames(gObjectEventPic_ButterfreeGmax, 4, 4),
@@ -133,15 +137,19 @@ static const struct SpriteFrameImage sPicTable_Pidgeot[] = {
 static const struct SpriteFrameImage sPicTable_Rattata[] = {
     overworld_ascending_frames(gObjectEventPic_Rattata, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RattataF[] = {
     overworld_ascending_frames(gObjectEventPic_RattataF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Raticate[] = {
     overworld_ascending_frames(gObjectEventPic_Raticate, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RaticateF[] = {
     overworld_ascending_frames(gObjectEventPic_RaticateF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_ALOLAN_FORMS
 static const struct SpriteFrameImage sPicTable_RattataAlola[] = {
     overworld_ascending_frames(gObjectEventPic_RattataAlola, 4, 4),
@@ -182,9 +190,11 @@ static const struct SpriteFrameImage sPicTable_PichuSpikyEared[] = {
 static const struct SpriteFrameImage sPicTable_Pikachu[] = {
     overworld_ascending_frames(gObjectEventPic_Pikachu, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_PikachuF[] = {
     overworld_ascending_frames(gObjectEventPic_PikachuF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_COSPLAY_PIKACHU_FORMS
 /*static const struct SpriteFrameImage sPicTable_PikachuCosplay[] = {
     overworld_ascending_frames(gObjectEventPic_PikachuCosplay, 4, 4),
@@ -242,9 +252,11 @@ static const struct SpriteFrameImage sPicTable_PikachuWorld[] = {
 static const struct SpriteFrameImage sPicTable_Raichu[] = {
     overworld_ascending_frames(gObjectEventPic_Raichu, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RaichuF[] = {
     overworld_ascending_frames(gObjectEventPic_RaichuF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_ALOLAN_FORMS
 static const struct SpriteFrameImage sPicTable_RaichuAlola[] = {
     overworld_ascending_frames(gObjectEventPic_RaichuAlola, 4, 4),
@@ -339,15 +351,19 @@ static const struct SpriteFrameImage sPicTable_Wigglytuff[] = {
 static const struct SpriteFrameImage sPicTable_Zubat[] = {
     overworld_ascending_frames(gObjectEventPic_Zubat, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ZubatF[] = {
     overworld_ascending_frames(gObjectEventPic_ZubatF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Golbat[] = {
     overworld_ascending_frames(gObjectEventPic_Golbat, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GolbatF[] = {
     overworld_ascending_frames(gObjectEventPic_GolbatF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_2_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Crobat[] = {
     overworld_ascending_frames(gObjectEventPic_Crobat, 4, 4),
@@ -362,15 +378,19 @@ static const struct SpriteFrameImage sPicTable_Oddish[] = {
 static const struct SpriteFrameImage sPicTable_Gloom[] = {
     overworld_ascending_frames(gObjectEventPic_Gloom, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GloomF[] = {
     overworld_ascending_frames(gObjectEventPic_GloomF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Vileplume[] = {
     overworld_ascending_frames(gObjectEventPic_Vileplume, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_VileplumeF[] = {
     overworld_ascending_frames(gObjectEventPic_VileplumeF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_2_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Bellossom[] = {
     overworld_ascending_frames(gObjectEventPic_Bellossom, 4, 4),
@@ -499,9 +519,11 @@ static const struct SpriteFrameImage sPicTable_Poliwrath[] = {
 static const struct SpriteFrameImage sPicTable_Politoed[] = {
     overworld_ascending_frames(gObjectEventPic_Politoed, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_PolitoedF[] = {
     overworld_ascending_frames(gObjectEventPic_PolitoedF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_POLIWAG
 
@@ -512,15 +534,19 @@ static const struct SpriteFrameImage sPicTable_Abra[] = {
 static const struct SpriteFrameImage sPicTable_Kadabra[] = {
     overworld_ascending_frames(gObjectEventPic_Kadabra, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_KadabraF[] = {
     overworld_ascending_frames(gObjectEventPic_KadabraF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Alakazam[] = {
     overworld_ascending_frames(gObjectEventPic_Alakazam, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_AlakazamF[] = {
     overworld_ascending_frames(gObjectEventPic_AlakazamF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_AlakazamMega[] = {
     overworld_ascending_frames(gObjectEventPic_AlakazamMega, 4, 4),
@@ -672,15 +698,19 @@ static const struct SpriteFrameImage sPicTable_Sirfetchd[] = {
 static const struct SpriteFrameImage sPicTable_Doduo[] = {
     overworld_ascending_frames(gObjectEventPic_Doduo, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_DoduoF[] = {
     overworld_ascending_frames(gObjectEventPic_DoduoF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Dodrio[] = {
     overworld_ascending_frames(gObjectEventPic_Dodrio, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_DodrioF[] = {
     overworld_ascending_frames(gObjectEventPic_DodrioF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_DODUO
 
 #if P_FAMILY_SEEL
@@ -748,9 +778,11 @@ static const struct SpriteFrameImage sPicTable_Onix[] = {
 static const struct SpriteFrameImage sPicTable_Steelix[] = {
     overworld_ascending_frames(gObjectEventPic_Steelix, 8, 8),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SteelixF[] = {
     overworld_ascending_frames(gObjectEventPic_SteelixF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_SteelixMega[] = {
     overworld_ascending_frames(gObjectEventPic_SteelixMega, 4, 4),
@@ -766,9 +798,11 @@ static const struct SpriteFrameImage sPicTable_Drowzee[] = {
 static const struct SpriteFrameImage sPicTable_Hypno[] = {
     overworld_ascending_frames(gObjectEventPic_Hypno, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_HypnoF[] = {
     overworld_ascending_frames(gObjectEventPic_HypnoF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_DROWZEE
 
 #if P_FAMILY_KRABBY
@@ -878,22 +912,28 @@ static const struct SpriteFrameImage sPicTable_WeezingGalar[] = {
 static const struct SpriteFrameImage sPicTable_Rhyhorn[] = {
     overworld_ascending_frames(gObjectEventPic_Rhyhorn, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RhyhornF[] = {
     overworld_ascending_frames(gObjectEventPic_RhyhornF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Rhydon[] = {
     overworld_ascending_frames(gObjectEventPic_Rhydon, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RhydonF[] = {
     overworld_ascending_frames(gObjectEventPic_RhydonF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Rhyperior[] = {
     overworld_ascending_frames(gObjectEventPic_Rhyperior, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RhyperiorF[] = {
     overworld_ascending_frames(gObjectEventPic_RhyperiorF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RHYHORN
 
@@ -921,9 +961,11 @@ static const struct SpriteFrameImage sPicTable_Tangela[] = {
 static const struct SpriteFrameImage sPicTable_Tangrowth[] = {
     overworld_ascending_frames(gObjectEventPic_Tangrowth, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_TangrowthF[] = {
     overworld_ascending_frames(gObjectEventPic_TangrowthF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_TANGELA
 
@@ -956,15 +998,19 @@ static const struct SpriteFrameImage sPicTable_Kingdra[] = {
 static const struct SpriteFrameImage sPicTable_Goldeen[] = {
     overworld_ascending_frames(gObjectEventPic_Goldeen, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GoldeenF[] = {
     overworld_ascending_frames(gObjectEventPic_GoldeenF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Seaking[] = {
     overworld_ascending_frames(gObjectEventPic_Seaking, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SeakingF[] = {
     overworld_ascending_frames(gObjectEventPic_SeakingF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_GOLDEEN
 
 #if P_FAMILY_STARYU
@@ -999,16 +1045,20 @@ static const struct SpriteFrameImage sPicTable_MrRime[] = {
 static const struct SpriteFrameImage sPicTable_Scyther[] = {
     overworld_ascending_frames(gObjectEventPic_Scyther, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ScytherF[] = {
     overworld_ascending_frames(gObjectEventPic_ScytherF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_2_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Scizor[] = {
     overworld_ascending_frames(gObjectEventPic_Scizor, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ScizorF[] = {
     overworld_ascending_frames(gObjectEventPic_ScizorF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_ScizorMega[] = {
     overworld_ascending_frames(gObjectEventPic_ScizorMega, 4, 4),
@@ -1098,15 +1148,19 @@ static const struct SpriteFrameImage sPicTable_TaurosPaldeaAqua[] = {
 static const struct SpriteFrameImage sPicTable_Magikarp[] = {
     overworld_ascending_frames(gObjectEventPic_Magikarp, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MagikarpF[] = {
     overworld_ascending_frames(gObjectEventPic_MagikarpF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Gyarados[] = {
     overworld_ascending_frames(gObjectEventPic_Gyarados, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GyaradosF[] = {
     overworld_ascending_frames(gObjectEventPic_GyaradosF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_GyaradosMega[] = {
     overworld_ascending_frames(gObjectEventPic_GyaradosMega, 4, 4),
@@ -1135,9 +1189,11 @@ static const struct SpriteFrameImage sPicTable_Ditto[] = {
 static const struct SpriteFrameImage sPicTable_Eevee[] = {
     overworld_ascending_frames(gObjectEventPic_Eevee, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_EeveeF[] = {
     overworld_ascending_frames(gObjectEventPic_EeveeF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GIGANTAMAX_FORMS
 /*static const struct SpriteFrameImage sPicTable_EeveeGmax[] = {
     overworld_ascending_frames(gObjectEventPic_EeveeGmax, 4, 4),
@@ -1314,9 +1370,11 @@ static const struct SpriteFrameImage sPicTable_Bayleef[] = {
 static const struct SpriteFrameImage sPicTable_Meganium[] = {
     overworld_ascending_frames(gObjectEventPic_Meganium, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MeganiumF[] = {
     overworld_ascending_frames(gObjectEventPic_MeganiumF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_CHIKORITA
 
 #if P_FAMILY_CYNDAQUIL
@@ -1370,15 +1428,19 @@ static const struct SpriteFrameImage sPicTable_Noctowl[] = {
 static const struct SpriteFrameImage sPicTable_Ledyba[] = {
     overworld_ascending_frames(gObjectEventPic_Ledyba, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LedybaF[] = {
     overworld_ascending_frames(gObjectEventPic_LedybaF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Ledian[] = {
     overworld_ascending_frames(gObjectEventPic_Ledian, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LedianF[] = {
     overworld_ascending_frames(gObjectEventPic_LedianF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_LEDYBA
 
 #if P_FAMILY_SPINARAK
@@ -1420,9 +1482,11 @@ static const struct SpriteFrameImage sPicTable_Natu[] = {
 static const struct SpriteFrameImage sPicTable_Xatu[] = {
     overworld_ascending_frames(gObjectEventPic_Xatu, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_XatuF[] = {
     overworld_ascending_frames(gObjectEventPic_XatuF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_NATU
 
 #if P_FAMILY_MAREEP
@@ -1465,9 +1529,11 @@ static const struct SpriteFrameImage sPicTable_Bonsly[] = {
 static const struct SpriteFrameImage sPicTable_Sudowoodo[] = {
     overworld_ascending_frames(gObjectEventPic_Sudowoodo, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SudowoodoF[] = {
     overworld_ascending_frames(gObjectEventPic_SudowoodoF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_SUDOWOODO
 
 #if P_FAMILY_HOPPIP
@@ -1486,16 +1552,20 @@ static const struct SpriteFrameImage sPicTable_Jumpluff[] = {
 static const struct SpriteFrameImage sPicTable_Aipom[] = {
     overworld_ascending_frames(gObjectEventPic_Aipom, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_AipomF[] = {
     overworld_ascending_frames(gObjectEventPic_AipomF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Ambipom[] = {
     overworld_ascending_frames(gObjectEventPic_Ambipom, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_AmbipomF[] = {
     overworld_ascending_frames(gObjectEventPic_AmbipomF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_AIPOM
 
@@ -1523,15 +1593,19 @@ static const struct SpriteFrameImage sPicTable_Yanmega[] = {
 static const struct SpriteFrameImage sPicTable_Wooper[] = {
     overworld_ascending_frames(gObjectEventPic_Wooper, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_WooperF[] = {
     overworld_ascending_frames(gObjectEventPic_WooperF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Quagsire[] = {
     overworld_ascending_frames(gObjectEventPic_Quagsire, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_QuagsireF[] = {
     overworld_ascending_frames(gObjectEventPic_QuagsireF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_PALDEAN_FORMS
 static const struct SpriteFrameImage sPicTable_WooperPaldea[] = {
     overworld_ascending_frames(gObjectEventPic_WooperPaldea, 4, 4),
@@ -1546,9 +1620,11 @@ static const struct SpriteFrameImage sPicTable_Clodsire[] = {
 static const struct SpriteFrameImage sPicTable_Murkrow[] = {
     overworld_ascending_frames(gObjectEventPic_Murkrow, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MurkrowF[] = {
     overworld_ascending_frames(gObjectEventPic_MurkrowF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Honchkrow[] = {
     overworld_ascending_frames(gObjectEventPic_Honchkrow, 4, 4),
@@ -1663,18 +1739,22 @@ static const struct SpriteFrameImage sPicTable_Wynaut[] = {
 static const struct SpriteFrameImage sPicTable_Wobbuffet[] = {
     overworld_ascending_frames(gObjectEventPic_Wobbuffet, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_WobbuffetF[] = {
     overworld_ascending_frames(gObjectEventPic_WobbuffetF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_WOBBUFFET
 
 #if P_FAMILY_GIRAFARIG
 static const struct SpriteFrameImage sPicTable_Girafarig[] = {
     overworld_ascending_frames(gObjectEventPic_Girafarig, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GirafarigF[] = {
     overworld_ascending_frames(gObjectEventPic_GirafarigF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_9_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Farigiraf[] = {
     overworld_ascending_frames(gObjectEventPic_Farigiraf, 4, 4),
@@ -1711,9 +1791,11 @@ static const struct SpriteFrameImage sPicTable_DudunsparceThreeSegment[] = {
 static const struct SpriteFrameImage sPicTable_Gligar[] = {
     overworld_ascending_frames(gObjectEventPic_Gligar, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GligarF[] = {
     overworld_ascending_frames(gObjectEventPic_GligarF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Gliscor[] = {
     overworld_ascending_frames(gObjectEventPic_Gliscor, 4, 4),
@@ -1754,9 +1836,11 @@ static const struct SpriteFrameImage sPicTable_Shuckle[] = {
 static const struct SpriteFrameImage sPicTable_Heracross[] = {
     overworld_ascending_frames(gObjectEventPic_Heracross, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_HeracrossF[] = {
     overworld_ascending_frames(gObjectEventPic_HeracrossF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_HeracrossMega[] = {
     overworld_ascending_frames(gObjectEventPic_HeracrossMega, 4, 4),
@@ -1768,25 +1852,31 @@ static const struct SpriteFrameImage sPicTable_HeracrossF[] = {
 static const struct SpriteFrameImage sPicTable_Sneasel[] = {
     overworld_ascending_frames(gObjectEventPic_Sneasel, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SneaselF[] = {
     overworld_ascending_frames(gObjectEventPic_SneaselF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Weavile[] = {
     overworld_ascending_frames(gObjectEventPic_Weavile, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_WeavileF[] = {
     overworld_ascending_frames(gObjectEventPic_WeavileF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 
 #if P_HISUIAN_FORMS
 static const struct SpriteFrameImage sPicTable_SneaselHisui[] = {
     overworld_ascending_frames(gObjectEventPic_SneaselHisui, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SneaselHisuiF[] = {
     overworld_ascending_frames(gObjectEventPic_SneaselHisuiF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Sneasler[] = {
     overworld_ascending_frames(gObjectEventPic_Sneasler, 4, 4),
 };
@@ -1800,9 +1890,11 @@ static const struct SpriteFrameImage sPicTable_Teddiursa[] = {
 static const struct SpriteFrameImage sPicTable_Ursaring[] = {
     overworld_ascending_frames(gObjectEventPic_Ursaring, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_UrsaringF[] = {
     overworld_ascending_frames(gObjectEventPic_UrsaringF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_8_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Ursaluna[] = {
     overworld_ascending_frames(gObjectEventPic_Ursaluna, 4, 4),
@@ -1829,16 +1921,20 @@ static const struct SpriteFrameImage sPicTable_Swinub[] = {
 static const struct SpriteFrameImage sPicTable_Piloswine[] = {
     overworld_ascending_frames(gObjectEventPic_Piloswine, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_PiloswineF[] = {
     overworld_ascending_frames(gObjectEventPic_PiloswineF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Mamoswine[] = {
     overworld_ascending_frames(gObjectEventPic_Mamoswine, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MamoswineF[] = {
     overworld_ascending_frames(gObjectEventPic_MamoswineF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SWINUB
 
@@ -1863,9 +1959,11 @@ static const struct SpriteFrameImage sPicTable_Remoraid[] = {
 static const struct SpriteFrameImage sPicTable_Octillery[] = {
     overworld_ascending_frames(gObjectEventPic_Octillery, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_OctilleryF[] = {
     overworld_ascending_frames(gObjectEventPic_OctilleryF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_REMORAID
 
 #if P_FAMILY_DELIBIRD
@@ -1898,9 +1996,11 @@ static const struct SpriteFrameImage sPicTable_Houndour[] = {
 static const struct SpriteFrameImage sPicTable_Houndoom[] = {
     overworld_ascending_frames(gObjectEventPic_Houndoom, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_HoundoomF[] = {
     overworld_ascending_frames(gObjectEventPic_HoundoomF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_HoundoomMega[] = {
     overworld_ascending_frames(gObjectEventPic_HoundoomMega, 4, 4),
@@ -1915,9 +2015,11 @@ static const struct SpriteFrameImage sPicTable_Phanpy[] = {
 static const struct SpriteFrameImage sPicTable_Donphan[] = {
     overworld_ascending_frames(gObjectEventPic_Donphan, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_DonphanF[] = {
     overworld_ascending_frames(gObjectEventPic_DonphanF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_PHANPY
 
 #if P_FAMILY_STANTLER
@@ -2017,21 +2119,27 @@ static const struct SpriteFrameImage sPicTable_Sceptile[] = {
 static const struct SpriteFrameImage sPicTable_Torchic[] = {
     overworld_ascending_frames(gObjectEventPic_Torchic, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_TorchicF[] = {
     overworld_ascending_frames(gObjectEventPic_TorchicF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Combusken[] = {
     overworld_ascending_frames(gObjectEventPic_Combusken, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CombuskenF[] = {
     overworld_ascending_frames(gObjectEventPic_CombuskenF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Blaziken[] = {
     overworld_ascending_frames(gObjectEventPic_Blaziken, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_BlazikenF[] = {
     overworld_ascending_frames(gObjectEventPic_BlazikenF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_BlazikenMega[] = {
     overworld_ascending_frames(gObjectEventPic_BlazikenMega, 4, 4),
@@ -2095,18 +2203,22 @@ static const struct SpriteFrameImage sPicTable_Silcoon[] = {
 static const struct SpriteFrameImage sPicTable_Beautifly[] = {
     overworld_ascending_frames(gObjectEventPic_Beautifly, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_BeautiflyF[] = {
     overworld_ascending_frames(gObjectEventPic_BeautiflyF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Cascoon[] = {
     overworld_ascending_frames(gObjectEventPic_Cascoon, 4, 4),
 };
 static const struct SpriteFrameImage sPicTable_Dustox[] = {
     overworld_ascending_frames(gObjectEventPic_Dustox, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_DustoxF[] = {
     overworld_ascending_frames(gObjectEventPic_DustoxF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_WURMPLE
 
 #if P_FAMILY_LOTAD
@@ -2119,9 +2231,11 @@ static const struct SpriteFrameImage sPicTable_Lombre[] = {
 static const struct SpriteFrameImage sPicTable_Ludicolo[] = {
     overworld_ascending_frames(gObjectEventPic_Ludicolo, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LudicoloF[] = {
     overworld_ascending_frames(gObjectEventPic_LudicoloF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_LOTAD
 
 #if P_FAMILY_SEEDOT
@@ -2131,15 +2245,19 @@ static const struct SpriteFrameImage sPicTable_Seedot[] = {
 static const struct SpriteFrameImage sPicTable_Nuzleaf[] = {
     overworld_ascending_frames(gObjectEventPic_Nuzleaf, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_NuzleafF[] = {
     overworld_ascending_frames(gObjectEventPic_NuzleafF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Shiftry[] = {
     overworld_ascending_frames(gObjectEventPic_Shiftry, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ShiftryF[] = {
     overworld_ascending_frames(gObjectEventPic_ShiftryF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_SEEDOT
 
 #if P_FAMILY_TAILLOW
@@ -2314,15 +2432,19 @@ static const struct SpriteFrameImage sPicTable_Aggron[] = {
 static const struct SpriteFrameImage sPicTable_Meditite[] = {
     overworld_ascending_frames(gObjectEventPic_Meditite, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MedititeF[] = {
     overworld_ascending_frames(gObjectEventPic_MedititeF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Medicham[] = {
     overworld_ascending_frames(gObjectEventPic_Medicham, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MedichamF[] = {
     overworld_ascending_frames(gObjectEventPic_MedichamF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_MedichamMega[] = {
     overworld_ascending_frames(gObjectEventPic_MedichamMega, 4, 4),
@@ -2374,17 +2496,20 @@ static const struct SpriteFrameImage sPicTable_Budew[] = {
 static const struct SpriteFrameImage sPicTable_Roselia[] = {
     overworld_ascending_frames(gObjectEventPic_Roselia, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RoseliaF[] = {
     overworld_ascending_frames(gObjectEventPic_RoseliaF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_GEN_4_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Roserade[] = {
     overworld_ascending_frames(gObjectEventPic_Roserade, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RoseradeF[] = {
     overworld_ascending_frames(gObjectEventPic_RoseradeF, 4, 4),
 };
-
+#endif //P_GENDER_DIFFERENCES
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ROSELIA
 
@@ -2392,15 +2517,19 @@ static const struct SpriteFrameImage sPicTable_RoseradeF[] = {
 static const struct SpriteFrameImage sPicTable_Gulpin[] = {
     overworld_ascending_frames(gObjectEventPic_Gulpin, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GulpinF[] = {
     overworld_ascending_frames(gObjectEventPic_GulpinF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Swalot[] = {
     overworld_ascending_frames(gObjectEventPic_Swalot, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SwalotF[] = {
     overworld_ascending_frames(gObjectEventPic_SwalotF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_GULPIN
 
 #if P_FAMILY_CARVANHA
@@ -2430,15 +2559,19 @@ static const struct SpriteFrameImage sPicTable_Wailord[] = {
 static const struct SpriteFrameImage sPicTable_Numel[] = {
     overworld_ascending_frames(gObjectEventPic_Numel, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_NumelF[] = {
     overworld_ascending_frames(gObjectEventPic_NumelF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Camerupt[] = {
     overworld_ascending_frames(gObjectEventPic_Camerupt, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CameruptF[] = {
     overworld_ascending_frames(gObjectEventPic_CameruptF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_CameruptMega[] = {
     overworld_ascending_frames(gObjectEventPic_CameruptMega, 4, 4),
@@ -2486,9 +2619,11 @@ static const struct SpriteFrameImage sPicTable_Cacnea[] = {
 static const struct SpriteFrameImage sPicTable_Cacturne[] = {
     overworld_ascending_frames(gObjectEventPic_Cacturne, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CacturneF[] = {
     overworld_ascending_frames(gObjectEventPic_CacturneF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_CACNEA
 
 #if P_FAMILY_SWABLU
@@ -2581,9 +2716,11 @@ static const struct SpriteFrameImage sPicTable_Feebas[] = {
 static const struct SpriteFrameImage sPicTable_Milotic[] = {
     overworld_ascending_frames(gObjectEventPic_Milotic, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_MiloticF[] = {
     overworld_ascending_frames(gObjectEventPic_MiloticF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_FEEBAS
 
 #if P_FAMILY_CASTFORM
@@ -2711,9 +2848,11 @@ static const struct SpriteFrameImage sPicTable_Gorebyss[] = {
 static const struct SpriteFrameImage sPicTable_Relicanth[] = {
     overworld_ascending_frames(gObjectEventPic_Relicanth, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_RelicanthF[] = {
     overworld_ascending_frames(gObjectEventPic_RelicanthF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_RELICANTH
 
 #if P_FAMILY_LUVDISC
@@ -2890,72 +3029,92 @@ static const struct SpriteFrameImage sPicTable_Empoleon[] = {
 static const struct SpriteFrameImage sPicTable_Starly[] = {
     overworld_ascending_frames(gObjectEventPic_Starly, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_StarlyF[] = {
     overworld_ascending_frames(gObjectEventPic_StarlyF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Staravia[] = {
     overworld_ascending_frames(gObjectEventPic_Staravia, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_StaraviaF[] = {
     overworld_ascending_frames(gObjectEventPic_StaraviaF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Staraptor[] = {
     overworld_ascending_frames(gObjectEventPic_Staraptor, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_StaraptorF[] = {
     overworld_ascending_frames(gObjectEventPic_StaraptorF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_STARLY
 
 #if P_FAMILY_BIDOOF
 static const struct SpriteFrameImage sPicTable_Bidoof[] = {
     overworld_ascending_frames(gObjectEventPic_Bidoof, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_BidoofF[] = {
     overworld_ascending_frames(gObjectEventPic_BidoofF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Bibarel[] = {
     overworld_ascending_frames(gObjectEventPic_Bibarel, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_BibarelF[] = {
     overworld_ascending_frames(gObjectEventPic_BibarelF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_BIDOOF
 
 #if P_FAMILY_KRICKETOT
 static const struct SpriteFrameImage sPicTable_Kricketot[] = {
     overworld_ascending_frames(gObjectEventPic_Kricketot, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_KricketotF[] = {
     overworld_ascending_frames(gObjectEventPic_KricketotF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Kricketune[] = {
     overworld_ascending_frames(gObjectEventPic_Kricketune, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_KricketuneF[] = {
     overworld_ascending_frames(gObjectEventPic_KricketuneF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_KRICKETOT
 
 #if P_FAMILY_SHINX
 static const struct SpriteFrameImage sPicTable_Shinx[] = {
     overworld_ascending_frames(gObjectEventPic_Shinx, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ShinxF[] = {
     overworld_ascending_frames(gObjectEventPic_ShinxF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Luxio[] = {
     overworld_ascending_frames(gObjectEventPic_Luxio, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LuxioF[] = {
     overworld_ascending_frames(gObjectEventPic_LuxioF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Luxray[] = {
     overworld_ascending_frames(gObjectEventPic_Luxray, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LuxrayF[] = {
     overworld_ascending_frames(gObjectEventPic_LuxrayF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_SHINX
 
 #if P_FAMILY_CRANIDOS
@@ -3004,9 +3163,11 @@ static const struct SpriteFrameImage sPicTable_Mothim[] = {
 static const struct SpriteFrameImage sPicTable_Combee[] = {
     overworld_ascending_frames(gObjectEventPic_Combee, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CombeeF[] = {
     overworld_ascending_frames(gObjectEventPic_CombeeF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Vespiquen[] = {
     overworld_ascending_frames(gObjectEventPic_Vespiquen, 4, 4),
 };
@@ -3016,24 +3177,30 @@ static const struct SpriteFrameImage sPicTable_Vespiquen[] = {
 static const struct SpriteFrameImage sPicTable_Pachirisu[] = {
     overworld_ascending_frames(gObjectEventPic_Pachirisu, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_PachirisuF[] = {
     overworld_ascending_frames(gObjectEventPic_PachirisuF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_PACHIRISU
 
 #if P_FAMILY_BUIZEL
 static const struct SpriteFrameImage sPicTable_Buizel[] = {
     overworld_ascending_frames(gObjectEventPic_Buizel, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_BuizelF[] = {
     overworld_ascending_frames(gObjectEventPic_BuizelF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Floatzel[] = {
     overworld_ascending_frames(gObjectEventPic_Floatzel, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_FloatzelF[] = {
     overworld_ascending_frames(gObjectEventPic_FloatzelF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_BUIZEL
 
 #if P_FAMILY_CHERUBI
@@ -3129,21 +3296,27 @@ static const struct SpriteFrameImage sPicTable_Spiritomb[] = {
 static const struct SpriteFrameImage sPicTable_Gible[] = {
     overworld_ascending_frames(gObjectEventPic_Gible, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GibleF[] = {
     overworld_ascending_frames(gObjectEventPic_GibleF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Gabite[] = {
     overworld_ascending_frames(gObjectEventPic_Gabite, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GabiteF[] = {
     overworld_ascending_frames(gObjectEventPic_GabiteF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Garchomp[] = {
     overworld_ascending_frames(gObjectEventPic_Garchomp, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_GarchompF[] = {
     overworld_ascending_frames(gObjectEventPic_GarchompF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_GarchompMega[] = {
     overworld_ascending_frames(gObjectEventPic_GarchompMega, 4, 4),
@@ -3169,9 +3342,11 @@ static const struct SpriteFrameImage sPicTable_Lucario[] = {
 static const struct SpriteFrameImage sPicTable_Hippopotas[] = {
     overworld_ascending_frames(gObjectEventPic_Hippopotas, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_HippopotasF[] = {
     overworld_ascending_frames(gObjectEventPic_HippopotasF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Hippowdon[] = {
     overworld_ascending_frames(gObjectEventPic_Hippowdon, 4, 4),
 };
@@ -3190,15 +3365,19 @@ static const struct SpriteFrameImage sPicTable_Drapion[] = {
 static const struct SpriteFrameImage sPicTable_Croagunk[] = {
     overworld_ascending_frames(gObjectEventPic_Croagunk, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_CroagunkF[] = {
     overworld_ascending_frames(gObjectEventPic_CroagunkF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Toxicroak[] = {
     overworld_ascending_frames(gObjectEventPic_Toxicroak, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_ToxicroakF[] = {
     overworld_ascending_frames(gObjectEventPic_ToxicroakF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_CROAGUNK
 
 #if P_FAMILY_CARNIVINE
@@ -3211,30 +3390,38 @@ static const struct SpriteFrameImage sPicTable_Carnivine[] = {
 static const struct SpriteFrameImage sPicTable_Finneon[] = {
     overworld_ascending_frames(gObjectEventPic_Finneon, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_FinneonF[] = {
     overworld_ascending_frames(gObjectEventPic_FinneonF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Lumineon[] = {
     overworld_ascending_frames(gObjectEventPic_Lumineon, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_LumineonF[] = {
     overworld_ascending_frames(gObjectEventPic_LumineonF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_FINNEON
 
 #if P_FAMILY_SNOVER
 static const struct SpriteFrameImage sPicTable_Snover[] = {
     overworld_ascending_frames(gObjectEventPic_Snover, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_SnoverF[] = {
     overworld_ascending_frames(gObjectEventPic_SnoverF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Abomasnow[] = {
     overworld_ascending_frames(gObjectEventPic_Abomasnow, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_AbomasnowF[] = {
     overworld_ascending_frames(gObjectEventPic_AbomasnowF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_AbomasnowMega[] = {
     overworld_ascending_frames(gObjectEventPic_AbomasnowMega, 4, 4),
@@ -3532,9 +3719,11 @@ static const struct SpriteFrameImage sPicTable_Tranquill[] = {
 static const struct SpriteFrameImage sPicTable_Unfezant[] = {
     overworld_ascending_frames(gObjectEventPic_Unfezant, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_UnfezantF[] = {
     overworld_ascending_frames(gObjectEventPic_UnfezantF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_PIDOVE
 
 #if P_FAMILY_BLITZLE
@@ -3931,15 +4120,19 @@ static const struct SpriteFrameImage sPicTable_Amoonguss[] = {
 static const struct SpriteFrameImage sPicTable_Frillish[] = {
     overworld_ascending_frames(gObjectEventPic_Frillish, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_FrillishF[] = {
     overworld_ascending_frames(gObjectEventPic_FrillishF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_Jellicent[] = {
     overworld_ascending_frames(gObjectEventPic_Jellicent, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_JellicentF[] = {
     overworld_ascending_frames(gObjectEventPic_JellicentF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_FRILLISH
 
 #if P_FAMILY_ALOMOMOLA
@@ -4405,9 +4598,11 @@ static const struct SpriteFrameImage sPicTable_Litleo[] = {
 static const struct SpriteFrameImage sPicTable_Pyroar[] = {
     overworld_ascending_frames(gObjectEventPic_Pyroar, 4, 4),
 };
+#if P_GENDER_DIFFERENCES
 static const struct SpriteFrameImage sPicTable_PyroarF[] = {
     overworld_ascending_frames(gObjectEventPic_PyroarF, 4, 4),
 };
+#endif //P_GENDER_DIFFERENCES
 #endif //P_FAMILY_LITLEO
 
 #if P_FAMILY_FLABEBE
