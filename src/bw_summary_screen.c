@@ -3920,7 +3920,7 @@ static void PrintMonOTID(void)
 static void PrintMonAbilityName(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum, FALSE);
-    if(sMonSummaryScreen->summary.abilityNum != 2 && sMonSummaryScreen->summary.abilityNum != 5)
+    if(sMonSummaryScreen->summary.abilityNum < 2)
     {
         PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 4, 2, 0, 0);
     }
