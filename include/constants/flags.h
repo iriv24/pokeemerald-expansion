@@ -1252,7 +1252,7 @@
 #define FLAG_ITEM_SOUTHERN_ISLAND_LATIASITE                         0x4AE
 #define FLAG_ITEM_NAVEL_ROCK_DIANCITE                               0x4AF
 #define FLAG_MET_REGULAR_MOVE_TUTOR                                 0x4B0
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
+#define FLAG_SLEEP_CLAUSE_TOGGLE                                    0x4B1
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
