@@ -4797,7 +4797,9 @@ static const struct TrainerMon sParty_Winona1[] = {
     .lvl = 68,
     .species = SPECIES_AGGRON,
     .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    //custom adamant
+           //hp,atk,def,spatk,spdef,speed
+    .ev = TRAINER_PARTY_EVS( 6, 252, 252, 0, 0, 0 ),
     .ability = ABILITY_ROCK_HEAD,
     .heldItem = ITEM_ASSAULT_VEST,
     .moves = {MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_FIRE_PUNCH, MOVE_BODY_PRESS}
@@ -4885,9 +4887,8 @@ static const struct TrainerMon sParty_Liza[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 76,
     .species = SPECIES_IRON_LEAVES,
-    .nature = NATURE_NAUGHTY,
-           //hp,atk,def,spatk,spdef,speed
-    .ev = TRAINER_PARTY_EVS(6, 252, 0, 0, 0, 252 ),
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_SHARPNESS,
     .heldItem = ITEM_CHOICE_SCARF,
     .moves = {MOVE_LEAF_BLADE, MOVE_PSYBLADE, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH}
@@ -4932,7 +4933,7 @@ static const struct TrainerMon sParty_Juan1[] = {
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_OWN_TEMPO,
-    .heldItem = ITEM_METAL_COAT,
+    .heldItem = ITEM_SHUCA_BERRY,
     .moves = {MOVE_GIGATON_HAMMER, MOVE_PLAY_ROUGH, MOVE_STONE_EDGE, MOVE_BRICK_BREAK}
     },
     {
