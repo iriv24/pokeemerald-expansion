@@ -459,8 +459,8 @@ PetalburgWoods_Text_MiracleSeedExplanation:
 
 PetalburgWoods_Text_TrainerTipsExperience:
 	.string "TRAINER TIPS\p"
-	.string "You can sort the Items in you Bag by\n"
-	.string "pressing the “Start” button when\l"
+	.string "You can sort the Items in your Bag\n"
+	.string "by pressing the “Start” button when\l"
 	.string "inside one of the pockets.$"
 
 PetalburgWoods_Text_TrainerTipsPP:

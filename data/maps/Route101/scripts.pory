@@ -288,12 +288,11 @@ Route101_Text_YouSavedMe:
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If Pokémon get tired, take them to\n"
 	.string "a Pokémon Center.\p"
-	.string "Alternatively, there is a new item called\n"
-	.string "a PokéVial. That thing is super useful,\l"
-	.string "it's a Key Item that heals your party\l"
-	.string "right where you are! I would recommend\l"
-	.string "registering it immediately\l"
-	.string "if you have one!$"
+	.string "Alternatively, you can heal your party\n"
+	.string "anywhere if you have a PokéVial.\p"
+	.string "If you have one, you can access it by\n"
+	.string "pressing the “L” button, that thing is\l"
+	.string "super useful!$"
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Wild Pokémon will jump out at you in\n"

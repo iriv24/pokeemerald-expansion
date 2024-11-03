@@ -504,16 +504,16 @@ TimeChanger_Text_Dusk:
 	.string "Dusk$"
 
 TimeChanger_Text_ItIsNowDay:
-	.string "It is now Day.$"
+	.string "Time set to 10:00 AM.$"
 
 TimeChanger_Text_ItIsNowNight:
-	.string "It is now Night.$"
+	.string "Time set to 8:00 PM.$"
 
 TimeChanger_Text_ItIsNowMorning:
-	.string "It is now Morning.$"
+	.string "Time set to 6:00 AM.$"
 
 TimeChanger_Text_ItIsNowDusk:
-	.string "It is now Dusk.$"
+	.string "Time set to 7:00 PM.$"
 
 TimeChanger_Text_Exit:
 	.string "Cancel$"
