@@ -4359,8 +4359,8 @@ static const struct TrainerMon sParty_Cynthia[] = {
            //hp,atk,def,spatk,spdef,speed
     .ev = TRAINER_PARTY_EVS( 252, 0, 0, 6, 252, 0 ),
     .ability = ABILITY_INTIMIDATE,
-    .heldItem = ITEM_FOCUS_SASH,
-    .moves = {MOVE_DARK_HOLE, MOVE_TAUNT, MOVE_DREAM_EATER, MOVE_POLTERGEIST}
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_DARK_HOLE, MOVE_SUCKER_PUNCH, MOVE_DREAM_EATER, MOVE_POLTERGEIST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5980,10 +5980,10 @@ static const struct TrainerMon sParty_WallaceWithSteven[] = {
     .lvl = 85,
     .species = SPECIES_SUICUNE,
     .heldItem = ITEM_LEFTOVERS,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_INNER_FOCUS,
-    .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_EXTRASENSORY, MOVE_AIR_SLASH}
+    .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_CALM_MIND, MOVE_AIR_SLASH}
     }
 };
 
