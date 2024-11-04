@@ -10351,22 +10351,22 @@ static const struct TrainerMon sParty_Trent1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
-    .species = SPECIES_FRAXURE,
-    .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_MOLD_BREAKER,
-    .heldItem = ITEM_DRAGON_FANG,
-    .moves = {MOVE_DUAL_CHOP, MOVE_SLASH, MOVE_POISON_JAB, MOVE_DRAGON_DANCE}
+    .species = SPECIES_TURTONATOR,
+    .nature = NATURE_CALM,
+    .ev = TRAINER_PARTY_EVS_CALM(),
+    .ability = ABILITY_DAUNTLESS_SHIELD,
+    .heldItem = ITEM_WHITE_HERB,
+    .moves = {MOVE_FLAMETHROWER, MOVE_AURA_SPHERE, MOVE_DRAGON_PULSE, MOVE_SHELL_SMASH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 201,
-    .species = SPECIES_BIBAREL,
-    .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_SIMPLE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_AQUA_JET, MOVE_WATERFALL, MOVE_CURSE}
+    .lvl = 202,
+    .species = SPECIES_BELLOSSOM,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_CHLOROPHYLL,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_MOONBLAST, MOVE_QUIVER_DANCE}
     },
 };
 
