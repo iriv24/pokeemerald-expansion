@@ -119,9 +119,9 @@
 
 // gTileset_Cave
 #define METATILE_Cave_CrackedFloor                       0x22F
-#define METATILE_Cave_NormalFloor                        0x201
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
+#define METATILE_Cave_NormalFloor                        0x201
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
 #define METATILE_Cave_SealedChamberEntrance_BottomMid    0x233
@@ -381,6 +381,8 @@
 #define METATILE_Pacifidlog_HalfSubmergedLogs_HorizontalRight  0x253
 #define METATILE_Pacifidlog_HalfSubmergedLogs_VerticalBottom   0x261
 #define METATILE_Pacifidlog_HalfSubmergedLogs_VerticalTop      0x259
+#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Bottom         0x2CA
+#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Top            0x2C2
 #define METATILE_Pacifidlog_SkyPillar_CrackedFloor_Hole        0x237
 #define METATILE_Pacifidlog_SkyPillar_DoorOpen_Bottom          0x2B2
 #define METATILE_Pacifidlog_SkyPillar_DoorOpen_Top             0x2AA
@@ -388,8 +390,6 @@
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalRight      0x255
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
-#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Bottom         0x2CA
-#define METATILE_Pacifidlog_SkyPillar_CloseOpen_Top            0x2C2
 
 // gTileset_Petalburg
 #define METATILE_Petalburg_Door_BirchsLab   0x249
