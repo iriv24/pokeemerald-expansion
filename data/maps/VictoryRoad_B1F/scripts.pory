@@ -1,6 +1,88 @@
 raw `
+.set LOCALID_REGIGIGAS, 22
 VictoryRoad_B1F_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, VictoryRoad_B1F_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, VictoryRoad_B1F_OnTransition
 	.byte 0
+
+VictoryRoad_B1F_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, VictoryRoad_B1F_EventScript_TryRemoveRegigigas
+	end
+
+VictoryRoad_B1F_EventScript_TryRemoveRegigigas::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+VictoryRoad_B1F_OnTransition:
+	call_if_unset FLAG_DEFEATED_REGIGIGAS, VictoryRoad_B1F_EventScript_ShowRegigigas
+	end
+
+VictoryRoad_B1F_EventScript_ShowRegigigas::
+	clearflag FLAG_HIDE_REGIGIGAS
+	call_if_set FLAG_DEFEATED_REGICE, VictoryRoad_B1F_EventScript_AnimateRegigigas1
+	return
+
+VictoryRoad_B1F_EventScript_AnimateRegigigas1::
+	call_if_set FLAG_DEFEATED_REGIDRAGO, VictoryRoad_B1F_EventScript_AnimateRegigigas2
+	return
+
+VictoryRoad_B1F_EventScript_AnimateRegigigas2::
+	call_if_set FLAG_DEFEATED_REGIELEKI, VictoryRoad_B1F_EventScript_AnimateRegigigas3
+	return
+
+VictoryRoad_B1F_EventScript_AnimateRegigigas3::
+	call_if_set FLAG_DEFEATED_REGIROCK, VictoryRoad_B1F_EventScript_AnimateRegigigas4
+	return
+
+VictoryRoad_B1F_EventScript_AnimateRegigigas4::
+	call_if_set FLAG_DEFEATED_REGISTEEL, VictoryRoad_B1F_EventScript_AnimateRegigigas5
+	return
+
+VictoryRoad_B1F_EventScript_AnimateRegigigas5::
+	setobjectmovementtype LOCALID_REGIGIGAS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	return
+
+VictoryRoad_B1F_EventScript_Regigigas::
+	lock
+	goto_if_unset FLAG_DEFEATED_REGIDRAGO, VictoryRoad_B1F_EventScript_MustBeatRegis
+	goto_if_unset FLAG_DEFEATED_REGIELEKI, VictoryRoad_B1F_EventScript_MustBeatRegis
+	goto_if_unset FLAG_DEFEATED_REGIROCK, VictoryRoad_B1F_EventScript_MustBeatRegis
+	goto_if_unset FLAG_DEFEATED_REGISTEEL, VictoryRoad_B1F_EventScript_MustBeatRegis
+	goto_if_unset FLAG_DEFEATED_REGICE, VictoryRoad_B1F_EventScript_MustBeatRegis
+	faceplayer
+	waitse
+	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIGIGAS, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, VictoryRoad_B1F_EventScript_DefeatedRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VictoryRoad_B1F_EventScript_RanFromRegigigas
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, VictoryRoad_B1F_EventScript_RanFromRegigigas
+	setflag FLAG_DEFEATED_REGIGIGAS
+	release
+	end
+
+VictoryRoad_B1F_EventScript_MustBeatRegis::
+	msgbox VictoryRoad_B1F_Text_LooksLikeStatue, MSGBOX_DEFAULT
+	release
+	end
+
+VictoryRoad_B1F_EventScript_DefeatedRegigigas::
+	setflag FLAG_DEFEATED_REGIGIGAS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+VictoryRoad_B1F_EventScript_RanFromRegigigas::
+	setvar VAR_0x8004, SPECIES_REGIGIGAS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 VictoryRoad_B1F_EventScript_Samuel::
 	trainerbattle_single TRAINER_SAMUEL, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat
@@ -26,6 +108,10 @@ VictoryRoad_B1F_EventScript_Halle::
 	trainerbattle_single TRAINER_HALLE, VictoryRoad_B1F_Text_HalleIntro, VictoryRoad_B1F_Text_HalleDefeat
 	msgbox VictoryRoad_B1F_Text_HallePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_B1F_Text_LooksLikeStatue:
+	.string "It looks like a statue of an ancient,\n"
+	.string "powerful Pokémon…$"
 
 VictoryRoad_B1F_Text_SamuelIntro:
 	.string "The thought that I'm getting closer to\n"

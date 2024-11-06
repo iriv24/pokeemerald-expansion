@@ -699,6 +699,10 @@ void StartRegiBattle(void)
         transitionId = B_TRANSITION_GRID_SQUARES;
         song = MUS_VS_REGI;
         break;
+    case SPECIES_REGIGIGAS:
+        transitionId = B_TRANSITION_GRID_SQUARES;
+        song = MUS_VS_REGI;
+        break;
     case SPECIES_UXIE:
         transitionId = B_TRANSITION_GRID_SQUARES;
         song = MUS_DP_VS_UXIE_MESPRIT_AZELF;
@@ -713,7 +717,7 @@ void StartRegiBattle(void)
         break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
-        song = MUS_DP_VS_LEGEND;
+        song = MUS_VS_REGI;
         break;
     }
     CreateBattleStartTask(transitionId, song);
