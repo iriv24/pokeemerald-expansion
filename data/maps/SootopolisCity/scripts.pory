@@ -1487,13 +1487,13 @@ SootopolisCity_Movement_DestroyTask::
 	step_end
 
 SootopolisCity_Text_GymSign:
-	.string "SOOTOPOLIS CITY POKéMON GYM\n"
-	.string "LEADER: JUAN\p"
-	.string "“The GYM LEADER with the beauty\n"
+	.string "Sootopolis City Pokémon Gym\n"
+	.string "Leader: JUAN\p"
+	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
 SootopolisCity_Text_CitySign:
-	.string "SOOTOPOLIS CITY\p"
+	.string "Sootopolis City\p"
 	.string "“The mystical city where history\n"
 	.string "slumbers.”$"
 
@@ -1643,17 +1643,17 @@ SootopolisCity_Text_CaveOfOriginPleaseLeave:
 	.string "Who might you be?\p"
 	.string "This is the Cave of Origin.\p"
 	.string "The spirits of Pokémon, becalmed at\n"
-	.string "MT. PYRE, are said to be revived here.\p"
+	.string "Mt. Pyre, are said to be revived here.\p"
 	.string "Please leave.$"
 
 SootopolisCity_Text_LeadSuperiorTrainerToCave:
 	.string "A person with a strong will and\n"
 	.string "superior talent…\p"
-	.string "A TRAINER who has knowledge and\n"
+	.string "A trainer who has knowledge and\n"
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
 	.string "instructed by Wallace to lead that\l"
-	.string "TRAINER to this CAVE.$"
+	.string "trainer to this Cave.$"
 
 SootopolisCity_Text_AwakenedPokemonClash:
 	.string "Oh, my…\p"

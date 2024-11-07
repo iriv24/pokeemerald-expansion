@@ -406,7 +406,7 @@ LavaridgeTown_Text_AsYouWishThen:
 
 LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
 	.string "Every so often, an Egg will be found at\n"
-	.string "the Pokémon DAY CARE.\p"
+	.string "the Pokémon Day Care.\p"
 	.string "Or at least that's how the rumor goes.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry:
@@ -433,7 +433,7 @@ LavaridgeTown_Text_OhYouLikeHotSprings:
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"
 	.string "I want to become a beautiful and strong\n"
-	.string "GYM LEADER like FLANNERY.$"
+	.string "Gym Leader like Flannery.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings:
 	.string "If people put Pokémon in hot springs,\n"
@@ -449,17 +449,17 @@ LavaridgeTown_Text_HotSpringsClaims:
 	.string "money…$"
 
 LavaridgeTown_Text_TownSign:
-	.string "LAVARIDGE TOWN\p"
-	.string "“Pokémon CENTER HOT SPRINGS\n"
+	.string "Lavaridge Town\p"
+	.string "“Pokémon Center Hot Springs\n"
 	.string "An excellent place for relaxing!”$"
 
 LavaridgeTown_Text_GymSign:
-	.string "LAVARIDGE TOWN Pokémon GYM\n"
-	.string "LEADER: FLANNERY\l"
+	.string "Lavaridge Town Pokémon Gym\n"
+	.string "Leader: Flannery\l"
 	.string "“One with a fiery passion that burns!”$"
 
 LavaridgeTown_Text_HerbShopSign:
-	.string "Pokémon HERB SHOP\n"
+	.string "Pokémon Herb Shop\n"
 	.string "“Bitter taste--better cure!”$"
 
 LavaridgeTown_Text_Sandygast:
