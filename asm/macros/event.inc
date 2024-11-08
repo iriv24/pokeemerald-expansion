@@ -2538,3 +2538,8 @@
 	.2byte \dest
 	.endm
 
+	@ Checks if the player has a typed Memory for Silvally in their Bag. Sets VAR_RESULT to TRUE if the player has
+	@ one, or FALSE if they don't.
+	.macro checkitemmemory
+	callnative ScrCmd_checkitemmemory
+	.endm

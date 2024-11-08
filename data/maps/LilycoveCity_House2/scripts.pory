@@ -2,15 +2,93 @@ raw `
 LilycoveCity_House2_MapScripts::
 	.byte 0
 
-LilycoveCity_House2_EventScript_FatMan::
+`
+
+script LilycoveCity_House2_EventScript_FatMan {
 	lock
 	faceplayer
-	msgbox LilycoveCity_House2_Text_SleepIsEssential, MSGBOX_DEFAULT
+	if(!flag(FLAG_MET_SILVALLY_GUY))
+	{
+		msgbox(LilycoveCity_House2_SilvallyManIntro)
+		giveitem(ITEM_DRAGON_MEMORY)
+		msgbox(LilycoveCity_House2_SeeGoodMemory)
+		setflag(FLAG_MET_SILVALLY_GUY)
+		release
+		end
+	}
+	checkitemmemory()
+	if(!var(VAR_RESULT))
+	{
+		msgbox(LilycoveCity_House2_Text_NoMemories)
+		release
+		end
+	}
+
+	msgbox(SilvallyManSwapMemory)
+	dynmultipush("Fighting", ITEM_FIGHTING_MEMORY)
+	dynmultipush("Flying", ITEM_FLYING_MEMORY)
+	dynmultipush("Poison", ITEM_POISON_MEMORY)
+	dynmultipush("Ground", ITEM_GROUND_MEMORY)
+	dynmultipush("Rock", ITEM_ROCK_MEMORY)
+	dynmultipush("Bug", ITEM_BUG_MEMORY)
+	dynmultipush("Ghost", ITEM_GHOST_MEMORY)
+	dynmultipush("Steel", ITEM_STEEL_MEMORY)
+	dynmultipush("Fire", ITEM_FIRE_MEMORY)
+	dynmultipush("Water", ITEM_WATER_MEMORY)
+	dynmultipush("Grass", ITEM_GRASS_MEMORY)
+	dynmultipush("Electric", ITEM_ELECTRIC_MEMORY)
+	dynmultipush("Psychic", ITEM_PSYCHIC_MEMORY)
+	dynmultipush("Ice", ITEM_ICE_MEMORY)
+	dynmultipush("Dragon", ITEM_DRAGON_MEMORY)
+	dynmultipush("Dark", ITEM_DARK_MEMORY)
+	dynmultipush("Fairy", ITEM_FAIRY_MEMORY)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, ITEM_FIGHTING_MEMORY, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(LilycoveCity_House2_EventScript_SilvallyManNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	removeitem(VAR_0x8004)
+	msgbox("Okay fine, let's trade memories then.")
+	giveitem(VAR_0x8005)
+	msgbox("Come back if you want to trade\nmemories again!")
 	release
 	end
+}
 
-LilycoveCity_House2_Text_SleepIsEssential:
-	.string "Yawn…\p"
-	.string "Sleep is essential for good health…\n"
-	.string "Sleep and regain health…$"
-`
+
+script LilycoveCity_House2_EventScript_SilvallyManNo {
+    msgbox("Whatever man, didn't want to give you\nany more memories anyway.")
+    release
+    end
+}
+
+text LilycoveCity_House2_SilvallyManIntro {
+	"I don't know what you heard, but I've\n"
+	"got a great memory.\p"
+	"Don't believe me? Here, check this out."
+}
+
+text LilycoveCity_House2_SeeGoodMemory {
+	"See? I told you I had a great memory."
+}
+
+text SilvallyManSwapMemory {
+	"What now? That memory's not good\n"
+	"enough for you?\p"
+	"That's fine, I've got plenty.\p"
+	"Here, I'll even let you take your pick,\n"
+	"but you'll have to give me that one back\l"
+	"in exchange.\p"
+	"Which Memory do you want?"
+}
+
+text LilycoveCity_House2_Text_NoMemories {
+	"Nice try, but you don't even have any\n"
+	"memories to trade with me!"
+}

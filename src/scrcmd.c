@@ -544,6 +544,23 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     return FALSE;
 }
 
+void ScrCmd_checkitemmemory(void)
+{
+    u32 i = 0;
+    gSpecialVar_Result = FALSE;
+    gSpecialVar_0x8004 = 0;
+
+    for(i = ITEM_FIRE_MEMORY; i <= ITEM_FAIRY_MEMORY; i++)
+    {
+        if(CheckBagHasItem(i, 1))
+        {
+            gSpecialVar_Result = TRUE;
+            gSpecialVar_0x8004 = i;
+            break;
+        }
+    }
+}
+
 bool8 ScrCmd_checkitemtype(struct ScriptContext *ctx)
 {
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
