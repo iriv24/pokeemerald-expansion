@@ -1254,7 +1254,7 @@
 #define FLAG_MET_REGULAR_MOVE_TUTOR                                 0x4B0
 #define FLAG_SLEEP_CLAUSE_TOGGLE                                    0x4B1
 #define FLAG_MET_SILVALLY_GUY                                       0x4B2
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
+#define FLAG_MET_GENESECT_GUY                                       0x4B3
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag

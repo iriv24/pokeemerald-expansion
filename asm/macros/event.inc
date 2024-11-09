@@ -2543,3 +2543,9 @@
 	.macro checkitemmemory
 	callnative ScrCmd_checkitemmemory
 	.endm
+
+	@ Checks if the player has a typed Drive for Genesect in their Bag. Sets VAR_RESULT to TRUE if the player has
+	@ one, or FALSE if they don't.
+	.macro checkitemdrive
+	callnative ScrCmd_checkitemdrive
+	.endm

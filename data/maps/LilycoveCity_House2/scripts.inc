@@ -201,10 +201,11 @@ LilycoveCity_House2_SilvallyManIntro::
 
 LilycoveCity_House2_SeeGoodMemory::
 # 77 "data/maps/LilycoveCity_House2/scripts.pory"
-	.string "See? I told you I had a great memory.$"
+	.string "Come back anytime if you want a\n"
+	.string "different memory.$"
 
 SilvallyManSwapMemory::
-# 81 "data/maps/LilycoveCity_House2/scripts.pory"
+# 82 "data/maps/LilycoveCity_House2/scripts.pory"
 	.string "What now? That memory's not good\n"
 	.string "enough for you?\p"
 	.string "That's fine, I've got plenty.\p"
@@ -214,6 +215,6 @@ SilvallyManSwapMemory::
 	.string "Which Memory do you want?$"
 
 LilycoveCity_House2_Text_NoMemories::
-# 91 "data/maps/LilycoveCity_House2/scripts.pory"
+# 92 "data/maps/LilycoveCity_House2/scripts.pory"
 	.string "Nice try, but you don't even have any\n"
 	.string "memories to trade with me!$"

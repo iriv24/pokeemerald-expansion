@@ -561,6 +561,23 @@ void ScrCmd_checkitemmemory(void)
     }
 }
 
+void ScrCmd_checkitemdrive(void)
+{
+    u32 i = 0;
+    gSpecialVar_Result = FALSE;
+    gSpecialVar_0x8004 = 0;
+
+    for(i = ITEM_DOUSE_DRIVE; i <= ITEM_CHILL_DRIVE; i++)
+    {
+        if(CheckBagHasItem(i, 1))
+        {
+            gSpecialVar_Result = TRUE;
+            gSpecialVar_0x8004 = i;
+            break;
+        }
+    }
+}
+
 bool8 ScrCmd_checkitemtype(struct ScriptContext *ctx)
 {
     u16 itemId = VarGet(ScriptReadHalfword(ctx));

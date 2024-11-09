@@ -75,7 +75,8 @@ text LilycoveCity_House2_SilvallyManIntro {
 }
 
 text LilycoveCity_House2_SeeGoodMemory {
-	"See? I told you I had a great memory."
+	"Come back anytime if you want a\n"
+	"different memory."
 }
 
 text SilvallyManSwapMemory {

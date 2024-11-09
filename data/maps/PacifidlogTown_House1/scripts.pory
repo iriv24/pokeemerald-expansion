@@ -2,22 +2,9 @@ raw `
 PacifidlogTown_House1_MapScripts::
 	.byte 0
 
-PacifidlogTown_House1_EventScript_Man::
-	msgbox PacifidlogTown_House1_Text_RegiStory, MSGBOX_NPC
-	end
-
 PacifidlogTown_House1_EventScript_Woman::
 	msgbox PacifidlogTown_House1_Text_SixDotsOpenThreeDoors, MSGBOX_NPC
 	end
-
-PacifidlogTown_House1_Text_RegiStory:
-	.string "In the HOENN region, there are three\n"
-	.string "POKéMON that represent the power of\l"
-	.string "rock, ice, and steel.\p"
-	.string "Each of them is said to hide away deep\n"
-	.string "inside caves.\p"
-	.string "That's the story I heard when I was\n"
-	.string "just a little kid.$"
 
 PacifidlogTown_House1_Text_SixDotsOpenThreeDoors:
 	.string "“Six dots open three doors.”\p"
@@ -25,3 +12,78 @@ PacifidlogTown_House1_Text_SixDotsOpenThreeDoors:
 	.string "know what he meant.$"
 
 `
+
+script PacifidlogTown_House1_EventScript_Man {
+	lock
+	faceplayer
+	if(!flag(FLAG_MET_GENESECT_GUY))
+	{
+		msgbox(PacifidlogTown_House1_GenesectManIntro)
+		giveitem(ITEM_DOUSE_DRIVE)
+		msgbox(PacifidlogTown_House1_SeeGoodDrive)
+		setflag(FLAG_MET_GENESECT_GUY)
+		release
+		end
+	}
+	checkitemdrive()
+	if(!var(VAR_RESULT))
+	{
+		msgbox(PacifidlogTown_House1_Text_NoDrives)
+		release
+		end
+	}
+
+	msgbox(GenesectManSwapDrive)
+	dynmultipush("Douse", ITEM_DOUSE_DRIVE)
+	dynmultipush("Shock", ITEM_SHOCK_DRIVE)
+	dynmultipush("Burn", ITEM_BURN_DRIVE)
+	dynmultipush("Chill", ITEM_CHILL_DRIVE)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, ITEM_DOUSE_DRIVE, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(PacifidlogTown_House1_EventScript_GenesectManNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	removeitem(VAR_0x8004)
+	msgbox("Cool, let's swap drives then.")
+	giveitem(VAR_0x8005)
+	msgbox("Come back if you want to trade\ndrives again!")
+	release
+	end
+}
+
+
+script PacifidlogTown_House1_EventScript_GenesectManNo {
+    msgbox("No worries, you can come back and trade\ndrives with me anytime.")
+    release
+    end
+}
+
+text PacifidlogTown_House1_GenesectManIntro {
+	"People always tell me that I'm really\n"
+	"driven, but what they don't know is\l"
+	"that I just have a lot of drives.\p"
+	"Want to see what I mean?\n"
+	"Here, take this."
+}
+
+text PacifidlogTown_House1_SeeGoodDrive {
+	"Come back anytime if you want a\n"
+	"different drive."
+}
+
+text GenesectManSwapDrive {
+	"Oh hey, you came back! Does this mean\n"
+	"you want to trade drives?\p"
+	"Great! Which Drive do you want?"
+}
+
+text PacifidlogTown_House1_Text_NoDrives {
+	"Hmm? You don't have any drives to trade\n"
+	"with me."
+}
