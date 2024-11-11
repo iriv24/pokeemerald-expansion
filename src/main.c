@@ -89,6 +89,9 @@ void InitIntrHandlers(void);
 static void WaitForVBlank(void);
 void EnableVCountIntrAtLine150(void);
 
+extern bool32 FieldDialogIsActive(void);
+extern bool32 HandlingFieldDialogInput(void);
+
 #define B_START_SELECT (B_BUTTON | START_BUTTON | SELECT_BUTTON)
 
 void AgbMain()
@@ -305,6 +308,10 @@ static void ReadKeys(void)
         if (JOY_HELD(L_BUTTON))
             gMain.heldKeys |= A_BUTTON;
     }
+
+    // Turns R into Turbo A during Field and Battle Messages.
+    if (JOY_HELD(R_BUTTON) && FieldDialogIsActive())
+       gMain.newKeys ^= A_BUTTON;
 
     if (JOY_NEW(gMain.watchedKeysMask))
         gMain.watchedKeysPressed = TRUE;

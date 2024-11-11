@@ -14,6 +14,7 @@
 #include "pokedex.h"
 #include "pokemon_icon.h"
 #include "region_map.h"
+#include "script_menu.h"
 #include "sound.h"
 #include "string_util.h"
 #include "strings.h"
@@ -341,6 +342,7 @@ void DrawDialogueFrame(u8 windowId, bool8 copyToVram)
     PutWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
+    gMain.activeOverworldDialog = TRUE;
 }
 
 void DrawStdWindowFrame(u8 windowId, bool8 copyToVram)
@@ -359,6 +361,7 @@ void ClearDialogWindowAndFrame(u8 windowId, bool8 copyToVram)
     ClearWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
+    gMain.activeOverworldDialog = FALSE;
 }
 
 void ClearStdWindowAndFrame(u8 windowId, bool8 copyToVram)
@@ -823,6 +826,7 @@ void ClearDialogWindowAndFrameToTransparent(u8 windowId, bool8 copyToVram)
     ClearWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
+    gMain.activeOverworldDialog = FALSE;
 }
 
 static void WindowFunc_ClearDialogWindowAndFrameNullPalette(u8 bg, u8 tilemapLeft, u8 tilemapTop, u8 width, u8 height, u8 paletteNum)
@@ -2329,4 +2333,11 @@ void HBlankCB_DoublePopupWindow(void)
     {
         REG_BG0VOFS = 512 - offset;
     }
+}
+
+bool32 FieldDialogIsActive(void)
+{
+    if (gMain.activeOverworldDialog && !gMain.inBattle && !HandlingFieldDialogInput())
+        return TRUE;
+    return FALSE;
 }

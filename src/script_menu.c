@@ -1152,3 +1152,12 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width)
 
     return adjustedLeft;
 }
+
+// Uncomment Task_HandleScrollingMultichoiceInput if using expansion
+bool32 HandlingFieldDialogInput(void)
+{
+    if (FuncIsActiveTask(Task_HandleYesNoInput) || FuncIsActiveTask(Task_HandleMultichoiceInput) 
+     || FuncIsActiveTask(Task_HandleMultichoiceGridInput)/* || FuncIsActiveTask(Task_HandleScrollingMultichoiceInput) */)
+        return TRUE;
+    return FALSE;
+}
