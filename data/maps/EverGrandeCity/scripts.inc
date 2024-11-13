@@ -551,21 +551,21 @@ EverGrandeCity_Text_BrendanGoingBackToLittleroot:
 # 276 "data/maps/EverGrandeCity/scripts.pory"
 EverGrandeCity_Text_EnteringVictoryRoad:
 # 277 "data/maps/EverGrandeCity/scripts.pory"
-	.string "ENTERING VICTORY ROAD$"
+	.string "Entering Victory Road$"
 # 278 "data/maps/EverGrandeCity/scripts.pory"
 
 # 279 "data/maps/EverGrandeCity/scripts.pory"
 EverGrandeCity_Text_EnteringPokemonLeague:
 # 280 "data/maps/EverGrandeCity/scripts.pory"
-	.string "ENTERING POKéMON LEAGUE\n"
+	.string "Entering Pokémon League\n"
 # 281 "data/maps/EverGrandeCity/scripts.pory"
-	.string "CENTER GATE$"
+	.string "Center Gate$"
 # 282 "data/maps/EverGrandeCity/scripts.pory"
 
 # 283 "data/maps/EverGrandeCity/scripts.pory"
 EverGrandeCity_Text_CitySign:
 # 284 "data/maps/EverGrandeCity/scripts.pory"
-	.string "EVER GRANDE CITY\p"
+	.string "Ever Grande City\p"
 # 285 "data/maps/EverGrandeCity/scripts.pory"
 	.string "“The paradise of flowers, the sea,\n"
 # 286 "data/maps/EverGrandeCity/scripts.pory"

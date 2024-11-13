@@ -169,7 +169,7 @@ FallarborTown_Text_HaveYouChallengedFlannery:
 # 85 "data/maps/FallarborTown/scripts.pory"
 FallarborTown_Text_BattleTentSign:
 # 86 "data/maps/FallarborTown/scripts.pory"
-	.string "BATTLE TENT FALLARBOR SITE\n"
+	.string "Battle Tent Fallarbor Site\n"
 # 87 "data/maps/FallarborTown/scripts.pory"
 	.string "“May the Greatest Teams Gather!”$"
 # 88 "data/maps/FallarborTown/scripts.pory"
@@ -177,7 +177,7 @@ FallarborTown_Text_BattleTentSign:
 # 89 "data/maps/FallarborTown/scripts.pory"
 FallarborTown_Text_TownSign:
 # 90 "data/maps/FallarborTown/scripts.pory"
-	.string "FALLARBOR TOWN\n"
+	.string "Fallarbor Town\n"
 # 91 "data/maps/FallarborTown/scripts.pory"
 	.string "“A farm community with small gardens.”$"
 # 92 "data/maps/FallarborTown/scripts.pory"
@@ -185,6 +185,6 @@ FallarborTown_Text_TownSign:
 # 93 "data/maps/FallarborTown/scripts.pory"
 FallarborTown_Text_MoveTutorSign:
 # 94 "data/maps/FallarborTown/scripts.pory"
-	.string "MOVE TUTOR'S HOUSE\n"
+	.string "Move Tutor's House\n"
 # 95 "data/maps/FallarborTown/scripts.pory"
 	.string "“New moves taught to Pokémon.”$"

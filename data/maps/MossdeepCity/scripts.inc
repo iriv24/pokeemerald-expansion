@@ -753,7 +753,7 @@ MossdeepCity_Text_WantKingsRockStevenGaveMe:
 # 377 "data/maps/MossdeepCity/scripts.pory"
 	.string "know what it's good for.\p"
 # 378 "data/maps/MossdeepCity/scripts.pory"
-	.string "I think it's called KING'S ROCK.\n"
+	.string "I think it's called King'S Rock.\n"
 # 379 "data/maps/MossdeepCity/scripts.pory"
 	.string "Do you want it?$"
 # 380 "data/maps/MossdeepCity/scripts.pory"

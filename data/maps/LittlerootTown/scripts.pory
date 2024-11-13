@@ -1994,7 +1994,7 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 # 999 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_TownSign:
 # 1000 "data/maps/LittlerootTown/scripts.pory"
-	.string "LITTLEROOT TOWN\n"
+	.string "Littleroot Town\n"
 # 1001 "data/maps/LittlerootTown/scripts.pory"
 	.string "“A town that can't be shaded any hue.”$"
 # 1002 "data/maps/LittlerootTown/scripts.pory"
@@ -2002,25 +2002,25 @@ LittlerootTown_Text_TownSign:
 # 1003 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ProfBirchsLab:
 # 1004 "data/maps/LittlerootTown/scripts.pory"
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "Prof. Birch's Pokémon Lab$"
 # 1005 "data/maps/LittlerootTown/scripts.pory"
 
 # 1006 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_PlayersHouse:
 # 1007 "data/maps/LittlerootTown/scripts.pory"
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 # 1008 "data/maps/LittlerootTown/scripts.pory"
 
 # 1009 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_ProfBirchsHouse:
 # 1010 "data/maps/LittlerootTown/scripts.pory"
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "Prof. Birch's House$"
 # 1011 "data/maps/LittlerootTown/scripts.pory"
 
 # 1012 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1013 "data/maps/LittlerootTown/scripts.pory"
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "Prof. Birch: Well, well, {PLAYER}{KUN}!\n"
 # 1014 "data/maps/LittlerootTown/scripts.pory"
 	.string "That was good work out there!\p"
 # 1015 "data/maps/LittlerootTown/scripts.pory"
@@ -2037,5 +2037,5 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "next Hoenn Champion.\l"
 # 1020 "data/maps/LittlerootTown/scripts.pory"
 # 1021 "data/maps/LittlerootTown/scripts.pory"
-	.string "Let's go to my LAB.$"
+	.string "Let's go to my lab.$"
 `
