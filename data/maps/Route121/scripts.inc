@@ -535,31 +535,103 @@ Route121_EventScript_ExplainMeltan::
 	end
 
 
-Route121_Trigger_BlockPath::
+Route121_Psyduck1::
 # 344 "data/maps/Route121/scripts.pory"
-	lockall
+	lock
 # 345 "data/maps/Route121/scripts.pory"
-	msgbox GoBeatWinona
+	faceplayer
 # 346 "data/maps/Route121/scripts.pory"
-	waitmessage
+	waitse
 # 347 "data/maps/Route121/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, StopPlayerLeft
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
 # 348 "data/maps/Route121/scripts.pory"
-	waitmovement 0
+	msgbox Route121_Psyduck1_Text_0, MSGBOX_DEFAULT
 # 349 "data/maps/Route121/scripts.pory"
-	releaseall
+	waitmoncry
+# 350 "data/maps/Route121/scripts.pory"
+	release
 	end
 
 
+Route121_Psyduck2::
+# 356 "data/maps/Route121/scripts.pory"
+	lock
+# 357 "data/maps/Route121/scripts.pory"
+	faceplayer
 # 358 "data/maps/Route121/scripts.pory"
-StopPlayerLeft:
+	waitse
 # 359 "data/maps/Route121/scripts.pory"
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
+# 360 "data/maps/Route121/scripts.pory"
+	msgbox Route121_Psyduck2_Text_0, MSGBOX_DEFAULT
+# 361 "data/maps/Route121/scripts.pory"
+	waitmoncry
+# 362 "data/maps/Route121/scripts.pory"
+	release
+	end
+
+
+Route121_Psyduck3::
+# 367 "data/maps/Route121/scripts.pory"
+	lock
+# 368 "data/maps/Route121/scripts.pory"
+	faceplayer
+# 369 "data/maps/Route121/scripts.pory"
+	waitse
+# 370 "data/maps/Route121/scripts.pory"
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
+# 371 "data/maps/Route121/scripts.pory"
+	msgbox Route121_Psyduck3_Text_0, MSGBOX_DEFAULT
+# 372 "data/maps/Route121/scripts.pory"
+	waitmoncry
+# 373 "data/maps/Route121/scripts.pory"
+	release
+	end
+
+
+Route121_Psyduck4::
+# 378 "data/maps/Route121/scripts.pory"
+	lock
+# 379 "data/maps/Route121/scripts.pory"
+	faceplayer
+# 380 "data/maps/Route121/scripts.pory"
+	waitse
+# 381 "data/maps/Route121/scripts.pory"
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
+# 382 "data/maps/Route121/scripts.pory"
+	msgbox Route121_Psyduck4_Text_0, MSGBOX_DEFAULT
+# 383 "data/maps/Route121/scripts.pory"
+	waitmoncry
+# 384 "data/maps/Route121/scripts.pory"
+	release
+	end
+
+
+# 393 "data/maps/Route121/scripts.pory"
+StopPlayerLeft:
+# 394 "data/maps/Route121/scripts.pory"
 	walk_left
 	step_end
 
 Route121_EventScript_BattleByron_Text_0:
 # 228 "data/maps/Route121/scripts.pory"
 	.string "Excellent!$"
+
+Route121_Psyduck1_Text_0:
+# 348 "data/maps/Route121/scripts.pory"
+	.string "Psyduck: Psyyyyyyy.$"
+
+Route121_Psyduck2_Text_0:
+# 360 "data/maps/Route121/scripts.pory"
+	.string "Psyduck: Psy?$"
+
+Route121_Psyduck3_Text_0:
+# 371 "data/maps/Route121/scripts.pory"
+	.string "Psyduck: Psyyyy?$"
+
+Route121_Psyduck4_Text_0:
+# 382 "data/maps/Route121/scripts.pory"
+	.string "Psyduck: PSYYY!!!!$"
 
 Route121_Text_PlayerReceivedMeltan::
 # 301 "data/maps/Route121/scripts.pory"
@@ -603,6 +675,6 @@ PostBattle_Byron::
 	.string "this region.$"
 
 GoBeatWinona::
-# 353 "data/maps/Route121/scripts.pory"
+# 388 "data/maps/Route121/scripts.pory"
 	.string "You should defeat Winona before\n"
 	.string "moving on to here.$"

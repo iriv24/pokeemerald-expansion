@@ -340,13 +340,48 @@ text PostBattle_Byron{
 	"this region."
 }
 
-script Route121_Trigger_BlockPath{
-	lockall
-	msgbox(GoBeatWinona)
-	waitmessage
-	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayerLeft)
-	waitmovement(0)
-	releaseall
+script Route121_Psyduck1{
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+	msgbox("Psyduck: Psyyyyyyy.", MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}
+
+
+script Route121_Psyduck2{
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+	msgbox("Psyduck: Psy?", MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}
+
+script Route121_Psyduck3{
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+	msgbox("Psyduck: Psyyyy?", MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}
+
+script Route121_Psyduck4{
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PSYDUCK, CRY_MODE_NORMAL)
+	msgbox("Psyduck: PSYYY!!!!", MSGBOX_DEFAULT)
+	waitmoncry
+	release
 	end
 }
 
