@@ -387,7 +387,7 @@ MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum:
 # 194 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "{PLAYER} checked the POKé BALL.\p"
 # 195 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "It contained the POKéMON\n"
+	.string "It contained the Pokémon\n"
 # 196 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "BELDUM.\p"
 # 197 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -405,7 +405,7 @@ MossdeepCity_StevensHouse_Text_ObtainedBeldum:
 # 203 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_Text_NoSpaceForAnotherMon:
 # 204 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "There is no space for another POKéMON.$"
+	.string "There is no space for another Pokémon.$"
 # 205 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 
 # 206 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -441,7 +441,7 @@ MossdeepCity_StevensHouse_Text_LetterFromSteven:
 # 221 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "Inside it is a BELDUM, my favorite\n"
 # 222 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	.string "POKéMON.\p"
+	.string "Pokémon.\p"
 # 223 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	.string "I'm counting on you.\p"
 # 224 "data/maps/MossdeepCity_StevensHouse/scripts.pory"

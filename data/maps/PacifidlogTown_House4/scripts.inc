@@ -61,7 +61,7 @@ PacifidlogTown_House4_EventScript_No::
 # 31 "data/maps/PacifidlogTown_House4/scripts.pory"
 PacifidlogTown_House4_Text_PeopleSawHighFlyingPokemon:
 # 32 "data/maps/PacifidlogTown_House4/scripts.pory"
-	.string "People were saying they saw a POKéMON\n"
+	.string "People were saying they saw a Pokémon\n"
 # 33 "data/maps/PacifidlogTown_House4/scripts.pory"
 	.string "flying high above HOENN.\p"
 # 34 "data/maps/PacifidlogTown_House4/scripts.pory"
@@ -73,9 +73,9 @@ PacifidlogTown_House4_Text_PeopleSawHighFlyingPokemon:
 # 37 "data/maps/PacifidlogTown_House4/scripts.pory"
 PacifidlogTown_House4_Text_SkyPokemon:
 # 38 "data/maps/PacifidlogTown_House4/scripts.pory"
-	.string "A sky POKéMON!\n"
+	.string "A sky Pokémon!\n"
 # 39 "data/maps/PacifidlogTown_House4/scripts.pory"
-	.string "A sky POKéMON!$"
+	.string "A sky Pokémon!$"
 # 40 "data/maps/PacifidlogTown_House4/scripts.pory"
 
 # 41 "data/maps/PacifidlogTown_House4/scripts.pory"

@@ -83,7 +83,7 @@ Route114_FossilManiacsHouse_Text_HaveThisToDigLikeMyBrother:
 # 42 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 Route114_FossilManiacsHouse_Text_DigReturnsYouToEntrance:
 # 43 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
-	.string "If you make a POKéMON DIG inside a\n"
+	.string "If you make a Pokémon DIG inside a\n"
 # 44 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	.string "cave, you're returned to the entrance…$"
 # 45 "data/maps/Route114_FossilManiacsHouse/scripts.pory"

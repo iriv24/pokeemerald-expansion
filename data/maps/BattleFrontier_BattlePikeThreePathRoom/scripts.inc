@@ -691,7 +691,7 @@ BattleFrontier_BattlePikeThreePathRoom_Text_AromaOfPokemon:
 # 346 "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.pory"
 	.string "It seems to have the distinct aroma\n"
 # 347 "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.pory"
-	.string "of POKéMON wafting around it…$"
+	.string "of Pokémon wafting around it…$"
 # 348 "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.pory"
 
 # 349 "data/maps/BattleFrontier_BattlePikeThreePathRoom/scripts.pory"

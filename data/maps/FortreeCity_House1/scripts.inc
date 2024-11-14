@@ -183,7 +183,7 @@ FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
 # 92 "data/maps/FortreeCity_House1/scripts.pory"
 FortreeCity_House1_Text_TradingMemoriesWithOthers:
 # 93 "data/maps/FortreeCity_House1/scripts.pory"
-	.string "Trading POKéMON with others…\p"
+	.string "Trading Pokémon with others…\p"
 # 94 "data/maps/FortreeCity_House1/scripts.pory"
 	.string "It's as if you're trading your own\n"
 # 95 "data/maps/FortreeCity_House1/scripts.pory"

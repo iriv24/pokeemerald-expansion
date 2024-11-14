@@ -149,7 +149,7 @@ Route114_FossilManiacsTunnel_Text_DevonCorpRevivingFossils:
 # 75 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	.string "From what I've heard, DEVON is doing\n"
 # 76 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	.string "research on reviving POKéMON from\l"
+	.string "research on reviving Pokémon from\l"
 # 77 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	.string "FOSSILS…\p"
 # 78 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"

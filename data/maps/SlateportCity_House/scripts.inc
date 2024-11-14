@@ -25,15 +25,15 @@ SlateportCity_House_EventScript_Girl::
 # 13 "data/maps/SlateportCity_House/scripts.pory"
 SlateportCity_House_Text_NatureToDoWithStatGains:
 # 14 "data/maps/SlateportCity_House/scripts.pory"
-	.string "My POKéMON has a HASTY nature.\p"
+	.string "My Pokémon has a HASTY nature.\p"
 # 15 "data/maps/SlateportCity_House/scripts.pory"
 	.string "It has higher SPEED compared to\n"
 # 16 "data/maps/SlateportCity_House/scripts.pory"
-	.string "my other POKéMON.\p"
+	.string "my other Pokémon.\p"
 # 17 "data/maps/SlateportCity_House/scripts.pory"
 	.string "Maybe their nature has something to\n"
 # 18 "data/maps/SlateportCity_House/scripts.pory"
-	.string "do with the stat gains of POKéMON.$"
+	.string "do with the stat gains of Pokémon.$"
 # 19 "data/maps/SlateportCity_House/scripts.pory"
 
 # 20 "data/maps/SlateportCity_House/scripts.pory"

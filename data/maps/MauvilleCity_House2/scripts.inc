@@ -95,7 +95,7 @@ MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
 # 48 "data/maps/MauvilleCity_House2/scripts.pory"
 	.string "I'd be able to buy HARBOR MAIL at the\n"
 # 49 "data/maps/MauvilleCity_House2/scripts.pory"
-	.string "POKéMON MART in SLATEPORT…$"
+	.string "Pokémon MART in SLATEPORT…$"
 # 50 "data/maps/MauvilleCity_House2/scripts.pory"
 
 # 51 "data/maps/MauvilleCity_House2/scripts.pory"

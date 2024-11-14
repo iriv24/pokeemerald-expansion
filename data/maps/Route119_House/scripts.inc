@@ -43,7 +43,7 @@ Route119_House_Text_RumorAboutCaveOfOrigin:
 # 22 "data/maps/Route119_House/scripts.pory"
 	.string "People rumor that the spirits of\n"
 # 23 "data/maps/Route119_House/scripts.pory"
-	.string "POKéMON are revived there. Could\l"
+	.string "Pokémon are revived there. Could\l"
 # 24 "data/maps/Route119_House/scripts.pory"
 	.string "something like that really happen?$"
 # 25 "data/maps/Route119_House/scripts.pory"

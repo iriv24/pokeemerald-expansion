@@ -75,7 +75,7 @@ LavaridgeTown_Mart_EventScript_OldWoman::
 # 38 "data/maps/LavaridgeTown_Mart/scripts.pory"
 LavaridgeTown_Mart_Text_XSpeedFirstStrike:
 # 39 "data/maps/LavaridgeTown_Mart/scripts.pory"
-	.string "Use X SPEED to add to a POKéMON's\n"
+	.string "Use X SPEED to add to a Pokémon's\n"
 # 40 "data/maps/LavaridgeTown_Mart/scripts.pory"
 	.string "SPEED in battle.\p"
 # 41 "data/maps/LavaridgeTown_Mart/scripts.pory"
@@ -91,4 +91,4 @@ LavaridgeTown_Mart_Text_LocalSpecialtyOnMtChimney:
 # 46 "data/maps/LavaridgeTown_Mart/scripts.pory"
 	.string "specialty that you can buy only there.\p"
 # 47 "data/maps/LavaridgeTown_Mart/scripts.pory"
-	.string "Give it to a POKéMON--it will be elated.$"
+	.string "Give it to a Pokémon--it will be elated.$"

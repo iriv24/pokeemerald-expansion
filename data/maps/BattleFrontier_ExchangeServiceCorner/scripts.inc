@@ -1213,7 +1213,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ItemsWillGetMonTougher:
 # 607 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "If I can get hold of the items here,\n"
 # 608 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "my POKéMON will get tougher.\p"
+	.string "my Pokémon will get tougher.\p"
 # 609 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "You bet they will!\n"
 # 610 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1339,7 +1339,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc::
 # 670 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "Raises the stat ATTACK of one\n"
 # 671 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 672 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 673 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1347,7 +1347,7 @@ BattleFrontier_ExchangeServiceCorner_Text_CalciumDesc::
 # 674 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "Raises the stat SP. ATK of one\n"
 # 675 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 676 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 677 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1355,7 +1355,7 @@ BattleFrontier_ExchangeServiceCorner_Text_IronDesc::
 # 678 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "Raises the stat DEFENSE of one\n"
 # 679 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 680 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 681 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1363,7 +1363,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ZincDesc::
 # 682 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "Raises the stat SP. DEF of one\n"
 # 683 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 684 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 685 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1371,13 +1371,13 @@ BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc::
 # 686 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "Raises the stat SPEED of one\n"
 # 687 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 688 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 689 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc::
 # 690 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "Raises the HP of one POKéMON.$"
+	.string "Raises the HP of one Pokémon.$"
 # 691 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 
 # 692 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
@@ -1407,7 +1407,7 @@ BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc::
 # 704 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc::
 # 705 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	.string "A hold item that snaps POKéMON out\n"
+	.string "A hold item that snaps Pokémon out\n"
 # 706 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	.string "of infatuation.$"
 # 707 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"

@@ -545,7 +545,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
 # 273 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
 # 274 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MOSSDEEP has mainly sunny weather,\n"
+	.string "Mossdeep has mainly sunny weather,\n"
 # 275 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "and its winds are stable.\p"
 # 276 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"

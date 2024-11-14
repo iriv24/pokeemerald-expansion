@@ -213,7 +213,7 @@ Route119_WeatherInstitute_1F_Text_WowYoureStrong:
 # 107 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 	.string "Wow, you're really strong!\p"
 # 108 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
-	.string "I wish I could be a POKéMON TRAINER\n"
+	.string "I wish I could be a Pokémon TRAINER\n"
 # 109 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 	.string "like you!$"
 # 110 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"

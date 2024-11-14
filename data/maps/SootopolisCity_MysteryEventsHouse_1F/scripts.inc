@@ -339,7 +339,7 @@ SootopolisCity_MysteryEventsHouse_1F_Text_OnlyAmusementWatchingBattles:
 # 170 "data/maps/SootopolisCity_MysteryEventsHouse_1F/scripts.pory"
 	.string "When I was young, I traveled the world\n"
 # 171 "data/maps/SootopolisCity_MysteryEventsHouse_1F/scripts.pory"
-	.string "as a POKéMON TRAINER.\p"
+	.string "as a Pokémon TRAINER.\p"
 # 172 "data/maps/SootopolisCity_MysteryEventsHouse_1F/scripts.pory"
 	.string "Now that I've become an old buzzard,\n"
 # 173 "data/maps/SootopolisCity_MysteryEventsHouse_1F/scripts.pory"

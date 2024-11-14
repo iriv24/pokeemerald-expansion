@@ -155,14 +155,14 @@ SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
 # 78 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 	.string "happens, I will always be friends with\l"
 # 79 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "POKéMON.\p"
+	.string "Pokémon.\p"
 # 80 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Because it's fun to be with POKéMON!$"
+	.string "Because it's fun to be with Pokémon!$"
 # 81 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 
 # 82 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
 # 83 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "Aren't POKéMON our friends?\p"
+	.string "Aren't Pokémon our friends?\p"
 # 84 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 	.string "Why are they going wild this way?$"

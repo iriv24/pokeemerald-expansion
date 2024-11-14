@@ -365,7 +365,7 @@ Route121_Text_AheadLoomsMtPyre:
 # 183 "data/maps/Route121/scripts.pory"
 	.string "It is a natural monument to the spirits \n"
 # 184 "data/maps/Route121/scripts.pory"
-	.string "of departed POKéMON…$"
+	.string "of departed Pokémon…$"
 # 185 "data/maps/Route121/scripts.pory"
 
 # 186 "data/maps/Route121/scripts.pory"
@@ -381,7 +381,7 @@ Route121_Text_MtPyrePierSign:
 # 191 "data/maps/Route121/scripts.pory"
 Route121_Text_SafariZoneSign:
 # 192 "data/maps/Route121/scripts.pory"
-	.string "“Filled with rare POKéMON!”\n"
+	.string "“Filled with rare Pokémon!”\n"
 # 193 "data/maps/Route121/scripts.pory"
 	.string "SAFARI ZONE$"
 

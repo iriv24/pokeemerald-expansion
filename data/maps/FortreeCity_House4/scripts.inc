@@ -135,7 +135,7 @@ FortreeCity_House4_EventScript_Wingull::
 # 68 "data/maps/FortreeCity_House4/scripts.pory"
 FortreeCity_House4_Text_BringsWorldCloserTogether:
 # 69 "data/maps/FortreeCity_House4/scripts.pory"
-	.string "By being together with POKéMON,\n"
+	.string "By being together with Pokémon,\n"
 # 70 "data/maps/FortreeCity_House4/scripts.pory"
 	.string "people make more and more friends.\p"
 # 71 "data/maps/FortreeCity_House4/scripts.pory"
@@ -149,7 +149,7 @@ FortreeCity_House4_Text_GoBirdPokemon:
 # 75 "data/maps/FortreeCity_House4/scripts.pory"
 	.string "There!\n"
 # 76 "data/maps/FortreeCity_House4/scripts.pory"
-	.string "Go, BIRD POKéMON!$"
+	.string "Go, Bird Pokémon!$"
 # 77 "data/maps/FortreeCity_House4/scripts.pory"
 
 # 78 "data/maps/FortreeCity_House4/scripts.pory"

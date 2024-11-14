@@ -557,7 +557,7 @@ Route101_Text_YouSavedMe:
 # 279 "data/maps/Route101/scripts.pory"
 	.string "I was in the tall grass studying wild\n"
 # 280 "data/maps/Route101/scripts.pory"
-	.string "POKéMON when I was jumped.\p"
+	.string "Pokémon when I was jumped.\p"
 # 281 "data/maps/Route101/scripts.pory"
 	.string "You saved me.\n"
 # 282 "data/maps/Route101/scripts.pory"
@@ -569,7 +569,7 @@ Route101_Text_YouSavedMe:
 # 285 "data/maps/Route101/scripts.pory"
 	.string "This is not the place to chat, so come\n"
 # 286 "data/maps/Route101/scripts.pory"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "by my Pokémon LAB later, okay?$"
 # 287 "data/maps/Route101/scripts.pory"
 
 # 288 "data/maps/Route101/scripts.pory"

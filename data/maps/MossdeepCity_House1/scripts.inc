@@ -79,4 +79,4 @@ MossdeepCity_House1_Text_HusbandCanTellPokeblockMonLikes:
 # 40 "data/maps/MossdeepCity_House1/scripts.pory"
 	.string "My husband can tell what kind of\n"
 # 41 "data/maps/MossdeepCity_House1/scripts.pory"
-	.string "{POKEBLOCK}S a POKéMON likes at a glance.$"
+	.string "{POKEBLOCK}S a Pokémon likes at a glance.$"

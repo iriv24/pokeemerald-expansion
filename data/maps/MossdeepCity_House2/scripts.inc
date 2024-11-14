@@ -125,7 +125,7 @@ MossdeepCity_House2_Text_PokemonCarriesMailBackAndForth:
 # 63 "data/maps/MossdeepCity_House2/scripts.pory"
 	.string "Even though I can't see my friend in\n"
 # 64 "data/maps/MossdeepCity_House2/scripts.pory"
-	.string "FORTREE, my POKéMON carries MAIL\l"
+	.string "Fortree, my Pokémon carries MAIL\l"
 # 65 "data/maps/MossdeepCity_House2/scripts.pory"
 	.string "back and forth for us.\p"
 # 66 "data/maps/MossdeepCity_House2/scripts.pory"

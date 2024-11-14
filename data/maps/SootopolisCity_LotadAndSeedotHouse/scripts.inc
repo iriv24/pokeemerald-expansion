@@ -213,7 +213,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_LotadSizeRecord::
 # 107 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigSeedot:
 # 108 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "Do you know the POKéMON SEEDOT?\n"
+	.string "Do you know the Pokémon SEEDOT?\n"
 # 109 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "It's hardly ever seen in SOOTOPOLIS.\p"
 # 110 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
@@ -311,7 +311,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_BiggestSeedotInHistory:
 # 156 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigLotad:
 # 157 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
-	.string "Do you know the POKéMON LOTAD?\n"
+	.string "Do you know the Pokémon LOTAD?\n"
 # 158 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"
 	.string "It's rarely seen in SOOTOPOLIS.\p"
 # 159 "data/maps/SootopolisCity_LotadAndSeedotHouse/scripts.pory"

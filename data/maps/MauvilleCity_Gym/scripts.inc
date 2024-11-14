@@ -695,7 +695,7 @@ MauvilleCity_Gym_Text_AngeloDefeat:
 # 348 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_Text_AngeloPostBattle:
 # 349 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE GYM's Wattson has a shiny\n"
+	.string "Mauville GYM's Wattson has a shiny\n"
 # 350 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "forehead. It makes me happy!$"
 # 351 "data/maps/MauvilleCity_Gym/scripts.pory"
@@ -807,15 +807,15 @@ MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 # 404 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_Text_GymStatue:
 # 405 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "Mauville City Pokémon Gym$"
 # 406 "data/maps/MauvilleCity_Gym/scripts.pory"
 
 # 407 "data/maps/MauvilleCity_Gym/scripts.pory"
 MauvilleCity_Gym_Text_GymStatueCertified:
 # 408 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "MAUVILLE CITY POKéMON GYM\p"
+	.string "Mauville City Pokémon Gym\p"
 # 409 "data/maps/MauvilleCity_Gym/scripts.pory"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
+	.string "Wattson'S Certified Trainers:\n"
 # 410 "data/maps/MauvilleCity_Gym/scripts.pory"
 	.string "{PLAYER}$"
 # 411 "data/maps/MauvilleCity_Gym/scripts.pory"

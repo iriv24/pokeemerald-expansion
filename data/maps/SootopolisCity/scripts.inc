@@ -2979,7 +2979,7 @@ SootopolisCity_Text_GymSign:
 # 1490 "data/maps/SootopolisCity/scripts.pory"
 	.string "Sootopolis City Pokémon Gym\n"
 # 1491 "data/maps/SootopolisCity/scripts.pory"
-	.string "Leader: JUAN\p"
+	.string "Leader: Juan\p"
 # 1492 "data/maps/SootopolisCity/scripts.pory"
 	.string "“The Gym Leader with the beauty\n"
 # 1493 "data/maps/SootopolisCity/scripts.pory"

@@ -453,7 +453,7 @@ Route114_EventScript_Kai::
 # 227 "data/maps/Route114/scripts.pory"
 Route114_Text_AllMyMonDoesIsRoarTakeThis:
 # 228 "data/maps/Route114/scripts.pory"
-	.string "All my POKéMON does is ROAR…\n"
+	.string "All my Pokémon does is ROAR…\n"
 # 229 "data/maps/Route114/scripts.pory"
 	.string "No one dares to come near me…\p"
 # 230 "data/maps/Route114/scripts.pory"
@@ -467,7 +467,7 @@ Route114_Text_ExplainRoar:
 # 234 "data/maps/Route114/scripts.pory"
 	.string "TM05 contains ROAR.\n"
 # 235 "data/maps/Route114/scripts.pory"
-	.string "A ROAR sends POKéMON scurrying.$"
+	.string "A ROAR sends Pokémon scurrying.$"
 # 236 "data/maps/Route114/scripts.pory"
 
 # 237 "data/maps/Route114/scripts.pory"
@@ -481,7 +481,7 @@ Route114_Text_MeteorFallsSign:
 # 241 "data/maps/Route114/scripts.pory"
 	.string "METEOR FALLS\n"
 # 242 "data/maps/Route114/scripts.pory"
-	.string "RUSTBORO CITY THROUGH HERE$"
+	.string "Rustboro CITY THROUGH HERE$"
 # 243 "data/maps/Route114/scripts.pory"
 
 # 244 "data/maps/Route114/scripts.pory"

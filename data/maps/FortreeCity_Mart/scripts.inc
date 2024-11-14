@@ -109,6 +109,6 @@ FortreeCity_Mart_Text_StockUpOnItems:
 # 55 "data/maps/FortreeCity_Mart/scripts.pory"
 FortreeCity_Mart_Text_RareCandyMakesMonGrow:
 # 56 "data/maps/FortreeCity_Mart/scripts.pory"
-	.string "A RARE CANDY makes a POKéMON grow\n"
+	.string "A RARE CANDY makes a Pokémon grow\n"
 # 57 "data/maps/FortreeCity_Mart/scripts.pory"
 	.string "immediately by one level.$"

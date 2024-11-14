@@ -33,7 +33,7 @@ FortreeCity_House3_Text_MetStevenHadAmazingPokemon:
 # 17 "data/maps/FortreeCity_House3/scripts.pory"
 	.string "I was searching for rare stones.\p"
 # 18 "data/maps/FortreeCity_House3/scripts.pory"
-	.string "Hoo, boy, he had some amazing POKéMON\n"
+	.string "Hoo, boy, he had some amazing Pokémon\n"
 # 19 "data/maps/FortreeCity_House3/scripts.pory"
 	.string "with him.\p"
 # 20 "data/maps/FortreeCity_House3/scripts.pory"

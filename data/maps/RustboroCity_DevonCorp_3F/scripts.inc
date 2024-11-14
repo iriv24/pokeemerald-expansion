@@ -457,7 +457,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 # 229 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	.string "Mr. Stone: That device…\p"
 # 230 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "It's a POKéMON NAVIGATOR, or PokéNav\n"
+	.string "It's a Pokémon NAVIGATOR, or PokéNav\n"
 # 231 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	.string "for short.\p"
 # 232 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
@@ -537,7 +537,7 @@ RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 # 269 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	.string "But do young people all want to be\n"
 # 270 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	.string "TRAINERS in the POKéMON LEAGUE?$"
+	.string "TRAINERS in the Pokémon LEAGUE?$"
 # 271 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 
 # 272 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"

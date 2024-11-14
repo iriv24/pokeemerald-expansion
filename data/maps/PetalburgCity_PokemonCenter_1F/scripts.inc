@@ -115,7 +115,7 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 # 58 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
 # 59 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "That PC-based POKéMON Storage\n"
+	.string "That PC-based Pokémon Storage\n"
 # 60 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "System…\p"
 # 61 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
@@ -127,7 +127,7 @@ PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
 # 64 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
 # 65 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "When my POKéMON ate an\n"
+	.string "When my Pokémon ate an\n"
 # 66 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "ORAN BERRY, it regained HP!$"
 # 67 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
@@ -135,13 +135,13 @@ PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
 # 68 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
 # 69 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "There are many types of POKéMON.\p"
+	.string "There are many types of Pokémon.\p"
 # 70 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "All types have their strengths and\n"
 # 71 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "weaknesses against other types.\p"
 # 72 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "Depending on the types of POKéMON,\n"
+	.string "Depending on the types of Pokémon,\n"
 # 73 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "a battle could be easy or hard.$"
 # 74 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
@@ -159,7 +159,7 @@ PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
 # 80 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "But, it's weak against FIRE-type\n"
 # 81 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 82 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 
 # 83 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
@@ -175,7 +175,7 @@ PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
 # 88 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "But, it's weak against WATER-type\n"
 # 89 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 90 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 
 # 91 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
@@ -189,4 +189,4 @@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 # 95 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
 	.string "But, it's weak against GRASS-type\n"
 # 96 "data/maps/PetalburgCity_PokemonCenter_1F/scripts.pory"
-	.string "and ELECTRIC-type POKéMON.$"
+	.string "and ELECTRIC-type Pokémon.$"

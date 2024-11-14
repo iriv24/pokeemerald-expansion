@@ -287,6 +287,6 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay:
 # 144 "data/maps/RustboroCity_DevonCorp_1F/scripts.pory"
 	.string "“Recently, DEVON has begun marketing\n"
 # 145 "data/maps/RustboroCity_DevonCorp_1F/scripts.pory"
-	.string "tools for POKéMON TRAINERS, including\l"
+	.string "tools for Pokémon TRAINERS, including\l"
 # 146 "data/maps/RustboroCity_DevonCorp_1F/scripts.pory"
 	.string "POKé BALLS and PokéNav systems.”$"

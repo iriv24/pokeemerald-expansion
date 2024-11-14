@@ -379,7 +379,7 @@ VictoryRoad_1F_Text_WallyPostBattle:
 # 190 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "I'm going to catch up to you…\p"
 # 191 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "And challenge the POKéMON LEAGUE!$"
+	.string "And challenge the Pokémon LEAGUE!$"
 # 192 "data/maps/VictoryRoad_1F/scripts.pory"
 
 # 193 "data/maps/VictoryRoad_1F/scripts.pory"
@@ -477,7 +477,7 @@ VictoryRoad_1F_Text_QuincyPostBattle:
 # 239 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "the final test for any TRAINER aiming\l"
 # 240 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "to become the POKéMON CHAMPION.\p"
+	.string "to become the Pokémon CHAMPION.\p"
 # 241 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "That's why it's called the VICTORY\n"
 # 242 "data/maps/VictoryRoad_1F/scripts.pory"

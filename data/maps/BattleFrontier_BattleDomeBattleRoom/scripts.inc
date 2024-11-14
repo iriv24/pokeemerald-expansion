@@ -2227,7 +2227,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_LegendHasReturnedDomeAceTucker:
 # 1114 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	.string "Ladies and gentlemen!\n"
 # 1115 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
-	.string "Boys, girls, and POKéMON!\p"
+	.string "Boys, girls, and Pokémon!\p"
 # 1116 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"
 	.string "Finally!\n"
 # 1117 "data/maps/BattleFrontier_BattleDomeBattleRoom/scripts.pory"

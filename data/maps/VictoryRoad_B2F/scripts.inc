@@ -133,7 +133,7 @@ VictoryRoad_B2F_Text_CarolineDefeat:
 # 67 "data/maps/VictoryRoad_B2F/scripts.pory"
 VictoryRoad_B2F_Text_CarolinePostBattle:
 # 68 "data/maps/VictoryRoad_B2F/scripts.pory"
-	.string "VICTORY ROAD and the POKéMON LEAGUE\n"
+	.string "VICTORY ROAD and the Pokémon LEAGUE\n"
 # 69 "data/maps/VictoryRoad_B2F/scripts.pory"
 	.string "are long and grueling challenges.\l"
 # 70 "data/maps/VictoryRoad_B2F/scripts.pory"
@@ -187,7 +187,7 @@ VictoryRoad_B2F_Text_FelixPostBattle:
 # 94 "data/maps/VictoryRoad_B2F/scripts.pory"
 	.string "I can't help getting all tense knowing\n"
 # 95 "data/maps/VictoryRoad_B2F/scripts.pory"
-	.string "that I'm nearing the POKéMON LEAGUE.\p"
+	.string "that I'm nearing the Pokémon LEAGUE.\p"
 # 96 "data/maps/VictoryRoad_B2F/scripts.pory"
 	.string "It's all I can do to feign calm.$"
 # 97 "data/maps/VictoryRoad_B2F/scripts.pory"

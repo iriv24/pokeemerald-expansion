@@ -45,9 +45,9 @@ SootopolisCity_House3_EventScript_Girl::
 # 23 "data/maps/SootopolisCity_House3/scripts.pory"
 SootopolisCity_House3_Text_JuanHasManyFansDoYou:
 # 24 "data/maps/SootopolisCity_House3/scripts.pory"
-	.string "You're a POKéMON TRAINER, aren't you?\p"
+	.string "You're a Pokémon TRAINER, aren't you?\p"
 # 25 "data/maps/SootopolisCity_House3/scripts.pory"
-	.string "SOOTOPOLIS's JUAN has many fans.\n"
+	.string "Sootopolis's JUAN has many fans.\n"
 # 26 "data/maps/SootopolisCity_House3/scripts.pory"
 	.string "Even more than his student WALLACE!\p"
 # 27 "data/maps/SootopolisCity_House3/scripts.pory"

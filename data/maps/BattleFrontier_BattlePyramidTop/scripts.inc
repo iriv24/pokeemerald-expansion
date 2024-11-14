@@ -509,7 +509,7 @@ BattleFrontier_BattlePyramidTop_Text_ExplorationsAreGrandestAdventure:
 # 255 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	.string "Your own strength!\p"
 # 256 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
-	.string "Your own POKéMON!\p"
+	.string "Your own Pokémon!\p"
 # 257 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"
 	.string "And, above all, only your own courage\n"
 # 258 "data/maps/BattleFrontier_BattlePyramidTop/scripts.pory"

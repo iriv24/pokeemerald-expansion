@@ -77,7 +77,7 @@ MtPyre_6F_Text_ValeriePostBattle:
 # 39 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Perhaps the power is from the spirits\n"
 # 40 "data/maps/MtPyre_6F/scripts.pory"
-	.string "of POKéMON in fitful sleep here…$"
+	.string "of Pokémon in fitful sleep here…$"
 # 41 "data/maps/MtPyre_6F/scripts.pory"
 
 # 42 "data/maps/MtPyre_6F/scripts.pory"
@@ -109,7 +109,7 @@ MtPyre_6F_Text_ValerieRematchDefeat:
 # 55 "data/maps/MtPyre_6F/scripts.pory"
 MtPyre_6F_Text_ValeriePostRematch:
 # 56 "data/maps/MtPyre_6F/scripts.pory"
-	.string "The POKéMON at rest here…\n"
+	.string "The Pokémon at rest here…\n"
 # 57 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Sometimes, they play…$"
 # 58 "data/maps/MtPyre_6F/scripts.pory"

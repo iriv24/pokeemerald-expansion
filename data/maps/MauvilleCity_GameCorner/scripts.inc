@@ -1533,7 +1533,7 @@ MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 # 767 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone:
 # 768 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	.string "MAUVILLE has something for\n"
+	.string "Mauville has something for\n"
 # 769 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.string "everyone.\p"
 # 770 "data/maps/MauvilleCity_GameCorner/scripts.pory"

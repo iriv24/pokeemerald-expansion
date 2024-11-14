@@ -865,13 +865,13 @@ DewfordTown_Gym_Text_BrawlyPostBattle:
 # 433 "data/maps/DewfordTown_Gym/scripts.pory"
 DewfordTown_Gym_Text_GymStatue:
 # 434 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "Dewford TOWN Pokémon Gym$"
+	.string "Dewford Town Pokémon Gym$"
 # 435 "data/maps/DewfordTown_Gym/scripts.pory"
 
 # 436 "data/maps/DewfordTown_Gym/scripts.pory"
 DewfordTown_Gym_Text_GymStatueCertified:
 # 437 "data/maps/DewfordTown_Gym/scripts.pory"
-	.string "Dewford TOWN Pokémon Gym\p"
+	.string "Dewford Town Pokémon Gym\p"
 # 438 "data/maps/DewfordTown_Gym/scripts.pory"
 	.string "Brawly'S Certified trainers:\n"
 # 439 "data/maps/DewfordTown_Gym/scripts.pory"

@@ -1029,7 +1029,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_WinnerIsOpponent:
 # 515 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
 BattleFrontier_BattleArenaBattleRoom_Text_MonsWillBeRestored:
 # 516 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
-	.string "Your POKéMON will be restored to\n"
+	.string "Your Pokémon will be restored to\n"
 # 517 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"
 	.string "full health.$"
 # 518 "data/maps/BattleFrontier_BattleArenaBattleRoom/scripts.pory"

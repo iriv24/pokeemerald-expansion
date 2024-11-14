@@ -25,7 +25,7 @@ OldaleTown_House2_EventScript_Man::
 # 13 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTown_House2_Text_PokemonLevelUp:
 # 14 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "When POKéMON battle, they eventually\n"
+	.string "When Pokémon battle, they eventually\n"
 # 15 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "level up and become stronger.$"
 # 16 "data/maps/OldaleTown_House2/scripts.pory"
@@ -33,7 +33,7 @@ OldaleTown_House2_Text_PokemonLevelUp:
 # 17 "data/maps/OldaleTown_House2/scripts.pory"
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
 # 18 "data/maps/OldaleTown_House2/scripts.pory"
-	.string "If the POKéMON with you become\n"
+	.string "If the Pokémon with you become\n"
 # 19 "data/maps/OldaleTown_House2/scripts.pory"
 	.string "stronger, you'll be able to go farther\l"
 # 20 "data/maps/OldaleTown_House2/scripts.pory"

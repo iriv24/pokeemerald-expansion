@@ -183,7 +183,7 @@ SootopolisCity_Gym_B1F_Text_DaphnePostBattle:
 # 92 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "Oh… I'm so fortunate to have found\n"
 # 93 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 # 94 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 
 # 95 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -215,7 +215,7 @@ SootopolisCity_Gym_B1F_Text_ConniePostBattle:
 # 108 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 SootopolisCity_Gym_B1F_Text_BridgetIntro:
 # 109 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "The POKéMON GYM of the highest level\n"
+	.string "The Pokémon GYM of the highest level\n"
 # 110 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "in the HOENN region…\p"
 # 111 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -243,7 +243,7 @@ SootopolisCity_Gym_B1F_Text_BridgetPostBattle:
 # 122 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 SootopolisCity_Gym_B1F_Text_OliviaIntro:
 # 123 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "I train my POKéMON together with\n"
+	.string "I train my Pokémon together with\n"
 # 124 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "JUAN.\p"
 # 125 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -295,7 +295,7 @@ SootopolisCity_Gym_B1F_Text_TiffanyPostBattle:
 # 148 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 SootopolisCity_Gym_B1F_Text_BethanyIntro:
 # 149 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "When I'm with my POKéMON, the time\n"
+	.string "When I'm with my Pokémon, the time\n"
 # 150 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "flies by before you can say, “Oops!”$"
 # 151 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -317,7 +317,7 @@ SootopolisCity_Gym_B1F_Text_BethanyPostBattle:
 # 159 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 SootopolisCity_Gym_B1F_Text_AnnikaIntro:
 # 160 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "I can battle with really rare POKéMON\n"
+	.string "I can battle with really rare Pokémon\n"
 # 161 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "if you'd like.$"
 # 162 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -327,7 +327,7 @@ SootopolisCity_Gym_B1F_Text_AnnikaDefeat:
 # 164 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "Oh, there now! Did you have a good look\n"
 # 165 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "at my POKéMON?$"
+	.string "at my Pokémon?$"
 # 166 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 
 # 167 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
@@ -335,7 +335,7 @@ SootopolisCity_Gym_B1F_Text_AnnikaPostBattle:
 # 168 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "I came to this GYM because JUAN\n"
 # 169 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
-	.string "praised me for my darling POKéMON.\p"
+	.string "praised me for my darling Pokémon.\p"
 # 170 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"
 	.string "Oh, if only I'd met JUAN years ago\n"
 # 171 "data/maps/SootopolisCity_Gym_B1F/scripts.pory"

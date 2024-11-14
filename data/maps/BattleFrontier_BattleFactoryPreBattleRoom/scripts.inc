@@ -915,13 +915,13 @@ BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantReturnToPlayer:
 # 458 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 BattleFrontier_BattleFactoryPreBattleRoom_Text_HoldMonsChooseFromSelection:
 # 459 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	.string "First, we will hold your POKéMON for\n"
+	.string "First, we will hold your Pokémon for\n"
 # 460 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	.string "safekeeping.\p"
 # 461 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	.string "You may then choose from our\n"
 # 462 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	.string "selection of POKéMON.$"
+	.string "selection of Pokémon.$"
 # 463 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 
 # 464 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
@@ -929,7 +929,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_LetUsRestoreMons:
 # 465 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	.string "Thank you for competing!\n"
 # 466 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	.string "Let us restore your POKéMON!$"
+	.string "Let us restore your Pokémon!$"
 # 467 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 
 # 468 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
@@ -1233,7 +1233,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_LikeToSwapMon:
 # 617 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	.string "Before starting the battle, would you\n"
 # 618 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	.string "like to swap a POKéMON?$"
+	.string "like to swap a Pokémon?$"
 # 619 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 
 # 620 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
@@ -1241,7 +1241,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_YourSwapIsComplete:
 # 621 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	.string "Thank you!\n"
 # 622 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	.string "Your POKéMON swap is complete.$"
+	.string "Your Pokémon swap is complete.$"
 # 623 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 
 # 624 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"

@@ -45,4 +45,4 @@ PetalburgCity_House2_Text_BattledNormanOnce:
 # 23 "data/maps/PetalburgCity_House2/scripts.pory"
 	.string "I just got the feeling that he\n"
 # 24 "data/maps/PetalburgCity_House2/scripts.pory"
-	.string "lives for POKéMON.$"
+	.string "lives for Pokémon.$"

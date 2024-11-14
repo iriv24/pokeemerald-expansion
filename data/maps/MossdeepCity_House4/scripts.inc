@@ -97,7 +97,7 @@ MossdeepCity_House4_Text_BrotherLikesToVisitBasesAndBattle:
 # 49 "data/maps/MossdeepCity_House4/scripts.pory"
 	.string "visit people's SECRET BASES and have\l"
 # 50 "data/maps/MossdeepCity_House4/scripts.pory"
-	.string "POKéMON battles.$"
+	.string "Pokémon battles.$"
 # 51 "data/maps/MossdeepCity_House4/scripts.pory"
 
 # 52 "data/maps/MossdeepCity_House4/scripts.pory"

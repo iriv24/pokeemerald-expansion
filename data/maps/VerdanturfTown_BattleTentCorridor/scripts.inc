@@ -107,7 +107,7 @@ VerdanturfTown_ContestHall_Text_WhichContestYouEntering:
 # 54 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 	.string "You need to work out ways for raising\n"
 # 55 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "POKéMON better.$"
+	.string "Pokémon better.$"
 # 56 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 
 # 57 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
@@ -115,13 +115,13 @@ VerdanturfTown_ContestHall_Text_WhichContestYouEntering:
 # 58 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 VerdanturfTown_ContestHall_Text_RaisedMonToBeCute:
 # 59 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "I raised my POKéMON to be cute.\p"
+	.string "I raised my Pokémon to be cute.\p"
 # 60 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "I found out you can put POKéMON in\n"
+	.string "I found out you can put Pokémon in\n"
 # 61 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 	.string "a CONTEST for cuteness!\p"
 # 62 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "I'm so glad I raised my POKéMON with\n"
+	.string "I'm so glad I raised my Pokémon with\n"
 # 63 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 	.string "loving care…$"
 # 64 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
@@ -131,7 +131,7 @@ VerdanturfTown_ContestHall_Text_RaisedMonToBeCute:
 # 66 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 VerdanturfTown_ContestHall_Text_MyMonRules:
 # 67 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "My POKéMON rules!\p"
+	.string "My Pokémon rules!\p"
 # 68 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 	.string "It's cool, tough yet beautiful, cute,\n"
 # 69 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
@@ -147,6 +147,6 @@ VerdanturfTown_ContestHall_Text_MyMonRules:
 # 74 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 VerdanturfTown_ContestHall_Text_NormalRankStage:
 # 75 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
-	.string "POKéMON CONTESTS\n"
+	.string "Pokémon CONTESTS\n"
 # 76 "data/maps/VerdanturfTown_BattleTentCorridor/scripts.pory"
 	.string "NORMAL RANK STAGE!$"

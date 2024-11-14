@@ -37,6 +37,6 @@ RustboroCity_House2_Text_RoxanneKnowsALot:
 # 19 "data/maps/RustboroCity_House2/scripts.pory"
 	.string "ROXANNE, the GYM LEADER, really knows\n"
 # 20 "data/maps/RustboroCity_House2/scripts.pory"
-	.string "a lot about POKéMON.\p"
+	.string "a lot about Pokémon.\p"
 # 21 "data/maps/RustboroCity_House2/scripts.pory"
 	.string "She's really strong, too!$"

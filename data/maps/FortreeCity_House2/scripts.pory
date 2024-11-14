@@ -82,7 +82,7 @@ FortreeCity_House2_Text_YourStoredPowerHasAwoken:
 	.string "Oh! Splendid!\n"
 	.string "Your stored power has awoken!\p"
 	.string "Here, take this and awaken the stored\n"
-	.string "power of your POKéMON.$"
+	.string "power of your Pokémon.$"
 
 FortreeCity_House2_Text_ExplainStoredPower:
 	.string "Stored Power is a move that does\n"

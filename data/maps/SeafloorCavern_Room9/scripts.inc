@@ -643,7 +643,7 @@ SeafloorCavern_Room9_Text_ArchieBeholdKyogre:
 # 322 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "See how beautiful it is, the sleeping\n"
 # 323 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	.string "form of the ancient POKéMON KYOGRE!\p"
+	.string "form of the ancient Pokémon KYOGRE!\p"
 # 324 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	.string "I have waited so long for this day to\n"
 # 325 "data/maps/SeafloorCavern_Room9/scripts.pory"

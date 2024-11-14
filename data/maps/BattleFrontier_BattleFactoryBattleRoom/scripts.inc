@@ -543,7 +543,7 @@ BattleFrontier_BattleFactoryBattleRoom_Text_NolandImFactoryHead:
 # 272 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
 	.string "conditions as you.\p"
 # 273 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
-	.string "I'll be using rental POKéMON, too!$"
+	.string "I'll be using rental Pokémon, too!$"
 # 274 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"
 
 # 275 "data/maps/BattleFrontier_BattleFactoryBattleRoom/scripts.pory"

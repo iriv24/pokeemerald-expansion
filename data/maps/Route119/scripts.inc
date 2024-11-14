@@ -1231,7 +1231,7 @@ Route119_Text_ThoughtFlyByCatchingBirdMons:
 # 616 "data/maps/Route119/scripts.pory"
 	.string "I thought you FLY by catching a whole\n"
 # 617 "data/maps/Route119/scripts.pory"
-	.string "flock of BIRD Pokémon, and then\l"
+	.string "flock of Bird Pokémon, and then\l"
 # 618 "data/maps/Route119/scripts.pory"
 	.string "hanging on to them somehow.\p"
 # 619 "data/maps/Route119/scripts.pory"

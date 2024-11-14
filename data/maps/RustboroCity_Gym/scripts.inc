@@ -467,15 +467,15 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 # 234 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_GymStatue:
 # 235 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "Rustboro City Pokémon Gym$"
 # 236 "data/maps/RustboroCity_Gym/scripts.pory"
 
 # 237 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_GymStatueCertified:
 # 238 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "RUSTBORO CITY POKéMON GYM\p"
+	.string "Rustboro City Pokémon Gym\p"
 # 239 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
+	.string "Roxanne's Certified Trainers:\n"
 # 240 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "{PLAYER}$"
 # 241 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -489,7 +489,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 # 245 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Roxanne: Oh, hello, {PLAYER}?\n"
 # 246 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "This is Roxanne of Rustboro CITY.\p"
+	.string "This is Roxanne of Rustboro City.\p"
 # 247 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "I heard from Brawly that you're\n"
 # 248 "data/maps/RustboroCity_Gym/scripts.pory"

@@ -567,7 +567,7 @@ SlateportCity_OceanicMuseum_1F_Text_MustBePokemonWeDontKnow:
 # 284 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	.string "infinitely deep…\p"
 # 285 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	.string "There must be many POKéMON that\n"
+	.string "There must be many Pokémon that\n"
 # 286 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	.string "we don't know about.$"
 # 287 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
@@ -575,7 +575,7 @@ SlateportCity_OceanicMuseum_1F_Text_MustBePokemonWeDontKnow:
 # 288 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 SlateportCity_OceanicMuseum_1F_Text_WantSeaPokemon:
 # 289 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
-	.string "I want a sea POKéMON.\p"
+	.string "I want a sea Pokémon.\p"
 # 290 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"
 	.string "I think it would feel cool and nice\n"
 # 291 "data/maps/SlateportCity_OceanicMuseum_1F/scripts.pory"

@@ -167,7 +167,7 @@ FortreeCity_House2_Text_YourStoredPowerHasAwoken:
 # 84 "data/maps/FortreeCity_House2/scripts.pory"
 	.string "Here, take this and awaken the stored\n"
 # 85 "data/maps/FortreeCity_House2/scripts.pory"
-	.string "power of your POKéMON.$"
+	.string "power of your Pokémon.$"
 # 86 "data/maps/FortreeCity_House2/scripts.pory"
 
 # 87 "data/maps/FortreeCity_House2/scripts.pory"

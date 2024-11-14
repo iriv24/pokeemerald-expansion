@@ -59,7 +59,7 @@ SSTidalLowerDeck_Text_LeonardIntro:
 # 30 "data/maps/SSTidalLowerDeck/scripts.pory"
 	.string "There's plenty of room.\l"
 # 31 "data/maps/SSTidalLowerDeck/scripts.pory"
-	.string "It'll be alright for a POKéMON battle.$"
+	.string "It'll be alright for a Pokémon battle.$"
 # 32 "data/maps/SSTidalLowerDeck/scripts.pory"
 
 # 33 "data/maps/SSTidalLowerDeck/scripts.pory"

@@ -123,7 +123,7 @@ LilycoveCity_DepartmentStore_3F_EventScript_Woman::
 # 62 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon:
 # 63 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "For quickly toughening up POKéMON,\n"
+	.string "For quickly toughening up Pokémon,\n"
 # 64 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "items are the best.\p"
 # 65 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
@@ -135,7 +135,7 @@ LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon:
 # 68 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance:
 # 69 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "I want my POKéMON to have more\n"
+	.string "I want my Pokémon to have more\n"
 # 70 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "endurance.\p"
 # 71 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
@@ -147,6 +147,6 @@ LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance:
 # 74 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon:
 # 75 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "I gave a CARBOS to my POKéMON,\n"
+	.string "I gave a CARBOS to my Pokémon,\n"
 # 76 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "and its SPEED went up.$"

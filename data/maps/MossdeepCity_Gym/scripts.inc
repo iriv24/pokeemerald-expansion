@@ -1301,15 +1301,15 @@ MossdeepCity_Gym_Text_GymLeadersPostVictory:
 # 651 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_Text_GymStatue:
 # 652 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "MOSSDEEP CITY POKéMON GYM$"
+	.string "Mossdeep City Pokémon Gym$"
 # 653 "data/maps/MossdeepCity_Gym/scripts.pory"
 
 # 654 "data/maps/MossdeepCity_Gym/scripts.pory"
 MossdeepCity_Gym_Text_GymStatueCertified:
 # 655 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "MOSSDEEP CITY POKéMON GYM\p"
+	.string "Mossdeep City Pokémon Gym\p"
 # 656 "data/maps/MossdeepCity_Gym/scripts.pory"
-	.string "LIZA AND TATE'S CERTIFIED TRAINERS:\n"
+	.string "Liza and Tate's Certified Trainers:\n"
 # 657 "data/maps/MossdeepCity_Gym/scripts.pory"
 	.string "{PLAYER}$"
 # 658 "data/maps/MossdeepCity_Gym/scripts.pory"

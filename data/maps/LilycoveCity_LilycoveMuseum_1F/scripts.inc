@@ -335,7 +335,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_WelcomeToLilycoveMuseum:
 # 168 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "collection of fantastic artwork\l"
 # 169 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "featuring POKéMON.$"
+	.string "featuring Pokémon.$"
 # 170 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 
 # 171 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -367,7 +367,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_HaveYouAnInterestInPaintings:
 # 184 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "Oh? I do believe that you seem to\n"
 # 185 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "be a POKéMON TRAINER.\p"
+	.string "be a Pokémon TRAINER.\p"
 # 186 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "Have you an interest in paintings,\n"
 # 187 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -415,13 +415,13 @@ LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfBeautifulWoman:
 # 208 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "It's a painting of a beautiful, smiling\n"
 # 209 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "woman with a POKéMON on her lap.$"
+	.string "woman with a Pokémon on her lap.$"
 # 210 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 
 # 211 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfLegendaryPokemon:
 # 212 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "It's a painting of a legendary POKéMON\n"
+	.string "It's a painting of a legendary Pokémon\n"
 # 213 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "from long ago.\p"
 # 214 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -433,7 +433,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfLegendaryPokemon:
 # 217 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 LilycoveCity_LilycoveMuseum_1F_Text_PaintingOfGrassPokemon:
 # 218 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "It's a painting of GRASS POKéMON\n"
+	.string "It's a painting of GRASS Pokémon\n"
 # 219 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "swaying in a breeze.\p"
 # 220 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -457,7 +457,7 @@ LilycoveCity_LilycoveMuseum_Text_BirdPokemonSculptureReplica:
 # 229 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "It's a replica of a famous sculpture.\p"
 # 230 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "It depicts an ancient BIRD POKéMON.$"
+	.string "It depicts an ancient Bird Pokémon.$"
 # 231 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 
 # 232 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -477,7 +477,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_StoneTabletWithAncientText:
 # 239 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "It's a huge stone tablet inscribed\n"
 # 240 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "with POKéMON and dense text in the\l"
+	.string "with Pokémon and dense text in the\l"
 # 241 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "small characters of an ancient,\l"
 # 242 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -495,7 +495,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_WorksOfMagnificence:
 # 248 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 LilycoveCity_LilycoveMuseum_1F_Text_MustntForgetLoveForFineArts:
 # 249 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "Battling with POKéMON is fun,\n"
+	.string "Battling with Pokémon is fun,\n"
 # 250 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "I'll grant you that.\p"
 # 251 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
@@ -529,7 +529,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_ThisLadyIsPretty:
 # 265 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 LilycoveCity_LilycoveMuseum_1F_Text_ThisPokemonIsAdorable:
 # 266 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
-	.string "This POKéMON is adorable!\n"
+	.string "This Pokémon is adorable!\n"
 # 267 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"
 	.string "Just like our little boy!$"
 # 268 "data/maps/LilycoveCity_LilycoveMuseum_1F/scripts.pory"

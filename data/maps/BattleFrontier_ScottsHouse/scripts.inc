@@ -567,7 +567,7 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier:
 # 284 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "Well, guess what?\p"
 # 285 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "You may run into wild POKéMON in\n"
+	.string "You may run into wild Pokémon in\n"
 # 286 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "the BATTLE FRONTIER somewhere…\l"
 # 287 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"

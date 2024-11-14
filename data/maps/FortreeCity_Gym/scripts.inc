@@ -337,7 +337,7 @@ FortreeCity_Gym_Text_GymGuideAdvice:
 # 169 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "bound {PLAYER}?\p"
 # 170 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "FORTREE GYM LEADER Winona is\n"
+	.string "Fortree GYM LEADER Winona is\n"
 # 171 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "a master of FLYING-type Pokémon.\p"
 # 172 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -365,7 +365,7 @@ FortreeCity_Gym_Text_JaredIntro:
 # 183 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "Behold the elegant battle style of\n"
 # 184 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "BIRD Pokémon!$"
+	.string "Bird Pokémon!$"
 # 185 "data/maps/FortreeCity_Gym/scripts.pory"
 
 # 186 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -391,7 +391,7 @@ FortreeCity_Gym_Text_JaredPostBattle:
 # 196 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_EdwardoIntro:
 # 197 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "The lovers of BIRD Pokémon aspire\n"
+	.string "The lovers of Bird Pokémon aspire\n"
 # 198 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "to join this GYM.\p"
 # 199 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -467,7 +467,7 @@ FortreeCity_Gym_Text_AshleyPostBattle:
 # 234 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "Thanks to Winona, the people of\n"
 # 235 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "FORTREE can live without fear.$"
+	.string "Fortree can live without fear.$"
 # 236 "data/maps/FortreeCity_Gym/scripts.pory"
 
 # 237 "data/maps/FortreeCity_Gym/scripts.pory"
@@ -639,15 +639,15 @@ FortreeCity_Gym_Text_WinonaPostBattle:
 # 320 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_GymStatue:
 # 321 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "FORTREE CITY POKéMON GYM$"
+	.string "Fortree City Pokémon Gym$"
 # 322 "data/maps/FortreeCity_Gym/scripts.pory"
 
 # 323 "data/maps/FortreeCity_Gym/scripts.pory"
 FortreeCity_Gym_Text_GymStatueCertified:
 # 324 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "FORTREE CITY POKéMON GYM\p"
+	.string "Fortree City Pokémon Gym\p"
 # 325 "data/maps/FortreeCity_Gym/scripts.pory"
-	.string "WINONA'S CERTIFIED TRAINERS:\n"
+	.string "Winona'S Certified Trainers:\n"
 # 326 "data/maps/FortreeCity_Gym/scripts.pory"
 	.string "{PLAYER}$"
 # 327 "data/maps/FortreeCity_Gym/scripts.pory"

@@ -63,7 +63,7 @@ MossdeepCity_House3_Text_YouWantSuperRod:
 # 32 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Say all you want, but this baby can\n"
 # 33 "data/maps/MossdeepCity_House3/scripts.pory"
-	.string "catch POKéMON off the seafloor!\p"
+	.string "catch Pokémon off the seafloor!\p"
 # 34 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "What do you think?\n"
 # 35 "data/maps/MossdeepCity_House3/scripts.pory"
@@ -97,6 +97,6 @@ MossdeepCity_House3_Text_DontYouLikeToFish:
 # 49 "data/maps/MossdeepCity_House3/scripts.pory"
 MossdeepCity_House3_Text_GoAfterSeafloorPokemon:
 # 50 "data/maps/MossdeepCity_House3/scripts.pory"
-	.string "Go after the seafloor POKéMON with\n"
+	.string "Go after the seafloor Pokémon with\n"
 # 51 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "your SUPER ROD.$"

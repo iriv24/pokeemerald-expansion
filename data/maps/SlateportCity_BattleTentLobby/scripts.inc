@@ -555,7 +555,7 @@ SlateportCity_BattleTentLobby_Text_CouldntFindMonForMe:
 # 278 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	.string "So, like, I couldn't find myself any\n"
 # 279 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
-	.string "POKéMON that were, like, for me.\p"
+	.string "Pokémon that were, like, for me.\p"
 # 280 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	.string "So, I figured, like, hey, I should file\n"
 # 281 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
@@ -587,7 +587,7 @@ SlateportCity_BattleTentLobby_Text_ExplainThief:
 # 294 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 SlateportCity_BattleTentLobby_Text_IllTryUsingBugMons:
 # 295 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
-	.string "I don't really like BUG POKéMON,\n"
+	.string "I don't really like BUG Pokémon,\n"
 # 296 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	.string "but maybe I'll try using some for\l"
 # 297 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
@@ -603,7 +603,7 @@ SlateportCity_BattleTentLobby_Text_BattleEvenWithoutToughMons:
 # 302 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 	.string "You can battle all you want here even\n"
 # 303 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
-	.string "if you don't have any tough POKéMON.$"
+	.string "if you don't have any tough Pokémon.$"
 # 304 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"
 
 # 305 "data/maps/SlateportCity_BattleTentLobby/scripts.pory"

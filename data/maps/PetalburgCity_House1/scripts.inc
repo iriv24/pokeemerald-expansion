@@ -39,7 +39,7 @@ PetalburgCity_House1_Text_GoOnAdventure:
 # 20 "data/maps/PetalburgCity_House1/scripts.pory"
 	.string "I wish I could go on an adventure\n"
 # 21 "data/maps/PetalburgCity_House1/scripts.pory"
-	.string "with some POKéMON…\p"
+	.string "with some Pokémon…\p"
 # 22 "data/maps/PetalburgCity_House1/scripts.pory"
 	.string "Crawl through some damp grass…\n"
 # 23 "data/maps/PetalburgCity_House1/scripts.pory"

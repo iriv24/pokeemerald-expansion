@@ -131,7 +131,7 @@ Route110_TrickHousePuzzle6_Text_SophiaPostBattle:
 # 66 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
 Route110_TrickHousePuzzle6_Text_BennyIntro:
 # 67 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
-	.string "Maybe I could get my BIRD POKéMON\n"
+	.string "Maybe I could get my Bird Pokémon\n"
 # 68 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
 	.string "to fly over the wall…$"
 # 69 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"

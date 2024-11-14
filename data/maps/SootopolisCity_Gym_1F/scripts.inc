@@ -401,15 +401,15 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 # 201 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
 # 202 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "Yow! You've beaten even JUAN, who\n"
+	.string "Yow! You've beaten even Juan, who\n"
 # 203 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "was supposedly the best in all HOENN!\p"
+	.string "was supposedly the best in all Hoenn!\p"
 # 204 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "Okay! Check out your TRAINER CARD.\p"
+	.string "Okay! Check out your Trainer Card.\p"
 # 205 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "If you've gotten all the BADGES, you're\n"
+	.string "If you've gotten all the Badges, you're\n"
 # 206 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "set for the Pokémon LEAGUE challenge!$"
+	.string "set for the Pokémon League challenge!$"
 # 207 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
 # 208 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
@@ -575,15 +575,15 @@ SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
 # 288 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymStatue:
 # 289 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "SOOTOPOLIS CITY POKéMON GYM$"
+	.string "Sootopolis City Pokémon Gym$"
 # 290 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 
 # 291 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_GymStatueCertified:
 # 292 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "SOOTOPOLIS CITY POKéMON GYM\p"
+	.string "Sootopolis City Pokémon Gym\p"
 # 293 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "JUAN'S CERTIFIED TRAINERS:\n"
+	.string "Juan's Certified Trainers:\n"
 # 294 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "{PLAYER}$"
 # 295 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
@@ -591,7 +591,7 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified:
 # 296 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanPreRematch:
 # 297 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "Juan: Ah, this GYM had returned to its\n"
+	.string "Juan: Ah, this Gym had returned to its\n"
 # 298 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "usual state of serenity…\p"
 # 299 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
@@ -637,7 +637,7 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch:
 # 319 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 # 320 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	.string "Juan: Ah, this GYM had returned to its\n"
+	.string "Juan: Ah, this Gym had returned to its\n"
 # 321 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	.string "usual state of serenity…\p"
 # 322 "data/maps/SootopolisCity_Gym_1F/scripts.pory"

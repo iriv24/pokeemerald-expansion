@@ -597,7 +597,7 @@ MossdeepCity_SpaceCenter_1F_Text_CantStrollOnBeachWithMagma:
 # 299 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
 MossdeepCity_SpaceCenter_1F_Text_DidPokemonComeFromSpace:
 # 300 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
-	.string "Some people claim that POKéMON came\n"
+	.string "Some people claim that Pokémon came\n"
 # 301 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"
 	.string "from space. Could it be true?$"
 # 302 "data/maps/MossdeepCity_SpaceCenter_1F/scripts.pory"

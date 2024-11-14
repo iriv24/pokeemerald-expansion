@@ -105,7 +105,7 @@ MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 # 53 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "A RECORD CORNER opened upstairs in\n"
 # 54 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "the POKéMON CENTER.\p"
+	.string "the Pokémon CENTER.\p"
 # 55 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "I don't know what it's about, but it\n"
 # 56 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"

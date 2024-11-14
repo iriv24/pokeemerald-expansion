@@ -119,7 +119,7 @@ SootopolisCity_Mart_Text_PPUpIsGreat:
 # 60 "data/maps/SootopolisCity_Mart/scripts.pory"
 	.string "It raises the POWER POINTS, the PP,\n"
 # 61 "data/maps/SootopolisCity_Mart/scripts.pory"
-	.string "of a POKéMON move.$"
+	.string "of a Pokémon move.$"
 # 62 "data/maps/SootopolisCity_Mart/scripts.pory"
 
 # 63 "data/maps/SootopolisCity_Mart/scripts.pory"

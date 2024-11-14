@@ -157,7 +157,7 @@ SSTidalRooms_Text_ColtonPostBattle:
 # 79 "data/maps/SSTidalRooms/scripts.pory"
 	.string "I get so excited imagining what kinds\n"
 # 80 "data/maps/SSTidalRooms/scripts.pory"
-	.string "of POKéMON I'll get to see in the next\l"
+	.string "of Pokémon I'll get to see in the next\l"
 # 81 "data/maps/SSTidalRooms/scripts.pory"
 	.string "CONTEST. The anticipation of it thrills!$"
 # 82 "data/maps/SSTidalRooms/scripts.pory"
@@ -179,7 +179,7 @@ SSTidalRooms_Text_MicahPostBattle:
 # 90 "data/maps/SSTidalRooms/scripts.pory"
 	.string "Friends need not be human.\n"
 # 91 "data/maps/SSTidalRooms/scripts.pory"
-	.string "For me, POKéMON are treasured friends!$"
+	.string "For me, Pokémon are treasured friends!$"
 # 92 "data/maps/SSTidalRooms/scripts.pory"
 
 # 93 "data/maps/SSTidalRooms/scripts.pory"
@@ -233,7 +233,7 @@ SSTidalRooms_Text_JedPostBattle:
 # 117 "data/maps/SSTidalRooms/scripts.pory"
 SSTidalRooms_Text_JedNotEnoughMons:
 # 118 "data/maps/SSTidalRooms/scripts.pory"
-	.string "JED: You only have one POKéMON?\n"
+	.string "JED: You only have one Pokémon?\n"
 # 119 "data/maps/SSTidalRooms/scripts.pory"
 	.string "Isn't that just too lonesome?$"
 # 120 "data/maps/SSTidalRooms/scripts.pory"
@@ -267,7 +267,7 @@ SSTidalRooms_Text_LeaNotEnoughMons:
 # 134 "data/maps/SSTidalRooms/scripts.pory"
 	.string "LEA: I wanted to battle…\n"
 # 135 "data/maps/SSTidalRooms/scripts.pory"
-	.string "But you don't even have two POKéMON…$"
+	.string "But you don't even have two Pokémon…$"
 # 136 "data/maps/SSTidalRooms/scripts.pory"
 
 # 137 "data/maps/SSTidalRooms/scripts.pory"
@@ -293,7 +293,7 @@ SSTidalRooms_Text_GarretPostBattle:
 # 147 "data/maps/SSTidalRooms/scripts.pory"
 	.string "a yacht for me.\l"
 # 148 "data/maps/SSTidalRooms/scripts.pory"
-	.string "A yacht for me and POKéMON!$"
+	.string "A yacht for me and Pokémon!$"
 # 149 "data/maps/SSTidalRooms/scripts.pory"
 
 # 150 "data/maps/SSTidalRooms/scripts.pory"

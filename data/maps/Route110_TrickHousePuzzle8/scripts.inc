@@ -89,7 +89,7 @@ Route110_TrickHousePuzzle8_Text_VincentDefeat:
 # 45 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 Route110_TrickHousePuzzle8_Text_VincentPostBattle:
 # 46 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
-	.string "You've beaten the POKéMON LEAGUE\n"
+	.string "You've beaten the Pokémon LEAGUE\n"
 # 47 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"
 	.string "CHAMPION? That's too much!$"
 # 48 "data/maps/Route110_TrickHousePuzzle8/scripts.pory"

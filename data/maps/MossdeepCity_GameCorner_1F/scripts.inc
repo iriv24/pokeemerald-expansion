@@ -85,7 +85,7 @@ RS_MysteryEventsHouse_Text_OldManGreeting:
 # 43 "data/maps/MossdeepCity_GameCorner_1F/scripts.pory"
 	.string "When I was young, I traveled the world\n"
 # 44 "data/maps/MossdeepCity_GameCorner_1F/scripts.pory"
-	.string "as a POKéMON TRAINER.\p"
+	.string "as a Pokémon TRAINER.\p"
 # 45 "data/maps/MossdeepCity_GameCorner_1F/scripts.pory"
 	.string "Now that I've become an old buzzard,\n"
 # 46 "data/maps/MossdeepCity_GameCorner_1F/scripts.pory"

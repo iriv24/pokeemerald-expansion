@@ -47,7 +47,7 @@ RustboroCity_House3_EventScript_Pekachu::
 # 24 "data/maps/RustboroCity_House3/scripts.pory"
 RustboroCity_House3_Text_IGivePerfectlySuitedNicknames:
 # 25 "data/maps/RustboroCity_House3/scripts.pory"
-	.string "For my own POKéMON, I give them\n"
+	.string "For my own Pokémon, I give them\n"
 # 26 "data/maps/RustboroCity_House3/scripts.pory"
 	.string "perfectly suited nicknames!\p"
 # 27 "data/maps/RustboroCity_House3/scripts.pory"
