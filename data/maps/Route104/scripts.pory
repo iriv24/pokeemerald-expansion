@@ -1070,7 +1070,7 @@ Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"
 
 Route104_Text_TrainerTipsDoubleBattles:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "You can rearrange your Pokémon party\n"
 	.string "more efficiently by using the “Select”\l"
 	.string "button or the “R” button while\l"

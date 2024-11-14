@@ -43,7 +43,7 @@ Route106_EventScript_Ned::
 	end
 
 Route106_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "The nurse in front of the counter\n"
 	.string "inside of Pokémon centers can perform\l"
 	.string "many useful functions.$"

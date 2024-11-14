@@ -316,7 +316,7 @@ Route125_EventScript_BattleCandice_Text_0:
 	.string "Okay then!$"
 
 Candice_ExplainItems::
-# 179 "data/maps/Route125/scripts.pory"
+# 180 "data/maps/Route125/scripts.pory"
 	.string "Those are some of my favorite Ice-type\n"
 	.string "moves, they may not be the most\l"
 	.string "accurate, but they sure do deal damage\l"
@@ -325,7 +325,7 @@ Candice_ExplainItems::
 	.string "let you through.$"
 
 Candice_Greeting::
-# 188 "data/maps/Route125/scripts.pory"
+# 189 "data/maps/Route125/scripts.pory"
 	.string "Oh, hello there. I take it you're a\n"
 	.string "trainer who wants to get into this\l"
 	.string "cave?\p"
@@ -342,11 +342,11 @@ Candice_Greeting::
 	.string "challenge me or not?$"
 
 Candice_Outro::
-# 205 "data/maps/Route125/scripts.pory"
+# 206 "data/maps/Route125/scripts.pory"
 	.string "Looks like you'll be just fine in this\n"
 	.string "cave.$"
 
 PostBattle_Candice::
-# 211 "data/maps/Route125/scripts.pory"
+# 212 "data/maps/Route125/scripts.pory"
 	.string "The Pokémon in there are strong,\n"
 	.string "aren't they?$"

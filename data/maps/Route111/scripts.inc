@@ -1359,7 +1359,7 @@ Route111_Text_OldLadysRestStopSign:
 # 680 "data/maps/Route111/scripts.pory"
 Route111_Text_TrainerTipsSpAtkSpDef:
 # 681 "data/maps/Route111/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 682 "data/maps/Route111/scripts.pory"
 	.string "One of the indicators of a Pokémon's\n"
 # 683 "data/maps/Route111/scripts.pory"

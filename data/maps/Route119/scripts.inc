@@ -1283,7 +1283,7 @@ Route119_Text_WeatherInstitute:
 # 642 "data/maps/Route119/scripts.pory"
 Route119_Text_TrainerTipsDecoration:
 # 643 "data/maps/Route119/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 644 "data/maps/Route119/scripts.pory"
 	.string "Up to sixteen decorations and\n"
 # 645 "data/maps/Route119/scripts.pory"

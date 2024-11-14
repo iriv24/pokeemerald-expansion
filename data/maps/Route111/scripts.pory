@@ -678,7 +678,7 @@ Route111_Text_OldLadysRestStopSign:
 	.string "TAKE THE EGG I HAVE$"
 
 Route111_Text_TrainerTipsSpAtkSpDef:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "One of the indicators of a Pokémon's\n"
 	.string "powerfulness is SP. ATK. It stands for\l"
 	.string "“SPECIAL ATTACK.”\p"

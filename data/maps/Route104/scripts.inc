@@ -2143,7 +2143,7 @@ Route104_Text_PrettyPetalFlowShop:
 # 1072 "data/maps/Route104/scripts.pory"
 Route104_Text_TrainerTipsDoubleBattles:
 # 1073 "data/maps/Route104/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 1074 "data/maps/Route104/scripts.pory"
 	.string "You can rearrange your Pokémon party\n"
 # 1075 "data/maps/Route104/scripts.pory"

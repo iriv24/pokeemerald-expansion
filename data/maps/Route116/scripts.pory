@@ -503,12 +503,12 @@ Route116_Text_TunnelersRestHouse:
 	.string "TUNNELER'S REST HOUSE$"
 
 Route116_Text_TrainerTipsBToStopEvolution:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "Press the “L” button to open a very\n"
 	.string "useful 2nd menu if you haven't already.$"
 
 Route116_Text_TrainerTipsBagHasPockets:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "You can reuse TMs as many times as\n"
 	.string "you want.$"
 

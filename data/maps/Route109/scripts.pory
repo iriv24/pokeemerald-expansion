@@ -1,9 +1,20 @@
 raw `
+.set LOCALID_LITTLE_GIRL, 9
 @ NOTE: Route 109's sail to Dewford script references local IDs from Dewford's map.
 @  These are labeled in DewfordTown/scripts.inc
 
 Route109_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route109_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route109_OnLoad
 	.byte 0
+
+Route109_OnTransition:
+	call_if_set FLAG_BADGE02_GET, SetHotHouseGirlPermLoc
+	end
+
+Route109_OnLoad:
+	call_if_set FLAG_BADGE02_GET, SetHotHouseGirlPermLoc
+	end
 
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation
@@ -314,7 +325,12 @@ Route109_EventScript_ChoseNotToSail::
 	end
 
 Route109_EventScript_SeashoreHouseGirl::
+	goto_if_unset FLAG_BADGE02_GET, Route109_EventScript_SeashoreHouseGirlNoBadge
 	msgbox Route109_Text_ChillAtMyPapasSpot, MSGBOX_NPC
+	end
+
+Route109_EventScript_SeashoreHouseGirlNoBadge::
+	msgbox Route109_Text_PapasSpotGettingFixed, MSGBOX_NPC
 	end
 
 Route109_EventScript_SandCastleBoy::
@@ -478,46 +494,53 @@ Route109_EventScript_Elijah::
 	end
 
 DewfordTown_Text_BrineyLandedInSlateportDeliverGoods:
-	.string "MR. BRINEY: Ahoy!\n"
-	.string "We've made land in SLATEPORT!\p"
-	.string "I suppose you're going to visit CAPT.\n"
-	.string "STERN and deliver the DEVON GOODS?$"
+	.string "Mr. Briney: Ahoy!\n"
+	.string "We've made land in Slateport!\p"
+	.string "I suppose you're going to visit Capt.\n"
+	.string "Stern and deliver the Devon Goods?$"
 
 Route109_Text_BrineySailToDewfordQuestion:
-	.string "MR. BRINEY: I thought you're supposed\n"
-	.string "to deliver the DEVON GOODS.\p"
+	.string "Mr. Briney: I thought you're supposed\n"
+	.string "to deliver the Devon Goods.\p"
 	.string "Would you like to sail back to\n"
-	.string "DEWFORD, then?$"
+	.string "Dewford, then?$"
 
 Route109_Text_BrineyDewfordItIs:
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
+	.string "Mr. Briney: Dewford it is, then!\p"
 	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "Peeko, we're setting sail, my darling!$"
 
 Route109_Text_BrineyDeliverDevonGoods:
-	.string "MR. BRINEY: Then you go on and deliver\n"
-	.string "the DEVON GOODS. I'll be waiting.$"
+	.string "Mr. Briney: Then you go on and deliver\n"
+	.string "the Devon Goods. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInSlateport:
-	.string "MR. BRINEY: Ahoy! We've made land in\n"
-	.string "SLATEPORT!\p"
+	.string "Mr. Briney: Ahoy! We've made land in\n"
+	.string "Slateport!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
 Route109_Text_BrineyWhereAreWeBound:
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "Mr. Briney: Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 Route109_Text_BrineyTellMeWhenYouNeedToSail:
-	.string "MR. BRINEY: You just tell me whenever\n"
+	.string "Mr. Briney: You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
 Route109_Text_ChillAtMyPapasSpot:
-	.string "Yo, TRAINERS!\n"
+	.string "Yo, trainers!\n"
 	.string "Whether you're hot to trot,\l"
 	.string "or cool cat not,\l"
 	.string "chill at my papa's spot!$"
+
+Route109_Text_PapasSpotGettingFixed:
+	.string "Yo, trainer!\p"
+	.string "Sorry, my papa's spot is getting fixed\n"
+	.string "up right now.\p"
+	.string "Make sure you come back later to see\n"
+	.string "the hottest spot in town, though!$"
 
 Route109_Text_LittleKidsDartAround:
 	.string "Little kids can dart around so quickly…\p"
@@ -542,7 +565,7 @@ Route109_Text_WereGoingToMakeBigCastle:
 
 Route109_Text_ZigzagoonPicksUpLitter:
 	.string "The water around these parts is clean.\p"
-	.string "But, I get my ZIGZAGOON to pick up\n"
+	.string "But, I get my Zigzagoon to pick up\n"
 	.string "litter from the shoreline at times.\p"
 	.string "Dirty water becomes rain and joins our\n"
 	.string "rivers, which we drink from…\p"
@@ -550,32 +573,21 @@ Route109_Text_ZigzagoonPicksUpLitter:
 	.string "back to haunt us eventually.$"
 
 Route109_Text_ZigzagoonCry:
-	.string "ZIGZAGOON: Guguu?$"
+	.string "Zigzagoon: Guguu?$"
 
 Route109_Text_SeashoreHouseSign:
-	.string "SEASHORE HOUSE\p"
+	.string "Seashore House\p"
 	.string "“May hot battles rage on hot sands!\n"
-	.string "The place for hot TRAINERS!”$"
+	.string "The place for hot trainers!”$"
 
 Route109_Text_TrainerTipsSign:
-	.string "TRAINER TIPS\p"
-	.string "Pokémon at the same level may not\n"
-	.string "always have identical stats.\p"
-	.string "Pokémon raised by TRAINERS are said\n"
-	.string "to grow stronger than wild Pokémon.$"
+	.string "Trainer Tips\p"
+	.string "Some areas are blocked off until\n"
+	.string "certain events are completed, such as\l"
+	.string "obtaining a new Gym Badge.$"
 `
 
-script Route109_Trigger_BlockHotHouse{
-	lockall
-	msgbox(GoBeatBrawly, MSGBOX_SIGN)
-	waitmessage
-	applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
-	waitmovement(0)
-	releaseall
-	end
-}
-
-text GoBeatBrawly{
-	"You should defeat Brawly before\n"
-	"entering here."
+script SetHotHouseGirlPermLoc {
+	setobjectxyperm(LOCALID_LITTLE_GIRL, 11, 6)
+	return
 }

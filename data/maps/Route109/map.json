@@ -131,7 +131,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 11,
+      "x": 12,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -348,15 +348,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 6,
-      "elevation": 0,
-      "var": "FLAG_BADGE02_GET",
-      "var_value": "0",
-      "script": "Route109_Trigger_BlockHotHouse"
-    }
+
   ],
   "bg_events": [
     {

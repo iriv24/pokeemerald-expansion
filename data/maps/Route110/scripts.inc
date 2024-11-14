@@ -2261,7 +2261,7 @@ Route110_Text_MauvilleCitySign:
 # 1131 "data/maps/Route110/scripts.pory"
 Route110_Text_TrainerTipsPrlzSleep:
 # 1132 "data/maps/Route110/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 1133 "data/maps/Route110/scripts.pory"
 	.string "You can press the “R” button while\n"
 # 1134 "data/maps/Route110/scripts.pory"
@@ -2273,7 +2273,7 @@ Route110_Text_TrainerTipsPrlzSleep:
 # 1137 "data/maps/Route110/scripts.pory"
 Route110_Text_TrainerTipsRegisterItems:
 # 1138 "data/maps/Route110/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 1139 "data/maps/Route110/scripts.pory"
 	.string "The Pokédex contains information\n"
 # 1140 "data/maps/Route110/scripts.pory"

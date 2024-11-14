@@ -919,7 +919,7 @@ PetalburgWoods_Text_MiracleSeedExplanation:
 # 460 "data/maps/PetalburgWoods/scripts.pory"
 PetalburgWoods_Text_TrainerTipsExperience:
 # 461 "data/maps/PetalburgWoods/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 462 "data/maps/PetalburgWoods/scripts.pory"
 	.string "You can sort the Items in your Bag\n"
 # 463 "data/maps/PetalburgWoods/scripts.pory"
@@ -931,7 +931,7 @@ PetalburgWoods_Text_TrainerTipsExperience:
 # 466 "data/maps/PetalburgWoods/scripts.pory"
 PetalburgWoods_Text_TrainerTipsPP:
 # 467 "data/maps/PetalburgWoods/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 468 "data/maps/PetalburgWoods/scripts.pory"
 	.string "You can register multiple Key Items,\n"
 # 469 "data/maps/PetalburgWoods/scripts.pory"

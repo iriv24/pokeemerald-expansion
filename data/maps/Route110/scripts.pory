@@ -1129,13 +1129,13 @@ Route110_Text_MauvilleCitySign:
 	.string "{UP_ARROW} MAUVILLE CITY$"
 
 Route110_Text_TrainerTipsPrlzSleep:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "You can press the “R” button while\n"
 	.string "choosing a move in battle to see\l"
 	.string "information about it.$"
 
 Route110_Text_TrainerTipsRegisterItems:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "The Pokédex contains information\n"
 	.string "about a Pokémon's learnsets and\l"
 	.string "evolution methods.$"

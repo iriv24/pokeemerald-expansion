@@ -458,13 +458,13 @@ PetalburgWoods_Text_MiracleSeedExplanation:
 	.string "to hold.$"
 
 PetalburgWoods_Text_TrainerTipsExperience:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "You can sort the Items in your Bag\n"
 	.string "by pressing the “Start” button when\l"
 	.string "inside one of the pockets.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "You can register multiple Key Items,\n"
 	.string "and then see them all in a list by\l"
 	.string "pressing the “Select” button.\p"

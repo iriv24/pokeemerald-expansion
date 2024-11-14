@@ -1009,7 +1009,7 @@ Route116_Text_TunnelersRestHouse:
 # 505 "data/maps/Route116/scripts.pory"
 Route116_Text_TrainerTipsBToStopEvolution:
 # 506 "data/maps/Route116/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 507 "data/maps/Route116/scripts.pory"
 	.string "Press the “L” button to open a very\n"
 # 508 "data/maps/Route116/scripts.pory"
@@ -1019,7 +1019,7 @@ Route116_Text_TrainerTipsBToStopEvolution:
 # 510 "data/maps/Route116/scripts.pory"
 Route116_Text_TrainerTipsBagHasPockets:
 # 511 "data/maps/Route116/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 512 "data/maps/Route116/scripts.pory"
 	.string "You can reuse TMs as many times as\n"
 # 513 "data/maps/Route116/scripts.pory"

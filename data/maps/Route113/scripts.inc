@@ -293,7 +293,7 @@ Route113_Text_RouteSignFallarbor:
 # 147 "data/maps/Route113/scripts.pory"
 Route113_Text_TrainerTipsRegisterKeyItems:
 # 148 "data/maps/Route113/scripts.pory"
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 # 149 "data/maps/Route113/scripts.pory"
 	.string "You may register one of the KEY ITEMS\n"
 # 150 "data/maps/Route113/scripts.pory"

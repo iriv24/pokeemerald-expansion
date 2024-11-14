@@ -917,7 +917,7 @@ RusturfTunnel_Text_ComeAndGetSome:
 # 459 "data/maps/RusturfTunnel/scripts.pory"
 RusturfTunnel_Text_Peeko:
 # 460 "data/maps/RusturfTunnel/scripts.pory"
-	.string "PEEKO: Pii pihyoh!$"
+	.string "Peeko: Pii pihyoh!$"
 # 461 "data/maps/RusturfTunnel/scripts.pory"
 
 # 462 "data/maps/RusturfTunnel/scripts.pory"
@@ -967,7 +967,7 @@ RusturfTunnel_Text_GruntTakePackage:
 # 484 "data/maps/RusturfTunnel/scripts.pory"
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 # 485 "data/maps/RusturfTunnel/scripts.pory"
-	.string "PEEKO!\n"
+	.string "Peeko!\n"
 # 486 "data/maps/RusturfTunnel/scripts.pory"
 	.string "Am I glad to see you're safe!$"
 # 487 "data/maps/RusturfTunnel/scripts.pory"
@@ -975,7 +975,7 @@ RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 # 488 "data/maps/RusturfTunnel/scripts.pory"
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
 # 489 "data/maps/RusturfTunnel/scripts.pory"
-	.string "PEEKO owes her life to you!\p"
+	.string "Peeko owes her life to you!\p"
 # 490 "data/maps/RusturfTunnel/scripts.pory"
 	.string "They call me MR. BRINEY.\n"
 # 491 "data/maps/RusturfTunnel/scripts.pory"
@@ -1001,7 +1001,7 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
 # 501 "data/maps/RusturfTunnel/scripts.pory"
 	.string "home.\p"
 # 502 "data/maps/RusturfTunnel/scripts.pory"
-	.string "PEEKO: Pihyoh!$"
+	.string "Peeko: Pihyoh!$"
 # 503 "data/maps/RusturfTunnel/scripts.pory"
 
 # 504 "data/maps/RusturfTunnel/scripts.pory"
