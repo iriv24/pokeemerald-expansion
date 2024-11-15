@@ -263,7 +263,7 @@ static const u8 sText_PkmnSealedOpponentMove[] = _("{B_ATK_NAME_WITH_PREFIX} sea
 static const u8 sText_PkmnWantsGrudge[] = _("{B_ATK_NAME_WITH_PREFIX} wants its target to bear a grudge!");
 static const u8 sText_PkmnLostPPGrudge[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1} lost all its PP due to the grudge!");
 static const u8 sText_PkmnShroudedItself[] = _("{B_ATK_NAME_WITH_PREFIX} shrouded itself with Magic Coat!");
-static const u8 sText_PkmnMoveBounced[] = _("{B_EFF_NAME_WITH_PREFIX} bounced the {B_CURRENT_MOVE} back!");
+static const u8 sText_PkmnMoveBounced[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE}\nwas bounced back by MAGIC COAT!");
 static const u8 sText_PkmnWaitsForTarget[] = _("{B_ATK_NAME_WITH_PREFIX} waits for a target to make a move!");
 static const u8 sText_PkmnSnatchedMove[] = _("{B_DEF_NAME_WITH_PREFIX} snatched {B_SCR_ACTIVE_NAME_WITH_PREFIX2}'s move!");
 static const u8 sText_ElectricityWeakened[] = _("Electricity's power was weakened!");
@@ -782,7 +782,7 @@ static const u8 sText_StrongWindsDissipated[] = _("The mysterious strong winds h
 static const u8 sText_MysteriousAirCurrentBlowsOn[] = _("The mysterious strong winds blow on regardless!");
 static const u8 sText_AttackWeakenedByStrongWinds[] = _("The mysterious strong winds weakened the attack!");
 static const u8 sText_StuffCheeksCantSelect[] = _("It can't use the move because it doesn't have a Berry!\p");
-static const u8 sText_PkmnRevertedToPrimal[] = _("{B_ATK_NAME_WITH_PREFIX}'s Primal Reversion! It reverted to its primal state!");
+static const u8 sText_PkmnRevertedToPrimal[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s Primal Reversion! It reverted to its primal state!");
 static const u8 sText_ButPokemonCantUseTheMove[] = _("But {B_ATK_NAME_WITH_PREFIX2} can't use the move!");
 static const u8 sText_ButHoopaCantUseIt[] = _("But {B_ATK_NAME_WITH_PREFIX2} can't use it the way it is now!");
 static const u8 sText_BrokeThroughProtection[] = _("It broke through {B_DEF_NAME_WITH_PREFIX2}'s protection!");
@@ -1649,11 +1649,6 @@ const u16 gTerrainPreventsStringIds[] =
     [B_MSG_TERRAINPREVENTS_MISTY]    = STRINGID_MISTYTERRAINPREVENTS,
     [B_MSG_TERRAINPREVENTS_ELECTRIC] = STRINGID_ELECTRICTERRAINPREVENTS,
     [B_MSG_TERRAINPREVENTS_PSYCHIC]  = STRINGID_PSYCHICTERRAINPREVENTS
-};
-
-const u16 gMagicCoatBounceStringIds[] =
-{
-    STRINGID_PKMNMOVEBOUNCED, STRINGID_PKMNMOVEBOUNCEDABILITY
 };
 
 const u16 gHealingWishStringIds[] =
@@ -3359,6 +3354,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
     u8 fontId = FONT_NORMAL;
     s16 letterSpacing = 0;
     u32 lineNum = 1;
+    u32 displayedLineNums = 1;
 
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED_LINK)
         multiplayerId = gRecordedBattleMultiplayerId;
@@ -3772,8 +3768,12 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
 
                 if (dstWidth + toCpyWidth > BATTLE_MSG_MAX_WIDTH)
                 {
-                    dst[lastValidSkip] = lineNum == 1 ? CHAR_NEWLINE : CHAR_PROMPT_SCROLL;
+                    dst[lastValidSkip] = displayedLineNums == 1 ? CHAR_NEWLINE : CHAR_PROMPT_SCROLL;
                     dstWidth = GetStringLineWidth(fontId, dst, letterSpacing, lineNum, dstSize);
+                    if (displayedLineNums == 1)
+                        displayedLineNums++;
+                    else
+                        displayedLineNums = 1;
                     lineNum++;
                 }
                 while (*toCpy != EOS)
@@ -3799,15 +3799,20 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
             dst[dstID] = *src;
             if (dstWidth + toCpyWidth > BATTLE_MSG_MAX_WIDTH)
             {
-                dst[lastValidSkip] = lineNum == 1 ? CHAR_NEWLINE : CHAR_PROMPT_SCROLL;
+                dst[lastValidSkip] = displayedLineNums == 1 ? CHAR_NEWLINE : CHAR_PROMPT_SCROLL;
+                if (displayedLineNums == 1)
+                    displayedLineNums++;
+                else
+                    displayedLineNums = 1;
                 lineNum++;
                 dstWidth = 0;
             }
             switch (*src)
             {
-            case CHAR_NEWLINE:
-            case CHAR_PROMPT_SCROLL:
             case CHAR_PROMPT_CLEAR:
+            case CHAR_PROMPT_SCROLL:
+                displayedLineNums = 1;
+            case CHAR_NEWLINE:
                 lineNum++;
                 dstWidth = 0;
                 //fallthrough
