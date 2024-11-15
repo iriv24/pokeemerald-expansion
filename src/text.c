@@ -1123,6 +1123,8 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             case CHAR_NEWLINE:
                 textPrinter->printerTemplate.currentX = textPrinter->printerTemplate.x;
                 textPrinter->printerTemplate.currentY += (gFonts[textPrinter->printerTemplate.fontId].maxLetterHeight + textPrinter->printerTemplate.lineSpacing);
+                if (subStruct->fontId == FONT_BW_SUMMARY_SCREEN)
+                    textPrinter->printerTemplate.currentY -= 2;
                 return RENDER_REPEAT;
             case PLACEHOLDER_BEGIN:
                 textPrinter->printerTemplate.currentChar++;
@@ -1287,6 +1289,7 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             case FONT_SHORT_COPY_1:
             case FONT_SHORT_COPY_2:
             case FONT_SHORT_COPY_3:
+            case FONT_BW_SUMMARY_SCREEN:
                 DecompressGlyph_Short(currChar, textPrinter->japanese);
                 break;
             case FONT_NARROW:
