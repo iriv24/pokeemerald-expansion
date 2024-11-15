@@ -314,7 +314,6 @@ LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Huh?\n"
 	.string "Who… Who are you?\p"
-	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "Oh, you're {PLAYER}{KUN}.\n"
 	.string "So your move was today.\p"
@@ -332,7 +331,8 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Eheheh…\p"
 	.string "Oh, no! I forgot!\p"
 	.string "I was supposed to go help Dad catch\n"
-	.string "some wild Pokémon!\p"
+	.string "some wild Pokémon, I did just get\l"
+	.string "my very first Pokémon after all!\p"
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
@@ -353,7 +353,8 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Huh? Hey, {PLAYER}, don't you have\n"
 	.string "a Pokémon?\p"
 	.string "I'm supposed to go help my dad catch\n"
-	.string "some wild Pokémon.\p"
+	.string "some wild Pokémon, I did just get\l"
+	.string "my very first Pokémon after all!\p"
 	.string "You should go talk to him and see if\n"
 	.string "you can get your own Pokémon too!$"
 

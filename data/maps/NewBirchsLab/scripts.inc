@@ -10,7 +10,7 @@ NewBirchsLab_MapScripts::
 
 NewBirchsLab_EventScript_BallDefault::
 # 8 "data/maps/NewBirchsLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F7, 0
+	setvar VAR_STARTER_GEN, 0
 # 9 "data/maps/NewBirchsLab/scripts.pory"
 	setvar VAR_UNUSED_0x40F8, 1
 	return
@@ -81,7 +81,7 @@ NewBirchsLab_EventScript_Birch_5:
 	goto_if_eq NewBirchsLab_EventScript_Birch_13
 NewBirchsLab_EventScript_Birch_12:
 # 42 "data/maps/NewBirchsLab/scripts.pory"
-	copyvar VAR_UNUSED_0x40F7, VAR_RESULT
+	copyvar VAR_STARTER_GEN, VAR_RESULT
 # 43 "data/maps/NewBirchsLab/scripts.pory"
 	goto NewBirchsLab_EventScript_SayGenShowing
 	goto NewBirchsLab_EventScript_Birch_4
@@ -104,7 +104,7 @@ NewBirchsLab_EventScript_Birch_13:
 
 NewBirchsLab_EventScript_SayGenShowing::
 # 56 "data/maps/NewBirchsLab/scripts.pory"
-	switch VAR_UNUSED_0x40F7
+	switch VAR_STARTER_GEN
 # 58 "data/maps/NewBirchsLab/scripts.pory"
 	case 0, NewBirchsLab_EventScript_SayGenShowing_3
 # 60 "data/maps/NewBirchsLab/scripts.pory"
@@ -207,31 +207,31 @@ NewBirchsLab_EventScript_PokeballOne_3:
 
 NewBirchsLab_EventScript_PokeballOne_4:
 # 93 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_GEN, 0
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_14
 # 96 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_GEN, 1
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_15
 # 99 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_GEN, 2
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_16
 # 102 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 3
+	compare VAR_STARTER_GEN, 3
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_17
 # 105 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 4
+	compare VAR_STARTER_GEN, 4
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_18
 # 108 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 5
+	compare VAR_STARTER_GEN, 5
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_19
 # 111 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 6
+	compare VAR_STARTER_GEN, 6
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_20
 # 114 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 7
+	compare VAR_STARTER_GEN, 7
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_21
 # 117 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 8
+	compare VAR_STARTER_GEN, 8
 	goto_if_eq NewBirchsLab_EventScript_PokeballOne_22
 NewBirchsLab_EventScript_PokeballOne_13:
 # 120 "data/maps/NewBirchsLab/scripts.pory"
@@ -334,31 +334,31 @@ NewBirchsLab_EventScript_PokeballTwo_3:
 
 NewBirchsLab_EventScript_PokeballTwo_4:
 # 146 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_GEN, 0
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_14
 # 149 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_GEN, 1
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_15
 # 152 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_GEN, 2
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_16
 # 155 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 3
+	compare VAR_STARTER_GEN, 3
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_17
 # 158 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 4
+	compare VAR_STARTER_GEN, 4
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_18
 # 161 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 5
+	compare VAR_STARTER_GEN, 5
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_19
 # 164 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 6
+	compare VAR_STARTER_GEN, 6
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_20
 # 167 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 7
+	compare VAR_STARTER_GEN, 7
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_21
 # 170 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 8
+	compare VAR_STARTER_GEN, 8
 	goto_if_eq NewBirchsLab_EventScript_PokeballTwo_22
 NewBirchsLab_EventScript_PokeballTwo_13:
 # 173 "data/maps/NewBirchsLab/scripts.pory"
@@ -461,31 +461,31 @@ NewBirchsLab_EventScript_PokeballThree_3:
 
 NewBirchsLab_EventScript_PokeballThree_4:
 # 198 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_GEN, 0
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_14
 # 201 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_GEN, 1
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_15
 # 204 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_GEN, 2
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_16
 # 207 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 3
+	compare VAR_STARTER_GEN, 3
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_17
 # 210 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 4
+	compare VAR_STARTER_GEN, 4
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_18
 # 213 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 5
+	compare VAR_STARTER_GEN, 5
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_19
 # 216 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 6
+	compare VAR_STARTER_GEN, 6
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_20
 # 219 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 7
+	compare VAR_STARTER_GEN, 7
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_21
 # 222 "data/maps/NewBirchsLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 8
+	compare VAR_STARTER_GEN, 8
 	goto_if_eq NewBirchsLab_EventScript_PokeballThree_22
 NewBirchsLab_EventScript_PokeballThree_13:
 # 225 "data/maps/NewBirchsLab/scripts.pory"
@@ -3351,11 +3351,12 @@ NewBirchsLab_WelcomePlayerMale::
 	.string "{RIVAL}, she stopped by and grabbed\l"
 	.string "one of my Starter Pokémon and then\l"
 	.string "rushed out of here.\p"
-	.string "She said to be on the lookout for a\n"
+	.string "I told her to be on the lookout for a\n"
 	.string "trainer named {PLAYER}, who just moved\l"
 	.string "into the house next door!\p"
-	.string "I'm glad to see {RIVAL} has a friend\n"
-	.string "to start a new Pokémon journey with.\p"
+	.string "I hope the two of you can be friends\n"
+	.string "who can start a new Pokémon journey\l"
+	.string "together.\p"
 	.string "How about this, I'll give you one of\n"
 	.string "these Starter Pokémon, and then if you\l"
 	.string "can beat {RIVAL} with your Pokémon,\l"
@@ -3368,17 +3369,18 @@ NewBirchsLab_WelcomePlayerMale::
 	.string "ask me if you want to change them.$"
 
 NewBirchsLab_WelcomePlayerFemale::
-# 1676 "data/maps/NewBirchsLab/scripts.pory"
+# 1677 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Hello there! I'm Prof. Birch, and you\n"
 	.string "must be {PLAYER}. You just missed\l"
 	.string "{RIVAL}, he stopped by and grabbed\l"
 	.string "one of my Starter Pokémon and then\l"
 	.string "rushed out of here.\p"
-	.string "He said to be on the lookout for a\n"
+	.string "I told him to be on the lookout for a\n"
 	.string "trainer named {PLAYER}, who just moved\l"
 	.string "into the house next door!\p"
-	.string "I'm glad to see {RIVAL} has a friend\n"
-	.string "to start a new Pokémon journey with.\p"
+	.string "I hope the two of you can be friends\n"
+	.string "who can start a new Pokémon journey\l"
+	.string "together.\p"
 	.string "How about this, I'll give you one of\n"
 	.string "these Starter Pokémon, and then if you\l"
 	.string "can beat {RIVAL} with your Pokémon,\l"
@@ -3391,55 +3393,55 @@ NewBirchsLab_WelcomePlayerFemale::
 	.string "ask me if you want to change them.$"
 
 NewBirchsLab_Route103PlayerMale::
-# 1699 "data/maps/NewBirchsLab/scripts.pory"
+# 1701 "data/maps/NewBirchsLab/scripts.pory"
 	.string "{RIVAL} yelled she was heading to\n"
 	.string "Route 103 as she ran out the door,\l"
 	.string "perhaps you should look for her there.$"
 
 NewBirchsLab_Route103PlayerFemale::
-# 1706 "data/maps/NewBirchsLab/scripts.pory"
+# 1708 "data/maps/NewBirchsLab/scripts.pory"
 	.string "{RIVAL} yelled he was heading to\n"
 	.string "Route 103 as he ran out the door,\l"
 	.string "perhaps you should look for him there.$"
 
 NewBirchsLab_RivalStarterTreeckoPlayerMale::
-# 1713 "data/maps/NewBirchsLab/scripts.pory"
+# 1715 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Treecko as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterTreeckoPlayerFemale::
-# 1720 "data/maps/NewBirchsLab/scripts.pory"
+# 1722 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Treecko as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_RivalStarterMudkipPlayerMale::
-# 1727 "data/maps/NewBirchsLab/scripts.pory"
+# 1729 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Mudkip as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterMudkipPlayerFemale::
-# 1734 "data/maps/NewBirchsLab/scripts.pory"
+# 1736 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Mudkip as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_RivalStarterTorchicPlayerMale::
-# 1741 "data/maps/NewBirchsLab/scripts.pory"
+# 1743 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Torchic as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterTorchicPlayerFemale::
-# 1748 "data/maps/NewBirchsLab/scripts.pory"
+# 1750 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Torchic as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_ChangeStarters::
-# 1755 "data/maps/NewBirchsLab/scripts.pory"
+# 1757 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Which Generation of Starters would you\n"
 	.string "like to see? You can change\l"
 	.string "Generations as many times as you want.$"

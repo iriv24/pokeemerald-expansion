@@ -5,7 +5,7 @@ mapscripts NewBirchsLab_MapScripts {
 }
  
 script NewBirchsLab_EventScript_BallDefault{
-    setvar(VAR_UNUSED_0x40F7, 0)
+    setvar(VAR_STARTER_GEN, 0)
     setvar(VAR_UNUSED_0x40F8, 1)
 }
  
@@ -39,7 +39,7 @@ script NewBirchsLab_EventScript_Birch{
         {
             goto(NewBirchsLab_EventScript_SayGenShowing)
         }
-        copyvar(VAR_UNUSED_0x40F7, VAR_RESULT)
+        copyvar(VAR_STARTER_GEN, VAR_RESULT)
         goto(NewBirchsLab_EventScript_SayGenShowing)
     }
     else{
@@ -53,7 +53,7 @@ script NewBirchsLab_EventScript_Birch{
 }
 
 script NewBirchsLab_EventScript_SayGenShowing {
-    switch(var(VAR_UNUSED_0x40F7))
+    switch(var(VAR_STARTER_GEN))
     {
         case 0:
             msgbox("Showing starters for Gen 1.")
@@ -90,31 +90,31 @@ script NewBirchsLab_EventScript_PokeballOne{
         msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
+        if(var(VAR_STARTER_GEN) == 0){
             call(NewBirchsLab_EventScript_Squirtle)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
+        elif(var(VAR_STARTER_GEN) == 1){
             call(NewBirchsLab_EventScript_Totodile)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
+        elif(var(VAR_STARTER_GEN) == 2){
             call(NewBirchsLab_EventScript_Mudkip)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 3){
+        elif(var(VAR_STARTER_GEN) == 3){
             call(NewBirchsLab_EventScript_Piplup)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 4){
+        elif(var(VAR_STARTER_GEN) == 4){
             call(NewBirchsLab_EventScript_Oshawott)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 5){
+        elif(var(VAR_STARTER_GEN) == 5){
             call(NewBirchsLab_EventScript_Froakie)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 6){
+        elif(var(VAR_STARTER_GEN) == 6){
             call(NewBirchsLab_EventScript_Popplio)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 7){
+        elif(var(VAR_STARTER_GEN) == 7){
             call(NewBirchsLab_EventScript_Sobble)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 8){
+        elif(var(VAR_STARTER_GEN) == 8){
             call(NewBirchsLab_EventScript_Quaxly)
         }
         if(flag(FLAG_SYS_POKEMON_GET))
@@ -143,31 +143,31 @@ script NewBirchsLab_EventScript_PokeballTwo{
         msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
+        if(var(VAR_STARTER_GEN) == 0){
             call(NewBirchsLab_EventScript_Bulbasaur)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
+        elif(var(VAR_STARTER_GEN) == 1){
             call(NewBirchsLab_EventScript_Chikorita)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
+        elif(var(VAR_STARTER_GEN) == 2){
             call(NewBirchsLab_EventScript_Treecko)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 3){
+        elif(var(VAR_STARTER_GEN) == 3){
             call(NewBirchsLab_EventScript_Turtwig)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 4){
+        elif(var(VAR_STARTER_GEN) == 4){
             call(NewBirchsLab_EventScript_Snivy)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 5){
+        elif(var(VAR_STARTER_GEN) == 5){
             call(NewBirchsLab_EventScript_Chespin)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 6){
+        elif(var(VAR_STARTER_GEN) == 6){
             call(NewBirchsLab_EventScript_Rowlet)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 7){
+        elif(var(VAR_STARTER_GEN) == 7){
             call(NewBirchsLab_EventScript_Grookey)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 8){
+        elif(var(VAR_STARTER_GEN) == 8){
             call(NewBirchsLab_EventScript_Sprigatito)
         }
         if(flag(FLAG_SYS_POKEMON_GET))
@@ -195,31 +195,31 @@ script NewBirchsLab_EventScript_PokeballThree{
         msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
+        if(var(VAR_STARTER_GEN) == 0){
             call(NewBirchsLab_EventScript_Charmander)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
+        elif(var(VAR_STARTER_GEN) == 1){
             call(NewBirchsLab_EventScript_Cyndaquil)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
+        elif(var(VAR_STARTER_GEN) == 2){
             call(NewBirchsLab_EventScript_Torchic)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 3){
+        elif(var(VAR_STARTER_GEN) == 3){
             call(NewBirchsLab_EventScript_Chimchar)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 4){
+        elif(var(VAR_STARTER_GEN) == 4){
             call(NewBirchsLab_EventScript_Tepig)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 5){
+        elif(var(VAR_STARTER_GEN) == 5){
             call(NewBirchsLab_EventScript_Fennekin)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 6){
+        elif(var(VAR_STARTER_GEN) == 6){
             call(NewBirchsLab_EventScript_Litten)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 7){
+        elif(var(VAR_STARTER_GEN) == 7){
             call(NewBirchsLab_EventScript_Scorbunny)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 8){
+        elif(var(VAR_STARTER_GEN) == 8){
             call(NewBirchsLab_EventScript_Fuecoco)
         }
         if(flag(FLAG_SYS_POKEMON_GET))
@@ -1656,11 +1656,12 @@ text NewBirchsLab_WelcomePlayerMale{
     "{RIVAL}, she stopped by and grabbed\l"
     "one of my Starter Pokémon and then\l"
     "rushed out of here.\p" 
-    "She said to be on the lookout for a\n"
+    "I told her to be on the lookout for a\n"
     "trainer named {PLAYER}, who just moved\l"
     "into the house next door!\p"
-    "I'm glad to see {RIVAL} has a friend\n"
-    "to start a new Pokémon journey with.\p"
+    "I hope the two of you can be friends\n"
+    "who can start a new Pokémon journey\l"
+    "together.\p"
     "How about this, I'll give you one of\n"
     "these Starter Pokémon, and then if you\l"
     "can beat {RIVAL} with your Pokémon,\l"
@@ -1679,11 +1680,12 @@ text NewBirchsLab_WelcomePlayerFemale{
     "{RIVAL}, he stopped by and grabbed\l"
     "one of my Starter Pokémon and then\l"
     "rushed out of here.\p" 
-    "He said to be on the lookout for a\n"
+    "I told him to be on the lookout for a\n"
     "trainer named {PLAYER}, who just moved\l"
     "into the house next door!\p"
-    "I'm glad to see {RIVAL} has a friend\n"
-    "to start a new Pokémon journey with.\p"
+    "I hope the two of you can be friends\n"
+    "who can start a new Pokémon journey\l"
+    "together.\p"
     "How about this, I'll give you one of\n"
     "these Starter Pokémon, and then if you\l"
     "can beat {RIVAL} with your Pokémon,\l"

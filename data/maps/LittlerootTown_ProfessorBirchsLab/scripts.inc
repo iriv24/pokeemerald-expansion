@@ -251,7 +251,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 # 126 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	lockall
 # 127 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F7, 0
+	setvar VAR_STARTER_GEN, 0
 # 128 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
     setvar VAR_UNUSED_0x40F8, 1
 # 129 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
