@@ -1583,36 +1583,42 @@ script NewBirchsLab_EventScript_GoodbyePlayerFemale {
 script NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale {
     msgbox(NewBirchsLab_RivalStarterTreeckoPlayerMale)
     msgbox(NewBirchsLab_Route103PlayerMale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 
 script NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale {
     msgbox(NewBirchsLab_RivalStarterTreeckoPlayerFemale)
     msgbox(NewBirchsLab_Route103PlayerFemale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 
 script NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerMale {
     msgbox(NewBirchsLab_RivalStarterMudkipPlayerMale)
     msgbox(NewBirchsLab_Route103PlayerMale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 
 script NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerFemale {
     msgbox(NewBirchsLab_RivalStarterMudkipPlayerFemale)
     msgbox(NewBirchsLab_Route103PlayerFemale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 
 script NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerMale {
     msgbox(NewBirchsLab_RivalStarterTorchicPlayerMale)
     msgbox(NewBirchsLab_Route103PlayerMale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 
 script NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerFemale {
     msgbox(NewBirchsLab_RivalStarterTorchicPlayerFemale)
     msgbox(NewBirchsLab_Route103PlayerFemale)
+    callnative(UpdateFollowingPokemon)
     return
 }
 

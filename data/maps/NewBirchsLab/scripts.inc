@@ -2935,82 +2935,94 @@ NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale::
 	msgbox NewBirchsLab_RivalStarterTreeckoPlayerMale
 # 1585 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerMale
+# 1586 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale::
-# 1590 "data/maps/NewBirchsLab/scripts.pory"
-	msgbox NewBirchsLab_RivalStarterTreeckoPlayerFemale
 # 1591 "data/maps/NewBirchsLab/scripts.pory"
+	msgbox NewBirchsLab_RivalStarterTreeckoPlayerFemale
+# 1592 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerFemale
+# 1593 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerMale::
-# 1596 "data/maps/NewBirchsLab/scripts.pory"
+# 1598 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_RivalStarterMudkipPlayerMale
-# 1597 "data/maps/NewBirchsLab/scripts.pory"
+# 1599 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerMale
+# 1600 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NewBirchsLab_EventScript_RivalMudkipGoodbyePlayerFemale::
-# 1602 "data/maps/NewBirchsLab/scripts.pory"
+# 1605 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_RivalStarterMudkipPlayerFemale
-# 1603 "data/maps/NewBirchsLab/scripts.pory"
+# 1606 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerFemale
+# 1607 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerMale::
-# 1608 "data/maps/NewBirchsLab/scripts.pory"
+# 1612 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_RivalStarterTorchicPlayerMale
-# 1609 "data/maps/NewBirchsLab/scripts.pory"
+# 1613 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerMale
+# 1614 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NewBirchsLab_EventScript_RivalTorchicGoodbyePlayerFemale::
-# 1614 "data/maps/NewBirchsLab/scripts.pory"
+# 1619 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_RivalStarterTorchicPlayerFemale
-# 1615 "data/maps/NewBirchsLab/scripts.pory"
+# 1620 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NewBirchsLab_Route103PlayerFemale
+# 1621 "data/maps/NewBirchsLab/scripts.pory"
+	callnative UpdateFollowingPokemon
 	return
 
 
 NicknamePartyMon::
-# 1625 "data/maps/NewBirchsLab/scripts.pory"
+# 1631 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 1626 "data/maps/NewBirchsLab/scripts.pory"
+# 1632 "data/maps/NewBirchsLab/scripts.pory"
 	hidemonpic
-# 1627 "data/maps/NewBirchsLab/scripts.pory"
+# 1633 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 1628 "data/maps/NewBirchsLab/scripts.pory"
+# 1634 "data/maps/NewBirchsLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 1629 "data/maps/NewBirchsLab/scripts.pory"
+# 1635 "data/maps/NewBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 1636 "data/maps/NewBirchsLab/scripts.pory"
+# 1642 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 1637 "data/maps/NewBirchsLab/scripts.pory"
+# 1643 "data/maps/NewBirchsLab/scripts.pory"
 	hidemonpic
-# 1638 "data/maps/NewBirchsLab/scripts.pory"
+# 1644 "data/maps/NewBirchsLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 1641 "data/maps/NewBirchsLab/scripts.pory"
+# 1647 "data/maps/NewBirchsLab/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 1639 "data/maps/NewBirchsLab/scripts.pory"
+# 1645 "data/maps/NewBirchsLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -3328,24 +3340,24 @@ NewBirchsLab_EventScript_Fuecoco_Text_2:
 	.string "{PLAYER} {PLAYER} received the the Fuecoco!$"
 
 NicknamePartyMon_Text_0:
-# 1625 "data/maps/NewBirchsLab/scripts.pory"
+# 1631 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Give a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 1641 "data/maps/NewBirchsLab/scripts.pory"
+# 1647 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Transferred to PC.$"
 
 NewBirchsLab_NotChosen::
-# 1644 "data/maps/NewBirchsLab/scripts.pory"
+# 1650 "data/maps/NewBirchsLab/scripts.pory"
 	.string "You did not choose this Pokemon.$"
 
 NewBirchsLab_NotYet::
-# 1648 "data/maps/NewBirchsLab/scripts.pory"
+# 1654 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Better not touch these yet!\p"
 	.string "Maybe you should talk to {RIVAL}.$"
 
 NewBirchsLab_WelcomePlayerMale::
-# 1653 "data/maps/NewBirchsLab/scripts.pory"
+# 1659 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Hello there! I'm Prof. Birch, and you\n"
 	.string "must be {PLAYER}. You just missed\l"
 	.string "{RIVAL}, she stopped by and grabbed\l"
@@ -3369,7 +3381,7 @@ NewBirchsLab_WelcomePlayerMale::
 	.string "ask me if you want to change them.$"
 
 NewBirchsLab_WelcomePlayerFemale::
-# 1677 "data/maps/NewBirchsLab/scripts.pory"
+# 1683 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Hello there! I'm Prof. Birch, and you\n"
 	.string "must be {PLAYER}. You just missed\l"
 	.string "{RIVAL}, he stopped by and grabbed\l"
@@ -3393,55 +3405,55 @@ NewBirchsLab_WelcomePlayerFemale::
 	.string "ask me if you want to change them.$"
 
 NewBirchsLab_Route103PlayerMale::
-# 1701 "data/maps/NewBirchsLab/scripts.pory"
+# 1707 "data/maps/NewBirchsLab/scripts.pory"
 	.string "{RIVAL} yelled she was heading to\n"
 	.string "Route 103 as she ran out the door,\l"
 	.string "perhaps you should look for her there.$"
 
 NewBirchsLab_Route103PlayerFemale::
-# 1708 "data/maps/NewBirchsLab/scripts.pory"
+# 1714 "data/maps/NewBirchsLab/scripts.pory"
 	.string "{RIVAL} yelled he was heading to\n"
 	.string "Route 103 as he ran out the door,\l"
 	.string "perhaps you should look for him there.$"
 
 NewBirchsLab_RivalStarterTreeckoPlayerMale::
-# 1715 "data/maps/NewBirchsLab/scripts.pory"
+# 1721 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Treecko as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterTreeckoPlayerFemale::
-# 1722 "data/maps/NewBirchsLab/scripts.pory"
+# 1728 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Treecko as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_RivalStarterMudkipPlayerMale::
-# 1729 "data/maps/NewBirchsLab/scripts.pory"
+# 1735 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Mudkip as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterMudkipPlayerFemale::
-# 1736 "data/maps/NewBirchsLab/scripts.pory"
+# 1742 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Mudkip as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_RivalStarterTorchicPlayerMale::
-# 1743 "data/maps/NewBirchsLab/scripts.pory"
+# 1749 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Torchic as\l"
 	.string "her Starter!$"
 
 NewBirchsLab_RivalStarterTorchicPlayerFemale::
-# 1750 "data/maps/NewBirchsLab/scripts.pory"
+# 1756 "data/maps/NewBirchsLab/scripts.pory"
 	.string "A great choice, but also an unlucky one!\n"
 	.string "{RIVAL} chose a Torchic as\l"
 	.string "his Starter!$"
 
 NewBirchsLab_ChangeStarters::
-# 1757 "data/maps/NewBirchsLab/scripts.pory"
+# 1763 "data/maps/NewBirchsLab/scripts.pory"
 	.string "Which Generation of Starters would you\n"
 	.string "like to see? You can change\l"
 	.string "Generations as many times as you want.$"
