@@ -43,9 +43,17 @@ script NewBirchsLab_EventScript_Birch{
         goto(NewBirchsLab_EventScript_SayGenShowing)
     }
     else{
-        checkplayergender
-	    call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_GoodbyePlayerFemale)
-        call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_GoodbyePlayerMale)
+        if(flag(FLAG_SYS_POKEDEX_GET))
+        {
+            goto(ProfBirch_EventScript_AskRatePokedex)
+        }
+        else
+        {
+            checkplayergender
+            call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_GoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_GoodbyePlayerMale)
+        }
+        
     }
     waitmessage
     releaseall
