@@ -3196,6 +3196,7 @@ static const u16 sDugtrioAlolaTeachableLearnset[] = {
 static const u16 sMeowthTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BODY_SLAM,
+    MOVE_BULLET_SEED,
     MOVE_CUT,
     MOVE_DARK_PULSE,
     MOVE_DIG,
@@ -3247,6 +3248,7 @@ static const u16 sMeowthTeachableLearnset[] = {
 static const u16 sPersianTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_BODY_SLAM,
+    MOVE_BULLET_SEED,
     MOVE_CUT,
     MOVE_DARK_PULSE,
     MOVE_DIG,

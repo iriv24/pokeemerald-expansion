@@ -6219,6 +6219,7 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
+      "MOVE_BULLET_SEED",
       "MOVE_WORK_UP",
       "MOVE_TOXIC",
       "MOVE_HIDDEN_POWER",
@@ -6376,6 +6377,7 @@
       "MOVE_PAY_DAY"
     ],
     "TMMoves": [
+      "MOVE_BULLET_SEED",
       "MOVE_WORK_UP",
       "MOVE_ROAR",
       "MOVE_TOXIC",
