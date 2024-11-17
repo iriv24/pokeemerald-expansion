@@ -225,7 +225,7 @@ Route112_Text_YeahWeNeedMeteorite:
 # 113 "data/maps/Route112/scripts.pory"
 	.string "Sounds like it, yeah. But I heard\n"
 # 114 "data/maps/Route112/scripts.pory"
-	.string "we need a METEORITE to do it.$"
+	.string "we need a meteorite to do it.$"
 # 115 "data/maps/Route112/scripts.pory"
 
 # 116 "data/maps/Route112/scripts.pory"
@@ -233,7 +233,7 @@ Route112_Text_OhThatsWhyCrewWentToFallarbor:
 # 117 "data/maps/Route112/scripts.pory"
 	.string "Oh, I get it now. That's why the rest\n"
 # 118 "data/maps/Route112/scripts.pory"
-	.string "of the crew went out to FALLARBOR.$"
+	.string "of the crew went out to Fallarbor.$"
 # 119 "data/maps/Route112/scripts.pory"
 
 # 120 "data/maps/Route112/scripts.pory"
@@ -247,11 +247,11 @@ Route112_Text_CantLetAnyonePassUntilTheyreBack:
 # 124 "data/maps/Route112/scripts.pory"
 Route112_Text_NotEasyToGetBackToLavaridge:
 # 125 "data/maps/Route112/scripts.pory"
-	.string "Eh, I'd like to get to MAUVILLE, but if\n"
+	.string "Eh, I'd like to get to Mauville, but if\n"
 # 126 "data/maps/Route112/scripts.pory"
 	.string "I went down these ledges, it'd be no\l"
 # 127 "data/maps/Route112/scripts.pory"
-	.string "easy matter to get back to LAVARIDGE.$"
+	.string "easy matter to get back to Lavaridge.$"
 # 128 "data/maps/Route112/scripts.pory"
 
 # 129 "data/maps/Route112/scripts.pory"
@@ -267,7 +267,7 @@ Route112_Text_MtChimneySign:
 # 134 "data/maps/Route112/scripts.pory"
 	.string "MT. CHIMNEY\p"
 # 135 "data/maps/Route112/scripts.pory"
-	.string "“For LAVARIDGE TOWN or the summit,\n"
+	.string "“For Lavaridge Town or the summit,\n"
 # 136 "data/maps/Route112/scripts.pory"
 	.string "please take the CABLE CAR.”$"
 # 137 "data/maps/Route112/scripts.pory"
