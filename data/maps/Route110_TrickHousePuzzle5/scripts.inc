@@ -1931,7 +1931,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz3:
 # 966 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "MECHADOLL 2 QUIZ.\p"
 # 967 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
-	.string "Which of these Pokémon did TEAM AQUA\n"
+	.string "Which of these Pokémon did Team Aqua\n"
 # 968 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "use in PETALBURG FOREST?$"
 # 969 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"

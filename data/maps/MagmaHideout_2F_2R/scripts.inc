@@ -77,7 +77,7 @@ MagmaHideout_2F_2R_Text_Grunt6Intro:
 # 39 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	.string "I can't stand heat. Maybe I should've\n"
 # 40 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	.string "joined TEAM AQUA instead…$"
+	.string "joined Team Aqua instead…$"
 # 41 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 
 # 42 "data/maps/MagmaHideout_2F_2R/scripts.pory"
@@ -85,7 +85,7 @@ MagmaHideout_2F_2R_Text_Grunt6Defeat:
 # 43 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	.string "Yeah, I really may not be right for\n"
 # 44 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	.string "TEAM MAGMA…$"
+	.string "Team Magma…$"
 # 45 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 
 # 46 "data/maps/MagmaHideout_2F_2R/scripts.pory"
@@ -125,7 +125,7 @@ MagmaHideout_2F_2R_Text_Grunt7PostBattle:
 # 63 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	.string "but that doesn't matter.\p"
 # 64 "data/maps/MagmaHideout_2F_2R/scripts.pory"
-	.string "TEAM MAGMA's goal is about to be\n"
+	.string "Team Magma's goal is about to be\n"
 # 65 "data/maps/MagmaHideout_2F_2R/scripts.pory"
 	.string "reached!$"
 # 66 "data/maps/MagmaHideout_2F_2R/scripts.pory"

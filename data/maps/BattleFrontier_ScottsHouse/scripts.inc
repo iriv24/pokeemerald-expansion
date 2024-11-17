@@ -649,7 +649,7 @@ BattleFrontier_ScottsHouse_Text_SoGladIBroughtYouHere:
 # 325 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 BattleFrontier_ScottsHouse_Text_BerryPocketStuffed:
 # 326 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
-	.string "Your BERRY POCKET seems to\n"
+	.string "Your BERRY Pocket seems to\n"
 # 327 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"
 	.string "be stuffed.$"
 # 328 "data/maps/BattleFrontier_ScottsHouse/scripts.pory"

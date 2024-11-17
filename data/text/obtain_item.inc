@@ -6,7 +6,7 @@ gText_TheBagIsFull::
 
 gText_PutItemInPocket::
 	.string "{PLAYER} put away the {STR_VAR_2}\n"
-	.string "in the {STR_VAR_3} POCKET.$"
+	.string "in the {STR_VAR_3} Pocket.$"
 
 gText_PutItemInPC::
 	.string "{PLAYER} put away the {STR_VAR_2}\n"

@@ -53,6 +53,6 @@ sText_MysticTicketThankYou:
 
 sText_MysticTicketBagFull:
 	.string "Oh, I'm sorry, {PLAYER}.\n"
-	.string "Your BAG's KEY ITEMS POCKET is full.\p"
+	.string "Your BAG's KEY ITEMS Pocket is full.\p"
 	.string "Please store something on your PC,\n"
 	.string "then come back for this.$"

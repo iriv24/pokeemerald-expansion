@@ -557,7 +557,7 @@ MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
 # 279 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
 # 280 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Why would TEAM MAGMA want to steal\n"
+	.string "Why would Team Magma want to steal\n"
 # 281 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "our rocket fuel in the first place?$"
 # 282 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
@@ -577,7 +577,7 @@ MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 # 289 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
 # 290 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If TEAM MAGMA takes the rocket fuel,\n"
+	.string "If Team Magma takes the rocket fuel,\n"
 # 291 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "I won't be able to go to space!\p"
 # 292 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
@@ -597,7 +597,7 @@ MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 # 299 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
 # 300 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "TEAM MAGMA…\n"
+	.string "Team Magma…\n"
 # 301 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "Do they want to go to space, too?$"
 # 302 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"

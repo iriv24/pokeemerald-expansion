@@ -171,7 +171,7 @@ Route104_Text_DadPokenavCall:
 # 86 "data/maps/Route105/scripts.pory"
 	.string "It sounds windy wherever you are.\p"
 # 87 "data/maps/Route105/scripts.pory"
-	.string "I just heard from DEVON's MR. STONE\n"
+	.string "I just heard from Devon's Mr. Stone\n"
 # 88 "data/maps/Route105/scripts.pory"
 	.string "about your PokéNav, so I decided\l"
 # 89 "data/maps/Route105/scripts.pory"
@@ -191,6 +191,6 @@ Route104_Text_DadPokenavCall:
 # 96 "data/maps/Route105/scripts.pory"
 Route104_Text_RegisteredDadInPokenav:
 # 97 "data/maps/Route105/scripts.pory"
-	.string "Registered DAD NORMAN\n"
+	.string "Registered Dad Norman\n"
 # 98 "data/maps/Route105/scripts.pory"
 	.string "in the PokéNav.$"

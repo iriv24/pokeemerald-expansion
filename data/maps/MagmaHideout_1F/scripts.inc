@@ -39,7 +39,7 @@ MagmaHideout_1F_EventScript_Grunt2::
 # 20 "data/maps/MagmaHideout_1F/scripts.pory"
 MagmaHideout_1F_Text_Grunt1Intro:
 # 21 "data/maps/MagmaHideout_1F/scripts.pory"
-	.string "When TEAM MAGMA has roll call, we get\n"
+	.string "When Team Magma has roll call, we get\n"
 # 22 "data/maps/MagmaHideout_1F/scripts.pory"
 	.string "important guarding assignments in\l"
 # 23 "data/maps/MagmaHideout_1F/scripts.pory"
