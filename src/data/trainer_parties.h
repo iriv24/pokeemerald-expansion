@@ -12052,11 +12052,11 @@ static const struct TrainerMon sParty_Charlotte[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
     .species = SPECIES_FROSLASS,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_ICE_BODY,
-    .heldItem = ITEM_WIDE_LENS,
-    .moves = {MOVE_TRIPLE_AXEL, MOVE_POLTERGEIST, MOVE_ICE_SHARD, MOVE_DESTINY_BOND}
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_BLIZZARD, MOVE_BITTER_MALICE, MOVE_THUNDERBOLT, MOVE_DESTINY_BOND}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
