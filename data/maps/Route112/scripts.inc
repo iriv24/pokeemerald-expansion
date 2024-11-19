@@ -269,7 +269,7 @@ Route112_Text_MtChimneySign:
 # 135 "data/maps/Route112/scripts.pory"
 	.string "“For Lavaridge Town or the summit,\n"
 # 136 "data/maps/Route112/scripts.pory"
-	.string "please take the CABLE CAR.”$"
+	.string "please take the Cable Car.”$"
 # 137 "data/maps/Route112/scripts.pory"
 
 # 138 "data/maps/Route112/scripts.pory"

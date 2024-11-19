@@ -1171,7 +1171,7 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 # 586 "data/maps/MtChimney/scripts.pory"
 	.string "Even without the Meteorite, if we\n"
 # 587 "data/maps/MtChimney/scripts.pory"
-	.string "obtain that ORB… Fufufu…$"
+	.string "obtain that Orb… Fufufu…$"
 # 588 "data/maps/MtChimney/scripts.pory"
 
 # 589 "data/maps/MtChimney/scripts.pory"
@@ -1415,7 +1415,7 @@ MtChimney_Text_LessHabitatForWaterPokemon:
 # 708 "data/maps/MtChimney/scripts.pory"
 	.string "If they expand the land, there'll be\n"
 # 709 "data/maps/MtChimney/scripts.pory"
-	.string "less habitats for WATER Pokémon!$"
+	.string "less habitats for Water Pokémon!$"
 # 710 "data/maps/MtChimney/scripts.pory"
 
 # 711 "data/maps/MtChimney/scripts.pory"
@@ -1517,7 +1517,7 @@ MtChimney_Text_RouteSign:
 # 759 "data/maps/MtChimney/scripts.pory"
 	.string "{DOWN_ARROW} Jagged Path\n"
 # 760 "data/maps/MtChimney/scripts.pory"
-	.string "Lavaridge Town AHEAD$"
+	.string "Lavaridge Town ahead$"
 # 761 "data/maps/MtChimney/scripts.pory"
 
 # 762 "data/maps/MtChimney/scripts.pory"

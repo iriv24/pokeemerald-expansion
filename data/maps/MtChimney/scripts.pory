@@ -584,7 +584,7 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "you've seen of Team Magma.\p"
 	.string "Fufufu…\p"
 	.string "Even without the Meteorite, if we\n"
-	.string "obtain that ORB… Fufufu…$"
+	.string "obtain that Orb… Fufufu…$"
 
 MtChimney_Text_TabithaIntro:
 	.string "Hehehe!\p"
@@ -706,7 +706,7 @@ MtChimney_Text_MagmaOutnumbersUs:
 
 MtChimney_Text_LessHabitatForWaterPokemon:
 	.string "If they expand the land, there'll be\n"
-	.string "less habitats for WATER Pokémon!$"
+	.string "less habitats for Water Pokémon!$"
 
 MtChimney_Text_MagmasNameSimilar:
 	.string "We're Team Aqua!\p"
@@ -757,7 +757,7 @@ MtChimney_Text_MachineMakesNoResponse:
 
 MtChimney_Text_RouteSign:
 	.string "{DOWN_ARROW} Jagged Path\n"
-	.string "Lavaridge Town AHEAD$"
+	.string "Lavaridge Town ahead$"
 
 MtChimney_Text_ShelbyIntro:
 	.string "I've been to the hot springs and\n"

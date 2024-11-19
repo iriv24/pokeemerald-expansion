@@ -179,7 +179,7 @@ Route112_CableCarStation_Movement_ExitCableCar:
 # 90 "data/maps/Route112_CableCarStation/scripts.pory"
 Route112_CableCarStation_Text_CableCarReadyGetOn:
 # 91 "data/maps/Route112_CableCarStation/scripts.pory"
-	.string "The CABLE CAR is ready to go up.\n"
+	.string "The Cable Car is ready to go up.\n"
 # 92 "data/maps/Route112_CableCarStation/scripts.pory"
 	.string "Would you like to be on it?$"
 # 93 "data/maps/Route112_CableCarStation/scripts.pory"
