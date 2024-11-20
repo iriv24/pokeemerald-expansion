@@ -5362,7 +5362,7 @@ static const struct TrainerMon sParty_Victor[] = {
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_STRONG_JAW,
     .heldItem = ITEM_MUSCLE_BAND,
-    .moves = {MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_PSYCHIC_FANGS, MOVE_CRUNCH}
+    .moves = {MOVE_THUNDER_FANG, MOVE_ICE_FANG, MOVE_PSYCHIC_FANGS, MOVE_CRUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

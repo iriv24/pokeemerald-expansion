@@ -201,6 +201,7 @@ static const u16 sRandomizerAbilityWhitelist[] =
     ABILITY_EMERGENCY_EXIT,
     ABILITY_WATER_COMPACTION,
     ABILITY_MERCILESS,
+    // TODO comment this out
     ABILITY_SHIELDS_DOWN,
     ABILITY_STAKEOUT,
     ABILITY_WATER_BUBBLE,
@@ -252,6 +253,7 @@ static const u16 sRandomizerAbilityWhitelist[] =
     ABILITY_SAND_SPIT,
     ABILITY_ICE_SCALES,
     ABILITY_RIPEN,
+    // TODO comment this out
     ABILITY_ICE_FACE,
     //ABILITY_POWER_SPOT,
     //ABILITY_MIMICRY,
