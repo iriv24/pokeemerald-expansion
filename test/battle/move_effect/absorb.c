@@ -107,7 +107,6 @@ DOUBLE_BATTLE_TEST("Matcha Gatcha will faint the pokemon if Liquid Ooze drain de
     }
 }
 
-
 SINGLE_BATTLE_TEST("Draining Kiss recovers 75% of the damage dealt")
 {
     s16 damage;

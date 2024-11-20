@@ -5776,6 +5776,7 @@ static void Cmd_moveend(void)
                         gBattleMoveDamage = 1;
                     gBattleMoveDamage = GetDrainedBigRootHp(gBattlerAttacker, gBattleMoveDamage);
                     gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE;
+                    effect = TRUE;
                     if (GetBattlerAbility(gBattlerTarget) == ABILITY_LIQUID_OOZE)
                     {
                         gBattleMoveDamage *= -1;

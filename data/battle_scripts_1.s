@@ -3023,7 +3023,6 @@ BattleScript_EffectAbsorb::
 	printfromtable gAbsorbDrainStringIds
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
-	tryfaintmon BS_TARGET
 	return
 
 BattleScript_EffectExplosion::

@@ -146,13 +146,13 @@ SINGLE_BATTLE_TEST("Steel Roller and Ice Spinner reverts typing on Mimicry users
     }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_STUNFISK_GALARIAN].types[1] == TYPE_STEEL);
+        ASSUME(gSpeciesInfo[SPECIES_STUNFISK_GALAR].types[1] == TYPE_STEEL);
         PLAYER(SPECIES_WOBBUFFET); 
-        OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
+        OPPONENT(SPECIES_STUNFISK_GALAR) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(opponent, terrainMove); MOVE(player, removeTerrainMove); }
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
-        MESSAGE("It doesn't affect Foe Stunfisk…");
+        MESSAGE("It doesn't affect the opposing Stunfisk…");
     }
 }
