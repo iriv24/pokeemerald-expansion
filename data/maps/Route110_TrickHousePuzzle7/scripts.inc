@@ -639,7 +639,7 @@ Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened::
 # 320 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
 	.string "on the door.\p"
 # 321 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
-	.string "“TRICK MASTER is huggable.”\n"
+	.string "“Trick Master is huggable.”\n"
 # 322 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
 	.string "… … … … … … … …\p"
 # 323 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
@@ -649,7 +649,7 @@ Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened::
 # 325 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
 Route110_TrickHousePuzzle7_Text_JoshuaIntro:
 # 326 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
-	.string "The TRICK MASTER always vanishes\n"
+	.string "The Trick Master always vanishes\n"
 # 327 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"
 	.string "like smoke. How does he do it?$"
 # 328 "data/maps/Route110_TrickHousePuzzle7/scripts.pory"

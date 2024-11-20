@@ -65,7 +65,7 @@ Route110_TrickHousePuzzle4_Text_WroteSecretCodeLockOpened:
 # 33 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 	.string "on the door.\p"
 # 34 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
-	.string "“TRICK MASTER is cool.”\n"
+	.string "“Trick Master is cool.”\n"
 # 35 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"
 	.string "… … … … … … … …\p"
 # 36 "data/maps/Route110_TrickHousePuzzle4/scripts.pory"

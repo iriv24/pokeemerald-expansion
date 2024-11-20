@@ -613,7 +613,7 @@ Route110_TrickHousePuzzle3_Text_WroteSecretCodeLockOpened:
 # 307 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	.string "on the door.\p"
 # 308 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
-	.string "“TRICK MASTER is coveted.”\n"
+	.string "“Trick Master is coveted.”\n"
 # 309 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"
 	.string "… … … … … … … …\p"
 # 310 "data/maps/Route110_TrickHousePuzzle3/scripts.pory"

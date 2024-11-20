@@ -83,7 +83,7 @@ Route110_TrickHousePuzzle1_Text_WroteSecretCodeLockOpened::
 # 42 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 	.string "on the door.\p"
 # 43 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "“TRICK MASTER is fabulous.”\n"
+	.string "“Trick Master is fabulous.”\n"
 # 44 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 	.string "… … … … … … … …\p"
 # 45 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
@@ -137,7 +137,7 @@ Route110_TrickHousePuzzle1_Text_EddiePostBattle:
 # 69 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 Route110_TrickHousePuzzle1_Text_RobinIntro:
 # 70 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
-	.string "Just who is the TRICK MASTER?$"
+	.string "Just who is the Trick Master?$"
 # 71 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"
 
 # 72 "data/maps/Route110_TrickHousePuzzle1/scripts.pory"

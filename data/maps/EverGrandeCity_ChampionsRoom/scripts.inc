@@ -303,105 +303,105 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 # 152 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	waitmovement 0
 # 153 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	setflag FLAG_HIDE_PETALBURG_GYM_GREETER
-# 154 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
-# 155 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 154 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	waitstate
-# 156 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 155 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	releaseall
-# 157 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 156 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	end
+# 157 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 158 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 159 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_EventScript_MayCongratulations::
-# 160 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 159 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	msgbox EverGrandeCity_ChampionsRoom_Text_MayCongratulations, MSGBOX_DEFAULT
+# 160 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	return
 # 161 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	return
+
 # 162 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 163 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_EventScript_BrendanCongratulations::
-# 164 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 163 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	msgbox EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations, MSGBOX_DEFAULT
+# 164 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	return
 # 165 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	return
+
 # 166 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 167 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_EventScript_RivalApproachPlayer::
-# 168 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 167 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer1
+# 168 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	waitmovement 0
 # 169 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	waitmovement 0
-# 170 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	addobject LOCALID_DAWN
-# 171 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 170 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay 15
-# 172 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 171 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer2
-# 173 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 172 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement LOCALID_DAWN, EverGrandeCity_ChampionsRoom_Movement_DawnApproachPlayer
+# 173 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	waitmovement 0
 # 174 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	waitmovement 0
-# 175 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+# 175 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	waitmovement 0
 # 176 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	waitmovement 0
+	return
 # 177 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	return
+
 # 178 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 179 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_EventScript_RivalLookBackAndForth::
-# 180 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 179 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement LOCALID_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth
-# 181 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 180 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	applymovement LOCALID_DAWN, EverGrandeCity_ChampionsRoom_Movement_DawnLookBackAndForth
-# 182 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 181 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	waitmovement 0
-# 183 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 182 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	return
-# 184 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 183 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 185 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 184 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart:
+# 185 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 186 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 187 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
+	step_end
 # 188 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 189 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 190 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_PlayerExit:
+# 190 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 191 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 192 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay_16
+# 192 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 193 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 194 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay_8
-# 195 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 194 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	set_invisible
+# 195 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	step_end
 # 196 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 197 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 198 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer1:
-# 199 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 198 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
-# 200 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 199 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	step_end
-# 201 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 200 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 202 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 201 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer2:
+# 202 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 203 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 204 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
@@ -409,19 +409,19 @@ EverGrandeCity_ChampionsRoom_Movement_RivalApproachPlayer2:
 # 205 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 206 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 207 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_left
-# 208 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 207 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
-# 209 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 208 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_right
-# 210 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 209 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	step_end
-# 211 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 210 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 212 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 211 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_DawnApproachPlayer:
+# 212 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 213 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 214 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
@@ -431,95 +431,95 @@ EverGrandeCity_ChampionsRoom_Movement_DawnApproachPlayer:
 # 216 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 217 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 218 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_left
+# 218 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_in_place_faster_right
 # 219 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_right
+	step_end
 # 220 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 221 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 222 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_RivalLookBackAndForth:
+# 222 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_in_place_faster_down
 # 223 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_down
+	delay_16
 # 224 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_16
+	walk_in_place_faster_right
 # 225 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_right
+	delay_16
 # 226 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_16
-# 227 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_down
+# 227 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	delay_8
 # 228 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_8
+	walk_in_place_faster_right
 # 229 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_right
+	delay_16
 # 230 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_16
+	step_end
 # 231 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 232 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 233 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_DawnLookBackAndForth:
+# 233 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_in_place_faster_up
 # 234 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_up
+	delay_16
 # 235 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_16
+	walk_in_place_faster_right
 # 236 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_in_place_faster_right
+	delay_16
 # 237 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	delay_16
-# 238 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_up
-# 239 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 238 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay_8
-# 240 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 239 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_right
-# 241 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 240 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay_16
+# 241 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	step_end
 # 242 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 243 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 244 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_RivalFollows:
-# 245 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 244 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_right
-# 246 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 245 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
-# 247 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 246 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	step_end
-# 248 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 247 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 249 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 248 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart:
+# 249 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 250 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 251 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 252 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_down
+# 252 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	step_end
 # 253 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	step_end
+
 # 254 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 255 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_WallaceExit:
-# 256 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 255 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
-# 257 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 256 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	delay_8
-# 258 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 257 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	set_invisible
-# 259 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 258 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	step_end
-# 260 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 259 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 261 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 260 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Movement_BirchArrives:
+# 261 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	walk_up
 # 262 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 263 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
@@ -529,296 +529,294 @@ EverGrandeCity_ChampionsRoom_Movement_BirchArrives:
 # 265 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
 # 266 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	walk_up
-# 267 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_right
-# 268 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 267 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_up
-# 269 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 268 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	walk_in_place_faster_left
-# 270 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 269 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	step_end
+# 270 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 271 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 272 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_WallaceIntroSpeech:
-# 273 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 272 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Wallace: Welcome, {PLAYER}{KUN}!\p"
-# 274 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 273 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "That incident in Sootopolis City…\n"
-# 275 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 274 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "That was superb work, putting an end\l"
-# 276 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 275 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "to that crisis all by yourself.\p"
-# 277 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 276 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Oops!\p"
-# 278 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 277 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It wouldn't be fair to say that you\n"
-# 279 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 278 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "alone ended the crisis.\p"
-# 280 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 279 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You overcame that difficult situation\n"
-# 281 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 280 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "by working as one with your Pokémon,\l"
-# 282 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 281 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "of course!\p"
-# 283 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 282 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Now, I'm sure you're wondering why I'm\n"
-# 284 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 283 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "not alone here… well…$"
+# 284 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 285 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 286 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_StevenIntroSpeech:
-# 287 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 286 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Steven: I just couldn't stand to be\n"
-# 288 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 287 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "left out of all of the fun!\p"
-# 289 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 288 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You see, I was the Champion here in\n"
-# 290 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 289 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Hoenn before Wallace, but we've done\l"
-# 291 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 290 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "some shifting around over the years.\p"
-# 292 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 291 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Then everything happened with Drake\n"
-# 293 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 292 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "being evil, and we called in Cynthia, and\l"
-# 294 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 293 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "it was starting to feel like everyone\l"
-# 295 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 294 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "was going to get to face off against\l"
-# 296 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 295 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "you, the strongest upcoming trainer\l"
-# 297 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 296 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "we'd seen in a long time, except me!\p"
-# 298 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 297 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "And I just couldn't sit back and stay\n"
-# 299 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 298 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "on the sidelines, so I asked Wallace if,\l"
-# 300 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 299 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "just this once, we could be Co-\l"
-# 301 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 300 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Champions to face off against you.$"
+# 301 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 302 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 303 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_WallaceAndISaidYes:
-# 304 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 303 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Wallace: And I said yes, so here we are!\n"
-# 305 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 304 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "But enough talk for now…\p"
-# 306 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 305 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It's time for us to give you one final\n"
-# 307 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 306 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "test, {PLAYER}…\p"
-# 308 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 307 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It's time for us to have one last battle\n"
-# 309 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 308 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "to see if you really are the strongest\l"
-# 310 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 309 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "trainer in the Hoenn region!$"
+# 310 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 311 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 312 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_WallaceDefeat:
-# 313 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 312 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "That was wonderful work.\n"
-# 314 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 313 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You were elegant, infuriatingly so.\l"
-# 315 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 314 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "And yet it was utterly glorious!\p"
-# 316 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 315 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Kudos to you, {PLAYER}{KUN}!\p"
-# 317 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 316 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You are truly the strongest Pokémon\n"
-# 318 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 317 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "trainer in the Hoenn region, and\l"
-# 319 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 318 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "certainly the strongest I've ever\l"
-# 320 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 319 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "faced.$"
+# 320 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 321 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 322 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_StevenDefeat:
-# 323 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 322 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Haha! That was incredible, {PLAYER}.\n"
-# 324 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 323 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "I'm so glad Wallace let me tag along for\l"
-# 325 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 324 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "this battle, so I could witness your\l"
-# 326 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 325 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "strength firsthand.\p"
-# 327 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 326 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Congratulations, {PLAYER}, on becoming\n"
-# 328 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 327 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "the new Pokémon League Champion!$"
+# 328 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 329 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 330 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech:
-# 331 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 330 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Wallace: The Pokémon you sent into\n"
-# 332 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 331 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "battle…\p"
-# 333 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 332 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "At times they danced like a spring\n"
-# 334 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 333 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "breeze, and at times they struck\l"
-# 335 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 334 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "like lightning.\p"
-# 336 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 335 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It was with light, yet surefooted,\n"
-# 337 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 336 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "elegance that you led your Pokémon.\p"
-# 338 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 337 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Even I felt bedazzled by your\n"
-# 339 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 338 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "masterful performance!\p"
-# 340 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 339 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You now stand at the glorious peak\n"
-# 341 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 340 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "of the Pokémon League.\p"
-# 342 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 341 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "I now proclaim you to be the new\n"
-# 343 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 342 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Hoenn region…$"
+# 343 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 344 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 345 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_MayAdvice:
-# 346 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 345 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "May: {PLAYER}{KUN}!\p"
-# 347 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 346 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Here's some advice before you challenge\n"
-# 348 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 347 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "the Champion…$"
+# 348 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 349 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 350 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_BrendanAdvice:
-# 351 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 350 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Brendan: {PLAYER}!\p"
-# 352 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 351 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "How would you like some advice before\n"
-# 353 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 352 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "you challenge the Champion?…$"
+# 353 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 354 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 355 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_DawnYouveWon:
-# 356 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 355 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Dawn: Huh?\n"
-# 357 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 356 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "What, what, what?\p"
-# 358 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 357 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "{PLAYER}{KUN}…\n"
-# 359 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 358 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Could it be that…\l"
-# 360 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 359 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It's already over?\p"
-# 361 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 360 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "I couldn't even believe you'd made it\n"
-# 362 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 361 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "past Cynthia already, but this…$"
+# 362 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 363 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 364 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex:
-# 365 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 364 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Prof. Birch: See?\n"
-# 366 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 365 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "What did I tell you two?\p"
-# 367 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 366 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Didn't I tell you that you don't need\n"
-# 368 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 367 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "to worry about {PLAYER}{KUN}?\p"
+# 368 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	.string "… … … … … … … …\n"
 # 369 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "… … … … … … … …\n"
-# 370 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "{PLAYER}{KUN}, you've finally done it.\p"
-# 371 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 370 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "When I heard that you defeated your\n"
-# 372 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 371 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "own father at the Petalburg Gym,\l"
-# 373 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 372 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "I thought perhaps you had a chance…\p"
-# 374 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 373 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "But to think you've actually become\n"
-# 375 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 374 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "the Champion!\p"
-# 376 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 375 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Ah, yes!\p"
-# 377 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 376 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "What became of your Pokédex?\n"
-# 378 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 377 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Here, let me see.$"
+# 378 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 379 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 380 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_BirchCongratulations:
-# 381 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 380 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Prof. Birch: Anyways,\n"
-# 382 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 381 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "congratulations!\p"
-# 383 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 382 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Now, go proudly into the final room!$"
+# 383 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 384 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 385 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe:
-# 386 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 385 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Wallace: {PLAYER}{KUN}…\p"
-# 387 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 386 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "No, let me rephrase that properly.\p"
-# 388 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 387 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "The new Champion!\p"
-# 389 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 388 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Come with me.$"
+# 389 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 390 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 391 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_WallaceWaitOutside:
-# 392 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 391 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Wallace: I'm sorry, but…\p"
-# 393 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 392 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "From here on, only those trainers who\n"
-# 394 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 393 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "have become Champions may enter.\p"
-# 395 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 394 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "You'll have to wait outside with\n"
-# 396 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 395 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Prof. Birch.$"
+# 396 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+
 # 397 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-
-# 398 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_MayCongratulations:
-# 399 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 398 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "May: Groan…\p"
-# 400 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 399 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "… … … … … … … …\n"
+# 400 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+	.string "… … … … … … … …\p"
 # 401 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
-	.string "… … … … … … … …\p"
-# 402 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "I'm just joking! That's okay!\n"
-# 403 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 402 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "That's the rule!\p"
-# 404 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 403 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "{PLAYER}{KUN}!\n"
-# 405 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 404 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Honestly, congratulations!$"
-# 406 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 405 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 
-# 407 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 406 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations:
-# 408 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 407 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Brendan: Whaaaat?! … … … … …\n"
-# 409 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 408 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "… … … … … … … …\p"
-# 410 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 409 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "It can't be helped if that's the rule.\p"
-# 411 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 410 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "{PLAYER}, way to go!\n"
-# 412 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
+# 411 "data/maps/EverGrandeCity_ChampionsRoom/scripts.pory"
 	.string "Congratulations!$"

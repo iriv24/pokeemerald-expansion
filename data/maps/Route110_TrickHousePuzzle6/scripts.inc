@@ -95,7 +95,7 @@ Route110_TrickHousePuzzle6_Text_WroteSecretCodeLockOpened:
 # 48 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
 	.string "on the door.\p"
 # 49 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
-	.string "“TRICK MASTER is my life.”\n"
+	.string "“Trick Master is my life.”\n"
 # 50 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"
 	.string "… … … … … … … …\p"
 # 51 "data/maps/Route110_TrickHousePuzzle6/scripts.pory"

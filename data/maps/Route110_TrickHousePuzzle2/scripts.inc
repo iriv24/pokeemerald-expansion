@@ -209,7 +209,7 @@ Route110_TrickHousePuzzle2_Text_WroteSecretCodeLockOpened:
 # 105 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "on the door.\p"
 # 106 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "“TRICK MASTER is smart.”\n"
+	.string "“Trick Master is smart.”\n"
 # 107 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "… … … … … … … …\p"
 # 108 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
@@ -255,7 +255,7 @@ Route110_TrickHousePuzzle2_Text_RachelDefeat:
 # 128 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 Route110_TrickHousePuzzle2_Text_RachelPostBattle:
 # 129 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
-	.string "The TRICK MASTER rigged all the tricks\n"
+	.string "The Trick Master rigged all the tricks\n"
 # 130 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"
 	.string "in this house all by himself.$"
 # 131 "data/maps/Route110_TrickHousePuzzle2/scripts.pory"

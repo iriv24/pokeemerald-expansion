@@ -1813,7 +1813,7 @@ Route110_TrickHousePuzzle5_Text_WroteSecretCodeLockOpened:
 # 907 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "on the door.\p"
 # 908 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
-	.string "“TRICK MASTER is a genius.”\n"
+	.string "“Trick Master is a genius.”\n"
 # 909 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "… … … … … … … …\p"
 # 910 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
