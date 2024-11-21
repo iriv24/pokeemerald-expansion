@@ -266,7 +266,7 @@ Route118_Text_StevenQuestions:
 	.string "being caused by both organizations.\p"
 	.string "One such disturbance is a supposed\n"
 	.string "attack on the Weather Institute, which\l"
-	.string "lies further ahead on this route.\p"
+	.string "lies further ahead on Route 119.\p"
 	.string "Would you mind investigating this\n"
 	.string "activity, {PLAYER}?\p"
 	.string "… … … … … …\p"

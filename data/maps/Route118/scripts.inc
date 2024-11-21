@@ -535,7 +535,7 @@ Route118_Text_StevenQuestions:
 # 268 "data/maps/Route118/scripts.pory"
 	.string "attack on the Weather Institute, which\l"
 # 269 "data/maps/Route118/scripts.pory"
-	.string "lies further ahead on this route.\p"
+	.string "lies further ahead on Route 119.\p"
 # 270 "data/maps/Route118/scripts.pory"
 	.string "Would you mind investigating this\n"
 # 271 "data/maps/Route118/scripts.pory"
