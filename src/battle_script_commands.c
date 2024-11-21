@@ -5780,9 +5780,7 @@ static void Cmd_moveend(void)
                 }
                 else if (IsBattlerAlive(gBattlerAttacker) && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
                 {
-                    gBattleMoveDamage = (gHpDealt * gMovesInfo[gCurrentMove].argument / 100);
-                    if (gBattleMoveDamage == 0)
-                        gBattleMoveDamage = 1;
+                    gBattleMoveDamage = max(1, (gHpDealt * gMovesInfo[gCurrentMove].argument / 100));
                     gBattleMoveDamage = GetDrainedBigRootHp(gBattlerAttacker, gBattleMoveDamage);
                     gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE;
                     effect = TRUE;
