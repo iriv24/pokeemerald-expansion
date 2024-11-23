@@ -507,7 +507,7 @@
 #define MOVE_TARGET_FOES_AND_ALLY       (1 << 5)
 #define MOVE_TARGET_OPPONENTS_FIELD     (1 << 6)
 #define MOVE_TARGET_ALLY                (1 << 7)
-#define MOVE_TARGET_ALL_BATTLERS        ((1 << 8) | MOVE_TARGET_USER)
+#define MOVE_TARGET_ALL_BATTLERS        ((1 << 8) | MOVE_TARGET_USER) // No functionality for status moves
 
 // For the second argument of GetMoveTarget, when no target override is needed
 #define NO_TARGET_OVERRIDE 0
