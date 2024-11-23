@@ -105,12 +105,12 @@ NewMauville_Entrance_Text_DoorIsLocked:
 # 53 "data/maps/NewMauville_Entrance/scripts.pory"
 NewMauville_Entrance_Text_UseBasementKey:
 # 54 "data/maps/NewMauville_Entrance/scripts.pory"
-	.string "Use the BASEMENT KEY?$"
+	.string "Use the Basement Key?$"
 # 55 "data/maps/NewMauville_Entrance/scripts.pory"
 
 # 56 "data/maps/NewMauville_Entrance/scripts.pory"
 NewMauville_Entrance_Text_UsedBasementKey:
 # 57 "data/maps/NewMauville_Entrance/scripts.pory"
-	.string "{PLAYER} used the BASEMENT KEY.\p"
+	.string "{PLAYER} used the Basement Key.\p"
 # 58 "data/maps/NewMauville_Entrance/scripts.pory"
 	.string "The door opened!$"

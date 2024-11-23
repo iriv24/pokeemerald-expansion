@@ -47,11 +47,13 @@ Route119_WeatherInstitute_2F_EventScript_Grunt3::
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Shelly::
+	callnative RemoveFollowingPokemon
 	trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
+	setflag FLAG_TEMP_HIDE_FOLLOWER
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_DEFAULT
 	closemessage
 	addobject LOCALID_GRUNT_3
@@ -84,6 +86,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_SCIENTIST
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 

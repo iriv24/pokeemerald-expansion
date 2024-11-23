@@ -1211,9 +1211,9 @@ Route119_Text_StayAwayFromWeatherInstitute:
 # 606 "data/maps/Route119/scripts.pory"
 	.string "We're standing lookout here.\p"
 # 607 "data/maps/Route119/scripts.pory"
-	.string "Hey, you! Stay away from the WEATHER\n"
+	.string "Hey, you! Stay away from the Weather\n"
 # 608 "data/maps/Route119/scripts.pory"
-	.string "INSTITUTE. It's not safe.$"
+	.string "Institute. It's not safe.$"
 # 609 "data/maps/Route119/scripts.pory"
 
 # 610 "data/maps/Route119/scripts.pory"
@@ -1223,7 +1223,7 @@ Route119_Text_DontGoNearWeatherInstitute:
 # 612 "data/maps/Route119/scripts.pory"
 	.string "Hey, you! Please don't go near the\n"
 # 613 "data/maps/Route119/scripts.pory"
-	.string "WEATHER INSTITUTE.$"
+	.string "Weather Institute.$"
 # 614 "data/maps/Route119/scripts.pory"
 
 # 615 "data/maps/Route119/scripts.pory"

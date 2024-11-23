@@ -355,13 +355,13 @@ Route121_Text_OkayMoveOutToMtPyre:
 # 178 "data/maps/Route121/scripts.pory"
 	.string "Okay!\n"
 # 179 "data/maps/Route121/scripts.pory"
-	.string "We're to move out to MT. PYRE!$"
+	.string "We're to move out to Mt. Pyre!$"
 # 180 "data/maps/Route121/scripts.pory"
 
 # 181 "data/maps/Route121/scripts.pory"
 Route121_Text_AheadLoomsMtPyre:
 # 182 "data/maps/Route121/scripts.pory"
-	.string "Ahead looms MT. PYRE…\p"
+	.string "Ahead looms Mt. Pyre…\p"
 # 183 "data/maps/Route121/scripts.pory"
 	.string "It is a natural monument to the spirits \n"
 # 184 "data/maps/Route121/scripts.pory"
