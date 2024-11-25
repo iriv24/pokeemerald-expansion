@@ -343,7 +343,7 @@ MossdeepCity_EventScript_FormerDynamicPunchTutor::
 	end
 
 MossdeepCity_Text_FormerDynamicPunchTutor:
-	.string "I used to be able to punch dynamically.. \n"
+	.string "I used to be able to punch dynamically…\n"
 	.string "Oh, what happened?$"
 
 MossdeepCity_Text_StevenPreRocket:

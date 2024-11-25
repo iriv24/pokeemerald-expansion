@@ -193,7 +193,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_FormerSubstituteTutor::
 	end
 
 LilycoveCity_DepartmentStoreRooftop_Text_FormerSubstituteTutor:
-	.string "I used to be able to sub anything..\n"
+	.string "I used to be able to sub anything…\n"
 	.string "Oh, what happened?$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_SetDatesForClearOutSales:

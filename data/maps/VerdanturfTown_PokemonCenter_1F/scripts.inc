@@ -105,6 +105,6 @@ VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent:
 # 53 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
 MauvilleCity_Text_FormerFuryCutterTutor:
 # 54 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
-	.string "I used to be able to cut with a fury...\n"
+	.string "I used to be able to cut with a fury…\n"
 # 55 "data/maps/VerdanturfTown_PokemonCenter_1F/scripts.pory"
 	.string "Oh, what happened?$"

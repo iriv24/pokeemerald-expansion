@@ -71,4 +71,4 @@ LavaridgeTown_House_Text_FormerMimicTutor:
 # 36 "data/maps/LavaridgeTown_House/scripts.pory"
 	.string "I used to be able to mimic\n"
 # 37 "data/maps/LavaridgeTown_House/scripts.pory"
-	.string "anything... Oh, what happened?$"
+	.string "anything… Oh, what happened?$"

@@ -405,6 +405,6 @@ SlateportCity_PokemonFanClub_Text_Azumarill:
 
 SlateportCity_PokemonFanClub_Text_FormerSwaggerTutor:
 	.string "I used to have such a swagger about\n"
-	.string "me... Oh, what happened?$"
+	.string "me… Oh, what happened?$"
 
 `

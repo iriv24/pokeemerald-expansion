@@ -51,7 +51,7 @@ FortreeCity_House2_EventScript_FormerSleepTalkTutor::
 	end
 
 FortreeCity_House2_Text_FormerSleepTalkTutor:
-	.string "I used to be able to talk in my sleep...\n"
+	.string "I used to be able to talk in my sleep…\n"
 	.string "Oh, what happened?$"
 
 FortreeCity_House2_Text_StoredPowersArousedByNature:

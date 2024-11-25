@@ -389,7 +389,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_FormerSubstituteTutor::
 # 195 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 LilycoveCity_DepartmentStoreRooftop_Text_FormerSubstituteTutor:
 # 196 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
-	.string "I used to be able to sub anything..\n"
+	.string "I used to be able to sub anything…\n"
 # 197 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"
 	.string "Oh, what happened?$"
 # 198 "data/maps/LilycoveCity_DepartmentStoreRooftop/scripts.pory"

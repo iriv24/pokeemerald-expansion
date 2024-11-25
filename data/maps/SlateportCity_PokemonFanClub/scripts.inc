@@ -813,4 +813,4 @@ SlateportCity_PokemonFanClub_Text_FormerSwaggerTutor:
 # 407 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	.string "I used to have such a swagger about\n"
 # 408 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	.string "me... Oh, what happened?$"
+	.string "me… Oh, what happened?$"

@@ -105,7 +105,7 @@ FortreeCity_House2_EventScript_FormerSleepTalkTutor::
 # 53 "data/maps/FortreeCity_House2/scripts.pory"
 FortreeCity_House2_Text_FormerSleepTalkTutor:
 # 54 "data/maps/FortreeCity_House2/scripts.pory"
-	.string "I used to be able to talk in my sleep...\n"
+	.string "I used to be able to talk in my sleep…\n"
 # 55 "data/maps/FortreeCity_House2/scripts.pory"
 	.string "Oh, what happened?$"
 # 56 "data/maps/FortreeCity_House2/scripts.pory"

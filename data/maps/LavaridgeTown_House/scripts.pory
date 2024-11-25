@@ -34,6 +34,6 @@ LavaridgeTown_House_Text_Zigzagoon:
 
 LavaridgeTown_House_Text_FormerMimicTutor:
 	.string "I used to be able to mimic\n"
-	.string "anything... Oh, what happened?$"
+	.string "anything… Oh, what happened?$"
 
 `

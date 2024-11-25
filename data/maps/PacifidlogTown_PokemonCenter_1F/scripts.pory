@@ -30,6 +30,17 @@ PacifidlogTown_PokemonCenter_1F_EventScript_OldMan::
 	msgbox PacifidlogTown_PokemonCenter_1F_Text_AncestorsLivedOnBoats, MSGBOX_NPC
 	end
 
+PacifidlogTown_PokemonCenter_1F_EventScript_FormerExplosionTutor::
+	lockall
+	faceplayer
+	msgbox PacifidlogTown_PokemonCenter_1F_Text_FormerExplosionTutor, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PacifidlogTown_PokemonCenter_1F_Text_FormerExplosionTutor:
+	.string "I used to be able to cause huge\n"
+	.string "explosions… Oh, what happened?$"
+
 PacifidlogTown_PokemonCenter_1F_Text_WhatColorTrainerCard:
 	.string "What color is your TRAINER CARD?\n"
 	.string "Mine's copper!$"

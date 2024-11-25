@@ -1355,7 +1355,7 @@ MauvilleCity_Text_BeenCheckingOutTV:
 # 678 "data/maps/MauvilleCity/scripts.pory"
 MauvilleCity_Text_FormerRolloutTutor:
 # 679 "data/maps/MauvilleCity/scripts.pory"
-	.string "I used to be able to rock and roll... Oh,\n"
+	.string "I used to be able to rock and roll… Oh,\n"
 # 680 "data/maps/MauvilleCity/scripts.pory"
 	.string "what happened?$"
 

@@ -117,7 +117,7 @@ FallarborTown_Mart_Text_FormerMetronomeTutor:
 # 59 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "I used to have such a great\n"
 # 60 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "rhythm... Oh, what happened?$"
+	.string "rhythm… Oh, what happened?$"
 # 61 "data/maps/FallarborTown_Mart/scripts.pory"
 
 # 62 "data/maps/FallarborTown_Mart/scripts.pory"

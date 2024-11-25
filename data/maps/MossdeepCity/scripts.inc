@@ -689,7 +689,7 @@ MossdeepCity_EventScript_FormerDynamicPunchTutor::
 # 345 "data/maps/MossdeepCity/scripts.pory"
 MossdeepCity_Text_FormerDynamicPunchTutor:
 # 346 "data/maps/MossdeepCity/scripts.pory"
-	.string "I used to be able to punch dynamically.. \n"
+	.string "I used to be able to punch dynamically…\n"
 # 347 "data/maps/MossdeepCity/scripts.pory"
 	.string "Oh, what happened?$"
 # 348 "data/maps/MossdeepCity/scripts.pory"

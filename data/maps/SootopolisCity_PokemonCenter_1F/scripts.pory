@@ -56,7 +56,7 @@ SootopolisCity_PokemonCenter_1F_EventScript_FormerDoubleEdgeTutor::
 
 SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor:
 	.string "I used to have two great\n"
-	.string "edges... Oh, what happened?$"
+	.string "edges… Oh, what happened?$"
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
 	.string "WALLACE is rumored to be the toughest\n"

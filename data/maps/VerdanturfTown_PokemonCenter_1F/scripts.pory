@@ -51,6 +51,6 @@ VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent:
 	.string "came to see?$"
 
 MauvilleCity_Text_FormerFuryCutterTutor:
-	.string "I used to be able to cut with a fury...\n"
+	.string "I used to be able to cut with a fury…\n"
 	.string "Oh, what happened?$"
 `

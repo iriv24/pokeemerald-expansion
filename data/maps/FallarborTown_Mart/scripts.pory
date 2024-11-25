@@ -57,7 +57,7 @@ FallarborTown_Mart_EventScript_FormerMetronomeTutor::
 
 FallarborTown_Mart_Text_FormerMetronomeTutor:
 	.string "I used to have such a great\n"
-	.string "rhythm... Oh, what happened?$"
+	.string "rhythm… Oh, what happened?$"
 
 FallarborTown_Mart_Text_DecidingSkittyEvolve:
 	.string "I'm having a hard time deciding if I\n"

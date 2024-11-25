@@ -115,7 +115,7 @@ SootopolisCity_PokemonCenter_1F_Text_FormerDoubleEdgeTutor:
 # 58 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 	.string "I used to have two great\n"
 # 59 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
-	.string "edges... Oh, what happened?$"
+	.string "edges… Oh, what happened?$"
 # 60 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
 
 # 61 "data/maps/SootopolisCity_PokemonCenter_1F/scripts.pory"
