@@ -3688,7 +3688,7 @@ gBattleAnimMove_DarkVoid::
 	loopsewithpan SE_M_CONFUSE_RAY, SOUND_PAN_ATTACKER, 5, 2
 	delay 48
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, -768, 21, 0, 112 @Last is duration
-	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, -768, 21, 0, 112 @Last is duration
+	createsprite gSlideMonToOffsetPartnerSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, -768, 21, 0, 112 @Last is duration
 	delay 64
 	invisible ANIM_TARGET
 	invisible ANIM_DEF_PARTNER
@@ -3696,7 +3696,7 @@ gBattleAnimMove_DarkVoid::
 	createsprite gDarkVoidPurpleStarsTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_DEF_PARTNER, 0, 32, 60
 	waitforvisualfinish
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0, 16
-	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0, 16
+	createsprite gSlideMonToOriginalPosPartnerSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0, 16
 	delay 32
 	call UnsetPsychicBg
 	visible ANIM_TARGET
@@ -33578,7 +33578,7 @@ gBattleAnimMove_ClangorousSoulblaze::
 	delay 0x2
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0x0, 0xFFE0, 0x1, 0xffff
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0xfd00, 0xa, 0x0, 0x2a
-	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0xfd00, 0xa, 0x0, 0x2a
+	createsprite gSlideMonToOffsetPartnerSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0xfd00, 0xa, 0x0, 0x2a
 	delay 0x20
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0x0, 0x20, 0x1, 0xffff
 	delay 0xC
@@ -33770,7 +33770,7 @@ FINISH_SOULBLAZE:
 	call ResetFromWhiteScreen
 	blendoff
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0x0, 0x10
-	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0x0, 0x10
+	createsprite gSlideMonToOriginalPosPartnerSpriteTemplate, ANIM_ATTACKER, 2, ANIM_DEF_PARTNER, 0x0, 0x10
 	waitforvisualfinish
 	end
 ClangorousSoulblazeEnergySwirl:
