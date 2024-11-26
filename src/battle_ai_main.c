@@ -730,7 +730,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     if (IsSemiInvulnerable(battlerDef, move) && moveEffect != EFFECT_SEMI_INVULNERABLE && AI_IsFaster(battlerAtk, battlerDef, move))
         RETURN_SCORE_MINUS(10);
 
-    if (IsTwoTurnNotSemiInvulnerableMove(battlerAtk, move) && CanTargetFaintAi(battlerDef, battlerAtk))
+    if (IsTwoTurnNotSemiInvulnerableMove(battlerAtk, move))
         RETURN_SCORE_MINUS(10);
 
     if (gBattleStruct->commandingDondozo & (1u << battlerDef))

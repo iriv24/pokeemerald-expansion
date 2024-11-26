@@ -117,6 +117,7 @@ MagmaHideout_4F_EventScript_MaxieContinued::
 	removeobject LOCAL_ID_COURTNEY
 	removeobject LOCALID_TABITHA
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
+	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	end

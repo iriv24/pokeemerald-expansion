@@ -455,7 +455,7 @@ JaggedPass_Text_GruntDefeat:
 # 228 "data/maps/JaggedPass/scripts.pory"
 	.string "Urrrgh…\p"
 # 229 "data/maps/JaggedPass/scripts.pory"
-	.string "I should've ducked into our HIDEOUT\n"
+	.string "I should've ducked into our Hideout\n"
 # 230 "data/maps/JaggedPass/scripts.pory"
 	.string "right away…$"
 # 231 "data/maps/JaggedPass/scripts.pory"
@@ -477,7 +477,7 @@ JaggedPass_Text_BoulderShakingInResponseToEmblem:
 # 239 "data/maps/JaggedPass/scripts.pory"
 	.string "Oh! This boulder is shaking in response\n"
 # 240 "data/maps/JaggedPass/scripts.pory"
-	.string "to the MAGMA EMBLEM!$"
+	.string "to the Magma Emblem!$"
 # 241 "data/maps/JaggedPass/scripts.pory"
 
 # 242 "data/maps/JaggedPass/scripts.pory"
