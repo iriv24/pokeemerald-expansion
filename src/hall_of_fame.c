@@ -33,7 +33,9 @@
 #include "trainer_pokemon_sprites.h"
 #include "data.h"
 #include "confetti_util.h"
+#include "randomizer.h"
 #include "constants/rgb.h"
+#include "constants/game_settings.h"
 
 #define HALL_OF_FAME_MAX_TEAMS 30
 #define TAG_CONFETTI 1001
@@ -1111,7 +1113,25 @@ static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2)
 {
     FillWindowPixelBuffer(0, PIXEL_FILL(0));
     PutWindowTilemap(0);
-    AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOF, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOF);
+
+    if(VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
+    {
+        if(FlagGet(FLAG_MIN_GRINDING_MODE))
+            AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOFEasyMGM, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOFEasyMGM);
+        else
+            AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOFEasyNoMGM, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOFEasyNoMGM);
+    }
+    else if(VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_NORMAL_MODE)
+    {
+        if(FlagGet(FLAG_MIN_GRINDING_MODE))
+            AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOFNormalMGM, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOFNormalMGM);
+        else
+            AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOFNormalNoMGM, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOFNormalNoMGM);
+    }
+    else
+    {
+        AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_WelcomeToHOF, 0xD0), 1, sMonInfoTextColors, 0, gText_WelcomeToHOF);
+    } 
     CopyWindowToVram(0, COPYWIN_FULL);
 }
 

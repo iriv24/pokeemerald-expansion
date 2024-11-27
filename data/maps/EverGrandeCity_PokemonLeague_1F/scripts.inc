@@ -293,7 +293,7 @@ EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges:
 # 147 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "are permitted to enter.\p"
 # 148 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
-	.string "trainer, let us confirm that you have\n"
+	.string "Trainer, let us confirm that you have\n"
 # 149 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"
 	.string "all the Gym Badges.$"
 # 150 "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.pory"

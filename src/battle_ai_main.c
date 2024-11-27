@@ -3395,6 +3395,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
             break;
         score += AI_TryToClearStats(battlerAtk, battlerDef, isDoubleBattle);
+        if(gSideStatuses[GetBattlerSide(battlerDef)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK))
+            ADJUST_SCORE(5);
         break;
     case EFFECT_MULTI_HIT:
     case EFFECT_TRIPLE_KICK:
