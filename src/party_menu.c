@@ -106,6 +106,11 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_INFLICT_SLEEP,
+    MENU_INFLICT_POISON,
+    MENU_INFLICT_BURN,
+    MENU_INFLICT_FREEZE,
+    MENU_INFLICT_PARALYSIS,
     MENU_FIELD_MOVES
 };
 
@@ -127,6 +132,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_HEXORB,
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -501,6 +507,11 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
+static void CursorCb_InflictSleep(u8);
+static void CursorCb_InflictPoison(u8);
+static void CursorCb_InflictBurn(u8);
+static void CursorCb_InflictFreeze(u8);
+static void CursorCb_InflictParlysis(u8);
 static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
@@ -2658,6 +2669,9 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_APPLIANCE:
             *windowPtr = AddWindow(&sOrderWhichApplianceMsgWindowTemplate);
             break;
+        case PARTY_MSG_WHICH_STATUS:
+            *windowPtr = AddWindow(&sInflictWhichStatusMsgWindowTemplate);
+            break;
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2721,7 +2735,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
         window = sZygardeCubeSelectWindowTemplate;
         break;
     case SELECTWINDOW_HEXORB:
-        SetWindowTemplateFields(&window, 2, 19, 19 - (sPartyMenuInternal->numActions * 2), 10, sPartyMenuInternal->numActions * 2, 14, 0x2E9);
+        window = sHexorbSelectWindowTemplate;
         break;
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
@@ -4451,7 +4465,6 @@ void CB2_ShowPartyMenuForItemUse(void)
     }
     if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_SACRED_ASH)
     {
-        DebugPrintf("boop");
         gPartyMenu.slotId = 0;
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -5186,6 +5199,7 @@ static void ShowStatusSelectWindow(u8 slot)
             continue;
 
         DebugPrintf("slot %d can be %S",slot, status[statusIndex].text);
+        DebugPrintf("nunm actions is %d",sPartyMenuInternal->numActions);
         AddTextPrinterParameterized(windowId, fontId, status[statusIndex].text, 8, (sPartyMenuInternal->numActions * 16) + 1, TEXT_SKIP_DRAW, NULL);
         sPartyMenuInternal->numActions++;
     }
@@ -6635,6 +6649,41 @@ static void CursorCb_ChangeAbility(u8 taskId)
     TryMultichoiceFormChange(taskId);
 }
 
+static void CursorCb_InflictSleep(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    TryMultichoiceFormChange(taskId);
+}
+static void CursorCb_InflictPoison(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    TryMultichoiceFormChange(taskId);
+
+}
+static void CursorCb_InflictBurn(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    TryMultichoiceFormChange(taskId);
+
+}
+static void CursorCb_InflictFreeze(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    TryMultichoiceFormChange(taskId);
+
+}
+static void CursorCb_InflictParlysis(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    TryMultichoiceFormChange(taskId);
+
+}
+
 void TryItemHoldFormChange(struct Pokemon *mon)
 {
     u16 targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_ITEM_HOLD, 0);
@@ -7830,95 +7879,11 @@ void IsLastMonThatKnowsSurf(void)
 
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 {
-    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    struct PartyMenuInternal *ptr = sPartyMenuInternal;
-    s16 *arrayPtr = ptr->data;
-    u16 item = ITEM_RARE_CANDY;
-    u16 *itemPtr = &item;
-    bool8 cannotUseEffect;
-    u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
-
-    sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
-    {
-        BufferMonStatsToTaskData(mon, arrayPtr);
-        cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
-        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
-    }
-    else
-    {
-        cannotUseEffect = TRUE;
-    }
-    PlaySE(SE_SELECT);
-    if (cannotUseEffect)
-    {
-        u16 targetSpecies = SPECIES_NONE;
-        bool32 evoModeNormal = TRUE;
-
-        // Resets values to 0 so other means of teaching moves doesn't overwrite levels
-        sInitialLevel = 0;
-        sFinalLevel = 0;
-
-        if (holdEffectParam == 0)
-        {
-            targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
-            if (targetSpecies == SPECIES_NONE)
-            {
-                targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
-                evoModeNormal = FALSE;
-            }
-        }
-
-        if (targetSpecies != SPECIES_NONE)
-        {
-            FreePartyPointers();
-            gCB2_AfterEvolution = gPartyMenu.exitCallback;
-            BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
-            DestroyTask(taskId);
-        }
-        else
-        {
-            gPartyMenuUseExitCallback = FALSE;
-            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
-            ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = task;
-        }
-    }
-    else
-    {
-        sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
-        gPartyMenuUseExitCallback = TRUE;
-        UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        GetMonNickname(mon, gStringVar1);
-        if (sFinalLevel > sInitialLevel)
-        {
-            PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
-            if (holdEffectParam == 0) // Rare Candy
-            {
-                ConvertIntToDecimalStringN(gStringVar2, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
-                StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
-            }
-            else // Exp Candies
-            {
-                ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
-                ConvertIntToDecimalStringN(gStringVar3, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
-                StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
-            }
-
-            DisplayPartyMenuMessage(gStringVar4, TRUE);
-            ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_DisplayLevelUpStatsPg1;
-        }
-        else
-        {
-            PlaySE(SE_USE_ITEM);
-            gPartyMenuUseExitCallback = FALSE;
-            ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
-            StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExp);
-            DisplayPartyMenuMessage(gStringVar4, FALSE);
-            ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = task;
-        }
-    }
-    //ShowStatusSelectWindow(gPartyMenu.slotId);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
+    DisplaySelectionWindow(SELECTWINDOW_HEXORB);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
