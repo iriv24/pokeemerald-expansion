@@ -1331,6 +1331,11 @@ void ItemUseOutOfBattle_EnigmaBerry(u8 taskId)
         gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
         ItemUseOutOfBattle_PPRecovery(taskId);
         break;
+    case ITEM_EFFECT_HEXORB:
+        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
+        ItemUseOutOfBattle_RareCandy(taskId);
+        //ItemUseOutOfBattle_Hexorb(taskId);
+        break;
     default:
         gTasks[taskId].tEnigmaBerryType = ITEM_USE_BAG_MENU;
         ItemUseOutOfBattle_CannotUse(taskId);
@@ -1497,6 +1502,12 @@ void FieldUseFunc_VsSeeker(u8 taskId)
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 {
     Task_CloseCantUseKeyItemMessage(taskId);
+}
+
+void ItemUseOutOfBattle_Hexorb(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_UseHexorb;
+    SetUpItemUseCallback(taskId);
 }
 
 #undef tUsingRegisteredKeyItem

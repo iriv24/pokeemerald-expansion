@@ -75,6 +75,8 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "hexorb.h"
+#include "battle_pike.h"
 
 enum {
     MENU_SUMMARY,
@@ -2718,6 +2720,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
         break;
+    case SELECTWINDOW_HEXORB:
+        SetWindowTemplateFields(&window, 2, 19, 19 - (sPartyMenuInternal->numActions * 2), 10, sPartyMenuInternal->numActions * 2, 14, 0x2E9);
+        break;
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
         break;
@@ -4444,9 +4449,9 @@ void CB2_ShowPartyMenuForItemUse(void)
         menuType = PARTY_MENU_TYPE_FIELD;
         partyLayout = PARTY_LAYOUT_SINGLE;
     }
-
     if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_SACRED_ASH)
     {
+        DebugPrintf("boop");
         gPartyMenu.slotId = 0;
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -4567,6 +4572,7 @@ static void GetMedicineItemEffectMessage(u16 item, u32 statusCured)
         break;
     default:
         StringExpandPlaceholders(gStringVar4, gText_WontHaveEffect);
+
         break;
     }
 }
@@ -5137,6 +5143,57 @@ static void ShowMoveSelectWindow(u8 slot)
     InitMenuInUpperLeftCornerNormal(windowId, moveCount, 0);
     ScheduleBgCopyTilemapToVram(2);
 }
+
+struct StatusEffect
+{
+    u32 effect;
+    const u8 *text;
+};
+
+static void ShowStatusSelectWindow(u8 slot)
+{
+    u32 statusIndex, chosenStatus;
+    sPartyMenuInternal->numActions = 0;
+    u32 fontId = FONT_NORMAL;
+    u8 windowId = DisplaySelectionWindow(SELECTWINDOW_HEXORB);
+    struct Pokemon *mon;
+
+    struct StatusEffect status[] =
+    {
+        {STATUS1_SLEEP, gText_Slp},
+        {STATUS1_POISON, gText_Psn},
+        {STATUS1_BURN, gText_Brn},
+#ifdef B_USE_FROSTBITE
+        {STATUS1_FROSTBITE, gText_Frz},
+#else
+        {STATUS1_FREEZE, gText_Frz},
+#endif
+        {STATUS1_PARALYSIS, gText_Par},
+    };
+
+    for (statusIndex = 0; statusIndex < ARRAY_COUNT(status) ; statusIndex++)
+    {
+        mon = &gPlayerParty[slot];
+        chosenStatus = status[statusIndex].effect;
+
+        if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
+            continue;
+
+        if (DoesAbilityPreventStatus(mon, chosenStatus))
+            continue;
+
+        if (DoesTypePreventStatus(GetMonData(mon,MON_DATA_SPECIES), chosenStatus))
+            continue;
+
+        DebugPrintf("slot %d can be %S",slot, status[statusIndex].text);
+        AddTextPrinterParameterized(windowId, fontId, status[statusIndex].text, 8, (sPartyMenuInternal->numActions * 16) + 1, TEXT_SKIP_DRAW, NULL);
+        sPartyMenuInternal->numActions++;
+    }
+
+    InitMenuInUpperLeftCornerNormal(windowId, sPartyMenuInternal->numActions, 0);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
 
 static void Task_HandleWhichMoveInput(u8 taskId)
 {
@@ -6611,6 +6668,8 @@ u8 GetItemEffectType(u16 item)
         return ITEM_EFFECT_SACRED_ASH;
     else if (itemEffect[3] & ITEM3_LEVEL_UP)
         return ITEM_EFFECT_RAISE_LEVEL;
+    else if (itemEffect[0] & ITEM0_HEXORB)
+        return ITEM_EFFECT_HEXORB;
 
     statusCure = itemEffect[3] & ITEM3_STATUS_ALL;
     if (statusCure || (itemEffect[0] >> 7))
@@ -7767,4 +7826,99 @@ void IsLastMonThatKnowsSurf(void)
         if (AnyStorageMonWithMove(move) != TRUE)
             gSpecialVar_Result = !P_CAN_FORGET_HIDDEN_MOVE;
     }
+}
+
+void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    struct PartyMenuInternal *ptr = sPartyMenuInternal;
+    s16 *arrayPtr = ptr->data;
+    u16 item = ITEM_RARE_CANDY;
+    u16 *itemPtr = &item;
+    bool8 cannotUseEffect;
+    u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
+
+    sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
+    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    {
+        BufferMonStatsToTaskData(mon, arrayPtr);
+        cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
+        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+    }
+    else
+    {
+        cannotUseEffect = TRUE;
+    }
+    PlaySE(SE_SELECT);
+    if (cannotUseEffect)
+    {
+        u16 targetSpecies = SPECIES_NONE;
+        bool32 evoModeNormal = TRUE;
+
+        // Resets values to 0 so other means of teaching moves doesn't overwrite levels
+        sInitialLevel = 0;
+        sFinalLevel = 0;
+
+        if (holdEffectParam == 0)
+        {
+            targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
+            if (targetSpecies == SPECIES_NONE)
+            {
+                targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
+                evoModeNormal = FALSE;
+            }
+        }
+
+        if (targetSpecies != SPECIES_NONE)
+        {
+            FreePartyPointers();
+            gCB2_AfterEvolution = gPartyMenu.exitCallback;
+            BeginEvolutionScene(mon, targetSpecies, evoModeNormal, gPartyMenu.slotId);
+            DestroyTask(taskId);
+        }
+        else
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = task;
+        }
+    }
+    else
+    {
+        sFinalLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+        gPartyMenuUseExitCallback = TRUE;
+        UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+        GetMonNickname(mon, gStringVar1);
+        if (sFinalLevel > sInitialLevel)
+        {
+            PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+            if (holdEffectParam == 0) // Rare Candy
+            {
+                ConvertIntToDecimalStringN(gStringVar2, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
+                StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
+            }
+            else // Exp Candies
+            {
+                ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+                ConvertIntToDecimalStringN(gStringVar3, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
+                StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
+            }
+
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_DisplayLevelUpStatsPg1;
+        }
+        else
+        {
+            PlaySE(SE_USE_ITEM);
+            gPartyMenuUseExitCallback = FALSE;
+            ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+            StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExp);
+            DisplayPartyMenuMessage(gStringVar4, FALSE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = task;
+        }
+    }
+    //ShowStatusSelectWindow(gPartyMenu.slotId);
 }
