@@ -11,6 +11,33 @@
 #include "party_menu.h"
 #include "battle.h"
 
+static const void Hexorb_BufferBlockedStatusMessage(u32 status)
+{
+    switch (status)
+    {
+        case STATUS1_SLEEP:
+            StringCopy(gStringVar3,COMPOUND_STRING("asleep"));
+            break;
+        case STATUS1_TOXIC_POISON:
+            StringCopy(gStringVar3,COMPOUND_STRING("poisoned"));
+            break;
+        case STATUS1_BURN:
+            StringCopy(gStringVar3,COMPOUND_STRING("burned"));
+            break;
+        case STATUS1_FROSTBITE:
+            StringCopy(gStringVar3,COMPOUND_STRING("frostbit"));
+            break;
+        case STATUS1_FREEZE:
+            StringCopy(gStringVar3,COMPOUND_STRING("frozen"));
+            break;
+        case STATUS1_PARALYSIS:
+            StringCopy(gStringVar3,COMPOUND_STRING("paralyzed"));
+            break;
+        default:
+            StringCopy(gStringVar3,COMPOUND_STRING("new status!"));
+            break;
+    }
+}
 static const void Hexorb_BufferStatusFailureText(u32 status)
 {
     switch (status)
@@ -87,6 +114,14 @@ static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
     }
 }
 
+static bool32 Hexorb_ShouldExistingStatusBlock(struct Pokemon *mon)
+{
+    if (HEXORB_BLOCK_STATUS == FALSE)
+        return FALSE;
+
+    return (GetMonData(mon, MON_DATA_STATUS) != STATUS1_NONE);
+}
+
 u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 {
     if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
@@ -94,6 +129,9 @@ u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 
     if (!GetMonData(mon, MON_DATA_HP))
         return HEXORB_RESULT_FAINTED_OR_NO_MON;
+
+    if (Hexorb_ShouldExistingStatusBlock(mon))
+        return HEXORB_RESULT_HAS_STATUS;
 
     if (DoesAbilityPreventStatus(mon, status))
         return HEXORB_RESULT_ABILITY;
@@ -149,6 +187,14 @@ void Hexorb_ConstructAbilityFailureMessage(struct Pokemon* mon, u32 status)
     StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
     Hexorb_BufferStatusFailureText(status);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}\nprevents it from {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
+}
+
+void Hexorb_ConstructStatusFailureMessage(struct Pokemon* mon)
+{
+    u32 status = GetMonData(mon, MON_DATA_STATUS);
+    GetMonNickname(mon, gStringVar1);
+    Hexorb_BufferBlockedStatusMessage(status);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} is already {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
 }
 
 void Task_UseHexorbFromField(u8 taskId)

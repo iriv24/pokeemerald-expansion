@@ -7825,6 +7825,14 @@ static void TryHexorbAndPrintResult(u8 taskId)
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             break;
+        case HEXORB_RESULT_HAS_STATUS:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructStatusFailureMessage(mon);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            break;
         case HEXORB_RESULT_ABILITY:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
