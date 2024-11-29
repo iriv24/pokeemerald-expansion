@@ -119,7 +119,7 @@ static bool32 Hexorb_ShouldExistingStatusBlock(struct Pokemon *mon)
     if (HEXORB_BLOCK_STATUS == FALSE)
         return FALSE;
 
-    return (GetMonData(mon, MON_DATA_STATUS) != STATUS1_NONE);
+    return (GetMonData(mon, MON_DATA_STATUS) & STATUS1_ANY) != 0;
 }
 
 u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
