@@ -517,7 +517,8 @@ static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
 // Start hexorb Branch
 static void TryHexorbAndPrintResult(u8);
-static void Task_RetryHexorbAfterMessage(u8);
+static void Task_RetryHexorbAfterFailedStatus(u8);
+static void Task_RetryHexorbAfterFailedMon(u8);
 // End hexorb Branch
 
 // static const data
@@ -7818,17 +7819,11 @@ static void TryHexorbAndPrintResult(u8 taskId)
 
     switch (result)
     {
-        case HEXORB_RESULT_FAINTED_OR_NO_MON:
-            gPartyMenuUseExitCallback = FALSE;
-            PlaySE(SE_SELECT);
-            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
-            ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
-            break;
-        case HEXORB_RESULT_HAS_STATUS:
-            gPartyMenuUseExitCallback = FALSE;
-            PlaySE(SE_SELECT);
-            Hexorb_ConstructStatusFailureMessage(mon);
+        default:
+            gPartyMenuUseExitCallback = TRUE;
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+            PlayCry_ByMode(GetMonData(mon, MON_DATA_SPECIES), 0, CRY_MODE_WEAK);
+            Hexorb_ConstructSuccessMessage(mon, status);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
@@ -7839,7 +7834,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
             Hexorb_ConstructAbilityFailureMessage(mon,status);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_RetryHexorbAfterMessage;
+            gTasks[taskId].func = Task_RetryHexorbAfterFailedStatus;
             break;
         case HEXORB_RESULT_TYPE_0:
         case HEXORB_RESULT_TYPE_1:
@@ -7848,21 +7843,27 @@ static void TryHexorbAndPrintResult(u8 taskId)
             Hexorb_ConstructTypeFailureMessage(mon, status, result);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_RetryHexorbAfterMessage;
+            gTasks[taskId].func = Task_RetryHexorbAfterFailedStatus;
             break;
-        default:
-            gPartyMenuUseExitCallback = TRUE;
-            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-            PlayCry_ByMode(GetMonData(mon, MON_DATA_SPECIES), 0, CRY_MODE_WEAK);
-            Hexorb_ConstructSuccessMessage(mon, status);
+        case HEXORB_RESULT_HAS_STATUS:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructStatusFailureMessage(mon);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            gTasks[taskId].func = Task_RetryHexorbAfterFailedMon;
+            break;
+        case HEXORB_RESULT_FAINTED_OR_NO_MON:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_RetryHexorbAfterFailedMon;
             break;
     }
 }
 
-static void Task_RetryHexorbAfterMessage(u8 taskId)
+static void Task_RetryHexorbAfterFailedStatus(u8 taskId)
 {
     if (!JOY_NEW(A_BUTTON | B_BUTTON))
         return;
@@ -7870,6 +7871,17 @@ static void Task_RetryHexorbAfterMessage(u8 taskId)
     ClearDialogWindowAndFrame(WIN_MSG,FALSE);
     PlaySE(SE_SELECT);
     ItemUseCB_UseHexorb(taskId, Task_HandleSelectionMenuInput);
+}
+
+static void Task_RetryHexorbAfterFailedMon(u8 taskId)
+{
+    if (!JOY_NEW(A_BUTTON | B_BUTTON))
+        return;
+
+    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
+    PlaySE(SE_SELECT);
+    gTasks[taskId].func = Task_HandleChooseMonInput;
 }
 
 void InitPartyMenuForHexorbFromField(u8 taskId)
