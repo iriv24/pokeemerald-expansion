@@ -844,7 +844,7 @@ bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
     return ret;
 }
 
-bool8 DoesTypePreventStatus(u16 species, u32 status)
+static bool8 DoesTypePreventStatus(u16 species, u32 status)
 {
     bool8 ret = FALSE;
 

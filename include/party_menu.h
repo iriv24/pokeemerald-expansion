@@ -102,7 +102,10 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
-void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task); // Hexorb
-void InitPartyMenuForHexorbFromField(u8 taskId); // Hexorb
+
+// Start hexorb Branch
+void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
+void Task_RetryHexorbAfterMessage(u8 taskId);
+// End hexorb Branch
 
 #endif // GUARD_PARTY_MENU_H

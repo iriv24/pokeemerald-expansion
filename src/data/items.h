@@ -14076,6 +14076,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+// Start hexorb branch
     [ITEM_HEXORB] =
     {
         .name = _("Hexorb"),
@@ -14091,4 +14092,5 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Hexorb,
         .iconPalette = gItemIconPalette_Hexorb,
     }
+// End hexorb Branch
 };

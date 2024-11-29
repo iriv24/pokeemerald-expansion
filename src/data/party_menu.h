@@ -493,6 +493,7 @@ static const struct WindowTemplate sOrderWhichApplianceMsgWindowTemplate =
     .baseBlock = 0x299,
 };
 
+// Start hexorb branch
 static const struct WindowTemplate sInflictWhichStatusMsgWindowTemplate =
 {
     .bg = 2,
@@ -503,6 +504,7 @@ static const struct WindowTemplate sInflictWhichStatusMsgWindowTemplate =
     .paletteNum = 15,
     .baseBlock = 0x24F,
 };
+// End hexorb Branch
 
 static const struct WindowTemplate sItemGiveTakeWindowTemplate =
 {
@@ -559,6 +561,7 @@ static const struct WindowTemplate sZygardeCubeSelectWindowTemplate =
     .baseBlock = 0x2E9,
 };
 
+// Start hexorb branch
 static const struct WindowTemplate sHexorbSelectWindowTemplate =
 {
     .bg = 2,
@@ -569,7 +572,7 @@ static const struct WindowTemplate sHexorbSelectWindowTemplate =
     .paletteNum = 15,
     .baseBlock = 0x299,
 };
-
+// End hexorb Branch
 
 static const struct WindowTemplate sPartyMenuYesNoWindowTemplate =
 {
@@ -743,11 +746,17 @@ struct
     [MENU_CATALOG_MOWER] = {gText_LawnMower, CursorCb_CatalogMower},
     [MENU_CHANGE_FORM] = {gText_ChangeForm, CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY] = {gText_ChangeAbility, CursorCb_ChangeAbility},
+// Start hexorb branch
     [MENU_INFLICT_SLEEP] = {gText_Slp, CursorCb_InflictSleep},
     [MENU_INFLICT_POISON] = {gText_Psn, CursorCb_InflictPoison},
     [MENU_INFLICT_BURN] = {gText_Brn, CursorCb_InflictBurn},
-    [MENU_INFLICT_FREEZE] = {gText_Frz, CursorCb_InflictFreeze},
+#ifdef B_USE_FROSTBITE
+    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Fsb, CursorCb_InflictFreeze},
+#else
+    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Frz, CursorCb_InflictFreeze},
+#endif
     [MENU_INFLICT_PARALYSIS] = {gText_Par, CursorCb_InflictParlysis},
+// End Hexorb branch
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -765,7 +774,7 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
-static const u8 sPartyMenuAction_Hexorb[] = {MENU_INFLICT_SLEEP, MENU_INFLICT_POISON, MENU_INFLICT_BURN, MENU_INFLICT_FREEZE, MENU_INFLICT_PARALYSIS, MENU_CANCEL1};
+static const u8 sPartyMenuAction_Hexorb[] = {MENU_INFLICT_SLEEP, MENU_INFLICT_POISON, MENU_INFLICT_BURN, MENU_INFLICT_FREEZE_FROSTBITE, MENU_INFLICT_PARALYSIS, MENU_CANCEL1}; // hexorb Branch
 
 
 
@@ -787,7 +796,7 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_TAKEITEM_TOSS] = sPartyMenuAction_TakeItemTossCancel,
     [ACTIONS_ROTOM_CATALOG] = sPartyMenuAction_RotomCatalog,
     [ACTIONS_ZYGARDE_CUBE]  = sPartyMenuAction_ZygardeCube,
-    [ACTIONS_HEXORB] = sPartyMenuAction_Hexorb,
+    [ACTIONS_HEXORB] = sPartyMenuAction_Hexorb, // hexorb Branch
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -808,7 +817,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
-    [ACTIONS_HEXORB] = ARRAY_COUNT(sPartyMenuAction_Hexorb),
+    [ACTIONS_HEXORB] = ARRAY_COUNT(sPartyMenuAction_Hexorb), // hexorb Branch
 };
 
 static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =

@@ -3371,8 +3371,9 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
-// Hexorb
+// Start hexorb branch
 extern const u32 gItemIcon_Hexorb[];
 extern const u32 gItemIconPalette_Hexorb[];
+// End hexorb Branch
 
 #endif //GUARD_GRAPHICS_H

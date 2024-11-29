@@ -81,7 +81,7 @@
 #define PARTY_MSG_ALREADY_HOLDING_ONE       26
 #define PARTY_MSG_WHICH_APPLIANCE           27
 #define PARTY_MSG_CHOOSE_SECOND_FUSION      28
-#define PARTY_MSG_WHICH_STATUS              29
+#define PARTY_MSG_WHICH_STATUS              29 // hexorb Branch
 #define PARTY_MSG_NONE                      127
 
 // IDs for DisplayPartyPokemonDescriptionText, to display a message in the party pokemon's box
@@ -105,6 +105,6 @@
 #define SELECTWINDOW_MOVES       3
 #define SELECTWINDOW_CATALOG     4
 #define SELECTWINDOW_ZYGARDECUBE 5
-#define SELECTWINDOW_HEXORB      6
+#define SELECTWINDOW_HEXORB      6 // hexorb Branch
 
 #endif // GUARD_CONSTANTS_PARTY_MENU_H
