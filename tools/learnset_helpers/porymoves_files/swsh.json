@@ -76356,7 +76356,8 @@
       "MOVE_DRAGON_PULSE",
       "MOVE_ALLY_SWITCH",
       "MOVE_SCALD",
-      "MOVE_PSYCHIC_FANGS"
+      "MOVE_PSYCHIC_FANGS",
+      "MOVE_SHADOW_CLAW"
     ],
     "EggMoves": [
       "MOVE_CONFUSE_RAY",

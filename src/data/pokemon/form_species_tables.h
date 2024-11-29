@@ -2198,3 +2198,11 @@ static const u16 sRoseradeFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_ROSELIA
 
+#if P_FAMILY_DUSKULL
+static const u16 sDusknoirFormSpeciesIdTable[] = {
+    SPECIES_DUSKNOIR,
+    SPECIES_DUSKNOIR_MEGA,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_DUSKULL
+

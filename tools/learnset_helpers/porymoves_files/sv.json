@@ -73108,7 +73108,8 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_BREAKING_SWIPE",
       "MOVE_CURSE",
-      "MOVE_DRAGON_CHEER"
+      "MOVE_DRAGON_CHEER",
+      "MOVE_SHADOW_CLAW"
     ],
     "EggMoves": [
       "MOVE_CONFUSE_RAY",

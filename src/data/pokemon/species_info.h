@@ -725,6 +725,72 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sRoseradeFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
+
+    [SPECIES_DUSKNOIR_MEGA] =
+    {
+        .baseHP        = 105, // + 60
+        .baseAttack    = 110, // + 10
+        .baseDefense   = 150, // + 15 
+        .baseSpeed     = 45,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 150, // + 15
+        .types = MON_TYPES(TYPE_GHOST, TYPE_DARK),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 263,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 236,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 2,
+        .itemRare = ITEM_SPELL_TAG,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = {ABILITY_PRANKSTER,  ABILITY_PRANKSTER,  ABILITY_PRANKSTER },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Dusknoir"),
+        .cryId = CRY_DUSKNOIR,
+        .natDexNum = NATIONAL_DEX_DUSKNOIR,
+        .categoryName = _("Gripper"),
+        .height = 22,
+        .weight = 1066,
+        .description = COMPOUND_STRING(
+            "This feared Pokémon is said to travel to\n"
+            "worlds unknown. Some even believe that\n"
+            "it takes lost spirits into its pliant body\n"
+            "and guides them home."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 348,
+        .trainerOffset = 6,
+        .frontPic = gMonFrontPic_DusknoirMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_DusknoirMega,
+        .frontAnimId = ANIM_H_SLIDE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_DusknoirMega,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_Dusknoir,
+        .shinyPalette = gMonShinyPalette_Dusknoir,
+        .iconSprite = gMonIcon_Dusknoir,
+        .iconPalIndex = 2,
+        SHADOW(6, 13, SHADOW_SIZE_M)
+        FOOTPRINT(Dusknoir)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sDusknoirLevelUpLearnset,
+        .teachableLearnset = sDusknoirTeachableLearnset,
+        .formSpeciesIdTable = sDusknoirFormSpeciesIdTable,
+        .formChangeTable = sDusknoirFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
+    },
 #endif //P_MEGA_EVOLUTIONS
 
         [SPECIES_DARMANITAN_GALAR_ZEN_MODE_TWO] =

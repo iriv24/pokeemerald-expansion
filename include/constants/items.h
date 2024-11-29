@@ -1162,8 +1162,9 @@
 #define ITEM_SLAKITE 996
 #define ITEM_ROSERADITE 997
 #define ITEM_STRANGE_BALL 998
+#define ITEM_DUSKNOIRITE 999
 
-#define ITEMS_COUNT 999
+#define ITEMS_COUNT 1000
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

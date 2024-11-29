@@ -1298,5 +1298,12 @@ static const struct FormChange sRoseradeFormChangeTable[] = {
 };
 #endif //P_FAMILY_ROSELIA
 
+#if P_FAMILY_DUSKULL
+static const struct FormChange sDusknoirFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DUSKNOIR_MEGA, ITEM_DUSKNOIRITE},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_DUSKULL
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

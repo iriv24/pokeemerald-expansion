@@ -44863,6 +44863,7 @@ static const u16 sDragapultTeachableLearnset[] = {
     MOVE_REST,
     MOVE_SCALD,
     MOVE_SHADOW_BALL,
+    MOVE_SHADOW_CLAW,
     MOVE_SLEEP_TALK,
     MOVE_SOLAR_BEAM,
     MOVE_STEEL_WING,

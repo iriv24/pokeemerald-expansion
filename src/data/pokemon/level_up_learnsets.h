@@ -6855,6 +6855,7 @@ static const struct LevelUpMove sDuskullLevelUpLearnset[] = {
 
 static const struct LevelUpMove sDusclopsLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_SHADOW_PUNCH),
+	LEVEL_UP_MOVE( 0, MOVE_AMNESIA),
 	LEVEL_UP_MOVE( 1, MOVE_SHADOW_PUNCH),
 	LEVEL_UP_MOVE( 1, MOVE_FUTURE_SIGHT),
 	LEVEL_UP_MOVE( 1, MOVE_FIRE_PUNCH),
@@ -9713,6 +9714,7 @@ static const struct LevelUpMove sProbopassLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sDusknoirLevelUpLearnset[] = {
+	LEVEL_UP_MOVE( 0, MOVE_AMNESIA),
 	LEVEL_UP_MOVE( 1, MOVE_SHADOW_PUNCH),
 	LEVEL_UP_MOVE( 1, MOVE_FUTURE_SIGHT),
 	LEVEL_UP_MOVE( 1, MOVE_FIRE_PUNCH),

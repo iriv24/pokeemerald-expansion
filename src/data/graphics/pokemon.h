@@ -12975,6 +12975,14 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_Dusknoir[] = INCBIN_U32("graphics/pokemon/dusknoir/overworld_normal.gbapal.lz");
     const u32 gShinyOverworldPalette_Dusknoir[] = INCBIN_U32("graphics/pokemon/dusknoir/overworld_shiny.gbapal.lz");
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_DusknoirMega[] = INCBIN_U32("graphics/pokemon/dusknoir/mega/megadusknoir.4bpp.lz");
+    const u32 gMonPalette_DusknoirMega[] = INCBIN_U32("graphics/pokemon/dusknoir/mega/megadusknoir.gbapal.lz");
+    const u32 gMonBackPic_DusknoirMega[] = INCBIN_U32("graphics/pokemon/dusknoir/mega/megadusknoir_back.4bpp.lz");
+    //const u32 gMonShinyPalette_LopunnyMega[] = INCBIN_U32("graphics/pokemon/lopunny/mega/shiny.gbapal.lz");
+    //const u8 gMonIcon_LopunnyMega[] = INCBIN_U8("graphics/pokemon/lopunny/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GEN_4_CROSS_EVOS

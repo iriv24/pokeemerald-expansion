@@ -1644,7 +1644,8 @@
 #define SPECIES_DIALGA_PRIMAL                           1529
 #define SPECIES_PALKIA_PRIMAL                           1530
 #define SPECIES_ROSERADE_MEGA                           1531
-#define SPECIES_MIMIKYU_BUSTED_TOTEM                    1532
+#define SPECIES_DUSKNOIR_MEGA                           1532
+#define SPECIES_MIMIKYU_BUSTED_TOTEM                    1533
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
 
