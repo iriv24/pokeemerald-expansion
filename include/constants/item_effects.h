@@ -93,6 +93,6 @@
 #define ITEM_EFFECT_PP_MAX 20
 #define ITEM_EFFECT_HEAL_PP 21
 #define ITEM_EFFECT_NONE 22
-#define ITEM_EFFECT_HEXORB 23 //hexorb branch
+#define ITEM_EFFECT_HEXORB 23 //hexorb Branch
 
 #endif // GUARD_CONSTANTS_ITEM_EFFECTS_H
