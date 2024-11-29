@@ -124,25 +124,30 @@ static bool32 Hexorb_ShouldExistingStatusBlock(struct Pokemon *mon)
 
 u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 {
+    u32 clearStatus;
+
     if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
-        return HEXORB_RESULT_FAINTED_OR_NO_MON;
+        return HEXORB_RESULT_FAIL_FAINTED;
 
     if (!GetMonData(mon, MON_DATA_HP))
-        return HEXORB_RESULT_FAINTED_OR_NO_MON;
+        return HEXORB_RESULT_FAIL_FAINTED;
 
     if (Hexorb_ShouldExistingStatusBlock(mon))
-        return HEXORB_RESULT_HAS_STATUS;
+        return HEXORB_RESULT_FAIL_HAS_STATUS;
 
     if (DoesAbilityPreventStatus(mon, status))
-        return HEXORB_RESULT_ABILITY;
+        return HEXORB_RESULT_FAIL_ABILITY;
 
     if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 0, status))
-        return HEXORB_RESULT_TYPE_0;
+        return HEXORB_RESULT_FAIL_TYPE_0;
 
     if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 1, status))
-        return HEXORB_RESULT_TYPE_1;
+        return HEXORB_RESULT_FAIL_TYPE_1;
 
+    clearStatus = STATUS1_NONE;
+    SetMonData(mon, MON_DATA_STATUS, &clearStatus);
     SetMonData(mon, MON_DATA_STATUS, &status);
+
     return HEXORB_RESULT_SUCCESS;
 }
 
@@ -172,7 +177,7 @@ void Hexorb_ConstructSuccessMessage(struct Pokemon* mon, u32 status)
 
 void Hexorb_ConstructTypeFailureMessage(struct Pokemon *mon, u32 status, u32 result)
 {
-    u32 type = gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].types[result - HEXORB_RESULT_TYPE_0];
+    u32 type = gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].types[result];
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, gTypesInfo[type].name);
     Hexorb_BufferStatusFailureText(status);

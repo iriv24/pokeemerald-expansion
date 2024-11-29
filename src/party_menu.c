@@ -7828,7 +7828,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             break;
-        case HEXORB_RESULT_ABILITY:
+        case HEXORB_RESULT_FAIL_ABILITY:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
             Hexorb_ConstructAbilityFailureMessage(mon,status);
@@ -7836,8 +7836,8 @@ static void TryHexorbAndPrintResult(u8 taskId)
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_RetryHexorbAfterFailedStatus;
             break;
-        case HEXORB_RESULT_TYPE_0:
-        case HEXORB_RESULT_TYPE_1:
+        case HEXORB_RESULT_FAIL_TYPE_0:
+        case HEXORB_RESULT_FAIL_TYPE_1:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
             Hexorb_ConstructTypeFailureMessage(mon, status, result);
@@ -7845,7 +7845,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_RetryHexorbAfterFailedStatus;
             break;
-        case HEXORB_RESULT_HAS_STATUS:
+        case HEXORB_RESULT_FAIL_HAS_STATUS:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
             Hexorb_ConstructStatusFailureMessage(mon);
@@ -7853,7 +7853,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_RetryHexorbAfterFailedMon;
             break;
-        case HEXORB_RESULT_FAINTED_OR_NO_MON:
+        case HEXORB_RESULT_FAIL_FAINTED:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
             DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
