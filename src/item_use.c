@@ -1499,10 +1499,12 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
     Task_CloseCantUseKeyItemMessage(taskId);
 }
 
+// Start hexorb Branch
 void ItemUseOutOfBattle_Hexorb(u8 taskId)
 {
     gItemUseCB = ItemUseCB_UseHexorb;
     SetUpItemUseCallback(taskId);
 }
+// End hexorb Branch
 
 #undef tUsingRegisteredKeyItem

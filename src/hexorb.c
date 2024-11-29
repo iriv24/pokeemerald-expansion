@@ -9,11 +9,6 @@
 #include "constants/songs.h"
 #include "sound.h"
 
-enum {
-    // Window ids 0-5 are implicitly assigned to each party Pokémon in InitPartyMenuBoxes
-    WIN_MSG = PARTY_SIZE,
-};
-
 static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
 {
     u32 type = gSpeciesInfo[species].types[typeIndex];
@@ -22,6 +17,7 @@ static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
         case STATUS1_TOXIC_POISON:
             return (type == TYPE_STEEL || type == TYPE_POISON);
         case STATUS1_FREEZE:
+        case STATUS1_FROSTBITE:
             return (type == TYPE_ICE);
         case STATUS1_PARALYSIS:
             if (B_PARALYZE_ELECTRIC < GEN_6)
@@ -32,29 +28,6 @@ static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
         default:
             return FALSE;
     }
-}
-
-
-void CursorCb_InflictSleep(u8 taskId)
-{
-    TryHexorbAndPrintResult(STATUS1_SLEEP,taskId);
-}
-void CursorCb_InflictPoison(u8 taskId)
-{
-    TryHexorbAndPrintResult(STATUS1_TOXIC_POISON,taskId);
-}
-void CursorCb_InflictBurn(u8 taskId)
-{
-    TryHexorbAndPrintResult(STATUS1_BURN,taskId);
-}
-void CursorCb_InflictFreeze(u8 taskId)
-{
-    u32 status = (B_USE_FROSTBITE) ? STATUS1_FROSTBITE : STATUS1_FREEZE;
-    TryHexorbAndPrintResult(status,taskId);
-}
-void CursorCb_InflictParlysis(u8 taskId)
-{
-    TryHexorbAndPrintResult(STATUS1_PARALYSIS,taskId);
 }
 
 u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status)
@@ -76,5 +49,22 @@ u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status)
 
     SetMonData(mon, MON_DATA_STATUS, &status);
     return HEXORB_RESULT_SUCCESS;
+}
+
+u32 ConvertMenuPosToStatus(u32 pos)
+{
+    switch (pos)
+    {
+        case 0: return STATUS1_SLEEP;
+        case 1: return STATUS1_TOXIC_POISON;
+        case 2: return STATUS1_BURN;
+#ifdef B_USE_FROSTBITE
+        case 3: return STATUS1_FROSTBITE;
+#else
+        case 3: return STATUS1_FREEZE;
+#endif
+        default:
+        case 4: return STATUS1_PARALYSIS;
+    }
 }
 

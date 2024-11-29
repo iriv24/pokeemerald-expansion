@@ -685,7 +685,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_ALREADY_HOLDING_ONE]    = gText_AlreadyHoldingOne,
     [PARTY_MSG_WHICH_APPLIANCE]        = gText_WhichAppliance,
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
-    [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"),
+    [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"), // hexorb Branch
 };
 
 static const u8 *const sDescriptionStringTable[] =
@@ -747,15 +747,15 @@ struct
     [MENU_CHANGE_FORM] = {gText_ChangeForm, CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY] = {gText_ChangeAbility, CursorCb_ChangeAbility},
 // Start hexorb branch
-    [MENU_INFLICT_SLEEP] = {gText_Slp, CursorCb_InflictSleep},
-    [MENU_INFLICT_POISON] = {gText_Psn, CursorCb_InflictPoison},
-    [MENU_INFLICT_BURN] = {gText_Brn, CursorCb_InflictBurn},
+    [MENU_INFLICT_SLEEP] = {gText_Slp, TryHexorbAndPrintResult},
+    [MENU_INFLICT_POISON] = {gText_Psn, TryHexorbAndPrintResult},
+    [MENU_INFLICT_BURN] = {gText_Brn, TryHexorbAndPrintResult},
 #ifdef B_USE_FROSTBITE
-    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Fsb, CursorCb_InflictFreeze},
+    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Fsb, TryHexorbAndPrintResult},
 #else
-    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Frz, CursorCb_InflictFreeze},
+    [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Frz, TryHexorbAndPrintResult},
 #endif
-    [MENU_INFLICT_PARALYSIS] = {gText_Par, CursorCb_InflictParlysis},
+    [MENU_INFLICT_PARALYSIS] = {gText_Par, TryHexorbAndPrintResult},
 // End Hexorb branch
 };
 

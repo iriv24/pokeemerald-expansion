@@ -28,6 +28,7 @@
 #include "frontier_util.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "hexorb.h" // hexorb Branch
 #include "international_string_util.h"
 #include "item.h"
 #include "item_menu.h"
@@ -75,8 +76,6 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "hexorb.h"
-#include "battle_pike.h"
 
 enum {
     MENU_SUMMARY,
@@ -106,11 +105,13 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    // Start hexorb Branch
     MENU_INFLICT_SLEEP,
     MENU_INFLICT_POISON,
     MENU_INFLICT_BURN,
     MENU_INFLICT_FREEZE_FROSTBITE,
     MENU_INFLICT_PARALYSIS,
+    // End hexorb Branch
     MENU_FIELD_MOVES
 };
 
@@ -132,7 +133,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
-    ACTIONS_HEXORB,
+    ACTIONS_HEXORB, // hexorb Branch
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -514,6 +515,10 @@ static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+// Start hexorb Branch
+static void TryHexorbAndPrintResult(u8);
+static void Task_RetryHexorbAfterMessage(u8);
+// End hexorb Branch
 
 // static const data
 #include "data/party_menu.h"
@@ -4585,7 +4590,6 @@ static void GetMedicineItemEffectMessage(u16 item, u32 statusCured)
         break;
     default:
         StringExpandPlaceholders(gStringVar4, gText_WontHaveEffect);
-
         break;
     }
 }
@@ -7792,6 +7796,7 @@ void IsLastMonThatKnowsSurf(void)
     }
 }
 
+// Start hexorb Branch
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 {
     SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
@@ -7801,21 +7806,13 @@ void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
-void Task_RetryHexorbAfterMessage(u8 taskId)
+static void TryHexorbAndPrintResult(u8 taskId)
 {
-    if (!JOY_NEW(A_BUTTON | B_BUTTON))
-        return;
-
-    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
-    PlaySE(SE_SELECT);
-    ItemUseCB_UseHexorb(taskId, Task_HandleSelectionMenuInput);
-}
-
-void TryHexorbAndPrintResult(u32 status, u8 taskId)
-{
+    s16 *data = gTasks[taskId].data;
+    u32 status = ConvertMenuPosToStatus(data[0]);
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 ability, species, type;
     u32 result = (TryInflictStatusFromHexorb(mon, status));
+    u32 ability, species, type;
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
@@ -7911,4 +7908,16 @@ void TryHexorbAndPrintResult(u32 status, u8 taskId)
             break;
     }
 }
+
+static void Task_RetryHexorbAfterMessage(u8 taskId)
+{
+    if (!JOY_NEW(A_BUTTON | B_BUTTON))
+        return;
+
+    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
+    PlaySE(SE_SELECT);
+    ItemUseCB_UseHexorb(taskId, Task_HandleSelectionMenuInput);
+}
+
+// End hexorb Branch
 

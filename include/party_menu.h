@@ -105,7 +105,6 @@ void MoveDeleterChooseMoveToForget(void);
 
 // Start hexorb Branch
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
-void Task_RetryHexorbAfterMessage(u8 taskId);
 // End hexorb Branch
 
 #endif // GUARD_PARTY_MENU_H
