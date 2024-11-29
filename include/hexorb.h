@@ -3,7 +3,7 @@
 
 #include "constants/hexorb.h"
 
-#define HEXORB_BLOCK_STATUS       TRUE // When TRUE, a Pokémon that is afflicted by a non-volatile status decision cannot get a status condition from the Hexorb.
+#define HEXORB_BLOCK_STATUS       FALSE // When TRUE, a Pokémon that is afflicted by a non-volatile status decision cannot get a status condition from the Hexorb.
 
 u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status);
 u32 Hexorb_ConvertMenuPosToStatus(u32 pos);
