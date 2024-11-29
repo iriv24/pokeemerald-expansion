@@ -6593,6 +6593,9 @@ static void TryHexorbAndPrintResult(u32 status, u8 taskId)
     u32 ability, species, type;
     u32 result = (TryInflictStatusFromHexorb(mon, status));
 
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
     switch (result)
     {
         case HEXORB_RESULT_FAINTED_OR_NO_MON:
