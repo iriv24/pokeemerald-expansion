@@ -519,6 +519,8 @@ static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+static u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status);
+static void TryHexorbAndPrintResult(u32 status, u8 taskId);
 
 // static const data
 #include "data/party_menu.h"
@@ -2673,6 +2675,7 @@ void DisplayPartyMenuStdMessage(u32 stringId)
             *windowPtr = AddWindow(&sInflictWhichStatusMsgWindowTemplate);
             break;
         default:
+            DebugPrintf("boop");
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
         }
@@ -5157,58 +5160,6 @@ static void ShowMoveSelectWindow(u8 slot)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-struct StatusEffect
-{
-    u32 effect;
-    const u8 *text;
-};
-
-static void ShowStatusSelectWindow(u8 slot)
-{
-    u32 statusIndex, chosenStatus;
-    sPartyMenuInternal->numActions = 0;
-    u32 fontId = FONT_NORMAL;
-    u8 windowId = DisplaySelectionWindow(SELECTWINDOW_HEXORB);
-    struct Pokemon *mon;
-
-    struct StatusEffect status[] =
-    {
-        {STATUS1_SLEEP, gText_Slp},
-        {STATUS1_POISON, gText_Psn},
-        {STATUS1_BURN, gText_Brn},
-#ifdef B_USE_FROSTBITE
-        {STATUS1_FROSTBITE, gText_Frz},
-#else
-        {STATUS1_FREEZE, gText_Frz},
-#endif
-        {STATUS1_PARALYSIS, gText_Par},
-    };
-
-    for (statusIndex = 0; statusIndex < ARRAY_COUNT(status) ; statusIndex++)
-    {
-        mon = &gPlayerParty[slot];
-        chosenStatus = status[statusIndex].effect;
-
-        if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
-            continue;
-
-        if (DoesAbilityPreventStatus(mon, chosenStatus))
-            continue;
-
-        if (DoesTypePreventStatus(GetMonData(mon,MON_DATA_SPECIES), chosenStatus))
-            continue;
-
-        DebugPrintf("slot %d can be %S",slot, status[statusIndex].text);
-        DebugPrintf("nunm actions is %d",sPartyMenuInternal->numActions);
-        AddTextPrinterParameterized(windowId, fontId, status[statusIndex].text, 8, (sPartyMenuInternal->numActions * 16) + 1, TEXT_SKIP_DRAW, NULL);
-        sPartyMenuInternal->numActions++;
-    }
-
-    InitMenuInUpperLeftCornerNormal(windowId, sPartyMenuInternal->numActions, 0);
-    ScheduleBgCopyTilemapToVram(2);
-}
-
-
 static void Task_HandleWhichMoveInput(u8 taskId)
 {
     s8 input = Menu_ProcessInput();
@@ -6478,7 +6429,7 @@ static void Task_TryItemUseFormChange(u8 taskId)
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].tState++;
-        }
+       }
 
         break;
     case 6:
@@ -6585,6 +6536,155 @@ bool32 TryMultichoiceFormChange(u8 taskId)
     }
 }
 
+static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
+{
+    u32 type = gSpeciesInfo[species].types[typeIndex];
+    switch (status)
+    {
+        case STATUS1_TOXIC_POISON:
+            return (type == TYPE_STEEL || type == TYPE_POISON);
+        case STATUS1_FREEZE:
+            return (type == TYPE_ICE);
+        case STATUS1_PARALYSIS:
+            if (B_PARALYZE_ELECTRIC < GEN_6)
+                return FALSE;
+            return (type == TYPE_ELECTRIC);
+        case STATUS1_BURN:
+            return (type == TYPE_FIRE);
+        default:
+            return FALSE;
+    }
+}
+
+static u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status)
+{
+    if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
+        return HEXORB_RESULT_FAINTED_OR_NO_MON;
+
+    if (!GetMonData(mon, MON_DATA_HP))
+        return HEXORB_RESULT_FAINTED_OR_NO_MON;
+
+    if (DoesAbilityPreventStatus(mon, status))
+        return HEXORB_RESULT_ABILITY;
+
+    if (DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 0, status))
+        return HEXORB_RESULT_TYPE_0;
+
+    if (DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 1, status))
+        return HEXORB_RESULT_TYPE_1;
+
+    SetMonData(mon, MON_DATA_STATUS, &status);
+    return HEXORB_RESULT_SUCCESS;
+}
+
+static void Task_RetryHexorbAfterMessage(u8 taskId)
+{
+    if (!JOY_NEW(A_BUTTON | B_BUTTON))
+        return;
+
+    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
+    PlaySE(SE_SELECT);
+    ItemUseCB_UseHexorb(taskId, Task_HandleSelectionMenuInput);
+}
+
+static void TryHexorbAndPrintResult(u32 status, u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u32 ability, species, type;
+    u32 result = (TryInflictStatusFromHexorb(mon, status));
+
+    switch (result)
+    {
+        case HEXORB_RESULT_FAINTED_OR_NO_MON:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            break;
+        case HEXORB_RESULT_ABILITY:
+        case HEXORB_RESULT_TYPE_0:
+        case HEXORB_RESULT_TYPE_1:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            GetMonNickname(mon, gStringVar1);
+            species = GetMonData(mon, MON_DATA_SPECIES);
+
+            if (result == HEXORB_RESULT_ABILITY)
+            {
+                ability = GetAbilityBySpecies(species, GetMonData(mon,MON_DATA_ABILITY_NUM));
+                StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
+            }
+            else
+            {
+                type = gSpeciesInfo[species].types[result - HEXORB_RESULT_TYPE_0];
+                StringCopy(gStringVar2, gTypesInfo[type].name);
+            }
+
+            switch (status)
+            {
+                case STATUS1_SLEEP:
+                    StringCopy(gStringVar3, COMPOUND_STRING("falling asleep"));
+                    break;
+                case STATUS1_TOXIC_POISON:
+                    StringCopy(gStringVar3, COMPOUND_STRING("being poisoned"));
+                    break;
+                case STATUS1_BURN:
+                    StringCopy(gStringVar3, COMPOUND_STRING("being burned"));
+                    break;
+                case STATUS1_FROSTBITE:
+                    StringCopy(gStringVar3, COMPOUND_STRING("getting frostbite"));
+                    break;
+                case STATUS1_FREEZE:
+                    StringCopy(gStringVar3, COMPOUND_STRING("being frozen"));
+                    break;
+                case STATUS1_PARALYSIS:
+                    StringCopy(gStringVar3, COMPOUND_STRING("being paralyzed"));
+                    break;
+            }
+
+            if (result == HEXORB_RESULT_ABILITY)
+                StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}\nprevents it from {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
+            else
+                StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}-type prevents it from\n{STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
+
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_RetryHexorbAfterMessage;
+            break;
+        default:
+            gPartyMenuUseExitCallback = TRUE;
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+            PlayCry_ByMode(GetMonData(mon, MON_DATA_SPECIES), 0, CRY_MODE_WEAK);
+            GetMonNickname(mon, gStringVar1);
+            switch (status)
+            {
+                case STATUS1_SLEEP:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} fell asleep!{PAUSE_UNTIL_PRESS}"));
+                    break;
+                case STATUS1_TOXIC_POISON:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was poisoned!{PAUSE_UNTIL_PRESS}"));
+                    break;
+                case STATUS1_BURN:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was burned!{PAUSE_UNTIL_PRESS}"));
+                    break;
+                case STATUS1_FROSTBITE:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} got frostbite!{PAUSE_UNTIL_PRESS}"));
+                    break;
+                case STATUS1_FREEZE:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was frozen solid!{PAUSE_UNTIL_PRESS}"));
+                    break;
+                case STATUS1_PARALYSIS:
+                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} is paralyzed!{PAUSE_UNTIL_PRESS}"));
+                    break;
+            }
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            break;
+    }
+}
+
 static void CursorCb_CatalogBulb(u8 taskId)
 {
     gSpecialVar_Result = 0;
@@ -6651,37 +6751,24 @@ static void CursorCb_ChangeAbility(u8 taskId)
 
 static void CursorCb_InflictSleep(u8 taskId)
 {
-    gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
-    TryMultichoiceFormChange(taskId);
+    TryHexorbAndPrintResult(STATUS1_SLEEP,taskId);
 }
 static void CursorCb_InflictPoison(u8 taskId)
 {
-    gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
-    TryMultichoiceFormChange(taskId);
-
+    TryHexorbAndPrintResult(STATUS1_TOXIC_POISON,taskId);
 }
 static void CursorCb_InflictBurn(u8 taskId)
 {
-    gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
-    TryMultichoiceFormChange(taskId);
-
+    TryHexorbAndPrintResult(STATUS1_BURN,taskId);
 }
 static void CursorCb_InflictFreeze(u8 taskId)
 {
-    gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
-    TryMultichoiceFormChange(taskId);
-
+    u32 status = (B_USE_FROSTBITE) ? STATUS1_FROSTBITE : STATUS1_FREEZE;
+    TryHexorbAndPrintResult(status,taskId);
 }
 static void CursorCb_InflictParlysis(u8 taskId)
 {
-    gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
-    TryMultichoiceFormChange(taskId);
-
+    TryHexorbAndPrintResult(STATUS1_PARALYSIS,taskId);
 }
 
 void TryItemHoldFormChange(struct Pokemon *mon)
@@ -7879,11 +7966,9 @@ void IsLastMonThatKnowsSurf(void)
 
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 {
-    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
-    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
     SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
     DisplaySelectionWindow(SELECTWINDOW_HEXORB);
     DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
-    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].data[0] = TASK_NONE;
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
