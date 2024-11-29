@@ -150,3 +150,9 @@ void Hexorb_ConstructAbilityFailureMessage(struct Pokemon* mon, u32 status)
     Hexorb_BufferStatusFailureText(status);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}\nprevents it from {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
 }
+
+void Task_UseHexorbFromField(u8 taskId)
+{
+    ItemUseCB_UseHexorb(taskId,NULL);
+}
+

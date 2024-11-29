@@ -1500,10 +1500,35 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 }
 
 // Start hexorb Branch
+void Task_OpenRegisteredHexorb(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenuForHexorbFromField(taskId);
+        DestroyTask(taskId);
+    }
+}
+
 void ItemUseOutOfBattle_Hexorb(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_UseHexorb;
-    SetUpItemUseCallback(taskId);
+    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+    {
+        gItemUseCB = ItemUseCB_UseHexorb;
+        SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gItemUseCB = ItemUseCB_UseHexorb;
+        gTasks[taskId].func = Task_OpenRegisteredHexorb;
+    }
+
+    /*
+       gItemUseCB = ItemUseCB_UseHexorb;
+       SetUpItemUseCallback(taskId);
+       */
 }
 // End hexorb Branch
 

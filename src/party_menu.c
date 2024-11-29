@@ -7797,6 +7797,11 @@ void IsLastMonThatKnowsSurf(void)
 }
 
 // Start hexorb Branch
+void InitPartyMenuForHexorbFromField(u8 taskId)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_USE_ON_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToField);
+}
+
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 {
     SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
