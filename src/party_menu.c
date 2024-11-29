@@ -7809,10 +7809,9 @@ void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 static void TryHexorbAndPrintResult(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    u32 status = ConvertMenuPosToStatus(data[0]);
+    u32 status = Hexorb_ConvertMenuPosToStatus(data[0]);
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 result = (TryInflictStatusFromHexorb(mon, status));
-    u32 ability, species, type;
+    u32 result = (Hexorb_TryInflictStatus(mon, status));
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
@@ -7827,51 +7826,18 @@ static void TryHexorbAndPrintResult(u8 taskId)
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             break;
         case HEXORB_RESULT_ABILITY:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructAbilityFailureMessage(mon,status);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_RetryHexorbAfterMessage;
+            break;
         case HEXORB_RESULT_TYPE_0:
         case HEXORB_RESULT_TYPE_1:
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
-            GetMonNickname(mon, gStringVar1);
-            species = GetMonData(mon, MON_DATA_SPECIES);
-
-            if (result == HEXORB_RESULT_ABILITY)
-            {
-                ability = GetAbilityBySpecies(species, GetMonData(mon,MON_DATA_ABILITY_NUM));
-                StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
-            }
-            else
-            {
-                type = gSpeciesInfo[species].types[result - HEXORB_RESULT_TYPE_0];
-                StringCopy(gStringVar2, gTypesInfo[type].name);
-            }
-
-            switch (status)
-            {
-                case STATUS1_SLEEP:
-                    StringCopy(gStringVar3, COMPOUND_STRING("falling asleep"));
-                    break;
-                case STATUS1_TOXIC_POISON:
-                    StringCopy(gStringVar3, COMPOUND_STRING("being poisoned"));
-                    break;
-                case STATUS1_BURN:
-                    StringCopy(gStringVar3, COMPOUND_STRING("being burned"));
-                    break;
-                case STATUS1_FROSTBITE:
-                    StringCopy(gStringVar3, COMPOUND_STRING("getting frostbite"));
-                    break;
-                case STATUS1_FREEZE:
-                    StringCopy(gStringVar3, COMPOUND_STRING("being frozen"));
-                    break;
-                case STATUS1_PARALYSIS:
-                    StringCopy(gStringVar3, COMPOUND_STRING("being paralyzed"));
-                    break;
-            }
-
-            if (result == HEXORB_RESULT_ABILITY)
-                StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}\nprevents it from {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
-            else
-                StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}-type prevents it from\n{STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
-
+            Hexorb_ConstructTypeFailureMessage(mon, status, result);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_RetryHexorbAfterMessage;
@@ -7880,28 +7846,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
             gPartyMenuUseExitCallback = TRUE;
             UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
             PlayCry_ByMode(GetMonData(mon, MON_DATA_SPECIES), 0, CRY_MODE_WEAK);
-            GetMonNickname(mon, gStringVar1);
-            switch (status)
-            {
-                case STATUS1_SLEEP:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} fell asleep!{PAUSE_UNTIL_PRESS}"));
-                    break;
-                case STATUS1_TOXIC_POISON:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was poisoned!{PAUSE_UNTIL_PRESS}"));
-                    break;
-                case STATUS1_BURN:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was burned!{PAUSE_UNTIL_PRESS}"));
-                    break;
-                case STATUS1_FROSTBITE:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} got frostbite!{PAUSE_UNTIL_PRESS}"));
-                    break;
-                case STATUS1_FREEZE:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} was frozen solid!{PAUSE_UNTIL_PRESS}"));
-                    break;
-                case STATUS1_PARALYSIS:
-                    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} is paralyzed!{PAUSE_UNTIL_PRESS}"));
-                    break;
-            }
+            Hexorb_ConstructSuccessMessage(mon, status);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;

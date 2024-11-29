@@ -8,8 +8,65 @@
 #include "constants/battle.h"
 #include "constants/songs.h"
 #include "sound.h"
+#include "party_menu.h"
+#include "battle.h"
 
-static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
+static const void Hexorb_BufferStatusFailureText(u32 status)
+{
+    switch (status)
+    {
+        case STATUS1_SLEEP:
+            StringCopy(gStringVar3,COMPOUND_STRING("falling asleep"));
+            break;
+        case STATUS1_TOXIC_POISON:
+            StringCopy(gStringVar3,COMPOUND_STRING("being poisoned"));
+            break;
+        case STATUS1_BURN:
+            StringCopy(gStringVar3,COMPOUND_STRING("being burned"));
+            break;
+        case STATUS1_FROSTBITE:
+            StringCopy(gStringVar3,COMPOUND_STRING("getting frostbite"));
+            break;
+        case STATUS1_FREEZE:
+            StringCopy(gStringVar3,COMPOUND_STRING("being frozen"));
+            break;
+        case STATUS1_PARALYSIS:
+            StringCopy(gStringVar3,COMPOUND_STRING("being paralyzed"));
+            break;
+        default:
+            StringCopy(gStringVar3,COMPOUND_STRING("new status!"));
+            break;
+    }
+}
+
+static void Hexorb_BufferStatusAfflictionText(u32 status)
+{
+    switch (status)
+    {
+        case STATUS1_SLEEP:
+            StringCopy(gStringVar2, COMPOUND_STRING("fell asleep"));
+            break;
+        case STATUS1_TOXIC_POISON:
+            StringCopy(gStringVar2, COMPOUND_STRING("was poisoned"));
+            break;
+        case STATUS1_BURN:
+            StringCopy(gStringVar2, COMPOUND_STRING("was burned"));
+            break;
+        case STATUS1_FROSTBITE:
+            StringCopy(gStringVar2, COMPOUND_STRING("got frostbite"));
+            break;
+        case STATUS1_FREEZE:
+            StringCopy(gStringVar2, COMPOUND_STRING("was frozen solid"));
+            break;
+        case STATUS1_PARALYSIS:
+            StringCopy(gStringVar2, COMPOUND_STRING("is paralyzed"));
+            break;
+        default:
+            StringCopy(gStringVar2, COMPOUND_STRING("new status!"));
+    }
+}
+
+static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
 {
     u32 type = gSpeciesInfo[species].types[typeIndex];
     switch (status)
@@ -30,7 +87,7 @@ static bool32 DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
     }
 }
 
-u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status)
+u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 {
     if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
         return HEXORB_RESULT_FAINTED_OR_NO_MON;
@@ -41,24 +98,24 @@ u32 TryInflictStatusFromHexorb(struct Pokemon *mon, u32 status)
     if (DoesAbilityPreventStatus(mon, status))
         return HEXORB_RESULT_ABILITY;
 
-    if (DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 0, status))
+    if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 0, status))
         return HEXORB_RESULT_TYPE_0;
 
-    if (DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 1, status))
+    if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 1, status))
         return HEXORB_RESULT_TYPE_1;
 
     SetMonData(mon, MON_DATA_STATUS, &status);
     return HEXORB_RESULT_SUCCESS;
 }
 
-u32 ConvertMenuPosToStatus(u32 pos)
+u32 Hexorb_ConvertMenuPosToStatus(u32 pos)
 {
     switch (pos)
     {
         case 0: return STATUS1_SLEEP;
         case 1: return STATUS1_TOXIC_POISON;
         case 2: return STATUS1_BURN;
-#ifdef B_USE_FROSTBITE
+#if B_USE_FROSTBITE == TRUE
         case 3: return STATUS1_FROSTBITE;
 #else
         case 3: return STATUS1_FREEZE;
@@ -68,3 +125,28 @@ u32 ConvertMenuPosToStatus(u32 pos)
     }
 }
 
+void Hexorb_ConstructSuccessMessage(struct Pokemon* mon, u32 status)
+{
+    GetMonNickname(mon, gStringVar1);
+    Hexorb_BufferStatusAfflictionText(status);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} {STR_VAR_2}!{PAUSE_UNTIL_PRESS}"));
+}
+
+void Hexorb_ConstructTypeFailureMessage(struct Pokemon *mon, u32 status, u32 result)
+{
+    u32 type = gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].types[result - HEXORB_RESULT_TYPE_0];
+    GetMonNickname(mon, gStringVar1);
+    StringCopy(gStringVar2, gTypesInfo[type].name);
+    Hexorb_BufferStatusFailureText(status);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}-type prevents it from\n{STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
+}
+
+void Hexorb_ConstructAbilityFailureMessage(struct Pokemon* mon, u32 status)
+{
+    u32 ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ABILITY_NUM));
+
+    GetMonNickname(mon, gStringVar1);
+    StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
+    Hexorb_BufferStatusFailureText(status);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}'s {STR_VAR_2}\nprevents it from {STR_VAR_3}!{PAUSE_UNTIL_PRESS}"));
+}

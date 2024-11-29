@@ -750,7 +750,7 @@ struct
     [MENU_INFLICT_SLEEP] = {gText_Slp, TryHexorbAndPrintResult},
     [MENU_INFLICT_POISON] = {gText_Psn, TryHexorbAndPrintResult},
     [MENU_INFLICT_BURN] = {gText_Brn, TryHexorbAndPrintResult},
-#ifdef B_USE_FROSTBITE
+#if B_USE_FROSTBITE == TRUE
     [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Fsb, TryHexorbAndPrintResult},
 #else
     [MENU_INFLICT_FREEZE_FROSTBITE] = {gText_Frz, TryHexorbAndPrintResult},
