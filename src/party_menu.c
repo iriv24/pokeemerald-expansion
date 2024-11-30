@@ -519,6 +519,7 @@ static void Task_HandleWhichMoveInput(u8 taskId);
 static void TryHexorbAndPrintResult(u8);
 static void Task_RetryHexorbAfterFailedStatus(u8);
 static void Task_RetryHexorbAfterFailedMon(u8);
+static void DisplayHexorbMessageAndScheduleTask(u8, const u8*, TaskFunc, bool32);
 // End hexorb Branch
 
 // static const data
