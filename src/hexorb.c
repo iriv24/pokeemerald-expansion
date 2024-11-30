@@ -122,7 +122,7 @@ static bool32 Hexorb_ShouldExistingStatusBlock(struct Pokemon *mon)
     return (GetMonData(mon, MON_DATA_STATUS) & STATUS1_ANY) != 0;
 }
 
-u32 Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
+enum HexorbResultCodes Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 {
     u32 clearStatus;
 
@@ -175,7 +175,7 @@ void Hexorb_ConstructSuccessMessage(struct Pokemon* mon, u32 status)
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} {STR_VAR_2}!{PAUSE_UNTIL_PRESS}"));
 }
 
-void Hexorb_ConstructTypeFailureMessage(struct Pokemon *mon, u32 status, u32 result)
+void Hexorb_ConstructTypeFailureMessage(struct Pokemon *mon, u32 status, enum HexorbResultCodes result)
 {
     u32 type = gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].types[result];
     GetMonNickname(mon, gStringVar1);

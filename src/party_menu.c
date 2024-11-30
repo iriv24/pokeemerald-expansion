@@ -7812,7 +7812,7 @@ static void TryHexorbAndPrintResult(u8 taskId)
     s16 *data = gTasks[taskId].data;
     u32 status = Hexorb_ConvertMenuPosToStatus(data[0]);
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 result = (Hexorb_TryInflictStatus(mon, status));
+    enum HexorbResultCodes result = (Hexorb_TryInflictStatus(mon, status));
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
