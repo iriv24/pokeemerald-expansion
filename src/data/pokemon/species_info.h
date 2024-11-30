@@ -322,8 +322,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
-        .palette = gMonPalette_Luxray,
-        .shinyPalette = gMonShinyPalette_Luxray,
+        .palette = gMonPalette_LuxrayMega,
+        .shinyPalette = gMonShinyPalette_LuxrayMega,
         .iconSprite = gMonIcon_Luxray,
         .iconPalIndex = 0,
     #if P_GENDER_DIFFERENCES
