@@ -1,15 +1,15 @@
 #include "global.h"
-#include "main.h"
-#include "hexorb.h"
-#include "constants/item_effects.h"
-#include "string_util.h"
-#include "battle_pike.h"
-#include "menu.h"
-#include "constants/battle.h"
-#include "constants/songs.h"
-#include "sound.h"
-#include "party_menu.h"
 #include "battle.h"
+#include "battle_pike.h"
+#include "hexorb.h"
+#include "main.h"
+#include "menu.h"
+#include "party_menu.h"
+#include "sound.h"
+#include "string_util.h"
+#include "constants/battle.h"
+#include "constants/item_effects.h"
+#include "constants/songs.h"
 
 static const void Hexorb_BufferBlockedStatusMessage(u32 status)
 {
@@ -104,9 +104,7 @@ static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
         case STATUS1_FROSTBITE:
             return (type == TYPE_ICE);
         case STATUS1_PARALYSIS:
-            if (B_PARALYZE_ELECTRIC < GEN_6)
-                return FALSE;
-            return (type == TYPE_ELECTRIC);
+            return (B_PARALYZE_ELECTRIC >= GEN_6 && type == TYPE_ELECTRIC);
         case STATUS1_BURN:
             return (type == TYPE_FIRE);
         default:
@@ -116,15 +114,13 @@ static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
 
 static bool32 Hexorb_ShouldExistingStatusBlock(struct Pokemon *mon)
 {
-    if (HEXORB_BLOCK_STATUS == FALSE)
-        return FALSE;
-
-    return (GetMonData(mon, MON_DATA_STATUS) & STATUS1_ANY) != 0;
+    return HEXORB_BLOCK_STATUS && (GetMonData(mon, MON_DATA_STATUS) & STATUS1_ANY);
 }
 
 enum HexorbResultCodes Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 {
     u32 clearStatus;
+    u32 species = GetMonData(mon,MON_DATA_SPECIES);
 
     if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
         return HEXORB_RESULT_FAIL_FAINTED;
@@ -138,10 +134,10 @@ enum HexorbResultCodes Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
     if (DoesAbilityPreventStatus(mon, status))
         return HEXORB_RESULT_FAIL_ABILITY;
 
-    if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 0, status))
+    if (Hexorb_DoesTypeBlockStatus(species, 0, status))
         return HEXORB_RESULT_FAIL_TYPE_0;
 
-    if (Hexorb_DoesTypeBlockStatus(GetMonData(mon,MON_DATA_SPECIES), 1, status))
+    if (Hexorb_DoesTypeBlockStatus(species, 1, status))
         return HEXORB_RESULT_FAIL_TYPE_1;
 
     clearStatus = STATUS1_NONE;
@@ -153,19 +149,19 @@ enum HexorbResultCodes Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
 
 u32 Hexorb_ConvertMenuPosToStatus(u32 pos)
 {
-    switch (pos)
-    {
-        case 0: return STATUS1_SLEEP;
-        case 1: return STATUS1_TOXIC_POISON;
-        case 2: return STATUS1_BURN;
+    static const u32 statusMap[] = {
+        STATUS1_SLEEP,
+        STATUS1_TOXIC_POISON,
+        STATUS1_BURN,
 #if B_USE_FROSTBITE == TRUE
-        case 3: return STATUS1_FROSTBITE;
+        STATUS1_FROSTBITE,
 #else
-        case 3: return STATUS1_FREEZE;
+        STATUS1_FREEZE,
 #endif
-        default:
-        case 4: return STATUS1_PARALYSIS;
-    }
+        STATUS1_PARALYSIS
+    };
+
+    return statusMap[pos];
 }
 
 void Hexorb_ConstructSuccessMessage(struct Pokemon* mon, u32 status)
