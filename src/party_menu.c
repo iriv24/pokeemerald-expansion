@@ -517,6 +517,7 @@ static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
 // Start hexorb Branch
 static void TryHexorbAndPrintResult(u8);
+static void DisplayHexorbResult(u8, u32, enum HexorbResultCodes, struct Pokemon*);
 static void Task_RetryHexorbAfterFailedStatus(u8);
 static void Task_RetryHexorbAfterFailedMon(u8);
 static void DisplayHexorbMessageAndScheduleTask(u8, const u8*, TaskFunc, bool32);
@@ -7809,6 +7810,14 @@ static void DisplayHexorbMessageAndScheduleTask(u8 taskId, const u8* message, Ta
 
 void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
 {
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
+    if (!GetMonData(mon, MON_DATA_HP))
+    {
+        DisplayHexorbResult(taskId, 0, HEXORB_RESULT_FAIL_FAINTED, mon);
+        return;
+    }
+
     SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
     DisplaySelectionWindow(SELECTWINDOW_HEXORB);
     DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
@@ -7826,6 +7835,11 @@ static void TryHexorbAndPrintResult(u8 taskId)
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
 
+    DisplayHexorbResult(taskId, status, result, mon);
+}
+
+static void DisplayHexorbResult(u8 taskId, u32 status, enum HexorbResultCodes result, struct Pokemon* mon)
+{
     switch (result)
     {
         case HEXORB_RESULT_SUCCESS:
@@ -7849,14 +7863,14 @@ static void TryHexorbAndPrintResult(u8 taskId)
         case HEXORB_RESULT_FAIL_HAS_STATUS:
             PlaySE(SE_SELECT);
             Hexorb_ConstructStatusFailureMessage(mon);
-            DisplayHexorbMessageAndScheduleTask(taskId, gText_WontHaveEffect, Task_RetryHexorbAfterFailedMon, FALSE);
+            DisplayHexorbMessageAndScheduleTask(taskId, gStringVar4, Task_RetryHexorbAfterFailedMon, FALSE);
             break;
+        default:
         case HEXORB_RESULT_FAIL_FAINTED:
             PlaySE(SE_SELECT);
             Hexorb_ConstructStatusFailureMessage(mon);
             DisplayHexorbMessageAndScheduleTask(taskId, gText_WontHaveEffect, Task_RetryHexorbAfterFailedMon, FALSE);
             break;
-        default:
     }
 }
 

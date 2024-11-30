@@ -122,12 +122,6 @@ enum HexorbResultCodes Hexorb_TryInflictStatus(struct Pokemon *mon, u32 status)
     u32 clearStatus;
     u32 species = GetMonData(mon,MON_DATA_SPECIES);
 
-    if (!GetMonData(mon,MON_DATA_SANITY_HAS_SPECIES))
-        return HEXORB_RESULT_FAIL_FAINTED;
-
-    if (!GetMonData(mon, MON_DATA_HP))
-        return HEXORB_RESULT_FAIL_FAINTED;
-
     if (Hexorb_ShouldExistingStatusBlock(mon))
         return HEXORB_RESULT_FAIL_HAS_STATUS;
 
