@@ -703,14 +703,16 @@ Route117_EventScript_FantinaGiveItems::
 # 368 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_GENGARITE
 # 369 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT
+	giveitem ITEM_DUSKNOIRITE
 # 370 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_EXPERT_BELT
 # 371 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
+	giveitem ITEM_LEFTOVERS
 # 372 "data/maps/Route117/scripts.pory"
-	msgbox Fantina_ExplainItems
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 # 373 "data/maps/Route117/scripts.pory"
+	msgbox Fantina_ExplainItems
+# 374 "data/maps/Route117/scripts.pory"
 	release
 	end
 
@@ -720,7 +722,7 @@ Route117_EventScript_BattleFantina_Text_0:
 	.string "You're on!$"
 
 Fantina_ExplainItems::
-# 377 "data/maps/Route117/scripts.pory"
+# 378 "data/maps/Route117/scripts.pory"
 	.string "Those three are some very\n"
 	.string "powerful moves. In addition, I had\l"
 	.string "a few spare Mega Stones for some\l"
@@ -732,7 +734,7 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Greeting::
-# 389 "data/maps/Route117/scripts.pory"
+# 390 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina.\n"
 	.string "Did you come here to enjoy the\l"
 	.string "flowers too?\p"
@@ -746,13 +748,13 @@ Fantina_Greeting::
 	.string "Is that what you came here for?$"
 
 Fantina_Outro::
-# 403 "data/maps/Route117/scripts.pory"
+# 404 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\l"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 410 "data/maps/Route117/scripts.pory"
+# 411 "data/maps/Route117/scripts.pory"
 	.string "Maybe I'll head to Ever Grande City\n"
 	.string "after this, I've heard the flowers\l"
 	.string "there are extraordinary.$"

@@ -366,6 +366,7 @@ script Route117_EventScript_FantinaGiveItems{
 	giveitem(ITEM_BANETTITE)
 	giveitem(ITEM_SABLENITE)
 	giveitem(ITEM_GENGARITE)
+	giveitem(ITEM_DUSKNOIRITE)
 	giveitem(ITEM_EXPERT_BELT)
 	giveitem(ITEM_LEFTOVERS)
 	setflag(FLAG_RECEIVED_TM_SHADOW_BALL)
