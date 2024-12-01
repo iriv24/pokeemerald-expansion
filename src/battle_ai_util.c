@@ -2439,6 +2439,7 @@ bool32 IsTwoTurnNotSemiInvulnerableMove(u32 battlerAtk, u32 move)
     {
     case EFFECT_SOLAR_BEAM:
     case EFFECT_TWO_TURNS_ATTACK:
+    case EFFECT_GEOMANCY:
         return !(AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB
           || (AI_GetWeather(AI_DATA) & gMovesInfo[move].argument));
     default:
