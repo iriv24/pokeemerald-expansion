@@ -126,7 +126,7 @@ void Task_OpenDexNavFromLMenu(u8 taskId);
 bool8 TryStartDexnavSearch(void);
 void TryIncrementSpeciesSearchLevel(u16 dexNum);
 void ResetDexNavSearch(void);
-bool8 DexNavTryMakeShinyMon(void);
+u32 CalculateDexnavShinyRolls(void);
 void IncrementDexNavChain(void);
 
 //ewram

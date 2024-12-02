@@ -479,9 +479,8 @@ static void AddSearchWindow(u8 width)
 }
 
 #define WINDOW_COL_0        (SPECIES_ICON_X + 4)
-#define WINDOW_COL_1        (WINDOW_COL_0 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * (POKEMON_NAME_LENGTH)))
-#define WINDOW_MOVE_NAME_X  (WINDOW_COL_1 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * 6))
-#define SEARCH_ARROW_X      (WINDOW_MOVE_NAME_X + 90)
+#define WINDOW_COL_1        (WINDOW_COL_0 + 88)
+#define SEARCH_ARROW_X      (WINDOW_COL_1 + 80)
 #define SEARCH_ARROW_Y      0
 static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8 hidden)
 {
@@ -503,42 +502,27 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
     //level - always present
     ConvertIntToDecimalStringN(gStringVar1, sDexNavSearchDataPtr->monLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, sText_MonLevel);
-    AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, 0, WINDOW_COL_1, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
-    
-    /*if (proximity <= SNEAKING_PROXIMITY)
+    AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, 0, WINDOW_COL_1 - 12, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+
+    // ability name
+    StringCopy(gStringVar1, gAbilitiesInfo[GetAbilityBySpecies(species, sDexNavSearchDataPtr->abilityNum, FALSE)].name);
+    AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 12, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
+
+    // item name
+    if (sDexNavSearchDataPtr->heldItem)
     {
-        PlaySE(SE_POKENAV_ON);
-        // move
-        if (searchLevel > 1 && sDexNavSearchDataPtr->moves[0])
-        {
-            StringCopy(gStringVar1, gMovesInfo[sDexNavSearchDataPtr->moves[0]].name);
-            StringExpandPlaceholders(gStringVar4, sText_EggMove);
-            AddTextPrinterParameterized3(windowId, 0, WINDOW_MOVE_NAME_X, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
-        }
-        
-        if (searchLevel > 2)
-        {            
-            // ability name
-            StringCopy(gStringVar1, gAbilitiesInfo[GetAbilityBySpecies(species, sDexNavSearchDataPtr->abilityNum)].name);
-            AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
-        
-            // item name
-            if (sDexNavSearchDataPtr->heldItem)
-            {
-                CopyItemName(sDexNavSearchDataPtr->heldItem, gStringVar1);
-                StringExpandPlaceholders(gStringVar4, sText_HeldItem);
-                AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_0, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
-            }
-        }
-    }*/
-    
+        CopyItemName(sDexNavSearchDataPtr->heldItem, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, sText_HeldItem);
+        AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_0, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+    }
+
     //chain level - always present
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
     if (gSaveBlock1Ptr->dexNavChain > 99)
         StringExpandPlaceholders(gStringVar4, sText_DexNavChainLong);
     else
         StringExpandPlaceholders(gStringVar4, sText_DexNavChain);
-    AddTextPrinterParameterized3(windowId, 0, SEARCH_ARROW_X - 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);    
+    AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 36, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
     
     CopyWindowToVram(sDexNavSearchDataPtr->windowId, 2);
 }
@@ -1064,11 +1048,11 @@ static void Task_DexNavSearch(u8 taskId)
     
     if (sDexNavSearchDataPtr->proximity < 1)
     {
+        gDexnavBattle = TRUE;  
         CreateDexNavWildMon(sDexNavSearchDataPtr->species, sDexNavSearchDataPtr->potential, sDexNavSearchDataPtr->monLevel, 
           sDexNavSearchDataPtr->abilityNum, sDexNavSearchDataPtr->heldItem, sDexNavSearchDataPtr->moves);
         
         FlagClear(FLAG_SYS_DEXNAV_SEARCH);
-        gDexnavBattle = TRUE;        
         ScriptContext_SetupScript(EventScript_StartDexNavBattle);
         Free(sDexNavSearchDataPtr);
         DestroyTask(taskId);
@@ -1164,12 +1148,6 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
     u8 i;
     u8 perfectIv = 31;
     
-    if (DexNavTryMakeShinyMon())
-    {
-        FlagSet(FLAG_SHINY_CREATION); // just easier this way
-    }
-        
-    
     CreateWildMon(species, level);  // shiny rate bonus handled in CreateBoxMon
     
     if(FlagGet(FLAG_MIN_GRINDING_MODE))
@@ -1195,7 +1173,6 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
         SetMonMoveSlot(mon, moves[i], i);
 
     CalculateMonStats(mon);
-    FlagClear(FLAG_SHINY_CREATION);
 }
 
 // gets a random level of the species based on map data.
@@ -2549,42 +2526,14 @@ static void DexNavDrawHiddenIcons(void)
 /////////////////////////
 //// GENERAL UTILITY ////
 /////////////////////////
-bool8 DexNavTryMakeShinyMon(void)
+u32 CalculateDexnavShinyRolls(void)
 {
-    u32 i, shinyRolls, chainBonus, rndBonus;
-    u32 shinyRate = 0;
-    u32 charmBonus = 0;
-    u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
+    u32 chainBonus, rndBonus;
     u8 chain = gSaveBlock1Ptr->dexNavChain;
-
-    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
-    chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
-    rndBonus = (Random() % 100 < 4 ? 4 : 0);
-    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
-
-    if (searchLevel > 200)
-    {
-        shinyRate += searchLevel - 200;
-        searchLevel = 200;
-    }
-    if (searchLevel > 100)
-    {
-        shinyRate += (searchLevel * 2) - 200;
-        searchLevel = 100;
-    }
-    if (searchLevel > 0)
-    {
-        shinyRate += searchLevel * 6;
-    }
-
-    shinyRate /= 100;
-    for (i = 0; i < shinyRolls; i++)
-    {
-        if (Random() % 10000 < shinyRate)
-            return TRUE;
-    }
-
-    return FALSE;
+    
+    chainBonus = (chain >= 100) ? 20 : (chain >= 75) ? 15 : (chain >= 50) ? 10 : (chain >= 25) ? 5 : 0;
+    rndBonus = (Random() % 100 < 4) ? 4 : 0;
+    return chainBonus + rndBonus;
 }
 
 void TryIncrementSpeciesSearchLevel(u16 dexNum)
