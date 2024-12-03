@@ -2240,9 +2240,7 @@ u8 DoBattlerEndTurnEffects(void)
                   && ability != ABILITY_SAND_FORCE
                   && ability != ABILITY_SAND_RUSH
                   && ability != ABILITY_OVERCOAT
-                  && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_ROCK)
-                  && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GROUND)
-                  && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_STEEL)
+                  && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
                   && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                   && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
@@ -2812,7 +2810,7 @@ u8 DoBattlerEndTurnEffects(void)
              && !IsBattlerProtectedByMagicGuard(battler, ability))
             {
                 gBattlerTarget = battler;
-                if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_STEEL) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER))
+                if (IS_BATTLER_ANY_TYPE(gBattlerTarget, TYPE_STEEL, TYPE_WATER))
                     gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
                 else
                     gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 8;
@@ -10472,13 +10470,14 @@ static void UpdateMoveResultFlags(uq4_12_t modifier)
 static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 moveType, u32 battlerAtk, u32 battlerDef, bool32 recordAbilities, uq4_12_t modifier, u32 defAbility)
 {
     u32 illusionSpecies;
+    u32 types[3];
+    GetBattlerTypes(battlerDef, FALSE, types);
 
-    MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, GetBattlerType(battlerDef, 0, FALSE), battlerAtk, recordAbilities);
-    if (GetBattlerType(battlerDef, 1, FALSE) != GetBattlerType(battlerDef, 0, FALSE))
-        MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, GetBattlerType(battlerDef, 1, FALSE), battlerAtk, recordAbilities);
-    if (GetBattlerType(battlerDef, 2, FALSE) != TYPE_MYSTERY && GetBattlerType(battlerDef, 2, FALSE) != GetBattlerType(battlerDef, 1, FALSE)
-        && GetBattlerType(battlerDef, 2, FALSE) != GetBattlerType(battlerDef, 0, FALSE))
-        MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, GetBattlerType(battlerDef, 2, FALSE), battlerAtk, recordAbilities);
+    MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, types[0], battlerAtk, recordAbilities);
+    if (types[1] != types[0])
+        MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, types[1], battlerAtk, recordAbilities);
+    if (types[2] != TYPE_MYSTERY && types[2] != types[1] && types[2] != types[0])
+        MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, types[2], battlerAtk, recordAbilities);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
 
@@ -10521,8 +10520,9 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
     }
 
     // Thousand Arrows ignores type modifiers for flying mons
-    if (!IsBattlerGrounded(battlerDef) && (gMovesInfo[move].ignoreTypeIfFlyingAndUngrounded)
-        && (GetBattlerType(battlerDef, 0, FALSE) == TYPE_FLYING || GetBattlerType(battlerDef, 1, FALSE) == TYPE_FLYING || GetBattlerType(battlerDef, 2, FALSE) == TYPE_FLYING))
+    if (!IsBattlerGrounded(battlerDef)
+     && (gMovesInfo[move].ignoreTypeIfFlyingAndUngrounded)
+     && IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING))
     {
         modifier = UQ_4_12(1.0);
     }
@@ -11040,8 +11040,9 @@ bool32 TryBattleFormChange(u32 battler, u32 method)
 bool32 DoBattlersShareType(u32 battler1, u32 battler2)
 {
     s32 i;
-    u8 types1[3] = {GetBattlerType(battler1, 0, FALSE), GetBattlerType(battler1, 1, FALSE), GetBattlerType(battler1, 2, FALSE)};
-    u8 types2[3] = {GetBattlerType(battler2, 0, FALSE), GetBattlerType(battler2, 1, FALSE), GetBattlerType(battler2, 2, FALSE)};
+    u32 types1[3], types2[3];
+    GetBattlerTypes(battler1, FALSE, types1);
+    GetBattlerTypes(battler2, FALSE, types2);
 
     if (types1[2] == TYPE_MYSTERY)
         types1[2] = types1[0];
@@ -11817,31 +11818,40 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
     }
 }
 
-u8 GetBattlerType(u32 battler, u8 typeIndex, bool32 ignoreTera)
+void GetBattlerTypes(u32 battler, bool32 ignoreTera, u32 types[static 3])
 {
-    u32 teraType = GetBattlerTeraType(battler);
-    u16 types[3] = {0};
+    // Terastallization.
+    bool32 isTera = GetActiveGimmick(battler) == GIMMICK_TERA;
+    if (!ignoreTera && isTera)
+    {
+        u32 teraType = GetBattlerTeraType(battler);
+        if (teraType != TYPE_STELLAR)
+        {
+            types[0] = types[1] = types[2] = teraType;
+            return;
+        }
+    }
+
     types[0] = gBattleMons[battler].types[0];
     types[1] = gBattleMons[battler].types[1];
     types[2] = gBattleMons[battler].types[2];
 
-    // Handle Terastallization
-    if (GetActiveGimmick(battler) == GIMMICK_TERA && teraType != TYPE_STELLAR && !ignoreTera)
-        return GetBattlerTeraType(battler);
-
-    // Handle Roost's Flying-type suppression
-    if (typeIndex == 0 || typeIndex == 1)
+    // Roost.
+    if (!isTera && (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST))
     {
-        if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_ROOST
-            && GetActiveGimmick(battler) != GIMMICK_TERA)
-        {
-            if (types[0] == TYPE_FLYING && types[1] == TYPE_FLYING)
-                return B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_NORMAL : TYPE_MYSTERY;
-            else
-                return types[typeIndex] == TYPE_FLYING ? TYPE_MYSTERY : types[typeIndex];
-        }
+        if (types[0] == TYPE_FLYING && types[1] == TYPE_FLYING)
+            types[0] = types[1] = B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_NORMAL : TYPE_MYSTERY;
+        else if (types[0] == TYPE_FLYING)
+            types[0] = TYPE_MYSTERY;
+        else if (types[1] == TYPE_FLYING)
+            types[1] = TYPE_MYSTERY;
     }
+}
 
+u32 GetBattlerType(u32 battler, u32 typeIndex, bool32 ignoreTera)
+{
+    u32 types[3];
+    GetBattlerTypes(battler, ignoreTera, types);
     return types[typeIndex];
 }
 

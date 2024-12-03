@@ -2350,12 +2350,15 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_SOAK:
+        {
+            u32 types[3];
+            GetBattlerTypes(battlerDef, FALSE, types);
+            // TODO: Use the type of the move like 'VARIOUS_TRY_SOAK'?
             if (PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove)
-              || (GetBattlerType(battlerDef, 0, FALSE) == TYPE_WATER
-              && GetBattlerType(battlerDef, 1, FALSE) == TYPE_WATER
-              && GetBattlerType(battlerDef, 2, FALSE) == TYPE_MYSTERY))
+              || (types[0] == TYPE_WATER && types[1] == TYPE_WATER && types[2] == TYPE_MYSTERY))
                 ADJUST_SCORE(-10);    // target is already water-only
             break;
+        }
         case EFFECT_THIRD_TYPE:
             switch (move)
             {
@@ -3209,6 +3212,10 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         || (gBattleMons[battlerAtk].status1 & STATUS1_FROSTBITE && HasOnlyMovesWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL, TRUE)))
             ADJUST_SCORE(-20); // Force switch if all your attacking moves are physical and you have Natural Cure.
     }
+
+    // med hp
+    if (AI_DATA->hpPercents[battlerAtk] < 40 && IsStatRaisingEffect(moveEffect))
+        ADJUST_SCORE(-2);
 
     // move effect checks
     switch (moveEffect)

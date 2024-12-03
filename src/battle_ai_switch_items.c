@@ -82,10 +82,9 @@ static inline bool32 SetSwitchinAndSwitch(u32 battler, u32 switchinId)
 static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
 {
     //Variable initialization
-    // TO CHECK PAWKKIE this function
-    u8 opposingPosition, atkType1, atkType2, defType1, defType2;
+    u8 opposingPosition, atkType1, atkType2, defType1, defType2, effectiveness;
     s32 i, damageDealt = 0, maxDamageDealt = 0, damageTaken = 0, maxDamageTaken = 0;
-    u32 aiMove, playerMove, aiBestMove = MOVE_NONE, aiAbility = AI_DATA->abilities[battler], opposingBattler;
+    u32 aiMove, playerMove, aiBestMove = MOVE_NONE, aiAbility = AI_DATA->abilities[battler], opposingBattler, weather = AI_GetWeather(AI_DATA);
     bool32 getsOneShot = FALSE, hasStatusMove = FALSE, hasSuperEffectiveMove = FALSE;
     u16 typeEffectiveness = UQ_4_12(1.0), aiMoveEffect; //baseline typing damage
 
@@ -161,7 +160,8 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
         if (playerMove != MOVE_NONE && gMovesInfo[playerMove].power != 0)
         {
             // Pawkkie -- why were we re-calcing damage here, and is this line the correct substitute?
-            damageTaken = AI_DATA->simulatedDmg[opposingBattler][battler][i].averageRoll;
+            damageTaken = AI_CalcDamage(playerMove, opposingBattler, battler, &effectiveness, FALSE, weather).averageRoll;
+            //damageTaken = AI_DATA->simulatedDmg[opposingBattler][battler][i].averageRoll;
             if (damageTaken > maxDamageTaken)
                 maxDamageTaken = damageTaken;
         }
