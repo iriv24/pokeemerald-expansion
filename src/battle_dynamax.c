@@ -134,7 +134,7 @@ u16 GetNonDynamaxHP(u32 battler)
         return gBattleMons[battler].hp;
     else
     {
-        u16 mult = UQ_4_12(1.0/1.5); // placeholder
+        u16 mult = UQ_4_12_FLOORED(1.0/1.5); // placeholder
         u16 hp = UQ_4_12_TO_INT((gBattleMons[battler].hp * mult) + UQ_4_12_ROUND);
         return hp;
     }
@@ -147,7 +147,7 @@ u16 GetNonDynamaxMaxHP(u32 battler)
         return gBattleMons[battler].maxHP;
     else
     {
-        u16 mult = UQ_4_12(1.0/1.5); // placeholder
+        u16 mult = UQ_4_12_FLOORED(1.0/1.5); // placeholder
         u16 maxHP = UQ_4_12_TO_INT((gBattleMons[battler].maxHP * mult) + UQ_4_12_ROUND);
         return maxHP;
     }
@@ -185,7 +185,7 @@ void UndoDynamax(u32 battler)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
     {
         struct Pokemon *mon = (side == B_SIDE_PLAYER) ? &gPlayerParty[monId] : &gEnemyParty[monId];
-        u16 mult = UQ_4_12(1.0/1.5); // placeholder
+        u16 mult = UQ_4_12_FLOORED(1.0/1.5); // placeholder
         gBattleMons[battler].hp = UQ_4_12_TO_INT((GetMonData(mon, MON_DATA_HP) * mult + 1) + UQ_4_12_ROUND); // round up
         SetMonData(mon, MON_DATA_HP, &gBattleMons[battler].hp);
         CalculateMonStats(mon);
