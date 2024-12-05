@@ -778,8 +778,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
-        .palette = gMonPalette_Dusknoir,
-        .shinyPalette = gMonShinyPalette_Dusknoir,
+        .palette = gMonPalette_DusknoirMega,
+        .shinyPalette = gMonShinyPalette_DusknoirMega,
         .iconSprite = gMonIcon_Dusknoir,
         .iconPalIndex = 2,
         SHADOW(6, 13, SHADOW_SIZE_M)
