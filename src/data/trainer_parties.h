@@ -5643,7 +5643,7 @@ static const struct TrainerMon sParty_Vicky[] = {
     .species = SPECIES_MEDICHAM,
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
-    .ability = ABILITY_PURE_POWER,
+    .ability = ABILITY_HUGE_POWER,
     .heldItem = ITEM_MEDICHAMITE,
     .moves = {MOVE_FAKE_OUT, MOVE_DRAIN_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH}
     },
