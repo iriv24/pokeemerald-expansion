@@ -4238,12 +4238,12 @@ static const struct TrainerMon sParty_Glacia1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_ROTOM_HEAT,
-    .nature = NATURE_TIMID,
-    .ev = TRAINER_PARTY_EVS_TIMID(),
-    .ability = ABILITY_LEVITATE,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_OVERHEAT, MOVE_THUNDERBOLT, MOVE_WILL_O_WISP, MOVE_VOLT_SWITCH}
+    .species = SPECIES_DECIDUEYE_HISUI,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_QUILL_RUSH,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_LEAF_BLADE, MOVE_SUCKER_PUNCH, MOVE_STONE_EDGE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4252,18 +4252,18 @@ static const struct TrainerMon sParty_Glacia1[] = {
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_ZEN_MODE,
-    .heldItem = ITEM_EXPERT_BELT,
+    .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_FLARE_BLITZ, MOVE_ICICLE_CRASH, MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_FLAREON,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
-    .ability = ABILITY_FLASH_FIRE,
-    .heldItem = ITEM_CHOICE_BAND,
-    .moves = {MOVE_STOMPING_TANTRUM, MOVE_SACRED_FIRE, MOVE_FACADE, MOVE_SUPERPOWER}
+    .species = SPECIES_VOLCANION,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_WATER_ABSORB,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+    .moves = {MOVE_HYDRO_STEAM, MOVE_FLAMETHROWER, MOVE_SLUDGE_WAVE, MOVE_DEFOG}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4272,8 +4272,8 @@ static const struct TrainerMon sParty_Glacia1[] = {
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_TURBOBLAZE,
-    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
-    .moves = {MOVE_FUSION_FLARE, MOVE_DRAGON_PULSE, MOVE_AURA_SPHERE, MOVE_EARTH_POWER}
+    .heldItem = ITEM_WEAKNESS_POLICY,
+    .moves = {MOVE_FUSION_FLARE, MOVE_DRAGON_PULSE, MOVE_AURA_SPHERE, MOVE_FLAME_CHARGE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4301,12 +4301,12 @@ static const struct TrainerMon sParty_Glacia2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_ROTOM_FROST,
-    .nature = NATURE_TIMID,
-    .ev = TRAINER_PARTY_EVS_TIMID(),
-    .ability = ABILITY_LEVITATE,
-    .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_BLIZZARD, MOVE_THUNDERBOLT, MOVE_WILL_O_WISP, MOVE_VOLT_SWITCH}
+    .species = SPECIES_ELECTIVIRE,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_MACH_PUNCH, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4315,18 +4315,18 @@ static const struct TrainerMon sParty_Glacia2[] = {
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_ZEN_MODE,
-    .heldItem = ITEM_EXPERT_BELT,
+    .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_FLARE_BLITZ, MOVE_ICICLE_CRASH, MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
-    .species = SPECIES_GLACEON,
+    .species = SPECIES_VOLCANION,
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),
-    .ability = ABILITY_SLUSH_RUSH,
-    .heldItem = ITEM_CHOICE_SPECS,
-    .moves = {MOVE_FREEZE_DRY, MOVE_BLIZZARD, MOVE_EARTH_POWER, MOVE_HYPER_VOICE}
+    .ability = ABILITY_WATER_ABSORB,
+    .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+    .moves = {MOVE_STEAM_ERUPTION, MOVE_FLAMETHROWER, MOVE_SLUDGE_WAVE, MOVE_DEFOG}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
