@@ -321,5 +321,6 @@ void TryActivateSleepClause(u32 battler, u32 indexInParty);
 void TryDeactivateSleepClause(u32 battlerSide, u32 indexInParty);
 bool8 IsSleepClauseActiveForSide(u32 battlerSide);
 bool32 IsSleepClauseEnabled();
+u32 DoesDestinyBondFail(u32 battler);
 
 #endif // GUARD_BATTLE_UTIL_H
