@@ -2375,6 +2375,30 @@ bool32 IsSwitchOutEffect(u32 effect)
     }
 }
 
+static inline bool32 IsMoveSleepClauseTrigger(u32 move)
+{
+    u32 i, effect = gMovesInfo[move].effect;
+    // Sleeping effects like Sleep Powder, Yawn, Dark Void, etc.
+    switch (effect)
+    {
+    case EFFECT_SLEEP:
+    case EFFECT_YAWN:
+    case EFFECT_DARK_VOID:
+        return TRUE;
+    }
+    // Sleeping effects like G-Max Befuddle, G-Max Snooze, etc.
+    for (i = 0; i < gMovesInfo[move].numAdditionalEffects; i++)
+    {
+        switch (gMovesInfo[move].additionalEffects[i].moveEffect)
+        {
+        case MAX_EFFECT_EFFECT_SPORE_FOES:
+        case MAX_EFFECT_YAWN_FOE:
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 bool32 HasDamagingMove(u32 battlerId)
 {
     u32 i;
@@ -3418,13 +3442,9 @@ bool32 PartnerMoveIsSameNoTarget(u32 battlerAtkPartner, u32 move, u32 partnerMov
 
 bool32 PartnerMoveActivatesSleepClause(u32 partnerMove)
 {
-    u32 effect = gMovesInfo[partnerMove].effect;
-    if (!IsDoubleBattle() || !FlagGet(B_FLAG_SLEEP_CLAUSE))
+    if (!IsDoubleBattle() || !IsSleepClauseEnabled())
         return FALSE;
-    if (effect == EFFECT_SLEEP
-        || effect == EFFECT_YAWN)
-        return TRUE;
-    return FALSE;
+    return IsMoveSleepClauseTrigger(partnerMove);
 }
 
 bool32 ShouldUseWishAromatherapy(u32 battlerAtk, u32 battlerDef, u32 move)

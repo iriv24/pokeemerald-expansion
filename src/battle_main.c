@@ -3179,7 +3179,7 @@ static void BattleStartClearSetData(void)
     gSelectedMonPartyId = PARTY_SIZE; // Revival Blessing
     gCategoryIconSpriteId = 0xFF;
 
-    if(FlagGet(B_FLAG_SLEEP_CLAUSE))
+    if(IsSleepClauseEnabled())
     {
         // If monCausingSleepClause[side] equals PARTY_SIZE, Sleep Clause is not active for the given side.
         gBattleStruct->monCausingSleepClause[B_SIDE_PLAYER] = PARTY_SIZE;
