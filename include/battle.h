@@ -831,9 +831,12 @@ struct BattleStruct
     u32 stellarBoostFlags[NUM_BATTLE_SIDES]; // stored as a bitfield of flags for all types for each side
     u8 redCardActivates:1;
     u8 usedEjectItem;
-    u8 usedMicleBerry;
     u8 monCausingSleepClause[NUM_BATTLE_SIDES]; // Stores which pokemon on a given side is causing Sleep Clause to be active as the mon's index in the party
-    u8 sleepClauseEffectExempt; // Stores whether effect should be exempt from triggering Sleep Clause (Effect Spore)
+    u8 sleepClauseEffectExempt:4; // Stores whether effect should be exempt from triggering Sleep Clause (Effect Spore)
+    u8 usedMicleBerry:4;
+    u8 pursuitTarget:4; // Each battler as a bit.
+    u8 pursuitSwitchByMove:1;
+    u8 pursuitStoredSwitch; // Stored id for the Pursuit target's switch
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,
