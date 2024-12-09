@@ -16,6 +16,16 @@ body:
         Please enter a description of the issue. Here you can also attach log screenshots, gifs or a video
     validations:
       required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of Emerald Imperium are you playing?
+      options:
+        - 1.0
+        - beta
+    validations:
+      required: true
   - type: input
     id: contact
     attributes:
