@@ -1,5 +1,5 @@
 name: 📜 Documentation Inconsistency 📜
-description: Any inconsistencies found in the Google Docs OR if something in Emerald Imperium is different than the data found on ([the Radical Red dex](https://dex.radicalred.net/)) and it is NOT explicitly mentioned.
+description: Any inconsistencies found in the Google Docs OR in Pokemon data between Emerald Imperium and Radical Red that are NOT explicitly mentioned.
 body:
   - type: markdown
     attributes:
