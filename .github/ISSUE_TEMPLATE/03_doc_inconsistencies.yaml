@@ -1,6 +1,6 @@
 name: 📜 Documentation Inconsistency 📜
 description: Please report any inconsistencies found in any of the Google Docs OR if something in Emerald Imperium is different than the data found on ([the Radical Red dex](https://dex.radicalred.net/)) and it is NOT explicitly mentioned.
-Examples: 
+Examples include;
 - Bulbasaur is supposed to leanr Growl at level 3 according to RRDex, but your Bulbasaur didn't learn Growl at level 3! Please report that here.
 - The Google Doc says that you can find Poochyena on Route 101, but you notice Poochyena is actually unavailable on Route 101! Please report that here.
 labels: ["doc-inconsistency"]
