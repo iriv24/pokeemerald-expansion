@@ -7676,7 +7676,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_QUARK_DRIVE,  ABILITY_NONE,  ABILITY_NONE },
+        .abilities = { ABILITY_QUARK_DRIVE,  ABILITY_NONE,  ABILITY_SHARPNESS },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Iron Crown"),
         .cryId = CRY_IRON_CROWN,
@@ -7725,7 +7725,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_TERAPAGOS
     [SPECIES_TERAPAGOS_NORMAL] =
     {
-        .baseHP        = 90,
+        .baseHP        = 110,
         .baseAttack    = 65,
         .baseDefense   = 85,
         .baseSpeed     = 60,

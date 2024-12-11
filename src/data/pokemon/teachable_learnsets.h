@@ -1364,6 +1364,7 @@ static const u16 sRaichuTeachableLearnset[] = {
     MOVE_FOCUS_BLAST,
     MOVE_FOCUS_PUNCH,
     MOVE_GRASS_KNOT,
+    MOVE_HYPER_VOICE,
     MOVE_IRON_TAIL,
     MOVE_KNOCK_OFF,
     MOVE_LIGHT_SCREEN,

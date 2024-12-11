@@ -2863,7 +2863,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_HYPER_VOICE"
     ],
     "EggMoves": [
       "MOVE_BESTOW",
