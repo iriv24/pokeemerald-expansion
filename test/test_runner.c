@@ -356,9 +356,14 @@ top:
             if (gTestRunnerState.result == TEST_RESULT_PASS)
             {
                 if (gTestRunnerState.result != gTestRunnerState.expectedResult)
+                {
+                    Test_MgbaPrintf(":L%s:%d", gTestRunnerState.test->filename, SourceLine(0));
                     Test_MgbaPrintf(":U%s%s\e[0m", color, result);
+                }
                 else
+                {
                     Test_MgbaPrintf(":P%s%s\e[0m", color, result);
+                }
             }
             else if (gTestRunnerState.result == TEST_RESULT_ASSUMPTION_FAIL)
                 Test_MgbaPrintf(":A%s%s\e[0m", color, result);
