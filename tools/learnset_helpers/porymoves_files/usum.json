@@ -753,7 +753,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_DRACO_METEOR"
     ],
     "EggMoves": [
       "MOVE_AIR_CUTTER",
@@ -3151,7 +3152,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_HIGH_HORSEPOWER"
     ],
     "EggMoves": [
       "MOVE_CHIP_AWAY",
@@ -6700,7 +6702,9 @@
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_CLEAR_SMOG",
@@ -7608,7 +7612,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_BUBBLE_BEAM",
@@ -12092,7 +12097,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_FLASH_CANNON",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [
       "MOVE_BLOCK",
@@ -14029,7 +14035,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_GUNK_SHOT"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -14168,7 +14175,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_GUNK_SHOT"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -16097,7 +16105,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_TRICK_ROOM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_ALLURING_VOICE"
     ],
     "EggMoves": [
       "MOVE_CAPTIVATE",
@@ -16355,7 +16364,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
@@ -27113,7 +27123,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_NATURE_POWER",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [
       "MOVE_BLOCK",
@@ -27399,7 +27410,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_SNARL",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_DRAIN_PUNCH"
     ],
     "EggMoves": [
       "MOVE_CLOSE_COMBAT",
@@ -29416,7 +29428,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_FLIP_TURN"
     ],
     "EggMoves": [
       "MOVE_AURORA_BEAM",
@@ -32341,7 +32354,8 @@
       "MOVE_SURF",
       "MOVE_SNARL",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
@@ -33192,7 +33206,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_BULLET_SEED",
@@ -34034,7 +34049,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
@@ -35581,7 +35597,10 @@
       "MOVE_SNARL",
       "MOVE_NATURE_POWER",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TAUNT"
     ],
     "EggMoves": [
       "MOVE_AMNESIA",
@@ -39040,7 +39059,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_ALLURING_VOICE"
     ],
     "EggMoves": [
       "MOVE_BATON_PASS",
@@ -39811,7 +39831,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_SURF",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [
       "MOVE_BODY_SLAM",
@@ -43136,7 +43157,9 @@
       "MOVE_SLEEP_TALK",
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE",
+      "MOVE_STEALTH_ROCK"
     ],
     "EggMoves": [
       "MOVE_BUG_BITE",
@@ -49080,7 +49103,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_FLASH_CANNON",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -49780,7 +49804,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_FLIP_TURN"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -50783,7 +50808,9 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_GRASSY_GLIDE",
+      "MOVE_IRON_DEFENSE"
     ],
     "EggMoves": [
       "MOVE_AMNESIA",
@@ -51631,7 +51658,9 @@
       "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_CONFIDE",
-      "MOVE_IRON_HEAD"
+      "MOVE_IRON_HEAD",
+      "MOVE_AIR_SLASH",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -57097,7 +57126,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_ALLURING_VOICE"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -60509,7 +60539,9 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_TRAILBLAZE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
@@ -60656,7 +60688,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
@@ -61378,7 +61411,8 @@
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_HIGH_HORSEPOWER"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -61534,7 +61568,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_TRAILBLAZE"
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
@@ -65609,7 +65644,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_AIR_SLASH",
@@ -68004,7 +68040,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_ELECTROWEB"
     ],
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",
@@ -68131,7 +68168,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_ELECTROWEB"
     ],
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",
@@ -70550,7 +70588,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_LOW_KICK"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -71378,7 +71417,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_WEATHER_BALL"
     ],
     "EggMoves": [
       "MOVE_BIDE",
@@ -76463,7 +76503,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_HIGH_HORSEPOWER"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -83231,7 +83272,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_FLASH_CANNON",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -83466,7 +83508,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -84386,7 +84429,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_SURF",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -85132,7 +85176,9 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF",
+      "MOVE_HIGH_HORSEPOWER"
     ],
     "EggMoves": [
       "MOVE_BELLY_DRUM",
@@ -85985,7 +86031,8 @@
       "MOVE_SURF",
       "MOVE_DARK_PULSE",
       "MOVE_WATERFALL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SLUDGE_WAVE"
     ],
     "EggMoves": [
       "MOVE_BESTOW",
@@ -87650,7 +87697,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_SURF",
       "MOVE_NATURE_POWER",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_HIGH_HORSEPOWER"
     ],
     "EggMoves": [
       "MOVE_DEFENSE_CURL",
@@ -91329,7 +91377,8 @@
       "MOVE_FEINT",
       "MOVE_ME_FIRST",
       "MOVE_MUD_SPORT",
-      "MOVE_QUICK_GUARD"
+      "MOVE_QUICK_GUARD",
+      "MOVE_LUNGE"
     ],
     "TutorMoves": [
       "MOVE_ALLY_SWITCH",
@@ -91893,7 +91942,8 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_ACID_ARMOR",
@@ -92275,7 +92325,8 @@
       "MOVE_TRICK_ROOM",
       "MOVE_NATURE_POWER",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_BESTOW",
@@ -95688,7 +95739,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_FIRE_FANG",
@@ -101658,7 +101710,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_FLASH_CANNON",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_COUNTER",
@@ -101810,7 +101863,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_NATURE_POWER",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -103566,7 +103620,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_TRICK_ROOM",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_DRACO_METEOR"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -104408,7 +104463,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_WILD_CHARGE",
       "MOVE_SNARL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -109063,7 +109119,8 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_SNARL",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_CRUSH_CLAW",

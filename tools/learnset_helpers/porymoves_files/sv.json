@@ -68401,7 +68401,8 @@
       "MOVE_WHIRLPOOL",
       "MOVE_MUDDY_WATER",
       "MOVE_SKITTER_SMACK",
-      "MOVE_BREAKING_SWIPE"
+      "MOVE_BREAKING_SWIPE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_AQUA_JET",
@@ -72210,7 +72211,8 @@
       "MOVE_FLIP_TURN",
       "MOVE_DOUBLE_EDGE",
       "MOVE_WHIRLPOOL",
-      "MOVE_FEATHER_DANCE"
+      "MOVE_FEATHER_DANCE",
+      "MOVE_FLIP_TURN"
     ],
     "EggMoves": [
       "MOVE_AQUA_RING",
@@ -78699,7 +78701,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_SCORCHING_SANDS",
       "MOVE_EXPANDING_FORCE",
-      "MOVE_METEOR_BEAM"
+      "MOVE_METEOR_BEAM",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_DESTINY_BOND",
@@ -84423,7 +84426,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_DOUBLE_EDGE",
       "MOVE_EXPANDING_FORCE",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_TELEPORT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -87635,7 +87639,8 @@
       "MOVE_POLTERGEIST",
       "MOVE_PAIN_SPLIT",
       "MOVE_PSYCH_UP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_WILL_O_WISP"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -87731,7 +87736,8 @@
       "MOVE_POLTERGEIST",
       "MOVE_PAIN_SPLIT",
       "MOVE_PSYCH_UP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_WILL_O_WISP"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -87846,7 +87852,8 @@
       "MOVE_THROAT_CHOP",
       "MOVE_CURSE",
       "MOVE_HARD_PRESS",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_POWER_UP_PUNCH"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -87957,7 +87964,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_SLUDGE_WAVE",
       "MOVE_FUTURE_SIGHT",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_TELEPORT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -88072,7 +88080,10 @@
       "MOVE_DUAL_WINGBEAT",
       "MOVE_LASH_OUT",
       "MOVE_PSYCH_UP",
-      "MOVE_ALLURING_VOICE"
+      "MOVE_ALLURING_VOICE",
+      "MOVE_SLUDGE_WAVE",
+      "MOVE_DRAINING_KISS",
+      "MOVE_DEFOG"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -94089,7 +94100,8 @@
       "MOVE_FEATHER_DANCE",
       "MOVE_FUTURE_SIGHT",
       "MOVE_EXPANDING_FORCE",
-      "MOVE_PSYCHIC_NOISE"
+      "MOVE_PSYCHIC_NOISE",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_ROCK_SMASH",
@@ -94339,7 +94351,8 @@
       "MOVE_SKITTER_SMACK",
       "MOVE_BREAKING_SWIPE",
       "MOVE_CURSE",
-      "MOVE_DRAGON_CHEER"
+      "MOVE_DRAGON_CHEER",
+      "MOVE_KNOCK_OFF"
     ],
     "EggMoves": [
       "MOVE_COUNTER",
@@ -94723,7 +94736,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_LOW_KICK",
+      "MOVE_BRICK_BREAK"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -94838,7 +94853,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_TEMPER_FLARE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_LOW_KICK",
+      "MOVE_BRICK_BREAK"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -94950,7 +94967,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_WHIRLPOOL",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_LOW_KICK",
+      "MOVE_BRICK_BREAK"
     ],
     "EggMoves": [
       "MOVE_CURSE",

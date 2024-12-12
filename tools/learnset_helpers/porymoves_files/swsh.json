@@ -69215,7 +69215,8 @@
       "MOVE_DARK_PULSE",
       "MOVE_SCALD",
       "MOVE_WORK_UP",
-      "MOVE_LIQUIDATION"
+      "MOVE_LIQUIDATION",
+      "MOVE_VACUUM_WAVE"
     ],
     "EggMoves": [
       "MOVE_AQUA_JET",
@@ -73563,7 +73564,8 @@
       "MOVE_GRASS_KNOT",
       "MOVE_WORK_UP",
       "MOVE_THROAT_CHOP",
-      "MOVE_BODY_PRESS"
+      "MOVE_BODY_PRESS",
+      "MOVE_SUPERCELL_SLAM"
     ],
     "EggMoves": [
       "MOVE_KNOCK_OFF",
@@ -76587,7 +76589,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_PLAY_ROUGH",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_PSYCHIC_FANGS"
+      "MOVE_PSYCHIC_FANGS",
+      "MOVE_ROAR"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -79956,7 +79959,8 @@
       "MOVE_SLUDGE_WAVE",
       "MOVE_PLAY_ROUGH",
       "MOVE_VENOM_DRENCH",
-      "MOVE_DAZZLING_GLEAM"
+      "MOVE_DAZZLING_GLEAM",
+      "MOVE_GUNK_SHOT"
     ],
     "EggMoves": [
       "MOVE_CURSE",

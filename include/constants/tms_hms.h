@@ -162,7 +162,14 @@
     F(BODY_SLAM) \
     F(PLAY_ROUGH) \
     F(WATER_PULSE) \
-    F(DARK_HOLE)
+    F(DARK_HOLE) \
+    F(SLUDGE_WAVE) \
+    F(SUPERCELL_SLAM) \
+    F(TEMPER_FLARE) \
+    F(SCALE_SHOT) \
+    F(PSYCHIC_NOISE) \
+    F(ALLURING_VOICE) \
+    F(VACUUM_WAVE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

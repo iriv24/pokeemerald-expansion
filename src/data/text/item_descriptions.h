@@ -3836,26 +3836,40 @@ static const u8 sTM161Desc[] = _(
     "To the abyss.\n"
     "May sleep.");
 
-static const u8 sTM162Desc[] = _( // Todo
-    "?????");
+static const u8 sTM162Desc[] = _(
+    "Swamps the foe\n"
+    "with a wave of\n"
+    "sludge. May poison.");
 
-static const u8 sTM163Desc[] = _( // Todo
-    "?????");
+static const u8 sTM163Desc[] = _(
+    "An electric slam.\n"
+    "If it misses, the\n"
+    "user is hurt.");
 
-static const u8 sTM164Desc[] = _( // Todo
-    "?????");
+static const u8 sTM164Desc[] = _(
+    "Desperate attack,\n"
+    "power doubles if\n"
+    "last move failed.");
 
-static const u8 sTM165Desc[] = _( // Todo
-    "?????");
+static const u8 sTM165Desc[] = _(
+    "Shoots scales 2\n"
+    "to 5 times. Ups\n"
+    "Spd, lowers Def.");
 
-static const u8 sTM166Desc[] = _( // Todo
-    "?????");
+static const u8 sTM166Desc[] = _(
+    "Unpleasant sounds\n"
+    "that damage and\n"
+    "prevent healing.");
 
-static const u8 sTM167Desc[] = _( // Todo
-    "?????");
+static const u8 sTM167Desc[] = _(
+    "Confuses foe if\n"
+    "its stats were\n"
+    "boosted this turn.");
 
-static const u8 sTM168Desc[] = _( // Todo
-    "?????");
+static const u8 sTM168Desc[] = _(
+    "Whirls its fists\n"
+    "to send a wave\n"
+    "that strikes first.");
 
 static const u8 sTM169Desc[] = _( // Todo
     "?????");

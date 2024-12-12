@@ -15401,7 +15401,7 @@ static const struct TrainerMon sParty_Volkner[] = {
     .ev = TRAINER_PARTY_EVS_ADAMANT(),
     .ability = ABILITY_QUARK_DRIVE,
     .heldItem = ITEM_BOOSTER_ENERGY,
-    .moves = {MOVE_FAKE_OUT, MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_HEAVY_SLAM}
+    .moves = {MOVE_FAKE_OUT, MOVE_SUPERCELL_SLAM, MOVE_CLOSE_COMBAT, MOVE_HEAVY_SLAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

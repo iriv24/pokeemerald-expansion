@@ -583,6 +583,7 @@ script EverGrandeCity_EventScript_BattleVolkner{
 	msgbox("This is going to be electric!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_VOLKNER, Volkner_Outro)
 	giveitem(ITEM_TM_RISING_VOLTAGE)
+	giveitem(ITEM_TM_SUPERCELL_SLAM)
 	goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
 	return
 }
