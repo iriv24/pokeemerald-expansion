@@ -2475,9 +2475,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_RUSTY_AURA] =
+    [ABILITY_EMPERORS_PRESENCE] =
     {
-        .name = _("Rusty Aura"),
+        .name = _("Emperor's Presence"),
         .description = COMPOUND_STRING("Boosts own and ally's\nWater & Steel-type moves."),
         .aiRating = 2,
     },
