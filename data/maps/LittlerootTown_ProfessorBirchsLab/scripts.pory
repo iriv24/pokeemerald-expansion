@@ -810,10 +810,10 @@ LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 	.string "Oh, also, {PLAYER}{KUN}, I \n"
 	.string "gave these to {RIVAL} already.\p"
-	.string "I swear these starting items are\n"
+	.string "I swear these starting Items are\n"
 	.string "getting more and more advanced. Back in\l"
 	.string "my day, I had to walk to the Mart uphill\l"
-	.string "both ways with no items or…\p"
+	.string "both ways with no Items or…\p"
 	.string "I digress, just take these.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
