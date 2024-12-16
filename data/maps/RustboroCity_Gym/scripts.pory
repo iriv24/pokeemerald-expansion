@@ -213,7 +213,7 @@ RustboroCity_Gym_Text_ReceivedStoneBadge:
 	.string "from Roxanne.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "This badge enables your Pokémon to use\n"
+	.string "This Badge enables your Pokémon to use\n"
 	.string "the HM move Cut outside of battle.\p"
 	.string "Please take this with you, too.$"
 

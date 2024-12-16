@@ -893,7 +893,7 @@ PetalburgWoods_Text_TryUsingThisItem:
 # 447 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Oh, neat!\n"
 # 448 "data/maps/PetalburgWoods/scripts.pory"
-	.string "That's the badge from Rustboro Gym!\p"
+	.string "That's the Badge from Rustboro Gym!\p"
 # 449 "data/maps/PetalburgWoods/scripts.pory"
 	.string "You must be a trainer.\n"
 # 450 "data/maps/PetalburgWoods/scripts.pory"

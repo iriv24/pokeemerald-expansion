@@ -1266,7 +1266,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "the Gym Leader, Roxanne.\p"
 	.string "After her, go on to other Pokémon\n"
 	.string "Gyms and defeat their leaders.\p"
-	.string "Collect badges from them,\n"
+	.string "Collect Badges from them,\n"
 	.string "understood?\p"
 	.string "Of course, I'm a Gym Leader, too.\n"
 	.string "We'll battle one day, {PLAYER}.\p"
@@ -1295,7 +1295,7 @@ PetalburgCity_Gym_Text_NormanGoToDewford:
 PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "Dad: Hm… {PLAYER}, you have gotten\n"
 	.string "stronger.\p"
-	.string "I can tell by the number of badges\n"
+	.string "I can tell by the number of Badges\n"
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanGoToTrickHouse:

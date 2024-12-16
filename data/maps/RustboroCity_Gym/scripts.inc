@@ -429,7 +429,7 @@ RustboroCity_Gym_Text_ReceivedStoneBadge:
 # 215 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 # 216 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "This badge enables your Pokémon to use\n"
+	.string "This Badge enables your Pokémon to use\n"
 # 217 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "the HM move Cut outside of battle.\p"
 # 218 "data/maps/RustboroCity_Gym/scripts.pory"

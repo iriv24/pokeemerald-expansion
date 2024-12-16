@@ -697,7 +697,7 @@ PlayersHouse_1F_Text_TakeCareHoney:
 # 349 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
 # 350 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
-	.string "Oh? Did Dad give you that badge?\p"
+	.string "Oh? Did Dad give you that Badge?\p"
 # 351 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "Then here's something from your Mom!$"
 # 352 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
