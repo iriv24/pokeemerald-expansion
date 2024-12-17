@@ -47,6 +47,7 @@
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
+#include "starter_choose.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -1912,6 +1913,20 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+const struct TrainerMon *RivalPartyPicker(const struct Trainer *trainer)
+{
+    switch(GetStarterPokemon(VarGet(VAR_STARTER_MON)))
+    {
+        case SPECIES_MUDKIP:
+            return trainer->party;
+        case SPECIES_TREECKO:
+            return trainer->additionalParties[0];
+        default:
+        case SPECIES_TORCHIC:
+            return trainer->additionalParties[1];
+    }
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u32 personalityValue;
@@ -1940,7 +1955,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         {
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData = trainer->party;
+            const struct TrainerMon *partyData;
+            if(trainer->hasAdditionalParties)
+            {
+                partyData = trainer->partyPickFunc(trainer);
+            }
+            else
+            {
+                partyData = trainer->party;
+            }
+            
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 ability = 0;

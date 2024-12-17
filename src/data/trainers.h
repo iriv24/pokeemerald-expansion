@@ -6,6 +6,7 @@
 // Use sed -i '/^#line/d' 'src/data/trainers.h' to remove #line markers.
 //
 
+#include "battle_main.h"
 #line 1 "src/data/trainers.party"
 
 #line 76
@@ -23726,7 +23727,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9504
-    [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+    [TRAINER_BRENDAN_ROUTE_103] =
     {
 #line 9505
         .trainerName = _("BRENDAN"),
@@ -23755,6 +23756,32 @@ F_TRAINER_FEMALE |
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
+        },
+        .hasAdditionalParties = TRUE,
+        .partyPickFunc = RivalPartyPicker,
+        .additionalParties =  {
+                (const struct TrainerMon[])
+                {
+                        {
+                        .species = SPECIES_TORCHIC,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                },
+                (const struct TrainerMon[])
+                {
+                        {
+                        .species = SPECIES_MUDKIP,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                }
         },
     },
 #line 9517
@@ -24146,7 +24173,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9669
-    [TRAINER_MAY_ROUTE_103_MUDKIP] =
+    [TRAINER_MAY_ROUTE_103] =
     {
 #line 9670
         .trainerName = _("MAY"),
@@ -24177,6 +24204,32 @@ F_TRAINER_FEMALE |
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
+        },
+        .hasAdditionalParties = TRUE,
+        .partyPickFunc = RivalPartyPicker,
+        .additionalParties =  {
+                (const struct TrainerMon[])
+                {
+                        {
+                        .species = SPECIES_TORCHIC,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                },
+                (const struct TrainerMon[])
+                {
+                        {
+                        .species = SPECIES_MUDKIP,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                }
         },
     },
 #line 9682
