@@ -23757,8 +23757,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
-        .hasAdditionalParties = TRUE,
-        .partyPickFunc = RivalPartyPicker,
+        .partyPickerFunction = RivalPartyPicker,
         .additionalParties =  {
                 (const struct TrainerMon[])
                 {
@@ -23783,6 +23782,7 @@ F_TRAINER_FEMALE |
                         },
                 }
         },
+        .additionalPartySizes = {1, 1},
     },
 #line 9517
     [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
@@ -24205,11 +24205,26 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
-        .hasAdditionalParties = TRUE,
-        .partyPickFunc = RivalPartyPicker,
+        .partyPickerFunction = RivalPartyPicker,
         .additionalParties =  {
                 (const struct TrainerMon[])
                 {
+                        {
+                        .species = SPECIES_TORCHIC,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                        {
+                        .species = SPECIES_TORCHIC,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
                         {
                         .species = SPECIES_TORCHIC,
                         .gender = TRAINER_MON_RANDOM_GENDER,
@@ -24222,6 +24237,14 @@ F_TRAINER_FEMALE |
                 (const struct TrainerMon[])
                 {
                         {
+                        .species = SPECIES_METAPOD,
+                        .gender = TRAINER_MON_RANDOM_GENDER,
+                        .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+                        .lvl = 5,
+                        .nature = NATURE_HARDY,
+                        .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+                        },
+                        {
                         .species = SPECIES_MUDKIP,
                         .gender = TRAINER_MON_RANDOM_GENDER,
                         .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24231,6 +24254,7 @@ F_TRAINER_FEMALE |
                         },
                 }
         },
+        .additionalPartySizes = {3, 2},
     },
 #line 9682
     [TRAINER_MAY_ROUTE_110_MUDKIP] =

@@ -1913,17 +1913,19 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-const struct TrainerMon *RivalPartyPicker(const struct Trainer *trainer)
+// This is an example function that could be used to consolidate 
+// a given rival battle (say, May Route 103 for example) into one trainer
+u16 RivalPartyPicker(const struct Trainer *trainer)
 {
     switch(GetStarterPokemon(VarGet(VAR_STARTER_MON)))
     {
         case SPECIES_MUDKIP:
-            return trainer->party;
+            return 0;
         case SPECIES_TREECKO:
-            return trainer->additionalParties[0];
+            return 1;
         default:
         case SPECIES_TORCHIC:
-            return trainer->additionalParties[1];
+            return 2;
     }
 }
 
@@ -1932,6 +1934,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u32 personalityValue;
     s32 i;
     u8 monsCount;
+    u16 partyIndexToUse = 0;
+    u8 partySizeToUse = trainer->partySize;
+    const struct TrainerMon *partyData;
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1939,32 +1945,40 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         if (firstTrainer == TRUE)
             ZeroEnemyPartyMons();
 
-        if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        if (trainer->partyPickerFunction != NULL)
         {
-            if (trainer->partySize > PARTY_SIZE / 2)
-                monsCount = PARTY_SIZE / 2;
+            partyIndexToUse = trainer->partyPickerFunction(trainer);
+            if(partyIndexToUse > 0)
+            {
+                partyData = trainer->additionalParties[partyIndexToUse - 1];
+                partySizeToUse = trainer->additionalPartySizes[partyIndexToUse - 1];
+            }
             else
-                monsCount = trainer->partySize;
+            {
+                partyData = trainer->party;
+            }
         }
         else
         {
-            monsCount = trainer->partySize;
+            partyData = trainer->party;
+        }
+
+        if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        {
+            if (partySizeToUse > PARTY_SIZE / 2)
+                monsCount = PARTY_SIZE / 2;
+            else
+                monsCount = partySizeToUse;
+        }
+        else
+        {
+            monsCount = partySizeToUse;
         }
 
         for (i = 0; i < monsCount; i++)
         {
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData;
-            if(trainer->hasAdditionalParties)
-            {
-                partyData = trainer->partyPickFunc(trainer);
-            }
-            else
-            {
-                partyData = trainer->party;
-            }
-            
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 ability = 0;
@@ -2065,7 +2079,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         }
     }
 
-    return trainer->partySize;
+    return partySizeToUse;
 }
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
