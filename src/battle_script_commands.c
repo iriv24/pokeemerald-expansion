@@ -9010,8 +9010,8 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
 
 static bool32 TryTidyUpClear(u32 battlerAtk, bool32 clear)
 {
-    s32 i;
-    u8 saveBattler = gBattlerAttacker;
+    u32 i;
+    u32 saveBattler = gBattlerAttacker;
 
     for (i = 0; i < NUM_BATTLE_SIDES; i++)
     {
