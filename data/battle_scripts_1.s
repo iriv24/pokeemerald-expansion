@@ -9085,7 +9085,7 @@ BattleScript_BerryStatRaiseEnd2::
 BattleScript_BerryStatRaiseEnd2_AbilityPopup:
 	call BattleScript_AbilityPopUp
 BattleScript_BerryStatRaiseEnd2_Anim:
-	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_BerryStatRaiseEnd2_End
+	statbuffchange STAT_CHANGE_ALLOW_PTR | MOVE_EFFECT_AFFECTS_USER, BattleScript_BerryStatRaiseEnd2_End
 	setgraphicalstatchangevalues
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, sB_ANIM_ARG1
 	setbyte cMULTISTRING_CHOOSER, B_MSG_STAT_ROSE_ITEM

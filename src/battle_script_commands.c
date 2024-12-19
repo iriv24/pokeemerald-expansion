@@ -12100,7 +12100,10 @@ static void Cmd_statbuffchange(void)
     const u8 *ptrBefore = gBattlescriptCurrInstr;
     const u8 *failInstr = cmd->failInstr;
 
-    if (ChangeStatBuffs(GET_STAT_BUFF_VALUE_WITH_SIGN(gBattleScripting.statChanger), GET_STAT_BUFF_ID(gBattleScripting.statChanger), flags, failInstr) == STAT_CHANGE_WORKED)
+    if (ChangeStatBuffs(GET_STAT_BUFF_VALUE_WITH_SIGN(gBattleScripting.statChanger),
+                        GET_STAT_BUFF_ID(gBattleScripting.statChanger),
+                        flags,
+                        failInstr) == STAT_CHANGE_WORKED)
         gBattlescriptCurrInstr = cmd->nextInstr;
     else if (gBattlescriptCurrInstr == ptrBefore) // Prevent infinite looping.
         gBattlescriptCurrInstr = failInstr;
