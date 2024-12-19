@@ -3,8 +3,7 @@ SlateportCity_NameRatersHouse_MapScripts::
 	.byte 0
 
 SlateportCity_NameRatersHouse_EventScript_NameRater::
-	msgbox SlateportCity_NameRatersHouse_Text_PleasedToRateMonNickname, MSGBOX_DEFAULT
-	release
+	msgbox SlateportCity_NameRatersHouse_Text_PleasedToRateMonNickname, MSGBOX_NPC
 	end
 
 SlateportCity_NameRatersHouse_EventScript_ChooseMonToRate::
