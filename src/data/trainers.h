@@ -5,6 +5,7 @@
 // in include/config/general.h and remove this notice.
 // Use sed -i '/^#line/d' 'src/data/trainers.h' to remove #line markers.
 //
+
 #line 1 "src/data/trainers.party"
 
 #line 76
