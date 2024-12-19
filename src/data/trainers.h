@@ -5,8 +5,6 @@
 // in include/config/general.h and remove this notice.
 // Use sed -i '/^#line/d' 'src/data/trainers.h' to remove #line markers.
 //
-
-#include "battle_main.h"
 #line 1 "src/data/trainers.party"
 
 #line 76
@@ -23743,6 +23741,7 @@ F_TRAINER_FEMALE |
 #line 9511
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
+        // PARTY_RIVAL_HAS_TREECKO
         .party = (const struct TrainerMon[])
         {
             {
@@ -23759,6 +23758,7 @@ F_TRAINER_FEMALE |
         },
         .partyPickerFunction = RivalPartyPicker,
         .additionalParties =  {
+                // PARTY_RIVAL_HAS_TORCHIC
                 (const struct TrainerMon[])
                 {
                         {
@@ -23770,6 +23770,7 @@ F_TRAINER_FEMALE |
                         .dynamaxLevel = MAX_DYNAMAX_LEVEL,
                         },
                 },
+                // PARTY_RIVAL_HAS_MUDKIP
                 (const struct TrainerMon[])
                 {
                         {
@@ -24191,6 +24192,7 @@ F_TRAINER_FEMALE |
 #line 9676
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 1,
+        // PARTY_RIVAL_HAS_TREECKO
         .party = (const struct TrainerMon[])
         {
             {
@@ -24207,6 +24209,7 @@ F_TRAINER_FEMALE |
         },
         .partyPickerFunction = RivalPartyPicker,
         .additionalParties =  {
+                // PARTY_RIVAL_HAS_TORCHIC
                 (const struct TrainerMon[])
                 {
                         {
@@ -24234,6 +24237,7 @@ F_TRAINER_FEMALE |
                         .dynamaxLevel = MAX_DYNAMAX_LEVEL,
                         },
                 },
+                // PARTY_RIVAL_HAS_MUDKIP
                 (const struct TrainerMon[])
                 {
                         {

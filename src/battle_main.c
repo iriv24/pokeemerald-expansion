@@ -36,6 +36,7 @@
 #include "m4a.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "party_pickers.h"
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
@@ -47,7 +48,6 @@
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
-#include "starter_choose.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -1913,21 +1913,6 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-// This is an example function that could be used to consolidate 
-// a given rival battle (say, May Route 103 for example) into one trainer
-u16 RivalPartyPicker(const struct Trainer *trainer)
-{
-    switch(GetStarterPokemon(VarGet(VAR_STARTER_MON)))
-    {
-        case SPECIES_MUDKIP:
-            return 0;
-        case SPECIES_TREECKO:
-            return 1;
-        default:
-        case SPECIES_TORCHIC:
-            return 2;
-    }
-}
 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {

@@ -92,7 +92,7 @@ struct Trainer
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
     /*0x1F*/ u8 mugshotColor;
     /*0x20*/ u8 partySize;
-             u16 (*partyPickerFunction)(const struct Trainer *trainer);
+             u32 (*partyPickerFunction)(const struct Trainer *trainer);
              const struct TrainerMon *additionalParties[MAX_ADDITIONAL_TRAINER_PARTIES];
              u8 additionalPartySizes[MAX_ADDITIONAL_TRAINER_PARTIES];
 };
