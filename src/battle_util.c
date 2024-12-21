@@ -11677,7 +11677,12 @@ bool32 MoveIsAffectedBySheerForce(u32 move)
     u32 i;
     for (i = 0; i < gMovesInfo[move].numAdditionalEffects; i++)
     {
+        if (gMovesInfo[move].additionalEffects[i].sheerForceBoost == SHEER_FORCE_NO_BOOST)
+            continue;
+
         if (gMovesInfo[move].additionalEffects[i].chance > 0)
+            return TRUE;
+        if (gMovesInfo[move].additionalEffects[i].sheerForceBoost == SHEER_FORCE_BOOST)
             return TRUE;
     }
     return FALSE;
