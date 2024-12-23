@@ -2383,5 +2383,5 @@ Route110_Trigger_BlockTrickHouse::
 
 TrickHouseMessage::
 # 1197 "data/maps/Route110/scripts.pory"
-	.string "The Trick Master says he'll be ready\n"
-	.string "once you beat Flannery.$"
+	.string "“Puzzles under construction,\n"
+	.string "come back later” - The Trick Master$"

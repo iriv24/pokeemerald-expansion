@@ -1195,7 +1195,7 @@ script Route110_Trigger_BlockTrickHouse{
 }
 
 text TrickHouseMessage {
-	"The Trick Master says he'll be ready\n"
-	"once you beat Flannery."
+	"“Puzzles under construction,\n"
+	"come back later” - The Trick Master"
 
 }
