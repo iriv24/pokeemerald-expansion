@@ -729,7 +729,7 @@ static const u8 sText_PkmnAbsorbingPower[] = _("{B_ATK_NAME_WITH_PREFIX} is abso
 static const u8 sText_NoOneWillBeAbleToRun[] = _("No one will be able to run away during the next turn!");
 static const u8 sText_DestinyKnotActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} fell in love because of the {B_LAST_ITEM}!");
 static const u8 sText_CloakedInAFreezingLight[] = _("{B_ATK_NAME_WITH_PREFIX} became cloaked in a freezing light!");
-static const u8 sText_ClearAmuletWontLowerStats[] = _("The effects of the {B_LAST_ITEM} held by {B_DEF_NAME_WITH_PREFIX2} prevents its stats from being lowered!");
+static const u8 sText_ClearAmuletWontLowerStats[] = _("The effects of the {B_LAST_ITEM} held by {B_SCR_ACTIVE_NAME_WITH_PREFIX2} prevents its stats from being lowered!");
 static const u8 sText_AuraFlaredToLife[] = _("{B_DEF_NAME_WITH_PREFIX}'s aura flared to life!");
 static const u8 sText_AirLockActivates[] = _("The effects of the weather disappeared.");
 static const u8 sText_PressureActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is exerting its pressure!");
@@ -1994,7 +1994,10 @@ const u16 gWeatherStartsStringIds[] =
 
 const u16 gTerrainStartsStringIds[] =
 {
-    STRINGID_MISTSWIRLSAROUND, STRINGID_ELECTRICCURRENTISRUNNING, STRINGID_ISCOVEREDWITHGRASS, STRINGID_SEEMSWEIRD,
+    [B_MSG_TERRAIN_SET_MISTY]    = STRINGID_MISTSWIRLSAROUND,
+    [B_MSG_TERRAIN_SET_ELECTRIC] = STRINGID_ELECTRICCURRENTISRUNNING,
+    [B_MSG_TERRAIN_SET_PSYCHIC]  = STRINGID_SEEMSWEIRD,
+    [B_MSG_TERRAIN_SET_GRASSY]   = STRINGID_ISCOVEREDWITHGRASS,
 };
 
 const u16 gPrimalWeatherBlocksStringIds[] =
