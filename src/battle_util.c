@@ -9172,7 +9172,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_EMPERORS_PRESENCE:
         if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_SHARPNESS:
         if (gMovesInfo[move].slicingMove)
@@ -9211,7 +9211,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             break;
         case ABILITY_EMPERORS_PRESENCE:
             if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
-                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
             break;
         }
     }
