@@ -429,8 +429,10 @@ Route110_EventScript_MayBattleMudkip::
 
 Route110_EventScript_MayDefeated::
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
-	call Route110_EventScript_GiveItemfinder
-	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveFly
+	msgbox Route110_Text_RivalThatsNotAll, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveRestOfItems
+	msgbox Route110_Text_RivalExplainRestOfItems, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end
 
@@ -459,13 +461,20 @@ Route110_EventScript_BrendanBattleMudkip::
 
 Route110_EventScript_BrendanDefeated::
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
-	call Route110_EventScript_GiveItemfinder
-	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveFly
+	msgbox Route110_Text_RivalThatsNotAll, MSGBOX_DEFAULT
+	call Route110_EventScript_GiveRestOfItems
+	msgbox Route110_Text_RivalExplainRestOfItems, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end
 
-Route110_EventScript_GiveItemfinder::
+Route110_EventScript_GiveFly::
 	giveitem ITEM_HM_FLY
+	msgbox Route110_Text_RivalExplainFlyHM, MSGBOX_DEFAULT
+	msgbox Route110_Text_RivalExplainFlyFromPokeNav, MSGBOX_DEFAULT
+	return
+
+Route110_EventScript_GiveRestOfItems::
 	giveitemfast ITEM_DOWSING_MACHINE
 	giveitemfast ITEM_TM_FIRE_PUNCH
 	giveitemfast ITEM_TM_ICE_PUNCH
@@ -928,19 +937,44 @@ Route110_Text_MayTakeThis:
 	.string "training, too, haven't you?\p"
 	.string "I think you deserve a reward!\n"
 	.string "These are from me!\p"
-	.string "I've got a whole slew\n"
-	.string "of Items for you.$"
+	.string "I've got some things to help you\n"
+	.string "on your journey.$"
 
-Route110_Text_MayExplainItemfinder:
+Route110_Text_RivalExplainFlyHM:
 	.string "As you can see, {COLOR GREEN}{SHADOW LIGHT_GREEN}I just gave you the\n"
 	.string "HM02 Fly.\p"
 	.string "Any Pokémon that can learn Fly should\n"
 	.string "now have it in your party menu,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} and the\l"
 	.string "Badge requirement to use it has been\l"
 	.string "removed! If you don't believe me, give\l"
-	.string "it a try!\p"
-	.string "In addition, I gave you the following\n"
-	.string "Items: the Dowsing MCHN, the TMs for\l"
+	.string "it a try!$"
+
+Route110_Text_RivalExplainFlyFromPokeNav:
+	.string "On the topic of Flying, let me borrow\n"
+	.string "your PokéNav for a second.\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "There we go! One of the developers\n"
+	.string "from the Devon Corporation showed\l"
+	.string "me how to do that.\p"
+	.string "I just installed a new feature into\n"
+	.string "your PokéNav that will allow you to Fly\l"
+	.string "anywhere you've previously been, just\l"
+	.string "from looking at the map!\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}If you hover over a town or city that\n"
+	.string "you've visited in the PokéNav's map, you\l"
+	.string "will see an option to press the “R”\l"
+	.string "button to Fly there.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Isn't that cool?\p"
+	.string "Now you have two convenient options\n"
+	.string "to Fly around Hoenn.$"
+
+Route110_Text_RivalThatsNotAll::
+	.string "That's not all I have for you.\n"
+	.string "Here, take these as well.$"
+
+Route110_Text_RivalExplainRestOfItems::
+	.string "I just gave you the following Items:\n"
+	.string "the Dowsing MCHN, the TMs for\l"
 	.string "Fire Punch, Ice Punch, Thunder Punch,\l"
 	.string "Fire Fang, Ice Fang, Thunder Fang,\l"
 	.string "Psychic Fangs, and Poison Fang, some\l"
@@ -951,8 +985,7 @@ Route110_Text_MayExplainItemfinder:
 	.string "Extenders, and some Terrain Seeds.\p"
 	.string "Whew, I think that's everything, you\n"
 	.string "might want to take a look through your\l"
-	.string "Bag pockets now to see what you've\l"
-	.string "got!\p"
+	.string "Bag pockets to see what you have now!\p"
 	.string "I'll be going now, {PLAYER}, keep up the\n"
 	.string "good work!$"
 
@@ -973,33 +1006,8 @@ Route110_Text_BrendanTakeThis:
 	.string "without me noticing…\p"
 	.string "Good enough!\n"
 	.string "Here, take these,\p"
-	.string "I've got a whole slew\n"
-	.string "of items for you.$"
-
-Route110_Text_BrendanExplainItemfinder:
-	.string "As you can see, {COLOR GREEN}{SHADOW LIGHT_GREEN}I just gave you the\n"
-	.string "HM02 Fly.\p"
-	.string "Any Pokémon that can learn Fly should\n"
-	.string "now have it in your party menu,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} and the\l"
-	.string "Badge requirement to use it has been\l"
-	.string "removed! If you don't believe me, give\l"
-	.string "it a try!\p"
-	.string "In addition, I gave you the following\n"
-	.string "Items: the Dowsing MCHN, the TMs for\l"
-	.string "Fire Punch, Ice Punch, Thunder Punch,\l"
-	.string "Fire Fang, Ice Fang, Thunder Fang,\l"
-	.string "Psychic Fangs, and Poison Fang, some\l"
-	.string "more types of Poké Balls, Shiny Stones,\l"
-	.string "Black Sludges, Flame Orbs, Toxic Orbs,\l"
-	.string "Smoke Balls, Thick Clubs, Weakness\l"
-	.string "Policies, Air Balloons, Terrain\l"
-	.string "Extenders, and some Terrain Seeds.\p"
-	.string "Whew, I think that's everything, you\n"
-	.string "might want to take a look through your\l"
-	.string "Bag pockets now to see what you've\l"
-	.string "got!\p"
-	.string "I'll be going now, {PLAYER}, keep up the\n"
-	.string "good work!$"
+	.string "I've got some things to help you\n"
+	.string "on your journey.$"
 
 Route110_Text_RideBikeAtFullSpeed:
 	.string "Wouldn't it be great to ride a BIKE\n"
