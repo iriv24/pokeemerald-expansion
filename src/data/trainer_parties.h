@@ -12156,11 +12156,79 @@ static const struct TrainerMon sParty_GruntMagmaHideout10[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMagmaHideout11[] = {
+static const struct TrainerMon sParty_Sunbird[] = {
     {
-    .lvl = 70,
-    .species = SPECIES_CLAYDOL,
-    }
+    .nickname = COMPOUND_STRING("Jex"),
+    .gender = TRAINER_MON_FEMALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GLIMMORA,
+    .nature = NATURE_MODEST,
+    .ev = TRAINER_PARTY_EVS_MODEST(),
+    .ability = ABILITY_TOXIC_DEBRIS,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HIDDEN_POWER, MOVE_SLUDGE_WAVE, MOVE_POWER_GEM}
+    },
+    {
+    .nickname = COMPOUND_STRING("Mr. Fish"),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DRACOVISH,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_STRONG_JAW,
+    .heldItem = ITEM_QUICK_CLAW,
+    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_FISHIOUS_REND, MOVE_ANCIENT_POWER}
+    },
+    {
+    .nickname = COMPOUND_STRING("Noodle"),
+    .gender = TRAINER_MON_FEMALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DRAGONITE,
+    .nature = NATURE_GENTLE,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_MULTISCALE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_EXTREME_SPEED, MOVE_DRAGON_DANCE, MOVE_AQUA_TAIL, MOVE_OUTRAGE}
+    },
+    {
+    .nickname = COMPOUND_STRING("Sylvain"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_MEOWSCARADA,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_PROTEAN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_NIGHT_SLASH, MOVE_U_TURN, MOVE_PLAY_ROUGH, MOVE_ENERGY_BALL}
+    },
+    {
+    .nickname = COMPOUND_STRING("OBC Andy"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SKELEDIRGE,
+    .nature = NATURE_MODEST,
+    .ev = TRAINER_PARTY_EVS_MODEST(),
+    .ability = ABILITY_UNAWARE,
+    .heldItem = ITEM_THROAT_SPRAY,
+    .moves = {MOVE_SNARL, MOVE_HEX, MOVE_HYPER_VOICE, MOVE_TORCH_SONG}
+    },
+    {
+    .nickname = COMPOUND_STRING("Mochi"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_TYRANTRUM,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_STRONG_JAW,
+    .heldItem = ITEM_METRONOME,
+    .moves = {MOVE_POISON_FANG, MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_CLAW},
+    .isShiny = TRUE,
+    },
 };
 
 static const struct TrainerMon sParty_GruntMagmaHideout12[] = {
@@ -15859,7 +15927,7 @@ static const struct TrainerMon sParty_Cap[] = {
     .ev = TRAINER_PARTY_EVS_ADAMANT(),
     .ability = ABILITY_IRON_FIST,
     .heldItem = ITEM_PUNCHING_GLOVE,
-    .gender = FEMALE,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_DRAIN_PUNCH, MOVE_MACH_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH}
     },
     {

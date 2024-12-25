@@ -729,7 +729,7 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_8       723
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_9       724
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_10      725
-#define TRAINER_GRUNT_MAGMA_HIDEOUT_11      726 //unused
+#define TRAINER_SUNBIRD                     726
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_12      727 //unused
 #define TRAINER_COURTNEY                    728
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_14      729

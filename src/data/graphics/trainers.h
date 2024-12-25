@@ -337,6 +337,9 @@ const u32 gTrainerPalette_StevenAndWallace[] = INCBIN_U32("graphics/trainers/fro
 const u32 gTrainerFrontPic_Courtney[] = INCBIN_U32("graphics/trainers/front_pics/courtney.4bpp.lz");
 const u32 gTrainerPalette_Courtney[] = INCBIN_U32("graphics/trainers/front_pics/courtney.gbapal.lz");
 
+const u32 gTrainerFrontPic_BeautyFirered[] = INCBIN_U32("graphics/trainers/front_pics/beauty_firered.4bpp.lz");
+const u32 gTrainerPalette_BeautyFirered[] = INCBIN_U32("graphics/trainers/front_pics/beauty_firered.gbapal.lz");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -460,7 +463,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LIZA, gTrainerFrontPic_Liza, gTrainerPalette_Liza),
     TRAINER_SPRITE(TRAINER_PIC_CHAMPION_STEVEN, gTrainerFrontPic_ChampionSteven, gTrainerPalette_ChampionSteven, 0, 7, 0x188),
     TRAINER_SPRITE(TRAINER_PIC_STEVENANDWALLACE, gTrainerFrontPic_StevenAndWallace, gTrainerPalette_StevenAndWallace),
-    TRAINER_SPRITE(TRAINER_PIC_COURTNEY, gTrainerFrontPic_Courtney, gTrainerPalette_Courtney) 
+    TRAINER_SPRITE(TRAINER_PIC_COURTNEY, gTrainerFrontPic_Courtney, gTrainerPalette_Courtney),
+    TRAINER_SPRITE(TRAINER_PIC_BEAUTY_FIRERED, gTrainerFrontPic_BeautyFirered, gTrainerPalette_BeautyFirered),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

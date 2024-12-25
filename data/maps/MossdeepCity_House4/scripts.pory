@@ -2,62 +2,171 @@ raw `
 MossdeepCity_House4_MapScripts::
 	.byte 0
 
-MossdeepCity_House4_EventScript_Woman::
-	lock
-	faceplayer
-	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_House4_EventScript_CanBattleAtSecretBases
-	msgbox MossdeepCity_House4_Text_BrotherLikesToFindBases, MSGBOX_DEFAULT
-	release
-	end
-
-MossdeepCity_House4_EventScript_CanBattleAtSecretBases::
-	msgbox MossdeepCity_House4_Text_BrotherLikesToVisitBasesAndBattle, MSGBOX_DEFAULT
-	release
-	end
-
-MossdeepCity_House4_EventScript_NinjaBoy::
-	lock
-	faceplayer
-	special CheckPlayerHasSecretBase
-	goto_if_eq VAR_RESULT, FALSE, MossdeepCity_House4_EventScript_NoSecretBase
-	special GetSecretBaseNearbyMapName
-	msgbox MossdeepCity_House4_Text_YouMadeSecretBaseNearX, MSGBOX_DEFAULT
-	release
-	end
-
-MossdeepCity_House4_EventScript_NoSecretBase::
-	msgbox MossdeepCity_House4_Text_MakeSecretBase, MSGBOX_DEFAULT
-	release
-	end
-
-MossdeepCity_House4_EventScript_Skitty::
+MossdeepCity_House4_EventScript_Mochi::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
-	msgbox MossdeepCity_House4_Text_Skitty, MSGBOX_DEFAULT
+	playmoncry SPECIES_TYRANTRUM, CRY_MODE_NORMAL
+	msgbox MossdeepCity_House4_Text_Tyrantrum, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
 
-MossdeepCity_House4_Text_BrotherLikesToFindBases:
-	.string "My little brother says he likes to go\n"
-	.string "find people's SECRET BASES.$"
-
-MossdeepCity_House4_Text_BrotherLikesToVisitBasesAndBattle:
-	.string "My little brother says he likes to\n"
-	.string "visit people's SECRET BASES and have\l"
-	.string "Pokémon battles.$"
-
-MossdeepCity_House4_Text_YouMadeSecretBaseNearX:
-	.string "Was it you who made a SECRET BASE\n"
-	.string "near {STR_VAR_1}?$"
-
-MossdeepCity_House4_Text_MakeSecretBase:
-	.string "You should make a SECRET BASE\n"
-	.string "somewhere. I'll go find it!$"
-
-MossdeepCity_House4_Text_Skitty:
-	.string "SKITTY: Miyaan?$"
-
+MossdeepCity_House4_Text_Tyrantrum:
+	.string "Mochi: Grrrraaaaraaararaaa!$"
 `
+
+script MossdeepCity_House4_EventScript_Sunbird{
+	lockall
+	applymovement(1, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_MEW, MossdeepCity_House4_EventScript_SunbirdDefeated)
+	goto_if_set(FLAG_DECLINED_SUNBIRD_BATTLE, MossdeepCity_House4_EventScript_SunbirdRequestBattleAgain)
+	msgbox(Sunbird_Greeting, MSGBOX_YESNO)
+	goto(MossdeepCity_House4_EventScript_BattleSunbirdPrompt)
+	end
+}
+
+script MossdeepCity_House4_EventScript_SunbirdRequestBattleAgain{
+	msgbox(Sunbird_ReadyYet, MSGBOX_YESNO)
+	goto(MossdeepCity_House4_EventScript_BattleSunbirdPrompt)
+	end
+}
+
+script MossdeepCity_House4_EventScript_BattleSunbirdPrompt{
+	call_if_eq(VAR_RESULT, YES, MossdeepCity_House4_EventScript_BattleSunbird)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_House4_EventScript_DeclineSunbirdBattle)
+	closemessage
+	end
+}
+
+script MossdeepCity_House4_EventScript_DeclineSunbirdBattle {
+	setflag(FLAG_DECLINED_SUNBIRD_BATTLE)
+	msgbox(Sunbird_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MossdeepCity_House4_EventScript_BattleSunbird{
+	msgbox(Sunbird_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_SUNBIRD, Sunbird_Outro)
+	goto(MossdeepCity_House4_EventScript_SunbirdGiveMew)
+	return
+}
+
+
+script MossdeepCity_House4_EventScript_SunbirdDefeated{
+	msgbox(PostBattle_Sunbird, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script MossdeepCity_House4_EventScript_SunbirdGiveMew{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW)
+	givemonrandom(SPECIES_MEW, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_House4_EventScript_ReceiveMewParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_House4_EventScript_ReceiveMewPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script MossdeepCity_House4_EventScript_ReceiveMewParty{
+	call(MossdeepCity_House4_EventScript_ReceivedMewFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_House4_EventScript_ExplainMew)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(MossdeepCity_House4_EventScript_ExplainMew)
+	end
+}
+	
+
+script MossdeepCity_House4_EventScript_ReceiveMewPC {
+	call(MossdeepCity_House4_EventScript_ReceivedMewFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_House4_EventScript_SendMewToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(MossdeepCity_House4_EventScript_SendMewToPC)
+	end
+}
+	
+
+script MossdeepCity_House4_EventScript_SendMewToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(MossdeepCity_House4_EventScript_ExplainMew)
+	end
+}
+	
+
+script MossdeepCity_House4_EventScript_ReceivedMewFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(MossdeepCity_House4_Text_PlayerReceivedMew)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MEW)
+	return
+}
+	
+
+script MossdeepCity_House4_EventScript_ExplainMew {
+	msgbox(Sunbird_ExplainMew, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_MEW)
+	release
+	end
+}
+
+text Sunbird_Greeting{
+	"Hello! I'm Sunbird, and I was one of the\n"
+	"first players ever to beat this game, so\l"
+	"I got to make my own trainer with my\l"
+	"Hall of Fame team!\p"
+	"Now if you can beat me, I'll give you a\n"
+	"pretty good reward (spoiler, it's a\l"
+	"Mythical Pokémon)!\p"
+	"I'll also explain to you what my\n"
+	"Skeledirge's nickname, “OBC Andy”,\l"
+	"means.\p"
+	"In fact, you kind of remind me of him.\p"
+	"So, you think you can beat me?"
+}
+
+text Sunbird_ReadyYet{
+	"Ready yet, OBC trainer?"
+}
+
+text Sunbird_YoureOn{
+	"Alright you're on, OBC trainer!"
+}
+
+text Sunbird_ComeBackWhenReady{
+	"That's fine, I don't blame you.\n"
+	"My team is pretty scary!"
+}
+
+text Sunbird_Outro{
+	"Ok, I'll tell you… “OBC” stands for “One\n"
+	"Brain Cell”, but Andy does his best!"
+}
+
+text MossdeepCity_House4_Text_PlayerReceivedMew{
+	"{PLAYER} received Mew!"
+}
+
+text Sunbird_ExplainMew{
+	"I told you I'd give you a Mythical if you\n"
+	"could beat me!\p"
+	"And I'd say that's a pretty darn good\n"
+	"one, so I hope Mew helps you!"
+}
+
+text PostBattle_Sunbird{
+	"Mochi the shiny Tyrantrum was a\n"
+	"core member of my team when I beat\l"
+	"this game.\p"
+	"He was with me for so long and was a big\n"
+	"part of my Hall of Fame team!\p"
+	"I hope you have a Pokémon with you\n"
+	"that you care about as much as I care\l"
+	"about Mochi, and I hope you go far\l"
+	"together!"
+}
