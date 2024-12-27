@@ -10494,7 +10494,7 @@
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_POKEMANIAC,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
         .trainerName = _("iriv24"),
         .items = {},
         .doubleBattle = FALSE,
