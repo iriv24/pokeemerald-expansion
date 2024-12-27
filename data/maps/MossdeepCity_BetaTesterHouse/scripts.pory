@@ -1,0 +1,335 @@
+raw `
+MossdeepCity_BetaTesterHouse_MapScripts::
+	.byte 0
+
+MossdeepCity_BetaTesterHouse_EventScript_Mochi::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_TYRANTRUM, CRY_MODE_NORMAL
+	msgbox MossdeepCity_BetaTesterHouse_Text_Tyrantrum, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+MossdeepCity_BetaTesterHouse_Text_Tyrantrum:
+	.string "Mochi: Grrrraaaaraaararaaa!$"
+
+MossdeepCity_BetaTesterHouse_EventScript_Kingambit::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KINGAMBIT, CRY_MODE_NORMAL
+	msgbox MossdeepCity_BetaTesterHouse_Text_Kingambit, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+MossdeepCity_BetaTesterHouse_Text_Kingambit:
+	.string "Kingambit: Uuhuuhuuhuuahahuuhu!$"
+`
+
+script MossdeepCity_BetaTesterHouse_EventScript_Sunbird{
+	lockall
+	applymovement(1, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_SUNBIRD, MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated)
+	goto_if_set(FLAG_TEMP_1, MossdeepCity_BetaTesterHouse_EventScript_SunbirdRequestBattleAgain)
+	msgbox(Sunbird_Greeting, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunbirdRequestBattleAgain{
+	msgbox(Sunbird_ReadyYet, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt{
+	call_if_eq(VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleSunbird)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineSunbirdBattle)
+	closemessage
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_DeclineSunbirdBattle {
+	setflag(FLAG_TEMP_1)
+	msgbox(Sunbird_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleSunbird{
+	msgbox(Sunbird_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_SUNBIRD, Sunbird_Outro)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew)
+	return
+}
+
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated{
+	msgbox(PostBattle_Sunbird, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW)
+	givemonrandom(SPECIES_MEW, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty{
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC {
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MEW)
+	return
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ExplainMew {
+	msgbox(Sunbird_ExplainMew, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Sunbird_Greeting{
+	"Hello! I'm Sunbird, and I was one of the\n"
+	"first players ever to beat this game, so\l"
+	"I got to make my own trainer with my\l"
+	"Hall of Fame team!\p"
+	"Now if you can beat me, I'll give you a\n"
+	"pretty good reward (spoiler, it's a\l"
+	"Mythical Pokémon)!\p"
+	"I'll also explain to you what my\n"
+	"Skeledirge's nickname, “OBC Andy”,\l"
+	"means.\p"
+	"In fact, you kind of remind me of him.\p"
+	"So, you think you can beat me?"
+}
+
+text Sunbird_ReadyYet{
+	"Ready yet, OBC trainer?"
+}
+
+text Sunbird_YoureOn{
+	"Alright you're on, OBC trainer!"
+}
+
+text Sunbird_ComeBackWhenReady{
+	"That's fine, I don't blame you.\n"
+	"My team is pretty scary!"
+}
+
+text Sunbird_Outro{
+	"Ok, I'll tell you… “OBC” stands for “One\n"
+	"Brain Cell”, but Andy does his best!"
+}
+
+text MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew{
+	"{PLAYER} received Mew!"
+}
+
+text Sunbird_ExplainMew{
+	"I told you I'd give you a Mythical if you\n"
+	"could beat me!\p"
+	"And I'd say that's a pretty darn good\n"
+	"one, so I hope Mew helps you!"
+}
+
+text PostBattle_Sunbird{
+	"Mochi the shiny Tyrantrum was a\n"
+	"core member of my team when I beat\l"
+	"this game.\p"
+	"He was with me for so long and was a big\n"
+	"part of my Hall of Fame team!\p"
+	"I hope you have a Pokémon with you\n"
+	"that you care about as much as I care\l"
+	"about Mochi, and I hope you go far\l"
+	"together!"
+}
+
+
+
+script MossdeepCity_BetaTesterHouse_EventScript_Suneal{
+	lockall
+	applymovement(3, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_SUNEAL, MossdeepCity_BetaTesterHouse_EventScript_SunealDefeated)
+	goto_if_set(FLAG_TEMP_2, MossdeepCity_BetaTesterHouse_EventScript_SunealRequestBattleAgain)
+	msgbox(Suneal_Greeting, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunealRequestBattleAgain{
+	msgbox(Suneal_ReadyYet, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt{
+	call_if_eq(VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleSuneal)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineSunealBattle)
+	closemessage
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_DeclineSunealBattle {
+	setflag(FLAG_TEMP_2)
+	msgbox(Suneal_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleSuneal{
+	msgbox(Suneal_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_SUNEAL, Suneal_Outro)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SunealGiveDarkrai)
+	return
+}
+
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunealDefeated{
+	msgbox(PostBattle_Suneal, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_SunealGiveDarkrai{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DARKRAI)
+	givemonrandom(SPECIES_DARKRAI, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiParty{
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiPC {
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(MossdeepCity_BetaTesterHouse_Text_PlayerReceivedDarkrai)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_DARKRAI)
+	return
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai {
+	msgbox(Suneal_ExplainDarkrai, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Suneal_Greeting{
+	"What's up? My name is Suneal, and I was\n"
+	"the first person besides the creator\l"
+	"to beat this game.\p"
+	"I actually beat it more than once, and\n"
+	"I played a version way before it was\l"
+	"finalized.\p"
+	"If you can beat me, I'll give you a\n"
+	"Mythical Pokémon as a reward.\p"
+	"What do you say?"
+}
+
+text Suneal_ReadyYet{
+	"Ready to battle yet?"
+}
+
+text Suneal_YoureOn{
+	"Let's do this."
+}
+
+text Suneal_ComeBackWhenReady{
+	"Come back if you change your mind."
+}
+
+text Suneal_Outro{
+	"Looks like you might not be a complete\n"
+	"bum after all."
+}
+
+text MossdeepCity_BetaTesterHouse_Text_PlayerReceivedDarkrai{
+	"{PLAYER} received Darkrai!"
+}
+
+text Suneal_ExplainDarkrai{
+	"As promised, there's your Mythical.\n"
+	"You're not getting Dark Hole until\l"
+	"post-game though, that move is\l"
+	"completely broken."
+}
+
+text PostBattle_Suneal{
+	"I was the one who suggested adding a\n"
+	"White Out Counter to the 2nd Nurse in\l"
+	"the Pokémon Centers, and I'm the one\l"
+	"who came up with the “obtained several\l"
+	"Items!” idea instead of getting 50\l"
+	"individual messages, so you're\l"
+	"welcome for that."
+}
+

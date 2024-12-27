@@ -12156,88 +12156,6 @@ static const struct TrainerMon sParty_GruntMagmaHideout10[] = {
     }
 };
 
-static const struct TrainerMon sParty_Sunbird[] = {
-    {
-    .nickname = COMPOUND_STRING("Jex"),
-    .gender = TRAINER_MON_FEMALE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_GLIMMORA,
-    .nature = NATURE_MODEST,
-    .ev = TRAINER_PARTY_EVS_MODEST(),
-    .ability = ABILITY_TOXIC_DEBRIS,
-    .heldItem = ITEM_BLACK_SLUDGE,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_HIDDEN_POWER, MOVE_SLUDGE_WAVE, MOVE_POWER_GEM}
-    },
-    {
-    .nickname = COMPOUND_STRING("Mr. Fish"),
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_DRACOVISH,
-    .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_STRONG_JAW,
-    .heldItem = ITEM_QUICK_CLAW,
-    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_FISHIOUS_REND, MOVE_ANCIENT_POWER}
-    },
-    {
-    .nickname = COMPOUND_STRING("Noodle"),
-    .gender = TRAINER_MON_FEMALE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_DRAGONITE,
-    .nature = NATURE_GENTLE,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_MULTISCALE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_EXTREME_SPEED, MOVE_DRAGON_DANCE, MOVE_AQUA_TAIL, MOVE_OUTRAGE}
-    },
-    {
-    .nickname = COMPOUND_STRING("Sylvain"),
-    .gender = TRAINER_MON_MALE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_MEOWSCARADA,
-    .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_PROTEAN,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_NIGHT_SLASH, MOVE_U_TURN, MOVE_PLAY_ROUGH, MOVE_ENERGY_BALL}
-    },
-    {
-    .nickname = COMPOUND_STRING("OBC Andy"),
-    .gender = TRAINER_MON_MALE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_SKELEDIRGE,
-    .nature = NATURE_MODEST,
-    .ev = TRAINER_PARTY_EVS_MODEST(),
-    .ability = ABILITY_UNAWARE,
-    .heldItem = ITEM_THROAT_SPRAY,
-    .moves = {MOVE_SNARL, MOVE_HEX, MOVE_HYPER_VOICE, MOVE_TORCH_SONG}
-    },
-    {
-    .nickname = COMPOUND_STRING("Mochi"),
-    .gender = TRAINER_MON_MALE,
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_TYRANTRUM,
-    .nature = NATURE_ADAMANT,
-    .ev = TRAINER_PARTY_EVS_ADAMANT(),
-    .ability = ABILITY_STRONG_JAW,
-    .heldItem = ITEM_METRONOME,
-    .moves = {MOVE_POISON_FANG, MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_CLAW},
-    .isShiny = TRUE,
-    },
-};
-
-static const struct TrainerMon sParty_GruntMagmaHideout12[] = {
-    {
-    .lvl = 70,
-    .species = SPECIES_CAMERUPT,
-    }
-};
-
 static const struct TrainerMon sParty_GruntMagmaHideout14[] = {
     {
     .lvl = 70,
@@ -15991,4 +15909,142 @@ static const struct TrainerMon sParty_Shady[] = {
     .species = SPECIES_SANDSLASH,
     .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
     }
+};
+
+static const struct TrainerMon sParty_Sunbird[] = {
+    {
+    .nickname = COMPOUND_STRING("Jex"),
+    .gender = TRAINER_MON_FEMALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GLIMMORA,
+    .nature = NATURE_MODEST,
+    .ev = TRAINER_PARTY_EVS_MODEST(),
+    .ability = ABILITY_TOXIC_DEBRIS,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .moves = {MOVE_STEALTH_ROCK, MOVE_HIDDEN_POWER, MOVE_SLUDGE_WAVE, MOVE_POWER_GEM}
+    },
+    {
+    .nickname = COMPOUND_STRING("Mr. Fish"),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DRACOVISH,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_STRONG_JAW,
+    .heldItem = ITEM_QUICK_CLAW,
+    .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_FISHIOUS_REND, MOVE_ANCIENT_POWER}
+    },
+    {
+    .nickname = COMPOUND_STRING("Noodle"),
+    .gender = TRAINER_MON_FEMALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DRAGONITE,
+    .nature = NATURE_GENTLE,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_MULTISCALE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_EXTREME_SPEED, MOVE_DRAGON_DANCE, MOVE_AQUA_TAIL, MOVE_OUTRAGE}
+    },
+    {
+    .nickname = COMPOUND_STRING("Sylvain"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_MEOWSCARADA,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_PROTEAN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_NIGHT_SLASH, MOVE_U_TURN, MOVE_PLAY_ROUGH, MOVE_ENERGY_BALL}
+    },
+    {
+    .nickname = COMPOUND_STRING("OBC Andy"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SKELEDIRGE,
+    .nature = NATURE_MODEST,
+    .ev = TRAINER_PARTY_EVS_MODEST(),
+    .ability = ABILITY_UNAWARE,
+    .heldItem = ITEM_THROAT_SPRAY,
+    .moves = {MOVE_SNARL, MOVE_HEX, MOVE_HYPER_VOICE, MOVE_TORCH_SONG}
+    },
+    {
+    .nickname = COMPOUND_STRING("Mochi"),
+    .gender = TRAINER_MON_MALE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_TYRANTRUM,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_STRONG_JAW,
+    .heldItem = ITEM_METRONOME,
+    .moves = {MOVE_POISON_FANG, MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_DRAGON_CLAW},
+    .isShiny = TRUE,
+    },
+};
+
+static const struct TrainerMon sParty_Suneal[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_DRAGAPULT,
+    .nature = NATURE_NAIVE,
+    .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK(),
+    .ability = ABILITY_INFILTRATOR,
+    .heldItem = ITEM_DRACO_PLATE,
+    .moves = {MOVE_DRAGON_DARTS, MOVE_HEX, MOVE_WILL_O_WISP, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_BLAZIKEN,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_BLAZE,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_FLAME_CHARGE, MOVE_FLARE_BLITZ, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SNEASLER,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_POISON_TOUCH,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_CLOSE_COMBAT, MOVE_DIRE_CLAW, MOVE_U_TURN, MOVE_ROCK_SLIDE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_BAXCALIBUR,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_THERMAL_EXCHANGE,
+    .heldItem = ITEM_LOADED_DICE,
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_SCALE_SHOT, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GYARADOS,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_GYARADOSITE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_WATERFALL, MOVE_CRUNCH, MOVE_ICE_FANG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_KINGAMBIT,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_SUPREME_OVERLORD,
+    .heldItem = ITEM_BLACK_GLASSES,
+    .moves = {MOVE_IRON_HEAD, MOVE_SUCKER_PUNCH, MOVE_LOW_KICK, MOVE_KOWTOW_CLEAVE},
+    },
 };

@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/GrassySlab/border.bin",
       "blockdata_filepath": "data/layouts/GrassySlab/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOSSDEEP_CITY_BETA_TESTER_HOUSE",
+      "name": "MossdeepCity_BetaTesterHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MossdeepCity_BetaTesterHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MossdeepCity_BetaTesterHouse/map.bin"
     }
   ]
 }
