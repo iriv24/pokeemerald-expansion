@@ -48,7 +48,7 @@
 #define TRAINER_ROSE_4                       42
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
-#define TRAINER_SHADY                        45
+#define TRAINER_SHADY                        45 // unused for now
 #define TRAINER_FOSTER                       46
 #define TRAINER_DUSTY_2                      47
 #define TRAINER_DUSTY_3                      48

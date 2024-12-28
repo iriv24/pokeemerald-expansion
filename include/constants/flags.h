@@ -70,12 +70,12 @@
 #define FLAG_BEAT_TRICK_HOUSE_3    0x38
 #define FLAG_RECEIVED_KUBFU    0x39
 #define FLAG_DECLINED_WAKE_BATTLE    0x3A
-#define FLAG_RECEIVED_WATER_MEGAS    0x3B
-#define FLAG_DECLINED_IRIV24_BATTLE    0x3C
-#define FLAG_RECEIVED_GRASS_MEGAS    0x3D
-#define FLAG_DECLINED_X_BATTLE    0x3E
-#define FLAG_RECEIVED_FIRE_MEGAS    0x3F
-#define FLAG_DECLINED_CAP_BATTLE    0x40
+#define FLAG_UNUSED_0x3B             0x3B // unused
+#define FLAG_UNUSED_0x3C             0x3C // unused
+#define FLAG_UNUSED_0x3D             0x3D // unused
+#define FLAG_UNUSED_0x3E             0x3E // unused
+#define FLAG_UNUSED_0x3F             0x3F // unused
+#define FLAG_UNUSED_0x40             0x40 // unused
 #define FLAG_RECEIVED_MELTAN    0x41
 #define FLAG_DECLINED_BYRON_BATTLE    0x42
 #define FLAG_DAWN_LILYCOVE    0x43
