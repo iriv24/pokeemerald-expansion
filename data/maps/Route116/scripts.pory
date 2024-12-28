@@ -517,8 +517,8 @@ Route116_Text_TrainerTipsBagHasPockets:
 script Route116_EventScript_Roark{
 	lockall
 	applymovement(29, Common_Movement_FacePlayer)
-	call_if_eq(VAR_UNUSED_FOUGHT_ROARK116, 1, Route116_EventScript_RoarkDefeated)
-	goto_if_set(FLAG_DECLINED_ROARK_BATTLE_116, Route116_EventScript_RoarkRequestBattleAgain)
+	goto_if_set(FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkDefeated)
+	goto_if_set(FLAG_TEMP_1, Route116_EventScript_RoarkRequestBattleAgain)
 	msgbox(Roark_Greeting, MSGBOX_DEFAULT)
 	waitmessage
 	msgbox(Roark_WillYouBattleMe, MSGBOX_YESNO)
@@ -540,7 +540,7 @@ script Route116_EventScript_BattleRoarkPrompt{
 }
 
 script Route116_EventScript_DeclineRoarkBattle {
-	setflag(FLAG_DECLINED_ROARK_BATTLE_116)
+	setflag(FLAG_TEMP_1)
 	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
 	release
 	end
@@ -549,7 +549,6 @@ script Route116_EventScript_DeclineRoarkBattle {
 script Route116_EventScript_BattleRoark{
 	msgbox("Let's do this!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_ROARK, Roark_Outro)
-	setvar(VAR_UNUSED_FOUGHT_ROARK116, 1)
 	goto(Route116_EventScript_RoarkGiveRockTomb)
 	return
 }
@@ -564,7 +563,6 @@ script Route116_EventScript_RoarkDefeated{
 script Route116_EventScript_RoarkGiveRockTomb{
 	giveitem(ITEM_TM_ROCK_TOMB)
 	giveitem(ITEM_MUSCLE_BAND)
-	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
 	setflag(FLAG_RECEIVED_TM_ROCK_TOMB)
 	msgbox(Roark_ExplainRockTombAndMuscleBand)
 	release

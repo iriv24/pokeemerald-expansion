@@ -1853,9 +1853,9 @@ Route111_EventScript_Daisuke::
 # 1020 "data/maps/Route111/scripts.pory"
 	applymovement 30, Common_Movement_FacePlayer
 # 1021 "data/maps/Route111/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TYROGUE, Route111_EventScript_DaisukeDefeated
+	goto_if_defeated TRAINER_DAISUKE, Route111_EventScript_DaisukeDefeated
 # 1022 "data/maps/Route111/scripts.pory"
-	goto_if_set FLAG_DECLINED_DAISUKE_BATTLE, Route111_EventScript_DaisukeRequestBattleAgain
+	goto_if_set FLAG_TEMP_1, Route111_EventScript_DaisukeRequestBattleAgain
 # 1023 "data/maps/Route111/scripts.pory"
 	msgbox Daisuke_Greeting, MSGBOX_YESNO
 # 1024 "data/maps/Route111/scripts.pory"
@@ -1865,7 +1865,7 @@ Route111_EventScript_Daisuke::
 
 Route111_EventScript_DaisukeRequestBattleAgain::
 # 1029 "data/maps/Route111/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
+	msgbox Daisuke_ReadyYet, MSGBOX_YESNO
 # 1030 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_BattleDaisukePrompt
 	end
@@ -1883,9 +1883,9 @@ Route111_EventScript_BattleDaisukePrompt::
 
 Route111_EventScript_DeclineDaisukeBattle::
 # 1042 "data/maps/Route111/scripts.pory"
-	setflag FLAG_DECLINED_DAISUKE_BATTLE
+	setflag FLAG_TEMP_1
 # 1043 "data/maps/Route111/scripts.pory"
-	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+	msgbox Daisuke_ComeBackWhenReady, MSGBOX_DEFAULT
 # 1044 "data/maps/Route111/scripts.pory"
 	release
 	end
@@ -1987,8 +1987,6 @@ Route111_EventScript_ExplainTyrogue::
 # 1114 "data/maps/Route111/scripts.pory"
 	msgbox Daisuke_ExplainTyrogue, MSGBOX_DEFAULT
 # 1115 "data/maps/Route111/scripts.pory"
-	setflag FLAG_RECEIVED_TYROGUE
-# 1116 "data/maps/Route111/scripts.pory"
 	release
 	end
 
@@ -2036,11 +2034,29 @@ TrainerHillDev::
 	.string "UNDER DEVELOPMENT$"
 
 Route111_Text_PlayerReceivedTyrogue::
-# 1120 "data/maps/Route111/scripts.pory"
+# 1119 "data/maps/Route111/scripts.pory"
 	.string "{PLAYER} received Tyrogue!$"
 
+Daisuke_Greeting::
+# 1123 "data/maps/Route111/scripts.pory"
+	.string "Yo! I'm working on becoming the karate\n"
+	.string "master of this region. If you can help\l"
+	.string "me with my training, I'll reward you with\l"
+	.string "one of the Pokémon I've been training.\p"
+	.string "What do you say?$"
+
+Daisuke_ReadyYet::
+# 1131 "data/maps/Route111/scripts.pory"
+	.string "Are you willing to help me become the\n"
+	.string "karate master now?$"
+
+Daisuke_ComeBackWhenReady::
+# 1136 "data/maps/Route111/scripts.pory"
+	.string "No worries, I'll keep training on my own\n"
+	.string "out here.$"
+
 Daisuke_ExplainTyrogue::
-# 1126 "data/maps/Route111/scripts.pory"
+# 1141 "data/maps/Route111/scripts.pory"
 	.string "Tyrogue can evolve in 3 different ways,\n"
 	.string "all when it reaches level 20.\p"
 	.string "If its Attack is less than its Defense,\n"
@@ -2051,21 +2067,13 @@ Daisuke_ExplainTyrogue::
 	.string "result in Hitmontop.\p"
 	.string "It's very versatile!$"
 
-Daisuke_Greeting::
-# 1140 "data/maps/Route111/scripts.pory"
-	.string "Yo! I'm working on becoming the karate\n"
-	.string "master of this region. If you can help\l"
-	.string "me with my training, I'll reward you with\l"
-	.string "one of the Pokémon I've been training.\p"
-	.string "What do you say?$"
-
 Daisuke_Outro::
-# 1148 "data/maps/Route111/scripts.pory"
+# 1153 "data/maps/Route111/scripts.pory"
 	.string "Great battle! I know I'll be leaving this\n"
 	.string "Pokémon in good hands.$"
 
 PostBattle_Daisuke::
-# 1154 "data/maps/Route111/scripts.pory"
+# 1159 "data/maps/Route111/scripts.pory"
 	.string "Looks like I still have a long way to go.\n"
 	.string "Hope you're taking good care of\l"
 	.string "Tyrogue for me.$"

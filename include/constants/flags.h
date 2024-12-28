@@ -52,7 +52,7 @@
 #define FLAG_USING_POKEMONPCMENU       0x26
 #define FLAG_STOP_ENCOUNTERS           0x27
 #define FLAG_PARTY_MOVES               0x28
-#define FLAG_RECEIVED_TM_U_TURN        0x29
+#define FLAG_UNUSED_0x29               0x29 // unused
 #define FLAG_RECEIVED_RUSTBORO_EGG     0x2A
 #define FLAG_RECEIVED_SETUP_TMS        0x2B
 #define FLAG_UNUSED_0x2C               0x2C // unused
@@ -62,8 +62,8 @@
 #define FLAG_RECEIVED_MEGA_STONES      0x30
 #define FLAG_RECEIVED_TMS_FROM_TUTOR   0x31
 #define FLAG_DECLINED_DANCE_BATTLE     0x32
-#define FLAG_RECEIVED_TYROGUE          0x33
-#define FLAG_DECLINED_DAISUKE_BATTLE   0x34 
+#define FLAG_UNUSED_0x33               0x33 // unused
+#define FLAG_UNUSED_0x34               0x34 // unused
 #define FLAG_RECEIVED_ROUTE_111_EGG    0x35
 #define FLAG_RECEIVED_SCOPE_LENS       0x36
 #define FLAG_UNUSED_0x37               0x37 // unused
@@ -460,8 +460,8 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_DECLINED_ROARK_BATTLE_116       0x1AA 
-#define FLAG_DECLINED_GARDENIA_BATTLE        0x1AB
+#define FLAG_UNUSED_0x1AA                    0x1AA // unused
+#define FLAG_UNUSED_0x1AB                    0x1AB // unused
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD

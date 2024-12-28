@@ -477,8 +477,9 @@ PetalburgWoods_Text_TrainerTipsPP:
 script PetalburgWoods_EventScript_Gardenia{
 	lockall
 	applymovement(14, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_TM_U_TURN, PetalburgWoods_EventScript_GardeniaDefeated)
-	goto_if_set(FLAG_DECLINED_GARDENIA_BATTLE, PetalburgWoods_EventScript_GardeniaRequestBattleAgain)
+	goto_if_defeated(TRAINER_GARDENIA, PetalburgWoods_EventScript_GardeniaDefeated)
+	goto_if_defeated(TRAINER_GARDENIA2, PetalburgWoods_EventScript_GardeniaDefeated)
+	goto_if_set(FLAG_TEMP_1, PetalburgWoods_EventScript_GardeniaRequestBattleAgain)
 	msgbox(Gardenia_Greeting, MSGBOX_DEFAULT)
 	waitmessage
 	msgbox(Gardenia_WillYouBattleMe, MSGBOX_YESNO)
@@ -487,7 +488,7 @@ script PetalburgWoods_EventScript_Gardenia{
 }
 
 script PetalburgWoods_EventScript_GardeniaRequestBattleAgain{
-	msgbox(Ready_Yet, MSGBOX_YESNO)
+	msgbox(Gardenia_ReadyYet, MSGBOX_YESNO)
 	goto(PetalburgWoods_EventScript_BattleGardeniaPrompt)
 	end
 }
@@ -500,8 +501,8 @@ script PetalburgWoods_EventScript_BattleGardeniaPrompt{
 }
 
 script PetalburgWoods_EventScript_DeclineGardeniaBattle {
-	setflag(FLAG_DECLINED_GARDENIA_BATTLE)
-	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_1)
+	msgbox(Gardenia_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -532,20 +533,9 @@ script PetalburgWoods_EventScript_GardeniaGiveItems{
 	giveitem(ITEM_TM_U_TURN)
 	giveitem(ITEM_EVIOLITE)
 	giveitem(ITEM_LEAF_STONE, 10)
-	setflag(FLAG_RECEIVED_TM_U_TURN)
 	msgbox(Gardenia_ExplainItems)
 	release
 	end
-}
-
-text Gardenia_ExplainItems{
-	"That TM contains U-turn, it's very\n"
-	"useful for getting a hit off while\l"
-	"switching out a Pokémon.\p" 
-	"I also included some useful\n"
-	"evolution stones and an Item that\l"
-	"will be good for a Pokémon you can't\l"
-	"evolve quite yet."
 }
 
 text Gardenia_Greeting{
@@ -557,8 +547,29 @@ text Gardenia_Greeting{
 	"who's strong enough to beat Roxanne,\l"
 	"which means you're a trainer I want to\l"
 	"face!\p"
+	"I'm Gardenia by the way, I'm the 2nd Gym\n"
+	"Leader from the Sinnoh region.\p"
 	"If you can beat me I'll make it\n"
 	"worth your while!"
+}
+
+text Gardenia_ReadyYet{
+	"Want to battle now?"
+}
+
+text Gardenia_ComeBackWhenReady{
+	"I'll be here looking for some more\n"
+	"Grass-types in the meantime."
+}
+
+text Gardenia_ExplainItems{
+	"That TM contains U-turn, it's very\n"
+	"useful for getting a hit off while\l"
+	"switching out a Pokémon.\p" 
+	"I also included some useful\n"
+	"evolution stones and an Item that\l"
+	"will be good for a Pokémon you can't\l"
+	"evolve quite yet."
 }
 
 text Gardenia_WillYouBattleMe{
@@ -573,6 +584,6 @@ text Gardenia_Outro{
 
 
 text PostBattle_Gardenia{
-	"Hope there are some cool grass types in\n"
+	"Hope there are some cool Grass-types in\n"
 	"this region!"
 }

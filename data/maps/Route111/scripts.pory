@@ -1018,15 +1018,15 @@ text TrainerHillDev{
 script Route111_EventScript_Daisuke{
 	lockall
 	applymovement(30, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_TYROGUE, Route111_EventScript_DaisukeDefeated)
-	goto_if_set(FLAG_DECLINED_DAISUKE_BATTLE, Route111_EventScript_DaisukeRequestBattleAgain)
+	goto_if_defeated(TRAINER_DAISUKE, Route111_EventScript_DaisukeDefeated)
+	goto_if_set(FLAG_TEMP_1, Route111_EventScript_DaisukeRequestBattleAgain)
 	msgbox(Daisuke_Greeting, MSGBOX_YESNO)
 	goto(Route111_EventScript_BattleDaisukePrompt)
 	end
 }
 
 script Route111_EventScript_DaisukeRequestBattleAgain{
-	msgbox(Ready_Yet, MSGBOX_YESNO)
+	msgbox(Daisuke_ReadyYet, MSGBOX_YESNO)
 	goto(Route111_EventScript_BattleDaisukePrompt)
 	end
 }
@@ -1039,8 +1039,8 @@ script Route111_EventScript_BattleDaisukePrompt{
 }
 
 script Route111_EventScript_DeclineDaisukeBattle {
-	setflag(FLAG_DECLINED_DAISUKE_BATTLE)
-	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_1)
+	msgbox(Daisuke_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -1112,7 +1112,6 @@ script Route111_EventScript_ReceivedTyrogueFanfare {
 
 script Route111_EventScript_ExplainTyrogue {
 	msgbox(Daisuke_ExplainTyrogue, MSGBOX_DEFAULT)
-	setflag(FLAG_RECEIVED_TYROGUE)
 	release
 	end
 }
@@ -1121,7 +1120,23 @@ text Route111_Text_PlayerReceivedTyrogue{
 	"{PLAYER} received Tyrogue!$"
 }
 
+text Daisuke_Greeting{
+	"Yo! I'm working on becoming the karate\n"
+	"master of this region. If you can help\l"
+	"me with my training, I'll reward you with\l"
+	"one of the Pokémon I've been training.\p"
+	"What do you say?"
+}
 
+text Daisuke_ReadyYet{
+	"Are you willing to help me become the\n"
+	"karate master now?"
+}
+
+text Daisuke_ComeBackWhenReady{
+	"No worries, I'll keep training on my own\n"
+	"out here."
+}
 
 text Daisuke_ExplainTyrogue{
 	"Tyrogue can evolve in 3 different ways,\n"
@@ -1133,16 +1148,6 @@ text Daisuke_ExplainTyrogue{
 	"Finally, Attack equal to Defense will\n"
 	"result in Hitmontop.\p"
 	"It's very versatile!"
-}
-
-	
-
-text Daisuke_Greeting{
-	"Yo! I'm working on becoming the karate\n"
-	"master of this region. If you can help\l"
-	"me with my training, I'll reward you with\l"
-	"one of the Pokémon I've been training.\p"
-	"What do you say?"
 }
 	
 text Daisuke_Outro{
