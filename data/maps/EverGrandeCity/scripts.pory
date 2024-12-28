@@ -552,15 +552,15 @@ text DawnFarewell2{
 script EverGrandeCity_EventScript_Volkner{
 	lockall
 	applymovement(LOCALID_VOLKNER, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_ZERAORA, EverGrandeCity_EventScript_VolknerDefeated)
-	goto_if_set(FLAG_DECLINED_VOLKNER_BATTLE, EverGrandeCity_EventScript_VolknerRequestBattleAgain)
+	goto_if_defeated(TRAINER_VOLKNER, EverGrandeCity_EventScript_VolknerDefeated)
+	goto_if_set(FLAG_TEMP_1, EverGrandeCity_EventScript_VolknerRequestBattleAgain)
 	msgbox(Volkner_Greeting, MSGBOX_YESNO)
 	goto(EverGrandeCity_EventScript_BattleVolknerPrompt)
 	end
 }
 
 script EverGrandeCity_EventScript_VolknerRequestBattleAgain{
-	msgbox(Ready_Yet, MSGBOX_YESNO)
+	msgbox(Volkner_ReadyYet, MSGBOX_YESNO)
 	goto(EverGrandeCity_EventScript_BattleVolknerPrompt)
 	end
 }
@@ -573,8 +573,8 @@ script EverGrandeCity_EventScript_BattleVolknerPrompt{
 }
 
 script EverGrandeCity_EventScript_DeclineVolknerBattle {
-	setflag(FLAG_DECLINED_VOLKNER_BATTLE)
-	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_1)
+	msgbox(Volkner_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -645,22 +645,10 @@ script EverGrandeCity_EventScript_ReceivedZeraoraFanfare {
 
 script EverGrandeCity_EventScript_ExplainZeraora {
 	msgbox(Volkner_ExplainZeraora, MSGBOX_DEFAULT)
-	setflag(FLAG_RECEIVED_ZERAORA)
 	release
 	end
 }
-	
-text EverGrandeCity_Text_PlayerReceivedZeraora{
-	"{PLAYER} received Zeraora!"
-}
 
-text Volkner_ExplainZeraora{
-	"Zeraora is definitely a favorite of\n"
-	"mine. His electrifying fists light up\l"
-	"any battle!\p"
-	"I hope you raise it well!"
-}
-	
 text Volkner_Greeting{
 	"Wow, another trainer showed up here. It\n"
 	"gets pretty boring being the strongest\l"
@@ -675,6 +663,26 @@ text Volkner_Greeting{
 	"looking trainer I've seen come through\l"
 	"here, it's really got me itching for a\l"
 	"battle. So, will you battle me?"
+}
+
+text Volkner_ReadyYet{
+	"Ready to battle me yet?"
+}
+
+text Volkner_ComeBackWhenReady{
+	"How boring, I was hoping you'd be\n"
+	"different than the average trainer."
+}
+	
+text EverGrandeCity_Text_PlayerReceivedZeraora{
+	"{PLAYER} received Zeraora!"
+}
+
+text Volkner_ExplainZeraora{
+	"Zeraora is definitely a favorite of\n"
+	"mine. His electrifying fists light up\l"
+	"any battle!\p"
+	"I hope you raise it well!"
 }
 	
 text Volkner_Outro{

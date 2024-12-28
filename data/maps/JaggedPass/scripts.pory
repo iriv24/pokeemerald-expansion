@@ -256,15 +256,15 @@ JaggedPass_Text_AutumnPostBattle:
 script JaggedPass_EventScript_Maylene{
 	lockall
 	applymovement(7, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneDefeated)
-	goto_if_set(FLAG_DECLINED_MAYLENE_BATTLE, JaggedPass_EventScript_MayleneRequestBattleAgain)
+	goto_if_defeated(TRAINER_MAYLENE, JaggedPass_EventScript_MayleneDefeated)
+	goto_if_set(FLAG_TEMP_1, JaggedPass_EventScript_MayleneRequestBattleAgain)
 	msgbox(Maylene_Greeting, MSGBOX_YESNO)
 	goto(JaggedPass_EventScript_BattleMaylenePrompt)
 	end
 }
 
 script JaggedPass_EventScript_MayleneRequestBattleAgain{
-	msgbox(Ready_Yet, MSGBOX_YESNO)
+	msgbox(Maylene_ReadyYet, MSGBOX_YESNO)
 	goto(JaggedPass_EventScript_BattleMaylenePrompt)
 	end
 }
@@ -277,14 +277,14 @@ script JaggedPass_EventScript_BattleMaylenePrompt{
 }
 
 script JaggedPass_EventScript_DeclineMayleneBattle {
-	setflag(FLAG_DECLINED_MAYLENE_BATTLE)
-	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_1)
+	msgbox(Maylene_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
 
 script JaggedPass_EventScript_BattleMaylene{
-	msgbox("You're on!", MSGBOX_DEFAULT)
+	msgbox("Bring it!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_MAYLENE, Maylene_Outro)
 	goto(JaggedPass_EventScript_MayleneGiveItems)
 	return
@@ -305,22 +305,13 @@ script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_AURA_SPHERE)
 	giveitem(ITEM_LUCARIONITE)
 	giveitem(ITEM_MACHAMPITE)
-	setflag(FLAG_RECEIVED_TM_DRAIN_PUNCH)
 	msgbox(Maylene_ExplainItems)
 	release
 	end
 }
 
-text Maylene_ExplainItems{
-	"Those are some of the most powerful\n"
-	"Fighting-type TMs out there, I'm sure\l"
-	"you will be able to make use of them.\p"
-	"I threw in some of my favorite Mega\n"
-	"Stones as well. Good luck, trainer!"
-}
-
 text Maylene_Greeting{
-	"HOO-HAH! Is this finally a worthy\n"
+	"Well, well! Is this finally a worthy\n"
 	"opponent? I can tell that you seem\l"
 	"pretty strong.\p"
 	"My name is Maylene, and I came over here\n"
@@ -333,11 +324,26 @@ text Maylene_Greeting{
 	"What do you say, will you battle\n"
 	"with me?"
 }
+
+text Maylene_ReadyYet{
+	"Ready for some training yet?"
+}
+
+text Maylene_ComeBackWhenReady{
+	"That's fine, I'll be here training."
+}
+
+text Maylene_ExplainItems{
+	"Those are some of the most powerful\n"
+	"Fighting-type TMs out there, I'm sure\l"
+	"you will be able to make use of them.\p"
+	"I threw in some of my favorite Mega\n"
+	"Stones as well. Good luck, trainer!"
+}
 	
 text Maylene_Outro{
 	"My instincts were right!"
 }
-
 
 text PostBattle_Maylene{
 	"Gotta. Get. Stronger."

@@ -23,7 +23,7 @@ Route125_OnTransition:
 # 12 "data/maps/Route125/scripts.pory"
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 # 13 "data/maps/Route125/scripts.pory"
-	call_if_set FLAG_RECEIVED_TM_BLIZZARD, SetCandicePermLoc
+	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
 # 14 "data/maps/Route125/scripts.pory"
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 # 15 "data/maps/Route125/scripts.pory"
@@ -41,7 +41,7 @@ Route125_OnLoad:
 # 21 "data/maps/Route125/scripts.pory"
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_PlaceTilesRoute125East
 # 22 "data/maps/Route125/scripts.pory"
-	call_if_set FLAG_RECEIVED_TM_BLIZZARD, SetCandicePermLoc
+	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
 # 23 "data/maps/Route125/scripts.pory"
 	end
 # 24 "data/maps/Route125/scripts.pory"
@@ -181,9 +181,9 @@ Route125_EventScript_Candice::
 # 94 "data/maps/Route125/scripts.pory"
 	applymovement LOCALID_CANDICE, Common_Movement_FacePlayer
 # 95 "data/maps/Route125/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_BLIZZARD, Route125_EventScript_CandiceDefeated
+	goto_if_defeated TRAINER_CANDICE, Route125_EventScript_CandiceDefeated
 # 96 "data/maps/Route125/scripts.pory"
-	goto_if_set FLAG_DECLINED_CANDICE_BATTLE, Route125_EventScript_CandiceRequestBattleAgain
+	goto_if_set FLAG_TEMP_1, Route125_EventScript_CandiceRequestBattleAgain
 # 97 "data/maps/Route125/scripts.pory"
 	msgbox Candice_Greeting, MSGBOX_YESNO
 # 98 "data/maps/Route125/scripts.pory"
@@ -193,7 +193,7 @@ Route125_EventScript_Candice::
 
 Route125_EventScript_CandiceRequestBattleAgain::
 # 103 "data/maps/Route125/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
+	msgbox Candice_ReadyYet, MSGBOX_YESNO
 # 104 "data/maps/Route125/scripts.pory"
 	goto Route125_EventScript_BattleCandicePrompt
 	end
@@ -211,9 +211,9 @@ Route125_EventScript_BattleCandicePrompt::
 
 Route125_EventScript_DeclineCandiceBattle::
 # 116 "data/maps/Route125/scripts.pory"
-	setflag FLAG_DECLINED_CANDICE_BATTLE
+	setflag FLAG_TEMP_1
 # 117 "data/maps/Route125/scripts.pory"
-	msgbox Route125_EventScript_DeclineCandiceBattle_Text_0, MSGBOX_DEFAULT
+	msgbox Candice_ComeBackWhenReady, MSGBOX_DEFAULT
 # 118 "data/maps/Route125/scripts.pory"
 	release
 	end
@@ -243,50 +243,48 @@ Route125_EventScript_CandiceGiveItems::
 # 138 "data/maps/Route125/scripts.pory"
 	giveitem ITEM_TM_TRIPLE_AXEL
 # 139 "data/maps/Route125/scripts.pory"
-	setflag FLAG_RECEIVED_TM_BLIZZARD
-# 140 "data/maps/Route125/scripts.pory"
 	msgbox Candice_ExplainItems
-# 141 "data/maps/Route125/scripts.pory"
+# 140 "data/maps/Route125/scripts.pory"
 	waitmessage
-# 142 "data/maps/Route125/scripts.pory"
+# 141 "data/maps/Route125/scripts.pory"
 	switch VAR_FACING
-# 143 "data/maps/Route125/scripts.pory"
+# 142 "data/maps/Route125/scripts.pory"
 	case DIR_EAST, Route125_EventScript_CandiceGiveItems_3
-# 146 "data/maps/Route125/scripts.pory"
+# 145 "data/maps/Route125/scripts.pory"
 	goto CandiceMoveScript1
 Route125_EventScript_CandiceGiveItems_1:
-# 148 "data/maps/Route125/scripts.pory"
+# 147 "data/maps/Route125/scripts.pory"
 	release
 	end
 
 Route125_EventScript_CandiceGiveItems_3:
-# 144 "data/maps/Route125/scripts.pory"
+# 143 "data/maps/Route125/scripts.pory"
 	goto CandiceMoveScript2
 	goto Route125_EventScript_CandiceGiveItems_1
 
 
 CandiceMoveScript1::
-# 153 "data/maps/Route125/scripts.pory"
+# 152 "data/maps/Route125/scripts.pory"
 	applymovement LOCALID_CANDICE, CandiceUnblockCaveStepWest
-# 154 "data/maps/Route125/scripts.pory"
+# 153 "data/maps/Route125/scripts.pory"
 	copyobjectxytoperm LOCALID_CANDICE
 	return
 
 
 CandiceMoveScript2::
-# 158 "data/maps/Route125/scripts.pory"
+# 157 "data/maps/Route125/scripts.pory"
 	applymovement LOCALID_CANDICE, CandiceUnblockCaveStepEast
-# 159 "data/maps/Route125/scripts.pory"
+# 158 "data/maps/Route125/scripts.pory"
 	copyobjectxytoperm LOCALID_CANDICE
 	return
 
 
 CandiceUnblockCaveStepWest::
-# 164 "data/maps/Route125/scripts.pory"
+# 163 "data/maps/Route125/scripts.pory"
 	walk_left
-# 165 "data/maps/Route125/scripts.pory"
+# 164 "data/maps/Route125/scripts.pory"
 	face_down
-# 166 "data/maps/Route125/scripts.pory"
+# 165 "data/maps/Route125/scripts.pory"
 	step_end
 	return
 
@@ -307,25 +305,12 @@ SetCandicePermLoc::
 	return
 
 
-Route125_EventScript_DeclineCandiceBattle_Text_0:
-# 117 "data/maps/Route125/scripts.pory"
-	.string "Let me know if you want to battle.$"
-
 Route125_EventScript_BattleCandice_Text_0:
 # 123 "data/maps/Route125/scripts.pory"
 	.string "Okay then!$"
 
-Candice_ExplainItems::
-# 180 "data/maps/Route125/scripts.pory"
-	.string "Those are some of my favorite Ice-type\n"
-	.string "moves, they may not be the most\l"
-	.string "accurate, but they sure do deal damage\l"
-	.string "if they land!\p"
-	.string "I'll step out of the way now and\n"
-	.string "let you through.$"
-
 Candice_Greeting::
-# 189 "data/maps/Route125/scripts.pory"
+# 180 "data/maps/Route125/scripts.pory"
 	.string "Oh, hello there. I take it you're a\n"
 	.string "trainer who wants to get into this\l"
 	.string "cave?\p"
@@ -341,12 +326,30 @@ Candice_Greeting::
 	.string "But enough talk, are you here to\n"
 	.string "challenge me or not?$"
 
-Candice_Outro::
+Candice_ReadyYet::
+# 197 "data/maps/Route125/scripts.pory"
+	.string "Up to the challenge now?$"
+
+Candice_ComeBackWhenReady::
+# 201 "data/maps/Route125/scripts.pory"
+	.string "Well, you're not getting into this cave\n"
+	.string "unless you can beat me.$"
+
+Candice_ExplainItems::
 # 206 "data/maps/Route125/scripts.pory"
+	.string "Those are some of my favorite Ice-type\n"
+	.string "moves, they may not be the most\l"
+	.string "accurate, but they sure do deal damage\l"
+	.string "if they land!\p"
+	.string "I'll step out of the way now and\n"
+	.string "let you through.$"
+
+Candice_Outro::
+# 215 "data/maps/Route125/scripts.pory"
 	.string "Looks like you'll be just fine in this\n"
 	.string "cave.$"
 
 PostBattle_Candice::
-# 212 "data/maps/Route125/scripts.pory"
+# 221 "data/maps/Route125/scripts.pory"
 	.string "The Pokémon in there are strong,\n"
 	.string "aren't they?$"

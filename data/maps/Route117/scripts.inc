@@ -633,9 +633,9 @@ Route117_EventScript_Fantina::
 # 320 "data/maps/Route117/scripts.pory"
 	applymovement 29, Common_Movement_FacePlayer
 # 321 "data/maps/Route117/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_SHADOW_BALL, Route117_EventScript_FantinaDefeated
+	goto_if_defeated TRAINER_FANTINA, Route117_EventScript_FantinaDefeated
 # 322 "data/maps/Route117/scripts.pory"
-	goto_if_set FLAG_DECLINED_FANTINA_BATTLE_117, Route117_EventScript_FantinaRequestBattleAgain
+	goto_if_set FLAG_TEMP_3, Route117_EventScript_FantinaRequestBattleAgain
 # 323 "data/maps/Route117/scripts.pory"
 	msgbox Fantina_Greeting, MSGBOX_YESNO
 # 324 "data/maps/Route117/scripts.pory"
@@ -645,7 +645,7 @@ Route117_EventScript_Fantina::
 
 Route117_EventScript_FantinaRequestBattleAgain::
 # 329 "data/maps/Route117/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
+	msgbox Fantina_ReadyYet, MSGBOX_YESNO
 # 330 "data/maps/Route117/scripts.pory"
 	goto Route117_EventScript_BattleFantinaPrompt
 	end
@@ -663,9 +663,9 @@ Route117_EventScript_BattleFantinaPrompt::
 
 Route117_EventScript_DeclineFantinaBattle::
 # 342 "data/maps/Route117/scripts.pory"
-	setflag FLAG_DECLINED_FANTINA_BATTLE_117
+	setflag FLAG_TEMP_3
 # 343 "data/maps/Route117/scripts.pory"
-	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+	msgbox Fantina_ComeBackWhenReady, MSGBOX_DEFAULT
 # 344 "data/maps/Route117/scripts.pory"
 	release
 	end
@@ -709,32 +709,18 @@ Route117_EventScript_FantinaGiveItems::
 # 371 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_LEFTOVERS
 # 372 "data/maps/Route117/scripts.pory"
-	setflag FLAG_RECEIVED_TM_SHADOW_BALL
-# 373 "data/maps/Route117/scripts.pory"
 	msgbox Fantina_ExplainItems
-# 374 "data/maps/Route117/scripts.pory"
+# 373 "data/maps/Route117/scripts.pory"
 	release
 	end
 
 
 Route117_EventScript_BattleFantina_Text_0:
 # 349 "data/maps/Route117/scripts.pory"
-	.string "You're on!$"
-
-Fantina_ExplainItems::
-# 378 "data/maps/Route117/scripts.pory"
-	.string "Those three are some very\n"
-	.string "powerful moves. In addition, I had\l"
-	.string "a few spare Mega Stones for some\l"
-	.string "Ghost-type Pokémon, though you'll need\l"
-	.string "a Mega Ring if you want to use them.\p"
-	.string "Finally, the Expert Belt is used for\n"
-	.string "boosting moves that are super\l"
-	.string "effective. I'm, sure you'll put it to\l"
-	.string "good use. Best of luck!$"
+	.string "Let us begin then!$"
 
 Fantina_Greeting::
-# 390 "data/maps/Route117/scripts.pory"
+# 377 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina.\n"
 	.string "Did you come here to enjoy the\l"
 	.string "flowers too?\p"
@@ -747,14 +733,35 @@ Fantina_Greeting::
 	.string "to battle new trainers.\p"
 	.string "Is that what you came here for?$"
 
+Fantina_ReadyYet::
+# 391 "data/maps/Route117/scripts.pory"
+	.string "Hm? Is it time for our battle?$"
+
+Fantina_ComeBackWhenReady::
+# 395 "data/maps/Route117/scripts.pory"
+	.string "I'll just enjoy the flowers until\n"
+	.string "you're ready.$"
+
+Fantina_ExplainItems::
+# 400 "data/maps/Route117/scripts.pory"
+	.string "Those three are some very\n"
+	.string "powerful moves. In addition, I had\l"
+	.string "a few spare Mega Stones for some\l"
+	.string "Ghost-type Pokémon, though you'll need\l"
+	.string "a Mega Ring if you want to use them.\p"
+	.string "Finally, the Expert Belt is used for\n"
+	.string "boosting moves that are super\l"
+	.string "effective. I'm, sure you'll put it to\l"
+	.string "good use. Best of luck!$"
+
 Fantina_Outro::
-# 404 "data/maps/Route117/scripts.pory"
+# 412 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\l"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 411 "data/maps/Route117/scripts.pory"
+# 419 "data/maps/Route117/scripts.pory"
 	.string "Maybe I'll head to Ever Grande City\n"
 	.string "after this, I've heard the flowers\l"
 	.string "there are extraordinary.$"

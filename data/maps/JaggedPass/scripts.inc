@@ -509,9 +509,9 @@ JaggedPass_EventScript_Maylene::
 # 258 "data/maps/JaggedPass/scripts.pory"
 	applymovement 7, Common_Movement_FacePlayer
 # 259 "data/maps/JaggedPass/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_DRAIN_PUNCH, JaggedPass_EventScript_MayleneDefeated
+	goto_if_defeated TRAINER_MAYLENE, JaggedPass_EventScript_MayleneDefeated
 # 260 "data/maps/JaggedPass/scripts.pory"
-	goto_if_set FLAG_DECLINED_MAYLENE_BATTLE, JaggedPass_EventScript_MayleneRequestBattleAgain
+	goto_if_set FLAG_TEMP_1, JaggedPass_EventScript_MayleneRequestBattleAgain
 # 261 "data/maps/JaggedPass/scripts.pory"
 	msgbox Maylene_Greeting, MSGBOX_YESNO
 # 262 "data/maps/JaggedPass/scripts.pory"
@@ -521,7 +521,7 @@ JaggedPass_EventScript_Maylene::
 
 JaggedPass_EventScript_MayleneRequestBattleAgain::
 # 267 "data/maps/JaggedPass/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
+	msgbox Maylene_ReadyYet, MSGBOX_YESNO
 # 268 "data/maps/JaggedPass/scripts.pory"
 	goto JaggedPass_EventScript_BattleMaylenePrompt
 	end
@@ -539,9 +539,9 @@ JaggedPass_EventScript_BattleMaylenePrompt::
 
 JaggedPass_EventScript_DeclineMayleneBattle::
 # 280 "data/maps/JaggedPass/scripts.pory"
-	setflag FLAG_DECLINED_MAYLENE_BATTLE
+	setflag FLAG_TEMP_1
 # 281 "data/maps/JaggedPass/scripts.pory"
-	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+	msgbox Maylene_ComeBackWhenReady, MSGBOX_DEFAULT
 # 282 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
@@ -581,29 +581,19 @@ JaggedPass_EventScript_MayleneGiveItems::
 # 307 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_MACHAMPITE
 # 308 "data/maps/JaggedPass/scripts.pory"
-	setflag FLAG_RECEIVED_TM_DRAIN_PUNCH
-# 309 "data/maps/JaggedPass/scripts.pory"
 	msgbox Maylene_ExplainItems
-# 310 "data/maps/JaggedPass/scripts.pory"
+# 309 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
 
 
 JaggedPass_EventScript_BattleMaylene_Text_0:
 # 287 "data/maps/JaggedPass/scripts.pory"
-	.string "You're on!$"
-
-Maylene_ExplainItems::
-# 314 "data/maps/JaggedPass/scripts.pory"
-	.string "Those are some of the most powerful\n"
-	.string "Fighting-type TMs out there, I'm sure\l"
-	.string "you will be able to make use of them.\p"
-	.string "I threw in some of my favorite Mega\n"
-	.string "Stones as well. Good luck, trainer!$"
+	.string "Bring it!$"
 
 Maylene_Greeting::
-# 322 "data/maps/JaggedPass/scripts.pory"
-	.string "HOO-HAH! Is this finally a worthy\n"
+# 313 "data/maps/JaggedPass/scripts.pory"
+	.string "Well, well! Is this finally a worthy\n"
 	.string "opponent? I can tell that you seem\l"
 	.string "pretty strong.\p"
 	.string "My name is Maylene, and I came over here\n"
@@ -616,10 +606,26 @@ Maylene_Greeting::
 	.string "What do you say, will you battle\n"
 	.string "with me?$"
 
+Maylene_ReadyYet::
+# 328 "data/maps/JaggedPass/scripts.pory"
+	.string "Ready for some training yet?$"
+
+Maylene_ComeBackWhenReady::
+# 332 "data/maps/JaggedPass/scripts.pory"
+	.string "That's fine, I'll be here training.$"
+
+Maylene_ExplainItems::
+# 336 "data/maps/JaggedPass/scripts.pory"
+	.string "Those are some of the most powerful\n"
+	.string "Fighting-type TMs out there, I'm sure\l"
+	.string "you will be able to make use of them.\p"
+	.string "I threw in some of my favorite Mega\n"
+	.string "Stones as well. Good luck, trainer!$"
+
 Maylene_Outro::
-# 337 "data/maps/JaggedPass/scripts.pory"
+# 344 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 342 "data/maps/JaggedPass/scripts.pory"
+# 348 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"

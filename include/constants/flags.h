@@ -43,54 +43,54 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_CHOSE_WATERSTARTER    0x20
-#define FLAG_CHOSE_GRASSSTARTER    0x21
-#define FLAG_CHOSE_FIRESTARTER    0x22
-#define FLAG_TOUCHED_BALLS    0x23
-#define FLAG_DAWN_104     0x24
-#define FLAG_RECEIVED_TM_ROCK_TOMB   0x25
-#define FLAG_USING_POKEMONPCMENU    0x26
-#define FLAG_STOP_ENCOUNTERS 0x27
-#define FLAG_PARTY_MOVES     0x28 // Unused Flag 0X27 IS USED BY OW_FLAG_NO_ENCOUNTER
-#define FLAG_RECEIVED_TM_U_TURN    0x29
-#define FLAG_RECEIVED_RUSTBORO_EGG    0x2A
-#define FLAG_RECEIVED_SETUP_TMS    0x2B
-#define FLAG_RECEIVED_TM_SHADOW_BALL    0x2C
-#define FLAG_RIVAL_110    0x2D
-#define FLAG_DAWN_111    0x2E
-#define FLAG_RECEIVED_TM_DRAIN_PUNCH    0x2F
-#define FLAG_RECEIVED_MEGA_STONES    0x30
-#define FLAG_RECEIVED_TMS_FROM_TUTOR    0x31
-#define FLAG_DECLINED_DANCE_BATTLE    0x32
-#define FLAG_RECEIVED_TYROGUE    0x33
-#define FLAG_DECLINED_DAISUKE_BATTLE    0x34 
+#define FLAG_CHOSE_WATERSTARTER        0x20
+#define FLAG_CHOSE_GRASSSTARTER        0x21
+#define FLAG_CHOSE_FIRESTARTER         0x22
+#define FLAG_TOUCHED_BALLS             0x23
+#define FLAG_DAWN_104                  0x24
+#define FLAG_RECEIVED_TM_ROCK_TOMB     0x25
+#define FLAG_USING_POKEMONPCMENU       0x26
+#define FLAG_STOP_ENCOUNTERS           0x27
+#define FLAG_PARTY_MOVES               0x28
+#define FLAG_RECEIVED_TM_U_TURN        0x29
+#define FLAG_RECEIVED_RUSTBORO_EGG     0x2A
+#define FLAG_RECEIVED_SETUP_TMS        0x2B
+#define FLAG_UNUSED_0x2C               0x2C // unused
+#define FLAG_RIVAL_110                 0x2D
+#define FLAG_DAWN_111                  0x2E
+#define FLAG_UNUSED_0x2F               0x2F // unused
+#define FLAG_RECEIVED_MEGA_STONES      0x30
+#define FLAG_RECEIVED_TMS_FROM_TUTOR   0x31
+#define FLAG_DECLINED_DANCE_BATTLE     0x32
+#define FLAG_RECEIVED_TYROGUE          0x33
+#define FLAG_DECLINED_DAISUKE_BATTLE   0x34 
 #define FLAG_RECEIVED_ROUTE_111_EGG    0x35
-#define FLAG_RECEIVED_SCOPE_LENS    0x36
-#define FLAG_DECLINED_MAYLENE_BATTLE    0x37
-#define FLAG_BEAT_TRICK_HOUSE_3    0x38
-#define FLAG_RECEIVED_KUBFU    0x39
-#define FLAG_DECLINED_WAKE_BATTLE    0x3A
-#define FLAG_UNUSED_0x3B             0x3B // unused
-#define FLAG_UNUSED_0x3C             0x3C // unused
-#define FLAG_UNUSED_0x3D             0x3D // unused
-#define FLAG_UNUSED_0x3E             0x3E // unused
-#define FLAG_UNUSED_0x3F             0x3F // unused
-#define FLAG_UNUSED_0x40             0x40 // unused
-#define FLAG_RECEIVED_MELTAN    0x41
-#define FLAG_DECLINED_BYRON_BATTLE    0x42
-#define FLAG_DAWN_LILYCOVE    0x43
-#define FLAG_DECLINED_CANDICE_BATTLE    0x44
-#define FLAG_RECEIVED_TM_BLIZZARD    0x45
-#define FLAG_BEAT_DAWN_EVERGRANDE    0x46
-#define FLAG_BEAT_BOTH_RIVALS    0x47
-#define FLAG_DECLINED_DAWN_EVERGRANDE    0x48
-#define FLAG_RECEIVED_ZERAORA    0x49
-#define FLAG_DECLINED_VOLKNER_BATTLE    0x4A
-#define FLAG_RECEIVED_LILYCOVE_EGG    0x4B
-#define FLAG_EZ_CATCH    0x4C
-#define FLAG_DEXALL    0x4D
-#define FLAG_DISABLE_FOLLOWERS    0x4E
-#define FLAG_STOP_TRAINER_SEE    0x4F
+#define FLAG_RECEIVED_SCOPE_LENS       0x36
+#define FLAG_UNUSED_0x37               0x37 // unused
+#define FLAG_BEAT_TRICK_HOUSE_3        0x38
+#define FLAG_RECEIVED_KUBFU            0x39
+#define FLAG_UNUSED_0x3A               0x3A // unused
+#define FLAG_UNUSED_0x3B               0x3B // unused
+#define FLAG_UNUSED_0x3C               0x3C // unused
+#define FLAG_UNUSED_0x3D               0x3D // unused
+#define FLAG_UNUSED_0x3E               0x3E // unused
+#define FLAG_UNUSED_0x3F               0x3F // unused
+#define FLAG_UNUSED_0x40               0x40 // unused
+#define FLAG_UNUSED_0x41               0x41 // unused
+#define FLAG_UNUSED_0x42               0x42 // unused
+#define FLAG_DAWN_LILYCOVE             0x43
+#define FLAG_UNUSED_0x44               0x44 // unused
+#define FLAG_UNUSED_0x45               0x45 // unused
+#define FLAG_BEAT_DAWN_EVERGRANDE      0x46
+#define FLAG_BEAT_BOTH_RIVALS          0x47
+#define FLAG_DECLINED_DAWN_EVERGRANDE  0x48
+#define FLAG_UNUSED_0x49               0x49 // unused
+#define FLAG_UNUSED_0x4A               0x4A // unused
+#define FLAG_RECEIVED_LILYCOVE_EGG     0x4B
+#define FLAG_EZ_CATCH                  0x4C
+#define FLAG_DEXALL                    0x4D
+#define FLAG_DISABLE_FOLLOWERS         0x4E
+#define FLAG_STOP_TRAINER_SEE          0x4F
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -140,7 +140,7 @@
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
 #define FLAG_LANDMARK_MIRAGE_TOWER           0x78
-#define FLAG_RECEIVED_WAKE_ITEMS             0x79
+#define FLAG_UNUSED_0x79                     0x79 // unused
 #define FLAG_RECEIVED_HM_SURF                0x7A
 #define FLAG_RECEIVED_HM_DIVE                0x7B
 #define FLAG_REGISTER_RIVAL_POKENAV          0x7C
@@ -510,7 +510,7 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_DECLINED_FANTINA_BATTLE_117     0x1DA
+#define FLAG_UNUSED_0x1DA                    0x1DA // unused
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_RESHIRAM               0x1DC

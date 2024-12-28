@@ -849,9 +849,9 @@ EverGrandeCity_EventScript_Volkner::
 # 554 "data/maps/EverGrandeCity/scripts.pory"
 	applymovement LOCALID_VOLKNER, Common_Movement_FacePlayer
 # 555 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_RECEIVED_ZERAORA, EverGrandeCity_EventScript_VolknerDefeated
+	goto_if_defeated TRAINER_VOLKNER, EverGrandeCity_EventScript_VolknerDefeated
 # 556 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_set FLAG_DECLINED_VOLKNER_BATTLE, EverGrandeCity_EventScript_VolknerRequestBattleAgain
+	goto_if_set FLAG_TEMP_1, EverGrandeCity_EventScript_VolknerRequestBattleAgain
 # 557 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox Volkner_Greeting, MSGBOX_YESNO
 # 558 "data/maps/EverGrandeCity/scripts.pory"
@@ -861,7 +861,7 @@ EverGrandeCity_EventScript_Volkner::
 
 EverGrandeCity_EventScript_VolknerRequestBattleAgain::
 # 563 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox Ready_Yet, MSGBOX_YESNO
+	msgbox Volkner_ReadyYet, MSGBOX_YESNO
 # 564 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_BattleVolknerPrompt
 	end
@@ -879,9 +879,9 @@ EverGrandeCity_EventScript_BattleVolknerPrompt::
 
 EverGrandeCity_EventScript_DeclineVolknerBattle::
 # 576 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_DECLINED_VOLKNER_BATTLE
+	setflag FLAG_TEMP_1
 # 577 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox Come_Back_When_Ready, MSGBOX_DEFAULT
+	msgbox Volkner_ComeBackWhenReady, MSGBOX_DEFAULT
 # 578 "data/maps/EverGrandeCity/scripts.pory"
 	release
 	end
@@ -981,8 +981,6 @@ EverGrandeCity_EventScript_ExplainZeraora::
 # 647 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox Volkner_ExplainZeraora, MSGBOX_DEFAULT
 # 648 "data/maps/EverGrandeCity/scripts.pory"
-	setflag FLAG_RECEIVED_ZERAORA
-# 649 "data/maps/EverGrandeCity/scripts.pory"
 	release
 	end
 
@@ -1077,19 +1075,8 @@ DawnFarewell2::
 	.string "you can do it!\p"
 	.string "So long, my friend, until next time!$"
 
-EverGrandeCity_Text_PlayerReceivedZeraora::
-# 653 "data/maps/EverGrandeCity/scripts.pory"
-	.string "{PLAYER} received Zeraora!$"
-
-Volkner_ExplainZeraora::
-# 657 "data/maps/EverGrandeCity/scripts.pory"
-	.string "Zeraora is definitely a favorite of\n"
-	.string "mine. His electrifying fists light up\l"
-	.string "any battle!\p"
-	.string "I hope you raise it well!$"
-
 Volkner_Greeting::
-# 664 "data/maps/EverGrandeCity/scripts.pory"
+# 652 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Wow, another trainer showed up here. It\n"
 	.string "gets pretty boring being the strongest\l"
 	.string "Gym Leader in a given region…\p"
@@ -1104,13 +1091,33 @@ Volkner_Greeting::
 	.string "here, it's really got me itching for a\l"
 	.string "battle. So, will you battle me?$"
 
+Volkner_ReadyYet::
+# 668 "data/maps/EverGrandeCity/scripts.pory"
+	.string "Ready to battle me yet?$"
+
+Volkner_ComeBackWhenReady::
+# 672 "data/maps/EverGrandeCity/scripts.pory"
+	.string "How boring, I was hoping you'd be\n"
+	.string "different than the average trainer.$"
+
+EverGrandeCity_Text_PlayerReceivedZeraora::
+# 677 "data/maps/EverGrandeCity/scripts.pory"
+	.string "{PLAYER} received Zeraora!$"
+
+Volkner_ExplainZeraora::
+# 681 "data/maps/EverGrandeCity/scripts.pory"
+	.string "Zeraora is definitely a favorite of\n"
+	.string "mine. His electrifying fists light up\l"
+	.string "any battle!\p"
+	.string "I hope you raise it well!$"
+
 Volkner_Outro::
-# 680 "data/maps/EverGrandeCity/scripts.pory"
+# 688 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Ha! Wow, the trainers here are way\n"
 	.string "stronger than in Sinnoh, how exciting!$"
 
 PostBattle_Volkner::
-# 686 "data/maps/EverGrandeCity/scripts.pory"
+# 694 "data/maps/EverGrandeCity/scripts.pory"
 	.string "I think I'll just stay here and wait for\n"
 	.string "more strong trainers, someone else can\l"
 	.string "run my Gym for all I care.$"

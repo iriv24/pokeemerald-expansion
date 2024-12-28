@@ -315,15 +315,15 @@ Route118_Text_RouteSign119:
 script Route118_EventScript_Wake{
 	lockall
 	applymovement(LOCALID_WAKE, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_WAKE_ITEMS, Route118_EventScript_WakeDefeated)
-	goto_if_set(FLAG_DECLINED_WAKE_BATTLE, Route118_EventScript_WakeRequestBattleAgain)
+	goto_if_defeated(TRAINER_WAKE, Route118_EventScript_WakeDefeated)
+	goto_if_set(FLAG_TEMP_1, Route118_EventScript_WakeRequestBattleAgain)
 	msgbox(Wake_Greeting, MSGBOX_YESNO)
 	goto(Route118_EventScript_BattleWakePrompt)
 	end
 }
 
 script Route118_EventScript_WakeRequestBattleAgain{
-	msgbox(Ready_Yet, MSGBOX_YESNO)
+	msgbox(Wake_ReadyYet, MSGBOX_YESNO)
 	goto(Route118_EventScript_BattleWakePrompt)
 	end
 }
@@ -336,14 +336,14 @@ script Route118_EventScript_BattleWakePrompt{
 }
 
 script Route118_EventScript_DeclineWakeBattle {
-	setflag(FLAG_DECLINED_WAKE_BATTLE)
-	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_1)
+	msgbox(Wake_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
 
 script Route118_EventScript_BattleWake{
-	msgbox("Let's do this.", MSGBOX_DEFAULT)
+	msgbox("GLUB GLUB GLUB GLUB!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_WAKE, Wake_Outro)
 	goto(Route118_EventScript_WakeGiveItems)
 	return
@@ -353,7 +353,6 @@ script Route118_EventScript_WakeGiveItems{
 	giveitem(ITEM_LAPRASITE)
 	giveitem(ITEM_DREDNAWITE)
 	giveitem(ITEM_GYARADOSITE)
-	setflag(FLAG_RECEIVED_WAKE_ITEMS)
 	msgbox(Wake_ExplainItems)
 	release
 	end
@@ -377,6 +376,14 @@ text Wake_Greeting{
 	"it maybe a 7 out of 10.\p"
 	"GLUB GLUB Anyway, you wanna battle\n"
 	"or not?"
+}
+
+text Wake_ReadyYet{
+	"GLUB GLUB Ready yet?"
+}
+
+text Wake_ComeBackWhenReady{
+	"GLUB GLUB Suit yourself."
 }
 	
 text Wake_Outro{
