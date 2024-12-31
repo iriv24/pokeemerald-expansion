@@ -10566,7 +10566,7 @@ static uq4_12_t GetInverseTypeMultiplier(uq4_12_t multiplier)
     }
 }
 
-uq4_12_t GetTypeEffectiveness(struct Pokemon *mon, u8 moveType)
+uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 {
     uq4_12_t modifier = UQ_4_12(1.0);
     u16 abilityDef = GetMonAbility(mon);
