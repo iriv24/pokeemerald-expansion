@@ -10513,6 +10513,7 @@ static void Cmd_various(void)
         {
             gBattlerSpriteIds[BATTLE_PARTNER(battler)] = gBattleScripting.savedDmg >> 8;
             gBattlerSpriteIds[battler] = gBattleScripting.savedDmg & 0xFF;
+            gBattleScripting.savedDmg = 0;
             if (IsBattlerAlive(battler))
             {
                 SetBattlerShadowSpriteCallback(battler, gBattleMons[battler].species);
