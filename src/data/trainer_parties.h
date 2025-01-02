@@ -4209,7 +4209,7 @@ static const struct TrainerMon sParty_Phoebe2[] = {
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_AS_ONE_SHADOW_RIDER,
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_FOCUS_SASH,
     .moves = {MOVE_NASTY_PLOT, MOVE_ASTRAL_BARRAGE, MOVE_PSYSHOCK, MOVE_DRAINING_KISS}
     },
     {
