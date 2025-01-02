@@ -104,6 +104,10 @@ FallarborTown_BattleTentLobby_EventScript_ResumeChallenge::
 	goto FallarborTown_BattleTentLobby_EventScript_EnterChallenge
 
 FallarborTown_BattleTentLobby_EventScript_Attendant::
+	msgbox FallarborTown_BattleTentLobby_Text_UnderDevelopment, MSGBOX_NPC
+    end
+
+FallarborTown_BattleTentLobby_EventScript_AttendantOriginal::
 	lock
 	faceplayer
 	fallarbortent_getprize
@@ -346,5 +350,9 @@ FallarborTown_BattleTentLobby_Text_ScottMakeChallenge:
 	.string "Scott Instead of wasting your\n"
 	.string "time with the likes of me, why not\l"
 	.string "make a challenge?$"
+
+FallarborTown_BattleTentLobby_Text_UnderDevelopment:
+	.string "The Battle Tent is currently\n"
+	.string "under development.$"
 
 `

@@ -105,6 +105,10 @@ VerdanturfTown_BattleTentLobby_EventScript_ResumeChallenge::
 	goto VerdanturfTown_BattleTentLobby_EventScript_EnterChallenge
 
 VerdanturfTown_BattleTentLobby_EventScript_Attendant::
+	msgbox VerdanturfTown_BattleTentLobby_Text_UnderDevelopment, MSGBOX_NPC
+    end
+
+VerdanturfTown_BattleTentLobby_EventScript_AttendantOriginal::
 	lock
 	faceplayer
 	verdanturftent_getprize
@@ -378,4 +382,8 @@ VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly:
 	.string "Scott: I visit here regularly in hopes\n"
 	.string "of seeing tough TRAINERS in action\l"
 	.string "in whatever the situation.$"
+
+VerdanturfTown_BattleTentLobby_Text_UnderDevelopment:
+	.string "The Battle Tent is currently\n"
+	.string "under development.$"
 `

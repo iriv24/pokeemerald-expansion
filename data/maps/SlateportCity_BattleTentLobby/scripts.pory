@@ -91,6 +91,10 @@ SlateportCity_BattleTentLobby_EventScript_ResumeChallenge::
 	goto SlateportCity_BattleTentLobby_EventScript_EnterChallenge
 
 SlateportCity_BattleTentLobby_EventScript_Attendant::
+	msgbox SlateportCity_BattleTentLobby_Text_UnderDevelopment, MSGBOX_NPC
+    end
+
+SlateportCity_BattleTentLobby_EventScript_AttendantOriginal::
 	lock
 	faceplayer
 	slateporttent_getprize
@@ -305,5 +309,9 @@ SlateportCity_BattleTentLobby_Text_BattleEvenWithoutToughMons:
 SlateportCity_BattleTentLobby_Text_NiceIfMoreSelection:
 	.string "Wouldn't it be nice if they had more of\n"
 	.string "a selection?$"
+
+SlateportCity_BattleTentLobby_Text_UnderDevelopment:
+	.string "The Battle Tent is currently\n"
+	.string "under development.$"
 
 `
