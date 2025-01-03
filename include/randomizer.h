@@ -12,7 +12,7 @@
 //#include "constants/moves.h"
 
 #define RANDOMIZER_STREAM 17
-#define MY_STARTER_AND_GIFT_MON_COUNT 37
+#define MY_STARTER_AND_GIFT_MON_COUNT 64
 #define MY_EGG_MON_COUNT 31
 
 
