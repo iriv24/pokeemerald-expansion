@@ -6551,18 +6551,22 @@ static void Cmd_moveend(void)
                             gLastUsedItem = gBattleMons[battler].item;
                             if (gMovesInfo[gCurrentMove].effect == EFFECT_HIT_ESCAPE)
                                 gBattlescriptCurrInstr = BattleScript_MoveEnd;  // Prevent user switch-in selection
-                            effect = TRUE;
-                            BattleScriptPushCursor();
-                            gBattleStruct->usedEjectItem |= 1u << battler;
                             if (ejectButtonBattlers & (1u << battler))
                             {
+                                effect = TRUE;
+                                gBattleStruct->usedEjectItem |= 1u << battler;
+                                BattleScriptPushCursor();
                                 gBattlescriptCurrInstr = BattleScript_EjectButtonActivates;
                                 AI_DATA->ejectButtonSwitch = TRUE;
                             }
                             else // Eject Pack
                             {
-                                if (!(gBattleResources->flags->flags[gBattlerTarget] & RESOURCE_FLAG_EMERGENCY_EXIT))
+                                if (!(gBattleResources->flags->flags[gBattlerTarget] & RESOURCE_FLAG_EMERGENCY_EXIT)
+                                    && !(gMovesInfo[gCurrentMove].effect == EFFECT_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker)))
                                 {
+                                    effect = TRUE;
+                                    gBattleStruct->usedEjectItem |= 1u << battler;
+                                    BattleScriptPushCursor();
                                     gBattlescriptCurrInstr = BattleScript_EjectPackActivates;
                                     AI_DATA->ejectPackSwitch = TRUE;
                                     gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage = TRUE;
