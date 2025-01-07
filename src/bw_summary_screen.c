@@ -224,7 +224,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
 
 static EWRAM_DATA u8 sMoveSlotToReplace = 0;
 ALIGNED(4) static EWRAM_DATA u8 sAnimDelayTaskId = 0;
-static EWRAM_DATA u8 sStringVar5[0x4] = {0};
+static EWRAM_DATA u8 sStringVar5[0x8] = {0};
 
 // forward declarations
 static bool8 LoadGraphics(void);
