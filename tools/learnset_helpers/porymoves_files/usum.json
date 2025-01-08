@@ -52417,7 +52417,12 @@
       "MOVE_SWAGGER",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_BULLET_SEED",
+      "MOVE_BULLDOZE",
+      "MOVE_HYPER_VOICE",
+      "MOVE_KNOCK_OFF",
+      "MOVE_ROCK_TOMB"
     ],
     "EggMoves": [],
     "TutorMoves": [
