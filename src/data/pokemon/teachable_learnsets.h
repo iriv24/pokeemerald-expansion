@@ -43582,6 +43582,7 @@ static const u16 sBoltundTeachableLearnset[] = {
     MOVE_FIRE_FANG,
     MOVE_FLAME_CHARGE,
     MOVE_HYPER_VOICE,
+    MOVE_ICE_FANG,
     MOVE_PLAY_ROUGH,
     MOVE_PSYCHIC_FANGS,
     MOVE_REST,

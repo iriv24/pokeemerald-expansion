@@ -70894,7 +70894,8 @@
       "MOVE_ELECTRO_BALL",
       "MOVE_WILD_CHARGE",
       "MOVE_PLAY_ROUGH",
-      "MOVE_PSYCHIC_FANGS"
+      "MOVE_PSYCHIC_FANGS",
+      "MOVE_ICE_FANG"
     ],
     "EggMoves": [
       "MOVE_DISCHARGE",
