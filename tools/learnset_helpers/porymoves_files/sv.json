@@ -75131,7 +75131,8 @@
       "MOVE_SLUDGE_WAVE",
       "MOVE_THROAT_CHOP",
       "MOVE_CURSE",
-      "MOVE_DARK_HOLE"
+      "MOVE_DARK_HOLE",
+      "MOVE_FLIP_TURN"
     ],
     "EggMoves": [
       "MOVE_ACID_SPRAY",
@@ -93180,7 +93181,8 @@
       "MOVE_PAIN_SPLIT",
       "MOVE_DOUBLE_EDGE",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_FLIP_TURN"
     ],
     "EggMoves": [
       "MOVE_ACID_SPRAY",
