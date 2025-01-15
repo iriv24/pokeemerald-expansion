@@ -109,7 +109,6 @@ struct ContestPokemon
     bool8 gameCleared;
     u8 isShiny:1;
     u8 unused1:7;
-    u8 unused2[9];
     u32 personality;
     u32 otId;
 };
