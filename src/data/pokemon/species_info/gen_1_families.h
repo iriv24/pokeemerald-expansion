@@ -12406,7 +12406,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sLickitungLevelUpLearnset,
         .teachableLearnset = sLickitungTeachableLearnset,
         .eggMoveLearnset = sLickitungEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_LICKILICKY},
+                                {EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}),
     },
 
 #if P_GEN_4_CROSS_EVOS
