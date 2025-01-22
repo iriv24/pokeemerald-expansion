@@ -1,5 +1,5 @@
-name: 💾 Other errors 🖥️
-description: Everything else that doesn't fit in the above categories.
+name: 💾 Other Errors and Feedback 🖥️
+description: Everything else that doesn't fit in the above categories, and any feedback about the game!
 labels: ["bug", "status: unconfirmed"]
 body:
   - type: markdown
