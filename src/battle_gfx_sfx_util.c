@@ -6,6 +6,7 @@
 #include "constants/battle_anim.h"
 #include "battle_interface.h"
 #include "main.h"
+#include "menu.h"
 #include "dma3.h"
 #include "malloc.h"
 #include "graphics.h"
@@ -649,9 +650,10 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battler)
     else
         lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, currentPersonality);
 
-    LZDecompressWram(lzPaletteData, gDecompressionBuffer);
-    LoadPalette(gDecompressionBuffer, paletteOffset, PLTT_SIZE_4BPP);
-    LoadPalette(gDecompressionBuffer, BG_PLTT_ID(8) + BG_PLTT_ID(battler), PLTT_SIZE_4BPP);
+    void *buffer = malloc_and_decompress(lzPaletteData, NULL);
+    LoadPalette(buffer, paletteOffset, PLTT_SIZE_4BPP);
+    LoadPalette(buffer, BG_PLTT_ID(8) + BG_PLTT_ID(battler), PLTT_SIZE_4BPP);
+    Free(buffer);
 
     // transform's pink color
     if (gBattleSpritesDataPtr->battlerData[battler].transformSpecies != SPECIES_NONE)
@@ -972,8 +974,9 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, bool32 megaEvo, bo
     DmaCopy32(3, src, dst, MON_PIC_SIZE);
     paletteOffset = OBJ_PLTT_ID(battlerAtk);
     lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, isShiny, personalityValue);
-    LZDecompressWram(lzPaletteData, gDecompressionBuffer);
-    LoadPalette(gDecompressionBuffer, paletteOffset, PLTT_SIZE_4BPP);
+    void *buffer = malloc_and_decompress(lzPaletteData, NULL);
+    LoadPalette(buffer, paletteOffset, PLTT_SIZE_4BPP);
+    Free(buffer);
 
     if (!megaEvo)
     {

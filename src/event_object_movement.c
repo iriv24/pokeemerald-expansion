@@ -2025,11 +2025,16 @@ static u32 LoadDynamicFollowerPalette(u32 species, bool32 shiny, bool32 female)
         // Check if pal data must be decompressed
         if (IsLZ77Data(spritePalette.data, PLTT_SIZE_4BPP, PLTT_SIZE_4BPP))
         {
-            // IsLZ77Data guarantees word-alignment, so casting this is safe
-            LZ77UnCompWram((u32*)spritePalette.data, gDecompressionBuffer);
-            spritePalette.data = (void*)gDecompressionBuffer;
+            struct CompressedSpritePalette compSpritePalette;
+
+            compSpritePalette.data = (const void *) spritePalette.data;
+            compSpritePalette.tag = spritePalette.tag;
+            paletteNum = LoadCompressedSpritePalette(&compSpritePalette);
         }
-        paletteNum = LoadSpritePalette(&spritePalette);
+        else
+        {
+            paletteNum = LoadSpritePalette(&spritePalette);
+        }
     }
     else
 #endif //OW_POKEMON_OBJECT_EVENTS == TRUE && OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
