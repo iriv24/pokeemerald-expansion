@@ -1517,7 +1517,7 @@ PetalburgCity_Text_AreYouRookieTrainer:
 # 759 "data/maps/PetalburgCity/scripts.pory"
 	.string "A rookie trainer?\p"
 # 760 "data/maps/PetalburgCity/scripts.pory"
-	.string "Do you know what Pokémon trainerS\n"
+	.string "Do you know what Pokémon trainers\n"
 # 761 "data/maps/PetalburgCity/scripts.pory"
 	.string "do when they reach a new town?\p"
 # 762 "data/maps/PetalburgCity/scripts.pory"

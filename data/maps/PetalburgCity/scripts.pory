@@ -757,7 +757,7 @@ PetalburgCity_Text_WhereIsWally:
 PetalburgCity_Text_AreYouRookieTrainer:
 	.string "Hiya! Are you maybe…\n"
 	.string "A rookie trainer?\p"
-	.string "Do you know what Pokémon trainerS\n"
+	.string "Do you know what Pokémon trainers\n"
 	.string "do when they reach a new town?\p"
 	.string "They first check what kind of Gym\n"
 	.string "is in the town.$"
