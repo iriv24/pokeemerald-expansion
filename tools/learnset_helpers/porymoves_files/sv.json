@@ -93445,7 +93445,8 @@
       "MOVE_LASH_OUT",
       "MOVE_WHIRLPOOL",
       "MOVE_THROAT_CHOP",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_CUT"
     ],
     "EggMoves": [
       "MOVE_AIR_SLASH",

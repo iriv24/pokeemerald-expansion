@@ -929,10 +929,12 @@ static const u16 sPidgeottoTeachableLearnset[] = {
 static const u16 sPidgeotTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_AIR_SLASH,
+    MOVE_AURA_SPHERE,
     MOVE_BRAVE_BIRD,
     MOVE_DEFOG,
     MOVE_FACADE,
     MOVE_FLY,
+    MOVE_FOCUS_BLAST,
     MOVE_HEAT_WAVE,
     MOVE_HURRICANE,
     MOVE_PLUCK,
@@ -4381,6 +4383,7 @@ static const u16 sKadabraTeachableLearnset[] = {
 };
 
 static const u16 sAlakazamTeachableLearnset[] = {
+    MOVE_AURA_SPHERE,
     MOVE_BODY_SLAM,
     MOVE_CALM_MIND,
     MOVE_CHARGE_BEAM,
@@ -28763,6 +28766,7 @@ static const u16 sSamurottHisuiTeachableLearnset[] = {
     MOVE_BODY_SLAM,
     MOVE_BRICK_BREAK,
     MOVE_BULLDOZE,
+    MOVE_CUT,
     MOVE_DARK_PULSE,
     MOVE_DIG,
     MOVE_DRILL_RUN,

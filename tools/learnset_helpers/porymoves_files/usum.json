@@ -1851,7 +1851,9 @@
       "MOVE_SLEEP_TALK",
       "MOVE_U_TURN",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_AURA_SPHERE",
+      "MOVE_FOCUS_BLAST"
     ],
     "EggMoves": [
       "MOVE_AIR_CUTTER",
@@ -7993,7 +7995,8 @@
       "MOVE_SUBSTITUTE",
       "MOVE_TRICK_ROOM",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_AURA_SPHERE"
     ],
     "EggMoves": [
       "MOVE_ALLY_SWITCH",
@@ -60549,7 +60552,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_CONFIDE",
       "MOVE_TRAILBLAZE",
-      "MOVE_KNOCK_OFF"
+      "MOVE_KNOCK_OFF",
+      "MOVRE_CLOSE_COMBAT"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
@@ -65653,7 +65657,8 @@
       "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_CONFIDE",
-      "MOVE_VACUUM_WAVE"
+      "MOVE_VACUUM_WAVE",
+      "MOVE_CUT"
     ],
     "EggMoves": [
       "MOVE_AIR_SLASH",
