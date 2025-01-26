@@ -51666,7 +51666,8 @@
       "MOVE_CONFIDE",
       "MOVE_IRON_HEAD",
       "MOVE_AIR_SLASH",
-      "MOVE_VACUUM_WAVE"
+      "MOVE_VACUUM_WAVE",
+      "MOVE_CALM_MIND"
     ],
     "EggMoves": [
       "MOVE_AGILITY",
@@ -91100,7 +91101,8 @@
       "MOVE_FLASH_CANNON",
       "MOVE_NATURE_POWER",
       "MOVE_DARK_PULSE",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_POWER_GEM"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
