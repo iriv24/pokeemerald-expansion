@@ -281,6 +281,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 2, CheatCodeCaughtEmAll
 	goto_if_eq VAR_RESULT, 3, CheatCodeEzCatch
 	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
+	goto_if_eq VAR_RESULT, 5, CheatCodeShinyStarters
 	end
 
 CheatCodeFailed::
@@ -401,6 +402,22 @@ CheatCodeMegaStones::
 	releaseall
 	end
 
+CheatCodeShinyStarters::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_SHINY_STARTERS, CheatCodeShinyStartersOff
+	goto_if_set FLAG_SHINY_STARTERS, CheatCodeShinyStartersOn
+	end
+
+CheatCodeShinyStartersOn::
+	msgbox CheatCodeShinyStartersOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeShinyStartersOff::
+	msgbox CheatCodeShinyStartersOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
 CheatCodeExit::
 	releaseall
 	end
@@ -431,6 +448,12 @@ CheatCodeEzCatchOff_Text:
 
 CheatCodeMegaStonesGiven_Text:
 	.string "All Mega Stones given.$"
+
+CheatCodeShinyStartersOn_Text:
+	.string "ShinyStarters cheat enabled.$"
+
+CheatCodeShinyStartersOff_Text:
+	.string "ShinyStarters cheat disabled.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"

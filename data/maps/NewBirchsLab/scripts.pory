@@ -250,7 +250,13 @@ script NewBirchsLab_EventScript_Squirtle{
     showmonpic(SPECIES_SQUIRTLE, 10,3)
     msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_SQUIRTLE, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_SQUIRTLE, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_SQUIRTLE, 5)
+        }
+        
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Squirtle!")
@@ -299,7 +305,12 @@ script NewBirchsLab_EventScript_Totodile{
     showmonpic(SPECIES_TOTODILE, 10,3)
     msgbox("Do you want to choose Totodile?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_TOTODILE, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_TOTODILE, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_TOTODILE, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Totodile!")
@@ -348,7 +359,12 @@ script NewBirchsLab_EventScript_Mudkip{
     showmonpic(SPECIES_MUDKIP, 10,3)
     msgbox("Do you want to choose Mudkip?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_MUDKIP, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_MUDKIP, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_MUDKIP, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Mudkip!")
@@ -397,7 +413,12 @@ script NewBirchsLab_EventScript_Piplup{
     showmonpic(SPECIES_PIPLUP, 10,3)
     msgbox("Do you want to choose Piplup?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_PIPLUP, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_PIPLUP, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_PIPLUP, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Piplup!")
@@ -446,7 +467,12 @@ script NewBirchsLab_EventScript_Oshawott{
     showmonpic(SPECIES_OSHAWOTT, 10,3)
     msgbox("Do you want to choose Oshawott?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_OSHAWOTT, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_OSHAWOTT, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_OSHAWOTT, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Oshawott!")
@@ -495,7 +521,12 @@ script NewBirchsLab_EventScript_Froakie{
     showmonpic(SPECIES_FROAKIE, 10,3)
     msgbox("Do you want to choose Froakie?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_FROAKIE, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_FROAKIE, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_FROAKIE, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Froakie!")
@@ -544,7 +575,12 @@ script NewBirchsLab_EventScript_Popplio{
     showmonpic(SPECIES_POPPLIO, 10,3)
     msgbox("Do you want to choose Popplio?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_POPPLIO, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_POPPLIO, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_POPPLIO, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Popplio!")
@@ -593,7 +629,12 @@ script NewBirchsLab_EventScript_Sobble{
     showmonpic(SPECIES_SOBBLE, 10,3)
     msgbox("Do you want to choose Sobble?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_SOBBLE, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_SOBBLE, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_SOBBLE, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Sobble!")
@@ -642,7 +683,12 @@ script NewBirchsLab_EventScript_Quaxly{
     showmonpic(SPECIES_QUAXLY, 10,3)
     msgbox("Do you want to choose Quaxly?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_QUAXLY, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_QUAXLY, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_QUAXLY, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Quaxly!")
@@ -691,7 +737,12 @@ script NewBirchsLab_EventScript_Bulbasaur{
     showmonpic(SPECIES_BULBASAUR, 10,3)
     msgbox("Do you want to choose Bulbasaur?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_BULBASAUR, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_BULBASAUR, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_BULBASAUR, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Bulbasaur!")
@@ -740,7 +791,12 @@ script NewBirchsLab_EventScript_Chikorita{
     showmonpic(SPECIES_CHIKORITA, 10,3)
     msgbox("Do you want to choose Chikorita?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_CHIKORITA, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_CHIKORITA, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_CHIKORITA, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Chikorita!")
@@ -789,7 +845,12 @@ script NewBirchsLab_EventScript_Treecko{
     showmonpic(SPECIES_TREECKO, 10,3)
     msgbox("Do you want to choose Treecko?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_TREECKO, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_TREECKO, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_TREECKO, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Treecko!")
@@ -838,7 +899,12 @@ script NewBirchsLab_EventScript_Turtwig{
     showmonpic(SPECIES_TURTWIG, 10,3)
     msgbox("Do you want to choose Turtwig?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_TURTWIG, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_TURTWIG, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_TURTWIG, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Turtwig!")
@@ -887,7 +953,12 @@ script NewBirchsLab_EventScript_Snivy{
     showmonpic(SPECIES_SNIVY, 10,3)
     msgbox("Do you want to choose Snivy?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_SNIVY, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_SNIVY, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_SNIVY, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Snivy!")
@@ -936,7 +1007,12 @@ script NewBirchsLab_EventScript_Chespin{
     showmonpic(SPECIES_CHESPIN, 10,3)
     msgbox("Do you want to choose Chespin?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_CHESPIN, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_CHESPIN, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_CHESPIN, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Chespin!")
@@ -985,7 +1061,12 @@ script NewBirchsLab_EventScript_Rowlet{
     showmonpic(SPECIES_ROWLET, 10,3)
     msgbox("Do you want to choose Rowlet?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_ROWLET, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_ROWLET, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_ROWLET, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Rowlet!")
@@ -1034,7 +1115,12 @@ script NewBirchsLab_EventScript_Grookey{
     showmonpic(SPECIES_GROOKEY, 10,3)
     msgbox("Do you want to choose Grookey?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_GROOKEY, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_GROOKEY, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_GROOKEY, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Grookey!")
@@ -1083,7 +1169,12 @@ script NewBirchsLab_EventScript_Sprigatito{
     showmonpic(SPECIES_SPRIGATITO, 10,3)
     msgbox("Do you want to choose Sprigatito?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_SPRIGATITO, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_SPRIGATITO, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_SPRIGATITO, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Sprigatito!")
@@ -1132,7 +1223,12 @@ script NewBirchsLab_EventScript_Charmander{
     showmonpic(SPECIES_CHARMANDER, 10,3)
     msgbox("Do you want to choose Charmander?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_CHARMANDER, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_CHARMANDER, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_CHARMANDER, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Charmander!")
@@ -1181,7 +1277,12 @@ script NewBirchsLab_EventScript_Cyndaquil{
     showmonpic(SPECIES_CYNDAQUIL, 10,3)
     msgbox("Do you want to choose Cyndaquil?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_CYNDAQUIL, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_CYNDAQUIL, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_CYNDAQUIL, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Cyndaquil!")
@@ -1230,7 +1331,12 @@ script NewBirchsLab_EventScript_Torchic{
     showmonpic(SPECIES_TORCHIC, 10,3)
     msgbox("Do you want to choose Torchic?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_TORCHIC, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_TORCHIC, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_TORCHIC, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Torchic!")
@@ -1279,7 +1385,12 @@ script NewBirchsLab_EventScript_Chimchar{
     showmonpic(SPECIES_CHIMCHAR, 10,3)
     msgbox("Do you want to choose Chimchar?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_CHIMCHAR, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_CHIMCHAR, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_CHIMCHAR, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Chimchar!")
@@ -1328,7 +1439,12 @@ script NewBirchsLab_EventScript_Tepig{
     showmonpic(SPECIES_TEPIG, 10,3)
     msgbox("Do you want to choose Tepig?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_TEPIG, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_TEPIG, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_TEPIG, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Tepig!")
@@ -1377,7 +1493,12 @@ script NewBirchsLab_EventScript_Fennekin{
     showmonpic(SPECIES_FENNEKIN, 10,3)
     msgbox("Do you want to choose Fennekin?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_FENNEKIN, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_FENNEKIN, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_FENNEKIN, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Fennekin!")
@@ -1426,7 +1547,12 @@ script NewBirchsLab_EventScript_Litten{
     showmonpic(SPECIES_LITTEN, 10,3)
     msgbox("Do you want to choose Litten?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_LITTEN, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_LITTEN, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_LITTEN, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Litten!")
@@ -1475,7 +1601,12 @@ script NewBirchsLab_EventScript_Scorbunny{
     showmonpic(SPECIES_SCORBUNNY, 10,3)
     msgbox("Do you want to choose Scorbunny?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_SCORBUNNY, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_SCORBUNNY, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_SCORBUNNY, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Scorbunny!")
@@ -1524,7 +1655,12 @@ script NewBirchsLab_EventScript_Fuecoco{
     showmonpic(SPECIES_FUECOCO, 10,3)
     msgbox("Do you want to choose Fuecoco?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemonrandom(SPECIES_FUECOCO, 5)
+        if(flag(FLAG_SHINY_STARTERS)){
+            givemonrandom(SPECIES_FUECOCO, 5, isShiny=TRUE)
+        }
+        else{
+            givemonrandom(SPECIES_FUECOCO, 5)
+        }
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("{PLAYER} received the Fuecoco!")
