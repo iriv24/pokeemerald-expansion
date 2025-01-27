@@ -60554,7 +60554,8 @@
       "MOVE_CONFIDE",
       "MOVE_TRAILBLAZE",
       "MOVE_KNOCK_OFF",
-      "MOVRE_CLOSE_COMBAT"
+      "MOVRE_CLOSE_COMBAT",
+      "MOVE_DRAIN_PUNCH"
     ],
     "EggMoves": [
       "MOVE_BARRIER",
