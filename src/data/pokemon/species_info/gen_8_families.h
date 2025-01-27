@@ -2377,7 +2377,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sApplinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_FLAPPLE},
                                 {EVO_ITEM, ITEM_SUN_STONE, SPECIES_APPLETUN},
-                                {EVO_LEVEL, 33, SPECIES_DIPPLIN}),
+                                {EVO_LEVEL, 30, SPECIES_DIPPLIN}),
     },
 
     [SPECIES_FLAPPLE] =
