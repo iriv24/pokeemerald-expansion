@@ -22,6 +22,9 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	giveitem ITEM_IRON_BALL, 10
 	giveitem ITEM_WIDE_LENS, 10
 	giveitem ITEM_HEAT_ROCK, 10
+	giveitem ITEM_DAMP_ROCK, 10
+	giveitem ITEM_SMOOTH_ROCK, 10
+	giveitem ITEM_ICY_ROCK, 10
 	giveitem ITEM_LEEK, 10
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
