@@ -1,13 +1,14 @@
 raw `
 .set LOCALID_MOVE_RELEARNER, 1
+.set LOCALID_EGG_MAN, 2
+
 
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
 
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
-	lockall
-	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
-	waitmovement 0
+	lock
+	faceplayer
 	goto_if_unset FLAG_BADGE04_GET, FallarborTown_MoveRelearnersHouse_EventScript_NeedLavaBadge
 	goto_if_set FLAG_RECEIVED_TMS_FROM_TUTOR, FallarborTown_MoveRelearnersHouse_EventScript_ReceivedTms
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
@@ -186,9 +187,8 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 `
 
 script FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive {
-	lockall
+	lock
 	faceplayer
-	waitmovement(0)
 	msgbox(EggManIntro)
 
 	dynmultipush("{COLOR RED}{SHADOW LIGHT_RED}Fire", ITEM_RED_SHARD)
