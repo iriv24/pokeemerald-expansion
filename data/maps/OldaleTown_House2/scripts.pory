@@ -7,12 +7,28 @@ OldaleTown_House2_EventScript_Woman::
 	end
 
 OldaleTown_House2_EventScript_Man::
-	msgbox OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC
+	lock
+	faceplayer
+	checkitem ITEM_SHINY_CHARM
+	goto_if_eq VAR_RESULT, TRUE, OldaleTown_House2_EventScript_ManNormal
+	msgbox OldaleTown_House2_Text_IfYoureSeeingThis, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM
+	release
+	end
+
+OldaleTown_House2_EventScript_ManNormal::
+	msgbox OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_DEFAULT
+	release
 	end
 
 OldaleTown_House2_Text_PokemonLevelUp:
 	.string "When Pokémon battle, they eventually\n"
 	.string "level up and become stronger.$"
+
+OldaleTown_House2_Text_IfYoureSeeingThis:
+	.string "If you're seeing this message,\n"
+	.string "it means you're a real OG.\l"
+	.string "Here, take this.$"
 
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
 	.string "If the Pokémon with you become\n"

@@ -578,6 +578,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitemfast ITEM_ABSORB_BULB, 10
 	giveitemfast ITEM_MENTAL_HERB, 10
 	giveitemfast ITEM_LIGHT_BALL, 10
+	giveitemfast ITEM_SHINY_CHARM
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
 	waitfanfare
