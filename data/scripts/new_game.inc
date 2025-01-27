@@ -282,6 +282,7 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_START_POST_RAYQUAZA_SCENE, 0
 	clearflag FLAG_MET_REGULAR_MOVE_TUTOR
 	clearflag FLAG_MET_EGG_MOVE_TUTOR
+	clearflag FLAG_SHINY_STARTERS
 	setflag FLAG_SLEEP_CLAUSE_TOGGLE
 	call EventScript_ResetAllBerries
 	end

@@ -69237,7 +69237,8 @@
       "MOVE_WILD_CHARGE",
       "MOVE_SURF",
       "MOVE_DAZZLING_GLEAM",
-      "MOVE_CONFIDE"
+      "MOVE_CONFIDE",
+      "MOVE_TELEPORT"
     ],
     "EggMoves": [
       "MOVE_AMNESIA",

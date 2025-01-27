@@ -29883,6 +29883,7 @@ static const u16 sAudinoTeachableLearnset[] = {
     MOVE_STOMPING_TANTRUM,
     MOVE_SUNNY_DAY,
     MOVE_SURF,
+    MOVE_TELEPORT,
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,

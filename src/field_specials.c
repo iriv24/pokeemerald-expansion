@@ -4446,6 +4446,7 @@ void GetCheatCodeFeedback(void)
     static const u8 sText_CheatCodeCaughtEmAll[] = _("CaughtAll"); // Mark entire Pokedex as caught
     static const u8 sText_CheatCodeBestBall[] = _("EZCatch"); // 100% catch rate with all balls
     static const u8 sText_CheatCodeMega[] = _("Mega"); // give all mega stones
+    static const u8 sText_CheatCodeShinyStarters[] = _("SS"); // guarantee shiny starters
 
     // Mark entire Pokedex as seen
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll))
@@ -4482,6 +4483,16 @@ void GetCheatCodeFeedback(void)
     // give all mega stones
     else if (!StringCompare(gStringVar2, sText_CheatCodeMega))
         gSpecialVar_Result = 4;
+
+    // guarantee shiny starters
+    if (!StringCompare(gStringVar2, sText_CheatCodeShinyStarters))
+    {
+        if (FlagGet(FLAG_SHINY_STARTERS))
+            FlagClear(FLAG_SHINY_STARTERS);
+        else
+            FlagSet(FLAG_SHINY_STARTERS);
+        gSpecialVar_Result = 5;
+    }
 
     // Illegal cheat code
     else
