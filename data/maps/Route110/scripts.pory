@@ -501,6 +501,7 @@ Route110_EventScript_GiveRestOfItems::
 	giveitemfast ITEM_MISTY_SEED, 10
 	giveitemfast ITEM_AIR_BALLOON, 10
 	giveitemfast ITEM_TERRAIN_EXTENDER, 10
+	giveitemfast ITEM_LIGHT_CLAY, 10
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
 	waitfanfare

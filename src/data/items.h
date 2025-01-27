@@ -8426,7 +8426,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Light Clay"),
         .pluralName = _("Light Clay"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 100,
         .holdEffect = HOLD_EFFECT_LIGHT_CLAY,
         .description = COMPOUND_STRING(
             "Extends the length\n"
