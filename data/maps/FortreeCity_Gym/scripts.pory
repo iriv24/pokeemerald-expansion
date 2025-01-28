@@ -75,6 +75,7 @@ FortreeCity_Gym_EventScript_GiveAerialAce2::
 
 FortreeCity_Gym_EventScript_GiveAerialAce::
 	giveitem ITEM_TM_BRAVE_BIRD
+	giveitem ITEM_TM_ACROBATICS
 	giveitem ITEM_TM_HURRICANE
 	giveitem ITEM_TM_TAILWIND
 	giveitem ITEM_ALTARIANITE
