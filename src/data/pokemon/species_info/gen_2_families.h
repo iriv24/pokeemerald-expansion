@@ -5586,7 +5586,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSwinubLevelUpLearnset,
         .teachableLearnset = sSwinubTeachableLearnset,
         .eggMoveLearnset = sSwinubEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_PILOSWINE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PILOSWINE}),
     },
 
     [SPECIES_PILOSWINE] =
@@ -5661,7 +5661,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sPiloswineLevelUpLearnset,
         .teachableLearnset = sPiloswineTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_ANCIENT_POWER, SPECIES_MAMOSWINE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_MAMOSWINE},
+            {EVO_MOVE, MOVE_ANCIENT_POWER, SPECIES_MAMOSWINE}),
     },
 
 #if P_GEN_4_CROSS_EVOS
