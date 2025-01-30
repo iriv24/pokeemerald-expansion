@@ -69,6 +69,7 @@ InsideOfTruck_EventScript_SetDefaultSettings:
 	clearflag FLAG_RANDOMIZER_ENABLED
 	clearflag FLAG_RANDOM_ABILITIES_ENABLED
 	clearflag FLAG_RANDOM_ABILITIES_ENABLED
+	special ForceBattleStyleSetPleaseGod
 	setvar VAR_RANDOMIZER_MODE, MAX_MON_MODE
 	return
 
@@ -477,6 +478,7 @@ script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
 
 
 script InsideOfTruck_EventScript_SaveSettingsDone {
+	special(ForceBattleStyleSetPleaseGod)
 	msgbox(CustomSettingsSaved)
 	releaseall
 	end

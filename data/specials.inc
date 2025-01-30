@@ -565,3 +565,4 @@ gSpecials::
 	def_special GetCheatCodeFeedback
 	def_special GetWhiteOutCountForText
 	def_special UseBlankMessageToCancelPokemonPic
+	def_special ForceBattleStyleSetPleaseGod
