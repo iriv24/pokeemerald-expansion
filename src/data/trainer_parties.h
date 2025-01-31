@@ -247,7 +247,8 @@ static const struct TrainerMon sParty_MattWeatherInst[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 64,
-    .species = SPECIES_GRENINJA_BATTLE_BOND,
+    .species = SPECIES_GRENINJA,
+    .ability = ABILITY_BATTLE_BOND,
     .heldItem = ITEM_EXPERT_BELT,
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),
@@ -607,7 +608,8 @@ static const struct TrainerMon sParty_MattSeafloorCavern[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 80,
-    .species = SPECIES_GRENINJA_BATTLE_BOND,
+    .species = SPECIES_GRENINJA,
+    .ability = ABILITY_BATTLE_BOND,
     .heldItem = ITEM_EXPERT_BELT,
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),

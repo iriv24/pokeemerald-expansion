@@ -763,8 +763,8 @@ static const struct FormChange sGenesectFormChangeTable[] = {
 
 #if P_FAMILY_FROAKIE
 static const struct FormChange sGreninjaBattleBondFormChangeTable[] = {
-    {FORM_CHANGE_FAINT,         SPECIES_GRENINJA_BATTLE_BOND},
-    {FORM_CHANGE_END_BATTLE,    SPECIES_GRENINJA_BATTLE_BOND},
+    {FORM_CHANGE_FAINT,         SPECIES_GRENINJA},
+    {FORM_CHANGE_END_BATTLE,    SPECIES_GRENINJA},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_FROAKIE
