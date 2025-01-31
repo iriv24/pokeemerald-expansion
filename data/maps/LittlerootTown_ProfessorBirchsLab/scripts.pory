@@ -549,6 +549,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
+	giveitemfast ITEM_QUICK_BALL, 99
 	giveitemfast ITEM_POKE_BALL, 99
 	giveitemfast ITEM_ORAN_BERRY, 20
 	giveitemfast ITEM_ABILITY_CAPSULE, 999
@@ -570,7 +571,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitemfast ITEM_BLACK_BELT, 10
 	giveitemfast ITEM_BLACK_GLASSES, 10
 	giveitemfast ITEM_DRAGON_FANG, 10
-	giveitemfast ITEM_QUICK_BALL, 99
 	giveitemfast ITEM_BLUE_SHARD, 100
 	giveitemfast ITEM_RED_SHARD, 100
 	giveitemfast ITEM_GREEN_SHARD, 100

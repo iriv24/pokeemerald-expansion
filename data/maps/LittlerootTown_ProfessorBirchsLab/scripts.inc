@@ -1101,49 +1101,49 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 # 551 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
 # 552 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_POKE_BALL, 99
-# 553 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_ORAN_BERRY, 20
-# 554 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_ABILITY_CAPSULE, 999
-# 555 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SILK_SCARF, 10
-# 556 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MYSTIC_WATER, 10
-# 557 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MIRACLE_SEED, 10
-# 558 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_CHARCOAL, 10
-# 559 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_NEVER_MELT_ICE, 10
-# 560 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_PIXIE_PLATE, 10
-# 561 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_IRON_PLATE, 10
-# 562 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SHARP_BEAK, 10
-# 563 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SILVER_POWDER, 10
-# 564 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SOFT_SAND, 10
-# 565 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_HARD_STONE, 10
-# 566 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SPELL_TAG, 10
-# 567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_TWISTED_SPOON, 10
-# 568 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MAGNET, 10
-# 569 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_POISON_BARB, 10
-# 570 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_BLACK_BELT, 10
-# 571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_BLACK_GLASSES, 10
-# 572 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_DRAGON_FANG, 10
-# 573 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_QUICK_BALL, 99
+# 553 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_POKE_BALL, 99
+# 554 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_ORAN_BERRY, 20
+# 555 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_ABILITY_CAPSULE, 999
+# 556 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SILK_SCARF, 10
+# 557 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_MYSTIC_WATER, 10
+# 558 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_MIRACLE_SEED, 10
+# 559 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_CHARCOAL, 10
+# 560 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_NEVER_MELT_ICE, 10
+# 561 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_PIXIE_PLATE, 10
+# 562 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_IRON_PLATE, 10
+# 563 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SHARP_BEAK, 10
+# 564 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SILVER_POWDER, 10
+# 565 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SOFT_SAND, 10
+# 566 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_HARD_STONE, 10
+# 567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SPELL_TAG, 10
+# 568 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_TWISTED_SPOON, 10
+# 569 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_MAGNET, 10
+# 570 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_POISON_BARB, 10
+# 571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_BLACK_BELT, 10
+# 572 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_BLACK_GLASSES, 10
+# 573 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_DRAGON_FANG, 10
 # 574 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_BLUE_SHARD, 100
 # 575 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
