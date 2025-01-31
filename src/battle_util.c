@@ -11847,6 +11847,10 @@ void SetShellSideArmCategory(void)
     u32 physical;
     u32 special;
 
+    // Don't run this check for Safari Battles. Because player's stats are zeroed out, this performs division by zero which previously would crash on certain emulators in Safari Zone.
+    if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+        return;
+
     for (battlerAtk = 0; battlerAtk < gBattlersCount; battlerAtk++)
     {
         attackerAtkStat = gBattleMons[battlerAtk].attack;
