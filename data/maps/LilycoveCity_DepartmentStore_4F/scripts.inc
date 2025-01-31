@@ -91,106 +91,108 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 # 46 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_CHERISH_BALL
 # 47 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_NONE
+	.2byte ITEM_BEAST_BALL
 # 48 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	release
-# 49 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	end
-# 50 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-
-# 51 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
-# 52 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	lock
-# 53 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	faceplayer
-# 54 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	message gText_HowMayIServeYou
-# 55 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	waitmessage
-# 56 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	pokemart LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs
-# 57 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 58 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	release
-# 59 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	end
-# 60 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-
-# 61 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.align 2
-# 62 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
-# 63 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_FIRE_STONE
-# 64 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_THUNDER_STONE
-# 65 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_LEAF_STONE
-# 66 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_WATER_STONE
-# 67 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_ICE_STONE
-# 68 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_SUN_STONE
-# 69 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_MOON_STONE
-# 70 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_PRISM_SCALE
-# 71 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_LINKING_CORD
-# 72 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_DUSK_STONE
-# 73 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_DAWN_STONE
-# 74 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_SHINY_STONE
-# 75 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_KINGS_ROCK
-# 76 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_METAL_COAT
-# 77 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_UPGRADE
-# 78 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_DUBIOUS_DISC
-# 79 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_NONE
-# 80 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+# 49 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	release
-# 81 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+# 50 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	end
+# 51 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+
+# 52 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
+# 53 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	lock
+# 54 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	faceplayer
+# 55 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	message gText_HowMayIServeYou
+# 56 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	waitmessage
+# 57 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	pokemart LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs
+# 58 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 59 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	release
+# 60 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	end
+# 61 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+
+# 62 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.align 2
+# 63 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
+# 64 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_FIRE_STONE
+# 65 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_THUNDER_STONE
+# 66 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_LEAF_STONE
+# 67 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_WATER_STONE
+# 68 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_ICE_STONE
+# 69 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_SUN_STONE
+# 70 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_MOON_STONE
+# 71 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_PRISM_SCALE
+# 72 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_LINKING_CORD
+# 73 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_DUSK_STONE
+# 74 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_DAWN_STONE
+# 75 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_SHINY_STONE
+# 76 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_KINGS_ROCK
+# 77 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_METAL_COAT
+# 78 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_UPGRADE
+# 79 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_DUBIOUS_DISC
+# 80 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.2byte ITEM_NONE
+# 81 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	release
 # 82 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-
+	end
 # 83 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
+
 # 84 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "Hmm…\p"
+LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 # 85 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "An attacking move…\n"
+	.string "Hmm…\p"
 # 86 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "Or a defensive move…\p"
+	.string "An attacking move…\n"
 # 87 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "It's no easy matter to decide which TM\n"
+	.string "Or a defensive move…\p"
 # 88 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "moves should be taught to Pokémon…$"
+	.string "It's no easy matter to decide which TM\n"
 # 89 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-
+	.string "moves should be taught to Pokémon…$"
 # 90 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
-# 91 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "There are so many different kinds of\n"
-# 92 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "TM moves.\p"
-# 93 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "A catalog I read said there are fifty\n"
-# 94 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "different kinds.$"
-# 95 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 
+# 91 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
+# 92 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.string "There are so many different kinds of\n"
+# 93 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.string "TM moves.\p"
+# 94 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.string "A catalog I read said there are fifty\n"
+# 95 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.string "different kinds.$"
 # 96 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
+
 # 97 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.string "I'd like to get all the different TMs,\n"
+LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 # 98 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
+	.string "I'd like to get all the different TMs,\n"
+# 99 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.string "but a Pokémon learns only four moves.$"
