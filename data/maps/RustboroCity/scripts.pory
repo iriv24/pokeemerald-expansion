@@ -897,6 +897,7 @@ RustboroCity_EventScript_BattleMayTreecko::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
 
@@ -905,6 +906,7 @@ RustboroCity_EventScript_BattleMayTorchic::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
 
@@ -913,6 +915,7 @@ RustboroCity_EventScript_BattleMayMudkip::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
 
@@ -972,6 +975,7 @@ RustboroCity_EventScript_BattleBrendanTreecko::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
 
@@ -980,6 +984,7 @@ RustboroCity_EventScript_BattleBrendanTorchic::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
 
@@ -988,6 +993,7 @@ RustboroCity_EventScript_BattleBrendanMudkip::
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
 
