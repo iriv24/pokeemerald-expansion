@@ -71,7 +71,13 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	msgbox(HelloHowCanIHelp)
 	dynmultipush("Nature Change", 0)
 	dynmultipush("Gender Swap", 1)
-	dynmultipush("Set Mon to Lvl Cap", 2)
+	if(!flag(FLAG_MET_REGULAR_MOVE_TUTOR)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Set Mon to Lvl Cap{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 2)
+	}
+	else{
+		dynmultipush("Set Mon to Lvl Cap", 2)
+	}
+	
 	dynmultipush("White Out Counter", 3)
 	dynmultipush("Mode Info", 4)
     dynmultipush("Cancel", MULTI_B_PRESSED)
@@ -233,6 +239,12 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurseNo {
 }
 
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap{
+	if(!flag(FLAG_MET_REGULAR_MOVE_TUTOR))
+	{
+		msgbox(FeatureAvailableAfterMoveTutor)
+		release
+		end
+	}
 	specialvar(VAR_0x8006, GetLevelCapForText)
 	buffernumberstring(STR_VAR_3, VAR_0x8006)
 	msgbox(TellLevelCapAndAsk, MSGBOX_YESNO)
@@ -400,6 +412,13 @@ text MonHasBeenSetToLevelCap
 	"{STR_VAR_1} has been set\n"
 	"to level {STR_VAR_3}.\p"
 	"Come again if you need something else."
+}
+
+text FeatureAvailableAfterMoveTutor
+{
+	"This feature will become available once\n"
+	"you have met the Move Relearner in\l"
+	"Dewford Town."
 }
 
 text EasyMode
