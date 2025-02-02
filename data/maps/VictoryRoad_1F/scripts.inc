@@ -107,49 +107,49 @@ VictoryRoad_1F_EventScript_WallyEntranceBattle::
 # 54 "data/maps/VictoryRoad_1F/scripts.pory"
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
 # 55 "data/maps/VictoryRoad_1F/scripts.pory"
-	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
+	closemessage
 # 56 "data/maps/VictoryRoad_1F/scripts.pory"
-	copyobjectxytoperm LOCALID_WALLY_ENTRANCE
+	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
 # 57 "data/maps/VictoryRoad_1F/scripts.pory"
-	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD
+	copyobjectxytoperm LOCALID_WALLY_ENTRANCE
 # 58 "data/maps/VictoryRoad_1F/scripts.pory"
-	copyvar VAR_VICTORY_ROAD_1F_STATE, VAR_0x8008
+	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD
 # 59 "data/maps/VictoryRoad_1F/scripts.pory"
-	releaseall
+	copyvar VAR_VICTORY_ROAD_1F_STATE, VAR_0x8008
 # 60 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+	delay 30
 # 61 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	playfanfare MUS_LEVEL_UP
 # 62 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Movement_WallyApproachPlayer1:
+	specialvar VAR_0x8006, GetLevelCapForText
 # 63 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	buffernumberstring STR_VAR_3, VAR_0x8006
 # 64 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
 # 65 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	waitfanfare
 # 66 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	closemessage
 # 67 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	delay 30
 # 68 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	releaseall
 # 69 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+	end
 # 70 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+
 # 71 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
+VictoryRoad_1F_Movement_WallyApproachPlayer1:
 # 72 "data/maps/VictoryRoad_1F/scripts.pory"
 	walk_left
 # 73 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_up
+	walk_left
 # 74 "data/maps/VictoryRoad_1F/scripts.pory"
-	step_end
+	walk_left
 # 75 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	walk_left
 # 76 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Movement_WallyApproachPlayer2:
+	walk_left
 # 77 "data/maps/VictoryRoad_1F/scripts.pory"
 	walk_left
 # 78 "data/maps/VictoryRoad_1F/scripts.pory"
@@ -161,346 +161,364 @@ VictoryRoad_1F_Movement_WallyApproachPlayer2:
 # 81 "data/maps/VictoryRoad_1F/scripts.pory"
 	walk_left
 # 82 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
-# 83 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
-# 84 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
-# 85 "data/maps/VictoryRoad_1F/scripts.pory"
-	walk_left
-# 86 "data/maps/VictoryRoad_1F/scripts.pory"
 	walk_up
-# 87 "data/maps/VictoryRoad_1F/scripts.pory"
+# 83 "data/maps/VictoryRoad_1F/scripts.pory"
 	step_end
+# 84 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 85 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Movement_WallyApproachPlayer2:
+# 86 "data/maps/VictoryRoad_1F/scripts.pory"
+	walk_left
+# 87 "data/maps/VictoryRoad_1F/scripts.pory"
+	walk_left
 # 88 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	walk_left
 # 89 "data/maps/VictoryRoad_1F/scripts.pory"
-@ This Wally appears near the entrance once his battle is triggered and remains there until the Hall of Fame is entered
+	walk_left
 # 90 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_EntranceWally::
+	walk_left
 # 91 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_NPC
+	walk_left
 # 92 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+	walk_left
 # 93 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	walk_left
 # 94 "data/maps/VictoryRoad_1F/scripts.pory"
-@ This Wally appears and remains at the exit after the Hall of Fame is entered
+	walk_left
 # 95 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_ExitWally::
+	walk_up
 # 96 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+	step_end
 # 97 "data/maps/VictoryRoad_1F/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+
 # 98 "data/maps/VictoryRoad_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, VictoryRoad_1F_EventScript_RematchWally
+@ This Wally appears near the entrance once his battle is triggered and remains there until the Hall of Fame is entered
 # 99 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
+VictoryRoad_1F_EventScript_EntranceWally::
 # 100 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_NPC
 # 101 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	end
 # 102 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_RematchWally::
+
 # 103 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+@ This Wally appears and remains at the exit after the Hall of Fame is entered
 # 104 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
+VictoryRoad_1F_EventScript_ExitWally::
 # 105 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+	trainerbattle_single TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 # 106 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 107 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_Edgar::
+	goto_if_eq VAR_RESULT, TRUE, VictoryRoad_1F_EventScript_RematchWally
 # 108 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_EDGAR, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat
+	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 # 109 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 110 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+
 # 111 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_EventScript_RematchWally::
 # 112 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_Albert::
+	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 # 113 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_ALBERT, VictoryRoad_1F_Text_AlbertIntro, VictoryRoad_1F_Text_AlbertDefeat
+	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
 # 114 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_AlbertPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 115 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+
 # 116 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_EventScript_Edgar::
 # 117 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_Hope::
+	trainerbattle_single TRAINER_EDGAR, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat
 # 118 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_HOPE, VictoryRoad_1F_Text_HopeIntro, VictoryRoad_1F_Text_HopeDefeat
+	msgbox VictoryRoad_1F_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE
 # 119 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_HopePostBattle, MSGBOX_AUTOCLOSE
+	end
 # 120 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+
 # 121 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_EventScript_Albert::
 # 122 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_Quincy::
+	trainerbattle_single TRAINER_ALBERT, VictoryRoad_1F_Text_AlbertIntro, VictoryRoad_1F_Text_AlbertDefeat
 # 123 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_QUINCY, VictoryRoad_1F_Text_QuincyIntro, VictoryRoad_1F_Text_QuincyDefeat
+	msgbox VictoryRoad_1F_Text_AlbertPostBattle, MSGBOX_AUTOCLOSE
 # 124 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_QuincyPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 125 "data/maps/VictoryRoad_1F/scripts.pory"
-	end
+
 # 126 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_EventScript_Hope::
 # 127 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_EventScript_Katelynn::
+	trainerbattle_single TRAINER_HOPE, VictoryRoad_1F_Text_HopeIntro, VictoryRoad_1F_Text_HopeDefeat
 # 128 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_KATELYNN, VictoryRoad_1F_Text_KatelynnIntro, VictoryRoad_1F_Text_KatelynnDefeat
+	msgbox VictoryRoad_1F_Text_HopePostBattle, MSGBOX_AUTOCLOSE
 # 129 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_KatelynnPostBattle, MSGBOX_AUTOCLOSE
-# 130 "data/maps/VictoryRoad_1F/scripts.pory"
 	end
+# 130 "data/maps/VictoryRoad_1F/scripts.pory"
+
 # 131 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_EventScript_Quincy::
 # 132 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore:
+	trainerbattle_single TRAINER_QUINCY, VictoryRoad_1F_Text_QuincyIntro, VictoryRoad_1F_Text_QuincyDefeat
 # 133 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "{PLAYER}! You made it! I've been\n"
+	msgbox VictoryRoad_1F_Text_QuincyPostBattle, MSGBOX_AUTOCLOSE
 # 134 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "wandering around here doing more\l"
+	end
 # 135 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "training, and I knew you'd show up\l"
+
 # 136 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "eventually.\p"
+VictoryRoad_1F_EventScript_Katelynn::
 # 137 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "After you beat me in Mauville and on\n"
+	trainerbattle_single TRAINER_KATELYNN, VictoryRoad_1F_Text_KatelynnIntro, VictoryRoad_1F_Text_KatelynnDefeat
 # 138 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Route 110, I realized how weak I was,\l"
+	msgbox VictoryRoad_1F_Text_KatelynnPostBattle, MSGBOX_AUTOCLOSE
 # 139 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "how little I knew about Pokémon…\p"
+	end
 # 140 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Since then, I've become so much\n"
+
 # 141 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "stronger.\p"
+VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore:
 # 142 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I've trained extremely hard in hopes of\n"
+	.string "{PLAYER}! You made it! I've been\n"
 # 143 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "beating you one day, I even defeated\l"
+	.string "wandering around here doing more\l"
 # 144 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "all of the Gym Leaders here in Hoenn!\p"
+	.string "training, and I knew you'd show up\l"
 # 145 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "However, I have one more goal before I\n"
+	.string "eventually.\p"
 # 146 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "can move on to the Pokémon League…\p"
+	.string "After you beat me in Mauville and on\n"
 # 147 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I have to beat you, {PLAYER}!\n"
+	.string "Route 110, I realized how weak I was,\l"
 # 148 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "You inspired me to get stronger, so now\l"
+	.string "how little I knew about Pokémon…\p"
 # 149 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I'll show you the results of my\l"
+	.string "Since then, I've become so much\n"
 # 150 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "hard work!$"
+	.string "stronger.\p"
 # 151 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "I've trained extremely hard in hopes of\n"
 # 152 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyEntranceDefeat:
+	.string "beating you one day, I even defeated\l"
 # 153 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "All my training, and it still wasn't\n"
+	.string "all of the Gym Leaders here in Hoenn!\p"
 # 154 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "enough… I won't give up, though! I'll\l"
+	.string "However, I have one more goal before I\n"
 # 155 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "keep training until I can beat you!$"
+	.string "can move on to the Pokémon League…\p"
 # 156 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "I have to beat you, {PLAYER}!\n"
 # 157 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyPostEntranceBattle:
+	.string "You inspired me to get stronger, so now\l"
 # 158 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I couldn't beat you this time,\n"
+	.string "I'll show you the results of my\l"
 # 159 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "either…\p"
+	.string "hard work!$"
 # 160 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "But one of these days,\n"
+
 # 161 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "{PLAYER}, I'm going to catch up to you.\p"
+VictoryRoad_1F_Text_WallyEntranceDefeat:
 # 162 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "And then I'll challenge the Pokémon\n"
+	.string "All my training, and it still wasn't\n"
 # 163 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "League!$"
+	.string "enough… I won't give up, though! I'll\l"
 # 164 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "keep training until I can beat you!$"
 # 165 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyGiftFromDad:
+
 # 166 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "That was a great battle, but I still\n"
+VictoryRoad_1F_Text_WallyPostEntranceBattle:
 # 167 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "clearly have more to learn…\p"
-# 168 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Oh! I just remembered, your dad gave me\n"
-# 169 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "a package with some items to give to\l"
-# 170 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "you, {PLAYER}.\p"
-# 171 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "He said to tell you he was sorry he\n"
-# 172 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "didn't have that one Mega Stone ready\l"
-# 173 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "when you defeated him, so he threw in\l"
-# 174 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "some extras to make up for it.\p"
-# 175 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Here you go, {PLAYER}.$"
-# 176 "data/maps/VictoryRoad_1F/scripts.pory"
-
-# 177 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyIntro:
-# 178 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Hi! {PLAYER}!\p"
-# 179 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I've gotten stronger since that last\n"
-# 180 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "time! I wanted to show you, {PLAYER}!\p"
-# 181 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Okay… Here I come!$"
-# 182 "data/maps/VictoryRoad_1F/scripts.pory"
-
-# 183 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyDefeat:
-# 184 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Wow!\n"
-# 185 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "{PLAYER}, you are strong, after all!$"
-# 186 "data/maps/VictoryRoad_1F/scripts.pory"
-
-# 187 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_WallyPostBattle:
-# 188 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "I couldn't beat you this time,\n"
+# 168 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "either…\p"
+# 169 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "But one of these days,\n"
+# 170 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "{PLAYER}, I'm going to catch up to you.\p"
+# 171 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "And then I'll challenge the Pokémon\n"
+# 172 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "League!$"
+# 173 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 174 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_WallyGiftFromDad:
+# 175 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "That was a great battle, but I still\n"
+# 176 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "clearly have more to learn…\p"
+# 177 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Oh! I just remembered, your dad gave me\n"
+# 178 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "a package with some items to give to\l"
+# 179 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "you, {PLAYER}.\p"
+# 180 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "He said to tell you he was sorry he\n"
+# 181 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "didn't have that one Mega Stone ready\l"
+# 182 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "when you defeated him, so he threw in\l"
+# 183 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "some extras to make up for it.\p"
+# 184 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Here you go, {PLAYER}.$"
+# 185 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 186 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_WallyIntro:
+# 187 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Hi! {PLAYER}!\p"
+# 188 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "I've gotten stronger since that last\n"
 # 189 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "too… But one of these days, {PLAYER},\l"
+	.string "time! I wanted to show you, {PLAYER}!\p"
 # 190 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I'm going to catch up to you…\p"
+	.string "Okay… Here I come!$"
 # 191 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "And challenge the Pokémon LEAGUE!$"
+
 # 192 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_Text_WallyDefeat:
 # 193 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_EdgarIntro:
+	.string "Wow!\n"
 # 194 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I've made it this far a couple times,\n"
+	.string "{PLAYER}, you are strong, after all!$"
 # 195 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "but the last stretch is so long…$"
+
 # 196 "data/maps/VictoryRoad_1F/scripts.pory"
-
+VictoryRoad_1F_Text_WallyPostBattle:
 # 197 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_EdgarDefeat:
+	.string "I couldn't beat you this time,\n"
 # 198 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "My dream ends here again…$"
+	.string "too… But one of these days, {PLAYER},\l"
 # 199 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "I'm going to catch up to you…\p"
 # 200 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_EdgarPostBattle:
+	.string "And challenge the Pokémon LEAGUE!$"
 # 201 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "You've made it this far. Keep the\n"
-# 202 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "momentum going and become the\l"
-# 203 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "CHAMPION! If anyone can, it's you!$"
-# 204 "data/maps/VictoryRoad_1F/scripts.pory"
 
+# 202 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_EdgarIntro:
+# 203 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "I've made it this far a couple times,\n"
+# 204 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "but the last stretch is so long…$"
 # 205 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_AlbertIntro:
+
 # 206 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I didn't come all this way to lose now.\n"
+VictoryRoad_1F_Text_EdgarDefeat:
 # 207 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "That possibility doesn't exist!$"
+	.string "My dream ends here again…$"
 # 208 "data/maps/VictoryRoad_1F/scripts.pory"
 
 # 209 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_AlbertDefeat:
+VictoryRoad_1F_Text_EdgarPostBattle:
 # 210 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Impossible…\n"
+	.string "You've made it this far. Keep the\n"
 # 211 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I lost?$"
+	.string "momentum going and become the\l"
 # 212 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "CHAMPION! If anyone can, it's you!$"
 # 213 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_AlbertPostBattle:
+
 # 214 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I lost here…\p"
+VictoryRoad_1F_Text_AlbertIntro:
 # 215 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "That means I lack the qualifications\n"
+	.string "I didn't come all this way to lose now.\n"
 # 216 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "to become the CHAMPION…$"
+	.string "That possibility doesn't exist!$"
 # 217 "data/maps/VictoryRoad_1F/scripts.pory"
 
 # 218 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_HopeIntro:
+VictoryRoad_1F_Text_AlbertDefeat:
 # 219 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "This seemingly infinite and harsh road\n"
+	.string "Impossible…\n"
 # 220 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "lives up to its name of VICTORY.$"
+	.string "I lost?$"
 # 221 "data/maps/VictoryRoad_1F/scripts.pory"
 
 # 222 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_HopeDefeat:
+VictoryRoad_1F_Text_AlbertPostBattle:
 # 223 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Your battle style is fantastic…$"
+	.string "I lost here…\p"
 # 224 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "That means I lack the qualifications\n"
 # 225 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_HopePostBattle:
+	.string "to become the CHAMPION…$"
 # 226 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "You seem to have the potential for\n"
+
 # 227 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "becoming the CHAMPION.$"
+VictoryRoad_1F_Text_HopeIntro:
 # 228 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "This seemingly infinite and harsh road\n"
 # 229 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_QuincyIntro:
+	.string "lives up to its name of VICTORY.$"
 # 230 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "What is the VICTORY ROAD?\n"
+
 # 231 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I'll tell you if you win!$"
+VictoryRoad_1F_Text_HopeDefeat:
 # 232 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "Your battle style is fantastic…$"
 # 233 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_QuincyDefeat:
+
 # 234 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Okay!\n"
+VictoryRoad_1F_Text_HopePostBattle:
 # 235 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Well done!$"
+	.string "You seem to have the potential for\n"
 # 236 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "becoming the CHAMPION.$"
 # 237 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_QuincyPostBattle:
+
 # 238 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Getting through here safely--that's\n"
+VictoryRoad_1F_Text_QuincyIntro:
 # 239 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "the final test for any TRAINER aiming\l"
+	.string "What is the VICTORY ROAD?\n"
 # 240 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "to become the Pokémon CHAMPION.\p"
+	.string "I'll tell you if you win!$"
 # 241 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "That's why it's called the VICTORY\n"
+
 # 242 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "ROAD.$"
+VictoryRoad_1F_Text_QuincyDefeat:
 # 243 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "Okay!\n"
 # 244 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_KatelynnIntro:
+	.string "Well done!$"
 # 245 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "I have nothing to say to anyone\n"
+
 # 246 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "that's come this far. Come on!$"
+VictoryRoad_1F_Text_QuincyPostBattle:
 # 247 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "Getting through here safely--that's\n"
 # 248 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_KatelynnDefeat:
+	.string "the final test for any TRAINER aiming\l"
 # 249 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "This is a disgrace…$"
+	.string "to become the Pokémon CHAMPION.\p"
 # 250 "data/maps/VictoryRoad_1F/scripts.pory"
-
+	.string "That's why it's called the VICTORY\n"
 # 251 "data/maps/VictoryRoad_1F/scripts.pory"
-VictoryRoad_1F_Text_KatelynnPostBattle:
+	.string "ROAD.$"
 # 252 "data/maps/VictoryRoad_1F/scripts.pory"
-	.string "Humph, go right on ahead.\n"
+
 # 253 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_KatelynnIntro:
+# 254 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "I have nothing to say to anyone\n"
+# 255 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "that's come this far. Come on!$"
+# 256 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 257 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_KatelynnDefeat:
+# 258 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "This is a disgrace…$"
+# 259 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 260 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_KatelynnPostBattle:
+# 261 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Humph, go right on ahead.\n"
+# 262 "data/maps/VictoryRoad_1F/scripts.pory"
 	.string "See if I care.$"

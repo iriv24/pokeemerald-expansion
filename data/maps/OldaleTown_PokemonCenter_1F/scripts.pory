@@ -423,3 +423,8 @@ text NormalModeWithMgm
 	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode\n"
 	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode"
 }
+
+text LevelCapIncreasedTo
+{
+	"{COLOR BLUE}{SHADOW LIGHT_BLUE}Level Cap increased to: {STR_VAR_3}."
+}

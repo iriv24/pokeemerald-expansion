@@ -887,6 +887,21 @@ RustboroCity_EventScript_MayBrineyHint::
 	releaseall
 	end
 
+RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage::
+	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
+	releaseall
+	end
+
 RustboroCity_EventScript_RestoreBgm::
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -898,7 +913,7 @@ RustboroCity_EventScript_BattleMayTreecko::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_EventScript_BattleMayTorchic::
@@ -907,7 +922,7 @@ RustboroCity_EventScript_BattleMayTorchic::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_EventScript_BattleMayMudkip::
@@ -916,7 +931,7 @@ RustboroCity_EventScript_BattleMayMudkip::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_MayBrineyHint
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_EventScript_BrendanEncounter::
@@ -970,13 +985,28 @@ RustboroCity_EventScript_BrendanBrineyHint::
 	releaseall
 	end
 
+RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage::
+	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
+	releaseall
+	end
+
 RustboroCity_EventScript_BattleBrendanTreecko::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_EventScript_BattleBrendanTorchic::
@@ -985,7 +1015,7 @@ RustboroCity_EventScript_BattleBrendanTorchic::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_EventScript_BattleBrendanMudkip::
@@ -994,7 +1024,7 @@ RustboroCity_EventScript_BattleBrendanMudkip::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
 RustboroCity_Movement_RivalApproachPlayer0:

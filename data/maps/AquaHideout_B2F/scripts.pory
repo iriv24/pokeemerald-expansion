@@ -52,6 +52,14 @@ AquaHideout_B2F_EventScript_SubmarineEscape::
 	setflag FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE
 	setflag FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	release
 	end
 

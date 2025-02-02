@@ -58,6 +58,14 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	release
 	end
 

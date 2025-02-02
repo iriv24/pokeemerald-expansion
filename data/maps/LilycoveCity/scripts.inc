@@ -1028,87 +1028,103 @@ LilycoveCity_EventScript_DawnExit::
 	call_if_eq VAR_0x8008, 1, LilycoveCity_EventScript_ApplyMovementDawn1
 # 539 "data/maps/LilycoveCity/scripts.pory"
 	call_if_eq VAR_0x8008, 2, LilycoveCity_EventScript_ApplyMovementDawn2
-# 541 "data/maps/LilycoveCity/scripts.pory"
+# 540 "data/maps/LilycoveCity/scripts.pory"
 	removeobject 22
-# 542 "data/maps/LilycoveCity/scripts.pory"
+# 541 "data/maps/LilycoveCity/scripts.pory"
 	setflag FLAG_DAWN_LILYCOVE
-# 543 "data/maps/LilycoveCity/scripts.pory"
+# 542 "data/maps/LilycoveCity/scripts.pory"
 	setvar VAR_FOUGHT_DAWN_LILYCOVE, 1
+# 543 "data/maps/LilycoveCity/scripts.pory"
+	delay 30
 # 544 "data/maps/LilycoveCity/scripts.pory"
-	savebgm MUS_DUMMY
+	playfanfare MUS_LEVEL_UP
 # 545 "data/maps/LilycoveCity/scripts.pory"
-	fadedefaultbgm
+	specialvar VAR_0x8006, GetLevelCapForText
 # 546 "data/maps/LilycoveCity/scripts.pory"
+	buffernumberstring STR_VAR_3, VAR_0x8006
+# 547 "data/maps/LilycoveCity/scripts.pory"
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+# 548 "data/maps/LilycoveCity/scripts.pory"
+	waitfanfare
+# 549 "data/maps/LilycoveCity/scripts.pory"
+	closemessage
+# 550 "data/maps/LilycoveCity/scripts.pory"
+	delay 30
+# 551 "data/maps/LilycoveCity/scripts.pory"
+	savebgm MUS_DUMMY
+# 552 "data/maps/LilycoveCity/scripts.pory"
+	fadedefaultbgm
+# 553 "data/maps/LilycoveCity/scripts.pory"
 	releaseall
 	end
 
 
 LilycoveCity_EventScript_ApplyMovementDawn1::
-# 591 "data/maps/LilycoveCity/scripts.pory"
+# 598 "data/maps/LilycoveCity/scripts.pory"
 	applymovement 22, LilycoveCity_EventScript_DawnExit1
-# 592 "data/maps/LilycoveCity/scripts.pory"
+# 599 "data/maps/LilycoveCity/scripts.pory"
 	waitmovement 0
 	return
 
 
 LilycoveCity_EventScript_DawnExit1::
-# 597 "data/maps/LilycoveCity/scripts.pory"
-	walk_right
-# 598 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 599 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 600 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 601 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 602 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 603 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
 # 604 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
+	walk_right
 # 605 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 606 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 607 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 608 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 609 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 610 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 611 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 612 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 613 "data/maps/LilycoveCity/scripts.pory"
 	step_end
 	return
 
 
 LilycoveCity_EventScript_ApplyMovementDawn2::
-# 610 "data/maps/LilycoveCity/scripts.pory"
+# 617 "data/maps/LilycoveCity/scripts.pory"
 	applymovement 22, LilycoveCity_EventScript_DawnExit2
-# 611 "data/maps/LilycoveCity/scripts.pory"
+# 618 "data/maps/LilycoveCity/scripts.pory"
 	waitmovement 0
 	return
 
 
 LilycoveCity_EventScript_DawnExit2::
-# 616 "data/maps/LilycoveCity/scripts.pory"
-	walk_left
-# 617 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 618 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 619 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 620 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 621 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
-# 622 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
 # 623 "data/maps/LilycoveCity/scripts.pory"
-	walk_down
+	walk_left
 # 624 "data/maps/LilycoveCity/scripts.pory"
 	walk_down
 # 625 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 626 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 627 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 628 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 629 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 630 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 631 "data/maps/LilycoveCity/scripts.pory"
+	walk_down
+# 632 "data/maps/LilycoveCity/scripts.pory"
 	step_end
 	return
 
 
 LilycoveCity_Text_Dawn_Greeting::
-# 550 "data/maps/LilycoveCity/scripts.pory"
+# 557 "data/maps/LilycoveCity/scripts.pory"
 	.string "{PLAYER}! Fancy seeing you here!\p"
 	.string "{RIVAL} told me about the amazing\n"
 	.string "department store here, so I had to come\l"
@@ -1121,16 +1137,16 @@ LilycoveCity_Text_Dawn_Greeting::
 	.string "what do you say we have a battle?$"
 
 LilycoveCity_Text_Dawn_Defeated::
-# 563 "data/maps/LilycoveCity/scripts.pory"
+# 570 "data/maps/LilycoveCity/scripts.pory"
 	.string "Crushing it as always, {PLAYER}.$"
 
 LilycoveCity_Text_Dawn_MagmaAndAqua::
-# 567 "data/maps/LilycoveCity/scripts.pory"
+# 574 "data/maps/LilycoveCity/scripts.pory"
 	.string "Geez, I'm running out of things I can\n"
 	.string "give you, hope these will suffice.$"
 
 LilycoveCity_Text_DawnGoodbye::
-# 572 "data/maps/LilycoveCity/scripts.pory"
+# 579 "data/maps/LilycoveCity/scripts.pory"
 	.string "On a more serious note, I'm starting to\n"
 	.string "get a little concerned about Team Aqua\l"
 	.string "and Team Magma's activities.\p"

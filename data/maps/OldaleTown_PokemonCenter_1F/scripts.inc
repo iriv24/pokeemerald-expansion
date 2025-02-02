@@ -909,3 +909,7 @@ NormalModeWithMgm::
 # 421 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode\n"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode$"
+
+LevelCapIncreasedTo::
+# 427 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
+	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Level Cap increased to: {STR_VAR_3}.$"

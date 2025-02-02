@@ -79,6 +79,14 @@ MtChimney_EventScript_Maxie::
 	clearflag FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO
 	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
 	clearflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	releaseall
 	end
 

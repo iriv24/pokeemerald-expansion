@@ -91,6 +91,13 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	release
 	end
 

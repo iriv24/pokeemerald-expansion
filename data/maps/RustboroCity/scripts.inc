@@ -1777,928 +1777,988 @@ RustboroCity_EventScript_MayBrineyHint::
 # 889 "data/maps/RustboroCity/scripts.pory"
 
 # 890 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_RestoreBgm::
+RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage::
 # 891 "data/maps/RustboroCity/scripts.pory"
-	savebgm MUS_DUMMY
+	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
 # 892 "data/maps/RustboroCity/scripts.pory"
-	fadedefaultbgm
+	closemessage
 # 893 "data/maps/RustboroCity/scripts.pory"
-	return
+	delay 30
 # 894 "data/maps/RustboroCity/scripts.pory"
-
+	playfanfare MUS_LEVEL_UP
 # 895 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleMayTreecko::
+	specialvar VAR_0x8006, GetLevelCapForText
 # 896 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
+	buffernumberstring STR_VAR_3, VAR_0x8006
 # 897 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
 # 898 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 8
-# 899 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_ROUTE104_STATE, 2
-# 900 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_BRINEY_HOUSE_STATE, 1
-# 901 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_MayBrineyHint
-# 902 "data/maps/RustboroCity/scripts.pory"
-	end
-# 903 "data/maps/RustboroCity/scripts.pory"
-
-# 904 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleMayTorchic::
-# 905 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
-# 906 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-# 907 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 8
-# 908 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_ROUTE104_STATE, 2
-# 909 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_BRINEY_HOUSE_STATE, 1
-# 910 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_MayBrineyHint
-# 911 "data/maps/RustboroCity/scripts.pory"
-	end
-# 912 "data/maps/RustboroCity/scripts.pory"
-
-# 913 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleMayMudkip::
-# 914 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
-# 915 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-# 916 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 8
-# 917 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_ROUTE104_STATE, 2
-# 918 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_BRINEY_HOUSE_STATE, 1
-# 919 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_MayBrineyHint
-# 920 "data/maps/RustboroCity/scripts.pory"
-	end
-# 921 "data/maps/RustboroCity/scripts.pory"
-
-# 922 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BrendanEncounter::
-# 923 "data/maps/RustboroCity/scripts.pory"
-	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanBrineyHint
-# 924 "data/maps/RustboroCity/scripts.pory"
-	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanAskToBattle
-# 925 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_MET_RIVAL_RUSTBORO
-# 926 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanHiLetsRegister, MSGBOX_DEFAULT
-# 927 "data/maps/RustboroCity/scripts.pory"
-	closemessage
-# 928 "data/maps/RustboroCity/scripts.pory"
-	delay 30
-# 929 "data/maps/RustboroCity/scripts.pory"
-	playfanfare MUS_REGISTER_MATCH_CALL
-# 930 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_RegisteredBrendan, MSGBOX_DEFAULT
-# 931 "data/maps/RustboroCity/scripts.pory"
 	waitfanfare
-# 932 "data/maps/RustboroCity/scripts.pory"
+# 899 "data/maps/RustboroCity/scripts.pory"
 	closemessage
-# 933 "data/maps/RustboroCity/scripts.pory"
+# 900 "data/maps/RustboroCity/scripts.pory"
 	delay 30
-# 934 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-# 935 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
-# 936 "data/maps/RustboroCity/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
-# 937 "data/maps/RustboroCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
-# 938 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
-# 939 "data/maps/RustboroCity/scripts.pory"
-	call RustboroCity_EventScript_RestoreBgm
-# 940 "data/maps/RustboroCity/scripts.pory"
-	releaseall
-# 941 "data/maps/RustboroCity/scripts.pory"
-	end
-# 942 "data/maps/RustboroCity/scripts.pory"
-
-# 943 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BrendanAskToBattle::
-# 944 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanWantToBattle, MSGBOX_YESNO
-# 945 "data/maps/RustboroCity/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
-# 946 "data/maps/RustboroCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
-# 947 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
-# 948 "data/maps/RustboroCity/scripts.pory"
-	releaseall
-# 949 "data/maps/RustboroCity/scripts.pory"
-	end
-# 950 "data/maps/RustboroCity/scripts.pory"
-
-# 951 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleBrendan::
-# 952 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanIWontGoEasy, MSGBOX_DEFAULT
-# 953 "data/maps/RustboroCity/scripts.pory"
-	switch VAR_STARTER_MON
-# 954 "data/maps/RustboroCity/scripts.pory"
-	case 0, RustboroCity_EventScript_BattleBrendanTreecko
-# 955 "data/maps/RustboroCity/scripts.pory"
-	case 1, RustboroCity_EventScript_BattleBrendanTorchic
-# 956 "data/maps/RustboroCity/scripts.pory"
-	case 2, RustboroCity_EventScript_BattleBrendanMudkip
-# 957 "data/maps/RustboroCity/scripts.pory"
-	end
-# 958 "data/maps/RustboroCity/scripts.pory"
-
-# 959 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleBrendan2::
-# 960 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_TooBad, MSGBOX_DEFAULT
-# 961 "data/maps/RustboroCity/scripts.pory"
-	switch VAR_STARTER_MON
-# 962 "data/maps/RustboroCity/scripts.pory"
-	case 0, RustboroCity_EventScript_BattleBrendanTreecko
-# 963 "data/maps/RustboroCity/scripts.pory"
-	case 1, RustboroCity_EventScript_BattleBrendanTorchic
-# 964 "data/maps/RustboroCity/scripts.pory"
-	case 2, RustboroCity_EventScript_BattleBrendanMudkip
-# 965 "data/maps/RustboroCity/scripts.pory"
-	end
-# 966 "data/maps/RustboroCity/scripts.pory"
-
-# 967 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BrendanBrineyHint::
-# 968 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
-# 969 "data/maps/RustboroCity/scripts.pory"
+# 901 "data/maps/RustboroCity/scripts.pory"
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
-# 970 "data/maps/RustboroCity/scripts.pory"
+# 902 "data/maps/RustboroCity/scripts.pory"
 	releaseall
-# 971 "data/maps/RustboroCity/scripts.pory"
+# 903 "data/maps/RustboroCity/scripts.pory"
 	end
-# 972 "data/maps/RustboroCity/scripts.pory"
+# 904 "data/maps/RustboroCity/scripts.pory"
 
-# 973 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleBrendanTreecko::
-# 974 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
-# 975 "data/maps/RustboroCity/scripts.pory"
+# 905 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_RestoreBgm::
+# 906 "data/maps/RustboroCity/scripts.pory"
+	savebgm MUS_DUMMY
+# 907 "data/maps/RustboroCity/scripts.pory"
+	fadedefaultbgm
+# 908 "data/maps/RustboroCity/scripts.pory"
+	return
+# 909 "data/maps/RustboroCity/scripts.pory"
+
+# 910 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleMayTreecko::
+# 911 "data/maps/RustboroCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
+# 912 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
-# 976 "data/maps/RustboroCity/scripts.pory"
+# 913 "data/maps/RustboroCity/scripts.pory"
 	setvar VAR_RUSTBORO_CITY_STATE, 8
-# 977 "data/maps/RustboroCity/scripts.pory"
+# 914 "data/maps/RustboroCity/scripts.pory"
 	setvar VAR_ROUTE104_STATE, 2
-# 978 "data/maps/RustboroCity/scripts.pory"
+# 915 "data/maps/RustboroCity/scripts.pory"
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+# 916 "data/maps/RustboroCity/scripts.pory"
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
+# 917 "data/maps/RustboroCity/scripts.pory"
+	end
+# 918 "data/maps/RustboroCity/scripts.pory"
+
+# 919 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleMayTorchic::
+# 920 "data/maps/RustboroCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
+# 921 "data/maps/RustboroCity/scripts.pory"
+	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
+# 922 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_RUSTBORO_CITY_STATE, 8
+# 923 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_ROUTE104_STATE, 2
+# 924 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_BRINEY_HOUSE_STATE, 1
+# 925 "data/maps/RustboroCity/scripts.pory"
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
+# 926 "data/maps/RustboroCity/scripts.pory"
+	end
+# 927 "data/maps/RustboroCity/scripts.pory"
+
+# 928 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleMayMudkip::
+# 929 "data/maps/RustboroCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
+# 930 "data/maps/RustboroCity/scripts.pory"
+	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
+# 931 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_RUSTBORO_CITY_STATE, 8
+# 932 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_ROUTE104_STATE, 2
+# 933 "data/maps/RustboroCity/scripts.pory"
+	setvar VAR_BRINEY_HOUSE_STATE, 1
+# 934 "data/maps/RustboroCity/scripts.pory"
+	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
+# 935 "data/maps/RustboroCity/scripts.pory"
+	end
+# 936 "data/maps/RustboroCity/scripts.pory"
+
+# 937 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BrendanEncounter::
+# 938 "data/maps/RustboroCity/scripts.pory"
+	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanBrineyHint
+# 939 "data/maps/RustboroCity/scripts.pory"
+	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_BrendanAskToBattle
+# 940 "data/maps/RustboroCity/scripts.pory"
+	setflag FLAG_MET_RIVAL_RUSTBORO
+# 941 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanHiLetsRegister, MSGBOX_DEFAULT
+# 942 "data/maps/RustboroCity/scripts.pory"
+	closemessage
+# 943 "data/maps/RustboroCity/scripts.pory"
+	delay 30
+# 944 "data/maps/RustboroCity/scripts.pory"
+	playfanfare MUS_REGISTER_MATCH_CALL
+# 945 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_RegisteredBrendan, MSGBOX_DEFAULT
+# 946 "data/maps/RustboroCity/scripts.pory"
+	waitfanfare
+# 947 "data/maps/RustboroCity/scripts.pory"
+	closemessage
+# 948 "data/maps/RustboroCity/scripts.pory"
+	delay 30
+# 949 "data/maps/RustboroCity/scripts.pory"
+	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+# 950 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
+# 951 "data/maps/RustboroCity/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
+# 952 "data/maps/RustboroCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
+# 953 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
+# 954 "data/maps/RustboroCity/scripts.pory"
+	call RustboroCity_EventScript_RestoreBgm
+# 955 "data/maps/RustboroCity/scripts.pory"
+	releaseall
+# 956 "data/maps/RustboroCity/scripts.pory"
+	end
+# 957 "data/maps/RustboroCity/scripts.pory"
+
+# 958 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BrendanAskToBattle::
+# 959 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanWantToBattle, MSGBOX_YESNO
+# 960 "data/maps/RustboroCity/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
+# 961 "data/maps/RustboroCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
+# 962 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
+# 963 "data/maps/RustboroCity/scripts.pory"
+	releaseall
+# 964 "data/maps/RustboroCity/scripts.pory"
+	end
+# 965 "data/maps/RustboroCity/scripts.pory"
+
+# 966 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleBrendan::
+# 967 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_BrendanIWontGoEasy, MSGBOX_DEFAULT
+# 968 "data/maps/RustboroCity/scripts.pory"
+	switch VAR_STARTER_MON
+# 969 "data/maps/RustboroCity/scripts.pory"
+	case 0, RustboroCity_EventScript_BattleBrendanTreecko
+# 970 "data/maps/RustboroCity/scripts.pory"
+	case 1, RustboroCity_EventScript_BattleBrendanTorchic
+# 971 "data/maps/RustboroCity/scripts.pory"
+	case 2, RustboroCity_EventScript_BattleBrendanMudkip
+# 972 "data/maps/RustboroCity/scripts.pory"
+	end
+# 973 "data/maps/RustboroCity/scripts.pory"
+
+# 974 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleBrendan2::
+# 975 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_TooBad, MSGBOX_DEFAULT
+# 976 "data/maps/RustboroCity/scripts.pory"
+	switch VAR_STARTER_MON
+# 977 "data/maps/RustboroCity/scripts.pory"
+	case 0, RustboroCity_EventScript_BattleBrendanTreecko
+# 978 "data/maps/RustboroCity/scripts.pory"
+	case 1, RustboroCity_EventScript_BattleBrendanTorchic
 # 979 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	case 2, RustboroCity_EventScript_BattleBrendanMudkip
 # 980 "data/maps/RustboroCity/scripts.pory"
 	end
 # 981 "data/maps/RustboroCity/scripts.pory"
 
 # 982 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleBrendanTorchic::
+RustboroCity_EventScript_BrendanBrineyHint::
 # 983 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
+	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 # 984 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 # 985 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 8
+	releaseall
 # 986 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_ROUTE104_STATE, 2
+	end
 # 987 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_BRINEY_HOUSE_STATE, 1
+
 # 988 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_BrendanBrineyHint
+RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage::
 # 989 "data/maps/RustboroCity/scripts.pory"
-	end
+	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 # 990 "data/maps/RustboroCity/scripts.pory"
-
+	closemessage
 # 991 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_BattleBrendanMudkip::
+	delay 30
 # 992 "data/maps/RustboroCity/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
+	playfanfare MUS_LEVEL_UP
 # 993 "data/maps/RustboroCity/scripts.pory"
-	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
+	specialvar VAR_0x8006, GetLevelCapForText
 # 994 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_RUSTBORO_CITY_STATE, 8
+	buffernumberstring STR_VAR_3, VAR_0x8006
 # 995 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_ROUTE104_STATE, 2
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
 # 996 "data/maps/RustboroCity/scripts.pory"
-	setvar VAR_BRINEY_HOUSE_STATE, 1
+	waitfanfare
 # 997 "data/maps/RustboroCity/scripts.pory"
-	goto RustboroCity_EventScript_BrendanBrineyHint
+	closemessage
 # 998 "data/maps/RustboroCity/scripts.pory"
-	end
+	delay 30
 # 999 "data/maps/RustboroCity/scripts.pory"
-
+	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 # 1000 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer0:
+	releaseall
 # 1001 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	end
 # 1002 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+
 # 1003 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+RustboroCity_EventScript_BattleBrendanTreecko::
 # 1004 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
 # 1005 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 # 1006 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	setvar VAR_RUSTBORO_CITY_STATE, 8
 # 1007 "data/maps/RustboroCity/scripts.pory"
-	step_end
+	setvar VAR_ROUTE104_STATE, 2
 # 1008 "data/maps/RustboroCity/scripts.pory"
-
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 # 1009 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer1:
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 # 1010 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	end
 # 1011 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+
 # 1012 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+RustboroCity_EventScript_BattleBrendanTorchic::
 # 1013 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
 # 1014 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 # 1015 "data/maps/RustboroCity/scripts.pory"
-	step_end
+	setvar VAR_RUSTBORO_CITY_STATE, 8
 # 1016 "data/maps/RustboroCity/scripts.pory"
-
+	setvar VAR_ROUTE104_STATE, 2
 # 1017 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer2:
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 # 1018 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 # 1019 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+	end
 # 1020 "data/maps/RustboroCity/scripts.pory"
-	walk_left
-# 1021 "data/maps/RustboroCity/scripts.pory"
-	walk_down
-# 1022 "data/maps/RustboroCity/scripts.pory"
-	step_end
-# 1023 "data/maps/RustboroCity/scripts.pory"
 
+# 1021 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_BattleBrendanMudkip::
+# 1022 "data/maps/RustboroCity/scripts.pory"
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
+# 1023 "data/maps/RustboroCity/scripts.pory"
+	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 # 1024 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer3:
+	setvar VAR_RUSTBORO_CITY_STATE, 8
 # 1025 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	setvar VAR_ROUTE104_STATE, 2
 # 1026 "data/maps/RustboroCity/scripts.pory"
-	walk_left
+	setvar VAR_BRINEY_HOUSE_STATE, 1
 # 1027 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 # 1028 "data/maps/RustboroCity/scripts.pory"
-	step_end
+	end
 # 1029 "data/maps/RustboroCity/scripts.pory"
 
 # 1030 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer4:
+RustboroCity_Movement_RivalApproachPlayer0:
 # 1031 "data/maps/RustboroCity/scripts.pory"
 	walk_down
 # 1032 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	walk_left
 # 1033 "data/maps/RustboroCity/scripts.pory"
-	step_end
+	walk_left
 # 1034 "data/maps/RustboroCity/scripts.pory"
-
+	walk_left
 # 1035 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer5:
+	walk_left
 # 1036 "data/maps/RustboroCity/scripts.pory"
 	walk_down
 # 1037 "data/maps/RustboroCity/scripts.pory"
-	walk_right
+	step_end
 # 1038 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+
 # 1039 "data/maps/RustboroCity/scripts.pory"
-	step_end
+RustboroCity_Movement_RivalApproachPlayer1:
 # 1040 "data/maps/RustboroCity/scripts.pory"
-
+	walk_down
 # 1041 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer6:
+	walk_left
 # 1042 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	walk_left
 # 1043 "data/maps/RustboroCity/scripts.pory"
-	walk_right
+	walk_left
 # 1044 "data/maps/RustboroCity/scripts.pory"
-	walk_right
+	walk_down
 # 1045 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	step_end
 # 1046 "data/maps/RustboroCity/scripts.pory"
-	step_end
+
 # 1047 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Movement_RivalApproachPlayer2:
 # 1048 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Movement_RivalApproachPlayer7:
+	walk_down
 # 1049 "data/maps/RustboroCity/scripts.pory"
-	walk_down
+	walk_left
 # 1050 "data/maps/RustboroCity/scripts.pory"
-	walk_right
+	walk_left
 # 1051 "data/maps/RustboroCity/scripts.pory"
-	walk_right
-# 1052 "data/maps/RustboroCity/scripts.pory"
-	walk_right
-# 1053 "data/maps/RustboroCity/scripts.pory"
 	walk_down
-# 1054 "data/maps/RustboroCity/scripts.pory"
+# 1052 "data/maps/RustboroCity/scripts.pory"
 	step_end
-# 1055 "data/maps/RustboroCity/scripts.pory"
+# 1053 "data/maps/RustboroCity/scripts.pory"
 
+# 1054 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Movement_RivalApproachPlayer3:
+# 1055 "data/maps/RustboroCity/scripts.pory"
+	walk_down
 # 1056 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_EventScript_Boy1::
+	walk_left
 # 1057 "data/maps/RustboroCity/scripts.pory"
-	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
+	walk_down
 # 1058 "data/maps/RustboroCity/scripts.pory"
-	end
+	step_end
 # 1059 "data/maps/RustboroCity/scripts.pory"
 
 # 1060 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_WeShortenItToDevon:
+RustboroCity_Movement_RivalApproachPlayer4:
 # 1061 "data/maps/RustboroCity/scripts.pory"
-	.string "The Devon Corporation…\n"
+	walk_down
 # 1062 "data/maps/RustboroCity/scripts.pory"
-	.string "We all just shorten it to Devon.\p"
+	walk_down
 # 1063 "data/maps/RustboroCity/scripts.pory"
-	.string "That company makes all sorts of\n"
+	step_end
 # 1064 "data/maps/RustboroCity/scripts.pory"
-	.string "convenient products.$"
-# 1065 "data/maps/RustboroCity/scripts.pory"
 
+# 1065 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Movement_RivalApproachPlayer5:
 # 1066 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_SneakyLookingManWentAroundCorner:
+	walk_down
 # 1067 "data/maps/RustboroCity/scripts.pory"
-	.string "Hm? A sneaky-looking man?\p"
+	walk_right
 # 1068 "data/maps/RustboroCity/scripts.pory"
-	.string "Come to think of it, yes, a shady-\n"
+	walk_down
 # 1069 "data/maps/RustboroCity/scripts.pory"
-	.string "looking guy went around the corner.$"
+	step_end
 # 1070 "data/maps/RustboroCity/scripts.pory"
 
 # 1071 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_HaveYouChallengedGym:
+RustboroCity_Movement_RivalApproachPlayer6:
 # 1072 "data/maps/RustboroCity/scripts.pory"
-	.string "Have you taken the Pokémon Gym\n"
+	walk_down
 # 1073 "data/maps/RustboroCity/scripts.pory"
-	.string "challenge?\p"
+	walk_right
 # 1074 "data/maps/RustboroCity/scripts.pory"
-	.string "When you get that shiny Gym Badge\n"
+	walk_right
 # 1075 "data/maps/RustboroCity/scripts.pory"
-	.string "in hand, I guess trainers begin to\l"
+	walk_down
 # 1076 "data/maps/RustboroCity/scripts.pory"
-	.string "realize what is required of them.$"
+	step_end
 # 1077 "data/maps/RustboroCity/scripts.pory"
 
 # 1078 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_HeyThatsRustborosGymBadge:
+RustboroCity_Movement_RivalApproachPlayer7:
 # 1079 "data/maps/RustboroCity/scripts.pory"
-	.string "Hey, that's Rustboro's Gym Badge!\p"
+	walk_down
 # 1080 "data/maps/RustboroCity/scripts.pory"
-	.string "Out of all the Pokémon Gym BadgeS,\n"
+	walk_right
 # 1081 "data/maps/RustboroCity/scripts.pory"
-	.string "Rustboro's is the coolest, I'd say.$"
+	walk_right
 # 1082 "data/maps/RustboroCity/scripts.pory"
-
+	walk_right
 # 1083 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_YoureNewAroundHere:
+	walk_down
 # 1084 "data/maps/RustboroCity/scripts.pory"
-	.string "Oh? Who might you be?\n"
+	step_end
 # 1085 "data/maps/RustboroCity/scripts.pory"
-	.string "You're a new face around these parts.\p"
-# 1086 "data/maps/RustboroCity/scripts.pory"
-	.string "Have you just transferred into the\n"
-# 1087 "data/maps/RustboroCity/scripts.pory"
-	.string "Pokémon Trainer's School?$"
-# 1088 "data/maps/RustboroCity/scripts.pory"
 
+# 1086 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_EventScript_Boy1::
+# 1087 "data/maps/RustboroCity/scripts.pory"
+	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
+# 1088 "data/maps/RustboroCity/scripts.pory"
+	end
 # 1089 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_GymLeaderIsntEasyWithFire:
+
 # 1090 "data/maps/RustboroCity/scripts.pory"
-	.string "I challenged the Gym Leader, but…\p"
+RustboroCity_Text_WeShortenItToDevon:
 # 1091 "data/maps/RustboroCity/scripts.pory"
-	.string "It's not going to be easy winning with\n"
+	.string "The Devon Corporation…\n"
 # 1092 "data/maps/RustboroCity/scripts.pory"
-	.string "my Fire-type Pokémon…\p"
+	.string "We all just shorten it to Devon.\p"
 # 1093 "data/maps/RustboroCity/scripts.pory"
-	.string "Fire-type Pokémon don't match up\n"
+	.string "That company makes all sorts of\n"
 # 1094 "data/maps/RustboroCity/scripts.pory"
-	.string "well against Rock-type Pokémon…$"
+	.string "convenient products.$"
 # 1095 "data/maps/RustboroCity/scripts.pory"
 
 # 1096 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MrBrineyWalksInTheTunnel:
+RustboroCity_Text_SneakyLookingManWentAroundCorner:
 # 1097 "data/maps/RustboroCity/scripts.pory"
-	.string "The old sailor Mr. Briney lives in\n"
+	.string "Hm? A sneaky-looking man?\p"
 # 1098 "data/maps/RustboroCity/scripts.pory"
-	.string "a cottage by the sea.\p"
+	.string "Come to think of it, yes, a shady-\n"
 # 1099 "data/maps/RustboroCity/scripts.pory"
-	.string "He goes for walks in the tunnel every\n"
+	.string "looking guy went around the corner.$"
 # 1100 "data/maps/RustboroCity/scripts.pory"
-	.string "so often.$"
+
 # 1101 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Text_HaveYouChallengedGym:
 # 1102 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MrBrineyLovesPeeko:
+	.string "Have you taken the Pokémon Gym\n"
 # 1103 "data/maps/RustboroCity/scripts.pory"
-	.string "The old sailor Mr. Briney lives in\n"
+	.string "challenge?\p"
 # 1104 "data/maps/RustboroCity/scripts.pory"
-	.string "a cottage by the sea.\p"
+	.string "When you get that shiny Gym Badge\n"
 # 1105 "data/maps/RustboroCity/scripts.pory"
-	.string "He said he was going shopping in\n"
+	.string "in hand, I guess trainers begin to\l"
 # 1106 "data/maps/RustboroCity/scripts.pory"
-	.string "Slateport for his pet, Peeko.\p"
+	.string "realize what is required of them.$"
 # 1107 "data/maps/RustboroCity/scripts.pory"
-	.string "That old sea dog, he must really love\n"
+
 # 1108 "data/maps/RustboroCity/scripts.pory"
-	.string "that Peeko.$"
+RustboroCity_Text_HeyThatsRustborosGymBadge:
 # 1109 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Hey, that's Rustboro's Gym Badge!\p"
 # 1110 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_WowYouHavePokemon:
+	.string "Out of all the Pokémon Gym BadgeS,\n"
 # 1111 "data/maps/RustboroCity/scripts.pory"
-	.string "Wow, you have Pokémon with you, too.\p"
+	.string "Rustboro's is the coolest, I'd say.$"
 # 1112 "data/maps/RustboroCity/scripts.pory"
-	.string "When I get bigger, I'm going to go\n"
+
 # 1113 "data/maps/RustboroCity/scripts.pory"
-	.string "places with Pokémon, too.$"
+RustboroCity_Text_YoureNewAroundHere:
 # 1114 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Oh? Who might you be?\n"
 # 1115 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
+	.string "You're a new face around these parts.\p"
 # 1116 "data/maps/RustboroCity/scripts.pory"
-	.string "Pokémon Trainer's School!\p"
+	.string "Have you just transferred into the\n"
 # 1117 "data/maps/RustboroCity/scripts.pory"
-	.string "If I go to this school, will I be able\n"
+	.string "Pokémon Trainer's School?$"
 # 1118 "data/maps/RustboroCity/scripts.pory"
-	.string "to catch rare Pokémon easily?$"
+
 # 1119 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Text_GymLeaderIsntEasyWithFire:
 # 1120 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_PokemonCanChangeLookFromExp:
+	.string "I challenged the Gym Leader, but…\p"
 # 1121 "data/maps/RustboroCity/scripts.pory"
-	.string "If a Pokémon gains experience in\n"
+	.string "It's not going to be easy winning with\n"
 # 1122 "data/maps/RustboroCity/scripts.pory"
-	.string "battles, it can sometimes change in\l"
+	.string "my Fire-type Pokémon…\p"
 # 1123 "data/maps/RustboroCity/scripts.pory"
-	.string "the way it looks.$"
+	.string "Fire-type Pokémon don't match up\n"
 # 1124 "data/maps/RustboroCity/scripts.pory"
-
+	.string "well against Rock-type Pokémon…$"
 # 1125 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_PokemonChangeShape:
+
 # 1126 "data/maps/RustboroCity/scripts.pory"
-	.string "A Pokémon changes shape?\n"
+RustboroCity_Text_MrBrineyWalksInTheTunnel:
 # 1127 "data/maps/RustboroCity/scripts.pory"
-	.string "If one did that, I would be shocked!$"
+	.string "The old sailor Mr. Briney lives in\n"
 # 1128 "data/maps/RustboroCity/scripts.pory"
-
+	.string "a cottage by the sea.\p"
 # 1129 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_TradePokemonGrowFast:
+	.string "He goes for walks in the tunnel every\n"
 # 1130 "data/maps/RustboroCity/scripts.pory"
-	.string "A Pokémon you get in a trade from\n"
+	.string "so often.$"
 # 1131 "data/maps/RustboroCity/scripts.pory"
-	.string "someone grows fast.\p"
+
 # 1132 "data/maps/RustboroCity/scripts.pory"
-	.string "But if you don't have certain Gym\n"
+RustboroCity_Text_MrBrineyLovesPeeko:
 # 1133 "data/maps/RustboroCity/scripts.pory"
-	.string "Badges, it may not obey you…$"
+	.string "The old sailor Mr. Briney lives in\n"
 # 1134 "data/maps/RustboroCity/scripts.pory"
-
+	.string "a cottage by the sea.\p"
 # 1135 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_OutOfTheWay:
+	.string "He said he was going shopping in\n"
 # 1136 "data/maps/RustboroCity/scripts.pory"
-	.string "Get out!\n"
+	.string "Slateport for his pet, Peeko.\p"
 # 1137 "data/maps/RustboroCity/scripts.pory"
-	.string "Out of the way!$"
+	.string "That old sea dog, he must really love\n"
 # 1138 "data/maps/RustboroCity/scripts.pory"
-
+	.string "that Peeko.$"
 # 1139 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_WaitDontTakeMyGoods:
+
 # 1140 "data/maps/RustboroCity/scripts.pory"
-	.string "Wait! Pleeeaaase!\p"
+RustboroCity_Text_WowYouHavePokemon:
 # 1141 "data/maps/RustboroCity/scripts.pory"
-	.string "Don't take my Goods!$"
+	.string "Wow, you have Pokémon with you, too.\p"
 # 1142 "data/maps/RustboroCity/scripts.pory"
-
+	.string "When I get bigger, I'm going to go\n"
 # 1143 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_HelpMeIWasRobbed:
+	.string "places with Pokémon, too.$"
 # 1144 "data/maps/RustboroCity/scripts.pory"
-	.string "Oh, it's you!\p"
+
 # 1145 "data/maps/RustboroCity/scripts.pory"
-	.string "You're that fantastic trainer who\n"
+RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 # 1146 "data/maps/RustboroCity/scripts.pory"
-	.string "helped me in Petalburg Woods!\p"
+	.string "Pokémon Trainer's School!\p"
 # 1147 "data/maps/RustboroCity/scripts.pory"
-	.string "Help me! I was robbed by Team Aqua!\n"
+	.string "If I go to this school, will I be able\n"
 # 1148 "data/maps/RustboroCity/scripts.pory"
-	.string "I have to get the Devon Goods back!\p"
+	.string "to catch rare Pokémon easily?$"
 # 1149 "data/maps/RustboroCity/scripts.pory"
-	.string "If I don't…\n"
+
 # 1150 "data/maps/RustboroCity/scripts.pory"
-	.string "I'm going to be in serious trouble.$"
+RustboroCity_Text_PokemonCanChangeLookFromExp:
 # 1151 "data/maps/RustboroCity/scripts.pory"
-
+	.string "If a Pokémon gains experience in\n"
 # 1152 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
+	.string "battles, it can sometimes change in\l"
 # 1153 "data/maps/RustboroCity/scripts.pory"
-	.string "That shady character, I think he took\n"
+	.string "the way it looks.$"
 # 1154 "data/maps/RustboroCity/scripts.pory"
-	.string "off towards the tunnel over there.$"
-# 1155 "data/maps/RustboroCity/scripts.pory"
 
+# 1155 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_PokemonChangeShape:
 # 1156 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_YouGotItThankYou:
+	.string "A Pokémon changes shape?\n"
 # 1157 "data/maps/RustboroCity/scripts.pory"
-	.string "Oh! How did it go?\n"
+	.string "If one did that, I would be shocked!$"
 # 1158 "data/maps/RustboroCity/scripts.pory"
-	.string "The Devon Goods?\p"
+
 # 1159 "data/maps/RustboroCity/scripts.pory"
-	.string "You did!\n"
+RustboroCity_Text_TradePokemonGrowFast:
 # 1160 "data/maps/RustboroCity/scripts.pory"
-	.string "You got them back!\p"
+	.string "A Pokémon you get in a trade from\n"
 # 1161 "data/maps/RustboroCity/scripts.pory"
-	.string "You really are a great trainer!\p"
+	.string "someone grows fast.\p"
 # 1162 "data/maps/RustboroCity/scripts.pory"
-	.string "I know! As my thanks, I'll give you\n"
+	.string "But if you don't have certain Gym\n"
 # 1163 "data/maps/RustboroCity/scripts.pory"
-	.string "another Great Ball!$"
+	.string "Badges, it may not obey you…$"
 # 1164 "data/maps/RustboroCity/scripts.pory"
 
 # 1165 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_YoureLoadedWithItems:
+RustboroCity_Text_OutOfTheWay:
 # 1166 "data/maps/RustboroCity/scripts.pory"
-	.string "You're loaded with items.\n"
+	.string "Get out!\n"
 # 1167 "data/maps/RustboroCity/scripts.pory"
-	.string "I can't give you this Great Ball.$"
+	.string "Out of the way!$"
 # 1168 "data/maps/RustboroCity/scripts.pory"
 
 # 1169 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_PleaseComeWithMe:
+RustboroCity_Text_WaitDontTakeMyGoods:
 # 1170 "data/maps/RustboroCity/scripts.pory"
-	.string "Excuse me, please!\n"
+	.string "Wait! Pleeeaaase!\p"
 # 1171 "data/maps/RustboroCity/scripts.pory"
-	.string "Please come with me!$"
+	.string "Don't take my Goods!$"
 # 1172 "data/maps/RustboroCity/scripts.pory"
 
 # 1173 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayHiLetsRegister:
+RustboroCity_Text_HelpMeIWasRobbed:
 # 1174 "data/maps/RustboroCity/scripts.pory"
-	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "Oh, it's you!\p"
 # 1175 "data/maps/RustboroCity/scripts.pory"
-	.string "You had a Match Call feature put\n"
+	.string "You're that fantastic trainer who\n"
 # 1176 "data/maps/RustboroCity/scripts.pory"
-	.string "on your PokéNav!\p"
+	.string "helped me in Petalburg Woods!\p"
 # 1177 "data/maps/RustboroCity/scripts.pory"
-	.string "Let's register each other so we can\n"
+	.string "Help me! I was robbed by Team Aqua!\n"
 # 1178 "data/maps/RustboroCity/scripts.pory"
-	.string "contact one another anytime!\p"
+	.string "I have to get the Devon Goods back!\p"
 # 1179 "data/maps/RustboroCity/scripts.pory"
-	.string "… … … … … …$"
+	.string "If I don't…\n"
 # 1180 "data/maps/RustboroCity/scripts.pory"
-
+	.string "I'm going to be in serious trouble.$"
 # 1181 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_RegisteredMay:
-# 1182 "data/maps/RustboroCity/scripts.pory"
-	.string "Registered May\n"
-# 1183 "data/maps/RustboroCity/scripts.pory"
-	.string "in the PokéNav.$"
-# 1184 "data/maps/RustboroCity/scripts.pory"
 
+# 1182 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
+# 1183 "data/maps/RustboroCity/scripts.pory"
+	.string "That shady character, I think he took\n"
+# 1184 "data/maps/RustboroCity/scripts.pory"
+	.string "off towards the tunnel over there.$"
 # 1185 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayPassedBrineyWantToBattle:
+
 # 1186 "data/maps/RustboroCity/scripts.pory"
-	.string "May: Oh, by the way, I passed\n"
+RustboroCity_Text_YouGotItThankYou:
 # 1187 "data/maps/RustboroCity/scripts.pory"
-	.string "Mr. Briney in Petalburg Woods.\p"
+	.string "Oh! How did it go?\n"
 # 1188 "data/maps/RustboroCity/scripts.pory"
-	.string "I guess he's on his way home to his\n"
+	.string "The Devon Goods?\p"
 # 1189 "data/maps/RustboroCity/scripts.pory"
-	.string "cottage by the sea.\p"
+	.string "You did!\n"
 # 1190 "data/maps/RustboroCity/scripts.pory"
-	.string "How's your Pokédex coming along,\n"
+	.string "You got them back!\p"
 # 1191 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}{KUN}? Mine's looking pretty decent!\p"
+	.string "You really are a great trainer!\p"
 # 1192 "data/maps/RustboroCity/scripts.pory"
-	.string "So…\n"
+	.string "I know! As my thanks, I'll give you\n"
 # 1193 "data/maps/RustboroCity/scripts.pory"
-	.string "How about a little battle?$"
+	.string "another Great Ball!$"
 # 1194 "data/maps/RustboroCity/scripts.pory"
 
 # 1195 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
+RustboroCity_Text_YoureLoadedWithItems:
 # 1196 "data/maps/RustboroCity/scripts.pory"
-	.string "May: Oh, what's the matter?\p"
+	.string "You're loaded with items.\n"
 # 1197 "data/maps/RustboroCity/scripts.pory"
-	.string "Haven't you caught or raised your\n"
+	.string "I can't give you this Great Ball.$"
 # 1198 "data/maps/RustboroCity/scripts.pory"
-	.string "Pokémon very much?\p"
+
 # 1199 "data/maps/RustboroCity/scripts.pory"
-	.string "That's not very good for a trainer!$"
+RustboroCity_Text_PleaseComeWithMe:
 # 1200 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Excuse me, please!\n"
 # 1201 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayWantToBattle:
+	.string "Please come with me!$"
 # 1202 "data/maps/RustboroCity/scripts.pory"
-	.string "May: So, what do you think?\n"
+
 # 1203 "data/maps/RustboroCity/scripts.pory"
-	.string "How about a little battle here?$"
+RustboroCity_Text_MayHiLetsRegister:
 # 1204 "data/maps/RustboroCity/scripts.pory"
-
+	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
 # 1205 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayImNotGoingToLose:
-# 1206 "data/maps/RustboroCity/scripts.pory"
-	.string "May: You just became a trainer,\n"
-# 1207 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}{KUN}. I'm not going to lose!$"
-# 1208 "data/maps/RustboroCity/scripts.pory"
-
-# 1209 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_TooBad:
-# 1210 "data/maps/RustboroCity/scripts.pory"
-	.string "Too bad!$"
-# 1211 "data/maps/RustboroCity/scripts.pory"
-
-# 1212 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayDefeat:
-# 1213 "data/maps/RustboroCity/scripts.pory"
-	.string "Yikes!\n"
-# 1214 "data/maps/RustboroCity/scripts.pory"
-	.string "You're better than I expected!$"
-# 1215 "data/maps/RustboroCity/scripts.pory"
-
-# 1216 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_MayMrBrineyHint:
-# 1217 "data/maps/RustboroCity/scripts.pory"
-	.string "May: Oh, by the way, Mr. Briney, who\n"
-# 1218 "data/maps/RustboroCity/scripts.pory"
-	.string "I just passed…\p"
-# 1219 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}{KUN}, you just moved here so you\n"
-# 1220 "data/maps/RustboroCity/scripts.pory"
-	.string "might not know this, but Mr. Briney\l"
-# 1221 "data/maps/RustboroCity/scripts.pory"
-	.string "was once a revered seafarer.$"
-# 1222 "data/maps/RustboroCity/scripts.pory"
-
-# 1223 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanHiLetsRegister:
-# 1224 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: Oh, hey, {PLAYER}!\p"
-# 1225 "data/maps/RustboroCity/scripts.pory"
 	.string "You had a Match Call feature put\n"
-# 1226 "data/maps/RustboroCity/scripts.pory"
-	.string "on your PokéNav! Cool!\p"
-# 1227 "data/maps/RustboroCity/scripts.pory"
+# 1206 "data/maps/RustboroCity/scripts.pory"
+	.string "on your PokéNav!\p"
+# 1207 "data/maps/RustboroCity/scripts.pory"
 	.string "Let's register each other so we can\n"
-# 1228 "data/maps/RustboroCity/scripts.pory"
-	.string "get in touch anytime!\p"
-# 1229 "data/maps/RustboroCity/scripts.pory"
+# 1208 "data/maps/RustboroCity/scripts.pory"
+	.string "contact one another anytime!\p"
+# 1209 "data/maps/RustboroCity/scripts.pory"
 	.string "… … … … … …$"
+# 1210 "data/maps/RustboroCity/scripts.pory"
+
+# 1211 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_RegisteredMay:
+# 1212 "data/maps/RustboroCity/scripts.pory"
+	.string "Registered May\n"
+# 1213 "data/maps/RustboroCity/scripts.pory"
+	.string "in the PokéNav.$"
+# 1214 "data/maps/RustboroCity/scripts.pory"
+
+# 1215 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_MayPassedBrineyWantToBattle:
+# 1216 "data/maps/RustboroCity/scripts.pory"
+	.string "May: Oh, by the way, I passed\n"
+# 1217 "data/maps/RustboroCity/scripts.pory"
+	.string "Mr. Briney in Petalburg Woods.\p"
+# 1218 "data/maps/RustboroCity/scripts.pory"
+	.string "I guess he's on his way home to his\n"
+# 1219 "data/maps/RustboroCity/scripts.pory"
+	.string "cottage by the sea.\p"
+# 1220 "data/maps/RustboroCity/scripts.pory"
+	.string "How's your Pokédex coming along,\n"
+# 1221 "data/maps/RustboroCity/scripts.pory"
+	.string "{PLAYER}{KUN}? Mine's looking pretty decent!\p"
+# 1222 "data/maps/RustboroCity/scripts.pory"
+	.string "So…\n"
+# 1223 "data/maps/RustboroCity/scripts.pory"
+	.string "How about a little battle?$"
+# 1224 "data/maps/RustboroCity/scripts.pory"
+
+# 1225 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
+# 1226 "data/maps/RustboroCity/scripts.pory"
+	.string "May: Oh, what's the matter?\p"
+# 1227 "data/maps/RustboroCity/scripts.pory"
+	.string "Haven't you caught or raised your\n"
+# 1228 "data/maps/RustboroCity/scripts.pory"
+	.string "Pokémon very much?\p"
+# 1229 "data/maps/RustboroCity/scripts.pory"
+	.string "That's not very good for a trainer!$"
 # 1230 "data/maps/RustboroCity/scripts.pory"
 
 # 1231 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_RegisteredBrendan:
+RustboroCity_Text_MayWantToBattle:
 # 1232 "data/maps/RustboroCity/scripts.pory"
-	.string "Registered Brendan\n"
+	.string "May: So, what do you think?\n"
 # 1233 "data/maps/RustboroCity/scripts.pory"
-	.string "in the PokéNav.$"
+	.string "How about a little battle here?$"
 # 1234 "data/maps/RustboroCity/scripts.pory"
 
 # 1235 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanPassedBrineyWantToBattle:
+RustboroCity_Text_MayImNotGoingToLose:
 # 1236 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: By the way, {PLAYER}, I walked\n"
+	.string "May: You just became a trainer,\n"
 # 1237 "data/maps/RustboroCity/scripts.pory"
-	.string "by Mr. Briney in Petalburg Woods.\p"
+	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 # 1238 "data/maps/RustboroCity/scripts.pory"
-	.string "I bet he was on his way home to his\n"
+
 # 1239 "data/maps/RustboroCity/scripts.pory"
-	.string "cottage by the sea.\p"
+RustboroCity_Text_TooBad:
 # 1240 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}, how's your Pokédex?\n"
+	.string "Too bad!$"
 # 1241 "data/maps/RustboroCity/scripts.pory"
-	.string "Have you filled in any pages yet?\p"
+
 # 1242 "data/maps/RustboroCity/scripts.pory"
-	.string "Mine rules.\p"
+RustboroCity_Text_MayDefeat:
 # 1243 "data/maps/RustboroCity/scripts.pory"
-	.string "Want to have a battle to test how\n"
+	.string "Yikes!\n"
 # 1244 "data/maps/RustboroCity/scripts.pory"
-	.string "far you've progressed?$"
+	.string "You're better than I expected!$"
 # 1245 "data/maps/RustboroCity/scripts.pory"
 
 # 1246 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanNoConfidenceInPokemon:
+RustboroCity_Text_MayMrBrineyHint:
 # 1247 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: What's the matter? Don't have\n"
+	.string "May: Oh, by the way, Mr. Briney, who\n"
 # 1248 "data/maps/RustboroCity/scripts.pory"
-	.string "any confidence in your Pokémon?$"
+	.string "I just passed…\p"
 # 1249 "data/maps/RustboroCity/scripts.pory"
-
+	.string "{PLAYER}{KUN}, you just moved here so you\n"
 # 1250 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanWantToBattle:
+	.string "might not know this, but Mr. Briney\l"
 # 1251 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: What's up?\n"
+	.string "was once a revered seafarer.$"
 # 1252 "data/maps/RustboroCity/scripts.pory"
-	.string "Want to have a battle with me?$"
+
 # 1253 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Text_BrendanHiLetsRegister:
 # 1254 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanIWontGoEasy:
+	.string "Brendan: Oh, hey, {PLAYER}!\p"
 # 1255 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: I know you just became\n"
+	.string "You had a Match Call feature put\n"
 # 1256 "data/maps/RustboroCity/scripts.pory"
-	.string "a trainer, but I won't go easy!$"
+	.string "on your PokéNav! Cool!\p"
 # 1257 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Let's register each other so we can\n"
 # 1258 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanDefeat:
+	.string "get in touch anytime!\p"
 # 1259 "data/maps/RustboroCity/scripts.pory"
-	.string "Hmm…\n"
+	.string "… … … … … …$"
 # 1260 "data/maps/RustboroCity/scripts.pory"
-	.string "You're pretty good.$"
+
 # 1261 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Text_RegisteredBrendan:
 # 1262 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_BrendanMrBrineyHint:
+	.string "Registered Brendan\n"
 # 1263 "data/maps/RustboroCity/scripts.pory"
-	.string "Brendan: By the way, you know\n"
+	.string "in the PokéNav.$"
 # 1264 "data/maps/RustboroCity/scripts.pory"
-	.string "Mr. Briney? The guy I just passed?\p"
-# 1265 "data/maps/RustboroCity/scripts.pory"
-	.string "I bet you didn't know this, since you\n"
-# 1266 "data/maps/RustboroCity/scripts.pory"
-	.string "just moved here, {PLAYER}, but\l"
-# 1267 "data/maps/RustboroCity/scripts.pory"
-	.string "Mr. Briney was once a great sailor.$"
-# 1268 "data/maps/RustboroCity/scripts.pory"
 
+# 1265 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_BrendanPassedBrineyWantToBattle:
+# 1266 "data/maps/RustboroCity/scripts.pory"
+	.string "Brendan: By the way, {PLAYER}, I walked\n"
+# 1267 "data/maps/RustboroCity/scripts.pory"
+	.string "by Mr. Briney in Petalburg Woods.\p"
+# 1268 "data/maps/RustboroCity/scripts.pory"
+	.string "I bet he was on his way home to his\n"
 # 1269 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_TunnelNearingCompletion:
+	.string "cottage by the sea.\p"
 # 1270 "data/maps/RustboroCity/scripts.pory"
-	.string "“Timesaving tunnel nearing\n"
+	.string "{PLAYER}, how's your Pokédex?\n"
 # 1271 "data/maps/RustboroCity/scripts.pory"
-	.string "completion!”\p"
+	.string "Have you filled in any pages yet?\p"
 # 1272 "data/maps/RustboroCity/scripts.pory"
-	.string "…Is what it says on the sign, but\n"
+	.string "Mine rules.\p"
 # 1273 "data/maps/RustboroCity/scripts.pory"
-	.string "there's also a big “X” splashed\l"
+	.string "Want to have a battle to test how\n"
 # 1274 "data/maps/RustboroCity/scripts.pory"
-	.string "across it in red paint…$"
+	.string "far you've progressed?$"
 # 1275 "data/maps/RustboroCity/scripts.pory"
 
 # 1276 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_DevonCorpSign:
+RustboroCity_Text_BrendanNoConfidenceInPokemon:
 # 1277 "data/maps/RustboroCity/scripts.pory"
-	.string "Devon Corporation\p"
+	.string "Brendan: What's the matter? Don't have\n"
 # 1278 "data/maps/RustboroCity/scripts.pory"
-	.string "“For all your living needs, we make\n"
+	.string "any confidence in your Pokémon?$"
 # 1279 "data/maps/RustboroCity/scripts.pory"
-	.string "it all.”$"
+
 # 1280 "data/maps/RustboroCity/scripts.pory"
-
+RustboroCity_Text_BrendanWantToBattle:
 # 1281 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_GymSign:
+	.string "Brendan: What's up?\n"
 # 1282 "data/maps/RustboroCity/scripts.pory"
-	.string "Rustboro City Pokémon Gym\n"
+	.string "Want to have a battle with me?$"
 # 1283 "data/maps/RustboroCity/scripts.pory"
-	.string "Leader: Roxanne\p"
+
 # 1284 "data/maps/RustboroCity/scripts.pory"
-	.string "“The Rock-loving honors student!”$"
+RustboroCity_Text_BrendanIWontGoEasy:
 # 1285 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Brendan: I know you just became\n"
 # 1286 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_DevonCorpBranchOfficeSign:
+	.string "a trainer, but I won't go easy!$"
 # 1287 "data/maps/RustboroCity/scripts.pory"
-	.string "Devon Corp. Branch Office\p"
+
 # 1288 "data/maps/RustboroCity/scripts.pory"
-	.string "“Access limited to Devon employees\n"
+RustboroCity_Text_BrendanDefeat:
 # 1289 "data/maps/RustboroCity/scripts.pory"
-	.string "and authorized personnel.”$"
+	.string "Hmm…\n"
 # 1290 "data/maps/RustboroCity/scripts.pory"
-
+	.string "You're pretty good.$"
 # 1291 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_CitySign:
+
 # 1292 "data/maps/RustboroCity/scripts.pory"
-	.string "Rustboro City\p"
+RustboroCity_Text_BrendanMrBrineyHint:
 # 1293 "data/maps/RustboroCity/scripts.pory"
-	.string "“The city probing the integration of\n"
+	.string "Brendan: By the way, you know\n"
 # 1294 "data/maps/RustboroCity/scripts.pory"
-	.string "nature and science.”$"
+	.string "Mr. Briney? The guy I just passed?\p"
 # 1295 "data/maps/RustboroCity/scripts.pory"
-
+	.string "I bet you didn't know this, since you\n"
 # 1296 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_TrainersSchoolSign:
+	.string "just moved here, {PLAYER}, but\l"
 # 1297 "data/maps/RustboroCity/scripts.pory"
-	.string "Pokémon Trainer's School\p"
+	.string "Mr. Briney was once a great sailor.$"
 # 1298 "data/maps/RustboroCity/scripts.pory"
-	.string "“We'll teach you anything about\n"
+
 # 1299 "data/maps/RustboroCity/scripts.pory"
-	.string "Pokémon!”$"
+RustboroCity_Text_TunnelNearingCompletion:
 # 1300 "data/maps/RustboroCity/scripts.pory"
-
+	.string "“Timesaving tunnel nearing\n"
 # 1301 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_CuttersHouse:
+	.string "completion!”\p"
 # 1302 "data/maps/RustboroCity/scripts.pory"
-	.string "Cutter's House$"
+	.string "…Is what it says on the sign, but\n"
 # 1303 "data/maps/RustboroCity/scripts.pory"
-
+	.string "there's also a big “X” splashed\l"
 # 1304 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_DevelopedNewPokenavFeature:
+	.string "across it in red paint…$"
 # 1305 "data/maps/RustboroCity/scripts.pory"
-	.string "I've been developing an added feature\n"
+
 # 1306 "data/maps/RustboroCity/scripts.pory"
-	.string "for the PokéNav…\p"
+RustboroCity_Text_DevonCorpSign:
 # 1307 "data/maps/RustboroCity/scripts.pory"
-	.string "And it turned out great!\p"
+	.string "Devon Corporation\p"
 # 1308 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}, may I see that PokéNav?\n"
+	.string "“For all your living needs, we make\n"
 # 1309 "data/maps/RustboroCity/scripts.pory"
-	.string "The one our President gave you?$"
+	.string "it all.”$"
 # 1310 "data/maps/RustboroCity/scripts.pory"
 
 # 1311 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
+RustboroCity_Text_GymSign:
 # 1312 "data/maps/RustboroCity/scripts.pory"
-	.string "There you go, {PLAYER}!\p"
+	.string "Rustboro City Pokémon Gym\n"
 # 1313 "data/maps/RustboroCity/scripts.pory"
-	.string "I added a new feature named\n"
+	.string "Leader: Roxanne\p"
 # 1314 "data/maps/RustboroCity/scripts.pory"
-	.string "Match Call to your PokéNav.\p"
+	.string "“The Rock-loving honors student!”$"
 # 1315 "data/maps/RustboroCity/scripts.pory"
-	.string "Using the Match Call feature,\n"
-# 1316 "data/maps/RustboroCity/scripts.pory"
-	.string "you can chat with people who have\l"
-# 1317 "data/maps/RustboroCity/scripts.pory"
-	.string "been registered in your PokéNav.\p"
-# 1318 "data/maps/RustboroCity/scripts.pory"
-	.string "{PLAYER}, our President Stone should\n"
-# 1319 "data/maps/RustboroCity/scripts.pory"
-	.string "be registered in your PokéNav.\p"
-# 1320 "data/maps/RustboroCity/scripts.pory"
-	.string "Test it out.\n"
-# 1321 "data/maps/RustboroCity/scripts.pory"
-	.string "Please give our President a call.$"
-# 1322 "data/maps/RustboroCity/scripts.pory"
 
+# 1316 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_DevonCorpBranchOfficeSign:
+# 1317 "data/maps/RustboroCity/scripts.pory"
+	.string "Devon Corp. Branch Office\p"
+# 1318 "data/maps/RustboroCity/scripts.pory"
+	.string "“Access limited to Devon employees\n"
+# 1319 "data/maps/RustboroCity/scripts.pory"
+	.string "and authorized personnel.”$"
+# 1320 "data/maps/RustboroCity/scripts.pory"
+
+# 1321 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_CitySign:
+# 1322 "data/maps/RustboroCity/scripts.pory"
+	.string "Rustboro City\p"
 # 1323 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_PleaseSelectPokenav:
+	.string "“The city probing the integration of\n"
 # 1324 "data/maps/RustboroCity/scripts.pory"
-	.string "Please select the PokéNav.$"
+	.string "nature and science.”$"
 # 1325 "data/maps/RustboroCity/scripts.pory"
 
 # 1326 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_IdBetterGetBackToWork:
+RustboroCity_Text_TrainersSchoolSign:
 # 1327 "data/maps/RustboroCity/scripts.pory"
-	.string "Okay, I'd better get back to work.\n"
+	.string "Pokémon Trainer's School\p"
 # 1328 "data/maps/RustboroCity/scripts.pory"
-	.string "Please take care, {PLAYER}!$"
+	.string "“We'll teach you anything about\n"
 # 1329 "data/maps/RustboroCity/scripts.pory"
-
+	.string "Pokémon!”$"
 # 1330 "data/maps/RustboroCity/scripts.pory"
-RustboroCity_Text_YouCanHave2On2Battle:
+
 # 1331 "data/maps/RustboroCity/scripts.pory"
-	.string "Did you know this?\p"
+RustboroCity_Text_CuttersHouse:
 # 1332 "data/maps/RustboroCity/scripts.pory"
-	.string "You can have a 2-on-2 battle even\n"
+	.string "Cutter's House$"
 # 1333 "data/maps/RustboroCity/scripts.pory"
-	.string "if you're not with another trainer.\p"
+
 # 1334 "data/maps/RustboroCity/scripts.pory"
-	.string "If you catch the eyes of two trainers\n"
+RustboroCity_Text_DevelopedNewPokenavFeature:
 # 1335 "data/maps/RustboroCity/scripts.pory"
-	.string "when you have two or more Pokémon,\l"
+	.string "I've been developing an added feature\n"
 # 1336 "data/maps/RustboroCity/scripts.pory"
-	.string "they'll both challenge you.\p"
+	.string "for the PokéNav…\p"
 # 1337 "data/maps/RustboroCity/scripts.pory"
-	.string "Don't you think it'd be cool if you\n"
+	.string "And it turned out great!\p"
 # 1338 "data/maps/RustboroCity/scripts.pory"
+	.string "{PLAYER}, may I see that PokéNav?\n"
+# 1339 "data/maps/RustboroCity/scripts.pory"
+	.string "The one our President gave you?$"
+# 1340 "data/maps/RustboroCity/scripts.pory"
+
+# 1341 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
+# 1342 "data/maps/RustboroCity/scripts.pory"
+	.string "There you go, {PLAYER}!\p"
+# 1343 "data/maps/RustboroCity/scripts.pory"
+	.string "I added a new feature named\n"
+# 1344 "data/maps/RustboroCity/scripts.pory"
+	.string "Match Call to your PokéNav.\p"
+# 1345 "data/maps/RustboroCity/scripts.pory"
+	.string "Using the Match Call feature,\n"
+# 1346 "data/maps/RustboroCity/scripts.pory"
+	.string "you can chat with people who have\l"
+# 1347 "data/maps/RustboroCity/scripts.pory"
+	.string "been registered in your PokéNav.\p"
+# 1348 "data/maps/RustboroCity/scripts.pory"
+	.string "{PLAYER}, our President Stone should\n"
+# 1349 "data/maps/RustboroCity/scripts.pory"
+	.string "be registered in your PokéNav.\p"
+# 1350 "data/maps/RustboroCity/scripts.pory"
+	.string "Test it out.\n"
+# 1351 "data/maps/RustboroCity/scripts.pory"
+	.string "Please give our President a call.$"
+# 1352 "data/maps/RustboroCity/scripts.pory"
+
+# 1353 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_PleaseSelectPokenav:
+# 1354 "data/maps/RustboroCity/scripts.pory"
+	.string "Please select the PokéNav.$"
+# 1355 "data/maps/RustboroCity/scripts.pory"
+
+# 1356 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_IdBetterGetBackToWork:
+# 1357 "data/maps/RustboroCity/scripts.pory"
+	.string "Okay, I'd better get back to work.\n"
+# 1358 "data/maps/RustboroCity/scripts.pory"
+	.string "Please take care, {PLAYER}!$"
+# 1359 "data/maps/RustboroCity/scripts.pory"
+
+# 1360 "data/maps/RustboroCity/scripts.pory"
+RustboroCity_Text_YouCanHave2On2Battle:
+# 1361 "data/maps/RustboroCity/scripts.pory"
+	.string "Did you know this?\p"
+# 1362 "data/maps/RustboroCity/scripts.pory"
+	.string "You can have a 2-on-2 battle even\n"
+# 1363 "data/maps/RustboroCity/scripts.pory"
+	.string "if you're not with another trainer.\p"
+# 1364 "data/maps/RustboroCity/scripts.pory"
+	.string "If you catch the eyes of two trainers\n"
+# 1365 "data/maps/RustboroCity/scripts.pory"
+	.string "when you have two or more Pokémon,\l"
+# 1366 "data/maps/RustboroCity/scripts.pory"
+	.string "they'll both challenge you.\p"
+# 1367 "data/maps/RustboroCity/scripts.pory"
+	.string "Don't you think it'd be cool if you\n"
+# 1368 "data/maps/RustboroCity/scripts.pory"
 	.string "could beat two trainers by yourself?$"
 
 RustboroCity_Trigger_BlockGymEntrance::
-# 1342 "data/maps/RustboroCity/scripts.pory"
+# 1372 "data/maps/RustboroCity/scripts.pory"
 	lockall
-# 1343 "data/maps/RustboroCity/scripts.pory"
+# 1373 "data/maps/RustboroCity/scripts.pory"
 	msgbox GoBeatRoark, MSGBOX_SIGN
-# 1344 "data/maps/RustboroCity/scripts.pory"
+# 1374 "data/maps/RustboroCity/scripts.pory"
 	waitmessage
-# 1345 "data/maps/RustboroCity/scripts.pory"
+# 1375 "data/maps/RustboroCity/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
-# 1346 "data/maps/RustboroCity/scripts.pory"
+# 1376 "data/maps/RustboroCity/scripts.pory"
 	waitmovement 0
-# 1347 "data/maps/RustboroCity/scripts.pory"
+# 1377 "data/maps/RustboroCity/scripts.pory"
 	releaseall
 	end
 
 
-# 1357 "data/maps/RustboroCity/scripts.pory"
+# 1387 "data/maps/RustboroCity/scripts.pory"
 StopPlayer:
-# 1358 "data/maps/RustboroCity/scripts.pory"
+# 1388 "data/maps/RustboroCity/scripts.pory"
 	walk_down
 	step_end
 
 GoBeatRoark::
-# 1351 "data/maps/RustboroCity/scripts.pory"
+# 1381 "data/maps/RustboroCity/scripts.pory"
 	.string "You should go see if there are any\n"
 	.string "other strong trainers to fight, perhaps\l"
 	.string "very far east on Route 116.$"

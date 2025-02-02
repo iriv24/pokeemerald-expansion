@@ -111,6 +111,14 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_WATTSON_MATCH_CALL
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	release
 	end
 

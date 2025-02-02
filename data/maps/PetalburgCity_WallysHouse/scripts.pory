@@ -30,6 +30,15 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 	setflag FLAG_RECEIVED_HM_SURF
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_CITY_STATE, 5
+	closemessage
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	releaseall
 	end
 
@@ -120,8 +129,8 @@ PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces:
 	.string "but I figured it's better than nothing!$"
 
 PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
-	.string "Wally's coming home soon.\n"
-	.string "I'm looking forward to that.$"
+	.string "How silly of me, I can't believe I\n"
+	.string "dropped HM03 Surf out in the desert.$"
 
 PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
 	.string "Oh? You met Wally in\n"

@@ -32,6 +32,15 @@ RustboroCity_Gym_EventScript_GiveBulldoze::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_BULLDOZE
 	msgbox RustboroCity_Gym_Text_ExplainBulldoze, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	release
 	end
 

@@ -199,6 +199,14 @@ Route119_EventScript_RivalExitScottArrive::
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_ScottExit1
 	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_ScottExit2
 	removeobject LOCALID_SCOTT
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
 	releaseall
 	end
 
