@@ -1,6 +1,8 @@
 #include "global.h"
 #include "data.h"
+#include "menu.h"
 
+/*
 static inline void CopyFuncToIwram(void *funcBuffer, const void *funcStartAddress, const void *funcEndAdress)
 {
     memcpy(funcBuffer, funcStartAddress, funcEndAdress - funcStartAddress);
@@ -22,16 +24,16 @@ ARM_FUNC __attribute__((no_reorder)) static void SwitchToArmCallTestHashRom(u32 
 {
     hashFunction(hashes);
 }
+*/
 
-void HashRomIwram(void)
+void VerifyRomPatch(void)
 {
     u32 funcBuffer[350];
     u32 hashes[4] = {0, 0, 0, 0};
 
     CycleCountStart();
-    CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
-    SwitchToArmCallTestHashRom(hashes, (void *) funcBuffer);
+    //CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
+    //SwitchToArmCallTestHashRom(hashes, (void *) funcBuffer);
     u32 timeTaken = CycleCountEnd() >> 24;
     MgbaPrintf(MGBA_LOG_WARN, "Time: %u\n%u\n%u\n%u\n%u", timeTaken, hashes[0], hashes[1], hashes[2], hashes[3]);
 }
-
