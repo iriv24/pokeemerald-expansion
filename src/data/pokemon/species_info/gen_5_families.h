@@ -3880,6 +3880,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sBasculinTeachableLearnset,
         .eggMoveLearnset = sBasculinEggMoveLearnset,
         .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 44, SPECIES_BASCULEGION_M},
+                                {EVO_LEVEL_FEMALE, 44, SPECIES_BASCULEGION_F}),
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM
     },
 
@@ -3946,6 +3948,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sBasculinTeachableLearnset,
         .eggMoveLearnset = sBasculinEggMoveLearnset,
         .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 44, SPECIES_BASCULEGION_M},
+                                {EVO_LEVEL_FEMALE, 44, SPECIES_BASCULEGION_F}),
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
@@ -4012,8 +4016,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sBasculinWhiteStripedLevelUpLearnset,
         .teachableLearnset = sBasculinWhiteStripedTeachableLearnset,
         .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 44, SPECIES_BASCULEGION_M},
-                                {EVO_LEVEL, 44, SPECIES_BASCULEGION_F}),
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 44, SPECIES_BASCULEGION_M},
+                                {EVO_LEVEL_FEMALE, 44, SPECIES_BASCULEGION_F}),
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
