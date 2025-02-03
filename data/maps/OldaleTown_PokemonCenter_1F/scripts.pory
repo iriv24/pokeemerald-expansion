@@ -202,10 +202,14 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
 		case SPECIES_RALTS:
         case SPECIES_KIRLIA:
 		case SPECIES_SALANDIT:
-        case SPECIES_BURMY:
+        case SPECIES_BURMY_PLANT:
+		case SPECIES_BURMY_SANDY:
+		case SPECIES_BURMY_TRASH:
 		case SPECIES_COMBEE:
         case SPECIES_ESPURR:
-		case SPECIES_BASCULIN:
+		case SPECIES_BASCULIN_RED_STRIPED:
+		case SPECIES_BASCULIN_BLUE_STRIPED:
+		case SPECIES_BASCULIN_WHITE_STRIPED:
         case SPECIES_LECHONK:
 			special(BufferMonNickname)
 			msgbox(AreYouSureGenderSwap, MSGBOX_YESNO)
@@ -308,6 +312,8 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount{
 }
 
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ModeInfo{
+	msgbox(VersionNumber)
+
 	if(flag(FLAG_MIN_GRINDING_MODE))
 	{
 		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
@@ -419,6 +425,11 @@ text FeatureAvailableAfterMoveTutor
 	"This feature will become available once\n"
 	"you have met the Move Relearner in\l"
 	"Dewford Town."
+}
+
+text VersionNumber
+{
+	"Version: 1.2"
 }
 
 text EasyMode
