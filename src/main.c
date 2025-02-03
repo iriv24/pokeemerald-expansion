@@ -26,6 +26,7 @@
 #include "test_runner.h"
 #include "constants/rgb.h"
 #include "randomizer.h"
+#include "user_protection.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -118,8 +119,14 @@ void AgbMain()
 
     gSoftResetDisabled = FALSE;
 
+
     if (gFlashMemoryPresent != TRUE)
         SetMainCallback2((SAVE_TYPE_ERROR_SCREEN) ? CB2_FlashNotDetectedScreen : NULL);
+
+    UserProtectionWindow();
+
+    if (!gPatchSuccess)
+        SetMainCallback2(CB2_RomHashFail);
 
     gLinkTransferringData = FALSE;
 
@@ -130,6 +137,7 @@ void AgbMain()
     AGBPrintfInit();
 #endif
 #endif
+
     gAgbMainLoop_sp = __builtin_frame_address(0);
     AgbMainLoop();
 }
