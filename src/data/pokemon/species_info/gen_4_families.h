@@ -334,10 +334,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_INFERNAPE] =
     {
         .baseHP        = 76,
-        .baseAttack    = 104,
+        .baseAttack    = 110,
         .baseDefense   = 71,
-        .baseSpeed     = 108,
-        .baseSpAttack  = 104,
+        .baseSpeed     = 113,
+        .baseSpAttack  = 110,
         .baseSpDefense = 71,
         .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
         .catchRate = 45,
@@ -1061,7 +1061,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseDefense   = 71,
         .baseSpeed     = 80,
         .baseSpAttack  = 55,
-        .baseSpDefense = 51,
+        .baseSpDefense = 71,
         .types = MON_TYPES(TYPE_BUG),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 134 : 159,
@@ -1886,10 +1886,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_WORMADAM_SANDY] =
     {
         .baseHP        = 60,
-        .baseAttack    = 79,
+        .baseAttack    = 59,
         .baseDefense   = 105,
         .baseSpeed     = 36,
-        .baseSpAttack  = 59,
+        .baseSpAttack  = 79,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_BUG, TYPE_GROUND),
         .catchRate = 45,
@@ -1951,10 +1951,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_WORMADAM_TRASH] =
     {
         .baseHP        = 60,
-        .baseAttack    = 69,
+        .baseAttack    = 59,
         .baseDefense   = 95,
         .baseSpeed     = 36,
-        .baseSpAttack  = 69,
+        .baseSpAttack  = 79,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 45,
@@ -4627,7 +4627,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #if P_FAMILY_CARNIVINE
     [SPECIES_CARNIVINE] =
     {
-        .baseHP        = 74,
+        .baseHP        = 89,
         .baseAttack    = 100,
         .baseDefense   = 82,
         .baseSpeed     = 46,

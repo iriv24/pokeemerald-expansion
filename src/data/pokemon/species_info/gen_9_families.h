@@ -4813,7 +4813,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_VELUZA
     [SPECIES_VELUZA] =
     {
-        .baseHP        = 90,
+        .baseHP        = 95,
         .baseAttack    = 102,
         .baseDefense   = 83,
         .baseSpeed     = 70,
@@ -5204,7 +5204,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseAttack    = 65,
         .baseDefense   = 99,
         .baseSpeed     = 111,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 85,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_FAIRY, TYPE_PSYCHIC),
         .catchRate = 50,
@@ -5854,7 +5854,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_IRON_THORNS
     [SPECIES_IRON_THORNS] =
     {
-        .baseHP        = 110,
+        .baseHP        = 100,
         .baseAttack    = 134,
         .baseDefense   = 110,
         .baseSpeed     = 72,
@@ -7324,10 +7324,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_FEZANDIPITI] =
     {
         .baseHP        = 88,
-        .baseAttack    = 91,
+        .baseAttack    = 70,
         .baseDefense   = 82,
         .baseSpeed     = 99,
-        .baseSpAttack  = 70,
+        .baseSpAttack  = 91,
         .baseSpDefense = 125,
         .types = MON_TYPES(TYPE_POISON, TYPE_FAIRY),
         .catchRate = 3,
@@ -7793,7 +7793,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_TERAPAGOS_TERASTAL] =
     {
-        .baseHP        = 95,
+        .baseHP        = 110,
         .baseAttack    = 95,
         .baseDefense   = 110,
         .baseSpeed     = 85,

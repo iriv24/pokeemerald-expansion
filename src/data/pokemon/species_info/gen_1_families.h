@@ -6221,7 +6221,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseAttack    = 35,
         .baseDefense   = 35,
         .baseSpeed     = 90,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 40,
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 255,
@@ -7551,7 +7551,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 55,
         .baseAttack    = 50,
-        .baseDefense   = 30,
+        .baseDefense   = 45,
         .baseSpeed     = 120,
         .baseSpAttack  = 135,
         .baseSpDefense = 95,

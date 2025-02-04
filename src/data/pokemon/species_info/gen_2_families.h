@@ -4365,7 +4365,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_GRANBULL] =
     {
-        .baseHP        = 90,
+        .baseHP        = 100,
         .baseAttack    = 120,
         .baseDefense   = 75,
         .baseSpeed     = 45,
@@ -5342,7 +5342,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseAttack    = 70,
         .baseDefense   = 120,
         .baseSpeed     = 52,
-        .baseSpAttack  = 135,
+        .baseSpAttack  = 140,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_GROUND, TYPE_NORMAL),
         .catchRate = 5,
@@ -6887,7 +6887,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_MILTANK] =
     {
         .baseHP        = 95,
-        .baseAttack    = 80,
+        .baseAttack    = 85,
         .baseDefense   = 105,
         .baseSpeed     = 100,
         .baseSpAttack  = 40,

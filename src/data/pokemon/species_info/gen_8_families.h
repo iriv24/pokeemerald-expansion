@@ -6643,12 +6643,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 
     [SPECIES_ETERNATUS_ETERNAMAX] =
     {
-        .baseHP        = 255,
-        .baseAttack    = 115,
-        .baseDefense   = 250,
-        .baseSpeed     = 130,
-        .baseSpAttack  = 125,
-        .baseSpDefense = 250,
+        .baseHP        = 140,
+        .baseAttack    = 105,
+        .baseDefense   = 110,
+        .baseSpeed     = 140,
+        .baseSpAttack  = 185,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_POISON, TYPE_DRAGON),
         .catchRate = 255,
         .expYield = 563,
