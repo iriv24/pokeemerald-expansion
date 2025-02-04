@@ -691,6 +691,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_LEER},
         .battleAnimScript = gBattleAnimMove_Stomp,
+        .kickingMove = TRUE,
     },
 
     [MOVE_DOUBLE_KICK] =
@@ -12244,6 +12245,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_LowSweep,
+        .kickingMove = TRUE,
     },
 
     [MOVE_ACID_SPRAY] =
@@ -15665,6 +15667,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_HighHorsepower,
+        .kickingMove = TRUE,
     },
 
     [MOVE_STRENGTH_SAP] =
@@ -17571,6 +17574,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_PyroBall,
+        .kickingMove = TRUE,
     },
 
     [MOVE_BEHEMOTH_BLADE] =
@@ -19073,6 +19077,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .chance = 30,
         }),
         .battleAnimScript = gBattleAnimMove_TripleArrows,
+        .kickingMove = TRUE,
     },
 
     [MOVE_INFERNAL_PARADE] =
@@ -19690,6 +19695,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_AquaStep,
+        .kickingMove = TRUE,
     },
 
     [MOVE_RAGING_BULL] =
