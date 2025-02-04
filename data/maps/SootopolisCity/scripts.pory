@@ -34,6 +34,7 @@ SootopolisCity_OnLoad:
 	end
 
 SootopolisCity_EventScript_LegendariesNotArrived::
+	setmetatile 51, 36, METATILE_Sootopolis_Door_Closed, TRUE
 	end
 
 SootopolisCity_EventScript_LockHouseDoors::
@@ -54,6 +55,7 @@ SootopolisCity_EventScript_LockMysteryHouseDoor::
 
 SootopolisCity_EventScript_LockGymDoor::
 	setmetatile 31, 32, METATILE_Sootopolis_GymDoor_Closed, TRUE
+	setmetatile 51, 36, METATILE_Sootopolis_Door_Closed, TRUE
 	return
 
 SootopolisCity_OnTransition:
