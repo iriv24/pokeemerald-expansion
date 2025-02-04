@@ -2693,7 +2693,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_PIKACHU_ROCK_STAR] =
@@ -2745,7 +2744,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_PIKACHU_BELLE] =
@@ -2798,7 +2796,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_PIKACHU_POP_STAR] =
@@ -2809,7 +2806,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 50,
         .baseSpDefense = 50,
-        .types = MON_TYPES(TYPE_ELECTRIC),
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
@@ -2851,7 +2848,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_PIKACHU_PHD] =
@@ -2903,7 +2899,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_PIKACHU_LIBRE] =
@@ -2955,7 +2950,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
 #endif //P_COSPLAY_PIKACHU_FORMS

@@ -9,11 +9,6 @@ MauvilleCity_PokemonCenter_1F_MapScripts::
 MauvilleCity_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_MAUVILLE_CITY
 	call Common_EventScript_UpdateBrineyLocation
-	goto MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx
-	end
-
-MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx::
-	special SetMauvilleOldManObjEventGfx
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
@@ -37,10 +32,8 @@ MauvilleCity_PokemonCenter_1F_EventScript_Youngster::
 	end
 
 MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
-	.string "That man over there, he says weird\n"
-	.string "things!\p"
-	.string "He's funny in a weird way.\n"
-	.string "I doubt I'll forget about him!$"
+	.string "That man over there, he has so many\n"
+	.string "Costume Pikachus!$"
 
 MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
 	.string "When I accessed the RECORD CORNER,\n"
@@ -56,3 +49,80 @@ MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 	.string "sounds fun. I'll go check it out!$"
 
 `
+
+script MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive {
+	lock
+	faceplayer
+	msgbox(PikachuManIntro)
+
+	dynmultipush("Pikachu Cosplay", SPECIES_PIKACHU_COSPLAY)
+	dynmultipush("Pikachu Rock Star", SPECIES_PIKACHU_ROCK_STAR)
+	dynmultipush("Pikachu Belle", SPECIES_PIKACHU_BELLE)
+	dynmultipush("Pikachu Pop Star", SPECIES_PIKACHU_POP_STAR)
+	dynmultipush("Pikachu PhD", SPECIES_PIKACHU_PHD)
+	dynmultipush("Pikachu Libre", SPECIES_PIKACHU_LIBRE)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	checkitem(ITEM_YELLOW_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu)
+	msgbox("That's my favorite one, great choice!")
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu)
+	waitfanfare
+	givemonrandom(VAR_0x8005, 25)
+	removeitem(ITEM_YELLOW_SHARD)
+	msgbox("Come back if you want more Pikachus!")
+	release
+	end
+	
+}
+
+script MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo {
+    msgbox("More for me then!")
+    release
+    end
+}
+
+script MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard {
+	msgbox(MauvilleCity_PokemonCenter_1F_Text_ComeBackWithYellowShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu {
+	msgbox(MauvilleCity_PokemonCenter_1F_Text_NoRoomForThisPikachu, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text PikachuManIntro {
+	"Hi, hi! I'm the number one Pikachu guy!\n"
+	"For just one Yellow Shard, any Costume\l"
+	"Pikachu can be yours, what do you say,\l"
+	"do you want one of these Pikachus?"
+}
+
+text MauvilleCity_PokemonCenter_1F_Text_ComeBackWithYellowShard {
+	"It doesn't look like you have a\n"
+	"Yellow Shard. Come back when you do."
+}
+
+text MauvilleCity_PokemonCenter_1F_Text_NoRoomForThisPikachu {
+	"Oh? You've too many Pokémon.\n"
+	"There's no room for this Pikachu."
+}
+
+text MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu {
+	"{PLAYER} received the Pikachu!"
+}
