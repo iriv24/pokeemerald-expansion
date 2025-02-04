@@ -413,6 +413,16 @@ static void HandleInputChooseAction(u32 battler)
     {
         SwapHpBarsWithHpText();
     }
+    else if (JOY_NEW(R_BUTTON))
+    {
+        if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+        {
+            PlaySE(SE_SELECT);
+            TryHideLastUsedBall();
+            BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_RUN, 0);
+            PlayerBufferExecCompleted(battler);
+        }
+    }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_DEBUG, 0);
