@@ -417,6 +417,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
         {
+            PlaySE(SE_SELECT);
             TryHideLastUsedBall();
             BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_RUN, 0);
             PlayerBufferExecCompleted(battler);
