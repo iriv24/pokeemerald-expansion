@@ -429,7 +429,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HUSTLE] =
     {
         .name = _("Hustle"),
-        .description = COMPOUND_STRING("Reduces accuray by 20% but\nboosts Atk by 50%."),
+        .description = COMPOUND_STRING("Reduces accuracy by 20% but\nboosts Atk by 50%."),
         .aiRating = 7,
     },
 
