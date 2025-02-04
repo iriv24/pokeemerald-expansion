@@ -74,6 +74,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_STRANGE,
         .iconPic = gItemIcon_StrangeBall,
         .iconPalette = gItemIconPalette_StrangeBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_POKE_BALL] =
@@ -90,6 +91,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_POKE,
         .iconPic = gItemIcon_PokeBall,
         .iconPalette = gItemIconPalette_PokeBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_GREAT_BALL] =
@@ -106,6 +108,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_GREAT,
         .iconPic = gItemIcon_GreatBall,
         .iconPalette = gItemIconPalette_GreatBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_ULTRA_BALL] =
@@ -122,6 +125,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_ULTRA,
         .iconPic = gItemIcon_UltraBall,
         .iconPalette = gItemIconPalette_UltraBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_MASTER_BALL] =
@@ -138,6 +142,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_MASTER,
         .iconPic = gItemIcon_MasterBall,
         .iconPalette = gItemIconPalette_MasterBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_PREMIER_BALL] =
@@ -154,6 +159,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_PREMIER,
         .iconPic = gItemIcon_PremierBall,
         .iconPalette = gItemIconPalette_LuxuryBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_HEAL_BALL] =
@@ -170,6 +176,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_HEAL,
         .iconPic = gItemIcon_HealBall,
         .iconPalette = gItemIconPalette_HealBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_NET_BALL] =
@@ -186,6 +193,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_NET,
         .iconPic = gItemIcon_NetBall,
         .iconPalette = gItemIconPalette_NetBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_NEST_BALL] =
@@ -202,6 +210,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_NEST,
         .iconPic = gItemIcon_NestBall,
         .iconPalette = gItemIconPalette_NestBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_DIVE_BALL] =
@@ -218,6 +227,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_DIVE,
         .iconPic = gItemIcon_DiveBall,
         .iconPalette = gItemIconPalette_DiveBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_DUSK_BALL] =
@@ -234,6 +244,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_DUSK,
         .iconPic = gItemIcon_DuskBall,
         .iconPalette = gItemIconPalette_DuskBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_TIMER_BALL] =
@@ -250,6 +261,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_TIMER,
         .iconPic = gItemIcon_TimerBall,
         .iconPalette = gItemIconPalette_RepeatBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_QUICK_BALL] =
@@ -266,6 +278,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_QUICK,
         .iconPic = gItemIcon_QuickBall,
         .iconPalette = gItemIconPalette_QuickBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_REPEAT_BALL] =
@@ -282,6 +295,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_REPEAT,
         .iconPic = gItemIcon_RepeatBall,
         .iconPalette = gItemIconPalette_RepeatBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_LUXURY_BALL] =
@@ -298,6 +312,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_LUXURY,
         .iconPic = gItemIcon_LuxuryBall,
         .iconPalette = gItemIconPalette_LuxuryBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_LEVEL_BALL] =
@@ -314,6 +329,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_LEVEL,
         .iconPic = gItemIcon_LevelBall,
         .iconPalette = gItemIconPalette_LevelBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_LURE_BALL] =
@@ -330,6 +346,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_LURE,
         .iconPic = gItemIcon_LureBall,
         .iconPalette = gItemIconPalette_LureBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_MOON_BALL] =
@@ -346,6 +363,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_MOON,
         .iconPic = gItemIcon_MoonBall,
         .iconPalette = gItemIconPalette_MoonBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_FRIEND_BALL] =
@@ -362,6 +380,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_FRIEND,
         .iconPic = gItemIcon_FriendBall,
         .iconPalette = gItemIconPalette_FriendBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_LOVE_BALL] =
@@ -378,6 +397,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_LOVE,
         .iconPic = gItemIcon_LoveBall,
         .iconPalette = gItemIconPalette_LoveBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_FAST_BALL] =
@@ -394,6 +414,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_FAST,
         .iconPic = gItemIcon_FastBall,
         .iconPalette = gItemIconPalette_FastBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_HEAVY_BALL] =
@@ -410,6 +431,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_HEAVY,
         .iconPic = gItemIcon_HeavyBall,
         .iconPalette = gItemIconPalette_HeavyBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_DREAM_BALL] =
@@ -431,6 +453,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_DREAM,
         .iconPic = gItemIcon_DreamBall,
         .iconPalette = gItemIconPalette_DreamBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_SAFARI_BALL] =
@@ -447,6 +470,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_SAFARI,
         .iconPic = gItemIcon_SafariBall,
         .iconPalette = gItemIconPalette_SafariBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_SPORT_BALL] =
@@ -463,6 +487,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_SPORT,
         .iconPic = gItemIcon_SportBall,
         .iconPalette = gItemIconPalette_SportBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_PARK_BALL] =
@@ -478,6 +503,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_PARK,
         .iconPic = gItemIcon_ParkBall,
         .iconPalette = gItemIconPalette_ParkBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_BEAST_BALL] =
@@ -493,6 +519,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_BEAST,
         .iconPic = gItemIcon_BeastBall,
         .iconPalette = gItemIconPalette_BeastBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
     [ITEM_CHERISH_BALL] =
@@ -509,6 +536,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = BALL_CHERISH,
         .iconPic = gItemIcon_CherishBall,
         .iconPalette = gItemIconPalette_CherishBall,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeBall,
     },
 
 // Medicine
