@@ -4879,7 +4879,7 @@ static const struct TrainerMon sParty_Tate[] = {
     .heldItem = ITEM_KANGASKHANITE,
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
-    .ability = ABILITY_SCRAPPY,
+    .ability = ABILITY_INNER_FOCUS,
     .moves = {MOVE_POWER_UP_PUNCH, MOVE_BODY_SLAM, MOVE_CRUNCH, MOVE_BRICK_BREAK}
     }
 };
