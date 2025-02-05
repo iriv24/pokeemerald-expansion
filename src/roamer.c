@@ -1,5 +1,6 @@
 #include "global.h"
 #include "event_data.h"
+#include "pokedex.h"
 #include "pokemon.h"
 #include "random.h"
 #include "roamer.h"
@@ -138,6 +139,7 @@ bool8 TryAddRoamer(u16 species, u8 level)
     {
         // Create the roamer and stop searching
         CreateInitialRoamerMon(index, species, level);
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_SEEN);
         return TRUE;
     }
 
