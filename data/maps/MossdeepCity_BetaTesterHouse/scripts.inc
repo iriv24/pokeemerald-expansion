@@ -1,340 +1,510 @@
 # 1 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 
 # 2 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-MossdeepCity_BetaTesterHouse_MapScripts::
+.set LOCALID_SUNBIRD, 1
 # 3 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	.byte 0
+.set LOCALID_SUNEAL, 3
 # 4 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-
+.set LOCALID_DOLLAMIKE, 5
 # 5 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-MossdeepCity_BetaTesterHouse_EventScript_Mochi::
+MossdeepCity_BetaTesterHouse_MapScripts::
 # 6 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	lock
+	.byte 0
 # 7 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	faceplayer
-# 8 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	waitse
-# 9 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	playmoncry SPECIES_TYRANTRUM, CRY_MODE_NORMAL
-# 10 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	msgbox MossdeepCity_BetaTesterHouse_Text_Tyrantrum, MSGBOX_DEFAULT
-# 11 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	waitmoncry
-# 12 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	release
-# 13 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	end
-# 14 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 
+# 8 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_Mochi::
+# 9 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	lock
+# 10 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	faceplayer
+# 11 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitse
+# 12 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	playmoncry SPECIES_TYRANTRUM, CRY_MODE_NORMAL
+# 13 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox MossdeepCity_BetaTesterHouse_Text_Tyrantrum, MSGBOX_DEFAULT
+# 14 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitmoncry
 # 15 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-MossdeepCity_BetaTesterHouse_Text_Tyrantrum:
+	release
 # 16 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	.string "Mochi: Grrrraaaaraaararaaa!$"
+	end
 # 17 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 
 # 18 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-MossdeepCity_BetaTesterHouse_EventScript_Kingambit::
+MossdeepCity_BetaTesterHouse_Text_Tyrantrum:
 # 19 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	lock
+	.string "Mochi: Grrrraaaaraaararaaa!$"
 # 20 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	faceplayer
-# 21 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	waitse
-# 22 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	playmoncry SPECIES_KINGAMBIT, CRY_MODE_NORMAL
-# 23 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	msgbox MossdeepCity_BetaTesterHouse_Text_Kingambit, MSGBOX_DEFAULT
-# 24 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	waitmoncry
-# 25 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	release
-# 26 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	end
-# 27 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 
+# 21 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_Kingambit::
+# 22 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	lock
+# 23 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	faceplayer
+# 24 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitse
+# 25 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	playmoncry SPECIES_KINGAMBIT, CRY_MODE_NORMAL
+# 26 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox MossdeepCity_BetaTesterHouse_Text_Kingambit, MSGBOX_DEFAULT
+# 27 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitmoncry
 # 28 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-MossdeepCity_BetaTesterHouse_Text_Kingambit:
+	release
 # 29 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	end
+# 30 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+
+# 31 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_Text_Kingambit:
+# 32 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Kingambit: Uuhuuhuuhuuahahuuhu!$"
+# 33 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+
+# 34 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_Blaziken::
+# 35 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	lock
+# 36 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	faceplayer
+# 37 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitse
+# 38 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	playmoncry SPECIES_BLAZIKEN, CRY_MODE_NORMAL
+# 39 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox MossdeepCity_BetaTesterHouse_Text_Blaziken, MSGBOX_DEFAULT
+# 40 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitmoncry
+# 41 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	release
+# 42 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	end
+# 43 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+
+# 44 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_Text_Blaziken:
+# 45 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "Blaziken: Trrrrererehhhhhh!$"
 
 MossdeepCity_BetaTesterHouse_EventScript_Sunbird::
-# 33 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 49 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	lockall
-# 34 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	applymovement 1, Common_Movement_FacePlayer
-# 35 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 50 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	applymovement LOCALID_SUNBIRD, Common_Movement_FacePlayer
+# 51 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_defeated TRAINER_SUNBIRD, MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated
-# 36 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 52 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_1, MossdeepCity_BetaTesterHouse_EventScript_SunbirdRequestBattleAgain
-# 37 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 53 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Sunbird_Greeting, MSGBOX_YESNO
-# 38 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 54 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SunbirdRequestBattleAgain::
-# 43 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 59 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Sunbird_ReadyYet, MSGBOX_YESNO
-# 44 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 60 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_BattleSunbirdPrompt::
-# 49 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 65 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleSunbird
-# 50 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 66 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineSunbirdBattle
-# 51 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 67 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	closemessage
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_DeclineSunbirdBattle::
-# 56 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 72 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	setflag FLAG_TEMP_1
-# 57 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 73 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Sunbird_ComeBackWhenReady, MSGBOX_DEFAULT
-# 58 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 74 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_BattleSunbird::
-# 63 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 79 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Sunbird_YoureOn, MSGBOX_DEFAULT
-# 64 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 80 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_SUNBIRD, Sunbird_Outro
-# 65 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew
+# 81 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveCelebi
 	return
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated::
-# 71 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 87 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox PostBattle_Sunbird, MSGBOX_DEFAULT
-# 72 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 88 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	releaseall
 	end
 
 
-MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew::
-# 77 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW
-# 78 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	givemonrandom SPECIES_MEW, 50
-# 79 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty
-# 80 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC
-# 81 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveCelebi::
+# 93 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CELEBI
+# 94 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	givemonrandom SPECIES_CELEBI, 50
+# 95 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiParty
+# 96 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiPC
+# 97 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 82 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 98 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
-MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty::
-# 87 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare
-# 88 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiParty::
+# 103 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare
+# 104 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 89 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainMew
-# 90 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 105 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi
+# 106 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 91 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 107 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 92 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainMew
-	end
-
-
-MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC::
-# 98 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare
-# 99 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 100 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC
-# 101 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	call Common_EventScript_NameReceivedBoxMon
-# 102 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC
-	end
-
-
-MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC::
 # 108 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	call Common_EventScript_TransferredToPC
-# 109 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainMew
+	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi
 	end
 
 
-MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare::
+MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiPC::
+# 114 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare
 # 115 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 116 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	message MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC
 # 117 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	waitmessage
+	call Common_EventScript_NameReceivedBoxMon
 # 118 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC::
+# 124 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call Common_EventScript_TransferredToPC
+# 125 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare::
+# 131 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 132 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	message MossdeepCity_BetaTesterHouse_Text_PlayerReceivedCelebi
+# 133 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitmessage
+# 134 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	waitfanfare
-# 119 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_MEW
+# 135 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_CELEBI
 	return
 
 
-MossdeepCity_BetaTesterHouse_EventScript_ExplainMew::
-# 125 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	msgbox Sunbird_ExplainMew, MSGBOX_DEFAULT
-# 126 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi::
+# 141 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox Sunbird_ExplainCelebi, MSGBOX_DEFAULT
+# 142 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_Suneal::
-# 189 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 205 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	lockall
-# 190 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	applymovement 3, Common_Movement_FacePlayer
-# 191 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 206 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	applymovement LOCALID_SUNEAL, Common_Movement_FacePlayer
+# 207 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_defeated TRAINER_SUNEAL, MossdeepCity_BetaTesterHouse_EventScript_SunealDefeated
-# 192 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 208 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, MossdeepCity_BetaTesterHouse_EventScript_SunealRequestBattleAgain
-# 193 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 209 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Suneal_Greeting, MSGBOX_YESNO
-# 194 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 210 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SunealRequestBattleAgain::
-# 199 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 215 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Suneal_ReadyYet, MSGBOX_YESNO
-# 200 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 216 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_BattleSunealPrompt::
-# 205 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 221 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleSuneal
-# 206 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 222 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineSunealBattle
-# 207 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 223 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	closemessage
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_DeclineSunealBattle::
-# 212 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 228 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	setflag FLAG_TEMP_2
-# 213 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 229 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Suneal_ComeBackWhenReady, MSGBOX_DEFAULT
-# 214 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 230 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_BattleSuneal::
-# 219 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 235 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Suneal_YoureOn, MSGBOX_DEFAULT
-# 220 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 236 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_SUNEAL, Suneal_Outro
-# 221 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 237 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_SunealGiveDarkrai
 	return
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SunealDefeated::
-# 227 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 243 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox PostBattle_Suneal, MSGBOX_DEFAULT
-# 228 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 244 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	releaseall
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SunealGiveDarkrai::
-# 233 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 249 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DARKRAI
-# 234 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 250 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	givemonrandom SPECIES_DARKRAI, 50
-# 235 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 251 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiParty
-# 236 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 252 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiPC
-# 237 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 253 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 238 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 254 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiParty::
-# 243 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 259 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare
-# 244 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 260 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 245 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 261 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai
-# 246 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 262 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 247 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 263 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 248 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 264 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_ReceiveDarkraiPC::
-# 254 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 270 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare
-# 255 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 271 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 256 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 272 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC
-# 257 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 273 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 258 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 274 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_SendDarkraiToPC::
-# 264 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 280 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 265 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 281 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai
 	end
 
 
 MossdeepCity_BetaTesterHouse_EventScript_ReceivedDarkraiFanfare::
-# 271 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 287 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 272 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 288 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	message MossdeepCity_BetaTesterHouse_Text_PlayerReceivedDarkrai
-# 273 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 289 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	waitmessage
-# 274 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 290 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	waitfanfare
-# 275 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 291 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_DARKRAI
 	return
 
 
 MossdeepCity_BetaTesterHouse_EventScript_ExplainDarkrai::
-# 281 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 297 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	msgbox Suneal_ExplainDarkrai, MSGBOX_DEFAULT
-# 282 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 298 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	release
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_DollaMike::
+# 354 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	lockall
+# 355 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	applymovement LOCALID_DOLLAMIKE, Common_Movement_FacePlayer
+# 356 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_defeated TRAINER_DOLLAMIKE, MossdeepCity_BetaTesterHouse_EventScript_DollaMikeDefeated
+# 357 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_set FLAG_TEMP_3, MossdeepCity_BetaTesterHouse_EventScript_DollaMikeRequestBattleAgain
+# 358 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox DollaMike_Greeting, MSGBOX_YESNO
+# 359 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_DollaMikeRequestBattleAgain::
+# 364 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox DollaMike_ReadyYet, MSGBOX_YESNO
+# 365 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt::
+# 370 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call_if_eq VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMike
+# 371 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineDollaMikeBattle
+# 372 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	closemessage
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_DeclineDollaMikeBattle::
+# 377 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	setflag FLAG_TEMP_3
+# 378 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox DollaMike_ComeBackWhenReady, MSGBOX_DEFAULT
+# 379 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	release
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMike::
+# 384 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox DollaMike_YoureOn, MSGBOX_DEFAULT
+# 385 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	trainerbattle_no_intro TRAINER_DOLLAMIKE, DollaMike_Outro
+# 386 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_DollaMikeGiveVictini
+	return
+
+
+MossdeepCity_BetaTesterHouse_EventScript_DollaMikeDefeated::
+# 392 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox PostBattle_DollaMike, MSGBOX_DEFAULT
+# 393 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	releaseall
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_DollaMikeGiveVictini::
+# 398 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VICTINI
+# 399 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	givemonrandom SPECIES_VICTINI, 50
+# 400 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniParty
+# 401 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniPC
+# 402 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto Common_EventScript_NoMoreRoomForPokemon
+# 403 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	release
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniParty::
+# 408 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare
+# 409 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 410 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini
+# 411 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 412 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 413 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniPC::
+# 419 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare
+# 420 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 421 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC
+# 422 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call Common_EventScript_NameReceivedBoxMon
+# 423 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC::
+# 429 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	call Common_EventScript_TransferredToPC
+# 430 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	goto MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini
+	end
+
+
+MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare::
+# 436 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 437 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	message MossdeepCity_BetaTesterHouse_Text_PlayerReceivedVictini
+# 438 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitmessage
+# 439 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	waitfanfare
+# 440 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_VICTINI
+	return
+
+
+MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini::
+# 446 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	msgbox DollaMike_ExplainVictini, MSGBOX_DEFAULT
+# 447 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	release
 	end
 
 
 Sunbird_Greeting::
-# 130 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 146 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Hello! I'm Sunbird, and I was one of the\n"
 	.string "first players ever to beat this game, so\l"
 	.string "I got to make my own trainer with my\l"
@@ -349,36 +519,36 @@ Sunbird_Greeting::
 	.string "So, you think you can beat me?$"
 
 Sunbird_ReadyYet::
-# 145 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 161 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Ready yet, OBC trainer?$"
 
 Sunbird_YoureOn::
-# 149 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 165 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Alright you're on, OBC trainer!$"
 
 Sunbird_ComeBackWhenReady::
-# 153 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 169 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "That's fine, I don't blame you.\n"
 	.string "My team is pretty scary!$"
 
 Sunbird_Outro::
-# 158 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 174 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Ok, I'll tell you… “OBC” stands for “One\n"
 	.string "Brain Cell”, but Andy does his best!$"
 
-MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew::
-# 163 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
-	.string "{PLAYER} received Mew!$"
+MossdeepCity_BetaTesterHouse_Text_PlayerReceivedCelebi::
+# 179 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "{PLAYER} received Celebi!$"
 
-Sunbird_ExplainMew::
-# 167 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+Sunbird_ExplainCelebi::
+# 183 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "I told you I'd give you a Mythical if you\n"
 	.string "could beat me!\p"
 	.string "And I'd say that's a pretty darn good\n"
-	.string "one, so I hope Mew helps you!$"
+	.string "one, so I hope Celebi helps you!$"
 
 PostBattle_Sunbird::
-# 174 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 190 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Mochi the shiny Tyrantrum was a\n"
 	.string "core member of my team when I beat\l"
 	.string "this game.\p"
@@ -390,7 +560,7 @@ PostBattle_Sunbird::
 	.string "together!$"
 
 Suneal_Greeting::
-# 286 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 302 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "What's up? My name is Suneal, and I was\n"
 	.string "the first person besides the creator\l"
 	.string "to beat this game.\p"
@@ -402,35 +572,35 @@ Suneal_Greeting::
 	.string "What do you say?$"
 
 Suneal_ReadyYet::
-# 298 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 314 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Ready to battle yet?$"
 
 Suneal_YoureOn::
-# 302 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 318 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Let's do this.$"
 
 Suneal_ComeBackWhenReady::
-# 306 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 322 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Come back if you change your mind.$"
 
 Suneal_Outro::
-# 310 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 326 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "Looks like you might not be a complete\n"
 	.string "bum after all.$"
 
 MossdeepCity_BetaTesterHouse_Text_PlayerReceivedDarkrai::
-# 315 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 331 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "{PLAYER} received Darkrai!$"
 
 Suneal_ExplainDarkrai::
-# 319 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 335 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "As promised, there's your Mythical.\n"
 	.string "You're not getting Dark Hole until\l"
 	.string "post-game though, that move is\l"
 	.string "completely broken.$"
 
 PostBattle_Suneal::
-# 326 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+# 342 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
 	.string "I was the one who suggested adding a\n"
 	.string "White Out Counter to the 2nd Nurse in\l"
 	.string "the Pokémon Centers, and I'm the one\l"
@@ -438,3 +608,50 @@ PostBattle_Suneal::
 	.string "Items!” idea instead of getting 50\l"
 	.string "individual messages, so you're\l"
 	.string "welcome for that.$"
+
+DollaMike_Greeting::
+# 451 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "Yo, I'm DollaMike, and it took me a full\n"
+	.string "90 hours of no speed-up gameplay to\l"
+	.string "to beat this game.\p"
+	.string "I didn't even realize there was a\n"
+	.string "PokéVial until right before the\l"
+	.string "Champion battle, and I told the creator\l"
+	.string "I was out of Elixirs. True story.\p"
+	.string "Anyway, I'm gonna hit you with a brick\n"
+	.string "now, because that's what I do. If you\l"
+	.string "beat me, I'll give you a Mythical, you in?$"
+
+DollaMike_ReadyYet::
+# 464 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "This brick's got your name on it,\n"
+	.string "if you're ready now.$"
+
+DollaMike_YoureOn::
+# 469 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "You're cooked kid.$"
+
+DollaMike_ComeBackWhenReady::
+# 473 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "I'd be scared too if I were you.$"
+
+DollaMike_Outro::
+# 477 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "It's all because I ran out of Elixirs!$"
+
+MossdeepCity_BetaTesterHouse_Text_PlayerReceivedVictini::
+# 481 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "{PLAYER} received Victini!$"
+
+DollaMike_ExplainVictini::
+# 485 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "That Mythical there represents\n"
+	.string "victory!\p"
+	.string "I think anyway, I actually chose Keldeo\n"
+	.string "as my gift Pokémon, but the creator\l"
+	.string "said no, so I guess that'll do.$"
+
+PostBattle_DollaMike::
+# 493 "data/maps/MossdeepCity_BetaTesterHouse/scripts.pory"
+	.string "This game was so hard, man, I can't wait\n"
+	.string "to play it again.$"

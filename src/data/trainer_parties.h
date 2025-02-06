@@ -365,13 +365,6 @@ static const struct TrainerMon sParty_GruntMtPyre1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMtPyre2[] = {
-    {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
 static const struct TrainerMon sParty_GruntMtPyre3[] = {
     {
     .lvl = 30,
@@ -16699,5 +16692,68 @@ static const struct TrainerMon sParty_Suneal[] = {
     .ability = ABILITY_SUPREME_OVERLORD,
     .heldItem = ITEM_BLACK_GLASSES,
     .moves = {MOVE_IRON_HEAD, MOVE_SUCKER_PUNCH, MOVE_LOW_KICK, MOVE_KOWTOW_CLEAVE},
+    },
+};
+
+static const struct TrainerMon sParty_DollaMike[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GENGAR,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_LEVITATE,
+    .heldItem = ITEM_GENGARITE,
+    .moves = {MOVE_HYPNOSIS, MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_NASTY_PLOT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_BLAZIKEN,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_STRIKER,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_FLAME_CHARGE, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE, MOVE_BLAZE_KICK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_NINETALES_ALOLA,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_SNOW_WARNING,
+    .heldItem = ITEM_SHELL_BELL,
+    .moves = {MOVE_BLIZZARD, MOVE_AURORA_VEIL, MOVE_DAZZLING_GLEAM, MOVE_FREEZE_DRY}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SWAMPERT,
+    .nature = NATURE_IMPISH,
+    .ev = TRAINER_PARTY_EVS_IMPISH(),
+    .ability = ABILITY_TORRENT,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .moves = {MOVE_MUDDY_WATER, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_STEALTH_ROCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SYLVEON,
+    .nature = NATURE_BOLD,
+    .ev = TRAINER_PARTY_EVS_BOLD(),
+    .ability = ABILITY_PIXILATE,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_CALM_MIND, MOVE_IRON_TAIL, MOVE_DAZZLING_GLEAM, MOVE_PSYSHOCK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SILVALLY_NORMAL,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_RKS_SYSTEM,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_THUNDER_FANG, MOVE_ROCK_SLIDE, MOVE_PARTING_SHOT, MOVE_MULTI_ATTACK},
     },
 };

@@ -1,4 +1,7 @@
 raw `
+.set LOCALID_SUNBIRD, 1
+.set LOCALID_SUNEAL, 3
+.set LOCALID_DOLLAMIKE, 5
 MossdeepCity_BetaTesterHouse_MapScripts::
 	.byte 0
 
@@ -27,11 +30,24 @@ MossdeepCity_BetaTesterHouse_EventScript_Kingambit::
 
 MossdeepCity_BetaTesterHouse_Text_Kingambit:
 	.string "Kingambit: Uuhuuhuuhuuahahuuhu!$"
+
+MossdeepCity_BetaTesterHouse_EventScript_Blaziken::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_BLAZIKEN, CRY_MODE_NORMAL
+	msgbox MossdeepCity_BetaTesterHouse_Text_Blaziken, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+MossdeepCity_BetaTesterHouse_Text_Blaziken:
+	.string "Blaziken: Trrrrererehhhhhh!$"
 `
 
 script MossdeepCity_BetaTesterHouse_EventScript_Sunbird{
 	lockall
-	applymovement(1, Common_Movement_FacePlayer)
+	applymovement(LOCALID_SUNBIRD, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_SUNBIRD, MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated)
 	goto_if_set(FLAG_TEMP_1, MossdeepCity_BetaTesterHouse_EventScript_SunbirdRequestBattleAgain)
 	msgbox(Sunbird_Greeting, MSGBOX_YESNO)
@@ -62,7 +78,7 @@ script MossdeepCity_BetaTesterHouse_EventScript_DeclineSunbirdBattle {
 script MossdeepCity_BetaTesterHouse_EventScript_BattleSunbird{
 	msgbox(Sunbird_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_SUNBIRD, Sunbird_Outro)
-	goto(MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveCelebi)
 	return
 }
 
@@ -73,56 +89,56 @@ script MossdeepCity_BetaTesterHouse_EventScript_SunbirdDefeated{
 	end
 }
 
-script MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveMew{
-	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEW)
-	givemonrandom(SPECIES_MEW, 50)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC)
+script MossdeepCity_BetaTesterHouse_EventScript_SunbirdGiveCelebi{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CELEBI)
+	givemonrandom(SPECIES_CELEBI, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)
 	release
 	end
 }
 
-script MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewParty{
-	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare)
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiParty{
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi)
 	call(Common_EventScript_GetGiftMonPartySlot)
 	call(Common_EventScript_NameReceivedPartyMon)
-	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi)
 	end
 }
 	
 
-script MossdeepCity_BetaTesterHouse_EventScript_ReceiveMewPC {
-	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare)
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveCelebiPC {
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC)
 	call(Common_EventScript_NameReceivedBoxMon)
-	goto(MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC)
 	end
 }
 	
 
-script MossdeepCity_BetaTesterHouse_EventScript_SendMewToPC {
+script MossdeepCity_BetaTesterHouse_EventScript_SendCelebiToPC {
 	call(Common_EventScript_TransferredToPC)
-	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainMew)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi)
 	end
 }
 	
 
-script MossdeepCity_BetaTesterHouse_EventScript_ReceivedMewFanfare {
+script MossdeepCity_BetaTesterHouse_EventScript_ReceivedCelebiFanfare {
 	playfanfare(MUS_OBTAIN_ITEM)
-	message(MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew)
+	message(MossdeepCity_BetaTesterHouse_Text_PlayerReceivedCelebi)
 	waitmessage
 	waitfanfare
-	bufferspeciesname(STR_VAR_1, SPECIES_MEW)
+	bufferspeciesname(STR_VAR_1, SPECIES_CELEBI)
 	return
 }
 	
 
-script MossdeepCity_BetaTesterHouse_EventScript_ExplainMew {
-	msgbox(Sunbird_ExplainMew, MSGBOX_DEFAULT)
+script MossdeepCity_BetaTesterHouse_EventScript_ExplainCelebi {
+	msgbox(Sunbird_ExplainCelebi, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -160,15 +176,15 @@ text Sunbird_Outro{
 	"Brain Cell”, but Andy does his best!"
 }
 
-text MossdeepCity_BetaTesterHouse_Text_PlayerReceivedMew{
-	"{PLAYER} received Mew!"
+text MossdeepCity_BetaTesterHouse_Text_PlayerReceivedCelebi{
+	"{PLAYER} received Celebi!"
 }
 
-text Sunbird_ExplainMew{
+text Sunbird_ExplainCelebi{
 	"I told you I'd give you a Mythical if you\n"
 	"could beat me!\p"
 	"And I'd say that's a pretty darn good\n"
-	"one, so I hope Mew helps you!"
+	"one, so I hope Celebi helps you!"
 }
 
 text PostBattle_Sunbird{
@@ -187,7 +203,7 @@ text PostBattle_Sunbird{
 
 script MossdeepCity_BetaTesterHouse_EventScript_Suneal{
 	lockall
-	applymovement(3, Common_Movement_FacePlayer)
+	applymovement(LOCALID_SUNEAL, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_SUNEAL, MossdeepCity_BetaTesterHouse_EventScript_SunealDefeated)
 	goto_if_set(FLAG_TEMP_2, MossdeepCity_BetaTesterHouse_EventScript_SunealRequestBattleAgain)
 	msgbox(Suneal_Greeting, MSGBOX_YESNO)
@@ -333,3 +349,148 @@ text PostBattle_Suneal{
 	"welcome for that."
 }
 
+
+script MossdeepCity_BetaTesterHouse_EventScript_DollaMike{
+	lockall
+	applymovement(LOCALID_DOLLAMIKE, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_DOLLAMIKE, MossdeepCity_BetaTesterHouse_EventScript_DollaMikeDefeated)
+	goto_if_set(FLAG_TEMP_3, MossdeepCity_BetaTesterHouse_EventScript_DollaMikeRequestBattleAgain)
+	msgbox(DollaMike_Greeting, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_DollaMikeRequestBattleAgain{
+	msgbox(DollaMike_ReadyYet, MSGBOX_YESNO)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt)
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMikePrompt{
+	call_if_eq(VAR_RESULT, YES, MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMike)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_DeclineDollaMikeBattle)
+	closemessage
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_DeclineDollaMikeBattle {
+	setflag(FLAG_TEMP_3)
+	msgbox(DollaMike_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_BattleDollaMike{
+	msgbox(DollaMike_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_DOLLAMIKE, DollaMike_Outro)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_DollaMikeGiveVictini)
+	return
+}
+
+
+script MossdeepCity_BetaTesterHouse_EventScript_DollaMikeDefeated{
+	msgbox(PostBattle_DollaMike, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_DollaMikeGiveVictini{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VICTINI)
+	givemonrandom(SPECIES_VICTINI, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniParty{
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceiveVictiniPC {
+	call(MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_SendVictiniToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini)
+	end
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ReceivedVictiniFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(MossdeepCity_BetaTesterHouse_Text_PlayerReceivedVictini)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_VICTINI)
+	return
+}
+	
+
+script MossdeepCity_BetaTesterHouse_EventScript_ExplainVictini {
+	msgbox(DollaMike_ExplainVictini, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text DollaMike_Greeting{
+	"Yo, I'm DollaMike, and it took me a full\n"
+	"90 hours of no speed-up gameplay to\l"
+	"to beat this game.\p"
+	"I didn't even realize there was a\n"
+	"PokéVial until right before the\l"
+	"Champion battle, and I told the creator\l"
+	"I was out of Elixirs. True story.\p"
+	"Anyway, I'm gonna hit you with a brick\n"
+	"now, because that's what I do. If you\l"
+	"beat me, I'll give you a Mythical, you in?"
+}
+
+text DollaMike_ReadyYet{
+	"This brick's got your name on it,\n"
+	"if you're ready now."
+}
+
+text DollaMike_YoureOn{
+	"You're cooked kid."
+}
+
+text DollaMike_ComeBackWhenReady{
+	"I'd be scared too if I were you."
+}
+
+text DollaMike_Outro{
+	"It's all because I ran out of Elixirs!"
+}
+
+text MossdeepCity_BetaTesterHouse_Text_PlayerReceivedVictini{
+	"{PLAYER} received Victini!"
+}
+
+text DollaMike_ExplainVictini{
+	"That Mythical there represents\n"
+	"victory!\p"
+	"I think anyway, I actually chose Keldeo\n"
+	"as my gift Pokémon, but the creator\l"
+	"said no, so I guess that'll do."
+}
+
+text PostBattle_DollaMike{
+	"This game was so hard, man, I can't wait\n"
+	"to play it again."
+}
