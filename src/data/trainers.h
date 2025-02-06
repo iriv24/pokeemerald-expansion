@@ -282,18 +282,6 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter1),
     },
 
-    [TRAINER_GRUNT_MT_PYRE_3] =
-    {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("Grunt"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntMtPyre3),
-    },
-
     [TRAINER_GRUNT_WEATHER_INST_4] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -10515,5 +10503,18 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_DollaMike),
+        .isBossTrainer = TRUE,
+    },
+
+    [TRAINER_DANNI] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = _("Danni"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
+        .party = TRAINER_PARTY(sParty_Danni),
         .isBossTrainer = TRUE,
     },

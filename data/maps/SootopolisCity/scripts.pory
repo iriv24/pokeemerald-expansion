@@ -42,7 +42,6 @@ SootopolisCity_EventScript_LockHouseDoors::
 	setmetatile 9, 17, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 9, 26, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 44, 17, METATILE_Sootopolis_Door_Closed, TRUE
-	setmetatile 8, 35, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 53, 28, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 45, 6, METATILE_Sootopolis_Door_Closed, TRUE
 	setmetatile 48, 25, METATILE_Sootopolis_Door_Closed, TRUE

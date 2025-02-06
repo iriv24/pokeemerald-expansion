@@ -365,17 +365,6 @@ static const struct TrainerMon sParty_GruntMtPyre1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMtPyre3[] = {
-    {
-    .lvl = 30,
-    .species = SPECIES_POOCHYENA,
-    },
-    {
-    .lvl = 30,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
 static const struct TrainerMon sParty_GruntWeatherInst4[] = {
     {
     .lvl = 60,
@@ -16755,5 +16744,74 @@ static const struct TrainerMon sParty_DollaMike[] = {
     .ability = ABILITY_RKS_SYSTEM,
     .heldItem = ITEM_LEFTOVERS,
     .moves = {MOVE_THUNDER_FANG, MOVE_ROCK_SLIDE, MOVE_PARTING_SHOT, MOVE_MULTI_ATTACK},
+    },
+};
+
+static const struct TrainerMon sParty_Danni[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Po"),
+    .species = SPECIES_URSHIFU_RAPID_STRIKE,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_UNSEEN_FIST,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_SURGING_STRIKES, MOVE_CLOSE_COMBAT, MOVE_AQUA_JET, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Freddy"),
+    .species = SPECIES_DARKRAI,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_BAD_DREAMS,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_DARK_PULSE, MOVE_FOCUS_BLAST, MOVE_DARK_VOID, MOVE_NASTY_PLOT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Mettaton"),
+    .species = SPECIES_DRAGAPULT,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_INFILTRATOR,
+    .heldItem = ITEM_CHOICE_SPECS,
+    .moves = {MOVE_DRAGON_PULSE, MOVE_SHADOW_BALL, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Scor"),
+    .species = SPECIES_CINDERACE,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_LIBERO,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .moves = {MOVE_PYRO_BALL, MOVE_HIGH_JUMP_KICK, MOVE_SUCKER_PUNCH, MOVE_U_TURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Spoopy"),
+    .species = SPECIES_FLUTTER_MANE,
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .ability = ABILITY_PROTOSYNTHESIS,
+    .heldItem = ITEM_BOOSTER_ENERGY,
+    .moves = {MOVE_SHADOW_BALL, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_POWER_GEM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .nickname = COMPOUND_STRING("Byron"),
+    .species = SPECIES_MELMETAL,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_IRON_FIST,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_DOUBLE_IRON_BASH, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH},
     },
 };

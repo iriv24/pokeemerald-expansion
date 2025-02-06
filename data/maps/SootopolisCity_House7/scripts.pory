@@ -1,28 +1,158 @@
 raw `
+.set LOCALID_DANNI, 1
+
 SootopolisCity_House7_MapScripts::
 	.byte 0
 
-SootopolisCity_House7_EventScript_OldMan::
-	msgbox SootopolisCity_House7_Text_CityFromEruptedVolcano, MSGBOX_NPC
+SootopolisCity_House7_EventScript_Urshifu::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_URSHIFU_RAPID_STRIKE, CRY_MODE_NORMAL
+	msgbox SootopolisCity_House7_Text_Urshifu, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
-SootopolisCity_House7_EventScript_PokefanF::
-	msgbox SootopolisCity_House7_Text_CaveMadeToKeepSomething, MSGBOX_NPC
-	end
-
-SootopolisCity_House7_Text_CityFromEruptedVolcano:
-	.string "An underwater volcano erupted and\n"
-	.string "forced itself up from the depths.\p"
-	.string "Its crater emerged from the sea and\n"
-	.string "became filled with rainwater.\p"
-	.string "That's how SOOTOPOLIS CITY came into\n"
-	.string "being.$"
-
-SootopolisCity_House7_Text_CaveMadeToKeepSomething:
-	.string "The cave that links SOOTOPOLIS and\n"
-	.string "the outside world…\p"
-	.string "It seems as if the cave was made to\n"
-	.string "keep something from getting out.\p"
-	.string "Or am I just imagining things?$"
+SootopolisCity_House7_Text_Urshifu:
+	.string "Urshifu: Huaaaaah!$"
 
 `
+
+script SootopolisCity_House7_EventScript_Danni{
+	lockall
+	applymovement(LOCALID_DANNI, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_DANNI, SootopolisCity_House7_EventScript_DanniDefeated)
+	goto_if_set(FLAG_TEMP_1, SootopolisCity_House7_EventScript_DanniRequestBattleAgain)
+	msgbox(Danni_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_House7_EventScript_BattleDanniPrompt)
+	end
+}
+
+script SootopolisCity_House7_EventScript_DanniRequestBattleAgain{
+	msgbox(Danni_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_House7_EventScript_BattleDanniPrompt)
+	end
+}
+
+script SootopolisCity_House7_EventScript_BattleDanniPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_House7_EventScript_BattleDanni)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_DeclineDanniBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_House7_EventScript_DeclineDanniBattle {
+	setflag(FLAG_TEMP_1)
+	msgbox(Danni_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_House7_EventScript_BattleDanni{
+	msgbox(Danni_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_DANNI, Danni_Outro)
+	goto(SootopolisCity_House7_EventScript_DanniGiveHoopa)
+	return
+}
+
+
+script SootopolisCity_House7_EventScript_DanniDefeated{
+	msgbox(PostBattle_Danni, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_House7_EventScript_DanniGiveHoopa{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOOPA_CONFINED)
+	givemonrandom(SPECIES_HOOPA_CONFINED, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveHoopaParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveHoopaPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_House7_EventScript_ReceiveHoopaParty{
+	call(SootopolisCity_House7_EventScript_ReceivedHoopaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainHoopa)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_House7_EventScript_ExplainHoopa)
+	end
+}
+	
+
+script SootopolisCity_House7_EventScript_ReceiveHoopaPC {
+	call(SootopolisCity_House7_EventScript_ReceivedHoopaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendHoopaToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_House7_EventScript_SendHoopaToPC)
+	end
+}
+	
+
+script SootopolisCity_House7_EventScript_SendHoopaToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_House7_EventScript_ExplainHoopa)
+	end
+}
+	
+
+script SootopolisCity_House7_EventScript_ReceivedHoopaFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_House7_Text_PlayerReceivedHoopa)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_HOOPA_CONFINED)
+	return
+}
+	
+
+script SootopolisCity_House7_EventScript_ExplainHoopa {
+	msgbox(Danni_ExplainHoopa, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Danni_Greeting{
+	"Ello ello, trainer. Nice to see you’ve\n"
+	"gotten this far. How bout a battle with\l"
+	"a nuzlocke legend?\p"
+	"Win here and you get a rad Mythical\n"
+	"from me. You in?"
+}
+
+text Danni_ReadyYet{
+	"Ready yet?"
+}
+
+text Danni_YoureOn{
+	"You'll never beat this squad!"
+}
+
+text Danni_ComeBackWhenReady{
+	"Didn't think so!"
+}
+
+text Danni_Outro{
+	"Huh. You defeated me. Kudos and\n"
+	"congrats."
+}
+
+text SootopolisCity_House7_Text_PlayerReceivedHoopa{
+	"{PLAYER} received Hoopa!"
+}
+
+text Danni_ExplainHoopa{
+	"As promised, there's your Mythical.\n"
+	"That one is pretty strong too, I'd say."
+}
+
+text PostBattle_Danni{
+	"I was the first player ever to nuzlocke\n"
+	"this game! And, I did it deathless!\l"
+	"How do you like that?"
+}
