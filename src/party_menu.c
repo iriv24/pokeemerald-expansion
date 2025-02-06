@@ -8175,6 +8175,5 @@ void ItemUseCB_PokeBall(u8 taskId, TaskFunc task)
         DisplayPartyMenuMessage(gStringVar4, TRUE);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
-        RemoveBagItem(newBall, 1);
     }
 }
