@@ -5775,7 +5775,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .natDexNum = NATIONAL_DEX_GARBODOR,
         .categoryName = _("Trash Heap"),
         .height = 210,
-        .weight = 0,
+        .weight = 1073,
         .description = COMPOUND_STRING(
             "It sprays toxic gas from its mouth\n"
             "and fingers. If the gas engulfs you,\n"

@@ -1261,7 +1261,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .natDexNum = NATIONAL_DEX_BUTTERFREE,
         .categoryName = _("Butterfly"),
         .height = 170,
-        .weight = 0,
+        .weight = 320,
         .description = COMPOUND_STRING(
             "Once it has opponents trapped in a\n"
             "tornado that could blow away a 10-\n"
@@ -7926,7 +7926,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .natDexNum = NATIONAL_DEX_MACHAMP,
         .categoryName = _("Superpower"),
         .height = 250,
-        .weight = 0,
+        .weight = 1300,
         .description = COMPOUND_STRING(
             "One of these Pokémon once used\n"
             "its immeasurable strength to lift a\n"
@@ -11324,7 +11324,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .natDexNum = NATIONAL_DEX_KINGLER,
         .categoryName = _("Pincer"),
         .height = 190,
-        .weight = 0,
+        .weight = 600,
         .description = COMPOUND_STRING(
             "The flow of Mega energy has\n"
             "spurred this Pokémon's left pincer\n"
@@ -15615,7 +15615,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .natDexNum = NATIONAL_DEX_LAPRAS,
         .categoryName = _("Transport"),
         .height = 240,
-        .weight = 0,
+        .weight = 2200,
         .description = COMPOUND_STRING(
             "Over 5,000 people can ride on its\n"
             "shell at once. And it's a very\n"
@@ -17181,7 +17181,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .natDexNum = NATIONAL_DEX_SNORLAX,
         .categoryName = _("Sleeping"),
         .height = 350,
-        .weight = 0,
+        .weight = 4600,
         .description = COMPOUND_STRING(
             "Mega energy has affected\n"
             "stray seeds and even pebbles that\n"

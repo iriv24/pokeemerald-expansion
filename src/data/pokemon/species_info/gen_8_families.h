@@ -1341,7 +1341,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_ORBEETLE,
         .categoryName = _("Seven Spot"),
         .height = 140,
-        .weight = 0,
+        .weight = 408,
         .description = COMPOUND_STRING(
             "Its brain has grown to a gargantuan\n"
             "size, as has the rest of its body.\n"
@@ -1904,7 +1904,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_DREDNAW,
         .categoryName = _("Bite"),
         .height = 240,
-        .weight = 0,
+        .weight = 1155,
         .description = COMPOUND_STRING(
             "In the Galar region, there's a tale\n"
             "about this Pokémon chewing up a\n"
@@ -2278,7 +2278,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_COALOSSAL,
         .categoryName = _("Coal"),
         .height = 420,
-        .weight = 0,
+        .weight = 3105,
         .description = COMPOUND_STRING(
             "Its body is a colossal stove. With\n"
             "Gigantamax energy stoking the fire,\n"
@@ -2468,7 +2468,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_FLAPPLE,
         .categoryName = _("Apple Wing"),
         .height = 240,
-        .weight = 0,
+        .weight = 10,
         .description = COMPOUND_STRING(
             "Under the influence of Mega\n"
             "energy, it produces much more sweet\n"
@@ -2589,7 +2589,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_APPLETUN,
         .categoryName = _("Apple Nectar"),
         .height = 240,
-        .weight = 0,
+        .weight = 130,
         .description = COMPOUND_STRING(
             "Due to Mega energy, this\n"
             "Pokémon's nectar has thickened. The\n"
@@ -2899,7 +2899,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_SANDACONDA,
         .categoryName = _("Sand Snake"),
         .height = 220,
-        .weight = 0,
+        .weight = 655,
         .description = COMPOUND_STRING(
             "Its sand pouch has grown to tremendous\n"
             "proportions. More than 1,000,000 tons of\n"
@@ -3392,7 +3392,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_TOXTRICITY,
         .categoryName = _("Punk"),
         .height = 240,
-        .weight = 0,
+        .weight = 400,
         .description = gToxtricityGigantamaxPokedexText,
         .pokemonScale = 259,
         .pokemonOffset = 1,
@@ -3637,7 +3637,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_CENTISKORCH,
         .categoryName = _("Radiator"),
         .height = 750,
-        .weight = 0,
+        .weight = 1200,
         .description = COMPOUND_STRING(
             "The heat that comes off a\n"
             "Mega Centiskorch may destabilize air\n"
@@ -4516,7 +4516,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_GRIMMSNARL,
         .categoryName = _("Bulk Up"),
         .height = 320,
-        .weight = 0,
+        .weight = 610,
         .description = COMPOUND_STRING(
             "Mega energy has caused more\n"
             "hair to sprout all over its body.\n"
@@ -5639,7 +5639,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_COPPERAJAH,
         .categoryName = _("Copperderm"),
         .height = 230,
-        .weight = 0,
+        .weight = 6500,
         .description = COMPOUND_STRING(
             "After this Pokémon has\n"
             "Mega-ed, its massive nose can utterly\n"
