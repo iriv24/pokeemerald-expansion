@@ -1587,7 +1587,7 @@ Route104_Text_OnlyThrowBallAtWildPokemon:
 # 794 "data/maps/Route104/scripts.pory"
 	.string "someone else's Pokémon.\p"
 # 795 "data/maps/Route104/scripts.pory"
-	.string "You should throw Poké BallS only at\n"
+	.string "You should throw Poké Balls only at\n"
 # 796 "data/maps/Route104/scripts.pory"
 	.string "wild Pokémon.$"
 # 797 "data/maps/Route104/scripts.pory"
