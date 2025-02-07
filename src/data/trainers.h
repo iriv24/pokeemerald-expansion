@@ -516,18 +516,6 @@
         .isBossTrainer = TRUE,
     },
 
-    [TRAINER_SHADY] =
-    {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Chip"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Shady),
-    },
-
     [TRAINER_FOSTER] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
@@ -10516,5 +10504,18 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_Danni),
+        .isBossTrainer = TRUE,
+    },
+
+    [TRAINER_MASTA_JANES] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_SUPERNERD_FIRERED,
+        .trainerName = _("MastaJanes"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_ACE_POKEMON,
+        .party = TRAINER_PARTY(sParty_MastaJanes),
         .isBossTrainer = TRUE,
     },

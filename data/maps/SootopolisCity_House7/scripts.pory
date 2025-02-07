@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_DANNI, 1
+.set LOCALID_MASTA_JANES, 3
 
 SootopolisCity_House7_MapScripts::
 	.byte 0
@@ -16,6 +17,19 @@ SootopolisCity_House7_EventScript_Urshifu::
 
 SootopolisCity_House7_Text_Urshifu:
 	.string "Urshifu: Huaaaaah!$"
+
+SootopolisCity_House7_EventScript_Meowscarada::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MEOWSCARADA, CRY_MODE_NORMAL
+	msgbox SootopolisCity_House7_Text_Meowscarada, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SootopolisCity_House7_Text_Meowscarada:
+	.string "Meowscarada: Tzchrowwwwww!$"
 
 `
 
@@ -155,4 +169,144 @@ text PostBattle_Danni{
 	"I was the first player ever to nuzlocke\n"
 	"this game! And, I did it deathless!\l"
 	"How do you like that?"
+}
+
+script SootopolisCity_House7_EventScript_MastaJanes{
+	lockall
+	applymovement(LOCALID_MASTA_JANES, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_MASTA_JANES, SootopolisCity_House7_EventScript_MastaJanesDefeated)
+	goto_if_set(FLAG_TEMP_2, SootopolisCity_House7_EventScript_MastaJanesRequestBattleAgain)
+	msgbox(MastaJanes_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_House7_EventScript_BattleMastaJanesPrompt)
+	end
+}
+
+script SootopolisCity_House7_EventScript_MastaJanesRequestBattleAgain{
+	msgbox(MastaJanes_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_House7_EventScript_BattleMastaJanesPrompt)
+	end
+}
+
+script SootopolisCity_House7_EventScript_BattleMastaJanesPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_House7_EventScript_BattleMastaJanes)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_DeclineMastaJanesBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_House7_EventScript_DeclineMastaJanesBattle {
+	setflag(FLAG_TEMP_2)
+	msgbox(MastaJanes_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_House7_EventScript_BattleMastaJanes{
+	msgbox(MastaJanes_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MASTA_JANES, MastaJanes_Outro)
+	goto(SootopolisCity_House7_EventScript_MastaJanesGiveDitto)
+	return
+}
+
+script SootopolisCity_House7_EventScript_MastaJanesDefeated{
+	msgbox(PostBattle_MastaJanes, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_House7_EventScript_MastaJanesGiveDitto{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DITTO)
+	givemonrandom(SPECIES_DITTO, 50, isShiny=TRUE)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveDittoParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveDittoPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_House7_EventScript_ReceiveDittoParty{
+	call(SootopolisCity_House7_EventScript_ReceivedDittoFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainDitto)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_House7_EventScript_ExplainDitto)
+	end
+}
+	
+script SootopolisCity_House7_EventScript_ReceiveDittoPC {
+	call(SootopolisCity_House7_EventScript_ReceivedDittoFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendDittoToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_House7_EventScript_SendDittoToPC)
+	end
+}
+	
+script SootopolisCity_House7_EventScript_SendDittoToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_House7_EventScript_ExplainDitto)
+	end
+}
+	
+script SootopolisCity_House7_EventScript_ReceivedDittoFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_House7_Text_PlayerReceivedDitto)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_DITTO)
+	return
+}
+
+script SootopolisCity_House7_EventScript_ExplainDitto {
+	msgbox(MastaJanes_ExplainDitto, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text MastaJanes_Greeting{
+	"Hi there trainer, my name is MastaJanes.\n"
+	"I was the 5th person to beat this game,\l"
+	"and most notably, I beat it on the\l"
+	"MyBoy emulator.\p"
+	"Even though were several crashes in\n"
+	"that version of the game at the time,\l"
+	"and even though the creator told me\l"
+	"not to use MyBoy, I persevered and\l"
+	"finished the game anyway.\p"
+	"Now, if you can beat me, I'll give you a\n"
+	"shiny Ditto you can use to breed more\l"
+	"shiny Pokémon.\p"
+	"Do you want to battle?"
+}
+
+text MastaJanes_ReadyYet{
+	"Are you ready now?"
+}
+
+text MastaJanes_YoureOn{
+	"You're going down!"
+}
+
+text MastaJanes_ComeBackWhenReady{
+	"You know where to find me if you change\n"
+	"your mind."
+}
+
+text MastaJanes_Outro{
+	"Wow, I didn't think I could lose.\n"
+}
+
+text SootopolisCity_House7_Text_PlayerReceivedDitto{
+	"{PLAYER} received Ditto!"
+}
+
+text MastaJanes_ExplainDitto{
+	"Here's your shiny Ditto!\n"
+	"Hope you can use it to get many more\l"
+	"shiny Pokémon."
+}
+
+text PostBattle_MastaJanes{
+	"I'm still playing on MyBoy to this day."
 }
