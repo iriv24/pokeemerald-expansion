@@ -113,7 +113,7 @@ SootopolisCity_House7_EventScript_BattleDanni::
 # 68 "data/maps/SootopolisCity_House7/scripts.pory"
 	trainerbattle_no_intro TRAINER_DANNI, Danni_Outro
 # 69 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto SootopolisCity_House7_EventScript_DanniGiveHoopa
+	goto SootopolisCity_House7_EventScript_DanniGiveGenesect
 	return
 
 
@@ -125,15 +125,15 @@ SootopolisCity_House7_EventScript_DanniDefeated::
 	end
 
 
-SootopolisCity_House7_EventScript_DanniGiveHoopa::
+SootopolisCity_House7_EventScript_DanniGiveGenesect::
 # 81 "data/maps/SootopolisCity_House7/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOOPA_CONFINED
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GENESECT
 # 82 "data/maps/SootopolisCity_House7/scripts.pory"
-	givemonrandom SPECIES_HOOPA_CONFINED, 50
+	givemonrandom SPECIES_GENESECT, 50
 # 83 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveHoopaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveGenesectParty
 # 84 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveHoopaPC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveGenesectPC
 # 85 "data/maps/SootopolisCity_House7/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
 # 86 "data/maps/SootopolisCity_House7/scripts.pory"
@@ -141,61 +141,61 @@ SootopolisCity_House7_EventScript_DanniGiveHoopa::
 	end
 
 
-SootopolisCity_House7_EventScript_ReceiveHoopaParty::
+SootopolisCity_House7_EventScript_ReceiveGenesectParty::
 # 91 "data/maps/SootopolisCity_House7/scripts.pory"
-	call SootopolisCity_House7_EventScript_ReceivedHoopaFanfare
+	call SootopolisCity_House7_EventScript_ReceivedGenesectFanfare
 # 92 "data/maps/SootopolisCity_House7/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 93 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainHoopa
+	goto_if_eq VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainGenesect
 # 94 "data/maps/SootopolisCity_House7/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
 # 95 "data/maps/SootopolisCity_House7/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 # 96 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto SootopolisCity_House7_EventScript_ExplainHoopa
+	goto SootopolisCity_House7_EventScript_ExplainGenesect
 	end
 
 
-SootopolisCity_House7_EventScript_ReceiveHoopaPC::
+SootopolisCity_House7_EventScript_ReceiveGenesectPC::
 # 102 "data/maps/SootopolisCity_House7/scripts.pory"
-	call SootopolisCity_House7_EventScript_ReceivedHoopaFanfare
+	call SootopolisCity_House7_EventScript_ReceivedGenesectFanfare
 # 103 "data/maps/SootopolisCity_House7/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 104 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendHoopaToPC
+	goto_if_eq VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendGenesectToPC
 # 105 "data/maps/SootopolisCity_House7/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 # 106 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto SootopolisCity_House7_EventScript_SendHoopaToPC
+	goto SootopolisCity_House7_EventScript_SendGenesectToPC
 	end
 
 
-SootopolisCity_House7_EventScript_SendHoopaToPC::
+SootopolisCity_House7_EventScript_SendGenesectToPC::
 # 112 "data/maps/SootopolisCity_House7/scripts.pory"
 	call Common_EventScript_TransferredToPC
 # 113 "data/maps/SootopolisCity_House7/scripts.pory"
-	goto SootopolisCity_House7_EventScript_ExplainHoopa
+	goto SootopolisCity_House7_EventScript_ExplainGenesect
 	end
 
 
-SootopolisCity_House7_EventScript_ReceivedHoopaFanfare::
+SootopolisCity_House7_EventScript_ReceivedGenesectFanfare::
 # 119 "data/maps/SootopolisCity_House7/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 120 "data/maps/SootopolisCity_House7/scripts.pory"
-	message SootopolisCity_House7_Text_PlayerReceivedHoopa
+	message SootopolisCity_House7_Text_PlayerReceivedGenesect
 # 121 "data/maps/SootopolisCity_House7/scripts.pory"
 	waitmessage
 # 122 "data/maps/SootopolisCity_House7/scripts.pory"
 	waitfanfare
 # 123 "data/maps/SootopolisCity_House7/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_HOOPA_CONFINED
+	bufferspeciesname STR_VAR_1, SPECIES_GENESECT
 	return
 
 
-SootopolisCity_House7_EventScript_ExplainHoopa::
+SootopolisCity_House7_EventScript_ExplainGenesect::
 # 129 "data/maps/SootopolisCity_House7/scripts.pory"
-	msgbox Danni_ExplainHoopa, MSGBOX_DEFAULT
+	msgbox Danni_ExplainGenesect, MSGBOX_DEFAULT
 # 130 "data/maps/SootopolisCity_House7/scripts.pory"
 	release
 	end
@@ -364,11 +364,11 @@ Danni_Outro::
 	.string "Huh. You defeated me. Kudos and\n"
 	.string "congrats.$"
 
-SootopolisCity_House7_Text_PlayerReceivedHoopa::
+SootopolisCity_House7_Text_PlayerReceivedGenesect::
 # 159 "data/maps/SootopolisCity_House7/scripts.pory"
-	.string "{PLAYER} received Hoopa!$"
+	.string "{PLAYER} received Genesect!$"
 
-Danni_ExplainHoopa::
+Danni_ExplainGenesect::
 # 163 "data/maps/SootopolisCity_House7/scripts.pory"
 	.string "As promised, there's your Mythical.\n"
 	.string "That one is pretty strong too, I'd say.$"

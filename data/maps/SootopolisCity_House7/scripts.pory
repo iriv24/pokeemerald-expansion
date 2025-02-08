@@ -66,7 +66,7 @@ script SootopolisCity_House7_EventScript_DeclineDanniBattle {
 script SootopolisCity_House7_EventScript_BattleDanni{
 	msgbox(Danni_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_DANNI, Danni_Outro)
-	goto(SootopolisCity_House7_EventScript_DanniGiveHoopa)
+	goto(SootopolisCity_House7_EventScript_DanniGiveGenesect)
 	return
 }
 
@@ -77,56 +77,56 @@ script SootopolisCity_House7_EventScript_DanniDefeated{
 	end
 }
 
-script SootopolisCity_House7_EventScript_DanniGiveHoopa{
-	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOOPA_CONFINED)
-	givemonrandom(SPECIES_HOOPA_CONFINED, 50)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveHoopaParty)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveHoopaPC)
+script SootopolisCity_House7_EventScript_DanniGiveGenesect{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GENESECT)
+	givemonrandom(SPECIES_GENESECT, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House7_EventScript_ReceiveGenesectParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House7_EventScript_ReceiveGenesectPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)
 	release
 	end
 }
 
-script SootopolisCity_House7_EventScript_ReceiveHoopaParty{
-	call(SootopolisCity_House7_EventScript_ReceivedHoopaFanfare)
+script SootopolisCity_House7_EventScript_ReceiveGenesectParty{
+	call(SootopolisCity_House7_EventScript_ReceivedGenesectFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainHoopa)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_ExplainGenesect)
 	call(Common_EventScript_GetGiftMonPartySlot)
 	call(Common_EventScript_NameReceivedPartyMon)
-	goto(SootopolisCity_House7_EventScript_ExplainHoopa)
+	goto(SootopolisCity_House7_EventScript_ExplainGenesect)
 	end
 }
 	
 
-script SootopolisCity_House7_EventScript_ReceiveHoopaPC {
-	call(SootopolisCity_House7_EventScript_ReceivedHoopaFanfare)
+script SootopolisCity_House7_EventScript_ReceiveGenesectPC {
+	call(SootopolisCity_House7_EventScript_ReceivedGenesectFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendHoopaToPC)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House7_EventScript_SendGenesectToPC)
 	call(Common_EventScript_NameReceivedBoxMon)
-	goto(SootopolisCity_House7_EventScript_SendHoopaToPC)
+	goto(SootopolisCity_House7_EventScript_SendGenesectToPC)
 	end
 }
 	
 
-script SootopolisCity_House7_EventScript_SendHoopaToPC {
+script SootopolisCity_House7_EventScript_SendGenesectToPC {
 	call(Common_EventScript_TransferredToPC)
-	goto(SootopolisCity_House7_EventScript_ExplainHoopa)
+	goto(SootopolisCity_House7_EventScript_ExplainGenesect)
 	end
 }
 	
 
-script SootopolisCity_House7_EventScript_ReceivedHoopaFanfare {
+script SootopolisCity_House7_EventScript_ReceivedGenesectFanfare {
 	playfanfare(MUS_OBTAIN_ITEM)
-	message(SootopolisCity_House7_Text_PlayerReceivedHoopa)
+	message(SootopolisCity_House7_Text_PlayerReceivedGenesect)
 	waitmessage
 	waitfanfare
-	bufferspeciesname(STR_VAR_1, SPECIES_HOOPA_CONFINED)
+	bufferspeciesname(STR_VAR_1, SPECIES_GENESECT)
 	return
 }
 	
 
-script SootopolisCity_House7_EventScript_ExplainHoopa {
-	msgbox(Danni_ExplainHoopa, MSGBOX_DEFAULT)
+script SootopolisCity_House7_EventScript_ExplainGenesect {
+	msgbox(Danni_ExplainGenesect, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -156,11 +156,11 @@ text Danni_Outro{
 	"congrats."
 }
 
-text SootopolisCity_House7_Text_PlayerReceivedHoopa{
-	"{PLAYER} received Hoopa!"
+text SootopolisCity_House7_Text_PlayerReceivedGenesect{
+	"{PLAYER} received Genesect!"
 }
 
-text Danni_ExplainHoopa{
+text Danni_ExplainGenesect{
 	"As promised, there's your Mythical.\n"
 	"That one is pretty strong too, I'd say."
 }
