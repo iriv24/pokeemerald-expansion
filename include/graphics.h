@@ -1700,6 +1700,7 @@ extern const u32 gItemIconPalette_BerserkGene[];
 
 extern const u32 gItemIcon_FairyFeather[];
 extern const u32 gItemIconPalette_FairyFeather[];
+extern const u32 gItemIconPalette_SteelFeather[];
 
 extern const u32 gItemIcon_Mochi[];
 extern const u32 gItemIconPalette_HealthMochi[];

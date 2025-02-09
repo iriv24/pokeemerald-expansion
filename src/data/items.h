@@ -15281,6 +15281,24 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FairyFeather,
     },
 
+    [ITEM_STEEL_FEATHER] =
+    {
+        .name = _("Steel Feather"),
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises the power of\n"
+            "Steel-type moves."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+        .iconPic = gItemIcon_FairyFeather,
+        .iconPalette = gItemIconPalette_SteelFeather,
+    },
+
     [ITEM_SYRUPY_APPLE] =
     {
         .name = _("Syrupy Apple"),
