@@ -3553,6 +3553,9 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             if (CountUsablePartyMons(battlerAtk) == 0)
                 break; // Can't switch
 
+            else if(gBattleMons[battlerAtk].species == SPECIES_EMPOLEON || gBattleMons[battlerAtk].species == SPECIES_EMPOLEON_MEGA_D)
+                ADJUST_SCORE(GOOD_EFFECT);
+
             //if (switchAbility == ABILITY_INTIMIDATE && PartyHasMoveCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
                 //ADJUST_SCORE(7);
         }

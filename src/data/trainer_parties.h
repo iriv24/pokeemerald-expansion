@@ -2143,11 +2143,11 @@ static const struct TrainerMon sParty_Jessica1[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 202,
     .species = SPECIES_MAGNEZONE,
-    .nature = NATURE_HASTY,
+    .nature = NATURE_NAIVE,
     .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_SP_ATK(),
     .ability = ABILITY_STURDY,
     .heldItem = ITEM_CUSTAP_BERRY,
-    .moves = {MOVE_EXPLOSION, MOVE_FLASH_CANNON, MOVE_THUNDER, MOVE_STEALTH_ROCK}
+    .moves = {MOVE_EXPLOSION, MOVE_FLASH_CANNON, MOVE_THUNDER, MOVE_BODY_PRESS}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4134,11 +4134,11 @@ static const struct TrainerMon sParty_Phoebe1[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
     .species = SPECIES_FEZANDIPITI,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .nature = NATURE_TIMID,
+    .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_TOXIC_CHAIN,
     .heldItem = ITEM_ASSAULT_VEST,
-    .moves = {MOVE_PLAY_ROUGH, MOVE_GUNK_SHOT, MOVE_DOUBLE_KICK, MOVE_U_TURN}
+    .moves = {MOVE_MOONBLAST, MOVE_SLUDGE_WAVE, MOVE_DARK_PULSE, MOVE_HEAT_WAVE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5923,7 +5923,7 @@ static const struct TrainerMon sParty_WallaceWithSteven[] = {
     .ability = ABILITY_TORRENT,
     .heldItem = ITEM_EMPOLEONITE_O,
     .isShiny = TRUE,
-    .moves = {MOVE_IRON_HEAD, MOVE_LIQUIDATION, MOVE_DRILL_PECK, MOVE_BRICK_BREAK}
+    .moves = {MOVE_IRON_HEAD, MOVE_LIQUIDATION, MOVE_DRILL_PECK, MOVE_PROTECT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -5952,12 +5952,12 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 85,
     .species = SPECIES_EMPOLEON,
-    .nature = NATURE_BOLD,
+    .nature = NATURE_RELAXED,
     .ev = TRAINER_PARTY_EVS_BOLD(),
     .ability = ABILITY_TORRENT,
     .heldItem = ITEM_EMPOLEONITE_D,
     .isShiny = TRUE,
-    .moves = {MOVE_SCALD, MOVE_STEALTH_ROCK, MOVE_ROAR, MOVE_ROOST}
+    .moves = {MOVE_TOXIC, MOVE_FLASH_CANNON, MOVE_FLIP_TURN, MOVE_ROOST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
