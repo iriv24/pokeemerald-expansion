@@ -434,10 +434,15 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
         CreateMonWithNature(&mon, species, level, ivToMakeMon, nature);
 
     // shininess
-    if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
+    // if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
+    //     isShiny = TRUE;
+    // else if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
+    //     isShiny = FALSE;
+
+    if (!isShiny && (Random() < 109))
+    {
         isShiny = TRUE;
-    else if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
-        isShiny = FALSE;
+    }
     SetMonData(&mon, MON_DATA_IS_SHINY, &isShiny);
 
     // gigantamax factor

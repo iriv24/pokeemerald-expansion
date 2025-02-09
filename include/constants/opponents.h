@@ -74,10 +74,10 @@
 #define TRAINER_RICKY_3                      68
 #define TRAINER_RICKY_4                      69
 #define TRAINER_RICKY_5                      70
-#define TRAINER_RANDALL                      71
-#define TRAINER_PARKER                       72
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
+#define TRAINER_RANDALL                      71 //unused norman gym
+#define TRAINER_PARKER                       72 //unused norman gym
+#define TRAINER_GEORGE                       73 //unused norman gym
+#define TRAINER_BERKE                        74 //unused norman gym
 #define TRAINER_BRAXTON                      75
 #define TRAINER_VINCENT                      76
 #define TRAINER_LEROY                        77
@@ -92,9 +92,9 @@
 #define TRAINER_WILTON_4                     86
 #define TRAINER_WILTON_5                     87
 #define TRAINER_WARREN                       88
-#define TRAINER_MARY                         89
-#define TRAINER_ALEXIA                       90
-#define TRAINER_JODY                         91
+#define TRAINER_MARY                         89 //unused norman gym
+#define TRAINER_ALEXIA                       90 //unused norman gym
+#define TRAINER_JODY                         91 //unused norman gym
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94
