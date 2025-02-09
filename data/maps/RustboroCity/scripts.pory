@@ -14,6 +14,7 @@ RustboroCity_MapScripts::
 
 RustboroCity_OnTransition:
 	setflag FLAG_VISITED_RUSTBORO_CITY
+	setrespawn HEAL_LOCATION_RUSTBORO_CITY
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_HideMapNamePopup
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -896,6 +897,9 @@ RustboroCity_EventScript_BattleMayTreecko::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
@@ -905,6 +909,9 @@ RustboroCity_EventScript_BattleMayTorchic::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
@@ -914,6 +921,9 @@ RustboroCity_EventScript_BattleMayMudkip::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage
 	end
 
@@ -930,6 +940,7 @@ RustboroCity_EventScript_BrendanEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setvar VAR_0x8008, 0
 	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
 	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
@@ -939,6 +950,7 @@ RustboroCity_EventScript_BrendanEncounter::
 	end
 
 RustboroCity_EventScript_BrendanAskToBattle::
+	setvar VAR_0x8008, 1
 	msgbox RustboroCity_Text_BrendanWantToBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
 	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_BattleBrendan2
@@ -989,6 +1001,9 @@ RustboroCity_EventScript_BattleBrendanTreecko::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
@@ -998,6 +1013,9 @@ RustboroCity_EventScript_BattleBrendanTorchic::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
@@ -1007,6 +1025,9 @@ RustboroCity_EventScript_BattleBrendanMudkip::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_BRINEY_HOUSE_STATE, 1
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
 	goto RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage
 	end
 
