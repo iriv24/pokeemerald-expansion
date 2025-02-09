@@ -177,7 +177,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_STOMPING_TANTRUM",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_BULLET_SEED",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
     },
