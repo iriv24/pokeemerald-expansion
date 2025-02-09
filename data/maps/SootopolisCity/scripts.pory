@@ -81,7 +81,7 @@ SootopolisCity_EventScript_HideMapNamePopup::
 
 SootopolisCity_EventScript_SetBattleSpectators::
 	setobjectxyperm LOCALID_KIRI, 13, 48
-	setobjectxyperm LOCALID_BOY_1, 46, 32
+	setobjectxyperm LOCALID_BOY_1, 45, 32
 	setobjectxyperm LOCALID_NINJA_BOY, 48, 41
 	setobjectxyperm LOCALID_WOMAN_1, 45, 43
 	setobjectmovementtype LOCALID_KIRI, MOVEMENT_TYPE_FACE_UP

@@ -165,7 +165,7 @@ SootopolisCity_EventScript_SetBattleSpectators::
 # 83 "data/maps/SootopolisCity/scripts.pory"
 	setobjectxyperm LOCALID_KIRI, 13, 48
 # 84 "data/maps/SootopolisCity/scripts.pory"
-	setobjectxyperm LOCALID_BOY_1, 46, 32
+	setobjectxyperm LOCALID_BOY_1, 45, 32
 # 85 "data/maps/SootopolisCity/scripts.pory"
 	setobjectxyperm LOCALID_NINJA_BOY, 48, 41
 # 86 "data/maps/SootopolisCity/scripts.pory"

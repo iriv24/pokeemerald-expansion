@@ -2,35 +2,92 @@ raw `
 SootopolisCity_House2_MapScripts::
 	.byte 0
 
-SootopolisCity_House2_EventScript_ExpertF::
+`
+
+script SootopolisCity_House2_EventScript_ExpertF {
 	lock
 	faceplayer
-	msgbox SootopolisCity_House2_Text_DidYouKnowAboutMtPyreOrbs, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, SootopolisCity_House2_EventScript_KnowAboutOrbs
-	call_if_eq VAR_RESULT, NO, SootopolisCity_House2_EventScript_DontKnowAboutOrbs
+	if(!flag(FLAG_MET_ARCEUS_EXPERT))
+	{
+		msgbox(SootopolisCity_House2_ArceusExpertIntro)
+		giveitem(ITEM_DRACO_PLATE)
+		msgbox(SootopolisCity_House2_SeeGoodPlate)
+		setflag(FLAG_MET_ARCEUS_EXPERT)
+		release
+		end
+	}
+	checkitemplate()
+	if(!var(VAR_RESULT))
+	{
+		msgbox(SootopolisCity_House2_Text_NoPlates)
+		release
+		end
+	}
+
+	msgbox(ArceusExpertSwapPlate)
+	dynmultipush("Fighting", ITEM_FIST_PLATE)
+	dynmultipush("Flying", ITEM_SKY_PLATE)
+	dynmultipush("Poison", ITEM_TOXIC_PLATE)
+	dynmultipush("Ground", ITEM_EARTH_PLATE)
+	dynmultipush("Rock", ITEM_STONE_PLATE)
+	dynmultipush("Bug", ITEM_INSECT_PLATE)
+	dynmultipush("Ghost", ITEM_SPOOKY_PLATE)
+	dynmultipush("Steel", ITEM_IRON_PLATE)
+	dynmultipush("Fire", ITEM_FLAME_PLATE)
+	dynmultipush("Water", ITEM_SPLASH_PLATE)
+	dynmultipush("Grass", ITEM_MEADOW_PLATE)
+	dynmultipush("Electric", ITEM_ZAP_PLATE)
+	dynmultipush("Psychic", ITEM_MIND_PLATE)
+	dynmultipush("Ice", ITEM_ICICLE_PLATE)
+	dynmultipush("Dragon", ITEM_DRACO_PLATE)
+	dynmultipush("Dark", ITEM_DREAD_PLATE)
+	dynmultipush("Fairy", ITEM_PIXIE_PLATE)
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+    // // setting initial selected to a non-existant ID will always have it point to the first option
+	dynmultistack(0, 0, FALSE, 6, FALSE, ITEM_FIST_PLATE, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(SootopolisCity_House2_EventScript_ArceusExpertNo)
+	}
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	removeitem(VAR_0x8004)
+	msgbox("Good choice, let us exchange Plates.")
+	giveitem(VAR_0x8005)
+	msgbox("Come back if you want to trade\nPlates again.")
 	release
 	end
+}
 
-SootopolisCity_House2_EventScript_KnowAboutOrbs::
-	msgbox SootopolisCity_House2_Text_YesTwoOrbsSideBySide, MSGBOX_DEFAULT
-	return
 
-SootopolisCity_House2_EventScript_DontKnowAboutOrbs::
-	msgbox SootopolisCity_House2_Text_OughtToVisitAndSee, MSGBOX_DEFAULT
-	return
+script SootopolisCity_House2_EventScript_ArceusExpertNo {
+    msgbox("I see, come back if you change\nyour mind.")
+    release
+    end
+}
 
-SootopolisCity_House2_Text_DidYouKnowAboutMtPyreOrbs:
-	.string "MT. PYRE…\p"
-	.string "At its peak are two orbs placed side\n"
-	.string "by side. Did you know?$"
+text SootopolisCity_House2_ArceusExpertIntro {
+	"Hello, young trainer. I can tell from the\n"
+	"look on your face that you have what it\l"
+	"takes to use this Item correctly; I've\l"
+	"been waiting for someone like you."
+}
 
-SootopolisCity_House2_Text_YesTwoOrbsSideBySide:
-	.string "Yes, two orbs side by side…\p"
-	.string "The sight of them together…\n"
-	.string "It is somehow soothing…$"
+text SootopolisCity_House2_SeeGoodPlate {
+	"I've spent years collecting these\n"
+	"Plates, come back if you want to swap\l"
+	"for a new type of Plate."
+}
 
-SootopolisCity_House2_Text_OughtToVisitAndSee:
-	.string "Is that so?\n"
-	.string "Perhaps you ought to visit and see…$"
+text ArceusExpertSwapPlate {
+	"Welcome back, young trainer. I see you \n"
+	"want to trade Plates.\p"
+	"Which Plate do you want?"
+}
 
-`
+text SootopolisCity_House2_Text_NoPlates {
+	"Ah, I see you don't have one of the\n"
+	"Plates with you. Come back when you do."
+}
