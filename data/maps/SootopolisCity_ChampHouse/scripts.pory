@@ -2,6 +2,7 @@ raw `
 .set LOCALID_DANNI, 1
 .set LOCALID_MASTA_JANES, 3
 .set LOCALID_BEFOOLS, 5
+.set LOCALID_NATN, 7
 
 SootopolisCity_ChampHouse_MapScripts::
 	.byte 0
@@ -44,6 +45,19 @@ SootopolisCity_ChampHouse_EventScript_Gengar::
 
 SootopolisCity_ChampHouse_Text_Gengar:
 	.string "Gengar: Errrraaaaauhh!$"
+
+SootopolisCity_ChampHouse_EventScript_Kingambit::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KINGAMBIT, CRY_MODE_NORMAL
+	msgbox SootopolisCity_ChampHouse_Text_Kingambit, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SootopolisCity_ChampHouse_Text_Kingambit:
+	.string "Kingambit: Uuhuuhuuhuuahahuuhu!$"
 
 `
 
@@ -460,4 +474,144 @@ text Befools_ExplainHoopa{
 
 text PostBattle_Befools{
 	"Gengar use Hypnosis!"
+}
+
+script SootopolisCity_ChampHouse_EventScript_Natn{
+	lockall
+	applymovement(LOCALID_NATN, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_NATN, SootopolisCity_ChampHouse_EventScript_NatnDefeated)
+	goto_if_set(FLAG_TEMP_4, SootopolisCity_ChampHouse_EventScript_NatnRequestBattleAgain)
+	msgbox(Natn_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_ChampHouse_EventScript_BattleNatnPrompt)
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_NatnRequestBattleAgain{
+	msgbox(Natn_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_ChampHouse_EventScript_BattleNatnPrompt)
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BattleNatnPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_ChampHouse_EventScript_BattleNatn)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_DeclineNatnBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_DeclineNatnBattle {
+	setflag(FLAG_TEMP_4)
+	msgbox(Natn_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BattleNatn{
+	msgbox(Natn_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_NATN, Natn_Outro)
+	goto(SootopolisCity_ChampHouse_EventScript_NatnGiveMeloetta)
+	return
+}
+
+script SootopolisCity_ChampHouse_EventScript_NatnDefeated{
+	msgbox(PostBattle_Natn, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_NatnGiveMeloetta{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELOETTA_ARIA)
+	givemonrandom(SPECIES_MELOETTA_ARIA, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_ChampHouse_EventScript_ReceiveMeloettaParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_ChampHouse_EventScript_ReceiveMeloettaPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_ReceiveMeloettaParty{
+	call(SootopolisCity_ChampHouse_EventScript_ReceivedMeloettaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_ExplainMeloetta)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_ChampHouse_EventScript_ExplainMeloetta)
+	end
+}
+	
+script SootopolisCity_ChampHouse_EventScript_ReceiveMeloettaPC {
+	call(SootopolisCity_ChampHouse_EventScript_ReceivedMeloettaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_SendMeloettaToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_ChampHouse_EventScript_SendMeloettaToPC)
+	end
+}
+	
+script SootopolisCity_ChampHouse_EventScript_SendMeloettaToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_ChampHouse_EventScript_ExplainMeloetta)
+	end
+}
+	
+script SootopolisCity_ChampHouse_EventScript_ReceivedMeloettaFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_ChampHouse_Text_PlayerReceivedMeloetta)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MELOETTA_ARIA)
+	return
+}
+
+script SootopolisCity_ChampHouse_EventScript_ExplainMeloetta {
+	msgbox(Natn_ExplainMeloetta, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Natn_Greeting{
+	"Hey, my name's Natn, and I was the first\n"
+	"person to beat this game in Normal mode\l"
+	"when it released.\p"
+	"I didn't really do a lot of talking in the\n"
+	"early days, I just showed up, blitzed\l"
+	"through the game, then posted my Hall\l"
+	"of Fame team.\p"
+	"My rules are the same, if you can beat\n"
+	"me, I'll give you a Mythical.\p"
+	"Interested in battling?"
+}
+
+text Natn_ReadyYet{
+	"Want to battle now?"
+}
+
+text Natn_YoureOn{
+	"Let's do this."
+}
+
+text Natn_ComeBackWhenReady{
+	"Let me know if you change your mind."
+}
+
+text Natn_Outro{
+	"Not bad at all.\n"
+}
+
+text SootopolisCity_ChampHouse_Text_PlayerReceivedMeloetta{
+	"{PLAYER} received Meloetta!"
+}
+
+text Natn_ExplainMeloetta{
+	"There's your Mythical.\n"
+	"I'm sure you know it's gimmick by now,\l"
+	"but if you use its signature move, Relic\l"
+	"Song, you can change forms in battle.\p"
+	"Really makes you wonder how Maylene\n"
+	"got one that started in Pirouette form."
+}
+
+text PostBattle_Natn{
+	"Honestly, this game was pretty easy.\n"
+	"I'll be here waiting for Hardcore mode."
 }
