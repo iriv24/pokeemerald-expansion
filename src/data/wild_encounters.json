@@ -2084,12 +2084,12 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_PANSEAR"
+                "species": "SPECIES_ZORUA_HISUI"
               },
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_PANSEAR"
+                "species": "SPECIES_ZORUA_HISUI"
               }
             ]
           }
@@ -2552,12 +2552,12 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_SWIRLIX"
+                "species": "SPECIES_ZORUA"
               },
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_SMOOCHUM"
+                "species": "SPECIES_ZORUA"
               }
             ]
           },
@@ -4885,7 +4885,7 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_ZORUA"
+                "species": "SPECIES_SWIRLIX"
               },
               {
                 "min_level": 12,
@@ -4895,7 +4895,7 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_ZORUA_HISUI"
+                "species": "SPECIES_SMOOCHUM"
               },
               {
                 "min_level": 12,
@@ -12073,6 +12073,75 @@
                 "min_level": 60,
                 "max_level": 70,
                 "species": "SPECIES_METAGROSS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_RUSTBORO_CITY",
+          "base_label": "gRustboroCity",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_SHROOMISH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_SHROOMISH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_SHROOMISH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_PIDGEY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_PANSEAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_PANSEAR"
               }
             ]
           }
