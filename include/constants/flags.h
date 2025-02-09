@@ -1257,11 +1257,11 @@
 #define FLAG_MET_GENESECT_GUY                                       0x4B3
 #define FLAG_ITEM_STEVENS_CAVE_DARK_HOLE                            0x4B4
 #define FLAG_MET_ARCEUS_EXPERT                                      0x4B5
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
+#define FLAG_RECEIVED_RUSTED_SWORD                                  0x4B6
+#define FLAG_RECEIVED_RUSTED_SHIELD                                 0x4B7
+#define FLAG_RECEIVED_ADAMANT_ORB                                   0x4B8
+#define FLAG_RECEIVED_LUSTROUS_ORB                                  0x4B9
+#define FLAG_RECEIVED_GRISEOUS_ORB                                  0x4BA
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
