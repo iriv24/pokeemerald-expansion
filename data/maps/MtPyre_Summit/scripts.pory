@@ -166,6 +166,9 @@ MtPyre_Summit_EventScript_OldLady::
 
 MtPyre_Summit_EventScript_OldLadyOrbsReturned::
 	msgbox MtPyre_Summit_Text_ThoseTwoMenReturnedOrbs, MSGBOX_DEFAULT
+	giveitem ITEM_RED_ORB
+	giveitem ITEM_BLUE_ORB
+	msgbox MtPyre_Summit_Text_TrustYou, MSGBOX_DEFAULT
 	setflag FLAG_RETURNED_RED_OR_BLUE_ORB
 	release
 	end
@@ -457,8 +460,18 @@ MtPyre_Summit_Text_GroudonKyogreAwakened:
 MtPyre_Summit_Text_ThoseTwoMenReturnedOrbs:
 	.string "The two men who took the Orbs came\n"
 	.string "back to return them on their own.\p"
-	.string "Those men…\n"
-	.string "Perhaps they are not so evil after all…$"
+	.string "I know this will be a large ask of you,\n"
+	.string "but I fear the day when a situation like\l"
+	.string "this arises again.\p"
+	.string "Would you take these Orbs and look\n"
+	.string "after them?\p"
+	.string "You have proven to be a trustworthy\n"
+	.string "individual, and I think they'd be safest\l"
+	.string "with you.$"
+
+MtPyre_Summit_Text_TrustYou:
+	.string "I know you will not abuse the power\n"
+	.string "granted by those Orbs, {PLAYER}.$"
 
 MtPyre_Summit_Text_SuperAncientPokemonTaughtUs:
 	.string "The embodiments of the land, sea,\n"
