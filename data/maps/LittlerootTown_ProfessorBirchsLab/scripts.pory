@@ -558,8 +558,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	giveitemfast ITEM_MIRACLE_SEED, 10
 	giveitemfast ITEM_CHARCOAL, 10
 	giveitemfast ITEM_NEVER_MELT_ICE, 10
-	giveitemfast ITEM_PIXIE_PLATE, 10
-	giveitemfast ITEM_IRON_PLATE, 10
+	giveitemfast ITEM_FAIRY_FEATHER, 10
+	giveitemfast ITEM_STEEL_FEATHER, 10
 	giveitemfast ITEM_SHARP_BEAK, 10
 	giveitemfast ITEM_SILVER_POWDER, 10
 	giveitemfast ITEM_SOFT_SAND, 10

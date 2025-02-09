@@ -1119,9 +1119,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 # 560 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_NEVER_MELT_ICE, 10
 # 561 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_PIXIE_PLATE, 10
+	giveitemfast ITEM_FAIRY_FEATHER, 10
 # 562 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_IRON_PLATE, 10
+	giveitemfast ITEM_STEEL_FEATHER, 10
 # 563 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_SHARP_BEAK, 10
 # 564 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
