@@ -2591,9 +2591,9 @@ SlateportCity_Text_HarborSign:
 # 1296 "data/maps/SlateportCity/scripts.pory"
 SlateportCity_Text_NameRatersHouseSign:
 # 1297 "data/maps/SlateportCity/scripts.pory"
-	.string "Name Rater's House\n"
+	.string "Move Deleter's House\n"
 # 1298 "data/maps/SlateportCity/scripts.pory"
-	.string "“Pokémon nicknames rated.”$"
+	.string "“Pokémon moves deleted.”$"
 # 1299 "data/maps/SlateportCity/scripts.pory"
 
 # 1300 "data/maps/SlateportCity/scripts.pory"

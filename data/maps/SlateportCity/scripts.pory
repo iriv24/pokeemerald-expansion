@@ -1294,8 +1294,8 @@ SlateportCity_Text_HarborSign:
 	.string "the ferry S.S. Tidal.”$"
 
 SlateportCity_Text_NameRatersHouseSign:
-	.string "Name Rater's House\n"
-	.string "“Pokémon nicknames rated.”$"
+	.string "Move Deleter's House\n"
+	.string "“Pokémon moves deleted.”$"
 
 SlateportCity_Text_ExplainBerries:
 	.string "If a wild Pokémon gets hurt, it heals\n"
