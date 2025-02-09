@@ -1177,3 +1177,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/GrassySlab/scripts.inc"
 
 	.include "data/maps/MossdeepCity_BetaTesterHouse/scripts.inc"
+
+	.include "data/maps/SootopolisCity_ChampHouse/scripts.inc"

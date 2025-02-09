@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/MossdeepCity_BetaTesterHouse/border.bin",
       "blockdata_filepath": "data/layouts/MossdeepCity_BetaTesterHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOOTOPOLIS_CITY_CHAMP_HOUSE",
+      "name": "SootopolisCity_ChampHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SootopolisCity_ChampHouse/border.bin",
+      "blockdata_filepath": "data/layouts/SootopolisCity_ChampHouse/map.bin"
     }
   ]
 }

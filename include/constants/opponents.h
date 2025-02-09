@@ -662,7 +662,7 @@
 #define TRAINER_WALLY_MAUVILLE              656
 #define TRAINER_WALLY_VR_2                  657
 #define TRAINER_WALLY_ROUTE_110             658
-#define TRAINER_WALLY_VR_4                  659 // unused
+#define TRAINER_BEFOOLS                     659
 #define TRAINER_WALLY_VR_5                  660 // unused
 #define TRAINER_BRENDAN_EVERGRANDE_MUDKIP     661
 #define TRAINER_BRENDAN_EVERGRANDE_TREECKO    662
