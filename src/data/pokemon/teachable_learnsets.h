@@ -31101,6 +31101,7 @@ static const u16 sGrimmsnarlTeachableLearnset[] = {
     MOVE_BODY_SLAM,
     MOVE_TRAILBLAZE,
     MOVE_POWER_WHIP,
+    MOVE_MOONBLAST,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_IMPIDIMP
