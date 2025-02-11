@@ -4281,6 +4281,7 @@ static void HandleTurnActionSelectionState(void)
                 AI_DATA->mostSuitableMonId[battler] = GetMostSuitableMonToSwitchInto(battler, isAiRisky);
                 if (ShouldSwitch(battler))
                     AI_DATA->shouldSwitch |= (1u << battler);
+                gBattleStruct->prevTurnSpecies[battler] = gBattleMons[battler].species;
 
                 // Do scoring
                 gBattleStruct->aiMoveOrAction[battler] = BattleAI_ChooseMoveOrAction();
