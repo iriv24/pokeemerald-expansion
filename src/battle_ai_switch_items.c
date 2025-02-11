@@ -864,7 +864,7 @@ static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
 
     if (HOLD_EFFECT_CHOICE(holdEffect) && gBattleMons[battler].ability != ABILITY_KLUTZ)
     {
-        if (gMovesInfo[gLastUsedMove].category == DAMAGE_CATEGORY_STATUS)
+        if (gMovesInfo[AI_DATA->lastUsedMove[battler]].category == DAMAGE_CATEGORY_STATUS)
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
 
