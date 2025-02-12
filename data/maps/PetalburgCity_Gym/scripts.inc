@@ -449,7 +449,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 # 225 "data/maps/PetalburgCity_Gym/scripts.pory"
 	// as it gets set to 2 in PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial shortly)
 # 226 "data/maps/PetalburgCity_Gym/scripts.pory"
-	setvar VAR_PETALBURG_CITY_STATE 3
+	setvar VAR_PETALBURG_CITY_STATE, 3
 # 227 "data/maps/PetalburgCity_Gym/scripts.pory"
 
 # 228 "data/maps/PetalburgCity_Gym/scripts.pory"
