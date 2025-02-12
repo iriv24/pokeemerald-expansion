@@ -10383,7 +10383,15 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         if (recordAbilities)
             RecordAbilityBattle(battlerAtk, abilityAtk);
     }
-
+    else if (moveType == TYPE_POISON && defType == TYPE_STEEL
+        && abilityAtk == ABILITY_CORROSION
+        && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (recordAbilities)
+            RecordAbilityBattle(battlerAtk, abilityAtk);
+    }
+    
     if (moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (gMovesInfo[move].effect == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == gMovesInfo[move].argument)

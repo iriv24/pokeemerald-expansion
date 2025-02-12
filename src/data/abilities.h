@@ -1621,7 +1621,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CORROSION] =
     {
         .name = _("Corrosion"),
-        .description = COMPOUND_STRING("Poisons any type."),
+        .description = COMPOUND_STRING("Poison can hit\nSteel types."),
         .aiRating = 5,
     },
 
