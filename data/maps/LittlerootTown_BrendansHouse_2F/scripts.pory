@@ -283,6 +283,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
 	goto_if_eq VAR_RESULT, 5, CheatCodeShinyStarters
 	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
+	goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
 	end
 
 CheatCodeFailed::
@@ -425,6 +426,22 @@ CheatCodeMaxMoney::
 	releaseall
 	end
 
+CheatCodeGiveMenu::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_GIVE_MENU, CheatCodeGiveMenuOff
+	goto_if_set FLAG_GIVE_MENU, CheatCodeGiveMenuOn
+	end
+
+CheatCodeGiveMenuOn::
+	msgbox CheatCodeGiveMenuOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeGiveMenuOff::
+	msgbox CheatCodeGiveMenuOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
 CheatCodeExit::
 	releaseall
 	end
@@ -465,6 +482,13 @@ CheatCodeShinyStartersOn_Text:
 
 CheatCodeShinyStartersOff_Text:
 	.string "ShinyStarters cheat disabled.$"
+
+CheatCodeGiveMenuOn_Text:
+	.string "Give Menu enabled:\n"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Hold “A” and press “Start” to open.$"
+
+CheatCodeGiveMenuOff_Text:
+	.string "Give Menu disabled.$"
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"

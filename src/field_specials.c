@@ -4450,6 +4450,7 @@ void GetCheatCodeFeedback(void)
     static const u8 sText_CheatCodeMega[] = _("Mega"); // give all mega stones
     static const u8 sText_CheatCodeShinyStarters[] = _("ShinyS"); // guarantee shiny starters
     static const u8 sText_CheatCodeMaxMoney[] = _("MaxMoney"); // give max money
+    static const u8 sText_CheatCodeGiveMenu[] = _("GiveMenu"); // give max money
 
     // Mark entire Pokedex as seen
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll))
@@ -4497,10 +4498,21 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 5;
     }
 
+    // sets money to max value
     else if(!StringCompare(gStringVar2, sText_CheatCodeMaxMoney))
     {
         SetMoney(&gSaveBlock1Ptr->money, MAX_MONEY);
         gSpecialVar_Result = 6;
+    }
+
+    // enables "give menu", which is just the give item and give mon features of the debug menu
+    else if (!StringCompare(gStringVar2, sText_CheatCodeGiveMenu))
+    {
+        if (FlagGet(FLAG_GIVE_MENU))
+            FlagClear(FLAG_GIVE_MENU);
+        else
+            FlagSet(FLAG_GIVE_MENU);
+        gSpecialVar_Result = 7;
     }
 
     // Illegal cheat code

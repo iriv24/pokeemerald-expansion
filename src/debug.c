@@ -11,6 +11,7 @@
 #include "battle.h"
 #include "battle_setup.h"
 #include "berry.h"
+#include "caps.h"
 #include "clock.h"
 #include "coins.h"
 #include "credits.h"
@@ -357,6 +358,7 @@ static void DebugTask_HandleMenuInput_Scripts(u8 taskId);
 static void DebugTask_HandleMenuInput_FlagsVars(u8 taskId);
 static void DebugTask_HandleMenuInput_Battle(u8 taskId);
 static void DebugTask_HandleMenuInput_Give(u8 taskId);
+static void DebugTask_HandleMenuInput_LimitedGive(u8 taskId);
 static void DebugTask_HandleMenuInput_Sound(u8 taskId);
 static void DebugTask_HandleMenuInput_BerryFunctions(u8 taskId);
 
@@ -851,6 +853,13 @@ static const struct ListMenuItem sDebugMenu_Items_Give[] =
     [DEBUG_GIVE_MENU_ITEM_DAYCARE_EGG]       = {sDebugText_Give_DaycareEgg,         DEBUG_GIVE_MENU_ITEM_DAYCARE_EGG},
 };
 
+static const struct ListMenuItem sDebugMenu_Items_LimitedGive[] =
+{
+    [DEBUG_GIVE_MENU_ITEM_ITEM_X]            = {sDebugText_Give_GiveItem,           DEBUG_GIVE_MENU_ITEM_ITEM_X},
+    [DEBUG_GIVE_MENU_ITEM_POKEMON_SIMPLE]    = {sDebugText_Give_GivePokemonSimple,  DEBUG_GIVE_MENU_ITEM_POKEMON_SIMPLE},
+    [DEBUG_GIVE_MENU_ITEM_POKEMON_COMPLEX]   = {sDebugText_Give_GivePokemonComplex, DEBUG_GIVE_MENU_ITEM_POKEMON_COMPLEX},
+};
+
 static const struct ListMenuItem sDebugMenu_Items_Sound[] =
 {
     [DEBUG_SOUND_MENU_ITEM_SE]  = {sDebugText_Sound_SFX,  DEBUG_SOUND_MENU_ITEM_SE},
@@ -1002,6 +1011,17 @@ static const struct WindowTemplate sDebugMenuWindowTemplateMain =
     .baseBlock = 1,
 };
 
+static const struct WindowTemplate sDebugMenuWindowTemplateLimited =
+{
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = DEBUG_MENU_WIDTH_MAIN,
+    .height = 7,
+    .paletteNum = 15,
+    .baseBlock = 1,
+};
+
 static const struct WindowTemplate sDebugMenuWindowTemplateExtra =
 {
     .bg = 0,
@@ -1125,6 +1145,13 @@ static const struct ListMenuTemplate sDebugMenu_ListTemplate_Give =
     .totalItems = ARRAY_COUNT(sDebugMenu_Items_Give),
 };
 
+static const struct ListMenuTemplate sDebugMenu_ListTemplate_LimitedGive =
+{
+    .items = sDebugMenu_Items_LimitedGive,
+    .moveCursorFunc = ListMenuDefaultCursorMoveFunc,
+    .totalItems = ARRAY_COUNT(sDebugMenu_Items_LimitedGive),
+};
+
 static const struct ListMenuTemplate sDebugMenu_ListTemplate_Sound =
 {
     .items = sDebugMenu_Items_Sound,
@@ -1150,6 +1177,15 @@ void Debug_ShowMainMenu(void)
     Debug_ShowMenu(DebugTask_HandleMenuInput_Main, sDebugMenu_ListTemplate_Main);
 }
 
+void Debug_ShowLimitedMenu(void)
+{
+    sDebugBattleData = AllocZeroed(sizeof(*sDebugBattleData));
+    sDebugMenuListData = AllocZeroed(sizeof(*sDebugMenuListData));
+    Debug_InitDebugBattleData();
+
+    Debug_ShowMenu(DebugTask_HandleMenuInput_LimitedGive, sDebugMenu_ListTemplate_LimitedGive);
+}
+
 static void Debug_ReShowMainMenu(void)
 {
     Debug_ShowMenu(DebugTask_HandleMenuInput_Main, sDebugMenu_ListTemplate_Main);
@@ -1171,7 +1207,10 @@ static void Debug_ShowMenu(void (*HandleInput)(u8), struct ListMenuTemplate LMte
     // create window
     HideMapNamePopUpWindow();
     LoadMessageBoxAndBorderGfx();
-    windowId = AddWindow(&sDebugMenuWindowTemplateMain);
+    if(FlagGet(FLAG_GIVE_MENU))
+        windowId = AddWindow(&sDebugMenuWindowTemplateLimited);
+    else
+        windowId = AddWindow(&sDebugMenuWindowTemplateMain);
     DrawStdWindowFrame(windowId, FALSE);
 
     // create list menu
@@ -1799,6 +1838,25 @@ static void DebugTask_HandleMenuInput_Give(u8 taskId)
         PlaySE(SE_SELECT);
         Debug_DestroyMenu(taskId);
         Debug_ReShowMainMenu();
+    }
+}
+
+static void DebugTask_HandleMenuInput_LimitedGive(u8 taskId)
+{
+    void (*func)(u8);
+    u32 input = ListMenu_ProcessInput(gTasks[taskId].tMenuTaskId);
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        if ((func = sDebugMenu_Actions_Give[input]) != NULL)
+            func(taskId);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        Debug_DestroyMenu_Full(taskId);
+        ScriptContext_Enable();
     }
 }
 
@@ -3286,6 +3344,12 @@ static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
         if (JOY_NEW(DPAD_UP))
         {
             gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
+            if(FlagGet(FLAG_GIVE_MENU))
+            {
+                u32 levelCap = GetCurrentLevelCap();
+                if(gTasks[taskId].tInput > (levelCap))
+                gTasks[taskId].tInput = levelCap;
+            }
             if (gTasks[taskId].tInput > MAX_LEVEL)
                 gTasks[taskId].tInput = MAX_LEVEL;
         }

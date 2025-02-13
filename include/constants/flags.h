@@ -84,7 +84,7 @@
 #define FLAG_BEAT_DAWN_EVERGRANDE      0x46
 #define FLAG_BEAT_BOTH_RIVALS          0x47
 #define FLAG_DECLINED_DAWN_EVERGRANDE  0x48
-#define FLAG_UNUSED_0x49               0x49 // unused
+#define FLAG_GIVE_MENU                 0x49
 #define FLAG_UNUSED_0x4A               0x4A // unused
 #define FLAG_RECEIVED_LILYCOVE_EGG     0x4B
 #define FLAG_EZ_CATCH                  0x4C

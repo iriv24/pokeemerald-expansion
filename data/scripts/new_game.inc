@@ -283,5 +283,6 @@ EventScript_ResetAllMapFlags::
 	clearflag FLAG_MET_EGG_MOVE_TUTOR
 	clearflag FLAG_SHINY_STARTERS
 	setflag FLAG_SLEEP_CLAUSE_TOGGLE
+	clearflag FLAG_GIVE_MENU
 	call EventScript_ResetAllBerries
 	end
