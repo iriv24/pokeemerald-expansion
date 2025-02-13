@@ -2,40 +2,122 @@ raw `
 SootopolisCity_House4_MapScripts::
 	.byte 0
 
-SootopolisCity_House4_EventScript_Man::
-	msgbox SootopolisCity_House4_Text_AncientTreasuresWaitingInSea, MSGBOX_NPC
-	end
+`
 
-SootopolisCity_House4_EventScript_Woman::
-	msgbox SootopolisCity_House4_Text_StrollUnderwaterWithPokemon, MSGBOX_NPC
-	end
-
-SootopolisCity_House4_EventScript_Azumarill::
+script SootopolisCity_House4_EventScript_RelicsMan{
 	lock
 	faceplayer
-	waitse
-	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
-	msgbox SootopolisCity_House4_Text_Azumarill, MSGBOX_DEFAULT
-	waitmoncry
+
+	if(flag(FLAG_RECEIVED_ADAMANT_ORB) && flag(FLAG_RECEIVED_LUSTROUS_ORB) && flag(FLAG_RECEIVED_GRISEOUS_ORB)){
+		msgbox(SootopolisCity_House4_Text_UseThoseRelics, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	
+	msgbox(SootopolisCity_House4_Text_PleaseShowLegend, MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_RESULT, VAR_0x8004)
+	goto_if_eq(VAR_RESULT, PARTY_NOTHING_CHOSEN, SootopolisCity_House4_EventScript_CancelLegend)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_DIALGA:
+			if(flag(FLAG_RECEIVED_ADAMANT_ORB))
+			{
+				msgbox(SootopolisCity_House4_Text_AlreadyGaveRelic, MSGBOX_DEFAULT)
+				release
+				end
+			}
+			else{
+				msgbox(SootopolisCity_House4_Text_PleaseTakeThisRelic, MSGBOX_DEFAULT)
+				giveitem(ITEM_ADAMANT_ORB)
+				setflag(FLAG_RECEIVED_ADAMANT_ORB)
+			}
+			
+		case SPECIES_PALKIA:
+			if(flag(FLAG_RECEIVED_LUSTROUS_ORB))
+			{
+				msgbox(SootopolisCity_House4_Text_AlreadyGaveRelic, MSGBOX_DEFAULT)
+				release
+				end
+			}
+			else{
+				msgbox(SootopolisCity_House4_Text_PleaseTakeThisRelic, MSGBOX_DEFAULT)
+				giveitem(ITEM_LUSTROUS_ORB)
+				setflag(FLAG_RECEIVED_LUSTROUS_ORB)
+			}
+			
+		case SPECIES_GIRATINA:
+			if(flag(FLAG_RECEIVED_GRISEOUS_ORB))
+			{
+				msgbox(SootopolisCity_House4_Text_AlreadyGaveRelic, MSGBOX_DEFAULT)
+				release
+				end
+			}
+			else{
+				msgbox(SootopolisCity_House4_Text_PleaseTakeThisRelic, MSGBOX_DEFAULT)
+				giveitem(ITEM_GRISEOUS_ORB)
+				setflag(FLAG_RECEIVED_GRISEOUS_ORB)
+			}
+			
+        default:
+            msgbox(SootopolisCity_House4_Text_NotLegend, MSGBOX_DEFAULT)
+			release
+			end
+	}
+	
+	msgbox(SootopolisCity_House4_Text_UseThatRelic, MSGBOX_DEFAULT)
 	release
 	end
+}
 
-SootopolisCity_House4_Text_AncientTreasuresWaitingInSea:
-	.string "Listen up, and I'll tell you something\n"
-	.string "good.\p"
-	.string "There's supposed to be an ancient\n"
-	.string "ruin in the sea around here.\p"
-	.string "There could be treasures just waiting\n"
-	.string "to be discovered down there.$"
+script SootopolisCity_House4_EventScript_CancelLegend{
+	msgbox(SootopolisCity_House4_Text_DontHaveLegend, MSGBOX_DEFAULT)
+	release
+	end
+}
 
-SootopolisCity_House4_Text_StrollUnderwaterWithPokemon:
-	.string "Ancient treasures…\p"
-	.string "It would be nice if they existed, but\n"
-	.string "even if they didn't, it would be so\l"
-	.string "beautiful to take an underwater\l"
-	.string "stroll with my Pokémon.$"
+text SootopolisCity_House4_Text_PleaseShowLegend{
+	"Well now, don't you look like the\n"
+	"promising young trainer.\p"
+	"I've traveled far and wide in my\n"
+	"lifetime, and I have here 3 very\l"
+	"powerful relics from another region\l"
+	"that I am looking to give to a\l"
+	"trustworthy trainer.\p"
+	"If you can show me one of the Pokémon\n"
+	"that uses these relics, I'll know you\l"
+	"are worth possessing one."
+}
 
-SootopolisCity_House4_Text_Azumarill:
-	.string "AZUMARILL: Marurii.$"
+text SootopolisCity_House4_Text_PleaseTakeThisRelic{
+	"Oh my! That is one of the of the\n"
+	"Pokémon that can use this relic.\p"
+	"Here, you are clearly a trainer worthy\n"
+	"of wielding its power."
+}
 
-`
+text SootopolisCity_House4_Text_UseThatRelic{
+	"I believe you can harness the full\n"
+	"power of that relic."
+}
+
+text SootopolisCity_House4_Text_UseThoseRelics{
+	"That's all the relics I'd collected over\n"
+	"the years.\p"
+	"I hope you use them wisely."
+}
+
+text SootopolisCity_House4_Text_AlreadyGaveRelic{
+	"I already gave you the relic for that\n"
+	"Pokémon."
+}
+
+text SootopolisCity_House4_Text_DontHaveLegend{
+	"I see, you don't have one of the\n"
+	"Pokémon that can use these relics."
+}
+text SootopolisCity_House4_Text_NotLegend{
+	"That's not one of the Pokémon that can\n"
+	"use these relics."
+}
