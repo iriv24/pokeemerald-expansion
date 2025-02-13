@@ -427,6 +427,7 @@ static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
 static void Debug_InitializeBattle(u8 taskId);
 
 static void DebugAction_Give_Item(u8 taskId);
+static bool8 IsIllegalItem(u32 itemId);
 static void DebugAction_Give_Item_SelectId(u8 taskId);
 static void DebugAction_Give_Item_SelectQuantity(u8 taskId);
 static void DebugAction_Give_PokemonSimple(u8 taskId);
@@ -3026,6 +3027,273 @@ static void DebugAction_Give_Item(u8 taskId)
     gSprites[gTasks[taskId].tSpriteId].oam.priority = 0;
 }
 
+static bool8 IsIllegalItem(u32 itemId)
+{
+    switch(itemId)
+    {
+    // EV Feathers
+    case ITEM_HEALTH_FEATHER:
+    case ITEM_MUSCLE_FEATHER:
+    case ITEM_RESIST_FEATHER:
+    case ITEM_GENIUS_FEATHER:
+    case ITEM_CLEVER_FEATHER:
+    case ITEM_SWIFT_FEATHER:
+
+    // Mints
+    case ITEM_LONELY_MINT:
+    case ITEM_ADAMANT_MINT:
+    case ITEM_NAUGHTY_MINT:
+    case ITEM_BRAVE_MINT:
+    case ITEM_BOLD_MINT:
+    case ITEM_IMPISH_MINT:
+    case ITEM_LAX_MINT:
+    case ITEM_RELAXED_MINT:
+    case ITEM_MODEST_MINT:
+    case ITEM_MILD_MINT:
+    case ITEM_RASH_MINT:
+    case ITEM_QUIET_MINT:
+    case ITEM_CALM_MINT:
+    case ITEM_GENTLE_MINT:
+    case ITEM_CAREFUL_MINT:
+    case ITEM_SASSY_MINT:
+    case ITEM_TIMID_MINT:
+    case ITEM_HASTY_MINT:
+    case ITEM_JOLLY_MINT:
+    case ITEM_NAIVE_MINT:
+    case ITEM_SERIOUS_MINT:
+
+    case ITEM_DYNAMAX_CANDY:
+
+    case ITEM_SUPER_LURE:
+    case ITEM_MAX_LURE:
+
+    case ITEM_WISHING_PIECE:
+    case ITEM_GALARICA_TWIG:
+    case ITEM_ARMORITE_ORE:
+    case ITEM_DYNITE_ORE:
+
+    // Z-Crystals
+    case ITEM_NORMALIUM_Z:
+    case ITEM_FIRIUM_Z:
+    case ITEM_WATERIUM_Z:
+    case ITEM_ELECTRIUM_Z:
+    case ITEM_GRASSIUM_Z:
+    case ITEM_ICIUM_Z:
+    case ITEM_FIGHTINIUM_Z:
+    case ITEM_POISONIUM_Z:
+    case ITEM_GROUNDIUM_Z:
+    case ITEM_FLYINIUM_Z:
+    case ITEM_PSYCHIUM_Z:
+    case ITEM_BUGINIUM_Z:
+    case ITEM_ROCKIUM_Z:
+    case ITEM_GHOSTIUM_Z:
+    case ITEM_DRAGONIUM_Z:
+    case ITEM_DARKINIUM_Z:
+    case ITEM_STEELIUM_Z:
+    case ITEM_FAIRIUM_Z:
+    case ITEM_PIKANIUM_Z:
+    case ITEM_EEVIUM_Z:
+    case ITEM_SNORLIUM_Z:
+    case ITEM_MEWNIUM_Z:
+    case ITEM_DECIDIUM_Z:
+    case ITEM_INCINIUM_Z:
+    case ITEM_PRIMARIUM_Z:
+    case ITEM_LYCANIUM_Z:
+    case ITEM_MIMIKIUM_Z:
+    case ITEM_KOMMONIUM_Z:
+    case ITEM_TAPUNIUM_Z:
+    case ITEM_SOLGANIUM_Z:
+    case ITEM_LUNALIUM_Z:
+    case ITEM_MARSHADIUM_Z:
+    case ITEM_ALORAICHIUM_Z:
+    case ITEM_PIKASHUNIUM_Z:
+    case ITEM_ULTRANECROZIUM_Z:
+
+    // TMs/HMs
+    case ITEM_TM169:
+    case ITEM_TM170:
+    case ITEM_TM171:
+    case ITEM_TM172:
+    case ITEM_TM173:
+    case ITEM_TM174:
+    case ITEM_TM175:
+    case ITEM_TM176:
+    case ITEM_TM177:
+    case ITEM_TM178:
+    case ITEM_TM179:
+    case ITEM_TM180:
+    case ITEM_TM181:
+    case ITEM_TM182:
+    case ITEM_TM183:
+    case ITEM_TM184:
+    case ITEM_TM185:
+    case ITEM_TM186:
+    case ITEM_TM187:
+    case ITEM_TM188:
+    case ITEM_TM189:
+    case ITEM_TM190:
+    case ITEM_TM191:
+    case ITEM_TM192:
+    case ITEM_TM193:
+    case ITEM_TM194:
+    case ITEM_TM195:
+    case ITEM_TM196:
+    case ITEM_TM197:
+    case ITEM_TM198:
+    case ITEM_TM199:
+    case ITEM_TM200:
+    case ITEM_TM201:
+    case ITEM_TM202:
+    case ITEM_TM203:
+    case ITEM_TM204:
+    case ITEM_TM205:
+    case ITEM_TM206:
+    case ITEM_TM207:
+    case ITEM_TM208:
+    case ITEM_TM209:
+    case ITEM_TM210:
+    case ITEM_TM211:
+    case ITEM_TM212:
+    case ITEM_TM213:
+    case ITEM_TM214:
+    case ITEM_TM215:
+    case ITEM_TM216:
+    case ITEM_TM217:
+    case ITEM_TM218:
+    case ITEM_TM219:
+    case ITEM_TM220:
+    case ITEM_TM221:
+    case ITEM_TM222:
+    case ITEM_TM223:
+    case ITEM_TM224:
+    case ITEM_TM225:
+    case ITEM_TM226:
+    case ITEM_TM227:
+    case ITEM_TM228:
+    case ITEM_TM229:
+    case ITEM_TM230:
+    case ITEM_TM231:
+    case ITEM_TM232:
+    case ITEM_TM233:
+    case ITEM_TM234:
+    case ITEM_TM235:
+    case ITEM_TM236:
+    case ITEM_TM237:
+    case ITEM_TM238:
+    case ITEM_TM239:
+    case ITEM_TM240:
+    case ITEM_TM241:
+    case ITEM_TM242:
+
+    case ITEM_HM01:
+    case ITEM_HM02:
+    case ITEM_HM03:
+    case ITEM_HM04:
+    case ITEM_HM05:
+    case ITEM_HM06:
+    case ITEM_HM07:
+    case ITEM_HM08:
+
+    case ITEM_DNA_SPLICERS:
+    case ITEM_ZYGARDE_CUBE:
+    case ITEM_N_SOLARIZER:
+    case ITEM_N_LUNARIZER:
+    case ITEM_REINS_OF_UNITY:
+
+    // Battle Mechanic Key Items
+    case ITEM_Z_POWER_RING:
+    case ITEM_DYNAMAX_BAND:
+
+    // Misc. Key Items
+    case ITEM_BICYCLE:
+    case ITEM_TOWN_MAP:
+    case ITEM_VS_SEEKER:
+    case ITEM_TM_CASE:
+    case ITEM_BERRY_POUCH:
+    case ITEM_POKEMON_BOX_LINK:
+    case ITEM_POKE_RADAR:
+    case ITEM_POKE_FLUTE:
+    case ITEM_FAME_CHECKER:
+    case ITEM_TEACHY_TV:
+
+    // Story Key Items
+    case ITEM_SS_TICKET:
+    case ITEM_EON_TICKET:
+    case ITEM_MYSTIC_TICKET:
+    case ITEM_AURORA_TICKET:
+    case ITEM_OLD_SEA_MAP:
+    case ITEM_LETTER:
+    case ITEM_DEVON_PARTS:
+    case ITEM_GO_GOGGLES:
+    case ITEM_DEVON_SCOPE:
+    case ITEM_BASEMENT_KEY:
+    case ITEM_SCANNER:
+    case ITEM_STORAGE_KEY:
+    case ITEM_KEY_TO_ROOM_1:
+    case ITEM_KEY_TO_ROOM_2:
+    case ITEM_KEY_TO_ROOM_4:
+    case ITEM_KEY_TO_ROOM_6:
+    case ITEM_METEORITE:
+    case ITEM_MAGMA_EMBLEM:
+    case ITEM_CONTEST_PASS:
+    case ITEM_PARCEL:
+    case ITEM_SECRET_KEY:
+    case ITEM_BIKE_VOUCHER:
+    case ITEM_GOLD_TEETH:
+    case ITEM_CARD_KEY:
+    case ITEM_LIFT_KEY:
+    case ITEM_SILPH_SCOPE:
+    case ITEM_TRI_PASS:
+    case ITEM_RAINBOW_PASS:
+    case ITEM_TEA:
+    case ITEM_RUBY:
+    case ITEM_SAPPHIRE:
+
+    // GEN IX ITEMS
+    case ITEM_SCROLL_OF_DARKNESS:
+    case ITEM_SCROLL_OF_WATERS:
+    case ITEM_TERA_ORB:
+    case ITEM_TINY_BAMBOO_SHOOT:
+
+    case ITEM_BUG_TERA_SHARD:
+    case ITEM_DARK_TERA_SHARD:
+    case ITEM_DRAGON_TERA_SHARD:
+    case ITEM_ELECTRIC_TERA_SHARD:
+    case ITEM_FAIRY_TERA_SHARD:
+    case ITEM_FIGHTING_TERA_SHARD:
+    case ITEM_FIRE_TERA_SHARD:
+    case ITEM_FLYING_TERA_SHARD:
+    case ITEM_GHOST_TERA_SHARD:
+    case ITEM_GRASS_TERA_SHARD:
+    case ITEM_GROUND_TERA_SHARD:
+    case ITEM_ICE_TERA_SHARD:
+    case ITEM_NORMAL_TERA_SHARD:
+    case ITEM_POISON_TERA_SHARD:
+    case ITEM_PSYCHIC_TERA_SHARD:
+    case ITEM_ROCK_TERA_SHARD:
+    case ITEM_STEEL_TERA_SHARD:
+    case ITEM_WATER_TERA_SHARD:
+
+    case ITEM_HEALTH_MOCHI:
+    case ITEM_MUSCLE_MOCHI:
+    case ITEM_RESIST_MOCHI:
+    case ITEM_GENIUS_MOCHI:
+    case ITEM_CLEVER_MOCHI:
+    case ITEM_SWIFT_MOCHI:
+    case ITEM_FRESH_START_MOCHI:
+    case ITEM_GLIMMERING_CHARM:
+    case ITEM_822: // TWV0YWwgQWxsb3k=
+    case ITEM_823: // U3RlbGxhciBUZXJhIFNoYXJk
+    case ITEM_POKE_VIAL:
+    case ITEM_INFINITE_CANDY:
+    case ITEM_INFINITE_REPEL:
+    case ITEM_STELLAR_TERA_SHARD:
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 static void DebugAction_Give_Item_SelectId(u8 taskId)
 {
     if (JOY_NEW(DPAD_ANY))
@@ -3037,12 +3305,18 @@ static void DebugAction_Give_Item_SelectId(u8 taskId)
             gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
             if (gTasks[taskId].tInput >= ITEMS_COUNT)
                 gTasks[taskId].tInput = ITEMS_COUNT - 1;
+
+            while (IsIllegalItem(gTasks[taskId].tInput) && gTasks[taskId].tInput < ITEMS_COUNT) 
+                gTasks[taskId].tInput++; // Increment by 1 to skip illegal items
         }
         if (JOY_NEW(DPAD_DOWN))
         {
             gTasks[taskId].tInput -= sPowersOfTen[gTasks[taskId].tDigit];
             if (gTasks[taskId].tInput < 1)
                 gTasks[taskId].tInput = 1;
+
+            while (IsIllegalItem(gTasks[taskId].tInput) && gTasks[taskId].tInput > 1) 
+                gTasks[taskId].tInput--; // Decrement by 1 to skip illegal items
         }
         if (JOY_NEW(DPAD_LEFT))
         {
