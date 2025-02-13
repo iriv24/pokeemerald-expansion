@@ -282,6 +282,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 3, CheatCodeEzCatch
 	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
 	goto_if_eq VAR_RESULT, 5, CheatCodeShinyStarters
+	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
 	end
 
 CheatCodeFailed::
@@ -418,6 +419,12 @@ CheatCodeShinyStartersOff::
 	releaseall
 	end
 
+CheatCodeMaxMoney::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	msgbox CheatCodeMaxMoney_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
 CheatCodeExit::
 	releaseall
 	end
@@ -428,6 +435,7 @@ EnterCheatCode_EnterCheatCodeText:
 
 EnterCheatCode_FailedText:
 	.string "Cheat code failed.$"
+	
 EnterCheatCode_SucceededText:
 	.string "Cheat code succeeded.$"
 
@@ -439,6 +447,9 @@ CheatCodeDexAllOff_Text:
 
 CheatCodeCaughtEmAll_Text:
 	.string "CaughtAll cheat enabled.$"
+
+CheatCodeMaxMoney_Text:
+	.string "Money set to max amount.$"
 
 CheatCodeEzCatchOn_Text:
 	.string "EZCatch cheat enabled.$"

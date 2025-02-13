@@ -28,6 +28,7 @@
 #include "mystery_gift.h"
 #include "match_call.h"
 #include "menu.h"
+#include "money.h"
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
@@ -4448,6 +4449,7 @@ void GetCheatCodeFeedback(void)
     static const u8 sText_CheatCodeBestBall[] = _("EZCatch"); // 100% catch rate with all balls
     static const u8 sText_CheatCodeMega[] = _("Mega"); // give all mega stones
     static const u8 sText_CheatCodeShinyStarters[] = _("ShinyS"); // guarantee shiny starters
+    static const u8 sText_CheatCodeMaxMoney[] = _("MaxMoney"); // give max money
 
     // Mark entire Pokedex as seen
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll))
@@ -4493,6 +4495,12 @@ void GetCheatCodeFeedback(void)
         else
             FlagSet(FLAG_SHINY_STARTERS);
         gSpecialVar_Result = 5;
+    }
+
+    else if(!StringCompare(gStringVar2, sText_CheatCodeMaxMoney))
+    {
+        SetMoney(&gSaveBlock1Ptr->money, MAX_MONEY);
+        gSpecialVar_Result = 6;
     }
 
     // Illegal cheat code
