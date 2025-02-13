@@ -283,7 +283,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 4, CheatCodeMegaStones
 	goto_if_eq VAR_RESULT, 5, CheatCodeShinyStarters
 	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
-	goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
+	@goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
 	end
 
 CheatCodeFailed::

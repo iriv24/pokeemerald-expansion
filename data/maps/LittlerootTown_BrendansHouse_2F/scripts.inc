@@ -569,7 +569,7 @@ PlayersHouse_2F_EventScript_GameCube::
 # 285 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
 # 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
+	@goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
 # 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	end
 # 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
