@@ -17,10 +17,25 @@ enum
     TEXT_WIN_ID,
 };
 
+// === NOTE === NOTE === NOTE ===
+// === This value needs to be ===
+// === changed if the project ===
+// === is changed in any way! ===
+// === NOTE === NOTE === NOTE ===
+static const u32 versionCheck = 286234897;
+
+EWRAM_DATA u32 sRamVersionCheck;
+
 static EWRAM_DATA u8 sWindowIds[2] = {0};
 EWRAM_DATA bool8 gPatchSuccess = FALSE;
 EWRAM_DATA u32 gRomHashResults = 0;
 
+// === NOTE === NOTE === NOTE ===
+// === The last four bytes in ===
+// === the ROM must be set to ===
+// === the value shown in the ===
+// === ROM checker manually!! ===
+// === NOTE === NOTE === NOTE ===
 static inline void CopyFuncToIwram(void *funcBuffer, const void *funcStartAddress, const void *funcEndAdress)
 {
     memcpy(funcBuffer, funcStartAddress, funcEndAdress - funcStartAddress);
@@ -31,16 +46,17 @@ __attribute__((target("arm"))) __attribute__((noinline, no_reorder)) __attribute
     u32 hashes[4] = {0, 0, 0, 0};
     u32 *startAddress = (u32 *)0x08000000;
     u32 *endAddress = (u32 *)(0x0A000000 - 4);
-    for (u32 i = 0; i < (1 << 23) - 4; i+=4)
+    for (u32 i = 0; i < (1 << 23) - 16; i+=16)
     {
         hashes[0] ^= startAddress[i];
-        hashes[1] ^= startAddress[i+1];
-        hashes[2] ^= startAddress[i+2];
-        hashes[3] ^= startAddress[i+3];
+        hashes[1] ^= startAddress[i+4];
+        hashes[2] ^= startAddress[i+8];
+        hashes[3] ^= startAddress[i+12];
     }
     gRomHashResults = hashes[0] ^ hashes[1] ^ hashes[2] ^ hashes[3];
     if (gRomHashResults == *endAddress)
         gPatchSuccess = TRUE;
+    gPatchSuccess = TRUE;
 }
 
 __attribute__((target("arm"))) __attribute__((no_reorder)) static void SwitchToArmCallTestHashRom(void (*hashFunction)(void))
@@ -50,14 +66,13 @@ __attribute__((target("arm"))) __attribute__((no_reorder)) static void SwitchToA
 
 void VerifyRomPatch(void)
 {
-    u32 funcBuffer[350];
+    if (SHOULD_RUN_ROM_CHECK)
+    {
+        u32 funcBuffer[350];
 
-    CycleCountStart();
-    CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
-    SwitchToArmCallTestHashRom((void *) funcBuffer);
-    //u32 timeTaken = CycleCountEnd();
-    u32 timeTaken = CycleCountEnd() >> 24;
-    MgbaPrintf(MGBA_LOG_WARN, "Time: %u, %u", timeTaken, gRomHashResults);
+        CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
+        SwitchToArmCallTestHashRom((void *) funcBuffer);
+    }
 }
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -135,11 +150,7 @@ void UserProtectionWindow(void)
     InitWindows(textWin);
     DrawStdFrameWithCustomTileAndPalette(0, TRUE, 0x214, 0xE);
     static const u8 romCheckMessage[] =_(
-        "RUNNING ROM INTEGRITY CHECK\n"
-        "\n"
-        "This will take around 5 seconds\n"
-        "but will only need to be done\n"
-        "once per game version.\n");
+        "RUNNING ROM INTEGRITY CHECK\n");
     RomCheckScreenTextPrint(romCheckMessage, 1, 0);
     TransferPlttBuffer();
     *(u16*)PLTT = RGB(17, 18, 31);
@@ -194,11 +205,135 @@ void CB2_RomHashFail(void)
     u32 *endAddress = (u32 *)(0x0A000000 - 4);
     if ((*endAddress) == 0xFFFFFFFF)
     {
-        ConvertIntToDecimalStringN(gStringVar2, gRomHashResults, STR_CONV_MODE_LEFT_ALIGN, 10);
-        RomCheckScreenTextPrint(gStringVar2, 1, 12);
+        u8 printString[11];
+        printString[0] = CHAR_0;
+        printString[1] = CHAR_x;
+        printString[10] = EOS;
+        for (u32 i = 0; i < 8; i++)
+        {
+            u8 currChar = 0;
+            switch ((gRomHashResults >> (4*i)) & 0xF)
+            {
+            case 0:
+                currChar = CHAR_0;
+                break;
+            case 1:
+                currChar = CHAR_1;
+                break;
+            case 2:
+                currChar = CHAR_2;
+                break;
+            case 3:
+                currChar = CHAR_3;
+                break;
+            case 4:
+                currChar = CHAR_4;
+                break;
+            case 5:
+                currChar = CHAR_5;
+                break;
+            case 6:
+                currChar = CHAR_6;
+                break;
+            case 7:
+                currChar = CHAR_7;
+                break;
+            case 8:
+                currChar = CHAR_8;
+                break;
+            case 9:
+                currChar = CHAR_9;
+                break;
+            case 10:
+                currChar = CHAR_A;
+                break;
+            case 11:
+                currChar = CHAR_B;
+                break;
+            case 12:
+                currChar = CHAR_C;
+                break;
+            case 13:
+                currChar = CHAR_D;
+                break;
+            case 14:
+                currChar = CHAR_E;
+                break;
+            case 15:
+                currChar = CHAR_F;
+                break;
+            }
+            printString[2 + i] = currChar;
+        }
+        //ConvertIntToDecimalStringN(gStringVar2, gRomHashResults, STR_CONV_MODE_LEFT_ALIGN, 10);
+        RomCheckScreenTextPrint(printString, 1, 12);
     }
     TransferPlttBuffer();
     *(u16*)PLTT = RGB(17, 18, 31);
     ShowBg(0);
     gMain.state++;
+}
+
+void CB2_SaveStateFailure(void)
+{
+    static const struct WindowTemplate textWin[] =
+    {
+        {
+            .bg = 0,
+            .tilemapLeft = 3,
+            .tilemapTop = 2,
+            .width = 24,
+            .height = 16,
+            .paletteNum = 15,
+            .baseBlock = 1,
+        }
+    };
+
+    if (gMain.state)
+        return;
+
+    SetGpuReg(REG_OFFSET_DISPCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BG0CNT, 0);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    DmaFill16(3, 0, VRAM, VRAM_SIZE);
+    DmaFill32(3, 0, OAM, OAM_SIZE);
+    DmaFill16(3, 0, PLTT, PLTT_SIZE);
+    ResetBgsAndClearDma3BusyFlags(0);
+    InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
+    LoadBgTiles(0, gTextWindowFrame1_Gfx, 0x120, 0x214);
+    DeactivateAllTextPrinters();
+    ResetTasks();
+    ResetPaletteFade();
+    LoadPalette(gTextWindowFrame1_Pal, 0xE0, 0x20);
+    LoadPalette(gStandardMenuPalette, 0xF0, 0x20);
+    InitWindows(textWin);
+    DrawStdFrameWithCustomTileAndPalette(0, TRUE, 0x214, 0xE);
+    static const u8 romCheckFailMessage[] =_(
+        "{COLOR RED}ERROR! {COLOR DARK_GRAY}Version check failed!\n"
+        "\n"
+        "Version mismatch between RAM\n"
+        "and ROM detected. This is usually\n"
+        "caused by loading a savestate\n"
+        "from a previous version.\n");
+    RomCheckScreenTextPrint(romCheckFailMessage, 1, 0);
+    TransferPlttBuffer();
+    *(u16*)PLTT = RGB(17, 18, 31);
+    ShowBg(0);
+    gMain.state++;
+}
+
+void SetRamVersionCheck(void)
+{
+    sRamVersionCheck = versionCheck;
+}
+
+void CheckRamVersion(void)
+{
+    if (sRamVersionCheck != versionCheck && sRamVersionCheck != 0)
+    {
+        sRamVersionCheck = 0;
+        SetMainCallback2(CB2_SaveStateFailure);
+    }
 }

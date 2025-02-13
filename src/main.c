@@ -124,6 +124,7 @@ void AgbMain()
         SetMainCallback2((SAVE_TYPE_ERROR_SCREEN) ? CB2_FlashNotDetectedScreen : NULL);
 
     UserProtectionWindow();
+    SetRamVersionCheck();
 
     if (!gPatchSuccess)
         SetMainCallback2(CB2_RomHashFail);
@@ -177,6 +178,7 @@ void AgbMainLoop(void)
                 gLinkTransferringData = FALSE;
             }
         }
+        CheckRamVersion();
 
         PlayTimeCounter_Update();
         MapMusicMain();
