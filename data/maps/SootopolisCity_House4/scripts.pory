@@ -31,6 +31,7 @@ script SootopolisCity_House4_EventScript_RelicsMan{
 			else{
 				msgbox(SootopolisCity_House4_Text_PleaseTakeThisRelic, MSGBOX_DEFAULT)
 				giveitem(ITEM_ADAMANT_ORB)
+				giveitem(ITEM_ADAMANT_CRYSTAL)
 				setflag(FLAG_RECEIVED_ADAMANT_ORB)
 			}
 			
@@ -44,6 +45,7 @@ script SootopolisCity_House4_EventScript_RelicsMan{
 			else{
 				msgbox(SootopolisCity_House4_Text_PleaseTakeThisRelic, MSGBOX_DEFAULT)
 				giveitem(ITEM_LUSTROUS_ORB)
+				giveitem(ITEM_LUSTROUS_GLOBE)
 				setflag(FLAG_RECEIVED_LUSTROUS_ORB)
 			}
 			
