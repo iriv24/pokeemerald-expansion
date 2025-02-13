@@ -4437,6 +4437,7 @@ void SetMonToLevelCap(void)
 
 void EnterCheatCode(void)
 {
+    *gStringVar2 = EOS;
     DoNamingScreen(NAMING_SCREEN_CHEAT_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 

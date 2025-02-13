@@ -135,7 +135,7 @@ SootopolisCity_House4_Text_PleaseShowLegend::
 	.string "Well now, don't you look like the\n"
 	.string "promising young trainer.\p"
 	.string "I've traveled far and wide in my\n"
-	.string "lifetime, and I have here 3 very\l"
+	.string "lifetime, and I have here some very\l"
 	.string "powerful relics from another region\l"
 	.string "that I am looking to give to a\l"
 	.string "trustworthy trainer.\p"
