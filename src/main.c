@@ -123,11 +123,16 @@ void AgbMain()
     if (gFlashMemoryPresent != TRUE)
         SetMainCallback2((SAVE_TYPE_ERROR_SCREEN) ? CB2_FlashNotDetectedScreen : NULL);
 
-    UserProtectionWindow();
-    SetRamVersionCheck();
+    if (SHOULD_RUN_RAM_CHECK)
+        SetRamVersionCheck();
 
-    if (!gPatchSuccess)
-        SetMainCallback2(CB2_RomHashFail);
+    if (SHOULD_RUN_ROM_CHECK)
+    {
+        UserProtectionWindow();
+
+        if (!gPatchSuccess)
+            SetMainCallback2(CB2_RomHashFail);
+    }
 
     gLinkTransferringData = FALSE;
 
@@ -178,7 +183,8 @@ void AgbMainLoop(void)
                 gLinkTransferringData = FALSE;
             }
         }
-        CheckRamVersion();
+        if (SHOULD_RUN_RAM_CHECK)
+            CheckRamVersion();
 
         PlayTimeCounter_Update();
         MapMusicMain();

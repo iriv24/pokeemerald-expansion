@@ -22,7 +22,7 @@ enum
 // === changed if the project ===
 // === is changed in any way! ===
 // === NOTE === NOTE === NOTE ===
-static const u32 versionCheck = 286234897;
+static const u32 versionCheck = 216234897;
 
 EWRAM_DATA u32 sRamVersionCheck;
 
@@ -36,12 +36,37 @@ EWRAM_DATA u32 gRomHashResults = 0;
 // === the value shown in the ===
 // === ROM checker manually!! ===
 // === NOTE === NOTE === NOTE ===
+/*
 static inline void CopyFuncToIwram(void *funcBuffer, const void *funcStartAddress, const void *funcEndAdress)
 {
     memcpy(funcBuffer, funcStartAddress, funcEndAdress - funcStartAddress);
 }
 
 __attribute__((target("arm"))) __attribute__((noinline, no_reorder)) __attribute__((optimize("-O3"))) static void TestHashRom(void)
+{
+    u32 hashes[4] = {0, 0, 0, 0};
+    u32 *startAddress = (u32 *)0x08000000;
+    u32 *endAddress = (u32 *)(0x0A000000 - 4);
+    for (u32 i = 0; i < (1 << 23) - 4*ROM_HASH_SPEED; i+=4*ROM_HASH_SPEED)
+    {
+        hashes[0] ^= startAddress[i];
+        hashes[1] ^= startAddress[i + ROM_HASH_SPEED];
+        hashes[2] ^= startAddress[i + 2*ROM_HASH_SPEED];
+        hashes[3] ^= startAddress[i + 3*ROM_HASH_SPEED];
+    }
+    gRomHashResults = hashes[0] ^ hashes[1] ^ hashes[2] ^ hashes[3];
+    if (gRomHashResults == *endAddress)
+        gPatchSuccess = TRUE;
+    gPatchSuccess = TRUE;
+}
+
+__attribute__((target("arm"))) __attribute__((no_reorder)) static void SwitchToArmCallTestHashRom(void (*hashFunction)(void))
+{
+    hashFunction();
+}
+*/
+
+void TestHashRomOther(void)
 {
     u32 hashes[4] = {0, 0, 0, 0};
     u32 *startAddress = (u32 *)0x08000000;
@@ -56,23 +81,15 @@ __attribute__((target("arm"))) __attribute__((noinline, no_reorder)) __attribute
     gRomHashResults = hashes[0] ^ hashes[1] ^ hashes[2] ^ hashes[3];
     if (gRomHashResults == *endAddress)
         gPatchSuccess = TRUE;
-    gPatchSuccess = TRUE;
-}
-
-__attribute__((target("arm"))) __attribute__((no_reorder)) static void SwitchToArmCallTestHashRom(void (*hashFunction)(void))
-{
-    hashFunction();
 }
 
 void VerifyRomPatch(void)
 {
-    if (SHOULD_RUN_ROM_CHECK)
-    {
-        u32 funcBuffer[350];
+    //u32 funcBuffer[350];
 
-        CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
-        SwitchToArmCallTestHashRom((void *) funcBuffer);
-    }
+    //CopyFuncToIwram(funcBuffer, TestHashRom, SwitchToArmCallTestHashRom);
+    //SwitchToArmCallTestHashRom((void *) funcBuffer);
+    TestHashRomOther();
 }
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -158,6 +175,70 @@ void UserProtectionWindow(void)
     VerifyRomPatch();
 }
 
+static void GetHexStringFromU32(u8 *str, u32 value)
+{
+    str[0] = CHAR_0;
+    str[1] = CHAR_x;
+    str[10] = EOS;
+    for (u32 i = 0; i < 8; i++)
+    {
+        u8 currChar = 0;
+        switch ((value >> (4*i)) & 0xF)
+        {
+        case 0:
+            currChar = CHAR_0;
+            break;
+        case 1:
+            currChar = CHAR_1;
+            break;
+        case 2:
+            currChar = CHAR_2;
+            break;
+        case 3:
+            currChar = CHAR_3;
+            break;
+        case 4:
+            currChar = CHAR_4;
+            break;
+        case 5:
+            currChar = CHAR_5;
+            break;
+        case 6:
+            currChar = CHAR_6;
+            break;
+        case 7:
+            currChar = CHAR_7;
+            break;
+        case 8:
+            currChar = CHAR_8;
+            break;
+        case 9:
+            currChar = CHAR_9;
+            break;
+        case 10:
+            currChar = CHAR_A;
+            break;
+        case 11:
+            currChar = CHAR_B;
+            break;
+        case 12:
+            currChar = CHAR_C;
+            break;
+        case 13:
+            currChar = CHAR_D;
+            break;
+        case 14:
+            currChar = CHAR_E;
+            break;
+        case 15:
+            currChar = CHAR_F;
+            break;
+        }
+        u32 pos = 3 + 2*(i >> 1) - (i % 2);
+        str[pos] = currChar;
+    }
+}
+
 void CB2_RomHashFail(void)
 {
     static const struct WindowTemplate textWin[] =
@@ -203,70 +284,14 @@ void CB2_RomHashFail(void)
         "is done correctly.\n");
     RomCheckScreenTextPrint(romCheckFailMessage, 1, 0);
     u32 *endAddress = (u32 *)(0x0A000000 - 4);
-    if ((*endAddress) == 0xFFFFFFFF)
+    //if ((*endAddress) == 0xFFFFFFFF)
     {
         u8 printString[11];
-        printString[0] = CHAR_0;
-        printString[1] = CHAR_x;
-        printString[10] = EOS;
-        for (u32 i = 0; i < 8; i++)
-        {
-            u8 currChar = 0;
-            switch ((gRomHashResults >> (4*i)) & 0xF)
-            {
-            case 0:
-                currChar = CHAR_0;
-                break;
-            case 1:
-                currChar = CHAR_1;
-                break;
-            case 2:
-                currChar = CHAR_2;
-                break;
-            case 3:
-                currChar = CHAR_3;
-                break;
-            case 4:
-                currChar = CHAR_4;
-                break;
-            case 5:
-                currChar = CHAR_5;
-                break;
-            case 6:
-                currChar = CHAR_6;
-                break;
-            case 7:
-                currChar = CHAR_7;
-                break;
-            case 8:
-                currChar = CHAR_8;
-                break;
-            case 9:
-                currChar = CHAR_9;
-                break;
-            case 10:
-                currChar = CHAR_A;
-                break;
-            case 11:
-                currChar = CHAR_B;
-                break;
-            case 12:
-                currChar = CHAR_C;
-                break;
-            case 13:
-                currChar = CHAR_D;
-                break;
-            case 14:
-                currChar = CHAR_E;
-                break;
-            case 15:
-                currChar = CHAR_F;
-                break;
-            }
-            printString[2 + i] = currChar;
-        }
-        //ConvertIntToDecimalStringN(gStringVar2, gRomHashResults, STR_CONV_MODE_LEFT_ALIGN, 10);
+        GetHexStringFromU32(printString, gRomHashResults);
         RomCheckScreenTextPrint(printString, 1, 12);
+        MgbaPrintf(MGBA_LOG_WARN, "%S", printString);
+        GetHexStringFromU32(printString, *endAddress);
+        MgbaPrintf(MGBA_LOG_WARN, "%S", printString);
     }
     TransferPlttBuffer();
     *(u16*)PLTT = RGB(17, 18, 31);
