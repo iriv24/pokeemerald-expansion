@@ -284,7 +284,7 @@ void CB2_RomHashFail(void)
         "is done correctly.\n");
     RomCheckScreenTextPrint(romCheckFailMessage, 1, 0);
     u32 *endAddress = (u32 *)(0x0A000000 - 4);
-    //if ((*endAddress) == 0xFFFFFFFF)
+    if ((*endAddress) == 0xFFFFFFFF)
     {
         u8 printString[11];
         GetHexStringFromU32(printString, gRomHashResults);
