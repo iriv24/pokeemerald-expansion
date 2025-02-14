@@ -289,7 +289,6 @@ void CB2_RomHashFail(void)
         u8 printString[11];
         GetHexStringFromU32(printString, gRomHashResults);
         RomCheckScreenTextPrint(printString, 1, 12);
-        GetHexStringFromU32(printString, *endAddress);
     }
     TransferPlttBuffer();
     *(u16*)PLTT = RGB(17, 18, 31);
