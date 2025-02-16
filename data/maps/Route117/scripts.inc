@@ -599,7 +599,7 @@ Route117_Text_DanceInstructor:
 # 300 "data/maps/Route117/scripts.pory"
 	.string "Tell you what, if you can beat Wattson,\n"
 # 301 "data/maps/Route117/scripts.pory"
-	.string "come see me in Vendanturf Town and I'll\l"
+	.string "come see me in Verdanturf Town and I'll\l"
 # 302 "data/maps/Route117/scripts.pory"
 	.string "give you a lesson!$"
 # 303 "data/maps/Route117/scripts.pory"

@@ -298,7 +298,7 @@ Route117_Text_DanceInstructor:
 	.string "may not be as good a battler as Phoebe,\l"
 	.string "but I'm a way better dancer!\p"
 	.string "Tell you what, if you can beat Wattson,\n"
-	.string "come see me in Vendanturf Town and I'll\l"
+	.string "come see me in Verdanturf Town and I'll\l"
 	.string "give you a lesson!$"
 
 Route117_Text_RouteSignVerdanturf:
