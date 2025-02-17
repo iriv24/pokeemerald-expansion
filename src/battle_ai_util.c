@@ -542,6 +542,20 @@ static inline s32 SetFixedMoveBasePower(u32 battlerAtk, u32 move)
     return fixedBasePower;
 }
 
+static inline void AI_StoreBattlerTypes(u32 battlerAtk, u32 *types)
+{
+    types[0] = gBattleMons[battlerAtk].types[0];
+    types[1] = gBattleMons[battlerAtk].types[1];
+    types[2] = gBattleMons[battlerAtk].types[2];
+}
+
+static inline void AI_RestoreBattlerTypes(u32 battlerAtk, u32 *types)
+{
+    gBattleMons[battlerAtk].types[0] = types[0];
+    gBattleMons[battlerAtk].types[1] = types[1];
+    gBattleMons[battlerAtk].types[2] = types[2];
+}
+
 static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCalcData, s32 *expectedDamage, s32 *minimumDamage, u32 holdEffectAtk, u32 abilityAtk)
 {
     u32 move = damageCalcData->move;
@@ -664,6 +678,9 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     {
         s32 critChanceIndex, fixedBasePower;
 
+        u32 types[3];
+        AI_StoreBattlerTypes(battlerAtk, types);
+
         ProteanTryChangeType(battlerAtk, aiData->abilities[battlerAtk], move, moveType);
         fixedBasePower = SetFixedMoveBasePower(battlerAtk, move);
 
@@ -741,6 +758,8 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
                                   aiData->holdEffects[battlerAtk],
                                   aiData->abilities[battlerAtk]);
         }
+
+        AI_RestoreBattlerTypes(battlerAtk, types);
     }
     else
     {
