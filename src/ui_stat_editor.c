@@ -923,12 +923,6 @@ static bool8 CheckIfStatCantIncrease(void)
     if(FlagGet(FLAG_MIN_GRINDING_MODE) && sStatEditorDataPtr->selector_x == EDITING_EVS)
         return TRUE;
 
-    else if(!FlagGet(FLAG_MIN_GRINDING_MODE)
-            && !FlagGet(FLAG_BADGE08_GET)
-            && (GetMonData(ReturnPartyMon(), MON_DATA_IVS_WERE_PERFECTED, NULL) != 1)
-            && sStatEditorDataPtr->selector_x == EDITING_IVS)
-        return TRUE;
-
     if (sStatEditorDataPtr->selector_x == EDITING_EVS && (sStatEditorDataPtr->editingStat == EV_MAX_SINGLE_STAT || sStatEditorDataPtr->evTotal == EV_MAX_TOTAL))
         return TRUE;
    
@@ -942,12 +936,6 @@ static bool8 CheckIfStatCantIncrease(void)
 bool8 CheckIfStatCantDecrease(void) 
 {
     if(FlagGet(FLAG_MIN_GRINDING_MODE) && sStatEditorDataPtr->selector_x == EDITING_EVS)
-        return TRUE;
-
-    else if(!FlagGet(FLAG_MIN_GRINDING_MODE)
-            && !FlagGet(FLAG_BADGE08_GET)
-            && (GetMonData(ReturnPartyMon(), MON_DATA_IVS_WERE_PERFECTED, 0) != 1)
-            && sStatEditorDataPtr->selector_x == EDITING_IVS)
         return TRUE;
      
     return FALSE;

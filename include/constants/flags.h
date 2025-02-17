@@ -1239,7 +1239,7 @@
 #define FLAG_ROAMER_MATCH_CALL                                      0x4A1
 #define FLAG_HIDE_CHAMPIONS_ROOM_DAWN                               0x4A2
 #define FLAG_SYS_STAT_EDITOR_GET                                    0x4A3
-#define FLAG_MET_IV_PERFECTER                                       0x4A4
+#define FLAG_UNUSED_0x4A4                                           0x4A4
 #define FLAG_HIDE_LUGIA                                             0x4A5
 #define FLAG_DEFEATED_LUGIA                                         0x4A6
 #define FLAG_CAUGHT_LUGIA                                           0x4A7

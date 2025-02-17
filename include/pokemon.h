@@ -117,7 +117,7 @@ enum {
     MON_DATA_TERA_TYPE,
     MON_DATA_EVOLUTION_TRACKER,
     MON_DATA_CANT_RANDOMIZE_ABILITY,
-    MON_DATA_IVS_WERE_PERFECTED,
+    MON_DATA_IVS_WERE_PERFECTED,        // TODO iriv remove this
 };
 
 enum {
@@ -140,7 +140,7 @@ struct PokemonSubstruct0
     u8 friendship;
     u16 pokeball:6; // 63 balls.
     u16 nickname12:8; // 12th character of nickname.
-    u8 ivsWerePerfected:1;
+    u8 ivsWerePerfected:1; // TODO iriv remove this
     u16 unused_0A:1;
 };
 

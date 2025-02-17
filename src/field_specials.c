@@ -1579,11 +1579,6 @@ u16 ScriptGetPartyMonSpecies(void)
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
-u16 ScriptGetPartyMonPerfectedIVs(void)
-{
-    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IVS_WERE_PERFECTED, NULL);
-}
-
 u16 ScriptGetPartyMonLevel(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
@@ -4413,7 +4408,6 @@ void ChangeMonIVsForHP(void)
 void PerfectMonIVs(void) 
 {
     u8 iv = 31;
-    u8 one = 1;
 
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &iv);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &iv);
@@ -4421,7 +4415,8 @@ void PerfectMonIVs(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &iv);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &iv);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &iv);
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IVS_WERE_PERFECTED, &one);
+    // TODO iriv remove this when breaking saves
+    //SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IVS_WERE_PERFECTED, &one);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 

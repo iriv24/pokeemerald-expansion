@@ -338,7 +338,6 @@ gSpecials::
 	def_special SetRoute123Weather
 	def_special GetContestMultiplayerId
 	def_special ScriptGetPartyMonSpecies
-	def_special ScriptGetPartyMonPerfectedIVs
 	def_special ScriptGetPartyMonLevel
 	def_special IsSelectedMonEgg
 	def_special TryInitBattleTowerAwardManObjectEvent

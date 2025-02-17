@@ -111,12 +111,8 @@ MauvilleCity_House1_Text_ExplainStatEditorInMGM:
 
 MauvilleCity_House1_Text_ExplainStatEditorNotInMGM:
 	.string "Since you have Minimal Grinding Mode\n"
-	.string "disabled, you can only edit the IVs\l"
-	.string "of the Pokémon whose IVs you have\l"
-	.string "perfected.\p"
-	.string "That limitation will be in place until\n"
-	.string "you have all 8 Gym Badges.\p"
-	.string "You can edit EVs freely though.$"
+	.string "disabled, you can edit both EVs\l"
+	.string "and IVs freely with that device.$"
 
 MauvilleCity_House1_Text_ReceivedStatEditorInMGM:
 	.string "Remember, you can access the Stat\n"
@@ -129,13 +125,9 @@ MauvilleCity_House1_Text_ReceivedStatEditorInMGM:
 MauvilleCity_House1_Text_ReceivedStatEditorNotInMGM:
 	.string "Remember, you can access the Stat\n"
 	.string "Editor from your “L menu”.\p"
-	.string "However, since you have\n"
-	.string "Minimal Grinding Mode disabled, you\l"
-	.string "can only edit the IVs of the\l"
-	.string "Pokémon whose IVs you have perfected.\p"
-	.string "That limitation will be in place until\n"
-	.string "you have all 8 Gym Badges.\p"
-	.string "You can edit EVs freely though.$"
+	.string "Since you have Minimal Grinding\n"
+	.string "Mode disabled, you can edit the\l"
+	.string "EVs and IVs of your Pokémon freely.$"
 
 MauvilleCity_House1_Text_ObtainedStatEditor:
 	.string "Obtained the Stat Editor!$"
@@ -145,39 +137,30 @@ MauvilleCity_House1_Text_ObtainedStatEditor:
 script MauvilleCity_House1_EventScript_HPChangerDude {
     lock
     faceplayer
-	msgbox(HpChangerHelloCanChange)
-	if(!flag(FLAG_MIN_GRINDING_MODE) && !flag(FLAG_BADGE08_GET))
-	{
-		msgbox(HpChangerNotInMgm)
-	}
-	msgbox(HpChangerShouldIChange, MSGBOX_YESNO)
+	msgbox(HpChangerHelloCanChange, MSGBOX_YESNO)
+
 	if(var(VAR_RESULT) == NO)
 	{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
 	}
+
 	msgbox("Which Pokémon?")
 	special(ChoosePartyMon)
 	waitstate
+
 	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
 	{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
 	}
+
 	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+
 	if(var(VAR_RESULT) == SPECIES_EGG) {
 		msgbox("I can't change the Hidden Power\nof an Egg.")
 		release
 		end
 	}
-	if(!flag(FLAG_MIN_GRINDING_MODE) && !flag(FLAG_BADGE08_GET))
-	{
-		specialvar(VAR_RESULT, ScriptGetPartyMonPerfectedIVs)
-		if(var(VAR_RESULT) != 1) {
-			msgbox("I can't change the Hidden Power of\nthat Pokémon since you haven't\lperfected its IVs.")
-			release
-			end
-		}
-	}
-	
+
 	special(BufferMonNickname)
 	msgbox("Which new Hidden Power type would\nyou like for {STR_VAR_1}?")
 	dynmultipush("Fighting", TYPE_FIGHTING)
@@ -236,58 +219,30 @@ script MauvilleCity_House1_EventScript_HPChangerNo {
 script MauvilleCity_House1_EventScript_IVPerfecterDude {
     lock
     faceplayer
-	if(flag(FLAG_MIN_GRINDING_MODE))
-	{
-		msgbox(IVPerfectHelloInMGM)
-		release
-		end
-	}
-	if(!flag(FLAG_MET_IV_PERFECTER))
-	{
-		setflag(FLAG_MET_IV_PERFECTER)
-		msgbox(IVPerfecterFirstTimeExplain)
-	}
-	if(flag(FLAG_BADGE08_GET))
-	{
-		msgbox(IVPerfecterHas8Badges)
-		goto(MauvilleCity_House1_EventScript_PerfectIV)
-	}
-	if(var(VAR_IV_PERFECTER_COUNTER) > 0)
-	{
-		buffernumberstring(STR_VAR_2, VAR_IV_PERFECTER_COUNTER)
-		msgbox(IVPerfecterCanPerfectAMon)
-		goto(MauvilleCity_House1_EventScript_PerfectIV)
-	}
-	msgbox(IVPerfecterNoneRemaining)
-	release
-	end
-}
+	msgbox(IVPerfecterGreeting, MSGBOX_YESNO)
 
-script MauvilleCity_House1_EventScript_PerfectIV{
-	msgbox(IVPerfecterShouldIPerfect, MSGBOX_YESNO)
 	if(var(VAR_RESULT) == NO)
 	{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
 	}
+
 	msgbox("Which Pokémon?")
 	special(ChoosePartyMon)
 	waitstate
+
 	if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN)
 	{
 		goto(MauvilleCity_House1_EventScript_HPChangerNo)
 	}
+
 	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+
 	if(var(VAR_RESULT) == SPECIES_EGG) {
 		msgbox("I can't perfect the IVs\nof an Egg.")
 		release
 		end
 	}
-	specialvar(VAR_RESULT, ScriptGetPartyMonPerfectedIVs)
-	if(var(VAR_RESULT) == 1) {
-		msgbox("I've already perfected that\nPokémon's IVs.")
-		release
-		end
-	}
+
 	special(BufferMonNickname)
 	msgbox(IVPerfecterAreYouSure, MSGBOX_YESNO)
 
@@ -303,24 +258,7 @@ script MauvilleCity_House1_EventScript_PerfectIV{
 	waitfanfare
 	closemessage
 	fadescreen(FADE_FROM_BLACK)
-	
-	if(flag(FLAG_BADGE08_GET))
-	{
-		msgbox(IVPerfecterComeBackSoon8Badges)
-		release
-		end
-	}
-	
-	subvar(VAR_IV_PERFECTER_COUNTER, 1)
-	if(var(VAR_IV_PERFECTER_COUNTER) > 0)
-	{
-		buffernumberstring(STR_VAR_2, VAR_IV_PERFECTER_COUNTER)
-		msgbox(IVPerfecterComeBackSoonSomeRemaining)
-		release
-		end
-	}
-
-	msgbox(IVPerfecterComeBackSoonNoneRemaining)
+	msgbox(IVPerfecterComeBackSoon)
 	release
 	end
 }
@@ -332,7 +270,9 @@ text HpChangerHelloCanChange
 	"changer.\p"
 	"You can choose a Pokémon and I can\n"
 	"quickly modify its IVs to change\l"
-	"the type of its Hidden Power."
+	"the type of its Hidden Power.\p"
+	"Would you like me to change the type of\n"
+	"one of your Pokémon's Hidden Power?"
 }
 
 text HpChangerNotInMgm
@@ -346,11 +286,6 @@ text HpChangerNotInMgm
 	"you have all 8 Gym Badges."
 }
 
-text HpChangerShouldIChange 
-{
-	"Would you like me to change the type of\n"
-	"one of your Pokémon's Hidden Power?"
-}
 
 text AreYouSureHPTypeChange
 {
@@ -372,46 +307,11 @@ text HPTypeChangedComeBackSoon
 	"another Pokémon."
 }
 
-text IVPerfectHelloInMGM
+text IVPerfecterGreeting
 {
-	"Hello, I am the IV Perfecter.\p"
-	"It looks like you have\n"
-	"Minimal Grinding Mode enabled, so you\l"
-	"should have no use for me.\p"
-	"If you need to perfect your Pokémon's\n"
-	"IVs, just use the Stat Editor\l"
-	"you lazy bum.\p"
-	"Or have my colleague there change your\n"
-	"Pokémon's Hidden Power type to be Dark,\l"
-	"that uses perfect IVs."
-}
-
-text IVPerfecterFirstTimeExplain
-{
-	"Hello, I am the IV Perfecter.\p"
-	"I can perfect one of your Pokémon's\n"
-	"IVs, but I have certain conditions.\p"
-	"I can only perfect up to 5 Pokémon's\n"
-	"IVs per Gym Badge that you have.\p"
-	"After you get 8 Badges, this limit will\n"
-	"no longer apply."
-}
-
-text IVPerfecterHas8Badges
-{
-	"Since you have 8 Badges, I can\n"
-	"perfect the IVs of any of your Pokémon\l"
-	"without limitation."
-}
-
-text IVPerfecterCanPerfectAMon
-{
-	"It looks like I can perfect the IVs of\n"
-	"up to {STR_VAR_2} Pokémon for you."
-}
-
-text IVPerfecterShouldIPerfect
-{
+	"Hello, I am the IV Perfecter,\n"
+	"I can perfect one of your\l"
+	"Pokémon's IVs.\p"
 	"Would you like me to perfect one of\n"
 	"your Pokémon's IVs?"
 }
@@ -422,7 +322,7 @@ text IVPerfecterAreYouSure
 	"{STR_VAR_1}'s IVs?"
 }
 
-text IVPerfecterComeBackSoon8Badges
+text IVPerfecterComeBackSoon
 {
 	"{STR_VAR_1}'s IVs have been\n"
 	"perfected.\p"
@@ -430,29 +330,3 @@ text IVPerfecterComeBackSoon8Badges
 	"the IVs of another Pokémon."
 }
 
-text IVPerfecterComeBackSoonSomeRemaining
-{
-	"{STR_VAR_1}'s IVs have been\n"
-	"perfected.\p"
-	"I can now perfect the IVs of\n"
-	"{STR_VAR_2} more Pokémon until you\l"
-	"obtain your next Gym Badge.\p"
-	"Come back if you need me to perfect\n"
-	"the IVs of another Pokémon."
-}
-
-text IVPerfecterComeBackSoonNoneRemaining
-{
-	"{STR_VAR_1}'s IVs have been\n"
-	"perfected.\p"
-	"I can not perfect the IVs of any more\n"
-	"of your Pokémon until you obtain your\l"
-	"next Gym Badge."
-}
-
-text IVPerfecterNoneRemaining
-{
-	"I can not perfect the IVs of any more\n"
-	"of your Pokémon until you obtain your\l"
-	"next Gym Badge."
-}
