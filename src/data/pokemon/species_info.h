@@ -303,7 +303,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_LUXRAY,
         .categoryName = _("Gleam Eyes"),
         .height = 14,
-        .weight = 420,
+        .weight = 460,
         .description = COMPOUND_STRING(
             "It has eyes which can see through\n"
             "anything. Luxray's ability to see\n"
@@ -496,7 +496,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_EMPOLEON,
         .categoryName = _("Emperor"),
         .height = 17,
-        .weight = 845,
+        .weight = 1600,
         .description = COMPOUND_STRING(
             "The three horns that extend from its beak\n"
             "attest to its power. It avoids unnecessary\n"
@@ -560,7 +560,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_INFERNAPE,
         .categoryName = _("Flame"),
         .height = 12,
-        .weight = 550,
+        .weight = 700,
         .description = COMPOUND_STRING(
             "Its crown of fire is indicative of its\n"
             "fiery nature. It uses a special kind of\n"
@@ -688,7 +688,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .natDexNum = NATIONAL_DEX_ROSERADE,
         .categoryName = _("Bouquet"),
         .height = 9,
-        .weight = 145,
+        .weight = 200,
         .description = COMPOUND_STRING(
             "Its sweet aroma attracts prey.\n"
             "With the movements of a dancer,\n"
