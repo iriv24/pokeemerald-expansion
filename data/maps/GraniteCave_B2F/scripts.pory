@@ -24,6 +24,7 @@ GraniteCave_B2F_EventScript_ShowMoltresGalar::
 
 GraniteCave_B2F_EventScript_MoltresGalar::
 	lock
+	goto_if_unset FLAG_BADGE08_GET, GraniteCave_B2F_EventScript_NotStrongEnoughYet
 	faceplayer
 	waitse
 	playmoncry SPECIES_MOLTRES_GALAR, CRY_MODE_ENCOUNTER
@@ -42,6 +43,11 @@ GraniteCave_B2F_EventScript_MoltresGalar::
 	release
 	end
 
+GraniteCave_B2F_EventScript_NotStrongEnoughYet::
+	msgbox GraniteCave_B2F_Text_NotStrongEnoughYet, MSGBOX_DEFAULT
+	release
+	end
+
 GraniteCave_B2F_EventScript_DefeatedMoltresGalar::
 	setflag FLAG_DEFEATED_MOLTRES_GALARIAN
 	goto Common_EventScript_RemoveStaticPokemon
@@ -51,5 +57,11 @@ GraniteCave_B2F_EventScript_RanFromMoltresGalar::
 	setvar VAR_0x8004, SPECIES_MOLTRES_GALAR
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+GraniteCave_B2F_Text_NotStrongEnoughYet:
+	.string "You sense you are not strong enough to\n"
+	.string "take on this Pokémon yet.\p"
+	.string "And you also shouldn't be here you\n"
+	.string "little DexNav-abusing cheater.$"
 
 `

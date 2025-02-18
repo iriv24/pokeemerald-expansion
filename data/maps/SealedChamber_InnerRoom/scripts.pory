@@ -32,6 +32,7 @@ SealedChamber_InnerRoom_EventScript_TryRemoveLugia::
 
 SealedChamber_InnerRoom_EventScript_Lugia::
 	lock
+	goto_if_unset FLAG_IS_CHAMPION, SealedChamber_InnerRoom_EventScript_NotStrongEnoughYet
 	faceplayer
 	waitse
 	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
@@ -47,6 +48,11 @@ SealedChamber_InnerRoom_EventScript_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SealedChamber_InnerRoom_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SealedChamber_InnerRoom_EventScript_RanFromLugia
 	setflag FLAG_CAUGHT_LUGIA
+	release
+	end
+
+SealedChamber_InnerRoom_EventScript_NotStrongEnoughYet::
+	msgbox SealedChamber_InnerRoom_Text_NotStrongEnoughYet, MSGBOX_DEFAULT
 	release
 	end
 
@@ -130,5 +136,11 @@ SealedChamber_InnerRoom_EventScript_BrailleStoryPart6::
 	braillemsgbox SealedChamber_InnerRoom_Braille_OpenDoorEternalPokemonWaits
 	releaseall
 	end
+
+SealedChamber_InnerRoom_Text_NotStrongEnoughYet:
+	.string "You sense you are not strong enough to\n"
+	.string "take on this Pokémon yet.\p"
+	.string "And you also shouldn't be here you\n"
+	.string "little DexNav-abusing cheater.$"
 
 `
