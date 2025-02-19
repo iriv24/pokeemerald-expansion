@@ -940,7 +940,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
     // primal weather check
     weather = AI_GetWeather(aiData);
-    if (weather & B_WEATHER_PRIMAL_ANY)
+    if (weather & B_WEATHER_PRIMAL_ANY || !WEATHER_HAS_EFFECT)
     {
         switch (move)
         {
