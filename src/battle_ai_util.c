@@ -3774,6 +3774,12 @@ static u32 IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, u32 statI
     if (AI_DATA->abilities[battlerDef] == ABILITY_OPPORTUNIST)
         return NO_INCREASE;
 
+    if(HasMoveEffect(battlerDef, EFFECT_ENCORE))
+        return NO_INCREASE;
+    
+    if (IsDoubleBattle() && HasMoveEffect(BATTLE_PARTNER(battlerDef), EFFECT_ENCORE))
+        return NO_INCREASE;
+
     switch (statId)
     {
     case STAT_CHANGE_ATK:
