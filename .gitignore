@@ -41,3 +41,4 @@ prefabs.json
 /pokeemerald-*.png
 src/data/map_group_count.h
 tools/trainerproc/trainerproc
+tools/poryscript
