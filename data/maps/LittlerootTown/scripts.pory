@@ -437,6 +437,7 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 # 219 "data/maps/LittlerootTown/scripts.pory"
 # 220 "data/maps/LittlerootTown/scripts.pory"
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 # 221 "data/maps/LittlerootTown/scripts.pory"
 	delay 20
 # 222 "data/maps/LittlerootTown/scripts.pory"
