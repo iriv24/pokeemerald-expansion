@@ -1921,6 +1921,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     s32 i;
     u8 monsCount;
     u8 isTrainerBossTrainer = trainer->isBossTrainer;
+    u8 trainerClass = trainer->trainerClass;
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1978,7 +1980,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            if(partyData[i].lvl >= 200)
+
+            if(FlagGet(FLAG_IS_CHAMPION) && (trainerClass == TRAINER_CLASS_ELITE_FOUR || trainerClass == TRAINER_CLASS_CHAMPION))
+            {
+                CreateMon(&party[i], species, 100, 0, TRUE, personalityValue, otIdType, fixedOtId);
+                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+            }
+            else if(partyData[i].lvl >= 200)
             {
                 playerLevelMinus = partyData[i].lvl - 200;
                 if(!decidedLevel)
