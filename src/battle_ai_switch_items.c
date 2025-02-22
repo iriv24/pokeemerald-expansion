@@ -710,7 +710,7 @@ static bool32 AreStatsRaised(u32 battler)
             buffedStatsValue += gBattleMons[battler].statStages[i] - DEFAULT_STAT_STAGE;
     }
 
-    return (buffedStatsValue > 3);
+    return (buffedStatsValue > STAY_IN_STATS_RAISED);
 }
 
 static bool32 FindMonWithFlagsAndSuperEffective(u32 battler, u16 flags, u32 percentChance)

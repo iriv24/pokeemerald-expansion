@@ -8,6 +8,7 @@
 #define MIN_ROLL_PERCENTAGE DMG_ROLL_PERCENT_LO
 #define DMG_ROLL_PERCENTAGE ((MAX_ROLL_PERCENTAGE + MIN_ROLL_PERCENTAGE + 1) / 2) // Controls the damage roll the AI sees for the default roll. By default the 9th roll is seen
 
+#define STAY_IN_STATS_RAISED 2 // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 enum DamageRollType
 {
     DMG_ROLL_LOWEST,
