@@ -1940,9 +1940,9 @@ static inline u32 GetHoldEffectCritChanceIncrease(u32 battler, u32 holdEffect)
         break;
     case HOLD_EFFECT_LEEK:
         if(GET_BASE_SPECIES_ID(gBattleMons[battler].species) == SPECIES_FARFETCHD)
-            critStageIncrease = 2;
-        else if (gBattleMons[battler].species == SPECIES_SIRFETCHD)
             critStageIncrease = 1;
+        else if (gBattleMons[battler].species == SPECIES_SIRFETCHD)
+            critStageIncrease = 2;
         break;
     default:
         critStageIncrease = 0;
@@ -2023,8 +2023,8 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     u32 superLuckScaler = 4;
     u32 scopeLensScaler = 4;
     u32 luckyPunchScaler = 8;
-    u32 farfetchdLeekScaler = 8;
-    u32 sirfetchdLeekScaler = 4;
+    u32 farfetchdLeekScaler = 4;
+    u32 sirfetchdLeekScaler = 8;
 
     s32 critChance = 0;
     s32 moveCritStage = gMovesInfo[gCurrentMove].criticalHitStage;
