@@ -17027,6 +17027,7 @@ static const u16 sEmpoleonTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_NASTY_PLOT,
     MOVE_RAIN_DANCE,
+    MOVE_IRON_HEAD,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PIPLUP
