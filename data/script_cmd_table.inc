@@ -234,6 +234,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_advancetime                       @ 0xe7
 	.4byte ScrCmd_checkpartymon						@ 0xe8
 	.4byte ScrCmd_bufferhptypeinfo					@ 0xe9
+	.4byte ScrCmd_tmshop                            @ 0xea
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

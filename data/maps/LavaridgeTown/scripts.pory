@@ -296,7 +296,7 @@ LavaridgeTown_MiniMarket_EventScript_Saleswoman::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart LavaridgeTown_MiniMart
+	tmshop LavaridgeTown_MiniMart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end

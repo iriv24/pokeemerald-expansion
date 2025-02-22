@@ -369,7 +369,7 @@ DewfordTown_MiniMarket_EventScript_Saleswoman2::
 # 185 "data/maps/DewfordTown/scripts.pory"
 	waitmessage
 # 186 "data/maps/DewfordTown/scripts.pory"
-	pokemart DewfordTown_MiniMart2
+	tmshop DewfordTown_MiniMart2
 # 187 "data/maps/DewfordTown/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 188 "data/maps/DewfordTown/scripts.pory"

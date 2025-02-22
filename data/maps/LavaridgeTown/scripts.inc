@@ -595,7 +595,7 @@ LavaridgeTown_MiniMarket_EventScript_Saleswoman::
 # 298 "data/maps/LavaridgeTown/scripts.pory"
 	waitmessage
 # 299 "data/maps/LavaridgeTown/scripts.pory"
-	pokemart LavaridgeTown_MiniMart
+	tmshop LavaridgeTown_MiniMart
 # 300 "data/maps/LavaridgeTown/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 301 "data/maps/LavaridgeTown/scripts.pory"

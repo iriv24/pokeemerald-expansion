@@ -1995,6 +1995,11 @@ extern const u32 gCategoryIcons_Gfx[];
 extern const u32 gShopMenu_Gfx[];
 extern const u32 gShopMenu_Tilemap[];
 extern const u32 gShopMenu_Pal[];
+
+extern const u32 gTMShopMenu_Gfx[];
+extern const u32 gTMShopMenu_Tilemap[];
+extern const u32 gTMShopMenu_Pal[];
+
 extern const u32 gShopMenuMoney_Gfx[];
 
 extern const u32 gBattleInterface_BallStatusBarGfx[];

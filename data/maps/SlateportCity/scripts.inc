@@ -1151,7 +1151,7 @@ SlateportCity_EventScript_PowerTMClerk::
 # 576 "data/maps/SlateportCity/scripts.pory"
 	waitmessage
 # 577 "data/maps/SlateportCity/scripts.pory"
-	pokemart SlateportCity_Pokemart_PowerTMs
+	tmshop SlateportCity_Pokemart_PowerTMs
 # 578 "data/maps/SlateportCity/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 579 "data/maps/SlateportCity/scripts.pory"

@@ -1267,7 +1267,7 @@ MauvilleCity_TMSales_EventScript_Saleswoman::
 # 634 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 635 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	pokemart MauvilleCity_TMSales
+	tmshop MauvilleCity_TMSales
 # 636 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 637 "data/maps/MauvilleCity_GameCorner/scripts.pory"
