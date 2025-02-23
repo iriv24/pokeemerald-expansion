@@ -1,22 +1,468 @@
 raw `
+.set LOCALID_NATN, 1
+.set LOCALID_MASTER_POUCINE, 3
+.set LOCALID_OBLIVION_WING, 5
+
 SootopolisCity_House5_MapScripts::
 	.byte 0
 
-SootopolisCity_House5_EventScript_Maniac::
-	msgbox SootopolisCity_House5_Text_SootopolisMtPyreConnection, MSGBOX_NPC
+SootopolisCity_House5_EventScript_Kingambit::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KINGAMBIT, CRY_MODE_NORMAL
+	msgbox SootopolisCity_House5_Text_Kingambit, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
-SootopolisCity_House5_EventScript_Girl::
-	msgbox SootopolisCity_House5_Text_BrotherUsedToStudySea, MSGBOX_NPC
+SootopolisCity_House5_Text_Kingambit:
+	.string "Kingambit: Uuhuuhuuhuuahahuuhu!$"
+
+
+SootopolisCity_House5_EventScript_Dragapult::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_DRAGAPULT, CRY_MODE_NORMAL
+	msgbox SootopolisCity_House5_Text_Dragapult, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
-SootopolisCity_House5_Text_SootopolisMtPyreConnection:
-	.string "There appears to be some connection\n"
-	.string "between SOOTOPOLIS and MT. PYRE.\p"
-	.string "My friends and I did some research on\n"
-	.string "it at the lab where I used to work.$"
+SootopolisCity_House5_Text_Dragapult:
+	.string "Dragapult: Huuuuuuureeeeeeee!$"
 
-SootopolisCity_House5_Text_BrotherUsedToStudySea:
-	.string "My big brother used to study the sea.$"
+
+SootopolisCity_House5_EventScript_Greninja::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_GRENINJA, CRY_MODE_NORMAL
+	msgbox SootopolisCity_House5_Text_Greninja, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SootopolisCity_House5_Text_Greninja:
+	.string "Greninja: Rruuueelelel!$"
 
 `
+
+script SootopolisCity_House5_EventScript_Natn{
+	lockall
+	applymovement(LOCALID_NATN, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_NATN, SootopolisCity_House5_EventScript_NatnDefeated)
+	goto_if_set(FLAG_TEMP_1, SootopolisCity_House5_EventScript_NatnRequestBattleAgain)
+	msgbox(Natn_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleNatnPrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_NatnRequestBattleAgain{
+	msgbox(Natn_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleNatnPrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleNatnPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleNatn)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineNatnBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_House5_EventScript_DeclineNatnBattle {
+	setflag(FLAG_TEMP_1)
+	msgbox(Natn_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleNatn{
+	msgbox(Natn_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_NATN, Natn_Outro)
+	goto(SootopolisCity_House5_EventScript_NatnGiveMeloetta)
+	return
+}
+
+script SootopolisCity_House5_EventScript_NatnDefeated{
+	msgbox(PostBattle_Natn, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_House5_EventScript_NatnGiveMeloetta{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELOETTA_ARIA)
+	givemonrandom(SPECIES_MELOETTA_ARIA, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveMeloettaParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveMeloettaPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_ReceiveMeloettaParty{
+	call(SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainMeloetta)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_House5_EventScript_ExplainMeloetta)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceiveMeloettaPC {
+	call(SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendMeloettaToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_House5_EventScript_SendMeloettaToPC)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_SendMeloettaToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_House5_EventScript_ExplainMeloetta)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_House5_Text_PlayerReceivedMeloetta)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MELOETTA_ARIA)
+	return
+}
+
+script SootopolisCity_House5_EventScript_ExplainMeloetta {
+	msgbox(Natn_ExplainMeloetta, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Natn_Greeting{
+	"Hey, my name's Natn, and I was the first\n"
+	"person to beat this game in Normal mode\l"
+	"when it released.\p"
+	"I didn't really do a lot of talking in the\n"
+	"early days, I just showed up, blitzed\l"
+	"through the game, then posted my Hall\l"
+	"of Fame team.\p"
+	"My rules are the same, if you can beat\n"
+	"me, I'll give you a Mythical.\p"
+	"Interested in battling?"
+}
+
+text Natn_ReadyYet{
+	"Want to battle now?"
+}
+
+text Natn_YoureOn{
+	"Let's do this."
+}
+
+text Natn_ComeBackWhenReady{
+	"Let me know if you change your mind."
+}
+
+text Natn_Outro{
+	"Not bad at all.\n"
+}
+
+text SootopolisCity_House5_Text_PlayerReceivedMeloetta{
+	"{PLAYER} received Meloetta!"
+}
+
+text Natn_ExplainMeloetta{
+	"There's your Mythical.\n"
+	"I'm sure you know it's gimmick by now,\l"
+	"but if you use its signature move, Relic\l"
+	"Song, you can change forms in battle.\p"
+	"Really makes you wonder how Maylene\n"
+	"got one that started in Pirouette form."
+}
+
+text PostBattle_Natn{
+	"Honestly, this game was pretty easy.\n"
+	"I'll be here waiting for Hardcore mode."
+}
+
+
+script SootopolisCity_House5_EventScript_MasterPoucine{
+	lockall
+	applymovement(LOCALID_MASTER_POUCINE, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_MASTER_POUCINE, SootopolisCity_House5_EventScript_MasterPoucineDefeated)
+	goto_if_set(FLAG_TEMP_2, SootopolisCity_House5_EventScript_MasterPoucineRequestBattleAgain)
+	msgbox(MasterPoucine_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_MasterPoucineRequestBattleAgain{
+	msgbox(MasterPoucine_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleMasterPoucine)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineMasterPoucineBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_House5_EventScript_DeclineMasterPoucineBattle {
+	setflag(FLAG_TEMP_2)
+	msgbox(MasterPoucine_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleMasterPoucine{
+	msgbox(MasterPoucine_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_MASTER_POUCINE, MasterPoucine_Outro)
+	goto(SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow)
+	return
+}
+
+script SootopolisCity_House5_EventScript_MasterPoucineDefeated{
+	msgbox(PostBattle_MasterPoucine, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MARSHADOW)
+	givemonrandom(SPECIES_MARSHADOW, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveMarshadowParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveMarshadowPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_ReceiveMarshadowParty{
+	call(SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainMarshadow)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_House5_EventScript_ExplainMarshadow)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceiveMarshadowPC {
+	call(SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendMarshadowToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_House5_EventScript_SendMarshadowToPC)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_SendMarshadowToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_House5_EventScript_ExplainMarshadow)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_House5_Text_PlayerReceivedMarshadow)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_MARSHADOW)
+	return
+}
+
+script SootopolisCity_House5_EventScript_ExplainMarshadow {
+	msgbox(MasterPoucine_ExplainMarshadow, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text MasterPoucine_Greeting{
+	"Hi there! I'm MasterPoucine, and I was\n"
+	"the third person to beat this game once\l"
+	"it released, and the first to do so\l"
+	"using the mascot, Empoleon!\p"
+	"I am also a content creator, so check\n"
+	"me out on YouTube!\p"
+	"Just like the other Champions, if you\n"
+	"can beat me, I'll give you a Mythical.\p"
+	"Do you want to battle me?"
+}
+
+text MasterPoucine_ReadyYet{
+	"Do you want to battle now?"
+}
+
+text MasterPoucine_YoureOn{
+	"You're on!"
+}
+
+text MasterPoucine_ComeBackWhenReady{
+	"Come back if you decide you want\n"
+	"to battle."
+}
+
+text MasterPoucine_Outro{
+	"Wow, that was an impressive battle!"
+}
+
+text SootopolisCity_House5_Text_PlayerReceivedMarshadow{
+	"{PLAYER} received Marshadow!"
+}
+
+text MasterPoucine_ExplainMarshadow{
+	"Now that's a good reward! Marshadow is\n"
+	"definitely one of the strongest\l"
+	"Mythicals, so I hope you use it well."
+}
+
+text PostBattle_MasterPoucine{
+	"I can't wait for a harder game mode to\n"
+	"come out so I can speed through that\l"
+	"one too!"
+}
+
+
+script SootopolisCity_House5_EventScript_OblivionWing{
+	lockall
+	applymovement(LOCALID_OBLIVION_WING, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_OBLIVION_WING, SootopolisCity_House5_EventScript_OblivionWingDefeated)
+	goto_if_set(FLAG_TEMP_3, SootopolisCity_House5_EventScript_OblivionWingRequestBattleAgain)
+	msgbox(OblivionWing_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleOblivionWingPrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_OblivionWingRequestBattleAgain{
+	msgbox(OblivionWing_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_House5_EventScript_BattleOblivionWingPrompt)
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleOblivionWingPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleOblivionWing)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineOblivionWingBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_House5_EventScript_DeclineOblivionWingBattle {
+	setflag(FLAG_TEMP_3)
+	msgbox(OblivionWing_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_BattleOblivionWing{
+	msgbox(OblivionWing_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_OBLIVION_WING, OblivionWing_Outro)
+	goto(SootopolisCity_House5_EventScript_OblivionWingGiveZarude)
+	return
+}
+
+script SootopolisCity_House5_EventScript_OblivionWingDefeated{
+	msgbox(PostBattle_OblivionWing, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_House5_EventScript_OblivionWingGiveZarude{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZARUDE)
+	givemonrandom(SPECIES_ZARUDE, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveZarudeParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveZarudePC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_House5_EventScript_ReceiveZarudeParty{
+	call(SootopolisCity_House5_EventScript_ReceivedZarudeFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainZarude)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_House5_EventScript_ExplainZarude)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceiveZarudePC {
+	call(SootopolisCity_House5_EventScript_ReceivedZarudeFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendZarudeToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_House5_EventScript_SendZarudeToPC)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_SendZarudeToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_House5_EventScript_ExplainZarude)
+	end
+}
+	
+script SootopolisCity_House5_EventScript_ReceivedZarudeFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_House5_Text_PlayerReceivedZarude)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_ZARUDE)
+	return
+}
+
+script SootopolisCity_House5_EventScript_ExplainZarude {
+	msgbox(OblivionWing_ExplainZarude, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text OblivionWing_Greeting{
+	"Hello, I'm OblivionWing, and I was the\n"
+	"first person ever to beat this game\l"
+	"after it released.\p"
+	"I sped through the game on Easy mode\n"
+	"and finished it just one day after it\l"
+	"came out!\p"
+	"If you can beat me, I'll give you a\n"
+	"Mythical, just like everyone else.\p"
+	"Does that sound good to you?"
+}
+
+text OblivionWing_ReadyYet{
+	"Ready to battle?"
+}
+
+text OblivionWing_YoureOn{
+	"Good luck, you'll need it!"
+}
+
+text OblivionWing_ComeBackWhenReady{
+	"You know where to find me if you change\n"
+	"your mind."
+}
+
+text OblivionWing_Outro{
+	"Not bad! If you were a little faster,\n"
+	"maybe you could've been the first to\l"
+	"beat this game!"
+}
+
+text SootopolisCity_House5_Text_PlayerReceivedZarude{
+	"{PLAYER} received Zarude!"
+}
+
+text OblivionWing_ExplainZarude{
+	"There you go, a Mythical for you.\n"
+	"I think that's a pretty good one too, if\l"
+	"I do say so myself."
+}
+
+text PostBattle_OblivionWing{
+	"Best of luck with the rest of the game!"
+}

@@ -44,28 +44,52 @@ const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
     SPECIES_SPRIGATITO,
     SPECIES_FUECOCO,
     SPECIES_KUBFU,
-    SPECIES_ZERAORA,
+    SPECIES_ZERAORA,  // gift mythical
     SPECIES_CHARCADET,
     SPECIES_TYROGUE, //30
     SPECIES_CASTFORM_NORMAL,
     SPECIES_LILEEP,
     SPECIES_ANORITH,
-    SPECIES_MELTAN,
-    SPECIES_CELEBI,
-    SPECIES_DARKRAI, //36
+    SPECIES_MELTAN, // gift mythical
+    SPECIES_CELEBI, // gift mythical
+    SPECIES_DARKRAI, //36, gift mythical
     SPECIES_PIKACHU_COSPLAY,
     SPECIES_PIKACHU_ROCK_STAR,
     SPECIES_PIKACHU_BELLE,
     SPECIES_PIKACHU_POP_STAR,
     SPECIES_PIKACHU_PHD,
     SPECIES_PIKACHU_LIBRE, //42
-    SPECIES_VICTINI,
-    SPECIES_HOOPA_CONFINED,
+    SPECIES_VICTINI, // gift mythical
+    SPECIES_HOOPA_CONFINED, // gift mythical
     SPECIES_DITTO,
-    SPECIES_GENESECT,
-    SPECIES_MELOETTA_ARIA,
-    SPECIES_BELDUM //48
+    SPECIES_GENESECT, // gift mythical
+    SPECIES_MELOETTA_ARIA, // gift mythical
+    SPECIES_BELDUM, //48
+    SPECIES_ZARUDE, // gift mythical
+    SPECIES_MARSHADOW // gift mythical
 };
+
+// mew post game
+// celebi gift
+// jirachi wild: meteor falls
+// deoxys post game
+// manaphy wild: super rod 132, 133
+// phione wild: super rod 130, 131
+// darkrai gift
+// shaymin wild: sky pillar
+// victini gift
+// keldeo roamer
+// meloetta gift
+// genesect gift
+// diancie wild: victory road
+// hoopa gift
+// volcanion wild: route 133 land
+// magearna wild: evergrande city
+// marshadow wild -> gift
+// zeraora gift
+// meltan gift
+// zarude wild -> gift?
+// pecharunt wild: mt pyre
 
 const u16 gEggMonTable[MY_EGG_MON_COUNT] =
 {
