@@ -85,10 +85,10 @@ const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
 // hoopa gift
 // volcanion wild: route 133 land
 // magearna wild: evergrande city
-// marshadow wild -> gift
+// marshadow gift
 // zeraora gift
 // meltan gift
-// zarude wild -> gift?
+// zarude gift
 // pecharunt wild: mt pyre
 
 const u16 gEggMonTable[MY_EGG_MON_COUNT] =
