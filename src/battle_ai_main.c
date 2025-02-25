@@ -3523,7 +3523,8 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_SUBSTITUTE:
     case EFFECT_SHED_TAIL:
-        IncreaseSubstituteMoveScore(battlerAtk, battlerDef, move, &score);
+        ADJUST_SCORE(IncreaseSubstituteMoveScore(battlerAtk, battlerDef, move));
+        break;
     case EFFECT_MIMIC:
         if (AI_IsFaster(battlerAtk, battlerDef, move))
         {
