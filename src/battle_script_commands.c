@@ -5957,7 +5957,7 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_RECOIL:
-            if (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+            if (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE || !TARGET_TURN_DAMAGED)
             {
                 gBattleScripting.moveendState++;
                 break;
