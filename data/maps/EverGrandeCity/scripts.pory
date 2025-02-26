@@ -584,6 +584,7 @@ script EverGrandeCity_EventScript_BattleVolkner{
 	trainerbattle_no_intro(TRAINER_VOLKNER, Volkner_Outro)
 	giveitem(ITEM_TM_RISING_VOLTAGE)
 	giveitem(ITEM_TM_SUPERCELL_SLAM)
+	giveitem(ITEM_EJECT_BUTTON)
 	goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
 	return
 }
