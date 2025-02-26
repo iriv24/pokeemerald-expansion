@@ -497,8 +497,6 @@ script LilycoveCity_EventScript_DawnRivalBattle{
 script LilycoveCity_EventScript_DawnDefeated{
 	msgbox(LilycoveCity_Text_Dawn_MagmaAndAqua)
 	giveitem(ITEM_ASSAULT_VEST)
-	giveitem(ITEM_PROTECTIVE_PADS)
-	giveitem(ITEM_EJECT_BUTTON)
 	msgbox(LilycoveCity_Text_DawnGoodbye)
 	goto(LilycoveCity_EventScript_DawnExit)
 	end
@@ -573,7 +571,7 @@ text LilycoveCity_Text_Dawn_Defeated{
 
 text LilycoveCity_Text_Dawn_MagmaAndAqua{
 	"Geez, I'm running out of things I can\n"
-	"give you, hope these will suffice."
+	"give you, hope this will suffice."
 }
 
 text LilycoveCity_Text_DawnGoodbye{
