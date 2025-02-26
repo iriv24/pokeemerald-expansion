@@ -353,6 +353,7 @@ script Route118_EventScript_WakeGiveItems{
 	giveitem(ITEM_LAPRASITE)
 	giveitem(ITEM_DREDNAWITE)
 	giveitem(ITEM_GYARADOSITE)
+	giveitem(ITEM_FOCUS_SASH)
 	msgbox(Wake_ExplainItems)
 	release
 	end

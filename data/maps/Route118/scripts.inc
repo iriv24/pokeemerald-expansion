@@ -683,16 +683,18 @@ Route118_EventScript_WakeGiveItems::
 # 355 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_GYARADOSITE
 # 356 "data/maps/Route118/scripts.pory"
-	msgbox Wake_ExplainItems
+	giveitem ITEM_FOCUS_SASH
 # 357 "data/maps/Route118/scripts.pory"
+	msgbox Wake_ExplainItems
+# 358 "data/maps/Route118/scripts.pory"
 	release
 	end
 
 
 Route118_EventScript_WakeDefeated::
-# 362 "data/maps/Route118/scripts.pory"
-	msgbox PostBattle_Wake, MSGBOX_DEFAULT
 # 363 "data/maps/Route118/scripts.pory"
+	msgbox PostBattle_Wake, MSGBOX_DEFAULT
+# 364 "data/maps/Route118/scripts.pory"
 	releaseall
 	end
 
@@ -702,7 +704,7 @@ Route118_EventScript_BattleWake_Text_0:
 	.string "GLUB GLUB GLUB GLUB!$"
 
 Wake_Greeting::
-# 367 "data/maps/Route118/scripts.pory"
+# 368 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB This better be good if\n"
 	.string "you're interrupting my training.\p"
 	.string "… … … … … …\p"
@@ -716,23 +718,23 @@ Wake_Greeting::
 	.string "or not?$"
 
 Wake_ReadyYet::
-# 381 "data/maps/Route118/scripts.pory"
+# 382 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB Ready yet?$"
 
 Wake_ComeBackWhenReady::
-# 385 "data/maps/Route118/scripts.pory"
+# 386 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB Suit yourself.$"
 
 Wake_Outro::
-# 389 "data/maps/Route118/scripts.pory"
+# 390 "data/maps/Route118/scripts.pory"
 	.string "Wow, what a fight. I know I'll be leaving\n"
 	.string "these Items in good hands.$"
 
 Wake_ExplainItems::
-# 394 "data/maps/Route118/scripts.pory"
+# 395 "data/maps/Route118/scripts.pory"
 	.string "Those are the best Mega stones I have.\n"
 	.string "Hope you put them to good use.$"
 
 PostBattle_Wake::
-# 399 "data/maps/Route118/scripts.pory"
+# 400 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB What now?!$"
