@@ -367,7 +367,7 @@ script Route117_EventScript_FantinaGiveItems{
 	giveitem(ITEM_SABLENITE)
 	giveitem(ITEM_GENGARITE)
 	giveitem(ITEM_DUSKNOIRITE)
-	giveitem(ITEM_EXPERT_BELT)
+	giveitem(ITEM_METRONOME)
 	giveitem(ITEM_LEFTOVERS)
 	msgbox(Fantina_ExplainItems)
 	release
@@ -403,9 +403,10 @@ text Fantina_ExplainItems{
 	"a few spare Mega Stones for some\l"
 	"Ghost-type Pokémon, though you'll need\l"
 	"a Mega Ring if you want to use them.\p"
-	"Finally, the Expert Belt is used for\n"
-	"boosting moves that are super\l"
-	"effective. I'm, sure you'll put it to\l"
+	"Finally, the Metronome is used for\n"
+	"boosting moves that are used multiple\l"
+	"times in succession.\p"
+	"I'm, sure you'll put it to\n"
 	"good use. Best of luck!"
 }
 	

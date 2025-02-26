@@ -705,7 +705,7 @@ Route117_EventScript_FantinaGiveItems::
 # 369 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_DUSKNOIRITE
 # 370 "data/maps/Route117/scripts.pory"
-	giveitem ITEM_EXPERT_BELT
+	giveitem ITEM_METRONOME
 # 371 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_LEFTOVERS
 # 372 "data/maps/Route117/scripts.pory"
@@ -749,19 +749,20 @@ Fantina_ExplainItems::
 	.string "a few spare Mega Stones for some\l"
 	.string "Ghost-type Pokémon, though you'll need\l"
 	.string "a Mega Ring if you want to use them.\p"
-	.string "Finally, the Expert Belt is used for\n"
-	.string "boosting moves that are super\l"
-	.string "effective. I'm, sure you'll put it to\l"
+	.string "Finally, the Metronome is used for\n"
+	.string "boosting moves that are used multiple\l"
+	.string "times in succession.\p"
+	.string "I'm, sure you'll put it to\n"
 	.string "good use. Best of luck!$"
 
 Fantina_Outro::
-# 412 "data/maps/Route117/scripts.pory"
+# 413 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\l"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 419 "data/maps/Route117/scripts.pory"
+# 420 "data/maps/Route117/scripts.pory"
 	.string "Maybe I'll head to Ever Grande City\n"
 	.string "after this, I've heard the flowers\l"
 	.string "there are extraordinary.$"
