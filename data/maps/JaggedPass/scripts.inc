@@ -581,8 +581,10 @@ JaggedPass_EventScript_MayleneGiveItems::
 # 307 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_MACHAMPITE
 # 308 "data/maps/JaggedPass/scripts.pory"
-	msgbox Maylene_ExplainItems
+	giveitem ITEM_EXPERT_BELT
 # 309 "data/maps/JaggedPass/scripts.pory"
+	msgbox Maylene_ExplainItems
+# 310 "data/maps/JaggedPass/scripts.pory"
 	release
 	end
 
@@ -592,7 +594,7 @@ JaggedPass_EventScript_BattleMaylene_Text_0:
 	.string "Bring it!$"
 
 Maylene_Greeting::
-# 313 "data/maps/JaggedPass/scripts.pory"
+# 314 "data/maps/JaggedPass/scripts.pory"
 	.string "Well, well! Is this finally a worthy\n"
 	.string "opponent? I can tell that you seem\l"
 	.string "pretty strong.\p"
@@ -607,25 +609,28 @@ Maylene_Greeting::
 	.string "with me?$"
 
 Maylene_ReadyYet::
-# 328 "data/maps/JaggedPass/scripts.pory"
+# 329 "data/maps/JaggedPass/scripts.pory"
 	.string "Ready for some training yet?$"
 
 Maylene_ComeBackWhenReady::
-# 332 "data/maps/JaggedPass/scripts.pory"
+# 333 "data/maps/JaggedPass/scripts.pory"
 	.string "That's fine, I'll be here training.$"
 
 Maylene_ExplainItems::
-# 336 "data/maps/JaggedPass/scripts.pory"
+# 337 "data/maps/JaggedPass/scripts.pory"
 	.string "Those are some of the most powerful\n"
 	.string "Fighting-type TMs out there, I'm sure\l"
 	.string "you will be able to make use of them.\p"
 	.string "I threw in some of my favorite Mega\n"
-	.string "Stones as well. Good luck, trainer!$"
+	.string "Stones as well.\p"
+	.string "Finally, the Expert Belt is used for\n"
+	.string "boosting moves that are super\l"
+	.string "effective. Good luck, trainer!$"
 
 Maylene_Outro::
-# 344 "data/maps/JaggedPass/scripts.pory"
+# 348 "data/maps/JaggedPass/scripts.pory"
 	.string "My instincts were right!$"
 
 PostBattle_Maylene::
-# 348 "data/maps/JaggedPass/scripts.pory"
+# 352 "data/maps/JaggedPass/scripts.pory"
 	.string "Gotta. Get. Stronger.$"
