@@ -797,7 +797,6 @@ script Route111_EventScript_DawnDefeated{
 	giveitem(ITEM_TM_FLASH_CANNON)
 	giveitem(ITEM_EMPOLEONITE_D)
 	giveitem(ITEM_ABILITY_PATCH, 999)
-	giveitem(ITEM_LOADED_DICE)
 	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)
 	end
@@ -1048,9 +1047,10 @@ script Route111_EventScript_DeclineDaisukeBattle {
 script Route111_EventScript_BattleDaisuke{
 	msgbox("Bring it on!", MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_DAISUKE, Daisuke_Outro)
-	giveitem(ITEM_FOCUS_SASH)
+	giveitem(ITEM_PROTECTIVE_PADS)
 	giveitem(ITEM_PUNCHING_GLOVE)
 	giveitem(ITEM_KICKING_SHOES)
+	giveitem(ITEM_LOADED_DICE)
 	goto(Route111_EventScript_DaisukeGiveTyrogue)
 	return
 }
