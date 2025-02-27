@@ -15684,7 +15684,7 @@ static const struct TrainerMon sParty_Wake[] = {
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_MOXIE,
     .heldItem = ITEM_FOCUS_SASH,
-    .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_BOUNCE, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
