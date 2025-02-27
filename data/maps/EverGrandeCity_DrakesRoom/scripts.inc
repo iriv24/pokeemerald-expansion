@@ -87,7 +87,7 @@ EverGrandeCity_DrakesRoom_EventScript_Cynthia::
 # 44 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ELITE_4_CYNTHIA, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 # 45 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	playbgm MUS_DP_ENCOUNTER_CHAMPION, FALSE
 # 46 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 47 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
