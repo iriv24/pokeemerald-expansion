@@ -10143,8 +10143,8 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
             if (damageCalcData->updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
             if (fromAiCode 
-                && dmg > 0 
-                && ((dmg * 100) / gBattleMons[battlerDef].maxHP) >= (hasRipen ? 80 : 66))
+                && dmg > 0
+                && ((dmg * 100) / gBattleMons[battlerDef].hp) >= (hasRipen ? 80 : 66))
             {
                 return UQ_4_12(1.0);
             }
