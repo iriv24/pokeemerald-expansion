@@ -35,15 +35,6 @@
 static u32 AI_GetEffectiveness(uq4_12_t multiplier);
 
 // Functions
-u32 GetDmgRollType(u32 battlerAtk)
-{
-    if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_RISKY)
-        return DMG_ROLL_HIGHEST;
-    if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE)
-        return DMG_ROLL_LOWEST;
-
-    return DMG_ROLL_DEFAULT;
-}
 
 bool32 AI_IsFaster(u32 battlerAi, u32 battlerDef, u32 move)
 {
@@ -374,7 +365,7 @@ bool32 MovesWithCategoryUnusable(u32 attacker, u32 target, u32 category)
 }
 
 // To save computation time this function has 2 variants. One saves, sets and restores battlers, while the other doesn't.
-struct SimulatedDamage AI_CalcDamageSaveBattlers(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower, enum DamageRollType rollType)
+struct SimulatedDamage AI_CalcDamageSaveBattlers(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower)
 {
     struct SimulatedDamage dmg;
 
@@ -382,16 +373,9 @@ struct SimulatedDamage AI_CalcDamageSaveBattlers(u32 move, u32 battlerAtk, u32 b
     SaveBattlerData(battlerDef);
     SetBattlerData(battlerAtk);
     SetBattlerData(battlerDef);
-    dmg = AI_CalcDamage(move, battlerAtk, battlerDef,  typeEffectiveness, considerZPower, AI_GetWeather(AI_DATA), rollType);
+    dmg = AI_CalcDamage(move, battlerAtk, battlerDef,  typeEffectiveness, considerZPower, AI_GetWeather(AI_DATA));
     RestoreBattlerData(battlerAtk);
     RestoreBattlerData(battlerDef);
-    return dmg;
-}
-
-static inline s32 LowestRollDmg(s32 dmg)
-{
-    dmg *= MIN_ROLL_PERCENTAGE;
-    dmg /= 100;
     return dmg;
 }
 
@@ -491,16 +475,6 @@ bool32 IsDamageMoveUnusable(u32 battlerAtk, u32 battlerDef, u32 move, u32 moveTy
     return FALSE;
 }
 
-static inline s32 GetDamageByRollType(s32 dmg, enum DamageRollType rollType)
-{
-    if (rollType == DMG_ROLL_LOWEST)
-        return LowestRollDmg(dmg);
-    else if (rollType == DMG_ROLL_HIGHEST)
-        return HighestRollDmg(dmg);
-    else
-        return DmgRoll(dmg);
-}
-
 static inline void SetMoveDamageCategory(u32 battlerAtk, u32 battlerDef, u32 move)
 {
     switch (gMovesInfo[move].effect)
@@ -556,57 +530,57 @@ static inline void AI_RestoreBattlerTypes(u32 battlerAtk, u32 *types)
     gBattleMons[battlerAtk].types[2] = types[2];
 }
 
-static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCalcData, s32 *expectedDamage, s32 *minimumDamage, u32 holdEffectAtk, u32 abilityAtk)
+static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCalcData, s32 *highestDamage, s32 *averageDamage, u32 holdEffectAtk, u32 abilityAtk)
 {
     u32 move = damageCalcData->move;
-    s32 expected = *expectedDamage;
-    s32 minimum = *minimumDamage;
+    s32 highest = *highestDamage;
+    s32 average = *averageDamage;
 
     switch (gMovesInfo[move].effect)
     {
     case EFFECT_LEVEL_DAMAGE:
-        expected = minimum = gBattleMons[damageCalcData->battlerAtk].level * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
+        highest = average = gBattleMons[damageCalcData->battlerAtk].level * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
     case EFFECT_PSYWAVE:
-        expected = minimum = gBattleMons[damageCalcData->battlerAtk].level * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
+        highest = average = gBattleMons[damageCalcData->battlerAtk].level * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
     case EFFECT_FIXED_DAMAGE_ARG:
-        expected = minimum = gMovesInfo[move].argument * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
+        highest = average = gMovesInfo[move].argument * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
     case EFFECT_MULTI_HIT:
         if (move == MOVE_WATER_SHURIKEN && gBattleMons[damageCalcData->battlerAtk].species == SPECIES_GRENINJA_ASH)
         {
-            expected *= 3;
-            minimum *= 3;
+            highest *= 3;
+            average *= 3;
         }
         else if (abilityAtk == ABILITY_SKILL_LINK)
         {
-            expected *= 5;
-            minimum *= 5;
+            highest *= 5;
+            average *= 5;
         }
         else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
         {
-            expected *= 9;
-            expected /= 2;
-            minimum *= 4;
+            highest *= 9;
+            highest /= 2;
+            average *= 4;
         }
         else
         {
-            expected *= 3;
-            minimum *= 2;
+            highest *= 3;
+            average *= 2;
         }
         break;
     case EFFECT_ENDEAVOR:
         // If target has less HP than user, Endeavor does no damage
-        expected = minimum = max(0, gBattleMons[damageCalcData->battlerDef].hp - gBattleMons[damageCalcData->battlerAtk].hp);
+        highest = average = max(0, gBattleMons[damageCalcData->battlerDef].hp - gBattleMons[damageCalcData->battlerAtk].hp);
         break;
     case EFFECT_SUPER_FANG:
-        expected = minimum = (abilityAtk == ABILITY_PARENTAL_BOND
+        highest = average = (abilityAtk == ABILITY_PARENTAL_BOND
             ? max(2, gBattleMons[damageCalcData->battlerDef].hp * 3 / 4)
             : max(1, gBattleMons[damageCalcData->battlerDef].hp / 2));
         break;
     case EFFECT_FINAL_GAMBIT:
-        expected = minimum = gBattleMons[damageCalcData->battlerAtk].hp;
+        highest = average = gBattleMons[damageCalcData->battlerAtk].hp;
         break;
     case EFFECT_BEAT_UP:
         if (B_BEAT_UP >= GEN_5)
@@ -615,10 +589,10 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
             u32 i;
             gBattleStruct->beatUpSlot = 0;
             damageCalcData->isCrit = FALSE;
-            expected = 0;
+            highest = 0;
             for (i = 0; i < partyCount; i++)
-                expected += CalculateMoveDamage(damageCalcData, 0);
-            minimum = expected;
+                highest += CalculateMoveDamage(damageCalcData, 0);
+            average = highest;
             gBattleStruct->beatUpSlot = 0;
         }
         break;
@@ -627,20 +601,20 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
     // Handle other multi-strike moves
     if (gMovesInfo[move].strikeCount > 1 && gMovesInfo[move].effect != EFFECT_TRIPLE_KICK)
     {
-        expected *= gMovesInfo[move].strikeCount;
-        minimum *= gMovesInfo[move].strikeCount;
+        highest *= gMovesInfo[move].strikeCount;
+        average *= gMovesInfo[move].strikeCount;
     }
 
-    if (expected == 0)
-        expected = 1;
-    if (minimum == 0)
-        minimum = 1;
+    if (highest == 0)
+        highest = 1;
+    if (average == 0)
+        average = 1;
 
-    *expectedDamage = expected;
-    *minimumDamage = minimum;
+    *highestDamage = highest;
+    *averageDamage = average;
 }
 
-struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower, u32 weather, enum DamageRollType rollType)
+struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectiveness, bool32 considerZPower, u32 weather)
 {
     struct SimulatedDamage simDamage;
     s32 moveType;
@@ -709,11 +683,19 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
 
             u32 critOdds = GetCritHitOdds(critChanceIndex);
             // With critOdds getting closer to 1, dmg gets closer to critDmg.
-            simDamage.expected = GetDamageByRollType((critDmg + nonCritDmg * (critOdds - 1)) / critOdds, rollType);
+            
             if (critOdds == 1)
-                simDamage.minimum = LowestRollDmg(critDmg);
+            {
+                s32 critDmgWithOdss = (critDmg + nonCritDmg * (critOdds - 1)) / critOdds;
+                simDamage.highestRoll = HighestRollDmg(critDmgWithOdss);
+                simDamage.averageRoll = DmgRoll(critDmgWithOdss);
+            }  
             else
-                simDamage.minimum = LowestRollDmg(nonCritDmg);
+            {
+                simDamage.highestRoll = HighestRollDmg(nonCritDmg);
+                simDamage.averageRoll = DmgRoll(nonCritDmg);
+            }
+                
         }
         else if (critChanceIndex == -2) // Guaranteed critical
         {
@@ -723,8 +705,8 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
                                                   aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
                                                   aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
 
-            simDamage.expected = GetDamageByRollType(critDmg, rollType);
-            simDamage.minimum = LowestRollDmg(critDmg);
+            simDamage.highestRoll = HighestRollDmg(critDmg);
+            simDamage.averageRoll = DmgRoll(critDmg);
         }
         else
         {
@@ -746,15 +728,15 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
                                                      aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
                                                      aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
             }
-            simDamage.expected = GetDamageByRollType(nonCritDmg, rollType);
-            simDamage.minimum = LowestRollDmg(nonCritDmg);
+            simDamage.highestRoll = HighestRollDmg(nonCritDmg);
+            simDamage.averageRoll = DmgRoll(nonCritDmg);
         }
 
         if (GetActiveGimmick(battlerAtk) != GIMMICK_Z_MOVE)
         {
             CalcDynamicMoveDamage(&damageCalcData,
-                                  &simDamage.expected,
-                                  &simDamage.minimum,
+                                  &simDamage.highestRoll,
+                                  &simDamage.averageRoll,
                                   aiData->holdEffects[battlerAtk],
                                   aiData->abilities[battlerAtk]);
         }
@@ -763,8 +745,8 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     }
     else
     {
-        simDamage.expected = 0;
-        simDamage.minimum = 0;
+        simDamage.highestRoll = 0;
+        simDamage.averageRoll = 0;
     }
 
     // convert multiper to AI_EFFECTIVENESS_xX
@@ -1037,14 +1019,7 @@ u32 GetNoOfHitsToKOBattlerDmg(u32 dmg, u32 battlerDef)
 
 u32 GetNoOfHitsToKOBattler(u32 battlerAtk, u32 battlerDef, u32 moveIndex)
 {
-    return GetNoOfHitsToKOBattlerDmg(AI_DATA->simulatedDmg[battlerAtk][battlerDef][moveIndex].expected, battlerDef);
-}
-
-u32 GetCurrDamageHpPercent(u32 battlerAtk, u32 battlerDef)
-{
-    int bestDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex].expected;
-
-    return (bestDmg * 100) / gBattleMons[battlerDef].maxHP;
+    return GetNoOfHitsToKOBattlerDmg(AI_DATA->simulatedDmg[battlerAtk][battlerDef][moveIndex].highestRoll, battlerDef);
 }
 
 uq4_12_t AI_GetTypeEffectiveness(u32 move, u32 battlerAtk, u32 battlerDef)
@@ -1181,7 +1156,7 @@ bool32 CanTargetFaintAi(u32 battlerDef, u32 battlerAtk)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && !(unusable & (1u << i))
-            && AI_DATA->simulatedDmg[battlerDef][battlerAtk][i].expected >= gBattleMons[battlerAtk].hp
+            && AI_DATA->simulatedDmg[battlerDef][battlerAtk][i].averageRoll >= gBattleMons[battlerAtk].hp
             && !CanEndureHit(battlerDef, battlerAtk, moves[i]))
         {
             return TRUE;
@@ -1199,6 +1174,8 @@ u32 NoOfHitsForTargetToFaintAI(u32 battlerDef, u32 battlerAtk)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
+        // used to see how many hits player needs to KO AI when deciding if AI should use a setup move
+        // this is the only place where AI calcs high roll dmg from the player
         currNumberOfHits = GetNoOfHitsToKOBattler(battlerDef, battlerAtk, i);
         if (currNumberOfHits != 0)
         {
@@ -1220,9 +1197,9 @@ u32 GetBestDmgMoveFromBattler(u32 battlerAtk, u32 battlerDef)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && !(unusable & (1u << i))
-            && bestDmg < AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected)
+            && bestDmg < AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].highestRoll)
         {
-            bestDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected;
+            bestDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].highestRoll;
             move = moves[i];
         }
     }
@@ -1241,9 +1218,9 @@ u32 GetBestDmgFromBattler(u32 battler, u32 battlerTarget)
         if (moves[i] != MOVE_NONE
          && moves[i] != MOVE_UNAVAILABLE
          && !(unusable & (1u << i))
-         && bestDmg < AI_DATA->simulatedDmg[battler][battlerTarget][i].expected)
+         && bestDmg < AI_DATA->simulatedDmg[battler][battlerTarget][i].highestRoll)
         {
-            bestDmg = AI_DATA->simulatedDmg[battler][battlerTarget][i].expected;
+            bestDmg = AI_DATA->simulatedDmg[battler][battlerTarget][i].highestRoll;
         }
     }
 
@@ -1263,7 +1240,7 @@ bool32 CanAIFaintTarget(u32 battlerAtk, u32 battlerDef, u32 numHits)
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && !(moveLimitations & (1u << i)))
         {
             // Use the pre-calculated value in simulatedDmg instead of re-calculating it
-            dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected;
+            dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].highestRoll;
 
             if (numHits)
                 dmg *= numHits;
@@ -1287,7 +1264,7 @@ bool32 CanTargetMoveFaintAi(u32 move, u32 battlerDef, u32 battlerAtk, u32 nHits)
     u32 indexSlot = GetMoveSlot(GetMovesArray(battlerDef), move);
     if (indexSlot < MAX_MON_MOVES)
     {
-        if (GetNoOfHitsToKO(AI_DATA->simulatedDmg[battlerDef][battlerAtk][indexSlot].expected, gBattleMons[battlerAtk].hp) <= nHits)
+        if (GetNoOfHitsToKO(AI_DATA->simulatedDmg[battlerDef][battlerAtk][indexSlot].averageRoll, gBattleMons[battlerAtk].hp) <= nHits)
             return TRUE;
     }
     return FALSE;
@@ -1307,7 +1284,7 @@ bool32 CanTargetFaintAiWithMod(u32 battlerDef, u32 battlerAtk, s32 hpMod, s32 dm
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected;
+        dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].averageRoll;
         if (dmgMod)
             dmg *= dmgMod;
 
@@ -1954,15 +1931,12 @@ bool32 ShouldLowerEvasion(u32 battlerAtk, u32 battlerDef, u32 defAbility)
     return FALSE;
 }
 
-bool32 CanIndexMoveFaintTarget(u32 battlerAtk, u32 battlerDef, u32 index, u32 numHits)
+bool32 CanIndexMoveFaintTarget(u32 battlerAtk, u32 battlerDef, u32 index)
 {
     s32 dmg;
     u16 *moves = gBattleMons[battlerAtk].moves;
 
-    if (numHits)
-        dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][index].expected * numHits;
-    else
-        dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][index].minimum;
+    dmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][index].highestRoll;
 
     if (gBattleMons[battlerDef].hp <= dmg && !CanEndureHit(battlerAtk, battlerDef, moves[index]))
         return TRUE;
@@ -2030,6 +2004,37 @@ bool32 HasMoveEffect(u32 battlerId, u32 effect)
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE
             && gMovesInfo[moves[i]].effect == effect)
             return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 HasMoveToStopSetup(u32 battlerId, u32 noOfHitsToFaint, u32 aiIsFaster)
+{
+    s32 i;
+    u16 *moves = GetMovesArray(battlerId);
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE)
+        {
+            if(gMovesInfo[moves[i]].effect == EFFECT_ENCORE)
+                return TRUE;
+
+            if (noOfHitsToFaint <=2)
+            {
+                if (GetMovePriority(battlerId, moves[i]) > 0)
+                    return TRUE;
+
+                switch (gMovesInfo[moves[i]].additionalEffects[i].moveEffect)
+                {
+                    case MOVE_EFFECT_SPD_MINUS_1:
+                    case MOVE_EFFECT_SPD_MINUS_2:
+                        if(aiIsFaster)
+                            return TRUE;
+                }
+            }
+        }
     }
 
     return FALSE;
@@ -3284,7 +3289,7 @@ bool32 ShouldRecover(u32 battlerAtk, u32 battlerDef, u32 move, u32 healPercent)
     if (move == 0xFFFF || AI_IsFaster(battlerAtk, battlerDef, move))
     {
         // using item or user going first
-        s32 damage = AI_DATA->simulatedDmg[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex].expected;
+        s32 damage = AI_DATA->simulatedDmg[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex].averageRoll;
         s32 healAmount = (healPercent * damage) / 100;
         if (gStatuses3[battlerAtk] & STATUS3_HEAL_BLOCK)
             healAmount = 0;
@@ -3561,7 +3566,7 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
         AI_THINKING_STRUCT->saved[battlerAtk].saved = FALSE;
     }
 
-    dmg = AI_CalcDamage(move, battlerAtk, battlerDef, &effectiveness, FALSE, AI_GetWeather(AI_DATA), rollType);
+    dmg = AI_CalcDamage(move, battlerAtk, battlerDef, &effectiveness, FALSE, AI_GetWeather(AI_DATA));
     // restores original gBattleMon struct
     FreeRestoreBattleMons(savedBattleMons);
 
@@ -3570,7 +3575,7 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
     else
         SetBattlerAiData(battlerDef, AI_DATA);
 
-    return dmg.expected;
+    return (rollType == DMG_ROLL_HIGHEST) ? dmg.highestRoll : dmg.averageRoll;
 }
 
 u32 AI_WhoStrikesFirstPartyMon(u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 moveConsidered)
@@ -3774,7 +3779,7 @@ static u32 IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, u32 statI
     if (AI_DATA->abilities[battlerDef] == ABILITY_OPPORTUNIST)
         return NO_INCREASE;
 
-    if(HasMoveEffect(battlerDef, EFFECT_ENCORE))
+    if(HasMoveToStopSetup(battlerDef, noOfHitsToFaint, aiIsFaster))
         return NO_INCREASE;
     
     if (IsDoubleBattle() && HasMoveEffect(BATTLE_PARTNER(battlerDef), EFFECT_ENCORE))
@@ -4036,9 +4041,9 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
         else if (!IS_MOVE_STATUS(chosenMove) && IS_MOVE_STATUS(zMove))
             return FALSE;
 
-        dmg = AI_CalcDamageSaveBattlers(chosenMove, battlerAtk, battlerDef, &effectiveness, FALSE, DMG_ROLL_DEFAULT);
+        dmg = AI_CalcDamageSaveBattlers(chosenMove, battlerAtk, battlerDef, &effectiveness, FALSE);
 
-        if (!IS_MOVE_STATUS(chosenMove) && dmg.minimum >= gBattleMons[battlerDef].hp)
+        if (!IS_MOVE_STATUS(chosenMove) && dmg.averageRoll >= gBattleMons[battlerDef].hp)
             return FALSE;   // don't waste damaging z move if can otherwise faint target
 
         return TRUE;
