@@ -1262,10 +1262,10 @@
 #define FLAG_RECEIVED_ADAMANT_ORB                                   0x4B8
 #define FLAG_RECEIVED_LUSTROUS_ORB                                  0x4B9
 #define FLAG_RECEIVED_GRISEOUS_ORB                                  0x4BA
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
+#define FLAG_RECEIVED_ZYGARDE_CUBE                                  0x4BB
+#define FLAG_RECEIVED_DNA_SPLICERS                                  0x4BC
+#define FLAG_RECEIVED_REINS_OF_UNITY                                0x4BD
+#define FLAG_RECEIVED_NECROZMA_FUSION                               0x4BE
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag

@@ -21,34 +21,6 @@ RustboroCity_DevonCorp_2F_EventScript_TalkToPokemonScientist::
 	release
 	end
 
-RustboroCity_DevonCorp_2F_EventScript_BallScientist::
-	lock
-	faceplayer
-	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
-	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_DevonCorp_2F_EventScript_DevelopedBalls
-	msgbox RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_DevelopedBalls::
-	msgbox RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_PokenavScientist::
-	lock
-	faceplayer
-	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
-	goto_if_set FLAG_RECEIVED_POKENAV, RustboroCity_DevonCorp_2F_EventScript_HasPokenav
-	msgbox RustboroCity_DevonCorp_2F_Text_IMadePokenav, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_EventScript_HasPokenav::
-	msgbox RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav, MSGBOX_DEFAULT
-	release
-	end
-
 RustboroCity_DevonCorp_2F_EventScript_PokemonDreamsScientist::
 	lock
 	faceplayer
@@ -276,38 +248,6 @@ RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon:
 	.string "with Pokémon.\p"
 	.string "But we haven't had much success…$"
 
-RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls:
-	.string "I'm developing new kinds of\n"
-	.string "POKé BALLS…\p"
-	.string "But I haven't made much headway…$"
-
-RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls:
-	.string "We finally made new kinds of\n"
-	.string "POKé BALLS!\p"
-	.string "The REPEAT BALL makes it easier to\n"
-	.string "catch Pokémon you've caught before.\p"
-	.string "The TIMER BALL gets better at catching\n"
-	.string "Pokémon the longer a battle runs.\p"
-	.string "Both are proudly developed by\n"
-	.string "the DEVON CORPORATION.\p"
-	.string "Please give them a try!$"
-
-RustboroCity_DevonCorp_2F_Text_IMadePokenav:
-	.string "I made the PokéNav!\p"
-	.string "As an engineer, I feel blessed to have\n"
-	.string "made something so great!$"
-
-RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav:
-	.string "Oh, wow!\n"
-	.string "That's a PokéNav!\p"
-	.string "It came about as a result of our\n"
-	.string "PRESIDENT's desire to learn about\l"
-	.string "the feelings of Pokémon.\p"
-	.string "Would you like me to describe its\n"
-	.string "features in detail?\p"
-	.string "No, no. I think you'll find out just by\n"
-	.string "trying the PokéNav out.$"
-
 RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams:
 	.string "I'm trying to develop a device that\n"
 	.string "visually reproduces the dreams of\l"
@@ -384,3 +324,255 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "environment as an engineer.$"
 
 `
+
+
+script RustboroCity_DevonCorp_2F_EventScript_DNASplicers{
+	lock
+	faceplayer
+
+	if(!flag(FLAG_BADGE08_GET)){
+		msgbox(RustboroCity_DevonCorp_2F_DoingFusionResearch, MSGBOX_DEFAULT)
+		release
+		end
+	}
+
+	if(flag(FLAG_RECEIVED_DNA_SPLICERS)){
+		msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataDnaSplicers, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_DnaSplicersReady, MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_RESULT, VAR_0x8004)
+	goto_if_eq(VAR_RESULT, PARTY_NOTHING_CHOSEN, RustboroCity_DevonCorp_2F_EventScript_CancelKyurem)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_KYUREM:
+		case SPECIES_KYUREM_WHITE:
+		case SPECIES_KYUREM_BLACK:
+				msgbox(RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseSplicers, MSGBOX_DEFAULT)
+				giveitem(ITEM_DNA_SPLICERS)
+				setflag(FLAG_RECEIVED_DNA_SPLICERS)
+			
+        default:
+            msgbox(RustboroCity_DevonCorp_2F_Text_NotKyurem, MSGBOX_DEFAULT)
+			release
+			end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataDnaSplicers, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script RustboroCity_DevonCorp_2F_EventScript_CancelKyurem{
+	msgbox(RustboroCity_DevonCorp_2F_Text_DontHaveKyurem, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text RustboroCity_DevonCorp_2F_Text_DnaSplicersReady{
+	"Our research is finally complete!\n"
+	"I'm looking for a trainer with Kyurem\l"
+	"who would be willing to try these DNA\l"
+	"Splicers.\p"
+	"Do you have a Kyurem?"
+}
+
+text RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseSplicers{
+	"Amazing! Here, take these DNA Splicers."
+}
+
+text RustboroCity_DevonCorp_2F_DoingFusionResearch{
+	"My colleagues and I are doing research\n"
+	"into fusing various Pokémon species.\p"
+	"I think our research is progressing\n"
+	"nicely, but we need a little more time\l"
+	"until we are ready to give our\l"
+	"technology to a real trainer."
+}
+
+text RustboroCity_DevonCorp_2F_Text_GiveUsDataDnaSplicers{
+	"You can use those DNA Splicers to fuse\n"
+	"Kyurem with either Zekrom or Reshiram.\l"
+	"You can also un-fuse them if you want!\p"
+	"You'll have to come back and let us know\n"
+	"how the fusion technology is\l"
+	"performing!\p"
+	"We would love to get more data from\n"
+	"real-world usage!"
+}
+
+text RustboroCity_DevonCorp_2F_Text_DontHaveKyurem{
+	"I see, you don't have Kyurem."
+}
+text RustboroCity_DevonCorp_2F_Text_NotKyurem{
+	"That's not Kyurem."
+}
+
+
+
+
+script RustboroCity_DevonCorp_2F_EventScript_ReinsOfUnity{
+	lock
+	faceplayer
+
+	if(!flag(FLAG_BADGE08_GET)){
+		msgbox(RustboroCity_DevonCorp_2F_DoingFusionResearch, MSGBOX_DEFAULT)
+		release
+		end
+	}
+
+	if(flag(FLAG_RECEIVED_REINS_OF_UNITY)){
+		msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataReinsOfUnity, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_ReinsReady, MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_RESULT, VAR_0x8004)
+	goto_if_eq(VAR_RESULT, PARTY_NOTHING_CHOSEN, RustboroCity_DevonCorp_2F_EventScript_CancelCalyrex)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_CALYREX:
+		case SPECIES_CALYREX_ICE:
+		case SPECIES_CALYREX_SHADOW:
+				msgbox(RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseReins, MSGBOX_DEFAULT)
+				giveitem(ITEM_REINS_OF_UNITY)
+				setflag(FLAG_RECEIVED_REINS_OF_UNITY)
+			
+        default:
+            msgbox(RustboroCity_DevonCorp_2F_Text_NotCalyrex, MSGBOX_DEFAULT)
+			release
+			end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataReinsOfUnity, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script RustboroCity_DevonCorp_2F_EventScript_CancelCalyrex{
+	msgbox(RustboroCity_DevonCorp_2F_Text_DontHaveCalyrex, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text RustboroCity_DevonCorp_2F_Text_ReinsReady{
+	"Our research is finally complete!\n"
+	"I'm looking for a trainer with Calyrex\l"
+	"who would be willing to try these Reins\l"
+	"of Unity.\p"
+	"Do you have a Calyrex?"
+}
+
+text RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseReins{
+	"Incredible! Here, take these Reins of\n"
+	"Unity."
+}
+
+text RustboroCity_DevonCorp_2F_Text_GiveUsDataReinsOfUnity{
+	"You can use those Reins of Unity to\n"
+	"fuse Calyrex with either Glastrier or\l"
+	"Spectrier.\l"
+	"You can also un-fuse them if you want!\p"
+	"You'll have to come back and let us know\n"
+	"how the fusion technology is\l"
+	"performing!\p"
+	"We would love to get more data from\n"
+	"real-world usage!"
+}
+
+text RustboroCity_DevonCorp_2F_Text_DontHaveCalyrex{
+	"I see, you don't have Calyrex."
+}
+text RustboroCity_DevonCorp_2F_Text_NotCalyrex{
+	"That's not Calyrex."
+}
+
+
+script RustboroCity_DevonCorp_2F_EventScript_NFusions{
+	lock
+	faceplayer
+
+	if(!flag(FLAG_BADGE08_GET)){
+		msgbox(RustboroCity_DevonCorp_2F_DoingFusionResearch, MSGBOX_DEFAULT)
+		release
+		end
+	}
+
+	if(flag(FLAG_RECEIVED_NECROZMA_FUSION)){
+		msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataNFusions, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_NFusionsReady, MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_RESULT, VAR_0x8004)
+	goto_if_eq(VAR_RESULT, PARTY_NOTHING_CHOSEN, RustboroCity_DevonCorp_2F_EventScript_CancelNecrozma)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_NECROZMA:
+		case SPECIES_NECROZMA_DUSK_MANE:
+		case SPECIES_NECROZMA_DAWN_WINGS:
+		case SPECIES_NECROZMA_ULTRA:
+				msgbox(RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseNFusions, MSGBOX_DEFAULT)
+				giveitem(ITEM_N_SOLARIZER)
+				giveitem(ITEM_N_LUNARIZER)
+				setflag(FLAG_RECEIVED_NECROZMA_FUSION)
+			
+        default:
+            msgbox(RustboroCity_DevonCorp_2F_Text_NotNecrozma, MSGBOX_DEFAULT)
+			release
+			end
+	}
+	
+	msgbox(RustboroCity_DevonCorp_2F_Text_GiveUsDataNFusions, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script RustboroCity_DevonCorp_2F_EventScript_CancelNecrozma{
+	msgbox(RustboroCity_DevonCorp_2F_Text_DontHaveNecrozma, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text RustboroCity_DevonCorp_2F_Text_NFusionsReady{
+	"Our research is finally complete!\n"
+	"I'm looking for a trainer with Necrozma\l"
+	"who would be willing to try this N-\l"
+	"Solarizer and N-Lunarizer.\p"
+	"Do you have a Necrozma?"
+}
+
+text RustboroCity_DevonCorp_2F_Text_PleaseTakeTheseNFusions{
+	"Wonderful! Here, take this N-Solarizer\n"
+	"and N-Lunarizer."
+}
+
+text RustboroCity_DevonCorp_2F_Text_GiveUsDataNFusions{
+	"You can use the N-Solarizer to fuse\n"
+	"Necrozma with Solgaleo, and you can use\l"
+	"the N-Lunarizer fuse Necrozma with\l"
+	"Lunala.\l"
+	"You can also un-fuse them if you want!\p"
+	"You'll have to come back and let us know\n"
+	"how the fusion technology is\l"
+	"performing!\p"
+	"We would love to get more data from\n"
+	"real-world usage!"
+}
+
+text RustboroCity_DevonCorp_2F_Text_DontHaveNecrozma{
+	"I see, you don't have Necrozma."
+}
+text RustboroCity_DevonCorp_2F_Text_NotNecrozma{
+	"That's not Necrozma."
+}
