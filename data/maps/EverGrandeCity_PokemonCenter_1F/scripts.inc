@@ -63,144 +63,231 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
 # 32 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
 # 33 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
-# 34 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	msgbox EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon, MSGBOX_NPC
-# 35 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	end
-# 36 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-
-# 37 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
-# 38 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 34 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	lock
-# 39 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 35 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	faceplayer
-# 40 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 36 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	msgbox EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou, MSGBOX_DEFAULT
-# 41 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 37 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	closemessage
-# 42 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 38 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_NORTH, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExitNorth
-# 43 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 39 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_EAST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
-# 44 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 40 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit
-# 45 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 41 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	addvar VAR_SCOTT_STATE, 1
-# 46 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 42 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
-# 47 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 43 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	playse SE_EXIT
-# 48 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 44 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	waitse
-# 49 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 45 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	removeobject LOCALID_SCOTT
-# 50 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 46 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	release
-# 51 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 47 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	end
-# 52 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 48 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
-# 53 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 49 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_EventScript_ScottExitNorth::
-# 54 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 50 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	applymovement LOCALID_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExitNorth
-# 55 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 51 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	waitmovement 0
-# 56 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 52 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	return
-# 57 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 53 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
-# 58 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 54 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit::
-# 59 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 55 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	applymovement LOCALID_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExit
-# 60 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 56 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	waitmovement 0
-# 61 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 57 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	return
-# 62 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 58 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
-# 63 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 59 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_Movement_ScottExitNorth:
-# 64 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 60 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	walk_left
+# 61 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	walk_down
+# 62 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	walk_down
+# 63 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	walk_left
+# 64 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	walk_down
 # 65 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	walk_down
 # 66 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_down
+	step_end
 # 67 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_left
+
 # 68 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_down
+EverGrandeCity_PokemonCenter_1F_Movement_ScottExit:
 # 69 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	walk_down
 # 70 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	step_end
+	walk_down
 # 71 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-
+	walk_left
 # 72 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-EverGrandeCity_PokemonCenter_1F_Movement_ScottExit:
+	walk_left
 # 73 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	walk_down
 # 74 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	walk_down
 # 75 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_left
-# 76 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_left
-# 77 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_down
-# 78 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	walk_down
-# 79 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	step_end
-# 80 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 76 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
-# 81 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 77 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad:
-# 82 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 78 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "The Pokémon League is only a short\n"
-# 83 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 79 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "distance after the Victory Road.\p"
-# 84 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 80 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "If you've come this far, what choice\n"
-# 85 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 81 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "do you have but to keep going?$"
-# 86 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 82 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 
-# 87 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon:
-# 88 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	.string "The long and harrowing Victory Road…\p"
-# 89 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	.string "It's like reliving the path one has\n"
-# 90 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	.string "traveled in life…\p"
-# 91 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	.string "Believe in your Pokémon and give it\n"
-# 92 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-	.string "your very best!$"
-# 93 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
-
-# 94 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 83 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
-# 95 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 84 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "Scott: {PLAYER}{KUN}, you've clawed your\n"
-# 96 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 85 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "way up to face the Pokémon League!\p"
-# 97 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 86 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "I'm happy for you!\n"
-# 98 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 87 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "You made my cheering worthwhile!\p"
-# 99 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 88 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER}{KUN}, if you were to become\n"
-# 100 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 89 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "the Pokémon League Champion…\p"
-# 101 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 90 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "I'll get in touch with you then.\p"
-# 102 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 91 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "Okay, {PLAYER}{KUN}.\n"
-# 103 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+# 92 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
 	.string "Go for greatness!$"
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
+# 97 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	lock
+# 98 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	faceplayer
+# 100 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	goto_if_set FLAG_RECEIVED_ZYGARDE_CUBE, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_2
+# 106 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_IHaveCube, MSGBOX_DEFAULT
+# 107 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	special ChoosePartyMon
+# 108 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	waitstate
+# 109 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	copyvar VAR_RESULT, VAR_0x8004
+# 110 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	goto_if_eq VAR_RESULT, PARTY_NOTHING_CHOSEN, EverGrandeCity_PokemonCenter_1F_EventScript_CancelLegend
+# 111 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 112 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	switch VAR_RESULT
+# 113 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 114 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_50, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 115 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_10, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 116 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_10_AURA_BREAK, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 117 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_10_POWER_CONSTRUCT, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 118 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_50_POWER_CONSTRUCT, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 119 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	case SPECIES_ZYGARDE_COMPLETE, EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6
+# 125 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_NotLegend, MSGBOX_DEFAULT
+# 126 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_2:
+# 101 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_UseThatCube, MSGBOX_DEFAULT
+# 102 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_4:
+# 130 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_UseThatCube, MSGBOX_DEFAULT
+# 131 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_6:
+# 120 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_PleaseTakeThisCube, MSGBOX_DEFAULT
+# 121 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	giveitem ITEM_ZYGARDE_CUBE
+# 122 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	setflag FLAG_RECEIVED_ZYGARDE_CUBE
+	goto EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_4
+
+
+EverGrandeCity_PokemonCenter_1F_EventScript_CancelLegend::
+# 136 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_DontHaveLegend, MSGBOX_DEFAULT
+# 137 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	release
+	end
+
+
+EverGrandeCity_PokemonCenter_1F_Text_IHaveCube::
+# 141 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	.string "A promising trainer I see. I knew if I\n"
+	.string "waited at this Pokémon Center,\l"
+	.string "eventually a trainer of your caliber\l"
+	.string "would arrive.\p"
+	.string "I've spent a long time collecting cells\n"
+	.string "to make a highly-advanced Cube to\l"
+	.string "change the form of a certain Pokémon.\p"
+	.string "If you show me you have this Pokémon, I\n"
+	.string "can give you the Cube.$"
+
+EverGrandeCity_PokemonCenter_1F_Text_PleaseTakeThisCube::
+# 153 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	.string "That's it! That's the Pokémon that this\n"
+	.string "Cube will work on.\p"
+	.string "Please, use this technology to the\n"
+	.string "fullest extent.$"
+
+EverGrandeCity_PokemonCenter_1F_Text_UseThatCube::
+# 160 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	.string "That Cube will bring out the true power\n"
+	.string "of Zygarde.\p"
+	.string "It took me many years to find the cells\n"
+	.string "needed to make it, so please use it well.$"
+
+EverGrandeCity_PokemonCenter_1F_Text_DontHaveLegend::
+# 167 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	.string "I see, you don't have the Pokémon I am\n"
+	.string "looking for.$"
+
+EverGrandeCity_PokemonCenter_1F_Text_NotLegend::
+# 171 "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.pory"
+	.string "That's not the Pokémon that can use\n"
+	.string "this Cube.$"

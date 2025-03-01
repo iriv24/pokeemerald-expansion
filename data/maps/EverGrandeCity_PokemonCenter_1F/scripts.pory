@@ -30,10 +30,6 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad, MSGBOX_NPC
 	end
 
-EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
-	msgbox EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon, MSGBOX_NPC
-	end
-
 EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 	lock
 	faceplayer
@@ -84,13 +80,6 @@ EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad:
 	.string "If you've come this far, what choice\n"
 	.string "do you have but to keep going?$"
 
-EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon:
-	.string "The long and harrowing Victory Road…\p"
-	.string "It's like reliving the path one has\n"
-	.string "traveled in life…\p"
-	.string "Believe in your Pokémon and give it\n"
-	.string "your very best!$"
-
 EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "Scott: {PLAYER}{KUN}, you've clawed your\n"
 	.string "way up to face the Pokémon League!\p"
@@ -103,3 +92,83 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "Go for greatness!$"
 
 `
+
+script EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM{
+	lock
+	faceplayer
+
+	if(flag(FLAG_RECEIVED_ZYGARDE_CUBE)){
+		msgbox(EverGrandeCity_PokemonCenter_1F_Text_UseThatCube, MSGBOX_DEFAULT)
+		release
+		end
+	}
+	
+	msgbox(EverGrandeCity_PokemonCenter_1F_Text_IHaveCube, MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_RESULT, VAR_0x8004)
+	goto_if_eq(VAR_RESULT, PARTY_NOTHING_CHOSEN, EverGrandeCity_PokemonCenter_1F_EventScript_CancelLegend)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+        case SPECIES_ZYGARDE:
+		case SPECIES_ZYGARDE_50:
+		case SPECIES_ZYGARDE_10:
+		case SPECIES_ZYGARDE_10_AURA_BREAK:
+		case SPECIES_ZYGARDE_10_POWER_CONSTRUCT:
+		case SPECIES_ZYGARDE_50_POWER_CONSTRUCT:
+		case SPECIES_ZYGARDE_COMPLETE:
+				msgbox(EverGrandeCity_PokemonCenter_1F_Text_PleaseTakeThisCube, MSGBOX_DEFAULT)
+				giveitem(ITEM_ZYGARDE_CUBE)
+				setflag(FLAG_RECEIVED_ZYGARDE_CUBE)
+			
+        default:
+            msgbox(EverGrandeCity_PokemonCenter_1F_Text_NotLegend, MSGBOX_DEFAULT)
+			release
+			end
+	}
+	
+	msgbox(EverGrandeCity_PokemonCenter_1F_Text_UseThatCube, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script EverGrandeCity_PokemonCenter_1F_EventScript_CancelLegend{
+	msgbox(EverGrandeCity_PokemonCenter_1F_Text_DontHaveLegend, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text EverGrandeCity_PokemonCenter_1F_Text_IHaveCube{
+	"A promising trainer I see. I knew if I\n"
+	"waited at this Pokémon Center,\l"
+	"eventually a trainer of your caliber\l"
+	"would arrive.\p"
+	"I've spent a long time collecting cells\n"
+	"to make a highly-advanced Cube to\l"
+	"change the form of a certain Pokémon.\p"
+	"If you show me you have this Pokémon, I\n"
+	"can give you the Cube."
+}
+
+text EverGrandeCity_PokemonCenter_1F_Text_PleaseTakeThisCube{
+	"That's it! That's the Pokémon that this\n"
+	"Cube will work on.\p"
+	"Please, use this technology to the\n"
+	"fullest extent."
+}
+
+text EverGrandeCity_PokemonCenter_1F_Text_UseThatCube{
+	"That Cube will bring out the true power\n"
+	"of Zygarde.\p"
+	"It took me many years to find the cells\n"
+	"needed to make it, so please use it well."
+}
+
+text EverGrandeCity_PokemonCenter_1F_Text_DontHaveLegend{
+	"I see, you don't have the Pokémon I am\n"
+	"looking for."
+}
+text EverGrandeCity_PokemonCenter_1F_Text_NotLegend{
+	"That's not the Pokémon that can use\n"
+	"this Cube."
+}
