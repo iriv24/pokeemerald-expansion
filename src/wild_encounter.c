@@ -781,7 +781,7 @@ void RockSmashWildEncounter(void)
     {
         const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].rockSmashMonsInfo;
 
-        if (wildPokemonInfo == NULL)
+        if (wildPokemonInfo == NULL || FlagGet(OW_FLAG_NO_ENCOUNTER))
         {
             gSpecialVar_Result = FALSE;
         }
