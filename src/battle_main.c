@@ -5754,6 +5754,9 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
         // The ZeroEnemyPartyMons() call happens in SaveXXXChallenge function (eg. SaveFactoryChallenge)
         if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
         {
+            if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+                UpdateRoamerHPStatus(&gEnemyParty[0]);
+
             ZeroEnemyPartyMons();
         }
         ResetDynamicAiFunc();
@@ -5824,7 +5827,6 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
-        UpdateRoamerHPStatus(&gEnemyParty[0]);
 
 #ifndef BUGFIX
         if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
