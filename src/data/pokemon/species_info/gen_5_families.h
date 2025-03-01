@@ -12036,7 +12036,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sMeloettaLevelUpLearnset,
         .teachableLearnset = sMeloettaTeachableLearnset,
         .formSpeciesIdTable = sMeloettaFormSpeciesIdTable,
-        .formChangeTable = sMeloettaFormChangeTable,
+        //.formChangeTable = sMeloettaFormChangeTable,
     },
 
     [SPECIES_MELOETTA_PIROUETTE] =
@@ -12107,7 +12107,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sMeloettaLevelUpLearnset,
         .teachableLearnset = sMeloettaTeachableLearnset,
         .formSpeciesIdTable = sMeloettaFormSpeciesIdTable,
-        .formChangeTable = sMeloettaFormChangeTable,
+        //.formChangeTable = sMeloettaFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_FAMILY_MELOETTA
