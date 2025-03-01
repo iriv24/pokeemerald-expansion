@@ -5752,11 +5752,8 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
     {
         // To account for Battle Factory and Slateport Battle Tent, enemy parties are zeroed out in the facilitites respective src/xxx.c files
         // The ZeroEnemyPartyMons() call happens in SaveXXXChallenge function (eg. SaveFactoryChallenge)
-        if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
+        if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER) && !(gBattleTypeFlags & BATTLE_TYPE_ROAMER))
         {
-            if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
-                UpdateRoamerHPStatus(&gEnemyParty[0]);
-
             ZeroEnemyPartyMons();
         }
         ResetDynamicAiFunc();
@@ -5827,6 +5824,8 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
+        UpdateRoamerHPStatus(&gEnemyParty[0]);
+        ZeroEnemyPartyMons();
 
 #ifndef BUGFIX
         if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
