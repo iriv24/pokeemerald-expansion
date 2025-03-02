@@ -16705,8 +16705,8 @@ static const struct TrainerMon sParty_MastaJanes[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 200,
     .species = SPECIES_INFERNAPE,
-    .nature = NATURE_TIMID,
-    .ev = TRAINER_PARTY_EVS_TIMID(),
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_IRON_FIST,
     .heldItem = ITEM_INFERNAPITE,
     .moves = {MOVE_POISON_JAB, MOVE_CLOSE_COMBAT, MOVE_PYRO_BALL, MOVE_ACROBATICS},
@@ -16884,22 +16884,22 @@ static const struct TrainerMon sParty_MasterPoucine[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 200,
-    .species = SPECIES_EMPOLEON,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
-    .ability = ABILITY_TORRENT,
-    .heldItem = ITEM_EMPOLEONITE_O,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_AQUA_JET, MOVE_IRON_HEAD, MOVE_LIQUIDATION}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
     .species = SPECIES_URSHIFU_SINGLE_STRIKE,
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_UNSEEN_FIST,
     .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_CLOSE_COMBAT, MOVE_WICKED_BLOW, MOVE_SUCKER_PUNCH, MOVE_SWORDS_DANCE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_EMPOLEON,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_TORRENT,
+    .heldItem = ITEM_EMPOLEONITE_O,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_AQUA_JET, MOVE_IRON_HEAD, MOVE_LIQUIDATION}
     }
 };
 
@@ -16923,16 +16923,6 @@ static const struct TrainerMon sParty_OblivionWing[] = {
     .ability = ABILITY_PROTEAN,
     .heldItem = ITEM_MYSTIC_WATER,
     .moves = {MOVE_SCALD, MOVE_ICY_WIND, MOVE_EXTRASENSORY, MOVE_WATER_PULSE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 200,
-    .species = SPECIES_LUXRAY,
-    .nature = NATURE_JOLLY,
-    .ev = TRAINER_PARTY_EVS_JOLLY(),
-    .ability = ABILITY_INTIMIDATE,
-    .heldItem = ITEM_LUXRITE,
-    .moves = {MOVE_CRUNCH, MOVE_ZING_ZAP, MOVE_THUNDER_FANG, MOVE_BABY_DOLL_EYES}
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -16963,5 +16953,15 @@ static const struct TrainerMon sParty_OblivionWing[] = {
     .ability = ABILITY_UNSEEN_FIST,
     .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_DYNAMIC_PUNCH, MOVE_WICKED_BLOW, MOVE_IRON_HEAD, MOVE_DETECT}
-    }
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 200,
+        .species = SPECIES_LUXRAY,
+        .nature = NATURE_JOLLY,
+        .ev = TRAINER_PARTY_EVS_JOLLY(),
+        .ability = ABILITY_INTIMIDATE,
+        .heldItem = ITEM_LUXRITE,
+        .moves = {MOVE_CRUNCH, MOVE_ZING_ZAP, MOVE_THUNDER_FANG, MOVE_BABY_DOLL_EYES}
+    },
 };

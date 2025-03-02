@@ -13277,6 +13277,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "shells. May lower Defense."),
         .effect = EFFECT_HIT,
         .power = 75,
+        .criticalHitStage = 1,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 10,
