@@ -82,9 +82,10 @@ static inline bool32 SetSwitchinAndSwitch(u32 battler, u32 switchinId)
 static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
 {
     //Variable initialization
-    u8 opposingPosition, atkType1, atkType2, defType1, defType2, effectiveness;
+    // TO CHECK PAWKKIE this function
+    u8 opposingPosition, atkType1, atkType2, defType1, defType2;
     s32 i, damageDealt = 0, maxDamageDealt = 0, damageTaken = 0, maxDamageTaken = 0;
-    u32 aiMove, playerMove, aiBestMove = MOVE_NONE, aiAbility = AI_DATA->abilities[battler], opposingBattler, weather = AI_GetWeather(AI_DATA);
+    u32 aiMove, playerMove, aiBestMove = MOVE_NONE, aiAbility = AI_DATA->abilities[battler], opposingBattler;
     bool32 getsOneShot = FALSE, hasStatusMove = FALSE, hasSuperEffectiveMove = FALSE;
     u16 typeEffectiveness = UQ_4_12(1.0), aiMoveEffect; //baseline typing damage
 
@@ -131,7 +132,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
                     hasSuperEffectiveMove = TRUE;
 
                 // Get maximum damage mon can deal
-                damageDealt = AI_DATA->simulatedDmg[battler][opposingBattler][i].expected;
+                damageDealt = AI_DATA->simulatedDmg[battler][opposingBattler][i].highestRoll;
                 if(damageDealt > maxDamageDealt)
                 {
                     maxDamageDealt = damageDealt;
@@ -159,7 +160,8 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
         playerMove = gBattleMons[opposingBattler].moves[i];
         if (playerMove != MOVE_NONE && gMovesInfo[playerMove].power != 0)
         {
-            damageTaken = AI_CalcDamage(playerMove, opposingBattler, battler, &effectiveness, FALSE, weather, DMG_ROLL_HIGHEST).expected;
+            // Pawkkie -- why were we re-calcing damage here, and is this line the correct substitute?
+            damageTaken = AI_DATA->simulatedDmg[opposingBattler][battler][i].averageRoll;
             if (damageTaken > maxDamageTaken)
                 maxDamageTaken = damageTaken;
         }
@@ -356,7 +358,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
             // Only check damage if it's a damaging move
             if (!IS_MOVE_STATUS(aiMove))
             {
-                if (AI_DATA->simulatedDmg[battler][opposingBattler][i].expected > gBattleMons[opposingBattler].hp)
+                if (AI_DATA->simulatedDmg[battler][opposingBattler][i].highestRoll > gBattleMons[opposingBattler].hp)
                     return FALSE;
             }
         }
@@ -1250,7 +1252,6 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
     int i, j;
     int dmg, bestDmg = 0;
     int bestMonId = PARTY_SIZE;
-    u32 rollType = GetDmgRollType(battler);
 
     u32 aiMove;
 
@@ -1267,7 +1268,7 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
             if (aiMove != MOVE_NONE && gMovesInfo[aiMove].power != 0)
             {
                 aiMove = GetMonData(&party[i], MON_DATA_MOVE1 + j);
-                dmg = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, rollType);
+                dmg = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, DMG_ROLL_DEFAULT);
                 if (bestDmg < dmg)
                 {
                     bestDmg = dmg;
@@ -1722,7 +1723,7 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
         playerMove = gBattleMons[opposingBattler].moves[i];
         if (playerMove != MOVE_NONE && gMovesInfo[playerMove].power != 0)
         {
-            damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, FALSE, DMG_ROLL_HIGHEST);
+            damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, FALSE, DMG_ROLL_DEFAULT);
             if (damageTaken > maxDamageTaken)
                 maxDamageTaken = damageTaken;
         }
@@ -1851,10 +1852,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
 
             if (aiMove != MOVE_NONE && gMovesInfo[aiMove].power != 0)
             {
-                if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_CONSERVATIVE)
-                    damageDealt = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, DMG_ROLL_LOWEST);
-                else
-                    damageDealt = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, DMG_ROLL_DEFAULT);
+                damageDealt = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, DMG_ROLL_DEFAULT);
             }
 
             // Offensive switchin decisions are based on which whether switchin moves first and whether it can win a 1v1
@@ -2098,7 +2096,7 @@ static bool32 AiExpectsToFaintPlayer(u32 battler)
         return FALSE; // AI not planning to use move
 
     if (GetBattlerSide(target) != GetBattlerSide(battler)
-      && CanIndexMoveFaintTarget(battler, target, gBattleStruct->aiMoveOrAction[battler], 0)
+      && CanIndexMoveFaintTarget(battler, target, gBattleStruct->aiMoveOrAction[battler])
       && AI_IsFaster(battler, target, GetAIChosenMove(battler)))
     {
         // We expect to faint the target and move first -> dont use an item
