@@ -1217,7 +1217,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ZEN_MODE] =
     {
         .name = _("Zen Mode"),
-        .description = COMPOUND_STRING("Transforms at half HP."),
+        .description = COMPOUND_STRING("Transforms into Zen Mode."),
         .aiRating = -1,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -1939,7 +1939,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEELY_SPIRIT] =
     {
         .name = _("Steely Spirit"),
-        .description = COMPOUND_STRING("Boosts own and ally's\nSteel-type moves."),
+        .description = COMPOUND_STRING("Boosts own and ally's\nSteel-type moves by 50%."),
         .aiRating = 2,
     },
 
@@ -2478,7 +2478,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EMPERORS_PRESENCE] =
     {
         .name = _("Emperor's Presence"),
-        .description = COMPOUND_STRING("Boosts own and ally's\nWater & Steel-type moves."),
+        .description = COMPOUND_STRING("Boosts own and ally's\nWater & Steel-type moves by 30%."),
         .aiRating = 2,
     },
 
