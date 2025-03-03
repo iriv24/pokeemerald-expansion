@@ -400,6 +400,7 @@ CheatCodeMegaStones::
 	giveitemfast ITEM_COPPERAJITE
 	giveitemfast ITEM_SLAKITE
 	giveitemfast ITEM_ROSERADITE
+	giveitemfast ITEM_DUSKNOIRITE
 	msgbox CheatCodeMegaStonesGiven_Text, MSGBOX_DEFAULT
 	releaseall
 	end
