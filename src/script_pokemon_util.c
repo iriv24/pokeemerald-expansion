@@ -439,7 +439,8 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     // else if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
     //     isShiny = FALSE;
 
-    if (!isShiny && (Random() < 109))
+    u16 randomNum = Random();
+    if (!isShiny && (randomNum < 109))
     {
         isShiny = TRUE;
     }
