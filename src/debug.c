@@ -1208,10 +1208,10 @@ static void Debug_ShowMenu(void (*HandleInput)(u8), struct ListMenuTemplate LMte
     // create window
     HideMapNamePopUpWindow();
     LoadMessageBoxAndBorderGfx();
-    if(FlagGet(FLAG_GIVE_MENU))
-        windowId = AddWindow(&sDebugMenuWindowTemplateLimited);
-    else
-        windowId = AddWindow(&sDebugMenuWindowTemplateMain);
+    //if(FlagGet(FLAG_GIVE_MENU))
+    //    windowId = AddWindow(&sDebugMenuWindowTemplateLimited);
+    //else
+    windowId = AddWindow(&sDebugMenuWindowTemplateMain);
     DrawStdWindowFrame(windowId, FALSE);
 
     // create list menu
@@ -3618,12 +3618,12 @@ static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
         if (JOY_NEW(DPAD_UP))
         {
             gTasks[taskId].tInput += sPowersOfTen[gTasks[taskId].tDigit];
-            if(FlagGet(FLAG_GIVE_MENU))
-            {
-                u32 levelCap = GetCurrentLevelCap();
-                if(gTasks[taskId].tInput > (levelCap))
-                gTasks[taskId].tInput = levelCap;
-            }
+            // if(FlagGet(FLAG_GIVE_MENU))
+            // {
+            //     u32 levelCap = GetCurrentLevelCap();
+            //     if(gTasks[taskId].tInput > (levelCap))
+            //     gTasks[taskId].tInput = levelCap;
+            // }
             if (gTasks[taskId].tInput > MAX_LEVEL)
                 gTasks[taskId].tInput = MAX_LEVEL;
         }
