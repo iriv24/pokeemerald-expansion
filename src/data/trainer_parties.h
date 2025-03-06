@@ -11307,7 +11307,7 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     .nature = NATURE_TIMID,
     .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_SERENE_GRACE,
-    .heldItem = ITEM_YACHE_BERRY,
+    .heldItem = ITEM_CHOICE_SPECS,
     .moves = {MOVE_AIR_SLASH, MOVE_SEED_FLARE, MOVE_EARTH_POWER, MOVE_PSYCHIC}
     },
     {
