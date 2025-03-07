@@ -165,9 +165,13 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
         playerMove = gBattleMons[opposingBattler].moves[i];
         if (playerMove != MOVE_NONE && gMovesInfo[playerMove].power != 0)
         {
-            // Pawkkie -- why were we re-calcing damage here, and is this line the correct substitute?
             damageTaken = AI_CalcDamage(playerMove, opposingBattler, battler, &effectiveness, FALSE, weather).averageRoll;
             //damageTaken = AI_DATA->simulatedDmg[opposingBattler][battler][i].averageRoll;
+            if (playerMove == gBattleStruct->choicedMove[opposingBattler]) // If player is choiced, only care about the choice locked move
+            {
+                return maxDamageTaken = damageTaken;
+                break;
+            }
             if (damageTaken > maxDamageTaken)
                 maxDamageTaken = damageTaken;
         }
@@ -1739,6 +1743,8 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
         if (playerMove != MOVE_NONE && gMovesInfo[playerMove].power != 0)
         {
             damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, FALSE, DMG_ROLL_DEFAULT);
+            if (playerMove == gBattleStruct->choicedMove[opposingBattler]) // If player is choiced, only care about the choice locked move
+                return damageTaken;
             if (damageTaken > maxDamageTaken)
                 maxDamageTaken = damageTaken;
         }
