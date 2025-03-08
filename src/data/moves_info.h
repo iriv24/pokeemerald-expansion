@@ -15161,7 +15161,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Nuzzle"),
         .description = COMPOUND_STRING(
-            "Rubs its cheecks against\n"
+            "Rubs its cheeks against\n"
             "the foe, paralyzing it."),
         .effect = EFFECT_HIT,
         .power = 20,
