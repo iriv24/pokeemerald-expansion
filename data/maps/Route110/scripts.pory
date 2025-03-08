@@ -489,6 +489,7 @@ Route110_EventScript_GiveRestOfItems::
 	giveitemfast ITEM_DIVE_BALL, 99
 	giveitemfast ITEM_DUSK_BALL, 99
 	giveitemfast ITEM_SHINY_STONE, 10
+	giveitemfast ITEM_ICE_STONE, 10
 	giveitemfast ITEM_BLACK_SLUDGE, 10
 	giveitemfast ITEM_TOXIC_ORB, 10
 	giveitemfast ITEM_FLAME_ORB, 10
@@ -988,10 +989,11 @@ Route110_Text_RivalExplainRestOfItems::
 	.string "Fire Fang, Ice Fang, Thunder Fang,\l"
 	.string "Psychic Fangs, and Poison Fang, some\l"
 	.string "more types of Poké Balls, Shiny Stones,\l"
-	.string "Black Sludges, Flame Orbs, Toxic Orbs,\l"
-	.string "Smoke Balls, Thick Clubs, Weakness\l"
-	.string "Policies, Air Balloons, Terrain\l"
-	.string "Extenders, and some Terrain Seeds.\p"
+	.string "Ice Stones, Black Sludges, Flame Orbs,\l"
+	.string "Toxic Orbs, Smoke Balls, Thick Clubs,\l"
+	.string "Weakness Policies, Air Balloons, Terrain\l"
+	.string "Extenders, some Terrain Seeds and\l"
+	.string "Light Clays.\p"
 	.string "Whew, I think that's everything, you\n"
 	.string "might want to take a look through your\l"
 	.string "Bag pockets to see what you have now!\p"
