@@ -57,7 +57,7 @@ SINGLE_BATTLE_TEST("Ion Deluge makes Normal type moves Electric type")
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); MOVE(player, MOVE_TACKLE); }
     } SCENE {
-        MESSAGE("The opposing Golbat used Ion Deluge!");
+        MESSAGE("Foe Golbat used Ion Deluge!");
         MESSAGE("A deluge of ions showers the battlefield!");
         MESSAGE("Wobbuffet used Tackle!");
         MESSAGE("It's super effective!"); // Because Tackle is now electric type.

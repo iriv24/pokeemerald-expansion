@@ -181,7 +181,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemo
     } WHEN {
             TURN { MOVE(player, MOVE_NIGHT_SLASH) ; EXPECT_SEND_OUT(opponent, alakazamFirst ? 1 : 2); } // AI doesn't send out Alakazam if it gets outsped
     } SCENE {
-        MESSAGE("The opposing Kadabra fainted!");
+        MESSAGE("Foe Kadabra fainted!");
         if (alakazamFirst) {
             MESSAGE(AI_TRAINER_NAME " sent out Alakazam!");
         } else {

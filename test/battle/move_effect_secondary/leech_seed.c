@@ -15,8 +15,8 @@ SINGLE_BATTLE_TEST("Sappy Seed can seed the target")
         TURN { MOVE(player, MOVE_SAPPY_SEED); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SAPPY_SEED, player);
-        MESSAGE("The opposing Wobbuffet was seeded!");
-        MESSAGE("The opposing Wobbuffet's health is sapped by Leech Seed!");
+        MESSAGE("Foe Wobbuffet was seeded!");
+        MESSAGE("Foe Wobbuffet's health is sapped by Leech Seed!");
     }
 }
 
@@ -30,8 +30,8 @@ SINGLE_BATTLE_TEST("Sappy Seed is not going to seed the target if it fails")
     } SCENE {
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_SAPPY_SEED, player);
-            MESSAGE("The opposing Wobbuffet was seeded!");
-            MESSAGE("The opposing Wobbuffet's health is sapped by Leech Seed!");
+            MESSAGE("Foe Wobbuffet was seeded!");
+            MESSAGE("Foe Wobbuffet's health is sapped by Leech Seed!");
         }
     }
 }

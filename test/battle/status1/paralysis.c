@@ -19,9 +19,9 @@ SINGLE_BATTLE_TEST("Paralysis reduces Speed by 50%")
                 MESSAGE("Wobbuffet used Celebrate!");
                 MESSAGE("Wobbuffet is paralyzed, so it may be unable to move!");
             }
-            MESSAGE("The opposing Wobbuffet used Celebrate!");
+            MESSAGE("Foe Wobbuffet used Celebrate!");
         } else {
-            MESSAGE("The opposing Wobbuffet used Celebrate!");
+            MESSAGE("Foe Wobbuffet used Celebrate!");
             ONE_OF {
                 MESSAGE("Wobbuffet used Celebrate!");
                 MESSAGE("Wobbuffet is paralyzed, so it may be unable to move!");

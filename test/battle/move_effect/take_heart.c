@@ -60,12 +60,12 @@ SINGLE_BATTLE_TEST("Take Heart cures sleep when used by Sleep Talk")
         MESSAGE("Wobbuffet used Spore!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SPORE, player);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_SLP, opponent);
-        MESSAGE("The opposing Wobbuffet fell asleep!");
-        MESSAGE("The opposing Wobbuffet used Sleep Talk!");
+        MESSAGE("Foe Wobbuffet fell asleep!");
+        MESSAGE("Foe Wobbuffet used Sleep Talk!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SLEEP_TALK, opponent);
-        MESSAGE("The opposing Wobbuffet used Take Heart!");
+        MESSAGE("Foe Wobbuffet used Take Heart!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TAKE_HEART, opponent);
         STATUS_ICON(opponent, none: TRUE);
-        MESSAGE("The opposing Wobbuffet's status returned to normal!");
+        MESSAGE("Foe Wobbuffet's status returned to normal!");
     }
 }

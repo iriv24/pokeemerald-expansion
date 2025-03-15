@@ -153,6 +153,6 @@ SINGLE_BATTLE_TEST("Steel Roller and Ice Spinner reverts typing on Mimicry users
         TURN { MOVE(opponent, terrainMove); MOVE(player, removeTerrainMove); }
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
-        MESSAGE("It doesn't affect the opposing Stunfisk…");
+        MESSAGE("It doesn't affect foe Stunfisk…");
     }
 }

@@ -25,20 +25,20 @@ SINGLE_BATTLE_TEST("Headbutt flinches the target if attacker is faster")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEADBUTT, player);
         HP_BAR(opponent);
         if (isFaster) {
-            MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            MESSAGE("Foe Wobbuffet flinched and couldn't move!");
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         } else {
-            NOT MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            NOT MESSAGE("Foe Wobbuffet flinched and couldn't move!");
         }
 
         // 2nd turn
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEADBUTT, player);
         HP_BAR(opponent);
         if (isFaster) {
-            MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            MESSAGE("Foe Wobbuffet flinched and couldn't move!");
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         } else {
-            NOT MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            NOT MESSAGE("Foe Wobbuffet flinched and couldn't move!");
         }
     }
 }

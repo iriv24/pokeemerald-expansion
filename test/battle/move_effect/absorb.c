@@ -136,7 +136,7 @@ SINGLE_BATTLE_TEST("Absorb does not drain any HP if user flinched")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FAKE_OUT, opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
-            MESSAGE("The opposing Wobbuffet had its energy drained!");
+            MESSAGE("Foe Wobbuffet had its energy drained!");
         }
     }
 }

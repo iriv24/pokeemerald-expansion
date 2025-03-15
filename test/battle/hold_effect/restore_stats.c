@@ -56,11 +56,11 @@ DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
 
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponentLeft);
-        MESSAGE("The opposing Wobbuffet returned its stats to normal using its White Herb!");
+        MESSAGE("Foe Wobbuffet returned its stats to normal using its White Herb!");
 
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponentRight);
-        MESSAGE("The opposing Wynaut returned its stats to normal using its White Herb!");
+        MESSAGE("Foe Wynaut returned its stats to normal using its White Herb!");
     } THEN {
         EXPECT(opponentLeft->item == ITEM_NONE);
         EXPECT(opponentLeft->statStages[STAT_DEF] = DEFAULT_STAT_STAGE);
@@ -141,14 +141,14 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off o
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         if (move == MOVE_THIEF) {
-            MESSAGE("The opposing Wobbuffet stole Slugma's White Herb!");
+            MESSAGE("Foe Wobbuffet stole Slugma's White Herb!");
         }
         ABILITY_POPUP(player, ABILITY_WEAK_ARMOR);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
         MESSAGE("Slugma's Weak Armor lowered its Defense!");
         MESSAGE("Slugma's Weak Armor raised its Speed!");
         if (move == MOVE_KNOCK_OFF) {
-            MESSAGE("The opposing Wobbuffet knocked off Slugma's White Herb!");
+            MESSAGE("Foe Wobbuffet knocked off Slugma's White Herb!");
         }
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
@@ -174,7 +174,7 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if Magician steals it"
         MESSAGE("Slugma's Weak Armor lowered its Defense!");
         MESSAGE("Slugma's Weak Armor raised its Speed!");
         ABILITY_POPUP(opponent, ABILITY_MAGICIAN);
-        MESSAGE("The opposing Fennekin stole Slugma's White Herb!");
+        MESSAGE("Foe Fennekin stole Slugma's White Herb!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
             MESSAGE("Wobbuffet returned its stats to normal using its White Herb!");

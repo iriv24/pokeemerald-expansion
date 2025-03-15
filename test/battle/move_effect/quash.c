@@ -44,7 +44,7 @@ DOUBLE_BATTLE_TEST("Quash is not affected by dynamic speed")
     }
 }
 
-DOUBLE_BATTLE_TEST("Quash calculates correct turn order if only one pokemon is left on the opposing side")
+DOUBLE_BATTLE_TEST("Quash calculates correct turn order if only one pokemon is left on foe side")
 {
     GIVEN {
         PLAYER(SPECIES_GRENINJA) { Speed(120); }
@@ -67,7 +67,7 @@ DOUBLE_BATTLE_TEST("Quash calculates correct turn order if only one pokemon is l
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponentRight);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STONE_EDGE, playerRight);
         HP_BAR(opponentLeft);
-        MESSAGE("The opposing Pidgeot fainted!");
+        MESSAGE("Foe Pidgeot fainted!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_QUASH, playerLeft);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponentRight);

@@ -121,7 +121,7 @@ SINGLE_BATTLE_TEST("Metronome Item counts charging turn of moves for its attacki
     } SCENE {
         MESSAGE("Wobbuffet used Solar Beam!");
         MESSAGE("Wobbuffet absorbed light!");
-        MESSAGE("The opposing Wobbuffet used Celebrate!");
+        MESSAGE("Foe Wobbuffet used Celebrate!");
         MESSAGE("Congratulations, 1!");
         MESSAGE("Wobbuffet used Solar Beam!");
         HP_BAR(opponent, captureDamage: &results[i].damage);
