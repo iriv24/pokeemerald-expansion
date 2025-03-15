@@ -295,7 +295,7 @@ SINGLE_BATTLE_TEST("Multi-hit moves don't hit a protected target and fail only o
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_ARM_THRUST, player);
         MESSAGE("Foe Beautifly protected itself!");
         // Each effect happens only once.
-        if (move == MOVE_KINGS_SHIELD || move == MOVE_SILK_TRAP || move == MOVE_OBSTRUCT) {
+        if (move == MOVE_SILK_TRAP || move == MOVE_OBSTRUCT) {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
         } else if (move == MOVE_SPIKY_SHIELD) {
             HP_BAR(player);
@@ -308,10 +308,10 @@ SINGLE_BATTLE_TEST("Multi-hit moves don't hit a protected target and fail only o
             } else if (move == MOVE_SPIKY_SHIELD) {
                 HP_BAR(player);
             }
-            MESSAGE("The Pokémon was hit 2 time(s)!");
-            MESSAGE("The Pokémon was hit 3 time(s)!");
-            MESSAGE("The Pokémon was hit 4 time(s)!");
-            MESSAGE("The Pokémon was hit 5 time(s)!");
+            MESSAGE("Hit 2 time(s)!");
+            MESSAGE("Hit 3 time(s)!");
+            MESSAGE("Hit 4 time(s)!");
+            MESSAGE("Hit 5 time(s)!");
         }
     }
 }

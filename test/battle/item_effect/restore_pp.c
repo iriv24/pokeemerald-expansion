@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 SINGLE_BATTLE_TEST("Ether restores the PP of one of a battler's moves by 10 ")
 {
     GIVEN {
@@ -68,6 +69,7 @@ SINGLE_BATTLE_TEST("Max Elixir restores the PP of all of a battler's moves fully
 TO_DO_BATTLE_TEST("Ether won't work if the selected move has all its PP")
 
 TO_DO_BATTLE_TEST("Elixir can be used if at least one move is missing PP in any slot") // The test system can't currently test this, in a test the item is used without running useability checks
+*/
 /*
 {
     u8 move1PP;

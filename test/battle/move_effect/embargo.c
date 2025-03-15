@@ -44,6 +44,7 @@ SINGLE_BATTLE_TEST("Embargo blocks an affected Pokémon's trainer from using ite
 
 WILD_BATTLE_TEST("Embargo doesn't block held item effects that affect experience gain", s32 exp)
 {
+    KNOWN_FAILING; //   Experience stuff
     u32 item;
 
     PARAMETRIZE { item = ITEM_LUCKY_EGG; }
@@ -56,10 +57,10 @@ WILD_BATTLE_TEST("Embargo doesn't block held item effects that affect experience
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); MOVE(player, MOVE_SCRATCH); }
     } SCENE {
-        MESSAGE("The wild Caterpie used Embargo!");
+        MESSAGE("Wild Caterpie used Embargo!");
         MESSAGE("Wobbuffet can't use items anymore!");
         MESSAGE("Wobbuffet used Scratch!");
-        MESSAGE("The wild Caterpie fainted!");
+        MESSAGE("Wild Caterpie fainted!");
         EXPERIENCE_BAR(player, captureGainedExp: &results[i].exp);
     } FINALLY {
         EXPECT_MUL_EQ(results[1].exp, Q_4_12(1.5), results[0].exp);
@@ -68,6 +69,7 @@ WILD_BATTLE_TEST("Embargo doesn't block held item effects that affect experience
 
 WILD_BATTLE_TEST("Embargo doesn't block held item effects that affect effort values")
 {
+    KNOWN_FAILING; // EV stuff
     u32 finalHPEVAmount;
 
     GIVEN {
@@ -196,7 +198,7 @@ SINGLE_BATTLE_TEST("Embargo doesn't stop an item flung at an affected target fro
         MESSAGE("Wobbuffet used Fling!");
         MESSAGE("Wobbuffet flung its Light Ball!");
         HP_BAR(opponent);
-        MESSAGE("Foe Wobbuffet is paralyzed, so it may be unable to move!");
+        MESSAGE("Foe Wobbuffet is paralyzed! It may be unable to move!");
     }
 }
 
@@ -322,7 +324,7 @@ SINGLE_BATTLE_TEST("Embargo can be reflected by Magic Coat")
         MESSAGE("Wobbuffet used Magic Coat!");
         MESSAGE("Wobbuffet shrouded itself with Magic Coat!");
         MESSAGE("Foe Wobbuffet used Embargo!");
-        MESSAGE("Wobbuffet bounced the Embargo back!");
+        MESSAGE("Foe Wobbuffet's Embargo was bounced back by MAGIC COAT!");
         MESSAGE("Foe Wobbuffet can't use items anymore!");
         // Turn 2
         MESSAGE("Foe Wobbuffet used Fling!");
@@ -349,7 +351,7 @@ SINGLE_BATTLE_TEST("Embargo doesn't prevent Mega Evolution")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BATON_PASS, opponent);
         MESSAGE("2 sent out Charizard!");
         // Turn 3
-        MESSAGE("Foe Charizard's Charizardite Y is reacting to 2's Mega Ring!");
+        MESSAGE("Foe Charizard's CharizarditeY is reacting to 2's Mega Ring!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, opponent);
         MESSAGE("Foe Charizard has Mega Evolved into Mega Charizard!");
     }

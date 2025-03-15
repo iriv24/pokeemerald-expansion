@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 SINGLE_BATTLE_TEST("Guard Spec. sets Mist effect on the battlers side")
 {
     GIVEN {
@@ -17,3 +18,4 @@ SINGLE_BATTLE_TEST("Guard Spec. sets Mist effect on the battlers side")
         MESSAGE("Wobbuffet is protected by the mist!");
     }
 }
+*/

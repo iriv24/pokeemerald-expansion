@@ -87,7 +87,7 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri will still take poison damage if while i
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("Tatsugiri was hurt by its poisoning!");
+        MESSAGE("Tatsugiri is hurt by poison!");
     }
 }
 
@@ -122,7 +122,7 @@ DOUBLE_BATTLE_TEST("Commander cannot affect a Dondozo that was previously affect
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("Tatsugiri was hurt by its poisoning!");
+        MESSAGE("Tatsugiri is hurt by poison!");
         NONE_OF {
             ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
             MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");

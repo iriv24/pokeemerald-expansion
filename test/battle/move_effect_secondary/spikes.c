@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Ceaseless Edge sets up hazards after hitting the target")
         s32 maxHP = GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CEASELESS_EDGE, player);
         HP_BAR(opponent);
-        MESSAGE("Spikes were scattered on the ground all around foe team!");
+        MESSAGE("Spikes were scattered on the ground all around the opposing team!");
         MESSAGE("2 sent out Wobbuffet!");
         HP_BAR(opponent, damage: maxHP / 8);
         MESSAGE("Foe Wobbuffet was hurt by the spikes!");
@@ -43,19 +43,19 @@ SINGLE_BATTLE_TEST("Ceaseless Edge can set up to 3 layers of Spikes")
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CEASELESS_EDGE, player);
         HP_BAR(opponent);
-        MESSAGE("Spikes were scattered on the ground all around foe team!");
+        MESSAGE("Spikes were scattered on the ground all around the opposing team!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CEASELESS_EDGE, player);
         HP_BAR(opponent);
-        MESSAGE("Spikes were scattered on the ground all around foe team!");
+        MESSAGE("Spikes were scattered on the ground all around the opposing team!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CEASELESS_EDGE, player);
         HP_BAR(opponent);
-        MESSAGE("Spikes were scattered on the ground all around foe team!");
+        MESSAGE("Spikes were scattered on the ground all around the opposing team!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CEASELESS_EDGE, player);
         HP_BAR(opponent);
-        NOT MESSAGE("Spikes were scattered on the ground all around foe team!");
+        NOT MESSAGE("Spikes were scattered on the ground all around the opposing team!");
 
         MESSAGE("2 sent out Wynaut!");
         HP_BAR(opponent, damage: maxHP / 4);

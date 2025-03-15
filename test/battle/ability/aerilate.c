@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Aerilate can not turn certain moves into Flying type moves")
     PARAMETRIZE { move = MOVE_MULTI_ATTACK; }
     PARAMETRIZE { move = MOVE_TERRAIN_PULSE; }
     GIVEN {
-        PLAYER(SPECIES_MEGANIUM);
+        PLAYER(SPECIES_TANGROWTH);
         OPPONENT(SPECIES_SALAMENCE) { Item(ITEM_SALAMENCITE); }
     } WHEN {
         TURN { MOVE(opponent, move, gimmick: GIMMICK_MEGA); }

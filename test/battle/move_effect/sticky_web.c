@@ -62,7 +62,7 @@ DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explos
         TURN {}
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, playerRight);
-        MESSAGE("A sticky web has been laid out on the ground around foe team!");
+        MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, playerLeft);
         MESSAGE("2 sent out Wynaut!");
         MESSAGE("2 sent out Alakazam!");
@@ -87,7 +87,7 @@ SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for a Pokemon with Contrary")
         TURN {}
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, player);
-        MESSAGE("A sticky web has been laid out on the ground around foe team!");
+        MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
         MESSAGE("2 sent out Shuckle!");
         MESSAGE("Foe Shuckle was caught in a sticky web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
@@ -166,14 +166,14 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - no o
     } SCENE {
         if (speedPlayer > speedOpponent) {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, playerRight);
-            MESSAGE("A sticky web has been laid out on the ground around foe team!");
+            MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
             ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, opponentLeft);
             MESSAGE("A sticky web has been laid out on the ground around your team!");
         } else {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, opponentLeft);
             MESSAGE("A sticky web has been laid out on the ground around your team!");
             ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, playerRight);
-            MESSAGE("A sticky web has been laid out on the ground around foe team!");
+            MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
         }
 
         SEND_IN_MESSAGE("Corviknight");

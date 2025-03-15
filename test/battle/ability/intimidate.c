@@ -211,7 +211,7 @@ SINGLE_BATTLE_TEST("Intimidate can not further lower opponents Atk stat if it is
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Foe Arbok's Intimidate cuts Wobbuffet's Attack!");
         }
-        MESSAGE("Wobbuffet's Attack won't go any lower!");
+        MESSAGE("Wobbuffet's Attack won't go lower!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_ATK], MIN_STAT_STAGE);
     }
@@ -281,9 +281,9 @@ SINGLE_BATTLE_TEST("Intimidate activates when it's no longer affected by Neutral
         TURN { MOVE(player, move); SEND_OUT(player, 1); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_NEUTRALIZING_GAS);
-        MESSAGE("Neutralizing Gas filled the area!");
+        MESSAGE("Neutralizing gas filled the area!");
         ANIMATION(ANIM_TYPE_MOVE, move, player);
-        MESSAGE("The effects of Neutralizing Gas wore off!");
+        MESSAGE("The effects of the neutralizing gas wore off!");
         ABILITY_POPUP(opponent, ABILITY_INTIMIDATE);
         SEND_IN_MESSAGE("Wobbuffet");
     } THEN {
@@ -316,11 +316,11 @@ SINGLE_BATTLE_TEST("Intimidate activates when it's no longer affected by Neutral
         }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_NEUTRALIZING_GAS);
-        MESSAGE("Neutralizing Gas filled the area!");
+        MESSAGE("Neutralizing gas filled the area!");
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         if (item != ITEM_NONE)
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-        MESSAGE("The effects of Neutralizing Gas wore off!");
+        MESSAGE("The effects of the neutralizing gas wore off!");
         ABILITY_POPUP(opponent, ABILITY_INTIMIDATE);
         if (item != ITEM_NONE) {
             SEND_IN_MESSAGE("Wobbuffet");
@@ -341,9 +341,9 @@ SINGLE_BATTLE_TEST("Intimidate activates when it's no longer affected by Neutral
         TURN { MOVE(opponent, MOVE_FELL_STINGER); SEND_OUT(player, 1); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_NEUTRALIZING_GAS);
-        MESSAGE("Neutralizing Gas filled the area!");
+        MESSAGE("Neutralizing gas filled the area!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FELL_STINGER, opponent);
-        MESSAGE("The effects of Neutralizing Gas wore off!");
+        MESSAGE("The effects of the neutralizing gas wore off!");
         ABILITY_POPUP(opponent, ABILITY_INTIMIDATE);
         MESSAGE("Weezing fainted!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);

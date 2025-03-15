@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 ASSUMPTIONS
 {
     ASSUME(gItemsInfo[ITEM_FULL_RESTORE].battleUsage == EFFECT_ITEM_HEAL_AND_CURE_STATUS);
@@ -142,3 +143,4 @@ SINGLE_BATTLE_TEST("Full Restore resets Toxic Counter")
         EXPECT_EQ(player->status1, STATUS1_NONE);
     }
 }
+*/

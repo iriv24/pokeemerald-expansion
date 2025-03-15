@@ -73,8 +73,8 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Reflect and Light 
         if (move == MOVE_DEFOG) {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
             MESSAGE("Foe Wobbuffet's evasiveness fell!");
-            MESSAGE("Foe team's Reflect wore off!");
-            MESSAGE("Foe team's Light Screen wore off!");
+            MESSAGE("The opposing team's Reflect wore off!");
+            MESSAGE("The opposing team's Light Screen wore off!");
         }
         MESSAGE("Wobbuffet used Tackle!");
         HP_BAR(opponentLeft, captureDamage: &results[i].damagePhysical);
@@ -107,8 +107,8 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Mist and Safeguard
         if (move == MOVE_DEFOG) {
             MESSAGE("Foe Wobbuffet is protected by the mist!");
             ANIMATION(ANIM_TYPE_MOVE, move, playerLeft);
-            MESSAGE("Foe team's Mist wore off!");
-            MESSAGE("Foe team's Safeguard wore off!");
+            MESSAGE("The opposing team's Mist wore off!");
+            MESSAGE("The opposing team's Safeguard wore off!");
         }
         MESSAGE("Wobbuffet used Screech!");
         if (move == MOVE_DEFOG) {
@@ -283,7 +283,7 @@ SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Toxic Spikes from 
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Wobbuffet's evasiveness fell!");
             if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
-                MESSAGE("The poison spikes disappeared from the ground around foe team!");
+                MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
         }
         // Switch happens
         MESSAGE("2 sent out Wobbuffet!");
@@ -376,10 +376,10 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes everything it can"
             MESSAGE("The sticky web has disappeared from the ground around your team!");
 
             // Opponent side
-            MESSAGE("The spikes disappeared from the ground around foe team!");
-            MESSAGE("The pointed stones disappeared from around foe team!");
-            MESSAGE("The poison spikes disappeared from the ground around foe team!");
-            MESSAGE("The sticky web has disappeared from the ground around foe team!");
+            MESSAGE("The spikes disappeared from the ground around the opposing team!");
+            MESSAGE("The pointed stones disappeared from around the opposing team!");
+            MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
+            MESSAGE("The sticky web has disappeared from the ground around the opposing team!");
         }
     }
 }
@@ -398,6 +398,6 @@ SINGLE_BATTLE_TEST("Defog is used on the correct side if opposing mon is behind 
         MESSAGE("Wobbuffet used Defog!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DEFOG, player);
         MESSAGE("Foe Wobbuffet's evasiveness fell!");
-        MESSAGE("Foe team's Light Screen wore off!");
+        MESSAGE("The opposing team's Light Screen wore off!");
     }
 }

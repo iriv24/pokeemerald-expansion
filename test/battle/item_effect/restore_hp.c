@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 SINGLE_BATTLE_TEST("Items can restore a battler's HP by a fixed amount")
 {
     u32 item, hp;
@@ -46,3 +47,4 @@ SINGLE_BATTLE_TEST("Items can restore a battler's HP by a percentage")
         HP_BAR(player, damage: -min(399, 400 * percentage / 100));
     }
 }
+*/

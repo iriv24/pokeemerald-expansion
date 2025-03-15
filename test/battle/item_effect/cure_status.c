@@ -1,6 +1,8 @@
 #include "global.h"
 #include "test/battle.h"
 
+//  Items can't be used in battle
+/*
 SINGLE_BATTLE_TEST("Paralyze Heal heals a battler from being paralyzed")
 {
     GIVEN {
@@ -392,3 +394,4 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
         EXPECT_EQ(player->status2, STATUS1_NONE); // because we dont have STATUS2_NONE
     }
 }
+*/

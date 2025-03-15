@@ -73,7 +73,7 @@ DOUBLE_BATTLE_TEST("Order Up increases a stat based on Tatsugiri's form even if 
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
-        MESSAGE("Tatsugiri was hurt by its poisoning!");
+        MESSAGE("Tatsugiri is hurt by poison!");
         MESSAGE("Tatsugiri fainted!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HAZE, opponentRight); // Remove previous stat boosts
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ORDER_UP, playerRight);
@@ -125,7 +125,7 @@ DOUBLE_BATTLE_TEST("Order Up is boosted by Sheer Force without removing the stat
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ENTRAINMENT].effect == EFFECT_ENTRAINMENT);
         PLAYER(SPECIES_DONDOZO) { Speed(10); }
-        PLAYER(SPECIES_TATSUGIRI_CURLY) { Speed(9); }
+        PLAYER(SPECIES_TATSUGIRI_CURLY) { Speed(9); Ability(ABILITY_COMMANDER); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
         OPPONENT(SPECIES_TAUROS) { Speed(21); Ability(ABILITY_SHEER_FORCE); }
     } WHEN {

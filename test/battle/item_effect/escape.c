@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 ASSUMPTIONS
 {
     ASSUME(gItemsInfo[ITEM_POKE_TOY].battleUsage == EFFECT_ITEM_ESCAPE);
@@ -48,3 +49,4 @@ WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if an 
         MESSAGE("{PLAY_SE SE_FLEE}You got away safely!\p");
     }
 }
+*/
