@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be flinched")
         TURN { MOVE(opponent, MOVE_FAKE_OUT); MOVE(player, MOVE_TACKLE, gimmick: GIMMICK_DYNAMAX); }
     } SCENE {
         MESSAGE("Foe Wobbuffet used Fake Out!");
-        NONE_OF { MESSAGE("Wobbuffet flinched and couldn't move!"); }
+        NONE_OF { MESSAGE("Wobbuffet flinched move!"); }
         MESSAGE("Wobbuffet used Max Strike!");
     }
 }

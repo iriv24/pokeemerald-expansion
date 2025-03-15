@@ -15,7 +15,7 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); }
     } SCENE {
-        MESSAGE("The wild Lanturn used Ion Deluge!");
+        MESSAGE("Wild Lanturn used Ion Deluge!");
         NONE_OF {
             ABILITY_POPUP(opponent, ABILITY_VOLT_ABSORB);
             HP_BAR(opponent);
@@ -37,7 +37,7 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); }
     } SCENE {
-        MESSAGE("The wild Zebstrika used Ion Deluge!");
+        MESSAGE("Wild Zebstrika used Ion Deluge!");
         NONE_OF {
             ABILITY_POPUP(opponent, ability);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);

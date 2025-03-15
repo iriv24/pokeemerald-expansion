@@ -23,6 +23,7 @@ SINGLE_BATTLE_TEST("Sappy Seed can seed the target")
 SINGLE_BATTLE_TEST("Sappy Seed is not going to seed the target if it fails")
 {
     GIVEN {
+        ASSUME(gMovesInfo[MOVE_SAPPY_SEED].accuracy != 100);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

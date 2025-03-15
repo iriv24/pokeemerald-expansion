@@ -179,10 +179,10 @@ SINGLE_BATTLE_TEST("Fling doesn't consume the item if pokemon is asleep/frozen/p
     } SCENE {
         if (status == STATUS1_FREEZE) {
             MESSAGE("Wobbuffet is frozen solid!");
-            MESSAGE("Wobbuffet thawed out!");
+            MESSAGE("Wobbuffet was defrosted!");
         }
         else if (status == STATUS1_PARALYSIS) {
-            MESSAGE("Wobbuffet couldn't move because it's paralyzed!");
+            MESSAGE("Wobbuffet is paralyzed! It can't move!");
         }
         else {
             MESSAGE("Wobbuffet is fast asleep.");
@@ -231,7 +231,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
             break;
         case ITEM_LIGHT_BALL:
             {
-                MESSAGE("Foe Wobbuffet is paralyzed, so it may be unable to move!");
+                MESSAGE("Foe Wobbuffet is paralyzed! It may be unable to move!");
                 STATUS_ICON(opponent, STATUS1_PARALYSIS);
             }
             break;
@@ -243,14 +243,14 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
             break;
         case ITEM_TOXIC_ORB:
             {
-                MESSAGE("Foe Wobbuffet was badly poisoned!");
+                MESSAGE("Foe Wobbuffet is badly poisoned!");
                 STATUS_ICON(opponent, STATUS1_TOXIC_POISON);
             }
             break;
         case ITEM_RAZOR_FANG:
         case ITEM_KINGS_ROCK:
             {
-                MESSAGE("Foe Wobbuffet flinched and couldn't move!");
+                MESSAGE("Foe Wobbuffet flinched!");
             }
             break;
         }
@@ -319,7 +319,7 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust")
         case ITEM_KINGS_ROCK:
             {
                 NONE_OF {
-                    MESSAGE("Foe Wobbuffet flinched and couldn't move!");
+                    MESSAGE("Foe Wobbuffet flinched move!");
                 }
                 switch (item)
                 {

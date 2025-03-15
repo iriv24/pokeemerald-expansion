@@ -52,7 +52,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (player)")
         TURN {}
     } SCENE {
         ABILITY_POPUP(player, ability);
-        MESSAGE("Foe team is too nervous to eat Berries!");
+        MESSAGE("The opposing team is too nervous to eat Berries!");
     }
 }
 

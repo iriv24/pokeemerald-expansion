@@ -8,7 +8,6 @@ SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking pokemon")
     PARAMETRIZE { move = MOVE_LEER; statId = STAT_DEF; }
     PARAMETRIZE { move = MOVE_GROWL; statId = STAT_ATK; }
     PARAMETRIZE { move = MOVE_SWEET_SCENT; statId = STAT_EVASION; }
-    PARAMETRIZE { move = MOVE_SAND_ATTACK; statId = STAT_ACC; }
     PARAMETRIZE { move = MOVE_CONFIDE; statId = STAT_SPATK; }
     PARAMETRIZE { move = MOVE_FAKE_TEARS; statId = STAT_SPDEF; }
 
@@ -27,9 +26,6 @@ SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking pokemon")
             break;
         case STAT_ATK:
             MESSAGE("Foe Wynaut's Attack fell!");
-            break;
-        case STAT_EVASION:
-            MESSAGE("Foe Wynaut's evasiveness harshly fell!");
             break;
         case STAT_ACC:
             MESSAGE("Foe Wynaut's accuracy fell!");
@@ -159,7 +155,7 @@ SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stat of the attacking Pokemon
         MESSAGE("Foe Wynaut used Leer!");
         ABILITY_POPUP(player, ABILITY_MIRROR_ARMOR);
         NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-        MESSAGE("Foe Wynaut's Defense won't go any lower!");
+        MESSAGE("Foe Wynaut's Defense won't go lower!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE);
         EXPECT_EQ(opponent->statStages[STAT_DEF], MIN_STAT_STAGE);

@@ -163,7 +163,7 @@ SINGLE_BATTLE_TEST("Sticky syrup will not decrease speed further then minus six"
         HP_BAR(opponent);
         MESSAGE("Foe Wobbuffet got covered in sticky candy syrup!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SYRUP_BOMB_SPEED_DROP, opponent);
-        MESSAGE("Foe Wobbuffet's Speed won't go any lower!");
+        MESSAGE("Foe Wobbuffet's Speed won't go lower!");
         NONE_OF {
             MESSAGE("Foe Wobbuffet's Speed fell!");
         }

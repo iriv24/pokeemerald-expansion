@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects")
             MESSAGE("Foe Vivillon is paralyzed, so it may be unable to move!");
             MESSAGE("Foe Vivillon was burned!");
             MESSAGE("Foe Vivillon was poisoned!");
-            MESSAGE("Foe Vivillon flinched and couldn't move!");
+            MESSAGE("Foe Vivillon flinched move!");
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
             MESSAGE("Foe Vivillon was prevented from healing!");
         }

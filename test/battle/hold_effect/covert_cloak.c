@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Covert Cloak blocks secondary effects")
             MESSAGE("Foe Wobbuffet is paralyzed, so it may be unable to move!");
             MESSAGE("Foe Wobbuffet was burned!");
             MESSAGE("Foe Wobbuffet was poisoned!");
-            MESSAGE("Foe Wobbuffet flinched and couldn't move!");
+            MESSAGE("Foe Wobbuffet flinched move!");
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
             MESSAGE("Foe Wobbuffet was prevented from healing!");
         }

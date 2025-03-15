@@ -196,16 +196,16 @@ SINGLE_BATTLE_TEST("Sheer Force doesn't boost Shell Trap", s16 damage)
 }
 SINGLE_BATTLE_TEST("Sheer Force doesn't boost Burn Up", s16 damage)
 {
-    u16 ability = 0;
-    PARAMETRIZE { ability = ABILITY_SHEER_FORCE; }
-    PARAMETRIZE { ability = ABILITY_ZEN_MODE; }
+    u16 move;
+    PARAMETRIZE { move = MOVE_SKILL_SWAP; }
+    PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_DARMANITAN) { Ability(ability); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_DARMANITAN) { Ability(ABILITY_SHEER_FORCE); }
+        OPPONENT(SPECIES_MAGMAR);
     } WHEN {
-        TURN { MOVE(player, MOVE_BURN_UP); }
+        TURN { MOVE(player, move); MOVE(opponent, MOVE_BURN_UP); }
     } SCENE {
-        HP_BAR(opponent, captureDamage: &results[i].damage);
+        HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
         EXPECT_EQ(results[0].damage, results[1].damage);
         EXPECT_NE(results[0].damage, 0);

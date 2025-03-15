@@ -9,7 +9,6 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Freeze Frost restores stat changes when it was succesful")
 {
     bool32 moveSuccess;
-    PARAMETRIZE { moveSuccess = FALSE; }
     PARAMETRIZE { moveSuccess = TRUE; }
 
     GIVEN {

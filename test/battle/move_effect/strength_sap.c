@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Strength Sap fails if target is at -6 Atk")
             HP_BAR(player);
             MESSAGE("Foe Wobbuffet had its energy drained!");
         }
-        MESSAGE("Foe Wobbuffet's Attack won't go any lower!");
+        MESSAGE("Foe Wobbuffet's Attack won't go lower!");
     }
 }
 

@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("Supersweet Syrup can not further lower opponents evasion if 
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Oddish's evasiveness fell!");
         }
-        MESSAGE("Oddish's evasiveness won't go any lower!");
+        MESSAGE("Oddish's evasiveness won't go lower!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_EVASION], MIN_STAT_STAGE);
     }

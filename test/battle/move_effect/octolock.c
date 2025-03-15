@@ -123,8 +123,8 @@ SINGLE_BATTLE_TEST("Octolock will not decrease Defense and Sp. Def further then 
             MESSAGE("Foe Wobbuffet's Defense fell!");
             MESSAGE("Foe Wobbuffet's Sp. Def fell!");
         }
-        MESSAGE("Foe Wobbuffet's Defense won't go any lower!");
-        MESSAGE("Foe Wobbuffet's Sp. Def won't go any lower!");
+        MESSAGE("Foe Wobbuffet's Defense won't go lower!");
+        MESSAGE("Foe Wobbuffet's Sp. Def won't go lower!");
         NONE_OF {
             MESSAGE("Foe Wobbuffet's Defense fell!");
             MESSAGE("Foe Wobbuffet's Sp. Def fell!");
