@@ -23,8 +23,8 @@ DOUBLE_BATTLE_TEST("Moxie/Chilling Neigh raises Attack by one stage after direct
         for (i = 0; i < 3; i++) {
             ONE_OF {
                 MESSAGE("Snorunt fainted!");
-                MESSAGE("The opposing Glalie fainted!");
-                MESSAGE("The opposing Abra fainted!");
+                MESSAGE("Foe Glalie fainted!");
+                MESSAGE("Foe Abra fainted!");
             }
             ABILITY_POPUP(playerLeft, abilityPopUp);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
@@ -61,8 +61,8 @@ DOUBLE_BATTLE_TEST("Moxie/Chilling Neigh does not trigger if Pokemon faint to in
         for (i = 0; i < 3; i++) {
             ONE_OF {
                 MESSAGE("Snorunt fainted!");
-                MESSAGE("The opposing Glalie fainted!");
-                MESSAGE("The opposing Abra fainted!");
+                MESSAGE("Foe Glalie fainted!");
+                MESSAGE("Foe Abra fainted!");
             }
             NONE_OF {
                 ABILITY_POPUP(playerLeft, abilityPopUp);
@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Moxie/Chilling Neigh does not trigger when already at maximu
         else
             MESSAGE("Calyrex cut its own HP and maximized its Attack!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_QUICK_ATTACK, player);
-        MESSAGE("The opposing Snorunt fainted!");
+        MESSAGE("Foe Snorunt fainted!");
         NONE_OF {
             ABILITY_POPUP(player, abilityPopUp);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);

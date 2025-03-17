@@ -7,13 +7,13 @@ ASSUMPTIONS
     ASSUME(gMovesInfo[MOVE_ECHOED_VOICE].category == DAMAGE_CATEGORY_SPECIAL);
 }
 
-SINGLE_BATTLE_TEST("Defeatist halves Attack when HP <= 50%", s16 damage)
+SINGLE_BATTLE_TEST("Defeatist halves Attack when HP <= 1/3", s16 damage)
 {
     u32 hp;
-    PARAMETRIZE { hp = 400; }
-    PARAMETRIZE { hp = 200; }
+    PARAMETRIZE { hp = 300; }
+    PARAMETRIZE { hp = 100; }
     GIVEN {
-        PLAYER(SPECIES_ARCHEN) { Ability(ABILITY_DEFEATIST); HP(hp), MaxHP(400);}
+        PLAYER(SPECIES_ARCHEN) { Ability(ABILITY_DEFEATIST); HP(hp), MaxHP(300);}
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_CELEBRATE); }
@@ -26,13 +26,13 @@ SINGLE_BATTLE_TEST("Defeatist halves Attack when HP <= 50%", s16 damage)
     }
 }
 
-SINGLE_BATTLE_TEST("Defeatist halves Special Attack when HP <= 50%", s16 damage)
+SINGLE_BATTLE_TEST("Defeatist halves Special Attack when HP <= 1/3", s16 damage)
 {
     u32 hp;
-    PARAMETRIZE { hp = 400; }
-    PARAMETRIZE { hp = 200; }
+    PARAMETRIZE { hp = 300; }
+    PARAMETRIZE { hp = 100; }
     GIVEN {
-        PLAYER(SPECIES_ARCHEN) { Ability(ABILITY_DEFEATIST); HP(hp), MaxHP(400);}
+        PLAYER(SPECIES_ARCHEN) { Ability(ABILITY_DEFEATIST); HP(hp), MaxHP(300);}
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ECHOED_VOICE); MOVE(opponent, MOVE_CELEBRATE); }

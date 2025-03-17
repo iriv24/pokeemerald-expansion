@@ -95,7 +95,7 @@ SINGLE_BATTLE_TEST("Weak Armor still lowers boosts Speed if Defense can't go any
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Slugma's Weak Armor lowered its Defense!");
         }
-        MESSAGE("Slugma's Defense won't go any lower!");
+        MESSAGE("Slugma's Defense won't go lower!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
         MESSAGE("Slugma's Weak Armor raised its Speed!");
     } THEN {
@@ -151,7 +151,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Defense can'
         }
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_SWIPES, opponent);
         ABILITY_POPUP(player, ABILITY_WEAK_ARMOR);
-        MESSAGE("Magcargo's Defense won't go any lower!");
+        MESSAGE("Magcargo's Defense won't go lower!");
         MESSAGE("Magcargo's Weak Armor raised its Speed!");
         for (j = 0; j < 2; j++)
         {
@@ -159,7 +159,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Defense can'
             // Ability doesn't activate if neither stat can be changed.
             NONE_OF {
                 ABILITY_POPUP(player, ABILITY_WEAK_ARMOR);
-                MESSAGE("Magcargo's Defense won't go any lower!");
+                MESSAGE("Magcargo's Defense won't go lower!");
                 MESSAGE("Magcargo's Speed won't go any higher!");
             }
         }

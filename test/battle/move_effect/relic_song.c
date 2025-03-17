@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Relic Song is prevented by Soundproof")
         TURN { MOVE(player, MOVE_RELIC_SONG); }
     } SCENE {
         ABILITY_POPUP(opponent, ABILITY_SOUNDPROOF);
-        MESSAGE("The opposing Voltorb's Soundproof blocks Relic Song!");
+        MESSAGE("Foe Voltorb's Soundproof blocks Relic Song!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_RELIC_SONG, player);
             HP_BAR(opponent);
@@ -134,7 +134,7 @@ SINGLE_BATTLE_TEST("Relic Song transformation is the last thing that happens aft
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_RELIC_SONG, player);
         HP_BAR(opponent);
-        MESSAGE("The opposing Gossifleur fainted!");
+        MESSAGE("Foe Gossifleur fainted!");
         ABILITY_POPUP(opponent, ABILITY_COTTON_DOWN);
         MESSAGE("Meloetta's Speed fell!");
         MESSAGE("Meloetta transformed!");
@@ -191,7 +191,7 @@ SINGLE_BATTLE_TEST("Relic Song transforms Meloetta after Magician was activated"
         ANIMATION(ANIM_TYPE_MOVE, MOVE_RELIC_SONG, player);
         HP_BAR(opponent);
         ABILITY_POPUP(player, ABILITY_MAGICIAN);
-        MESSAGE("Meloetta stole the opposing Delphox's Potion!");
+        MESSAGE("Meloetta stole foe Delphox's Potion!");
         MESSAGE("Meloetta transformed!");
     } THEN {
         EXPECT_EQ(player->species, SPECIES_MELOETTA_PIROUETTE);

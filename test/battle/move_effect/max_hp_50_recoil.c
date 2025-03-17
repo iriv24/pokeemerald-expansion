@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Steel Beam causes the user & the target to faint when below 
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STEEL_BEAM, player);
         HP_BAR(opponent, hp: 0);
-        MESSAGE("The opposing Wobbuffet fainted!");
+        MESSAGE("Foe Wobbuffet fainted!");
         HP_BAR(player, hp: 0);
         MESSAGE("Wobbuffet fainted!");
     }
@@ -97,7 +97,7 @@ SINGLE_BATTLE_TEST("Steel Beam hp loss is prevented by Magic Guard")
     }
 }
 
-SINGLE_BATTLE_TEST("Steel Beam makes the user lose HP even if the opposing mon protected")
+SINGLE_BATTLE_TEST("Steel Beam makes the user lose HP even if foe mon protected")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -143,7 +143,7 @@ SINGLE_BATTLE_TEST("Steel Beam is not blocked by Damp")
         HP_BAR(player, damage: 200);
         NONE_OF {
             ABILITY_POPUP(opponent, ABILITY_DAMP);
-            MESSAGE("The opposing Golduck's Damp prevents Wobbuffet from using Steel Beam!");
+            MESSAGE("Foe Golduck's Damp prevents Wobbuffet from using Steel Beam!");
         }
     }
 }

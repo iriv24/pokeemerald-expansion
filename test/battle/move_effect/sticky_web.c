@@ -20,9 +20,9 @@ SINGLE_BATTLE_TEST("Sticky Web lowers Speed by 1 on switch-in")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, player);
         MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
         MESSAGE("2 sent out Wynaut!");
-        MESSAGE("The opposing Wynaut was caught in a sticky web!");
+        MESSAGE("Foe Wynaut was caught in a sticky web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-        MESSAGE("The opposing Wynaut's Speed fell!");
+        MESSAGE("Foe Wynaut's Speed fell!");
     }
 }
 
@@ -66,12 +66,12 @@ DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explos
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, playerLeft);
         MESSAGE("2 sent out Wynaut!");
         MESSAGE("2 sent out Alakazam!");
-        MESSAGE("The opposing Alakazam was caught in a sticky web!");
+        MESSAGE("Foe Alakazam was caught in a sticky web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
-        MESSAGE("The opposing Alakazam's Speed fell!");
-        MESSAGE("The opposing Wynaut was caught in a sticky web!");
+        MESSAGE("Foe Alakazam's Speed fell!");
+        MESSAGE("Foe Wynaut was caught in a sticky web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
-        MESSAGE("The opposing Wynaut's Speed fell!");
+        MESSAGE("Foe Wynaut's Speed fell!");
     }
 }
 
@@ -89,9 +89,9 @@ SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for a Pokemon with Contrary")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, player);
         MESSAGE("A sticky web has been laid out on the ground around the opposing team!");
         MESSAGE("2 sent out Shuckle!");
-        MESSAGE("The opposing Shuckle was caught in a sticky web!");
+        MESSAGE("Foe Shuckle was caught in a sticky web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-        MESSAGE("The opposing Shuckle's Speed rose!");
+        MESSAGE("Foe Shuckle's Speed rose!");
     }
 }
 
@@ -128,14 +128,14 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - the 
         ABILITY_POPUP(playerRight, ABILITY_MIRROR_ARMOR);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, BATTLER_OPPONENT);
         if (opponentSetUpper == 0) {
-            MESSAGE("The opposing Caterpie's Speed fell!");
+            MESSAGE("Foe Caterpie's Speed fell!");
             NONE_OF {
-                MESSAGE("The opposing Caterpie was caught in a sticky web!");
+                MESSAGE("Foe Caterpie was caught in a sticky web!");
             }
         } else {
-            MESSAGE("The opposing Weedle's Speed fell!");
+            MESSAGE("Foe Weedle's Speed fell!");
             NONE_OF {
-                MESSAGE("The opposing Weedle was caught in a sticky web!");
+                MESSAGE("Foe Weedle was caught in a sticky web!");
             }
         }
     }
@@ -220,7 +220,7 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - no o
         MESSAGE("A sticky web has been laid out on the ground around your team!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_MEMENTO, opponentLeft);
-        MESSAGE("The opposing Caterpie fainted!");
+        MESSAGE("Foe Caterpie fainted!");
         if (hasReplacement) {
             MESSAGE("2 sent out Pidgey!");
         }
@@ -289,13 +289,13 @@ DOUBLE_BATTLE_TEST("Sticky Web setter has their speed lowered with Mirror Armor 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STICKY_WEB, opponentLeft);
         MESSAGE("A sticky web has been laid out on the ground around your team!");
         // Turn 2 - ally switch
-        MESSAGE("The opposing Natu used Ally Switch!");
+        MESSAGE("Foe Natu used Ally Switch!");
         // turn 3 - send our corviknight
         SEND_IN_MESSAGE("Corviknight");
         MESSAGE("Corviknight was caught in a sticky web!");
         ABILITY_POPUP(playerRight, ABILITY_MIRROR_ARMOR);
         // sticky web setter - caterpie (now opponentRight) gets speed lowered
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
-        MESSAGE("The opposing Caterpie's Speed fell!");
+        MESSAGE("Foe Caterpie's Speed fell!");
     }
 }

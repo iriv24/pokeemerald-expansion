@@ -1,6 +1,8 @@
 #include "global.h"
 #include "test/battle.h"
 
+//  Items can't be used in battle
+/*
 SINGLE_BATTLE_TEST("Paralyze Heal heals a battler from being paralyzed")
 {
     GIVEN {
@@ -57,7 +59,7 @@ SINGLE_BATTLE_TEST("Antidote resets Toxic Counter")
         TURN { ; }
         TURN { USE_ITEM(player, ITEM_ANTIDOTE, partyIndex: 0); }
     } SCENE {
-        MESSAGE("The opposing Wobbuffet used Toxic!");
+        MESSAGE("Foe Wobbuffet used Toxic!");
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
         EXPECT_EQ(player->status1, STATUS1_NONE);
@@ -392,3 +394,4 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
         EXPECT_EQ(player->status2, STATUS1_NONE); // because we dont have STATUS2_NONE
     }
 }
+*/

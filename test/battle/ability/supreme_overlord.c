@@ -34,6 +34,7 @@ DOUBLE_BATTLE_TEST("Supreme Overlord boosts Attack by an additive 10% per fainte
 
 DOUBLE_BATTLE_TEST("Supreme Overlord's boost caps at a 1.5x multipler", s16 damage)
 {
+    KNOWN_FAILING;  //  Items can't be used in battle
     u32 faintCount = 0;
     PARAMETRIZE { faintCount = 5; }
     PARAMETRIZE { faintCount = 6; }
@@ -130,6 +131,6 @@ SINGLE_BATTLE_TEST("Supreme Overlord's message displays correctly after all batt
         SEND_IN_MESSAGE("Wobbuffet");
         MESSAGE("2 sent out Kingambit!");
         ABILITY_POPUP(opponent, ABILITY_SUPREME_OVERLORD);
-        MESSAGE("The opposing Kingambit gained strength from the fallen!");
+        MESSAGE("Foe Kingambit gained strength from the fallen!");
     }
 }

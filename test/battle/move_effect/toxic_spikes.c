@@ -222,7 +222,7 @@ SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on switch in after Primal Rever
         TURN { SWITCH(player, 1); }
         TURN { MOVE(player, MOVE_MEMENTO); SEND_OUT(player, 2); }
     } SCENE {
-        MESSAGE("The opposing Wobbuffet used Toxic Spikes!");
+        MESSAGE("Foe Wobbuffet used Toxic Spikes!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_SPIKES, opponent);
         MESSAGE("Poison spikes were scattered on the ground all around your team!");
         // Switch in

@@ -17,7 +17,7 @@ SINGLE_BATTLE_TEST("Sheer Cold doesn't affect Ice-type Pokémon")
         TURN { MOVE(player, MOVE_SHEER_COLD); }
     } SCENE {
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_SHEER_COLD, player);
-        MESSAGE("It doesn't affect the opposing Glalie…");
+        MESSAGE("It doesn't affect foe Glalie…");
     }
 }
 

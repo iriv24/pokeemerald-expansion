@@ -51,7 +51,7 @@ DOUBLE_BATTLE_TEST("Rainbow doubles the chance of secondary move effects")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_WATER_PLEDGE, playerRight);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, playerLeft);
-        MESSAGE("The opposing Wynaut was burned!");
+        MESSAGE("Foe Wynaut was burned!");
     }
 }
 
@@ -72,7 +72,7 @@ DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_WATER_PLEDGE, playerRight);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BITE, playerLeft);
-        MESSAGE("The opposing Wynaut flinched and couldn't move!");
+        MESSAGE("Foe Wynaut flinched!");
     }
 }
 
@@ -100,17 +100,17 @@ DOUBLE_BATTLE_TEST("Fire and Grass Pledge summons Sea Of Fire for four turns tha
         MESSAGE("A sea of fire enveloped the opposing team!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SEA_OF_FIRE, opponentRight);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentLeft);
-        MESSAGE("The opposing Wobbuffet was hurt by the sea of fire!");
+        MESSAGE("Foe Wobbuffet was hurt by the sea of fire!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentRight);
-        MESSAGE("The opposing Wynaut was hurt by the sea of fire!");
+        MESSAGE("Foe Wynaut was hurt by the sea of fire!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentLeft);
-        MESSAGE("The opposing Wobbuffet was hurt by the sea of fire!");
+        MESSAGE("Foe Wobbuffet was hurt by the sea of fire!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentRight);
-        MESSAGE("The opposing Wynaut was hurt by the sea of fire!");
+        MESSAGE("Foe Wynaut was hurt by the sea of fire!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentLeft);
-        MESSAGE("The opposing Wobbuffet was hurt by the sea of fire!");
+        MESSAGE("Foe Wobbuffet was hurt by the sea of fire!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, opponentRight);
-        MESSAGE("The opposing Wynaut was hurt by the sea of fire!");
+        MESSAGE("Foe Wynaut was hurt by the sea of fire!");
         MESSAGE("The sea of fire around the opposing team disappeared!");
     }
 }
@@ -471,11 +471,11 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Flinch Right"
         TURN { MOVE(opponentLeft, MOVE_FAKE_OUT, target: playerRight); MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentRight); MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight); }
     } SCENE {
         if (speedPLeft < speedPRight) {
-            MESSAGE("Wynaut flinched and couldn't move!");
+            MESSAGE("Wynaut flinched!");
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
         } else {
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
-            MESSAGE("Wynaut flinched and couldn't move!");
+            MESSAGE("Wynaut flinched!");
         }
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
@@ -504,11 +504,11 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Flinch Left")
         TURN { MOVE(opponentLeft, MOVE_FAKE_OUT, target: playerLeft); MOVE(playerRight, MOVE_FIRE_PLEDGE, target: opponentRight); MOVE(playerLeft, MOVE_GRASS_PLEDGE, target: opponentRight); }
     } SCENE {
         if (speedPRight < speedPLeft) {
-            MESSAGE("Wobbuffet flinched and couldn't move!");
+            MESSAGE("Wobbuffet flinched!");
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
         } else {
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
-            MESSAGE("Wobbuffet flinched and couldn't move!");
+            MESSAGE("Wobbuffet flinched!");
         }
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
@@ -730,8 +730,8 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Paralyzed Bot
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentRight, WITH_RNG(RNG_PARALYSIS, 0)); MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight, WITH_RNG(RNG_PARALYSIS, 0)); }
     } SCENE {
-        MESSAGE("Wobbuffet couldn't move because it's paralyzed!");
-        MESSAGE("Wynaut couldn't move because it's paralyzed!");
+        MESSAGE("Wobbuffet is paralyzed! It can't move!");
+        MESSAGE("Wynaut is paralyzed! It can't move!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
@@ -752,8 +752,8 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Paralyzed Bot
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentRight, WITH_RNG(RNG_PARALYSIS, 0)); MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight, WITH_RNG(RNG_PARALYSIS, 0)); }
     } SCENE {
-        MESSAGE("Wynaut couldn't move because it's paralyzed!");
-        MESSAGE("Wobbuffet couldn't move because it's paralyzed!");
+        MESSAGE("Wynaut is paralyzed! It can't move!");
+        MESSAGE("Wobbuffet is paralyzed! It can't move!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
@@ -777,8 +777,8 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Flinch Both L
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FAKE_OUT, opponentLeft);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FAKE_OUT, opponentRight);
-        MESSAGE("Wobbuffet flinched and couldn't move!");
-        MESSAGE("Wynaut flinched and couldn't move!");
+        MESSAGE("Wobbuffet flinched!");
+        MESSAGE("Wynaut flinched!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);
@@ -802,8 +802,8 @@ DOUBLE_BATTLE_TEST("Pledge move combo fails if ally fails to act - Flinch Both R
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FAKE_OUT, opponentLeft);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FAKE_OUT, opponentRight);
-        MESSAGE("Wynaut flinched and couldn't move!");
-        MESSAGE("Wobbuffet flinched and couldn't move!");
+        MESSAGE("Wynaut flinched!");
+        MESSAGE("Wobbuffet flinched!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerRight);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_FIRE_PLEDGE, playerLeft);

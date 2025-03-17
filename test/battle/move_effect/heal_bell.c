@@ -55,9 +55,9 @@ DOUBLE_BATTLE_TEST("Heal Bell does not cure soundproof partners")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEAL_BELL, playerLeft);
         if (ability == ABILITY_SOUNDPROOF) {
-            MESSAGE("Exploud was hurt by its poisoning!");
+            MESSAGE("Exploud is hurt by poison!");
         } else {
-            NOT MESSAGE("Exploud was hurt by its poisoning!");
+            NOT MESSAGE("Exploud is hurt by poison!");
         }
     }
 }

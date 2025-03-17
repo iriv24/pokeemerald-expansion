@@ -19,18 +19,18 @@ DOUBLE_BATTLE_TEST("Gravity cancels fly and sky drop if they are in the air")
         TURN { MOVE(playerLeft, MOVE_GRAVITY); SKIP_TURN(opponentRight); SKIP_TURN(opponentLeft); }
     } SCENE {
         // turn 1
-        MESSAGE("The opposing Pidgey used Sky Drop!");
-        MESSAGE("The opposing Pidgey took Wynaut into the sky!");
+        MESSAGE("Foe Pidgey used Sky Drop!");
+        MESSAGE("Foe Pidgey took Wynaut into the sky!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SKY_DROP, opponentLeft);
-        MESSAGE("The opposing Rookidee used Fly!");
-        MESSAGE("The opposing Rookidee flew up high!");
+        MESSAGE("Foe Rookidee used Fly!");
+        MESSAGE("Foe Rookidee flew up high!");
         // turn 2
         MESSAGE("Wobbuffet used Gravity!");
         MESSAGE("Gravity intensified!");
-        MESSAGE("The opposing Pidgey fell from the sky due to the gravity!");
-        MESSAGE("The opposing Rookidee fell from the sky due to the gravity!");
-        MESSAGE("The opposing Pidgey can't use Sky Drop because of gravity!");
-        MESSAGE("The opposing Rookidee can't use Fly because of gravity!");
+        MESSAGE("Foe Pidgey fell from the sky due to the gravity!");
+        MESSAGE("Foe Rookidee fell from the sky due to the gravity!");
+        MESSAGE("Foe Pidgey can't use Sky Drop because of gravity!");
+        MESSAGE("Foe Rookidee can't use Fly because of gravity!");
     } THEN {
         // all battlers should be visible. assign to var first because expect_eq not working with bitfield address
         visibility = gBattleSpritesDataPtr->battlerData[0].invisible;

@@ -25,20 +25,20 @@ SINGLE_BATTLE_TEST("Headbutt flinches the target if attacker is faster")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEADBUTT, player);
         HP_BAR(opponent);
         if (isFaster) {
-            MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            MESSAGE("Foe Wobbuffet flinched!");
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         } else {
-            NOT MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            NOT MESSAGE("Foe Wobbuffet flinched!");
         }
 
         // 2nd turn
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEADBUTT, player);
         HP_BAR(opponent);
         if (isFaster) {
-            MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            MESSAGE("Foe Wobbuffet flinched!");
             NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         } else {
-            NOT MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+            NOT MESSAGE("Foe Wobbuffet flinched!");
         }
     }
 }
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Protect always works when used after flinching")
         // 2nd turn
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HEADBUTT, opponent);
         HP_BAR(player);
-        MESSAGE("Wobbuffet flinched and couldn't move!");
+        MESSAGE("Wobbuffet flinched!");
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
 
         // 3rd turn

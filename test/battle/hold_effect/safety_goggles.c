@@ -16,7 +16,7 @@ SINGLE_BATTLE_TEST("Safety Goggles block powder and spore moves")
         TURN { MOVE(player, MOVE_STUN_SPORE); }
     } SCENE {
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_STUN_SPORE, player);
-        MESSAGE("The opposing Abra is not affected thanks to its Safety Goggles!");
+        MESSAGE("Foe Abra is not affected thanks to its SafetyGoggles!");
     }
 }
 
@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Hail")
     } WHEN {
         TURN { MOVE(player, MOVE_HAIL); }
     } SCENE {
-        NOT MESSAGE("The opposing Wobbuffet is buffeted by the hail!");
+        NOT MESSAGE("Foe Wobbuffet is buffeted by the hail!");
     }
 }
 
@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Sandstorm")
     } WHEN {
         TURN { MOVE(player, MOVE_SANDSTORM); }
     } SCENE {
-        NOT MESSAGE("The opposing Wobbuffet is buffeted by the sandstorm!");
+        NOT MESSAGE("Foe Wobbuffet is buffeted by the sandstorm!");
     }
 }
 

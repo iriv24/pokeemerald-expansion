@@ -6,7 +6,7 @@ ASSUMPTIONS
     ASSUME(gMovesInfo[MOVE_DESTINY_BOND].effect == EFFECT_DESTINY_BOND);
 }
 
-SINGLE_BATTLE_TEST("Destiny Bond faints the opposing mon if it fainted from the attack")
+SINGLE_BATTLE_TEST("Destiny Bond faints foe mon if it fainted from the attack")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
@@ -17,7 +17,7 @@ SINGLE_BATTLE_TEST("Destiny Bond faints the opposing mon if it fainted from the 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DESTINY_BOND, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
         MESSAGE("Wobbuffet took its attacker down with it!");
-        MESSAGE("The opposing Wobbuffet fainted!");
+        MESSAGE("Foe Wobbuffet fainted!");
     }
 }
 

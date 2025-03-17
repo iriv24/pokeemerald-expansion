@@ -1,6 +1,8 @@
 #include "global.h"
 #include "test/battle.h"
 
+//  Not applicable in EI
+/*
 SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitten")
 {
     u32 move;
@@ -25,7 +27,7 @@ SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitt
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         if (move == MOVE_POWDER_SNOW) {
             FREEZE_OR_FROSTBURN_STATUS(player, TRUE);
-            NOT HP_BAR(player); // Regression caused by Mimikyu form change
+            //NOT HP_BAR(player); // Regression caused by Mimikyu form change
             MESSAGE("Shaymin transformed!");
         } else {
             NOT MESSAGE("Shaymin transformed!");
@@ -38,3 +40,4 @@ SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitt
 
     }
 }
+*/

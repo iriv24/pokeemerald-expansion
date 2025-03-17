@@ -1,6 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
+/*
 SINGLE_BATTLE_TEST("Revive restores a fainted battler's HP to half")
 {
     GIVEN {
@@ -100,3 +101,4 @@ DOUBLE_BATTLE_TEST("Revive works for a partner in a double battle")
 }
 
 TO_DO_BATTLE_TEST("Revive won't restore a battler's HP if it hasn't fainted")
+*/

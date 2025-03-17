@@ -22,7 +22,7 @@ SINGLE_BATTLE_TEST("Ceaseless Edge sets up hazards after hitting the target")
         MESSAGE("Spikes were scattered on the ground all around the opposing team!");
         MESSAGE("2 sent out Wobbuffet!");
         HP_BAR(opponent, damage: maxHP / 8);
-        MESSAGE("The opposing Wobbuffet was hurt by the spikes!");
+        MESSAGE("Foe Wobbuffet was hurt by the spikes!");
     }
 }
 
@@ -59,6 +59,6 @@ SINGLE_BATTLE_TEST("Ceaseless Edge can set up to 3 layers of Spikes")
 
         MESSAGE("2 sent out Wynaut!");
         HP_BAR(opponent, damage: maxHP / 4);
-        MESSAGE("The opposing Wynaut was hurt by the spikes!");
+        MESSAGE("Foe Wynaut was hurt by the spikes!");
     }
 }

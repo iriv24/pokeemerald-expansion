@@ -18,7 +18,7 @@ DOUBLE_BATTLE_TEST("Flame Burst Substitute")
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_SUBSTITUTE); MOVE(playerRight, MOVE_FLAME_BURST, target: opponentRight); }
     } SCENE {
-        MESSAGE("The bursting flames hit the opposing Wynaut!");
-        NOT MESSAGE("The substitute took damage for the opposing Wynaut!");
+        MESSAGE("The bursting flames hit foe Wynaut!");
+        NOT MESSAGE("The substitute took damage for foe Wynaut!");
     }
 }

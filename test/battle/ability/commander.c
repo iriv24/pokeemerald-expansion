@@ -51,7 +51,7 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri avoids moves targetted towards it")
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponentLeft);
-        MESSAGE("The opposing Wobbuffet's attack missed!");
+        MESSAGE("Foe Wobbuffet's attack missed!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_POUND, opponentRight);
     }
 }
@@ -71,7 +71,7 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri will still take residual damage from a f
         ABILITY_POPUP(opponentLeft, ABILITY_SAND_STREAM);
         MESSAGE("Dondozo is buffeted by the sandstorm!");
         MESSAGE("Tatsugiri is buffeted by the sandstorm!");
-        MESSAGE("The opposing Wobbuffet is buffeted by the sandstorm!");
+        MESSAGE("Foe Wobbuffet is buffeted by the sandstorm!");
     }
 }
 
@@ -87,7 +87,7 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri will still take poison damage if while i
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("Tatsugiri was hurt by its poisoning!");
+        MESSAGE("Tatsugiri is hurt by poison!");
     }
 }
 
@@ -104,7 +104,7 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri still avoids moves even when the attacke
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponentLeft);
-        MESSAGE("The opposing Machamp's attack missed!");
+        MESSAGE("Foe Machamp's attack missed!");
     }
 }
 
@@ -122,7 +122,7 @@ DOUBLE_BATTLE_TEST("Commander cannot affect a Dondozo that was previously affect
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("Tatsugiri was hurt by its poisoning!");
+        MESSAGE("Tatsugiri is hurt by poison!");
         NONE_OF {
             ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
             MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
@@ -144,9 +144,9 @@ DOUBLE_BATTLE_TEST("Commander prevents Whirlwind from working against Dondozo or
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("The opposing Wobbuffet used Whirlwind!");
+        MESSAGE("Foe Wobbuffet used Whirlwind!");
         MESSAGE("But it failed!");
-        MESSAGE("The opposing Wobbuffet used Whirlwind!");
+        MESSAGE("Foe Wobbuffet used Whirlwind!");
         MESSAGE("But it failed!");
     }
 }
@@ -250,7 +250,7 @@ DOUBLE_BATTLE_TEST("Commander doesn't prevent Imposter from working on a Command
         ABILITY_POPUP(playerRight, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
         ABILITY_POPUP(opponentRight, ABILITY_IMPOSTER);
-        MESSAGE("The opposing Ditto transformed into Tatsugiri using Imposter!");
+        MESSAGE("Foe Ditto transformed into Tatsugiri using Imposter!");
     }
 }
 
@@ -273,14 +273,14 @@ DOUBLE_BATTLE_TEST("Commander Tatsugiri is still affected by Perish Song while c
         MESSAGE("All Pokémon that heard the song will faint in three turns!");
         MESSAGE("Dondozo's perish count fell to 0!");
         MESSAGE("Dondozo fainted!");
-        MESSAGE("The opposing Wobbuffet's perish count fell to 0!");
-        MESSAGE("The opposing Wobbuffet fainted!");
+        MESSAGE("Foe Wobbuffet's perish count fell to 0!");
+        MESSAGE("Foe Wobbuffet fainted!");
         NONE_OF {
             MESSAGE("Tatsugiri's perish count fell to 0!");
             MESSAGE("Tatsugiri fainted!");
         }
-        MESSAGE("The opposing Wynaut's perish count fell to 0!");
-        MESSAGE("The opposing Wynaut fainted!");
+        MESSAGE("Foe Wynaut's perish count fell to 0!");
+        MESSAGE("Foe Wynaut fainted!");
     }
 }
 
@@ -323,7 +323,7 @@ DOUBLE_BATTLE_TEST("Commander Attacker is kept (Dondozo Left Slot)")
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SURF, opponentLeft);
         HP_BAR(playerLeft);
-        MESSAGE("The opposing Wobbuffet's attack missed!");
+        MESSAGE("Foe Wobbuffet's attack missed!");
         HP_BAR(opponentRight);
     }
 }
@@ -344,7 +344,7 @@ DOUBLE_BATTLE_TEST("Commander Attacker is kept (Dondozo Right Slot)")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponentRight);
         ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
         MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        MESSAGE("The opposing Wobbuffet's attack missed!");
+        MESSAGE("Foe Wobbuffet's attack missed!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SURF, opponentLeft);
         HP_BAR(playerRight);
         HP_BAR(opponentRight);

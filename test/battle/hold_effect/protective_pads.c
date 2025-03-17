@@ -10,7 +10,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Protective Pads protected moves still make direct contact", s16 damage)
 {
     u32 ability;
-    PARAMETRIZE { ability = ABILITY_KLUTZ; }
+    PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
     PARAMETRIZE { ability = ABILITY_FLUFFY; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_PROTECTIVE_PADS); }
@@ -69,7 +69,7 @@ SINGLE_BATTLE_TEST("Protective Pads protects from Rocly Helmet Damage")
         HP_BAR(opponent);
         NONE_OF {
             HP_BAR(player);
-            MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Rocky Helmet!");
+            MESSAGE("Wobbuffet was hurt by foe Wobbuffet's Rocky Helmet!");
         }
     }
 }

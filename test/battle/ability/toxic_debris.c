@@ -7,7 +7,7 @@ ASSUMPTIONS
     ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
 }
 
-SINGLE_BATTLE_TEST("Toxic Debris sets Toxic Spikes on the opposing side if hit by a physical attack")
+SINGLE_BATTLE_TEST("Toxic Debris sets Toxic Spikes on foe side if hit by a physical attack")
 {
     u32 move;
 

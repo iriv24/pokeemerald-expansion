@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Metronome's called powder move fails against Grass Types")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_METRONOME, player);
         MESSAGE("Waggling a finger let it use Poison Powder!");
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_POISON_POWDER, player);
-        MESSAGE("It doesn't affect the opposing Tangela…");
+        MESSAGE("It doesn't affect foe Tangela…");
         NOT STATUS_ICON(opponent, poison: TRUE);
     }
 }
@@ -56,6 +56,6 @@ SINGLE_BATTLE_TEST("Metronome's called multi-hit move hits multiple times")
         MESSAGE("Waggling a finger let it use Rock Blast!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ROCK_BLAST, player);
         HP_BAR(opponent);
-        MESSAGE("The Pokémon was hit 5 time(s)!");
+        MESSAGE("Hit 5 time(s)!");
     }
 }
