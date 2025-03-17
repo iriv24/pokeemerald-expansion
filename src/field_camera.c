@@ -12,7 +12,7 @@
 #include "sprite.h"
 #include "text.h"
 
-EWRAM_DATA bool8 gUnusedBikeCameraAheadPanback = FALSE;
+//EWRAM_DATA bool8 gUnusedBikeCameraAheadPanback = FALSE;   //  Old EWRAM variable that was never set to anything other than false
 
 struct FieldCameraOffset
 {
@@ -462,6 +462,11 @@ void UpdateCameraPanning(void)
 
 static void CameraPanningCB_PanAhead(void)
 {
+    InstallCameraPanAheadCallback();
+    //  Old code kept for archival purposes
+    //  The else condition could never run since gUnusedBikeCameraAheadPanback was never set to TRUE
+    //  So the behavior should not change
+    /*
     u8 var;
 
     if (gUnusedBikeCameraAheadPanback == FALSE)
@@ -502,4 +507,5 @@ static void CameraPanningCB_PanAhead(void)
             sVerticalCameraPan -= 2;
         }
     }
+    */
 }

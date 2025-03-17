@@ -12,6 +12,7 @@
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "main.h"
+#include "malloc.h"
 #include "m4a.h"
 #include "palette.h"
 #include "pokemon.h"
@@ -112,7 +113,7 @@ EWRAM_DATA static u16 sSoundAnimFramesToWait = 0;
 EWRAM_DATA static u8 sMonAnimTaskIdArray[2] = {0};
 EWRAM_DATA u8 gAnimMoveTurn = 0;
 EWRAM_DATA static u8 sAnimBackgroundFadeState = 0;
-EWRAM_DATA u16 gAnimMoveIndex = 0; // Set but unused.
+EWRAM_DATA u16 gAnimMoveIndex = 0;
 EWRAM_DATA u8 gBattleAnimAttacker = 0;
 EWRAM_DATA u8 gBattleAnimTarget = 0;
 EWRAM_DATA u16 gAnimBattlerSpecies[MAX_BATTLERS_COUNT] = {0};
@@ -1570,17 +1571,15 @@ void LoadMoveBg(u16 bgId)
 {
     if (IsContest())
     {
+        void *decompressionBuffer = Alloc(0x800);
         const u32 *tilemap = gBattleAnimBackgroundTable[bgId].tilemap;
-        void *dmaSrc;
-        void *dmaDest;
 
-        LZDecompressWram(tilemap, gDecompressionBuffer);
-        RelocateBattleBgPal(GetBattleBgPaletteNum(), (void *)gDecompressionBuffer, 0x100, FALSE);
-        dmaSrc = gDecompressionBuffer;
-        dmaDest = (void *)BG_SCREEN_ADDR(26);
-        DmaCopy32(3, dmaSrc, dmaDest, 0x800);
+        LZDecompressWram(tilemap, decompressionBuffer);
+        RelocateBattleBgPal(GetBattleBgPaletteNum(), decompressionBuffer, 0x100, FALSE);
+        DmaCopy32(3, decompressionBuffer, (void *)BG_SCREEN_ADDR(26), 0x800);
         LZDecompressVram(gBattleAnimBackgroundTable[bgId].image, (void *)BG_SCREEN_ADDR(4));
         LoadCompressedPalette(gBattleAnimBackgroundTable[bgId].palette, BG_PLTT_ID(GetBattleBgPaletteNum()), PLTT_SIZE_4BPP);
+        Free(decompressionBuffer);
     }
     else
     {

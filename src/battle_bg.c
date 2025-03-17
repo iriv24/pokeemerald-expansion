@@ -703,24 +703,6 @@ const struct BattleBackground sBattleTerrainTable[] =
     },
 };
 
-static void UNUSED CB2_UnusedBattleInit(void);
-
-static void UNUSED UnusedBattleInit(void)
-{
-    u8 spriteId;
-
-    ResetSpriteData();
-    spriteId = CreateSprite(&gUnusedBattleInitSprite, 0, 0, 0);
-    gSprites[spriteId].invisible = TRUE;
-    SetMainCallback2(CB2_UnusedBattleInit);
-}
-
-static void UNUSED CB2_UnusedBattleInit(void)
-{
-    AnimateSprites();
-    BuildOamBuffer();
-}
-
 void BattleInitBgsAndWindows(void)
 {
     ResetBgsAndClearDma3BusyFlags(0);
