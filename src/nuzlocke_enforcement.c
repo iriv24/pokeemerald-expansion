@@ -4,7 +4,7 @@
 
 #include "data/nuzlocke_enforcement_data.h"
 
-bool32 NuEn_IsMoveBanned(u32 move, u32 species, u32 item)
+bool32 NuEn_IsMoveComplexBanned(u32 move, u32 species, u32 item)
 {
     if (move == MOVE_TOXIC || move == MOVE_LEECH_SEED)
     {
@@ -15,10 +15,13 @@ bool32 NuEn_IsMoveBanned(u32 move, u32 species, u32 item)
         else
             return TRUE;
     }
-    else if (sBannedMoves[move])
-    {
+    return FALSE;
+}
+
+bool32 NuEn_IsMoveBanned(u32 move)
+{
+    if (sBannedMoves[move])
         return TRUE;
-    }
     return FALSE;
 }
 

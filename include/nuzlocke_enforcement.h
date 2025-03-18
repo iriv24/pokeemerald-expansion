@@ -5,7 +5,8 @@
 #include "global.h"
 #include "constants/moves.h"
 
-bool32 NuEn_IsMoveBanned(u32 move, u32 species, u32 item);
+bool32 NuEn_IsMoveBanned(u32 move);
+bool32 NuEn_IsMoveComplexBanned(u32 move, u32 species, u32 item);
 bool32 NuEn_IsMonDupe(u32 species);
 
 #endif

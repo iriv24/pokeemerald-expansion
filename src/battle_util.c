@@ -1135,7 +1135,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
     u32 holdEffect = GetBattlerHoldEffect(battler, TRUE);
     u16 *choicedMove = &gBattleStruct->choicedMove[battler];
 
-    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && (gDisableStructs[battler].disabledMove == move || (GetBattlerSide(battler) == B_SIDE_PLAYER && NuEn_IsMoveBanned(move, gBattleMons[battler].species, gBattleMons[battler].item))) && move != MOVE_NONE)
+    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE && (gDisableStructs[battler].disabledMove == move || (GetBattlerSide(battler) == B_SIDE_PLAYER && (NuEn_IsMoveBanned(move) || NuEn_IsMoveComplexBanned(move, gBattleMons[battler].species, gBattleMons[battler].item)))) && move != MOVE_NONE)
     {
         gBattleScripting.battler = battler;
         gCurrentMove = move;
@@ -1438,7 +1438,7 @@ u8 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         // Can't Use Twice flag
         else if (check & MOVE_LIMITATION_CANT_USE_TWICE && gMovesInfo[move].cantUseTwice && move == gLastResultingMoves[battler])
             unusableMoves |= 1u << i;
-        else if (GetBattlerSide(battler) == B_SIDE_PLAYER && NuEn_IsMoveBanned(move, gBattleMons[battler].species, gBattleMons[battler].item))
+        else if (GetBattlerSide(battler) == B_SIDE_PLAYER && (NuEn_IsMoveBanned(move) || NuEn_IsMoveComplexBanned(move, gBattleMons[battler].species, gBattleMons[battler].item)))
             unusableMoves |= 1u << i;
     }
     return unusableMoves;
