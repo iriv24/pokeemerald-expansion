@@ -1943,7 +1943,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         }
 
         bool8 decidedLevel = FALSE;
-        u8 maxLevel;
+        u8 maxLevel = 0;
         u8 playerLevelMinus;
         u8 finalLevel;
         for (i = 0; i < monsCount; i++)
