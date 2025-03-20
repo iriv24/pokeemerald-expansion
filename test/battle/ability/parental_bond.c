@@ -309,9 +309,9 @@ SINGLE_BATTLE_TEST("Parental Bond only triggers Dragon Tail's target switch out 
 SINGLE_BATTLE_TEST("Parental Bond does not trigger on semi-invulnerable moves")
 {
     GIVEN {
-        ASSUME(GetMoveCategory(MOVE_FLY) != DAMAGE_CATEGORY_STATUS);
-        ASSUME(GetMoveStrikeCount(MOVE_FLY) < 2);
-        ASSUME(GetMoveEffect(MOVE_FLY) == EFFECT_SEMI_INVULNERABLE);
+        ASSUME(gMovesInfo[MOVE_FLY].category != DAMAGE_CATEGORY_STATUS);
+        ASSUME(gMovesInfo[MOVE_FLY].strikeCount < 2);
+        ASSUME(gMovesInfo[MOVE_FLY].effect == EFFECT_SEMI_INVULNERABLE);
         PLAYER(SPECIES_KANGASKHAN) { Item(ITEM_KANGASKHANITE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -326,9 +326,9 @@ SINGLE_BATTLE_TEST("Parental Bond does not trigger on semi-invulnerable moves")
 SINGLE_BATTLE_TEST("Parental Bond does not trigger on two turn attacks")
 {
     GIVEN {
-        ASSUME(GetMoveCategory(MOVE_RAZOR_WIND) != DAMAGE_CATEGORY_STATUS);
-        ASSUME(GetMoveStrikeCount(MOVE_RAZOR_WIND) < 2);
-        ASSUME(GetMoveEffect(MOVE_RAZOR_WIND) == EFFECT_TWO_TURNS_ATTACK);
+        ASSUME(gMovesInfo[MOVE_RAZOR_WIND].category != DAMAGE_CATEGORY_STATUS);
+        ASSUME(gMovesInfo[MOVE_RAZOR_WIND].strikeCount < 2);
+        ASSUME(gMovesInfo[MOVE_RAZOR_WIND].effect == EFFECT_TWO_TURNS_ATTACK);
         PLAYER(SPECIES_KANGASKHAN) { Item(ITEM_KANGASKHANITE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
