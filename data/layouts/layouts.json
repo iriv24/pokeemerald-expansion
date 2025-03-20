@@ -4480,6 +4480,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SootopolisCity_ChampHouse/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_ChampHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_GEMSTONE_CAVE",
+      "name": "GemstoneCave_Layout",
+      "width": 50,
+      "height": 45,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Gemstone_Cave",
+      "border_filepath": "data/layouts/GemstoneCave/border.bin",
+      "blockdata_filepath": "data/layouts/GemstoneCave/map.bin"
     }
   ]
 }

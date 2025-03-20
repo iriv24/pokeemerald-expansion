@@ -217,7 +217,8 @@
 #define MAPSEC_FLOATING_SLAB                0xD5
 #define MAPSEC_ROCKY_SLAB                   0xD6
 #define MAPSEC_GRASSY_SLAB                  0xD7
-#define MAPSEC_NONE                         0xD8
+#define MAPSEC_GEMSTONE_CAVE                0xD8
+#define MAPSEC_NONE                         0xD9
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
