@@ -135,7 +135,7 @@ SINGLE_BATTLE_TEST("Pursuit ignores accuracy checks when attacking a switching t
 DOUBLE_BATTLE_TEST("Pursuit attacks switching foes even if not targetting them (Gen 4+)")
 {
     GIVEN {
-        ASSUME(B_PURSUIT_TARGET >= GEN_4);
+        //ASSUME(B_PURSUIT_TARGET >= GEN_4);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_ZIGZAGOON);
         PLAYER(SPECIES_GRIMER);
