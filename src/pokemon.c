@@ -1316,7 +1316,7 @@ STATIC_ASSERT(MOVES_COUNT_ALL < (1 << 11), PokemonSubstruct1_moves_TooSmall);
 STATIC_ASSERT(ARRAY_COUNT(sCompressedStatuses) <= (1 << 4), PokemonSubstruct3_compressedStatus_TooSmall);
 STATIC_ASSERT(MAX_LEVEL < (1 << 7), PokemonSubstruct3_metLevel_TooSmall);
 STATIC_ASSERT(NUM_VERSIONS < (1 << 4), PokemonSubstruct3_metGame_TooSmall);
-STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
+//STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
 STATIC_ASSERT(MAX_PER_STAT_IVS < (1 << 5), PokemonSubstruct3_ivs_TooSmall);
 STATIC_ASSERT(NUM_NATURES <= (1 << 5), BoxPokemon_hiddenNatureModifier_TooSmall);
 
@@ -2889,7 +2889,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct0->pokeball;
             break;
         case MON_DATA_OT_GENDER:
-            retVal = substruct3->otGender;
+            retVal = gSaveBlock2Ptr->playerGender;
             break;
         case MON_DATA_HP_IV:
             retVal = substruct3->hpIV;
@@ -2984,7 +2984,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = 0;
             break;
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            retVal = substruct3->modernFatefulEncounter;
+            retVal = FALSE;
             break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = substruct0->species;
@@ -3065,45 +3065,41 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             }
             break;
         case MON_DATA_HYPER_TRAINED_HP:
-            retVal = substruct1->hyperTrainedHP;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            retVal = substruct1->hyperTrainedAttack;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            retVal = substruct1->hyperTrainedDefense;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            retVal = substruct1->hyperTrainedSpeed;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            retVal = substruct1->hyperTrainedSpAttack;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            retVal = substruct1->hyperTrainedSpDefense;
+            retVal = FALSE;
             break;
         case MON_DATA_IS_SHADOW:
             retVal = FALSE;
             break;
         case MON_DATA_DYNAMAX_LEVEL:
-            retVal = substruct3->dynamaxLevel;
+            retVal = 10;
             break;
         case MON_DATA_GIGANTAMAX_FACTOR:
-            retVal = substruct3->gigantamaxFactor;
+            retVal = FALSE;
             break;
         case MON_DATA_TERA_TYPE:
             if (gSpeciesInfo[substruct0->species].forceTeraType)
             {
                 retVal = gSpeciesInfo[substruct0->species].forceTeraType;
             }
-            else if (substruct0->teraType == TYPE_NONE) // Tera Type hasn't been modified so we can just use the personality
+            else
             {
                 const u8 *types = gSpeciesInfo[substruct0->species].types;
                 retVal = (boxMon->personality & 0x1) == 0 ? types[0] : types[1];
-            }
-            else
-            {
-                retVal = substruct0->teraType;
             }
             break;
         case MON_DATA_EVOLUTION_TRACKER:
@@ -3116,7 +3112,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct3->cantRandomizeAbility;
             break;
         case MON_DATA_IVS_WERE_PERFECTED:
-            retVal = substruct0->ivsWerePerfected;
+            retVal = FALSE;
             break;
         default:
             break;
@@ -3414,7 +3410,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_OT_GENDER:
-            SET8(substruct3->otGender);
+            //SET8(substruct3->otGender);
             break;
         case MON_DATA_HP_IV:
             SET8(substruct3->hpIV);
@@ -3496,7 +3492,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             //SET8(substruct3->worldRibbon);
             break;
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            SET8(substruct3->modernFatefulEncounter);
+            //SET8(substruct3->modernFatefulEncounter);
             break;
         case MON_DATA_IVS:
         {
@@ -3510,37 +3506,37 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_HYPER_TRAINED_HP:
-            SET8(substruct1->hyperTrainedHP);
+            //SET8(substruct1->hyperTrainedHP);
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            SET8(substruct1->hyperTrainedAttack);
+            //SET8(substruct1->hyperTrainedAttack);
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            SET8(substruct1->hyperTrainedDefense);
+            //SET8(substruct1->hyperTrainedDefense);
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            SET8(substruct1->hyperTrainedSpeed);
+            //SET8(substruct1->hyperTrainedSpeed);
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            SET8(substruct1->hyperTrainedSpAttack);
+            //SET8(substruct1->hyperTrainedSpAttack);
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            SET8(substruct1->hyperTrainedSpDefense);
+            //SET8(substruct1->hyperTrainedSpDefense);
             break;
         case MON_DATA_IS_SHADOW:
             //SET8(substruct3->isShadow);
             break;
         case MON_DATA_DYNAMAX_LEVEL:
-            SET8(substruct3->dynamaxLevel);
+            //SET8(substruct3->dynamaxLevel);
             break;
         case MON_DATA_GIGANTAMAX_FACTOR:
-            SET8(substruct3->gigantamaxFactor);
+            //SET8(substruct3->gigantamaxFactor);
             break;
         case MON_DATA_TERA_TYPE:
         {
-            u32 teraType;
-            SET8(teraType);
-            substruct0->teraType = teraType;
+            //u32 teraType;
+            //SET8(teraType);
+            //substruct0->teraType = teraType;
             break;
         }
         case MON_DATA_EVOLUTION_TRACKER:
@@ -3557,7 +3553,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct3->cantRandomizeAbility);
             break;
         case MON_DATA_IVS_WERE_PERFECTED:
-            SET8(substruct0->ivsWerePerfected);
+            //SET8(substruct0->ivsWerePerfected);
             break;
         default:
             break;

@@ -140,7 +140,8 @@ total:      31
 struct PokemonSubstruct0
 {
     u16 species:11; // 2047 species.
-    u16 teraType:5; // 30 types.
+    u16 padding:5;
+    //u16 teraType:5; // 30 types.
     u16 heldItem:10; // 1023 items.
     u16 unused_02:6;
     u32 experience:21;
@@ -150,8 +151,8 @@ struct PokemonSubstruct0
     u8 friendship;
     u16 pokeball:6; // 63 balls.
     u16 nickname12:8; // 12th character of nickname.
-    u8 ivsWerePerfected:1; // TODO iriv remove this
-    u16 unused_0A:1;
+    //u8 ivsWerePerfected:1; // TODO iriv remove this
+    u16 unused_0A:2;
 };
 
 /*
@@ -162,22 +163,31 @@ struct PokemonSubstruct1
 {
     u16 move1:11; // 2047 moves.
     u16 evolutionTracker1:5;
+    //  u16
     u16 move2:11; // 2047 moves.
     u16 evolutionTracker2:5;
+    //  u32
     u16 move3:11; // 2047 moves.
     u16 unused_04:5;
+    //  u16
     u16 move4:11; // 2047 moves.
     u16 unused_06:3;
-    u16 hyperTrainedHP:1;
-    u16 hyperTrainedAttack:1;
+    u16 padding1:2;
+    //  u32
+    //u16 hyperTrainedHP:1;
+    //u16 hyperTrainedAttack:1;
     u8 pp1:7; // 127 PP.
-    u8 hyperTrainedDefense:1;
+    //u8 hyperTrainedDefense:1;
+    u8 padding2:1;
     u8 pp2:7; // 127 PP.
-    u8 hyperTrainedSpeed:1;
+    //u8 hyperTrainedSpeed:1;
+    u8 padding3:1;
     u8 pp3:7; // 127 PP.
-    u8 hyperTrainedSpAttack:1;
+    //u8 hyperTrainedSpAttack:1;
+    u8 padding4:1;
     u8 pp4:7; // 127 PP.
-    u8 hyperTrainedSpDefense:1;
+    //u8 hyperTrainedSpDefense:1;
+    u8 padding5:1;
 };
 
 /*
@@ -215,9 +225,11 @@ struct PokemonSubstruct3
     u8 pokerus;
     u8 metLocation;
     u16 metLevel:7;
-    u16 padding:4;
-    u16 dynamaxLevel:4;
-    u16 otGender:1;
+    u16 padding:9;
+    //  u32
+    //u16 metGame:4;
+    //u16 dynamaxLevel:4;
+    //u16 otGender:1;
     u32 hpIV:5;
     u32 attackIV:5;
     u32 defenseIV:5;
@@ -225,7 +237,8 @@ struct PokemonSubstruct3
     u32 spAttackIV:5;
     u32 spDefenseIV:5;
     u32 isEgg:1;
-    u32 gigantamaxFactor:1;
+    u32 padding1:1;
+    //u32 gigantamaxFactor:1;
     u32 padding2:28;
     //u32 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
     //u32 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
@@ -254,7 +267,8 @@ struct PokemonSubstruct3
     // If set, a Pokémon is a fateful encounter in FRLG's summary screen if hatched & for all Pokémon in Gen 4+ summary screens.
     // Set for in-game event island legendaries, events distributed after a certain date, & Pokémon from XD: Gale of Darkness.
     // Not to be confused with METLOC_FATEFUL_ENCOUNTER.
-    u32 modernFatefulEncounter:1;
+    u32 padding3:1;
+    //u32 modernFatefulEncounter:1;
 };
 
 // Number of bytes in the largest Pokémon substruct.
