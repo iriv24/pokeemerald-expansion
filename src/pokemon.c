@@ -2700,7 +2700,7 @@ union EvolutionTracker
  * number of arguments. */
 u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
-    s32 i;
+    //s32 i;
     u32 retVal = 0;
     struct PokemonSubstruct0 *substruct0 = NULL;
     struct PokemonSubstruct1 *substruct1 = NULL;
@@ -2743,19 +2743,19 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 StringCopy(data, gText_EggNickname);
                 retVal = StringLength(data);
             }
-            else if (boxMon->language == LANGUAGE_JAPANESE)
-            {
-                data[0] = EXT_CTRL_CODE_BEGIN;
-                data[1] = EXT_CTRL_CODE_JPN;
+            //else if (boxMon->language == LANGUAGE_JAPANESE)
+            //{
+            //    data[0] = EXT_CTRL_CODE_BEGIN;
+            //    data[1] = EXT_CTRL_CODE_JPN;
 
-                for (retVal = 2, i = 0;
-                    i < 5 && boxMon->nickname[i] != EOS;
-                    data[retVal] = boxMon->nickname[i], retVal++, i++) {}
+            //    for (retVal = 2, i = 0;
+            //        i < 5 && boxMon->nickname[i] != EOS;
+            //        data[retVal] = boxMon->nickname[i], retVal++, i++) {}
 
-                data[retVal++] = EXT_CTRL_CODE_BEGIN;
-                data[retVal++] = EXT_CTRL_CODE_ENG;
-                data[retVal] = EOS;
-            }
+            //    data[retVal++] = EXT_CTRL_CODE_BEGIN;
+            //    data[retVal++] = EXT_CTRL_CODE_ENG;
+            //    data[retVal] = EOS;
+            //}
             else
             {
                 retVal = 0;
@@ -3135,7 +3135,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = boxMon->otId;
             break;
         case MON_DATA_LANGUAGE:
-            retVal = boxMon->language;
+            retVal = gGameLanguage;
             break;
         case MON_DATA_SANITY_IS_BAD_EGG:
             retVal = boxMon->isBadEgg;
@@ -3160,7 +3160,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         }
         case MON_DATA_MARKINGS:
-            retVal = boxMon->markings;
+            retVal = 15;
             break;
         case MON_DATA_CHECKSUM:
             retVal = boxMon->checksum;
@@ -3178,7 +3178,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         }
         case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-            retVal = boxMon->daysSinceFormChange;
+            retVal = 0;
             break;
         default:
             break;
@@ -3580,7 +3580,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET32(boxMon->otId);
             break;
         case MON_DATA_LANGUAGE:
-            SET8(boxMon->language);
+            //SET8(boxMon->language);
             break;
         case MON_DATA_SANITY_IS_BAD_EGG:
             SET8(boxMon->isBadEgg);
@@ -3599,7 +3599,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_MARKINGS:
-            SET8(boxMon->markings);
+            //SET8(boxMon->markings);
             break;
         case MON_DATA_CHECKSUM:
             SET16(boxMon->checksum);
@@ -3621,7 +3621,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-            SET8(boxMon->daysSinceFormChange);
+            //SET8(boxMon->daysSinceFormChange);
             break;
         }
     }
