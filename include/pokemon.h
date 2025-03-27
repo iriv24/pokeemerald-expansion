@@ -127,6 +127,16 @@ enum {
     MON_RANDOMIZER_INVALID
 };
 
+// can remove:
+/*
+tera:       5
+unused_02:  6
+experience: 14 (partial)
+unused_04:  3
+ivThing:    1
+unused_0A:  1
+total:      31
+*/
 struct PokemonSubstruct0
 {
     u16 species:11; // 2047 species.
@@ -144,6 +154,10 @@ struct PokemonSubstruct0
     u16 unused_0A:1;
 };
 
+/*
+unused: 8
+hyper:  6
+*/
 struct PokemonSubstruct1
 {
     u16 move1:11; // 2047 moves.
@@ -166,6 +180,9 @@ struct PokemonSubstruct1
     u8 hyperTrainedSpDefense:1;
 };
 
+/*
+stuff: 48
+*/
 struct PokemonSubstruct2
 {
     u8 hpEV;
@@ -174,20 +191,31 @@ struct PokemonSubstruct2
     u8 speedEV;
     u8 spAttackEV;
     u8 spDefenseEV;
-    u8 cool;
-    u8 beauty;
-    u8 cute;
-    u8 smart;
-    u8 tough;
-    u8 sheen;
+    u8 padding[6];
+    //u8 cool;
+    //u8 beauty;
+    //u8 cute;
+    //u8 smart;
+    //u8 tough;
+    //u8 sheen;
 };
 
+/*
+ribbons:    27
+shadow:     1
+metGame:    4
+dynamax:    4
+otGender:   1
+gMax:       1
+fateful:    1
+total:      39
+*/
 struct PokemonSubstruct3
 {
     u8 pokerus;
     u8 metLocation;
     u16 metLevel:7;
-    u16 metGame:4;
+    u16 padding:4;
     u16 dynamaxLevel:4;
     u16 otGender:1;
     u32 hpIV:5;
@@ -198,24 +226,25 @@ struct PokemonSubstruct3
     u32 spDefenseIV:5;
     u32 isEgg:1;
     u32 gigantamaxFactor:1;
-    u32 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
-    u32 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
-    u32 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
-    u32 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
-    u32 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
-    u32 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
-    u32 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-    u32 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-    u32 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
-    u32 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
-    u32 marineRibbon:1;   // Never distributed.
-    u32 landRibbon:1;     // Never distributed.
-    u32 skyRibbon:1;      // Never distributed.
-    u32 countryRibbon:1;  // Distributed during Pokémon Festa '04 and '05 to tournament winners.
-    u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
-    u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
-    u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
-    u32 isShadow:1;
+    u32 padding2:28;
+    //u32 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
+    //u32 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
+    //u32 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
+    //u32 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
+    //u32 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
+    //u32 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
+    //u32 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+    //u32 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+    //u32 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
+    //u32 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+    //u32 marineRibbon:1;   // Never distributed.
+    //u32 landRibbon:1;     // Never distributed.
+    //u32 skyRibbon:1;      // Never distributed.
+    //u32 countryRibbon:1;  // Distributed during Pokémon Festa '04 and '05 to tournament winners.
+    //u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
+    //u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
+    //u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
+    //u32 isShadow:1;
     u32 cantRandomizeAbility:1;
     u32 abilityNum:2;
 
@@ -246,6 +275,14 @@ union PokemonSubstruct
     u16 raw[NUM_SUBSTRUCT_BYTES / 2]; // /2 because it's u16, not u8
 };
 
+/*
+language:   3
+blackBoxRS: 1
+daysForm:   3
+unused:     1
+markings:   4
+unused:     1
+*/
 struct BoxPokemon
 {
     u32 personality;
