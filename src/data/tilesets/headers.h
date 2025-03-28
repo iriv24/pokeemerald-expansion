@@ -836,3 +836,14 @@ const struct Tileset gTileset_Gemstone_Cave =
     .metatileAttributes = gMetatileAttributes_Gemstone_Cave,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SapphireCavern =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SapphireCavern,
+    .palettes = gTilesetPalettes_SapphireCavern,
+    .metatiles = gMetatiles_SapphireCavern,
+    .metatileAttributes = gMetatileAttributes_SapphireCavern,
+    .callback = NULL,
+};

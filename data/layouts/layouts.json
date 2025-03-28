@@ -4482,14 +4482,24 @@
       "blockdata_filepath": "data/layouts/SootopolisCity_ChampHouse/map.bin"
     },
     {
-      "id": "LAYOUT_GEMSTONE_CAVE",
-      "name": "GemstoneCave_Layout",
-      "width": 50,
-      "height": 45,
+      "id": "LAYOUT_RUBY_HOLLOW",
+      "name": "RubyHollow_Layout",
+      "width": 56,
+      "height": 48,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Gemstone_Cave",
-      "border_filepath": "data/layouts/GemstoneCave/border.bin",
-      "blockdata_filepath": "data/layouts/GemstoneCave/map.bin"
+      "border_filepath": "data/layouts/RubyHollow/border.bin",
+      "blockdata_filepath": "data/layouts/RubyHollow/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAPPHIRE_CAVERN",
+      "name": "SapphireCavern_Layout",
+      "width": 56,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SapphireCavern",
+      "border_filepath": "data/layouts/SapphireCavern/border.bin",
+      "blockdata_filepath": "data/layouts/SapphireCavern/map.bin"
     }
   ]
 }

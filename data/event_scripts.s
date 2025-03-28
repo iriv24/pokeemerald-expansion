@@ -1180,4 +1180,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/SootopolisCity_ChampHouse/scripts.inc"
 
-	.include "data/maps/GemstoneCave/scripts.inc"
+	.include "data/maps/RubyHollow/scripts.inc"
+
+	.include "data/maps/SapphireCavern/scripts.inc"

@@ -138,7 +138,14 @@
       "x": 0,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_GEMSTONE_CAVE",
+      "dest_map": "MAP_RUBY_HOLLOW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SAPPHIRE_CAVERN",
       "dest_warp_id": "0"
     }
   ],

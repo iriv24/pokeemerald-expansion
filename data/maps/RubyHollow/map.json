@@ -1,8 +1,8 @@
 {
-  "id": "MAP_GEMSTONE_CAVE",
-  "name": "GemstoneCave",
-  "layout": "LAYOUT_GEMSTONE_CAVE",
-  "music": "MUS_DESERT",
+  "id": "MAP_RUBY_HOLLOW",
+  "name": "RubyHollow",
+  "layout": "LAYOUT_RUBY_HOLLOW",
+  "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_DESERT_UNDERPASS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -11,15 +11,15 @@
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": false,
-  "battle_scene": "MAP_BATTLE_SCENE_MAGMA",
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
 
   ],
   "warp_events": [
     {
-      "x": 38,
-      "y": 6,
+      "x": 41,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "3"

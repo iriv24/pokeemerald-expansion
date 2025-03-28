@@ -437,7 +437,8 @@
     "FloatingSlab",
     "RockySlab",
     "GrassySlab",
-    "GemstoneCave"
+    "RubyHollow",
+    "SapphireCavern"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

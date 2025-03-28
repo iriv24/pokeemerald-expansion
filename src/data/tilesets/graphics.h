@@ -1653,3 +1653,22 @@ const u16 gTilesetPalettes_Gemstone_Cave[][16] =
 };
 
 const u32 gTilesetTiles_Gemstone_Cave[] = INCBIN_U32("data/tilesets/secondary/gemstone_cave/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_SapphireCavern[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/sapphire_cavern/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_SapphireCavern[] = INCBIN_U32("data/tilesets/secondary/sapphire_cavern/tiles.4bpp.lz");
