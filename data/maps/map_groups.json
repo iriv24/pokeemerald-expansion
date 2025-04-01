@@ -438,7 +438,8 @@
     "RockySlab",
     "GrassySlab",
     "RubyHollow",
-    "SapphireCavern"
+    "SapphireCavern",
+    "EmeraldGrotto"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

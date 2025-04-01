@@ -1183,3 +1183,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RubyHollow/scripts.inc"
 
 	.include "data/maps/SapphireCavern/scripts.inc"
+
+	.include "data/maps/EmeraldGrotto/scripts.inc"

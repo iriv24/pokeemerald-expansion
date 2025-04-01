@@ -4500,6 +4500,16 @@
       "secondary_tileset": "gTileset_SapphireCavern",
       "border_filepath": "data/layouts/SapphireCavern/border.bin",
       "blockdata_filepath": "data/layouts/SapphireCavern/map.bin"
+    },
+    {
+      "id": "LAYOUT_EMERALD_GROTTO",
+      "name": "EmeraldGrotto_Layout",
+      "width": 57,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Emerald_grotto",
+      "border_filepath": "data/layouts/EmeraldGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/EmeraldGrotto/map.bin"
     }
   ]
 }

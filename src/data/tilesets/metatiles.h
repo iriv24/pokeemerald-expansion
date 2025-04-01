@@ -213,3 +213,6 @@ const u16 gMetatileAttributes_Gemstone_Cave[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_SapphireCavern[] = INCBIN_U16("data/tilesets/secondary/sapphire_cavern/metatiles.bin");
 const u16 gMetatileAttributes_SapphireCavern[] = INCBIN_U16("data/tilesets/secondary/sapphire_cavern/metatile_attributes.bin");
+
+const u16 gMetatiles_Emerald_grotto[] = INCBIN_U16("data/tilesets/secondary/emerald_grotto/metatiles.bin");
+const u16 gMetatileAttributes_Emerald_grotto[] = INCBIN_U16("data/tilesets/secondary/emerald_grotto/metatile_attributes.bin");

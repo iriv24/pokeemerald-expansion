@@ -147,6 +147,13 @@
       "elevation": 0,
       "dest_map": "MAP_SAPPHIRE_CAVERN",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_EMERALD_GROTTO",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
