@@ -2981,19 +2981,108 @@ bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move
     return TRUE;
 }
 
-bool32 ShouldPoisonSelf(u32 battler, u32 ability)
+static inline bool32 DoesBattlerBenefitFromAllVolatileStatus(u32 battler, u32 ability)
 {
-    if (CanBePoisoned(battler, battler, GetBattlerAbility(battler)) && (
-     ability == ABILITY_MARVEL_SCALE
-      || ability == ABILITY_POISON_HEAL
-      || ability == ABILITY_QUICK_FEET
-      || ability == ABILITY_MAGIC_GUARD
-      || (ability == ABILITY_TOXIC_BOOST && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
-      || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
-      || HasMoveEffect(battler, EFFECT_FACADE)
-      || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT)))
-        return TRUE;    // battler can be poisoned and has move/ability that synergizes with being poisoned
+    if (ability == ABILITY_MARVEL_SCALE
+     || ability == ABILITY_QUICK_FEET
+     || ability == ABILITY_MAGIC_GUARD
+     || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
+     || HasMoveEffect(battler, EFFECT_FACADE)
+     || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT))
+        return TRUE;
     return FALSE;
+}
+
+bool32 ShouldPoison(u32 battlerAtk, u32 battlerDef)
+{
+    u32 defAbility = GetBattlerAbility(battlerDef);
+    // Battler can be poisoned and has move/ability that synergizes with being poisoned
+    if (CanBePoisoned(battlerAtk, battlerDef, GetBattlerAbility(battlerDef)) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)
+        || defAbility == ABILITY_POISON_HEAL
+        || (defAbility == ABILITY_TOXIC_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))))
+    {
+        if (battlerAtk == battlerDef) // Targeting self
+            return TRUE;
+        else
+            return FALSE;
+    }
+    if (battlerAtk == battlerDef)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef)
+{
+    u32 defAbility = GetBattlerAbility(battlerDef);
+    // Battler can be burned and has move/ability that synergizes with being burned
+    if (CanBeBurned(battlerDef, defAbility) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)
+        || defAbility == ABILITY_HEATPROOF
+        || (defAbility == ABILITY_FLARE_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))))
+    {
+        if (battlerAtk == battlerDef) // Targeting self
+            return TRUE;
+        else
+            return FALSE;
+    }
+
+    if (battlerAtk == battlerDef)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef)
+{
+    if (!B_USE_FROSTBITE)
+    {
+        if (CanBeFrozen(battlerDef))
+        {
+            if (battlerAtk == battlerDef) // Targeting self
+                return FALSE;
+            else
+                return TRUE;
+        }
+        return FALSE;
+    }
+    else
+    {
+        u32 defAbility = GetBattlerAbility(battlerDef);
+        // Battler can be frostbitten and has move/ability that synergizes with being frostbitten
+        if (CanBeFrozen(battlerDef) && 
+            DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility))
+        {
+            if (battlerAtk == battlerDef) // Targeting self
+                return TRUE;
+            else
+                return FALSE;
+        }
+    
+        if (battlerAtk == battlerDef)
+            return FALSE;
+        else
+            return TRUE;
+    }
+}
+
+bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef)
+{
+    u32 defAbility = GetBattlerAbility(battlerDef);
+    // Battler can be paralyzed and has move/ability that synergizes with being paralyzed
+    if (CanBeParalyzed(battlerDef, defAbility) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)))
+    {
+        if (battlerAtk == battlerDef) // Targeting self
+            return TRUE;
+        else
+            return FALSE;
+    }
+    if (battlerAtk == battlerDef)
+        return FALSE;
+    else
+        return TRUE;
 }
 
 bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
@@ -3057,20 +3146,6 @@ bool32 AI_CanGetFrostbite(u32 battler, u32 ability)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
         return FALSE;
     return TRUE;
-}
-
-bool32 ShouldBurnSelf(u32 battler, u32 ability)
-{
-    if (CanBeBurned(battler, ability) && (
-     ability == ABILITY_QUICK_FEET
-      || ability == ABILITY_HEATPROOF
-      || ability == ABILITY_MAGIC_GUARD
-      || (ability == ABILITY_FLARE_BOOST && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
-      || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
-      || HasMoveEffect(battler, EFFECT_FACADE)
-      || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT)))
-        return TRUE;
-    return FALSE;
 }
 
 bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
