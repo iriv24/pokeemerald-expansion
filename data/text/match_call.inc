@@ -2273,7 +2273,7 @@ MatchCall_Text_Phoebe::
 	.string "Pokémon.$"
 
 MatchCall_Text_Glacia::
-	.string "Glacia Hello, {PLAYER}.\p"
+	.string "Glacia: Hello, {PLAYER}.\p"
 	.string "I trust you haven't become\n"
 	.string "complacent with your power?\p"
 	.string "If you feel the need to cool your\n"
@@ -2281,7 +2281,7 @@ MatchCall_Text_Glacia::
 	.string "to the Pokémon League…$"
 
 MatchCall_Text_Drake::
-	.string "DRAKE: That voice… {PLAYER}, is it?\n"
+	.string "Cynthia: That voice… {PLAYER}, is it?\n"
 	.string "You sound well…\p"
 	.string "I understand that there is now\n"
 	.string "a facility called the BATTLE\l"
