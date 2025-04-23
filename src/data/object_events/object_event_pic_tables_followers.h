@@ -4959,6 +4959,14 @@ static const struct SpriteFrameImage sPicTable_ZygardeComplete[] = {
 static const struct SpriteFrameImage sPicTable_Diancie[] = {
     overworld_ascending_frames(gObjectEventPic_Diancie, 4, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_DiancieRuby[] = {
+    overworld_ascending_frames(gObjectEventPic_DiancieRuby, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_DiancieSapphire[] = {
+    overworld_ascending_frames(gObjectEventPic_DiancieSapphire, 4, 4),
+};
 #if P_MEGA_EVOLUTIONS
 /*static const struct SpriteFrameImage sPicTable_DiancieMega[] = {
     overworld_ascending_frames(gObjectEventPic_DiancieMega, 4, 4),

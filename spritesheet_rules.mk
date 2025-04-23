@@ -3300,6 +3300,12 @@ $(POKEMONGFXDIR)/zygarde/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/diancie/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(POKEMONGFXDIR)/diancie/ruby/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/diancie/sapphire/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(POKEMONGFXDIR)/hoopa/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

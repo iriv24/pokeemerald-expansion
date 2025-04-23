@@ -959,4 +959,138 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .formChangeTable = sPalkiaFormChangeTable,
             .randomizerMode = MON_RANDOMIZER_INVALID
         },
+
+        [SPECIES_DIANCIE_RUBY] =
+        {
+            .baseHP        = 50,
+            .baseAttack    = 100,
+            .baseDefense   = 150,
+            .baseSpeed     = 50,
+            .baseSpAttack  = 100,
+            .baseSpDefense = 150,
+            .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
+            .catchRate = 3,
+            .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
+            .evYield_Defense = 1,
+            .evYield_SpDefense = 2,
+            .genderRatio = MON_GENDERLESS,
+            .eggCycles = 25,
+            .friendship = STANDARD_FRIENDSHIP,
+            .growthRate = GROWTH_SLOW,
+            .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+            .abilities = {    ABILITY_CLEAR_BODY,   ABILITY_NONE,   ABILITY_NONE   },
+            .bodyColor = BODY_COLOR_PINK,
+            .speciesName = _("Diancie"),
+            .cryId = CRY_DIANCIE,
+            .natDexNum = NATIONAL_DEX_DIANCIE,
+            .categoryName = _("Jewel"),
+            .height = 7,
+            .weight = 88,
+            .description = COMPOUND_STRING(
+                "A sudden transformation of Carbink,\n"
+                "its pink, glimmering body is said to be\n"
+                "the loveliest sight in the whole world.\n"
+                "It creates diamonds between its hands."),
+            .pokemonScale = 365,
+            .pokemonOffset = 12,
+            .trainerScale = 256,
+            .trainerOffset = 0,
+            .frontPic = gMonFrontPic_DiancieRuby, // here
+            .frontPicSize = MON_COORDS_SIZE(40, 64),
+            .frontPicYOffset = 1,
+            .frontAnimFrames = sAnims_Diancie,
+            .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+            .backPic = gMonBackPic_DiancieRuby, // here
+            .backPicSize = MON_COORDS_SIZE(64, 64),
+            .backPicYOffset = 7,
+            //.backAnimId = BACK_ANIM_NONE,
+            .palette = gMonPalette_DiancieRuby, // here
+            .shinyPalette = gMonShinyPalette_DiancieRuby, // here
+            .iconSprite = gMonIcon_DiancieRuby, // here
+            .iconPalIndex = 4,
+            SHADOW(0, 13, SHADOW_SIZE_S)
+            FOOTPRINT(Diancie)
+            OVERWORLD(
+                sPicTable_DiancieRuby,
+                SIZE_32x32,
+                SHADOW_SIZE_M,
+                TRACKS_FOOT,
+                gOverworldPalette_DiancieRuby,
+                gShinyOverworldPalette_DiancieRuby
+            )
+            .isMythical = TRUE,
+            .isFrontierBanned = TRUE,
+            .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+            .levelUpLearnset = sDiancieLevelUpLearnset,
+            .teachableLearnset = sDiancieTeachableLearnset,
+            //.formSpeciesIdTable = sDiancieFormSpeciesIdTable,
+            //.formChangeTable = sDiancieFormChangeTable,
+        },
+
+        [SPECIES_DIANCIE_SAPPHIRE] =
+        {
+            .baseHP        = 50,
+            .baseAttack    = 100,
+            .baseDefense   = 150,
+            .baseSpeed     = 50,
+            .baseSpAttack  = 100,
+            .baseSpDefense = 150,
+            .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
+            .catchRate = 3,
+            .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
+            .evYield_Defense = 1,
+            .evYield_SpDefense = 2,
+            .genderRatio = MON_GENDERLESS,
+            .eggCycles = 25,
+            .friendship = STANDARD_FRIENDSHIP,
+            .growthRate = GROWTH_SLOW,
+            .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+            .abilities = {    ABILITY_CLEAR_BODY,   ABILITY_NONE,   ABILITY_NONE   },
+            .bodyColor = BODY_COLOR_PINK,
+            .speciesName = _("Diancie"),
+            .cryId = CRY_DIANCIE,
+            .natDexNum = NATIONAL_DEX_DIANCIE,
+            .categoryName = _("Jewel"),
+            .height = 7,
+            .weight = 88,
+            .description = COMPOUND_STRING(
+                "A sudden transformation of Carbink,\n"
+                "its pink, glimmering body is said to be\n"
+                "the loveliest sight in the whole world.\n"
+                "It creates diamonds between its hands."),
+            .pokemonScale = 365,
+            .pokemonOffset = 12,
+            .trainerScale = 256,
+            .trainerOffset = 0,
+            .frontPic = gMonFrontPic_DiancieSapphire, // here
+            .frontPicSize = MON_COORDS_SIZE(40, 64),
+            .frontPicYOffset = 1,
+            .frontAnimFrames = sAnims_Diancie,
+            .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+            .backPic = gMonBackPic_DiancieSapphire, // here
+            .backPicSize = MON_COORDS_SIZE(64, 64),
+            .backPicYOffset = 7,
+            //.backAnimId = BACK_ANIM_NONE,
+            .palette = gMonPalette_DiancieSapphire, // here
+            .shinyPalette = gMonShinyPalette_DiancieSapphire, // here
+            .iconSprite = gMonIcon_DiancieSapphire, // here
+            .iconPalIndex = 0,
+            SHADOW(0, 13, SHADOW_SIZE_S)
+            FOOTPRINT(Diancie)
+            OVERWORLD(
+                sPicTable_DiancieSapphire,
+                SIZE_32x32,
+                SHADOW_SIZE_M,
+                TRACKS_FOOT,
+                gOverworldPalette_DiancieSapphire,
+                gShinyOverworldPalette_DiancieSapphire
+            )
+            .isMythical = TRUE,
+            .isFrontierBanned = TRUE,
+            .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+            .levelUpLearnset = sDiancieLevelUpLearnset,
+            .teachableLearnset = sDiancieTeachableLearnset,
+            //.formSpeciesIdTable = sDiancieFormSpeciesIdTable,
+            //.formChangeTable = sDiancieFormChangeTable,
+        },
 };
