@@ -623,7 +623,7 @@ Route128_Text_StevenWhereIsDrake:
 # 312 "data/maps/Route128/scripts.pory"
 	.string "I haven't heard anything from him since\n"
 # 313 "data/maps/Route128/scripts.pory"
-	.string "we you both left Mossdeep…\p"
+	.string "you both left Mossdeep…\p"
 # 314 "data/maps/Route128/scripts.pory"
 	.string "There's no point discussing here,\n"
 # 315 "data/maps/Route128/scripts.pory"
