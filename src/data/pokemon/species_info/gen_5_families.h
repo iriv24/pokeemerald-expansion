@@ -1784,9 +1784,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_UNFEZANT] =
     {
         .baseHP        = 80,
-        .baseAttack    = 105,
+        .baseAttack    = 115,
         .baseDefense   = 80,
-        .baseSpeed     = 93,
+        .baseSpeed     = 108,
         .baseSpAttack  = 65,
         .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
