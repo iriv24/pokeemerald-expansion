@@ -478,7 +478,7 @@ static const struct MenuAction sMenuActions_Gender[] = {
 };
 
 static const u8 *const sMalePresetNames[] = {
-    COMPOUND_STRING("Zal"),
+    COMPOUND_STRING("Stu"),
     COMPOUND_STRING("Milton"),
     COMPOUND_STRING("Tom"),
     COMPOUND_STRING("Kenny"),
