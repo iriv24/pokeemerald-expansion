@@ -10352,6 +10352,7 @@ static const u16 sSneaselHisuiTeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
+    MOVE_ICE_PUNCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -10402,6 +10403,7 @@ static const u16 sSneaslerTeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
+    MOVE_ICE_PUNCH,
     MOVE_UNAVAILABLE,
 };
 #endif //P_HISUIAN_FORMS

@@ -2060,6 +2060,18 @@ static const u16 sSneaselEggMoveLearnset[] = {
     MOVE_THROAT_CHOP,
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sSneaselHisuiEggMoveLearnset[] = {
+    MOVE_COUNTER,
+    MOVE_DOUBLE_HIT,
+    MOVE_FAKE_OUT,
+    MOVE_FEINT,
+    MOVE_ICE_PUNCH,
+    MOVE_PURSUIT,
+    MOVE_QUICK_GUARD,
+    MOVE_SWITCHEROO,
+    MOVE_UNAVAILABLE,
+};
 #endif //P_FAMILY_SNEASEL
 
 #if P_FAMILY_TEDDIURSA
