@@ -1057,6 +1057,8 @@ static const u16 sPikachuLibreTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
     MOVE_CLOSE_COMBAT,
+    MOVE_AURA_SPHERE,
+    MOVE_FOCUS_BLAST,
     MOVE_UNAVAILABLE,
 };
 
@@ -1092,6 +1094,7 @@ static const u16 sPikachuPopStarTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
     MOVE_DAZZLING_GLEAM,
+    MOVE_MOONBLAST,
     MOVE_UNAVAILABLE,
 };
 
@@ -1163,6 +1166,8 @@ static const u16 sPikachuBelleTeachableLearnset[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
     MOVE_ICICLE_SPEAR,
+    MOVE_ICICLE_CRASH,
+    MOVE_ICE_BEAM,
     MOVE_UNAVAILABLE,
 };
 
