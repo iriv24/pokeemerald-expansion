@@ -1006,6 +1006,18 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonShinyPalette_PikachuLibre[] = INCBIN_U32("graphics/pokemon/pikachu/libre/shiny.gbapal.lz");
     const u8 gMonIcon_PikachuLibre[] = INCBIN_U8("graphics/pokemon/pikachu/libre/icon.4bpp");
 
+    const u32 gMonFrontPic_PikachuSurfing[] = INCBIN_U32("graphics/pokemon/pikachu/surfing/front.4bpp.lz");
+    const u32 gMonPalette_PikachuSurfing[] = INCBIN_U32("graphics/pokemon/pikachu/surfing/normal.gbapal.lz");
+    const u32 gMonBackPic_PikachuSurfing[] = INCBIN_U32("graphics/pokemon/pikachu/surfing/back.4bpp.lz");
+    const u32 gMonShinyPalette_PikachuSurfing[] = INCBIN_U32("graphics/pokemon/pikachu/surfing/shiny.gbapal.lz");
+    const u8 gMonIcon_PikachuSurfing[] = INCBIN_U8("graphics/pokemon/pikachu/surfing/icon.4bpp");
+
+    const u32 gMonFrontPic_PikachuFlying[] = INCBIN_U32("graphics/pokemon/pikachu/flying/front.4bpp.lz");
+    const u32 gMonPalette_PikachuFlying[] = INCBIN_U32("graphics/pokemon/pikachu/flying/normal.gbapal.lz");
+    const u32 gMonBackPic_PikachuFlying[] = INCBIN_U32("graphics/pokemon/pikachu/flying/back.4bpp.lz");
+    const u32 gMonShinyPalette_PikachuFlying[] = INCBIN_U32("graphics/pokemon/pikachu/flying/shiny.gbapal.lz");
+    const u8 gMonIcon_PikachuFlying[] = INCBIN_U8("graphics/pokemon/pikachu/flying/icon.4bpp");
+
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_PikachuCosplay[] = INCBIN_COMP("graphics/pokemon/pikachu/cosplay/overworld.4bpp");
     // const u32 gObjectEventPic_PikachuRockStar[] = INCBIN_COMP("graphics/pokemon/pikachu/rock_star/overworld.4bpp");
