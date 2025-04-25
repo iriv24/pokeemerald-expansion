@@ -872,6 +872,7 @@ RustboroCity_EventScript_MayBrineyHint::
 	end
 
 RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage::
+    msgbox RustboroCity_Text_RivalExplainFlyFromPokeNav
 	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -981,6 +982,7 @@ RustboroCity_EventScript_BrendanBrineyHint::
 	end
 
 RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage::
+	msgbox RustboroCity_Text_RivalExplainFlyFromPokeNav, MSGBOX_DEFAULT
 	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -1299,6 +1301,25 @@ RustboroCity_Text_BrendanMrBrineyHint:
 	.string "I bet you didn't know this, since you\n"
 	.string "just moved here, {PLAYER}, but\l"
 	.string "Mr. Briney was once a great sailor.$"
+
+RustboroCity_Text_RivalExplainFlyFromPokeNav:
+	.string "Oh by the way, {PLAYER}, check out\n"
+	.string "this new feature you can add to your\l"
+	.string "PokéNav.\l"
+	.string "Here, let me borrow yours for a second.\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "There we go! One of the developers\n"
+	.string "from the Devon Corporation showed\l"
+	.string "me how to do that.\p"
+	.string "I just installed a new feature into\n"
+	.string "your PokéNav that will allow you to Fly\l"
+	.string "anywhere you've previously been, just\l"
+	.string "from looking at the map!\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}If you hover over a town or city that\n"
+	.string "you've visited in the PokéNav's map, you\l"
+	.string "will see an option to press the “R”\l"
+	.string "button to Fly there.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Isn't that cool?$"
 
 RustboroCity_Text_TunnelNearingCompletion:
 	.string "“Timesaving tunnel nearing\n"

@@ -471,7 +471,6 @@ Route110_EventScript_BrendanDefeated::
 Route110_EventScript_GiveFly::
 	giveitem ITEM_HM_FLY
 	msgbox Route110_Text_RivalExplainFlyHM, MSGBOX_DEFAULT
-	msgbox Route110_Text_RivalExplainFlyFromPokeNav, MSGBOX_DEFAULT
 	return
 
 Route110_EventScript_GiveRestOfItems::
@@ -958,25 +957,6 @@ Route110_Text_RivalExplainFlyHM:
 	.string "Badge requirement to use it has been\l"
 	.string "removed! If you don't believe me, give\l"
 	.string "it a try!$"
-
-Route110_Text_RivalExplainFlyFromPokeNav:
-	.string "On the topic of Flying, let me borrow\n"
-	.string "your PokéNav for a second.\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "There we go! One of the developers\n"
-	.string "from the Devon Corporation showed\l"
-	.string "me how to do that.\p"
-	.string "I just installed a new feature into\n"
-	.string "your PokéNav that will allow you to Fly\l"
-	.string "anywhere you've previously been, just\l"
-	.string "from looking at the map!\p"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}If you hover over a town or city that\n"
-	.string "you've visited in the PokéNav's map, you\l"
-	.string "will see an option to press the “R”\l"
-	.string "button to Fly there.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Isn't that cool?\p"
-	.string "Now you have two convenient options\n"
-	.string "to Fly around Hoenn.$"
 
 Route110_Text_RivalThatsNotAll::
 	.string "That's not all I have for you.\n"
