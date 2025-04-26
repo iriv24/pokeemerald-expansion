@@ -818,10 +818,10 @@ AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player'
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
-        ASSUME(GetMovePriority(MOVE_QUICK_ATTACK) == 1);
-        ASSUME(IsSoundMove(MOVE_BOOMBURST));
-        ASSUME(IsBallisticMove(MOVE_BULLET_SEED));
-        ASSUME(GetMoveCategory(MOVE_TAIL_WHIP) == DAMAGE_CATEGORY_STATUS);
+        ASSUME(gMovesInfo[MOVE_QUICK_ATTACK].priority == 1);
+        ASSUME(gMovesInfo[MOVE_BOOMBURST].soundMove == TRUE);
+        ASSUME(gMovesInfo[MOVE_BULLET_SEED].ballisticMove == TRUE);
+        ASSUME(gMovesInfo[MOVE_TAIL_WHIP].category == DAMAGE_CATEGORY_STATUS);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(playerMon) { Ability(ability); }
@@ -875,8 +875,8 @@ AI_SINGLE_BATTLE_TEST("AI won't use thawing moves if target is frozen unless it 
 
     GIVEN {
         ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);
-        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
-        ASSUME(GetMoveCategory(MOVE_WATER_GUN) == DAMAGE_CATEGORY_SPECIAL);
+        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(gMovesInfo[MOVE_WATER_GUN].category == DAMAGE_CATEGORY_SPECIAL);
         ASSUME(gMovesInfo[MOVE_SCALD].thawsUser == TRUE);
         AI_FLAGS(aiFlags | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE); Status1(status); }

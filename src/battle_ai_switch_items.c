@@ -76,6 +76,14 @@ static inline bool32 SetSwitchinAndSwitch(u32 battler, u32 switchinId)
     return TRUE;
 }
 
+static bool32 AI_DoesChoiceItemBlockMove(u32 battler, u32 move)
+{
+    // Choice locked into something else
+    if (AI_DATA->lastUsedMove[battler] != MOVE_NONE && AI_DATA->lastUsedMove[battler] != move && HOLD_EFFECT_CHOICE(GetBattlerHoldEffect(battler, FALSE)) && IsBattlerItemEnabled(battler))
+        return TRUE;
+    return FALSE;
+}
+
 // Note that as many return statements as possible are INTENTIONALLY put after all of the loops;
 // the function can take a max of about 0.06s to run, and this prevents the player from identifying
 // whether the mon will switch or not by seeing how long the delay is before they select a move
@@ -105,7 +113,6 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
     defType1 = gBattleMons[battler].types[0];
     defType2 = gBattleMons[battler].types[1];
 
-    // Check AI moves for damage dealt
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         aiMove = gBattleMons[battler].moves[i];
@@ -127,17 +134,16 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
             if (gMovesInfo[aiMove].power != 0)
             {
                 // Check if mon has a super effective move
-                if (AI_GetMoveEffectiveness(aiMove, battler, opposingBattler) >= AI_EFFECTIVENESS_x2)
+                if (AI_GetMoveEffectiveness(aiMove, battler, opposingBattler) >= AI_EFFECTIVENESS_x2 && !AI_DoesChoiceItemBlockMove(battler, aiMove))
                     hasSuperEffectiveMove = TRUE;
 
                 // Get maximum damage mon can deal
                 damageDealt = AI_DATA->simulatedDmg[battler][opposingBattler][i].highestRoll;
-                if(damageDealt > maxDamageDealt)
+                if(damageDealt > maxDamageDealt && !AI_DoesChoiceItemBlockMove(battler, aiMove))
                 {
                     maxDamageDealt = damageDealt;
                     aiBestMove = aiMove;
                 }
-
             }
         }
     }
@@ -891,10 +897,18 @@ static bool32 ShouldSwitchIfEncored(u32 battler)
 static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
 {
     u32 holdEffect = GetBattlerHoldEffect(battler, FALSE);
+    u32 lastUsedMove = AI_DATA->lastUsedMove[battler];
+    u32 opposingBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler)));
+    bool32 moveAffectsTarget = TRUE;
+
+    if (lastUsedMove != MOVE_NONE && (AI_GetMoveEffectiveness(lastUsedMove, battler, opposingBattler) == UQ_4_12(0.0)
+        || CanAbilityAbsorbMove(battler, opposingBattler, AI_DATA->abilities[opposingBattler], lastUsedMove, GetMoveType(lastUsedMove))
+        || CanAbilityBlockMove(battler, opposingBattler, lastUsedMove, AI_DATA->abilities[opposingBattler])))
+        moveAffectsTarget = FALSE;
 
     if (HOLD_EFFECT_CHOICE(holdEffect) && IsBattlerItemEnabled(battler))
     {
-        if (gMovesInfo[AI_DATA->lastUsedMove[battler]].category == DAMAGE_CATEGORY_STATUS)
+        if ((gMovesInfo[AI_DATA->lastUsedMove[battler]].category == DAMAGE_CATEGORY_STATUS || !moveAffectsTarget))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
 
