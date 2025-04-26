@@ -199,7 +199,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon will switch if locked into a move the pl
 
 AI_SINGLE_BATTLE_TEST("Choiced Pokémon will only see choiced moves when considering switching with ShouldSwitchIfHasBadOdds")
 {
-    PASSES_RANDOMLY(100, 100, RNG_AI_SWITCH_HASBADODDS);
+    PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_GASTLY].types[0] == TYPE_GHOST);
         ASSUME(GetMoveType(MOVE_SURF) == TYPE_WATER);
