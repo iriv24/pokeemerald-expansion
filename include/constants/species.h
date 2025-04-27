@@ -1645,9 +1645,11 @@
 #define SPECIES_PALKIA_PRIMAL                           1530
 #define SPECIES_ROSERADE_MEGA                           1531
 #define SPECIES_DUSKNOIR_MEGA                           1532
-#define SPECIES_DIANCIE_RUBY                            1533
-#define SPECIES_DIANCIE_SAPPHIRE                        1534
-#define SPECIES_MIMIKYU_BUSTED_TOTEM                    1535
+#define SPECIES_PIKACHU_SURFING                         1533
+#define SPECIES_PIKACHU_FLYING                          1534
+#define SPECIES_DIANCIE_RUBY                            1535
+#define SPECIES_DIANCIE_SAPPHIRE                        1536
+#define SPECIES_MIMIKYU_BUSTED_TOTEM                    1537
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
 

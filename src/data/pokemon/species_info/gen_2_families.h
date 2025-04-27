@@ -5067,6 +5067,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSneaselHisuiLevelUpLearnset,
         .teachableLearnset = sSneaselHisuiTeachableLearnset,
         .formSpeciesIdTable = sSneaselFormSpeciesIdTable,
+        .eggMoveLearnset = sSneaselHisuiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 47, SPECIES_SNEASLER}),
     },
 

@@ -310,7 +310,7 @@ Route128_Text_StevenWhereIsDrake:
 	.string "happen to see him when you pursued\l"
 	.string "Team Aqua?\p"
 	.string "I haven't heard anything from him since\n"
-	.string "we you both left Mossdeep…\p"
+	.string "you both left Mossdeep…\p"
 	.string "There's no point discussing here,\n"
 	.string "Sootopolis might give us some answers.\p"
 	.string "{PLAYER}{KUN}…\n"

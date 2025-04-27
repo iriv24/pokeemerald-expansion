@@ -1124,7 +1124,7 @@ struct SaveBlock1
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
                u8 dexNavSearchLevels[NUM_SPECIES];
-               u8 unused_speciesPadding[100];
+               u8 unused_speciesPadding[98];         // if you increase NUM_SPECIES, decrease this by the same amount: 1533->1535;100->98
                u8 dexNavChain;
                u8 registeredItemLastSelected:4; //max 16 items
                u8 registeredItemListCount:4;

@@ -2274,7 +2274,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SUPREME_OVERLORD] =
     {
         .name = _("Supreme Overlord"),
-        .description = COMPOUND_STRING("Boosts power dependning on\nfainted allies."),
+        .description = COMPOUND_STRING("Boosts power depending on\nfainted allies."),
         .aiRating = 6,
     },
 
