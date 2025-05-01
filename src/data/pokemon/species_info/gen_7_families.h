@@ -1910,7 +1910,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .evolutions = EVOLUTION({EVO_LEVEL_DAY, 25, SPECIES_LYCANROC_MIDDAY},
                                 {EVO_LEVEL_NIGHT, 25, SPECIES_LYCANROC_MIDNIGHT},
                                 {EVO_LEVEL_DUSK, 25, SPECIES_LYCANROC_DUSK}),
-        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM
     },
 
     [SPECIES_ROCKRUFF_OWN_TEMPO] =
