@@ -6456,7 +6456,8 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
         return FALSE;
 
     return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE
-        || (ability == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gCurrentMove)));
+        || (ability == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gCurrentMove))
+        || (ability == ABILITY_BONE_ZONE && gMovesInfo[gCurrentMove].boneMove == TRUE));
 }
 
 static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
@@ -10400,6 +10401,22 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
     }
     else if (moveType == TYPE_POISON && defType == TYPE_STEEL
         && abilityAtk == ABILITY_CORROSION
+        && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (recordAbilities)
+            RecordAbilityBattle(battlerAtk, abilityAtk);
+    }
+    else if (moveType == TYPE_GROUND && defType == TYPE_FLYING
+        && abilityAtk == ABILITY_BONE_ZONE
+        && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (recordAbilities)
+            RecordAbilityBattle(battlerAtk, abilityAtk);
+    }
+    else if (moveType == TYPE_GHOST && defType == TYPE_NORMAL
+        && abilityAtk == ABILITY_BONE_ZONE
         && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);

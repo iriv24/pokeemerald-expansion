@@ -558,7 +558,9 @@ struct MoveInfo
     u32 parentalBondBanned:1;
     u32 skyBattleBanned:1;
     u32 sketchBanned:1;
-    u32 padding:5; // end of word
+    u32 kickingMove:1;
+    u32 boneMove:1;
+    u32 padding:3; // end of word
 
     u32 argument;
 
@@ -570,7 +572,6 @@ struct MoveInfo
     u8 contestCategory:3;
     u8 contestComboStarterId;
     u8 contestComboMoves[MAX_COMBO_MOVES];
-    u32 kickingMove:1;
     const u8 *battleAnimScript;
 };
 
