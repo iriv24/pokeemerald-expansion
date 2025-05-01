@@ -329,6 +329,7 @@ static const u16 sRandomizerAbilityWhitelist[] =
     ABILITY_BAD_COMPANY,
     ABILITY_BULL_RUSH,
     ABILITY_QUILL_RUSH,
+    ABILITY_BONE_ZONE
 };
 
 #define ABILITY_WHITELIST_SIZE     (NELEMS(sRandomizerAbilityWhitelist))
