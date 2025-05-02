@@ -5186,8 +5186,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomHeat,
             gShinyOverworldPalette_RotomHeat
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotomHeatLevelUpLearnset,
+        .teachableLearnset = sRotomHeatTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
         .formChangeTable = sRotomFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
@@ -5253,8 +5253,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomWash,
             gShinyOverworldPalette_RotomWash
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotomWashLevelUpLearnset,
+        .teachableLearnset = sRotomWashTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
         .formChangeTable = sRotomFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
@@ -5319,8 +5319,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomFrost,
             gShinyOverworldPalette_RotomFrost
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotomFrostLevelUpLearnset,
+        .teachableLearnset = sRotomFrostTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
         .formChangeTable = sRotomFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
@@ -5386,8 +5386,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomFan,
             gShinyOverworldPalette_RotomFan
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotomFanLevelUpLearnset,
+        .teachableLearnset = sRotomFanTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
         .formChangeTable = sRotomFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
@@ -5452,8 +5452,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomMow,
             gShinyOverworldPalette_RotomMow
         )
-        .levelUpLearnset = sRotomLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
+        .levelUpLearnset = sRotomCutLevelUpLearnset,
+        .teachableLearnset = sRotomCutTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
         .formChangeTable = sRotomFormChangeTable,
         .randomizerMode = MON_RANDOMIZER_INVALID
