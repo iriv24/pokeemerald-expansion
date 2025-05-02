@@ -5788,6 +5788,13 @@ static const u16 sHatennaEggMoveLearnset[] = {
 };
 #endif //P_FAMILY_HATENNA
 
+#if P_FAMILY_IMPIDIMP
+static const u16 sImpidimpEggMoveLearnset[] = {
+    MOVE_PARTING_SHOT,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_IMPIDIMP
+
 #if P_FAMILY_MILCERY
 static const u16 sMilceryEggMoveLearnset[] = {
     MOVE_BABY_DOLL_EYES,

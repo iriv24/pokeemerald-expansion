@@ -4363,6 +4363,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sImpidimpLevelUpLearnset,
         .teachableLearnset = sImpidimpTeachableLearnset,
+        .eggMoveLearnset = sImpidimpEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_MORGREM}),
     },
 
