@@ -1113,7 +1113,7 @@ RustboroCity_Text_HaveYouChallengedGym:
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "Hey, that's Rustboro's Gym Badge!\p"
-	.string "Out of all the Pokémon Gym BadgeS,\n"
+	.string "Out of all the Pokémon Gym Badges,\n"
 	.string "Rustboro's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere:

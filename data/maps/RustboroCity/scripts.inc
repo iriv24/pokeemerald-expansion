@@ -2229,7 +2229,7 @@ RustboroCity_Text_HeyThatsRustborosGymBadge:
 # 1115 "data/maps/RustboroCity/scripts.pory"
 	.string "Hey, that's Rustboro's Gym Badge!\p"
 # 1116 "data/maps/RustboroCity/scripts.pory"
-	.string "Out of all the Pokémon Gym BadgeS,\n"
+	.string "Out of all the Pokémon Gym Badges,\n"
 # 1117 "data/maps/RustboroCity/scripts.pory"
 	.string "Rustboro's is the coolest, I'd say.$"
 # 1118 "data/maps/RustboroCity/scripts.pory"
