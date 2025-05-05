@@ -140,6 +140,34 @@ static const struct HealLocation sHealLocationsPokemonCenter[HEAL_LOCATION_COUNT
         .map = MAP_NUM(BATTLE_FRONTIER_POKEMON_CENTER_1F),
         DEFAULT_POKEMON_CENTER_COORDS,
     },
+    [HEAL_LOCATION_MT_CHIMNEY - 1] =
+    {
+        .group = MAP_GROUP(ROUTE112),
+        .map = MAP_NUM(ROUTE112),
+        .x = 28,
+        .y = 28,
+    },
+    [HEAL_LOCATION_WEATHER_INST - 1] =
+    {
+        .group = MAP_GROUP(ROUTE119),
+        .map = MAP_NUM(ROUTE119),
+        .x = 6,
+        .y = 33,
+    },
+    [HEAL_LOCATION_ROUTE_121 - 1] =
+    {
+        .group = MAP_GROUP(ROUTE121),
+        .map = MAP_NUM(ROUTE121),
+        .x = 2,
+        .y = 7,
+    },
+    [HEAL_LOCATION_ROUTE_128 - 1] =
+    {
+        .group = MAP_GROUP(ROUTE128),
+        .map = MAP_NUM(ROUTE128),
+        .x = 42,
+        .y = 18,
+    },
 };
 
 #undef DEFAULT_POKEMON_CENTER_COORDS
@@ -172,4 +200,8 @@ static const u8 sHealNpcLocalId[HEAL_LOCATION_COUNT - 1] =
     [HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE - 1] = 1,
     [HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR - 1] = 0, // no heal npc
     [HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST - 1] = 1,
+    [HEAL_LOCATION_MT_CHIMNEY - 1] = 0, // no heal npc
+    [HEAL_LOCATION_WEATHER_INST - 1] = 0, // no heal npc
+    [HEAL_LOCATION_ROUTE_121 - 1] = 0, // no heal npc
+    [HEAL_LOCATION_ROUTE_128 - 1] = 0, // no heal npc
 };

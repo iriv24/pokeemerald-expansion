@@ -51,6 +51,7 @@ enum {
     TAG_CURSOR,
     TAG_PLAYER_ICON,
     TAG_FLY_ICON,
+    TAG_DUNGEON_ICON
 };
 
 // Window IDs for the fly map
@@ -75,7 +76,7 @@ static EWRAM_DATA struct {
     u16 mapSecId;
     struct RegionMap regionMap;
     u8 tileBuffer[0x1c0];
-    u8 nameBuffer[0x26]; // never read
+    u8 dungeonIconTiles[0x40];
     bool8 choseFlyLocation;
 } *sFlyMap = NULL;
 
@@ -109,7 +110,9 @@ static void CB2_FlyMap(void);
 static void SetFlyMapCallback(void callback(void));
 static void DrawFlyDestTextWindow(void);
 static void LoadFlyDestIcons(void);
+static void LoadDungeonDestIcons(void);
 static void CreateFlyDestIcons(void);
+static void CreateDungeonIcons(void);
 static void TryCreateRedOutlineFlyDestIcons(void);
 static void SpriteCB_FlyDestIcon(struct Sprite *sprite);
 static void CB_FadeInFlyMap(void);
@@ -167,6 +170,62 @@ static const u16 sMarineCaveMapSecIds[] =
     MAPSEC_MARINE_CAVE,
     MAPSEC_UNDERWATER_MARINE_CAVE,
     MAPSEC_UNDERWATER_MARINE_CAVE
+};
+
+static const u16 sFlyableCityMapSecIds[FLYABLE_CITY_MAPSEC_COUNT] =
+{
+    MAPSEC_LITTLEROOT_TOWN,
+    MAPSEC_OLDALE_TOWN,
+    MAPSEC_DEWFORD_TOWN,
+    MAPSEC_LAVARIDGE_TOWN,
+    MAPSEC_FALLARBOR_TOWN,
+    MAPSEC_VERDANTURF_TOWN,
+    MAPSEC_PACIFIDLOG_TOWN,
+    MAPSEC_PETALBURG_CITY,
+    MAPSEC_SLATEPORT_CITY,
+    MAPSEC_MAUVILLE_CITY,
+    MAPSEC_RUSTBORO_CITY,
+    MAPSEC_FORTREE_CITY,
+    MAPSEC_LILYCOVE_CITY,
+    MAPSEC_MOSSDEEP_CITY,
+    MAPSEC_SOOTOPOLIS_CITY,
+    MAPSEC_EVER_GRANDE_CITY,
+};
+
+static const u16 sFlyableCityMapFlags[FLYABLE_CITY_MAPSEC_COUNT] =
+{
+    FLAG_VISITED_LITTLEROOT_TOWN,
+    FLAG_VISITED_OLDALE_TOWN,
+    FLAG_VISITED_DEWFORD_TOWN,
+    FLAG_VISITED_LAVARIDGE_TOWN,
+    FLAG_VISITED_FALLARBOR_TOWN,
+    FLAG_VISITED_VERDANTURF_TOWN,
+    FLAG_VISITED_PACIFIDLOG_TOWN,
+    FLAG_VISITED_PETALBURG_CITY,
+    FLAG_VISITED_SLATEPORT_CITY,
+    FLAG_VISITED_MAUVILLE_CITY,
+    FLAG_VISITED_RUSTBORO_CITY,
+    FLAG_VISITED_FORTREE_CITY,
+    FLAG_VISITED_LILYCOVE_CITY,
+    FLAG_VISITED_MOSSDEEP_CITY,
+    FLAG_VISITED_SOOTOPOLIS_CITY,
+    FLAG_VISITED_EVER_GRANDE_CITY,
+};
+
+static const u16 sFlyableDungeonMapSecIds[FLYABLE_DUNGEON_MAPSEC_COUNT] =
+{
+    MAPSEC_MT_CHIMNEY,
+    MAPSEC_ROUTE_119,
+    MAPSEC_ROUTE_121,
+    MAPSEC_ROUTE_128
+};
+
+static const u16 sFlyableDungeonMapFlags[FLYABLE_DUNGEON_MAPSEC_COUNT] =
+{
+    FLAG_VISITED_MT_CHIMNEY,
+    FLAG_VISITED_WEATHER_INST,
+    FLAG_VISITED_ROUTE_121,
+    FLAG_VISITED_ROUTE_128
 };
 
 static const u16 sTerraOrMarineCaveMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
@@ -285,6 +344,8 @@ static const u32 sRegionMapFrameGfxLZ[] = INCBIN_U32("graphics/pokenav/region_ma
 static const u32 sRegionMapFrameTilemapLZ[] = INCBIN_U32("graphics/pokenav/region_map/frame.bin.lz");
 static const u16 sFlyTargetIcons_Pal[] = INCBIN_U16("graphics/pokenav/region_map/fly_target_icons.gbapal");
 static const u32 sFlyTargetIcons_Gfx[] = INCBIN_U32("graphics/pokenav/region_map/fly_target_icons.4bpp.lz");
+static const u16 sDungeonIcons_Pal[] = INCBIN_U16("graphics/pokenav/region_map/dungeon_icon.gbapal");
+static const u32 sDungeonIcons_Gfx[] = INCBIN_U32("graphics/pokenav/region_map/dungeon_icon.4bpp.lz");
 
 static const u8 sMapHealLocations[][3] =
 {
@@ -421,6 +482,12 @@ static const struct SpritePalette sFlyTargetIconsSpritePalette =
     .tag = TAG_FLY_ICON
 };
 
+static const struct SpritePalette sDungeonIconsSpritePalette =
+{
+    .data = sDungeonIcons_Pal,
+    .tag = TAG_DUNGEON_ICON
+};
+
 static const u16 sRedOutlineFlyDestinations[][2] =
 {
     {
@@ -500,6 +567,32 @@ static const struct SpriteTemplate sFlyDestIconSpriteTemplate =
     .paletteTag = TAG_FLY_ICON,
     .oam = &sFlyDestIcon_OamData,
     .anims = sFlyDestIcon_Anims,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
+};
+
+static const union AnimCmd sAnim_DungeonIconVisited[] = {
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd sAnim_DungeonIconNotVisited[] = {
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd *const sAnims_DungeonIcon[] = {
+    sAnim_DungeonIconVisited,
+    sAnim_DungeonIconNotVisited
+};
+
+static const struct SpriteTemplate sDungeonIconSpriteTemplate =
+{
+    .tileTag = TAG_DUNGEON_ICON,
+    .paletteTag = TAG_DUNGEON_ICON,
+    .oam = &sFlyDestIcon_OamData,
+    .anims = sAnims_DungeonIcon,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
@@ -1222,6 +1315,14 @@ static u8 GetMapsecType(u16 mapSecId)
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
         return FlagGet(FLAG_LANDMARK_SOUTHERN_ISLAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_MT_CHIMNEY:
+        return FlagGet(FLAG_VISITED_MT_CHIMNEY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ROUTE_119:
+        return FlagGet(FLAG_VISITED_WEATHER_INST) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ROUTE_121:
+        return FlagGet(FLAG_VISITED_ROUTE_121) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ROUTE_128:
+        return FlagGet(FLAG_VISITED_ROUTE_128) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     default:
         return MAPSECTYPE_ROUTE;
     }
@@ -1701,7 +1802,6 @@ void CB2_OpenFlyMap(void)
         CreateRegionMapCursor(TAG_CURSOR, TAG_CURSOR);
         CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
         sFlyMap->mapSecId = sFlyMap->regionMap.mapSecId;
-        StringFill(sFlyMap->nameBuffer, CHAR_SPACE, MAP_NAME_LENGTH);
         sDrawFlyDestTextWindow = TRUE;
         DrawFlyDestTextWindow();
         gMain.state++;
@@ -1724,6 +1824,7 @@ void CB2_OpenFlyMap(void)
         break;
     case 8:
         LoadFlyDestIcons();
+        LoadDungeonDestIcons();
         gMain.state++;
         break;
     case 9:
@@ -1840,14 +1941,28 @@ static void LoadFlyDestIcons(void)
     TryCreateRedOutlineFlyDestIcons();
 }
 
+static void LoadDungeonDestIcons(void)
+{
+    struct SpriteSheet sheet;
+
+    LZ77UnCompWram(sDungeonIcons_Gfx, sFlyMap->dungeonIconTiles);
+    sheet.data = sFlyMap->dungeonIconTiles;
+    sheet.size = sizeof(sFlyMap->dungeonIconTiles);
+    sheet.tag = TAG_DUNGEON_ICON;
+    LoadSpriteSheet(&sheet);
+    LoadSpritePalette(&sDungeonIconsSpritePalette);
+    CreateDungeonIcons();
+}
+
+
 // Sprite data for SpriteCB_FlyDestIcon
 #define sIconMapSec   data[0]
 #define sFlickerTimer data[1]
 
 static void CreateFlyDestIcons(void)
 {
-    u16 canFlyFlag;
-    u16 mapSecId;
+    u8 canFlyFlagIndex;
+    u8 mapSecIndex;
     u16 x;
     u16 y;
     u16 width;
@@ -1855,10 +1970,10 @@ static void CreateFlyDestIcons(void)
     u16 shape;
     u8 spriteId;
 
-    canFlyFlag = FLAG_VISITED_LITTLEROOT_TOWN;
-    for (mapSecId = MAPSEC_LITTLEROOT_TOWN; mapSecId <= MAPSEC_EVER_GRANDE_CITY; mapSecId++)
+    canFlyFlagIndex = 0;
+    for (mapSecIndex = 0; mapSecIndex < FLYABLE_CITY_MAPSEC_COUNT; mapSecIndex++)
     {
-        GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
+        GetMapSecDimensions(sFlyableCityMapSecIds[mapSecIndex], &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
         y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
 
@@ -1874,15 +1989,60 @@ static void CreateFlyDestIcons(void)
         {
             gSprites[spriteId].oam.shape = shape;
 
-            if (FlagGet(canFlyFlag))
+            if (FlagGet(sFlyableCityMapFlags[canFlyFlagIndex]))
                 gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
             else
                 shape += 3;
-
+            
             StartSpriteAnim(&gSprites[spriteId], shape);
-            gSprites[spriteId].sIconMapSec = mapSecId;
+            gSprites[spriteId].sIconMapSec = sFlyableCityMapSecIds[mapSecIndex];
         }
-        canFlyFlag++;
+        canFlyFlagIndex++;
+    }
+}
+
+
+
+static void CreateDungeonIcons(void)
+{
+    u8 canFlyFlagIndex;
+    u8 mapSecIndex;
+    u16 x;
+    u16 y;
+    u16 width;
+    u16 height;
+    u16 shape;
+    u8 spriteId;
+
+    canFlyFlagIndex = 0;
+    for (mapSecIndex = 0; mapSecIndex < FLYABLE_DUNGEON_MAPSEC_COUNT; mapSecIndex++)
+    {
+        GetMapSecDimensions(sFlyableDungeonMapSecIds[mapSecIndex], &x, &y, &width, &height);
+        x = (x + MAPCURSOR_X_MIN) * 8 + 4;
+        y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
+        
+
+        if(sFlyableDungeonMapSecIds[mapSecIndex] == MAPSEC_MT_CHIMNEY)
+            x+=8;
+        if(sFlyableDungeonMapSecIds[mapSecIndex] == MAPSEC_ROUTE_119)
+            y+=16;
+
+        shape = SPRITE_SHAPE(8x8);
+
+        spriteId = CreateSprite(&sDungeonIconSpriteTemplate, x, y, 10);
+        if (spriteId != MAX_SPRITES)
+        {
+            gSprites[spriteId].oam.shape = shape;
+
+            if (FlagGet(sFlyableDungeonMapFlags[canFlyFlagIndex]))
+                gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
+            // else
+            //     shape += 3;
+            
+            // //StartSpriteAnim(&gSprites[spriteId], shape);
+            gSprites[spriteId].sIconMapSec = sFlyableDungeonMapSecIds[mapSecIndex];
+        }
+        canFlyFlagIndex++;
     }
 }
 
@@ -2028,6 +2188,14 @@ u32 FilterFlyDestination(struct RegionMap* regionMap)
         return (gSaveBlock2Ptr->playerGender == MALE ? HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE : HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE);
     case MAPSEC_EVER_GRANDE_CITY:
         return (FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && regionMap->posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
+    case MAPSEC_MT_CHIMNEY:
+        return HEAL_LOCATION_MT_CHIMNEY;
+    case MAPSEC_ROUTE_119:
+        return HEAL_LOCATION_WEATHER_INST;
+    case MAPSEC_ROUTE_121:
+        return HEAL_LOCATION_ROUTE_121;
+    case MAPSEC_ROUTE_128:
+        return HEAL_LOCATION_ROUTE_128;
     default:
         if (sMapHealLocations[regionMap->mapSecId][2] != HEAL_LOCATION_NONE)
             return sMapHealLocations[regionMap->mapSecId][2];

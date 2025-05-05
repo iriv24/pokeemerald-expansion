@@ -1,7 +1,12 @@
 raw `
 
 Route119_WeatherInstitute_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_1F_OnTransition
 	.byte 0
+
+Route119_WeatherInstitute_1F_OnTransition:
+	setflag FLAG_VISITED_WEATHER_INST
+	end
 
 Route119_WeatherInstitute_1F_EventScript_InstituteWorker1::
 	lock
