@@ -367,6 +367,7 @@ extern const u8 gText_OnlyPkmnForBattle[];
 extern const u8 gJPText_AreYouSureYouWantToSpinTradeMon[];
 extern const u8 gText_PauseUntilPress[];
 extern const u8 gText_CantUseUntilNewBadge[];
+extern const u8 gText_CantUseUntilHaveHM[];
 extern const u8 gText_ReturnToHealingSpot[];
 extern const u8 gText_EscapeFromHere[];
 extern const u8 gText_PkmnCuredOfPoison[];

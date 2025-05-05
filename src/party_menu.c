@@ -4227,6 +4227,11 @@ static void CursorCb_FieldMove(u8 taskId)
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
+        else if (fieldMove == FIELD_MOVE_SURF && !CheckBagHasItem(ITEM_HM03, 1))
+        {
+            DisplayPartyMenuMessage(gText_CantUseUntilHaveHM, TRUE);
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        }
         else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
         {
             switch (fieldMove)
