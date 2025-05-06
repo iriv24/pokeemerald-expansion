@@ -269,7 +269,7 @@
               {
                 "min_level": 10,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_WEST"
               },
               {
                 "min_level": 25,
@@ -279,7 +279,7 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_GASTRODON"
+                "species": "SPECIES_GASTRODON_WEST"
               },
               {
                 "min_level": 20,
@@ -1842,17 +1842,17 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_EAST"
               },
               {
                 "min_level": 10,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_EAST"
               },
               {
                 "min_level": 10,
                 "max_level": 30,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_EAST"
               },
               {
                 "min_level": 10,
@@ -1862,12 +1862,12 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_GASTRODON"
+                "species": "SPECIES_GASTRODON_EAST"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_GASTRODON"
+                "species": "SPECIES_GASTRODON_EAST"
               },
               {
                 "min_level": 25,
@@ -5718,7 +5718,7 @@
               {
                 "min_level": 5,
                 "max_level": 35,
-                "species": "SPECIES_SHELLOS"
+                "species": "SPECIES_SHELLOS_EAST"
               },
               {
                 "min_level": 10,
