@@ -16222,4 +16222,21 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Sablenite,
         .iconPalette = gItemIconPalette_Sablenite,
     },
+// Start hexorb branch
+    [ITEM_HEX_ORB] =
+    {
+        .name = _("Hex Orb"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A purple orb\n"
+            "said to contain a\n"
+            "cursed power."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Hexorb,
+        .effect = gItemEffect_Hexorb,
+        .iconPic = gItemIcon_Hexorb,
+        .iconPalette = gItemIconPalette_Hexorb,
+    },
+// End hexorb Branch
 };

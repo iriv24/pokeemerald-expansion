@@ -96,8 +96,20 @@ Route104_EventScript_Boy1::
 	msgbox Route104_Text_ThrowBallAtWeakenedPokemon, MSGBOX_NPC
 	end
 
-Route104_EventScript_Woman::
-	msgbox Route104_Text_OnlyThrowBallAtWildPokemon, MSGBOX_NPC
+Route104_EventScript_HexManiac::
+	lock
+	faceplayer
+	checkitem ITEM_HEX_ORB
+	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_HexManiac_ReceivedOrb
+	msgbox Route104_Text_TakeHexOrb, MSGBOX_DEFAULT
+	giveitem ITEM_HEX_ORB
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+Route104_EventScript_HexManiac_ReceivedOrb::
+	msgbox Route104_Text_OnlyThrowBallAtWildPokemon, MSGBOX_DEFAULT
+	release
 	end
 
 Route104_EventScript_Boy2::
@@ -937,6 +949,10 @@ Route104_Text_BrendanPostBattle:
 	.string "making Pokémon battle.\p"
 	.string "Like Mr. Briney, it's important to\n"
 	.string "become friends with your Pokémon.$"
+
+Route104_Text_TakeHexOrb:
+	.string "Looks like you missed this somehow,\n"
+	.string "here take it.$"
 `
 
 script Route104_EventScript_DawnTrigger1{

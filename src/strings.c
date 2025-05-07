@@ -551,6 +551,7 @@ const u8 gText_Par[] = _("PAR");
 const u8 gText_Slp[] = _("SLP");
 const u8 gText_Brn[] = _("BRN");
 const u8 gText_Frz[] = _("FRZ");
+const u8 gText_Fsb[] = _("FSB");
 const u8 gText_Toxic[] = _("TOXIC"); // Unused
 const u8 gText_Ok3[] = _("OK"); // Unused
 const u8 gText_Quit[] = _("QUIT"); // Unused

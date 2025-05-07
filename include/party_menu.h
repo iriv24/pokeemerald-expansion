@@ -110,4 +110,9 @@ void MoveDeleterChooseMoveToForget(void);
 void CB2_ReturnToPartyMenuFromSummaryScreen(void);
 void ItemUseCB_PokeBall(u8 taskId, TaskFunc task);
 
+// Start hexorb Branch
+void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
+void InitPartyMenuForHexorbFromField(u8 taskId);
+// End hexorb Branch
+
 #endif // GUARD_PARTY_MENU_H

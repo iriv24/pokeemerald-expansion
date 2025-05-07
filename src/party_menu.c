@@ -30,6 +30,7 @@
 #include "frontier_util.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "hexorb.h" // hexorb Branch
 #include "international_string_util.h"
 #include "item.h"
 #include "item_menu.h"
@@ -114,6 +115,13 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    // Start hexorb Branch
+    MENU_INFLICT_SLEEP,
+    MENU_INFLICT_POISON,
+    MENU_INFLICT_BURN,
+    MENU_INFLICT_FREEZE_FROSTBITE,
+    MENU_INFLICT_PARALYSIS,
+    // End hexorb Branch
     MENU_FIELD_MOVES
 };
 
@@ -137,7 +145,8 @@ enum {
     ACTIONS_ZYGARDE_CUBE,
     ACTIONS_RELEARN_MOVES_BOTH,
     ACTIONS_RELEARN_MOVES_LVL_ONLY,
-    ACTIONS_RELEARN_MOVES_EGG_ONLY
+    ACTIONS_RELEARN_MOVES_EGG_ONLY,
+    ACTIONS_HEXORB, // hexorb Branch
 };
 
 // In CursorCb_FieldMove, field moves <= FIELD_MOVE_WATERFALL are assumed to line up with the badge flags.
@@ -520,6 +529,13 @@ static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+// Start hexorb Branch
+static void TryHexorbAndPrintResult(u8);
+static void DisplayHexorbResult(u8, u32, enum HexorbResultCodes, struct Pokemon*);
+static void Task_RetryHexorbAfterFailedStatus(u8);
+static void Task_RetryHexorbAfterFailedMon(u8);
+static void DisplayHexorbMessageAndScheduleTask(u8, const u8*, TaskFunc, bool32);
+// End hexorb Branch
 
 // static const data
 #include "data/party_menu.h"
@@ -2825,6 +2841,11 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_TYPE_RELEARN:
             *windowPtr = AddWindow(&sWhichTypeRelearnWindowTemplate);
             break;
+            // Start hexorb Branch
+        case PARTY_MSG_WHICH_STATUS:
+            *windowPtr = AddWindow(&sInflictWhichStatusMsgWindowTemplate);
+            break;
+            // End hexorb Branch
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2893,6 +2914,11 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_MOVE_RELEARN_ONE:
         window = sRelearnOneOptionsWindowTemplate;
         break;
+        // Start hexorb Branch
+    case SELECTWINDOW_HEXORB:
+        window = sHexorbSelectWindowTemplate;
+        break;
+        // End hexorb Branch
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
         break;
@@ -6972,6 +6998,10 @@ u8 GetItemEffectType(u16 item)
         return ITEM_EFFECT_SACRED_ASH;
     else if (itemEffect[3] & ITEM3_LEVEL_UP)
         return ITEM_EFFECT_RAISE_LEVEL;
+    // Start hexorb Branch
+    else if (itemEffect[0] & ITEM0_HEXORB)
+        return ITEM_EFFECT_HEXORB;
+    // End hexorb Branch
 
     statusCure = itemEffect[3] & ITEM3_STATUS_ALL;
     if (statusCure || (itemEffect[0] >> 7))
@@ -8182,3 +8212,106 @@ void ItemUseCB_PokeBall(u8 taskId, TaskFunc task)
         gTasks[taskId].func = task;
     }
 }
+
+// Start hexorb Branch
+static void DisplayHexorbMessageAndScheduleTask(u8 taskId, const u8* message, TaskFunc nextTask, bool32 useExitCallback)
+{
+    gPartyMenuUseExitCallback = useExitCallback;
+    DisplayPartyMenuMessage(message, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = nextTask;
+}
+
+void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
+    if (!GetMonData(mon, MON_DATA_HP))
+    {
+        DisplayHexorbResult(taskId, 0, HEXORB_RESULT_FAIL_FAINTED, mon);
+        return;
+    }
+
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_HEXORB);
+    DisplaySelectionWindow(SELECTWINDOW_HEXORB);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
+    gTasks[taskId].data[0] = TASK_NONE;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void TryHexorbAndPrintResult(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    u32 status = Hexorb_ConvertMenuPosToStatus(data[0]);
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    enum HexorbResultCodes result = (Hexorb_TryInflictStatus(mon, status));
+
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+    DisplayHexorbResult(taskId, status, result, mon);
+}
+
+static void DisplayHexorbResult(u8 taskId, u32 status, enum HexorbResultCodes result, struct Pokemon* mon)
+{
+    switch (result)
+    {
+        case HEXORB_RESULT_SUCCESS:
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+            PlayCry_ByMode(GetMonData(mon, MON_DATA_SPECIES), 0, CRY_MODE_WEAK);
+            Hexorb_ConstructSuccessMessage(mon, status);
+            DisplayHexorbMessageAndScheduleTask(taskId, gStringVar4, Task_ClosePartyMenuAfterText, TRUE);
+            break;
+        case HEXORB_RESULT_FAIL_ABILITY:
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructAbilityFailureMessage(mon,status);
+            DisplayHexorbMessageAndScheduleTask(taskId, gStringVar4, Task_RetryHexorbAfterFailedStatus, FALSE);
+            break;
+        case HEXORB_RESULT_FAIL_TYPE_0:
+        case HEXORB_RESULT_FAIL_TYPE_1:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructTypeFailureMessage(mon, status, result);
+            DisplayHexorbMessageAndScheduleTask(taskId, gStringVar4, Task_RetryHexorbAfterFailedStatus, FALSE);
+            break;
+        case HEXORB_RESULT_FAIL_HAS_STATUS:
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructStatusFailureMessage(mon);
+            DisplayHexorbMessageAndScheduleTask(taskId, gStringVar4, Task_RetryHexorbAfterFailedMon, FALSE);
+            break;
+        default:
+        case HEXORB_RESULT_FAIL_FAINTED:
+            PlaySE(SE_SELECT);
+            Hexorb_ConstructStatusFailureMessage(mon);
+            DisplayHexorbMessageAndScheduleTask(taskId, gText_WontHaveEffect, Task_RetryHexorbAfterFailedMon, FALSE);
+            break;
+    }
+}
+
+static void Task_RetryHexorbAfterFailedStatus(u8 taskId)
+{
+    if (!JOY_NEW(A_BUTTON | B_BUTTON))
+        return;
+
+    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
+    PlaySE(SE_SELECT);
+    ItemUseCB_UseHexorb(taskId, Task_HandleSelectionMenuInput);
+}
+
+static void Task_RetryHexorbAfterFailedMon(u8 taskId)
+{
+    if (!JOY_NEW(A_BUTTON | B_BUTTON))
+        return;
+
+    ClearDialogWindowAndFrame(WIN_MSG,FALSE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
+    PlaySE(SE_SELECT);
+    gTasks[taskId].func = Task_HandleChooseMonInput;
+}
+
+void InitPartyMenuForHexorbFromField(u8 taskId)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_USE_ON_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToField);
+}
+// End hexorb Branch
+
