@@ -34,6 +34,8 @@ static void CB2_ReturnFromChooseBattleFrontierParty(void);
 static u16 PickWaterStarterEgg(void);
 static u16 PickGrassStarterEgg(void);
 static u16 PickFireStarterEgg(void);
+static u16 PickOldaleEgg(void);
+
 static void HealPlayerBoxes(void);
 
 void HealPlayerParty(void)
@@ -82,6 +84,10 @@ u8 ScriptGiveEgg(u16 species)
     else if(species == SPECIES_CHARMANDER)
     {
         species = PickFireStarterEgg();
+    }
+    else if(species == SPECIES_SENTRET)
+    {
+        species = PickOldaleEgg();
     }
 
     #if RANDOMIZER_AVAILABLE == TRUE
@@ -146,6 +152,23 @@ static u16 PickFireStarterEgg(void)
     pokes[6] = SPECIES_LITTEN;
     pokes[7] = SPECIES_SCORBUNNY;
     pokes[8] = SPECIES_FUECOCO;
+    return pokes[rand];
+}
+
+static u16 PickOldaleEgg(void)
+{
+    u16 pokes[10];
+    u16 rand = Random() % 10;
+    pokes[0] = SPECIES_SENTRET;
+    pokes[1] = SPECIES_JIGGLYPUFF;
+    pokes[2] = SPECIES_KRICKETOT;
+    pokes[3] = SPECIES_CUBONE;
+    pokes[4] = SPECIES_PANCHAM;
+    pokes[5] = SPECIES_YAMPER;
+    pokes[6] = SPECIES_ROCKRUFF;
+    pokes[7] = SPECIES_GREAVARD;
+    pokes[8] = SPECIES_SPOINK;
+    pokes[9] = SPECIES_VAROOM;
     return pokes[rand];
 }
 

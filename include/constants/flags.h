@@ -53,7 +53,7 @@
 #define FLAG_STOP_ENCOUNTERS           0x27
 #define FLAG_PARTY_MOVES               0x28
 #define FLAG_UNUSED_0x29               0x29 // unused
-#define FLAG_RECEIVED_RUSTBORO_EGG     0x2A
+#define FLAG_RECEIVED_OLDALE_EGG       0x2A
 #define FLAG_RECEIVED_SETUP_TMS        0x2B
 #define FLAG_UNUSED_0x2C               0x2C // unused
 #define FLAG_RIVAL_110                 0x2D

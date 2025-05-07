@@ -40,6 +40,80 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	release
 	end
 
+OldaleTown_PokemonCenter_1F_EventScript_EggMan::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_DEXNAV_GET, OldaleTown_PokemonCenter_1F_EventScript_NotReadyForEggYet
+	goto_if_set FLAG_RECEIVED_OLDALE_EGG, OldaleTown_PokemonCenter_1F_EventScript_ReceivedEgg
+	msgbox OldaleTown_PokemonCenter_1F_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OldaleTown_PokemonCenter_1F_EventScript_DeclineEgg
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OldaleTown_PokemonCenter_1F_EventScript_NoRoomForEgg
+	msgbox OldaleTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_OLDALE_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message OldaleTown_PokemonCenter_1F_Text_ReceivedTheEgg
+	waitfanfare
+	giveegg SPECIES_SENTRET
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_NotReadyForEggYet::
+	msgbox OldaleTown_PokemonCenter_1F_Text_NotReadyForEggYet, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_ReceivedEgg::
+	msgbox OldaleTown_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_DeclineEgg::
+	msgbox OldaleTown_PokemonCenter_1F_Text_AsYouWishThen, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_EventScript_NoRoomForEgg::
+	msgbox OldaleTown_PokemonCenter_1F_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_PokemonCenter_1F_Text_NotReadyForEggYet:
+	.string "I have an Egg here, and I am looking for\n"
+	.string "a trainer with enough experience to\l"
+	.string "take it from me to hatch it.\p"
+	.string "You don't seem like you have quite\n"
+	.string "enough experience yet; perhaps come\l"
+	.string "back after you've received a Pokédex.$"
+
+OldaleTown_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare:
+	.string "I truly have no idea what\n"
+	.string "is inside that egg.$"
+
+OldaleTown_PokemonCenter_1F_Text_HaveEggWillYouTakeIt:
+	.string "I have an Egg here, but I'm too old to be\n"
+	.string "running around for long enough for it\l"
+	.string "to hatch.\p"
+	.string "I see you have a Pokédex, you must be a\n"
+	.string "trustworthy trainer.\p"
+	.string "Will you take this Egg from me?$"
+
+OldaleTown_PokemonCenter_1F_Text_AsYouWishThen:
+	.string "As you wish, then…\p"
+	.string "If you have a change of heart about\n"
+	.string "hatching this Egg, I will be here.$"
+
+OldaleTown_PokemonCenter_1F_Text_NoRoomForThisEgg:
+	.string "Oh? You've too many Pokémon.\n"
+	.string "There's no room for this Egg…$"
+
+OldaleTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg:
+	.string "Good! I hope you'll walk plenty with\n"
+	.string "that there Egg!$"
+
+OldaleTown_PokemonCenter_1F_Text_ReceivedTheEgg:
+	.string "{PLAYER} received the Egg.$"
+
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
 	.string "That PC in the corner there is\n"
 	.string "for any Pokémon TRAINER to use.\p"

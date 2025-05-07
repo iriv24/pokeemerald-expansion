@@ -23,38 +23,6 @@ RustboroCity_PokemonCenter_1F_EventScript_Man::
 	msgbox RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities, MSGBOX_NPC
 	end
 
-RustboroCity_PokemonCenter_1F_EventScript_EggMan::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_RUSTBORO_EGG, RustboroCity_PokemonCenter_1F_EventScript_ReceivedEgg
-	msgbox RustboroCity_PokemonCenter_1F_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, RustboroCity_PokemonCenter_1F_EventScript_DeclineEgg
-	getpartysize
-	goto_if_eq VAR_RESULT, PARTY_SIZE, RustboroCity_PokemonCenter_1F_EventScript_NoRoomForEgg
-	msgbox RustboroCity_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_RUSTBORO_EGG
-	playfanfare MUS_OBTAIN_ITEM
-	message RustboroCity_PokemonCenter_1F_Text_ReceivedTheEgg
-	waitfanfare
-	giveegg SPECIES_TOGEPI
-	release
-	end
-
-RustboroCity_PokemonCenter_1F_EventScript_ReceivedEgg::
-	msgbox RustboroCity_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_PokemonCenter_1F_EventScript_DeclineEgg::
-	msgbox RustboroCity_PokemonCenter_1F_Text_AsYouWishThen, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_PokemonCenter_1F_EventScript_NoRoomForEgg::
-	msgbox RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
-	release
-	end
-
 RustboroCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor, MSGBOX_NPC
 	end
@@ -75,30 +43,5 @@ RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor:
 	.string "The man next door gave me an HM!\p"
 	.string "I used it to teach my Pokémon how to\n"
 	.string "CUT down skinny trees.$"
-
-RustboroCity_PokemonCenter_1F_Text_EverySoOftenEggFoundAtDayCare:
-	.string "I truly have no idea what\n"
-	.string "is inside that egg.$"
-
-RustboroCity_PokemonCenter_1F_Text_HaveEggWillYouTakeIt:
-	.string "I have an Egg here, but I'm too old to be\n"
-	.string "running around for long enough for it\l"
-	.string "to hatch. Will you take it?$"
-
-RustboroCity_PokemonCenter_1F_Text_AsYouWishThen:
-	.string "As you wish, then…\p"
-	.string "If you have a change of heart about\n"
-	.string "hatching this Egg, I will be here.$"
-
-RustboroCity_PokemonCenter_1F_Text_NoRoomForThisEgg:
-	.string "Oh? You've too many Pokémon.\n"
-	.string "There's no room for this Egg…$"
-
-RustboroCity_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg:
-	.string "Good! I hope you'll walk plenty with\n"
-	.string "that there Egg!$"
-
-RustboroCity_PokemonCenter_1F_Text_ReceivedTheEgg:
-	.string "{PLAYER} received the Egg.$"
 
 `
