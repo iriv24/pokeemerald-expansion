@@ -3781,6 +3781,16 @@ static const u16 sRioluEggMoveLearnset[] = {
 
 #if P_FAMILY_HIPPOPOTAS
 static const u16 sHippopotasEggMoveLearnset[] = {
+    MOVE_BODY_SLAM,
+    MOVE_CURSE,
+    MOVE_REVENGE,
+    MOVE_SAND_TOMB,
+    MOVE_SLACK_OFF,
+    MOVE_SLEEP_TALK,
+    MOVE_SPIT_UP,
+    MOVE_STOCKPILE,
+    MOVE_SWALLOW,
+    MOVE_WHIRLWIND,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_HIPPOPOTAS
@@ -4579,6 +4589,14 @@ static const u16 sFoongusEggMoveLearnset[] = {
 
 #if P_FAMILY_FRILLISH
 static const u16 sFrillishEggMoveLearnset[] = {
+    MOVE_ACID_ARMOR,
+    MOVE_CONFUSE_RAY,
+    MOVE_CONSTRICT,
+    MOVE_DESTINY_BOND,
+    MOVE_MIST,
+    MOVE_PAIN_SPLIT,
+    MOVE_RECOVER,
+    MOVE_STRENGTH_SAP,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FRILLISH
