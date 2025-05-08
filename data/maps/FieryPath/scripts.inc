@@ -15,14 +15,16 @@ FieryPath_OnTransition:
 # 8 "data/maps/FieryPath/scripts.pory"
 	setflag FLAG_LANDMARK_FIERY_PATH
 # 9 "data/maps/FieryPath/scripts.pory"
-	end
+	setflag FLAG_VISITED_FIERY_PATH
 # 10 "data/maps/FieryPath/scripts.pory"
-
+	end
 # 11 "data/maps/FieryPath/scripts.pory"
-FieryPath_EventScript_MoveScottToFallarbor::
+
 # 12 "data/maps/FieryPath/scripts.pory"
-	setflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
+FieryPath_EventScript_MoveScottToFallarbor::
 # 13 "data/maps/FieryPath/scripts.pory"
-	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+	setflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
 # 14 "data/maps/FieryPath/scripts.pory"
+	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+# 15 "data/maps/FieryPath/scripts.pory"
 	return

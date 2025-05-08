@@ -144,8 +144,8 @@ static const struct HealLocation sHealLocationsPokemonCenter[HEAL_LOCATION_COUNT
     {
         .group = MAP_GROUP(ROUTE112),
         .map = MAP_NUM(ROUTE112),
-        .x = 28,
-        .y = 28,
+        .x = 11,
+        .y = 37,
     },
     [HEAL_LOCATION_WEATHER_INST - 1] =
     {

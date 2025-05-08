@@ -1388,7 +1388,7 @@
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
 #define FLAG_SYS_DEXNAV_SEARCH                      (SYSTEM_FLAGS + 0x21)
-#define FLAG_VISITED_MT_CHIMNEY                     (SYSTEM_FLAGS + 0x22)
+#define FLAG_VISITED_FIERY_PATH                     (SYSTEM_FLAGS + 0x22)
 #define FLAG_VISITED_WEATHER_INST                   (SYSTEM_FLAGS + 0x23)
 #define FLAG_VISITED_ROUTE_121                      (SYSTEM_FLAGS + 0x24)
 #define FLAG_VISITED_ROUTE_128                      (SYSTEM_FLAGS + 0x25)
