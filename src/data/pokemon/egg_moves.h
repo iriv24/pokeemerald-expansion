@@ -4450,6 +4450,18 @@ static const u16 sZoruaEggMoveLearnset[] = {
     MOVE_COPYCAT,
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sZoruaHisuiEggMoveLearnset[] = {
+    MOVE_CAPTIVATE,
+    MOVE_COPYCAT,
+    MOVE_COUNTER,
+    MOVE_DETECT,
+    MOVE_MEMENTO,
+    MOVE_SHADOW_BALL,
+    MOVE_SHADOW_SNEAK,
+    MOVE_SNATCH,
+    MOVE_WILL_O_WISP,    
+};
 #endif //P_FAMILY_ZORUA
 
 #if P_FAMILY_MINCCINO
