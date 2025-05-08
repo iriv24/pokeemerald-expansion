@@ -946,6 +946,21 @@ static const u16 sKrabbyEggMoveLearnset[] = {
 };
 #endif //P_FAMILY_KRABBY
 
+#if P_FAMILY_VOLTORB
+static const u16 sVoltorbEggMoveLearnset[] = {
+    MOVE_METAL_SOUND,
+    MOVE_RECYCLE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sVoltorbHisuiEggMoveLearnset[] = {
+    MOVE_LEECH_SEED,
+    MOVE_RECYCLE,
+    MOVE_WORRY_SEED,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_VOLTORB
+
 #if P_FAMILY_EXEGGCUTE
 static const u16 sExeggcuteEggMoveLearnset[] = {
     MOVE_SYNTHESIS,
