@@ -64,7 +64,7 @@
 #define FLAG_DECLINED_DANCE_BATTLE     0x32
 #define FLAG_UNUSED_0x33               0x33 // unused
 #define FLAG_UNUSED_0x34               0x34 // unused
-#define FLAG_RECEIVED_ROUTE_111_EGG    0x35
+#define FLAG_UNUSED_0x35               0x35 // unused
 #define FLAG_RECEIVED_SCOPE_LENS       0x36
 #define FLAG_UNUSED_0x37               0x37 // unused
 #define FLAG_BEAT_TRICK_HOUSE_3        0x38
