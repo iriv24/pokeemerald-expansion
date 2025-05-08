@@ -537,6 +537,24 @@ static const u16 sGrowlitheEggMoveLearnset[] = {
     MOVE_BURN_UP,
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sGrowlitheHisuiEggMoveLearnset[] = {
+    MOVE_BODY_SLAM,
+    MOVE_BURN_UP,
+    MOVE_COVET,
+    MOVE_CRUNCH,
+    MOVE_DOUBLE_EDGE,
+    MOVE_FIRE_SPIN,
+    MOVE_FLARE_BLITZ,
+    MOVE_HEAT_WAVE,
+    MOVE_HOWL,
+    MOVE_IRON_TAIL,
+    MOVE_MORNING_SUN,
+    MOVE_ROCK_BLAST,
+    MOVE_STONE_EDGE,
+    MOVE_THRASH,
+    MOVE_UNAVAILABLE,
+};
 #endif //P_FAMILY_GROWLITHE
 
 #if P_FAMILY_POLIWAG
@@ -4460,7 +4478,8 @@ static const u16 sZoruaHisuiEggMoveLearnset[] = {
     MOVE_SHADOW_BALL,
     MOVE_SHADOW_SNEAK,
     MOVE_SNATCH,
-    MOVE_WILL_O_WISP,    
+    MOVE_WILL_O_WISP,
+    MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ZORUA
 
