@@ -207,3 +207,12 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_Gemstone_Cave[] = INCBIN_U16("data/tilesets/secondary/gemstone_cave/metatiles.bin");
+const u16 gMetatileAttributes_Gemstone_Cave[] = INCBIN_U16("data/tilesets/secondary/gemstone_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_SapphireCavern[] = INCBIN_U16("data/tilesets/secondary/sapphire_cavern/metatiles.bin");
+const u16 gMetatileAttributes_SapphireCavern[] = INCBIN_U16("data/tilesets/secondary/sapphire_cavern/metatile_attributes.bin");
+
+const u16 gMetatiles_Emerald_grotto[] = INCBIN_U16("data/tilesets/secondary/emerald_grotto/metatiles.bin");
+const u16 gMetatileAttributes_Emerald_grotto[] = INCBIN_U16("data/tilesets/secondary/emerald_grotto/metatile_attributes.bin");

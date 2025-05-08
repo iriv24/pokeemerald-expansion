@@ -1179,3 +1179,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MossdeepCity_BetaTesterHouse/scripts.inc"
 
 	.include "data/maps/SootopolisCity_ChampHouse/scripts.inc"
+
+	.include "data/maps/RubyHollow/scripts.inc"
+
+	.include "data/maps/SapphireCavern/scripts.inc"
+
+	.include "data/maps/EmeraldGrotto/scripts.inc"
