@@ -835,7 +835,7 @@ Route109_Text_EdmondPostBattle:
 
 Route109_Text_RickyIntro:
 	.string "I'm thirsty… I could go for a SODA POP\n"
-	.string "at the SEASHORE HOUSE…$"
+	.string "at the Hot House…$"
 
 Route109_Text_RickyDefeated:
 	.string "Groan…$"
