@@ -588,6 +588,7 @@ gStdScripts_End::
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
+	call Route109_HotHouse_EventScript_ResetHotHouse
 	goto EventScript_ResetMrBriney
 	end
 
@@ -668,6 +669,17 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 	clearflag FLAG_ENTERED_ELITE_4
 	clearflag FLAG_HACKY_DOUBLE_BATTLE
 	setvar VAR_ELITE_4_STATE, 0
+	return
+
+Route109_HotHouse_EventScript_ResetHotHouse::
+	cleartrainerflag TRAINER_JOHANNA
+	cleartrainerflag TRAINER_SIMON
+	cleartrainerflag TRAINER_DWAYNE
+	clearflag FLAG_DEFEATED_HOT_HOUSE
+	clearflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON
+	setvar VAR_HOT_HOUSE_STATE, 0
+	setvar VAR_ENTERING_HOT_HOUSE, 0
+	setvar VAR_LEAVING_HOT_HOUSE, 0
 	return
 
 Common_EventScript_UpdateBrineyLocation::

@@ -199,7 +199,7 @@ static void BuildNormalLMenu(void)
         {
             AddLMenuAction(MENU_ACTION_POKEVIAL);
         }
-        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        if(!FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         {
             AddLMenuAction(MENU_ACTION_PC);
         }
@@ -211,7 +211,7 @@ static void BuildNormalLMenu(void)
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
 
-    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4))
+    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         AddLMenuAction(MENU_ACTION_STAT_EDITOR);
         
     if (hasDexNav)
@@ -302,7 +302,7 @@ static void BuildLinkModeLMenu(void)
         {
             AddLMenuAction(MENU_ACTION_POKEVIAL);
         }
-        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        if(!FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         {
             AddLMenuAction(MENU_ACTION_PC);
         }
@@ -314,7 +314,7 @@ static void BuildLinkModeLMenu(void)
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
 
-    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4))
+    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         AddLMenuAction(MENU_ACTION_STAT_EDITOR);
         
     if (hasDexNav)
@@ -364,7 +364,7 @@ static void BuildUnionRoomLMenu(void)
         {
             AddLMenuAction(MENU_ACTION_POKEVIAL);
         }
-        if(!FlagGet(FLAG_ENTERED_ELITE_4))
+        if(!FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         {
             AddLMenuAction(MENU_ACTION_PC);
         }
@@ -376,7 +376,7 @@ static void BuildUnionRoomLMenu(void)
         AddLMenuAction(MENU_ACTION_TIME_CHANGER);
     }
 
-    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4))
+    if(FlagGet(FLAG_SYS_STAT_EDITOR_GET) && !FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
         AddLMenuAction(MENU_ACTION_STAT_EDITOR);
         
     if (hasDexNav)

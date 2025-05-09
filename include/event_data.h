@@ -30,6 +30,7 @@ u8 FlagClear(u16 id);
 bool8 FlagGet(u16 id);
 u32 GetLevelCapForText(void);
 u32 GetWhiteOutCountForText(void);
+u32 GetNumBadges(void);
 
 extern u16 gSpecialVar_0x8000;
 extern u16 gSpecialVar_0x8001;

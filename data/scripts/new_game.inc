@@ -282,5 +282,10 @@ EventScript_ResetAllMapFlags::
 	clearflag FLAG_SHINY_STARTERS
 	setflag FLAG_SLEEP_CLAUSE_TOGGLE
 	clearflag FLAG_GIVE_MENU
+	clearflag FLAG_DEFEATED_HOT_HOUSE
+	clearflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON
+	setvar VAR_HOT_HOUSE_STATE, 0
+	setvar VAR_ENTERING_HOT_HOUSE, 0
+	setvar VAR_LEAVING_HOT_HOUSE, 0
 	call EventScript_ResetAllBerries
 	end

@@ -1,111 +1,37 @@
 raw `
 Route109_SeashoreHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route109_SeashoreHouse_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route109_SeashoreHouse_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route109_SeashoreHouse_OnFrame
 	.byte 0
+
+
+Route109_SeashoreHouse_OnWarp:
+	map_script_2 VAR_ENTERING_HOT_HOUSE, 1, Route109_SeashoreHouse_EventScript_PlayerTurnNorth
+	.2byte 0
+
+Route109_SeashoreHouse_EventScript_PlayerTurnNorth::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	end
+
+Route109_SeashoreHouse_OnFrame:
+	map_script_2 VAR_ENTERING_HOT_HOUSE, 1, Route109_SeashoreHouse_EventScript_EnterRoom
+	.2byte 0
+
+Route109_SeashoreHouse_EventScript_EnterRoom::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2
+	waitmovement 0
+	setmetatile 6, 9, METATILE_BuildingNormalFloor, FALSE
+	setmetatile 7, 9, METATILE_BuildingNormalFloor, FALSE
+	special DrawWholeMapView
+	playse SE_TRUCK_DOOR
+	setvar VAR_ENTERING_HOT_HOUSE, 0
+	releaseall
+	end
 
 Route109_SeashoreHouse_OnTransition:
 	setflag FLAG_LANDMARK_SEASHORE_HOUSE
-	end
-
-Route109_SeashoreHouse_EventScript_Owner::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_CHARCADET, Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop
-	goto_if_set FLAG_DEFEATED_SEASHORE_HOUSE, Route109_SeashoreHouse_EventScript_DefeatedTrainers
-	goto_if_set FLAG_TEMP_2, Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction
-	msgbox Route109_SeashoreHouse_Text_SeashoreHouseIntro, MSGBOX_DEFAULT
-	setflag FLAG_TEMP_2
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction::
-	msgbox Route109_SeashoreHouse_Text_ShowMeSomeHotMatches, MSGBOX_DEFAULT
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_DefeatedTrainers::
-	msgbox Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles, MSGBOX_DEFAULT
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARCADET
-	givemonrandom SPECIES_CHARCADET, 25
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route109_SeashoreHouse_EventScript_ReceiveCharcadetParty
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route109_SeashoreHouse_EventScript_ReceiveCharcadetPC
-	goto Common_EventScript_NoMoreRoomForPokemon
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_ReceiveCharcadetParty::
-	call Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_ExplainCharcadet
-	call Common_EventScript_GetGiftMonPartySlot
-	call Common_EventScript_NameReceivedPartyMon
-	goto Route109_SeashoreHouse_EventScript_ExplainCharcadet
-	end
-
-Route109_SeashoreHouse_EventScript_ReceiveCharcadetPC::
-	call Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_SendCharcadetToPC
-	call Common_EventScript_NameReceivedBoxMon
-	goto Route109_SeashoreHouse_EventScript_SendCharcadetToPC
-	end
-
-Route109_SeashoreHouse_EventScript_SendCharcadetToPC::
-	call Common_EventScript_TransferredToPC
-	goto Route109_SeashoreHouse_EventScript_ExplainCharcadet
-	end
-
-Route109_SeashoreHouse_EventScript_ReceivedCharcadetFanfare::
-	playfanfare MUS_OBTAIN_ITEM
-	message Route109_SeashoreHouse_Text_PlayerReceivedCharcadet
-	waitmessage
-	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_CHARCADET
-	return
-
-Route109_SeashoreHouse_EventScript_ExplainCharcadet::
-	msgbox Route109_SeashoreHouse_Text_PokemonChangesWithStone, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_CHARCADET
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_BagFull::
-	msgbox Route109_SeashoreHouse_Text_BagFull, MSGBOX_DEFAULT
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_AlreadyReceivedSodaPop::
-	showmoneybox 0, 0
-	msgbox Route109_SeashoreHouse_Text_WantToBuySodaPop, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route109_SeashoreHouse_EventScript_BuySodaPop
-	msgbox Route109_SeashoreHouse_Text_ThatsTooBad, MSGBOX_DEFAULT
-	hidemoneybox
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_BuySodaPop::
-	checkmoney 300
-	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughMoney
-	checkitemspace ITEM_SODA_POP
-	goto_if_eq VAR_RESULT, FALSE, Route109_SeashoreHouse_EventScript_NotEnoughSpace
-	msgbox Route109_SeashoreHouse_Text_HereYouGo, MSGBOX_DEFAULT
-	removemoney 300
-	updatemoneybox
-	giveitem ITEM_SODA_POP
-	hidemoneybox
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_NotEnoughMoney::
-	msgbox Route109_SeashoreHouse_Text_NotEnoughMoney, MSGBOX_DEFAULT
-	hidemoneybox
-	release
-	end
-
-Route109_SeashoreHouse_EventScript_NotEnoughSpace::
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-	hidemoneybox
-	release
 	end
 
 Route109_SeashoreHouse_EventScript_Dwayne::
@@ -127,7 +53,7 @@ Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
 	goto_if_not_defeated TRAINER_DWAYNE, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	goto_if_not_defeated TRAINER_SIMON, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-	setflag FLAG_DEFEATED_SEASHORE_HOUSE
+	setflag FLAG_DEFEATED_HOT_HOUSE
 	release
 	end
 
@@ -135,52 +61,9 @@ Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
 	release
 	end
 
-Route109_SeashoreHouse_Text_SeashoreHouseIntro:
-	.string "I'm the owner of the SEASHORE HOUSE.\n"
-	.string "But you can call me MR. SEA!\p"
-	.string "What I love above all is to see hot\n"
-	.string "Pokémon battles.\p"
-	.string "Let me see that your heart burns hot!\p"
-	.string "If you can defeat all the TRAINERS\n"
-	.string "here, I'll reward your efforts.$"
-
-Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
-	.string "Show me some hot matches!\p"
-	.string "I run this SEASHORE HOUSE just for\n"
-	.string "that reason alone!$"
-
-Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
-	.string "You're scorching hot!\n"
-	.string "Those battles blazed!\l"
-	.string "I'm more than just satisfied!\p"
-	.string "As thanks for showing me your hot\n"
-	.string "streak, I want you to take this\l"
-	.string "Pokémon. It's a scorching hot battler,\l"
-	.string "I'm sure you'll put it to good use!$"
-
-Route109_SeashoreHouse_Text_BagFull:
-	.string "Oh, but hey, your BAG's jammed full.\n"
-	.string "I'll hang on to these for you.$"
-
-Route109_SeashoreHouse_Text_WantToBuySodaPop:
-	.string "Want to buy some SODA POP?\n"
-	.string "Pokémon love it!\p"
-	.string "Just ¥300 a bottle!\n"
-	.string "Buy some!$"
-
-Route109_SeashoreHouse_Text_HereYouGo:
-	.string "Here you go!$"
-
-Route109_SeashoreHouse_Text_NotEnoughMoney:
-	.string "You don't have the money.$"
-
-Route109_SeashoreHouse_Text_ThatsTooBad:
-	.string "No?\n"
-	.string "That's too bad.$"
-
 Route109_SeashoreHouse_Text_DwayneIntro:
 	.string "If you're looking for a battle in the\n"
-	.string "SEASHORE HOUSE, you'll find no\l"
+	.string "Hot House, you'll find no\l"
 	.string "hotter TRAINER than me, matey!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated:
@@ -214,16 +97,157 @@ Route109_SeashoreHouse_Text_SimonPostBattle:
 	.string "If one of my Pokémon knew the move\n"
 	.string "for carrying me across water on its\l"
 	.string "back, I could get rid of this inner tube.$"
-
-Route109_SeashoreHouse_Text_PlayerReceivedCharcadet:
-	.string "{PLAYER} received Charcadet!$"
-
-Route109_SeashoreHouse_Text_PokemonChangesWithStone:
-	.string "That Pokémon can evolve into two\n"
-	.string "different forms. You can use a Sun\l"
-	.string "Stone to turn it into an Armarouge or a\l"
-	.string "Moon Stone to turn it into a Ceruledge.\p"
-	.string "I think both are great options, so you\n"
-	.string "can't go wrong!$"
-
 `
+
+script Route109_SeashoreHouse_EventScript_Owner {
+	lock
+	faceplayer
+	goto_if_set(FLAG_RECEIVED_HOT_HOUSE_GIFT_MON, Route109_SeashoreHouse_EventScript_AlreadyReceivedPokemon)
+	goto_if_set(FLAG_DEFEATED_HOT_HOUSE, Route109_SeashoreHouse_EventScript_DefeatedTrainers)
+	goto_if_set(FLAG_TEMP_2, Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction)
+	msgbox(Route109_SeashoreHouse_Text_SeashoreHouseIntro, MSGBOX_DEFAULT)
+	setflag(FLAG_TEMP_2)
+	release
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction {
+	msgbox(Route109_SeashoreHouse_Text_ShowMeSomeHotMatches, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_DefeatedTrainers {
+	setvar(VAR_LEAVING_HOT_HOUSE, 1)
+	setmetatile(6, 9, METATILE_BuildingWarpLeft, FALSE)
+	setmetatile(7, 9, METATILE_BuildingWarpRight, FALSE)
+	special(DrawWholeMapView)
+	msgbox(Route109_SeashoreHouse_Text_TakeThisPokemon, MSGBOX_DEFAULT)
+	switch(var(VAR_HOT_HOUSE_STATE))
+	{
+		case 2:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
+			givemonrandom(SPECIES_TYROGUE, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
+		case 3:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEPI)
+			givemonrandom(SPECIES_TOGEPI, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_TOGEPI)
+		case 4:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE)
+			givemonrandom(SPECIES_EEVEE, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
+		case 5:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RIOLU)
+			givemonrandom(SPECIES_RIOLU, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_RIOLU)
+		case 6:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPE_NULL)
+			givemonrandom(SPECIES_TYPE_NULL, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_TYPE_NULL)
+		case 7:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARCADET)
+			givemonrandom(SPECIES_CHARCADET, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_CHARCADET)
+		default:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
+			givemonrandom(SPECIES_TYROGUE, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
+	}
+	
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route109_SeashoreHouse_EventScript_ReceiveRewardParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route109_SeashoreHouse_EventScript_ReceiveRewardPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_ReceiveRewardParty {
+	call(Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_ExplainReward)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(Route109_SeashoreHouse_EventScript_ExplainReward)
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_ReceiveRewardPC {
+	call(Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_SendRewardToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(Route109_SeashoreHouse_EventScript_SendRewardToPC)
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_SendRewardToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(Route109_SeashoreHouse_EventScript_ExplainReward)
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(Route109_SeashoreHouse_Text_PlayerReceivedReward)
+	waitmessage
+	waitfanfare
+	return
+}
+
+script Route109_SeashoreHouse_EventScript_ExplainReward {
+	msgbox(Route109_SeashoreHouse_Text_PokemonDescribe, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_HOT_HOUSE_GIFT_MON)
+	release
+	end
+}
+
+script Route109_SeashoreHouse_EventScript_AlreadyReceivedPokemon {
+	msgbox(Route109_SeashoreHouse_Text_ThanksForCompeting, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Route109_SeashoreHouse_Text_SeashoreHouseIntro {
+	"I'm the owner of the Hot House.\n"
+	"But you can call me Mr. Sea!\p"
+	"What I love above all is to see hot\n"
+	"Pokémon battles.\p"
+	"Let me see that your heart burns hot!\p"
+	"If you can defeat all the trainers\n"
+	"here, I'll reward your efforts."
+}
+
+text Route109_SeashoreHouse_Text_ShowMeSomeHotMatches {
+	"Show me some hot matches!\p"
+	"I run this Hot House just for\n"
+	"that reason alone!"
+}
+
+text Route109_SeashoreHouse_Text_TakeThisPokemon {
+	"You're blistering hot!\n"
+	"Those battles blazed!\l"
+	"I'm more than just satisfied!\p"
+	"Like my daughter promised, as a reward\n"
+	"for defeating those scorching hot\l"
+	"trainers, please accept this Pokémon."
+}
+
+text Route109_SeashoreHouse_Text_PlayerReceivedReward {
+	"{PLAYER} received {STR_VAR_1}!"
+}
+
+text Route109_SeashoreHouse_Text_PokemonDescribe {
+	"That Pokémon is a blazing hot battler,\n"
+	"just like you!\l"
+	"I know you'll be able to raise it well!\p"
+	"Please come back anytime to challenge\n"
+	"the Hot House again!"
+}
+
+text Route109_SeashoreHouse_Text_ThanksForCompeting {
+	"Thanks for competing, you're one\n"
+	"blazing hot trainer!\p"
+	"Be sure to come back to try out another\n"
+	"challenge some time!"
+}

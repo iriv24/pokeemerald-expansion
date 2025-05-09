@@ -6,15 +6,54 @@ raw `
 Route109_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route109_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route109_OnLoad
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route109_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route109_OnFrame
 	.byte 0
 
 Route109_OnTransition:
-	call_if_set FLAG_BADGE02_GET, SetHotHouseGirlPermLoc
+	goto_if_set FLAG_DEFEATED_HOT_HOUSE, SetHotHouseGirlPermLoc
 	end
 
 Route109_OnLoad:
-	call_if_set FLAG_BADGE02_GET, SetHotHouseGirlPermLoc
+	goto_if_set FLAG_DEFEATED_HOT_HOUSE, SetHotHouseGirlPermLoc
 	end
+
+Route109_OnWarp:
+	map_script_2 VAR_LEAVING_HOT_HOUSE, 1, Route109_EventScript_PlayerTurnNorth
+	.2byte 0
+
+Route109_EventScript_PlayerTurnNorth::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	end
+
+Route109_OnFrame:
+	map_script_2 VAR_LEAVING_HOT_HOUSE, 1, Route109_EventScript_ExitHotHouse
+	.2byte 0
+
+Route109_EventScript_ExitHotHouse::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2
+	waitmovement 0
+	applymovement LOCALID_LITTLE_GIRL, Route109_EventScript_GirlWalkHotHouse
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox Route109_Text_ThanksForPlaying, MSGBOX_DEFAULT
+	closemessage
+	cleartrainerflag TRAINER_JOHANNA
+	cleartrainerflag TRAINER_SIMON
+	cleartrainerflag TRAINER_DWAYNE
+	clearflag FLAG_DEFEATED_HOT_HOUSE
+	clearflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON
+	setvar VAR_HOT_HOUSE_STATE, 0
+	setvar VAR_ENTERING_HOT_HOUSE, 0
+	setvar VAR_LEAVING_HOT_HOUSE, 0
+	releaseall
+	end
+
+Route109_EventScript_GirlWalkHotHouse::
+	walk_right
+	walk_in_place_faster_down
+	step_end
 
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation
@@ -324,15 +363,6 @@ Route109_EventScript_ChoseNotToSail::
 	release
 	end
 
-Route109_EventScript_SeashoreHouseGirl::
-	goto_if_unset FLAG_BADGE02_GET, Route109_EventScript_SeashoreHouseGirlNoBadge
-	msgbox Route109_Text_ChillAtMyPapasSpot, MSGBOX_NPC
-	end
-
-Route109_EventScript_SeashoreHouseGirlNoBadge::
-	msgbox Route109_Text_PapasSpotGettingFixed, MSGBOX_NPC
-	end
-
 Route109_EventScript_SandCastleBoy::
 	lock
 	faceplayer
@@ -529,19 +559,6 @@ Route109_Text_BrineyTellMeWhenYouNeedToSail:
 	.string "Mr. Briney: You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
-Route109_Text_ChillAtMyPapasSpot:
-	.string "Yo, trainers!\n"
-	.string "Whether you're hot to trot,\l"
-	.string "or cool cat not,\l"
-	.string "chill at my papa's spot!$"
-
-Route109_Text_PapasSpotGettingFixed:
-	.string "Yo, trainer!\p"
-	.string "Sorry, my papa's spot is getting fixed\n"
-	.string "up right now.\p"
-	.string "Make sure you come back later to see\n"
-	.string "the hottest spot in town, though!$"
-
 Route109_Text_LittleKidsDartAround:
 	.string "Little kids can dart around so quickly…\p"
 	.string "You don't dare take your eyes off them\n"
@@ -576,7 +593,7 @@ Route109_Text_ZigzagoonCry:
 	.string "Zigzagoon: Guguu?$"
 
 Route109_Text_SeashoreHouseSign:
-	.string "Seashore House\p"
+	.string "Hot House\p"
 	.string "“May hot battles rage on hot sands!\n"
 	.string "The place for hot trainers!”$"
 
@@ -585,9 +602,240 @@ Route109_Text_TrainerTipsSign:
 	.string "Some areas are blocked off until\n"
 	.string "certain events are completed, such as\l"
 	.string "obtaining a new Gym Badge.$"
+
+
+Route109_Text_ThanksForPlaying:
+	.string "Yo, trainer!\p"
+	.string "Looks like you beat the trainers in the\n"
+	.string "Hot House no problem!\p"
+	.string "Thanks for stopping by, and feel free\n"
+	.string "to come take the challenge again\l"
+	.string "anytime, yo!$"
 `
+
+script Route109_EventScript_HotHouseGirl{
+	lock
+	faceplayer
+	goto_if_unset(FLAG_BADGE02_GET, Route109_EventScript_SeashoreHouseGirlNoBadge)
+	msgbox(Route109_Text_HotHouseFullIntro)
+
+	dynmultipush("Tyrogue", 2)
+
+	if(!flag(FLAG_BADGE03_GET)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Togepi{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 3)
+	}
+	else{
+		dynmultipush("Togepi", 3)
+	}
+
+	if(!flag(FLAG_BADGE04_GET)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Eevee{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 4)
+	}
+	else{
+		dynmultipush("Eevee", 4)
+	}
+
+	if(!flag(FLAG_BADGE05_GET)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Riolu{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 5)
+	}
+	else{
+		dynmultipush("Riolu", 5)
+	}
+
+	if(!flag(FLAG_BADGE06_GET)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Type: Null{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 6)
+	}
+	else{
+		dynmultipush("Type: Null", 6)
+	}
+
+	if(!flag(FLAG_BADGE07_GET)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Charcadet{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 7)
+	}
+	else{
+		dynmultipush("Charcadet", 7)
+	}
+	
+    dynmultipush("Cancel", MULTI_B_PRESSED)
+    // setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 2, DYN_MULTICHOICE_CB_NONE)
+
+    if (var(VAR_RESULT) == MULTI_B_PRESSED)
+	{
+		goto(Route109_EventScript_HotHouseNo)
+	}
+
+	// copy the result of the multichoice into var 8005
+	copyvar(VAR_0x8005, VAR_RESULT)
+
+	// get the number of badges the player has into var 8006
+	specialvar(VAR_0x8006, GetNumBadges)
+
+	compare(VAR_0x8006, VAR_0x8005)
+	goto_if_lt(Route109_EventScript_SorryNotEnoughBadges)
+
+	msgbox(Route109_Text_EnterCantLeave, MSGBOX_YESNO)
+
+	if (var(VAR_RESULT) == NO)
+	{
+		goto(Route109_EventScript_HotHouseNo)
+	}
+
+	// copy the result of the multichoice into VAR_HOT_HOUSE_STATE
+	copyvar(VAR_HOT_HOUSE_STATE, VAR_0x8005)
+	setvar(VAR_ENTERING_HOT_HOUSE, 1)
+
+	msgbox(Route109_Text_GoodLuckTrainer, MSGBOX_DEFAULT)
+	closemessage()
+
+	switch(var(VAR_FACING))
+	{
+		case DIR_EAST:
+			applymovement(LOCALID_LITTLE_GIRL, HotHouseGirlUnblockStepEast)
+			waitmovement(0)
+			applymovement(OBJ_EVENT_ID_PLAYER, PlayerEnterHotHouseStepEast)
+			waitmovement(0)
+		case DIR_NORTH:
+			applymovement(LOCALID_LITTLE_GIRL, HotHouseGirlUnblockStepWest)
+			waitmovement(0)
+			applymovement(OBJ_EVENT_ID_PLAYER, PlayerEnterHotHouseStepNorth)
+			waitmovement(0)
+		case DIR_WEST:
+			applymovement(LOCALID_LITTLE_GIRL, HotHouseGirlUnblockStepWest)
+			waitmovement(0)
+			applymovement(OBJ_EVENT_ID_PLAYER, PlayerEnterHotHouseStepWest)
+			waitmovement(0)
+		default:
+			applymovement(LOCALID_LITTLE_GIRL, HotHouseGirlUnblockStepWest)
+			waitmovement(0)
+			applymovement(OBJ_EVENT_ID_PLAYER, PlayerEnterHotHouseStepNorth)
+			waitmovement(0)
+	}
+	
+
+	warp(MAP_ROUTE109_SEASHORE_HOUSE, 6, 9)
+	waitstate
+	release
+	end
+}
+
+script Route109_EventScript_SeashoreHouseGirlNoBadge {
+	msgbox(Route109_Text_PapasSpotGettingFixed)
+	release
+	end
+}
+
+script Route109_EventScript_HotHouseNo {
+    msgbox(Route109_Text_HotHouseNo)
+	setvar(VAR_HOT_HOUSE_STATE, 0)
+	setvar(VAR_ENTERING_HOT_HOUSE, 0)
+    release
+    end
+}
+
+script Route109_EventScript_SorryNotEnoughBadges {
+    msgbox(Route109_Text_SorryNotEnoughBadges)
+	setvar(VAR_HOT_HOUSE_STATE, 0)
+	setvar(VAR_ENTERING_HOT_HOUSE, 0)
+    release
+    end
+}
+
+script HotHouseGirlUnblockStepWest
+{
+	walk_left
+	face_right
+	step_end
+}
+
+script HotHouseGirlUnblockStepEast
+{
+	walk_right
+	face_left
+	step_end
+}
+
+script PlayerEnterHotHouseStepEast
+{
+	walk_right
+	walk_up
+	step_end
+}
+
+script PlayerEnterHotHouseStepWest
+{
+	walk_left
+	walk_up
+	step_end
+}
+
+script PlayerEnterHotHouseStepNorth
+{
+	walk_up
+	walk_up
+	step_end
+}
+
+script PlayerEnteredHotHouse
+{
+	walk_up
+	step_end
+}
 
 script SetHotHouseGirlPermLoc {
 	setobjectxyperm(LOCALID_LITTLE_GIRL, 11, 6)
-	return
+	end
+}
+
+text Route109_Text_PapasSpotGettingFixed {
+	"Yo, trainer!\p"
+	"Sorry, my papa's spot is getting fixed\n"
+	"up right now.\p"
+	"Make sure you come back later to see\n"
+	"the hottest spot in town, though!"
+}
+
+text Route109_Text_HotHouseFullIntro {
+	"Yo, trainer!\n"
+	"Looks like you've got the right stuff\l"
+	"to enter the new Hot House!\p"
+	"My papa totally revamped it, and we've\n"
+	"got all sorts of great rewards now, but\l"
+	"the trainers inside will be stronger if\l"
+	"you try to go for better rewards!\p"
+	"You can also come back and challenge\n"
+	"the Hot House as many times as you'd\l"
+	"like, {COLOR GREEN}{SHADOW LIGHT_GREEN}but be careful, because once you\l"
+	"enter, you can't leave or access your\l"
+	"portable PC!\p"
+	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Which reward Pokémon do you want to\n"
+	"compete for?"
+}
+
+text Route109_Text_EnterCantLeave {
+	"You got it, trainer!\n"
+	"Papa said I have to warn everyone again\l"
+	"before they go inside:\p"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Once you enter the Hot House, you can't\n"
+	"leave or use your PC until you white out\l"
+	"or beat all the trainers; {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}is that okay?"
+}
+
+text Route109_Text_GoodLuckTrainer {
+	"That's what I'm talking about, yeah!\n"
+	"You got this, trainer, good luck in\l"
+	"there!"
+}
+
+
+text Route109_Text_HotHouseNo {
+	"No worries! The Hot House is open if you\n"
+	"change your mind!"
+}
+
+text Route109_Text_SorryNotEnoughBadges {
+	"It looks like you don't have enough\n"
+	"Badges to compete for that reward yet.\l"
+	"Come back once you have more Badges!"
 }
