@@ -1991,7 +1991,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz1:
 # 996 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "MECHADOLL 4 QUIZ.\p"
 # 997 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
-	.string "In SEASHORE HOUSE, were there more men\n"
+	.string "In Hot House, were there more men\n"
 # 998 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
 	.string "or women?$"
 # 999 "data/maps/Route110_TrickHousePuzzle5/scripts.pory"
