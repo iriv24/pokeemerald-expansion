@@ -35,6 +35,7 @@ Route109_EventScript_ExitHotHouse::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2
 	waitmovement 0
 	applymovement LOCALID_LITTLE_GIRL, Route109_EventScript_GirlWalkHotHouse
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox Route109_Text_ThanksForPlaying, MSGBOX_DEFAULT

@@ -64,39 +64,41 @@ Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
 Route109_SeashoreHouse_Text_DwayneIntro:
 	.string "If you're looking for a battle in the\n"
 	.string "Hot House, you'll find no\l"
-	.string "hotter TRAINER than me, matey!$"
+	.string "hotter trainer than me, matey!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated:
 	.string "That was a hot battle!\n"
 	.string "I can accept that loss, matey!$"
 
 Route109_SeashoreHouse_Text_DwaynePostBattle:
-	.string "Whenever I'm in SLATEPORT, I enjoy\n"
-	.string "hot battles and ice-cold SODA POP!$"
+	.string "Not bad, matey, but you'll have to\n"
+	.string "defeat the other two if you want that\l"
+	.string "coveted reward!$"
 
 Route109_SeashoreHouse_Text_JohannaIntro:
 	.string "Boring battles aren't worth the effort.\p"
 	.string "Fiery hot battles are what toughen up\n"
-	.string "TRAINERS and Pokémon!$"
+	.string "trainers and Pokémon!$"
 
 Route109_SeashoreHouse_Text_JohannaDefeated:
 	.string "That's hot!$"
 
 Route109_SeashoreHouse_Text_JohannaPostBattle:
-	.string "Whew, I'm all thirsty.\n"
-	.string "Maybe I'll have a SODA POP.$"
+	.string "You might have what it takes to get\n"
+	.string "this reward, you're a scorching hot\l"
+	.string "battler!$"
 
 Route109_SeashoreHouse_Text_SimonIntro:
 	.string "I'm going to show you how great\n"
-	.string "my Pokémon are, but don't cry!$"
+	.string "my Pokémon are!$"
 
 Route109_SeashoreHouse_Text_SimonDefeated:
-	.string "…I lost, but I won't cry…$"
+	.string "Looks like I still need some work…$"
 
 Route109_SeashoreHouse_Text_SimonPostBattle:
-	.string "If one of my Pokémon knew the move\n"
-	.string "for carrying me across water on its\l"
-	.string "back, I could get rid of this inner tube.$"
+	.string "I've been practicing here in the Hot\n"
+	.string "House so I can be a strong Pokémon who\l"
+	.string "can take on the Elite Four someday!$"
 `
 
 script Route109_SeashoreHouse_EventScript_Owner {
@@ -197,6 +199,7 @@ script Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare {
 
 script Route109_SeashoreHouse_EventScript_ExplainReward {
 	msgbox(Route109_SeashoreHouse_Text_PokemonDescribe, MSGBOX_DEFAULT)
+	playse(SE_TRUCK_DOOR)
 	setflag(FLAG_RECEIVED_HOT_HOUSE_GIFT_MON)
 	release
 	end
