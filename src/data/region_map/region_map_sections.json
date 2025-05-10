@@ -1734,6 +1734,14 @@
         "y": 0,
         "width": 2,
         "height": 3
-      }
+      },
+      {
+      "map_section": "MAPSEC_HOT_HOUSE",
+      "name": "HOT HOUSE",
+      "x": 8,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    }
   ]
 }
