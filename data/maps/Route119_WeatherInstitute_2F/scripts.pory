@@ -91,13 +91,18 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
-	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
-	givemonrandom SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC
-	goto Common_EventScript_NoMoreRoomForPokemon
+	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseDontTakePokemon, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_CASTFORM
+	release
 	end
+	
+	
+	@setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
+	@givemonrandom SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
+	@goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
+	@goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC
+	@goto Common_EventScript_NoMoreRoomForPokemon
+	@end
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
@@ -292,14 +297,13 @@ Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
 	.string "Ahahahaha!\n"
 	.string "Team Magma, just you wait!$"
 
-Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon:
-	.string "Thanks!\n"
-	.string "Thanks to you, we're safe!\p"
-	.string "It might be an odd way of thanking you,\n"
-	.string "but take this Pokémon.\p"
-	.string "Honestly, it's pretty bad, but no way\n"
-	.string "the creator was putting this idiot out\l"
-	.string "in the wild, you know?$"
+Route119_WeatherInstitute_2F_Text_ThanksPleaseDontTakePokemon:
+	.string "Thanks to you, we're safe!\n"
+	.string "Normally, I would give you a Pokémon as\l"
+	.string "token of our appreciation, but I think\l"
+	.string "in this case, you'll be better of\l"
+	.string "Don't worry, though, Castform can now\n"
+	.string "be found out in the wild!$"
 
 @ Unused
 Route119_WeatherInstitute_2F_Text_NoRoomForPokemon:
