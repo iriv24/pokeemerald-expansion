@@ -91,11 +91,11 @@ Route109_SeashoreHouse_EventScript_Johanna::
 # 46 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 47 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_EventScript_Simon::
+Route109_SeashoreHouse_EventScript_Brian::
 # 48 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	trainerbattle_single TRAINER_SIMON, Route109_SeashoreHouse_Text_SimonIntro, Route109_SeashoreHouse_Text_SimonDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	trainerbattle_single TRAINER_BRIAN, Route109_SeashoreHouse_Text_BrianIntro, Route109_SeashoreHouse_Text_BrianDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
 # 49 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	msgbox Route109_SeashoreHouse_Text_SimonPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route109_SeashoreHouse_Text_BrianPostBattle, MSGBOX_AUTOCLOSE
 # 50 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	end
 # 51 "data/maps/Route109_SeashoreHouse/scripts.pory"
@@ -107,7 +107,7 @@ Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
 # 54 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 # 55 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	goto_if_not_defeated TRAINER_SIMON, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	goto_if_not_defeated TRAINER_BRIAN, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 # 56 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setflag FLAG_DEFEATED_HOT_HOUSE
 # 57 "data/maps/Route109_SeashoreHouse/scripts.pory"
@@ -179,225 +179,221 @@ Route109_SeashoreHouse_Text_JohannaPostBattle:
 # 90 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
 # 91 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_SimonIntro:
+Route109_SeashoreHouse_Text_BrianIntro:
 # 92 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "I'm going to show you how great\n"
+	.string "Hand me your Badges!$"
 # 93 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "my Pokémon are!$"
+
 # 94 "data/maps/Route109_SeashoreHouse/scripts.pory"
-
+Route109_SeashoreHouse_Text_BrianDefeated:
 # 95 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_SimonDefeated:
+	.string "My NELO is gonna suffer for this one…$"
 # 96 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "Looks like I still need some work…$"
-# 97 "data/maps/Route109_SeashoreHouse/scripts.pory"
 
+# 97 "data/maps/Route109_SeashoreHouse/scripts.pory"
+Route109_SeashoreHouse_Text_BrianPostBattle:
 # 98 "data/maps/Route109_SeashoreHouse/scripts.pory"
-Route109_SeashoreHouse_Text_SimonPostBattle:
+	.string "Did you know Greedent learns Counter?\n"
 # 99 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "I've been practicing here in the Hot\n"
-# 100 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "House so I can be a strong Pokémon who\l"
-# 101 "data/maps/Route109_SeashoreHouse/scripts.pory"
-	.string "can take on the Elite Four someday!$"
+	.string "I found that one out the hard way.$"
 
 Route109_SeashoreHouse_EventScript_Owner::
-# 105 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 103 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	lock
-# 106 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 104 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	faceplayer
-# 107 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 105 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_set FLAG_RECEIVED_HOT_HOUSE_GIFT_MON, Route109_SeashoreHouse_EventScript_AlreadyReceivedPokemon
-# 108 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 106 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_HOT_HOUSE, Route109_SeashoreHouse_EventScript_DefeatedTrainers
-# 109 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 107 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction
-# 110 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 108 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_SeashoreHouseIntro, MSGBOX_DEFAULT
-# 111 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 109 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setflag FLAG_TEMP_2
-# 112 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 110 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
 	end
 
 
 Route109_SeashoreHouse_EventScript_AlreadyGaveIntroduction::
-# 117 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 115 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_ShowMeSomeHotMatches, MSGBOX_DEFAULT
-# 118 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 116 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
 	end
 
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers::
-# 123 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 121 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_LEAVING_HOT_HOUSE, 1
-# 124 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 122 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setmetatile 6, 9, METATILE_BuildingWarpLeft, FALSE
-# 125 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 123 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setmetatile 7, 9, METATILE_BuildingWarpRight, FALSE
-# 126 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 124 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	special DrawWholeMapView
-# 127 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 125 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_TakeThisPokemon, MSGBOX_DEFAULT
-# 128 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 126 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	switch VAR_HOT_HOUSE_STATE
-# 130 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 128 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 2, Route109_SeashoreHouse_EventScript_DefeatedTrainers_3
-# 134 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 132 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 3, Route109_SeashoreHouse_EventScript_DefeatedTrainers_4
-# 138 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 136 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 4, Route109_SeashoreHouse_EventScript_DefeatedTrainers_5
-# 142 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 140 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 5, Route109_SeashoreHouse_EventScript_DefeatedTrainers_6
-# 146 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 144 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 6, Route109_SeashoreHouse_EventScript_DefeatedTrainers_7
-# 150 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 148 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	case 7, Route109_SeashoreHouse_EventScript_DefeatedTrainers_8
-# 155 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 153 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
-# 156 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 154 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_TYROGUE, 25
-# 157 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 155 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_1:
-# 160 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 158 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route109_SeashoreHouse_EventScript_ReceiveRewardParty
-# 161 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 159 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route109_SeashoreHouse_EventScript_ReceiveRewardPC
-# 162 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 160 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 163 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 161 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
 	end
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_3:
-# 131 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 129 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
-# 132 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 130 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_TYROGUE, 25
-# 133 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 131 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_4:
-# 135 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 133 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEPI
-# 136 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 134 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_TOGEPI, 25
-# 137 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 135 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TOGEPI
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_5:
-# 139 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 137 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE
-# 140 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 138 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_EEVEE, 25
-# 141 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 139 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_6:
-# 143 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 141 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RIOLU
-# 144 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 142 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_RIOLU, 25
-# 145 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 143 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_RIOLU
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_7:
-# 147 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 145 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPE_NULL
-# 148 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 146 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_TYPE_NULL, 25
-# 149 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 147 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TYPE_NULL
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 Route109_SeashoreHouse_EventScript_DefeatedTrainers_8:
-# 151 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 149 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARCADET
-# 152 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 150 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	givemonrandom SPECIES_CHARCADET, 25
-# 153 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 151 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_CHARCADET
 	goto Route109_SeashoreHouse_EventScript_DefeatedTrainers_1
 
 
 Route109_SeashoreHouse_EventScript_ReceiveRewardParty::
-# 168 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 166 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare
-# 169 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 167 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 170 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 168 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_ExplainReward
-# 171 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 169 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 172 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 170 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 173 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 171 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto Route109_SeashoreHouse_EventScript_ExplainReward
 	end
 
 
 Route109_SeashoreHouse_EventScript_ReceiveRewardPC::
-# 178 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 176 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare
-# 179 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 177 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 180 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 178 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route109_SeashoreHouse_EventScript_SendRewardToPC
-# 181 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 179 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 182 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 180 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto Route109_SeashoreHouse_EventScript_SendRewardToPC
 	end
 
 
 Route109_SeashoreHouse_EventScript_SendRewardToPC::
-# 187 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 185 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 188 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 186 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	goto Route109_SeashoreHouse_EventScript_ExplainReward
 	end
 
 
 Route109_SeashoreHouse_EventScript_ReceivedRewardFanfare::
-# 193 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 191 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 194 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 192 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	message Route109_SeashoreHouse_Text_PlayerReceivedReward
-# 195 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 193 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	waitmessage
-# 196 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 194 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	waitfanfare
 	return
 
 
 Route109_SeashoreHouse_EventScript_ExplainReward::
-# 201 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 199 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_PokemonDescribe, MSGBOX_DEFAULT
-# 202 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 200 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	playse SE_TRUCK_DOOR
-# 203 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 201 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	setflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON
-# 204 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 202 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
 	end
 
 
 Route109_SeashoreHouse_EventScript_AlreadyReceivedPokemon::
-# 209 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 207 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	msgbox Route109_SeashoreHouse_Text_ThanksForCompeting, MSGBOX_DEFAULT
-# 210 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 208 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	release
 	end
 
 
 Route109_SeashoreHouse_Text_SeashoreHouseIntro::
-# 214 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 212 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "I'm the owner of the Hot House.\n"
 	.string "But you can call me Mr. Sea!\p"
 	.string "What I love above all is to see hot\n"
@@ -407,13 +403,13 @@ Route109_SeashoreHouse_Text_SeashoreHouseIntro::
 	.string "here, I'll reward your efforts.$"
 
 Route109_SeashoreHouse_Text_ShowMeSomeHotMatches::
-# 224 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 222 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "Show me some hot matches!\p"
 	.string "I run this Hot House just for\n"
 	.string "that reason alone!$"
 
 Route109_SeashoreHouse_Text_TakeThisPokemon::
-# 230 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 228 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "You're blistering hot!\n"
 	.string "Those battles blazed!\l"
 	.string "I'm more than just satisfied!\p"
@@ -422,11 +418,11 @@ Route109_SeashoreHouse_Text_TakeThisPokemon::
 	.string "trainers, please accept this Pokémon.$"
 
 Route109_SeashoreHouse_Text_PlayerReceivedReward::
-# 239 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 237 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "{PLAYER} received {STR_VAR_1}!$"
 
 Route109_SeashoreHouse_Text_PokemonDescribe::
-# 243 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 241 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "That Pokémon is a blazing hot battler,\n"
 	.string "just like you!\l"
 	.string "I know you'll be able to raise it well!\p"
@@ -434,7 +430,7 @@ Route109_SeashoreHouse_Text_PokemonDescribe::
 	.string "the Hot House again!$"
 
 Route109_SeashoreHouse_Text_ThanksForCompeting::
-# 251 "data/maps/Route109_SeashoreHouse/scripts.pory"
+# 249 "data/maps/Route109_SeashoreHouse/scripts.pory"
 	.string "Thanks for competing, you're one\n"
 	.string "blazing hot trainer!\p"
 	.string "Be sure to come back to try out another\n"

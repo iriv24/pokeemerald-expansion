@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route109_SeashoreHouse_EventScript_Simon",
+      "script": "Route109_SeashoreHouse_EventScript_Brian",
       "flag": "0"
     },
     {

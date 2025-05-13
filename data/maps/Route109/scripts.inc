@@ -85,7 +85,7 @@ Route109_EventScript_ExitHotHouse::
 # 43 "data/maps/Route109/scripts.pory"
 	cleartrainerflag TRAINER_JOHANNA
 # 44 "data/maps/Route109/scripts.pory"
-	cleartrainerflag TRAINER_SIMON
+	cleartrainerflag TRAINER_BRIAN
 # 45 "data/maps/Route109/scripts.pory"
 	cleartrainerflag TRAINER_DWAYNE
 # 46 "data/maps/Route109/scripts.pory"

@@ -68,7 +68,7 @@
 #define TRAINER_LOLA_4                       62
 #define TRAINER_LOLA_5                       63
 #define TRAINER_RICKY_1                      64
-#define TRAINER_SIMON                        65
+#define TRAINER_BRIAN                        65
 #define TRAINER_CHARLIE                      66
 #define TRAINER_RICKY_2                      67
 #define TRAINER_RICKY_3                      68
