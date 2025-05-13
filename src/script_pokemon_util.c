@@ -171,7 +171,7 @@ static u16 PickOldaleEgg(void)
     pokes[4] = SPECIES_PANCHAM;
     pokes[5] = SPECIES_YAMPER;
     pokes[6] = SPECIES_ROCKRUFF;
-    pokes[7] = SPECIES_GREAVARD;
+    pokes[7] = SPECIES_SNORUNT;
     pokes[8] = SPECIES_SPOINK;
     pokes[9] = SPECIES_VAROOM;
     return pokes[rand];
