@@ -674,6 +674,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 Route109_HotHouse_EventScript_ResetHotHouse::
 	cleartrainerflag TRAINER_JOHANNA
 	cleartrainerflag TRAINER_BRIAN
+	cleartrainerflag TRAINER_BRIAN_2
 	cleartrainerflag TRAINER_DWAYNE
 	clearflag FLAG_DEFEATED_HOT_HOUSE
 	clearflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON

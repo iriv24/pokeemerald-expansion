@@ -37,6 +37,7 @@
 #include "m4a.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "party_pickers.h"
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
@@ -1922,6 +1923,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u8 monsCount;
     u8 isTrainerBossTrainer = trainer->isBossTrainer;
     u8 trainerClass = trainer->trainerClass;
+    u16 partyIndexToUse = 0;
+    u8 partySizeToUse = trainer->partySize;
+    const struct TrainerMon *partyData;
 
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
@@ -1929,17 +1933,35 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     {
         if (firstTrainer == TRUE)
             ZeroEnemyPartyMons();
-
-        if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        
+        if (trainer->partyPickerFunction != NULL)
         {
-            if (trainer->partySize > PARTY_SIZE / 2)
-                monsCount = PARTY_SIZE / 2;
+            partyIndexToUse = trainer->partyPickerFunction(trainer);
+            if(partyIndexToUse > 0)
+            {
+                partyData = trainer->additionalParties[partyIndexToUse - 1];
+                partySizeToUse = trainer->additionalPartySizes[partyIndexToUse - 1];
+            }
             else
-                monsCount = trainer->partySize;
+            {
+                partyData = trainer->party;
+            }
         }
         else
         {
-            monsCount = trainer->partySize;
+            partyData = trainer->party;
+        }
+
+        if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        {
+            if (partySizeToUse > PARTY_SIZE / 2)
+                monsCount = PARTY_SIZE / 2;
+            else
+                monsCount = partySizeToUse;
+        }
+        else
+        {
+            monsCount = partySizeToUse;
         }
 
         bool8 decidedLevel = FALSE;
@@ -1950,7 +1972,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         {
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData = trainer->party;
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 ability = 0;
@@ -2093,7 +2114,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         }
     }
 
-    return trainer->partySize;
+    return partySizeToUse;
 }
 
 u8 DecideLevel(void)

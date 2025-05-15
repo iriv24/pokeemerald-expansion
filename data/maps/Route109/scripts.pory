@@ -42,6 +42,7 @@ Route109_EventScript_ExitHotHouse::
 	closemessage
 	cleartrainerflag TRAINER_JOHANNA
 	cleartrainerflag TRAINER_BRIAN
+	cleartrainerflag TRAINER_BRIAN_2
 	cleartrainerflag TRAINER_DWAYNE
 	clearflag FLAG_DEFEATED_HOT_HOUSE
 	clearflag FLAG_RECEIVED_HOT_HOUSE_GIFT_MON
@@ -619,50 +620,56 @@ script Route109_EventScript_HotHouseGirl{
 	faceplayer
 	goto_if_unset(FLAG_BADGE02_GET, Route109_EventScript_SeashoreHouseGirlNoBadge)
 	msgbox(Route109_Text_HotHouseFullIntro)
+	closemessage()
+	goto(Route109_EventScript_WhichRewardMenu)
+}
 
-	dynmultipush("Tyrogue", 2)
+script Route109_EventScript_WhichRewardMenu {
+	msgbox(Route109_Text_IntroQuestion)
+
+	dynmultipush("Badge 2", 2)
 
 	if(!flag(FLAG_BADGE03_GET)){
-		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Togepi{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 3)
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Badge 3{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 3)
 	}
 	else{
-		dynmultipush("Togepi", 3)
+		dynmultipush("Badge 3", 3)
 	}
 
 	if(!flag(FLAG_BADGE04_GET)){
-		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Eevee{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 4)
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Badge 4{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 4)
 	}
 	else{
-		dynmultipush("Eevee", 4)
+		dynmultipush("Badge 4", 4)
 	}
 
 	if(!flag(FLAG_BADGE05_GET)){
-		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Riolu{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 5)
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Badge 5{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 5)
 	}
 	else{
-		dynmultipush("Riolu", 5)
+		dynmultipush("Badge 5", 5)
 	}
 
 	if(!flag(FLAG_BADGE06_GET)){
-		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Type: Null{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 6)
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Badge 6{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 6)
 	}
 	else{
-		dynmultipush("Type: Null", 6)
+		dynmultipush("Badge 6", 6)
 	}
 
 	if(!flag(FLAG_BADGE07_GET)){
-		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Charcadet{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 7)
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Badge 7{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 7)
 	}
 	else{
-		dynmultipush("Charcadet", 7)
+		dynmultipush("Badge 7", 7)
 	}
-	
-    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+	dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	dynmultistack(0, 0, FALSE, 6, FALSE, 2, DYN_MULTICHOICE_CB_NONE)
 
-    if (var(VAR_RESULT) == MULTI_B_PRESSED)
+	if (var(VAR_RESULT) == MULTI_B_PRESSED)
 	{
 		goto(Route109_EventScript_HotHouseNo)
 	}
@@ -675,7 +682,185 @@ script Route109_EventScript_HotHouseGirl{
 
 	compare(VAR_0x8006, VAR_0x8005)
 	goto_if_lt(Route109_EventScript_SorryNotEnoughBadges)
+	buffernumberstring(STR_VAR_1, VAR_0x8005)
 
+    if (var(VAR_0x8005) == 2)
+	{
+		goto(Route109_EventScript_Badge2Options)
+	}
+
+	if (var(VAR_0x8005) == 3)
+	{
+		goto(Route109_EventScript_Badge3Options)
+	}
+
+	if (var(VAR_0x8005) == 4)
+	{
+		goto(Route109_EventScript_Badge4Options)
+	}
+
+	if (var(VAR_0x8005) == 5)
+	{
+		goto(Route109_EventScript_Badge5Options)
+	}
+
+	if (var(VAR_0x8005) == 6)
+	{
+		goto(Route109_EventScript_Badge6Options)
+	}
+
+	if (var(VAR_0x8005) == 7)
+	{
+		goto(Route109_EventScript_Badge7Options)
+	}
+
+	goto(Route109_EventScript_HotHouseNo)
+
+}
+
+script Route109_EventScript_Badge2Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Tyrogue", 1)
+	dynmultipush("Pansage", 2)
+	dynmultipush("Panpour", 3)
+	dynmultipush("Pansear", 4)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 1, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_Badge3Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Misdreavus", 5)
+	dynmultipush("Pinsir", 6)
+	dynmultipush("Heracross", 7)
+	dynmultipush("Scyther", 8)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 5, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_Badge4Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Eevee", 9)
+	dynmultipush("Magby", 10)
+	dynmultipush("Elekid", 11)
+	dynmultipush("Smoochum", 12)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 9, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_Badge5Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Riolu", 13)
+	dynmultipush("Togepi", 14)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 13, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_Badge6Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Type: Null", 15)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 15, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_Badge7Options {
+	msgbox(Route109_Text_BadgeRewardsQuestion)
+
+	dynmultipush("Charcadet", 16)
+	dynmultipush("Back", MULTI_B_PRESSED)
+	
+	
+	// setting initial selected to a non-existant ID will always have it point to the first option
+	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	dynmultistack(0, 0, FALSE, 6, FALSE, 16, DYN_MULTICHOICE_CB_NONE)
+
+	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	{
+		goto(Route109_EventScript_WhichRewardMenu)
+	}
+
+	// copy the result of the multichoice into var 8004
+	copyvar(VAR_0x8004, VAR_RESULT)
+	goto(Route109_EventScript_ConfirmAndEnterHotHouse)
+
+}
+
+script Route109_EventScript_ConfirmAndEnterHotHouse {
 	msgbox(Route109_Text_EnterCantLeave, MSGBOX_YESNO)
 
 	if (var(VAR_RESULT) == NO)
@@ -684,7 +869,7 @@ script Route109_EventScript_HotHouseGirl{
 	}
 
 	// copy the result of the multichoice into VAR_HOT_HOUSE_STATE
-	copyvar(VAR_HOT_HOUSE_STATE, VAR_0x8005)
+	copyvar(VAR_HOT_HOUSE_STATE, VAR_0x8004)
 	setvar(VAR_ENTERING_HOT_HOUSE, 1)
 
 	msgbox(Route109_Text_GoodLuckTrainer, MSGBOX_DEFAULT)
@@ -809,9 +994,17 @@ text Route109_Text_HotHouseFullIntro {
 	"the Hot House as many times as you'd\l"
 	"like, {COLOR GREEN}{SHADOW LIGHT_GREEN}but be careful, because once you\l"
 	"enter, you can't leave or access your\l"
-	"portable PC!\p"
-	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Which reward Pokémon do you want to\n"
+	"portable PC!{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}"
+}
+
+text Route109_Text_IntroQuestion {
+	"Which reward level do you want to\n"
 	"compete for?"
+}
+
+text Route109_Text_BadgeRewardsQuestion {
+	"Which Badge {STR_VAR_1} reward Pokémon do you\n"
+	"want to compete for?"
 }
 
 text Route109_Text_EnterCantLeave {

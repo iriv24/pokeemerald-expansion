@@ -27,6 +27,10 @@ Route109_SeashoreHouse_EventScript_EnterRoom::
 	special DrawWholeMapView
 	playse SE_TRUCK_DOOR
 	setvar VAR_ENTERING_HOT_HOUSE, 0
+	cleartrainerflag TRAINER_JOHANNA
+	cleartrainerflag TRAINER_BRIAN
+	cleartrainerflag TRAINER_BRIAN_2
+	cleartrainerflag TRAINER_DWAYNE
 	releaseall
 	end
 
@@ -45,17 +49,32 @@ Route109_SeashoreHouse_EventScript_Johanna::
 	end
 
 Route109_SeashoreHouse_EventScript_Brian::
+	goto_if_eq VAR_HOT_HOUSE_STATE, 16, Route109_SeashoreHouse_EventScript_BrianDouble
 	trainerbattle_single TRAINER_BRIAN, Route109_SeashoreHouse_Text_BrianIntro, Route109_SeashoreHouse_Text_BrianDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	msgbox Route109_SeashoreHouse_Text_BrianPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route109_SeashoreHouse_EventScript_BrianDouble::
+	trainerbattle_single TRAINER_BRIAN_2, Route109_SeashoreHouse_Text_BrianIntro, Route109_SeashoreHouse_Text_BrianDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
 	msgbox Route109_SeashoreHouse_Text_BrianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
 	goto_if_not_defeated TRAINER_DWAYNE, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-	goto_if_not_defeated TRAINER_BRIAN, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	call_if_eq VAR_HOT_HOUSE_STATE, 16, Route109_SeashoreHouse_EventScript_CheckBrianDoubleBattle
+	call_if_lt VAR_HOT_HOUSE_STATE, 16, Route109_SeashoreHouse_EventScript_CheckBrianSingleBattle
 	setflag FLAG_DEFEATED_HOT_HOUSE
 	release
 	end
+
+Route109_SeashoreHouse_EventScript_CheckBrianSingleBattle::
+	goto_if_not_defeated TRAINER_BRIAN, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	return
+
+Route109_SeashoreHouse_EventScript_CheckBrianDoubleBattle::
+	goto_if_not_defeated TRAINER_BRIAN_2, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	return
 
 Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
 	release
@@ -89,10 +108,12 @@ Route109_SeashoreHouse_Text_JohannaPostBattle:
 	.string "battler!$"
 
 Route109_SeashoreHouse_Text_BrianIntro:
-	.string "Hand me your Badges!$"
+	.string "Hall of Fame? First of all, buddy,\n"
+	.string "You Will Never Defeat Guitarist Brian!$"
 
 Route109_SeashoreHouse_Text_BrianDefeated:
-	.string "My NELO is gonna suffer for this one…$"
+	.string "Do I have to give you my badges now?\n"
+	.string "My NELO is gonna suffer…$"
 
 Route109_SeashoreHouse_Text_BrianPostBattle:
 	.string "Did you know Greedent learns Counter?\n"
@@ -125,27 +146,67 @@ script Route109_SeashoreHouse_EventScript_DefeatedTrainers {
 	msgbox(Route109_SeashoreHouse_Text_TakeThisPokemon, MSGBOX_DEFAULT)
 	switch(var(VAR_HOT_HOUSE_STATE))
 	{
-		case 2:
+		case 1:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
 			givemonrandom(SPECIES_TYROGUE, 25)
 			bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
+		case 2:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PANSAGE)
+			givemonrandom(SPECIES_PANSAGE, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_PANSAGE)
 		case 3:
-			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEPI)
-			givemonrandom(SPECIES_TOGEPI, 25)
-			bufferspeciesname(STR_VAR_1, SPECIES_TOGEPI)
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PANPOUR)
+			givemonrandom(SPECIES_PANPOUR, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_PANPOUR)
 		case 4:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PANSEAR)
+			givemonrandom(SPECIES_PANSEAR, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_PANSEAR)
+		case 5:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISDREAVUS)
+			givemonrandom(SPECIES_MISDREAVUS, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_MISDREAVUS)
+		case 6:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PINSIR)
+			givemonrandom(SPECIES_PINSIR, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_PINSIR)
+		case 7:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HERACROSS)
+			givemonrandom(SPECIES_HERACROSS, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_HERACROSS)
+		case 8:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SCYTHER)
+			givemonrandom(SPECIES_SCYTHER, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_SCYTHER)
+		case 9:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE)
 			givemonrandom(SPECIES_EEVEE, 25)
 			bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
-		case 5:
+		case 10:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGBY)
+			givemonrandom(SPECIES_MAGBY, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_MAGBY)
+		case 11:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ELEKID)
+			givemonrandom(SPECIES_ELEKID, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_ELEKID)
+		case 12:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SMOOCHUM)
+			givemonrandom(SPECIES_SMOOCHUM, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_SMOOCHUM)
+		case 13:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_RIOLU)
 			givemonrandom(SPECIES_RIOLU, 25)
 			bufferspeciesname(STR_VAR_1, SPECIES_RIOLU)
-		case 6:
+		case 14:
+			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TOGEPI)
+			givemonrandom(SPECIES_TOGEPI, 25)
+			bufferspeciesname(STR_VAR_1, SPECIES_TOGEPI)
+		case 15:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYPE_NULL)
 			givemonrandom(SPECIES_TYPE_NULL, 25)
 			bufferspeciesname(STR_VAR_1, SPECIES_TYPE_NULL)
-		case 7:
+		case 16:
 			setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARCADET)
 			givemonrandom(SPECIES_CHARCADET, 25)
 			bufferspeciesname(STR_VAR_1, SPECIES_CHARCADET)
