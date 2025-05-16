@@ -237,7 +237,7 @@ script Route121_EventScript_BattleByron{
 	giveitem(ITEM_COPPERAJITE)
 	giveitem(ITEM_ROCKY_HELMET)
 	giveitem(ITEM_LEFTOVERS)
-	goto(Route121_EventScript_ByronGiveMeltan)
+	goto(Route121_EventScript_ByronGiveJirachi)
 	return
 }
 	
@@ -248,56 +248,56 @@ script Route121_EventScript_ByronDefeated{
 	end
 }
 
-script Route121_EventScript_ByronGiveMeltan{
-	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN)
-	givemonrandom(SPECIES_MELTAN, 30)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveMeltanParty)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveMeltanPC)
+script Route121_EventScript_ByronGiveJirachi{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JIRACHI)
+	givemonrandom(SPECIES_JIRACHI, 30)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveJirachiParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveJirachiPC)
 	goto(Common_EventScript_NoMoreRoomForPokemon)
 	release
 	end
 }
 
-script Route121_EventScript_ReceiveMeltanParty{
-	call(Route121_EventScript_ReceivedMeltanFanfare)
+script Route121_EventScript_ReceiveJirachiParty{
+	call(Route121_EventScript_ReceivedJirachiFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_ExplainMeltan)
+	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_ExplainJirachi)
 	call(Common_EventScript_GetGiftMonPartySlot)
 	call(Common_EventScript_NameReceivedPartyMon)
-	goto(Route121_EventScript_ExplainMeltan)
+	goto(Route121_EventScript_ExplainJirachi)
 	end
 }
 	
 
-script Route121_EventScript_ReceiveMeltanPC {
-	call(Route121_EventScript_ReceivedMeltanFanfare)
+script Route121_EventScript_ReceiveJirachiPC {
+	call(Route121_EventScript_ReceivedJirachiFanfare)
 	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_SendMeltanToPC)
+	goto_if_eq(VAR_RESULT, NO, Route121_EventScript_SendJirachiToPC)
 	call(Common_EventScript_NameReceivedBoxMon)
-	goto(Route121_EventScript_SendMeltanToPC)
+	goto(Route121_EventScript_SendJirachiToPC)
 	end
 }
 	
 
-script Route121_EventScript_SendMeltanToPC {
+script Route121_EventScript_SendJirachiToPC {
 	call(Common_EventScript_TransferredToPC)
-	goto(Route121_EventScript_ExplainMeltan)
+	goto(Route121_EventScript_ExplainJirachi)
 	end
 }
 	
 
-script Route121_EventScript_ReceivedMeltanFanfare {
+script Route121_EventScript_ReceivedJirachiFanfare {
 	playfanfare(MUS_OBTAIN_ITEM)
-	message(Route121_Text_PlayerReceivedMeltan)
+	message(Route121_Text_PlayerReceivedJirachi)
 	waitmessage
 	waitfanfare
-	bufferspeciesname(STR_VAR_1, SPECIES_MELTAN)
+	bufferspeciesname(STR_VAR_1, SPECIES_JIRACHI)
 	return
 }
 	
 
-script Route121_EventScript_ExplainMeltan {
-	msgbox(Byron_ExplainMeltan, MSGBOX_DEFAULT)
+script Route121_EventScript_ExplainJirachi {
+	msgbox(Byron_ExplainJirachi, MSGBOX_DEFAULT)
 	release
 	end
 }
@@ -330,14 +330,14 @@ text Byron_ComeBackWhenReady{
 	"change your mind."
 }
 	
-text Route121_Text_PlayerReceivedMeltan{
-	"{PLAYER} received Meltan!$"
+text Route121_Text_PlayerReceivedJirachi{
+	"{PLAYER} received Jirachi!$"
 }
 
-text Byron_ExplainMeltan{
-	"Meltan and Melmetal are 2 of my\n"
+text Byron_ExplainJirachi{
+	"Jirachi is one of my\n"
 	"favorite Steel-types, I hope you treat\l"
-	"that Meltan kindly and raise it well."
+	"that Jirachi kindly and raise it well."
 }
 	
 	

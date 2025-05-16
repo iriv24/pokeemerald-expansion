@@ -455,7 +455,7 @@ Route121_EventScript_BattleByron::
 # 239 "data/maps/Route121/scripts.pory"
 	giveitem ITEM_LEFTOVERS
 # 240 "data/maps/Route121/scripts.pory"
-	goto Route121_EventScript_ByronGiveMeltan
+	goto Route121_EventScript_ByronGiveJirachi
 	return
 
 
@@ -467,15 +467,15 @@ Route121_EventScript_ByronDefeated::
 	end
 
 
-Route121_EventScript_ByronGiveMeltan::
+Route121_EventScript_ByronGiveJirachi::
 # 252 "data/maps/Route121/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELTAN
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JIRACHI
 # 253 "data/maps/Route121/scripts.pory"
-	givemonrandom SPECIES_MELTAN, 30
+	givemonrandom SPECIES_JIRACHI, 30
 # 254 "data/maps/Route121/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveMeltanParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveJirachiParty
 # 255 "data/maps/Route121/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveMeltanPC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveJirachiPC
 # 256 "data/maps/Route121/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
 # 257 "data/maps/Route121/scripts.pory"
@@ -483,61 +483,61 @@ Route121_EventScript_ByronGiveMeltan::
 	end
 
 
-Route121_EventScript_ReceiveMeltanParty::
+Route121_EventScript_ReceiveJirachiParty::
 # 262 "data/maps/Route121/scripts.pory"
-	call Route121_EventScript_ReceivedMeltanFanfare
+	call Route121_EventScript_ReceivedJirachiFanfare
 # 263 "data/maps/Route121/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 264 "data/maps/Route121/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route121_EventScript_ExplainMeltan
+	goto_if_eq VAR_RESULT, NO, Route121_EventScript_ExplainJirachi
 # 265 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
 # 266 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 # 267 "data/maps/Route121/scripts.pory"
-	goto Route121_EventScript_ExplainMeltan
+	goto Route121_EventScript_ExplainJirachi
 	end
 
 
-Route121_EventScript_ReceiveMeltanPC::
+Route121_EventScript_ReceiveJirachiPC::
 # 273 "data/maps/Route121/scripts.pory"
-	call Route121_EventScript_ReceivedMeltanFanfare
+	call Route121_EventScript_ReceivedJirachiFanfare
 # 274 "data/maps/Route121/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 275 "data/maps/Route121/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route121_EventScript_SendMeltanToPC
+	goto_if_eq VAR_RESULT, NO, Route121_EventScript_SendJirachiToPC
 # 276 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 # 277 "data/maps/Route121/scripts.pory"
-	goto Route121_EventScript_SendMeltanToPC
+	goto Route121_EventScript_SendJirachiToPC
 	end
 
 
-Route121_EventScript_SendMeltanToPC::
+Route121_EventScript_SendJirachiToPC::
 # 283 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_TransferredToPC
 # 284 "data/maps/Route121/scripts.pory"
-	goto Route121_EventScript_ExplainMeltan
+	goto Route121_EventScript_ExplainJirachi
 	end
 
 
-Route121_EventScript_ReceivedMeltanFanfare::
+Route121_EventScript_ReceivedJirachiFanfare::
 # 290 "data/maps/Route121/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 291 "data/maps/Route121/scripts.pory"
-	message Route121_Text_PlayerReceivedMeltan
+	message Route121_Text_PlayerReceivedJirachi
 # 292 "data/maps/Route121/scripts.pory"
 	waitmessage
 # 293 "data/maps/Route121/scripts.pory"
 	waitfanfare
 # 294 "data/maps/Route121/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_MELTAN
+	bufferspeciesname STR_VAR_1, SPECIES_JIRACHI
 	return
 
 
-Route121_EventScript_ExplainMeltan::
+Route121_EventScript_ExplainJirachi::
 # 300 "data/maps/Route121/scripts.pory"
-	msgbox Byron_ExplainMeltan, MSGBOX_DEFAULT
+	msgbox Byron_ExplainJirachi, MSGBOX_DEFAULT
 # 301 "data/maps/Route121/scripts.pory"
 	release
 	end
@@ -669,15 +669,15 @@ Byron_ComeBackWhenReady::
 	.string "That's alright, I'll be here if you\n"
 	.string "change your mind.$"
 
-Route121_Text_PlayerReceivedMeltan::
+Route121_Text_PlayerReceivedJirachi::
 # 333 "data/maps/Route121/scripts.pory"
-	.string "{PLAYER} received Meltan!$"
+	.string "{PLAYER} received Jirachi!$"
 
-Byron_ExplainMeltan::
+Byron_ExplainJirachi::
 # 337 "data/maps/Route121/scripts.pory"
-	.string "Meltan and Melmetal are 2 of my\n"
+	.string "Jirachi is one of my\n"
 	.string "favorite Steel-types, I hope you treat\l"
-	.string "that Meltan kindly and raise it well.$"
+	.string "that Jirachi kindly and raise it well.$"
 
 Byron_Outro::
 # 344 "data/maps/Route121/scripts.pory"
