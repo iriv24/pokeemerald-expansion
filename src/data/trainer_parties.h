@@ -4612,7 +4612,7 @@ static const struct TrainerMon sParty_Vanessa[] = {
     .moves = {MOVE_SWORDS_DANCE, MOVE_STONE_EDGE, MOVE_LIQUIDATION, MOVE_X_SCISSOR}
     },
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 201,
     .species = SPECIES_DREDNAW,
     .heldItem = ITEM_DREDNAWITE,
