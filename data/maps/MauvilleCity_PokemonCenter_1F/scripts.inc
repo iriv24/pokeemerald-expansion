@@ -117,67 +117,71 @@ MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive::
 # 63 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	dynmultipush MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_5, SPECIES_PIKACHU_LIBRE
 # 64 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	dynmultipush MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_6, MULTI_B_PRESSED
-# 67 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE
+	dynmultipush MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_6, SPECIES_PIKACHU_SURFING
+# 65 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	dynmultipush MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_7, SPECIES_PIKACHU_FLYING
+# 66 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	dynmultipush MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_8, MULTI_B_PRESSED
 # 69 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE
+# 71 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_2
 MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_1:
-# 74 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	copyvar VAR_0x8005, VAR_RESULT
-# 75 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	checkitem ITEM_YELLOW_SHARD
 # 76 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard
+	copyvar VAR_0x8005, VAR_RESULT
 # 77 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	getpartysize
+	checkitem ITEM_YELLOW_SHARD
 # 78 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	goto_if_eq VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard
 # 79 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	msgbox MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_7
+	getpartysize
 # 80 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	goto_if_eq VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu
 # 81 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	message MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu
+	msgbox MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_9
 # 82 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 83 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	givemonrandom VAR_0x8005, 25
+	message MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu
 # 84 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	removeitem ITEM_YELLOW_SHARD
+	waitfanfare
 # 85 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	msgbox MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_8
+	givemonrandom VAR_0x8005, 25
 # 86 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	removeitem ITEM_YELLOW_SHARD
+# 87 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	msgbox MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_10
+# 88 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_2:
-# 71 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 73 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	goto MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo
 	goto MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_1
 
 
 MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo::
-# 92 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 94 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	msgbox MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo_Text_0
-# 93 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 95 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 
 MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard::
-# 98 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 100 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	msgbox MauvilleCity_PokemonCenter_1F_Text_ComeBackWithYellowShard, MSGBOX_DEFAULT
-# 99 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 101 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
 
 MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu::
-# 104 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 106 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	msgbox MauvilleCity_PokemonCenter_1F_Text_NoRoomForThisPikachu, MSGBOX_DEFAULT
-# 105 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 107 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	release
 	end
 
@@ -208,37 +212,45 @@ MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_5:
 
 MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_6:
 # 64 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "Cancel$"
+	.string "Pikachu Surfing$"
 
 MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_7:
-# 79 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
-	.string "That's my favorite one, great choice!$"
+# 65 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "Pikachu Flying$"
 
 MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_8:
-# 85 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 66 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "Cancel$"
+
+MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_9:
+# 81 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+	.string "That's my favorite one, great choice!$"
+
+MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive_Text_10:
+# 87 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "Come back if you want more Pikachus!$"
 
 MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo_Text_0:
-# 92 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 94 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "More for me then!$"
 
 PikachuManIntro::
-# 109 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 111 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "Hi, hi! I'm the number one Pikachu guy!\n"
 	.string "For just one Yellow Shard, any Costume\l"
 	.string "Pikachu can be yours, what do you say,\l"
 	.string "do you want one of these Pikachus?$"
 
 MauvilleCity_PokemonCenter_1F_Text_ComeBackWithYellowShard::
-# 116 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 118 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "It doesn't look like you have a\n"
 	.string "Yellow Shard. Come back when you do.$"
 
 MauvilleCity_PokemonCenter_1F_Text_NoRoomForThisPikachu::
-# 121 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 123 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "Oh? You've too many Pokémon.\n"
 	.string "There's no room for this Pikachu.$"
 
 MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu::
-# 126 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
+# 128 "data/maps/MauvilleCity_PokemonCenter_1F/scripts.pory"
 	.string "{PLAYER} received the Pikachu!$"

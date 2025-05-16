@@ -61,6 +61,8 @@ script MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive {
 	dynmultipush("Pikachu Pop Star", SPECIES_PIKACHU_POP_STAR)
 	dynmultipush("Pikachu PhD", SPECIES_PIKACHU_PHD)
 	dynmultipush("Pikachu Libre", SPECIES_PIKACHU_LIBRE)
+	dynmultipush("Pikachu Surfing", SPECIES_PIKACHU_SURFING)
+	dynmultipush("Pikachu Flying", SPECIES_PIKACHU_FLYING)
     dynmultipush("Cancel", MULTI_B_PRESSED)
 
     // // setting initial selected to a non-existant ID will always have it point to the first option
