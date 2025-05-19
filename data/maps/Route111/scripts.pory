@@ -1051,8 +1051,9 @@ script Route111_EventScript_BattleDaisuke{
 	giveitem(ITEM_PUNCHING_GLOVE)
 	giveitem(ITEM_KICKING_SHOES)
 	giveitem(ITEM_LOADED_DICE)
-	goto(Route111_EventScript_DaisukeGiveTyrogue)
-	return
+	msgbox(Daisuke_ExplainItems, MSGBOX_DEFAULT)
+	release
+	end
 }
 	
 
@@ -1062,69 +1063,12 @@ script Route111_EventScript_DaisukeDefeated{
 	end
 }
 
-script Route111_EventScript_DaisukeGiveTyrogue{
-	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE)
-	givemonrandom(SPECIES_TYROGUE, 15)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, Route111_EventScript_ReceiveTyrogueParty)
-	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, Route111_EventScript_ReceiveTyroguePC)
-	goto(Common_EventScript_NoMoreRoomForPokemon)
-	release
-	end
-}
-
-script Route111_EventScript_ReceiveTyrogueParty{
-	call(Route111_EventScript_ReceivedTyrogueFanfare)
-	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, Route111_EventScript_ExplainTyrogue)
-	call(Common_EventScript_GetGiftMonPartySlot)
-	call(Common_EventScript_NameReceivedPartyMon)
-	goto(Route111_EventScript_ExplainTyrogue)
-	end
-}
-	
-
-script Route111_EventScript_ReceiveTyroguePC {
-	call(Route111_EventScript_ReceivedTyrogueFanfare)
-	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
-	goto_if_eq(VAR_RESULT, NO, Route111_EventScript_SendTyrogueToPC)
-	call(Common_EventScript_NameReceivedBoxMon)
-	goto(Route111_EventScript_SendTyrogueToPC)
-	end
-}
-	
-
-script Route111_EventScript_SendTyrogueToPC {
-	call(Common_EventScript_TransferredToPC)
-	goto(Route111_EventScript_ExplainTyrogue)
-	end
-}
-	
-
-script Route111_EventScript_ReceivedTyrogueFanfare {
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(Route111_Text_PlayerReceivedTyrogue)
-	waitmessage
-	waitfanfare
-	bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
-	return
-}
-	
-
-script Route111_EventScript_ExplainTyrogue {
-	msgbox(Daisuke_ExplainTyrogue, MSGBOX_DEFAULT)
-	release
-	end
-}
-	
-text Route111_Text_PlayerReceivedTyrogue{
-	"{PLAYER} received Tyrogue!$"
-}
-
 text Daisuke_Greeting{
 	"Yo! I'm working on becoming the karate\n"
 	"master of this region. If you can help\l"
 	"me with my training, I'll reward you with\l"
-	"one of the Pokémon I've been training.\p"
+	"some of the Items I've been using on my\l"
+	"Pokémon during our training.\p"
 	"What do you say?"
 }
 
@@ -1138,26 +1082,23 @@ text Daisuke_ComeBackWhenReady{
 	"out here."
 }
 
-text Daisuke_ExplainTyrogue{
-	"Tyrogue can evolve in 3 different ways,\n"
-	"all when it reaches level 20.\p"
-	"If its Attack is less than its Defense,\n"
-	"it will evolve into Hitmonchan.\p"
-	"Attack greater than Defense will\n"
-	"result in Hitmonlee.\p"
-	"Finally, Attack equal to Defense will\n"
-	"result in Hitmontop.\p"
-	"It's very versatile!"
+text Daisuke_ExplainItems{
+	"I've used those Items a bunch for my\n"
+	"Pokémon during our training.\p"
+	"They boost the power of certain moves,\n"
+	"like punching or kicking moves.\p"
+	"They can be pretty niche, but they are\n"
+	"super useful when you need them!"
 }
 	
 text Daisuke_Outro{
-	"Great battle! I know I'll be leaving this\n"
-	"Pokémon in good hands."
+	"Great battle! I know I'll be leaving\n"
+	"these Items in good hands."
 }
 
 
 text PostBattle_Daisuke{
 	"Looks like I still have a long way to go.\n"
-	"Hope you're taking good care of\l"
-	"Tyrogue for me."
+	"Hope you're making good use of\l"
+	"those Items!"
 }
