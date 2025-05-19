@@ -26,10 +26,6 @@ PacifidlogTown_PokemonCenter_1F_EventScript_Woman::
 	msgbox PacifidlogTown_PokemonCenter_1F_Text_OnColonyOfCorsola, MSGBOX_NPC
 	end
 
-PacifidlogTown_PokemonCenter_1F_EventScript_OldMan::
-	msgbox PacifidlogTown_PokemonCenter_1F_Text_AncestorsLivedOnBoats, MSGBOX_NPC
-	end
-
 PacifidlogTown_PokemonCenter_1F_EventScript_FormerExplosionTutor::
 	lockall
 	faceplayer
@@ -50,14 +46,88 @@ PacifidlogTown_PokemonCenter_1F_Text_OnColonyOfCorsola:
 	.string "a colony of CORSOLA.\p"
 	.string "If I told you that, would you believe\n"
 	.string "me?$"
-
-PacifidlogTown_PokemonCenter_1F_Text_AncestorsLivedOnBoats:
-	.string "The ancestors of the people in\n"
-	.string "PACIFIDLOG were said to have been\l"
-	.string "born on boats and then lived and died \l"
-	.string "aboard them.\p"
-	.string "I understand that they lived that way\n"
-	.string "because they were searching for\l"
-	.string "something.$"
-
 `
+
+script PacifidlogTown_PokemonCenter_1F_EventScript_EggMan {
+	lock
+	faceplayer
+	msgbox(PacifidlogTown_PokemonCenter_1F_PseudoManIntro, MSGBOX_YESNO)
+
+	if(var(VAR_RESULT) == NO)
+	{
+		goto(PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo)
+	}
+
+	checkitem(ITEM_YELLOW_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, PacifidlogTown_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, PacifidlogTown_PokemonCenter_1F_EventScript_NoRoomForEgg)
+	msgbox(PacifidlogTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(PacifidlogTown_PokemonCenter_1F_Text_ReceivedTheEgg)
+	waitfanfare
+	giveegg(SPECIES_DRATINI)
+	removeitem(ITEM_YELLOW_SHARD)
+	msgbox(PacifidlogTown_PokemonCenter_1F_ComeBackWithMore, MSGBOX_DEFAULT)
+	release
+	end
+	
+}
+
+script PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo {
+    msgbox(PacifidlogTown_PokemonCenter_1F_PseudoEggManDeclined, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script PacifidlogTown_PokemonCenter_1F_EventScript_ComeBackWithYellowShard {
+	msgbox(PacifidlogTown_PokemonCenter_1F_Text_ComeBackWithYellowShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script PacifidlogTown_PokemonCenter_1F_EventScript_NoRoomForEgg {
+	msgbox(PacifidlogTown_PokemonCenter_1F_Text_NoRoomForThisEgg, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text PacifidlogTown_PokemonCenter_1F_PseudoManIntro {
+	"Hello, trainer. I have several rare Eggs\n"
+	"here with me.\p"
+	"I am currently seeking Yellow Shards,\n"
+	"would you be willing to exchange a\l"
+	"Yellow Shard in exchange for one of\l"
+	"these Eggs?"
+}
+
+text PacifidlogTown_PokemonCenter_1F_PseudoEggManDeclined
+{
+	"I see. Please come back if you change\n"
+	"your mind."
+}
+
+text PacifidlogTown_PokemonCenter_1F_Text_ComeBackWithYellowShard {
+	"It doesn't look like you have a\n"
+	"Yellow Shard. Come back when you do."
+}
+
+text PacifidlogTown_PokemonCenter_1F_Text_NoRoomForThisEgg {
+	"Oh? You've too many Pokémon.\n"
+	"There's no room for this Egg…"
+}
+
+text PacifidlogTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg {
+	"Good! I hope you'll walk plenty with\n"
+	"this here Egg!"
+}
+
+text PacifidlogTown_PokemonCenter_1F_Text_ReceivedTheEgg {
+	"{PLAYER} received the Egg."
+}
+
+text PacifidlogTown_PokemonCenter_1F_ComeBackWithMore {
+	"Please come back if you have more\n"
+	"Yellow Shards you'd like to exchange."
+
+}
