@@ -247,38 +247,6 @@ LavaridgeTown_EventScript_Sandygast::
 	release
 	end
 
-LavaridgeTown_EventScript_EggWoman::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_LAVARIDGE_EGG, LavaridgeTown_EventScript_ReceivedEgg
-	msgbox LavaridgeTown_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LavaridgeTown_EventScript_DeclineEgg
-	getpartysize
-	goto_if_eq VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg
-	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_LAVARIDGE_EGG
-	playfanfare MUS_OBTAIN_ITEM
-	message LavaridgeTown_Text_ReceivedTheEgg
-	waitfanfare
-	giveegg SPECIES_EEVEE
-	release
-	end
-
-LavaridgeTown_EventScript_ReceivedEgg::
-	msgbox LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_EventScript_NoRoomForEgg::
-	msgbox LavaridgeTown_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_EventScript_DeclineEgg::
-	msgbox LavaridgeTown_Text_AsYouWishThen, MSGBOX_DEFAULT
-	release
-	end
-
 LavaridgeTown_EventScript_TownSign::
 	msgbox LavaridgeTown_Text_TownSign, MSGBOX_SIGN
 	end
@@ -375,40 +343,6 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "comfortable because Dawn and I are\l"
 	.string "training hard too!$"
 
-LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an Egg.\p"
-	.string "I'd hoped to hatch it by covering it in\n"
-	.string "hot sand by the hot springs.\l"
-	.string "But that doesn't seem to be enough…\p"
-	.string "I've heard it would be best if it were\n"
-	.string "kept together with Pokémon and\l"
-	.string "carried about.\p"
-	.string "You are a trainer, yes?\n"
-	.string "And your Pokémon radiate vitality.\p"
-	.string "So, what say you?\n"
-	.string "Will you take this Egg to hatch?$"
-
-LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
-	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here Egg!$"
-
-LavaridgeTown_Text_ReceivedTheEgg:
-	.string "{PLAYER} received the Egg.$"
-
-LavaridgeTown_Text_NoRoomForThisEgg:
-	.string "Oh? You've too many Pokémon.\n"
-	.string "There's no room for this Egg…$"
-
-LavaridgeTown_Text_AsYouWishThen:
-	.string "As you wish, then…\p"
-	.string "If you have a change of heart about\n"
-	.string "hatching this Egg, I will be here.$"
-
-LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare:
-	.string "Every so often, an Egg will be found at\n"
-	.string "the Pokémon Day Care.\p"
-	.string "Or at least that's how the rumor goes.$"
-
 LavaridgeTown_Text_HotSpringsNeverRunDry:
 	.string "We draw as much hot water as we need,\n"
 	.string "and yet the hot springs never run dry.\p"
@@ -466,3 +400,86 @@ LavaridgeTown_Text_Sandygast:
 	.string "Sandygast: Sssssssss!$"
 
 `
+script LavaridgeTown_EventScript_EggWoman {
+	lock
+	faceplayer
+	msgbox(LavaridgeTown_EggWomanIntro, MSGBOX_YESNO)
+
+	if(var(VAR_RESULT) == NO)
+	{
+		goto(LavaridgeTown_EventScript_EggWomanManNo)
+	}
+
+	checkitem(ITEM_YELLOW_SHARD)
+	goto_if_eq(VAR_RESULT, FALSE, LavaridgeTown_EventScript_ComeBackWithYellowShard)
+	getpartysize
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg)
+	msgbox(LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(LavaridgeTown_Text_ReceivedTheEgg)
+	waitfanfare
+	giveegg(SPECIES_KLAWF)
+	removeitem(ITEM_YELLOW_SHARD)
+	msgbox(LavaridgeTown_ComeBackWithMore, MSGBOX_DEFAULT)
+	release
+	end
+	
+}
+
+script LavaridgeTown_EventScript_EggWomanManNo {
+    msgbox(LavaridgeTown_EggWomanDeclined, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script LavaridgeTown_EventScript_ComeBackWithYellowShard {
+	msgbox(LavaridgeTown_Text_ComeBackWithYellowShard, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script LavaridgeTown_EventScript_NoRoomForEgg {
+	msgbox(LavaridgeTown_Text_NoRoomForThisEgg, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text LavaridgeTown_EggWomanIntro {
+	"Hello, trainer. I have several large\n"
+	"Eggs here with me.\p"
+	"I am currently seeking Yellow Shards,\n"
+	"would you be willing to exchange a\l"
+	"Yellow Shard in exchange for one of\l"
+	"these Eggs?"
+}
+
+text LavaridgeTown_EggWomanDeclined
+{
+	"I see. Please come back if you change\n"
+	"your mind."
+}
+
+text LavaridgeTown_Text_ComeBackWithYellowShard {
+	"It doesn't look like you have a\n"
+	"Yellow Shard. Come back when you do."
+}
+
+text LavaridgeTown_Text_NoRoomForThisEgg {
+	"Oh? You've too many Pokémon.\n"
+	"There's no room for this Egg…"
+}
+
+text LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg {
+	"Good! I hope you'll walk plenty with\n"
+	"this here Egg!"
+}
+
+text LavaridgeTown_Text_ReceivedTheEgg {
+	"{PLAYER} received the Egg."
+}
+
+text LavaridgeTown_ComeBackWithMore {
+	"Please come back if you have more\n"
+	"Yellow Shards you'd like to exchange."
+
+}

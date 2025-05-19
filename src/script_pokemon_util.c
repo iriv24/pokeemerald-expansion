@@ -36,6 +36,7 @@ static u16 PickGrassStarterEgg(void);
 static u16 PickFireStarterEgg(void);
 static u16 PickOldaleEgg(void);
 static u16 PickPseudoEgg(void);
+static u16 PickSingleStageEgg(void);
 
 static void HealPlayerBoxes(void);
 
@@ -93,6 +94,10 @@ u8 ScriptGiveEgg(u16 species)
     else if(species == SPECIES_DRATINI)
     {
         species = PickPseudoEgg();
+    }
+    else if(species == SPECIES_KLAWF)
+    {
+        species = PickSingleStageEgg();
     }
 
     #if RANDOMIZER_AVAILABLE == TRUE
@@ -191,6 +196,22 @@ static u16 PickPseudoEgg(void)
     pokes[7] = SPECIES_JANGMO_O;
     pokes[8] = SPECIES_DREEPY;
     pokes[9] = SPECIES_FRIGIBAX;
+    return pokes[rand];
+}
+
+static u16 PickSingleStageEgg(void)
+{
+    u16 pokes[9];
+    u16 rand = Random() % 9;
+    pokes[0] = SPECIES_TAUROS;
+    pokes[1] = SPECIES_DELIBIRD;
+    pokes[2] = SPECIES_TROPIUS;
+    pokes[3] = SPECIES_SPIRITOMB;
+    pokes[4] = SPECIES_HEATMOR;
+    pokes[5] = SPECIES_DEDENNE;
+    pokes[6] = SPECIES_BRUXISH;
+    pokes[7] = SPECIES_FALINKS;
+    pokes[8] = SPECIES_KLAWF;
     return pokes[rand];
 }
 

@@ -289,7 +289,7 @@
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
 #define FLAG_RECEIVED_TM_THIEF               0x109
-#define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
+#define FLAG_UNUSED_0X10A                    0x10A    // unused
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
 #define FLAG_RECEIVED_TM_FLIP_TURN           0x10D
