@@ -658,11 +658,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_ROSERADE_MEGA] =
     {
         .baseHP        = 60,
-        .baseAttack    = 70,
-        .baseDefense   = 85,
-        .baseSpeed     = 130,
-        .baseSpAttack  = 150,
-        .baseSpDefense = 120,
+        .baseAttack    = 80, //+10
+        .baseDefense   = 90,  //+25
+        .baseSpeed     = 120, //+30
+        .baseSpAttack  = 140, //+15
+        .baseSpDefense = 125, //+20
         .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
         .catchRate = 75,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
