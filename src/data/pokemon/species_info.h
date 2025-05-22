@@ -406,12 +406,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_EMPOLEON_MEGA_O] =
     {
-        .baseHP        = 100, //+16
+        .baseHP        = 84,
         .baseAttack    = 150, //+64
-        .baseDefense   = 75,  //-13
+        .baseDefense   = 83,  //-5
         .baseSpeed     = 120, //+60
         .baseSpAttack  = 110, //-1
-        .baseSpDefense = 75,  //-26
+        .baseSpDefense = 83,  //-18
         .types = MON_TYPES(TYPE_WATER, TYPE_STEEL),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
