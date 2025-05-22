@@ -334,10 +334,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_INFERNAPE] =
     {
         .baseHP        = 76,
-        .baseAttack    = 110,
+        .baseAttack    = 110, //+6 from RR
         .baseDefense   = 71,
-        .baseSpeed     = 113,
-        .baseSpAttack  = 110,
+        .baseSpeed     = 113, //+5 from RR
+        .baseSpAttack  = 110, //+6 from RR
         .baseSpDefense = 71,
         .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
         .catchRate = 45,

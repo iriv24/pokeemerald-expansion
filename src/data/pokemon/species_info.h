@@ -528,13 +528,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
+    // only +83 stats for mega because base got +17 from RR
     [SPECIES_INFERNAPE_MEGA] =
     {
         .baseHP        = 76,
-        .baseAttack    = 137, //+33
+        .baseAttack    = 137, //+27
         .baseDefense   = 82,  //+11
-        .baseSpeed     = 120, //+12
-        .baseSpAttack  = 137, //+33
+        .baseSpeed     = 120, //+7
+        .baseSpAttack  = 137, //+27
         .baseSpDefense = 82,  //+11
         .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
         .catchRate = 45,
