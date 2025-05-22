@@ -15649,6 +15649,7 @@ static const u16 sDusclopsTeachableLearnset[] = {
     MOVE_HEX,
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
+    MOVE_KNOCK_OFF,
     MOVE_UNAVAILABLE,
 };
 
@@ -15690,6 +15691,7 @@ static const u16 sDusknoirTeachableLearnset[] = {
     MOVE_HEX,
     MOVE_FOCUS_PUNCH,
     MOVE_RAIN_DANCE,
+    MOVE_KNOCK_OFF,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_4_CROSS_EVOS
