@@ -280,6 +280,7 @@ EventScript_ResetAllMapFlags::
 	clearflag FLAG_MET_REGULAR_MOVE_TUTOR
 	clearflag FLAG_MET_EGG_MOVE_TUTOR
 	clearflag FLAG_SHINY_STARTERS
+	clearflag FLAG_SHINY_ROAMERS
 	setflag FLAG_SLEEP_CLAUSE_TOGGLE
 	clearflag FLAG_GIVE_MENU
 	clearflag FLAG_DEFEATED_HOT_HOUSE

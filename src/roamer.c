@@ -254,6 +254,7 @@ bool8 IsRoamerAt(u32 roamerIndex, u8 mapGroup, u8 mapNum)
 
 void CreateRoamerMonInstance(u32 roamerIndex)
 {
+    bool8 isShiny = TRUE;
     u32 status = ROAMER(roamerIndex)->statusA + (ROAMER(roamerIndex)->statusB << 8);
     struct Pokemon *mon = &gEnemyParty[0];
     ZeroEnemyPartyMons();
@@ -267,6 +268,9 @@ void CreateRoamerMonInstance(u32 roamerIndex)
     SetMonData(mon, MON_DATA_CUTE, &ROAMER(roamerIndex)->cute);
     SetMonData(mon, MON_DATA_SMART, &ROAMER(roamerIndex)->smart);
     SetMonData(mon, MON_DATA_TOUGH, &ROAMER(roamerIndex)->tough);
+    
+    if(FlagGet(FLAG_SHINY_ROAMERS))
+        SetMonData(mon, MON_DATA_IS_SHINY, &isShiny);
 }
 
 bool8 TryStartRoamerEncounter(void)

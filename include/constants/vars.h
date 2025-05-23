@@ -106,7 +106,7 @@
 #define VAR_RANDOMIZER_SEED_H                            0x4056
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_HOT_HOUSE_STATE                              0x4059
+#define VAR_UNUSED_0x4059                                0x4059
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_ENTERING_HOT_HOUSE                           0x405B
 #define VAR_LEAVING_HOT_HOUSE                            0x405C
@@ -204,7 +204,7 @@
 #define VAR_MOVE_MANAGER                                 0x40B8
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
+#define VAR_HOT_HOUSE_STATE                              0x40BB
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
 #define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
 #define VAR_GLASS_WORKSHOP_STATE                         0x40BE
