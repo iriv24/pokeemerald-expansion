@@ -100,7 +100,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	giveitem ITEM_TM_HEAT_CRASH
 	giveitem ITEM_TM_HEAT_WAVE
 	giveitem ITEM_TM_FLARE_BLITZ
-	giveitem ITEM_INFERNAPITE
+	giveitem ITEM_BLAZIKENITE
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_OVERHEAT
 	release
@@ -112,7 +112,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	giveitem ITEM_TM_HEAT_CRASH
 	giveitem ITEM_TM_HEAT_WAVE
 	giveitem ITEM_TM_FLARE_BLITZ
-	giveitem ITEM_INFERNAPITE
+	giveitem ITEM_BLAZIKENITE
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_OVERHEAT
 	return
@@ -383,9 +383,13 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 	.string "in the PokéNav.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
-	.string "Your power reminds me of someone…\p"
-	.string "Oh! I know! You battle like Norman,\n"
-	.string "the Gym Leader of Petalburg.$"
+	.string "What's wrong?\n"
+	.string "I said I gave you my favorite Mega\l"
+	.string "stone, I didn't say I gave you my best\l"
+	.string "one!\p"
+	.string "Hah! I got my Mega stone for Infernape\n"
+	.string "from a trainer in Fortree City, I wonder\l"
+	.string "if he would give you one too?$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
 	.string "Lavaridge Town Pokémon Gym$"

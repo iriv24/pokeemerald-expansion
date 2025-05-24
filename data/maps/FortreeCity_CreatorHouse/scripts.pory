@@ -236,7 +236,7 @@ script FortreeCity_CreatorHouse_EventScript_CapDefeated{
 script FortreeCity_CreatorHouse_EventScript_CapGiveItems{
 	giveitem(ITEM_CHARIZARDITE_X)
 	giveitem(ITEM_CHARIZARDITE_Y)
-	giveitem(ITEM_BLAZIKENITE)
+	giveitem(ITEM_INFERNAPITE)
 	giveitem(ITEM_TM_DRAGON_DANCE)
 	giveitem(ITEM_CHOICE_SPECS)
 	msgbox(Cap_ExplainItems)

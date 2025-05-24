@@ -203,7 +203,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 # 102 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	giveitem ITEM_TM_FLARE_BLITZ
 # 103 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	giveitem ITEM_INFERNAPITE
+	giveitem ITEM_BLAZIKENITE
 # 104 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 # 105 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
@@ -227,7 +227,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 # 114 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	giveitem ITEM_TM_FLARE_BLITZ
 # 115 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	giveitem ITEM_INFERNAPITE
+	giveitem ITEM_BLAZIKENITE
 # 116 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 # 117 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
@@ -769,98 +769,106 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 # 385 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 # 386 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Your power reminds me of someone…\p"
+	.string "What's wrong?\n"
 # 387 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Oh! I know! You battle like Norman,\n"
+	.string "I said I gave you my favorite Mega\l"
 # 388 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "the Gym Leader of Petalburg.$"
+	.string "stone, I didn't say I gave you my best\l"
 # 389 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-
+	.string "one!\p"
 # 390 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_GymStatue:
+	.string "Hah! I got my Mega stone for Infernape\n"
 # 391 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Lavaridge Town Pokémon Gym$"
+	.string "from a trainer in Fortree City, I wonder\l"
 # 392 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-
+	.string "if he would give you one too?$"
 # 393 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_GymStatueCertified:
+
 # 394 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Lavaridge Town Pokémon Gym\p"
+LavaridgeTown_Gym_1F_Text_GymStatue:
 # 395 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Flannery's Certified Trainers:\n"
+	.string "Lavaridge Town Pokémon Gym$"
 # 396 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "{PLAYER}$"
+
 # 397 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-
+LavaridgeTown_Gym_1F_Text_GymStatueCertified:
 # 398 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_FlanneryPreRematch:
+	.string "Lavaridge Town Pokémon Gym\p"
 # 399 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Flannery: Losing a battle isn't going\n"
+	.string "Flannery's Certified Trainers:\n"
 # 400 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "to deflate me.\p"
+	.string "{PLAYER}$"
 # 401 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "I love Pokémon.\n"
-# 402 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "I love to battle.\l"
-# 403 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "And… I love this Gym!\p"
-# 404 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Let's exchange superhot moves\n"
-# 405 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "in another battle!$"
-# 406 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 
+# 402 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+LavaridgeTown_Gym_1F_Text_FlanneryPreRematch:
+# 403 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "Flannery: Losing a battle isn't going\n"
+# 404 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "to deflate me.\p"
+# 405 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "I love Pokémon.\n"
+# 406 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "I love to battle.\l"
 # 407 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat:
+	.string "And… I love this Gym!\p"
 # 408 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Whew!\n"
+	.string "Let's exchange superhot moves\n"
 # 409 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "On the verge of eruption!$"
+	.string "in another battle!$"
 # 410 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 
 # 411 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_FlanneryPostRematch:
+LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat:
 # 412 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Flannery: I lost the match,\n"
+	.string "Whew!\n"
 # 413 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "but I'm completely satisfied.\p"
+	.string "On the verge of eruption!$"
 # 414 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "It's not often I get to enjoy a battle\n"
+
 # 415 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "this heated.\p"
+LavaridgeTown_Gym_1F_Text_FlanneryPostRematch:
 # 416 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Let's have another one like this\n"
+	.string "Flannery: I lost the match,\n"
 # 417 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "again sometime!$"
+	.string "but I'm completely satisfied.\p"
 # 418 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-
+	.string "It's not often I get to enjoy a battle\n"
 # 419 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
+	.string "this heated.\p"
 # 420 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Flannery: Losing a battle isn't going\n"
+	.string "Let's have another one like this\n"
 # 421 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "to deflate me.\p"
+	.string "again sometime!$"
 # 422 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "I love Pokémon.\n"
-# 423 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "I love to battle.\l"
-# 424 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "And… I love this Gym!\p"
-# 425 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Let's exchange superhot moves\n"
-# 426 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "in another battle!\p"
-# 427 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "Oh, wait. Do you only have one Pokémon\n"
-# 428 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "that can battle?\p"
-# 429 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "I hate to say this, but when you come\n"
-# 430 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	.string "see me, bring at least two Pokémon.$"
-# 431 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 
+# 423 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
+# 424 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "Flannery: Losing a battle isn't going\n"
+# 425 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "to deflate me.\p"
+# 426 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "I love Pokémon.\n"
+# 427 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "I love to battle.\l"
+# 428 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "And… I love this Gym!\p"
+# 429 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "Let's exchange superhot moves\n"
+# 430 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "in another battle!\p"
+# 431 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "Oh, wait. Do you only have one Pokémon\n"
 # 432 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-LavaridgeTown_Gym_1F_Text_Infernape:
+	.string "that can battle?\p"
 # 433 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "I hate to say this, but when you come\n"
+# 434 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+	.string "see me, bring at least two Pokémon.$"
+# 435 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+
+# 436 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
+LavaridgeTown_Gym_1F_Text_Infernape:
+# 437 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	.string "Infernape: Ewrrrr eeyee!$"

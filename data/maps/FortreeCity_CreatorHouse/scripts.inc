@@ -301,7 +301,7 @@ FortreeCity_CreatorHouse_EventScript_CapGiveItems::
 # 238 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHARIZARDITE_Y
 # 239 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	giveitem ITEM_BLAZIKENITE
+	giveitem ITEM_INFERNAPITE
 # 240 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TM_DRAGON_DANCE
 # 241 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
