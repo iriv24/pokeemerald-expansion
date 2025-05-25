@@ -222,7 +222,8 @@ struct BoxPokemon
     u32 hpLost:14; // 16383 HP.
     u32 hiddenNatureModifier:5; // 31 natures.
     u32 spDefenseIV:5;
-    u32 padding:8;
+    u32 markings:4;
+    u32 padding:4;
     //  word
 
     union

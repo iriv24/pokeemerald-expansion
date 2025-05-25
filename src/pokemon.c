@@ -3130,7 +3130,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         }
         case MON_DATA_MARKINGS:
-            retVal = 15;
+            retVal = boxMon->markings;
             break;
         case MON_DATA_CHECKSUM:
             retVal = boxMon->checksum;
