@@ -127,3 +127,7 @@ u32 GetCurrentEVCap(void)
 
     return MAX_TOTAL_EVS;
 }
+
+void LevelBoxesToCap(void)
+{
+}
