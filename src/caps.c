@@ -140,7 +140,9 @@ void LevelBoxesToCap(void)
             u32 species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
             if (species != SPECIES_NONE && species != SPECIES_EGG)
             {
-                SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][currentCap]);
+                u32 markings = GetBoxMonData(boxMon, MON_DATA_MARKINGS);
+                if (markings == 0)
+                    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][currentCap]);
             }
         }
     }
