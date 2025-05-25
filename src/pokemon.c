@@ -1317,7 +1317,7 @@ STATIC_ASSERT(MOVES_COUNT_ALL < (1 << 11), PokemonSubstruct1_moves_TooSmall);
 STATIC_ASSERT(ARRAY_COUNT(sCompressedStatuses) <= (1 << 4), PokemonSubstruct3_compressedStatus_TooSmall);
 STATIC_ASSERT(MAX_LEVEL < (1 << 7), PokemonSubstruct3_metLevel_TooSmall);
 STATIC_ASSERT(NUM_VERSIONS < (1 << 4), PokemonSubstruct3_metGame_TooSmall);
-STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
+//STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
 STATIC_ASSERT(MAX_PER_STAT_IVS < (1 << 5), PokemonSubstruct3_ivs_TooSmall);
 STATIC_ASSERT(NUM_NATURES <= (1 << 5), BoxPokemon_hiddenNatureModifier_TooSmall);
 
@@ -2701,7 +2701,7 @@ union EvolutionTracker
  * number of arguments. */
 u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
-    s32 i;
+    //s32 i;
     u32 retVal = 0;
     struct PokemonSubstruct0 *substruct0 = NULL;
     struct PokemonSubstruct1 *substruct1 = NULL;
@@ -2723,7 +2723,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         {
             boxMon->isBadEgg = TRUE;
             boxMon->isEgg = TRUE;
-            substruct3->isEgg = TRUE;
+            substruct1->isEgg = TRUE;
         }
 
         switch (field)
@@ -2744,19 +2744,19 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 StringCopy(data, gText_EggNickname);
                 retVal = StringLength(data);
             }
-            else if (boxMon->language == LANGUAGE_JAPANESE)
-            {
-                data[0] = EXT_CTRL_CODE_BEGIN;
-                data[1] = EXT_CTRL_CODE_JPN;
+            //else if (boxMon->language == LANGUAGE_JAPANESE)
+            //{
+            //    data[0] = EXT_CTRL_CODE_BEGIN;
+            //    data[1] = EXT_CTRL_CODE_JPN;
 
-                for (retVal = 2, i = 0;
-                    i < 5 && boxMon->nickname[i] != EOS;
-                    data[retVal] = boxMon->nickname[i], retVal++, i++) {}
+            //    for (retVal = 2, i = 0;
+            //        i < 5 && boxMon->nickname[i] != EOS;
+            //        data[retVal] = boxMon->nickname[i], retVal++, i++) {}
 
-                data[retVal++] = EXT_CTRL_CODE_BEGIN;
-                data[retVal++] = EXT_CTRL_CODE_ENG;
-                data[retVal] = EOS;
-            }
+            //    data[retVal++] = EXT_CTRL_CODE_BEGIN;
+            //    data[retVal++] = EXT_CTRL_CODE_ENG;
+            //    data[retVal] = EOS;
+            //}
             else
             {
                 retVal = 0;
@@ -2803,7 +2803,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = boxMon->isBadEgg ? SPECIES_EGG : substruct0->species;
             break;
         case MON_DATA_HELD_ITEM:
-            retVal = substruct0->heldItem;
+            retVal = substruct3->heldItem;
             break;
         case MON_DATA_EXP:
             retVal = substruct0->experience;
@@ -2830,13 +2830,13 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct1->pp1;
             break;
         case MON_DATA_PP2:
-            retVal = substruct1->pp2;
+            retVal = substruct3->pp2;
             break;
         case MON_DATA_PP3:
-            retVal = substruct1->pp3;
+            retVal = substruct2->pp3;
             break;
         case MON_DATA_PP4:
-            retVal = substruct1->pp4;
+            retVal = substruct2->pp4;
             break;
         case MON_DATA_HP_EV:
             retVal = substruct2->hpEV;
@@ -2857,25 +2857,25 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct2->spDefenseEV;
             break;
         case MON_DATA_COOL:
-            retVal = substruct2->cool;
+            retVal = 255;
             break;
         case MON_DATA_BEAUTY:
-            retVal = substruct2->beauty;
+            retVal = 255;
             break;
         case MON_DATA_CUTE:
-            retVal = substruct2->cute;
+            retVal = 255;
             break;
         case MON_DATA_SMART:
-            retVal = substruct2->smart;
+            retVal = 255;
             break;
         case MON_DATA_TOUGH:
-            retVal = substruct2->tough;
+            retVal = 255;
             break;
         case MON_DATA_SHEEN:
-            retVal = substruct2->sheen;
+            retVal = 255;
             break;
         case MON_DATA_POKERUS:
-            retVal = substruct3->pokerus;
+            retVal = 0;
             break;
         case MON_DATA_MET_LOCATION:
             retVal = substruct3->metLocation;
@@ -2884,13 +2884,13 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct3->metLevel;
             break;
         case MON_DATA_MET_GAME:
-            retVal = substruct3->metGame;
+            retVal = gGameVersion;
             break;
         case MON_DATA_POKEBALL:
-            retVal = substruct0->pokeball;
+            retVal = substruct3->pokeball;
             break;
         case MON_DATA_OT_GENDER:
-            retVal = substruct3->otGender;
+            retVal = gSaveBlock2Ptr->playerGender;
             break;
         case MON_DATA_HP_IV:
             retVal = substruct3->hpIV;
@@ -2908,71 +2908,88 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct3->spAttackIV;
             break;
         case MON_DATA_SPDEF_IV:
-            retVal = substruct3->spDefenseIV;
+            retVal = boxMon->spDefenseIV;
             break;
         case MON_DATA_IS_EGG:
-            retVal = substruct3->isEgg;
+            retVal = substruct1->isEgg;
             break;
         case MON_DATA_ABILITY_NUM:
-            retVal = substruct3->abilityNum;
+            retVal = substruct2->abilityNum;
             break;
         case MON_DATA_COOL_RIBBON:
-            retVal = substruct3->coolRibbon;
+            //retVal = substruct3->coolRibbon;
+            retVal = 7;
             break;
         case MON_DATA_BEAUTY_RIBBON:
-            retVal = substruct3->beautyRibbon;
+            //retVal = substruct3->beautyRibbon;
+            retVal = 7;
             break;
         case MON_DATA_CUTE_RIBBON:
-            retVal = substruct3->cuteRibbon;
+            //retVal = substruct3->cuteRibbon;
+            retVal = 7;
             break;
         case MON_DATA_SMART_RIBBON:
-            retVal = substruct3->smartRibbon;
+            //retVal = substruct3->smartRibbon;
+            retVal = 7;
             break;
         case MON_DATA_TOUGH_RIBBON:
-            retVal = substruct3->toughRibbon;
+            //retVal = substruct3->toughRibbon;
+            retVal = 7;
             break;
         case MON_DATA_CHAMPION_RIBBON:
-            retVal = substruct3->championRibbon;
+            //retVal = substruct3->championRibbon;
+            retVal = 0;
             break;
         case MON_DATA_WINNING_RIBBON:
-            retVal = substruct3->winningRibbon;
+            //retVal = substruct3->winningRibbon;
+            retVal = 0;
             break;
         case MON_DATA_VICTORY_RIBBON:
-            retVal = substruct3->victoryRibbon;
+            //retVal = substruct3->victoryRibbon;
+            retVal = 0;
             break;
         case MON_DATA_ARTIST_RIBBON:
-            retVal = substruct3->artistRibbon;
+            //retVal = substruct3->artistRibbon;
+            retVal = 0;
             break;
         case MON_DATA_EFFORT_RIBBON:
-            retVal = substruct3->effortRibbon;
+            //retVal = substruct3->effortRibbon;
+            retVal = 0;
             break;
         case MON_DATA_MARINE_RIBBON:
-            retVal = substruct3->marineRibbon;
+            //retVal = substruct3->marineRibbon;
+            retVal = 0;
             break;
         case MON_DATA_LAND_RIBBON:
-            retVal = substruct3->landRibbon;
+            //retVal = substruct3->landRibbon;
+            retVal = 0;
             break;
         case MON_DATA_SKY_RIBBON:
-            retVal = substruct3->skyRibbon;
+            //retVal = substruct3->skyRibbon;
+            retVal = 0;
             break;
         case MON_DATA_COUNTRY_RIBBON:
-            retVal = substruct3->countryRibbon;
+            //retVal = substruct3->countryRibbon;
+            retVal = 0;
             break;
         case MON_DATA_NATIONAL_RIBBON:
-            retVal = substruct3->nationalRibbon;
+            //retVal = substruct3->nationalRibbon;
+            retVal = 0;
             break;
         case MON_DATA_EARTH_RIBBON:
-            retVal = substruct3->earthRibbon;
+            //retVal = substruct3->earthRibbon;
+            retVal = 0;
             break;
         case MON_DATA_WORLD_RIBBON:
-            retVal = substruct3->worldRibbon;
+            //retVal = substruct3->worldRibbon;
+            retVal = 0;
             break;
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            retVal = substruct3->modernFatefulEncounter;
+            retVal = FALSE;
             break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = substruct0->species;
-            if (substruct0->species && (substruct3->isEgg || boxMon->isBadEgg))
+            if (substruct0->species && (substruct1->isEgg || boxMon->isBadEgg))
                 retVal = SPECIES_EGG;
             break;
         case MON_DATA_IVS:
@@ -2981,10 +2998,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                     | (substruct3->defenseIV << 10)
                     | (substruct3->speedIV << 15)
                     | (substruct3->spAttackIV << 20)
-                    | (substruct3->spDefenseIV << 25);
+                    | (boxMon->spDefenseIV << 25);
             break;
         case MON_DATA_KNOWN_MOVES:
-            if (substruct0->species && !substruct3->isEgg)
+            if (substruct0->species && !substruct1->isEgg)
             {
                 u16 *moves = (u16 *)data;
                 s32 i = 0;
@@ -3003,90 +3020,57 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         case MON_DATA_RIBBON_COUNT:
             retVal = 0;
-            if (substruct0->species && !substruct3->isEgg)
-            {
-                retVal += substruct3->coolRibbon;
-                retVal += substruct3->beautyRibbon;
-                retVal += substruct3->cuteRibbon;
-                retVal += substruct3->smartRibbon;
-                retVal += substruct3->toughRibbon;
-                retVal += substruct3->championRibbon;
-                retVal += substruct3->winningRibbon;
-                retVal += substruct3->victoryRibbon;
-                retVal += substruct3->artistRibbon;
-                retVal += substruct3->effortRibbon;
-                retVal += substruct3->marineRibbon;
-                retVal += substruct3->landRibbon;
-                retVal += substruct3->skyRibbon;
-                retVal += substruct3->countryRibbon;
-                retVal += substruct3->nationalRibbon;
-                retVal += substruct3->earthRibbon;
-                retVal += substruct3->worldRibbon;
-            }
+            if (substruct0->species && !substruct1->isEgg)
+                retVal = 5;
             break;
         case MON_DATA_RIBBONS:
             retVal = 0;
-            if (substruct0->species && !substruct3->isEgg)
+            if (substruct0->species && !substruct1->isEgg)
             {
-                retVal = substruct3->championRibbon
-                    | (substruct3->coolRibbon << 1)
-                    | (substruct3->beautyRibbon << 4)
-                    | (substruct3->cuteRibbon << 7)
-                    | (substruct3->smartRibbon << 10)
-                    | (substruct3->toughRibbon << 13)
-                    | (substruct3->winningRibbon << 16)
-                    | (substruct3->victoryRibbon << 17)
-                    | (substruct3->artistRibbon << 18)
-                    | (substruct3->effortRibbon << 19)
-                    | (substruct3->marineRibbon << 20)
-                    | (substruct3->landRibbon << 21)
-                    | (substruct3->skyRibbon << 22)
-                    | (substruct3->countryRibbon << 23)
-                    | (substruct3->nationalRibbon << 24)
-                    | (substruct3->earthRibbon << 25)
-                    | (substruct3->worldRibbon << 26);
+                retVal = 0
+                    | (7 << 1)
+                    | (7 << 4)
+                    | (7 << 7)
+                    | (7 << 10)
+                    | (7 << 13);
             }
             break;
         case MON_DATA_HYPER_TRAINED_HP:
-            retVal = substruct1->hyperTrainedHP;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            retVal = substruct1->hyperTrainedAttack;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            retVal = substruct1->hyperTrainedDefense;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            retVal = substruct1->hyperTrainedSpeed;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            retVal = substruct1->hyperTrainedSpAttack;
+            retVal = FALSE;
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            retVal = substruct1->hyperTrainedSpDefense;
+            retVal = FALSE;
             break;
         case MON_DATA_IS_SHADOW:
-            retVal = substruct3->isShadow;
+            retVal = FALSE;
             break;
         case MON_DATA_DYNAMAX_LEVEL:
-            retVal = substruct3->dynamaxLevel;
+            retVal = 10;
             break;
         case MON_DATA_GIGANTAMAX_FACTOR:
-            retVal = substruct3->gigantamaxFactor;
+            retVal = FALSE;
             break;
         case MON_DATA_TERA_TYPE:
             if (gSpeciesInfo[substruct0->species].forceTeraType)
             {
                 retVal = gSpeciesInfo[substruct0->species].forceTeraType;
             }
-            else if (substruct0->teraType == TYPE_NONE) // Tera Type hasn't been modified so we can just use the personality
+            else
             {
                 const u8 *types = gSpeciesInfo[substruct0->species].types;
                 retVal = (boxMon->personality & 0x1) == 0 ? types[0] : types[1];
-            }
-            else
-            {
-                retVal = substruct0->teraType;
             }
             break;
         case MON_DATA_EVOLUTION_TRACKER:
@@ -3099,7 +3083,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct3->cantRandomizeAbility;
             break;
         case MON_DATA_IVS_WERE_PERFECTED:
-            retVal = substruct0->ivsWerePerfected;
+            retVal = FALSE;
             break;
         default:
             break;
@@ -3122,7 +3106,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = boxMon->otId;
             break;
         case MON_DATA_LANGUAGE:
-            retVal = boxMon->language;
+            retVal = gGameLanguage;
             break;
         case MON_DATA_SANITY_IS_BAD_EGG:
             retVal = boxMon->isBadEgg;
@@ -3165,7 +3149,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         }
         case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-            retVal = boxMon->daysSinceFormChange;
+            retVal = 0;
             break;
         default:
             break;
@@ -3267,7 +3251,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         {
             boxMon->isBadEgg = TRUE;
             boxMon->isEgg = TRUE;
-            substruct3->isEgg = TRUE;
+            substruct1->isEgg = TRUE;
             EncryptBoxMon(boxMon);
             return;
         }
@@ -3304,7 +3288,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_HELD_ITEM:
-            SET16(substruct0->heldItem);
+            SET16(substruct3->heldItem);
             break;
         case MON_DATA_EXP:
             SET32(substruct0->experience);
@@ -3331,13 +3315,13 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct1->pp1);
             break;
         case MON_DATA_PP2:
-            SET8(substruct1->pp2);
+            SET8(substruct3->pp2);
             break;
         case MON_DATA_PP3:
-            SET8(substruct1->pp3);
+            SET8(substruct2->pp3);
             break;
         case MON_DATA_PP4:
-            SET8(substruct1->pp4);
+            SET8(substruct2->pp4);
             break;
         case MON_DATA_HP_EV:
             SET8(substruct2->hpEV);
@@ -3358,25 +3342,25 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct2->spDefenseEV);
             break;
         case MON_DATA_COOL:
-            SET8(substruct2->cool);
+            //SET8(substruct2->cool);
             break;
         case MON_DATA_BEAUTY:
-            SET8(substruct2->beauty);
+            //SET8(substruct2->beauty);
             break;
         case MON_DATA_CUTE:
-            SET8(substruct2->cute);
+            //SET8(substruct2->cute);
             break;
         case MON_DATA_SMART:
-            SET8(substruct2->smart);
+            //SET8(substruct2->smart);
             break;
         case MON_DATA_TOUGH:
-            SET8(substruct2->tough);
+            //SET8(substruct2->tough);
             break;
         case MON_DATA_SHEEN:
-            SET8(substruct2->sheen);
+            //SET8(substruct2->sheen);
             break;
         case MON_DATA_POKERUS:
-            SET8(substruct3->pokerus);
+            //SET8(substruct3->pokerus);
             break;
         case MON_DATA_MET_LOCATION:
             SET8(substruct3->metLocation);
@@ -3388,16 +3372,16 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_MET_GAME:
-            SET8(substruct3->metGame);
+            //SET8(substruct3->metGame);
             break;
         case MON_DATA_POKEBALL:
         {
             u8 pokeball = *data;
-            substruct0->pokeball = pokeball;
+            substruct3->pokeball = pokeball;
             break;
         }
         case MON_DATA_OT_GENDER:
-            SET8(substruct3->otGender);
+            //SET8(substruct3->otGender);
             break;
         case MON_DATA_HP_IV:
             SET8(substruct3->hpIV);
@@ -3415,71 +3399,71 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct3->spAttackIV);
             break;
         case MON_DATA_SPDEF_IV:
-            SET8(substruct3->spDefenseIV);
+            SET8(boxMon->spDefenseIV);
             break;
         case MON_DATA_IS_EGG:
-            SET8(substruct3->isEgg);
-            if (substruct3->isEgg)
+            SET8(substruct1->isEgg);
+            if (substruct1->isEgg)
                 boxMon->isEgg = TRUE;
             else
                 boxMon->isEgg = FALSE;
             break;
         case MON_DATA_ABILITY_NUM:
-            SET8(substruct3->abilityNum);
+            SET8(substruct2->abilityNum);
             break;
         case MON_DATA_COOL_RIBBON:
-            SET8(substruct3->coolRibbon);
+            //SET8(substruct3->coolRibbon);
             break;
         case MON_DATA_BEAUTY_RIBBON:
-            SET8(substruct3->beautyRibbon);
+            //SET8(substruct3->beautyRibbon);
             break;
         case MON_DATA_CUTE_RIBBON:
-            SET8(substruct3->cuteRibbon);
+            //SET8(substruct3->cuteRibbon);
             break;
         case MON_DATA_SMART_RIBBON:
-            SET8(substruct3->smartRibbon);
+            //SET8(substruct3->smartRibbon);
             break;
         case MON_DATA_TOUGH_RIBBON:
-            SET8(substruct3->toughRibbon);
+            //SET8(substruct3->toughRibbon);
             break;
         case MON_DATA_CHAMPION_RIBBON:
-            SET8(substruct3->championRibbon);
+            //SET8(substruct3->championRibbon);
             break;
         case MON_DATA_WINNING_RIBBON:
-            SET8(substruct3->winningRibbon);
+            //SET8(substruct3->winningRibbon);
             break;
         case MON_DATA_VICTORY_RIBBON:
-            SET8(substruct3->victoryRibbon);
+            //SET8(substruct3->victoryRibbon);
             break;
         case MON_DATA_ARTIST_RIBBON:
-            SET8(substruct3->artistRibbon);
+            //SET8(substruct3->artistRibbon);
             break;
         case MON_DATA_EFFORT_RIBBON:
-            SET8(substruct3->effortRibbon);
+            //SET8(substruct3->effortRibbon);
             break;
         case MON_DATA_MARINE_RIBBON:
-            SET8(substruct3->marineRibbon);
+            //SET8(substruct3->marineRibbon);
             break;
         case MON_DATA_LAND_RIBBON:
-            SET8(substruct3->landRibbon);
+            //SET8(substruct3->landRibbon);
             break;
         case MON_DATA_SKY_RIBBON:
-            SET8(substruct3->skyRibbon);
+            //SET8(substruct3->skyRibbon);
             break;
         case MON_DATA_COUNTRY_RIBBON:
-            SET8(substruct3->countryRibbon);
+            //SET8(substruct3->countryRibbon);
             break;
         case MON_DATA_NATIONAL_RIBBON:
-            SET8(substruct3->nationalRibbon);
+            //SET8(substruct3->nationalRibbon);
             break;
         case MON_DATA_EARTH_RIBBON:
-            SET8(substruct3->earthRibbon);
+            //SET8(substruct3->earthRibbon);
             break;
         case MON_DATA_WORLD_RIBBON:
-            SET8(substruct3->worldRibbon);
+            //SET8(substruct3->worldRibbon);
             break;
         case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            SET8(substruct3->modernFatefulEncounter);
+            //SET8(substruct3->modernFatefulEncounter);
             break;
         case MON_DATA_IVS:
         {
@@ -3489,41 +3473,41 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             substruct3->defenseIV = (ivs >> 10) & MAX_IV_MASK;
             substruct3->speedIV = (ivs >> 15) & MAX_IV_MASK;
             substruct3->spAttackIV = (ivs >> 20) & MAX_IV_MASK;
-            substruct3->spDefenseIV = (ivs >> 25) & MAX_IV_MASK;
+            boxMon->spDefenseIV = (ivs >> 25) & MAX_IV_MASK;
             break;
         }
         case MON_DATA_HYPER_TRAINED_HP:
-            SET8(substruct1->hyperTrainedHP);
+            //SET8(substruct1->hyperTrainedHP);
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            SET8(substruct1->hyperTrainedAttack);
+            //SET8(substruct1->hyperTrainedAttack);
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            SET8(substruct1->hyperTrainedDefense);
+            //SET8(substruct1->hyperTrainedDefense);
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            SET8(substruct1->hyperTrainedSpeed);
+            //SET8(substruct1->hyperTrainedSpeed);
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            SET8(substruct1->hyperTrainedSpAttack);
+            //SET8(substruct1->hyperTrainedSpAttack);
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            SET8(substruct1->hyperTrainedSpDefense);
+            //SET8(substruct1->hyperTrainedSpDefense);
             break;
         case MON_DATA_IS_SHADOW:
-            SET8(substruct3->isShadow);
+            //SET8(substruct3->isShadow);
             break;
         case MON_DATA_DYNAMAX_LEVEL:
-            SET8(substruct3->dynamaxLevel);
+            //SET8(substruct3->dynamaxLevel);
             break;
         case MON_DATA_GIGANTAMAX_FACTOR:
-            SET8(substruct3->gigantamaxFactor);
+            //SET8(substruct3->gigantamaxFactor);
             break;
         case MON_DATA_TERA_TYPE:
         {
-            u32 teraType;
-            SET8(teraType);
-            substruct0->teraType = teraType;
+            //u32 teraType;
+            //SET8(teraType);
+            //substruct0->teraType = teraType;
             break;
         }
         case MON_DATA_EVOLUTION_TRACKER:
@@ -3540,7 +3524,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct3->cantRandomizeAbility);
             break;
         case MON_DATA_IVS_WERE_PERFECTED:
-            SET8(substruct0->ivsWerePerfected);
+            //SET8(substruct0->ivsWerePerfected);
             break;
         default:
             break;
@@ -3567,7 +3551,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET32(boxMon->otId);
             break;
         case MON_DATA_LANGUAGE:
-            SET8(boxMon->language);
+            //SET8(boxMon->language);
             break;
         case MON_DATA_SANITY_IS_BAD_EGG:
             SET8(boxMon->isBadEgg);
@@ -3586,7 +3570,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_MARKINGS:
-            SET8(boxMon->markings);
+            //SET8(boxMon->markings);
             break;
         case MON_DATA_CHECKSUM:
             SET16(boxMon->checksum);
@@ -3608,7 +3592,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_DAYS_SINCE_FORM_CHANGE:
-            SET8(boxMon->daysSinceFormChange);
+            //SET8(boxMon->daysSinceFormChange);
             break;
         }
     }
