@@ -4440,24 +4440,24 @@ void EnterCheatCode(void)
 void GetCheatCodeFeedback(void)
 {
     static const u8 sText_CheatCodeDexAll[]           = _("DexAll");
-    static const u8 sText_CheatCodeDexAllShort[]      = _("DXA");
+    static const u8 sText_CheatCodeDexAllShort[]      = _("Dxa");
 
     static const u8 sText_CheatCodeCaughtEmAll[]      = _("CaughtAll");
-    static const u8 sText_CheatCodeCaughtEmAllShort[] = _("CAL");
+    static const u8 sText_CheatCodeCaughtEmAllShort[] = _("Cal");
 
     static const u8 sText_CheatCodeBestBall[]         = _("EZCatch");
-    static const u8 sText_CheatCodeBestBallShort[]    = _("EZC");
+    static const u8 sText_CheatCodeBestBallShort[]    = _("Ezc");
 
     static const u8 sText_CheatCodeMega[]             = _("Mega");
 
     static const u8 sText_CheatCodeShinyStarters[]        = _("ShinyS");
-    static const u8 sText_CheatCodeShinyStartersShort[]   = _("SHS");
+    static const u8 sText_CheatCodeShinyStartersShort[]   = _("Shs");
 
     static const u8 sText_CheatCodeMaxMoney[]         = _("MaxMoney");
-    static const u8 sText_CheatCodeMaxMoneyShort[]    = _("MMY");
+    static const u8 sText_CheatCodeMaxMoneyShort[]    = _("Mmy");
 
     static const u8 sText_CheatCodeShinyRoamers[]         = _("ShinyR");
-    static const u8 sText_CheatCodeShinyRoamersShort[]    = _("SHR");
+    static const u8 sText_CheatCodeShinyRoamersShort[]    = _("Shr");
 
     /* 1: DexAll / DXA – toggle full Pokédex seen */
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll) ||
