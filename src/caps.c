@@ -3,6 +3,7 @@
 #include "event_data.h"
 #include "caps.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 
 
 u32 GetCurrentLevelCap(void)
@@ -130,4 +131,17 @@ u32 GetCurrentEVCap(void)
 
 void LevelBoxesToCap(void)
 {
+    u32 currentCap = GetCurrentLevelCap();
+    for (u32 boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        for (u32 boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+        {
+            struct BoxPokemon *boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
+            u32 species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+            if (species != SPECIES_NONE && species != SPECIES_EGG)
+            {
+                SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][currentCap]);
+            }
+        }
+    }
 }
