@@ -1588,7 +1588,7 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_SENTRET"
+                "species": "SPECIES_SKWOVET"
               },
               {
                 "min_level": 25,
@@ -1926,7 +1926,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_SKWOVET"
+                "species": "SPECIES_SENTRET"
               },
               {
                 "min_level": 6,
