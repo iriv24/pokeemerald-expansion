@@ -4439,17 +4439,29 @@ void EnterCheatCode(void)
 
 void GetCheatCodeFeedback(void)
 {
-    static const u8 sText_CheatCodeDexAll[] = _("DexAll"); // Mark entire Pokedex as seen
-    static const u8 sText_CheatCodeCaughtEmAll[] = _("CaughtAll"); // Mark entire Pokedex as caught
-    static const u8 sText_CheatCodeBestBall[] = _("EZCatch"); // 100% catch rate with all balls
-    static const u8 sText_CheatCodeMega[] = _("Mega"); // give all mega stones
-    static const u8 sText_CheatCodeShinyStarters[] = _("ShinyS"); // guarantee shiny starters
-    static const u8 sText_CheatCodeMaxMoney[] = _("MaxMoney"); // give max money
-    static const u8 sText_CheatCodeShinyRoamers[] = _("ShinyR"); // guarantee shiny roamers
-    // static const u8 sText_CheatCodeGiveMenu[] = _("GiveMenu"); // give max money
+    static const u8 sText_CheatCodeDexAll[]           = _("DexAll");
+    static const u8 sText_CheatCodeDexAllShort[]      = _("Dxa");
 
-    // Mark entire Pokedex as seen
-    if (!StringCompare(gStringVar2, sText_CheatCodeDexAll))
+    static const u8 sText_CheatCodeCaughtEmAll[]      = _("CaughtAll");
+    static const u8 sText_CheatCodeCaughtEmAllShort[] = _("Cal");
+
+    static const u8 sText_CheatCodeBestBall[]         = _("EZCatch");
+    static const u8 sText_CheatCodeBestBallShort[]    = _("Ezc");
+
+    static const u8 sText_CheatCodeMega[]             = _("Mega");
+
+    static const u8 sText_CheatCodeShinyStarters[]        = _("ShinyS");
+    static const u8 sText_CheatCodeShinyStartersShort[]   = _("Shs");
+
+    static const u8 sText_CheatCodeMaxMoney[]         = _("MaxMoney");
+    static const u8 sText_CheatCodeMaxMoneyShort[]    = _("Mmy");
+
+    static const u8 sText_CheatCodeShinyRoamers[]         = _("ShinyR");
+    static const u8 sText_CheatCodeShinyRoamersShort[]    = _("Shr");
+
+    /* 1: DexAll / DXA – toggle full Pokédex seen */
+    if (!StringCompare(gStringVar2, sText_CheatCodeDexAll) ||
+        !StringCompare(gStringVar2, sText_CheatCodeDexAllShort))
     {
         if (FlagGet(FLAG_DEXALL))
             FlagClear(FLAG_DEXALL);
@@ -4458,11 +4470,11 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 1;
     }
 
-    // Mark entire Pokedex as caught
-    else if (!StringCompare(gStringVar2, sText_CheatCodeCaughtEmAll))
+    /* 2: CaughtAll / CAL – mark all species seen & caught */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeCaughtEmAll) ||
+             !StringCompare(gStringVar2, sText_CheatCodeCaughtEmAllShort))
     {
-        u32 i;
-        for (i = 0; i < NATIONAL_DEX_COUNT; i++)
+        for (u32 i = 0; i < NATIONAL_DEX_COUNT; i++)
         {
             GetSetPokedexFlag(i + 1, FLAG_SET_SEEN);
             GetSetPokedexFlag(i + 1, FLAG_SET_CAUGHT);
@@ -4470,8 +4482,9 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 2;
     }
 
-    // 100% catch rate with all balls
-    else if (!StringCompare(gStringVar2, sText_CheatCodeBestBall))
+    /* 3: EZCatch / EZC – toggle 100 % catch rate */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeBestBall) ||
+             !StringCompare(gStringVar2, sText_CheatCodeBestBallShort))
     {
         if (FlagGet(FLAG_EZ_CATCH))
             FlagClear(FLAG_EZ_CATCH);
@@ -4480,12 +4493,15 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 3;
     }
 
-    // give all mega stones
+    /* 4: Mega – handled in script */
     else if (!StringCompare(gStringVar2, sText_CheatCodeMega))
+    {
         gSpecialVar_Result = 4;
+    }
 
-    // guarantee shiny starters
-    else if (!StringCompare(gStringVar2, sText_CheatCodeShinyStarters))
+    /* 5: ShinyS / SHS – toggle shiny starters */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeShinyStarters) ||
+             !StringCompare(gStringVar2, sText_CheatCodeShinyStartersShort))
     {
         if (FlagGet(FLAG_SHINY_STARTERS))
             FlagClear(FLAG_SHINY_STARTERS);
@@ -4494,15 +4510,17 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 5;
     }
 
-    // sets money to max value
-    else if(!StringCompare(gStringVar2, sText_CheatCodeMaxMoney))
+    /* 6: MaxMoney / MMY – set money to max */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeMaxMoney) ||
+             !StringCompare(gStringVar2, sText_CheatCodeMaxMoneyShort))
     {
         SetMoney(&gSaveBlock1Ptr->money, MAX_MONEY);
         gSpecialVar_Result = 6;
     }
 
-    // guarantee shiny roamers
-    else if (!StringCompare(gStringVar2, sText_CheatCodeShinyRoamers))
+    /* 7: ShinyR / SHR – toggle shiny roamers */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeShinyRoamers) ||
+             !StringCompare(gStringVar2, sText_CheatCodeShinyRoamersShort))
     {
         if (FlagGet(FLAG_SHINY_ROAMERS))
             FlagClear(FLAG_SHINY_ROAMERS);
@@ -4511,17 +4529,10 @@ void GetCheatCodeFeedback(void)
         gSpecialVar_Result = 7;
     }
 
-    // enables "give menu", which is just the give item and give mon features of the debug menu
-    // else if (!StringCompare(gStringVar2, sText_CheatCodeGiveMenu))
-    // {
-    //     if (FlagGet(FLAG_GIVE_MENU))
-    //         FlagClear(FLAG_GIVE_MENU);
-    //     else
-    //         FlagSet(FLAG_GIVE_MENU);
-    //     gSpecialVar_Result = 7;
-    // }
-
-    // Illegal cheat code
+    /* 0: invalid code */
     else
+    {
         gSpecialVar_Result = 0;
+    }
 }
+
