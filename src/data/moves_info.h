@@ -18116,6 +18116,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .battleAnimScript = gBattleAnimMove_ShellSideArm,
     },
 
+    [MOVE_DRACO_BARRAGE] =
+    {
+        .name = COMPOUND_STRING("Draco Barrage"),
+        .description = COMPOUND_STRING(
+            "Ignores Fairy immunity; 33%\n"
+            "recoil; best of phys. or spec."
+        ),
+        .effect = EFFECT_SHELL_SIDE_ARM,
+        .power = 100,
+        .type = TYPE_DRAGON,
+        .accuracy = 100,
+        .pp = 5,
+        .recoil = 33,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DracoMeteor,
+    },
+
     [MOVE_MISTY_EXPLOSION] =
     {
         .name = COMPOUND_STRING("Misty Explosion"),
