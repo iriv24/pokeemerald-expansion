@@ -12392,7 +12392,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FightingTMHM,
     },
 
-    [ITEM_TM169] =
+    [ITEM_TM_SPIKES] =
     {
         .name = _("TM169"),
         .price = 100,
@@ -12401,12 +12401,12 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_SPIKES,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_GroundTMHM,
     },
 
-    [ITEM_TM170] =
+    [ITEM_TM_STEEL_BEAM] =
     {
         .name = _("TM170"),
         .price = 100,
@@ -12415,12 +12415,12 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_STEEL_BEAM,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_SteelTMHM,
     },
 
-    [ITEM_TM171] =
+    [ITEM_TM_DRACO_BARRAGE] =
     {
         .name = _("TM171"),
         .price = 100,
@@ -12429,9 +12429,9 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_DRACO_BARRAGE,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_DragonTMHM,
     },
 
     [ITEM_TM172] =

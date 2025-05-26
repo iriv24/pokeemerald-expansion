@@ -169,7 +169,10 @@
     F(SCALE_SHOT) \
     F(PSYCHIC_NOISE) \
     F(ALLURING_VOICE) \
-    F(VACUUM_WAVE)
+    F(VACUUM_WAVE) \
+    F(SPIKES) \
+    F(STEEL_BEAM) \
+    F(DRACO_BARRAGE)
 
 #define FOREACH_HM(F) \
     F(CUT) \
