@@ -6,10 +6,6 @@ LilycoveCity_DepartmentStore_2F_EventScript_Cook::
 	msgbox LilycoveCity_DepartmentStore_2F_Text_LearnToUseItemsProperly, MSGBOX_NPC
 	end
 
-LilycoveCity_DepartmentStore_2F_EventScript_PokefanF::
-	msgbox LilycoveCity_DepartmentStore_2F_Text_GoodGiftForHusband, MSGBOX_NPC
-	end
-
 LilycoveCity_DepartmentStore_2F_EventScript_Sailor::
 	msgbox LilycoveCity_DepartmentStore_2F_Text_StockUpOnItems, MSGBOX_NPC
 	end
@@ -79,4 +75,32 @@ LilycoveCity_DepartmentStore_2F_Text_StockUpOnItems:
 	.string "I'm leaving on a long journey soon.\n"
 	.string "I need to stock up on items.$"
 
+LilycoveCity_DepartmentStore_2F_Text_HereTakeThis:
+	.string "Oh, here, it looks like you should\n"
+	.string "have this!$"
+
 `
+
+script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF {
+	lock
+	faceplayer
+	checkitem(ITEM_TM_SPIKES)
+	goto_if_eq(VAR_RESULT, TRUE, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_Base)
+	goto_if_defeated(TRAINER_BYRON, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes)
+	msgbox(LilycoveCity_DepartmentStore_2F_Text_GoodGiftForHusband, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_Base {
+	msgbox(LilycoveCity_DepartmentStore_2F_Text_GoodGiftForHusband, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes {
+	msgbox(LilycoveCity_DepartmentStore_2F_Text_HereTakeThis, MSGBOX_DEFAULT)
+	giveitem(ITEM_TM_SPIKES)
+	release
+	end
+}

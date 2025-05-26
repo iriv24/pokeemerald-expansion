@@ -234,6 +234,7 @@ script Route121_EventScript_BattleByron{
 	trainerbattle_no_intro(TRAINER_BYRON, Byron_Outro)
 	giveitem(ITEM_TM_STEALTH_ROCK)
 	giveitem(ITEM_TM_HIGH_HORSEPOWER)
+	giveitem(ITEM_TM_SPIKES)
 	giveitem(ITEM_COPPERAJITE)
 	giveitem(ITEM_ROCKY_HELMET)
 	giveitem(ITEM_LEFTOVERS)
