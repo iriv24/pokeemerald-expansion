@@ -12,20 +12,22 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	call Common_EventScript_PlayerHandedOverTheItem
 	setflag FLAG_DELIVERED_STEVEN_LETTER
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_STEEL_WING
-	giveitem ITEM_SITRUS_BERRY, 20
-	giveitem ITEM_HEAL_BALL, 99
-	giveitem ITEM_BERRY_JUICE, 10
-	giveitem ITEM_MOON_STONE, 10
-	giveitem ITEM_THROAT_SPRAY, 10
-	giveitem ITEM_PP_UP, 20
-	giveitem ITEM_IRON_BALL, 10
-	giveitem ITEM_WIDE_LENS, 10
-	giveitem ITEM_HEAT_ROCK, 10
-	giveitem ITEM_DAMP_ROCK, 10
-	giveitem ITEM_SMOOTH_ROCK, 10
-	giveitem ITEM_ICY_ROCK, 10
-	giveitem ITEM_LEEK, 10
+	giveitemfast ITEM_TM_STEEL_WING
+	giveitemfast ITEM_SITRUS_BERRY, 20
+	giveitemfast ITEM_HEAL_BALL, 99
+	giveitemfast ITEM_BERRY_JUICE, 10
+	giveitemfast ITEM_MOON_STONE, 10
+	giveitemfast ITEM_THROAT_SPRAY, 10
+	giveitemfast ITEM_PP_UP, 20
+	giveitemfast ITEM_IRON_BALL, 10
+	giveitemfast ITEM_WIDE_LENS, 10
+	giveitemfast ITEM_HEAT_ROCK, 10
+	giveitemfast ITEM_DAMP_ROCK, 10
+	giveitemfast ITEM_SMOOTH_ROCK, 10
+	giveitemfast ITEM_ICY_ROCK, 10
+	giveitemfast ITEM_LEEK, 10
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
+	waitfanfare
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -114,10 +116,13 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 	.string "Steven: Your Pokémon appear quite\n"
-	.string "capable.\p"
-	.string "If you keep training, you could even\n"
-	.string "become the Champion of the Pokémon\l"
-	.string "League one day. That's what I think.\p"
+	.string "capable, so hopefully you can put those\l"
+	.string "Items to good use.\p"
+	.string "I had some spare Sitrus Berries, Heal\n"
+	.string "Balls, Berry Juices, Moon Stones, Throat\l"
+	.string "Sprays, PP Ups, Iron Balls, Wide Lenses,\l"
+	.string "Heat Rocks, Damp Rocks, Smooth Rocks,\l"
+	.string "Icy Rocks, and Leeks to give to you.\p"
 	.string "I know, since we've gotten to know each\n"
 	.string "other, let's register one another in\l"
 	.string "our PokéNavs.\p"
