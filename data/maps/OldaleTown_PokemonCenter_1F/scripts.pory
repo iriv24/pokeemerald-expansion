@@ -151,9 +151,16 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 	else{
 		dynmultipush("Set Mon to Lvl Cap", 2)
 	}
+
+	if(!flag(FLAG_MET_REGULAR_MOVE_TUTOR)){
+		dynmultipush("{COLOR WHITE}{SHADOW LIGHT_GRAY}Set Box to Lvl Cap{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}", 3)
+	}
+	else{
+		dynmultipush("Set Box to Lvl Cap", 3)
+	}
 	
-	dynmultipush("White Out Counter", 3)
-	dynmultipush("Mode Info", 4)
+	dynmultipush("White Out Counter", 4)
+	dynmultipush("Mode Info", 5)
     dynmultipush("Cancel", MULTI_B_PRESSED)
     // setting initial selected to a non-existant ID will always have it point to the first option
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -181,10 +188,15 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse {
 
 	if (var(VAR_RESULT) == 3)
 	{
-		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetBoxToLevelCap)	
 	}
 
 	if (var(VAR_RESULT) == 4)
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount)	
+	}
+
+	if (var(VAR_RESULT) == 5)
 	{
 		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurse_ModeInfo)	
 	}
@@ -364,6 +376,37 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetToLevelCap{
 	end
 }
 
+script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SetBoxToLevelCap{
+	if(!flag(FLAG_MET_REGULAR_MOVE_TUTOR))
+	{
+		msgbox(FeatureAvailableAfterMoveTutor)
+		release
+		end
+	}
+	specialvar(VAR_0x8006, GetLevelCapForText)
+	buffernumberstring(STR_VAR_3, VAR_0x8006)
+	msgbox(TellLevelCapAndAskBox, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	msgbox(AreYouSureLevelCapBox, MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO) 
+	{
+		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+	}
+	msgbox("Excellent. We shall begin at once!")
+	fadescreen(FADE_TO_BLACK)
+	special(LevelBoxesToCap)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	closemessage
+	fadescreen(FADE_FROM_BLACK)
+	msgbox(BoxHasBeenSetToLevelCap)
+	release
+	end
+}
+
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse_MonAlreadyAtCap{
 	msgbox("That Pokémon is already level {STR_VAR_3}.")
 	release
@@ -491,6 +534,31 @@ text MonHasBeenSetToLevelCap
 {
 	"{STR_VAR_1} has been set\n"
 	"to level {STR_VAR_3}.\p"
+	"Come again if you need something else."
+}
+
+text TellLevelCapAndAskBox
+{
+	"Current Level Cap: {STR_VAR_3}.\p"
+	"I can set all Unmarked Pokémon in your\n"
+	"PC and Party to level {STR_VAR_3}.\p"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}You can Mark Pokémon to NOT be leveled\n"
+	"up using the “Mark” option in your PC.\p"
+	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like me to set all Unmarked\n"
+	"Pokémon to level {STR_VAR_3}?"
+}
+
+text AreYouSureLevelCapBox
+{
+	"I will now set all Unmarked Pokémon in\n"
+	"your PC and Party to level {STR_VAR_3}.\p"
+	"Is that okay?"
+}
+
+text BoxHasBeenSetToLevelCap
+{
+	"All Unmarked Pokémon in your PC and\n"
+	"Party have been set to level {STR_VAR_3}.\p"
 	"Come again if you need something else."
 }
 
