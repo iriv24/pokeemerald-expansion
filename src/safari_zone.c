@@ -58,7 +58,7 @@ void EnterSafariMode(void)
     SetSafariZoneFlag();
     ClearAllPokeblockFeeders();
     gNumSafariBalls = 30;
-    sSafariZoneStepCounter = 500;
+    sSafariZoneStepCounter = 5000;
     sSafariZoneCaughtMons = 0;
     sSafariZonePkblkUses = 0;
 }
