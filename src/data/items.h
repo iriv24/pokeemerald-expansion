@@ -12434,7 +12434,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_DragonTMHM,
     },
 
-    [ITEM_TM172] =
+    [ITEM_TM_HEAVY_SLAM] =
     {
         .name = _("TM172"),
         .price = 100,
@@ -12443,9 +12443,9 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_HEAVY_SLAM,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_SteelTMHM,
     },
 
     [ITEM_TM173] =

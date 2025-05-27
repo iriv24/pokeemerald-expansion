@@ -3886,8 +3886,10 @@ static const u8 sTM171Desc[] = _(
     "33% recoil; best of\n"
     "phys. or spec.");
 
-static const u8 sTM172Desc[] = _( // Todo
-    "?????");
+static const u8 sTM172Desc[] = _(
+    "Does more damage if\n"
+    "the user outweighs\n"
+    "the foe.");
 
 static const u8 sTM173Desc[] = _( // Todo
     "?????");

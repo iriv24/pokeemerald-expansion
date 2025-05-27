@@ -172,7 +172,8 @@
     F(VACUUM_WAVE) \
     F(SPIKES) \
     F(STEEL_BEAM) \
-    F(DRACO_BARRAGE)
+    F(DRACO_BARRAGE) \
+    F(HEAVY_SLAM)
 
 #define FOREACH_HM(F) \
     F(CUT) \
