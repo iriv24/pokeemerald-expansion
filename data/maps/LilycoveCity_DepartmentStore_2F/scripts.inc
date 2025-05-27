@@ -191,6 +191,8 @@ LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes::
 # 103 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	giveitem ITEM_TM_SPIKES
 # 104 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
+	giveitem ITEM_TM_HEAVY_SLAM
+# 105 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	release
 	end
 
