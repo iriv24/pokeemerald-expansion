@@ -795,7 +795,6 @@ script Route111_EventScript_DawnDefeated{
 	giveitem(ITEM_TM_ROOST)
 	giveitem(ITEM_TM_SCALD)
 	giveitem(ITEM_TM_FLASH_CANNON)
-	giveitem(ITEM_EMPOLEONITE_D)
 	giveitem(ITEM_ABILITY_PATCH, 999)
 	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)
