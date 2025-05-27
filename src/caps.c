@@ -132,15 +132,34 @@ u32 GetCurrentEVCap(void)
 void LevelBoxesToCap(void)
 {
     u32 currentCap = GetCurrentLevelCap();
+    u32 species = 0;
+    u32 markings = 0;
+
+    for (u32 partyIndex = 0; partyIndex < PARTY_SIZE; partyIndex++)
+    {
+        struct Pokemon *mon = &gPlayerParty[partyIndex];
+        species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+        if (species != SPECIES_NONE && species != SPECIES_EGG)
+        {
+            u32 markings = GetMonData(mon, MON_DATA_MARKINGS);
+            if (markings == 0)
+            {
+                SetMonData(&gPlayerParty[partyIndex], MON_DATA_LEVEL, &currentCap);
+                SetMonData(&gPlayerParty[partyIndex], MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][currentCap]);
+                CalculateMonStats(&gPlayerParty[partyIndex]);
+            }
+        }
+    }
+    
     for (u32 boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
         for (u32 boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
         {
             struct BoxPokemon *boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
-            u32 species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+            species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
             if (species != SPECIES_NONE && species != SPECIES_EGG)
             {
-                u32 markings = GetBoxMonData(boxMon, MON_DATA_MARKINGS);
+                markings = GetBoxMonData(boxMon, MON_DATA_MARKINGS);
                 if (markings == 0)
                     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][currentCap]);
             }
