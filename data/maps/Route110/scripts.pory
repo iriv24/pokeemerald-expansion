@@ -499,7 +499,6 @@ Route110_EventScript_GiveRestOfItems::
 	giveitemfast ITEM_ELECTRIC_SEED, 10
 	giveitemfast ITEM_PSYCHIC_SEED, 10
 	giveitemfast ITEM_MISTY_SEED, 10
-	giveitemfast ITEM_AIR_BALLOON, 10
 	giveitemfast ITEM_TERRAIN_EXTENDER, 10
 	giveitemfast ITEM_LIGHT_CLAY, 10
 	playfanfare MUS_OBTAIN_ITEM
@@ -971,9 +970,8 @@ Route110_Text_RivalExplainRestOfItems::
 	.string "more types of Poké Balls, Shiny Stones,\l"
 	.string "Ice Stones, Black Sludges, Flame Orbs,\l"
 	.string "Toxic Orbs, Smoke Balls, Thick Clubs,\l"
-	.string "Weakness Policies, Air Balloons, Terrain\l"
-	.string "Extenders, some Terrain Seeds and\l"
-	.string "Light Clays.\p"
+	.string "Weakness Policies, Terrain Extenders,\l"
+	.string "some Terrain Seeds and Light Clays.\p"
 	.string "Whew, I think that's everything, you\n"
 	.string "might want to take a look through your\l"
 	.string "Bag pockets to see what you have now!\p"
