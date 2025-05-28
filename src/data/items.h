@@ -12448,7 +12448,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_SteelTMHM,
     },
 
-    [ITEM_TM173] =
+    [ITEM_TM_GRAVITY] =
     {
         .name = _("TM173"),
         .price = 100,
@@ -12457,9 +12457,9 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_GRAVITY,
         .iconPic = gItemIcon_TM,
-        .iconPalette = gItemIconPalette_NormalTMHM,
+        .iconPalette = gItemIconPalette_PsychicTMHM,
     },
 
     [ITEM_TM174] =

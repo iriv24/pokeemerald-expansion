@@ -173,7 +173,8 @@
     F(SPIKES) \
     F(STEEL_BEAM) \
     F(DRACO_BARRAGE) \
-    F(HEAVY_SLAM)
+    F(HEAVY_SLAM) \
+    F(GRAVITY)
 
 #define FOREACH_HM(F) \
     F(CUT) \
