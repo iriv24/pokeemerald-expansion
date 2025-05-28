@@ -6751,7 +6751,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .ability = ABILITY_TORRENT,
     .heldItem = ITEM_EMPOLEONITE_D,
     .isShiny = TRUE,
-    .moves = {MOVE_TOXIC, MOVE_FLASH_CANNON, MOVE_FLIP_TURN, MOVE_ROOST}
+    .moves = {MOVE_SCALD, MOVE_FLASH_CANNON, MOVE_FLIP_TURN, MOVE_ROOST}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6761,7 +6761,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .ev = TRAINER_PARTY_EVS_TIMID(),
     .ability = ABILITY_TELEPATHY,
     .heldItem = ITEM_ADAMANT_ORB,
-    .moves = {MOVE_ROAR_OF_TIME, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
+    .moves = {MOVE_DRACO_BARRAGE, MOVE_FLASH_CANNON, MOVE_FIRE_BLAST, MOVE_ICE_BEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6771,7 +6771,7 @@ static const struct TrainerMon sParty_StevenWithWallace[] = {
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_TOUGH_CLAWS,
-    .moves = {MOVE_METEOR_MASH, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH, MOVE_BULLET_PUNCH}
+    .moves = {MOVE_METEOR_MASH, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH, MOVE_HAMMER_ARM}
     }
 };
 
