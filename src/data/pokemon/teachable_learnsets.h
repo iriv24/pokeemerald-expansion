@@ -1,5 +1,5 @@
 //
-// DO NOT MODIFY THIS FILE! It is auto-generated from tools/learnset_helpers/teachable.py
+// DO MODIFY THIS FILE! It is manually updated with new teachable moves. We creatively interpret old instructions here.
 //
 
 // *************************************************** //
@@ -172,6 +172,11 @@
 // - MOVE_PSYCHIC_NOISE                                //
 // - MOVE_ALLURING_VOICE                               //
 // - MOVE_VACUUM_WAVE                                  //
+// - MOVE_SPIKES                                       //
+// - MOVE_STEEL_BEAM                                   //
+// - MOVE_DRACO_BARRAGE                                //
+// - MOVE_HEAVY_SLAM                                   //
+// - MOVE_GRAVITY                                      //
 // - MOVE_CUT                                          //
 // - MOVE_FLY                                          //
 // - MOVE_SURF                                         //
