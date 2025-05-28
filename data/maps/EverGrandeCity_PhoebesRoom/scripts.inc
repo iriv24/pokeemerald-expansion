@@ -153,7 +153,7 @@ EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
 # 77 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	.string "I learned how well Ghost-types are\n"
 # 78 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "complimented by Poison-types!\p"
+	.string "complimented by Fighting-types!\p"
 # 79 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	.string "You have to adapt your style if you\n"
 # 80 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"

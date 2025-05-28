@@ -75,7 +75,7 @@ EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
 	.string "But you know what else I learned while I\n"
 	.string "was training?\p"
 	.string "I learned how well Ghost-types are\n"
-	.string "complimented by Poison-types!\p"
+	.string "complimented by Fighting-types!\p"
 	.string "You have to adapt your style if you\n"
 	.string "want to stay on top, don't you think?$"
 
