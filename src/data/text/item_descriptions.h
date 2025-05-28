@@ -3891,8 +3891,9 @@ static const u8 sTM172Desc[] = _(
     "the user outweighs\n"
     "the foe.");
 
-static const u8 sTM173Desc[] = _( // Todo
-    "?????");
+static const u8 sTM173Desc[] = _(
+    "Gravity is intensified\n"
+    "negating levitation.");
 
 static const u8 sTM174Desc[] = _( // Todo
     "?????");
