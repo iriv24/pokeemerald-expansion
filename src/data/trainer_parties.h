@@ -4909,7 +4909,8 @@ static const struct TrainerMon sParty_Phoebe1[] = {
     .lvl = 85,
     .species = SPECIES_COBALION,
     .nature = NATURE_IMPISH,
-    .ev = TRAINER_PARTY_EVS_IMPISH(),
+               //hp,atk,def,spatk,spdef,speed
+    .ev = TRAINER_PARTY_EVS( 6, 252, 252, 0, 0, 0 ),
     .ability = ABILITY_SHARPNESS,
     .heldItem = ITEM_OCCA_BERRY,
     .moves = {MOVE_SACRED_SWORD, MOVE_CUT, MOVE_AIR_SLASH, MOVE_X_SCISSOR}
