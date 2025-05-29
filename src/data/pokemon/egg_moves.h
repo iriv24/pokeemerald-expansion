@@ -1386,7 +1386,6 @@ static const u16 sEeveeEggMoveLearnset[] = {
     MOVE_YAWN,
     MOVE_FAKE_TEARS,
     MOVE_COVET,
-    MOVE_DETECT,
     MOVE_NATURAL_GIFT,
     MOVE_STORED_POWER,
     MOVE_SYNCHRONOISE,
