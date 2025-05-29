@@ -51,9 +51,9 @@ MauvilleCity_Mart_Pokemart:
 # 26 "data/maps/MauvilleCity_Mart/scripts.pory"
 	.2byte ITEM_GUARD_SPEC
 # 27 "data/maps/MauvilleCity_Mart/scripts.pory"
-	.2byte ITEM_DIRE_HIT
-# 28 "data/maps/MauvilleCity_Mart/scripts.pory"
 	.2byte ITEM_X_ACCURACY
+# 28 "data/maps/MauvilleCity_Mart/scripts.pory"
+	.2byte ITEM_SHED_SHELL
 # 29 "data/maps/MauvilleCity_Mart/scripts.pory"
 	.2byte ITEM_LIGHT_CLAY
 # 30 "data/maps/MauvilleCity_Mart/scripts.pory"
