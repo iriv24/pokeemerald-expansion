@@ -1721,7 +1721,8 @@ bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
 
-    #if RANDOMIZER_AVAILABLE == TRUE
+    if(!FlagGet(FLAG_USE_MONOTYPE_STARTERS))
+    {
         u16 i = 0;
         for(i = 0; i < MY_STARTER_AND_GIFT_MON_COUNT; i++)
         {
@@ -1729,7 +1730,7 @@ bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
                 break;
         }
         species = RandomizeStarterAndGiftMon(i, gStarterAndGiftMonTable);
-    #endif
+    }
 
     ScriptMenu_ShowPokemonPic(species, x, y);
     return FALSE;
@@ -2723,5 +2724,101 @@ bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 
     *varPointer = gObjectEvents[GetObjectEventIdByLocalId(objectId)].facingDirection;
 
+    return FALSE;
+}
+
+bool8 ScrCmd_bufferstarterinfo(struct ScriptContext *ctx)
+{
+    // 0=grass, 1=fire, 2=water
+    u8 stringVarIndex = ScriptReadByte(ctx);
+    u16 startertype = VarGet(ScriptReadHalfword(ctx));
+
+    const u16 normalStarters[9][3] = {
+        // Gen 1
+        { SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE },
+        
+        // Gen 2
+        { SPECIES_CHIKORITA, SPECIES_CYNDAQUIL, SPECIES_TOTODILE },
+        
+        // Gen 3
+        { SPECIES_TREECKO, SPECIES_TORCHIC, SPECIES_MUDKIP },
+        
+        // Gen 4
+        { SPECIES_TURTWIG, SPECIES_CHIMCHAR, SPECIES_PIPLUP },
+        
+        // Gen 5
+        { SPECIES_SNIVY, SPECIES_TEPIG, SPECIES_OSHAWOTT },
+        
+        // Gen 6
+        { SPECIES_CHESPIN, SPECIES_FENNEKIN, SPECIES_FROAKIE },
+        
+        // Gen 7
+        { SPECIES_ROWLET, SPECIES_LITTEN, SPECIES_POPPLIO },
+        
+        // Gen 8
+        { SPECIES_GROOKEY, SPECIES_SCORBUNNY, SPECIES_SOBBLE },
+        
+        // Gen 9
+        { SPECIES_SPRIGATITO, SPECIES_FUECOCO, SPECIES_QUAXLY }
+    };
+
+    const u16 monoStarters[15][3] = {
+        // Fighting
+        { SPECIES_MANKEY, SPECIES_MACHOP, SPECIES_TIMBURR },
+        
+        // Flying
+        { SPECIES_HOPPIP, SPECIES_FLETCHLING, SPECIES_ROOKIDEE },
+        
+        // Poison
+        { SPECIES_BUDEW, SPECIES_VENIPEDE, SPECIES_ZUBAT },
+        
+        // Ground
+        { SPECIES_TRAPINCH, SPECIES_GEODUDE, SPECIES_SANDILE },
+        
+        // Rock
+        { SPECIES_ROLYCOLY, SPECIES_GEODUDE_ALOLA, SPECIES_NACLI },
+        
+        // Bug
+        { SPECIES_GRUBBIN, SPECIES_BLIPBUG, SPECIES_SEWADDLE },
+        
+        // Ghost
+        {  SPECIES_GASTLY, SPECIES_LITWICK, SPECIES_DUSKULL },
+        
+        // Steel
+        { SPECIES_TINKATINK, SPECIES_ARON, SPECIES_KLINK },
+        
+        // Electric
+        { SPECIES_MAGNEMITE, SPECIES_SHINX,  SPECIES_MAREEP},
+        
+        // Psychic
+        { SPECIES_ABRA, SPECIES_SOLOSIS, SPECIES_GOTHITA },
+        
+        // Ice
+        { SPECIES_VANILLITE, SPECIES_SWINUB, SPECIES_SPHEAL },
+        
+        // Dragon
+        { SPECIES_BAGON, SPECIES_GIBLE, SPECIES_DRATINI },
+        
+        // Dark
+        { SPECIES_PAWNIARD, SPECIES_ZIGZAGOON_GALAR, SPECIES_IMPIDIMP },
+        
+        // Normal
+        { SPECIES_WHISMUR, SPECIES_LILLIPUP, SPECIES_SMOLIV },
+        
+        // Fairy
+        { SPECIES_COTTONEE, SPECIES_PONYTA_GALAR, SPECIES_AZURILL },
+    };
+
+    if(FlagGet(FLAG_USE_MONOTYPE_STARTERS))
+    {
+        gSpecialVar_0x8006 = monoStarters[VarGet(VAR_MONOTYPE_STARTER)][startertype];
+             
+    }
+    else
+    {
+        gSpecialVar_0x8006 = normalStarters[VarGet(VAR_STARTER_GEN)][startertype]; 
+    }
+
+    StringCopy(sScriptStringVars[stringVarIndex], GetSpeciesName(gSpecialVar_0x8006));
     return FALSE;
 }

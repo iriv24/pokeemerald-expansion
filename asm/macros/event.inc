@@ -1989,6 +1989,12 @@
 	.4byte \products
 	.endm
 
+	@ Sets the species ID of the starter into VAR_0x8006, species name into the string var
+	.macro bufferstarterinfo stringVarId:req, startertype:req
+	.byte 0xeb
+	stringvar \stringVarId
+	.2byte \startertype
+	.endm
 
 @ Supplementary
 

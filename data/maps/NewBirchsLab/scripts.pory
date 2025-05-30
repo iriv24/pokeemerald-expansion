@@ -7,6 +7,7 @@ mapscripts NewBirchsLab_MapScripts {
 script NewBirchsLab_EventScript_BallDefault{
     setvar(VAR_STARTER_GEN, 0)
     setvar(VAR_UNUSED_0x40F8, 1)
+    setvar(VAR_MONOTYPE_STARTER, 0)
 }
  
 script NewBirchsLab_EventScript_Birch{
@@ -19,6 +20,9 @@ script NewBirchsLab_EventScript_Birch{
         call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_WelcomePlayerMale)
         setflag(FLAG_TOUCHED_BALLS)
     }
+    
+    goto_if_set(FLAG_USE_MONOTYPE_STARTERS, NewBirchsLab_EventScript_BirchMonotypeStarters)
+
     if(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
         msgbox(NewBirchsLab_ChangeStarters)
         dynmultipush("Gen 1", 0)
@@ -41,6 +45,55 @@ script NewBirchsLab_EventScript_Birch{
         }
         copyvar(VAR_STARTER_GEN, VAR_RESULT)
         goto(NewBirchsLab_EventScript_SayGenShowing)
+    }
+    else{
+        if(flag(FLAG_SYS_POKEDEX_GET))
+        {
+            goto(ProfBirch_EventScript_AskRatePokedex)
+        }
+        else
+        {
+            checkplayergender
+            call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_GoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_GoodbyePlayerMale)
+        }
+        
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script NewBirchsLab_EventScript_BirchMonotypeStarters{
+    if(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
+        msgbox(NewBirchsLab_ChangeStartersMonotypes)
+        
+        dynmultipush("Fighting", 0)
+        dynmultipush("Flying", 1)
+        dynmultipush("Poison", 2)
+        dynmultipush("Ground", 3)
+        dynmultipush("Rock", 4)
+        dynmultipush("Bug", 5)
+        dynmultipush("Ghost", 6)
+        dynmultipush("Steel", 7)
+        dynmultipush("Electric", 8)
+        dynmultipush("Psychic", 9)
+        dynmultipush("Ice", 10)
+        dynmultipush("Dragon", 11)
+        dynmultipush("Dark", 12)
+        dynmultipush("Normal", 13)
+        dynmultipush("Fairy", 14)
+        dynmultipush("Cancel", MULTI_B_PRESSED)
+
+        // // setting initial selected to a non-existant ID will always have it point to the first option
+        dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+
+        if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+        {
+            goto(NewBirchsLab_EventScript_SayMonoShowing)
+        }
+        copyvar(VAR_MONOTYPE_STARTER, VAR_RESULT)
+        goto(NewBirchsLab_EventScript_SayMonoShowing)
     }
     else{
         if(flag(FLAG_SYS_POKEDEX_GET))
@@ -87,7 +140,47 @@ script NewBirchsLab_EventScript_SayGenShowing {
     release
     end
 }
- 
+
+script  NewBirchsLab_EventScript_SayMonoShowing{
+    switch(var(VAR_MONOTYPE_STARTER))
+    {
+        case 0:
+            msgbox("Showing Fighting-type starters.")
+        case 1:
+            msgbox("Showing Flying-type starters.")
+        case 2:
+            msgbox("Showing Poison-type starters.")
+        case 3:
+            msgbox("Showing Ground-type starters.")
+        case 4:
+            msgbox("Showing Rock-type starters.")
+        case 5:
+            msgbox("Showing Bug-type starters.")
+        case 6:
+            msgbox("Showing Ghost-type starters.")
+        case 7:
+            msgbox("Showing Steel-type starters.")
+        case 8:
+            msgbox("Showing Electric-type starters.")
+        case 9:
+            msgbox("Showing Psychic-type starters.")
+        case 10:
+            msgbox("Showing Ice-type starters.")
+        case 11:
+            msgbox("Showing Dragon-type starters.")
+        case 12:
+            msgbox("Showing Dark-type starters.")
+        case 13:
+            msgbox("Showing Normal-type starters.")
+        case 14:
+            msgbox("Showing Fairy-type starters.")
+        default:
+            msgbox("Showing Normal-type starters.")
+    }
+    release
+    end
+}
+
 script NewBirchsLab_EventScript_PokeballOne{
     lockall
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
@@ -98,86 +191,7 @@ script NewBirchsLab_EventScript_PokeballOne{
         msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_STARTER_GEN) == 0){
-            call(NewBirchsLab_EventScript_Squirtle)
-        }
-        elif(var(VAR_STARTER_GEN) == 1){
-            call(NewBirchsLab_EventScript_Totodile)
-        }
-        elif(var(VAR_STARTER_GEN) == 2){
-            call(NewBirchsLab_EventScript_Mudkip)
-        }
-        elif(var(VAR_STARTER_GEN) == 3){
-            call(NewBirchsLab_EventScript_Piplup)
-        }
-        elif(var(VAR_STARTER_GEN) == 4){
-            call(NewBirchsLab_EventScript_Oshawott)
-        }
-        elif(var(VAR_STARTER_GEN) == 5){
-            call(NewBirchsLab_EventScript_Froakie)
-        }
-        elif(var(VAR_STARTER_GEN) == 6){
-            call(NewBirchsLab_EventScript_Popplio)
-        }
-        elif(var(VAR_STARTER_GEN) == 7){
-            call(NewBirchsLab_EventScript_Sobble)
-        }
-        elif(var(VAR_STARTER_GEN) == 8){
-            call(NewBirchsLab_EventScript_Quaxly)
-        }
-        if(flag(FLAG_SYS_POKEMON_GET))
-        {
-
-            checkplayergender
-	        call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale)
-            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale)
-        }
-    }
-    else{
-        msgbox("Better not get greedy!")
-    }
-    waitmessage
-    releaseall
-    end
-}
- 
-script NewBirchsLab_EventScript_PokeballTwo{
-    lockall
-    if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
-        msgbox(NewBirchsLab_NotYet)
-    }
-    elif(!flag(FLAG_TOUCHED_BALLS))
-    {
-        msgbox("Ask Professor Birch about this!")
-    }
-    elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_STARTER_GEN) == 0){
-            call(NewBirchsLab_EventScript_Bulbasaur)
-        }
-        elif(var(VAR_STARTER_GEN) == 1){
-            call(NewBirchsLab_EventScript_Chikorita)
-        }
-        elif(var(VAR_STARTER_GEN) == 2){
-            call(NewBirchsLab_EventScript_Treecko)
-        }
-        elif(var(VAR_STARTER_GEN) == 3){
-            call(NewBirchsLab_EventScript_Turtwig)
-        }
-        elif(var(VAR_STARTER_GEN) == 4){
-            call(NewBirchsLab_EventScript_Snivy)
-        }
-        elif(var(VAR_STARTER_GEN) == 5){
-            call(NewBirchsLab_EventScript_Chespin)
-        }
-        elif(var(VAR_STARTER_GEN) == 6){
-            call(NewBirchsLab_EventScript_Rowlet)
-        }
-        elif(var(VAR_STARTER_GEN) == 7){
-            call(NewBirchsLab_EventScript_Grookey)
-        }
-        elif(var(VAR_STARTER_GEN) == 8){
-            call(NewBirchsLab_EventScript_Sprigatito)
-        }
+        call(NewBirchsLab_EventScript_HandleGrassStarterChoice)
         if(flag(FLAG_SYS_POKEMON_GET))
         {
             checkplayergender
@@ -192,8 +206,58 @@ script NewBirchsLab_EventScript_PokeballTwo{
     releaseall
     end
 }
+
+script NewBirchsLab_EventScript_HandleGrassStarterChoice{
+    bufferstarterinfo(STR_VAR_1, 0)
+    showmonpic(VAR_0x8006, 10,3)
+    msgbox("Do you want to choose {STR_VAR_1}?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        call(NewBirchsLab_GiveStarter)
+        
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
+            waitfanfare
+            removeobject(1)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
+            waitfanfare
+            removeobject(1)
+            setflag(FLAG_CHOSE_GRASSSTARTER)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No More Room")
+        }
+        // 0=Treecko, 1=Torchic, 2=Mudkip
+        setflag(FLAG_SYS_POKEMON_GET)
+        setvar(VAR_STARTER_MON, 0)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
+    }
+    else{
+        hidemonpic
+        msgbox(NewBirchsLab_NotChosen)
+    }
  
-script NewBirchsLab_EventScript_PokeballThree{
+}
+
+script NewBirchsLab_EventScript_PokeballTwo{
     lockall
     if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
         msgbox(NewBirchsLab_NotYet)
@@ -203,33 +267,7 @@ script NewBirchsLab_EventScript_PokeballThree{
         msgbox("Ask Professor Birch about this!")
     }
     elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){
-        if(var(VAR_STARTER_GEN) == 0){
-            call(NewBirchsLab_EventScript_Charmander)
-        }
-        elif(var(VAR_STARTER_GEN) == 1){
-            call(NewBirchsLab_EventScript_Cyndaquil)
-        }
-        elif(var(VAR_STARTER_GEN) == 2){
-            call(NewBirchsLab_EventScript_Torchic)
-        }
-        elif(var(VAR_STARTER_GEN) == 3){
-            call(NewBirchsLab_EventScript_Chimchar)
-        }
-        elif(var(VAR_STARTER_GEN) == 4){
-            call(NewBirchsLab_EventScript_Tepig)
-        }
-        elif(var(VAR_STARTER_GEN) == 5){
-            call(NewBirchsLab_EventScript_Fennekin)
-        }
-        elif(var(VAR_STARTER_GEN) == 6){
-            call(NewBirchsLab_EventScript_Litten)
-        }
-        elif(var(VAR_STARTER_GEN) == 7){
-            call(NewBirchsLab_EventScript_Scorbunny)
-        }
-        elif(var(VAR_STARTER_GEN) == 8){
-            call(NewBirchsLab_EventScript_Fuecoco)
-        }
+        call(NewBirchsLab_EventScript_HandleFireStarterChoice)
         if(flag(FLAG_SYS_POKEMON_GET))
         {
             checkplayergender
@@ -245,85 +283,103 @@ script NewBirchsLab_EventScript_PokeballThree{
     end
 }
 
-
-script NewBirchsLab_EventScript_Squirtle{
-    showmonpic(SPECIES_SQUIRTLE, 10,3)
-    msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
+script NewBirchsLab_EventScript_HandleFireStarterChoice{
+    bufferstarterinfo(STR_VAR_1, 1)
+    showmonpic(VAR_0x8006, 10,3)
+    msgbox("Do you want to choose {STR_VAR_1}?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_SQUIRTLE, 5, isShiny=TRUE)
+        call(NewBirchsLab_GiveStarter)
+
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
+            waitfanfare
+            removeobject(2)
+            setflag(FLAG_CHOSE_FIRESTARTER)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
+            waitfanfare
+            removeobject(2)
+            setflag(FLAG_CHOSE_FIRESTARTER)
+            call(NicknameBoxMon)
         }
         else{
-            givemonrandom(SPECIES_SQUIRTLE, 5)
+            hidemonpic
+            msgbox("No More Room")
         }
+        // 0=Treecko, 1=Torchic, 2=Mudkip
+        setflag(FLAG_SYS_POKEMON_GET)
+        setvar(VAR_STARTER_MON, 1)
+
+        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
+	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
+        setflag(FLAG_RESCUED_BIRCH)
+	    setvar(VAR_BIRCH_LAB_STATE, 3)
+	    setvar(VAR_ROUTE101_STATE, 3)
+        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
+	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+        clearflag(FLAG_HIDE_ROUTE_101_BOY)
+	    checkplayergender
+	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
+	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
+    }
+    else{
+        hidemonpic
+        msgbox(NewBirchsLab_NotChosen)
+    }
+ 
+}
+ 
+script NewBirchsLab_EventScript_PokeballThree{
+    lockall
+    if(flag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH)){
+        msgbox(NewBirchsLab_NotYet)
+    }
+    elif(!flag(FLAG_TOUCHED_BALLS))
+    {
+        msgbox("Ask Professor Birch about this!")
+    }
+    elif(!(flag(FLAG_CHOSE_WATERSTARTER) || flag(FLAG_CHOSE_GRASSSTARTER) || flag(FLAG_CHOSE_FIRESTARTER))){    
+        call(NewBirchsLab_EventScript_HandleWaterStarterChoice)
+        if(flag(FLAG_SYS_POKEMON_GET))
+        {
+
+            checkplayergender
+	        call_if_eq(VAR_RESULT, FEMALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerFemale)
+            call_if_eq(VAR_RESULT, MALE, NewBirchsLab_EventScript_RivalTreeckoGoodbyePlayerMale)
+        }
+    }
+    else{
+        msgbox("Better not get greedy!")
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script NewBirchsLab_EventScript_HandleWaterStarterChoice {
+    bufferstarterinfo(STR_VAR_1, 2)
+    showmonpic(VAR_0x8006, 10,3)
+    msgbox("Do you want to choose {STR_VAR_1}?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        call(NewBirchsLab_GiveStarter)
         
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Squirtle!")
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
             waitfanfare
-            removeobject(1)
+            removeobject(3)
             setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Squirtle!")
+            msgbox("{PLAYER} received the {STR_VAR_1}!")
             waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Totodile{
-    showmonpic(SPECIES_TOTODILE, 10,3)
-    msgbox("Do you want to choose Totodile?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_TOTODILE, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_TOTODILE, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Totodile!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Totodile!")
-            waitfanfare
-            removeobject(1)
+            removeobject(3)
             setflag(FLAG_CHOSE_WATERSTARTER)
             call(NicknameBoxMon)
         }
@@ -354,1363 +410,56 @@ script NewBirchsLab_EventScript_Totodile{
  
 }
 
-
-script NewBirchsLab_EventScript_Mudkip{
-    showmonpic(SPECIES_MUDKIP, 10,3)
-    msgbox("Do you want to choose Mudkip?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_MUDKIP, 5, isShiny=TRUE)
+script NewBirchsLab_GiveStarter {
+    if(flag(FLAG_USE_MONOTYPE_STARTERS))
+    {
+        if(flag(FLAG_SHINY_STARTERS))
+        {
+            givemon(VAR_0x8006, 5, isShiny=TRUE)
         }
-        else{
-            givemonrandom(SPECIES_MUDKIP, 5)
+        else
+        {
+            givemon(VAR_0x8006, 5)
         }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Mudkip!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Mudkip!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
     }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
+    else
+    {
+        if(flag(FLAG_SHINY_STARTERS))
+        {
+            givemonrandom(VAR_0x8006, 5, isShiny=TRUE)
+        }
+        else
+        {
+            givemonrandom(VAR_0x8006, 5)
+        }
     }
- 
+    return
 }
 
-
-script NewBirchsLab_EventScript_Piplup{
-    showmonpic(SPECIES_PIPLUP, 10,3)
-    msgbox("Do you want to choose Piplup?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_PIPLUP, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_PIPLUP, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Piplup!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Piplup!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Oshawott{
-    showmonpic(SPECIES_OSHAWOTT, 10,3)
-    msgbox("Do you want to choose Oshawott?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_OSHAWOTT, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_OSHAWOTT, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Oshawott!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Oshawott!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Froakie{
-    showmonpic(SPECIES_FROAKIE, 10,3)
-    msgbox("Do you want to choose Froakie?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_FROAKIE, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_FROAKIE, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Froakie!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Froakie!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Popplio{
-    showmonpic(SPECIES_POPPLIO, 10,3)
-    msgbox("Do you want to choose Popplio?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_POPPLIO, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_POPPLIO, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Popplio!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Popplio!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Sobble{
-    showmonpic(SPECIES_SOBBLE, 10,3)
-    msgbox("Do you want to choose Sobble?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_SOBBLE, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_SOBBLE, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Sobble!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Sobble!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Quaxly{
-    showmonpic(SPECIES_QUAXLY, 10,3)
-    msgbox("Do you want to choose Quaxly?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_QUAXLY, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_QUAXLY, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Quaxly!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Quaxly!")
-            waitfanfare
-            removeobject(1)
-            setflag(FLAG_CHOSE_WATERSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 2)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Bulbasaur{
-    showmonpic(SPECIES_BULBASAUR, 10,3)
-    msgbox("Do you want to choose Bulbasaur?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_BULBASAUR, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_BULBASAUR, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Bulbasaur!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Bulbasaur!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Chikorita{
-    showmonpic(SPECIES_CHIKORITA, 10,3)
-    msgbox("Do you want to choose Chikorita?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_CHIKORITA, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_CHIKORITA, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chikorita!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chikorita!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Treecko{
-    showmonpic(SPECIES_TREECKO, 10,3)
-    msgbox("Do you want to choose Treecko?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_TREECKO, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_TREECKO, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Treecko!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Treecko!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Turtwig{
-    showmonpic(SPECIES_TURTWIG, 10,3)
-    msgbox("Do you want to choose Turtwig?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_TURTWIG, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_TURTWIG, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Turtwig!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Turtwig!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Snivy{
-    showmonpic(SPECIES_SNIVY, 10,3)
-    msgbox("Do you want to choose Snivy?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_SNIVY, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_SNIVY, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Snivy!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Snivy!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Chespin{
-    showmonpic(SPECIES_CHESPIN, 10,3)
-    msgbox("Do you want to choose Chespin?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_CHESPIN, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_CHESPIN, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chespin!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chespin!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Rowlet{
-    showmonpic(SPECIES_ROWLET, 10,3)
-    msgbox("Do you want to choose Rowlet?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_ROWLET, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_ROWLET, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Rowlet!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Rowlet!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Grookey{
-    showmonpic(SPECIES_GROOKEY, 10,3)
-    msgbox("Do you want to choose Grookey?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_GROOKEY, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_GROOKEY, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Grookey!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Grookey!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Sprigatito{
-    showmonpic(SPECIES_SPRIGATITO, 10,3)
-    msgbox("Do you want to choose Sprigatito?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_SPRIGATITO, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_SPRIGATITO, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Sprigatito!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Sprigatito!")
-            waitfanfare
-            removeobject(2)
-            setflag(FLAG_CHOSE_GRASSSTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 0)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Charmander{
-    showmonpic(SPECIES_CHARMANDER, 10,3)
-    msgbox("Do you want to choose Charmander?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_CHARMANDER, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_CHARMANDER, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Charmander!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Charmander!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Cyndaquil{
-    showmonpic(SPECIES_CYNDAQUIL, 10,3)
-    msgbox("Do you want to choose Cyndaquil?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_CYNDAQUIL, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_CYNDAQUIL, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Cyndaquil!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Cyndaquil!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Torchic{
-    showmonpic(SPECIES_TORCHIC, 10,3)
-    msgbox("Do you want to choose Torchic?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_TORCHIC, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_TORCHIC, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Torchic!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Torchic!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Chimchar{
-    showmonpic(SPECIES_CHIMCHAR, 10,3)
-    msgbox("Do you want to choose Chimchar?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_CHIMCHAR, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_CHIMCHAR, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chimchar!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Chimchar!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Tepig{
-    showmonpic(SPECIES_TEPIG, 10,3)
-    msgbox("Do you want to choose Tepig?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_TEPIG, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_TEPIG, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Tepig!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Tepig!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Fennekin{
-    showmonpic(SPECIES_FENNEKIN, 10,3)
-    msgbox("Do you want to choose Fennekin?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_FENNEKIN, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_FENNEKIN, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Fennekin!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Fennekin!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Litten{
-    showmonpic(SPECIES_LITTEN, 10,3)
-    msgbox("Do you want to choose Litten?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_LITTEN, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_LITTEN, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Litten!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Litten!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Scorbunny{
-    showmonpic(SPECIES_SCORBUNNY, 10,3)
-    msgbox("Do you want to choose Scorbunny?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_SCORBUNNY, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_SCORBUNNY, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Scorbunny!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Scorbunny!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
-
-
-script NewBirchsLab_EventScript_Fuecoco{
-    showmonpic(SPECIES_FUECOCO, 10,3)
-    msgbox("Do you want to choose Fuecoco?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        if(flag(FLAG_SHINY_STARTERS)){
-            givemonrandom(SPECIES_FUECOCO, 5, isShiny=TRUE)
-        }
-        else{
-            givemonrandom(SPECIES_FUECOCO, 5)
-        }
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} received the Fuecoco!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("{PLAYER} {PLAYER} received the the Fuecoco!")
-            waitfanfare
-            removeobject(3)
-            setflag(FLAG_CHOSE_FIRESTARTER)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No More Room")
-        }
-        // 0=Treecko, 1=Torchic, 2=Mudkip
-        setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_STARTER_MON, 1)
-
-        setflag(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE)
-	    setflag(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG)
-        setflag(FLAG_RESCUED_BIRCH)
-	    setvar(VAR_BIRCH_LAB_STATE, 3)
-	    setvar(VAR_ROUTE101_STATE, 3)
-        setvar(VAR_LITTLEROOT_TOWN_STATE, 2)
-	    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-        clearflag(FLAG_HIDE_ROUTE_101_BOY)
-	    checkplayergender
-	    call_if_eq(VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom)
-	    call_if_eq(VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom)
-    }
-    else{
-        hidemonpic
-        msgbox(NewBirchsLab_NotChosen)
-    }
- 
-}
 
 script NewBirchsLab_EventScript_WelcomePlayerMale {
-    msgbox(NewBirchsLab_WelcomePlayerMale)
+    if(flag(FLAG_USE_MONOTYPE_STARTERS))
+    {
+        msgbox(NewBirchsLab_WelcomePlayerMaleMonotype)
+    }
+    
+    else
+    {
+        msgbox(NewBirchsLab_WelcomePlayerMale)
+    }
     return
 }
 
 script NewBirchsLab_EventScript_WelcomePlayerFemale {
-    msgbox(NewBirchsLab_WelcomePlayerFemale)
+    if(flag(FLAG_USE_MONOTYPE_STARTERS))
+    {
+        msgbox(NewBirchsLab_WelcomePlayerFemaleMonotype)
+    }
+    
+    else
+    {
+        msgbox(NewBirchsLab_WelcomePlayerFemale)
+    }
     return
 }
 
@@ -1848,6 +597,54 @@ text NewBirchsLab_WelcomePlayerFemale{
     "ask me if you want to change them."
 }
 
+text NewBirchsLab_WelcomePlayerMaleMonotype {
+    "Hello there! I'm Prof. Birch, and you\n"
+    "must be {PLAYER}. You just missed\l"
+    "{RIVAL}, she stopped by and grabbed\l"
+    "one of my Starter Pokémon and then\l"
+    "rushed out of here.\p" 
+    "I told her to be on the lookout for a\n"
+    "trainer named {PLAYER}, who just moved\l"
+    "into the house next door!\p"
+    "I hope the two of you can be friends\n"
+    "who can start a new Pokémon journey\l"
+    "together.\p"
+    "How about this, I'll give you one of\n"
+    "these Starter Pokémon, and then if you\l"
+    "can beat {RIVAL} with your Pokémon,\l"
+    "come back and I'll give you a Pokédex!\p"
+    "I'll tell you which Starter she chose\n"
+    "after you pick yours, it wouldn't be\l"
+    "fair if you knew before you picked!\p"
+    "I can let you choose from any\n"
+    "Type of Starter Pokémon, just\l"
+    "ask me if you want to change them."
+}
+
+text NewBirchsLab_WelcomePlayerFemaleMonotype {
+    "Hello there! I'm Prof. Birch, and you\n"
+    "must be {PLAYER}. You just missed\l"
+    "{RIVAL}, he stopped by and grabbed\l"
+    "one of my Starter Pokémon and then\l"
+    "rushed out of here.\p" 
+    "I told him to be on the lookout for a\n"
+    "trainer named {PLAYER}, who just moved\l"
+    "into the house next door!\p"
+    "I hope the two of you can be friends\n"
+    "who can start a new Pokémon journey\l"
+    "together.\p"
+    "How about this, I'll give you one of\n"
+    "these Starter Pokémon, and then if you\l"
+    "can beat {RIVAL} with your Pokémon,\l"
+    "come back and I'll give you a Pokédex!\p"
+    "I'll tell you which Starter he chose\n"
+    "after you pick yours, it wouldn't be\l"
+    "fair if you knew before you picked!\p"
+    "I can let you choose from any\n"
+    "Type of Starter Pokémon, just\l"
+    "ask me if you want to change them."
+}
+
 text NewBirchsLab_Route103PlayerMale
 {
     "{RIVAL} yelled she was heading to\n"
@@ -1908,4 +705,10 @@ text NewBirchsLab_ChangeStarters{
     "Which Generation of Starters would you\n"
     "like to see? You can change\l"
     "Generations as many times as you want."
+}
+
+text NewBirchsLab_ChangeStartersMonotypes{
+    "Which Type of Starters would you\n"
+    "like to see? You can change\l"
+    "Types as many times as you want."
 }

@@ -4459,6 +4459,8 @@ void GetCheatCodeFeedback(void)
     static const u8 sText_CheatCodeShinyRoamers[]         = _("ShinyR");
     static const u8 sText_CheatCodeShinyRoamersShort[]    = _("Shr");
 
+    static const u8 sText_CheatCodeMono[]             = _("Mono");
+
     /* 1: DexAll / DXA – toggle full Pokédex seen */
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll) ||
         !StringCompare(gStringVar2, sText_CheatCodeDexAllShort))
@@ -4527,6 +4529,16 @@ void GetCheatCodeFeedback(void)
         else
             FlagSet(FLAG_SHINY_ROAMERS);
         gSpecialVar_Result = 7;
+    }
+
+    /* 8: Mono – enable monotype starter selection in Birch's lab */
+    else if (!StringCompare(gStringVar2, sText_CheatCodeMono))
+    {
+        if (FlagGet(FLAG_USE_MONOTYPE_STARTERS))
+            FlagClear(FLAG_USE_MONOTYPE_STARTERS);
+        else
+            FlagSet(FLAG_USE_MONOTYPE_STARTERS);
+        gSpecialVar_Result = 8;
     }
 
     /* 0: invalid code */

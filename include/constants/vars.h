@@ -267,7 +267,7 @@
 #define VAR_STARTER_GEN                                  0x40F7
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var probably
 #define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_MONOTYPE_STARTER                             0x40FA
 #define VAR_BEAT_WATTSON                                 0x40FB
 #define VAR_FOUGHT_DAWN_111                              0x40FC 
 #define VAR_DEXNAV_SPECIES                               0x40FD // Registered dexnav species

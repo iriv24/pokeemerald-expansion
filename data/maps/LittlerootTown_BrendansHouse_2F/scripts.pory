@@ -284,6 +284,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 5, CheatCodeShinyStarters
 	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
 	goto_if_eq VAR_RESULT, 7, CheatCodeShinyRoamers
+	goto_if_eq VAR_RESULT, 8, CheatCodeMonoStarters
 	@goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
 	end
 
@@ -444,6 +445,22 @@ CheatCodeMaxMoney::
 	releaseall
 	end
 
+CheatCodeMonoStarters::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_USE_MONOTYPE_STARTERS, CheatCodeMonoStartersOff
+	goto_if_set FLAG_USE_MONOTYPE_STARTERS, CheatCodeMonoStartersOn
+	end
+
+CheatCodeMonoStartersOn::
+	msgbox CheatCodeMonoStartersOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeMonoStartersOff::
+	msgbox CheatCodeMonoStartersOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
 CheatCodeGiveMenu::
 	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
 	goto_if_unset FLAG_GIVE_MENU, CheatCodeGiveMenuOff
@@ -506,6 +523,12 @@ CheatCodeShinyRoamersOn_Text:
 
 CheatCodeShinyRoamersOff_Text:
 	.string "ShinyRoamers cheat disabled.$"
+
+CheatCodeMonoStartersOn_Text:
+	.string "Monotype Starters cheat enabled.$"
+
+CheatCodeMonoStartersOff_Text:
+	.string "Monotype Starters cheat disabled.$"
 
 CheatCodeGiveMenuOn_Text:
 	.string "Give Menu enabled:\n"
