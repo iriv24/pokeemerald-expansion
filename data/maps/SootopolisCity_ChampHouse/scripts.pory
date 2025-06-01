@@ -2,6 +2,7 @@ raw `
 .set LOCALID_DANNI, 1
 .set LOCALID_MASTA_JANES, 3
 .set LOCALID_BEFOOLS, 5
+.set LOCALID_BURAK, 7
 
 SootopolisCity_ChampHouse_MapScripts::
 	.byte 0
@@ -44,6 +45,19 @@ SootopolisCity_ChampHouse_EventScript_Gengar::
 
 SootopolisCity_ChampHouse_Text_Gengar:
 	.string "Gengar: Errrraaaaauhh!$"
+
+SootopolisCity_ChampHouse_EventScript_Spidops::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SPIDOPS, CRY_MODE_NORMAL
+	msgbox SootopolisCity_ChampHouse_Text_Spidops, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SootopolisCity_ChampHouse_Text_Spidops:
+	.string "Spidops: Ghhsghsghhhhh!$"
 
 `
 
@@ -460,4 +474,149 @@ text Befools_ExplainHoopa{
 
 text PostBattle_Befools{
 	"Gengar use Hypnosis!"
+}
+
+
+script SootopolisCity_ChampHouse_EventScript_Burak{
+	lockall
+	applymovement(LOCALID_BURAK, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_BURAK, SootopolisCity_ChampHouse_EventScript_BurakDefeated)
+	goto_if_set(FLAG_TEMP_4, SootopolisCity_ChampHouse_EventScript_BurakRequestBattleAgain)
+	msgbox(Burak_Greeting, MSGBOX_YESNO)
+	goto(SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt)
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BurakRequestBattleAgain{
+	msgbox(Burak_ReadyYet, MSGBOX_YESNO)
+	goto(SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt)
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt{
+	call_if_eq(VAR_RESULT, YES, SootopolisCity_ChampHouse_EventScript_BattleBurak)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_DeclineBurakBattle)
+	closemessage
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_DeclineBurakBattle {
+	setflag(FLAG_TEMP_4)
+	msgbox(Burak_ComeBackWhenReady, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BattleBurak{
+	msgbox(Burak_YoureOn, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_BURAK, Burak_Outro)
+	goto(SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion)
+	return
+}
+
+
+script SootopolisCity_ChampHouse_EventScript_BurakDefeated{
+	msgbox(PostBattle_Burak, MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion{
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCANION)
+	givemonrandom(SPECIES_VOLCANION, 50)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionParty)
+	goto_if_eq(VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionPC)
+	goto(Common_EventScript_NoMoreRoomForPokemon)
+	release
+	end
+}
+
+script SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionParty{
+	call(SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_ExplainVolcanion)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(SootopolisCity_ChampHouse_EventScript_ExplainVolcanion)
+	end
+}
+	
+
+script SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionPC {
+	call(SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC)
+	call(Common_EventScript_NameReceivedBoxMon)
+	goto(SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC)
+	end
+}
+	
+
+script SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC {
+	call(Common_EventScript_TransferredToPC)
+	goto(SootopolisCity_ChampHouse_EventScript_ExplainVolcanion)
+	end
+}
+	
+
+script SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(SootopolisCity_ChampHouse_Text_PlayerReceivedVolcanion)
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_VOLCANION)
+	return
+}
+	
+
+script SootopolisCity_ChampHouse_EventScript_ExplainVolcanion {
+	msgbox(Burak_ExplainVolcanion, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Burak_Greeting{
+	"Come on Spidops, you're so close to\n"
+	"OHKO-ing that Reshiram…\p"
+	"Oh, hello, I was just preparing my\n"
+	"strategy for the Elite 4.\p"
+	"I think Spidops here is going to pick up\n"
+	"double-digit frags for this run.\p"
+	"Anyway, if you can beat me, I'll give you\n"
+	"a gift Mythical, which is unfortunately\l"
+	"not a Spidops, but it's still solid.\p"
+	"What do you say?"
+}
+
+text Burak_ReadyYet{
+	"Are you ready?\n"
+	"I'll tell Spidops to go easy on you."
+}
+
+text Burak_YoureOn{
+	"It was all a ploy, GO MEGA APE!!!"
+}
+
+text Burak_ComeBackWhenReady{
+	"That's fine, I'll be here training\n"
+	"Spidops."
+}
+
+text Burak_Outro{
+	"Well at least I'm still first on\n"
+	"THE SHEET."
+}
+
+text SootopolisCity_ChampHouse_Text_PlayerReceivedVolcanion{
+	"{PLAYER} received Volcanion!"
+}
+
+text Burak_ExplainVolcanion{
+	"There you go! It's no Spidops, but I\n"
+	"think it'll do just fine."
+}
+
+text PostBattle_Burak{
+	"Good As Spidops.\n"
+	"Stats irrelevant."
 }

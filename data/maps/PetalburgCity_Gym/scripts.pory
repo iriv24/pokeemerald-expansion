@@ -23,7 +23,6 @@ PetalburgCity_Gym_EventScript_OpenUnlockedDoors::
 	call_if_defeated TRAINER_MARY, PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors
 	call_if_defeated TRAINER_ALEXIA, PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors
 	call_if_defeated TRAINER_JODY, PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
-	call_if_defeated TRAINER_BERKE, PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
 	end
 
 PetalburgCity_Gym_EventScript_UnlockAllDoors::
@@ -912,9 +911,7 @@ PetalburgCity_Gym_EventScript_SlideOpenRecoveryRoomDoors::
 	end
 
 PetalburgCity_Gym_EventScript_Berke::
-	trainerbattle_single TRAINER_BERKE, PetalburgCity_Gym_Text_BerkeIntro, PetalburgCity_Gym_Text_BerkeDefeat, PetalburgCity_Gym_EventScript_SlideOpenOHKORoomDoors
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_BerkePostBadge
-	msgbox PetalburgCity_Gym_Text_BerkePostBattle, MSGBOX_AUTOCLOSE
+	msgbox PetalburgCity_Gym_Text_ParkerPostBattle, MSGBOX_NPC
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenOHKORoomDoors::
@@ -922,10 +919,6 @@ PetalburgCity_Gym_EventScript_SlideOpenOHKORoomDoors::
 	call PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
 	special DrawWholeMapView
 	release
-	end
-
-PetalburgCity_Gym_EventScript_BerkePostBadge::
-	msgbox PetalburgCity_Gym_Text_BerkePostBadge, MSGBOX_NPC
 	end
 
 PetalburgCity_Gym_EventScript_Mary::
@@ -1414,29 +1407,6 @@ PetalburgCity_Gym_Text_ParkerPostBattle:
 PetalburgCity_Gym_Text_ParkerPostBadge:
 	.string "After you beat our LEADER, the\n"
 	.string "training has become a lot tougher.$"
-
-PetalburgCity_Gym_Text_BerkeIntro:
-	.string "I'm not going to take it easy just\n"
-	.string "because you're our LEADER's kid.\p"
-	.string "I'll show you how horrid it is for\n"
-	.string "a Pokémon to take a critical hit!$"
-
-PetalburgCity_Gym_Text_BerkeDefeat:
-	.string "Your power…\n"
-	.string "You're the real deal.$"
-
-PetalburgCity_Gym_Text_BerkePostBattle:
-	.string "Your father really is strong.\n"
-	.string "He's a TRAINER worth my respect.\p"
-	.string "And, I sense the same glow coming\n"
-	.string "from you as your father.\p"
-	.string "I hope that you'll stage a terrific\n"
-	.string "battle with your father!$"
-
-PetalburgCity_Gym_Text_BerkePostBadge:
-	.string "Since your dad became the LEADER,\n"
-	.string "the TRAINERS of Petalburg City have\l"
-	.string "become a lot tougher.$"
 
 PetalburgCity_Gym_Text_MaryIntro:
 	.string "Giggle…\n"

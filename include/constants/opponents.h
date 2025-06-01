@@ -77,7 +77,7 @@
 #define TRAINER_MASTER_POUCINE               71
 #define TRAINER_OBLIVION_WING                72
 #define TRAINER_BRIAN_2                      73
-#define TRAINER_BERKE                        74 //unused norman gym
+#define TRAINER_BURAK                        74
 #define TRAINER_BRAXTON                      75
 #define TRAINER_VINCENT                      76
 #define TRAINER_LEROY                        77

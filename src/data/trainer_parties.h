@@ -2103,16 +2103,6 @@ static const struct TrainerMon sParty_George[] = {
     }
 };
 
-static const struct TrainerMon sParty_Berke[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 26,
-    .species = SPECIES_VIGOROTH,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_ENERGY, MOVE_SLASH, MOVE_NONE, MOVE_NONE}
-    }
-};
-
 static const struct TrainerMon sParty_Braxton[] = {
     {
     .lvl = 56,
@@ -17721,5 +17711,68 @@ static const struct TrainerMon sParty_OblivionWing[] = {
         .ability = ABILITY_INTIMIDATE,
         .heldItem = ITEM_LUXRITE,
         .moves = {MOVE_CRUNCH, MOVE_ZING_ZAP, MOVE_THUNDER_FANG, MOVE_BABY_DOLL_EYES}
+    },
+};
+
+static const struct TrainerMon sParty_Burak[] = {
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 200,
+        .species = SPECIES_INFERNAPE,
+        .nature = NATURE_HASTY,
+        .ev = TRAINER_PARTY_EVS_HASTY_OR_NAIVE_ATK(),
+        .ability = ABILITY_IRON_FIST,
+        .heldItem = ITEM_INFERNAPITE,
+        .moves = {MOVE_FAKE_OUT, MOVE_OVERHEAT, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GOUGING_FIRE,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_PROTOSYNTHESIS,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_HEAT_CRASH, MOVE_DRAGON_CLAW, MOVE_BURNING_BULWARK, MOVE_MORNING_SUN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_PRIMARINA,
+    .nature = NATURE_CALM,
+    .ev = TRAINER_PARTY_EVS_CALM(),
+    .ability = ABILITY_LIQUID_VOICE,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .moves = {MOVE_FLIP_TURN, MOVE_MOONBLAST, MOVE_ICE_BEAM, MOVE_HYPER_VOICE},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_GYARADOS,
+    .nature = NATURE_JOLLY,
+    .ev = TRAINER_PARTY_EVS_JOLLY(),
+    .ability = ABILITY_INTIMIDATE,
+    .heldItem = ITEM_WACAN_BERRY,
+    .moves = {MOVE_AQUA_TAIL, MOVE_ICE_FANG, MOVE_EARTHQUAKE, MOVE_CRUNCH}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_KINGAMBIT,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_DEFIANT,
+    .heldItem = ITEM_FOCUS_SASH,
+    .moves = {MOVE_KOWTOW_CLEAVE, MOVE_SUCKER_PUNCH, MOVE_IRON_HEAD, MOVE_BRICK_BREAK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 200,
+    .species = SPECIES_SPIDOPS,
+    .nature = NATURE_ADAMANT,
+    .ev = TRAINER_PARTY_EVS_ADAMANT(),
+    .ability = ABILITY_STAKEOUT,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_FIRST_IMPRESSION, MOVE_SKITTER_SMACK, MOVE_FACADE, MOVE_ROCK_TOMB}
     },
 };

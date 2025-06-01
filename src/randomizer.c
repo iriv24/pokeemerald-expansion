@@ -81,7 +81,8 @@ const u16 gStarterAndGiftMonTable[MY_STARTER_AND_GIFT_MON_COUNT] =
     SPECIES_MAGBY,
     SPECIES_SMOOCHUM,
     SPECIES_EEVEE, // 64
-    SPECIES_TYPE_NULL
+    SPECIES_TYPE_NULL,
+    SPECIES_VOLCANION
 };
 
 // mew post game
