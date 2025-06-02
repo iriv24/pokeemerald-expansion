@@ -520,7 +520,7 @@
       "x": 27,
       "y": 20,
       "elevation": 0,
-      "var": "FLAG_RECEIVED_TM_ROCK_TOMB",
+      "var": "FLAG_RECEIVED_TM_ICY_WIND",
       "var_value": "0",
       "script": "RustboroCity_Trigger_BlockGymEntrance"
     }

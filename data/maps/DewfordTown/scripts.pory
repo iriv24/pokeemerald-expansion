@@ -191,7 +191,7 @@ DewfordTown_MiniMarket_EventScript_Saleswoman2::
 	.align 2
 DewfordTown_MiniMart2:
 	.2byte ITEM_TM_ELECTROWEB
-	.2byte ITEM_TM_ICY_WIND
+	.2byte ITEM_TM_ROCK_TOMB
 	.2byte ITEM_TM_AERIAL_ACE
 	.2byte ITEM_TM_LOW_KICK
 	.2byte ITEM_TM_PLUCK

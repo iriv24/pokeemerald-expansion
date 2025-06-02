@@ -1,6 +1,7 @@
 raw `
 .set LOCALID_BRINEY, 11
 .set LOCALID_WANDAS_BF_OUTSIDE, 21
+.set LOCALID_CANDICE, 29
 
 Route116_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route116_OnResume
@@ -514,66 +515,68 @@ Route116_Text_TrainerTipsBagHasPockets:
 
 `
 
-script Route116_EventScript_Roark{
+script Route116_EventScript_Candice{
 	lockall
-	applymovement(29, Common_Movement_FacePlayer)
-	goto_if_set(FLAG_RECEIVED_TM_ROCK_TOMB, Route116_EventScript_RoarkDefeated)
-	goto_if_set(FLAG_TEMP_1, Route116_EventScript_RoarkRequestBattleAgain)
-	msgbox(Roark_Greeting, MSGBOX_DEFAULT)
+	applymovement(LOCALID_CANDICE, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_RECEIVED_TM_ICY_WIND, Route116_EventScript_CandiceDefeated)
+	goto_if_set(FLAG_TEMP_1, Route116_EventScript_CandiceRequestBattleAgain)
+	msgbox(Candice_Greeting, MSGBOX_DEFAULT)
 	waitmessage
-	msgbox(Roark_WillYouBattleMe, MSGBOX_YESNO)
-	goto(Route116_EventScript_BattleRoarkPrompt)
+	msgbox(Candice_WillYouBattleMe, MSGBOX_YESNO)
+	goto(Route116_EventScript_BattleCandicePrompt)
 	end
 }
 
-script Route116_EventScript_RoarkRequestBattleAgain{
+script Route116_EventScript_CandiceRequestBattleAgain{
 	msgbox(Ready_Yet, MSGBOX_YESNO)
-	goto(Route116_EventScript_BattleRoarkPrompt)
+	goto(Route116_EventScript_BattleCandicePrompt)
 	end
 }
 
-script Route116_EventScript_BattleRoarkPrompt{
-	call_if_eq(VAR_RESULT, YES, Route116_EventScript_BattleRoark)
-	goto_if_eq(VAR_RESULT, NO, Route116_EventScript_DeclineRoarkBattle)
+script Route116_EventScript_BattleCandicePrompt{
+	call_if_eq(VAR_RESULT, YES, Route116_EventScript_BattleCandice)
+	goto_if_eq(VAR_RESULT, NO, Route116_EventScript_DeclineCandiceBattle)
 	closemessage
 	end
 }
 
-script Route116_EventScript_DeclineRoarkBattle {
+script Route116_EventScript_DeclineCandiceBattle {
 	setflag(FLAG_TEMP_1)
 	msgbox(Come_Back_When_Ready, MSGBOX_DEFAULT)
 	release
 	end
 }
 
-script Route116_EventScript_BattleRoark{
+script Route116_EventScript_BattleCandice{
 	msgbox("Let's do this!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_ROARK, Roark_Outro)
-	goto(Route116_EventScript_RoarkGiveRockTomb)
+	trainerbattle_no_intro(TRAINER_CANDICE, Candice_Outro)
+	goto(Route116_EventScript_CandiceGiveRockTomb)
 	return
 }
 	
 
-script Route116_EventScript_RoarkDefeated{
-	msgbox(PostBattle_Roark, MSGBOX_DEFAULT)
+script Route116_EventScript_CandiceDefeated{
+	msgbox(PostBattle_Candice, MSGBOX_DEFAULT)
 	releaseall
 	end
 }
 
-script Route116_EventScript_RoarkGiveRockTomb{
-	giveitem(ITEM_TM_ROCK_TOMB)
+script Route116_EventScript_CandiceGiveRockTomb{
+	giveitem(ITEM_TM_ICY_WIND)
 	giveitem(ITEM_MUSCLE_BAND)
-	setflag(FLAG_RECEIVED_TM_ROCK_TOMB)
-	msgbox(Roark_ExplainRockTombAndMuscleBand)
+	setflag(FLAG_RECEIVED_TM_ICY_WIND)
+	msgbox(Candice_ExplainRockTombAndMuscleBand)
 	release
 	end
 }
 
-text Roark_ExplainRockTombAndMuscleBand{
-	"That Technical Machine, TM39,\n"
-	"contains Rock Tomb.\p"
-	"It not only inflicts damage by dropping\n"
-	"rocks, it also lowers Speed.\p"
+text Candice_ExplainRockTombAndMuscleBand{
+	"That Technical Machine, TM21,\n"
+	"contains Icy Wind.\p"
+	"It not only inflicts damage with a cold\n"
+	"breeze, it also lowers Speed.\p"
+	"I think you'll find it to be quite useful\n"
+	"against the first Gym Leader here!\p"
 	"If you use a TM, it instantly teaches\n"
 	"the move to a Pokémon.\p"
 	"Thanks to some great advances in\n"
@@ -583,33 +586,38 @@ text Roark_ExplainRockTombAndMuscleBand{
 	"Attack if held!"
 }
 
-text Roark_Greeting{
-	"Oh, hello. I'm Roark, a Gym Leader from\n"
-	"the Sinnoh region. I've heard there are\l"
-	"a lot of cool underground areas to\l"
-	"explore here in Hoenn, so I had to come\l"
-	"check it out myself.\p"
-	"I've also heard that the trainers in\n"
-	"this region are weaker than the ones\l"
-	"back in Sinnoh."
+text Candice_Greeting{
+	"Oh, hello. I'm Candice, the 7th Gym\n"
+	"Leader from the Sinnoh region.\p"
+	"I came to this Rustboro City to pay a\n"
+	"visit to the Trainer School and check\l"
+	"out the quality of education here in\l"
+	"the Hoenn region.\p"
+	"I am a teacher myself, you know!\p"
+	"You look like a trainer who has just\n"
+	"started out their journey, perhaps\l"
+	"you'd like to battle as a warmup for\l"
+	"your first Gym challenge?"
 }
 
-text Roark_WillYouBattleMe{
-	"Hm, what's that? You're a trainer?\n"
-	"Well, now I want to find out if the\l"
-	"rumors are true! What do you say we\l"
-	"have a battle?"
+text Candice_WillYouBattleMe{
+	"Don't worry, I brought a team of lower-\n"
+	"level Pokémon, just in case I bumped\l"
+	"into any promising new trainers, so you\l"
+	"won't have to face my full force!\p"
+	"What do you say we have a battle?"
 }
 	
-text Roark_Outro{
+text Candice_Outro{
 	"Looks like the trainers here are\n"
 	"pretty strong! Please, take these\l"
 	"as rewards for beating me."
 }
 
 
-text PostBattle_Roark{
-	"Time to explore the underground!"
+text PostBattle_Candice{
+	"It seems the quality of education here\n"
+	"in Hoenn is on par with ours in Sinnoh!"
 }
 
 text Ready_Yet{

@@ -367,7 +367,6 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 	setflag FLAG_BEAT_TRICK_HOUSE_3
-	giveitem ITEM_TM_STONE_EDGE
 	giveitem ITEM_STEELIXITE
 	giveitem ITEM_KINGLERITE
 	giveitem ITEM_BOOSTER_ENERGY

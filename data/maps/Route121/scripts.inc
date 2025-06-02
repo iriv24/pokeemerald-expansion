@@ -449,179 +449,175 @@ Route121_EventScript_BattleByron::
 # 236 "data/maps/Route121/scripts.pory"
 	giveitem ITEM_TM_HIGH_HORSEPOWER
 # 237 "data/maps/Route121/scripts.pory"
-	giveitem ITEM_TM_SPIKES
-# 238 "data/maps/Route121/scripts.pory"
-	giveitem ITEM_TM_HEAVY_SLAM
-# 239 "data/maps/Route121/scripts.pory"
 	giveitem ITEM_COPPERAJITE
-# 240 "data/maps/Route121/scripts.pory"
+# 238 "data/maps/Route121/scripts.pory"
 	giveitem ITEM_ROCKY_HELMET
-# 241 "data/maps/Route121/scripts.pory"
+# 239 "data/maps/Route121/scripts.pory"
 	giveitem ITEM_LEFTOVERS
-# 242 "data/maps/Route121/scripts.pory"
+# 240 "data/maps/Route121/scripts.pory"
 	goto Route121_EventScript_ByronGiveJirachi
 	return
 
 
 Route121_EventScript_ByronDefeated::
-# 248 "data/maps/Route121/scripts.pory"
+# 246 "data/maps/Route121/scripts.pory"
 	msgbox PostBattle_Byron, MSGBOX_DEFAULT
-# 249 "data/maps/Route121/scripts.pory"
+# 247 "data/maps/Route121/scripts.pory"
 	releaseall
 	end
 
 
 Route121_EventScript_ByronGiveJirachi::
-# 254 "data/maps/Route121/scripts.pory"
+# 252 "data/maps/Route121/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_JIRACHI
-# 255 "data/maps/Route121/scripts.pory"
+# 253 "data/maps/Route121/scripts.pory"
 	givemonrandom SPECIES_JIRACHI, 30
-# 256 "data/maps/Route121/scripts.pory"
+# 254 "data/maps/Route121/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route121_EventScript_ReceiveJirachiParty
-# 257 "data/maps/Route121/scripts.pory"
+# 255 "data/maps/Route121/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route121_EventScript_ReceiveJirachiPC
-# 258 "data/maps/Route121/scripts.pory"
+# 256 "data/maps/Route121/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 259 "data/maps/Route121/scripts.pory"
+# 257 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
 Route121_EventScript_ReceiveJirachiParty::
-# 264 "data/maps/Route121/scripts.pory"
+# 262 "data/maps/Route121/scripts.pory"
 	call Route121_EventScript_ReceivedJirachiFanfare
-# 265 "data/maps/Route121/scripts.pory"
+# 263 "data/maps/Route121/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 266 "data/maps/Route121/scripts.pory"
+# 264 "data/maps/Route121/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route121_EventScript_ExplainJirachi
-# 267 "data/maps/Route121/scripts.pory"
+# 265 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 268 "data/maps/Route121/scripts.pory"
+# 266 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 269 "data/maps/Route121/scripts.pory"
+# 267 "data/maps/Route121/scripts.pory"
 	goto Route121_EventScript_ExplainJirachi
 	end
 
 
 Route121_EventScript_ReceiveJirachiPC::
-# 275 "data/maps/Route121/scripts.pory"
+# 273 "data/maps/Route121/scripts.pory"
 	call Route121_EventScript_ReceivedJirachiFanfare
-# 276 "data/maps/Route121/scripts.pory"
+# 274 "data/maps/Route121/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 277 "data/maps/Route121/scripts.pory"
+# 275 "data/maps/Route121/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route121_EventScript_SendJirachiToPC
-# 278 "data/maps/Route121/scripts.pory"
+# 276 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 279 "data/maps/Route121/scripts.pory"
+# 277 "data/maps/Route121/scripts.pory"
 	goto Route121_EventScript_SendJirachiToPC
 	end
 
 
 Route121_EventScript_SendJirachiToPC::
-# 285 "data/maps/Route121/scripts.pory"
+# 283 "data/maps/Route121/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 286 "data/maps/Route121/scripts.pory"
+# 284 "data/maps/Route121/scripts.pory"
 	goto Route121_EventScript_ExplainJirachi
 	end
 
 
 Route121_EventScript_ReceivedJirachiFanfare::
-# 292 "data/maps/Route121/scripts.pory"
+# 290 "data/maps/Route121/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 293 "data/maps/Route121/scripts.pory"
+# 291 "data/maps/Route121/scripts.pory"
 	message Route121_Text_PlayerReceivedJirachi
-# 294 "data/maps/Route121/scripts.pory"
+# 292 "data/maps/Route121/scripts.pory"
 	waitmessage
-# 295 "data/maps/Route121/scripts.pory"
+# 293 "data/maps/Route121/scripts.pory"
 	waitfanfare
-# 296 "data/maps/Route121/scripts.pory"
+# 294 "data/maps/Route121/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_JIRACHI
 	return
 
 
 Route121_EventScript_ExplainJirachi::
-# 302 "data/maps/Route121/scripts.pory"
+# 300 "data/maps/Route121/scripts.pory"
 	msgbox Byron_ExplainJirachi, MSGBOX_DEFAULT
-# 303 "data/maps/Route121/scripts.pory"
+# 301 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
 Route121_Psyduck1::
-# 360 "data/maps/Route121/scripts.pory"
+# 358 "data/maps/Route121/scripts.pory"
 	lock
-# 361 "data/maps/Route121/scripts.pory"
+# 359 "data/maps/Route121/scripts.pory"
 	faceplayer
-# 362 "data/maps/Route121/scripts.pory"
+# 360 "data/maps/Route121/scripts.pory"
 	waitse
-# 363 "data/maps/Route121/scripts.pory"
+# 361 "data/maps/Route121/scripts.pory"
 	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
-# 364 "data/maps/Route121/scripts.pory"
+# 362 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Psyduck1_Text_0, MSGBOX_DEFAULT
-# 365 "data/maps/Route121/scripts.pory"
+# 363 "data/maps/Route121/scripts.pory"
 	waitmoncry
-# 366 "data/maps/Route121/scripts.pory"
+# 364 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
 Route121_Psyduck2::
-# 372 "data/maps/Route121/scripts.pory"
+# 370 "data/maps/Route121/scripts.pory"
 	lock
-# 373 "data/maps/Route121/scripts.pory"
+# 371 "data/maps/Route121/scripts.pory"
 	faceplayer
-# 374 "data/maps/Route121/scripts.pory"
+# 372 "data/maps/Route121/scripts.pory"
 	waitse
-# 375 "data/maps/Route121/scripts.pory"
+# 373 "data/maps/Route121/scripts.pory"
 	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
-# 376 "data/maps/Route121/scripts.pory"
+# 374 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Psyduck2_Text_0, MSGBOX_DEFAULT
-# 377 "data/maps/Route121/scripts.pory"
+# 375 "data/maps/Route121/scripts.pory"
 	waitmoncry
-# 378 "data/maps/Route121/scripts.pory"
+# 376 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
 Route121_Psyduck3::
-# 383 "data/maps/Route121/scripts.pory"
+# 381 "data/maps/Route121/scripts.pory"
 	lock
-# 384 "data/maps/Route121/scripts.pory"
+# 382 "data/maps/Route121/scripts.pory"
 	faceplayer
-# 385 "data/maps/Route121/scripts.pory"
+# 383 "data/maps/Route121/scripts.pory"
 	waitse
-# 386 "data/maps/Route121/scripts.pory"
+# 384 "data/maps/Route121/scripts.pory"
 	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
-# 387 "data/maps/Route121/scripts.pory"
+# 385 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Psyduck3_Text_0, MSGBOX_DEFAULT
-# 388 "data/maps/Route121/scripts.pory"
+# 386 "data/maps/Route121/scripts.pory"
 	waitmoncry
-# 389 "data/maps/Route121/scripts.pory"
+# 387 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
 Route121_Psyduck4::
-# 394 "data/maps/Route121/scripts.pory"
+# 392 "data/maps/Route121/scripts.pory"
 	lock
-# 395 "data/maps/Route121/scripts.pory"
+# 393 "data/maps/Route121/scripts.pory"
 	faceplayer
-# 396 "data/maps/Route121/scripts.pory"
+# 394 "data/maps/Route121/scripts.pory"
 	waitse
-# 397 "data/maps/Route121/scripts.pory"
+# 395 "data/maps/Route121/scripts.pory"
 	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
-# 398 "data/maps/Route121/scripts.pory"
+# 396 "data/maps/Route121/scripts.pory"
 	msgbox Route121_Psyduck4_Text_0, MSGBOX_DEFAULT
-# 399 "data/maps/Route121/scripts.pory"
+# 397 "data/maps/Route121/scripts.pory"
 	waitmoncry
-# 400 "data/maps/Route121/scripts.pory"
+# 398 "data/maps/Route121/scripts.pory"
 	release
 	end
 
 
-# 409 "data/maps/Route121/scripts.pory"
+# 407 "data/maps/Route121/scripts.pory"
 StopPlayerLeft:
-# 410 "data/maps/Route121/scripts.pory"
+# 408 "data/maps/Route121/scripts.pory"
 	walk_left
 	step_end
 
@@ -630,23 +626,23 @@ Route121_EventScript_BattleByron_Text_0:
 	.string "Excellent!$"
 
 Route121_Psyduck1_Text_0:
-# 364 "data/maps/Route121/scripts.pory"
+# 362 "data/maps/Route121/scripts.pory"
 	.string "Psyduck: Psyyyyyyy.$"
 
 Route121_Psyduck2_Text_0:
-# 376 "data/maps/Route121/scripts.pory"
+# 374 "data/maps/Route121/scripts.pory"
 	.string "Psyduck: Psy?$"
 
 Route121_Psyduck3_Text_0:
-# 387 "data/maps/Route121/scripts.pory"
+# 385 "data/maps/Route121/scripts.pory"
 	.string "Psyduck: Psyyyy?$"
 
 Route121_Psyduck4_Text_0:
-# 398 "data/maps/Route121/scripts.pory"
+# 396 "data/maps/Route121/scripts.pory"
 	.string "Psyduck: PSYYY!!!!$"
 
 Byron_Greeting::
-# 307 "data/maps/Route121/scripts.pory"
+# 305 "data/maps/Route121/scripts.pory"
 	.string "Well hello there, you look like a well-\n"
 	.string "traveled person. Did you happen to run\l"
 	.string "into a young man named Roark during\l"
@@ -665,37 +661,37 @@ Byron_Greeting::
 	.string "with me?$"
 
 Byron_ReadyYet::
-# 326 "data/maps/Route121/scripts.pory"
+# 324 "data/maps/Route121/scripts.pory"
 	.string "Would you like to battle now?$"
 
 Byron_ComeBackWhenReady::
-# 330 "data/maps/Route121/scripts.pory"
+# 328 "data/maps/Route121/scripts.pory"
 	.string "That's alright, I'll be here if you\n"
 	.string "change your mind.$"
 
 Route121_Text_PlayerReceivedJirachi::
-# 335 "data/maps/Route121/scripts.pory"
+# 333 "data/maps/Route121/scripts.pory"
 	.string "{PLAYER} received Jirachi!$"
 
 Byron_ExplainJirachi::
-# 339 "data/maps/Route121/scripts.pory"
+# 337 "data/maps/Route121/scripts.pory"
 	.string "Jirachi is one of my\n"
 	.string "favorite Steel-types, I hope you treat\l"
 	.string "that Jirachi kindly and raise it well.$"
 
 Byron_Outro::
-# 346 "data/maps/Route121/scripts.pory"
+# 344 "data/maps/Route121/scripts.pory"
 	.string "I see how you were able to defeat my\n"
 	.string "son. I'm confident I'll be leaving this\l"
 	.string "Pokémon in good hands.$"
 
 PostBattle_Byron::
-# 353 "data/maps/Route121/scripts.pory"
+# 351 "data/maps/Route121/scripts.pory"
 	.string "I'm off to find Roark, I'm sure he's\n"
 	.string "going to explore the underground of\l"
 	.string "this region.$"
 
 GoBeatWinona::
-# 404 "data/maps/Route121/scripts.pory"
+# 402 "data/maps/Route121/scripts.pory"
 	.string "You should defeat Winona before\n"
 	.string "moving on to here.$"

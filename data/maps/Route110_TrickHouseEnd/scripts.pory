@@ -96,7 +96,6 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	setflag FLAG_BEAT_TRICK_HOUSE_3
-	giveitem ITEM_TM_STONE_EDGE
 	giveitem ITEM_STEELIXITE
 	giveitem ITEM_KINGLERITE
 	giveitem ITEM_BOOSTER_ENERGY

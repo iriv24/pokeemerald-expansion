@@ -385,7 +385,7 @@ DewfordTown_MiniMart2:
 # 193 "data/maps/DewfordTown/scripts.pory"
 	.2byte ITEM_TM_ELECTROWEB
 # 194 "data/maps/DewfordTown/scripts.pory"
-	.2byte ITEM_TM_ICY_WIND
+	.2byte ITEM_TM_ROCK_TOMB
 # 195 "data/maps/DewfordTown/scripts.pory"
 	.2byte ITEM_TM_AERIAL_ACE
 # 196 "data/maps/DewfordTown/scripts.pory"

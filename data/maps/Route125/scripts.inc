@@ -1,7 +1,7 @@
 # 1 "data/maps/Route125/scripts.pory"
 
 # 2 "data/maps/Route125/scripts.pory"
-.set LOCALID_CANDICE, 11
+.set LOCALID_ROARK, 11
 # 3 "data/maps/Route125/scripts.pory"
 
 # 4 "data/maps/Route125/scripts.pory"
@@ -23,7 +23,7 @@ Route125_OnTransition:
 # 12 "data/maps/Route125/scripts.pory"
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 # 13 "data/maps/Route125/scripts.pory"
-	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
+	call_if_defeated TRAINER_ROARK, SetRoarkPermLoc
 # 14 "data/maps/Route125/scripts.pory"
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 # 15 "data/maps/Route125/scripts.pory"
@@ -41,7 +41,7 @@ Route125_OnLoad:
 # 21 "data/maps/Route125/scripts.pory"
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_PlaceTilesRoute125East
 # 22 "data/maps/Route125/scripts.pory"
-	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
+	call_if_defeated TRAINER_ROARK, SetRoarkPermLoc
 # 23 "data/maps/Route125/scripts.pory"
 	end
 # 24 "data/maps/Route125/scripts.pory"
@@ -175,111 +175,111 @@ Route125_EventScript_Auron::
 # 88 "data/maps/Route125/scripts.pory"
 	end
 
-Route125_EventScript_Candice::
+Route125_EventScript_Roark::
 # 93 "data/maps/Route125/scripts.pory"
 	lockall
 # 94 "data/maps/Route125/scripts.pory"
-	applymovement LOCALID_CANDICE, Common_Movement_FacePlayer
+	applymovement LOCALID_ROARK, Common_Movement_FacePlayer
 # 95 "data/maps/Route125/scripts.pory"
-	goto_if_defeated TRAINER_CANDICE, Route125_EventScript_CandiceDefeated
+	goto_if_defeated TRAINER_ROARK, Route125_EventScript_RoarkDefeated
 # 96 "data/maps/Route125/scripts.pory"
-	goto_if_set FLAG_TEMP_1, Route125_EventScript_CandiceRequestBattleAgain
+	goto_if_set FLAG_TEMP_1, Route125_EventScript_RoarkRequestBattleAgain
 # 97 "data/maps/Route125/scripts.pory"
-	msgbox Candice_Greeting, MSGBOX_YESNO
+	msgbox Roark_Greeting, MSGBOX_YESNO
 # 98 "data/maps/Route125/scripts.pory"
-	goto Route125_EventScript_BattleCandicePrompt
+	goto Route125_EventScript_BattleRoarkPrompt
 	end
 
 
-Route125_EventScript_CandiceRequestBattleAgain::
+Route125_EventScript_RoarkRequestBattleAgain::
 # 103 "data/maps/Route125/scripts.pory"
-	msgbox Candice_ReadyYet, MSGBOX_YESNO
+	msgbox Roark_ReadyYet, MSGBOX_YESNO
 # 104 "data/maps/Route125/scripts.pory"
-	goto Route125_EventScript_BattleCandicePrompt
+	goto Route125_EventScript_BattleRoarkPrompt
 	end
 
 
-Route125_EventScript_BattleCandicePrompt::
+Route125_EventScript_BattleRoarkPrompt::
 # 109 "data/maps/Route125/scripts.pory"
-	call_if_eq VAR_RESULT, YES, Route125_EventScript_BattleCandice
+	call_if_eq VAR_RESULT, YES, Route125_EventScript_BattleRoark
 # 110 "data/maps/Route125/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route125_EventScript_DeclineCandiceBattle
+	goto_if_eq VAR_RESULT, NO, Route125_EventScript_DeclineRoarkBattle
 # 111 "data/maps/Route125/scripts.pory"
 	closemessage
 	end
 
 
-Route125_EventScript_DeclineCandiceBattle::
+Route125_EventScript_DeclineRoarkBattle::
 # 116 "data/maps/Route125/scripts.pory"
 	setflag FLAG_TEMP_1
 # 117 "data/maps/Route125/scripts.pory"
-	msgbox Candice_ComeBackWhenReady, MSGBOX_DEFAULT
+	msgbox Roark_ComeBackWhenReady, MSGBOX_DEFAULT
 # 118 "data/maps/Route125/scripts.pory"
 	release
 	end
 
 
-Route125_EventScript_BattleCandice::
+Route125_EventScript_BattleRoark::
 # 123 "data/maps/Route125/scripts.pory"
-	msgbox Route125_EventScript_BattleCandice_Text_0, MSGBOX_DEFAULT
+	msgbox Route125_EventScript_BattleRoark_Text_0, MSGBOX_DEFAULT
 # 124 "data/maps/Route125/scripts.pory"
-	trainerbattle_no_intro TRAINER_CANDICE, Candice_Outro
+	trainerbattle_no_intro TRAINER_ROARK, Roark_Outro
 # 125 "data/maps/Route125/scripts.pory"
-	goto Route125_EventScript_CandiceGiveItems
+	goto Route125_EventScript_RoarkGiveItems
 	return
 
 
-Route125_EventScript_CandiceDefeated::
+Route125_EventScript_RoarkDefeated::
 # 131 "data/maps/Route125/scripts.pory"
-	msgbox PostBattle_Candice, MSGBOX_DEFAULT
+	msgbox PostBattle_Roark, MSGBOX_DEFAULT
 # 132 "data/maps/Route125/scripts.pory"
 	releaseall
 	end
 
 
-Route125_EventScript_CandiceGiveItems::
+Route125_EventScript_RoarkGiveItems::
 # 137 "data/maps/Route125/scripts.pory"
-	giveitem ITEM_TM_BLIZZARD
+	giveitem ITEM_TM_STONE_EDGE
 # 138 "data/maps/Route125/scripts.pory"
-	giveitem ITEM_TM_TRIPLE_AXEL
+	giveitem ITEM_TM_HEAVY_SLAM
 # 139 "data/maps/Route125/scripts.pory"
-	msgbox Candice_ExplainItems
+	msgbox Roark_ExplainItems
 # 140 "data/maps/Route125/scripts.pory"
 	waitmessage
 # 141 "data/maps/Route125/scripts.pory"
 	switch VAR_FACING
 # 142 "data/maps/Route125/scripts.pory"
-	case DIR_EAST, Route125_EventScript_CandiceGiveItems_3
+	case DIR_EAST, Route125_EventScript_RoarkGiveItems_3
 # 145 "data/maps/Route125/scripts.pory"
-	goto CandiceMoveScript1
-Route125_EventScript_CandiceGiveItems_1:
+	goto RoarkMoveScript1
+Route125_EventScript_RoarkGiveItems_1:
 # 147 "data/maps/Route125/scripts.pory"
 	release
 	end
 
-Route125_EventScript_CandiceGiveItems_3:
+Route125_EventScript_RoarkGiveItems_3:
 # 143 "data/maps/Route125/scripts.pory"
-	goto CandiceMoveScript2
-	goto Route125_EventScript_CandiceGiveItems_1
+	goto RoarkMoveScript2
+	goto Route125_EventScript_RoarkGiveItems_1
 
 
-CandiceMoveScript1::
+RoarkMoveScript1::
 # 152 "data/maps/Route125/scripts.pory"
-	applymovement LOCALID_CANDICE, CandiceUnblockCaveStepWest
+	applymovement LOCALID_ROARK, RoarkUnblockCaveStepWest
 # 153 "data/maps/Route125/scripts.pory"
-	copyobjectxytoperm LOCALID_CANDICE
+	copyobjectxytoperm LOCALID_ROARK
 	return
 
 
-CandiceMoveScript2::
+RoarkMoveScript2::
 # 157 "data/maps/Route125/scripts.pory"
-	applymovement LOCALID_CANDICE, CandiceUnblockCaveStepEast
+	applymovement LOCALID_ROARK, RoarkUnblockCaveStepEast
 # 158 "data/maps/Route125/scripts.pory"
-	copyobjectxytoperm LOCALID_CANDICE
+	copyobjectxytoperm LOCALID_ROARK
 	return
 
 
-CandiceUnblockCaveStepWest::
+RoarkUnblockCaveStepWest::
 # 163 "data/maps/Route125/scripts.pory"
 	walk_left
 # 164 "data/maps/Route125/scripts.pory"
@@ -289,7 +289,7 @@ CandiceUnblockCaveStepWest::
 	return
 
 
-CandiceUnblockCaveStepEast::
+RoarkUnblockCaveStepEast::
 # 170 "data/maps/Route125/scripts.pory"
 	walk_right
 # 171 "data/maps/Route125/scripts.pory"
@@ -299,57 +299,61 @@ CandiceUnblockCaveStepEast::
 	return
 
 
-SetCandicePermLoc::
+SetRoarkPermLoc::
 # 176 "data/maps/Route125/scripts.pory"
-	setobjectxyperm LOCALID_CANDICE, 21, 20
+	setobjectxyperm LOCALID_ROARK, 21, 20
 	return
 
 
-Route125_EventScript_BattleCandice_Text_0:
+Route125_EventScript_BattleRoark_Text_0:
 # 123 "data/maps/Route125/scripts.pory"
 	.string "Okay then!$"
 
-Candice_Greeting::
+Roark_Greeting::
 # 180 "data/maps/Route125/scripts.pory"
 	.string "Oh, hello there. I take it you're a\n"
 	.string "trainer who wants to get into this\l"
 	.string "cave?\p"
-	.string "Well, there are a lot of strong Pokémon\n"
+	.string "Well, I did some investigating, and\n"
+	.string "there are a lot of strong Pokémon\l"
 	.string "inside, so I've decided to stay out here\l"
 	.string "and make sure no weak trainers enter.\p"
 	.string "So if you want to go in, you'll have to\n"
 	.string "go through me.\p"
 	.string "… … … … … …\p"
 	.string "Who am I to have such authority?\n"
-	.string "I'm Candice, the 7th Gym Leader from\l"
+	.string "I'm Roark, the 1st Gym Leader from\l"
 	.string "the Sinnoh region, of course!\p"
+	.string "I may be the 1st Gym Leader back home,\n"
+	.string "but I brought my strongest team with\l"
+	.string "me here for exploring!\p"
 	.string "But enough talk, are you here to\n"
 	.string "challenge me or not?$"
 
-Candice_ReadyYet::
-# 197 "data/maps/Route125/scripts.pory"
+Roark_ReadyYet::
+# 201 "data/maps/Route125/scripts.pory"
 	.string "Up to the challenge now?$"
 
-Candice_ComeBackWhenReady::
-# 201 "data/maps/Route125/scripts.pory"
+Roark_ComeBackWhenReady::
+# 205 "data/maps/Route125/scripts.pory"
 	.string "Well, you're not getting into this cave\n"
 	.string "unless you can beat me.$"
 
-Candice_ExplainItems::
-# 206 "data/maps/Route125/scripts.pory"
-	.string "Those are some of my favorite Ice-type\n"
-	.string "moves, they may not be the most\l"
-	.string "accurate, but they sure do deal damage\l"
-	.string "if they land!\p"
+Roark_ExplainItems::
+# 210 "data/maps/Route125/scripts.pory"
+	.string "Those are some of my favorite TMs!\n"
+	.string "You'll have to be smart with how you use\l"
+	.string "them, but they sure do hit hard if you\l"
+	.string "use them correctly!\p"
 	.string "I'll step out of the way now and\n"
 	.string "let you through.$"
 
-Candice_Outro::
-# 215 "data/maps/Route125/scripts.pory"
+Roark_Outro::
+# 219 "data/maps/Route125/scripts.pory"
 	.string "Looks like you'll be just fine in this\n"
 	.string "cave.$"
 
-PostBattle_Candice::
-# 221 "data/maps/Route125/scripts.pory"
+PostBattle_Roark::
+# 225 "data/maps/Route125/scripts.pory"
 	.string "The Pokémon in there are strong,\n"
 	.string "aren't they?$"

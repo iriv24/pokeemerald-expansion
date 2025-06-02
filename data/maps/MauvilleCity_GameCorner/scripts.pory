@@ -660,6 +660,7 @@ MauvilleCity_TMSales:
 	.2byte ITEM_TM_DRAGON_TAIL
 	.2byte ITEM_TM_SCORCHING_SANDS
 	.2byte ITEM_TM_ICE_SPINNER
+	.2byte ITEM_TM_SPIKES
 	.2byte ITEM_TM_GRAVITY
 	.2byte ITEM_NONE
 	release

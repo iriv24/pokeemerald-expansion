@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_CANDICE, 11
+.set LOCALID_ROARK, 11
 
 
 Route125_MapScripts::
@@ -10,7 +10,7 @@ Route125_MapScripts::
 
 Route125_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
-	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
+	call_if_defeated TRAINER_ROARK, SetRoarkPermLoc
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_StartKyogreWeather
@@ -19,7 +19,7 @@ Route125_OnTransition:
 Route125_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_PlaceTilesRoute125West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_PlaceTilesRoute125East
-	call_if_defeated TRAINER_CANDICE, SetCandicePermLoc
+	call_if_defeated TRAINER_ROARK, SetRoarkPermLoc
 	end
 
 Route125_OnFrame:
@@ -89,136 +89,140 @@ Route125_EventScript_Auron::
 
 `
 
-script Route125_EventScript_Candice{
+script Route125_EventScript_Roark{
 	lockall
-	applymovement(LOCALID_CANDICE, Common_Movement_FacePlayer)
-	goto_if_defeated(TRAINER_CANDICE, Route125_EventScript_CandiceDefeated)
-	goto_if_set(FLAG_TEMP_1, Route125_EventScript_CandiceRequestBattleAgain)
-	msgbox(Candice_Greeting, MSGBOX_YESNO)
-	goto(Route125_EventScript_BattleCandicePrompt)
+	applymovement(LOCALID_ROARK, Common_Movement_FacePlayer)
+	goto_if_defeated(TRAINER_ROARK, Route125_EventScript_RoarkDefeated)
+	goto_if_set(FLAG_TEMP_1, Route125_EventScript_RoarkRequestBattleAgain)
+	msgbox(Roark_Greeting, MSGBOX_YESNO)
+	goto(Route125_EventScript_BattleRoarkPrompt)
 	end
 }
 
-script Route125_EventScript_CandiceRequestBattleAgain{
-	msgbox(Candice_ReadyYet, MSGBOX_YESNO)
-	goto(Route125_EventScript_BattleCandicePrompt)
+script Route125_EventScript_RoarkRequestBattleAgain{
+	msgbox(Roark_ReadyYet, MSGBOX_YESNO)
+	goto(Route125_EventScript_BattleRoarkPrompt)
 	end
 }
 
-script Route125_EventScript_BattleCandicePrompt{
-	call_if_eq(VAR_RESULT, YES, Route125_EventScript_BattleCandice)
-	goto_if_eq(VAR_RESULT, NO, Route125_EventScript_DeclineCandiceBattle)
+script Route125_EventScript_BattleRoarkPrompt{
+	call_if_eq(VAR_RESULT, YES, Route125_EventScript_BattleRoark)
+	goto_if_eq(VAR_RESULT, NO, Route125_EventScript_DeclineRoarkBattle)
 	closemessage
 	end
 }
 
-script Route125_EventScript_DeclineCandiceBattle {
+script Route125_EventScript_DeclineRoarkBattle {
 	setflag(FLAG_TEMP_1)
-	msgbox(Candice_ComeBackWhenReady, MSGBOX_DEFAULT)
+	msgbox(Roark_ComeBackWhenReady, MSGBOX_DEFAULT)
 	release
 	end
 }
 
-script Route125_EventScript_BattleCandice{
+script Route125_EventScript_BattleRoark{
 	msgbox("Okay then!", MSGBOX_DEFAULT)
-	trainerbattle_no_intro(TRAINER_CANDICE, Candice_Outro)
-	goto(Route125_EventScript_CandiceGiveItems)
+	trainerbattle_no_intro(TRAINER_ROARK, Roark_Outro)
+	goto(Route125_EventScript_RoarkGiveItems)
 	return
 }
 	
 
-script Route125_EventScript_CandiceDefeated{
-	msgbox(PostBattle_Candice, MSGBOX_DEFAULT)
+script Route125_EventScript_RoarkDefeated{
+	msgbox(PostBattle_Roark, MSGBOX_DEFAULT)
 	releaseall
 	end
 }
 
-script Route125_EventScript_CandiceGiveItems{
-	giveitem(ITEM_TM_BLIZZARD)
-	giveitem(ITEM_TM_TRIPLE_AXEL)
-	msgbox(Candice_ExplainItems)
+script Route125_EventScript_RoarkGiveItems{
+	giveitem(ITEM_TM_STONE_EDGE)
+	giveitem(ITEM_TM_HEAVY_SLAM)
+	msgbox(Roark_ExplainItems)
 	waitmessage
 	switch (var(VAR_FACING)) {
         case DIR_EAST:
-			goto(CandiceMoveScript2)
+			goto(RoarkMoveScript2)
 		default:
-            goto(CandiceMoveScript1)
+            goto(RoarkMoveScript1)
 	}
 	release
 	end
 }
 
-script CandiceMoveScript1 {
-	applymovement(LOCALID_CANDICE, CandiceUnblockCaveStepWest)
-	copyobjectxytoperm(LOCALID_CANDICE)
+script RoarkMoveScript1 {
+	applymovement(LOCALID_ROARK, RoarkUnblockCaveStepWest)
+	copyobjectxytoperm(LOCALID_ROARK)
 }
 
-script CandiceMoveScript2 {
-	applymovement(LOCALID_CANDICE, CandiceUnblockCaveStepEast)
-	copyobjectxytoperm(LOCALID_CANDICE)
+script RoarkMoveScript2 {
+	applymovement(LOCALID_ROARK, RoarkUnblockCaveStepEast)
+	copyobjectxytoperm(LOCALID_ROARK)
 }
 
-script CandiceUnblockCaveStepWest
+script RoarkUnblockCaveStepWest
 {
 	walk_left
 	face_down
 	step_end
 }
 
-script CandiceUnblockCaveStepEast
+script RoarkUnblockCaveStepEast
 {
 	walk_right
 	face_down
 	step_end
 }
 
-script SetCandicePermLoc {
-	setobjectxyperm(LOCALID_CANDICE, 21, 20)
+script SetRoarkPermLoc {
+	setobjectxyperm(LOCALID_ROARK, 21, 20)
 	return
 }
 
-text Candice_Greeting{
+text Roark_Greeting{
 	"Oh, hello there. I take it you're a\n"
 	"trainer who wants to get into this\l"
 	"cave?\p"
-	"Well, there are a lot of strong Pokémon\n"
+	"Well, I did some investigating, and\n"
+	"there are a lot of strong Pokémon\l"
 	"inside, so I've decided to stay out here\l"
 	"and make sure no weak trainers enter.\p"
 	"So if you want to go in, you'll have to\n"
 	"go through me.\p"
 	"… … … … … …\p"
 	"Who am I to have such authority?\n"
-	"I'm Candice, the 7th Gym Leader from\l"
+	"I'm Roark, the 1st Gym Leader from\l"
 	"the Sinnoh region, of course!\p"
+	"I may be the 1st Gym Leader back home,\n"
+	"but I brought my strongest team with\l"
+	"me here for exploring!\p"
 	"But enough talk, are you here to\n"
 	"challenge me or not?"
 }
 
-text Candice_ReadyYet{
+text Roark_ReadyYet{
 	"Up to the challenge now?"
 }
 
-text Candice_ComeBackWhenReady{
+text Roark_ComeBackWhenReady{
 	"Well, you're not getting into this cave\n"
 	"unless you can beat me."
 }
 
-text Candice_ExplainItems{
-	"Those are some of my favorite Ice-type\n"
-	"moves, they may not be the most\l"
-	"accurate, but they sure do deal damage\l"
-	"if they land!\p"
+text Roark_ExplainItems{
+	"Those are some of my favorite TMs!\n"
+	"You'll have to be smart with how you use\l"
+	"them, but they sure do hit hard if you\l"
+	"use them correctly!\p"
 	"I'll step out of the way now and\n"
 	"let you through."
 }
 	
-text Candice_Outro{
+text Roark_Outro{
 	"Looks like you'll be just fine in this\n"
 	"cave."
 }
 
 
-text PostBattle_Candice{
+text PostBattle_Roark{
 	"The Pokémon in there are strong,\n"
 	"aren't they?"
 }

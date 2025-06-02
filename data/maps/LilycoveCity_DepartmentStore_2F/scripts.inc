@@ -165,11 +165,11 @@ LilycoveCity_DepartmentStore_2F_EventScript_PokefanF::
 # 86 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	faceplayer
 # 87 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
-	checkitem ITEM_TM_SPIKES
+	checkitem ITEM_TM_HEAVY_SLAM
 # 88 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_Base
 # 89 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
-	goto_if_defeated TRAINER_BYRON, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes
+	goto_if_defeated TRAINER_ROARK, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes
 # 90 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	msgbox LilycoveCity_DepartmentStore_2F_Text_GoodGiftForHusband, MSGBOX_DEFAULT
 # 91 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
@@ -189,10 +189,8 @@ LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes::
 # 102 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	msgbox LilycoveCity_DepartmentStore_2F_Text_HereTakeThis, MSGBOX_DEFAULT
 # 103 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
-	giveitem ITEM_TM_SPIKES
-# 104 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	giveitem ITEM_TM_HEAVY_SLAM
-# 105 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
+# 104 "data/maps/LilycoveCity_DepartmentStore_2F/scripts.pory"
 	release
 	end
 

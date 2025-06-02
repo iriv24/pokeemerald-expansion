@@ -48,7 +48,7 @@
 #define FLAG_CHOSE_FIRESTARTER         0x22
 #define FLAG_TOUCHED_BALLS             0x23
 #define FLAG_DAWN_104                  0x24
-#define FLAG_RECEIVED_TM_ROCK_TOMB     0x25
+#define FLAG_RECEIVED_TM_ICY_WIND      0x25
 #define FLAG_USING_POKEMONPCMENU       0x26
 #define FLAG_STOP_ENCOUNTERS           0x27
 #define FLAG_PARTY_MOVES               0x28

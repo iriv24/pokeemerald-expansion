@@ -84,9 +84,9 @@ LilycoveCity_DepartmentStore_2F_Text_HereTakeThis:
 script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF {
 	lock
 	faceplayer
-	checkitem(ITEM_TM_SPIKES)
+	checkitem(ITEM_TM_HEAVY_SLAM)
 	goto_if_eq(VAR_RESULT, TRUE, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_Base)
-	goto_if_defeated(TRAINER_BYRON, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes)
+	goto_if_defeated(TRAINER_ROARK, LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes)
 	msgbox(LilycoveCity_DepartmentStore_2F_Text_GoodGiftForHusband, MSGBOX_DEFAULT)
 	release
 	end
@@ -100,7 +100,6 @@ script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_Base {
 
 script LilycoveCity_DepartmentStore_2F_EventScript_PokefanF_GiveSpikes {
 	msgbox(LilycoveCity_DepartmentStore_2F_Text_HereTakeThis, MSGBOX_DEFAULT)
-	giveitem(ITEM_TM_SPIKES)
 	giveitem(ITEM_TM_HEAVY_SLAM)
 	release
 	end

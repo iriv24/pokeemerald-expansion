@@ -1417,15 +1417,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Fantina[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Byron[] = {
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Byron, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_Byron, 2, 4),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Candice[] = {

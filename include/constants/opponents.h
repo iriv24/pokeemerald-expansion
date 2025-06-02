@@ -713,7 +713,7 @@
 #define TRAINER_HAYDEN                      707
 #define TRAINER_SOPHIE                      708
 #define TRAINER_COBY                        709
-#define TRAINER_CANDICE                     710
+#define TRAINER_ROARK                       710
 #define TRAINER_BYRON                       711
 #define TRAINER_VOLKNER                     712
 #define TRAINER_KAI                         713
@@ -854,7 +854,7 @@
 #define TRAINER_MARIELA                     848
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
-#define TRAINER_ROARK                       851
+#define TRAINER_CANDICE                     851
 #define TRAINER_GARDENIA                    852
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
