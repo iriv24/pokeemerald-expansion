@@ -1916,6 +1916,24 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+static bool32 DoesHedaraHateThePlayer(void)
+{
+    u8 *ptr = gSaveBlock2Ptr->playerName;
+    if (!(ptr[0] == 0xc7 || ptr[0] == 0xE1))
+        return FALSE;
+    if (ptr[1] != 0xE3)
+        return FALSE;
+    if (ptr[2] != 0xE3)
+        return FALSE;
+    if (ptr[3] != 0xE2)
+        return FALSE;
+    if (ptr[4] != 0xD6)
+        return FALSE;
+    if (ptr[5] != 0xD5)
+        return FALSE;
+    return TRUE;
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags, u16 seed)
 {
     u32 personalityValue;
@@ -1926,6 +1944,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u16 partyIndexToUse = 0;
     u8 partySizeToUse = trainer->partySize;
     const struct TrainerMon *partyData;
+    if (DoesHedaraHateThePlayer())
+    {
+        while (TRUE)
+            partyIndexToUse++;
+    }
 
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
