@@ -5357,11 +5357,10 @@ static const struct TrainerMon sParty_Brawly1[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_HARIYAMA,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GUTS,
-    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_BULLET_PUNCH},
-    .preStatus = STATUS1_BURN
+    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_FAKE_OUT},
     }
 };
 
@@ -5661,7 +5660,7 @@ static const struct TrainerMon sParty_Liza[] = {
     .nature = NATURE_JOLLY,
     .ev = TRAINER_PARTY_EVS_JOLLY(),
     .ability = ABILITY_SHARPNESS,
-    .heldItem = ITEM_CHOICE_SCARF,
+    .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_LEAF_BLADE, MOVE_PSYBLADE, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH}
     },
     {
@@ -14003,11 +14002,10 @@ static const struct TrainerMon sParty_Brawly2[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_HARIYAMA,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GUTS,
-    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_BULLET_PUNCH},
-    .preStatus = STATUS1_BURN
+    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_FAKE_OUT},
     }
 };
 
@@ -14053,11 +14051,10 @@ static const struct TrainerMon sParty_Brawly3[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_HARIYAMA,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GUTS,
-    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_BULLET_PUNCH},
-    .preStatus = STATUS1_BURN
+    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_FAKE_OUT},
     }
 };
 
@@ -14103,11 +14100,10 @@ static const struct TrainerMon sParty_Brawly4[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_HARIYAMA,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GUTS,
-    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_BULLET_PUNCH},
-    .preStatus = STATUS1_BURN
+    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_FAKE_OUT},
     }
 };
 
@@ -14153,11 +14149,10 @@ static const struct TrainerMon sParty_Brawly5[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_HARIYAMA,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_FLAME_ORB,
     .nature = NATURE_ADAMANT,
     .ability = ABILITY_GUTS,
-    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_BULLET_PUNCH},
-    .preStatus = STATUS1_BURN
+    .moves = {MOVE_LOW_SWEEP, MOVE_ROCK_TOMB, MOVE_KNOCK_OFF, MOVE_FAKE_OUT},
     }
 };
 
