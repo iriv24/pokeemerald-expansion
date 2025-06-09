@@ -10148,8 +10148,20 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
             if (fromAiCode 
                 && dmg > 0
-                && ((dmg * 100) / gBattleMons[battlerDef].hp) >= (hasRipen ? 80 : 66))
+                && ((dmg * 100) / gBattleMons[battlerDef].hp) >= (hasRipen ? 80 : 66)
+                && ((dmg * 100) / gBattleMons[battlerDef].hp) <= (hasRipen ? 400 : 200))
             {
+                u8 moveIndex = 0;
+                u32 battlerAtk = damageCalcData->battlerAtk;
+                u32 move = damageCalcData->move;
+
+                for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
+                {
+                    if (move == gBattleMons[battlerAtk].moves[moveIndex])
+                        break;
+                }
+
+                AI_DATA->resistBerryAffected[damageCalcData->battlerAtk][battlerDef][moveIndex] = TRUE;
                 return UQ_4_12(1.0);
             }
             else

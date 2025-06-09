@@ -3170,7 +3170,7 @@ static s32 AI_CompareDamagingMoves(u32 battlerAtk, u32 battlerDef, u32 currId)
                     viableMoveScores[currId] -= 2;
                     break;
                 }
-                switch (AI_WhichMoveBetter(moves[currId], moves[i], battlerAtk, battlerDef, noOfHits[currId]))
+                switch (AI_WhichMoveBetter(moves[currId], currId, moves[i], i, battlerAtk, battlerDef, noOfHits[currId]))
                 {
                 case 1:
                     viableMoveScores[i] -= 1;
