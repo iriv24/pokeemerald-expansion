@@ -35,6 +35,9 @@
 #include "confetti_util.h"
 #include "randomizer.h"
 #include "constants/rgb.h"
+#include "constants/abilities.h"
+#include "constants/items.h"
+#include "constants/form_change_types.h"
 #include "constants/game_settings.h"
 
 #define HALL_OF_FAME_MAX_TEAMS 30
@@ -438,6 +441,55 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
     }
 }
 
+static u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
+{
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+    u16 ability = GetMonAbility(mon);
+    u16 targetSpecies = species;
+    const struct FormChange *formChanges = GetSpeciesFormChanges(species);
+
+    for (u8 i = 0; formChanges != NULL && formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
+    {
+        switch (formChanges[i].method)
+        {
+        case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM:
+        case FORM_CHANGE_BATTLE_PRIMAL_REVERSION:
+        case FORM_CHANGE_BATTLE_ULTRA_BURST:
+        case FORM_CHANGE_ITEM_HOLD:
+        case FORM_CHANGE_BEGIN_BATTLE:
+            if (formChanges[i].param1 == GetMonData(mon, MON_DATA_HELD_ITEM))
+                targetSpecies = formChanges[i].targetSpecies;
+            break;
+
+        case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE:
+            for (u8 j = 0; j < MAX_MON_MOVES; j++)
+            {
+                u16 move = GetMonData(mon, MON_DATA_MOVE1 + j);
+                if (formChanges[i].param1 == move)
+                    targetSpecies =  formChanges[i].targetSpecies;
+            }
+            break;
+
+        case FORM_CHANGE_BATTLE_HP_PERCENT:
+            if (formChanges[i].param1 == ability
+                && formChanges[i].param2 == HP_LOWER_EQ_THAN // the lower than form is always the cool one
+                && formChanges[i].param3 == 50) // unless its 25% for Wishiwashi
+                targetSpecies =  formChanges[i].targetSpecies;
+            break;
+
+        case FORM_CHANGE_BATTLE_SWITCH:
+            if (formChanges[i].param1 == ability || formChanges[i].param1 == ABILITY_NONE)
+                targetSpecies =  formChanges[i].targetSpecies;
+            break;
+                
+        default:
+            break;
+        }
+    }
+
+    return targetSpecies;
+}
+
 static void Task_Hof_InitMonData(u8 taskId)
 {
     u16 i, j;
@@ -449,7 +501,7 @@ static void Task_Hof_InitMonData(u8 taskId)
         u8 nickname[POKEMON_NAME_LENGTH + 1];
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
         {
-            sHofMonPtr->mon[i].species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+            sHofMonPtr->mon[i].species = GetHallOfFameFormChangeSpecies(&gPlayerParty[i]);
             sHofMonPtr->mon[i].tid = GetMonData(&gPlayerParty[i], MON_DATA_OT_ID);
             sHofMonPtr->mon[i].isShiny = GetMonData(&gPlayerParty[i], MON_DATA_IS_SHINY);
             sHofMonPtr->mon[i].personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY);
