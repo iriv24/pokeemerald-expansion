@@ -1701,7 +1701,7 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
 
 static void MoveSelectionDisplayPpString(u32 battler)
 {
-    StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
+        StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }
 
@@ -1728,8 +1728,14 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     u8 type;
     u32 speciesId;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     type = gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].type;
+
+    u32 battlerDef = BATTLE_OPPOSITE(battler);
+    u32 types[3];
+    GetBattlerTypes(battlerDef, FALSE, types);
+    uq4_12_t effectivenessMultiplier = UQ_4_12(1.0);
+    uq4_12_t mod1 = UQ_4_12(1.0);
+    uq4_12_t mod2 = UQ_4_12(1.0);
 
     if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_TERA_BLAST)
     {
@@ -1761,7 +1767,34 @@ static void MoveSelectionDisplayMoveType(u32 battler)
         struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
         type = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
     }
-    end = StringCopy(txtPtr, gTypesInfo[type].name);
+
+    txtPtr = StringCopy(gDisplayedStringBattle, gTypesInfo[type].name);
+
+    if (moveInfo->moves[gMoveSelectionCursor[battler]] != MOVE_NONE && moveInfo->moves[gMoveSelectionCursor[battler]] != MOVE_UNAVAILABLE && gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].power > 0)
+    {
+        mod1 = GetTypeModifier(type, types[0]);
+        if(types[0] != types[1])
+            mod2 = GetTypeModifier(type, types[1]);
+        
+        effectivenessMultiplier = uq4_12_multiply(mod1, mod2);
+    }
+
+    if(effectivenessMultiplier == UQ_4_12(0.0))
+    {
+        end = StringCopy(txtPtr, gText_MoveInterfaceTypeImmune);
+    }
+    else if(effectivenessMultiplier > UQ_4_12(1.0))
+    {
+        end = StringCopy(txtPtr, gText_MoveInterfaceTypeSE);
+    } 
+    else if(effectivenessMultiplier < UQ_4_12(1.0))
+    {
+        end = StringCopy(txtPtr, gText_MoveInterfaceTypeNVE);
+    }  
+    else
+    {
+        end = StringCopy(txtPtr, gText_MoveInterfaceType);
+    }
 
     PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
