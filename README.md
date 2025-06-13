@@ -189,6 +189,7 @@ With this, you'll get the latest version of pokeemerald-expansion, plus a couple
 Please submit any issues with the project here:
 - [Original pokemon-expansion](https://github.com/rh-hideout/pokeemerald-expansion/issues)
 - [Pokemon Emerald Imperium](https://github.com/iriv24/pokeemerald-expansion/issues)
+
 Make sure that the issue wasn't reported by someone else by searching using the filters.
 
 ## Can I contribute even if I'm not a member of ROM Hacking Hideout?
