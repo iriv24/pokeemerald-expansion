@@ -7,7 +7,9 @@ This hack aims to provide a fresh and challenging experience similar to what is 
 
 Whether you're a seasoned player looking for a new challenge or a newcomer wanting to experience Hoenn in a different light, Emerald Imperium offers a unique adventure with new features, mechanics, and an engaging storyline.
 
-## Quality of Life Updates
+## Features
+
+### Quality of Life Updates
 - Change Pokemon Natures instantly
 - EV / IV Editor acquirable in-game
 - DexNav and Infinite Repel from menu
@@ -17,7 +19,7 @@ Whether you're a seasoned player looking for a new challenge or a newcomer wanti
 - HMs used from menu
 - ... and many, many more!
 
-## Pokemon Changes
+### Pokemon Changes
 - Brand new Megas for old favorites
 - Gigantamax forms converted to Megas
 - Pokemon from Generation 1-9 included
@@ -27,7 +29,7 @@ Whether you're a seasoned player looking for a new challenge or a newcomer wanti
 - Simplified evolution methods
 - Toggleable following Pokemon
 
-## Difficulty Enhancements
+### Difficulty Enhancements
 - Easy mode for new players
 - Normal mode is substantially harder than a mainline game
 - Competitive teams for enemy trainers
