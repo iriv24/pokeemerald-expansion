@@ -346,6 +346,10 @@ static const u8 sContextMenuItems_BattleUse[] = {
     ACTION_BATTLE_USE,  ACTION_CANCEL
 };
 
+static const u8 sContextMenuItems_Use[] = {
+    ACTION_USE,  ACTION_CANCEL
+};
+
 static const u8 sContextMenuItems_Give[] = {
     ACTION_GIVE,        ACTION_CANCEL
 };
@@ -1698,6 +1702,10 @@ static void OpenContextMenu(u8 taskId)
                 if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_CannotUse){
                     gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_Cancel);
                     memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_Cancel, sizeof(sContextMenuItems_Cancel));
+                }
+                else if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_InfiniteCandy){
+                    gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_Use);
+                    memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_Use, sizeof(sContextMenuItems_Use));
                 }
                 else {
                     gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_KeyItemsPocket);
