@@ -7,6 +7,11 @@ This hack aims to provide a fresh and challenging experience similar to what is 
 
 Whether you're a seasoned player looking for a new challenge or a newcomer wanting to experience Hoenn in a different light, Emerald Imperium offers a unique adventure with new features, mechanics, and an engaging storyline.
 
+![slide1](https://github.com/user-attachments/assets/3eb45430-b3f6-4729-980b-2ed668693733)
+![slide2](https://github.com/user-attachments/assets/62c546e8-e3e7-4f73-9fb2-c961eb925291)
+![slide4](https://github.com/user-attachments/assets/98cd02d8-3a89-48b2-8132-9ec0fd5301b1)
+![slide5](https://github.com/user-attachments/assets/6362bb67-7ecb-42b2-8b75-5922073123dd)
+
 ## Features
 
 ### Quality of Life Updates
