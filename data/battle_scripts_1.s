@@ -8582,6 +8582,13 @@ BattleScript_FriskMsg::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_GripperMsgWithPopup::
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_GRIPPERACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_FriskActivates::
 	saveattacker
 	copybyte gBattlerAttacker, sBATTLER

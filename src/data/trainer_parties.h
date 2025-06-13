@@ -4956,7 +4956,7 @@ static const struct TrainerMon sParty_Phoebe1[] = {
     .nature = NATURE_ADAMANT,
             //hp,atk,def,spatk,spdef,speed
     .ev = TRAINER_PARTY_EVS( 6, 252, 252, 0, 0, 0 ),
-    .ability = ABILITY_PRESSURE,
+    .ability = ABILITY_HUSTLE,
     .heldItem = ITEM_DUSKNOIRITE,
     .moves = {MOVE_SHADOW_PUNCH, MOVE_KNOCK_OFF, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH}
     },

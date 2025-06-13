@@ -647,6 +647,7 @@ static const u8 sText_IceBodyHpGain[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABI
 static const u8 sText_SnowWarningHail[] = _("It started to hail!");
 static const u8 sText_SnowWarningSnow[] = _("It started to snow!");
 static const u8 sText_FriskActivates[] = _("{B_ATK_NAME_WITH_PREFIX} frisked {B_DEF_NAME_WITH_PREFIX2} and found its {B_LAST_ITEM}!");
+static const u8 sText_GripperActivates[] = _("{B_ATK_NAME_WITH_PREFIX} got a grip on {B_DEF_NAME_WITH_PREFIX}, it can no longer escape!");
 static const u8 sText_UnnerveEnters[] = _("{B_DEF_TEAM1} team is too nervous to eat Berries!");
 static const u8 sText_HarvestBerry[] = _("{B_ATK_NAME_WITH_PREFIX} harvested its {B_LAST_ITEM}!");
 static const u8 sText_LastAbilityRaisedBuff1[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} raised its {B_BUFF1}!");
@@ -1591,6 +1592,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SEEMSWEIRD - BATTLESTRINGS_TABLE_START] = sText_SeemsWeird,
     [STRINGID_WAGGLINGAFINGER - BATTLESTRINGS_TABLE_START] = sText_WagglingAFinger,
     [STRINGID_BLOCKEDBYSLEEPCLAUSE - BATTLESTRINGS_TABLE_START] = sText_BlockedBySleepClause,
+    [STRINGID_GRIPPERACTIVATES - BATTLESTRINGS_TABLE_START] = sText_GripperActivates,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

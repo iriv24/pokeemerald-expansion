@@ -2517,6 +2517,13 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
+    [ABILITY_GRIPPER] =
+    {
+        .name = _("GRIPPER"),
+        .description = COMPOUND_STRING("Contact moves prevent the\nfoe from escaping."),
+        .aiRating = 7,
+    },
+
     
 
 };
