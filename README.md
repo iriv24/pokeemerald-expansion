@@ -51,3 +51,6 @@ Please submit any issues with the project here:
 - [Original pokemon-expansion](https://github.com/rh-hideout/pokeemerald-expansion/issues)
 
 Make sure that the issue wasn't reported by someone else by searching using the filters.
+
+## Need help?
+Join our [Discord](https://discord.gg/JQtkfAWr) for support and community discussion.
