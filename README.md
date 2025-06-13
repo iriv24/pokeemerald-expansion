@@ -1,4 +1,4 @@
-<img src="emerald_imperium_text_logo.png" width="400">
+<p align="center"><img src="emerald_imperium_text_logo.png" width="400"></p>
 
 # Pokemon Emerald Imperium
 
