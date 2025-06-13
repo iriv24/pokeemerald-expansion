@@ -9,8 +9,10 @@ Whether you're a seasoned player looking for a new challenge or a newcomer wanti
 
 ![slide1](https://github.com/user-attachments/assets/3eb45430-b3f6-4729-980b-2ed668693733)
 ![slide2](https://github.com/user-attachments/assets/62c546e8-e3e7-4f73-9fb2-c961eb925291)
+![slide3](https://github.com/user-attachments/assets/be11dba0-7914-4ff6-9f9e-035b58a55d15)
 ![slide4](https://github.com/user-attachments/assets/98cd02d8-3a89-48b2-8132-9ec0fd5301b1)
 ![slide5](https://github.com/user-attachments/assets/6362bb67-7ecb-42b2-8b75-5922073123dd)
+![slide6](https://github.com/user-attachments/assets/bb4245f4-1da9-47e4-8edf-c8acd1f9ac02)
 
 ## Features
 
