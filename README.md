@@ -1,6 +1,11 @@
 <p align="center"><img src="emerald_imperium_text_logo.png" width="400"></p>
 
 # Pokemon Emerald Imperium
+For the latest README, please refer to the [release](https://github.com/iriv24/pokeemerald-expansion/tree/release) branch.
+
+Anything below here is either outdated or from the original fork.
+
+---
 
 ### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
 
