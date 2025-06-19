@@ -13,6 +13,11 @@
 #define PALETTE_FADE_STATUS_DONE 0
 #define PALETTE_FADE_STATUS_LOADING 0xFF
 
+#define PALETTE_FADE_STATUS_DELAY 2
+#define PALETTE_FADE_STATUS_ACTIVE 1
+#define PALETTE_FADE_STATUS_DONE 0
+#define PALETTE_FADE_STATUS_LOADING 0xFF
+
 #define PALETTES_BG      0x0000FFFF
 #define PALETTES_OBJECTS 0xFFFF0000
 #define PALETTES_ALL     (PALETTES_BG | PALETTES_OBJECTS)
@@ -62,6 +67,7 @@ void LoadPalette(const void *src, u32 offset, u32 size);
 void FillPalette(u32 value, u32 offset, u32 size);
 void TransferPlttBuffer(void);
 u32 UpdatePaletteFade(void);
+u32 PrevPaletteFadeResult(void); // Battle Speed Up
 void ResetPaletteFade(void);
 bool32 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u32 blendColor);
 void ResetPaletteFadeControl(void);

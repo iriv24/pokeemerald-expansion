@@ -28,6 +28,8 @@ ALIGNED(4) EWRAM_DATA u16 gPlttBufferFaded[PLTT_BUFFER_SIZE] = {0};
 EWRAM_DATA struct PaletteFadeControl gPaletteFade = {0};
 static EWRAM_DATA u32 sPlttBufferTransferPending = 0;
 
+static EWRAM_DATA u32 sPlttPreviousUpdateResult = 0; // Fast Battle Speed
+
 static const u8 sRoundedDownGrayscaleMap[] = {
      0,  0,  0,  0,  0,
      5,  5,  5,  5,  5,
@@ -74,6 +76,8 @@ u32 UpdatePaletteFade(void)
 {
     u32 result;
 
+    sPlttPreviousUpdateResult = PALETTE_FADE_STATUS_LOADING;
+
     if (sPlttBufferTransferPending)
         return PALETTE_FADE_STATUS_LOADING;
 
@@ -85,9 +89,16 @@ u32 UpdatePaletteFade(void)
         result = UpdateHardwarePaletteFade();
 
     sPlttBufferTransferPending = gPaletteFade.multipurpose1;
+    sPlttPreviousUpdateResult = result;
 
     return result;
 }
+
+u32 PrevPaletteFadeResult(void)
+{
+    return sPlttPreviousUpdateResult;
+}
+
 
 void ResetPaletteFade(void)
 {
