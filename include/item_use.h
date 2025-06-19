@@ -2,6 +2,7 @@
 #define GUARD_ITEM_USE_H
 
 extern const u8 PokeVialHealScript[];
+extern const u8 PokeVialHealScript2[];
 void ItemUseOutOfBattle_Mail(u8);
 void ItemUseOutOfBattle_Bike(u8);
 void ItemUseOutOfBattle_Rod(u8);

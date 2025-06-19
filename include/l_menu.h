@@ -12,6 +12,7 @@ void HideLMenuFollowers(void);
 void HideLMenuTimeChanger(void);
 void HideLMenuInfiniteRepel(void);
 void HideLMenuPokeVial(void);
+void HideLMenuPokeVial2(void);
 void HideLMenuNoWildMons(void);
 void AppendToLList(u8 *list, u8 *pos, u8 newEntry);
 

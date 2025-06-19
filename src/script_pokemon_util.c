@@ -69,6 +69,23 @@ static void HealPlayerBoxes(void)
     }
 }
 
+void HealPlayerPartyNonDead(void)
+{
+    u32 i;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_HP) != 0)
+            HealPokemon(&gPlayerParty[i]);
+    }
+        
+    if (OW_PC_HEAL >= GEN_8)
+        HealPlayerBoxes();
+
+    // Recharge Tera Orb, if possible.
+    if (B_FLAG_TERA_ORB_CHARGED != 0 && CheckBagHasItem(ITEM_TERA_ORB, 1))
+        FlagSet(B_FLAG_TERA_ORB_CHARGED);
+}
+
 u8 ScriptGiveEgg(u16 species)
 {
     struct Pokemon mon;

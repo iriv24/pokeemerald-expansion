@@ -133,6 +133,12 @@ PokeVialHealScript::
 	msgbox PokeVialText, MSGBOX_SIGN
 	end
 
+PokeVialHealScript2::
+	special HealPlayerPartyNonDead
+	callnative UpdateFollowingPokemon
+	msgbox PokeVial2Text, MSGBOX_SIGN
+	end
+
 PokeVialHealScriptItem::
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
@@ -142,6 +148,9 @@ PokeVialHealScriptItem::
 
 PokeVialText::
 	.string "Your party was fully healed.$"
+
+PokeVial2Text::
+	.string "Your party was… almost fully healed.$"
 
 Movement_PkmnCenterNurse_Turn:
 	walk_in_place_faster_left
