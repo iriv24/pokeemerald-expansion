@@ -519,7 +519,7 @@ X_ExplainItems::
 	.string "This move Earthquake carried me\n"
 	.string "through many a Pearl run back in the\l"
 	.string "day.\p"
-	.string "Though, this should game be a biiiit\n"
+	.string "Though, this game should be a biiiit\n"
 	.string "more challenging (unless you use\l"
 	.string "Torterra because he's the GOAT, don't\l"
 	.string "let anyone else tell you otherwise).\p"
