@@ -21714,6 +21714,7 @@ static const u16 sLilligantHisuiTeachableLearnset[] = {
     MOVE_LEAF_BLADE,
     MOVE_TRAILBLAZE,
     MOVE_FOCUS_PUNCH,
+    MOVE_SOLAR_BLADE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_HISUIAN_FORMS
