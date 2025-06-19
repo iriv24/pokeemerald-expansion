@@ -161,23 +161,6 @@ DewfordTown_EventScript_LandedSlateport::
 	return
 
 
-DewfordTown_MiniMarket_EventScript_Saleswoman::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart DewfordTown_MiniMart
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-DewfordTown_MiniMart:
-	.2byte ITEM_POMEG_BERRY
-	.2byte ITEM_NONE
-	release
-	end
-
 DewfordTown_MiniMarket_EventScript_Saleswoman2::
 	lock
 	faceplayer

@@ -1093,6 +1093,23 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_MiniMarket_EventScript_Saleswoman::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart RustboroCity_MiniMart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+RustboroCity_MiniMart:
+	.2byte ITEM_POMEG_BERRY
+	.2byte ITEM_NONE
+	release
+	end
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The Devon Corporation…\n"
 	.string "We all just shorten it to Devon.\p"
