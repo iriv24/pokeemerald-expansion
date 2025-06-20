@@ -2513,7 +2513,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BONE_ZONE] =
     {
         .name = _("Bone Zone"),
-        .description = COMPOUND_STRING("Bone moves ignore\nimmunities and resistances."),
+        .description = COMPOUND_STRING("Bone moves have Tinted Lens\nand ignore immunities."),
         .aiRating = 7,
     },
 

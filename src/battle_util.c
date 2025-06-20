@@ -4102,7 +4102,8 @@ u32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 mov
             effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
         break;
     case ABILITY_EARTH_EATER:
-        if (moveType == TYPE_GROUND)
+        if (moveType == TYPE_GROUND
+            && ((gBattleMons[battlerAtk].ability != ABILITY_BONE_ZONE) || (gBattleMons[battlerAtk].ability == ABILITY_BONE_ZONE && !gMovesInfo[move].boneMove)))
             effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
         break;
     case ABILITY_ICE_EATER:
@@ -6474,8 +6475,7 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
         return FALSE;
 
     return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE
-        || (ability == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gCurrentMove))
-        || (ability == ABILITY_BONE_ZONE && gMovesInfo[gCurrentMove].boneMove == TRUE));
+        || (ability == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gCurrentMove)));
 }
 
 static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
