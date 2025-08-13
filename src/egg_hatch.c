@@ -319,7 +319,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     u16 moves[MAX_MON_MOVES];
     u32 ivs[NUM_STATS];
     u8 ivToMakeEgg = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeEgg = MAX_PER_STAT_IVS;
 
     species = GetMonData(egg, MON_DATA_SPECIES);

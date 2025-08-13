@@ -1098,7 +1098,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 metLocation;
     u8 isEgg;
     u8 ivToMakeEgg = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeEgg = MAX_PER_STAT_IVS;
 
     CreateMon(mon, species, EGG_HATCH_LEVEL, ivToMakeEgg, FALSE, 0, OT_ID_PLAYER_ID, 0);
@@ -1127,7 +1127,7 @@ static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *
     u8 metLevel;
     u8 language;
     u8 ivToMakeEgg = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeEgg = MAX_PER_STAT_IVS;
 
     personality = daycare->offspringPersonality;

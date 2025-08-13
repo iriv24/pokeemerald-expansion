@@ -4461,6 +4461,9 @@ void GetCheatCodeFeedback(void)
 
     static const u8 sText_CheatCodeMono[]             = _("Mono");
 
+    static const u8 sText_CheatCodeRandomIVs[]        = _("RandomIVs");
+    static const u8 sText_CheatCodeRandomIVsShort[]   = _("RIV");
+
     /* 1: DexAll / DXA – toggle full Pokédex seen */
     if (!StringCompare(gStringVar2, sText_CheatCodeDexAll) ||
         !StringCompare(gStringVar2, sText_CheatCodeDexAllShort))
@@ -4539,6 +4542,17 @@ void GetCheatCodeFeedback(void)
         else
             FlagSet(FLAG_USE_MONOTYPE_STARTERS);
         gSpecialVar_Result = 8;
+    }
+
+    /* 9: RandomIVs / RIV - toggle new mons having random IVs*/
+    else if (!StringCompare(gStringVar2, sText_CheatCodeRandomIVs) ||
+             !StringCompare(gStringVar2, sText_CheatCodeRandomIVsShort))
+    {
+        if (FlagGet(FLAG_RANDOM_IVS))
+            FlagClear(FLAG_RANDOM_IVS);
+        else
+            FlagSet(FLAG_RANDOM_IVS);
+        gSpecialVar_Result = 9;
     }
 
     /* 0: invalid code */

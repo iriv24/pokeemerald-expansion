@@ -285,6 +285,7 @@ PlayersHouse_2F_EventScript_GameCube::
 	goto_if_eq VAR_RESULT, 6, CheatCodeMaxMoney
 	goto_if_eq VAR_RESULT, 7, CheatCodeShinyRoamers
 	goto_if_eq VAR_RESULT, 8, CheatCodeMonoStarters
+	goto_if_eq VAR_RESULT, 9, CheatCodeRandomIVs
 	@goto_if_eq VAR_RESULT, 7, CheatCodeGiveMenu
 	end
 
@@ -461,6 +462,22 @@ CheatCodeMonoStartersOff::
 	releaseall
 	end
 
+CheatCodeRandomIVs::
+	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
+	goto_if_unset FLAG_RANDOM_IVS, CheatCodeRandomIVsOff
+	goto_if_set FLAG_RANDOM_IVS, CheatCodeRandomIVsOn
+	end
+
+CheatCodeRandomIVsOn::
+	msgbox CheatCodeRandomIVsOn_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CheatCodeRandomIVsOff::
+	msgbox CheatCodeRandomIVsOff_Text, MSGBOX_DEFAULT
+	releaseall
+	end
+
 CheatCodeGiveMenu::
 	msgbox EnterCheatCode_SucceededText, MSGBOX_DEFAULT
 	goto_if_unset FLAG_GIVE_MENU, CheatCodeGiveMenuOff
@@ -529,6 +546,12 @@ CheatCodeMonoStartersOn_Text:
 
 CheatCodeMonoStartersOff_Text:
 	.string "Monotype Starters cheat disabled.$"
+
+CheatCodeRandomIVsOn_Text:
+	.string "Random IVs cheat enabled.$"
+
+CheatCodeRandomIVsOff_Text:
+	.string "Random IVs disabled.$"
 
 CheatCodeGiveMenuOn_Text:
 	.string "Give Menu enabled:\n"

@@ -274,7 +274,7 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
     u8 ivToMakeMon = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeMon = MAX_PER_STAT_IVS;
 
     ZeroEnemyPartyMons();
@@ -294,7 +294,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     u8 heldItem1[2];
     u8 heldItem2[2];
     u8 ivToMakeMon = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeMon = MAX_PER_STAT_IVS;
 
     ZeroEnemyPartyMons();
@@ -494,10 +494,10 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     u8 ivToMakeMon = USE_RANDOM_IVS;
         
     if(FlagGet(FLAG_MIN_GRINDING_MODE))
-    {
         evToUseInCalc = 0;
+    if (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeMon = MAX_PER_STAT_IVS;
-    }
+
     // check whether to use a specific nature or a random one
     if (nature >= NUM_NATURES)
     {
@@ -635,7 +635,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
 u32 ScriptGiveMon(u16 species, u8 level, u16 item)
 {
     u8 ivToMakeMon = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeMon = MAX_PER_STAT_IVS;
 
     u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
@@ -669,12 +669,12 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 speedEv        = PARSE_FLAG(8, 0);
     u8 spAtkEv        = PARSE_FLAG(9, 0);
     u8 spDefEv        = PARSE_FLAG(10, 0);
-    u8 hpIv           = PARSE_FLAG(11, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 atkIv          = PARSE_FLAG(12, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 defIv          = PARSE_FLAG(13, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 speedIv        = PARSE_FLAG(14, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 spAtkIv        = PARSE_FLAG(15, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 spDefIv        = PARSE_FLAG(16, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 hpIv           = PARSE_FLAG(11, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 atkIv          = PARSE_FLAG(12, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 defIv          = PARSE_FLAG(13, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 speedIv        = PARSE_FLAG(14, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spAtkIv        = PARSE_FLAG(15, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spDefIv        = PARSE_FLAG(16, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
     u16 move1         = PARSE_FLAG(17, MOVE_NONE);
     u16 move2         = PARSE_FLAG(18, MOVE_NONE);
     u16 move3         = PARSE_FLAG(19, MOVE_NONE);
@@ -724,12 +724,12 @@ void ScrCmd_createrandommon(struct ScriptContext *ctx)
     u8 speedEv        = PARSE_FLAG(8, 0);
     u8 spAtkEv        = PARSE_FLAG(9, 0);
     u8 spDefEv        = PARSE_FLAG(10, 0);
-    u8 hpIv           = PARSE_FLAG(11, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 atkIv          = PARSE_FLAG(12, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 defIv          = PARSE_FLAG(13, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 speedIv        = PARSE_FLAG(14, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 spAtkIv        = PARSE_FLAG(15, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
-    u8 spDefIv        = PARSE_FLAG(16, FlagGet(FLAG_MIN_GRINDING_MODE) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 hpIv           = PARSE_FLAG(11, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 atkIv          = PARSE_FLAG(12, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 defIv          = PARSE_FLAG(13, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 speedIv        = PARSE_FLAG(14, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spAtkIv        = PARSE_FLAG(15, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
+    u8 spDefIv        = PARSE_FLAG(16, (FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS)) ? MAX_PER_STAT_IVS : USE_RANDOM_IVS);
     u16 move1         = PARSE_FLAG(17, MOVE_NONE);
     u16 move2         = PARSE_FLAG(18, MOVE_NONE);
     u16 move3         = PARSE_FLAG(19, MOVE_NONE);

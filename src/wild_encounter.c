@@ -416,7 +416,7 @@ void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm = TRUE;
     u8 ivToMakeMon = USE_RANDOM_IVS;
-    if(FlagGet(FLAG_MIN_GRINDING_MODE))
+    if(FlagGet(FLAG_MIN_GRINDING_MODE) && !FlagGet(FLAG_RANDOM_IVS))
         ivToMakeMon = MAX_PER_STAT_IVS;
 
     ZeroEnemyPartyMons();
