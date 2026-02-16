@@ -550,6 +550,10 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_ICE_EATER;
     }
+    else if (gMovesInfo[predictedMove].type == TYPE_ROCK || (isOpposingBattlerChargingOrInvulnerable && gMovesInfo[incomingMove].type == TYPE_ROCK))
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOUNTAINEER;
+    }
     else
     {
         return FALSE;
@@ -2118,7 +2122,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         else if (typeMatchupId != PARTY_SIZE)           return typeMatchupId;
         else if (defensiveMonId != PARTY_SIZE)          return defensiveMonId;
         else if (batonPassId != PARTY_SIZE)             return batonPassId;
-        else if (generic1v1MonId != PARTY_SIZE) return generic1v1MonId;
+        else if (generic1v1MonId != PARTY_SIZE)         return generic1v1MonId;
     }
     // If ace mon is the last available Pokemon and U-Turn/Volt Switch or Eject Pack/Button was used - switch to the mon.
     if (aceMonId != PARTY_SIZE && CountUsablePartyMons(battler) <= aceMonCount

@@ -35626,6 +35626,7 @@ static const u16 sIronValiantTeachableLearnset[] = {
     MOVE_HEX,
     MOVE_LEAF_BLADE,
     MOVE_MOONBLAST,
+    MOVE_EXPANDING_FORCE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_IRON_VALIANT
