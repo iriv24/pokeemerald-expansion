@@ -59,7 +59,7 @@ MossdeepCity_House3_Text_YouWantSuperRod:
 # 30 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Hey there, TRAINER!\n"
 # 31 "data/maps/MossdeepCity_House3/scripts.pory"
-	.string "A SUPER ROD really is super!\p"
+	.string "A fishing rod really is super!\p"
 # 32 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Say all you want, but this baby can\n"
 # 33 "data/maps/MossdeepCity_House3/scripts.pory"
@@ -75,7 +75,7 @@ MossdeepCity_House3_Text_SuperRodIsSuper:
 # 38 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "You bet, you bet!\n"
 # 39 "data/maps/MossdeepCity_House3/scripts.pory"
-	.string "After all, a SUPER ROD is really super!$"
+	.string "After all, a fishing rod is really super!$"
 # 40 "data/maps/MossdeepCity_House3/scripts.pory"
 
 # 41 "data/maps/MossdeepCity_House3/scripts.pory"
@@ -99,4 +99,4 @@ MossdeepCity_House3_Text_GoAfterSeafloorPokemon:
 # 50 "data/maps/MossdeepCity_House3/scripts.pory"
 	.string "Go after the seafloor Pokémon with\n"
 # 51 "data/maps/MossdeepCity_House3/scripts.pory"
-	.string "your SUPER ROD.$"
+	.string "your fishing rod.$"
