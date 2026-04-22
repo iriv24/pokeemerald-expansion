@@ -596,7 +596,7 @@ Route103_EventScript_Rhett::
 	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
 # 299 "data/maps/Route103/scripts.pory"
 	end
-# 300 "data/maps/Route103/scripts.pory"
+# 292 "data/maps/Route103/scripts.pory"
 
 # 301 "data/maps/Route103/scripts.pory"
 Route103_EventScript_Pete::
@@ -606,7 +606,7 @@ Route103_EventScript_Pete::
 	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
 # 304 "data/maps/Route103/scripts.pory"
 	end
-# 305 "data/maps/Route103/scripts.pory"
+# 297 "data/maps/Route103/scripts.pory"
 
 # 306 "data/maps/Route103/scripts.pory"
 Route103_EventScript_Isabelle::
@@ -616,7 +616,7 @@ Route103_EventScript_Isabelle::
 	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
 # 309 "data/maps/Route103/scripts.pory"
 	end
-# 310 "data/maps/Route103/scripts.pory"
+# 302 "data/maps/Route103/scripts.pory"
 
 # 311 "data/maps/Route103/scripts.pory"
 Route103_Text_MayRoute103Pokemon:
