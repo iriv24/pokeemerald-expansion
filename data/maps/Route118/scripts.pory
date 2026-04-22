@@ -265,12 +265,8 @@ Route118_Text_RouteSign119:
 	.string "{UP_ARROW} ROUTE 119$"
 
 Route118_Text_FormerGoodRod:
-	.string "Hey there, I bet you came here looking\n"
-	.string "for the Good Rod.\p"
-	.string "Sorry to say, I lent it to my buddy over\n"
-	.string "on Route 103, he's just west of the\l"
-	.string "Trick House, you can't miss him!$"
-
+	.string "I used to go fishing,\n"
+	.string "now, I don't know anymore…$"
 `
 
 script Route118_EventScript_Wake{

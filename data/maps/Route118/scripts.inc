@@ -533,100 +533,94 @@ Route118_Text_RouteSign119:
 # 267 "data/maps/Route118/scripts.pory"
 Route118_Text_FormerGoodRod:
 # 268 "data/maps/Route118/scripts.pory"
-	.string "Hey there, I bet you came here looking\n"
+	.string "I used to go fishing,\n"
 # 269 "data/maps/Route118/scripts.pory"
-	.string "for the Good Rod.\p"
-# 270 "data/maps/Route118/scripts.pory"
-	.string "Sorry to say, I lent it to my buddy over\n"
-# 271 "data/maps/Route118/scripts.pory"
-	.string "on Route 103, he's just west of the\l"
-# 272 "data/maps/Route118/scripts.pory"
-	.string "Trick House, you can't miss him!$"
+	.string "now, I don't know anymore…$"
 
 Route118_EventScript_Wake::
-# 277 "data/maps/Route118/scripts.pory"
+# 273 "data/maps/Route118/scripts.pory"
 	lockall
-# 278 "data/maps/Route118/scripts.pory"
+# 274 "data/maps/Route118/scripts.pory"
 	applymovement LOCALID_WAKE, Common_Movement_FacePlayer
-# 279 "data/maps/Route118/scripts.pory"
+# 275 "data/maps/Route118/scripts.pory"
 	goto_if_defeated TRAINER_WAKE, Route118_EventScript_WakeDefeated
-# 280 "data/maps/Route118/scripts.pory"
+# 276 "data/maps/Route118/scripts.pory"
 	goto_if_set FLAG_TEMP_1, Route118_EventScript_WakeRequestBattleAgain
-# 281 "data/maps/Route118/scripts.pory"
+# 277 "data/maps/Route118/scripts.pory"
 	msgbox Wake_Greeting, MSGBOX_YESNO
-# 282 "data/maps/Route118/scripts.pory"
+# 278 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_BattleWakePrompt
 	end
 
 
 Route118_EventScript_WakeRequestBattleAgain::
-# 287 "data/maps/Route118/scripts.pory"
+# 283 "data/maps/Route118/scripts.pory"
 	msgbox Wake_ReadyYet, MSGBOX_YESNO
-# 288 "data/maps/Route118/scripts.pory"
+# 284 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_BattleWakePrompt
 	end
 
 
 Route118_EventScript_BattleWakePrompt::
-# 293 "data/maps/Route118/scripts.pory"
+# 289 "data/maps/Route118/scripts.pory"
 	call_if_eq VAR_RESULT, YES, Route118_EventScript_BattleWake
-# 294 "data/maps/Route118/scripts.pory"
+# 290 "data/maps/Route118/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route118_EventScript_DeclineWakeBattle
-# 295 "data/maps/Route118/scripts.pory"
+# 291 "data/maps/Route118/scripts.pory"
 	closemessage
 	end
 
 
 Route118_EventScript_DeclineWakeBattle::
-# 300 "data/maps/Route118/scripts.pory"
+# 296 "data/maps/Route118/scripts.pory"
 	setflag FLAG_TEMP_1
-# 301 "data/maps/Route118/scripts.pory"
+# 297 "data/maps/Route118/scripts.pory"
 	msgbox Wake_ComeBackWhenReady, MSGBOX_DEFAULT
-# 302 "data/maps/Route118/scripts.pory"
+# 298 "data/maps/Route118/scripts.pory"
 	release
 	end
 
 
 Route118_EventScript_BattleWake::
-# 307 "data/maps/Route118/scripts.pory"
+# 303 "data/maps/Route118/scripts.pory"
 	msgbox Route118_EventScript_BattleWake_Text_0, MSGBOX_DEFAULT
-# 308 "data/maps/Route118/scripts.pory"
+# 304 "data/maps/Route118/scripts.pory"
 	trainerbattle_no_intro TRAINER_WAKE, Wake_Outro
-# 309 "data/maps/Route118/scripts.pory"
+# 305 "data/maps/Route118/scripts.pory"
 	goto Route118_EventScript_WakeGiveItems
 	return
 
 
 Route118_EventScript_WakeGiveItems::
-# 314 "data/maps/Route118/scripts.pory"
+# 310 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_LAPRASITE
-# 315 "data/maps/Route118/scripts.pory"
+# 311 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_DREDNAWITE
-# 316 "data/maps/Route118/scripts.pory"
+# 312 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_GYARADOSITE
-# 317 "data/maps/Route118/scripts.pory"
+# 313 "data/maps/Route118/scripts.pory"
 	giveitem ITEM_FOCUS_SASH
-# 318 "data/maps/Route118/scripts.pory"
+# 314 "data/maps/Route118/scripts.pory"
 	msgbox Wake_ExplainItems
-# 319 "data/maps/Route118/scripts.pory"
+# 315 "data/maps/Route118/scripts.pory"
 	release
 	end
 
 
 Route118_EventScript_WakeDefeated::
-# 324 "data/maps/Route118/scripts.pory"
+# 320 "data/maps/Route118/scripts.pory"
 	msgbox PostBattle_Wake, MSGBOX_DEFAULT
-# 325 "data/maps/Route118/scripts.pory"
+# 321 "data/maps/Route118/scripts.pory"
 	releaseall
 	end
 
 
 Route118_EventScript_BattleWake_Text_0:
-# 307 "data/maps/Route118/scripts.pory"
+# 303 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB GLUB GLUB!$"
 
 Wake_Greeting::
-# 329 "data/maps/Route118/scripts.pory"
+# 325 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB This better be good if\n"
 	.string "you're interrupting my training.\p"
 	.string "… … … … … …\p"
@@ -640,23 +634,23 @@ Wake_Greeting::
 	.string "or not?$"
 
 Wake_ReadyYet::
-# 343 "data/maps/Route118/scripts.pory"
+# 339 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB Ready yet?$"
 
 Wake_ComeBackWhenReady::
-# 347 "data/maps/Route118/scripts.pory"
+# 343 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB Suit yourself.$"
 
 Wake_Outro::
-# 351 "data/maps/Route118/scripts.pory"
+# 347 "data/maps/Route118/scripts.pory"
 	.string "Wow, what a fight. I know I'll be leaving\n"
 	.string "these Items in good hands.$"
 
 Wake_ExplainItems::
-# 356 "data/maps/Route118/scripts.pory"
+# 352 "data/maps/Route118/scripts.pory"
 	.string "Those are the best Mega stones I have.\n"
 	.string "Hope you put them to good use.$"
 
 PostBattle_Wake::
-# 361 "data/maps/Route118/scripts.pory"
+# 357 "data/maps/Route118/scripts.pory"
 	.string "GLUB GLUB What now?!$"

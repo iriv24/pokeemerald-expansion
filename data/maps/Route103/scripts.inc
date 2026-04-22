@@ -507,271 +507,270 @@ Route103_EventScript_Andrew::
 # 254 "data/maps/Route103/scripts.pory"
 	faceplayer
 # 255 "data/maps/Route103/scripts.pory"
-	goto_if_set FLAG_RECEIVED_GOOD_ROD, Route103_EventScript_ReceivedGoodRod
-# 256 "data/maps/Route103/scripts.pory"
 	msgbox Route103_Text_YouAgreeGoodRodIsGood, MSGBOX_YESNO
+# 256 "data/maps/Route103/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, Route103_EventScript_AcceptGoodRod
 # 257 "data/maps/Route103/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, Route103_EventScript_DeclineGoodRod
-# 258 "data/maps/Route103/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route103_EventScript_DeclineGoodRod
-# 259 "data/maps/Route103/scripts.pory"
+# 258 "data/maps/Route103/scripts.pory"
 	end
+# 259 "data/maps/Route103/scripts.pory"
+
 # 260 "data/maps/Route103/scripts.pory"
+Route103_EventScript_AcceptGoodRod::
+# 261 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_IdenticalMindsTakeThis, MSGBOX_DEFAULT
+# 262 "data/maps/Route103/scripts.pory"
+	release
+# 263 "data/maps/Route103/scripts.pory"
+	end
+# 264 "data/maps/Route103/scripts.pory"
+
+# 265 "data/maps/Route103/scripts.pory"
+Route103_EventScript_DeclineGoodRod::
+# 266 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_DontYouLikeToFish, MSGBOX_DEFAULT
+# 267 "data/maps/Route103/scripts.pory"
+	release
+# 268 "data/maps/Route103/scripts.pory"
+	end
+# 269 "data/maps/Route103/scripts.pory"
 
 # 270 "data/maps/Route103/scripts.pory"
-Route103_EventScript_DeclineGoodRod::
-# 271 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_DontYouLikeToFish, MSGBOX_DEFAULT
-# 272 "data/maps/Route103/scripts.pory"
-	release
-# 273 "data/maps/Route103/scripts.pory"
-	end
-# 274 "data/maps/Route103/scripts.pory"
-
-# 275 "data/maps/Route103/scripts.pory"
-Route103_EventScript_ReceivedGoodRod::
-# 276 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_TryCatchingMonWithGoodRod, MSGBOX_DEFAULT
-# 277 "data/maps/Route103/scripts.pory"
-	release
-# 278 "data/maps/Route103/scripts.pory"
-	end
-# 279 "data/maps/Route103/scripts.pory"
-
-# 280 "data/maps/Route103/scripts.pory"
 Route103_EventScript_Miguel::
-# 281 "data/maps/Route103/scripts.pory"
+# 271 "data/maps/Route103/scripts.pory"
 	trainerbattle_single TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route102_EventScript_MiguelRegisterMatchCallAfterBattle
-# 282 "data/maps/Route103/scripts.pory"
+# 272 "data/maps/Route103/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-# 283 "data/maps/Route103/scripts.pory"
+# 273 "data/maps/Route103/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route103_EventScript_MiguelRematch
-# 284 "data/maps/Route103/scripts.pory"
+# 274 "data/maps/Route103/scripts.pory"
 	msgbox Route103_Text_MiguelPostBattle, MSGBOX_DEFAULT
-# 285 "data/maps/Route103/scripts.pory"
+# 275 "data/maps/Route103/scripts.pory"
 	release
-# 286 "data/maps/Route103/scripts.pory"
+# 276 "data/maps/Route103/scripts.pory"
 	end
-# 287 "data/maps/Route103/scripts.pory"
+# 277 "data/maps/Route103/scripts.pory"
 
-# 288 "data/maps/Route103/scripts.pory"
+# 278 "data/maps/Route103/scripts.pory"
 Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
-# 289 "data/maps/Route103/scripts.pory"
+# 279 "data/maps/Route103/scripts.pory"
 	special PlayerFaceTrainerAfterBattle
-# 290 "data/maps/Route103/scripts.pory"
+# 280 "data/maps/Route103/scripts.pory"
 	waitmovement 0
-# 291 "data/maps/Route103/scripts.pory"
+# 281 "data/maps/Route103/scripts.pory"
 	msgbox Route103_Text_MiguelRegister, MSGBOX_DEFAULT
-# 292 "data/maps/Route103/scripts.pory"
+# 282 "data/maps/Route103/scripts.pory"
 	register_matchcall TRAINER_MIGUEL_1
-# 293 "data/maps/Route103/scripts.pory"
+# 283 "data/maps/Route103/scripts.pory"
 	release
+# 284 "data/maps/Route103/scripts.pory"
+	end
+# 285 "data/maps/Route103/scripts.pory"
+
+# 286 "data/maps/Route103/scripts.pory"
+Route103_EventScript_MiguelRematch::
+# 287 "data/maps/Route103/scripts.pory"
+	trainerbattle_rematch TRAINER_MIGUEL_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
+# 288 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
+# 289 "data/maps/Route103/scripts.pory"
+	end
+# 290 "data/maps/Route103/scripts.pory"
+
+# 291 "data/maps/Route103/scripts.pory"
+Route103_EventScript_Marcos::
+# 292 "data/maps/Route103/scripts.pory"
+	trainerbattle_single TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
+# 293 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
 # 294 "data/maps/Route103/scripts.pory"
 	end
 # 295 "data/maps/Route103/scripts.pory"
 
 # 296 "data/maps/Route103/scripts.pory"
-Route103_EventScript_MiguelRematch::
+Route103_EventScript_Rhett::
 # 297 "data/maps/Route103/scripts.pory"
-	trainerbattle_rematch TRAINER_MIGUEL_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
+	trainerbattle_single TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
 # 298 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
 # 299 "data/maps/Route103/scripts.pory"
 	end
 # 300 "data/maps/Route103/scripts.pory"
 
 # 301 "data/maps/Route103/scripts.pory"
-Route103_EventScript_Marcos::
+Route103_EventScript_Pete::
 # 302 "data/maps/Route103/scripts.pory"
-	trainerbattle_single TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
+	trainerbattle_single TRAINER_PETE, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
 # 303 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
 # 304 "data/maps/Route103/scripts.pory"
 	end
 # 305 "data/maps/Route103/scripts.pory"
 
 # 306 "data/maps/Route103/scripts.pory"
-Route103_EventScript_Rhett::
+Route103_EventScript_Isabelle::
 # 307 "data/maps/Route103/scripts.pory"
-	trainerbattle_single TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
+	trainerbattle_single TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
 # 308 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
 # 309 "data/maps/Route103/scripts.pory"
 	end
 # 310 "data/maps/Route103/scripts.pory"
 
 # 311 "data/maps/Route103/scripts.pory"
-Route103_EventScript_Pete::
-# 312 "data/maps/Route103/scripts.pory"
-	trainerbattle_single TRAINER_PETE, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
-# 313 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
-# 314 "data/maps/Route103/scripts.pory"
-	end
-# 315 "data/maps/Route103/scripts.pory"
-
-# 316 "data/maps/Route103/scripts.pory"
-Route103_EventScript_Isabelle::
-# 317 "data/maps/Route103/scripts.pory"
-	trainerbattle_single TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
-# 318 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
-# 319 "data/maps/Route103/scripts.pory"
-	end
-# 320 "data/maps/Route103/scripts.pory"
-
-# 321 "data/maps/Route103/scripts.pory"
 Route103_Text_MayRoute103Pokemon:
-# 322 "data/maps/Route103/scripts.pory"
+# 312 "data/maps/Route103/scripts.pory"
 	.string "Let's see… The Pokémon found\n"
-# 323 "data/maps/Route103/scripts.pory"
+# 313 "data/maps/Route103/scripts.pory"
 	.string "on Route 103 include…$"
-# 324 "data/maps/Route103/scripts.pory"
+# 314 "data/maps/Route103/scripts.pory"
 
-# 325 "data/maps/Route103/scripts.pory"
+# 315 "data/maps/Route103/scripts.pory"
 Route103_Text_MayLetsBattle:
-# 326 "data/maps/Route103/scripts.pory"
+# 316 "data/maps/Route103/scripts.pory"
 	.string "Oh, hi, {PLAYER}{KUN}!\p"
-# 327 "data/maps/Route103/scripts.pory"
+# 317 "data/maps/Route103/scripts.pory"
 	.string "…Oh, I see, my dad gave you\n"
-# 328 "data/maps/Route103/scripts.pory"
+# 318 "data/maps/Route103/scripts.pory"
 	.string "a Pokémon as a gift.\p"
-# 329 "data/maps/Route103/scripts.pory"
+# 319 "data/maps/Route103/scripts.pory"
 	.string "Since we're here, let's have a quick\n"
-# 330 "data/maps/Route103/scripts.pory"
+# 320 "data/maps/Route103/scripts.pory"
 	.string "battle!\p"
-# 331 "data/maps/Route103/scripts.pory"
+# 321 "data/maps/Route103/scripts.pory"
 	.string "I'll give you a taste of what being\n"
-# 332 "data/maps/Route103/scripts.pory"
+# 322 "data/maps/Route103/scripts.pory"
 	.string "a trainer is like.$"
-# 333 "data/maps/Route103/scripts.pory"
+# 323 "data/maps/Route103/scripts.pory"
 
-# 334 "data/maps/Route103/scripts.pory"
+# 324 "data/maps/Route103/scripts.pory"
 Route103_Text_MayDefeated:
-# 335 "data/maps/Route103/scripts.pory"
+# 325 "data/maps/Route103/scripts.pory"
 	.string "Wow! That's great!\n"
-# 336 "data/maps/Route103/scripts.pory"
+# 326 "data/maps/Route103/scripts.pory"
 	.string "{PLAYER}{KUN}, you're pretty good!$"
+# 327 "data/maps/Route103/scripts.pory"
+
+# 328 "data/maps/Route103/scripts.pory"
+Route103_Text_MayTimeToHeadBack:
+# 329 "data/maps/Route103/scripts.pory"
+	.string "I think I know why my dad has\n"
+# 330 "data/maps/Route103/scripts.pory"
+	.string "an eye out for you now.\p"
+# 331 "data/maps/Route103/scripts.pory"
+	.string "I mean, you just got that Pokémon,\n"
+# 332 "data/maps/Route103/scripts.pory"
+	.string "but it already likes you.\p"
+# 333 "data/maps/Route103/scripts.pory"
+	.string "You might be able to befriend any\n"
+# 334 "data/maps/Route103/scripts.pory"
+	.string "kind of Pokémon easily.\p"
+# 335 "data/maps/Route103/scripts.pory"
+	.string "Well, it's time to head back to\n"
+# 336 "data/maps/Route103/scripts.pory"
+	.string "the lab.$"
 # 337 "data/maps/Route103/scripts.pory"
 
 # 338 "data/maps/Route103/scripts.pory"
-Route103_Text_MayTimeToHeadBack:
-# 339 "data/maps/Route103/scripts.pory"
-	.string "I think I know why my dad has\n"
-# 340 "data/maps/Route103/scripts.pory"
-	.string "an eye out for you now.\p"
-# 341 "data/maps/Route103/scripts.pory"
-	.string "I mean, you just got that Pokémon,\n"
-# 342 "data/maps/Route103/scripts.pory"
-	.string "but it already likes you.\p"
-# 343 "data/maps/Route103/scripts.pory"
-	.string "You might be able to befriend any\n"
-# 344 "data/maps/Route103/scripts.pory"
-	.string "kind of Pokémon easily.\p"
-# 345 "data/maps/Route103/scripts.pory"
-	.string "Well, it's time to head back to\n"
-# 346 "data/maps/Route103/scripts.pory"
-	.string "the lab.$"
-# 347 "data/maps/Route103/scripts.pory"
-
-# 348 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanRoute103Pokemon:
-# 349 "data/maps/Route103/scripts.pory"
+# 339 "data/maps/Route103/scripts.pory"
 	.string "Okay, so it's this one and\n"
-# 350 "data/maps/Route103/scripts.pory"
+# 340 "data/maps/Route103/scripts.pory"
 	.string "that one that live on Route 103…$"
-# 351 "data/maps/Route103/scripts.pory"
+# 341 "data/maps/Route103/scripts.pory"
 
-# 352 "data/maps/Route103/scripts.pory"
+# 342 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanLetsBattle:
-# 353 "data/maps/Route103/scripts.pory"
+# 343 "data/maps/Route103/scripts.pory"
 	.string "Hey, it's {PLAYER}!\p"
-# 354 "data/maps/Route103/scripts.pory"
+# 344 "data/maps/Route103/scripts.pory"
 	.string "…Oh, yeah, Dad gave you a Pokémon.\p"
-# 355 "data/maps/Route103/scripts.pory"
+# 345 "data/maps/Route103/scripts.pory"
 	.string "Since we're here, how about a little\n"
-# 356 "data/maps/Route103/scripts.pory"
+# 346 "data/maps/Route103/scripts.pory"
 	.string "battle?\p"
-# 357 "data/maps/Route103/scripts.pory"
+# 347 "data/maps/Route103/scripts.pory"
 	.string "I'll teach you what being a trainer's\n"
-# 358 "data/maps/Route103/scripts.pory"
+# 348 "data/maps/Route103/scripts.pory"
 	.string "about!$"
-# 359 "data/maps/Route103/scripts.pory"
+# 349 "data/maps/Route103/scripts.pory"
 
-# 360 "data/maps/Route103/scripts.pory"
+# 350 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanDefeated:
-# 361 "data/maps/Route103/scripts.pory"
+# 351 "data/maps/Route103/scripts.pory"
 	.string "Huh, {PLAYER}, you're not too shabby.$"
-# 362 "data/maps/Route103/scripts.pory"
+# 352 "data/maps/Route103/scripts.pory"
 
-# 363 "data/maps/Route103/scripts.pory"
+# 353 "data/maps/Route103/scripts.pory"
 Route103_Text_BrendanTimeToHeadBack:
-# 364 "data/maps/Route103/scripts.pory"
+# 354 "data/maps/Route103/scripts.pory"
 	.string "I think I get it.\n"
-# 365 "data/maps/Route103/scripts.pory"
+# 355 "data/maps/Route103/scripts.pory"
 	.string "I think I know why my dad has his eye\l"
-# 366 "data/maps/Route103/scripts.pory"
+# 356 "data/maps/Route103/scripts.pory"
 	.string "out for you now.\p"
-# 367 "data/maps/Route103/scripts.pory"
+# 357 "data/maps/Route103/scripts.pory"
 	.string "Look, your Pokémon already likes you,\n"
-# 368 "data/maps/Route103/scripts.pory"
+# 358 "data/maps/Route103/scripts.pory"
 	.string "even though you just got it.\p"
-# 369 "data/maps/Route103/scripts.pory"
+# 359 "data/maps/Route103/scripts.pory"
 	.string "{PLAYER}, I get the feeling that you\n"
-# 370 "data/maps/Route103/scripts.pory"
+# 360 "data/maps/Route103/scripts.pory"
 	.string "could befriend any Pokémon with ease,\l"
-# 371 "data/maps/Route103/scripts.pory"
+# 361 "data/maps/Route103/scripts.pory"
 	.string "which is a great quality in a trainer.\p"
-# 372 "data/maps/Route103/scripts.pory"
+# 362 "data/maps/Route103/scripts.pory"
 	.string "Anyway, we should head back to the lab.$"
-# 373 "data/maps/Route103/scripts.pory"
+# 363 "data/maps/Route103/scripts.pory"
 
-# 374 "data/maps/Route103/scripts.pory"
+# 364 "data/maps/Route103/scripts.pory"
 Route103_Text_ShouldHaveBroughtPotion:
-# 375 "data/maps/Route103/scripts.pory"
+# 365 "data/maps/Route103/scripts.pory"
 	.string "My Pokémon is staggeringly tired…\n"
-# 376 "data/maps/Route103/scripts.pory"
+# 366 "data/maps/Route103/scripts.pory"
 	.string "I should have brought a Potion…$"
-# 377 "data/maps/Route103/scripts.pory"
+# 367 "data/maps/Route103/scripts.pory"
 
-# 378 "data/maps/Route103/scripts.pory"
+# 368 "data/maps/Route103/scripts.pory"
 Route103_Text_ShortcutToOldale:
-# 379 "data/maps/Route103/scripts.pory"
+# 369 "data/maps/Route103/scripts.pory"
 	.string "If you cross the sea from here,\n"
-# 380 "data/maps/Route103/scripts.pory"
+# 370 "data/maps/Route103/scripts.pory"
 	.string "it'll be a shortcut to Oldale Town.\p"
-# 381 "data/maps/Route103/scripts.pory"
+# 371 "data/maps/Route103/scripts.pory"
 	.string "Fufufu, that's useful, isn't it?$"
-# 382 "data/maps/Route103/scripts.pory"
+# 372 "data/maps/Route103/scripts.pory"
 
-# 383 "data/maps/Route103/scripts.pory"
+# 373 "data/maps/Route103/scripts.pory"
 Route103_Text_RouteSign:
-# 384 "data/maps/Route103/scripts.pory"
+# 374 "data/maps/Route103/scripts.pory"
 	.string "ROUTE 103\n"
-# 385 "data/maps/Route103/scripts.pory"
+# 375 "data/maps/Route103/scripts.pory"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
+# 376 "data/maps/Route103/scripts.pory"
+
+# 377 "data/maps/Route103/scripts.pory"
+Route103_Text_YouAgreeGoodRodIsGood:
+# 378 "data/maps/Route103/scripts.pory"
+	.string "Hmm!\n"
+# 379 "data/maps/Route103/scripts.pory"
+	.string "A fishing rod is really good!\p"
+# 380 "data/maps/Route103/scripts.pory"
+	.string "Wouldn't you agree?$"
+# 381 "data/maps/Route103/scripts.pory"
+
+# 382 "data/maps/Route103/scripts.pory"
+Route103_Text_IdenticalMindsTakeThis:
+# 383 "data/maps/Route103/scripts.pory"
+	.string "Hmm!\n"
+# 384 "data/maps/Route103/scripts.pory"
+	.string "Good old super fishing rod,\p"
+# 385 "data/maps/Route103/scripts.pory"
+	.string "nothing beats that!$"
 # 386 "data/maps/Route103/scripts.pory"
 
 # 387 "data/maps/Route103/scripts.pory"
-Route103_Text_YouAgreeGoodRodIsGood:
-# 388 "data/maps/Route103/scripts.pory"
-	.string "Hmm!\n"
-# 389 "data/maps/Route103/scripts.pory"
-	.string "A Good Rod is really good!\p"
-# 390 "data/maps/Route103/scripts.pory"
-	.string "Wouldn't you agree?$"
-# 391 "data/maps/Route103/scripts.pory"
-
-# 402 "data/maps/Route103/scripts.pory"
 Route103_Text_DontYouLikeToFish:
-# 403 "data/maps/Route103/scripts.pory"
-	.string "You have a Super Rod?!\n"
-# 404 "data/maps/Route103/scripts.pory"
-	.string "I'm so jealous.$"
-
-# 405 "data/maps/Route103/scripts.pory"
-Route103_Text_TryCatchingMonWithGoodRod:
-# 406 "data/maps/Route103/scripts.pory"
-	.string "You can't catch any Pokémon\n"
-# 407 "data/maps/Route103/scripts.pory"
-	.string "with a Good Rod these days.$"
+# 388 "data/maps/Route103/scripts.pory"
+	.string "Don't you like to fish?$"

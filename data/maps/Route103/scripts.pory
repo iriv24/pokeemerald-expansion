@@ -252,20 +252,18 @@ Route102_EventScript_LivRematch::
 Route103_EventScript_Andrew::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_GOOD_ROD, Route103_EventScript_ReceivedGoodRod
 	msgbox Route103_Text_YouAgreeGoodRodIsGood, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route103_EventScript_DeclineGoodRod
+	goto_if_eq VAR_RESULT, YES, Route103_EventScript_AcceptGoodRod
 	goto_if_eq VAR_RESULT, NO, Route103_EventScript_DeclineGoodRod
+	end
+
+Route103_EventScript_AcceptGoodRod::
+	msgbox Route103_Text_IdenticalMindsTakeThis, MSGBOX_DEFAULT
+	release
 	end
 
 Route103_EventScript_DeclineGoodRod::
 	msgbox Route103_Text_DontYouLikeToFish, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_GOOD_ROD
-	release
-	end
-
-Route103_EventScript_ReceivedGoodRod::
-	msgbox Route103_Text_TryCatchingMonWithGoodRod, MSGBOX_DEFAULT
 	release
 	end
 
@@ -378,24 +376,15 @@ Route103_Text_RouteSign:
 
 Route103_Text_YouAgreeGoodRodIsGood:
 	.string "Hmm!\n"
-	.string "A Good Rod is really good!\p"
+	.string "A fishing rod is really good!\p"
 	.string "Wouldn't you agree?$"
 
 Route103_Text_IdenticalMindsTakeThis:
 	.string "Hmm!\n"
-	.string "We're of identical minds!\p"
-	.string "Hmm!\n"
-	.string "Take this Good Rod!$"
-
-Route103_Text_TryYourLuckFishing:
-	.string "Wherever there's water, try your luck\n"
-	.string "at fishing.$"
+	.string "Good old super fishing rod,\p"
+	.string "nothing beats that!$"
 
 Route103_Text_DontYouLikeToFish:
 	.string "Don't you like to fish?$"
-
-Route103_Text_TryCatchingMonWithGoodRod:
-	.string "Try catching all sorts of Pokémon\n"
-	.string "with your Good Rod.$"
 
 `
