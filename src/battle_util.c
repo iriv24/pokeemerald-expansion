@@ -11468,7 +11468,7 @@ void TryRestoreHeldItems(void)
             //    lostItem = ITEM_NONE;
 
             // Check if the lost item should be restored
-            if (lostItem != ITEM_NONE || returnNPCItems)// && ItemId_GetPocket(lostItem) != POCKET_BERRIES)
+            if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE &&(lostItem != ITEM_NONE || returnNPCItems))// && ItemId_GetPocket(lostItem) != POCKET_BERRIES)
                 SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &lostItem);
         }
     }
