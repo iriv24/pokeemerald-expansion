@@ -153,6 +153,8 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt::
 	applymovement LOCALID_FAMILIAR_GRUNT, Common_Movement_Delay48
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis, MSGBOX_DEFAULT
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SlateportCity_OceanicMuseum_1F_EventScript_GiveTM_2
 	giveitem ITEM_TM_FLIP_TURN
 	goto_if_eq VAR_RESULT, 0, SlateportCity_OceanicMuseum_1F_EventScript_NoRoomForThief
 	setflag FLAG_RECEIVED_TM_FLIP_TURN
@@ -163,6 +165,20 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt::
 	goto_if_eq VAR_FACING, DIR_WEST, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitWestEast
 	goto_if_eq VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitWestEast
 	end
+	
+SlateportCity_OceanicMuseum_1F_EventScript_GiveTM_1:
+	goto_if_eq VAR_RESULT, 0, SlateportCity_OceanicMuseum_1F_EventScript_NoRoomForThief
+	setflag FLAG_RECEIVED_TM_FLIP_TURN
+	msgbox SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain, MSGBOX_DEFAULT
+	closemessage
+	goto_if_eq VAR_FACING, DIR_NORTH, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitNorth
+	goto_if_eq VAR_FACING, DIR_SOUTH, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitSouth
+	goto_if_eq VAR_FACING, DIR_WEST, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitWestEast
+	goto_if_eq VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitWestEast
+	end
+
+SlateportCity_OceanicMuseum_1F_EventScript_GiveTM_2:
+	goto SlateportCity_OceanicMuseum_1F_EventScript_GiveTM_1
 
 SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitNorth::
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_1F_Movement_PlayerWatchGruntExitNorth
@@ -300,7 +316,7 @@ SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis:
 	.string "You have to forgive me!$"
 
 SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain:
-	.string "Me? I'm Flip Turning out of here!\n"
+	.string "Me? I'm getting out of here!\n"
 	.string "Hope I never see you again!\p"
 	.string "Wahahaha!$"
 

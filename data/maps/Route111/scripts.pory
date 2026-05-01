@@ -795,7 +795,10 @@ script Route111_EventScript_DawnDefeated{
 	giveitem(ITEM_TM_ROOST)
 	giveitem(ITEM_TM_SCALD)
 	giveitem(ITEM_TM_FLASH_CANNON)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
 	giveitem(ITEM_ABILITY_PATCH, 999)
+	}
 	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)
 	end

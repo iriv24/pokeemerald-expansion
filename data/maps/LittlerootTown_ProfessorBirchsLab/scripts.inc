@@ -1109,1022 +1109,1090 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 # 555 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	giveitemfast ITEM_ORAN_BERRY, 20
 # 556 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_ABILITY_CAPSULE, 999
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 # 557 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SILK_SCARF, 10
+	goto_if_ge Route116_EventScript_BirchGiveItems_2
 # 558 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MYSTIC_WATER, 10
+	giveitemfast ITEM_ABILITY_CAPSULE, 999
 # 559 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MIRACLE_SEED, 10
+	giveitemfast ITEM_SILK_SCARF, 10
 # 560 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_CHARCOAL, 10
+	giveitemfast ITEM_MYSTIC_WATER, 10
 # 561 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_NEVER_MELT_ICE, 10
+	giveitemfast ITEM_MIRACLE_SEED, 10
 # 562 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_FAIRY_FEATHER, 10
+	giveitemfast ITEM_CHARCOAL, 10
 # 563 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_STEEL_FEATHER, 10
+	giveitemfast ITEM_NEVER_MELT_ICE, 10
 # 564 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SHARP_BEAK, 10
+	giveitemfast ITEM_FAIRY_FEATHER, 10
 # 565 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SILVER_POWDER, 10
+	giveitemfast ITEM_STEEL_FEATHER, 10
 # 566 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SOFT_SAND, 10
+	giveitemfast ITEM_SHARP_BEAK, 10
 # 567 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_HARD_STONE, 10
+	giveitemfast ITEM_SILVER_POWDER, 10
 # 568 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SPELL_TAG, 10
+	giveitemfast ITEM_SOFT_SAND, 10
 # 569 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_TWISTED_SPOON, 10
+	giveitemfast ITEM_HARD_STONE, 10
 # 570 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MAGNET, 10
+	giveitemfast ITEM_SPELL_TAG, 10
 # 571 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_POISON_BARB, 10
+	giveitemfast ITEM_TWISTED_SPOON, 10
 # 572 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_BLACK_BELT, 10
+	giveitemfast ITEM_MAGNET, 10
 # 573 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_BLACK_GLASSES, 10
+	giveitemfast ITEM_POISON_BARB, 10
 # 574 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_DRAGON_FANG, 10
+	giveitemfast ITEM_BLACK_BELT, 10
 # 575 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_BLUE_SHARD, 100
+	giveitemfast ITEM_BLACK_GLASSES, 10
 # 576 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_RED_SHARD, 100
+	giveitemfast ITEM_DRAGON_FANG, 10
 # 577 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_GREEN_SHARD, 100
+	giveitemfast ITEM_BLUE_SHARD, 100
 # 578 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_YELLOW_SHARD, 100
+	giveitemfast ITEM_RED_SHARD, 100
 # 579 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_ABSORB_BULB, 10
+	giveitemfast ITEM_GREEN_SHARD, 100
 # 580 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_MENTAL_HERB, 10
+	giveitemfast ITEM_YELLOW_SHARD, 100
 # 581 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_LIGHT_BALL, 10
+	giveitemfast ITEM_ABSORB_BULB, 10
 # 582 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_SHINY_CHARM
+	giveitemfast ITEM_MENTAL_HERB, 10
 # 583 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	giveitemfast ITEM_LIGHT_BALL, 10
 # 584 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
-# 585 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitfanfare
-# 586 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
-# 587 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_RESULT, 0
-# 588 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
-# 589 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
-# 590 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
-# 591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-# 592 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	giveitemfast ITEM_POKE_BALL, 5
-# 593 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
-# 594 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
-# 595 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_RESULT, 1
-# 596 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
-# 597 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
-# 598 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
-# 599 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 600 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
-# 601 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 585 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
+# 586 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitfanfare
+# 587 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
+# 588 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setvar VAR_RESULT, 0
+# 589 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	return
+# 590 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	
+# 591 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+Route116_EventScript_BirchGiveItems_1:
+# 592 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 593 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems, MSGBOX_DEFAULT
+# 594 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	waitfanfare
+# 595 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
+# 596 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	setvar VAR_RESULT, 0
+# 597 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	return
+# 598 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 599 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+Route116_EventScript_BirchGiveItems_2:
+# 600 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_SILK_SCARF, 1
+# 601 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_MYSTIC_WATER, 1
 # 602 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
+	giveitemfast ITEM_MIRACLE_SEED, 1
 # 603 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_SYS_NATIONAL_DEX
+	giveitemfast ITEM_CHARCOAL, 1
 # 604 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special SetUnlockedPokedexFlags
+	giveitemfast ITEM_NEVER_MELT_ICE, 1
 # 605 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	special EnableNationalPokedex
+	giveitemfast ITEM_FAIRY_FEATHER, 1
 # 606 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	giveitemfast ITEM_STEEL_FEATHER, 1
 # 607 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	giveitemfast ITEM_SHARP_BEAK, 1
 # 608 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	giveitemfast ITEM_SILVER_POWDER, 1
 # 609 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	giveitemfast ITEM_SOFT_SAND, 1
 # 610 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait::
+	giveitemfast ITEM_HARD_STONE, 1
 # 611 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait, MSGBOX_DEFAULT
+	giveitemfast ITEM_SPELL_TAG, 1
 # 612 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	release
+	giveitemfast ITEM_TWISTED_SPOON, 1
 # 613 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+	giveitemfast ITEM_MAGNET, 1
 # 614 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	giveitemfast ITEM_POISON_BARB, 1
 # 615 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls::
+	giveitemfast ITEM_BLACK_BELT, 1
 # 616 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull, MSGBOX_DEFAULT
+	giveitemfast ITEM_BLACK_GLASSES, 1
 # 617 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	giveitemfast ITEM_DRAGON_FANG, 1
 # 618 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	giveitemfast ITEM_ABSORB_BULB, 1
 # 619 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls::
+	giveitemfast ITEM_MENTAL_HERB, 1
 # 620 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull, MSGBOX_DEFAULT
+	giveitemfast ITEM_LIGHT_BALL, 1
 # 621 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	goto Route116_EventScript_BirchGiveItems_1
 # 622 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 623 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer:
-# 624 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	walk_down
-# 625 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	walk_in_place_faster_left
-# 626 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	step_end
-# 627 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 624 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
+# 625 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
+# 626 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	giveitemfast ITEM_POKE_BALL, 5
+# 627 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 # 628 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_Machine::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 # 629 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine, MSGBOX_SIGN
+	setvar VAR_RESULT, 1
 # 630 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+	return
 # 631 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 632 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
+LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 # 633 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lock
+	playfanfare MUS_OBTAIN_ITEM
 # 634 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	faceplayer
+	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
 # 635 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_RivalFuturePlans
+	waitfanfare
 # 636 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_RivalHaveYouGoneToBattleFrontier
+	setflag FLAG_SYS_POKEDEX_GET
 # 637 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork
+	setflag FLAG_SYS_NATIONAL_DEX
 # 638 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	checkplayergender
+	special SetUnlockedPokedexFlags
 # 639 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext
+	special EnableNationalPokedex
 # 640 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 # 641 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	release
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 # 642 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+	return
 # 643 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 644 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext::
+LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait::
 # 645 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait, MSGBOX_DEFAULT
 # 646 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	release
 # 647 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	end
 # 648 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext::
+
 # 649 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
+LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls::
 # 650 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull, MSGBOX_DEFAULT
 # 651 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	return
 # 652 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_RivalFuturePlans::
+
 # 653 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	checkplayergender
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls::
 # 654 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull, MSGBOX_DEFAULT
 # 655 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly
+	return
 # 656 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	release
+
 # 657 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer:
 # 658 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	walk_down
 # 659 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere::
+	walk_in_place_faster_left
 # 660 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere, MSGBOX_DEFAULT
+	step_end
 # 661 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+
 # 662 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_EventScript_Machine::
 # 663 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly:
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine, MSGBOX_SIGN
 # 664 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly, MSGBOX_DEFAULT
-# 665 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
-# 666 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
-# 667 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_RivalHaveYouGoneToBattleFrontier::
-# 668 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	checkplayergender
-# 669 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier
-# 670 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier
-# 671 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	release
-# 672 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	end
-# 673 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+# 665 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 666 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
+# 667 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	lock
+# 668 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	faceplayer
+# 669 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_RivalFuturePlans
+# 670 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_RivalHaveYouGoneToBattleFrontier
+# 671 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork
+# 672 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	checkplayergender
+# 673 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext
 # 674 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier::
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext
 # 675 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
+	release
 # 676 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	return
+	end
 # 677 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 678 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier::
+LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext::
 # 679 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
 # 680 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	return
 # 681 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 682 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork::
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext::
 # 683 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	checkplayergender
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
 # 684 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork
-# 685 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork
-# 686 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	release
-# 687 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
-# 688 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
-# 689 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
-# 690 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork, MSGBOX_DEFAULT
-# 691 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	return
+# 685 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 686 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalFuturePlans::
+# 687 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	checkplayergender
+# 688 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere
+# 689 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly
+# 690 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	release
+# 691 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	end
 # 692 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 693 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
+LittlerootTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere::
 # 694 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere, MSGBOX_DEFAULT
 # 695 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	return
 # 696 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 697 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_PC::
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly:
 # 698 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch, MSGBOX_SIGN
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly, MSGBOX_DEFAULT
 # 699 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+	return
 # 700 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 701 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalHaveYouGoneToBattleFrontier::
 # 702 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon, MSGBOX_SIGN
+	checkplayergender
 # 703 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier
 # 704 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier
 # 705 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_Book::
+	release
 # 706 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead, MSGBOX_SIGN
+	end
 # 707 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+
 # 708 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier::
 # 709 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
 # 710 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	lockall
+	return
 # 711 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	pokenavcall LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall
+
 # 712 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	waitmessage
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier::
 # 713 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	clearflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
 # 714 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	releaseall
+	return
 # 715 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	end
+
 # 716 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork::
 # 717 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
+	checkplayergender
 # 718 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Hunh? PROF. BIRCH?\p"
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork
 # 719 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The PROF's away on fieldwork.\n"
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork
 # 720 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Ergo, he isn't here.\p"
+	release
 # 721 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, let me explain what fieldwork is.\p"
+	end
 # 722 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It is to study things in the natural\n"
+
 # 723 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "environment, like fields and mountains,\l"
+LittlerootTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
 # 724 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "instead of a laboratory.\p"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork, MSGBOX_DEFAULT
 # 725 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The PROF isn't one for doing desk work.\n"
+	return
 # 726 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "He's the type of person who would\l"
+
 # 727 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "rather go outside and experience\l"
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
 # 728 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "things than read about them here.$"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork, MSGBOX_DEFAULT
 # 729 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	return
 # 730 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
+
 # 731 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The PROF isn't one for doing desk work.\n"
+LittlerootTown_ProfessorBirchsLab_EventScript_PC::
 # 732 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "He's the type of person who would\l"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch, MSGBOX_SIGN
 # 733 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "rather go outside and experience\l"
+	end
 # 734 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "things than read about them here.$"
+
 # 735 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 # 736 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon, MSGBOX_SIGN
 # 737 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "PROF. BIRCH is studying the habitats\n"
+	end
 # 738 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and distribution of Pokémon.\p"
+
 # 739 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The PROF enjoys {RIVAL}'s help, too.\n"
+LittlerootTown_ProfessorBirchsLab_EventScript_Book::
 # 740 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "There's a lot of love there.$"
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead, MSGBOX_SIGN
 # 741 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	end
 # 742 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
+
 # 743 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Welcome to Professor Birch's\n"
+LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 # 744 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "lab!\p"
+	lockall
 # 745 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You can talk to Professor Birch\n"
+	pokenavcall LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall
 # 746 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "to change the region of the\p"
+	waitmessage
 # 747 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "available starter Pokemon.$"
+	clearflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
 # 748 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	releaseall
 # 749 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
+	end
 # 750 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "While you're at it, why not\n"
+
 # 751 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "give a nickname to that {STR_VAR_1}?$"
+LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 # 752 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "Hunh? PROF. BIRCH?\p"
 # 753 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
+	.string "The PROF's away on fieldwork.\n"
 # 754 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "If you work at Pokémon\n"
+	.string "Ergo, he isn't here.\p"
 # 755 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and gain experience, I think you'll make\l"
+	.string "Oh, let me explain what fieldwork is.\p"
 # 756 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "an extremely good trainer.\p"
+	.string "It is to study things in the natural\n"
 # 757 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "My kid, {RIVAL}, is also studying\n"
+	.string "environment, like fields and mountains,\l"
 # 758 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Pokémon while helping me out.\p"
+	.string "instead of a laboratory.\p"
 # 759 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER}{KUN}, don't you think it might be\n"
+	.string "The PROF isn't one for doing desk work.\n"
 # 760 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "a good idea to go see {RIVAL}?$"
+	.string "He's the type of person who would\l"
 # 761 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "rather go outside and experience\l"
 # 762 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
+	.string "things than read about them here.$"
 # 763 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Great!\n"
+
 # 764 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{RIVAL} should be happy, too.\p"
+LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
 # 765 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Get {RIVAL} to teach you what it\n"
+	.string "The PROF isn't one for doing desk work.\n"
 # 766 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "means to be a trainer.$"
+	.string "He's the type of person who would\l"
 # 767 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "rather go outside and experience\l"
 # 768 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
+	.string "things than read about them here.$"
 # 769 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, don't be that way.\n"
+
 # 770 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You should go meet my kid.$"
+LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 # 771 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "PROF. BIRCH is studying the habitats\n"
 # 772 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
+	.string "and distribution of Pokémon.\p"
 # 773 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{RIVAL}?\n"
+	.string "The PROF enjoys {RIVAL}'s help, too.\n"
 # 774 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Gone home, I think.\p"
+	.string "There's a lot of love there.$"
 # 775 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Or maybe that kid's scrabbling around\n"
+
 # 776 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "in tall grass again somewhere…\p"
+LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 # 777 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "If you or your Pokémon get tired,\n"
+	.string "Welcome to Professor Birch's\n"
 # 778 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "you should get some rest at home.$"
+	.string "lab!\p"
 # 779 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "You can talk to Professor Birch\n"
 # 780 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
+	.string "to change the region of the\p"
 # 781 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, hi, {PLAYER}{KUN}!\p"
+	.string "available starter Pokemon.$"
 # 782 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I heard you beat {RIVAL} on\n"
+
 # 783 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "your first try. That's excellent!\p"
+LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 # 784 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{RIVAL}'s been helping with my research\n"
+	.string "While you're at it, why not\n"
 # 785 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "for a long time.\p"
+	.string "give a nickname to that {STR_VAR_1}?$"
 # 786 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{RIVAL} has an extensive history as\n"
+
 # 787 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "a trainer already.\p"
+LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 # 788 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Here, {PLAYER}{KUN}, I ordered this for my\n"
+	.string "If you work at Pokémon\n"
 # 789 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "research, but I think you should have\l"
+	.string "and gain experience, I think you'll make\l"
 # 790 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "this Pokédex.$"
+	.string "an extremely good trainer.\p"
 # 791 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "My kid, {RIVAL}, is also studying\n"
 # 792 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
+	.string "Pokémon while helping me out.\p"
 # 793 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER} received the Pokédex!$"
+	.string "{PLAYER}{KUN}, don't you think it might be\n"
 # 794 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "a good idea to go see {RIVAL}?$"
 # 795 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
+
 # 796 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The Pokédex is a high-tech\n"
+LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 # 797 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "tool that automatically makes a record\l"
+	.string "Great!\n"
 # 798 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "of any Pokémon you meet or catch.\p"
+	.string "{RIVAL} should be happy, too.\p"
 # 799 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "My kid, {RIVAL}, goes everywhere\n"
+	.string "Get {RIVAL} to teach you what it\n"
 # 800 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "with it.\p"
+	.string "means to be a trainer.$"
 # 801 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Whenever my kid catches a rare Pokémon\n"
+
 # 802 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and records its data in the Pokédex,\l"
+LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
 # 803 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "why, {RIVAL} looks for me while I'm out\l"
+	.string "Oh, don't be that way.\n"
 # 804 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "doing fieldwork, and shows me.$"
+	.string "You should go meet my kid.$"
 # 805 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 806 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
+LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 # 807 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Countless Pokémon\n"
+	.string "{RIVAL}?\n"
 # 808 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "await you!\p"
+	.string "Gone home, I think.\p"
 # 809 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Argh, I'm getting the itch to get out\n"
+	.string "Or maybe that kid's scrabbling around\n"
 # 810 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and do fieldwork again!$"
+	.string "in tall grass again somewhere…\p"
 # 811 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "If you or your Pokémon get tired,\n"
 # 812 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
+	.string "you should get some rest at home.$"
 # 813 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, also, {PLAYER}{KUN}, I \n"
+
 # 814 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "gave these to {RIVAL} already.\p"
+LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 # 815 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I swear these starting Items are\n"
+	.string "Oh, hi, {PLAYER}{KUN}!\p"
 # 816 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "getting more and more advanced. Back in\l"
+	.string "I heard you beat {RIVAL} on\n"
 # 817 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "my day, I had to walk to the Mart uphill\l"
+	.string "your first try. That's excellent!\p"
 # 818 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "both ways with no Items or…\p"
+	.string "{RIVAL}'s been helping with my research\n"
 # 819 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I digress, just take these.$"
+	.string "for a long time.\p"
 # 820 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "{RIVAL} has an extensive history as\n"
 # 821 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
+	.string "a trainer already.\p"
 # 822 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "That set of Items consisted of all\n"
+	.string "Here, {PLAYER}{KUN}, I ordered this for my\n"
 # 823 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "of the basic Type-boosting hold Items,\l"
+	.string "research, but I think you should have\l"
 # 824 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "as well as some Oran Berries, Poké Balls,\l"
+	.string "this Pokédex.$"
 # 825 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and other miscellaneous Items.\p"
+
 # 826 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Take a look through your Bag pockets\n"
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
 # 827 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "to see them all.\p"
+	.string "{PLAYER} received the Pokédex!$"
 # 828 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Now, good luck on your Pokémon journey,\n"
+
 # 829 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER}, I'll be rooting for you!$"
+LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 # 830 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "The Pokédex is a high-tech\n"
 # 831 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
+	.string "tool that automatically makes a record\l"
 # 832 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh? Your BAG's full.$"
+	.string "of any Pokémon you meet or catch.\p"
 # 833 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "My kid, {RIVAL}, goes everywhere\n"
 # 834 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
+	.string "with it.\p"
 # 835 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "May: I wonder where I should go look\n"
+	.string "Whenever my kid catches a rare Pokémon\n"
 # 836 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "for Pokémon next?$"
+	.string "and records its data in the Pokédex,\l"
 # 837 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "why, {RIVAL} looks for me while I'm out\l"
 # 838 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
+	.string "doing fieldwork, and shows me.$"
 # 839 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: Huh…\n"
+
 # 840 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "So you got a Pokédex, too.\p"
+LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 # 841 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Well then, here.\n"
+	.string "Countless Pokémon\n"
 # 842 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'll give you these.$"
+	.string "await you!\p"
 # 843 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "Argh, I'm getting the itch to get out\n"
 # 844 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
+	.string "and do fieldwork again!$"
 # 845 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: You know it's more fun to\n"
-# 846 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "have a whole bunch of Pokémon.\p"
-# 847 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'm going to explore all over the place\n"
-# 848 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "to find different Pokémon.\p"
-# 849 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "If I find any cool Pokémon, you bet\n"
-# 850 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'll try to get them with POKé BALLS.$"
-# 851 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 846 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
+# 847 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Oh, also, {PLAYER}{KUN}, I \n"
+# 848 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "gave these to {RIVAL} already.\p"
+# 849 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I swear these starting Items are\n"
+# 850 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "getting more and more advanced. Back in\l"
+# 851 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "my day, I had to walk to the Mart uphill\l"
 # 852 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
+	.string "both ways with no Items or…\p"
 # 853 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Hey, your BAG's full.$"
+	.string "I digress, just take these.$"
 # 854 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 855 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
+LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 # 856 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: Where should I look for\n"
+	.string "That set of Items consisted of all\n"
 # 857 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Pokémon next…$"
+	.string "of the basic Type-boosting hold Items,\l"
 # 858 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "as well as some Oran Berries, Poké Balls,\l"
 # 859 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
+	.string "and other miscellaneous Items.\p"
 # 860 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's a serious-looking machine.\n"
+	.string "Take a look through your Bag pockets\n"
 # 861 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The PROF must use this for research.$"
+	.string "to see them all.\p"
 # 862 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "Now, good luck on your Pokémon journey,\n"
 # 863 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch:
+	.string "{PLAYER}, I'll be rooting for you!$"
 # 864 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's a PC used for research.\n"
+
 # 865 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Better not mess around with it.$"
+LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 # 866 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "Oh? Your BAG's full.$"
 # 867 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon:
+
 # 868 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's crammed with books on Pokémon.$"
+LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
 # 869 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "May: I wonder where I should go look\n"
 # 870 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead:
+	.string "for Pokémon next?$"
 # 871 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's a book that's too hard to read.$"
+
 # 872 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
 # 873 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational:
+	.string "Brendan: Huh…\n"
 # 874 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Now…\p"
+	.string "So you got a Pokédex, too.\p"
 # 875 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER}{KUN} and {RIVAL}, I've had the two\n"
+	.string "Well then, here.\n"
 # 876 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "of you help me study Pokémon.\p"
+	.string "I'll give you these.$"
 # 877 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Thanks to your help, new facts\n"
-# 878 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "are coming to light.\p"
-# 879 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It appears that in the HOENN region,\n"
-# 880 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "there are also Pokémon from other\l"
-# 881 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "regions.\p"
-# 882 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It goes to show how rich and varied\n"
-# 883 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the natural environments of HOENN\l"
-# 884 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "happen to be.\p"
-# 885 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "That's why I think it's necessary for\n"
-# 886 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "me to upgrade your Pokédex to\l"
-# 887 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the NATIONAL Mode.\p"
-# 888 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Here, let me see your Pokédex units.$"
-# 889 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 878 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
+# 879 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Brendan: You know it's more fun to\n"
+# 880 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "have a whole bunch of Pokémon.\p"
+# 881 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I'm going to explore all over the place\n"
+# 882 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "to find different Pokémon.\p"
+# 883 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "If I find any cool Pokémon, you bet\n"
+# 884 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I'll try to get them with POKé BALLS.$"
+# 885 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 886 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
+# 887 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Hey, your BAG's full.$"
+# 888 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 889 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
 # 890 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool:
+	.string "Brendan: Where should I look for\n"
 # 891 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "May: Eheheh!\p"
+	.string "Pokémon next…$"
 # 892 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's so cool that even my Pokédex\n"
+
 # 893 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "is getting updated!\p"
+LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
 # 894 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's because you went out and caught\n"
+	.string "It's a serious-looking machine.\n"
 # 895 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "so many Pokémon, {PLAYER}{KUN}!$"
+	.string "The PROF must use this for research.$"
 # 896 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 897 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe:
+LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch:
 # 898 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: I went out all over HOENN\n"
+	.string "It's a PC used for research.\n"
 # 899 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and checked out Pokémon.\p"
+	.string "Better not mess around with it.$"
 # 900 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You can thank me for getting\n"
+
 # 901 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the NATIONAL Mode Pokédex.\p"
+LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon:
 # 902 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Yep, you're lucky, {PLAYER}!$"
+	.string "It's crammed with books on Pokémon.$"
 # 903 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 904 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone:
+LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead:
 # 905 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Okay, all done!$"
+	.string "It's a book that's too hard to read.$"
 # 906 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 907 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational:
+LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational:
 # 908 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER}'s Pokédex was upgraded\n"
+	.string "Now…\p"
 # 909 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "to the NATIONAL Mode!$"
+	.string "{PLAYER}{KUN} and {RIVAL}, I've had the two\n"
 # 910 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "of you help me study Pokémon.\p"
 # 911 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2:
+	.string "Thanks to your help, new facts\n"
 # 912 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "But listen.\n"
+	.string "are coming to light.\p"
 # 913 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You've become the CHAMPION,\l"
+	.string "It appears that in the HOENN region,\n"
 # 914 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "but your Pokémon journey isn't over.\p"
+	.string "there are also Pokémon from other\l"
 # 915 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "There is no end to the road\n"
+	.string "regions.\p"
 # 916 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "that is Pokémon.\p"
+	.string "It goes to show how rich and varied\n"
 # 917 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Somewhere, there is a grassy patch\n"
+	.string "the natural environments of HOENN\l"
 # 918 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "that's waiting for you!$"
+	.string "happen to be.\p"
 # 919 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "That's why I think it's necessary for\n"
 # 920 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
+	.string "me to upgrade your Pokédex to\l"
 # 921 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "May: I think I'll take a short break\n"
+	.string "the NATIONAL Mode.\p"
 # 922 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "from fieldwork.\p"
+	.string "Here, let me see your Pokédex units.$"
 # 923 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I think I'll help the PROF here for\n"
+
 # 924 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "a while.$"
+LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool:
 # 925 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "May: Eheheh!\p"
 # 926 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
+	.string "It's so cool that even my Pokédex\n"
 # 927 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: For the time being,\n"
+	.string "is getting updated!\p"
 # 928 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'm taking a break from fieldwork.\p"
+	.string "It's because you went out and caught\n"
 # 929 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'll be helping out the PROF here\n"
+	.string "so many Pokémon, {PLAYER}{KUN}!$"
 # 930 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "for a while.$"
+
 # 931 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe:
 # 932 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon:
+	.string "Brendan: I went out all over HOENN\n"
 # 933 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, {PLAYER}{KUN}!\n"
+	.string "and checked out Pokémon.\p"
 # 934 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Let's have a look at your Pokédex.\p"
+	.string "You can thank me for getting\n"
 # 935 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … …\n"
+	.string "the NATIONAL Mode Pokédex.\p"
 # 936 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … …\p"
+	.string "Yep, you're lucky, {PLAYER}!$"
 # 937 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Yes, there's no doubt about it.\p"
+
 # 938 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You really have completed the HOENN\n"
+LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone:
 # 939 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "region's Pokédex.\p"
+	.string "Okay, all done!$"
 # 940 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "That's more than just impressive.\p"
+
 # 941 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I have a gift for you.\p"
+LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational:
 # 942 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Consider it my show of appreciation\n"
+	.string "{PLAYER}'s Pokédex was upgraded\n"
 # 943 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "for the fantastic work you've done.\p"
+	.string "to the NATIONAL Mode!$"
 # 944 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "My gift is a rare Pokémon only found\n"
+
 # 945 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "in another region!\p"
+LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2:
 # 946 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You can have any one of these\n"
+	.string "But listen.\n"
 # 947 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "three Pokémon!$"
+	.string "You've become the CHAMPION,\l"
 # 948 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "but your Pokémon journey isn't over.\p"
 # 949 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
+	.string "There is no end to the road\n"
 # 950 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "These are rare Pokémon\n"
+	.string "that is Pokémon.\p"
 # 951 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "only found in another region!\p"
+	.string "Somewhere, there is a grassy patch\n"
 # 952 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You can have any one of these\n"
+	.string "that's waiting for you!$"
 # 953 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "three Pokémon!$"
+
 # 954 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
 # 955 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil:
+	.string "May: I think I'll take a short break\n"
 # 956 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The FIRE Pokémon\n"
+	.string "from fieldwork.\p"
 # 957 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "CYNDAQUIL caught your eye!\p"
+	.string "I think I'll help the PROF here for\n"
 # 958 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You're as sharp as ever!\p"
+	.string "a while.$"
 # 959 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "So the CYNDAQUIL is your choice?$"
+
 # 960 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
 # 961 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile:
+	.string "Brendan: For the time being,\n"
 # 962 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The WATER Pokémon\n"
+	.string "I'm taking a break from fieldwork.\p"
 # 963 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "TOTODILE is your choice!\p"
+	.string "I'll be helping out the PROF here\n"
 # 964 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You know how to pick a good one.\p"
+	.string "for a while.$"
 # 965 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "So, you'll take the TOTODILE?$"
+
 # 966 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon:
 # 967 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita:
+	.string "Oh, {PLAYER}{KUN}!\n"
 # 968 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "The GRASS Pokémon\n"
+	.string "Let's have a look at your Pokédex.\p"
 # 969 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "CHIKORITA is your choice!\p"
+	.string "… … … … … …\n"
 # 970 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You sure know what you're doing.\p"
+	.string "… … … … … …\p"
 # 971 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "So, you'll take the CHIKORITA?$"
+	.string "Yes, there's no doubt about it.\p"
 # 972 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "You really have completed the HOENN\n"
 # 973 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable:
+	.string "region's Pokédex.\p"
 # 974 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Take your time before\n"
+	.string "That's more than just impressive.\p"
 # 975 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "you decide.\p"
+	.string "I have a gift for you.\p"
 # 976 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "They're all invaluable Pokémon.$"
+	.string "Consider it my show of appreciation\n"
 # 977 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "for the fantastic work you've done.\p"
 # 978 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-@ Unused
+	.string "My gift is a rare Pokémon only found\n"
 # 979 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon:
+	.string "in another region!\p"
 # 980 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I see!\n"
+	.string "You can have any one of these\n"
 # 981 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You picked a fine Pokémon!$"
+	.string "three Pokémon!$"
 # 982 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 983 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ReceivedJohtoStarter:
+LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
 # 984 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER} received the {STR_VAR_1}\n"
+	.string "These are rare Pokémon\n"
 # 985 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "from PROF. BIRCH!$"
+	.string "only found in another region!\p"
 # 986 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "You can have any one of these\n"
 # 987 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-@ Unused
+	.string "three Pokémon!$"
 # 988 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_NicknameJohtoStarter:
-# 989 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Want to give a nickname to\n"
-# 990 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the {STR_VAR_1} you received?$"
-# 991 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 989 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil:
+# 990 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "The FIRE Pokémon\n"
+# 991 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "CYNDAQUIL caught your eye!\p"
 # 992 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting:
+	.string "You're as sharp as ever!\p"
 # 993 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Listen, {PLAYER}{KUN}.\n"
+	.string "So the CYNDAQUIL is your choice?$"
 # 994 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You've completed the HOENN Pokédex,\l"
+
 # 995 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "but your Pokémon journey isn't over.\p"
+LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile:
 # 996 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "There is no end to the road\n"
+	.string "The WATER Pokémon\n"
 # 997 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "that is Pokémon.\p"
+	.string "TOTODILE is your choice!\p"
 # 998 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Somewhere, there is a grassy patch\n"
+	.string "You know how to pick a good one.\p"
 # 999 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "that's waiting for you!$"
+	.string "So, you'll take the TOTODILE?$"
 # 1000 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
 # 1001 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BetterLeaveOthersAlone:
+LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita:
 # 1002 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You received the promised Pokémon.\n"
+	.string "The GRASS Pokémon\n"
 # 1003 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Better leave the others alone.$"
+	.string "CHIKORITA is your choice!\p"
 # 1004 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "You sure know what you're doing.\p"
 # 1005 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-@ Unused
+	.string "So, you'll take the CHIKORITA?$"
 # 1006 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon:
+
 # 1007 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Oh, you don't have any room for\n"
+LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable:
 # 1008 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "this Pokémon.$"
+	.string "Take your time before\n"
 # 1009 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "you decide.\p"
 # 1010 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
+	.string "They're all invaluable Pokémon.$"
 # 1011 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "May: {PLAYER}{KUN}, after this…\n"
+
 # 1012 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "What are you going to do?\p"
+@ Unused
 # 1013 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Are you going to keep battling\n"
+LittlerootTown_ProfessorBirchsLab_Text_PickedFinePokemon:
 # 1014 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "and sharpening your skills?\p"
+	.string "I see!\n"
 # 1015 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Or are you going to try filling\n"
+	.string "You picked a fine Pokémon!$"
 # 1016 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the NATIONAL Pokédex?\p"
+
 # 1017 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'm staying here to help the PROF.$"
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedJohtoStarter:
 # 1018 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "{PLAYER} received the {STR_VAR_1}\n"
 # 1019 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
+	.string "from PROF. BIRCH!$"
 # 1020 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: Rather than collecting\n"
+
 # 1021 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Pokémon, I prefer slowly and \l"
+@ Unused
 # 1022 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "steadily raising the one I chose.$"
+LittlerootTown_ProfessorBirchsLab_Text_NicknameJohtoStarter:
 # 1023 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "Want to give a nickname to\n"
 # 1024 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
+	.string "the {STR_VAR_1} you received?$"
 # 1025 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "May: Oh, hi, {PLAYER}{KUN}!\n"
+
 # 1026 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Have you gone to that place,\l"
+LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting:
 # 1027 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the BATTLE FRONTIER?$"
+	.string "Listen, {PLAYER}{KUN}.\n"
 # 1028 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "You've completed the HOENN Pokédex,\l"
 # 1029 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
+	.string "but your Pokémon journey isn't over.\p"
 # 1030 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Brendan: Hey, {PLAYER}!\n"
+	.string "There is no end to the road\n"
 # 1031 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Have you gone out to that place,\l"
+	.string "that is Pokémon.\p"
 # 1032 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "the BATTLE FRONTIER?$"
+	.string "Somewhere, there is a grassy patch\n"
 # 1033 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "that's waiting for you!$"
 # 1034 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
+
 # 1035 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … …\n"
+LittlerootTown_ProfessorBirchsLab_Text_BetterLeaveOthersAlone:
 # 1036 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … Beep!\p"
+	.string "You received the promised Pokémon.\n"
 # 1037 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Scott: Hi, hi, {PLAYER}!\n"
+	.string "Better leave the others alone.$"
 # 1038 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It's me, SCOTT.\p"
+
 # 1039 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'm aboard the S.S. TIDAL now.\n"
+@ Unused
 # 1040 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "It feels great to be on the sea!\p"
+LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon:
 # 1041 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "By the way…\p"
+	.string "Oh, you don't have any room for\n"
 # 1042 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "There's this place that I'd like to\n"
+	.string "this Pokémon.$"
 # 1043 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "invite you to for a visit.\p"
+
 # 1044 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "If you're interested, board a ferry\n"
+LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 # 1045 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "at either SLATEPORT or LILYCOVE.\p"
+	.string "May: {PLAYER}{KUN}, after this…\n"
 # 1046 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I'll fill you in on the details when\n"
+	.string "What are you going to do?\p"
 # 1047 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "we meet. I'll be waiting!\p"
+	.string "Are you going to keep battling\n"
 # 1048 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … …\n"
+	.string "and sharpening your skills?\p"
 # 1049 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "… … … … … Click!$"
+	.string "Or are you going to try filling\n"
 # 1050 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+	.string "the NATIONAL Pokédex?\p"
 # 1051 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems::
+	.string "I'm staying here to help the PROF.$"
 # 1052 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "{PLAYER} received several Items!$"
+
 # 1053 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-
+LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 # 1054 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_TakeTicket:
+	.string "Brendan: Rather than collecting\n"
 # 1055 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I've had this ticket for a long time, but\n"
+	.string "Pokémon, I prefer slowly and \l"
 # 1056 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I knew I had to wait to give it to a\l"
+	.string "steadily raising the one I chose.$"
 # 1057 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "strong trainer.\p"
-# 1058 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "Since you are the Champion, I know I'll\n"
-# 1059 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "be leaving it in good hands.$"
-# 1060 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
+# 1058 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
+# 1059 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "May: Oh, hi, {PLAYER}{KUN}!\n"
+# 1060 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Have you gone to that place,\l"
 # 1061 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-LittlerootTown_ProfessorBirchsLab_Text_HeadToLilyCove:
+	.string "the BATTLE FRONTIER?$"
 # 1062 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "I can see you've received some tickets\n"
+
 # 1063 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "from your parents already.\p"
+LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
 # 1064 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
-	.string "You'll sure be busy sailing to all new\n"
+	.string "Brendan: Hey, {PLAYER}!\n"
 # 1065 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Have you gone out to that place,\l"
+# 1066 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "the BATTLE FRONTIER?$"
+# 1067 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 1068 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
+# 1069 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "… … … … … …\n"
+# 1070 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "… … … … … Beep!\p"
+# 1071 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Scott: Hi, hi, {PLAYER}!\n"
+# 1072 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "It's me, SCOTT.\p"
+# 1073 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I'm aboard the S.S. TIDAL now.\n"
+# 1074 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "It feels great to be on the sea!\p"
+# 1075 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "By the way…\p"
+# 1076 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "There's this place that I'd like to\n"
+# 1077 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "invite you to for a visit.\p"
+# 1078 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "If you're interested, board a ferry\n"
+# 1079 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "at either SLATEPORT or LILYCOVE.\p"
+# 1080 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I'll fill you in on the details when\n"
+# 1081 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "we meet. I'll be waiting!\p"
+# 1082 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "… … … … … …\n"
+# 1083 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "… … … … … Click!$"
+# 1084 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 1085 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedSeveralItems::
+# 1086 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "{PLAYER} received several Items!$"
+# 1087 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 1088 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_TakeTicket:
+# 1089 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I've had this ticket for a long time, but\n"
+# 1090 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I knew I had to wait to give it to a\l"
+# 1091 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "strong trainer.\p"
+# 1092 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "Since you are the Champion, I know I'll\n"
+# 1093 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "be leaving it in good hands.$"
+# 1094 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+
+# 1095 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_HeadToLilyCove:
+# 1096 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "I can see you've received some tickets\n"
+# 1097 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "from your parents already.\p"
+# 1098 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	.string "You'll sure be busy sailing to all new\n"
+# 1099 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "parts of the region!$"

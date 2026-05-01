@@ -569,7 +569,7 @@ JaggedPass_EventScript_MayleneGiveItems::
 # 301 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_TM_FOCUS_PUNCH
 # 302 "data/maps/JaggedPass/scripts.pory"
-	giveitem ITEM_TM_FOCUS_BLAST
+	giveitem ITEM_TM_SUPERPOWER
 # 303 "data/maps/JaggedPass/scripts.pory"
 	giveitem ITEM_TM_DRAIN_PUNCH
 # 304 "data/maps/JaggedPass/scripts.pory"
