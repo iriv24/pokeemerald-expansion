@@ -23,10 +23,18 @@ BerryTree_EventScript_Sparkling::
 BerryTree_EventScript_CheckSoil::
 	lock
 	faceplayer
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge BerryTree_EventScript_CheckSoilHard
 	specialvar VAR_RESULT, PlayerHasBerries
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToPlant
 	specialvar VAR_RESULT, PlayerHasMulch
 	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_WantToMulch
+	message BerryTree_Text_ItsSoftLoamySoil
+	waitmessage
+	waitbuttonpress
+	release
+	end
+BerryTree_EventScript_CheckSoilHard:
 	message BerryTree_Text_ItsSoftLoamySoil
 	waitmessage
 	waitbuttonpress
