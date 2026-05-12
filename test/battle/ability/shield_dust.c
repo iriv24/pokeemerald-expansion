@@ -183,10 +183,12 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
     GIVEN {
         PLAYER(SPECIES_DUSTOX){ Ability(ABILITY_SHIELD_DUST); Moves(MOVE_GUST); }
         OPPONENT(SPECIES_SUNFLORA){ Ability(ABILITY_EARLY_BIRD); Moves(MOVE_MYSTICAL_FIRE, MOVE_FIERY_DANCE); }
+        
     } WHEN {
         TURN {
             MOVE(player, MOVE_GUST);
-            EXPECT_MOVE(opponent, MOVE_FIERY_DANCE);
+            SCORE_EQ_VAL(opponent, MOVE_MYSTICAL_FIRE, 101);
+            SCORE_EQ_VAL(opponent, MOVE_FIERY_DANCE, 101);
         }
     }
 }
@@ -200,7 +202,8 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
     } WHEN {
         TURN {
             MOVE(player, MOVE_GUST);
-            EXPECT_MOVE(opponent, MOVE_MYSTICAL_FIRE);
+            SCORE_EQ_VAL(opponent, MOVE_MYSTICAL_FIRE, 103);
+            SCORE_EQ_VAL(opponent, MOVE_FIERY_DANCE, 100);
         }
     }
 }
