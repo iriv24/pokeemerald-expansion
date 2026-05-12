@@ -898,7 +898,6 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
     if (TestIfSheerForceAffected(battlerAtk, move))
         return FALSE;
 
-
     switch (move)
     {
         case MOVE_SURF:
@@ -1177,14 +1176,14 @@ enum MoveComparisonResult AI_WhichMoveBetter(u32 move1, u32 move2, u32 battlerAt
     AI_THINKING_STRUCT->movesetIndex = 0;
 
     if (effect2minus && !effect1minus)
-        return MOVE_WON_COMPARISON;;
+        return MOVE_WON_COMPARISON;
     if (effect1minus && !effect2minus)
         return MOVE_LOST_COMPARISON;
 
     if (effect2plus && !effect1plus)
         return MOVE_LOST_COMPARISON;
     if (effect1plus && !effect2plus)
-        return MOVE_WON_COMPARISON;;
+        return MOVE_WON_COMPARISON;
 
     return MOVE_NEUTRAL_COMPARISON;
 }
