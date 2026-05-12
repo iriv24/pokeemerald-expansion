@@ -943,7 +943,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if opponent uses two-turn move and it has a switchin that wins 1v1")
+AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: two turn moves no longer force switch with removal of ShouldSwitchIfOpponentChargingOrInvulnerable")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SKY_ATTACK; }
@@ -958,7 +958,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if opponent u
         OPPONENT(SPECIES_LAIRON) { Moves(MOVE_ROCK_SLIDE); }
     } WHEN {
         TURN { MOVE(player, move); EXPECT_MOVE(opponent, MOVE_SURF); }
-        TURN { SKIP_TURN(player); EXPECT_SWITCH(opponent, 1); }
+        TURN { SKIP_TURN(player); EXPECT_MOVE(opponent, MOVE_SURF); }
     }
 }
 
