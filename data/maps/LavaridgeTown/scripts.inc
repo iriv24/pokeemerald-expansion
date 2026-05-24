@@ -805,69 +805,123 @@ LavaridgeTown_EventScript_EggWoman::
 # 405 "data/maps/LavaridgeTown/scripts.pory"
 	faceplayer
 # 406 "data/maps/LavaridgeTown/scripts.pory"
-	msgbox LavaridgeTown_EggWomanIntro, MSGBOX_YESNO
-# 408 "data/maps/LavaridgeTown/scripts.pory"
-	compare VAR_RESULT, NO
-	goto_if_eq LavaridgeTown_EventScript_EggWoman_2
-LavaridgeTown_EventScript_EggWoman_1:
-# 413 "data/maps/LavaridgeTown/scripts.pory"
-	checkitem ITEM_YELLOW_SHARD
-# 414 "data/maps/LavaridgeTown/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, LavaridgeTown_EventScript_ComeBackWithYellowShard
-# 415 "data/maps/LavaridgeTown/scripts.pory"
-	getpartysize
-# 416 "data/maps/LavaridgeTown/scripts.pory"
-	goto_if_eq VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg
-# 417 "data/maps/LavaridgeTown/scripts.pory"
-	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
-# 418 "data/maps/LavaridgeTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 419 "data/maps/LavaridgeTown/scripts.pory"
-	message LavaridgeTown_Text_ReceivedTheEgg
-# 420 "data/maps/LavaridgeTown/scripts.pory"
-	waitfanfare
-# 421 "data/maps/LavaridgeTown/scripts.pory"
-	giveegg SPECIES_KLAWF
+	goto_if_set FLAG_LAVARIDGE_EGG, LavaridgeTown_EventScript_EggWoman_2
+# 412 "data/maps/LavaridgeTown/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge LavaridgeTown_EventScript_EggWoman_6
 # 422 "data/maps/LavaridgeTown/scripts.pory"
-	removeitem ITEM_YELLOW_SHARD
+	msgbox LavaridgeTown_EggWomanIntro, MSGBOX_YESNO
 # 423 "data/maps/LavaridgeTown/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq LavaridgeTown_EventScript_EggWoman_15
+LavaridgeTown_EventScript_EggWoman_14:
+# 427 "data/maps/LavaridgeTown/scripts.pory"
+	checkitem ITEM_YELLOW_SHARD
+# 428 "data/maps/LavaridgeTown/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, LavaridgeTown_EventScript_ComeBackWithYellowShard
+LavaridgeTown_EventScript_EggWoman_5:
+# 430 "data/maps/LavaridgeTown/scripts.pory"
+	getpartysize
+# 431 "data/maps/LavaridgeTown/scripts.pory"
+	goto_if_eq VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg
+# 432 "data/maps/LavaridgeTown/scripts.pory"
+	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+# 433 "data/maps/LavaridgeTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 434 "data/maps/LavaridgeTown/scripts.pory"
+	message LavaridgeTown_Text_ReceivedTheEgg
+# 435 "data/maps/LavaridgeTown/scripts.pory"
+	waitfanfare
+# 436 "data/maps/LavaridgeTown/scripts.pory"
+	giveegg SPECIES_KLAWF
+# 437 "data/maps/LavaridgeTown/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge LavaridgeTown_EventScript_EggWoman_9
+# 444 "data/maps/LavaridgeTown/scripts.pory"
+	removeitem ITEM_YELLOW_SHARD
+# 445 "data/maps/LavaridgeTown/scripts.pory"
 	msgbox LavaridgeTown_ComeBackWithMore, MSGBOX_DEFAULT
-# 424 "data/maps/LavaridgeTown/scripts.pory"
+LavaridgeTown_EventScript_EggWoman_1:
+# 448 "data/maps/LavaridgeTown/scripts.pory"
 	release
 	end
 
 LavaridgeTown_EventScript_EggWoman_2:
-# 410 "data/maps/LavaridgeTown/scripts.pory"
-	goto LavaridgeTown_EventScript_EggWomanManNo
+# 408 "data/maps/LavaridgeTown/scripts.pory"
+	msgbox LavaridgeTown_EventScript_EggWoman_Text_0
 	goto LavaridgeTown_EventScript_EggWoman_1
+
+LavaridgeTown_EventScript_EggWoman_6:
+# 414 "data/maps/LavaridgeTown/scripts.pory"
+	msgbox LavaridgeTown_EggWomanIntroHard, MSGBOX_YESNO
+# 415 "data/maps/LavaridgeTown/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq LavaridgeTown_EventScript_EggWoman_12
+	goto LavaridgeTown_EventScript_EggWoman_5
+
+LavaridgeTown_EventScript_EggWoman_9:
+# 439 "data/maps/LavaridgeTown/scripts.pory"
+	msgbox LavaridgeTown_EventScript_EggWoman_Text_1
+# 440 "data/maps/LavaridgeTown/scripts.pory"
+	setflag FLAG_LAVARIDGE_EGG
+	goto LavaridgeTown_EventScript_EggWoman_1
+
+LavaridgeTown_EventScript_EggWoman_12:
+# 417 "data/maps/LavaridgeTown/scripts.pory"
+	goto LavaridgeTown_EventScript_EggWomanManNo
+	goto LavaridgeTown_EventScript_EggWoman_5
+
+LavaridgeTown_EventScript_EggWoman_15:
+# 425 "data/maps/LavaridgeTown/scripts.pory"
+	goto LavaridgeTown_EventScript_EggWomanManNo
+	goto LavaridgeTown_EventScript_EggWoman_14
 
 
 LavaridgeTown_EventScript_EggWomanManNo::
-# 430 "data/maps/LavaridgeTown/scripts.pory"
+# 454 "data/maps/LavaridgeTown/scripts.pory"
 	msgbox LavaridgeTown_EggWomanDeclined, MSGBOX_DEFAULT
-# 431 "data/maps/LavaridgeTown/scripts.pory"
+# 455 "data/maps/LavaridgeTown/scripts.pory"
 	release
 	end
 
 
 LavaridgeTown_EventScript_ComeBackWithYellowShard::
-# 436 "data/maps/LavaridgeTown/scripts.pory"
+# 460 "data/maps/LavaridgeTown/scripts.pory"
 	msgbox LavaridgeTown_Text_ComeBackWithYellowShard, MSGBOX_DEFAULT
-# 437 "data/maps/LavaridgeTown/scripts.pory"
+# 461 "data/maps/LavaridgeTown/scripts.pory"
 	release
 	end
 
 
 LavaridgeTown_EventScript_NoRoomForEgg::
-# 442 "data/maps/LavaridgeTown/scripts.pory"
+# 466 "data/maps/LavaridgeTown/scripts.pory"
 	msgbox LavaridgeTown_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
-# 443 "data/maps/LavaridgeTown/scripts.pory"
+# 467 "data/maps/LavaridgeTown/scripts.pory"
 	release
 	end
 
 
+LavaridgeTown_EventScript_EggWoman_Text_0:
+# 408 "data/maps/LavaridgeTown/scripts.pory"
+	.string "Keep on growing!$"
+
+LavaridgeTown_EventScript_EggWoman_Text_1:
+# 439 "data/maps/LavaridgeTown/scripts.pory"
+	.string "Take good care of it!$"
+
+LavaridgeTown_EggWomanIntroHard::
+# 471 "data/maps/LavaridgeTown/scripts.pory"
+	.string "Hello, trainer. I see you've\n"
+	.string "found your way from Fallarbor.\p"
+	.string "My old friend told me a lively\n"
+	.string "youngin would arrive shortly.\p"
+	.string "The road only gets steeper from\n"
+	.string "here, but this Egg should help.\p"
+	.string "So, do you think you can go\n"
+	.string "even further?$"
+
 LavaridgeTown_EggWomanIntro::
-# 447 "data/maps/LavaridgeTown/scripts.pory"
+# 482 "data/maps/LavaridgeTown/scripts.pory"
 	.string "Hello, trainer. I have several large\n"
 	.string "Eggs here with me.\p"
 	.string "I am currently seeking Yellow Shards,\n"
@@ -876,30 +930,30 @@ LavaridgeTown_EggWomanIntro::
 	.string "these Eggs?$"
 
 LavaridgeTown_EggWomanDeclined::
-# 456 "data/maps/LavaridgeTown/scripts.pory"
+# 491 "data/maps/LavaridgeTown/scripts.pory"
 	.string "I see. Please come back if you change\n"
 	.string "your mind.$"
 
 LavaridgeTown_Text_ComeBackWithYellowShard::
-# 462 "data/maps/LavaridgeTown/scripts.pory"
+# 497 "data/maps/LavaridgeTown/scripts.pory"
 	.string "It doesn't look like you have a\n"
 	.string "Yellow Shard. Come back when you do.$"
 
 LavaridgeTown_Text_NoRoomForThisEgg::
-# 467 "data/maps/LavaridgeTown/scripts.pory"
+# 502 "data/maps/LavaridgeTown/scripts.pory"
 	.string "Oh? You've too many Pokémon.\n"
 	.string "There's no room for this Egg…$"
 
 LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg::
-# 472 "data/maps/LavaridgeTown/scripts.pory"
+# 507 "data/maps/LavaridgeTown/scripts.pory"
 	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here Egg!$"
+	.string "this Egg!$"
 
 LavaridgeTown_Text_ReceivedTheEgg::
-# 477 "data/maps/LavaridgeTown/scripts.pory"
+# 512 "data/maps/LavaridgeTown/scripts.pory"
 	.string "{PLAYER} received the Egg.$"
 
 LavaridgeTown_ComeBackWithMore::
-# 481 "data/maps/LavaridgeTown/scripts.pory"
+# 516 "data/maps/LavaridgeTown/scripts.pory"
 	.string "Please come back if you have more\n"
 	.string "Yellow Shards you'd like to exchange.$"

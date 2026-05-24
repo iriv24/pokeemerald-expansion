@@ -52,18 +52,28 @@ script ShoalCave_LowTideLowerRoom_EventScript_PowerfulMonSummoner {
 		goto(ShoalCave_LowTideLowerRoom_EventScript_SummonWomanManNo)
 	}
 
-	goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom)
+	goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
 	release
 	end
 }
 
-script ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom {
-	msgbox(ShoalCave_LowTideLowerRoom_Text_WhichRoom, MSGBOX_DEFAULT)
+script ShoalCave_LowTideLowerRoom_EventScript_ChooseType {
+	msgbox(ShoalCave_LowTideLowerRoom_Text_WhichType, MSGBOX_DEFAULT)
 
-	dynmultipush("Entrance Room", 0)
-	dynmultipush("Inner Room", 1)
-	dynmultipush("Stairs Room", 2)
-    dynmultipush("Cancel", MULTI_B_PRESSED)
+
+	if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		dynmultipush("Paradox", 3)
+		dynmultipush("Ultra Beast", 4)
+		dynmultipush("Cancel", MULTI_B_PRESSED)
+	}
+	else
+	{
+		dynmultipush("Past Paradox", 0)
+		dynmultipush("Future Paradox", 1)
+		dynmultipush("Ultra Beast", 2)
+		dynmultipush("Cancel", MULTI_B_PRESSED)
+	}
 
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
     // // setting initial selected to a non-existant ID will always have it point to the first option
@@ -76,22 +86,40 @@ script ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom {
 
 	if (var(VAR_RESULT) == 0)
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_EntranceRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_PastParadox)
 	}
 	if (var(VAR_RESULT) == 1)
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_InnerRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_FutureParadox)
 	}
 	if (var(VAR_RESULT) == 2)
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_StairsRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_UltraBeast)
+	}
+	if (var(VAR_RESULT) == 3)
+	{
+		msgbox(ShoalCave_LowTideLowerRoom_Text_ConfirmSummonParadoxHard, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == NO)
+		{
+			goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
+		}
+		goto(ShoalCave_LowTideLowerRoom_EventScript_ParadoxHard)
+	}
+	if (var(VAR_RESULT) == 4)
+	{
+		msgbox(ShoalCave_LowTideLowerRoom_Text_ConfirmSummonUltraBeastHard, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == NO)
+		{
+			goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
+		}
+		goto(ShoalCave_LowTideLowerRoom_EventScript_UltraBeastHard)
 	}
 
 	release
 	end
 }
 
-script ShoalCave_LowTideLowerRoom_EventScript_EntranceRoom {
+script ShoalCave_LowTideLowerRoom_EventScript_PastParadox {
 	msgbox(ShoalCave_LowTideLowerRoom_Text_WhichPokemon, MSGBOX_DEFAULT)
 
 	dynmultipush("Great Tusk",   SPECIES_GREAT_TUSK)
@@ -112,7 +140,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_EntranceRoom {
 
 	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
 	}
 
 	goto(ShoalCave_LowTideLowerRoom_EventScript_ConfirmAndUseSummon)
@@ -122,7 +150,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_EntranceRoom {
 
 }
 
-script ShoalCave_LowTideLowerRoom_EventScript_InnerRoom {
+script ShoalCave_LowTideLowerRoom_EventScript_FutureParadox {
 	msgbox(ShoalCave_LowTideLowerRoom_Text_WhichPokemon, MSGBOX_DEFAULT)
 
 	dynmultipush("Iron Treads",   SPECIES_IRON_TREADS)
@@ -143,7 +171,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_InnerRoom {
 
 	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
 	}
 
 	goto(ShoalCave_LowTideLowerRoom_EventScript_ConfirmAndUseSummon)
@@ -153,7 +181,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_InnerRoom {
 
 }
 
-script ShoalCave_LowTideLowerRoom_EventScript_StairsRoom {
+script ShoalCave_LowTideLowerRoom_EventScript_UltraBeast {
 	msgbox(ShoalCave_LowTideLowerRoom_Text_WhichPokemon, MSGBOX_DEFAULT)
 
 	dynmultipush("Nihilego",    SPECIES_NIHILEGO)
@@ -174,7 +202,7 @@ script ShoalCave_LowTideLowerRoom_EventScript_StairsRoom {
 
 	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{
-		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseRoom)
+		goto(ShoalCave_LowTideLowerRoom_EventScript_ChooseType)
 	}
 
 	goto(ShoalCave_LowTideLowerRoom_EventScript_ConfirmAndUseSummon)
@@ -184,6 +212,39 @@ script ShoalCave_LowTideLowerRoom_EventScript_StairsRoom {
 
 }
 
+script ShoalCave_LowTideLowerRoom_EventScript_ParadoxHard {
+	randomelement(SPECIES_IRON_TREADS, SPECIES_IRON_BUNDLE, SPECIES_IRON_HANDS, SPECIES_IRON_JUGULIS, SPECIES_IRON_MOTH, SPECIES_IRON_THORNS, SPECIES_IRON_VALIANT, SPECIES_IRON_LEAVES, SPECIES_IRON_BOULDER, SPECIES_IRON_CROWN, SPECIES_GREAT_TUSK, SPECIES_SCREAM_TAIL, SPECIES_BRUTE_BONNET, SPECIES_FLUTTER_MANE, SPECIES_SLITHER_WING, SPECIES_SANDY_SHOCKS, SPECIES_ROARING_MOON, SPECIES_WALKING_WAKE, SPECIES_GOUGING_FIRE, SPECIES_RAGING_BOLT)
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	msgbox(ShoalCave_LowTideLowerRoom_Text_VeryWell, MSGBOX_DEFAULT)
+	delay(30)
+
+	setwildbattle(VAR_0x8005, 80)
+	waitse
+	playmoncry(VAR_0x8005, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	dowildbattle
+	release
+	end
+}
+
+script ShoalCave_LowTideLowerRoom_EventScript_UltraBeastHard {
+	randomelement(SPECIES_NIHILEGO, SPECIES_GUZZLORD, SPECIES_XURKITREE, SPECIES_BUZZWOLE, SPECIES_BLACEPHALON, SPECIES_BLACEPHALON, SPECIES_STAKATAKA, SPECIES_POIPOLE, SPECIES_PHEROMOSA, SPECIES_CELESTEELA, SPECIES_KARTANA)
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	msgbox(ShoalCave_LowTideLowerRoom_Text_VeryWell, MSGBOX_DEFAULT)
+	delay(30)
+
+	setwildbattle(VAR_0x8005, 80)
+	waitse
+	playmoncry(VAR_0x8005, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	dowildbattle
+	release
+	end
+}
 
 script ShoalCave_LowTideLowerRoom_EventScript_ConfirmAndUseSummon {
 	copyvar(VAR_0x8005, VAR_RESULT)
@@ -232,7 +293,7 @@ text ShoalCave_LowTideLowerRoom_Text_SummonerIntroQuick {
 	"here so you can battle it?"
 }
 
-text ShoalCave_LowTideLowerRoom_Text_WhichRoom {
+text ShoalCave_LowTideLowerRoom_Text_WhichType {
 	"Which room would you like me to summon a\n"
 	"Pokémon from?"
 }
@@ -245,6 +306,16 @@ text ShoalCave_LowTideLowerRoom_Text_WhichPokemon {
 text ShoalCave_LowTideLowerRoom_Text_ConfirmSummon {
 	"So you want me to summon a\n"
 	"{STR_VAR_1} for you to battle?"
+}
+
+text ShoalCave_LowTideLowerRoom_Text_ConfirmSummonParadoxHard {
+	"So you want me to summon a\n"
+	"Paradox Pokémon for you to battle?"
+}
+
+text ShoalCave_LowTideLowerRoom_Text_ConfirmSummonUltraBeastHard {
+	"So you want me to summon an\n"
+	"Ultra Beast for you to battle?"
 }
 
 text ShoalCave_LowTideLowerRoom_Text_VeryWell {
