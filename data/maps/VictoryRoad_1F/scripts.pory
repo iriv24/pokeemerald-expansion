@@ -45,6 +45,10 @@ VictoryRoad_1F_EventScript_WallyEntranceBattle::
 	waitmovement 0
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
+
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge VictoryRoad_1F_EventScript_WallyPostEntranceBattleHard
+	
 	msgbox VictoryRoad_1F_Text_WallyGiftFromDad, MSGBOX_DEFAULT
 	giveitem ITEM_SLAKITE
 	giveitem ITEM_TYRANITARITE
@@ -56,6 +60,26 @@ VictoryRoad_1F_EventScript_WallyEntranceBattle::
 	giveitem ITEM_AURORA_TICKET
 	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
+	copyobjectxytoperm LOCALID_WALLY_ENTRANCE
+	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD
+	clearflag FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL
+	copyvar VAR_VICTORY_ROAD_1F_STATE, VAR_0x8008
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	releaseall
+	end
+
+
+VictoryRoad_1F_EventScript_WallyPostEntranceBattleHard:
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
@@ -296,58 +320,38 @@ script VictoryRoad_1F_EventScript_PowerfulMonSummoner {
 		goto(VictoryRoad_1F_EventScript_SummonWomanManNo)
 	}
 
-	goto(VictoryRoad_1F_EventScript_ChooseRoom)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		goto(VictoryRoad_1F_EventScript_RandomLegend)
+	}
+	else
+	{
+		goto(VictoryRoad_1F_EventScript_ChooseLegend)
+	}
 	release
 	end
 }
 
-script VictoryRoad_1F_EventScript_ChooseRoom {
-	msgbox(VictoryRoad_1F_Text_WhichRoom, MSGBOX_DEFAULT)
 
-	dynmultipush("Entrance Room", 0)
-	dynmultipush("Inner Room", 1)
-	dynmultipush("Stairs Room", 2)
-    dynmultipush("Cancel", MULTI_B_PRESSED)
-
-	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
-    // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-
-	if (var(VAR_RESULT) == MULTI_B_PRESSED)
-	{
-		goto(VictoryRoad_1F_EventScript_SummonWomanManNo)
-	}
-
-	if (var(VAR_RESULT) == 0)
-	{
-		goto(VictoryRoad_1F_EventScript_EntranceRoom)
-	}
-	if (var(VAR_RESULT) == 1)
-	{
-		goto(VictoryRoad_1F_EventScript_InnerRoom)
-	}
-	if (var(VAR_RESULT) == 2)
-	{
-		goto(VictoryRoad_1F_EventScript_StairsRoom)
-	}
-
-	release
-	end
-}
-
-script VictoryRoad_1F_EventScript_EntranceRoom {
+script VictoryRoad_1F_EventScript_ChooseLegend {
 	msgbox(VictoryRoad_1F_Text_WhichPokemon, MSGBOX_DEFAULT)
 
-	dynmultipush("Great Tusk",   SPECIES_GREAT_TUSK)
-	dynmultipush("Scream Tail",  SPECIES_SCREAM_TAIL)
-	dynmultipush("Brute Bonnet", SPECIES_BRUTE_BONNET)
-	dynmultipush("Flutter Mane", SPECIES_FLUTTER_MANE)
-	dynmultipush("Slither Wing", SPECIES_SLITHER_WING)
-	dynmultipush("Sandy Shocks", SPECIES_SANDY_SHOCKS)
-	dynmultipush("Roaring Moon", SPECIES_ROARING_MOON)
-	dynmultipush("Walking Wake", SPECIES_WALKING_WAKE)
-	dynmultipush("Gouging Fire", SPECIES_GOUGING_FIRE)
-	dynmultipush("Raging Bolt",  SPECIES_RAGING_BOLT)
+	dynmultipush("Articuno",   SPECIES_ARTICUNO)
+	dynmultipush("Zapdos",  SPECIES_ZAPDOS)
+	dynmultipush("Moltres", SPECIES_MOLTRES)
+	dynmultipush("Raikou", SPECIES_RAIKOU)
+	dynmultipush("Entei", SPECIES_ENTEI)
+	dynmultipush("Suicune", SPECIES_SUICUNE)
+	dynmultipush("Cresselia", SPECIES_CRESSELIA)
+	dynmultipush("Cobalion", SPECIES_COBALION)
+	dynmultipush("Terrakion", SPECIES_TERRAKION)
+	dynmultipush("Virizion",  SPECIES_VIRIZION)
+	dynmultipush("Tornadus",  SPECIES_TORNADUS)
+	dynmultipush("Thundurus",  SPECIES_THUNDURUS)
+	dynmultipush("Landorus",  SPECIES_LANDORUS)
+	dynmultipush("Keldeo",  SPECIES_KELDEO)
+	dynmultipush("Calyrex",  SPECIES_CALYREX)
+	dynmultipush("Enamorus",  SPECIES_ENAMORUS)
     dynmultipush("Back", MULTI_B_PRESSED)
 
 	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -356,7 +360,7 @@ script VictoryRoad_1F_EventScript_EntranceRoom {
 
 	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{
-		goto(VictoryRoad_1F_EventScript_ChooseRoom)
+		goto(VictoryRoad_1F_EventScript_PowerfulMonSummoner)
 	}
 
 	goto(VictoryRoad_1F_EventScript_ConfirmAndUseSummon)
@@ -366,68 +370,22 @@ script VictoryRoad_1F_EventScript_EntranceRoom {
 
 }
 
-script VictoryRoad_1F_EventScript_InnerRoom {
-	msgbox(VictoryRoad_1F_Text_WhichPokemon, MSGBOX_DEFAULT)
+script VictoryRoad_1F_EventScript_RandomLegend{
+	randomelement(SPECIES_LATIOS,SPECIES_LATIAS,SPECIES_ZAPDOS_GALAR,SPECIES_HEATRAN,SPECIES_KELDEO,SPECIES_MELOETTA,SPECIES_MARSHADOW,SPECIES_GENESECT,SPECIES_CHI_YU,SPECIES_VOLCANION,SPECIES_URSHIFU_RAPID_STRIKE, SPECIES_URSHIFU_SINGLE_STRIKE,SPECIES_ENAMORUS,SPECIES_CHIEN_PAO,SPECIES_OGERPON,SPECIES_ZERAORA,SPECIES_LANDORUS,SPECIES_REGICE,SPECIES_TAPU_FINI,SPECIES_DARKRAI,SPECIES_VICTINI,SPECIES_HOOPA,SPECIES_ZARUDE,SPECIES_TERRAKION,SPECIES_TAPU_KOKO)
 
-	dynmultipush("Iron Treads",   SPECIES_IRON_TREADS)
-	dynmultipush("Iron Bundle",   SPECIES_IRON_BUNDLE)
-	dynmultipush("Iron Hands",    SPECIES_IRON_HANDS)
-	dynmultipush("Iron Jugulis",  SPECIES_IRON_JUGULIS)
-	dynmultipush("Iron Moth",     SPECIES_IRON_MOTH)
-	dynmultipush("Iron Thorns",   SPECIES_IRON_THORNS)
-	dynmultipush("Iron Valiant",  SPECIES_IRON_VALIANT)
-	dynmultipush("Iron Leaves",   SPECIES_IRON_LEAVES)
-	dynmultipush("Iron Boulder",  SPECIES_IRON_BOULDER)
-	dynmultipush("Iron Crown",    SPECIES_IRON_CROWN)
-    dynmultipush("Back", MULTI_B_PRESSED)
+	copyvar(VAR_0x8005, VAR_RESULT)
+	msgbox(ShoalCave_LowTideLowerRoom_Text_VeryWell, MSGBOX_DEFAULT)
+	delay(30)
 
-	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
-    // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, SPECIES_IRON_TREADS, DYN_MULTICHOICE_CB_NONE)
-
-	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
-	{
-		goto(VictoryRoad_1F_EventScript_ChooseRoom)
-	}
-
-	goto(VictoryRoad_1F_EventScript_ConfirmAndUseSummon)
-
+	setwildbattle(VAR_0x8005, 85)
+	waitse
+	playmoncry(VAR_0x8005, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	dowildbattle
 	release
 	end
-
 }
-
-script VictoryRoad_1F_EventScript_StairsRoom {
-	msgbox(VictoryRoad_1F_Text_WhichPokemon, MSGBOX_DEFAULT)
-
-	dynmultipush("Nihilego",    SPECIES_NIHILEGO)
-	dynmultipush("Guzzlord",    SPECIES_GUZZLORD)
-	dynmultipush("Xurkitree",   SPECIES_XURKITREE)
-	dynmultipush("Buzzwole",    SPECIES_BUZZWOLE)
-	dynmultipush("Blacephalon", SPECIES_BLACEPHALON)
-	dynmultipush("Stakataka",   SPECIES_STAKATAKA)
-	dynmultipush("Poipole",     SPECIES_POIPOLE)
-	dynmultipush("Pheromosa",   SPECIES_PHEROMOSA)
-	dynmultipush("Celesteela",  SPECIES_CELESTEELA)
-	dynmultipush("Kartana",     SPECIES_KARTANA)
-    dynmultipush("Back", MULTI_B_PRESSED)
-
-	//.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
-    // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, SPECIES_NIHILEGO, DYN_MULTICHOICE_CB_NONE)
-
-	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
-	{
-		goto(VictoryRoad_1F_EventScript_ChooseRoom)
-	}
-
-	goto(VictoryRoad_1F_EventScript_ConfirmAndUseSummon)
-
-	release
-	end
-
-}
-
 
 script VictoryRoad_1F_EventScript_ConfirmAndUseSummon {
 	copyvar(VAR_0x8005, VAR_RESULT)
@@ -473,11 +431,6 @@ text VictoryRoad_1F_Text_SummonerIntro {
 text VictoryRoad_1F_Text_SummonerIntroQuick {
 	"Would you like me to summon a Pokémon\n"
 	"here so you can battle it?"
-}
-
-text VictoryRoad_1F_Text_WhichRoom {
-	"Which room would you like me to summon a\n"
-	"Pokémon from?"
 }
 
 text VictoryRoad_1F_Text_WhichPokemon {

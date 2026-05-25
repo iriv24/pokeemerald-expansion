@@ -69,3 +69,9 @@ MtPyre_6F_Text_CedricPostBattle:
 	.string "It's dirty and I won't try it again…$"
 
 `
+
+
+script MtPyre6F_EventScript_PowerfulMonSummoner{
+	release
+	end
+}

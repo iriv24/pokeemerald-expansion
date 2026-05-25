@@ -136,3 +136,9 @@ MtPyre_6F_Text_CedricPostBattle:
 	.string "would be panicked and easy to beat.\p"
 # 69 "data/maps/MtPyre_6F/scripts.pory"
 	.string "It's dirty and I won't try it again…$"
+
+MtPyre6F_EventScript_PowerfulMonSummoner::
+# 75 "data/maps/MtPyre_6F/scripts.pory"
+	release
+	end
+

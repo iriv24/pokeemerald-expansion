@@ -93,73 +93,73 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 # 47 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	setvar VAR_TEMP_1, 1
 # 48 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
+
 # 49 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	checkplayergender
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 # 50 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
+	goto_if_ge EverGrandeCity_HallOfFame_EventScript_ClearFlagsHard
 # 51 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
+
 # 52 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	end
+	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
 # 53 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-
+	checkplayergender
 # 54 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_EventScript_GameClearMale::
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
 # 55 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
 # 56 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 24
+	end
 # 57 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	special GameClear
+
 # 58 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	waitstate
+EverGrandeCity_HallOfFame_EventScript_ClearFlagsHard::
 # 59 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	releaseall
+	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlagsHard
 # 60 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	end
+	checkplayergender
 # 61 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
 # 62 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_EventScript_GameClearFemale::
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
 # 63 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
-# 64 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 24
-# 65 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	special GameClear
-# 66 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	waitstate
-# 67 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	releaseall
-# 68 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	end
+# 64 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+
+# 65 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+EverGrandeCity_HallOfFame_EventScript_GameClearMale::
+# 66 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+# 67 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	fadescreenspeed FADE_TO_BLACK, 24
+# 68 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	special GameClear
 # 69 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-
+	waitstate
 # 70 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame1:
+	releaseall
 # 71 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
+	end
 # 72 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
-# 73 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
-# 74 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
-# 75 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
-# 76 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
-# 77 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	step_end
-# 78 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 
+# 73 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+EverGrandeCity_HallOfFame_EventScript_GameClearFemale::
+# 74 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
+# 75 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	fadescreenspeed FADE_TO_BLACK, 24
+# 76 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	special GameClear
+# 77 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	waitstate
+# 78 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	releaseall
 # 79 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
+	end
 # 80 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
+
 # 81 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	walk_up
+EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame1:
 # 82 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	walk_up
 # 83 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
@@ -167,32 +167,54 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
 # 84 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	walk_up
 # 85 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	step_end
+	walk_up
 # 86 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-
+	walk_up
 # 87 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
+	walk_up
 # 88 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "Wallace: This room…\p"
+	step_end
 # 89 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "This is where we keep records of\n"
-# 90 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "Pokémon that prevailed through\l"
-# 91 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "harsh battles.\p"
-# 92 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "It is here that the League Champions\n"
-# 93 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "are honored.$"
-# 94 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 
+# 90 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
+# 91 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	walk_up
+# 92 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	walk_up
+# 93 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	walk_up
+# 94 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	walk_up
 # 95 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
+	walk_up
 # 96 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "Wallace: Come on, let's record your\n"
+	step_end
 # 97 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "name as a trainer who triumphed over\l"
+
 # 98 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
-	.string "the Pokémon League, and the names of\l"
+EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
 # 99 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "Wallace: This room…\p"
+# 100 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "This is where we keep records of\n"
+# 101 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "Pokémon that prevailed through\l"
+# 102 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "harsh battles.\p"
+# 103 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "It is here that the League Champions\n"
+# 104 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "are honored.$"
+# 105 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+
+# 106 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
+# 107 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "Wallace: Come on, let's record your\n"
+# 108 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "name as a trainer who triumphed over\l"
+# 109 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
+	.string "the Pokémon League, and the names of\l"
+# 110 "data/maps/EverGrandeCity_HallOfFame/scripts.pory"
 	.string "the partners who battled with you.$"
