@@ -1292,9 +1292,9 @@
 #define FLAG_DEFEATED_MIRAIDON                                      0x4D6 
 #define FLAG_HIDE_KORAIDON                                          0x4D7 
 #define FLAG_DEFEATED_KORAIDON                                      0x4D8 
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
-#define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
-#define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
+#define FLAG_HIDE_HARD_MODE                                         0x4D9 
+#define FLAG_HIDE_NORMAL_MODE                                       0x4DA 
+#define FLAG_HIDE_HOF_MODE                                          0x4DB 
 #define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
 #define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
 #define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag

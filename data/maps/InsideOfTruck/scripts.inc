@@ -937,8 +937,10 @@ InsideOfTruck_EventScript_SaveSettingsDone::
 # 586 "data/maps/InsideOfTruck/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge InsideOfTruck_EventScript_SaveSettingsDone_2
+# 630 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_HIDE_NORMAL_MODE
 InsideOfTruck_EventScript_SaveSettingsDone_1:
-# 608 "data/maps/InsideOfTruck/scripts.pory"
+# 632 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 	end
 
@@ -981,6 +983,46 @@ InsideOfTruck_EventScript_SaveSettingsDone_2:
 	setflag FLAG_HIDE_ZAPDOS_GALARIAN
 # 606 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_MOLTRES_GALARIAN
+# 607 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_MEW
+# 608 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGICE
+# 609 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGIROCK
+# 610 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGISTEEL
+# 611 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_DEOXYS
+# 612 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_MESPRIT
+# 613 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_AZELF
+# 614 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_UXIE
+# 615 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_HEATRAN
+# 616 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGIGIGAS
+# 617 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_TAPU_KOKO
+# 618 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_TAPU_LELE
+# 619 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_TAPU_BULU
+# 620 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_TAPU_FINI
+# 621 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGIDRAGO
+# 622 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_REGIELEKI
+# 623 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_ARTICUNO_GALARIAN
+# 624 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_ZAPDOS_GALARIAN
+# 625 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_DEFEATED_MOLTRES_GALARIAN
+# 626 "data/maps/InsideOfTruck/scripts.pory"
+	setflag FLAG_HIDE_HARD_MODE
 	goto InsideOfTruck_EventScript_SaveSettingsDone_1
 
 
@@ -1085,27 +1127,27 @@ InsideOfTruck_EventScript_SpeciesRandomizerOptions_Text_5:
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware species$"
 
 WhichOption::
-# 612 "data/maps/InsideOfTruck/scripts.pory"
+# 636 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Which option would you like\n"
 	.string "to customize?$"
 
 WhichDifficulty::
-# 618 "data/maps/InsideOfTruck/scripts.pory"
+# 642 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Which difficulty mode would you\n"
 	.string "like to play on?$"
 
 WhichRandomizerOption::
-# 624 "data/maps/InsideOfTruck/scripts.pory"
+# 648 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Which randomizer option would you\n"
 	.string "like to customize?$"
 
 WhichSpeciesRandomizerOption::
-# 630 "data/maps/InsideOfTruck/scripts.pory"
+# 654 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Which Species Randomizer option would\n"
 	.string "you like to customize?$"
 
 NormalDifficultyCurrentlySelected::
-# 636 "data/maps/InsideOfTruck/scripts.pory"
+# 660 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This is the recommended difficulty\n"
 	.string "mode and is what this game is primarily\l"
 	.string "balanced around.\p"
@@ -1119,7 +1161,7 @@ NormalDifficultyCurrentlySelected::
 	.string "mode if you wish to change it.$"
 
 EasyDifficultyCurrentlySelected::
-# 651 "data/maps/InsideOfTruck/scripts.pory"
+# 675 "data/maps/InsideOfTruck/scripts.pory"
 	.string "There are still level caps in {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\n"
 	.string "however, the Boss Pokémon will be 2\l"
 	.string "levels lower than in Normal.\l"
@@ -1135,7 +1177,7 @@ EasyDifficultyCurrentlySelected::
 	.string "mode if you wish to change it.$"
 
 HardDifficultyCurrentlySelected::
-# 668 "data/maps/InsideOfTruck/scripts.pory"
+# 692 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This mode will be substantially more\n"
 	.string "difficult than Normal. Many Boss teams\l"
 	.string "will be  altered to be more challenging.\p"
@@ -1151,7 +1193,7 @@ HardDifficultyCurrentlySelected::
 	.string "mode if you wish to change it.$"
 
 VanillaDifficultyCurrentlySelected::
-# 685 "data/maps/InsideOfTruck/scripts.pory"
+# 709 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This mode is meant to feel as close to a\n"
 	.string "regular Pokémon game as possible, and\l"
 	.string "is considered to be the easiest.\p"
@@ -1168,7 +1210,7 @@ VanillaDifficultyCurrentlySelected::
 	.string "mode if you wish to change it.$"
 
 HoFDifficultyCurrentlySelected::
-# 703 "data/maps/InsideOfTruck/scripts.pory"
+# 727 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Hall of Fame mode is meant for players\n"
 	.string "attempting to stream their runs to\l"
 	.string "make it onto the “Nuzlocke Hall of\l"
@@ -1191,7 +1233,7 @@ HoFDifficultyCurrentlySelected::
 	.string "mode if you wish to change it.$"
 
 NormalDifficultyYesNo::
-# 727 "data/maps/InsideOfTruck/scripts.pory"
+# 751 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This is the recommended difficulty\n"
 	.string "mode and is what this game is primarily\l"
 	.string "balanced around.\p"
@@ -1204,7 +1246,7 @@ NormalDifficultyYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode?$"
 
 EasyDifficultyYesNo::
-# 741 "data/maps/InsideOfTruck/scripts.pory"
+# 765 "data/maps/InsideOfTruck/scripts.pory"
 	.string "There are still level caps in {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode,{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\n"
 	.string "however, the Boss Pokémon will be 2\l"
 	.string "levels lower than in Normal.\l"
@@ -1219,7 +1261,7 @@ EasyDifficultyYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode?$"
 
 HardDifficultyYesNo::
-# 757 "data/maps/InsideOfTruck/scripts.pory"
+# 781 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This mode will be substantially more\n"
 	.string "difficult than Normal. Many Boss teams\l"
 	.string "will be  altered to be more challenging.\p"
@@ -1234,7 +1276,7 @@ HardDifficultyYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Hard Mode?$"
 
 HoFDifficultyYesNo::
-# 773 "data/maps/InsideOfTruck/scripts.pory"
+# 797 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Hall of Fame mode is meant for players\n"
 	.string "attempting to stream their runs to\l"
 	.string "make it onto the “Nuzlocke Hall of\l"
@@ -1256,7 +1298,7 @@ HoFDifficultyYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Hall of Fame Mode?$"
 
 VanillaDifficultyYesNo::
-# 796 "data/maps/InsideOfTruck/scripts.pory"
+# 820 "data/maps/InsideOfTruck/scripts.pory"
 	.string "This mode is meant to feel as close to a\n"
 	.string "regular Pokémon game as possible, and\l"
 	.string "is considered to be the easiest.\p"
@@ -1272,29 +1314,29 @@ VanillaDifficultyYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Vanilla Mode?$"
 
 NormalDifficultyEnabled::
-# 813 "data/maps/InsideOfTruck/scripts.pory"
+# 837 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.$"
 
 EasyDifficultyEnabled::
-# 818 "data/maps/InsideOfTruck/scripts.pory"
+# 842 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.$"
 
 HardDifficultyEnabled::
-# 823 "data/maps/InsideOfTruck/scripts.pory"
+# 847 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Hard Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.$"
 
 VanillaDifficultyEnabled::
-# 828 "data/maps/InsideOfTruck/scripts.pory"
+# 852 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Vanilla Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.$"
 
 HoFDifficultyEnabled::
-# 833 "data/maps/InsideOfTruck/scripts.pory"
+# 857 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Hall of Fame Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} enabled.\n"
 	.string "Minimal Grinding Mode and all Randomizer\l"
 	.string "options automatically disabled.$"
 
 MinGrindingAlreadyOnYesNo::
-# 840 "data/maps/InsideOfTruck/scripts.pory"
+# 864 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} guarantees all\n"
 	.string "Pokémon to have perfect IVs,\l"
 	.string "and EVs cannot be obtained.\l"
@@ -1308,7 +1350,7 @@ MinGrindingAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode off?$"
 
 MinGrindingAlreadyOffYesNo::
-# 855 "data/maps/InsideOfTruck/scripts.pory"
+# 879 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} guarantees all\n"
 	.string "Pokémon to have perfect IVs,\l"
 	.string "and EVs cannot be obtained.\l"
@@ -1322,27 +1364,27 @@ MinGrindingAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode on?$"
 
 MinGrindingEnabled::
-# 870 "data/maps/InsideOfTruck/scripts.pory"
+# 894 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode enabled.$"
 
 MinGrindingDisabled::
-# 875 "data/maps/InsideOfTruck/scripts.pory"
+# 899 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Minimal Grinding Mode disabled.$"
 
 CannotToggleMGMInHoFMode::
-# 880 "data/maps/InsideOfTruck/scripts.pory"
+# 904 "data/maps/InsideOfTruck/scripts.pory"
 	.string "You cannot toggle Minimal Grinding Mode\n"
 	.string "with Hall of Fame Mode enabled.\l"
 	.string "Minimal Grinding Mode is disabled.$"
 
 CannotChangeRandomizerInHoFMode::
-# 887 "data/maps/InsideOfTruck/scripts.pory"
+# 911 "data/maps/InsideOfTruck/scripts.pory"
 	.string "You cannot change Randomizer options\n"
 	.string "with Hall of Fame Mode enabled.\l"
 	.string "All Randomizer options are disabled.$"
 
 RandomAbilitiesAlreadyOnYesNo::
-# 895 "data/maps/InsideOfTruck/scripts.pory"
+# 919 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes abilities\n"
 	.string "for the player, but doesn't affect\l"
 	.string "abilities on Boss Pokémon.\p"
@@ -1350,7 +1392,7 @@ RandomAbilitiesAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Ability Randomizer?$"
 
 RandomAbilitiesAlreadyOffYesNo::
-# 904 "data/maps/InsideOfTruck/scripts.pory"
+# 928 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes abilities\n"
 	.string "for the player, but doesn't affect\l"
 	.string "abilities on Boss Pokémon.\p"
@@ -1358,15 +1400,15 @@ RandomAbilitiesAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer?$"
 
 RandomAbilitiesEnabled::
-# 914 "data/maps/InsideOfTruck/scripts.pory"
+# 938 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Ability Randomizer enabled.$"
 
 RandomAbilitiesDisabled::
-# 919 "data/maps/InsideOfTruck/scripts.pory"
+# 943 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Ability Randomizer disabled.$"
 
 RandomLearnsetsAlreadyOnYesNo::
-# 925 "data/maps/InsideOfTruck/scripts.pory"
+# 949 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
 	.string "Pokémon learnsets.\p"
 	.string "It does not randomize TMs or\n"
@@ -1377,7 +1419,7 @@ RandomLearnsetsAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Learnset Randomizer?$"
 
 RandomLearnsetsAlreadyOffYesNo::
-# 937 "data/maps/InsideOfTruck/scripts.pory"
+# 961 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
 	.string "Pokémon learnsets.\p"
 	.string "It does not randomize TMs or\n"
@@ -1388,15 +1430,15 @@ RandomLearnsetsAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer?$"
 
 RandomLearnsetsEnabled::
-# 950 "data/maps/InsideOfTruck/scripts.pory"
+# 974 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Learnset Randomizer enabled.$"
 
 RandomLearnsetsDisabled::
-# 955 "data/maps/InsideOfTruck/scripts.pory"
+# 979 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Learnset Randomizer disabled.$"
 
 NormalSpeciesRandomizerAlreadyOnYesNo::
-# 961 "data/maps/InsideOfTruck/scripts.pory"
+# 985 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
 	.string "encounters, trainers, and gifts.\l"
 	.string "It does not randomize Boss battles.\p"
@@ -1406,7 +1448,7 @@ NormalSpeciesRandomizerAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Species Randomizer?$"
 
 NormalSpeciesRandomizerAlreadyOffYesNo::
-# 972 "data/maps/InsideOfTruck/scripts.pory"
+# 996 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} randomizes\n"
 	.string "encounters, trainers, and gifts.\l"
 	.string "It does not randomize Boss battles.\p"
@@ -1416,15 +1458,15 @@ NormalSpeciesRandomizerAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer?$"
 
 NormalSpeciesRandomizerEnabled::
-# 984 "data/maps/InsideOfTruck/scripts.pory"
+# 1008 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Species Randomizer enabled.$"
 
 NormalSpeciesRandomizerDisabled::
-# 989 "data/maps/InsideOfTruck/scripts.pory"
+# 1013 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Species Randomizer disabled.$"
 
 ScaledSpeciesRandomizerAlreadyOnYesNo::
-# 995 "data/maps/InsideOfTruck/scripts.pory"
+# 1019 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} only gives\n"
 	.string "reasonable Pokémon for your location\l"
 	.string "in the game.\p"
@@ -1436,7 +1478,7 @@ ScaledSpeciesRandomizerAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Scaled Randomizer?$"
 
 ScaledSpeciesRandomizerAlreadyOffYesNo::
-# 1008 "data/maps/InsideOfTruck/scripts.pory"
+# 1032 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} only gives\n"
 	.string "reasonable Pokémon for your location\l"
 	.string "in the game.\p"
@@ -1448,15 +1490,15 @@ ScaledSpeciesRandomizerAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer?$"
 
 ScaledSpeciesRandomizerEnabled::
-# 1022 "data/maps/InsideOfTruck/scripts.pory"
+# 1046 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Scaled Randomizer enabled.$"
 
 ScaledSpeciesRandomizerDisabled::
-# 1027 "data/maps/InsideOfTruck/scripts.pory"
+# 1051 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Scaled Randomizer disabled.$"
 
 LegendsAwareRandomizerAlreadyOnYesNo::
-# 1032 "data/maps/InsideOfTruck/scripts.pory"
+# 1056 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} is\n"
 	.string "the same thing as the Species\l"
 	.string "Randomizer, with the only difference\l"
@@ -1467,7 +1509,7 @@ LegendsAwareRandomizerAlreadyOnYesNo::
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Legendary-aware Species Randomizer?$"
 
 LegendsAwareRandomizerAlreadyOffYesNo::
-# 1044 "data/maps/InsideOfTruck/scripts.pory"
+# 1068 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} is\n"
 	.string "the same thing as the Species\l"
 	.string "Randomizer, with the only difference\l"
@@ -1478,16 +1520,16 @@ LegendsAwareRandomizerAlreadyOffYesNo::
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer?$"
 
 LegendsAwareRandomizerEnabled::
-# 1057 "data/maps/InsideOfTruck/scripts.pory"
+# 1081 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Legendary-aware Species Randomizer\n"
 	.string "enabled.$"
 
 LegendsAwareRandomizerDisabled::
-# 1063 "data/maps/InsideOfTruck/scripts.pory"
+# 1087 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Legendary-aware Species Randomizer\n"
 	.string "disabled.$"
 
 CustomSettingsSaved::
-# 1070 "data/maps/InsideOfTruck/scripts.pory"
+# 1094 "data/maps/InsideOfTruck/scripts.pory"
 	.string "Custom settings saved.\n"
 	.string "Good luck!$"
