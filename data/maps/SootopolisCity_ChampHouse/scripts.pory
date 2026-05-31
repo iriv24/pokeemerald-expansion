@@ -224,7 +224,14 @@ script SootopolisCity_ChampHouse_EventScript_MastaJanes{
 	applymovement(LOCALID_MASTA_JANES, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_MASTA_JANES, SootopolisCity_ChampHouse_EventScript_MastaJanesDefeated)
 	goto_if_set(FLAG_TEMP_2, SootopolisCity_ChampHouse_EventScript_MastaJanesRequestBattleAgain)
-	msgbox(MastaJanes_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(MastaJanes_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(MastaJanes_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_ChampHouse_EventScript_BattleMastaJanesPrompt)
 	end
 }
@@ -252,8 +259,15 @@ script SootopolisCity_ChampHouse_EventScript_DeclineMastaJanesBattle {
 script SootopolisCity_ChampHouse_EventScript_BattleMastaJanes{
 	msgbox(MastaJanes_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_MASTA_JANES, MastaJanes_Outro)
-	goto(SootopolisCity_ChampHouse_EventScript_MastaJanesGiveDitto)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_ChampHouse_EventScript_MastaJanesGiveDitto)
+		return
+	}
 }
 
 script SootopolisCity_ChampHouse_EventScript_MastaJanesDefeated{
@@ -325,6 +339,19 @@ text MastaJanes_Greeting{
 	"Now, if you can beat me, I'll give you a\n"
 	"shiny Ditto you can use to breed more\l"
 	"shiny Pokémon.\p"
+	"Do you want to battle?"
+}
+
+text MastaJanes_GreetingHard{
+	"Hi there trainer, my name is MastaJanes.\n"
+	"I was the 5th person to beat this game,\l"
+	"and most notably, I beat it on the\l"
+	"MyBoy emulator.\p"
+	"Even though there were several crashes\n"
+	"in that version of the game at the time,\l"
+	"and even though the creator told me\l"
+	"not to use MyBoy, I persevered and\l"
+	"finished the game anyway.\p"
 	"Do you want to battle?"
 }
 

@@ -282,196 +282,211 @@ SootopolisCity_ChampHouse_EventScript_MastaJanes::
 # 226 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, SootopolisCity_ChampHouse_EventScript_MastaJanesRequestBattleAgain
 # 227 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_ChampHouse_EventScript_MastaJanes_2
+# 233 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox MastaJanes_Greeting, MSGBOX_YESNO
-# 228 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+SootopolisCity_ChampHouse_EventScript_MastaJanes_1:
+# 235 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleMastaJanesPrompt
 	end
 
+SootopolisCity_ChampHouse_EventScript_MastaJanes_2:
+# 229 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+	msgbox MastaJanes_GreetingHard, MSGBOX_YESNO
+	goto SootopolisCity_ChampHouse_EventScript_MastaJanes_1
+
 
 SootopolisCity_ChampHouse_EventScript_MastaJanesRequestBattleAgain::
-# 233 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 240 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox MastaJanes_ReadyYet, MSGBOX_YESNO
-# 234 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 241 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleMastaJanesPrompt
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleMastaJanesPrompt::
-# 239 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 246 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_ChampHouse_EventScript_BattleMastaJanes
-# 240 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 247 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_DeclineMastaJanesBattle
-# 241 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 248 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_DeclineMastaJanesBattle::
-# 246 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 253 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setflag FLAG_TEMP_2
-# 247 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 254 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox MastaJanes_ComeBackWhenReady, MSGBOX_DEFAULT
-# 248 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 255 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleMastaJanes::
-# 253 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 260 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox MastaJanes_YoureOn, MSGBOX_DEFAULT
-# 254 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 261 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_MASTA_JANES, MastaJanes_Outro
-# 255 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 262 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_ChampHouse_EventScript_BattleMastaJanes_1
+# 268 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_MastaJanesGiveDitto
+	return
+
+SootopolisCity_ChampHouse_EventScript_BattleMastaJanes_1:
 	return
 
 
 SootopolisCity_ChampHouse_EventScript_MastaJanesDefeated::
-# 260 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 274 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox PostBattle_MastaJanes, MSGBOX_DEFAULT
-# 261 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 275 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	releaseall
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_MastaJanesGiveDitto::
-# 266 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 280 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DITTO
-# 267 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 281 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	givemonrandom SPECIES_DITTO, 50, isShiny = TRUE
-# 268 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 282 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_ChampHouse_EventScript_ReceiveDittoParty
-# 269 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 283 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_ChampHouse_EventScript_ReceiveDittoPC
-# 270 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 284 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 271 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 285 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveDittoParty::
-# 276 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 290 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedDittoFanfare
-# 277 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 291 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 278 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 292 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_ExplainDitto
-# 279 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 293 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 280 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 294 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 281 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 295 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainDitto
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveDittoPC::
-# 286 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 300 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedDittoFanfare
-# 287 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 301 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 288 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 302 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_SendDittoToPC
-# 289 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 303 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 290 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 304 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_SendDittoToPC
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_SendDittoToPC::
-# 295 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 309 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 296 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 310 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainDitto
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceivedDittoFanfare::
-# 301 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 315 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 302 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 316 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	message SootopolisCity_ChampHouse_Text_PlayerReceivedDitto
-# 303 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 317 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitmessage
-# 304 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 318 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitfanfare
-# 305 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 319 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_DITTO
 	return
 
 
 SootopolisCity_ChampHouse_EventScript_ExplainDitto::
-# 310 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 324 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox MastaJanes_ExplainDitto, MSGBOX_DEFAULT
-# 311 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 325 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_Befools::
-# 363 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 390 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	lockall
-# 364 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 391 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	applymovement LOCALID_BEFOOLS, Common_Movement_FacePlayer
-# 365 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 392 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_defeated TRAINER_BEFOOLS, SootopolisCity_ChampHouse_EventScript_BefoolsDefeated
-# 366 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 393 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_3, SootopolisCity_ChampHouse_EventScript_BefoolsRequestBattleAgain
-# 367 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 394 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge SootopolisCity_ChampHouse_EventScript_Befools_2
-# 373 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 400 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_Greeting, MSGBOX_YESNO
 SootopolisCity_ChampHouse_EventScript_Befools_1:
-# 375 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 402 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleBefoolsPrompt
 	end
 
 SootopolisCity_ChampHouse_EventScript_Befools_2:
-# 369 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 396 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_GreetingHard, MSGBOX_YESNO
 	goto SootopolisCity_ChampHouse_EventScript_Befools_1
 
 
 SootopolisCity_ChampHouse_EventScript_BefoolsRequestBattleAgain::
-# 380 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 407 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_ReadyYet, MSGBOX_YESNO
-# 381 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 408 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleBefoolsPrompt
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleBefoolsPrompt::
-# 386 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 413 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_ChampHouse_EventScript_BattleBefools
-# 387 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 414 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_DeclineBefoolsBattle
-# 388 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 415 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_DeclineBefoolsBattle::
-# 393 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 420 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setflag FLAG_TEMP_3
-# 394 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 421 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_ComeBackWhenReady, MSGBOX_DEFAULT
-# 395 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 422 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleBefools::
-# 400 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 427 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_YoureOn, MSGBOX_DEFAULT
-# 401 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 428 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_BEFOOLS, Befools_Outro
-# 402 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 429 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge SootopolisCity_ChampHouse_EventScript_BattleBefools_1
-# 408 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 435 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BefoolsGiveHoopa
 	return
 
@@ -480,151 +495,151 @@ SootopolisCity_ChampHouse_EventScript_BattleBefools_1:
 
 
 SootopolisCity_ChampHouse_EventScript_BefoolsDefeated::
-# 414 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 441 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox PostBattle_Befools, MSGBOX_DEFAULT
-# 415 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 442 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	releaseall
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BefoolsGiveHoopa::
-# 420 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 447 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HOOPA_CONFINED
-# 421 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 448 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	givemonrandom SPECIES_HOOPA_CONFINED, 50
-# 422 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 449 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_ChampHouse_EventScript_ReceiveHoopaParty
-# 423 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 450 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_ChampHouse_EventScript_ReceiveHoopaPC
-# 424 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 451 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 425 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 452 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveHoopaParty::
-# 430 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 457 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedHoopaFanfare
-# 431 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 458 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 432 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 459 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_ExplainHoopa
-# 433 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 460 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 434 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 461 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 435 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 462 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainHoopa
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveHoopaPC::
-# 440 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 467 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedHoopaFanfare
-# 441 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 468 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 442 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 469 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_SendHoopaToPC
-# 443 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 470 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 444 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 471 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_SendHoopaToPC
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_SendHoopaToPC::
-# 449 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 476 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 450 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 477 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainHoopa
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceivedHoopaFanfare::
-# 455 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 482 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 456 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 483 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	message SootopolisCity_ChampHouse_Text_PlayerReceivedHoopa
-# 457 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 484 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitmessage
-# 458 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 485 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitfanfare
-# 459 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 486 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_HOOPA_CONFINED
 	return
 
 
 SootopolisCity_ChampHouse_EventScript_ExplainHoopa::
-# 464 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 491 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Befools_ExplainHoopa, MSGBOX_DEFAULT
-# 465 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 492 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_Burak::
-# 526 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 553 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	lockall
-# 527 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 554 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	applymovement LOCALID_BURAK, Common_Movement_FacePlayer
-# 528 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 555 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_defeated TRAINER_BURAK, SootopolisCity_ChampHouse_EventScript_BurakDefeated
-# 529 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 556 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_4, SootopolisCity_ChampHouse_EventScript_BurakRequestBattleAgain
-# 530 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 557 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge SootopolisCity_ChampHouse_EventScript_Burak_2
-# 536 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 563 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_Greeting, MSGBOX_YESNO
 SootopolisCity_ChampHouse_EventScript_Burak_1:
-# 538 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 565 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt
 	end
 
 SootopolisCity_ChampHouse_EventScript_Burak_2:
-# 532 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 559 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_GreetingHard, MSGBOX_YESNO
 	goto SootopolisCity_ChampHouse_EventScript_Burak_1
 
 
 SootopolisCity_ChampHouse_EventScript_BurakRequestBattleAgain::
-# 543 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 570 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_ReadyYet, MSGBOX_YESNO
-# 544 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 571 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt::
-# 549 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 576 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_ChampHouse_EventScript_BattleBurak
-# 550 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 577 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_DeclineBurakBattle
-# 551 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 578 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_DeclineBurakBattle::
-# 556 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 583 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setflag FLAG_TEMP_4
-# 557 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 584 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_ComeBackWhenReady, MSGBOX_DEFAULT
-# 558 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 585 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BattleBurak::
-# 563 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 590 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_YoureOn, MSGBOX_DEFAULT
-# 564 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 591 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_BURAK, Burak_Outro
-# 565 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 592 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge SootopolisCity_ChampHouse_EventScript_BattleBurak_1
-# 571 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 598 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion
 	return
 
@@ -633,85 +648,85 @@ SootopolisCity_ChampHouse_EventScript_BattleBurak_1:
 
 
 SootopolisCity_ChampHouse_EventScript_BurakDefeated::
-# 578 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 605 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox PostBattle_Burak, MSGBOX_DEFAULT
-# 579 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 606 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	releaseall
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion::
-# 584 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 611 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_VOLCANION
-# 585 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 612 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	givemonrandom SPECIES_VOLCANION, 50
-# 586 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 613 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionParty
-# 587 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 614 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionPC
-# 588 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 615 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 589 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 616 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionParty::
-# 594 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 621 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare
-# 595 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 622 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 596 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 623 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_ExplainVolcanion
-# 597 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 624 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 598 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 625 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 599 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 626 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainVolcanion
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceiveVolcanionPC::
-# 605 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 632 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare
-# 606 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 633 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 607 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 634 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC
-# 608 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 635 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 609 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 636 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_SendVolcanionToPC::
-# 615 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 642 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 616 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 643 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	goto SootopolisCity_ChampHouse_EventScript_ExplainVolcanion
 	end
 
 
 SootopolisCity_ChampHouse_EventScript_ReceivedVolcanionFanfare::
-# 622 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 649 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 623 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 650 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	message SootopolisCity_ChampHouse_Text_PlayerReceivedVolcanion
-# 624 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 651 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitmessage
-# 625 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 652 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	waitfanfare
-# 626 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 653 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_VOLCANION
 	return
 
 
 SootopolisCity_ChampHouse_EventScript_ExplainVolcanion::
-# 632 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 659 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	msgbox Burak_ExplainVolcanion, MSGBOX_DEFAULT
-# 633 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 660 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	release
 	end
 
@@ -763,7 +778,7 @@ PostBattle_Danni::
 	.string "How do you like that?$"
 
 MastaJanes_Greeting::
-# 315 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 329 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Hi there trainer, my name is MastaJanes.\n"
 	.string "I was the 5th person to beat this game,\l"
 	.string "and most notably, I beat it on the\l"
@@ -778,39 +793,52 @@ MastaJanes_Greeting::
 	.string "shiny Pokémon.\p"
 	.string "Do you want to battle?$"
 
+MastaJanes_GreetingHard::
+# 345 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+	.string "Hi there trainer, my name is MastaJanes.\n"
+	.string "I was the 5th person to beat this game,\l"
+	.string "and most notably, I beat it on the\l"
+	.string "MyBoy emulator.\p"
+	.string "Even though there were several crashes\n"
+	.string "in that version of the game at the time,\l"
+	.string "and even though the creator told me\l"
+	.string "not to use MyBoy, I persevered and\l"
+	.string "finished the game anyway.\p"
+	.string "Do you want to battle?$"
+
 MastaJanes_ReadyYet::
-# 331 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 358 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Are you ready now?$"
 
 MastaJanes_YoureOn::
-# 335 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 362 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "You're going down!$"
 
 MastaJanes_ComeBackWhenReady::
-# 339 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 366 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "You know where to find me if you change\n"
 	.string "your mind.$"
 
 MastaJanes_Outro::
-# 344 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 371 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Wow, I didn't think I could lose.\n$"
 
 SootopolisCity_ChampHouse_Text_PlayerReceivedDitto::
-# 348 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 375 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "{PLAYER} received Ditto!$"
 
 MastaJanes_ExplainDitto::
-# 352 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 379 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Here's your shiny Ditto!\n"
 	.string "Hope you can use it to get many more\l"
 	.string "shiny Pokémon.$"
 
 PostBattle_MastaJanes::
-# 358 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 385 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "I'm still playing on MyBoy to this day.$"
 
 Befools_Greeting::
-# 469 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 496 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "I'm Befools, and I used my trusty\n"
 	.string "Gengar here to put every single\l"
 	.string "Pokémon in this game to sleep, and then\l"
@@ -823,7 +851,7 @@ Befools_Greeting::
 	.string "So, do you want to battle?$"
 
 Befools_GreetingHard::
-# 482 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 509 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "I'm Befools, and I used my trusty\n"
 	.string "Gengar here to put every single\l"
 	.string "Pokémon in this game to sleep, and then\l"
@@ -834,38 +862,38 @@ Befools_GreetingHard::
 	.string "So, do you want to battle?$"
 
 Befools_ReadyYet::
-# 493 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 520 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Ready for this snooze-fest?$"
 
 Befools_YoureOn::
-# 497 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 524 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "There is no escaping it. Give up.$"
 
 Befools_ComeBackWhenReady::
-# 501 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 528 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "You probably didn't have enough Chesto\n"
 	.string "Berries equipped anyway.$"
 
 Befools_Outro::
-# 506 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 533 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Even through all my Hypnosis attempts!\n$"
 
 SootopolisCity_ChampHouse_Text_PlayerReceivedHoopa::
-# 510 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 537 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "{PLAYER} received Hoopa!$"
 
 Befools_ExplainHoopa::
-# 514 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 541 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "As promised, there's your Mythical!\n"
 	.string "It's not as good a Ghost-type as\l"
 	.string "Gengar, but I think it will do.$"
 
 PostBattle_Befools::
-# 520 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 547 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Gengar use Hypnosis!$"
 
 Burak_Greeting::
-# 637 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 664 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Come on Spidops, you're so close to\n"
 	.string "OHKO-ing that Reshiram…\p"
 	.string "Oh, hello, I was just preparing my\n"
@@ -878,7 +906,7 @@ Burak_Greeting::
 	.string "What do you say?$"
 
 Burak_GreetingHard::
-# 650 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 677 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Come on Spidops, you're so close to\n"
 	.string "OHKO-ing that Reshiram…\p"
 	.string "Oh, hello, I was just preparing my\n"
@@ -891,34 +919,34 @@ Burak_GreetingHard::
 	.string "Ready to fight?$"
 
 Burak_ReadyYet::
-# 663 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 690 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Are you ready?\n"
 	.string "I'll tell Spidops to go easy on you.$"
 
 Burak_YoureOn::
-# 668 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 695 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "It was all a ploy, GO MEGA APE!!!$"
 
 Burak_ComeBackWhenReady::
-# 672 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 699 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "That's fine, I'll be here training\n"
 	.string "Spidops.$"
 
 Burak_Outro::
-# 677 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 704 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Well at least I'm still first on\n"
 	.string "THE SHEET.$"
 
 SootopolisCity_ChampHouse_Text_PlayerReceivedVolcanion::
-# 682 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 709 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "{PLAYER} received Volcanion!$"
 
 Burak_ExplainVolcanion::
-# 686 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 713 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "There you go! It's no Spidops, but I\n"
 	.string "think it'll do just fine.$"
 
 PostBattle_Burak::
-# 691 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
+# 718 "data/maps/SootopolisCity_ChampHouse/scripts.pory"
 	.string "Good As Spidops.\n"
 	.string "Stats irrelevant.$"
