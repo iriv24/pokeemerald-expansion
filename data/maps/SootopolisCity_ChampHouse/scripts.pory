@@ -66,7 +66,14 @@ script SootopolisCity_ChampHouse_EventScript_Danni{
 	applymovement(LOCALID_DANNI, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_DANNI, SootopolisCity_ChampHouse_EventScript_DanniDefeated)
 	goto_if_set(FLAG_TEMP_1, SootopolisCity_ChampHouse_EventScript_DanniRequestBattleAgain)
-	msgbox(Danni_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(Danni_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(Danni_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_ChampHouse_EventScript_BattleDanniPrompt)
 	end
 }
@@ -94,8 +101,15 @@ script SootopolisCity_ChampHouse_EventScript_DeclineDanniBattle {
 script SootopolisCity_ChampHouse_EventScript_BattleDanni{
 	msgbox(Danni_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_DANNI, Danni_Outro)
-	goto(SootopolisCity_ChampHouse_EventScript_DanniGiveGenesect)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_ChampHouse_EventScript_DanniGiveGenesect)
+		return
+	}
 }
 
 
@@ -165,6 +179,12 @@ text Danni_Greeting{
 	"a nuzlocke legend?\p"
 	"Win here and you get a rad Mythical\n"
 	"from me. You in?"
+}
+
+text Danni_GreetingHard{
+	"Ello ello, trainer. Nice to see you’ve\n"
+	"gotten this far. How bout a battle with\l"
+	"a nuzlocke legend?"
 }
 
 text Danni_ReadyYet{
@@ -344,7 +364,14 @@ script SootopolisCity_ChampHouse_EventScript_Befools{
 	applymovement(LOCALID_BEFOOLS, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_BEFOOLS, SootopolisCity_ChampHouse_EventScript_BefoolsDefeated)
 	goto_if_set(FLAG_TEMP_3, SootopolisCity_ChampHouse_EventScript_BefoolsRequestBattleAgain)
-	msgbox(Befools_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(Befools_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(Befools_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_ChampHouse_EventScript_BattleBefoolsPrompt)
 	end
 }
@@ -372,8 +399,15 @@ script SootopolisCity_ChampHouse_EventScript_DeclineBefoolsBattle {
 script SootopolisCity_ChampHouse_EventScript_BattleBefools{
 	msgbox(Befools_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_BEFOOLS, Befools_Outro)
-	goto(SootopolisCity_ChampHouse_EventScript_BefoolsGiveHoopa)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_ChampHouse_EventScript_BefoolsGiveHoopa)
+		return
+	}
 }
 
 script SootopolisCity_ChampHouse_EventScript_BefoolsDefeated{
@@ -445,6 +479,17 @@ text Befools_Greeting{
 	"So, do you want to battle?"
 }
 
+text Befools_GreetingHard{
+	"I'm Befools, and I used my trusty\n"
+	"Gengar here to put every single\l"
+	"Pokémon in this game to sleep, and then\l"
+	"knocked them out.\p"
+	"If the creator ends up nerfing sleep\n"
+	"even more in a future update, it will\l"
+	"probably be my fault, sorry about that!\p"
+	"So, do you want to battle?"
+}
+
 text Befools_ReadyYet{
 	"Ready for this snooze-fest?"
 }
@@ -482,7 +527,14 @@ script SootopolisCity_ChampHouse_EventScript_Burak{
 	applymovement(LOCALID_BURAK, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_BURAK, SootopolisCity_ChampHouse_EventScript_BurakDefeated)
 	goto_if_set(FLAG_TEMP_4, SootopolisCity_ChampHouse_EventScript_BurakRequestBattleAgain)
-	msgbox(Burak_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(Burak_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(Burak_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_ChampHouse_EventScript_BattleBurakPrompt)
 	end
 }
@@ -510,8 +562,15 @@ script SootopolisCity_ChampHouse_EventScript_DeclineBurakBattle {
 script SootopolisCity_ChampHouse_EventScript_BattleBurak{
 	msgbox(Burak_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_BURAK, Burak_Outro)
-	goto(SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_ChampHouse_EventScript_BurakGiveVolcanion)
+		return
+	}
 }
 
 
@@ -586,6 +645,19 @@ text Burak_Greeting{
 	"a gift Mythical, which is unfortunately\l"
 	"not a Spidops, but it's still solid.\p"
 	"What do you say?"
+}
+
+text Burak_GreetingHard{
+	"Come on Spidops, you're so close to\n"
+	"OHKO-ing that Reshiram…\p"
+	"Oh, hello, I was just preparing my\n"
+	"strategy for the Elite 4.\p"
+	"I think Spidops here is going to pick up\n"
+	"double-digit frags for this run.\p"
+	"Anyway, you think you can defeat\n"
+	"Spidopsinho… I mean Bashi-…\l"
+	"Nevermind that…\p"
+	"Ready to fight?"
 }
 
 text Burak_ReadyYet{
