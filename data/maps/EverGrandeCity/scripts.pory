@@ -350,11 +350,25 @@ script EverGrandeCity_EventScript_RivalsFlyAway{
 }
 
 script EverGrandeCity_EventScript_RivalFarewellStart{
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	waitmovement(0)
-	msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
-	closemessage()
-	goto(EverGrandeCity_EventScript_RivalGiveKubfu)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
+		closemessage()
+		giveitem(ITEM_TM_U_TURN)
+		checkplayergender
+		goto_if_eq(VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell)
+		goto_if_eq(VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell)
+	}
+	else
+	{
+		applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
+		closemessage()
+		goto(EverGrandeCity_EventScript_RivalGiveKubfu)
+	}
 	releaseall
 	end
 }
@@ -575,8 +589,15 @@ script EverGrandeCity_EventScript_BattleVolkner{
 	giveitem(ITEM_TM_RISING_VOLTAGE)
 	giveitem(ITEM_TM_SUPERCELL_SLAM)
 	giveitem(ITEM_EJECT_BUTTON)
-	goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
+		return
+	}
 }
 	
 

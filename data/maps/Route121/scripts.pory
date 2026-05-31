@@ -236,8 +236,15 @@ script Route121_EventScript_BattleByron{
 	giveitem(ITEM_TM_HIGH_HORSEPOWER)
 	giveitem(ITEM_COPPERAJITE)
 	giveitem(ITEM_ROCKY_HELMET)
-	giveitem(ITEM_LEFTOVERS)
-	goto(Route121_EventScript_ByronGiveJirachi)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_SKARMORITE)
+	}
+	else
+	{
+		giveitem(ITEM_LEFTOVERS)
+		goto(Route121_EventScript_ByronGiveJirachi)
+	}
 	return
 }
 	

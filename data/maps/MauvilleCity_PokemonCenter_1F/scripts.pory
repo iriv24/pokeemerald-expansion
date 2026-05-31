@@ -53,37 +53,57 @@ MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 script MauvilleCity_PokemonCenter_1F_EventScript_CostumePikachuGive {
 	lock
 	faceplayer
-	msgbox(PikachuManIntro)
-
-	dynmultipush("Pikachu Cosplay", SPECIES_PIKACHU_COSPLAY)
-	dynmultipush("Pikachu Rock Star", SPECIES_PIKACHU_ROCK_STAR)
-	dynmultipush("Pikachu Belle", SPECIES_PIKACHU_BELLE)
-	dynmultipush("Pikachu Pop Star", SPECIES_PIKACHU_POP_STAR)
-	dynmultipush("Pikachu PhD", SPECIES_PIKACHU_PHD)
-	dynmultipush("Pikachu Libre", SPECIES_PIKACHU_LIBRE)
-	dynmultipush("Pikachu Surfing", SPECIES_PIKACHU_SURFING)
-	dynmultipush("Pikachu Flying", SPECIES_PIKACHU_FLYING)
-    dynmultipush("Cancel", MULTI_B_PRESSED)
-
-    // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
-
-    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
 	{
-		goto(MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo)
+		msgbox(PikachuManIntroHard, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO)
+		{
+			goto(MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo)
+		}
+		randomelement(SPECIES_PIKACHU_ROCK_STAR,SPECIES_PIKACHU_BELLE,SPECIES_PIKACHU_POP_STAR,SPECIES_PIKACHU_PHD,SPECIES_PIKACHU_LIBRE,SPECIES_PIKACHU_SURFING,SPECIES_PIKACHU_FLYING)
+		copyvar(VAR_0x8005, VAR_RESULT)
+		getpartysize
+		goto_if_eq(VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu)
+		msgbox("I'll give you my favorite one!")
+		playfanfare(MUS_OBTAIN_ITEM)
+		message(MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu)
+		waitfanfare
+		givemonrandom(VAR_0x8005, 25)
 	}
+	else
+	{
+		msgbox(PikachuManIntro)
 
-	copyvar(VAR_0x8005, VAR_RESULT)
-	checkitem(ITEM_YELLOW_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
-	getpartysize
-	goto_if_eq(VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu)
-	msgbox("That's my favorite one, great choice!")
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu)
-	waitfanfare
-	givemonrandom(VAR_0x8005, 25)
-	removeitem(ITEM_YELLOW_SHARD)
+		dynmultipush("Pikachu Cosplay", SPECIES_PIKACHU_COSPLAY)
+		dynmultipush("Pikachu Rock Star", SPECIES_PIKACHU_ROCK_STAR)
+		dynmultipush("Pikachu Belle", SPECIES_PIKACHU_BELLE)
+		dynmultipush("Pikachu Pop Star", SPECIES_PIKACHU_POP_STAR)
+		dynmultipush("Pikachu PhD", SPECIES_PIKACHU_PHD)
+		dynmultipush("Pikachu Libre", SPECIES_PIKACHU_LIBRE)
+		dynmultipush("Pikachu Surfing", SPECIES_PIKACHU_SURFING)
+		dynmultipush("Pikachu Flying", SPECIES_PIKACHU_FLYING)
+		dynmultipush("Cancel", MULTI_B_PRESSED)
+
+		// // setting initial selected to a non-existant ID will always have it point to the first option
+		dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+
+		if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+		{
+			goto(MauvilleCity_PokemonCenter_1F_EventScript_PikachuManNo)
+		}
+
+		copyvar(VAR_0x8005, VAR_RESULT)
+		checkitem(ITEM_YELLOW_SHARD)
+		goto_if_eq(VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
+		getpartysize
+		goto_if_eq(VAR_RESULT, PARTY_SIZE, MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu)
+		msgbox("That's my favorite one, great choice!")
+		playfanfare(MUS_OBTAIN_ITEM)
+		message(MauvilleCity_PokemonCenter_1F_Text_ReceivedThePikachu)
+		waitfanfare
+		givemonrandom(VAR_0x8005, 25)
+		removeitem(ITEM_YELLOW_SHARD)
+	}
 	msgbox("Come back if you want more Pikachus!")
 	release
 	end
@@ -111,6 +131,13 @@ script MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForPikachu {
 text PikachuManIntro {
 	"Hi, hi! I'm the number one Pikachu guy!\n"
 	"For just one Yellow Shard, any Costume\l"
+	"Pikachu can be yours, what do you say,\l"
+	"do you want one of these Pikachus?"
+}
+
+text PikachuManIntroHard {
+	"Hi, hi! I'm the number one Pikachu guy!\n"
+	"If you like them too, any Costume\l"
 	"Pikachu can be yours, what do you say,\l"
 	"do you want one of these Pikachus?"
 }
