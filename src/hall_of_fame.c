@@ -436,48 +436,75 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
 static u16 GetHallOfFameFormChangeSpecies(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+    u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
     u16 ability = GetMonAbility(mon);
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
     u16 targetSpecies = species;
+    u16 prevSpecies;
     const struct FormChange *formChanges = GetSpeciesFormChanges(species);
 
-    for (u8 i = 0; formChanges != NULL && formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
-    {
-        switch (formChanges[i].method)
+    // I know this looks crazy, but I have an equally crazy reason!
+    // Reason for nested loop: Zygarde -> Zygarde Complete -> Mega Zygarde
+    do {
+        prevSpecies = targetSpecies;
+        formChanges = GetSpeciesFormChanges(targetSpecies);
+
+        for (u32 i = 0; formChanges != NULL && formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
         {
-        case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM:
-        case FORM_CHANGE_BATTLE_PRIMAL_REVERSION:
-        case FORM_CHANGE_BATTLE_ULTRA_BURST:
-        case FORM_CHANGE_ITEM_HOLD:
-        case FORM_CHANGE_BEGIN_BATTLE:
-            if (formChanges[i].param1 == GetMonData(mon, MON_DATA_HELD_ITEM))
-                targetSpecies = formChanges[i].targetSpecies;
-            break;
-
-        case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE:
-            for (u8 j = 0; j < MAX_MON_MOVES; j++)
+            switch (formChanges[i].method)
             {
-                u16 move = GetMonData(mon, MON_DATA_MOVE1 + j);
-                if (formChanges[i].param1 == move)
-                    targetSpecies =  formChanges[i].targetSpecies;
+            case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM: // eg. Charizard -> Mega Charizard X
+            case FORM_CHANGE_BATTLE_PRIMAL_REVERSION: // eg. Kyogre -> Primal Kyogre
+            case FORM_CHANGE_BATTLE_ULTRA_BURST: // eg. Necrozma Dawn Wings -> Ultra Necrozma
+            case FORM_CHANGE_ITEM_HOLD: // eg. Arceus -> Arceus-Fire
+            case FORM_CHANGE_BEGIN_BATTLE: // eg. Zacian -> Zacian Crowned
+                if (formChanges[i].param1 == item)
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE: // eg. Rayquaza -> Mega Rayquaza
+                for (u8 j = 0; j < MAX_MON_MOVES; j++)
+                {
+                    u16 move = GetMonData(mon, MON_DATA_MOVE1 + j);
+                    if (formChanges[i].param1 == move)
+                        targetSpecies = formChanges[i].targetSpecies;
+                }
+                break;
+
+            case FORM_CHANGE_BATTLE_GIGANTAMAX: // eg. Rillaboom -> GMax Rillaboom
+                if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR))
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            case FORM_CHANGE_BATTLE_TERASTALLIZATION: // eg. Ogerpon -> Tera Ogerpon
+                if (formChanges[i].param1 == GetMonData(mon, MON_DATA_TERA_TYPE))
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            case FORM_CHANGE_BATTLE_TURN_END: // eg. Morpeko Full Belly -> Morpeko Hangry
+                if (formChanges[i].param1 == ability && formChanges[i].targetSpecies != species)
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            case FORM_CHANGE_BATTLE_HP_PERCENT: // eg. Minior Meteor -> Minior Core
+                if (formChanges[i].param1 == ability
+                 && level >= formChanges[i].param3 // Wishiwashi Solo -> Wishiwashi School
+                 && formChanges[i].targetSpecies != species
+                 && targetSpecies == species)
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            case FORM_CHANGE_BATTLE_SWITCH: // eg. Palafin Zero -> Palafin Hero
+                if (formChanges[i].param1 != ABILITY_NONE && formChanges[i].param1 == ability
+                 && formChanges[i].targetSpecies != species)
+                    targetSpecies = formChanges[i].targetSpecies;
+                break;
+
+            default:
+                break;
             }
-            break;
-
-        case FORM_CHANGE_BATTLE_HP_PERCENT:
-            if (formChanges[i].param1 == ability
-                && formChanges[i].param2 == HP_LOWER_EQ_THAN // the lower than form is always the cool one
-                && formChanges[i].param3 == 50) // unless its 25% for Wishiwashi
-                targetSpecies =  formChanges[i].targetSpecies;
-            break;
-
-        case FORM_CHANGE_BATTLE_SWITCH:
-            if (formChanges[i].param1 == ability || formChanges[i].param1 == ABILITY_NONE)
-                targetSpecies =  formChanges[i].targetSpecies;
-            break;
-                
-        default:
-            break;
         }
-    }
+    } while (targetSpecies != prevSpecies);
 
     return targetSpecies;
 }
@@ -494,6 +521,7 @@ static void Task_Hof_InitMonData(u8 taskId)
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
         {
             sHofMonPtr->mon[i].species = GetHallOfFameFormChangeSpecies(&gPlayerParty[i]);
+            DebugPrintf("Species ID: %d; New ID: %d", GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), sHofMonPtr->mon[i].species);
             sHofMonPtr->mon[i].tid = GetMonData(&gPlayerParty[i], MON_DATA_OT_ID);
             sHofMonPtr->mon[i].isShiny = GetMonData(&gPlayerParty[i], MON_DATA_IS_SHINY);
             sHofMonPtr->mon[i].personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY);
