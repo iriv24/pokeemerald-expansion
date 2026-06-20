@@ -200,64 +200,73 @@ bool32 CanBattlerWin1v1(u32 hitsToKOAI, u32 hitsToKOPlayer, bool32 isBattlerFirs
 
 bool32 CanAIWin1V1(u32 battlerAtk, u32 battlerDef)
 {
-    //Variable initialization
-    u16 aiMoveEffect;
-    s32 i, damageDealt = 0, maxDamageDealt = 0, damageTaken = 0, maxDamageTaken = 0, maxDamageTakenPriority = 0;
-    u32 aiMove, playerMove, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE;
-    u32 hitsToKoAI = 0, hitsToKoAIPriority = 0, hitsToKoPlayer = 0;
-    bool32 canBattlerWin1v1 = FALSE, isBattlerFirst, isBattlerFirstPriority;
+    s32 i;
+    s32 damageTaken;
+    u32 aiMove, aiMoveEffect, playerMove;
+    s32 damageDealt;
+    s32 maxDamageTaken = 0, maxDamageTakenPriority = 0, maxDamageDealt = 0;
+    u32 bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE;
+    u32 bestPlayerMoveIndex = 0, bestPlayerPriorityMoveIndex = 0;
+    u32 hitsToKoAI, hitsToKoAIPriority, hitsToKoPlayer = 0;
+    bool32 isBattlerFirst, isBattlerFirstPriority;
+    bool32 canBattlerWin1v1 = FALSE;
 
-    // Get max damage mon could take
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         playerMove = gBattleMons[battlerDef].moves[i];
-        if (playerMove != MOVE_NONE 
-            && gMovesInfo[playerMove].category != DAMAGE_CATEGORY_STATUS 
-            && gMovesInfo[playerMove].effect != EFFECT_FOCUS_PUNCH
-            && gBattleMons[battlerDef].pp[i] > 0
-            && !MatchesSelfKillOrSuperfang(gMovesInfo[playerMove].effect, FALSE))
+        const struct MoveInfo *moveInfo = &gMovesInfo[playerMove];
+
+        if (playerMove == MOVE_NONE
+         || moveInfo->category == DAMAGE_CATEGORY_STATUS
+         || moveInfo->effect == EFFECT_FOCUS_PUNCH
+         || gBattleMons[battlerDef].pp[i] == 0
+         || MatchesSelfKillOrSuperfang(moveInfo->effect, FALSE))
+            continue;
+
+        damageTaken = AI_GetDamage(battlerDef, battlerAtk, i, AI_DEFENDING_NORMAL, AI_DATA);
+        if (AI_DoesChoiceEffectBlockMove(battlerDef, playerMove))
+            continue;
+
+        if (damageTaken > maxDamageTaken)
         {
-            damageTaken = AI_GetDamage(battlerDef, battlerAtk, i, AI_DEFENDING_NORMAL, AI_DATA);
-            if (damageTaken > maxDamageTaken && !AI_DoesChoiceEffectBlockMove(battlerDef, playerMove))
-            {
-                maxDamageTaken = damageTaken;
-                bestPlayerMove = playerMove;
-            }
-            if (GetMovePriority(battlerDef, playerMove) > 0 && damageTaken > maxDamageTakenPriority && !AI_DoesChoiceEffectBlockMove(battlerDef, playerMove))
-            {
-                maxDamageTakenPriority = damageTaken;
-                bestPlayerPriorityMove = playerMove;
-            }
+            maxDamageTaken = damageTaken;
+            bestPlayerMove = playerMove;
+            bestPlayerMoveIndex = i;
+        }
+        if (damageTaken > maxDamageTakenPriority && GetMovePriority(battlerDef, playerMove) > 0)
+        {
+            maxDamageTakenPriority = damageTaken;
+            bestPlayerPriorityMove = playerMove;
+            bestPlayerPriorityMoveIndex = i;
         }
     }
 
-    hitsToKoAI = GetNoOfHitsToKOBattlerDmg(maxDamageTaken, battlerAtk);
-    hitsToKoAIPriority = GetNoOfHitsToKOBattlerDmg(maxDamageTakenPriority, battlerAtk);
+    hitsToKoAI = GetNoOfHitsToKOBattler(battlerAtk, battlerDef, bestPlayerMoveIndex, AI_DEFENDING_NORMAL, CONSIDER_ENDURE);
+    hitsToKoAIPriority = GetNoOfHitsToKOBattler(battlerAtk, battlerDef, bestPlayerPriorityMoveIndex, AI_DEFENDING_NORMAL, CONSIDER_ENDURE);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         aiMove = gBattleMons[battlerAtk].moves[i];
+
+        if (aiMove == MOVE_NONE || gBattleMons[battlerAtk].pp[i] == 0)
+            continue;
+
         aiMoveEffect = gMovesInfo[aiMove].effect;
-        if (aiMove != MOVE_NONE && gBattleMons[battlerAtk].pp[i] > 0)
+        if (gMovesInfo[aiMove].category == DAMAGE_CATEGORY_STATUS
+         || AI_DoesChoiceEffectBlockMove(battlerAtk, aiMove)
+         || (aiMoveEffect == EFFECT_EXPLOSION && AI_DATA->shouldConsiderExplosion != TRUE))
+            continue;
+
+        damageDealt = AI_GetDamage(battlerAtk, battlerDef, i, AI_ATTACKING_ON_FIELD, AI_DATA);
+        if (damageDealt > maxDamageDealt)
+            maxDamageDealt = damageDealt;
+        // Once we can win a 1v1 we don't need to track this, but want to run the rest of the function to keep the runtime the same regardless of when we find the winning move
+        if (!canBattlerWin1v1)
         {
-            // Only check damage if it's a damaging move (if the damaging move is explosion, only if it can be used)
-            if (gMovesInfo[aiMove].category != DAMAGE_CATEGORY_STATUS
-                && !AI_DoesChoiceEffectBlockMove(battlerAtk, aiMove)
-                && (aiMoveEffect != EFFECT_EXPLOSION || (aiMoveEffect == EFFECT_EXPLOSION && AI_DATA->shouldConsiderExplosion == TRUE)))
-            {
-                // Get maximum damage mon can deal
-                damageDealt = AI_GetDamage(battlerAtk, battlerDef, i, AI_ATTACKING_ON_FIELD, AI_DATA);
-                if (damageDealt > maxDamageDealt)
-                    maxDamageDealt = damageDealt;
-                
-                if (!canBattlerWin1v1) // Once we can win a 1v1 we don't need to track this, but want to run the rest of the function to keep the runtime the same regardless of when we find the winning move
-                {
-                    hitsToKoPlayer = GetNoOfHitsToKOBattlerDmg(damageDealt, battlerDef);
-                    isBattlerFirst = AI_IsFaster(battlerAtk, battlerDef, aiMove, bestPlayerMove, CONSIDER_PRIORITY);
-                    isBattlerFirstPriority = AI_IsFaster(battlerAtk, battlerDef, aiMove, bestPlayerPriorityMove, CONSIDER_PRIORITY);
-                    canBattlerWin1v1 = CanBattlerWin1v1(hitsToKoAI, hitsToKoPlayer, isBattlerFirst) && CanBattlerWin1v1(hitsToKoAIPriority, hitsToKoPlayer, isBattlerFirstPriority);
-                }
-            }
+            hitsToKoPlayer = GetNoOfHitsToKOBattler(battlerDef, battlerAtk, i, AI_ATTACKING_IN_SWITCHIN_CALC, CONSIDER_ENDURE);
+            isBattlerFirst         = AI_IsFaster(battlerAtk, battlerDef, aiMove, bestPlayerMove, CONSIDER_PRIORITY);
+            isBattlerFirstPriority = AI_IsFaster(battlerAtk, battlerDef, aiMove, bestPlayerPriorityMove, CONSIDER_PRIORITY);
+            canBattlerWin1v1 = CanBattlerWin1v1(hitsToKoAI, hitsToKoPlayer, isBattlerFirst) && CanBattlerWin1v1(hitsToKoAIPriority, hitsToKoPlayer, isBattlerFirstPriority);
         }
     }
     return canBattlerWin1v1;
@@ -271,8 +280,10 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
     //Variable initialization
     u8 opposingPosition;
     u16 aiMoveEffect;
-    s32 i, damageDealt = 0, maxDamageDealt = 0, damageTaken = 0, maxDamageTaken = 0, maxDamageTakenPriority = 0;
+    u32 aiMove, playerMove;
+    s32 i, damageDealt = 0, maxDamageDealt = 0, damageTaken = 0, maxDamageTaken = 0, maxDamageTakenPriority = 0, damageTaken;
     u32 aiMove, playerMove, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE, aiAbility = AI_DATA->abilities[battler], opposingBattler;
+    u32 bestPlayerMoveIndex = 0, bestPlayerPriorityMoveIndex = 0;
     bool32 getsOneShot = FALSE, hasStatusMove = FALSE, hasSuperEffectiveMove = FALSE, getsOneShotByPrio = FALSE, oneShotDefenseCheck = FALSE;
     u32 typeMatchup;
     u32 hitsToKoAI = 0, hitsToKoAIPriority = 0, hitsToKoPlayer = 0;
@@ -293,66 +304,72 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         playerMove = gBattleMons[opposingBattler].moves[i];
-        if (playerMove != MOVE_NONE 
-            && gMovesInfo[playerMove].category != DAMAGE_CATEGORY_STATUS 
-            && gMovesInfo[playerMove].effect != EFFECT_FOCUS_PUNCH
-            && gBattleMons[opposingBattler].pp[i] > 0
-            && !MatchesSelfKillOrSuperfang(gMovesInfo[playerMove].effect, FALSE))
+        const struct MoveInfo *moveInfo = &gMovesInfo[playerMove];
+
+        if (playerMove == MOVE_NONE
+         || moveInfo->category == DAMAGE_CATEGORY_STATUS
+         || moveInfo->effect == EFFECT_FOCUS_PUNCH
+         || gBattleMons[opposingBattler].pp[i] == 0
+         || MatchesSelfKillOrSuperfang(moveInfo->effect, FALSE))
+            continue;
+
+        damageTaken = AI_GetDamage(opposingBattler, battler, i, AI_DEFENDING_NORMAL, AI_DATA);
+        if (AI_DoesChoiceEffectBlockMove(opposingBattler, playerMove))
+            continue;
+
+        if (damageTaken > maxDamageTaken)
         {
-            damageTaken = AI_GetDamage(opposingBattler, battler, i, AI_DEFENDING_NORMAL, AI_DATA);
-            if (damageTaken > maxDamageTaken && !AI_DoesChoiceEffectBlockMove(opposingBattler, playerMove))
-            {
-                maxDamageTaken = damageTaken;
-                bestPlayerMove = playerMove;
-            }
-            if (GetMovePriority(opposingBattler, playerMove) > 0 && damageTaken > maxDamageTakenPriority && !AI_DoesChoiceEffectBlockMove(opposingBattler, playerMove))
-            {
-                maxDamageTakenPriority = damageTaken;
-                bestPlayerPriorityMove = playerMove;
-            }
+            maxDamageTaken = damageTaken;
+            bestPlayerMove = playerMove;
+            bestPlayerMoveIndex = i;
+        }
+        if (damageTaken > maxDamageTakenPriority && GetMovePriority(opposingBattler, playerMove) > 0)
+        {
+            maxDamageTakenPriority = damageTaken;
+            bestPlayerPriorityMove = playerMove;
+            bestPlayerPriorityMoveIndex = i;
         }
     }
 
-    hitsToKoAI = GetNoOfHitsToKOBattlerDmg(maxDamageTaken, battler);
-    hitsToKoAIPriority = GetNoOfHitsToKOBattlerDmg(maxDamageTakenPriority, battler);
+    hitsToKoAI = GetNoOfHitsToKOBattler(battler, opposingBattler, bestPlayerMoveIndex, AI_DEFENDING_NORMAL, CONSIDER_ENDURE);
+    hitsToKoAIPriority = GetNoOfHitsToKOBattler(battler, opposingBattler, bestPlayerPriorityMoveIndex, AI_DEFENDING_NORMAL, CONSIDER_ENDURE);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         aiMove = gBattleMons[battler].moves[i];
+
+        if (aiMove == MOVE_NONE || gBattleMons[battler].pp[i] == 0)
+            continue;
+
         aiMoveEffect = gMovesInfo[aiMove].effect;
-        if (aiMove != MOVE_NONE && gBattleMons[battler].pp[i] > 0)
+        // Check if mon has an "important" status move
+        if (aiMoveEffect == EFFECT_REFLECT || aiMoveEffect == EFFECT_LIGHT_SCREEN || aiMoveEffect == EFFECT_AURORA_VEIL
+        || aiMoveEffect == EFFECT_SPIKES || aiMoveEffect == EFFECT_TOXIC_SPIKES || aiMoveEffect == EFFECT_STEALTH_ROCK || aiMoveEffect == EFFECT_STICKY_WEB
+        || aiMoveEffect == EFFECT_TAILWIND || aiMoveEffect == EFFECT_TRICK_ROOM 
+        )
         {
-            // Check if mon has an "important" status move
-            if (aiMoveEffect == EFFECT_REFLECT || aiMoveEffect == EFFECT_LIGHT_SCREEN || EFFECT_AURORA_VEIL
-            || aiMoveEffect == EFFECT_SPIKES || aiMoveEffect == EFFECT_TOXIC_SPIKES || aiMoveEffect == EFFECT_STEALTH_ROCK || aiMoveEffect == EFFECT_STICKY_WEB
-            || aiMoveEffect == EFFECT_TAILWIND || aiMoveEffect == EFFECT_TRICK_ROOM 
-            )
-            {
-                hasStatusMove = TRUE;
-            }
+            hasStatusMove = TRUE;
+        }
 
-            // Only check damage if it's a damaging move (if the damaging move is explosion, only if it can be used)
-            if (gMovesInfo[aiMove].category != DAMAGE_CATEGORY_STATUS
-                && !AI_DoesChoiceEffectBlockMove(battler, aiMove)
-                && (aiMoveEffect != EFFECT_EXPLOSION || (aiMoveEffect == EFFECT_EXPLOSION && AI_DATA->shouldConsiderExplosion == TRUE)))
-            {
-                // Check if mon has a super effective move
-                if (AI_GetMoveEffectiveness(aiMove, battler, opposingBattler) >= UQ_4_12(2.0))
-                    hasSuperEffectiveMove = TRUE;
+        if (gMovesInfo[aiMove].category == DAMAGE_CATEGORY_STATUS
+         || AI_DoesChoiceEffectBlockMove(battler, aiMove)
+         || (aiMoveEffect == EFFECT_EXPLOSION && AI_DATA->shouldConsiderExplosion != TRUE))
+            continue;
 
-                // Get maximum damage mon can deal
-                damageDealt = AI_GetDamage(battler, opposingBattler, i, AI_ATTACKING_ON_FIELD, AI_DATA);
-                if (damageDealt > maxDamageDealt)
-                    maxDamageDealt = damageDealt;
-                
-                if (!canBattlerWin1v1) // Once we can win a 1v1 we don't need to track this, but want to run the rest of the function to keep the runtime the same regardless of when we find the winning move
-                {
-                    hitsToKoPlayer = GetNoOfHitsToKOBattlerDmg(damageDealt, opposingBattler);
-                    isBattlerFirst = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerMove, CONSIDER_PRIORITY);
-                    isBattlerFirstPriority = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerPriorityMove, CONSIDER_PRIORITY);
-                    canBattlerWin1v1 = CanBattlerWin1v1(hitsToKoAI, hitsToKoPlayer, isBattlerFirst) && CanBattlerWin1v1(hitsToKoAIPriority, hitsToKoPlayer, isBattlerFirstPriority);
-                }
-            }
+        // Check if mon has a super effective move
+        if (AI_GetMoveEffectiveness(aiMove, battler, opposingBattler) >= UQ_4_12(2.0))
+            hasSuperEffectiveMove = TRUE;
+
+        damageDealt = AI_GetDamage(battler, opposingBattler, i, AI_ATTACKING_ON_FIELD, AI_DATA);
+        if (damageDealt > maxDamageDealt)
+            maxDamageDealt = damageDealt;
+        // Once we can win a 1v1 we don't need to track this, but want to run the rest of the function to keep the runtime the same regardless of when we find the winning move
+        if (!canBattlerWin1v1)
+        {
+            hitsToKoPlayer = GetNoOfHitsToKOBattler(opposingBattler, battler, i, AI_ATTACKING_IN_SWITCHIN_CALC, CONSIDER_ENDURE);
+            isBattlerFirst = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerMove, CONSIDER_PRIORITY);
+            isBattlerFirstPriority = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerPriorityMove, CONSIDER_PRIORITY);
+            canBattlerWin1v1 = CanBattlerWin1v1(hitsToKoAI, hitsToKoPlayer, isBattlerFirst) && CanBattlerWin1v1(hitsToKoAIPriority, hitsToKoPlayer, isBattlerFirstPriority);
         }
     }
 
@@ -2363,7 +2380,7 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, enum SwitchType switchType)
     }
 
     // Only use better mon selection if AI_FLAG_SMART_MON_CHOICES is set for the trainer.
-    if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_MON_CHOICES && !IsDoubleBattle()) // Double Battles aren't included in AI_FLAG_SMART_MON_CHOICE. Defaults to regular switch in logic
+    if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_MON_CHOICES)
     {
         bestMonId = GetBestMonIntegrated(party, firstId, lastId, battler, opposingBattler, battlerIn1, battlerIn2, switchType);
         return bestMonId;
