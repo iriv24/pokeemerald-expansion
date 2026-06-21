@@ -31,11 +31,11 @@ GraniteCave_StevensRoom_EventScript_Steven::
 # 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	giveitemfast ITEM_HEAL_BALL, 99
 # 17 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_PP_UP, 20
-# 18 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
-# 19 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 18 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	goto_if_ge GraniteCave_StevensRoom_EventScript_StevenGiveItems_2
+# 19 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	giveitemfast ITEM_PP_UP, 40
 # 20 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	giveitemfast ITEM_SITRUS_BERRY, 10
 # 21 "data/maps/GraniteCave_StevensRoom/scripts.pory"
@@ -153,67 +153,67 @@ GraniteCave_StevensRoom_EventScript_StevenGiveItems_1:
 # 77 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 GraniteCave_StevensRoom_EventScript_StevenGiveItems_2:
 # 78 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_SITRUS_BERRY, 60
+	giveitemfast ITEM_PP_UP, 12
 # 79 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_BERRY_JUICE, 20
+	giveitemfast ITEM_SITRUS_BERRY, 1
 # 80 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_THROAT_SPRAY, 1
+	giveitemfast ITEM_BERRY_JUICE, 10
 # 81 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_WIDE_LENS, 1
+	giveitemfast ITEM_THROAT_SPRAY, 1
 # 82 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_IRON_BALL, 1
+	giveitemfast ITEM_WIDE_LENS, 1
 # 83 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitemfast ITEM_LEEK, 1
+	giveitemfast ITEM_IRON_BALL, 1
 # 84 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	goto GraniteCave_StevensRoom_EventScript_StevenGiveItems_1
+	giveitemfast ITEM_LEEK, 1
 # 85 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	goto GraniteCave_StevensRoom_EventScript_StevenGiveItems_1
 # 86 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_EventScript_StevenExitNorth::
+
 # 87 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+GraniteCave_StevensRoom_EventScript_StevenExitNorth::
 # 88 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	waitmovement 0
-# 89 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	return
-# 90 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
-# 91 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
-# 92 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-# 93 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
-# 94 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 89 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	waitmovement 0
-# 95 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 90 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	return
-# 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 91 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 
-# 97 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_EventScript_StevenExitSouth::
-# 98 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 92 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
+# 93 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-# 99 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
-# 100 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 94 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+# 95 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	waitmovement 0
+# 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	return
+# 97 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+
+# 98 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+GraniteCave_StevensRoom_EventScript_StevenExitSouth::
+# 99 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
+# 100 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
 # 101 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	return
+	waitmovement 0
 # 102 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
-# 103 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_EventScript_BagFull::
-# 104 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	msgbox GraniteCave_StevensRoom_Text_OhBagIsFull, MSGBOX_DEFAULT
-# 105 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	return
-# 106 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 103 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 
+# 104 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+GraniteCave_StevensRoom_EventScript_BagFull::
+# 105 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	msgbox GraniteCave_StevensRoom_Text_OhBagIsFull, MSGBOX_DEFAULT
+# 106 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	return
 # 107 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Movement_StevenExit:
+
 # 108 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	walk_up
+GraniteCave_StevensRoom_Movement_StevenExit:
 # 109 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
 # 110 "data/maps/GraniteCave_StevensRoom/scripts.pory"
@@ -223,154 +223,156 @@ GraniteCave_StevensRoom_Movement_StevenExit:
 # 112 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
 # 113 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	delay_8
+	walk_up
 # 114 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	step_end
+	delay_8
 # 115 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	step_end
 # 116 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit:
+
 # 117 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	delay_16
+GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit:
 # 118 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	delay_16
 # 119 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	delay_16
 # 120 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	walk_in_place_faster_up
+	delay_16
 # 121 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	step_end
+	walk_in_place_faster_up
 # 122 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	step_end
 # 123 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Movement_StevenExitSouth:
+
 # 124 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	walk_left
+GraniteCave_StevensRoom_Movement_StevenExitSouth:
 # 125 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	walk_up
+	walk_left
 # 126 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
 # 127 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
 # 128 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	walk_right
-# 129 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
+# 129 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	walk_right
 # 130 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	walk_up
 # 131 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	delay_8
+	walk_up
 # 132 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	step_end
+	delay_8
 # 133 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	step_end
 # 134 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
+
 # 135 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "My name is Steven.\p"
+GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
 # 136 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "I'm interested in rare stones,\n"
+	.string "My name is Steven.\p"
 # 137 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "so I travel here and there.\p"
+	.string "I'm interested in rare stones,\n"
 # 138 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Oh?\n"
+	.string "so I travel here and there.\p"
 # 139 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "A Letter for me?$"
+	.string "Oh?\n"
 # 140 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	.string "A Letter for me?$"
 # 141 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_ThankYouTakeThis:
+
 # 142 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Steven: Okay, thank you.\n"
+GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 # 143 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "You went through all this trouble to\l"
+	.string "Steven: Okay, thank you.\n"
 # 144 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "deliver that. I need to thank you.\p"
+	.string "You went through all this trouble to\l"
 # 145 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Let me see…\n"
+	.string "deliver that. I need to thank you.\p"
 # 146 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "I'll give you this TM.\p"
+	.string "Let me see…\n"
 # 147 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "It contains my favorite move,\n"
+	.string "I'll give you this TM.\p"
 # 148 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Steel Wing. Also, take these spare\l"
+	.string "It contains my favorite move,\n"
 # 149 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Items I have, hopefully they will be\l"
+	.string "Steel Wing. Also, take these spare\l"
 # 150 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "helpful!$"
+	.string "Items I have, hopefully they will be\l"
 # 151 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	.string "helpful!$"
 # 152 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
+
 # 153 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Steven: Your Pokémon appear quite\n"
+GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 # 154 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "capable, so hopefully you can put those\l"
-# 155 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Items to good use.\p"
-# 156 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "I had some spare Sitrus Berries, Heal\n"
-# 157 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Balls, Berry Juices, Moon Stones, Throat\l"
-# 158 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Sprays, PP Ups, Iron Balls, Wide Lenses,\l"
-# 159 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Heat Rocks, Damp Rocks, Smooth Rocks,\l"
-# 160 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Icy Rocks, and Leeks to give to you.\p"
-# 161 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "I know, since we've gotten to know each\n"
-# 162 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "other, let's register one another in\l"
-# 163 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "our PokéNavs.\p"
-# 164 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "… … … … … …$"
-# 165 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
-# 166 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegisterHard:
-# 167 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "Steven: Your Pokémon appear quite\n"
-# 168 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 155 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "capable, so hopefully you can put those\l"
-# 169 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 156 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "Items to good use.\p"
-# 170 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 157 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "I had some spare Sitrus Berries, Heal\n"
-# 171 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Balls, Berry Juices, a Throat Spray,\l"
-# 172 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "PP Ups, a Wide Lens, an Iron Ball\l"
-# 173 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "and a Leek to give to you.\p"
-# 174 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 158 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Balls, Berry Juices, Moon Stones, Throat\l"
+# 159 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Sprays, PP Ups, Iron Balls, Wide Lenses,\l"
+# 160 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Heat Rocks, Damp Rocks, Smooth Rocks,\l"
+# 161 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Icy Rocks, and Leeks to give to you.\p"
+# 162 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "I know, since we've gotten to know each\n"
-# 175 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 163 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "other, let's register one another in\l"
-# 176 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 164 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "our PokéNavs.\p"
-# 177 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 165 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "… … … … … …$"
+# 166 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+
+# 167 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegisterHard:
+# 168 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Steven: Your Pokémon appear quite\n"
+# 169 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "capable, so hopefully you can put those\l"
+# 170 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Items to good use.\p"
+# 171 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "I had some spare Sitrus Berries, Heal\n"
+# 172 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Balls, Berry Juices, a Throat Spray,\l"
+# 173 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "PP Ups, a Wide Lens, an Iron Ball\l"
+# 174 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "and a Leek to give to you.\p"
+# 175 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "I know, since we've gotten to know each\n"
+# 176 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "other, let's register one another in\l"
+# 177 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "our PokéNavs.\p"
 # 178 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	.string "… … … … … …$"
 # 179 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_RegisteredSteven:
+
 # 180 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Registered Steven\n"
+GraniteCave_StevensRoom_Text_RegisteredSteven:
 # 181 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "in the PokéNav.$"
+	.string "Registered Steven\n"
 # 182 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	.string "in the PokéNav.$"
 # 183 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-# 184 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Now, I've got to hurry along.$"
-# 185 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 
+# 184 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
+# 185 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Now, I've got to hurry along.$"
 # 186 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_OhBagIsFull:
+
 # 187 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Oh, your BAG is full…\n"
+GraniteCave_StevensRoom_Text_OhBagIsFull:
 # 188 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Oh, your BAG is full…\n"
+# 189 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "That's too bad, then.$"

@@ -802,8 +802,8 @@ script Route111_EventScript_DawnDefeated{
 	else
 	{
 		giveitem(ITEM_ABILITY_PATCH, 999)
+		msgbox(Route111_Text_DawnGoodbye)
 	}
-	msgbox(Route111_Text_DawnGoodbye)
 	goto(Route111_EventScript_DawnExit)
 	end
 }

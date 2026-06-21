@@ -552,7 +552,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitemfast ITEM_QUICK_BALL, 99
 	giveitemfast ITEM_POKE_BALL, 99
-	giveitemfast ITEM_ORAN_BERRY, 20
+	giveitemfast ITEM_ORAN_BERRY, 10
 	giveitemfast ITEM_SHINY_CHARM
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge Route116_EventScript_BirchGiveItems_2

@@ -1561,9 +1561,9 @@ Route111_EventScript_DawnDefeated::
 	goto_if_ge Route111_EventScript_DawnDefeated_2
 # 804 "data/maps/Route111/scripts.pory"
 	giveitem ITEM_ABILITY_PATCH, 999
-Route111_EventScript_DawnDefeated_1:
-# 806 "data/maps/Route111/scripts.pory"
+# 805 "data/maps/Route111/scripts.pory"
 	msgbox Route111_Text_DawnGoodbye
+Route111_EventScript_DawnDefeated_1:
 # 807 "data/maps/Route111/scripts.pory"
 	goto Route111_EventScript_DawnExit
 	end

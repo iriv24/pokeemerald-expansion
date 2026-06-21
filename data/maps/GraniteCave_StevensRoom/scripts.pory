@@ -14,9 +14,9 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
 	giveitemfast ITEM_TM_STEEL_WING
 	giveitemfast ITEM_HEAL_BALL, 99
-	giveitemfast ITEM_PP_UP, 20
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge GraniteCave_StevensRoom_EventScript_StevenGiveItems_2
+	giveitemfast ITEM_PP_UP, 40
 	giveitemfast ITEM_SITRUS_BERRY, 10
 	giveitemfast ITEM_BERRY_JUICE, 10
 	giveitemfast ITEM_MOON_STONE, 10
@@ -75,8 +75,9 @@ GraniteCave_StevensRoom_EventScript_StevenGiveItems_1:
 
 
 GraniteCave_StevensRoom_EventScript_StevenGiveItems_2:
-	giveitemfast ITEM_SITRUS_BERRY, 60
-	giveitemfast ITEM_BERRY_JUICE, 20
+	giveitemfast ITEM_PP_UP, 12
+	giveitemfast ITEM_SITRUS_BERRY, 1
+	giveitemfast ITEM_BERRY_JUICE, 10
 	giveitemfast ITEM_THROAT_SPRAY, 1
 	giveitemfast ITEM_WIDE_LENS, 1
 	giveitemfast ITEM_IRON_BALL, 1
