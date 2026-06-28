@@ -3756,7 +3756,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_MEAN_LOOK:
         if (ShouldTrap(battlerAtk, battlerDef))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_LASER_FOCUS:
@@ -4628,7 +4628,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_FAIRY_LOCK:
         if (ShouldTrap(battlerAtk, battlerDef))
-            ADJUST_SCORE(BEST_EFFECT);
+            ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_QUASH:
         if (isDoubleBattle && AI_IsSlower(BATTLE_PARTNER(battlerAtk), battlerDef, aiData->partnerMove, MOVE_NONE, CONSIDER_PRIORITY))
@@ -4968,7 +4968,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                     break;
                 case MOVE_EFFECT_WRAP:
                     if (!HasMoveWithAdditionalEffect(battlerDef, MOVE_EFFECT_RAPID_SPIN) && ShouldTrap(battlerAtk, battlerDef))
-                        ADJUST_SCORE(BEST_EFFECT);
+                        ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case MOVE_EFFECT_SALT_CURE:
                     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_WATER) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL))
