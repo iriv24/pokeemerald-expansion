@@ -904,6 +904,7 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+
 void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_DynamaxCandy;
@@ -1443,6 +1444,20 @@ void ItemUseOutOfBattle_InfiniteCandy(u8 taskId)
     if (!gTasks[taskId].tUsingRegisteredKeyItem)
     {
         gItemUseCB = ItemUseCB_RareCandy;
+        SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+        // TODO: handle key items with callbacks to menus allow to be used by registering them.
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+}
+
+void ItemUseOutOfBattle_InstantCandy(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        gItemUseCB = ItemUseCB_InstantCandy;
         SetUpItemUseCallback(taskId);
     }
     else
