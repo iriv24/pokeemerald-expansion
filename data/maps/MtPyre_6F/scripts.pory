@@ -69,3 +69,84 @@ MtPyre_6F_Text_CedricPostBattle:
 	.string "It's dirty and I won't try it again…$"
 
 `
+
+
+script MtPyre6F_EventScript_PowerfulMonSummoner{
+	lock
+	faceplayer
+	if(flag(FLAG_TEMP_1))
+	{
+		msgbox(MtPyre6F_Text_SummonerIntroQuick, MSGBOX_YESNO)	
+	}
+	else
+	{
+		msgbox(MtPyre6F_Text_SummonerIntro, MSGBOX_YESNO)
+	}
+
+	setflag(FLAG_TEMP_1)
+
+	if(var(VAR_RESULT) == NO)
+	{
+		goto(MtPyre6F_EventScript_SummonWomanManNo)
+	}
+
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		goto(MtPyre6F_EventScript_RandomLegend)
+	}
+	release
+	end
+}
+
+
+script MtPyre6F_EventScript_SummonWomanManNo
+{
+    msgbox(MtPyre6F_SummonWomanDeclined, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script MtPyre6F_EventScript_RandomLegend{
+	randomelement(SPECIES_RAIKOU,SPECIES_ENTEI,SPECIES_SUICUNE,SPECIES_TORNADUS,SPECIES_THUNDURUS,SPECIES_AZELF,SPECIES_MESPRIT,SPECIES_UXIE,SPECIES_PECHARUNT,SPECIES_REGIROCK,SPECIES_REGIELEKI,SPECIES_DIANCIE,SPECIES_TAPU_BULU,SPECIES_MEW,SPECIES_JIRACHI,SPECIES_ZAPDOS,SPECIES_REGISTEEL,SPECIES_CRESSELIA,SPECIES_TAPU_LELE,SPECIES_SHAYMIN)
+
+	copyvar(VAR_0x8005, VAR_RESULT)
+	clearflag(FLAG_TEMP_1)
+	msgbox(MtPyre6F_Text_VeryWell, MSGBOX_DEFAULT)
+	delay(30)
+
+	setwildbattle(VAR_0x8005, 85)
+	waitse
+	playmoncry(VAR_0x8005, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	dowildbattle
+	release
+	end
+}
+
+
+text MtPyre6F_Text_SummonerIntro {
+	"Hello, young trainer.\p"
+	"I've come to this remote location\n"
+	"because I have learned a powerful\l"
+	"technique that allows me to summon one\l"
+	"Pokémon from a remote location.\p"
+	"Would you like me to summon a Pokémon\n"
+	"here so you can battle it?"
+}
+
+text MtPyre6F_Text_SummonerIntroQuick {
+	"Would you like me to summon a Pokémon\n"
+	"here so you can battle it?"
+}
+
+
+text MtPyre6F_Text_VeryWell {
+	"Very well, prepare yourself for battle."
+}
+
+text MtPyre6F_SummonWomanDeclined
+{
+	"I see. Let me know if you change\n"
+	"your mind."
+}

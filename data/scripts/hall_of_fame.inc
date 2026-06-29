@@ -22,6 +22,69 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	call_if_eq VAR_GIVE_NAVEL_ISLAND_TICKET, 0, EverGrandeCity_HallOfFame_EventScript_ReadyBirthIslandEvent
 	return
 
+EverGrandeCity_HallOfFame_EventScript_SetGameClearFlagsHard::
+	special SetChampionSaveWarp
+	setflag FLAG_IS_CHAMPION
+	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
+	call_if_eq VAR_FOSSIL_MANIAC_STATE, 0, EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady
+	clearflag FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS
+	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
+	setflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
+	clearflag FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY
+	setvar VAR_STEVENS_HOUSE_STATE, 2
+	setflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
+	clearflag FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY
+	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
+	clearflag FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL
+	special UpdateTrainerFanClubGameClear
+	call_if_unset FLAG_RECEIVED_SS_TICKET, EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent
+	call_if_unset FLAG_RECEIVED_BELDUM, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_TERAPAGOS
+	clearflag FLAG_HIDE_MEW
+	clearflag FLAG_HIDE_REGICE
+	clearflag FLAG_HIDE_REGIROCK
+	clearflag FLAG_HIDE_REGISTEEL
+	clearflag FLAG_HIDE_DEOXYS
+	clearflag FLAG_HIDE_MESPRIT
+	clearflag FLAG_HIDE_AZELF
+	clearflag FLAG_HIDE_UXIE
+	clearflag FLAG_HIDE_HEATRAN
+	clearflag FLAG_HIDE_REGIGIGAS
+	clearflag FLAG_HIDE_TAPU_KOKO
+	clearflag FLAG_HIDE_TAPU_LELE
+	clearflag FLAG_HIDE_TAPU_BULU
+	clearflag FLAG_HIDE_TAPU_FINI
+	clearflag FLAG_HIDE_REGIDRAGO
+	clearflag FLAG_HIDE_REGIELEKI
+	clearflag FLAG_HIDE_ARTICUNO_GALARIAN
+	clearflag FLAG_HIDE_ZAPDOS_GALARIAN
+	clearflag FLAG_HIDE_MOLTRES_GALARIAN
+	clearflag FLAG_DEFEATED_TERAPAGOS
+	clearflag FLAG_DEFEATED_MEW
+	clearflag FLAG_DEFEATED_REGICE
+	clearflag FLAG_DEFEATED_REGIROCK
+	clearflag FLAG_DEFEATED_REGISTEEL
+	clearflag FLAG_DEFEATED_DEOXYS
+	clearflag FLAG_DEFEATED_MESPRIT
+	clearflag FLAG_DEFEATED_AZELF
+	clearflag FLAG_DEFEATED_UXIE
+	clearflag FLAG_DEFEATED_HEATRAN
+	clearflag FLAG_DEFEATED_REGIGIGAS
+	clearflag FLAG_DEFEATED_TAPU_KOKO
+	clearflag FLAG_DEFEATED_TAPU_LELE
+	clearflag FLAG_DEFEATED_TAPU_BULU
+	clearflag FLAG_DEFEATED_TAPU_FINI
+	clearflag FLAG_DEFEATED_REGIDRAGO
+	clearflag FLAG_DEFEATED_REGIELEKI
+	clearflag FLAG_DEFEATED_ARTICUNO_GALARIAN
+	clearflag FLAG_DEFEATED_ZAPDOS_GALARIAN
+	clearflag FLAG_DEFEATED_MOLTRES_GALARIAN
+	call_if_eq VAR_GIVE_NAVEL_ISLAND_TICKET, 0, EverGrandeCity_HallOfFame_EventScript_ReadyBirthIslandEvent
+	return
+
 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_DEFEATED_DEOXYS
