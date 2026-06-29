@@ -29,6 +29,8 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 RustboroCity_Gym_EventScript_GiveBulldoze::
 	giveitem ITEM_TM_BULLDOZE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge RustboroCity_Gym_EventScript_GiveBulldoze_2
 	setflag FLAG_RECEIVED_TM_BULLDOZE
 	msgbox RustboroCity_Gym_Text_ExplainBulldoze, MSGBOX_DEFAULT
 	closemessage
@@ -42,6 +44,25 @@ RustboroCity_Gym_EventScript_GiveBulldoze::
 	delay 30
 	release
 	end
+	
+RustboroCity_Gym_EventScript_GiveBulldoze_1:
+	setflag FLAG_RECEIVED_TM_BULLDOZE
+	msgbox RustboroCity_Gym_Text_ExplainBulldoze, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	release
+	end
+
+RustboroCity_Gym_EventScript_GiveBulldoze_2:
+	giveitem ITEM_BOTTLE_CAP
+	goto RustboroCity_Gym_EventScript_GiveBulldoze_1
 
 RustboroCity_Gym_EventScript_RoxanneRematch::
 	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons

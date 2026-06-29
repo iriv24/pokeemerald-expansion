@@ -566,8 +566,8 @@ script Route116_EventScript_CandiceGiveIcyWind{
 
 	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
 	{
+		giveitem(ITEM_BOTTLE_CAP)
 		msgbox(Candice_ExplainIcyWindAndMuscleBandHardMode)
-		
 	}
 	else
 	{
@@ -601,7 +601,10 @@ text Candice_ExplainIcyWindAndMuscleBandHardMode{
 	"Attack if held!\p"
 	"What? Were you expecting a TM as well?\n"
 	"Sorry, but this is Hard Mode, Icy Wind\l"
-	"would make your next battle too easy!"
+	"would make your next battle too easy!\p"
+	"That Bottle Cap can be used to change\n"
+	"your Pokémon's nature, ability, IVs or\l"
+	"even buy some items! Use it well!"
 }
 
 text Candice_Greeting{

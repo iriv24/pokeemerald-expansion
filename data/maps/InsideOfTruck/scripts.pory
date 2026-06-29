@@ -583,6 +583,14 @@ script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
 script InsideOfTruck_EventScript_SaveSettingsDone {
 	special(ForceBattleStyleSetPleaseGod)
 	msgbox(CustomSettingsSaved)
+	if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_HOF_MODE)
+	{
+		setflag(FLAG_HIDE_HARD_MODE)
+	}
+	else
+	{
+		setflag(FLAG_HIDE_NORMAL_MODE)
+	}
 	releaseall
 	end
 }

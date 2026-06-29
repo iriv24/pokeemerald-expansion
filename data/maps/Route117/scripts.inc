@@ -707,12 +707,21 @@ Route117_EventScript_FantinaGiveItems::
 # 370 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_METRONOME
 # 371 "data/maps/Route117/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge Route117_EventScript_FantinaGiveItems_2
+# 377 "data/maps/Route117/scripts.pory"
 	giveitem ITEM_LEFTOVERS
-# 372 "data/maps/Route117/scripts.pory"
+Route117_EventScript_FantinaGiveItems_1:
+# 379 "data/maps/Route117/scripts.pory"
 	msgbox Fantina_ExplainItems
-# 373 "data/maps/Route117/scripts.pory"
+# 380 "data/maps/Route117/scripts.pory"
 	release
 	end
+
+Route117_EventScript_FantinaGiveItems_2:
+# 373 "data/maps/Route117/scripts.pory"
+	giveitem ITEM_BOTTLE_CAP
+	goto Route117_EventScript_FantinaGiveItems_1
 
 
 Route117_EventScript_BattleFantina_Text_0:
@@ -720,7 +729,7 @@ Route117_EventScript_BattleFantina_Text_0:
 	.string "Let us begin then!$"
 
 Fantina_Greeting::
-# 377 "data/maps/Route117/scripts.pory"
+# 384 "data/maps/Route117/scripts.pory"
 	.string "Oh, hello there, my name is Fantina.\n"
 	.string "Did you come here to enjoy the\l"
 	.string "flowers too?\p"
@@ -734,16 +743,16 @@ Fantina_Greeting::
 	.string "Is that what you came here for?$"
 
 Fantina_ReadyYet::
-# 391 "data/maps/Route117/scripts.pory"
+# 398 "data/maps/Route117/scripts.pory"
 	.string "Hm? Is it time for our battle?$"
 
 Fantina_ComeBackWhenReady::
-# 395 "data/maps/Route117/scripts.pory"
+# 402 "data/maps/Route117/scripts.pory"
 	.string "I'll just enjoy the flowers until\n"
 	.string "you're ready.$"
 
 Fantina_ExplainItems::
-# 400 "data/maps/Route117/scripts.pory"
+# 407 "data/maps/Route117/scripts.pory"
 	.string "Those three are some very\n"
 	.string "powerful moves. In addition, I had\l"
 	.string "a few spare Mega Stones for some\l"
@@ -756,13 +765,13 @@ Fantina_ExplainItems::
 	.string "good use. Best of luck!$"
 
 Fantina_Outro::
-# 413 "data/maps/Route117/scripts.pory"
+# 420 "data/maps/Route117/scripts.pory"
 	.string "My my! To think, there are such strong\n"
 	.string "trainers here in the Hoenn region. I\l"
 	.string "think you can make good use of these.$"
 
 PostBattle_Fantina::
-# 420 "data/maps/Route117/scripts.pory"
+# 427 "data/maps/Route117/scripts.pory"
 	.string "Maybe I'll head to Ever Grande City\n"
 	.string "after this, I've heard the flowers\l"
 	.string "there are extraordinary.$"
