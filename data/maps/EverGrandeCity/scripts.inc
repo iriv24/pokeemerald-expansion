@@ -900,98 +900,102 @@ EverGrandeCity_EventScript_BattleVolkner::
 # 590 "data/maps/EverGrandeCity/scripts.pory"
 	giveitem ITEM_TM_SUPERCELL_SLAM
 # 591 "data/maps/EverGrandeCity/scripts.pory"
-	giveitem ITEM_EJECT_BUTTON
-# 592 "data/maps/EverGrandeCity/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge EverGrandeCity_EventScript_BattleVolkner_1
 # 598 "data/maps/EverGrandeCity/scripts.pory"
+	giveitem ITEM_EJECT_BUTTON
+# 599 "data/maps/EverGrandeCity/scripts.pory"
+	giveitem ITEM_EJECT_PACK
+# 600 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_VolknerGiveZeraora
 	return
 
 EverGrandeCity_EventScript_BattleVolkner_1:
+# 593 "data/maps/EverGrandeCity/scripts.pory"
+	giveitem ITEM_EJECT_PACK
 	return
 
 
 EverGrandeCity_EventScript_VolknerDefeated::
-# 605 "data/maps/EverGrandeCity/scripts.pory"
+# 607 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox PostBattle_Volkner, MSGBOX_DEFAULT
-# 606 "data/maps/EverGrandeCity/scripts.pory"
+# 608 "data/maps/EverGrandeCity/scripts.pory"
 	releaseall
 	end
 
 
 EverGrandeCity_EventScript_VolknerGiveZeraora::
-# 611 "data/maps/EverGrandeCity/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA
-# 612 "data/maps/EverGrandeCity/scripts.pory"
-	givemonrandom SPECIES_ZERAORA, 50
 # 613 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZERAORA
 # 614 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveZeraoraPC
+	givemonrandom SPECIES_ZERAORA, 50
 # 615 "data/maps/EverGrandeCity/scripts.pory"
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EverGrandeCity_EventScript_ReceiveZeraoraParty
 # 616 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EverGrandeCity_EventScript_ReceiveZeraoraPC
+# 617 "data/maps/EverGrandeCity/scripts.pory"
+	goto Common_EventScript_NoMoreRoomForPokemon
+# 618 "data/maps/EverGrandeCity/scripts.pory"
 	release
 	end
 
 
 EverGrandeCity_EventScript_ReceiveZeraoraParty::
-# 621 "data/maps/EverGrandeCity/scripts.pory"
-	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
-# 622 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 623 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_ExplainZeraora
+	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
 # 624 "data/maps/EverGrandeCity/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 625 "data/maps/EverGrandeCity/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_ExplainZeraora
 # 626 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 627 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 628 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_ExplainZeraora
 	end
 
 
 EverGrandeCity_EventScript_ReceiveZeraoraPC::
-# 632 "data/maps/EverGrandeCity/scripts.pory"
-	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
-# 633 "data/maps/EverGrandeCity/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 634 "data/maps/EverGrandeCity/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_SendZeraoraToPC
+	call EverGrandeCity_EventScript_ReceivedZeraoraFanfare
 # 635 "data/maps/EverGrandeCity/scripts.pory"
-	call Common_EventScript_NameReceivedBoxMon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 636 "data/maps/EverGrandeCity/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, EverGrandeCity_EventScript_SendZeraoraToPC
+# 637 "data/maps/EverGrandeCity/scripts.pory"
+	call Common_EventScript_NameReceivedBoxMon
+# 638 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_SendZeraoraToPC
 	end
 
 
 EverGrandeCity_EventScript_SendZeraoraToPC::
-# 642 "data/maps/EverGrandeCity/scripts.pory"
+# 644 "data/maps/EverGrandeCity/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 643 "data/maps/EverGrandeCity/scripts.pory"
+# 645 "data/maps/EverGrandeCity/scripts.pory"
 	goto EverGrandeCity_EventScript_ExplainZeraora
 	end
 
 
 EverGrandeCity_EventScript_ReceivedZeraoraFanfare::
-# 649 "data/maps/EverGrandeCity/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 650 "data/maps/EverGrandeCity/scripts.pory"
-	message EverGrandeCity_Text_PlayerReceivedZeraora
 # 651 "data/maps/EverGrandeCity/scripts.pory"
-	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
 # 652 "data/maps/EverGrandeCity/scripts.pory"
-	waitfanfare
+	message EverGrandeCity_Text_PlayerReceivedZeraora
 # 653 "data/maps/EverGrandeCity/scripts.pory"
+	waitmessage
+# 654 "data/maps/EverGrandeCity/scripts.pory"
+	waitfanfare
+# 655 "data/maps/EverGrandeCity/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_ZERAORA
 	return
 
 
 EverGrandeCity_EventScript_ExplainZeraora::
-# 659 "data/maps/EverGrandeCity/scripts.pory"
+# 661 "data/maps/EverGrandeCity/scripts.pory"
 	msgbox Volkner_ExplainZeraora, MSGBOX_DEFAULT
-# 660 "data/maps/EverGrandeCity/scripts.pory"
+# 662 "data/maps/EverGrandeCity/scripts.pory"
 	release
 	end
 
@@ -1087,7 +1091,7 @@ DawnFarewell2::
 	.string "So long, my friend, until next time!$"
 
 Volkner_Greeting::
-# 664 "data/maps/EverGrandeCity/scripts.pory"
+# 666 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Wow, another trainer showed up here. It\n"
 	.string "gets pretty boring being the strongest\l"
 	.string "Gym Leader in a given region…\p"
@@ -1103,32 +1107,32 @@ Volkner_Greeting::
 	.string "battle. So, will you battle me?$"
 
 Volkner_ReadyYet::
-# 680 "data/maps/EverGrandeCity/scripts.pory"
+# 682 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Ready to battle me yet?$"
 
 Volkner_ComeBackWhenReady::
-# 684 "data/maps/EverGrandeCity/scripts.pory"
+# 686 "data/maps/EverGrandeCity/scripts.pory"
 	.string "How boring, I was hoping you'd be\n"
 	.string "different than the average trainer.$"
 
 EverGrandeCity_Text_PlayerReceivedZeraora::
-# 689 "data/maps/EverGrandeCity/scripts.pory"
+# 691 "data/maps/EverGrandeCity/scripts.pory"
 	.string "{PLAYER} received Zeraora!$"
 
 Volkner_ExplainZeraora::
-# 693 "data/maps/EverGrandeCity/scripts.pory"
+# 695 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Zeraora is definitely a favorite of\n"
 	.string "mine. His electrifying fists light up\l"
 	.string "any battle!\p"
 	.string "I hope you raise it well!$"
 
 Volkner_Outro::
-# 700 "data/maps/EverGrandeCity/scripts.pory"
+# 702 "data/maps/EverGrandeCity/scripts.pory"
 	.string "Ha! Wow, the trainers here are way\n"
 	.string "stronger than in Sinnoh, how exciting!$"
 
 PostBattle_Volkner::
-# 706 "data/maps/EverGrandeCity/scripts.pory"
+# 708 "data/maps/EverGrandeCity/scripts.pory"
 	.string "I think I'll just stay here and wait for\n"
 	.string "more strong trainers, someone else can\l"
 	.string "run my Gym for all I care.$"
