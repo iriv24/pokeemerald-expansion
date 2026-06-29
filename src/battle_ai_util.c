@@ -3528,12 +3528,15 @@ bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef)
     if (IsBattlerTrapped(battlerAtk, battlerDef))
         return FALSE;
 
+    if (CountUsablePartyMons(battlerDef) == 0)
+        return FALSE;
+
     if (BattlerWillFaintFromSecondaryDamage(battlerDef, AI_DATA->abilities[battlerDef]) 
     || (AI_DATA->items[battlerAtk] == ITEM_BINDING_BAND || AI_DATA->items[battlerAtk] == ITEM_GRIP_CLAW))
         return TRUE;    // battler is taking secondary damage with low HP
 
     if (!CanTargetFaintAi(battlerDef, battlerAtk))
-        return TRUE;    // attacker goes first and opponent can't kill us
+        return TRUE;    //opponent can't kill us
 
     return FALSE;
 }

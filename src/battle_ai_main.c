@@ -2320,14 +2320,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
-        case EFFECT_OCTOLOCK:
-            if ((AI_CanBattlerEscape(battlerDef) 
-                || (!AI_CanBattlerEscape(battlerDef) && IsBattlerTrapped(battlerAtk, battlerDef))) 
-                && (CountUsablePartyMons(battlerDef) != 0))
-            {
-                ADJUST_SCORE(-10);
-            }
-            break;
         case EFFECT_FLING:
             if (!CanFling(battlerAtk))
             {
@@ -4330,7 +4322,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         }
         break;
     case EFFECT_OCTOLOCK:
-        if (ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_SPDEF) || ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_DEF) )
+        if ((ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_SPDEF) || ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_DEF)) && ShouldTrap(battlerAtk,battlerDef))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_RAGING_BULL:

@@ -2055,7 +2055,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
             canSwitchinWin1v1 = CanSwitchinWin1v1(hitsToKOAI, hitsToKOPlayer, isSwitchinFirst, isFreeSwitch) && CanSwitchinWin1v1(hitsToKOAIPriority, hitsToKOPlayer, isSwitchinFirstPriority, isFreeSwitch); // AI must successfully 1v1 with and without priority to be considered a good option
 
             // Check if candidate has a support move and is not OHKO'd 
-            if (IsDoubleBattle() && (IsSupportMove(aiMove, aiMoveEffect)) && hitsToKOAI > 1) // maybe trapping moves 
+            if (IsDoubleBattle() && IsSupportMove(aiMove, aiMoveEffect) && hitsToKOAI > 1)
             {
                 hasSupportMove = TRUE;
             }
@@ -2091,7 +2091,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
 
                 // Check if current mon can revenge kill in some capacity
                 // If AI mon can one shot
-                if (damageDealt > playerMonHP)
+                if (damageDealt >= playerMonHP)
                 {
                     if (canSwitchinWin1v1)
                     {
