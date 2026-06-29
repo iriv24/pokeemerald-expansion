@@ -14738,6 +14738,20 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_RareCandy,
     },
 
+    [ITEM_INSTANT_CANDY] =
+    {
+        .name = _("InstantCandy"),
+        .price = 0,
+        .importance = 1,
+        .description = sInstantCandyDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InstantCandy,
+        .effect = gItemEffect_RareCandy,
+        .iconPic = gItemIcon_InstantCandy,
+        .iconPalette = gItemIconPalette_InstantCandy,
+    },
+
     [ITEM_INFINITE_REPEL] =
     {
         .name = _("InfiniteRepel"),
