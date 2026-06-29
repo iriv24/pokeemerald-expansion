@@ -145,7 +145,7 @@ script InsideOfTruck_EventScript_StartSettingsMenu {
 			msgbox(CannotChangeRandomizerInHoFMode)
 			goto(InsideOfTruck_EventScript_StartSettingsMenu)
 		}
-		goto(InsideOfTruck_EventScript_RandomzierOptions)	
+		goto(InsideOfTruck_EventScript_RandomizerOptions)	
 	}
 
 	if (var(VAR_RESULT) == 3) 
@@ -346,7 +346,7 @@ script InsideOfTruck_EventScript_MinGrindingMode {
 }
 
 
-script InsideOfTruck_EventScript_RandomzierOptions {
+script InsideOfTruck_EventScript_RandomizerOptions {
 	msgbox(WhichRandomizerOption)
 	if(flag(FLAG_RANDOMIZER_ENABLED))
 	{
@@ -418,7 +418,7 @@ script InsideOfTruck_EventScript_RandomzierOptions {
 				msgbox(RandomAbilitiesEnabled)
 			}
 		}
-		goto(InsideOfTruck_EventScript_RandomzierOptions)
+		goto(InsideOfTruck_EventScript_RandomizerOptions)
 	}
 
 	// Learnset
@@ -442,7 +442,7 @@ script InsideOfTruck_EventScript_RandomzierOptions {
 	// 			msgbox(RandomLearnsetsEnabled)
 	// 		}
 	// 	}
-	// 	goto(InsideOfTruck_EventScript_RandomzierOptions)
+	// 	goto(InsideOfTruck_EventScript_RandomizerOptions)
 	// }
 }
 
@@ -499,7 +499,7 @@ script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
 
 	if (var(VAR_RESULT) == MULTI_B_PRESSED) 
 	{
-		goto(InsideOfTruck_EventScript_RandomzierOptions)
+		goto(InsideOfTruck_EventScript_RandomizerOptions)
 	}
 
 	if(var(VAR_RESULT) == MON_RANDOM) 
@@ -583,10 +583,55 @@ script InsideOfTruck_EventScript_SpeciesRandomizerOptions {
 script InsideOfTruck_EventScript_SaveSettingsDone {
 	special(ForceBattleStyleSetPleaseGod)
 	msgbox(CustomSettingsSaved)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		setflag(FLAG_HIDE_MEW)
+		setflag(FLAG_HIDE_REGICE)
+		setflag(FLAG_HIDE_REGIROCK)
+		setflag(FLAG_HIDE_REGISTEEL)
+		setflag(FLAG_HIDE_DEOXYS)
+		setflag(FLAG_HIDE_MESPRIT)
+		setflag(FLAG_HIDE_AZELF)
+		setflag(FLAG_HIDE_UXIE)
+		setflag(FLAG_HIDE_HEATRAN)
+		setflag(FLAG_HIDE_REGIGIGAS)
+		setflag(FLAG_HIDE_TAPU_KOKO)
+		setflag(FLAG_HIDE_TAPU_LELE)
+		setflag(FLAG_HIDE_TAPU_BULU)
+		setflag(FLAG_HIDE_TAPU_FINI)
+		setflag(FLAG_HIDE_REGIDRAGO)
+		setflag(FLAG_HIDE_REGIELEKI)
+		setflag(FLAG_HIDE_ARTICUNO_GALARIAN)
+		setflag(FLAG_HIDE_ZAPDOS_GALARIAN)
+		setflag(FLAG_HIDE_MOLTRES_GALARIAN)
+		setflag(FLAG_DEFEATED_MEW)
+		setflag(FLAG_DEFEATED_REGICE)
+		setflag(FLAG_DEFEATED_REGIROCK)
+		setflag(FLAG_DEFEATED_REGISTEEL)
+		setflag(FLAG_DEFEATED_DEOXYS)
+		setflag(FLAG_DEFEATED_MESPRIT)
+		setflag(FLAG_DEFEATED_AZELF)
+		setflag(FLAG_DEFEATED_UXIE)
+		setflag(FLAG_DEFEATED_HEATRAN)
+		setflag(FLAG_DEFEATED_REGIGIGAS)
+		setflag(FLAG_DEFEATED_TAPU_KOKO)
+		setflag(FLAG_DEFEATED_TAPU_LELE)
+		setflag(FLAG_DEFEATED_TAPU_BULU)
+		setflag(FLAG_DEFEATED_TAPU_FINI)
+		setflag(FLAG_DEFEATED_REGIDRAGO)
+		setflag(FLAG_DEFEATED_REGIELEKI)
+		setflag(FLAG_DEFEATED_ARTICUNO_GALARIAN)
+		setflag(FLAG_DEFEATED_ZAPDOS_GALARIAN)
+		setflag(FLAG_DEFEATED_MOLTRES_GALARIAN)
+		setflag(FLAG_HIDE_HARD_MODE)
+  }  
+  else
+	{
+		setflag(FLAG_HIDE_NORMAL_MODE)
+	}
 	releaseall
 	end
 }
-
 
 text WhichOption
 {

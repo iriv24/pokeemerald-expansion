@@ -299,7 +299,7 @@ script JaggedPass_EventScript_MayleneDefeated{
 
 script JaggedPass_EventScript_MayleneGiveItems{
 	giveitem(ITEM_TM_FOCUS_PUNCH)
-	giveitem(ITEM_TM_FOCUS_BLAST)
+	giveitem(ITEM_TM_SUPERPOWER)
 	giveitem(ITEM_TM_DRAIN_PUNCH)
 	giveitem(ITEM_TM_BODY_PRESS)
 	giveitem(ITEM_TM_AURA_SPHERE)
