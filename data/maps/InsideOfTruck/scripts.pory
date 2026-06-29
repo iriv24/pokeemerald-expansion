@@ -624,8 +624,8 @@ script InsideOfTruck_EventScript_SaveSettingsDone {
 		setflag(FLAG_DEFEATED_ZAPDOS_GALARIAN)
 		setflag(FLAG_DEFEATED_MOLTRES_GALARIAN)
 		setflag(FLAG_HIDE_HARD_MODE)
-	}
-	else
+  }  
+  else
 	{
 		setflag(FLAG_HIDE_NORMAL_MODE)
 	}

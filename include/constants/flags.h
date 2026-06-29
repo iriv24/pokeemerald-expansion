@@ -52,13 +52,13 @@
 #define FLAG_USING_POKEMONPCMENU       0x26
 #define FLAG_STOP_ENCOUNTERS           0x27
 #define FLAG_PARTY_MOVES               0x28
-#define FLAG_UNUSED_0x29               0x29 // unused
+#define FLAG_STARTER_EGG               0x29
 #define FLAG_RECEIVED_OLDALE_EGG       0x2A
 #define FLAG_RECEIVED_SETUP_TMS        0x2B
-#define FLAG_UNUSED_0x2C               0x2C // unused
+#define FLAG_PSEUDO_EGG                0x2C 
 #define FLAG_RIVAL_110                 0x2D
 #define FLAG_DAWN_111                  0x2E
-#define FLAG_UNUSED_0x2F               0x2F // unused
+#define FLAG_LAVARIDGE_EGG             0x2F
 #define FLAG_RECEIVED_MEGA_STONES      0x30
 #define FLAG_RECEIVED_TMS_FROM_TUTOR   0x31
 #define FLAG_DECLINED_DANCE_BATTLE     0x32
@@ -1052,7 +1052,7 @@
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
 #define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
+#define FLAG_ITEM_ROUTE_104_PP_MAX                                  0x3EA
 #define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
@@ -1061,7 +1061,7 @@
 #define FLAG_ITEM_ROUTE_111_HM_SURF                                 0x3F0
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F1
 #define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
-#define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
+#define FLAG_ITEM_ROUTE_112_ZOOM_LENS                               0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
@@ -1160,7 +1160,7 @@
 #define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
 #define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
 #define FLAG_ITEM_ROUTE_123_ELIXIR                                  0x455
-#define FLAG_ITEM_NEW_MAUVILLE_TM_SUPERPOWER                        0x456
+#define FLAG_ITEM_NEW_MAUVILLE_TM_FOCUS_BLAST                       0x456
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0x458
 #define FLAG_UNUSED_0x459                                           0x459 // unused, formerly blizzard Tm
@@ -1187,7 +1187,7 @@
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_HIDE_TAPU_FINI                                         0x470
-#define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
+#define FLAG_ITEM_ROUTE_103_PP_MAX                                  0x471
 #define FLAG_DEFEATED_TAPU_KOKO                                     0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
@@ -1195,7 +1195,7 @@
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_HIDE_ARTICUNO_GALARIAN                                    0x479
+#define FLAG_HIDE_ARTICUNO_GALARIAN                                 0x479
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C

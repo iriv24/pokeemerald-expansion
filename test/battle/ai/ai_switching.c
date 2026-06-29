@@ -1492,3 +1492,54 @@ AI_DOUBLE_BATTLE_TEST("ABILITY_PARENTAL_BOND - AI should not calc parental bond 
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("GetSwitchinRecurringDamage - should not calculate an extra hit of life orb chip on the switch-in turn")
+{
+    PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_METAGROSS){ Level(85); Nature(NATURE_JOLLY); Ability(ABILITY_CLEAR_BODY); Item(ITEM_SITRUS_BERRY); Moves(MOVE_HAMMER_ARM); Speed(165); HP(257); Attack(260); }
+        OPPONENT(SPECIES_ZIGZAGOON) {Level(1); Moves(MOVE_TACKLE); Speed(1); }
+        OPPONENT(SPECIES_DARMANITAN_GALAR_ZEN_MODE_TWO) { Level(85); Nature(NATURE_JOLLY); Moves(MOVE_FLARE_BLITZ); Ability(ABILITY_ZEN_MODE); Item(ITEM_LIFE_ORB); Speed(286); Defense(124); HP(299); }
+    } WHEN {
+        TURN {
+            MOVE(player, MOVE_HAMMER_ARM);
+            EXPECT_SWITCH(opponent, 1);
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("GetSwitchinRecurringHealing - account for grassy terrain healing")
+{
+    PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_ENAMORUS_INCARNATE){ 
+            Level(85);
+            Nature(NATURE_TIMID);
+            Ability(ABILITY_CONTRARY);
+            Moves(MOVE_PLAY_ROUGH);
+            HP(247);
+            Attack(203);
+            SpDefense(167);
+            Speed(232);
+        }
+        OPPONENT(SPECIES_RILLABOOM) {Level(1); Moves(MOVE_TACKLE); Ability(ABILITY_GRASSY_SURGE); Speed(1); }
+        OPPONENT(SPECIES_FLORGES) {
+            Level(85);
+            Nature(NATURE_MODEST);
+            Ability(ABILITY_NATURAL_CURE); 
+            Item(ITEM_EXPERT_BELT); 
+            Moves(MOVE_THUNDER); 
+            HP(253);
+            SpAttack(242);
+            Defense(146);
+            Speed(158); 
+        }
+    } WHEN {
+        TURN {
+            MOVE(player, MOVE_PLAY_ROUGH);
+            EXPECT_SWITCH(opponent, 1);
+        }
+    }
+}

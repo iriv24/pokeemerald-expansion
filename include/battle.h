@@ -245,6 +245,7 @@ struct SpecialStatus
     // End of byte
     u8 damagedMons:4; // Mons that have been damaged directly by using a move, includes substitute.
     u8 dancerUsedMove:1;
+    u8 echoerUsedMove:1;
     u8 dancerOriginalTarget:3;
     // End of byte
     u8 emergencyExited:1;
@@ -252,6 +253,7 @@ struct SpecialStatus
     u8 preventLifeOrbDamage:1; // So that Life Orb doesn't activate various effects.
     u8 oraoraoraoraState:2;
     u8 distortedTypeMatchups:1;
+    u8 echoerOriginalTarget:3;
 };
 
 struct SideTimer
@@ -345,12 +347,6 @@ struct AIPartyData // Opposing battlers - party mons.
     u8 count[NUM_BATTLE_SIDES];
 };
 
-struct SwitchinCandidate
-{
-    struct BattlePokemon battleMon;
-    bool8 hypotheticalStatus;
-};
-
 struct SimulatedDamage
 {
     u16 minimum;
@@ -375,7 +371,6 @@ struct AiLogicData
     u8 moveLimitations[MAX_BATTLERS_COUNT];
     u8 monToSwitchInId[MAX_BATTLERS_COUNT]; // ID of the mon to switch in.
     u8 mostSuitableMonId[MAX_BATTLERS_COUNT]; // Stores result of GetMostSuitableMonToSwitchInto, which decides which generic mon the AI would switch into if they decide to switch. This can be overruled by specific mons found in ShouldSwitch; the final resulting mon is stored in AI_monToSwitchIntoId.
-    struct SwitchinCandidate switchinCandidate; // Struct used for deciding which mon to switch to in battle_ai_switch_items.c
     u8 weatherHasEffect:1; // The same as WEATHER_HAS_EFFECT. Stored here, so it's called only once.
     u8 ejectButtonSwitch:1; // Tracks whether current switch out was from Eject Button
     u8 ejectPackSwitch:1; // Tracks whether current switch out was from Eject Pack

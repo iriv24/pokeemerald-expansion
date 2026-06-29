@@ -11258,7 +11258,7 @@
             sParty_GardeniaHard,    // hard mode party
             sParty_GardeniaHard,    // HOF mode party (same as hard mode)
         },
-        .additionalPartySizes = {5, 5, 6, 6},
+        .additionalPartySizes = {5, 5, 5, 5},
     },
 
     [TRAINER_GARDENIA2] =

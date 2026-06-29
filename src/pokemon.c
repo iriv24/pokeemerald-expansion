@@ -4215,7 +4215,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_MARKINGS:
-            //SET8(boxMon->markings);
+            SET8(boxMon->markings);
             break;
         case MON_DATA_IS_SHINY:
         {

@@ -530,10 +530,18 @@ script PetalburgWoods_EventScript_GardeniaDefeated{
 }
 
 script PetalburgWoods_EventScript_GardeniaGiveItems{
-	giveitem(ITEM_TM_U_TURN)
 	giveitem(ITEM_EVIOLITE)
-	giveitem(ITEM_LEAF_STONE, 10)
-	msgbox(Gardenia_ExplainItems)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_BOTTLE_CAP)
+		msgbox(Gardenia_ExplainItemsHard)
+	}
+	else
+	{
+		giveitem(ITEM_TM_U_TURN)
+		giveitem(ITEM_LEAF_STONE, 10)
+		msgbox(Gardenia_ExplainItems)
+	}
 	release
 	end
 }
@@ -569,6 +577,12 @@ text Gardenia_ExplainItems{
 	"I also included some useful\n"
 	"evolution stones and an Item that\l"
 	"will be good for a Pokémon you can't\l"
+	"evolve quite yet."
+}
+
+text Gardenia_ExplainItemsHard{
+	"The Eviolite is my favorite Item,\n"
+	"it's great for Pokémons you can't\l"
 	"evolve quite yet."
 }
 

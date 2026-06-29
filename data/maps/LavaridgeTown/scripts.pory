@@ -403,24 +403,48 @@ LavaridgeTown_Text_Sandygast:
 script LavaridgeTown_EventScript_EggWoman {
 	lock
 	faceplayer
-	msgbox(LavaridgeTown_EggWomanIntro, MSGBOX_YESNO)
-
-	if(var(VAR_RESULT) == NO)
+	if(flag(FLAG_LAVARIDGE_EGG))
 	{
-		goto(LavaridgeTown_EventScript_EggWomanManNo)
+		msgbox("Keep on growing!")
 	}
-
-	checkitem(ITEM_YELLOW_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, LavaridgeTown_EventScript_ComeBackWithYellowShard)
-	getpartysize
-	goto_if_eq(VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg)
-	msgbox(LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(LavaridgeTown_Text_ReceivedTheEgg)
-	waitfanfare
-	giveegg(SPECIES_KLAWF)
-	removeitem(ITEM_YELLOW_SHARD)
-	msgbox(LavaridgeTown_ComeBackWithMore, MSGBOX_DEFAULT)
+	else
+	{
+		if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+		{
+			msgbox(LavaridgeTown_EggWomanIntroHard, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == NO)
+			{
+				goto(LavaridgeTown_EventScript_EggWomanManNo)
+			}
+		}
+		else
+		{
+			msgbox(LavaridgeTown_EggWomanIntro, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == NO)
+			{
+				goto(LavaridgeTown_EventScript_EggWomanManNo)
+			}
+			checkitem(ITEM_YELLOW_SHARD)
+			goto_if_eq(VAR_RESULT, FALSE, LavaridgeTown_EventScript_ComeBackWithYellowShard)
+		}
+		getpartysize
+		goto_if_eq(VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg)
+		msgbox(LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
+		playfanfare(MUS_OBTAIN_ITEM)
+		message(LavaridgeTown_Text_ReceivedTheEgg)
+		waitfanfare
+		giveegg(SPECIES_KLAWF)
+		if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+		{
+			msgbox("Take good care of it!")
+			setflag(FLAG_LAVARIDGE_EGG)
+		}
+		else
+		{
+			removeitem(ITEM_YELLOW_SHARD)
+			msgbox(LavaridgeTown_ComeBackWithMore, MSGBOX_DEFAULT)
+		}
+	}
 	release
 	end
 	
@@ -442,6 +466,17 @@ script LavaridgeTown_EventScript_NoRoomForEgg {
 	msgbox(LavaridgeTown_Text_NoRoomForThisEgg, MSGBOX_DEFAULT)
 	release
 	end
+}
+
+text LavaridgeTown_EggWomanIntroHard {
+	"Hello, trainer. I see you've\n"
+	"found your way from Fallarbor.\p"
+	"My old friend told me a lively\n"
+	"youngin would arrive shortly.\p"
+	"The road only gets steeper from\n"
+	"here, but this Egg should help.\p"
+	"So, do you think you can go\n"
+	"even further?"
 }
 
 text LavaridgeTown_EggWomanIntro {
@@ -471,7 +506,7 @@ text LavaridgeTown_Text_NoRoomForThisEgg {
 
 text LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg {
 	"Good! I hope you'll walk plenty with\n"
-	"this here Egg!"
+	"this Egg!"
 }
 
 text LavaridgeTown_Text_ReceivedTheEgg {

@@ -60,6 +60,7 @@
 #include "constants/item_effects.h"
 #include "constants/map_types.h"
 #include "constants/moves.h"
+#include "constants/game_settings.h"
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -1061,11 +1062,11 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_MAX_ETHER,       {   _,   _,   1,   1,   4,   4,   4,   _,   _,   _, } },
     { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
     { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_DESTINY_KNOT,    {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_LEFTOVERS,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_MENTAL_HERB,     {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_POWER_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_WHITE_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_DESTINY_KNOT,    {   _,   _,   5,   5,   5,   5,   5,   5,   5,   1, } },
+    { ITEM_LEFTOVERS,       {   _,   _,   _,   _,   _,   _,   _,   _,   _,   1, } },
+    { ITEM_MENTAL_HERB,     {   _,   _,   _,   _,   _,   _,   _,   _,   _,   1, } },
+    { ITEM_POWER_HERB,      {   _,   _,   _,   _,   _,   _,   _,   _,   _,   1, } },
+    { ITEM_WHITE_HERB,      {   _,   _,   _,   _,   _,   _,   _,   _,   _,   1, } },
     { ITEM_BALM_MUSHROOM,   {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
     { ITEM_MAX_REVIVE,      {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
     { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
@@ -3437,7 +3438,11 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_UPROAR:
-                if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR))
+                if (gSpecialStatuses[gEffectBattler].echoerUsedMove)
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                else if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR))
                 {
                     gBattleMons[gEffectBattler].status2 |= STATUS2_MULTIPLETURNS;
                     gLockedMoves[gEffectBattler] = gCurrentMove;
@@ -6330,6 +6335,18 @@ static void Cmd_moveend(void)
                         gBattleStruct->dynamax.lastUsedBaseMove = gBattleStruct->dynamax.baseMoves[gBattlerAttacker];
                 }
             }
+            if (!gSpecialStatuses[gBattlerAttacker].echoerUsedMove)
+            {
+                gDisableStructs[gBattlerAttacker].usedMoves |= 1u << gCurrMovePos;
+                gBattleStruct->lastMoveTarget[gBattlerAttacker] = gBattlerTarget;
+                if (gHitMarker & HITMARKER_ATTACKSTRING_PRINTED)
+                {
+                    gLastPrintedMoves[gBattlerAttacker] = gChosenMove;
+                    gLastUsedMove = gCurrentMove;
+                    if (IsMaxMove(gCurrentMove))
+                        gBattleStruct->dynamax.lastUsedBaseMove = gBattleStruct->dynamax.baseMoves[gBattlerAttacker];
+                }
+            }
             if (!(gAbsentBattlerFlags & (1u << gBattlerAttacker))
                 && !(gBattleStruct->absentBattlerFlags & (1u << gBattlerAttacker))
                 && gMovesInfo[originallyUsedMove].effect != EFFECT_BATON_PASS
@@ -6338,6 +6355,13 @@ static void Cmd_moveend(void)
                 if (gHitMarker & HITMARKER_OBEYS)
                 {
                     if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove)
+                    {
+                        gLastMoves[gBattlerAttacker] = gChosenMove;
+                        RecordKnownMove(gBattlerAttacker, gChosenMove);
+                        gLastResultingMoves[gBattlerAttacker] = gCurrentMove;
+                        gLastUsedMoveType[gBattlerAttacker] = GetMoveType(gCurrentMove);
+                    }
+                    if (!gSpecialStatuses[gBattlerAttacker].echoerUsedMove)
                     {
                         gLastMoves[gBattlerAttacker] = gChosenMove;
                         RecordKnownMove(gBattlerAttacker, gChosenMove);
@@ -6780,6 +6804,45 @@ static void Cmd_moveend(void)
                         effect = TRUE;
                 }
             }
+        case MOVEEND_WISTFULECHO: // Special case because it's so annoying
+            if (gMovesInfo[gCurrentMove].soundMove && !gBattleStruct->snatchedMoveIsUsed)
+            {
+                u32 battler, nextEchoer = 0;
+                bool32 hasWistfulEchoTriggered = FALSE;
+
+                for (battler = 0; battler < gBattlersCount; battler++)
+                {
+                    if (gSpecialStatuses[battler].echoerUsedMove)
+                    {
+                        // in case a battler fails to act on a Wistful Echo-called move
+                        hasWistfulEchoTriggered = TRUE;
+                        break;
+                    }
+                }
+
+                if (!(gMoveResultFlags & (MOVE_RESULT_FAILED | MOVE_RESULT_DOESNT_AFFECT_FOE)
+                 || (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE && !hasWistfulEchoTriggered)
+                 || (!gSpecialStatuses[gBattlerAttacker].echoerUsedMove && gBattleStruct->bouncedMoveIsUsed)))
+                {   // sound move succeeds
+                    // Set target for other Wistful Echo mons; set bit so that mon cannot activate Wistful Echo off of its own move
+                    if (!gSpecialStatuses[gBattlerAttacker].echoerUsedMove)
+                    {
+                        gBattleScripting.savedBattler = gBattlerTarget | 0x4;
+                        gBattleScripting.savedBattler |= (gBattlerAttacker << 4);
+                        gSpecialStatuses[gBattlerAttacker].echoerUsedMove = TRUE;
+                    }
+                    for (battler = 0; battler < gBattlersCount; battler++)
+                    {
+                        if (GetBattlerAbility(battler) == ABILITY_WISTFUL_ECHO && !gSpecialStatuses[battler].echoerUsedMove)
+                        {
+                            if (!nextEchoer || (gBattleMons[battler].speed < gBattleMons[nextEchoer & 0x3].speed))
+                                nextEchoer = battler | 0x4;
+                        }
+                    }
+                    if (nextEchoer && AbilityBattleEffects(ABILITYEFFECT_MOVE_END_OTHER, nextEchoer & 0x3, 0, 0, 0))
+                        effect = TRUE;
+                }
+            }
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_EMERGENCY_EXIT: // Special case, because moves hitting multiple opponents stop after switching out
@@ -6853,6 +6916,8 @@ static void Cmd_moveend(void)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
             if (gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget & 0x3;
+            if (gSpecialStatuses[gBattlerAttacker].echoerOriginalTarget)
+                *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].echoerOriginalTarget & 0x3;
 
             if (B_RAMPAGE_CANCELLING >= GEN_5
               && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH) // If we're rampaging
@@ -9096,7 +9161,7 @@ static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
             gBattlescriptCurrInstr = BattleScript_FogEnded_Ret;
             return TRUE;
         }
-        if (B_DEFOG_EFFECT_CLEARING >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY))
+        if (B_DEFOG_EFFECT_CLEARING >= GEN_8 && (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY) && VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
         {
             RemoveAllTerrains();
             BattleScriptPushCursor();
@@ -16775,6 +16840,8 @@ void BS_SetRemoveTerrain(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
         break;
     case EFFECT_HIT_SET_REMOVE_TERRAIN:
+        if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+            break;
         switch (gMovesInfo[gCurrentMove].argument)
         {
         case ARG_SET_PSYCHIC_TERRAIN: // Genesis Supernova

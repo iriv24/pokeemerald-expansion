@@ -132,13 +132,24 @@ MauvilleCity_Gym_EventScript_GiveVoltSwitch2::
 	end
 
 MauvilleCity_Gym_EventScript_GiveVoltSwitch::
-	giveitem ITEM_TM_VOLT_SWITCH
-	giveitem ITEM_LUXRITE
 	giveitem ITEM_MANECTITE
 	giveitem ITEM_AMPHAROSITE
+	giveitem ITEM_TM_WILD_CHARGE
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge MauvilleCity_Gym_EventScript_GiveItems_2
+	giveitem ITEM_TM_VOLT_SWITCH
+	giveitem ITEM_LUXRITE
 	msgbox MauvilleCity_Gym_Text_ExplainVoltSwitch, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
 	return
+MauvilleCity_Gym_EventScript_GiveItems_1:
+	setflag FLAG_RECEIVED_TM_VOLT_SWITCH
+	return
+
+MauvilleCity_Gym_EventScript_GiveItems_2:
+	giveitem ITEM_BOTTLE_CAP
+	msgbox MauvilleCity_Gym_Text_ExplainWildCharge, MSGBOX_DEFAULT
+	goto MauvilleCity_Gym_EventScript_GiveItems_1
 
 MauvilleCity_Gym_EventScript_CompletedNewMauville::
 	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
@@ -390,6 +401,17 @@ MauvilleCity_Gym_Text_ExplainVoltSwitch:
 	.string "It will let you zap an opponent and\l"
 	.string "then switch out immediately, pretty\l"
 	.string "handy!\p"
+	.string "I also included some of my\n"
+	.string "favorite Mega Stones, hopefully once\l"
+	.string "you get the Mega Ring they'll be of\l"
+	.string "some use to you.\p"
+	.string "… … … … … …$"
+
+MauvilleCity_Gym_Text_ExplainWildCharge:
+	.string "That TM99 there contains Wild Charge.\n"
+	.string "It will let you zap an opponent with\l"
+	.string "massive power while costing some HP,\l"
+	.string "use it with precision!\p"
 	.string "I also included some of my\n"
 	.string "favorite Mega Stones, hopefully once\l"
 	.string "you get the Mega Ring they'll be of\l"
