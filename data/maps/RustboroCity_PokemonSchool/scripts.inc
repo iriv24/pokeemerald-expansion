@@ -169,534 +169,536 @@ RustboroCity_PokemonSchool_EventScript_Teacher::
 # 85 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	giveitem ITEM_QUICK_CLAW
 # 86 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_BRIGHT_POWDER
 # 87 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	closemessage
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 # 88 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
-# 89 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	waitmovement 0
-# 90 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	setflag FLAG_RECEIVED_QUICK_CLAW
-# 91 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	release
-# 92 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	end
-# 93 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 94 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast::
-# 95 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	applymovement VAR_LAST_TALKED, RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast
-# 96 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	waitmovement 0
-# 97 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	return
-# 98 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 99 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsWest::
-# 100 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	applymovement VAR_LAST_TALKED, RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest
-# 101 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	waitmovement 0
-# 102 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	return
-# 103 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 104 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_GaveQuickClaw::
-# 105 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	msgbox RustboroCity_PokemonSchool_Text_ExplainQuickClaw, MSGBOX_DEFAULT
-# 106 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	closemessage
-# 107 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 89 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
-# 108 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 90 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	waitmovement 0
-# 109 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 91 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	setflag FLAG_RECEIVED_QUICK_CLAW
+# 92 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	release
-# 110 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 93 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	end
-# 111 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 94 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 
+# 95 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast::
+# 96 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	applymovement VAR_LAST_TALKED, RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast
+# 97 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	waitmovement 0
+# 98 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	return
+# 99 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 100 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsWest::
+# 101 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	applymovement VAR_LAST_TALKED, RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest
+# 102 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	waitmovement 0
+# 103 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	return
+# 104 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 105 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_GaveQuickClaw::
+# 106 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox RustboroCity_PokemonSchool_Text_ExplainQuickClaw, MSGBOX_DEFAULT
+# 107 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	closemessage
+# 108 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+# 109 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	waitmovement 0
+# 110 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	release
+# 111 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	end
 # 112 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest:
+
 # 113 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_left
+RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest:
 # 114 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_down
+	walk_left
 # 115 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_down
 # 116 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_right
+	walk_down
 # 117 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_in_place_faster_down
+	walk_right
 # 118 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	delay_16
+	walk_in_place_faster_down
 # 119 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 120 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 121 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_down
-# 122 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_in_place_faster_left
-# 123 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
+# 122 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_down
+# 123 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_in_place_faster_left
 # 124 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 125 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_right
-# 126 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
+# 126 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_right
 # 127 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 128 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	delay_8
+	delay_16
 # 129 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_up
+	delay_8
 # 130 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_left
+	walk_up
 # 131 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_left
 # 132 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_up
+	walk_left
 # 133 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_up
 # 134 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_right
+	walk_up
 # 135 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	step_end
-# 136 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 137 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
-# 138 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_right
+# 136 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	step_end
+# 137 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 138 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 # 139 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_right
 # 140 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_down
+	walk_right
 # 141 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_down
 # 142 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_left
+	walk_down
 # 143 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_left
 # 144 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_in_place_faster_down
+	walk_left
 # 145 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	delay_16
+	walk_in_place_faster_down
 # 146 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 147 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 148 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_down
-# 149 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_in_place_faster_left
-# 150 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
+# 149 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_down
+# 150 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_in_place_faster_left
 # 151 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 152 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_right
-# 153 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
+# 153 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_right
 # 154 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	delay_16
 # 155 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	delay_8
+	delay_16
 # 156 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_up
+	delay_8
 # 157 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_right
-# 158 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_up
+# 158 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	walk_right
 # 159 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_up
 # 160 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	walk_left
+	walk_up
 # 161 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	walk_left
 # 162 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	step_end
+	walk_left
 # 163 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	step_end
 # 164 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_Scott::
+
 # 165 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	lock
+RustboroCity_PokemonSchool_EventScript_Scott::
 # 166 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	faceplayer
+	lock
 # 167 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto_if_set FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE, RustboroCity_PokemonSchool_EventScript_ScottWatchStudents
+	faceplayer
 # 168 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto_if_set FLAG_MET_SCOTT_RUSTBORO, RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready
+	goto_if_set FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE, RustboroCity_PokemonSchool_EventScript_ScottWatchStudents
 # 169 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto_if_set FLAG_BADGE01_GET, RustboroCity_PokemonSchool_EventScript_ScottGreetHasBadge
+	goto_if_set FLAG_MET_SCOTT_RUSTBORO, RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready
 # 170 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_PokemonSchool_EventScript_ScottGreetHasBadge
 # 171 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	addvar VAR_SCOTT_STATE, 1
+	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut, MSGBOX_DEFAULT
 # 172 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	setflag FLAG_MET_SCOTT_RUSTBORO
-# 173 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	release
-# 174 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	end
-# 175 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 176 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready::
-# 177 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto_if_set FLAG_BADGE01_GET, RustboroCity_PokemonSchool_EventScript_ScottNoticeBadge
-# 178 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	msgbox RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown, MSGBOX_DEFAULT
-# 179 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	release
-# 180 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	end
-# 181 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 182 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_ScottGreetHasBadge::
-# 183 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge, MSGBOX_DEFAULT
-# 184 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge
-# 185 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	end
-# 186 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 187 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_ScottNoticeBadge::
-# 188 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	msgbox RustboroCity_PokemonSchool_Text_ScottStoneBadge, MSGBOX_DEFAULT
-# 189 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	goto RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge
-# 190 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	end
-# 191 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 192 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge::
-# 193 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	addvar VAR_SCOTT_STATE, 1
-# 194 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	setflag FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE
-# 195 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 173 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	setflag FLAG_MET_SCOTT_RUSTBORO
+# 174 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	release
-# 196 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 175 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	end
-# 197 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 176 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 
-# 198 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_EventScript_ScottWatchStudents::
-# 199 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 177 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready::
+# 178 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_PokemonSchool_EventScript_ScottNoticeBadge
+# 179 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	msgbox RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown, MSGBOX_DEFAULT
-# 200 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 180 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	release
-# 201 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 181 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	end
+# 182 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 183 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_ScottGreetHasBadge::
+# 184 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge, MSGBOX_DEFAULT
+# 185 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge
+# 186 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	end
+# 187 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 188 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_ScottNoticeBadge::
+# 189 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox RustboroCity_PokemonSchool_Text_ScottStoneBadge, MSGBOX_DEFAULT
+# 190 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge
+# 191 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	end
+# 192 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 193 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_MetScottAfterBadge::
+# 194 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	addvar VAR_SCOTT_STATE, 1
+# 195 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	setflag FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE
+# 196 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	release
+# 197 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	end
+# 198 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 199 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_EventScript_ScottWatchStudents::
+# 200 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown, MSGBOX_DEFAULT
+# 201 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	release
 # 202 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	end
 # 203 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges:
+
 # 204 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "The blackboard lists status changes\n"
+RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges:
 # 205 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "that may affect Pokémon in battle.$"
+	.string "The blackboard lists status changes\n"
 # 206 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "that may affect Pokémon in battle.$"
 # 207 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ReadWhichTopic:
+
 # 208 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Which topic do you want to read?$"
+RustboroCity_PokemonSchool_Text_ReadWhichTopic:
 # 209 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Which topic do you want to read?$"
 # 210 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainPoison:
+
 # 211 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "If a Pokémon is poisoned, it will\n"
+RustboroCity_PokemonSchool_Text_ExplainPoison:
 # 212 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "steadily lose HP.\p"
+	.string "If a Pokémon is poisoned, it will\n"
 # 213 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "The effects of poison remain after\n"
+	.string "steadily lose HP.\p"
 # 214 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "a battle.\p"
+	.string "The effects of poison remain after\n"
 # 215 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A poisoned Pokémon's HP will drop\n"
+	.string "a battle.\p"
 # 216 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "while it is traveling.\p"
+	.string "A poisoned Pokémon's HP will drop\n"
 # 217 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Heal a poisoning using an ANTIDOTE.$"
+	.string "while it is traveling.\p"
 # 218 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Heal a poisoning using an ANTIDOTE.$"
 # 219 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainParalysis:
+
 # 220 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "If a Pokémon becomes paralyzed,\n"
+RustboroCity_PokemonSchool_Text_ExplainParalysis:
 # 221 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "its SPEED drops.\p"
+	.string "If a Pokémon becomes paralyzed,\n"
 # 222 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It may also not be able to move while\n"
+	.string "its SPEED drops.\p"
 # 223 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "it is in battle.\p"
+	.string "It may also not be able to move while\n"
 # 224 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Paralysis remains after battle.\n"
+	.string "it is in battle.\p"
 # 225 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Cure it using a PARLYZ HEAL.$"
+	.string "Paralysis remains after battle.\n"
 # 226 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Cure it using a PARLYZ HEAL.$"
 # 227 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainSleep:
+
 # 228 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "If a Pokémon falls asleep, it will be\n"
+RustboroCity_PokemonSchool_Text_ExplainSleep:
 # 229 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "unable to attack.\p"
+	.string "If a Pokémon falls asleep, it will be\n"
 # 230 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A Pokémon may wake up on its own,\n"
+	.string "unable to attack.\p"
 # 231 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "but if a battle ends while it is\l"
+	.string "A Pokémon may wake up on its own,\n"
 # 232 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "sleeping, it will stay asleep.\p"
+	.string "but if a battle ends while it is\l"
 # 233 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Wake it up using an AWAKENING.$"
+	.string "sleeping, it will stay asleep.\p"
 # 234 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Wake it up using an AWAKENING.$"
 # 235 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainBurn:
+
 # 236 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A burn reduces ATTACK power, and it\n"
+RustboroCity_PokemonSchool_Text_ExplainBurn:
 # 237 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "steadily reduces the victim's HP.\p"
+	.string "A burn reduces ATTACK power, and it\n"
 # 238 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A burn lingers after battle.\n"
+	.string "steadily reduces the victim's HP.\p"
 # 239 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Cure a burn using a BURN HEAL.$"
+	.string "A burn lingers after battle.\n"
 # 240 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Cure a burn using a BURN HEAL.$"
 # 241 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainFreeze:
+
 # 242 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "If a Pokémon is frozen, it becomes\n"
+RustboroCity_PokemonSchool_Text_ExplainFreeze:
 # 243 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "completely helpless.\p"
+	.string "If a Pokémon is frozen, it becomes\n"
 # 244 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It will remain frozen after battle.\n"
+	.string "completely helpless.\p"
 # 245 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Thaw it out using an ICE HEAL.$"
+	.string "It will remain frozen after battle.\n"
 # 246 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "Thaw it out using an ICE HEAL.$"
 # 247 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
+
 # 248 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Students who don't study get a little\n"
+RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
 # 249 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "taste of my QUICK CLAW.\p"
+	.string "Students who don't study get a little\n"
 # 250 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Whether or not you are a good student \n"
+	.string "taste of my QUICK CLAW.\p"
 # 251 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "will be evident from the way you use\l"
+	.string "Whether or not you are a good student \n"
 # 252 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "this item.$"
+	.string "will be evident from the way you use\l"
 # 253 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "these items.$"
 # 254 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
+
 # 255 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A Pokémon holding the QUICK CLAW will\n"
+RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 # 256 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "occasionally speed up and get to move\l"
+	.string "A Pokémon holding the QUICK CLAW will\n"
 # 257 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "before its opponent.\p"
+	.string "occasionally speed up and get to move\l"
 # 258 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "There are many other items that are\n"
+	.string "before its opponent.\p"
 # 259 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "meant to be held by Pokémon.\p"
+	.string "There are many other items that are\n"
 # 260 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Just those alone will give you many\n"
+	.string "meant to be held by Pokémon.\p"
 # 261 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "topics to study!$"
+	.string "Just those alone will give you many\n"
 # 262 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "topics to study!$"
 # 263 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_TradingRightNow:
+
 # 264 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "I'm trading Pokémon with my friend\n"
+RustboroCity_PokemonSchool_Text_TradingRightNow:
 # 265 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "right now.$"
+	.string "I'm trading Pokémon with my friend\n"
 # 266 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "right now.$"
 # 267 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
+
 # 268 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "I always wanted a SEEDOT, and\n"
+RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
 # 269 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "I'm finally getting one!$"
+	.string "I always wanted a SEEDOT, and\n"
 # 270 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "I'm finally getting one!$"
 # 271 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
+
 # 272 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Pokémon can hold items, but they\n"
+RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
 # 273 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "don't know what to do with man-made\l"
+	.string "Pokémon can hold items, but they\n"
 # 274 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "items like POTION and ANTIDOTE.$"
+	.string "don't know what to do with man-made\l"
 # 275 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "items like POTION and ANTIDOTE.$"
 # 276 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
+
 # 277 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "You know how some Pokémon moves can\n"
+RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
 # 278 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "confuse a Pokémon?\p"
+	.string "You know how some Pokémon moves can\n"
 # 279 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A confused Pokémon will sometimes\n"
+	.string "confuse a Pokémon?\p"
 # 280 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "attack itself without meaning to.\p"
+	.string "A confused Pokémon will sometimes\n"
 # 281 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "But once it leaves battle, it will\n"
+	.string "attack itself without meaning to.\p"
 # 282 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "return to normal.$"
+	.string "But once it leaves battle, it will\n"
 # 283 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "return to normal.$"
 # 284 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry:
+
 # 285 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A Pokémon holding a BERRY will heal\n"
+RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry:
 # 286 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "itself…\p"
+	.string "A Pokémon holding a BERRY will heal\n"
 # 287 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "There are many kinds of items that\n"
+	.string "itself…\p"
 # 288 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Pokémon can hold…\p"
+	.string "There are many kinds of items that\n"
 # 289 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Boy, it sure is hard taking notes\n"
+	.string "Pokémon can hold…\p"
 # 290 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "down…$"
+	.string "Boy, it sure is hard taking notes\n"
 # 291 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "down…$"
 # 292 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_StudentsNotes:
+
 # 293 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It's this student's notebook…\p"
+RustboroCity_PokemonSchool_Text_StudentsNotes:
 # 294 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Pokémon are to be caught using\n"
+	.string "It's this student's notebook…\p"
 # 295 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "POKé BALLS.\p"
+	.string "Pokémon are to be caught using\n"
 # 296 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Up to six Pokémon can accompany\n"
+	.string "POKé BALLS.\p"
 # 297 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "a TRAINER.\p"
+	.string "Up to six Pokémon can accompany\n"
 # 298 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A TRAINER is someone who catches\n"
+	.string "a TRAINER.\p"
 # 299 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Pokémon, raises them, and battles\l"
+	.string "A TRAINER is someone who catches\n"
 # 300 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "with them.\p"
+	.string "Pokémon, raises them, and battles\l"
 # 301 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "A TRAINER's mission is to defeat\n"
+	.string "with them.\p"
 # 302 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "the strong TRAINERS who await\l"
+	.string "A TRAINER's mission is to defeat\n"
 # 303 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "challengers in Pokémon GYMS.$"
+	.string "the strong TRAINERS who await\l"
 # 304 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
+	.string "challengers in Pokémon GYMS.$"
 # 305 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
+
 # 306 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Hello? Didn't we meet before?\n"
+RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
 # 307 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "I think back in PETALBURG CITY.\p"
-# 308 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Let me introduce myself.\n"
-# 309 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "My name's SCOTT.\p"
-# 310 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "I've been traveling everywhere in\n"
-# 311 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "search of outstanding TRAINERS.\p"
-# 312 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "More specifically, I'm looking for\n"
-# 313 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Pokémon battle experts.\p"
-# 314 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "So, what brings you to this SCHOOL?\n"
-# 315 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Are you a TRAINER, too?\p"
-# 316 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "The first thing you should do is to\n"
-# 317 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "have a Pokémon learn the move CUT.\p"
-# 318 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "If I remember correctly, someone in\n"
-# 319 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "this town has CUT.$"
-# 320 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 321 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown:
-# 322 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Scott: Hmm…\p"
-# 323 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "The talent levels of the students here\n"
-# 324 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "are unknown. The potential's there.$"
-# 325 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 326 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ScottStoneBadge:
-# 327 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Scott: Oh, what's that?\p"
-# 328 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It's a STONE BADGE, isn't it?\n"
-# 329 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "That's pretty impressive, I'd say.\p"
-# 330 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "But, you know, I would've loved to see\n"
-# 331 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "you in battle.\p"
-# 332 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It's hard to tell what you're like as\n"
-# 333 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "a TRAINER from a LEAGUE BADGE.$"
-# 334 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-
-# 335 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
-# 336 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "Hello? Didn't we meet before?\n"
-# 337 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 308 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "I think back in PETALBURG CITY.\p"
-# 338 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 309 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "Let me introduce myself.\n"
-# 339 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 310 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "My name's SCOTT.\p"
-# 340 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 311 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "I've been traveling everywhere in\n"
-# 341 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 312 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "search of outstanding TRAINERS.\p"
-# 342 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 313 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "More specifically, I'm looking for\n"
-# 343 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 314 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "Pokémon battle experts.\p"
-# 344 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "Oh, what's that?\n"
-# 345 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "It's a STONE BADGE, isn't it?\p"
-# 346 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "That's pretty impressive, I'd say, for\n"
-# 347 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
-	.string "a starting TRAINER like yourself.\p"
-# 348 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 315 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "So, what brings you to this SCHOOL?\n"
+# 316 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Are you a TRAINER, too?\p"
+# 317 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "The first thing you should do is to\n"
+# 318 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "have a Pokémon learn the move CUT.\p"
+# 319 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "If I remember correctly, someone in\n"
+# 320 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "this town has CUT.$"
+# 321 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 322 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown:
+# 323 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Scott: Hmm…\p"
+# 324 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "The talent levels of the students here\n"
+# 325 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "are unknown. The potential's there.$"
+# 326 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 327 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_Text_ScottStoneBadge:
+# 328 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Scott: Oh, what's that?\p"
+# 329 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "It's a STONE BADGE, isn't it?\n"
+# 330 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "That's pretty impressive, I'd say.\p"
+# 331 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "But, you know, I would've loved to see\n"
-# 349 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 332 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "you in battle.\p"
-# 350 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+# 333 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "It's hard to tell what you're like as\n"
+# 334 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "a TRAINER from a LEAGUE BADGE.$"
+# 335 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+
+# 336 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
+# 337 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Hello? Didn't we meet before?\n"
+# 338 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "I think back in PETALBURG CITY.\p"
+# 339 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Let me introduce myself.\n"
+# 340 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "My name's SCOTT.\p"
+# 341 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "I've been traveling everywhere in\n"
+# 342 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "search of outstanding TRAINERS.\p"
+# 343 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "More specifically, I'm looking for\n"
+# 344 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Pokémon battle experts.\p"
+# 345 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Oh, what's that?\n"
+# 346 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "It's a STONE BADGE, isn't it?\p"
+# 347 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "That's pretty impressive, I'd say, for\n"
+# 348 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "a starting TRAINER like yourself.\p"
+# 349 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "But, you know, I would've loved to see\n"
+# 350 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "you in battle.\p"
 # 351 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "It's hard to tell what you're like as\n"
+# 352 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "a TRAINER from a LEAGUE BADGE.$"

@@ -281,6 +281,7 @@ const u8 gText_PokedollarVar1[] = _("¥{STR_VAR_1}");
 const u8 gText_Shift[] = _("Shift");
 const u8 gText_SendOut[] = _("Send Out");
 const u8 gText_Switch2[] = _("Switch");
+const u8 gText_OverworldMoves[] = _("Overworld");
 const u8 gText_Summary5[] = _("Summary");
 const u8 gText_Moves[] = _("Moves"); // Unused
 const u8 gText_Enter[] = _("Enter");

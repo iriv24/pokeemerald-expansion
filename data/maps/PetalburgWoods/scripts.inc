@@ -1025,16 +1025,27 @@ PetalburgWoods_EventScript_GardeniaDefeated::
 
 PetalburgWoods_EventScript_GardeniaGiveItems::
 # 533 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_TM_U_TURN
-# 534 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_EVIOLITE
-# 535 "data/maps/PetalburgWoods/scripts.pory"
+# 534 "data/maps/PetalburgWoods/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge PetalburgWoods_EventScript_GardeniaGiveItems_2
+# 541 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_TM_U_TURN
+# 542 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_LEAF_STONE, 10
-# 536 "data/maps/PetalburgWoods/scripts.pory"
+# 543 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox Gardenia_ExplainItems
-# 537 "data/maps/PetalburgWoods/scripts.pory"
+PetalburgWoods_EventScript_GardeniaGiveItems_1:
+# 545 "data/maps/PetalburgWoods/scripts.pory"
 	release
 	end
+
+PetalburgWoods_EventScript_GardeniaGiveItems_2:
+# 536 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_BOTTLE_CAP
+# 537 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_ExplainItemsHard
+	goto PetalburgWoods_EventScript_GardeniaGiveItems_1
 
 
 PetalburgWoods_EventScript_BattleGardenia_Text_0:
@@ -1042,7 +1053,7 @@ PetalburgWoods_EventScript_BattleGardenia_Text_0:
 	.string "Let's go!$"
 
 Gardenia_Greeting::
-# 541 "data/maps/PetalburgWoods/scripts.pory"
+# 549 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Aha! I saw you run by through those\n"
 	.string "trees earlier while I was hunting some\l"
 	.string "Grass-types, but it seemed clear you\l"
@@ -1057,16 +1068,16 @@ Gardenia_Greeting::
 	.string "worth your while!$"
 
 Gardenia_ReadyYet::
-# 556 "data/maps/PetalburgWoods/scripts.pory"
+# 564 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Want to battle now?$"
 
 Gardenia_ComeBackWhenReady::
-# 560 "data/maps/PetalburgWoods/scripts.pory"
+# 568 "data/maps/PetalburgWoods/scripts.pory"
 	.string "I'll be here looking for some more\n"
 	.string "Grass-types in the meantime.$"
 
 Gardenia_ExplainItems::
-# 565 "data/maps/PetalburgWoods/scripts.pory"
+# 573 "data/maps/PetalburgWoods/scripts.pory"
 	.string "That TM contains U-turn, it's very\n"
 	.string "useful for getting a hit off while\l"
 	.string "switching out a Pokémon.\p"
@@ -1075,17 +1086,23 @@ Gardenia_ExplainItems::
 	.string "will be good for a Pokémon you can't\l"
 	.string "evolve quite yet.$"
 
+Gardenia_ExplainItemsHard::
+# 583 "data/maps/PetalburgWoods/scripts.pory"
+	.string "The Eviolite is my favorite Item,\n"
+	.string "it's great for Pokémons you can't\l"
+	.string "evolve quite yet.$"
+
 Gardenia_WillYouBattleMe::
-# 575 "data/maps/PetalburgWoods/scripts.pory"
+# 589 "data/maps/PetalburgWoods/scripts.pory"
 	.string "How does that sound to you?\n"
 	.string "Want to have a battle?$"
 
 Gardenia_Outro::
-# 580 "data/maps/PetalburgWoods/scripts.pory"
+# 594 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Not bad at all! As promised, please take\n"
 	.string "these rewards for beating me.$"
 
 PostBattle_Gardenia::
-# 586 "data/maps/PetalburgWoods/scripts.pory"
+# 600 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Hope there are some cool Grass-types in\n"
 	.string "this region!$"

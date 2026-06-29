@@ -84,6 +84,7 @@
 
 enum {
     MENU_SUMMARY,
+    MENU_OVERWORLD_MOVES,
     MENU_SWITCH,
     MENU_RELEARN_BOTH,
     MENU_RELEARN_LVL_UP,
@@ -146,6 +147,7 @@ enum {
     ACTIONS_SUMMARY_ONLY,
     ACTIONS_ITEM,
     ACTIONS_MODE,
+    ACTIONS_OVERWORLD,
     ACTIONS_MAIL,
     ACTIONS_REGISTER,
     ACTIONS_TRADE,
@@ -524,6 +526,7 @@ static void CursorCb_Toxic(u8);
 static void CursorCb_Sleep(u8);
 static void UpdateStatus(u8, u16);// end of predmg menu
 static void CursorCb_Switch(u8);
+static void CursorCb_OverworldMoves(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
@@ -2944,8 +2947,11 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_MODE:
         window = sApplyModeWindowTemplate;
         break;
-    case SELECTWINDW_SETHP:
+    case SELECTWINDOW_SETHP:
         window = sSetHpWindowTemplate;
+        break;
+    case SELECTWINDOW_OVERWORLDMOVES:
+        window = sOverworldMovesWindowTemplate;
         break;
         // Start hexorb Branch
     case SELECTWINDOW_HEXORB:
@@ -3009,11 +3015,54 @@ static void PartyMenuDisplayYesNoMenu(void)
 
 static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 action)
 {
-    u8 i;
+    u8 i, j;
 
     if (action == ACTIONS_NONE)
     {
         SetPartyMonFieldSelectionActions(mons, slotId);
+    }
+    else if (action == ACTIONS_OVERWORLD)
+    {
+        // Build field moves list for Overworld menu
+        sPartyMenuInternal->numActions = 0;
+        
+        // Add field moves that the pokemon knows
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            for (j = 0; j != FIELD_MOVES_COUNT; j++)
+            {
+                if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
+                {
+                    // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
+                    if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02, 1)){
+                        // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
+                        if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05, 1)){ 
+                            if (sFieldMoves[j] != MOVE_DIG ){
+                                if (sFieldMoves[j] != MOVE_TELEPORT){
+                                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                                }
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        
+        // Add learnable field moves if < 4 moves are shown
+        if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 8 + MENU_FIELD_MOVES);
+        
+        if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+        
+        if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_DIG) != 1)) 
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 10 + MENU_FIELD_MOVES);
+        
+        if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_TELEPORT) != 1)) 
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 9 + MENU_FIELD_MOVES);
+        
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL2);
     }
     else
     {
@@ -3030,43 +3079,43 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 8 + MENU_FIELD_MOVES);
+    // Check if pokemon has any field moves
+    bool8 hasFieldMove = FALSE;
     
-    // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
-
-    // Add field moves to action list
+    // Check if Mon already knows any field moves
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         for (j = 0; j != FIELD_MOVES_COUNT; j++)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02, 1)){
-                    // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05, 1)){ 
-                        if (sFieldMoves[j] != MOVE_DIG ){
-                            if (sFieldMoves[j] != MOVE_TELEPORT){
-                                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                            }
-                        }
-                    }
-                }
+                hasFieldMove = TRUE;
                 break;
             }
         }
+        if (hasFieldMove)
+            break;
     }
     
+    // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
+    if (!hasFieldMove && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLY) != 1) && CheckBagHasItem(ITEM_HM02, 1)) 
+        hasFieldMove = TRUE;
+    
+    // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
+    if (!hasFieldMove && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_FLASH) != 1) && CheckBagHasItem(ITEM_HM05, 1)) 
+        hasFieldMove = TRUE;
+    
     // If Mon can learn Dig and action list consists of < 4 moves, add DIG to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_DIG) != 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 10 + MENU_FIELD_MOVES);
+    if (!hasFieldMove && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_DIG) != 1)) 
+        hasFieldMove = TRUE;
+    
     // If Mon can learn Teleport and action list consists of < 4 moves, add TELEPORT to action list
-    if (sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_TELEPORT) != 1)) 
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 9 + MENU_FIELD_MOVES);
+    if (!hasFieldMove && sPartyMenuInternal->numActions < 5 && (CanTeachMove(&mons[slotId], MOVE_TELEPORT) != 1)) 
+        hasFieldMove = TRUE;
+    
+    // Add Overworld menu item if Mon has field moves
+    if (hasFieldMove)
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_OVERWORLD_MOVES);
 
     if (!InBattlePike())
     {
@@ -8318,6 +8367,18 @@ static void CursorCb_Mode(u8 taskId)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
+static void CursorCb_OverworldMoves(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_OVERWORLD);
+    DisplaySelectionWindow(SELECTWINDOW_OVERWORLDMOVES);
+    DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_MON);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
 #define thealthPoints data[8]
 
 static void CursorCb_SetHp(u8 taskId)
@@ -8326,7 +8387,7 @@ static void CursorCb_SetHp(u8 taskId)
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
     SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_MODE);
-    // DisplaySelectionWindow(SELECTWINDW_SETHP);
+    // DisplaySelectionWindow(SELECTWINDOW_SETHP);
     sPartyMenuInternal->windowId[0] = AddWindow(&sSetHpWindowTemplate);
     DrawStdFrameWithCustomTileAndPalette(sPartyMenuInternal->windowId[0], FALSE, 0x4F, 13);
     PrintHP(sPartyMenuInternal->windowId[0], 1);

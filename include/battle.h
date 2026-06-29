@@ -245,6 +245,7 @@ struct SpecialStatus
     // End of byte
     u8 damagedMons:4; // Mons that have been damaged directly by using a move, includes substitute.
     u8 dancerUsedMove:1;
+    u8 echoerUsedMove:1;
     u8 dancerOriginalTarget:3;
     // End of byte
     u8 emergencyExited:1;
@@ -252,6 +253,7 @@ struct SpecialStatus
     u8 preventLifeOrbDamage:1; // So that Life Orb doesn't activate various effects.
     u8 oraoraoraoraState:2;
     u8 distortedTypeMatchups:1;
+    u8 echoerOriginalTarget:3;
 };
 
 struct SideTimer

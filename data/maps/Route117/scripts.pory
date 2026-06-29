@@ -368,7 +368,14 @@ script Route117_EventScript_FantinaGiveItems{
 	giveitem(ITEM_GENGARITE)
 	giveitem(ITEM_DUSKNOIRITE)
 	giveitem(ITEM_METRONOME)
-	giveitem(ITEM_LEFTOVERS)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_BOTTLE_CAP)
+	}
+	else
+	{
+		giveitem(ITEM_LEFTOVERS)
+	}
 	msgbox(Fantina_ExplainItems)
 	release
 	end
