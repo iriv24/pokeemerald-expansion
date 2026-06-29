@@ -6214,6 +6214,34 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_WISTFUL_ECHO:
+            if (IsBattlerAlive(battler)
+             && (gMovesInfo[gCurrentMove].soundMove)
+             && !gSpecialStatuses[battler].echoerUsedMove
+             && gBattlerAttacker != battler)
+            {
+                // Set bit and save Wistful Echo mon's original target
+                gSpecialStatuses[battler].echoerUsedMove = TRUE;
+                gSpecialStatuses[battler].echoerOriginalTarget = *(gBattleStruct->moveTarget + battler) | 0x4;
+                gBattleStruct->atkCancellerTracker = 0;
+                gBattlerAttacker = gBattlerAbility = battler;
+                gCalledMove = gCurrentMove;
+
+                // Set the target to the original target of the mon that first used a sound move
+                gBattlerTarget = gBattleScripting.savedBattler & 0x3;
+
+                // Edge case for sound moves that hit multiply targets
+                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
+                SetTypeBeforeUsingMove(gCalledMove, battler);
+
+                // Make sure that the target isn't an ally - if it is, target the original user
+                if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker))
+                    gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
+                gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
+                BattleScriptExecute(BattleScript_WistfulEchoActivates);
+                effect++;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_OPPORTUNIST:

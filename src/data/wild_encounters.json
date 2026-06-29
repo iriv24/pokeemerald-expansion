@@ -837,7 +837,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 10,
@@ -1139,7 +1139,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 10,
@@ -2330,7 +2330,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 10,
@@ -6980,7 +6980,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 25,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 10,
@@ -7213,7 +7213,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 60,
@@ -9445,7 +9445,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 25,
+            "encounter_rate": 90,
             "mons": [
               {
                 "min_level": 25,

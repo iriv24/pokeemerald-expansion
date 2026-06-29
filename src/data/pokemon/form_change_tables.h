@@ -1571,7 +1571,7 @@ static const struct FormChange sScovillainFormChangeTable[] = {
 #if P_FAMILY_FINIZEN
 static const struct FormChange sPalafinZeroFormChangeTable[] =
 {
-    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_PALAFIN_HERO},
+    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_PALAFIN_HERO, ABILITY_ZERO_TO_HERO},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_FINIZEN

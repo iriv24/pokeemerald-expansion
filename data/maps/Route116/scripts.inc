@@ -1112,6 +1112,8 @@ Route116_EventScript_CandiceGiveIcyWind_1:
 
 Route116_EventScript_CandiceGiveIcyWind_2:
 # 569 "data/maps/Route116/scripts.pory"
+	giveitem ITEM_BOTTLE_CAP
+# 570 "data/maps/Route116/scripts.pory"
 	msgbox Candice_ExplainIcyWindAndMuscleBandHardMode
 	goto Route116_EventScript_CandiceGiveIcyWind_1
 
@@ -1142,10 +1144,13 @@ Candice_ExplainIcyWindAndMuscleBandHardMode::
 	.string "Attack if held!\p"
 	.string "What? Were you expecting a TM as well?\n"
 	.string "Sorry, but this is Hard Mode, Icy Wind\l"
-	.string "would make your next battle too easy!$"
+	.string "would make your next battle too easy!\p"
+	.string "That Bottle Cap can be used to change\n"
+	.string "your Pokémon's nature, ability, IVs or\l"
+	.string "even buy some items! Use it well!$"
 
 Candice_Greeting::
-# 607 "data/maps/Route116/scripts.pory"
+# 610 "data/maps/Route116/scripts.pory"
 	.string "Oh, hello. I'm Candice, the 7th Gym\n"
 	.string "Leader from the Sinnoh region.\p"
 	.string "I came to this Rustboro City to pay a\n"
@@ -1159,7 +1164,7 @@ Candice_Greeting::
 	.string "your first Gym challenge?$"
 
 Candice_WillYouBattleMe::
-# 621 "data/maps/Route116/scripts.pory"
+# 624 "data/maps/Route116/scripts.pory"
 	.string "Don't worry, I brought a team of lower-\n"
 	.string "level Pokémon, just in case I bumped\l"
 	.string "into any promising new trainers, so you\l"
@@ -1167,20 +1172,20 @@ Candice_WillYouBattleMe::
 	.string "What do you say we have a battle?$"
 
 Candice_Outro::
-# 629 "data/maps/Route116/scripts.pory"
+# 632 "data/maps/Route116/scripts.pory"
 	.string "Looks like the trainers here are\n"
 	.string "pretty strong! Please, take these\l"
 	.string "as rewards for beating me.$"
 
 PostBattle_Candice::
-# 636 "data/maps/Route116/scripts.pory"
+# 639 "data/maps/Route116/scripts.pory"
 	.string "It seems the quality of education here\n"
 	.string "in Hoenn is on par with ours in Sinnoh!$"
 
 Ready_Yet::
-# 641 "data/maps/Route116/scripts.pory"
+# 644 "data/maps/Route116/scripts.pory"
 	.string "Ready for our battle now?$"
 
 Come_Back_When_Ready::
-# 645 "data/maps/Route116/scripts.pory"
+# 648 "data/maps/Route116/scripts.pory"
 	.string "Come back when you're ready.$"

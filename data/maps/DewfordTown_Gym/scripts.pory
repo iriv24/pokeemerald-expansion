@@ -176,10 +176,21 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	end
 
 DewfordTown_Gym_EventScript_GiveLowSweep::
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge DewfordTown_Gym_EventScript_GiveLowSweep_2
 	giveitem ITEM_TM_LOW_SWEEP
 	msgbox DewfordTown_Gym_Text_ExplainLowSweep, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_LOW_SWEEP
 	return
+DewfordTown_Gym_EventScript_GiveLowSweep_1:
+	giveitem ITEM_TM_LOW_SWEEP
+	msgbox DewfordTown_Gym_Text_ExplainLowSweep, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_LOW_SWEEP
+	return
+
+DewfordTown_Gym_EventScript_GiveLowSweep_2:
+	giveitem ITEM_BOTTLE_CAP
+	goto DewfordTown_Gym_EventScript_GiveLowSweep_1
 
 DewfordTown_Gym_EventScript_GiveLowSweep2:
 	giveitem ITEM_TM_LOW_SWEEP

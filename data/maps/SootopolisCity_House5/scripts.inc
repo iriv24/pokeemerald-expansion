@@ -105,412 +105,466 @@ SootopolisCity_House5_EventScript_Natn::
 # 56 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_set FLAG_TEMP_1, SootopolisCity_House5_EventScript_NatnRequestBattleAgain
 # 57 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_Natn_2
+# 63 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox Natn_Greeting, MSGBOX_YESNO
-# 58 "data/maps/SootopolisCity_House5/scripts.pory"
+SootopolisCity_House5_EventScript_Natn_1:
+# 65 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleNatnPrompt
 	end
 
+SootopolisCity_House5_EventScript_Natn_2:
+# 59 "data/maps/SootopolisCity_House5/scripts.pory"
+	msgbox Natn_GreetingHard, MSGBOX_YESNO
+	goto SootopolisCity_House5_EventScript_Natn_1
+
 
 SootopolisCity_House5_EventScript_NatnRequestBattleAgain::
-# 63 "data/maps/SootopolisCity_House5/scripts.pory"
+# 70 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox Natn_ReadyYet, MSGBOX_YESNO
-# 64 "data/maps/SootopolisCity_House5/scripts.pory"
+# 71 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleNatnPrompt
 	end
 
 
 SootopolisCity_House5_EventScript_BattleNatnPrompt::
-# 69 "data/maps/SootopolisCity_House5/scripts.pory"
+# 76 "data/maps/SootopolisCity_House5/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleNatn
-# 70 "data/maps/SootopolisCity_House5/scripts.pory"
+# 77 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineNatnBattle
-# 71 "data/maps/SootopolisCity_House5/scripts.pory"
+# 78 "data/maps/SootopolisCity_House5/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_House5_EventScript_DeclineNatnBattle::
-# 76 "data/maps/SootopolisCity_House5/scripts.pory"
+# 83 "data/maps/SootopolisCity_House5/scripts.pory"
 	setflag FLAG_TEMP_1
-# 77 "data/maps/SootopolisCity_House5/scripts.pory"
+# 84 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox Natn_ComeBackWhenReady, MSGBOX_DEFAULT
-# 78 "data/maps/SootopolisCity_House5/scripts.pory"
+# 85 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_BattleNatn::
-# 83 "data/maps/SootopolisCity_House5/scripts.pory"
+# 90 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox Natn_YoureOn, MSGBOX_DEFAULT
-# 84 "data/maps/SootopolisCity_House5/scripts.pory"
+# 91 "data/maps/SootopolisCity_House5/scripts.pory"
 	trainerbattle_no_intro TRAINER_NATN, Natn_Outro
-# 85 "data/maps/SootopolisCity_House5/scripts.pory"
+# 92 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_BattleNatn_1
+# 98 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_NatnGiveMeloetta
+	return
+
+SootopolisCity_House5_EventScript_BattleNatn_1:
 	return
 
 
 SootopolisCity_House5_EventScript_NatnDefeated::
-# 90 "data/maps/SootopolisCity_House5/scripts.pory"
+# 104 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_NatnDefeated_2
+# 110 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox PostBattle_Natn, MSGBOX_DEFAULT
-# 91 "data/maps/SootopolisCity_House5/scripts.pory"
+SootopolisCity_House5_EventScript_NatnDefeated_1:
+# 112 "data/maps/SootopolisCity_House5/scripts.pory"
 	releaseall
 	end
 
+SootopolisCity_House5_EventScript_NatnDefeated_2:
+# 106 "data/maps/SootopolisCity_House5/scripts.pory"
+	msgbox PostBattle_NatnHard, MSGBOX_DEFAULT
+	goto SootopolisCity_House5_EventScript_NatnDefeated_1
+
 
 SootopolisCity_House5_EventScript_NatnGiveMeloetta::
-# 96 "data/maps/SootopolisCity_House5/scripts.pory"
+# 117 "data/maps/SootopolisCity_House5/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MELOETTA_ARIA
-# 97 "data/maps/SootopolisCity_House5/scripts.pory"
+# 118 "data/maps/SootopolisCity_House5/scripts.pory"
 	givemonrandom SPECIES_MELOETTA_ARIA, 50
-# 98 "data/maps/SootopolisCity_House5/scripts.pory"
+# 119 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveMeloettaParty
-# 99 "data/maps/SootopolisCity_House5/scripts.pory"
+# 120 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveMeloettaPC
-# 100 "data/maps/SootopolisCity_House5/scripts.pory"
+# 121 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 101 "data/maps/SootopolisCity_House5/scripts.pory"
+# 122 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveMeloettaParty::
-# 106 "data/maps/SootopolisCity_House5/scripts.pory"
+# 127 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare
-# 107 "data/maps/SootopolisCity_House5/scripts.pory"
+# 128 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 108 "data/maps/SootopolisCity_House5/scripts.pory"
+# 129 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainMeloetta
-# 109 "data/maps/SootopolisCity_House5/scripts.pory"
+# 130 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 110 "data/maps/SootopolisCity_House5/scripts.pory"
+# 131 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 111 "data/maps/SootopolisCity_House5/scripts.pory"
+# 132 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainMeloetta
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveMeloettaPC::
-# 116 "data/maps/SootopolisCity_House5/scripts.pory"
+# 137 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare
-# 117 "data/maps/SootopolisCity_House5/scripts.pory"
+# 138 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 118 "data/maps/SootopolisCity_House5/scripts.pory"
+# 139 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendMeloettaToPC
-# 119 "data/maps/SootopolisCity_House5/scripts.pory"
+# 140 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 120 "data/maps/SootopolisCity_House5/scripts.pory"
+# 141 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_SendMeloettaToPC
 	end
 
 
 SootopolisCity_House5_EventScript_SendMeloettaToPC::
-# 125 "data/maps/SootopolisCity_House5/scripts.pory"
+# 146 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 126 "data/maps/SootopolisCity_House5/scripts.pory"
+# 147 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainMeloetta
 	end
 
 
 SootopolisCity_House5_EventScript_ReceivedMeloettaFanfare::
-# 131 "data/maps/SootopolisCity_House5/scripts.pory"
+# 152 "data/maps/SootopolisCity_House5/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 132 "data/maps/SootopolisCity_House5/scripts.pory"
+# 153 "data/maps/SootopolisCity_House5/scripts.pory"
 	message SootopolisCity_House5_Text_PlayerReceivedMeloetta
-# 133 "data/maps/SootopolisCity_House5/scripts.pory"
+# 154 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitmessage
-# 134 "data/maps/SootopolisCity_House5/scripts.pory"
+# 155 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitfanfare
-# 135 "data/maps/SootopolisCity_House5/scripts.pory"
+# 156 "data/maps/SootopolisCity_House5/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_MELOETTA_ARIA
 	return
 
 
 SootopolisCity_House5_EventScript_ExplainMeloetta::
-# 140 "data/maps/SootopolisCity_House5/scripts.pory"
+# 161 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox Natn_ExplainMeloetta, MSGBOX_DEFAULT
-# 141 "data/maps/SootopolisCity_House5/scripts.pory"
+# 162 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_MasterPoucine::
-# 194 "data/maps/SootopolisCity_House5/scripts.pory"
+# 231 "data/maps/SootopolisCity_House5/scripts.pory"
 	lockall
-# 195 "data/maps/SootopolisCity_House5/scripts.pory"
+# 232 "data/maps/SootopolisCity_House5/scripts.pory"
 	applymovement LOCALID_MASTER_POUCINE, Common_Movement_FacePlayer
-# 196 "data/maps/SootopolisCity_House5/scripts.pory"
+# 233 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_defeated TRAINER_MASTER_POUCINE, SootopolisCity_House5_EventScript_MasterPoucineDefeated
-# 197 "data/maps/SootopolisCity_House5/scripts.pory"
+# 234 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_set FLAG_TEMP_2, SootopolisCity_House5_EventScript_MasterPoucineRequestBattleAgain
-# 198 "data/maps/SootopolisCity_House5/scripts.pory"
+# 235 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_MasterPoucine_2
+# 241 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox MasterPoucine_Greeting, MSGBOX_YESNO
-# 199 "data/maps/SootopolisCity_House5/scripts.pory"
+SootopolisCity_House5_EventScript_MasterPoucine_1:
+# 243 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt
 	end
 
+SootopolisCity_House5_EventScript_MasterPoucine_2:
+# 237 "data/maps/SootopolisCity_House5/scripts.pory"
+	msgbox MasterPoucine_GreetingHard, MSGBOX_YESNO
+	goto SootopolisCity_House5_EventScript_MasterPoucine_1
+
 
 SootopolisCity_House5_EventScript_MasterPoucineRequestBattleAgain::
-# 204 "data/maps/SootopolisCity_House5/scripts.pory"
+# 248 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox MasterPoucine_ReadyYet, MSGBOX_YESNO
-# 205 "data/maps/SootopolisCity_House5/scripts.pory"
+# 249 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt
 	end
 
 
 SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt::
-# 210 "data/maps/SootopolisCity_House5/scripts.pory"
+# 254 "data/maps/SootopolisCity_House5/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleMasterPoucine
-# 211 "data/maps/SootopolisCity_House5/scripts.pory"
+# 255 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineMasterPoucineBattle
-# 212 "data/maps/SootopolisCity_House5/scripts.pory"
+# 256 "data/maps/SootopolisCity_House5/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_House5_EventScript_DeclineMasterPoucineBattle::
-# 217 "data/maps/SootopolisCity_House5/scripts.pory"
+# 261 "data/maps/SootopolisCity_House5/scripts.pory"
 	setflag FLAG_TEMP_2
-# 218 "data/maps/SootopolisCity_House5/scripts.pory"
+# 262 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox MasterPoucine_ComeBackWhenReady, MSGBOX_DEFAULT
-# 219 "data/maps/SootopolisCity_House5/scripts.pory"
+# 263 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_BattleMasterPoucine::
-# 224 "data/maps/SootopolisCity_House5/scripts.pory"
+# 268 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox MasterPoucine_YoureOn, MSGBOX_DEFAULT
-# 225 "data/maps/SootopolisCity_House5/scripts.pory"
+# 269 "data/maps/SootopolisCity_House5/scripts.pory"
 	trainerbattle_no_intro TRAINER_MASTER_POUCINE, MasterPoucine_Outro
-# 226 "data/maps/SootopolisCity_House5/scripts.pory"
+# 270 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_BattleMasterPoucine_1
+# 276 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow
+	return
+
+SootopolisCity_House5_EventScript_BattleMasterPoucine_1:
 	return
 
 
 SootopolisCity_House5_EventScript_MasterPoucineDefeated::
-# 231 "data/maps/SootopolisCity_House5/scripts.pory"
+# 282 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox PostBattle_MasterPoucine, MSGBOX_DEFAULT
-# 232 "data/maps/SootopolisCity_House5/scripts.pory"
+# 283 "data/maps/SootopolisCity_House5/scripts.pory"
 	releaseall
 	end
 
 
 SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow::
-# 237 "data/maps/SootopolisCity_House5/scripts.pory"
+# 288 "data/maps/SootopolisCity_House5/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MARSHADOW
-# 238 "data/maps/SootopolisCity_House5/scripts.pory"
+# 289 "data/maps/SootopolisCity_House5/scripts.pory"
 	givemonrandom SPECIES_MARSHADOW, 50
-# 239 "data/maps/SootopolisCity_House5/scripts.pory"
+# 290 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveMarshadowParty
-# 240 "data/maps/SootopolisCity_House5/scripts.pory"
+# 291 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveMarshadowPC
-# 241 "data/maps/SootopolisCity_House5/scripts.pory"
+# 292 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 242 "data/maps/SootopolisCity_House5/scripts.pory"
+# 293 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveMarshadowParty::
-# 247 "data/maps/SootopolisCity_House5/scripts.pory"
+# 298 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare
-# 248 "data/maps/SootopolisCity_House5/scripts.pory"
+# 299 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 249 "data/maps/SootopolisCity_House5/scripts.pory"
+# 300 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainMarshadow
-# 250 "data/maps/SootopolisCity_House5/scripts.pory"
+# 301 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 251 "data/maps/SootopolisCity_House5/scripts.pory"
+# 302 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 252 "data/maps/SootopolisCity_House5/scripts.pory"
+# 303 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainMarshadow
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveMarshadowPC::
-# 257 "data/maps/SootopolisCity_House5/scripts.pory"
+# 308 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare
-# 258 "data/maps/SootopolisCity_House5/scripts.pory"
+# 309 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 259 "data/maps/SootopolisCity_House5/scripts.pory"
+# 310 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendMarshadowToPC
-# 260 "data/maps/SootopolisCity_House5/scripts.pory"
+# 311 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 261 "data/maps/SootopolisCity_House5/scripts.pory"
+# 312 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_SendMarshadowToPC
 	end
 
 
 SootopolisCity_House5_EventScript_SendMarshadowToPC::
-# 266 "data/maps/SootopolisCity_House5/scripts.pory"
+# 317 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 267 "data/maps/SootopolisCity_House5/scripts.pory"
+# 318 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainMarshadow
 	end
 
 
 SootopolisCity_House5_EventScript_ReceivedMarshadowFanfare::
-# 272 "data/maps/SootopolisCity_House5/scripts.pory"
+# 323 "data/maps/SootopolisCity_House5/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 273 "data/maps/SootopolisCity_House5/scripts.pory"
+# 324 "data/maps/SootopolisCity_House5/scripts.pory"
 	message SootopolisCity_House5_Text_PlayerReceivedMarshadow
-# 274 "data/maps/SootopolisCity_House5/scripts.pory"
+# 325 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitmessage
-# 275 "data/maps/SootopolisCity_House5/scripts.pory"
+# 326 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitfanfare
-# 276 "data/maps/SootopolisCity_House5/scripts.pory"
+# 327 "data/maps/SootopolisCity_House5/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_MARSHADOW
 	return
 
 
 SootopolisCity_House5_EventScript_ExplainMarshadow::
-# 281 "data/maps/SootopolisCity_House5/scripts.pory"
+# 332 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox MasterPoucine_ExplainMarshadow, MSGBOX_DEFAULT
-# 282 "data/maps/SootopolisCity_House5/scripts.pory"
+# 333 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_OblivionWing::
-# 333 "data/maps/SootopolisCity_House5/scripts.pory"
+# 394 "data/maps/SootopolisCity_House5/scripts.pory"
 	lockall
-# 334 "data/maps/SootopolisCity_House5/scripts.pory"
+# 395 "data/maps/SootopolisCity_House5/scripts.pory"
 	applymovement LOCALID_OBLIVION_WING, Common_Movement_FacePlayer
-# 335 "data/maps/SootopolisCity_House5/scripts.pory"
+# 396 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_defeated TRAINER_OBLIVION_WING, SootopolisCity_House5_EventScript_OblivionWingDefeated
-# 336 "data/maps/SootopolisCity_House5/scripts.pory"
+# 397 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_set FLAG_TEMP_3, SootopolisCity_House5_EventScript_OblivionWingRequestBattleAgain
-# 337 "data/maps/SootopolisCity_House5/scripts.pory"
+# 398 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_OblivionWing_2
+# 404 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox OblivionWing_Greeting, MSGBOX_YESNO
-# 338 "data/maps/SootopolisCity_House5/scripts.pory"
+SootopolisCity_House5_EventScript_OblivionWing_1:
+# 406 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleOblivionWingPrompt
 	end
 
+SootopolisCity_House5_EventScript_OblivionWing_2:
+# 400 "data/maps/SootopolisCity_House5/scripts.pory"
+	msgbox OblivionWing_GreetingHard, MSGBOX_YESNO
+	goto SootopolisCity_House5_EventScript_OblivionWing_1
+
 
 SootopolisCity_House5_EventScript_OblivionWingRequestBattleAgain::
-# 343 "data/maps/SootopolisCity_House5/scripts.pory"
+# 411 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox OblivionWing_ReadyYet, MSGBOX_YESNO
-# 344 "data/maps/SootopolisCity_House5/scripts.pory"
+# 412 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_BattleOblivionWingPrompt
 	end
 
 
 SootopolisCity_House5_EventScript_BattleOblivionWingPrompt::
-# 349 "data/maps/SootopolisCity_House5/scripts.pory"
+# 417 "data/maps/SootopolisCity_House5/scripts.pory"
 	call_if_eq VAR_RESULT, YES, SootopolisCity_House5_EventScript_BattleOblivionWing
-# 350 "data/maps/SootopolisCity_House5/scripts.pory"
+# 418 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_DeclineOblivionWingBattle
-# 351 "data/maps/SootopolisCity_House5/scripts.pory"
+# 419 "data/maps/SootopolisCity_House5/scripts.pory"
 	closemessage
 	end
 
 
 SootopolisCity_House5_EventScript_DeclineOblivionWingBattle::
-# 356 "data/maps/SootopolisCity_House5/scripts.pory"
+# 424 "data/maps/SootopolisCity_House5/scripts.pory"
 	setflag FLAG_TEMP_3
-# 357 "data/maps/SootopolisCity_House5/scripts.pory"
+# 425 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox OblivionWing_ComeBackWhenReady, MSGBOX_DEFAULT
-# 358 "data/maps/SootopolisCity_House5/scripts.pory"
+# 426 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_BattleOblivionWing::
-# 363 "data/maps/SootopolisCity_House5/scripts.pory"
+# 431 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox OblivionWing_YoureOn, MSGBOX_DEFAULT
-# 364 "data/maps/SootopolisCity_House5/scripts.pory"
+# 432 "data/maps/SootopolisCity_House5/scripts.pory"
 	trainerbattle_no_intro TRAINER_OBLIVION_WING, OblivionWing_Outro
-# 365 "data/maps/SootopolisCity_House5/scripts.pory"
+# 433 "data/maps/SootopolisCity_House5/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SootopolisCity_House5_EventScript_BattleOblivionWing_1
+# 439 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_OblivionWingGiveZarude
+	return
+
+SootopolisCity_House5_EventScript_BattleOblivionWing_1:
 	return
 
 
 SootopolisCity_House5_EventScript_OblivionWingDefeated::
-# 370 "data/maps/SootopolisCity_House5/scripts.pory"
+# 445 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox PostBattle_OblivionWing, MSGBOX_DEFAULT
-# 371 "data/maps/SootopolisCity_House5/scripts.pory"
+# 446 "data/maps/SootopolisCity_House5/scripts.pory"
 	releaseall
 	end
 
 
 SootopolisCity_House5_EventScript_OblivionWingGiveZarude::
-# 376 "data/maps/SootopolisCity_House5/scripts.pory"
+# 451 "data/maps/SootopolisCity_House5/scripts.pory"
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ZARUDE
-# 377 "data/maps/SootopolisCity_House5/scripts.pory"
+# 452 "data/maps/SootopolisCity_House5/scripts.pory"
 	givemonrandom SPECIES_ZARUDE, 50
-# 378 "data/maps/SootopolisCity_House5/scripts.pory"
+# 453 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, SootopolisCity_House5_EventScript_ReceiveZarudeParty
-# 379 "data/maps/SootopolisCity_House5/scripts.pory"
+# 454 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, SootopolisCity_House5_EventScript_ReceiveZarudePC
-# 380 "data/maps/SootopolisCity_House5/scripts.pory"
+# 455 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto Common_EventScript_NoMoreRoomForPokemon
-# 381 "data/maps/SootopolisCity_House5/scripts.pory"
+# 456 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveZarudeParty::
-# 386 "data/maps/SootopolisCity_House5/scripts.pory"
+# 461 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedZarudeFanfare
-# 387 "data/maps/SootopolisCity_House5/scripts.pory"
+# 462 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 388 "data/maps/SootopolisCity_House5/scripts.pory"
+# 463 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_ExplainZarude
-# 389 "data/maps/SootopolisCity_House5/scripts.pory"
+# 464 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 390 "data/maps/SootopolisCity_House5/scripts.pory"
+# 465 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 391 "data/maps/SootopolisCity_House5/scripts.pory"
+# 466 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainZarude
 	end
 
 
 SootopolisCity_House5_EventScript_ReceiveZarudePC::
-# 396 "data/maps/SootopolisCity_House5/scripts.pory"
+# 471 "data/maps/SootopolisCity_House5/scripts.pory"
 	call SootopolisCity_House5_EventScript_ReceivedZarudeFanfare
-# 397 "data/maps/SootopolisCity_House5/scripts.pory"
+# 472 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 398 "data/maps/SootopolisCity_House5/scripts.pory"
+# 473 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SootopolisCity_House5_EventScript_SendZarudeToPC
-# 399 "data/maps/SootopolisCity_House5/scripts.pory"
+# 474 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
-# 400 "data/maps/SootopolisCity_House5/scripts.pory"
+# 475 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_SendZarudeToPC
 	end
 
 
 SootopolisCity_House5_EventScript_SendZarudeToPC::
-# 405 "data/maps/SootopolisCity_House5/scripts.pory"
+# 480 "data/maps/SootopolisCity_House5/scripts.pory"
 	call Common_EventScript_TransferredToPC
-# 406 "data/maps/SootopolisCity_House5/scripts.pory"
+# 481 "data/maps/SootopolisCity_House5/scripts.pory"
 	goto SootopolisCity_House5_EventScript_ExplainZarude
 	end
 
 
 SootopolisCity_House5_EventScript_ReceivedZarudeFanfare::
-# 411 "data/maps/SootopolisCity_House5/scripts.pory"
+# 486 "data/maps/SootopolisCity_House5/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 412 "data/maps/SootopolisCity_House5/scripts.pory"
+# 487 "data/maps/SootopolisCity_House5/scripts.pory"
 	message SootopolisCity_House5_Text_PlayerReceivedZarude
-# 413 "data/maps/SootopolisCity_House5/scripts.pory"
+# 488 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitmessage
-# 414 "data/maps/SootopolisCity_House5/scripts.pory"
+# 489 "data/maps/SootopolisCity_House5/scripts.pory"
 	waitfanfare
-# 415 "data/maps/SootopolisCity_House5/scripts.pory"
+# 490 "data/maps/SootopolisCity_House5/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_ZARUDE
 	return
 
 
 SootopolisCity_House5_EventScript_ExplainZarude::
-# 420 "data/maps/SootopolisCity_House5/scripts.pory"
+# 495 "data/maps/SootopolisCity_House5/scripts.pory"
 	msgbox OblivionWing_ExplainZarude, MSGBOX_DEFAULT
-# 421 "data/maps/SootopolisCity_House5/scripts.pory"
+# 496 "data/maps/SootopolisCity_House5/scripts.pory"
 	release
 	end
 
 
 Natn_Greeting::
-# 145 "data/maps/SootopolisCity_House5/scripts.pory"
+# 166 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Hey, my name's Natn, and I was the first\n"
 	.string "person to beat this game in Normal mode\l"
 	.string "when it released.\p"
@@ -522,28 +576,39 @@ Natn_Greeting::
 	.string "me, I'll give you a Mythical.\p"
 	.string "Interested in battling?$"
 
+Natn_GreetingHard::
+# 179 "data/maps/SootopolisCity_House5/scripts.pory"
+	.string "Hey, my name's Natn, and I was the first\n"
+	.string "person to beat this game in Normal mode\l"
+	.string "when it released.\p"
+	.string "I didn't really do a lot of talking in the\n"
+	.string "early days, I just showed up, blitzed\l"
+	.string "through the game, then posted my Hall\l"
+	.string "of Fame team.\p"
+	.string "Interested in battling?$"
+
 Natn_ReadyYet::
-# 158 "data/maps/SootopolisCity_House5/scripts.pory"
+# 190 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Want to battle now?$"
 
 Natn_YoureOn::
-# 162 "data/maps/SootopolisCity_House5/scripts.pory"
+# 194 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Let's do this.$"
 
 Natn_ComeBackWhenReady::
-# 166 "data/maps/SootopolisCity_House5/scripts.pory"
+# 198 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Let me know if you change your mind.$"
 
 Natn_Outro::
-# 170 "data/maps/SootopolisCity_House5/scripts.pory"
+# 202 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Not bad at all.\n$"
 
 SootopolisCity_House5_Text_PlayerReceivedMeloetta::
-# 174 "data/maps/SootopolisCity_House5/scripts.pory"
+# 206 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "{PLAYER} received Meloetta!$"
 
 Natn_ExplainMeloetta::
-# 178 "data/maps/SootopolisCity_House5/scripts.pory"
+# 210 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "There's your Mythical.\n"
 	.string "I'm sure you know it's gimmick by now,\l"
 	.string "but if you use its signature move, Relic\l"
@@ -552,12 +617,17 @@ Natn_ExplainMeloetta::
 	.string "got one that started in Pirouette form.$"
 
 PostBattle_Natn::
-# 187 "data/maps/SootopolisCity_House5/scripts.pory"
+# 219 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Honestly, this game was pretty easy.\n"
 	.string "I'll be here waiting for Hardcore mode.$"
 
+PostBattle_NatnHard::
+# 224 "data/maps/SootopolisCity_House5/scripts.pory"
+	.string "Honestly, this game was pretty easy.\n"
+	.string "Imagine if you were on normal mode.$"
+
 MasterPoucine_Greeting::
-# 286 "data/maps/SootopolisCity_House5/scripts.pory"
+# 337 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Hi there! I'm MasterPoucine, and I was\n"
 	.string "the third person to beat this game once\l"
 	.string "it released, and the first to do so\l"
@@ -568,41 +638,51 @@ MasterPoucine_Greeting::
 	.string "can beat me, I'll give you a Mythical.\p"
 	.string "Do you want to battle me?$"
 
+MasterPoucine_GreetingHard::
+# 349 "data/maps/SootopolisCity_House5/scripts.pory"
+	.string "Hi there! I'm MasterPoucine, and I was\n"
+	.string "the third person to beat this game once\l"
+	.string "it released, and the first to do so\l"
+	.string "using the mascot, Empoleon!\p"
+	.string "I am also a content creator, so check\n"
+	.string "me out on YouTube!\p"
+	.string "Do you want to battle me?$"
+
 MasterPoucine_ReadyYet::
-# 298 "data/maps/SootopolisCity_House5/scripts.pory"
+# 359 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Do you want to battle now?$"
 
 MasterPoucine_YoureOn::
-# 302 "data/maps/SootopolisCity_House5/scripts.pory"
+# 363 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "You're on!$"
 
 MasterPoucine_ComeBackWhenReady::
-# 306 "data/maps/SootopolisCity_House5/scripts.pory"
+# 367 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Come back if you decide you want\n"
 	.string "to battle.$"
 
 MasterPoucine_Outro::
-# 311 "data/maps/SootopolisCity_House5/scripts.pory"
+# 372 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Wow, that was an impressive battle!$"
 
 SootopolisCity_House5_Text_PlayerReceivedMarshadow::
-# 315 "data/maps/SootopolisCity_House5/scripts.pory"
+# 376 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "{PLAYER} received Marshadow!$"
 
 MasterPoucine_ExplainMarshadow::
-# 319 "data/maps/SootopolisCity_House5/scripts.pory"
+# 380 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Now that's a good reward! Marshadow is\n"
 	.string "definitely one of the strongest\l"
 	.string "Mythicals, so I hope you use it well.$"
 
 PostBattle_MasterPoucine::
-# 325 "data/maps/SootopolisCity_House5/scripts.pory"
+# 386 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "I can't wait for a harder game mode to\n"
 	.string "come out so I can speed through that\l"
 	.string "one too!$"
 
 OblivionWing_Greeting::
-# 425 "data/maps/SootopolisCity_House5/scripts.pory"
+# 500 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Hello, I'm OblivionWing, and I was the\n"
 	.string "first person ever to beat this game\l"
 	.string "after it released.\p"
@@ -613,35 +693,45 @@ OblivionWing_Greeting::
 	.string "Mythical, just like everyone else.\p"
 	.string "Does that sound good to you?$"
 
+OblivionWing_GreetingHard::
+# 512 "data/maps/SootopolisCity_House5/scripts.pory"
+	.string "Hello, I'm OblivionWing, and I was the\n"
+	.string "first person ever to beat this game\l"
+	.string "after it released.\p"
+	.string "I sped through the game on Easy mode\n"
+	.string "and finished it just one day after it\l"
+	.string "came out!\p"
+	.string "Do you think you can match that?$"
+
 OblivionWing_ReadyYet::
-# 437 "data/maps/SootopolisCity_House5/scripts.pory"
+# 522 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Ready to battle?$"
 
 OblivionWing_YoureOn::
-# 441 "data/maps/SootopolisCity_House5/scripts.pory"
+# 526 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Good luck, you'll need it!$"
 
 OblivionWing_ComeBackWhenReady::
-# 445 "data/maps/SootopolisCity_House5/scripts.pory"
+# 530 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "You know where to find me if you change\n"
 	.string "your mind.$"
 
 OblivionWing_Outro::
-# 450 "data/maps/SootopolisCity_House5/scripts.pory"
+# 535 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Not bad! If you were a little faster,\n"
 	.string "maybe you could've been the first to\l"
 	.string "beat this game!$"
 
 SootopolisCity_House5_Text_PlayerReceivedZarude::
-# 456 "data/maps/SootopolisCity_House5/scripts.pory"
+# 541 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "{PLAYER} received Zarude!$"
 
 OblivionWing_ExplainZarude::
-# 460 "data/maps/SootopolisCity_House5/scripts.pory"
+# 545 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "There you go, a Mythical for you.\n"
 	.string "I think that's a pretty good one too, if\l"
 	.string "I do say so myself.$"
 
 PostBattle_OblivionWing::
-# 466 "data/maps/SootopolisCity_House5/scripts.pory"
+# 551 "data/maps/SootopolisCity_House5/scripts.pory"
 	.string "Best of luck with the rest of the game!$"

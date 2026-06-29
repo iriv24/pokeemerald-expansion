@@ -294,6 +294,7 @@ enum MoveEndEffects
     MOVEEND_CHANGED_ITEMS,
     MOVEEND_PICKPOCKET,
     MOVEEND_DANCER,
+    MOVEEND_WISTFULECHO,
     MOVEEND_EMERGENCY_EXIT,
     MOVEEND_SYMBIOSIS,
     MOVEEND_OPPORTUNIST, // Occurs after other stat change items/abilities to try and copy the boosts

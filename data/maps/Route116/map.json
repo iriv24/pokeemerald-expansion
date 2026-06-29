@@ -244,7 +244,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route116_EventScript_Karen",
-      "flag": "0"
+      "flag": "FLAG_HIDE_HARD_MODE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
@@ -387,7 +387,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
       "script": "Route116_EventScript_Devan",
-      "flag": "0"
+      "flag": "FLAG_HIDE_HARD_MODE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CANDICE",

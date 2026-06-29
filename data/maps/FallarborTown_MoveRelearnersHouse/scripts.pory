@@ -191,34 +191,46 @@ FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 script FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive {
 	lock
 	faceplayer
-	msgbox(EggManIntro)
-
-	dynmultipush("{COLOR RED}{SHADOW LIGHT_RED}Fire", ITEM_RED_SHARD)
-	dynmultipush("{COLOR BLUE}{SHADOW LIGHT_BLUE}Water", ITEM_BLUE_SHARD)
-	dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Grass", ITEM_GREEN_SHARD)
-    dynmultipush("Cancel", MULTI_B_PRESSED)
-
-    // // setting initial selected to a non-existant ID will always have it point to the first option
-	dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
-
-    if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+	if(flag(FLAG_STARTER_EGG))
 	{
-		goto(FallarborTown_MoveRelearnersHouse_EventScript_EggManNo)
+		msgbox("Another?!\nYour greed knows no bounds.")
 	}
+	else
+	{
+		if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+		{
+			msgbox(EggManIntroHard)
+		}
+		else
+		{
+			msgbox(EggManIntro)
+		}
 
-	if (var(VAR_RESULT) == ITEM_RED_SHARD)
-	{
-		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg)
-	}
-	if (var(VAR_RESULT) == ITEM_BLUE_SHARD)
-	{
-		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg)
-		msgbox("Come back if you have more shards!")
-	}
-	if (var(VAR_RESULT) == ITEM_GREEN_SHARD)
-	{
-		goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg)
-		msgbox("Come back if you have more shards!")
+		dynmultipush("{COLOR RED}{SHADOW LIGHT_RED}Fire", ITEM_RED_SHARD)
+		dynmultipush("{COLOR BLUE}{SHADOW LIGHT_BLUE}Water", ITEM_BLUE_SHARD)
+		dynmultipush("{COLOR GREEN}{SHADOW LIGHT_GREEN}Grass", ITEM_GREEN_SHARD)
+		dynmultipush("Cancel", MULTI_B_PRESSED)
+
+		// // setting initial selected to a non-existant ID will always have it point to the first option
+		dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+
+		if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+		{
+			goto(FallarborTown_MoveRelearnersHouse_EventScript_EggManNo)
+		}
+
+		if (var(VAR_RESULT) == ITEM_RED_SHARD)
+		{
+			goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg)
+		}
+		if (var(VAR_RESULT) == ITEM_BLUE_SHARD)
+		{
+			goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg)
+		}
+		if (var(VAR_RESULT) == ITEM_GREEN_SHARD)
+		{
+			goto(FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg)
+		}
 	}
 	release
 	end
@@ -226,8 +238,11 @@ script FallarborTown_MoveRelearnersHouse_EventScript_StarterEggGive {
 }
 
 script FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg {
-	checkitem(ITEM_RED_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		checkitem(ITEM_RED_SHARD)
+		goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithRedShard)
+	}
 	getpartysize
 	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
 	msgbox("A wise choice. Here you go.")
@@ -235,15 +250,26 @@ script FallarborTown_MoveRelearnersHouse_EventScript_GiveFireEgg {
 	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
 	waitfanfare
 	giveegg(SPECIES_CHARMANDER)
-	removeitem(ITEM_RED_SHARD)
-	msgbox("Come back if you have more shards!")
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox("I hope you'll do great things!")
+		setflag(FLAG_STARTER_EGG)
+	}
+	else
+	{
+		removeitem(ITEM_RED_SHARD)
+		msgbox("Come back if you have more shards!")
+	}
 	release
 	end
 }
 
 script FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg {
-	checkitem(ITEM_BLUE_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		checkitem(ITEM_BLUE_SHARD)
+		goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithBlueShard)
+	}
 	getpartysize
 	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
 	msgbox("A wise choice. Here you go.")
@@ -251,15 +277,26 @@ script FallarborTown_MoveRelearnersHouse_EventScript_GiveWaterEgg {
 	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
 	waitfanfare
 	giveegg(SPECIES_SQUIRTLE)
-	removeitem(ITEM_BLUE_SHARD)
-	msgbox("Come back if you have more shards!")
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox("I hope you'll do great things!")
+		setflag(FLAG_STARTER_EGG)
+	}
+	else
+	{
+		removeitem(ITEM_BLUE_SHARD)
+		msgbox("Come back if you have more shards!")
+	}
 	release
 	end
 }
 
 script FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg {
-	checkitem(ITEM_GREEN_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		checkitem(ITEM_GREEN_SHARD)
+		goto_if_eq(VAR_RESULT, FALSE, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithGreenShard)
+	}
 	getpartysize
 	goto_if_eq(VAR_RESULT, PARTY_SIZE, FallarborTown_MoveRelearnersHouse_EventScript_NoRoomForEgg)
 	msgbox("A wise choice. Here you go.")
@@ -267,8 +304,16 @@ script FallarborTown_MoveRelearnersHouse_EventScript_GiveGrassEgg {
 	message(FallarborTown_MoveRelearnersHouse_Text_ReceivedTheEgg)
 	waitfanfare
 	giveegg(SPECIES_BULBASAUR)
-	removeitem(ITEM_GREEN_SHARD)
-	msgbox("Come back if you have more shards!")
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox("I hope you'll do great things!")
+		setflag(FLAG_STARTER_EGG)
+	}
+	else
+	{
+		removeitem(ITEM_GREEN_SHARD)
+		msgbox("Come back if you have more shards!")
+	}
 	release
 	end
 }
@@ -315,6 +360,16 @@ text EggManIntro {
 	"starters.\p"
 	"Which type of Egg do you want?"
 	
+}
+
+text EggManIntroHard {
+	"Hello, trainer. Wow, you have\n"
+	"sharp eyes, full of passion!\p"
+	"I'll tell you what, I have three\n"
+	"eggs here, for each starter type.\n"
+	"I'm always looking for promising\l"
+	"trainers to take them on adventures.\p"
+	"So, which type of Egg do you want?"
 }
 
 text FallarborTown_MoveRelearnersHouse_Text_ComeBackWithRedShard {
