@@ -37,8 +37,8 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 	delay 100
 	delay 100
 	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_SetDefaultSettings
-	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_StartSettingsMenu
+	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
+	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_SetDefaultSettings
 	releaseall
 	end
 
@@ -86,8 +86,8 @@ InsideOfTruck_Text_ReadCarefully:
 	.string "following carefully.$"
 
 InsideOfTruck_Text_WantToUseDefaultSettings:
-	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like to play Pokémon Emerald\n"
-	.string "Imperium with the default settings?\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like to change the settings\n"
+	.string "for Pokémon Emerald Imperium?\p"
 	.string "The default settings are as follows:\p"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal difficulty{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} - challenging Boss\n"
 	.string "battles with hard level caps enforced.\p"
@@ -99,8 +99,8 @@ InsideOfTruck_Text_WantToUseDefaultSettings:
 	.string "Randomizer {COLOR RED}{SHADOW LIGHT_RED}OFF{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} - no additional\n"
 	.string "randomization will be enabled.\p"
 	.string "With this information in mind:\n"
-	.string "Would you like to play Pokémon Emerald\l"
-	.string "Imperium with the default settings?$"
+	.string "Would you like to change the settings\l"
+	.string "for Pokémon Emerald Imperium?$"
 
 InsideOfTruck_Text_DefaultSettingsSaved:
 	.string "Default settings saved.\n"
@@ -624,7 +624,7 @@ script InsideOfTruck_EventScript_SaveSettingsDone {
 		setflag(FLAG_DEFEATED_ZAPDOS_GALARIAN)
 		setflag(FLAG_DEFEATED_MOLTRES_GALARIAN)
 		setflag(FLAG_HIDE_HARD_MODE)
-  }  
+  	}  
   else
 	{
 		setflag(FLAG_HIDE_NORMAL_MODE)
