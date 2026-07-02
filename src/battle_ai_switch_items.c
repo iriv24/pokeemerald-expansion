@@ -408,7 +408,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
             && gBattleMons[battler].hp >= gBattleMons[battler].maxHP / 4)))
     {
         // 50% chance to stay in regardless
-        if (RandomPercentage(RNG_AI_SWITCH_HASBADODDS, (100 - GetSwitchChance(SHOULD_SWITCH_HASBADODDS))))
+        if (RandomPercentage(RNG_AI_SWITCH_HASBADODDS, SHOULD_SWITCH_HASBADODDS_PERCENTAGE))
             return FALSE;
         // Switch mon out
         return SetSwitchinAndSwitch(battler, PARTY_SIZE);
@@ -425,7 +425,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
             if (hasStatusMove)
                 return FALSE;
             // 50% chance to stay in regardless
-            if (RandomPercentage(RNG_AI_SWITCH_HASBADODDS, 50))
+            if (RandomPercentage(RNG_AI_SWITCH_HASBADODDS, SHOULD_SWITCH_HASBADODDS_PERCENTAGE))
                 return FALSE;
             // Switch mon out
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
@@ -513,7 +513,7 @@ static bool32 ShouldSwitchIfAllMovesBad(u32 battler)
     }
     if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE) // Good candidate mon, send that in if you win 50/50
     {
-        if (RandomPercentage(RNG_AI_SWITCH_ALL_MOVES_BAD, 50))
+        if (RandomPercentage(RNG_AI_SWITCH_ALL_MOVES_BAD, SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         else
             AI_DATA->FailedAllMovesBadSwitch = TRUE;
@@ -543,7 +543,7 @@ static bool32 ShouldSwitchIfWonderGuard(u32 battler)
         }
     }
 
-    if (RandomPercentage(RNG_AI_SWITCH_WONDER_GUARD, GetSwitchChance(SHOULD_SWITCH_WONDER_GUARD)))
+    if (RandomPercentage(RNG_AI_SWITCH_WONDER_GUARD, SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE))
     {
         if (AI_DATA->mostSuitableMonId[battler] == PARTY_SIZE) // No good candidate mons, find any one that can deal damage
             return FindMonWithMoveOfEffectiveness(battler, opposingBattler, UQ_4_12(2.0));
@@ -691,7 +691,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
             // Found a mon
             if (absorbingTypeAbilities[j] == monAbility)
             {
-                if (playerIsChoiceLocked || RandomPercentage(RNG_AI_SWITCH_ABSORBING, GetSwitchChance(SHOULD_SWITCH_ABSORBS_MOVE)))
+                if (playerIsChoiceLocked || RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE))
                     return SetSwitchinAndSwitch(battler, i);
             }     
         }
@@ -711,7 +711,8 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
     //Perish Song
     if (gStatuses3[battler] & STATUS3_PERISH_SONG
         && gDisableStructs[battler].perishSongTimer == 0
-        && monAbility != ABILITY_SOUNDPROOF)
+        && monAbility != ABILITY_SOUNDPROOF
+        && RandomPercentage(RNG_AI_SWITCH_PERISH, SHOULD_SWITCH_PERISH_SONG_PERCENTAGE))
         switchMon = TRUE;
 
     if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
@@ -720,7 +721,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
         if (gStatuses3[battler] & STATUS3_YAWN
             && CanBeSlept(battler, monAbility, TRUE)
             && gBattleMons[battler].hp > gBattleMons[battler].maxHP / 3
-            && RandomPercentage(RNG_AI_SWITCH_YAWN, 50))
+            && RandomPercentage(RNG_AI_SWITCH_YAWN, SHOULD_SWITCH_YAWN_PERCENTAGE))
         {
             switchMon = TRUE;
 
@@ -764,22 +765,22 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
             if (((gBattleMons[battler].status1 & STATUS1_TOXIC_COUNTER) >= STATUS1_TOXIC_TURN(2))
                 && gBattleMons[battler].hp >= (gBattleMons[battler].maxHP / 3)
                 && AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_BADLY_POISONED, 20) : RandomPercentage(RNG_AI_SWITCH_BADLY_POISONED, 50)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_BADLY_POISONED, SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_BADLY_POISONED, SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE)))
                 switchMon = TRUE;
 
             //Cursed
             if (gBattleMons[battler].status2 & STATUS2_CURSED
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_CURSED, 20) : RandomPercentage(RNG_AI_SWITCH_CURSED, 50)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_CURSED, SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_CURSED, SHOULD_SWITCH_CURSED_PERCENTAGE)))
                 switchMon = TRUE;
 
             //Nightmare
             if (gBattleMons[battler].status2 & STATUS2_NIGHTMARE
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NIGHTMARE, 15) : RandomPercentage(RNG_AI_SWITCH_NIGHTMARE, 33)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NIGHTMARE, SHOULD_SWITCH_NIGHTMARE_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_NIGHTMARE, SHOULD_SWITCH_NIGHTMARE_PERCENTAGE)))
                 switchMon = TRUE;
 
             //Leech Seed
             if (gStatuses3[battler] & STATUS3_LEECHSEED
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_SEEDED, 10) : RandomPercentage(RNG_AI_SWITCH_SEEDED, 25)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_SEEDED, SHOULD_SWITCH_SEEDED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_SEEDED, SHOULD_SWITCH_SEEDED_PERCENTAGE)))
                 switchMon = TRUE;
         }
     }
@@ -805,13 +806,13 @@ static bool32 ShouldSwitchIfAbilityBenefit(u32 battler)
             //Attempt to cure bad ailment
             if (gBattleMons[battler].status1 & (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_TOXIC_POISON)
                 && AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, 10) : RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, 66)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, SHOULD_SWITCH_NATURAL_CURE_STRONG_STATS_RAISED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, SHOULD_SWITCH_NATURAL_CURE_STRONG_PERCENTAGE)))
                 break;
             //Attempt to cure lesser ailment
             if ((gBattleMons[battler].status1 & STATUS1_ANY)
                 && (gBattleMons[battler].hp >= gBattleMons[battler].maxHP / 2)
                 && AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE
-                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, 10) : RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, 25)))
+                && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, SHOULD_SWITCH_NATURAL_CURE_WEAK_STATS_RAISED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_NATURAL_CURE, SHOULD_SWITCH_NATURAL_CURE_WEAK_PERCENTAGE)))
                 break;
 
             return FALSE;
@@ -822,7 +823,7 @@ static bool32 ShouldSwitchIfAbilityBenefit(u32 battler)
                 return FALSE;
             if ((gBattleMons[battler].hp <= ((gBattleMons[battler].maxHP * 2) / 3))
                  && AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE
-                 && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_REGENERATOR, 20) : RandomPercentage(RNG_AI_SWITCH_REGENERATOR, 50)))
+                 && (hasStatRaised ? RandomPercentage(RNG_AI_SWITCH_REGENERATOR, SHOULD_SWITCH_REGENERATOR_STATS_RAISED_PERCENTAGE) : RandomPercentage(RNG_AI_SWITCH_REGENERATOR, SHOULD_SWITCH_REGENERATOR_PERCENTAGE)))
                 break;
 
             return FALSE;
@@ -974,7 +975,7 @@ static bool32 ShouldSwitchIfEncored(u32 battler)
     // Switch out 50% of the time otherwise
     else if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE)
     {
-        if (RandomPercentage(RNG_AI_SWITCH_ENCORE, 50))
+        if (RandomPercentage(RNG_AI_SWITCH_ENCORE, SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         else
             AI_DATA->FailedEncoreSwitch = TRUE;
@@ -1001,7 +1002,7 @@ static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
     {
         if ((gMovesInfo[AI_DATA->lastUsedMove[battler]].category == DAMAGE_CATEGORY_STATUS || !moveAffectsTarget)
         && AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE    
-        && RandomPercentage(RNG_AI_SWITCH_CHOICE_LOCK, 50))
+        && RandomPercentage(RNG_AI_SWITCH_CHOICE_LOCK, SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
 
@@ -1027,7 +1028,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
         // 50% chance if attack at -2 and have a good candidate mon
         else if (attackingStage == DEFAULT_STAT_STAGE - 2)
         {
-            if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, 50))
+            if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE))
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless
@@ -1044,7 +1045,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
         // 50% chance if attack at -2 and have a good candidate mon
         else if (spAttackingStage == DEFAULT_STAT_STAGE - 2)
         {
-            if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, 50))
+            if (AI_DATA->mostSuitableMonId[battler] != PARTY_SIZE && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE))
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless

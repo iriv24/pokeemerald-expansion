@@ -1,7 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
-AI_SINGLE_BATTLE_TEST("AI gets baited by Protect Switch tactics") // This behavior is to be fixed.
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI gets baited by Protect Switch tactics") // This behavior is to be fixed.
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
@@ -22,7 +22,7 @@ AI_SINGLE_BATTLE_TEST("AI gets baited by Protect Switch tactics") // This behavi
 }
 
 // General switching behaviour
-AI_SINGLE_BATTLE_TEST("AI switches if Perish Song is about to kill")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI switches if Perish Song is about to kill")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
@@ -39,7 +39,7 @@ AI_SINGLE_BATTLE_TEST("AI switches if Perish Song is about to kill")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI sees on-field player ability correctly and does not see previous Pokémon's ability after player uses a pivot move when choosing a post-KO switch")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI sees on-field player ability correctly and does not see previous Pokémon's ability after player uses a pivot move when choosing a post-KO switch")
 {
     u32 testAbility;
     PARAMETRIZE { testAbility = ABILITY_SHEER_FORCE; }
@@ -61,7 +61,7 @@ AI_SINGLE_BATTLE_TEST("AI sees on-field player ability correctly and does not se
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI sees on-field player ability correctly and does not see previous Pokémon's ability after player uses a pivot move when choosing a mid-battle switch")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI sees on-field player ability correctly and does not see previous Pokémon's ability after player uses a pivot move when choosing a mid-battle switch")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -127,8 +127,9 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same pokemon for 2 spot
     }
 }
 
-AI_SINGLE_BATTLE_TEST("When AI switches out due to having no move that affects the player, AI will send in a mon that can hit the player, even if not ideal")
-{
+AI_SINGLE_BATTLE_TEST("SWITCHING: When AI switches out due to having no move that affects the player, AI will send in a mon that can hit the player, even if not ideal")
+{   
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_ALL_MOVES_BAD);
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES);
         PLAYER(SPECIES_GENGAR) { Moves(MOVE_SHADOW_BALL, MOVE_CELEBRATE); }
@@ -145,7 +146,7 @@ AI_SINGLE_BATTLE_TEST("When AI switches out due to having no move that affects t
 
 AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same pokemon for 2 spots in a double battle (Wonder Guard)")
 {
-    PASSES_RANDOMLY(SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE, 100, RNG_AI_SWITCH_WONDER_GUARD);
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_WONDER_GUARD);
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_SWITCHING);
         PLAYER(SPECIES_SHEDINJA);
@@ -167,9 +168,9 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same pokemon for 2 spot
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
 {
-    PASSES_RANDOMLY(SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE, 100, RNG_AI_SWITCH_WONDER_GUARD);
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_WONDER_GUARD);
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
@@ -187,9 +188,9 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it can't deal damage to 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
 {
-    PASSES_RANDOMLY(SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE, 100, RNG_AI_SWITCH_WONDER_GUARD);
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_WONDER_GUARD);
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
@@ -207,7 +208,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it can't d
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Switch effect moves will send out Ace Mon if it's the only one remaining")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Switch effect moves will send out Ace Mon if it's the only one remaining")
 {
     u32 aiMove = 0;
     // Moves testing all effects in IsSwitchOutEffect
@@ -234,7 +235,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Switch effect moves will send 
 }
 
 // General AI_FLAG_SMART_MON_CHOICES behaviour
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculation checks whether incoming damage is less than recurring healing to avoid an infinite loop")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculation checks whether incoming damage is less than recurring healing to avoid an infinite loop")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES);
@@ -253,7 +254,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculati
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculation checks whether incoming damage is zero to avoid an infinite loop")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculation checks whether incoming damage is zero to avoid an infinite loop")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LEFTOVERS].holdEffect == HOLD_EFFECT_LEFTOVERS);
@@ -270,7 +271,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculati
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Avoid infinite loop if damage taken is equal to recurring healing")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Avoid infinite loop if damage taken is equal to recurring healing")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LEFTOVERS].holdEffect == HOLD_EFFECT_LEFTOVERS);
@@ -287,7 +288,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Avoid infinite loop if damage 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemon which is slower and gets 1HKOed after fainting")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemon which is slower and gets 1HKOed after fainting")
 {
     bool32 alakazamFirst;
     u32 speedAlakazm;
@@ -320,7 +321,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will not switch in a Pokemo
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI considers hazard damage when choosing which Pokemon to switch in")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI considers hazard damage when choosing which Pokemon to switch in")
 {
     u32 aiIsSmart = 0;
     u32 aiSmartSwitchFlags = 0;
@@ -340,7 +341,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI considers hazard damage whe
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize type matchup + SE move, then type matchup")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize type matchup + SE move, then type matchup")
 {
     u32 aiSmartSwitchFlags = 0;
     u32 move1;
@@ -364,7 +365,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize defensive options")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize defensive options")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES);
@@ -377,7 +378,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after slow U-Turn")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after slow U-Turn")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FALSE_SWIPE].effect == EFFECT_FALSE_SWIPE);
@@ -391,7 +392,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Button")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Button")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
@@ -406,7 +407,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Pack")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Pack")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_PACK].holdEffect == HOLD_EFFECT_EJECT_PACK);
@@ -421,7 +422,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize defensive options after Eject Pack if mon outspeeds")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize defensive options after Eject Pack if mon outspeeds")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_PACK].holdEffect == HOLD_EFFECT_EJECT_PACK);
@@ -436,7 +437,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Pack if mon outspeeds but was Intimidate'd")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize offensive options after Eject Pack if mon outspeeds but was Intimidate'd")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_PACK].holdEffect == HOLD_EFFECT_EJECT_PACK);
@@ -451,7 +452,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Mid-battle switches prioritize
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Eject Button will send out Ace Mon if it's the only one remaining")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Eject Button will send out Ace Mon if it's the only one remaining")
 {
     u32 aiSmartMonChoicesFlag;
     PARAMETRIZE { aiSmartMonChoicesFlag = 0; }
@@ -467,7 +468,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Eject Button will send out Ace
 }
 
 // hits a timeout case but the .elf file does work
-// AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider mega ability for post ko switch in")
+// AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will consider mega ability for post ko switch in")
 // {
 //     GIVEN {
 //         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -500,7 +501,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Eject Button will send out Ace
 //     }
 // }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Post-KO switches prioritize offensive options")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Post-KO switches prioritize offensive options")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES);
@@ -513,7 +514,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Post-KO switches prioritize of
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Post-KO switches factor in Trick Room for revenge killing")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Post-KO switches factor in Trick Room for revenge killing")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TRICK_ROOM].effect == EFFECT_TRICK_ROOM);
@@ -529,7 +530,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Post-KO switches factor in Tri
 }
 
 // General AI_FLAG_SMART_SWITCHING behaviour
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI switches out after sufficient stat drops")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI switches out after sufficient stat drops")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
@@ -542,7 +543,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI switches out after sufficient
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will not switch out if Pokemon would faint to hazards unless party member can clear them")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will not switch out if Pokemon would faint to hazards unless party member can clear them")
 {
     u32 move1;
 
@@ -573,7 +574,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will not switch out if Pokemo
 }
 
 // Trapping behaviour
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch in trapping mon mid battle")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch in trapping mon mid battle")
 {
     u32 aiSmartSwitchingFlag = 0;
     PARAMETRIZE { aiSmartSwitchingFlag = 0; }
@@ -596,7 +597,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch in trapping mon m
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will switch in trapping mon after KO")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will switch in trapping mon after KO")
 {
     u32 aiSmartMonChoicesFlag = 0; // Enables trapping behaviour after KOs
     PARAMETRIZE { aiSmartMonChoicesFlag = 0; } // No trapping behaviour
@@ -617,7 +618,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will switch in trapping mon
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI won't use trapping behaviour if player only has 1 mon left")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI won't use trapping behaviour if player only has 1 mon left")
 {
     u32 aiSmartMonChoicesFlag = 0; // Enables trapping behaviour after KOs
     PARAMETRIZE { aiSmartMonChoicesFlag = 0; } // No trapping behaviour
@@ -634,7 +635,7 @@ AI_SINGLE_BATTLE_TEST("AI won't use trapping behaviour if player only has 1 mon 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will trap player using Trace if player has a trapper")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will trap player using Trace if player has a trapper")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES);
@@ -647,7 +648,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will trap player using Trace 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if mon would be OKHO'd and they have a good switchin 50% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if mon would be OKHO'd and they have a good switchin 50% of the time")
 {
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -666,7 +667,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if mon would 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
@@ -685,7 +686,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it can't deal damage to 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
@@ -704,7 +705,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it can't d
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Toxic'd for at least two turns 50% of the time with more than 1/3 HP remaining with good switchin")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Toxic'd for at least two turns 50% of the time with more than 1/3 HP remaining with good switchin")
 {
     u32 species = SPECIES_NONE, odds = 0;
     PARAMETRIZE { species = SPECIES_ZIGZAGOON, odds = 0; }
@@ -723,7 +724,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Curse'd 50% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Curse'd 50% of the time")
 {
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_CURSED);
     GIVEN {
@@ -739,7 +740,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Nightmare'd 33% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Nightmare'd 33% of the time")
 {
     PASSES_RANDOMLY(33, 100, RNG_AI_SWITCH_NIGHTMARE);
     GIVEN {
@@ -754,7 +755,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Leech Seed'd 25% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Leech Seed'd 25% of the time")
 {
     PASSES_RANDOMLY(25, 100, RNG_AI_SWITCH_SEEDED);
     GIVEN {
@@ -769,7 +770,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been infatuated")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been infatuated")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ATTRACT].effect == EFFECT_ATTRACT);
@@ -783,7 +784,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Yawn'd with more than 1/3 HP remaining")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Yawn'd with more than 1/3 HP remaining")
 {
     u32 hp;
     PARAMETRIZE { hp = 30; }
@@ -826,7 +827,7 @@ AI_DOUBLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is semi-invulnerable and it has an absorber")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is semi-invulnerable and it has an absorber")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DIVE].type == TYPE_WATER);
@@ -840,7 +841,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's m
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber 80% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber 80% of the time")
 {
     PASSES_RANDOMLY(80, 100, RNG_AI_SWITCH_ABSORBING);
     GIVEN {
@@ -855,7 +856,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber but current mon has SE move 40% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber but current mon has SE move 40% of the time")
 {
     PASSES_RANDOMLY(40, 100, RNG_AI_SWITCH_ABSORBING_STAY_IN);
     GIVEN {
@@ -870,7 +871,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has an absorber")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has an absorber")
 {
     PASSES_RANDOMLY(100, 100, RNG_AI_SWITCH_ABSORBING);
     GIVEN {
@@ -885,7 +886,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's m
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has a good switchin immunity (type)")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has a good switchin immunity (type)")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DIG].type == TYPE_GROUND);
@@ -899,7 +900,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's m
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has a good switchin immunity (ability)")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if player's mon is charging and it has a good switchin immunity (ability)")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DIG].type == TYPE_GROUND);
@@ -913,7 +914,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if player's m
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has an absorber")
 {
     u32 aiMon; u32 move; u32 absorbingAbility;
     PARAMETRIZE { aiMon = SPECIES_NINETALES; absorbingAbility = ABILITY_FLASH_FIRE; move = MOVE_FLAMETHROWER;}
@@ -941,7 +942,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has an 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if opponent uses two-turn move and it has a switchin that wins 1v1")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if opponent uses two-turn move and it has a switchin that wins 1v1")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SKY_ATTACK; }
@@ -960,7 +961,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if opponent u
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if badly statused with >= 50% HP remaining and has Natural Cure and a good switchin 66% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if badly statused with >= 50% HP remaining and has Natural Cure and a good switchin 66% of the time")
 {
     PASSES_RANDOMLY(66, 100, RNG_AI_SWITCH_NATURAL_CURE);
     GIVEN {
@@ -974,7 +975,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if badly statused with >= 5
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it has <= 66% HP remaining and has Regenerator and a good switchin 50% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it has <= 66% HP remaining and has Regenerator and a good switchin 50% of the time")
 {
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_REGENERATOR);
     GIVEN {
@@ -987,7 +988,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if it has <= 66% HP remaini
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Encore'd into a status move")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it has been Encore'd into a status move")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ENCORE].effect == EFFECT_ENCORE);
@@ -1001,7 +1002,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if it has bee
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will stay in if Encore'd into super effective move")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will stay in if Encore'd into super effective move")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ENCORE].effect == EFFECT_ENCORE);
@@ -1015,7 +1016,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will stay in if Encore'd into
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if Encore'd into neutral move with good switchin 50% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if Encore'd into neutral move with good switchin 50% of the time")
 {
     KNOWN_FAILING; // AI still switches even if ShouldSwitch is set to immediately return FALSE, something external seems to be triggering this
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_ENCORE);
@@ -1031,7 +1032,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if Encore'd i
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if mon has Truant and opponent has Protect")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if mon has Truant and opponent has Protect")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
@@ -1044,7 +1045,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if mon has Truant and oppon
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if mon has Truant and opponent has invulnerability move and is faster")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if mon has Truant and opponent has invulnerability move and is faster")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
@@ -1057,7 +1058,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if mon has Truant and oppon
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attacking stat lowered by 2 stages with good switchin candidate 50% of the time")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if main attacking stat lowered by 2 stages with good switchin candidate 50% of the time")
 {
     u32 aiSpecies = SPECIES_NONE, aiMove = MOVE_NONE, move = MOVE_NONE;
 
@@ -1078,7 +1079,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attac
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attacking stat lowered by 3+ stages")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if main attacking stat lowered by 3+ stages")
 {
     u32 aiSpecies = SPECIES_NONE, aiMove = MOVE_NONE, move = MOVE_NONE, move2 = MOVE_NONE;
 
@@ -1100,7 +1101,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attac
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch into mon with good type matchup and SE move if current mon has no SE move and no stats raised")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch into mon with good type matchup and SE move if current mon has no SE move and no stats raised")
 {
     u32 odds = 0, species = SPECIES_NONE, move = MOVE_NONE;
     PARAMETRIZE { odds = 33; species = SPECIES_SCIZOR; move = MOVE_X_SCISSOR; }
@@ -1117,7 +1118,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch into mon with good type matchup
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI correctly handles abilities when scoring moves")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI correctly handles abilities when scoring moves")
 {
     GIVEN {
         ASSUME(B_PRANKSTER_DARK_TYPES >= GEN_7);
@@ -1131,7 +1132,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI correctly handles abilities
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch out if Yawn'd with only Ace mon remaining")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI won't switch out if Yawn'd with only Ace mon remaining")
 {
     u32 aceFlag;
     PARAMETRIZE{ aceFlag = 0; }
@@ -1151,7 +1152,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch out if Yawn'd wi
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch in ace mon after U-Turn if other options available")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI won't switch in ace mon after U-Turn if other options available")
 {
     u32 aceFlag;
     PARAMETRIZE{ aceFlag = 0; }
@@ -1170,7 +1171,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch in ace mon after
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI won't switch in ace mon after U-Turn if other options available")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI won't switch in ace mon after U-Turn if other options available")
 {
     u32 aceFlag;
     PARAMETRIZE{ aceFlag = 0; }
@@ -1189,7 +1190,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI won't switch in ace mon after U-Turn if oth
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked player when determining which mon to send out")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked player when determining which mon to send out")
 {
     u32 item;
     PARAMETRIZE { item = ITEM_NONE; }
@@ -1206,7 +1207,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if all moves deal zero damage")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if all moves deal zero damage")
 {
     PASSES_RANDOMLY(SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE, 100, RNG_AI_SWITCH_ALL_SCORES_BAD);
     GIVEN {
@@ -1227,7 +1228,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if all moves 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if all moves deal zero damage (absorbing ability)")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if all moves deal zero damage (absorbing ability)")
 {
     PASSES_RANDOMLY(SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE, 100, RNG_AI_SWITCH_ALL_SCORES_BAD);
     GIVEN {
@@ -1245,7 +1246,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if all moves 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if Palafin-Zero isn't transformed yet")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if Palafin-Zero isn't transformed yet")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
@@ -1257,7 +1258,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if Palafin-Zero isn't trans
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Switch AI: AI will use pivot move to activate Palafin's Zero to Hero rather than hard switching")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will use pivot move to activate Palafin's Zero to Hero rather than hard switching")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
@@ -1269,7 +1270,7 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will use pivot move to activate Palafin's Z
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't send out defensive mon that can lose 1v1, or switch out a mon that can win 1v1 even with bad type matchup")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI won't send out defensive mon that can lose 1v1, or switch out a mon that can win 1v1 even with bad type matchup")
 {
     PASSES_RANDOMLY(100, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -1328,7 +1329,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't send out defensive mon 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI considers 0 hits to KO as losing a 1v1")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI considers 0 hits to KO as losing a 1v1")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -1341,7 +1342,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI considers 0 hits to KO as los
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch out due to bad odds if it can OHKO with a priority move")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI won't switch out due to bad odds if it can OHKO with a priority move")
 {
     PASSES_RANDOMLY(100, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -1354,7 +1355,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch out due to bad o
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider player's priority when evaluating switchin candidates")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will consider player's priority when evaluating switchin candidates")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -1367,7 +1368,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider player's prio
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will consider player's priority when evaluating Bad Odds 1v1")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will consider player's priority when evaluating Bad Odds 1v1")
 {
     PASSES_RANDOMLY(SHOULD_SWITCH_HASBADODDS_PERCENTAGE, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -1396,7 +1397,7 @@ AI_DOUBLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will properly consider immu
 }
 
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: Fake Out style moves won't confuse choiced AI into thinking it does no damage")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: Fake Out style moves won't confuse choiced AI into thinking it does no damage")
 {
 
     GIVEN {
@@ -1412,7 +1413,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: Fake Out style moves won't confu
 }
 
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked player priority when determining which mon to send out")
+AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked player priority when determining which mon to send out")
 {
     u32 item;
     PARAMETRIZE { item = ITEM_NONE; }
@@ -1429,7 +1430,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: AI will consider choice-locked
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Rage Fist stacks are seen properly for switch logic")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Rage Fist stacks are seen properly for switch logic")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -1442,7 +1443,7 @@ AI_SINGLE_BATTLE_TEST("Rage Fist stacks are seen properly for switch logic")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("EFFECT_EXPLOSION and EFFECT_SUPER_FANG should be ignored for bad odds calculations")
+AI_SINGLE_BATTLE_TEST("SWITCHING: EFFECT_EXPLOSION and EFFECT_SUPER_FANG should be ignored for bad odds calculations")
 {
     PASSES_RANDOMLY(SHOULD_SWITCH_HASBADODDS_PERCENTAGE, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -1458,7 +1459,7 @@ AI_SINGLE_BATTLE_TEST("EFFECT_EXPLOSION and EFFECT_SUPER_FANG should be ignored 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Retaliate sees damage correctly for post ko switch in")
+AI_SINGLE_BATTLE_TEST("SWITCHING: Retaliate sees damage correctly for post ko switch in")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -1493,7 +1494,7 @@ AI_DOUBLE_BATTLE_TEST("ABILITY_PARENTAL_BOND - AI should not calc parental bond 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("GetSwitchinRecurringDamage - should not calculate an extra hit of life orb chip on the switch-in turn")
+AI_SINGLE_BATTLE_TEST("SWITCHING: GetSwitchinRecurringDamage - should not calculate an extra hit of life orb chip on the switch-in turn")
 {
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
@@ -1509,7 +1510,7 @@ AI_SINGLE_BATTLE_TEST("GetSwitchinRecurringDamage - should not calculate an extr
     }
 }
 
-AI_SINGLE_BATTLE_TEST("GetSwitchinRecurringHealing - account for grassy terrain healing")
+AI_SINGLE_BATTLE_TEST("SWITCHING: GetSwitchinRecurringHealing - account for grassy terrain healing")
 {
     PASSES_RANDOMLY(50, 100, RNG_AI_SWITCH_HASBADODDS);
     GIVEN {
