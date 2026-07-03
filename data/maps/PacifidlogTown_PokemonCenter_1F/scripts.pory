@@ -51,27 +51,50 @@ PacifidlogTown_PokemonCenter_1F_Text_OnColonyOfCorsola:
 script PacifidlogTown_PokemonCenter_1F_EventScript_EggMan {
 	lock
 	faceplayer
-	msgbox(PacifidlogTown_PokemonCenter_1F_PseudoManIntro, MSGBOX_YESNO)
-
-	if(var(VAR_RESULT) == NO)
+	if(flag(FLAG_PSEUDO_EGG))
 	{
-		goto(PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo)
+		msgbox("Prove us right.")
 	}
-
-	checkitem(ITEM_YELLOW_SHARD)
-	goto_if_eq(VAR_RESULT, FALSE, PacifidlogTown_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
-	getpartysize
-	goto_if_eq(VAR_RESULT, PARTY_SIZE, PacifidlogTown_PokemonCenter_1F_EventScript_NoRoomForEgg)
-	msgbox(PacifidlogTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
-	playfanfare(MUS_OBTAIN_ITEM)
-	message(PacifidlogTown_PokemonCenter_1F_Text_ReceivedTheEgg)
-	waitfanfare
-	giveegg(SPECIES_DRATINI)
-	removeitem(ITEM_YELLOW_SHARD)
-	msgbox(PacifidlogTown_PokemonCenter_1F_ComeBackWithMore, MSGBOX_DEFAULT)
+	else
+	{
+		if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+		{
+			msgbox(PacifidlogTown_PokemonCenter_1F_PseudoManIntroHard, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == NO)
+			{
+				goto(PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo)
+			}
+		}
+		else
+		{
+			msgbox(PacifidlogTown_PokemonCenter_1F_PseudoManIntro, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == NO)
+			{
+				goto(PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo)
+			}
+			checkitem(ITEM_YELLOW_SHARD)
+			goto_if_eq(VAR_RESULT, FALSE, PacifidlogTown_PokemonCenter_1F_EventScript_ComeBackWithYellowShard)
+		}
+		getpartysize
+		goto_if_eq(VAR_RESULT, PARTY_SIZE, PacifidlogTown_PokemonCenter_1F_EventScript_NoRoomForEgg)
+		msgbox(PacifidlogTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT)
+		playfanfare(MUS_OBTAIN_ITEM)
+		message(PacifidlogTown_PokemonCenter_1F_Text_ReceivedTheEgg)
+		waitfanfare
+		giveegg(SPECIES_DRATINI)
+		if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+		{
+			msgbox("I hope you'll do great things!")
+			setflag(FLAG_PSEUDO_EGG)
+		}
+		else
+		{
+			removeitem(ITEM_YELLOW_SHARD)
+			msgbox(PacifidlogTown_PokemonCenter_1F_ComeBackWithMore, MSGBOX_DEFAULT)
+		}
+	}
 	release
 	end
-	
 }
 
 script PacifidlogTown_PokemonCenter_1F_EventScript_PseudoEggManManNo {
@@ -101,6 +124,15 @@ text PacifidlogTown_PokemonCenter_1F_PseudoManIntro {
 	"these Eggs?"
 }
 
+text PacifidlogTown_PokemonCenter_1F_PseudoManIntroHard {
+	"Hello, trainer. My friends told\n"
+	"me about you.\p"
+	"The fact that you've made it this\n"
+	"far proves your worth as a trainer.\p"
+	"Can i entrust one of these rare\n"
+	"Eggs to you?"
+}
+
 text PacifidlogTown_PokemonCenter_1F_PseudoEggManDeclined
 {
 	"I see. Please come back if you change\n"
@@ -119,7 +151,7 @@ text PacifidlogTown_PokemonCenter_1F_Text_NoRoomForThisEgg {
 
 text PacifidlogTown_PokemonCenter_1F_Text_HopeYoullWalkPlentyWithEgg {
 	"Good! I hope you'll walk plenty with\n"
-	"this here Egg!"
+	"this Egg!"
 }
 
 text PacifidlogTown_PokemonCenter_1F_Text_ReceivedTheEgg {

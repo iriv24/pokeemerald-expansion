@@ -117,7 +117,7 @@ s32 AI_DecideKnownAbilityForTurn(u32 battlerId);
 u32 AI_DecideHoldEffectForTurn(u32 battlerId);
 bool32 DoesBattlerIgnoreAbilityChecks(u32 atkAbility, u32 move);
 u32 AI_GetWeather(struct AiLogicData *aiData);
-u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon);
+u32 AI_GetSwitchinWeather(u32 battler);
 bool32 CanAIFaintTarget(u32 battlerAtk, u32 battlerDef, u32 numHits);
 bool32 CanIndexMoveFaintTarget(u32 battlerAtk, u32 battlerDef, u32 index, enum DamageCalcContext calcContext);
 bool32 HasDamagingMove(u32 battlerId);
@@ -270,6 +270,8 @@ bool32 ShouldUseWishAromatherapy(u32 battlerAtk, u32 battlerDef, u32 move);
 // party logic
 struct BattlePokemon *AllocSaveBattleMons(void);
 void FreeRestoreBattleMons(struct BattlePokemon *savedBattleMons);
+struct AiLogicData *AllocSaveAiLogicData(void);
+void FreeRestoreAiLogicData(struct AiLogicData *savedAiLogicData);
 s32 CountUsablePartyMons(u32 battlerId);
 bool32 IsPartyFullyHealedExceptBattler(u32 battler);
 bool32 PartyHasMoveCategory(u32 battlerId, u32 category);
@@ -278,7 +280,7 @@ bool32 SideHasMoveCategory(u32 battlerId, u32 category);
 // score increases
 u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChange);
 u32 IncreaseStatUpScoreContrary(u32 battlerAtk, u32 battlerDef, enum StatChange statChange);
-bool32 MatchesExplosionOrSuperfang(u32 moveEffect, bool32 isSwitch);
+bool32 MatchesSelfKillOrSuperfang(u32 moveEffect, bool32 isSwitch);
 void IncreasePoisonScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseBurnScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseParalyzeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
@@ -288,8 +290,6 @@ void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
 bool32 HasHPForDamagingSetup(u32 battlerAtk, u32 battlerDef, u32 hpThreshold);
 //u32 IncreaseIndexMoveScoreBasedOnRolls(u32 battlerAtk, u32 battlerDef, u32 moveIndex);
 
-s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, enum DamageCalcContext calcContext);
-u32 AI_WhoStrikesFirstPartyMon(u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 aiMoveConsidered, u32 playerMoveConsidered, enum ConsiderPriority ConsiderPriority);
 s32 AI_TryToClearStats(u32 battlerAtk, u32 battlerDef, bool32 isDoubleBattle);
 bool32 AI_ShouldCopyStatChanges(u32 battlerAtk, u32 battlerDef);
 bool32 AI_ShouldSetUpHazards(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData);

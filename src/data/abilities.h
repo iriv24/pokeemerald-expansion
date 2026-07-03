@@ -2531,6 +2531,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
-    
+    [ABILITY_WISTFUL_ECHO] =
+    {
+        .name = _("Wistful Echo"),
+        .description = COMPOUND_STRING("Copies sound moves."),
+        .aiRating = 5,
+    },    
 
 };

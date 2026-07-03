@@ -45,7 +45,7 @@ void GetAIPartyIndexes(u32 battlerId, s32 *firstId, s32 *lastId);
 void AI_TrySwitchOrUseItem(u32 battler);
 u32 GetMostSuitableMonToSwitchInto(u32 battler, enum SwitchType switchType);
 bool32 ShouldSwitch(u32 battler);
-bool32 IsMonGrounded(u16 heldItemEffect, u32 ability, u8 type1, u8 type2);
+bool32 IsMonGrounded(u16 heldItemEffect, u32 ability, u32 battler);
 void ModifySwitchAfterMoveScoring(u32 battler);
 bool32 CanBattlerWin1v1(u32 hitsToKOAI, u32 hitsToKOPlayer, bool32 isBattlerFirst);
 bool32 CanAIWin1V1(u32 battlerAtk, u32 battlerDef);

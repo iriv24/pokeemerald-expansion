@@ -54,7 +54,14 @@ script SootopolisCity_House5_EventScript_Natn{
 	applymovement(LOCALID_NATN, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_NATN, SootopolisCity_House5_EventScript_NatnDefeated)
 	goto_if_set(FLAG_TEMP_1, SootopolisCity_House5_EventScript_NatnRequestBattleAgain)
-	msgbox(Natn_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(Natn_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(Natn_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_House5_EventScript_BattleNatnPrompt)
 	end
 }
@@ -82,12 +89,26 @@ script SootopolisCity_House5_EventScript_DeclineNatnBattle {
 script SootopolisCity_House5_EventScript_BattleNatn{
 	msgbox(Natn_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_NATN, Natn_Outro)
-	goto(SootopolisCity_House5_EventScript_NatnGiveMeloetta)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_House5_EventScript_NatnGiveMeloetta)
+		return
+	}
 }
 
 script SootopolisCity_House5_EventScript_NatnDefeated{
-	msgbox(PostBattle_Natn, MSGBOX_DEFAULT)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(PostBattle_NatnHard, MSGBOX_DEFAULT)
+	}
+	else
+	{
+		msgbox(PostBattle_Natn, MSGBOX_DEFAULT)
+	}
 	releaseall
 	end
 }
@@ -155,6 +176,17 @@ text Natn_Greeting{
 	"Interested in battling?"
 }
 
+text Natn_GreetingHard{
+	"Hey, my name's Natn, and I was the first\n"
+	"person to beat this game in Normal mode\l"
+	"when it released.\p"
+	"I didn't really do a lot of talking in the\n"
+	"early days, I just showed up, blitzed\l"
+	"through the game, then posted my Hall\l"
+	"of Fame team.\p"
+	"Interested in battling?"
+}
+
 text Natn_ReadyYet{
 	"Want to battle now?"
 }
@@ -189,13 +221,25 @@ text PostBattle_Natn{
 	"I'll be here waiting for Hardcore mode."
 }
 
+text PostBattle_NatnHard{
+	"Honestly, this game was pretty easy.\n"
+	"Imagine if you were on normal mode."
+}
+
 
 script SootopolisCity_House5_EventScript_MasterPoucine{
 	lockall
 	applymovement(LOCALID_MASTER_POUCINE, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_MASTER_POUCINE, SootopolisCity_House5_EventScript_MasterPoucineDefeated)
 	goto_if_set(FLAG_TEMP_2, SootopolisCity_House5_EventScript_MasterPoucineRequestBattleAgain)
-	msgbox(MasterPoucine_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(MasterPoucine_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(MasterPoucine_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_House5_EventScript_BattleMasterPoucinePrompt)
 	end
 }
@@ -223,8 +267,15 @@ script SootopolisCity_House5_EventScript_DeclineMasterPoucineBattle {
 script SootopolisCity_House5_EventScript_BattleMasterPoucine{
 	msgbox(MasterPoucine_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_MASTER_POUCINE, MasterPoucine_Outro)
-	goto(SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_House5_EventScript_MasterPoucineGiveMarshadow)
+		return
+	}
 }
 
 script SootopolisCity_House5_EventScript_MasterPoucineDefeated{
@@ -295,6 +346,16 @@ text MasterPoucine_Greeting{
 	"Do you want to battle me?"
 }
 
+text MasterPoucine_GreetingHard{
+	"Hi there! I'm MasterPoucine, and I was\n"
+	"the third person to beat this game once\l"
+	"it released, and the first to do so\l"
+	"using the mascot, Empoleon!\p"
+	"I am also a content creator, so check\n"
+	"me out on YouTube!\p"
+	"Do you want to battle me?"
+}
+
 text MasterPoucine_ReadyYet{
 	"Do you want to battle now?"
 }
@@ -334,7 +395,14 @@ script SootopolisCity_House5_EventScript_OblivionWing{
 	applymovement(LOCALID_OBLIVION_WING, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_OBLIVION_WING, SootopolisCity_House5_EventScript_OblivionWingDefeated)
 	goto_if_set(FLAG_TEMP_3, SootopolisCity_House5_EventScript_OblivionWingRequestBattleAgain)
-	msgbox(OblivionWing_Greeting, MSGBOX_YESNO)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(OblivionWing_GreetingHard, MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(OblivionWing_Greeting, MSGBOX_YESNO)
+	}
 	goto(SootopolisCity_House5_EventScript_BattleOblivionWingPrompt)
 	end
 }
@@ -362,8 +430,15 @@ script SootopolisCity_House5_EventScript_DeclineOblivionWingBattle {
 script SootopolisCity_House5_EventScript_BattleOblivionWing{
 	msgbox(OblivionWing_YoureOn, MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_OBLIVION_WING, OblivionWing_Outro)
-	goto(SootopolisCity_House5_EventScript_OblivionWingGiveZarude)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		return
+	}
+	else
+	{
+		goto(SootopolisCity_House5_EventScript_OblivionWingGiveZarude)
+		return
+	}
 }
 
 script SootopolisCity_House5_EventScript_OblivionWingDefeated{
@@ -432,6 +507,16 @@ text OblivionWing_Greeting{
 	"If you can beat me, I'll give you a\n"
 	"Mythical, just like everyone else.\p"
 	"Does that sound good to you?"
+}
+
+text OblivionWing_GreetingHard{
+	"Hello, I'm OblivionWing, and I was the\n"
+	"first person ever to beat this game\l"
+	"after it released.\p"
+	"I sped through the game on Easy mode\n"
+	"and finished it just one day after it\l"
+	"came out!\p"
+	"Do you think you can match that?"
 }
 
 text OblivionWing_ReadyYet{

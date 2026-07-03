@@ -45,7 +45,18 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD
 	delay 40
 	setvar VAR_TEMP_1, 1
+
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge EverGrandeCity_HallOfFame_EventScript_ClearFlagsHard
+
 	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
+	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
+	end
+
+EverGrandeCity_HallOfFame_EventScript_ClearFlagsHard::
+	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlagsHard
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
 	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale

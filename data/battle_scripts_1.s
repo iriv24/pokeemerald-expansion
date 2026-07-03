@@ -8696,6 +8696,14 @@ BattleScript_DancerActivates::
 	orword gHitMarker, HITMARKER_ALLOW_NO_PP
 	jumptocalledmove TRUE
 
+BattleScript_WistfulEchoActivates::
+	call BattleScript_AbilityPopUp
+	waitmessage B_WAIT_TIME_SHORT
+	setbyte sB_ANIM_TURN, 0
+	setbyte sB_ANIM_TARGETS_HIT, 0
+	orword gHitMarker, HITMARKER_ALLOW_NO_PP
+	jumptocalledmove TRUE
+
 BattleScript_SynchronizeActivates::
 	waitstate
 	call BattleScript_AbilityPopUp

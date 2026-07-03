@@ -150,16 +150,6 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
-EverGrandeCity_EventScript_MomRoamerCall::
-	lockall
-	pokenavcall MatchCall_Text_MomRoamers
-	waitmessage
-	closemessage
-	special InitRoamer
-	setflag FLAG_ROAMER_MATCH_CALL
-	releaseall
-	end
-
 EverGrandeCity_Text_MayShoppingLetsBattle:
 	.string "{PLAYER}! Dawn told me about\n"
 	.string "everything that happened with Team\l"
@@ -360,11 +350,25 @@ script EverGrandeCity_EventScript_RivalsFlyAway{
 }
 
 script EverGrandeCity_EventScript_RivalFarewellStart{
-	applymovement(1, Common_Movement_WalkInPlaceFasterDown)
-	waitmovement(0)
-	msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
-	closemessage()
-	goto(EverGrandeCity_EventScript_RivalGiveKubfu)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
+		closemessage()
+		giveitem(ITEM_TM_U_TURN)
+		checkplayergender
+		goto_if_eq(VAR_RESULT, MALE, EverGrandeCity_EventScript_MayFarewell)
+		goto_if_eq(VAR_RESULT, FEMALE, EverGrandeCity_EventScript_BrendanFarewell)
+	}
+	else
+	{
+		applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(EverGrandeCity_Text_RivalTakeKubfu, MSGBOX_DEFAULT)
+		closemessage()
+		goto(EverGrandeCity_EventScript_RivalGiveKubfu)
+	}
 	releaseall
 	end
 }
@@ -584,9 +588,18 @@ script EverGrandeCity_EventScript_BattleVolkner{
 	trainerbattle_no_intro(TRAINER_VOLKNER, Volkner_Outro)
 	giveitem(ITEM_TM_RISING_VOLTAGE)
 	giveitem(ITEM_TM_SUPERCELL_SLAM)
-	giveitem(ITEM_EJECT_BUTTON)
-	goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
-	return
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_EJECT_PACK)
+		return
+	}
+	else
+	{
+		giveitem(ITEM_EJECT_BUTTON)
+		giveitem(ITEM_EJECT_PACK)
+		goto(EverGrandeCity_EventScript_VolknerGiveZeraora)
+		return
+	}
 }
 	
 

@@ -331,6 +331,7 @@ static const u16 sHardModeRandomizerAbilityWhitelist[] =
     ABILITY_QUILL_RUSH,
     ABILITY_BONE_ZONE,
     ABILITY_PARASITIC_WASTE,
+    ABILITY_WISTFUL_ECHO,
 };
 
 #define HARD_MODE_ABILITY_WHITELIST_SIZE     (NELEMS(sHardModeRandomizerAbilityWhitelist))

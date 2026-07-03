@@ -872,15 +872,12 @@ RustboroCity_EventScript_MayBrineyHint::
 	end
 
 RustboroCity_EventScript_MayBrineyHintWithLevelCapMessage::
+	giveitemfast ITEM_TM_FIRE_FANG
+	giveitemfast ITEM_TM_ICE_FANG
+	giveitemfast ITEM_TM_THUNDER_FANG
+	giveitemfast ITEM_TM_POISON_FANG
     msgbox RustboroCity_Text_RivalExplainFlyFromPokeNav
 	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
-	closemessage
-	delay 30
-	playfanfare MUS_LEVEL_UP
-	specialvar VAR_0x8006, GetLevelCapForText
-	buffernumberstring STR_VAR_3, VAR_0x8006
-	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
-	waitfanfare
 	closemessage
 	delay 30
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
@@ -982,15 +979,12 @@ RustboroCity_EventScript_BrendanBrineyHint::
 	end
 
 RustboroCity_EventScript_BrendanBrineyHintWithLevelCapMessage::
+	giveitemfast ITEM_TM_FIRE_FANG
+	giveitemfast ITEM_TM_ICE_FANG
+	giveitemfast ITEM_TM_THUNDER_FANG
+	giveitemfast ITEM_TM_POISON_FANG
 	msgbox RustboroCity_Text_RivalExplainFlyFromPokeNav, MSGBOX_DEFAULT
 	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
-	closemessage
-	delay 30
-	playfanfare MUS_LEVEL_UP
-	specialvar VAR_0x8006, GetLevelCapForText
-	buffernumberstring STR_VAR_3, VAR_0x8006
-	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
-	waitfanfare
 	closemessage
 	delay 30
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
@@ -1336,7 +1330,8 @@ RustboroCity_Text_RivalExplainFlyFromPokeNav:
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}If you hover over a town or city that\n"
 	.string "you've visited in the PokéNav's map, you\l"
 	.string "will see an option to press the “R”\l"
-	.string "button to Fly there.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Isn't that cool?$"
+	.string "button to Fly there.{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Isn't that cool?\p"
+	.string "I also gave you some useful TMs!$"
 
 RustboroCity_Text_TunnelNearingCompletion:
 	.string "“Timesaving tunnel nearing\n"

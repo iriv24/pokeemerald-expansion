@@ -724,6 +724,17 @@ static const struct WindowTemplate sApplyModeWindowTemplate =
     .baseBlock = 0x299,
 };
 
+static const struct WindowTemplate sOverworldMovesWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 19,
+    .tilemapTop = 9,
+    .width = 10,
+    .height = 10,
+    .paletteNum = 15,
+    .baseBlock = 0x299,
+};
+
 static const struct WindowTemplate sSetHpWindowTemplate =
 {
     .bg = 2,
@@ -935,6 +946,7 @@ struct
     [MENU_TXC] = {gText_ToxicMenu, CursorCb_Toxic},
     [MENU_SLP] = {gText_SleepMenu, CursorCb_Sleep},
     [MENU_NICKNAME] = {gText_Nickname, CursorCb_Nickname},
+    [MENU_OVERWORLD_MOVES] = {gText_OverworldMoves, CursorCb_OverworldMoves},
     [MENU_SWITCH] = {gText_Switch2, CursorCb_Switch},
     [MENU_CANCEL1] = {gText_Cancel2, CursorCb_Cancel1},
     [MENU_ITEM] = {gText_Item, CursorCb_Item},
@@ -993,7 +1005,8 @@ static const u8 sPartyMenuAction_LvlUpEggCancel[] = {MENU_LEVEL_UP_MOVES, MENU_E
 static const u8 sPartyMenuAction_LvlUpCancel[] = {MENU_LEVEL_UP_MOVES, MENU_CANCEL2};
 static const u8 sPartyMenuAction_EggCancel[] = {MENU_EGG_MOVES, MENU_CANCEL2};
 static const u8 sPartyMenuAction_Hexorb[] = {MENU_INFLICT_SLEEP, MENU_INFLICT_POISON, MENU_INFLICT_BURN, MENU_INFLICT_FREEZE_FROSTBITE, MENU_INFLICT_PARALYSIS, MENU_CANCEL1}; // hexorb Branch
-static const u8 sPartyMenuAction_Mode[] = {MENU_HP, MENU_BRN, MENU_PAR, MENU_FSB, MENU_PSN, MENU_TXC, MENU_SLP, MENU_CANCEL1};
+static const u8 sPartyMenuAction_Mode[] = {MENU_HP, MENU_BRN, MENU_PAR, MENU_FSB, MENU_PSN, MENU_TXC, MENU_SLP, MENU_CANCEL2};
+static const u8 sPartyMenuAction_Overworld[] = {MENU_OVERWORLD_MOVES, MENU_CANCEL2};
 
 
 static const u8 *const sPartyMenuActions[] =
@@ -1019,6 +1032,7 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_RELEARN_MOVES_EGG_ONLY] = sPartyMenuAction_EggCancel,
     [ACTIONS_HEXORB] = sPartyMenuAction_Hexorb, // hexorb Branch
     [ACTIONS_MODE] = sPartyMenuAction_Mode,
+    [ACTIONS_OVERWORLD] = sPartyMenuAction_Overworld,
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -1044,6 +1058,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_RELEARN_MOVES_EGG_ONLY] = ARRAY_COUNT(sPartyMenuAction_EggCancel),
     [ACTIONS_HEXORB] = ARRAY_COUNT(sPartyMenuAction_Hexorb), // hexorb Branch
     [ACTIONS_MODE] = ARRAY_COUNT(sPartyMenuAction_Mode),
+    [ACTIONS_OVERWORLD] = ARRAY_COUNT(sPartyMenuAction_Overworld),
 };
 
 static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =

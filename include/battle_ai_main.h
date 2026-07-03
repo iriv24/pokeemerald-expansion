@@ -121,6 +121,7 @@ void Ai_UpdateFaintData(u32 battler);
 void SetAiLogicDataForTurn(struct AiLogicData *aiData);
 void ResetDynamicAiFunc(void);
 u32 GetStatBeingLoweredFromMoveEffect(u32 statChange);
+void CalcBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u32 battlerDef, u32 weather);
 
 extern u8 sBattler_AI;
 
