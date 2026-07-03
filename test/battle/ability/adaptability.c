@@ -23,6 +23,7 @@ SINGLE_BATTLE_TEST("Adaptability increases same-type attack bonus from x1.5 to x
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into a different type with Adaptability gives 2.0x STAB", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -43,6 +44,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into a different type with Adaptabilit
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into the same type with Adaptability gives 2.25x STAB", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }

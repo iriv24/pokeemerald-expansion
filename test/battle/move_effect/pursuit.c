@@ -398,6 +398,7 @@ DOUBLE_BATTLE_TEST("Pursuit user mega evolves before attacking a switching foe a
 
 SINGLE_BATTLE_TEST("Pursuit user terastalizes before attacking a switching foe and gets the damage boost from the tera type", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     u32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }

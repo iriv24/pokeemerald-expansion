@@ -35,6 +35,7 @@ TEST("Terastallization type defaults to primary or secondary type")
 
 TEST("Terastallization type can be set to any type except TYPE_NONE")
 {
+    KNOWN_FAILING; // tera irrelevant for EI
     u32 i, teraType;
     struct Pokemon mon;
     for (i = 1; i < NUMBER_OF_MON_TYPES; i++)
@@ -48,6 +49,7 @@ TEST("Terastallization type can be set to any type except TYPE_NONE")
 
 TEST("Terastallization type is reset to the default types when setting Tera Type back to TYPE_NONE")
 {
+    KNOWN_FAILING; // tera irrelevant for EI
     u32 i, teraType, typeNone;
     struct Pokemon mon;
     for (i = 1; i < NUMBER_OF_MON_TYPES; i++)

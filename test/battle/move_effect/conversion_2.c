@@ -191,6 +191,7 @@ SINGLE_BATTLE_TEST("Conversion 2 fails if the move used is of typeless damage (G
 
 SINGLE_BATTLE_TEST("Conversion 2 fails if the targeted move is Stellar Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_WOBBUFFET);

@@ -8,6 +8,7 @@ ASSUMPTIONS
 
 SINGLE_BATTLE_TEST("Tera Blast changes from Normal-type to the user's Tera Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TERA_BLAST].type == TYPE_NORMAL);
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_DARK); }
@@ -23,6 +24,7 @@ SINGLE_BATTLE_TEST("Tera Blast changes from Normal-type to the user's Tera Type"
 
 SINGLE_BATTLE_TEST("Tera Blast has correct effectiveness for every Tera Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     u32 species;
     u32 type;
 
@@ -74,6 +76,7 @@ SINGLE_BATTLE_TEST("Tera Blast has correct effectiveness for every Tera Type")
 
 SINGLE_BATTLE_TEST("Tera Blast becomes a physical move if the user is Terastallized and has a higher Attack stat", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -96,6 +99,7 @@ SINGLE_BATTLE_TEST("Tera Blast becomes a physical move if the user is Terastalli
 
 SINGLE_BATTLE_TEST("Stellar-type Tera Blast lowers both offensive stats")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -113,6 +117,7 @@ SINGLE_BATTLE_TEST("Stellar-type Tera Blast lowers both offensive stats")
 
 SINGLE_BATTLE_TEST("Stellar-type Tera Blast has 100 BP and a one-time 1.2x boost")
 {
+    KNOWN_FAILING; // terastalization not in EI
     s16 damage[3];
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
@@ -143,34 +148,38 @@ SINGLE_BATTLE_TEST("Stellar-type Tera Blast has 100 BP and a one-time 1.2x boost
     }
 }
 
-SINGLE_BATTLE_TEST("Stellar-type Tera Blast is super-effective on Stellar-type Pokemon")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_CELEBRATE, gimmick: GIMMICK_TERA); }
-    } SCENE {
-        MESSAGE("Wobbuffet used Tera Blast!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TERA_BLAST, player);
-        MESSAGE("It's super effective!");
-    }
-}
+// hits invalid error even w/ KNOWN_FAILING
+// SINGLE_BATTLE_TEST("Stellar-type Tera Blast is super-effective on Stellar-type Pokemon")
+// {
+//     KNOWN_FAILING; // terastalization not in EI
+    // GIVEN {
+    //     PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
+    //     OPPONENT(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
+    // } WHEN {
+    //     TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_CELEBRATE, gimmick: GIMMICK_TERA); }
+    // } SCENE {
+    //     MESSAGE("Wobbuffet used Tera Blast!");
+    //     ANIMATION(ANIM_TYPE_MOVE, MOVE_TERA_BLAST, player);
+    //     MESSAGE("It's super effective!");
+    // }
+// }
 
-SINGLE_BATTLE_TEST("Stellar-type Tera Blast activates a Stellar-type Pokemon's Weakness Policy")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_WEAKNESS_POLICY); TeraType(TYPE_NORMAL); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_CELEBRATE, gimmick: GIMMICK_TERA); }
-    } SCENE {
-        MESSAGE("Wobbuffet used Tera Blast!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TERA_BLAST, player);
-        MESSAGE("It's super effective!");
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
-    }
-}
+// hits invalid error even w/ KNOWN_FAILING
+// SINGLE_BATTLE_TEST("Stellar-type Tera Blast activates a Stellar-type Pokemon's Weakness Policy")
+// {
+//     KNOWN_FAILING; // terastalization not in EI
+//     GIVEN {
+//         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
+//         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_WEAKNESS_POLICY); TeraType(TYPE_NORMAL); }
+//     } WHEN {
+//         TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_CELEBRATE, gimmick: GIMMICK_TERA); }
+//     } SCENE {
+//         MESSAGE("Wobbuffet used Tera Blast!");
+//         ANIMATION(ANIM_TYPE_MOVE, MOVE_TERA_BLAST, player);
+//         MESSAGE("It's super effective!");
+//         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+//     }
+// }
 
 SINGLE_BATTLE_TEST("Flying-type Tera Blast does not have its priority boosted by Gale Wings")
 {
