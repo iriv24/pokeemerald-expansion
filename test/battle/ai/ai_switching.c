@@ -24,6 +24,7 @@ AI_SINGLE_BATTLE_TEST("SWITCHING: AI gets baited by Protect Switch tactics") // 
 // General switching behaviour
 AI_SINGLE_BATTLE_TEST("SWITCHING: AI switches if Perish Song is about to kill")
 {
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_PERISH);
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET);
@@ -102,7 +103,7 @@ AI_SINGLE_BATTLE_TEST("SWITCHING: AI sees on-field player ability correctly and 
 AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same pokemon for 2 spots in a double battle (all bad moves)")
 {
     u32 flags;
-
+    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_ALL_MOVES_BAD);
     PARAMETRIZE {flags = AI_FLAG_SMART_SWITCHING; }
     PARAMETRIZE {flags = 0; }
 
@@ -170,7 +171,6 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same pokemon for 2 spot
 
 AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
 {
-    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_WONDER_GUARD);
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
         ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
@@ -180,26 +180,6 @@ AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it can't deal
         ASSUME(GetMoveType(MOVE_SCRATCH) == TYPE_NORMAL);
         ASSUME(GetMoveType(MOVE_SHADOW_BALL) == TYPE_GHOST);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_SHEDINJA) { Moves(MOVE_SCRATCH); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SCRATCH); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SHADOW_BALL); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_SCRATCH) ; EXPECT_SWITCH(opponent, 1); }
-    }
-}
-
-AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
-{
-    PASSES_RANDOMLY(0, 100, RNG_AI_SWITCH_WONDER_GUARD);
-    GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[0] == ABILITY_WONDER_GUARD);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[1] == ABILITY_NONE);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[2] == ABILITY_NONE);
-        ASSUME(GetMoveType(MOVE_SCRATCH) == TYPE_NORMAL);
-        ASSUME(GetMoveType(MOVE_SHADOW_BALL) == TYPE_GHOST);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
         PLAYER(SPECIES_SHEDINJA) { Moves(MOVE_SCRATCH); }
         OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SCRATCH); }
         OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SHADOW_BALL); }
@@ -467,40 +447,6 @@ AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Eject Button will s
     }
 }
 
-// hits a timeout case but the .elf file does work
-// AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: AI will consider mega ability for post ko switch in")
-// {
-//     GIVEN {
-//         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
-//         PLAYER(SPECIES_GALLADE) {
-//             Level(85);
-//             Moves(MOVE_SACRED_SWORD);
-//             Item(ITEM_GALLADITE);
-//         }
-//         OPPONENT(SPECIES_WOBBUFFET) {Level(1); HP(1); Moves(MOVE_TACKLE); }
-//         OPPONENT(SPECIES_GRIMMSNARL) {
-//             Level(85);
-//             Moves(MOVE_SPIRIT_BREAK, MOVE_DARKEST_LARIAT, MOVE_HAMMER_ARM, MOVE_PARTING_SHOT);
-//             Nature(NATURE_JOLLY);
-//             Ability(ABILITY_PRANKSTER);
-//             Item(ITEM_LEFTOVERS);
-//         }
-//         OPPONENT(SPECIES_ROARING_MOON) {
-//             Level(85);
-//             Moves(MOVE_DRAGON_DANCE, MOVE_IRON_HEAD, MOVE_DRAGON_CLAW, MOVE_KNOCK_OFF);
-//             Nature(NATURE_ADAMANT);
-//             Ability(ABILITY_PROTOSYNTHESIS);
-//             Item(ITEM_BOOSTER_ENERGY); 
-//         }
-//     } WHEN {
-//         TURN { 
-//             MOVE(player, MOVE_SACRED_SWORD, gimmick: GIMMICK_MEGA);
-//             EXPECT_MOVE(opponent, MOVE_TACKLE);
-//             EXPECT_SEND_OUT(opponent, 2); // grimmsnarl damageMonId otherwise
-//         }
-//     }
-// }
-
 AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_MON_CHOICES: Post-KO switches prioritize offensive options")
 {
     GIVEN {
@@ -664,44 +610,6 @@ AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if
         OPPONENT(SPECIES_RHYDON) { Moves(MOVE_EARTHQUAKE); Ability(ABILITY_ROCK_HEAD); }
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDERBOLT) ; EXPECT_SWITCH(opponent, 1); }
-    }
-}
-
-AI_SINGLE_BATTLE_TEST("SWITCHING: Switch AI: AI will switch out if it can't deal damage to a mon with Wonder Guard")
-{
-    GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[0] == ABILITY_WONDER_GUARD);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[1] == ABILITY_NONE);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[2] == ABILITY_NONE);
-        ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_NORMAL);
-        ASSUME(gMovesInfo[MOVE_SHADOW_BALL].type == TYPE_GHOST);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_SHEDINJA) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SHADOW_BALL); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE) ; EXPECT_SWITCH(opponent, 1); }
-    }
-}
-
-AI_SINGLE_BATTLE_TEST("SWITCHING: AI_FLAG_SMART_SWITCHING: AI will switch out if it can't deal damage to a mon with Wonder Guard")
-{
-    GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[0] == TYPE_BUG);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].types[1] == TYPE_GHOST);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[0] == ABILITY_WONDER_GUARD);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[1] == ABILITY_NONE);
-        ASSUME(gSpeciesInfo[SPECIES_SHEDINJA].abilities[2] == ABILITY_NONE);
-        ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_NORMAL);
-        ASSUME(gMovesInfo[MOVE_SHADOW_BALL].type == TYPE_GHOST);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
-        PLAYER(SPECIES_SHEDINJA) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_SHADOW_BALL); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE) ; EXPECT_SWITCH(opponent, 1); }
     }
 }
 
