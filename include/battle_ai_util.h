@@ -228,6 +228,7 @@ bool32 HasHighCritRatioMove(u32 battler);
 bool32 HasMagicCoatAffectedMove(u32 battler);
 bool32 HasSnatchAffectedMove(u32 battler);
 bool32 IsSubstituteEffect(u32 effect);
+bool32 IsSupportMove(u32 move, u32 effect);
 bool32 IsHazardClearingMove(u32 move);
 
 // status checks

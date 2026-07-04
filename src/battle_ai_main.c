@@ -2320,14 +2320,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
-        case EFFECT_OCTOLOCK:
-            if ((AI_CanBattlerEscape(battlerDef) 
-                || (!AI_CanBattlerEscape(battlerDef) && IsBattlerTrapped(battlerAtk, battlerDef))) 
-                && (CountUsablePartyMons(battlerDef) != 0))
-            {
-                ADJUST_SCORE(-10);
-            }
-            break;
         case EFFECT_FLING:
             if (!CanFling(battlerAtk))
             {
@@ -3756,7 +3748,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_MEAN_LOOK:
         if (ShouldTrap(battlerAtk, battlerDef))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_LASER_FOCUS:
@@ -4330,7 +4322,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         }
         break;
     case EFFECT_OCTOLOCK:
-        if (ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_SPDEF) || ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_DEF) )
+        if ((ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_SPDEF) || ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_DEF)) && ShouldTrap(battlerAtk,battlerDef))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_RAGING_BULL:
@@ -4424,7 +4416,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_GEOMANCY:
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB)
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(WEAK_EFFECT);
     case EFFECT_QUIVER_DANCE:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED));
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK));
@@ -4628,7 +4620,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_FAIRY_LOCK:
         if (ShouldTrap(battlerAtk, battlerDef))
-            ADJUST_SCORE(BEST_EFFECT);
+            ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_QUASH:
         if (isDoubleBattle && AI_IsSlower(BATTLE_PARTNER(battlerAtk), battlerDef, aiData->partnerMove, MOVE_NONE, CONSIDER_PRIORITY))
@@ -4968,7 +4960,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                     break;
                 case MOVE_EFFECT_WRAP:
                     if (!HasMoveWithAdditionalEffect(battlerDef, MOVE_EFFECT_RAPID_SPIN) && ShouldTrap(battlerAtk, battlerDef))
-                        ADJUST_SCORE(BEST_EFFECT);
+                        ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case MOVE_EFFECT_SALT_CURE:
                     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_WATER) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL))

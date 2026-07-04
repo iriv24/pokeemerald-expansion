@@ -187,6 +187,7 @@ enum RandomTag
     RNG_AI_SWITCH_ALL_SCORES_BAD,
     RNG_AI_SWITCH_ALL_MOVES_BAD,
     RNG_AI_SWITCH_YAWN,
+    RNG_AI_SWITCH_PERISH,
     RNG_AI_SWITCH_CHOICE_LOCK,
     RNG_SHELL_SIDE_ARM,
     RNG_RANDOM_TARGET,
@@ -196,6 +197,8 @@ enum RandomTag
     RNG_AI_SHOULD_RECOVER,
     RNG_AI_BOOST_INTO_HAZE,
     RNG_AI_PRIORITIZE_LAST_CHANCE,
+    RNG_AI_RANDOM_SWITCHIN_POST_KO,
+    RNG_AI_RANDOM_SWITCHIN_MID_BATTLE,
     RNG_AI_INCREASE_PURSUIT_SCORE,
     RNG_AI_SWITCH_ABSORBING_STAY_IN,
     RNG_AI_NO_SETUP_HAZARDS,
@@ -237,6 +240,9 @@ enum RandomTag
     ({ \
         *(typeof((array)[0]) *)RandomElementArray(tag, array, sizeof((array)[0]), ARRAY_COUNT(array)); \
     })
+
+u32 RandomBit(enum RandomTag tag, u32 bits);
+u32 RandomBitIndex(enum RandomTag tag, u32 bits);
 
 u32 RandomUniform(enum RandomTag, u32 lo, u32 hi);
 u32 RandomUniformExcept(enum RandomTag, u32 lo, u32 hi, bool32 (*reject)(u32));

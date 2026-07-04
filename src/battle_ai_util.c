@@ -2868,6 +2868,23 @@ bool32 IsSubstituteEffect(u32 effect)
     }
 }
 
+bool32 IsSupportMove(u32 move, u32 effect)
+{
+    if (IsStatRaisingEffect(effect))
+        return FALSE;
+
+    if (effect == EFFECT_PROTECT || effect == EFFECT_ENDURE)
+        return FALSE;
+
+    if (IsHealingMove(move) 
+    && !(effect == EFFECT_REVIVAL_BLESSING || effect == EFFECT_STRENGTH_SAP || effect == EFFECT_HEALING_WISH 
+        || effect == EFFECT_JUNGLE_HEALING || effect == EFFECT_HEAL_PULSE))
+        return FALSE;
+        
+    return gMovesInfo[move].category == DAMAGE_CATEGORY_STATUS
+        || IsTrappingMove(move);
+}
+
 static inline bool32 IsMoveSleepClauseTrigger(u32 move)
 {
     u32 i, effect = gMovesInfo[move].effect;
@@ -3510,14 +3527,15 @@ bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef)
     if (IsBattlerTrapped(battlerAtk, battlerDef))
         return FALSE;
 
-    if (BattlerWillFaintFromSecondaryDamage(battlerDef, AI_DATA->abilities[battlerDef]))
+    if (CountUsablePartyMons(battlerDef) == 0)
+        return FALSE;
+
+    if (BattlerWillFaintFromSecondaryDamage(battlerDef, AI_DATA->abilities[battlerDef]) 
+    || (AI_DATA->items[battlerAtk] == ITEM_BINDING_BAND || AI_DATA->items[battlerAtk] == ITEM_GRIP_CLAW))
         return TRUE;    // battler is taking secondary damage with low HP
 
-    if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_STALL)
-    {
-        if (!CanTargetFaintAi(battlerDef, battlerAtk))
-            return TRUE;    // attacker goes first and opponent can't kill us
-    }
+    if (!CanTargetFaintAi(battlerDef, battlerAtk))
+        return TRUE;    //opponent can't kill us
 
     return FALSE;
 }
@@ -4676,12 +4694,11 @@ u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
     u32 scoreIncrease = 0;
 
     if (gBattleMons[battlerDef].status1 & STATUS1_SLEEP)
-        scoreIncrease += DECENT_EFFECT;
+        scoreIncrease += WEAK_EFFECT;
 
     if (gMovesInfo[move].effect == EFFECT_SHED_TAIL) // Shed Tail specific
     {
-        if ((ShouldPivot(battlerAtk, battlerDef, move))
-        && (HasAnyKnownMove(battlerDef) && (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING_NORMAL) < gBattleMons[battlerAtk].maxHP / 2)))
+        if (ShouldPivot(battlerAtk, battlerDef, move))
             scoreIncrease += BEST_EFFECT;     
     }
     else if (gMovesInfo[move].effect == EFFECT_SUBSTITUTE) // Substitute specific
