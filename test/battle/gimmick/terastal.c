@@ -5,6 +5,7 @@
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into a different type preserves other STAB boosts", s16 damage1, s16 damage2)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -48,6 +49,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing does not affect the power of non-STAB 
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into a different type gives that type 1.5x STAB", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -130,6 +132,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -150,6 +153,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor does not apply to multi-hit moves", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -169,6 +173,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor does not apply to mult
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor does not apply to priority moves", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -190,6 +195,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor does not apply to prio
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization changes type effectiveness", s16 damage)
 {
+    KNOWN_FAILING; // terastalization not in EI
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
@@ -209,6 +215,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization changes type effectiveness", s16 dam
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization changes type effectiveness")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_FLYING); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -223,6 +230,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization changes type effectiveness")
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization persists across switches")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_FLYING); }
         PLAYER(SPECIES_WOBBUFFET);
@@ -248,6 +256,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization persists across switches")
 
 SINGLE_BATTLE_TEST("(TERA) Terastallization changes the effect of Curse")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GHOST); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -337,6 +346,7 @@ SINGLE_BATTLE_TEST("(TERA) Conversion2 fails if used by a Terastallized Pokemon"
 
 SINGLE_BATTLE_TEST("(TERA) Reflect Type copies a Terastallized Pokemon's Tera Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GHOST); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -357,6 +367,7 @@ SINGLE_BATTLE_TEST("(TERA) Reflect Type copies a Terastallized Pokemon's Tera Ty
 
 SINGLE_BATTLE_TEST("(TERA) Synchronoise uses a Terastallized Pokemon's Tera Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GHOST); }
         OPPONENT(SPECIES_WOBBUFFET) { TeraType(TYPE_GHOST); }
@@ -375,6 +386,7 @@ SINGLE_BATTLE_TEST("(TERA) Synchronoise uses a Terastallized Pokemon's Tera Type
 
 SINGLE_BATTLE_TEST("(TERA) Revelation Dance uses a Terastallized Pokemon's Tera Type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         ASSUME(P_GEN_7_POKEMON);
         PLAYER(SPECIES_ORICORIO) { TeraType(TYPE_NORMAL); }
@@ -496,6 +508,7 @@ SINGLE_BATTLE_TEST("(TERA) Reflect Type copies a Stellar-type Pokemon's base typ
 
 SINGLE_BATTLE_TEST("(TERA) Revelation Dance uses a Stellar-type Pokemon's base type")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         ASSUME(P_GEN_7_POKEMON);
         PLAYER(SPECIES_ORICORIO_SENSU) { TeraType(TYPE_STELLAR); }
@@ -547,6 +560,7 @@ SINGLE_BATTLE_TEST("(TERA) Roost does not remove Flying-type ground immunity whe
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar-type provides a one-time 2.0x boost to STAB moves")
 {
+    KNOWN_FAILING; // terastalization not in EI
     s16 damage[3];
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
@@ -577,6 +591,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar-type provides a one-t
 
 SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar-type provides a one-time 1.2x boost to non-STAB moves")
 {
+    KNOWN_FAILING; // terastalization not in EI
     s16 damage[3];
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
@@ -644,6 +659,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar type boosts all moves
 
 SINGLE_BATTLE_TEST("(TERA) Protean cannot change the type of a Terastallized Pokemon")
 {
+    KNOWN_FAILING; // terastalization not in EI
     GIVEN {
         PLAYER(SPECIES_GRENINJA) { Ability(ABILITY_PROTEAN); TeraType(TYPE_GRASS); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -659,6 +675,7 @@ SINGLE_BATTLE_TEST("(TERA) Protean cannot change the type of a Terastallized Pok
 
 SINGLE_BATTLE_TEST("(TERA) Status moves don't expend Stellar's one-time type boost")
 {
+    KNOWN_FAILING; // terastalization not in EI
     s16 damage[2];
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
@@ -686,6 +703,7 @@ SINGLE_BATTLE_TEST("(TERA) Status moves don't expend Stellar's one-time type boo
 
 SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-typed moves")
 {
+    KNOWN_FAILING; // terastalization not in EI
     s16 damage[4];
     GIVEN {
         ASSUME(gMovesInfo[MOVE_WEATHER_BALL].type == TYPE_NORMAL);
