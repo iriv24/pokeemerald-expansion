@@ -1987,7 +1987,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
     bool32 isFreeSwitch = IsFreeSwitch(switchType, battlerIn1, opposingBattler), isSwitchinFirst, isSwitchinFirstPriority, canSwitchinWin1v1;
     u32 storeCurrBattlerPartyIndex = gBattlerPartyIndexes[battler]; //Rage Fist fix
     u32 opposingPartner = GetBattlerAtPosition(BATTLE_PARTNER(opposingBattler));
-    bool32 isFastKilldByPartner, hasSupportMove = FALSE;
+    bool32 isFastKilldByPartner = FALSE, hasSupportMove = FALSE;
     struct AiLogicData *savedAiLogicData = AllocSaveAiLogicData();
     struct BattlePokemon *savedBattleMons = AllocSaveBattleMons();
 
@@ -2043,7 +2043,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
             if (gBattleMons[battler].pp[moveIndex] < 1)
                 continue;
 
-            if (isFastKilldByPartner)
+            if (IsDoubleBattle() && isFastKilldByPartner)
                 continue;
             
             aiMove = gBattleMons[battler].moves[moveIndex];
