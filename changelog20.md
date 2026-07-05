@@ -86,7 +86,7 @@
 #### Switch AI
 
 - The AI no longer factors in its own Explosion, Self-Destruct, or Misty Explosion damage when evaluating how much damage a switch-in candidate would deal to the player.
-- Most switch functions now have a 50% chance of triggering when their conditions are met and a valid party candidate exists, with the expection of -3 to the main attacking stat.
+- Most switch functions now have a 50% chance of triggering when their conditions are met and a valid party candidate exists, with the exception of -3 to the main attacking stat.
 - Removed the two-turn move and trapper switch AI functions.
 - Absorb AI now accounts for Mountaineer immunity.
 - The AI now checks whether it wins the current 1v1 across multiple functions, avoiding aimless switches.
