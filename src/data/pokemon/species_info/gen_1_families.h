@@ -6982,7 +6982,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_VITAL_SPIRIT,  ABILITY_ANGER_POINT,  ABILITY_DEFIANT },
+        .abilities = {ABILITY_ANGER_POINT,  ABILITY_ANGER_POINT,  ABILITY_DEFIANT },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Mankey"),
         .cryId = CRY_MANKEY,
@@ -7046,7 +7046,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_VITAL_SPIRIT,  ABILITY_ANGER_POINT,  ABILITY_DEFIANT },
+        .abilities = {ABILITY_ANGER_POINT,  ABILITY_ANGER_POINT,  ABILITY_DEFIANT },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Primeape"),
         .cryId = CRY_PRIMEAPE,
@@ -7088,7 +7088,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sPrimeapeLevelUpLearnset,
         .teachableLearnset = sPrimeapeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_SHADOW_PUNCH, SPECIES_ANNIHILAPE}),
+        .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_ANNIHILAPE}),
     },
 
 #if P_GEN_9_CROSS_EVOS
@@ -7109,7 +7109,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_VITAL_SPIRIT,  ABILITY_INNER_FOCUS,  ABILITY_DEFIANT },
+        .abilities = {ABILITY_INNER_FOCUS,  ABILITY_INNER_FOCUS,  ABILITY_DEFIANT },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Annihilape"),
         .cryId = CRY_ANNIHILAPE,
