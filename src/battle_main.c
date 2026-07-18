@@ -2104,6 +2104,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 SetMonData(&party[i], MON_DATA_STATUS, &partyData[i].preStatus);
 
             }
+            if(partyData[i].startingHP > 0)
+            {
+                SetMonData(&party[i], MON_DATA_HP, &partyData[i].startingHP);
+
+            }
             CalculateMonStats(&party[i]);
 
             if (B_TRAINER_CLASS_POKE_BALLS >= GEN_7 && ball == -1)
