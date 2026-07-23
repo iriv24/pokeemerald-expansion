@@ -162,251 +162,342 @@ FortreeCity_CreatorHouse_EventScript_Iriv24::
 	goto_if_defeated TRAINER_IRIV24, FortreeCity_CreatorHouse_EventScript_Iriv24Defeated
 # 85 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_1, FortreeCity_CreatorHouse_EventScript_Iriv24RequestBattleAgain
-# 86 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
-	msgbox Iriv24_Greeting, MSGBOX_YESNO
 # 87 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_Iriv24_2
+# 102 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Iriv24_Greeting, MSGBOX_YESNO
+# 103 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt
+FortreeCity_CreatorHouse_EventScript_Iriv24_1:
 	end
+
+FortreeCity_CreatorHouse_EventScript_Iriv24_2:
+# 89 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, FortreeCity_CreatorHouse_EventScript_Iriv24_5
+# 96 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Iriv24_NotUnlockedYet
+# 97 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	release
+	goto FortreeCity_CreatorHouse_EventScript_Iriv24_1
+
+FortreeCity_CreatorHouse_EventScript_Iriv24_5:
+# 91 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Iriv24_GreetingHard, MSGBOX_YESNO
+# 92 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt
+	goto FortreeCity_CreatorHouse_EventScript_Iriv24_1
 
 
 FortreeCity_CreatorHouse_EventScript_Iriv24RequestBattleAgain::
-# 92 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 109 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Iriv24_ReadyYet, MSGBOX_YESNO
-# 93 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 110 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt::
-# 98 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 115 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, FortreeCity_CreatorHouse_EventScript_BattleIriv24
-# 99 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 116 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FortreeCity_CreatorHouse_EventScript_DeclineIriv24Battle
-# 100 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 117 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	closemessage
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_DeclineIriv24Battle::
-# 105 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 122 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_TEMP_1
-# 106 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 123 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Iriv24_ComeBackWhenReady, MSGBOX_DEFAULT
-# 107 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 124 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleIriv24::
-# 112 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 129 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox FortreeCity_CreatorHouse_EventScript_BattleIriv24_Text_0, MSGBOX_DEFAULT
-# 113 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 130 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_IRIV24, Iriv24_Outro
-# 114 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 131 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems
 	return
 
 
 FortreeCity_CreatorHouse_EventScript_Iriv24Defeated::
-# 120 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 137 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox PostBattle_Iriv24, MSGBOX_DEFAULT
-# 121 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 138 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	releaseall
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems::
-# 126 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 143 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems_2
+# 149 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_EMPOLEONITE_O
-# 127 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 150 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_BLASTOISINITE
-# 128 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 151 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_SWAMPERTITE
-# 129 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 152 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TM_SUBSTITUTE
-# 130 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 153 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHOICE_SCARF
-# 131 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems_1:
+# 155 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Iriv24_ExplainItems
-# 132 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 156 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
+FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems_2:
+# 145 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	giveitem ITEM_CHOICE_SCARF
+	goto FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems_1
+
 
 FortreeCity_CreatorHouse_EventScript_Cap::
-# 193 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 253 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	lockall
-# 194 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 254 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	applymovement 2, Common_Movement_FacePlayer
-# 195 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 255 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_defeated TRAINER_CAP, FortreeCity_CreatorHouse_EventScript_CapDefeated
-# 196 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 256 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, FortreeCity_CreatorHouse_EventScript_CapRequestBattleAgain
-# 197 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 258 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_Cap_2
+# 273 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Cap_Greeting, MSGBOX_YESNO
-# 198 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 274 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleCapPrompt
+FortreeCity_CreatorHouse_EventScript_Cap_1:
 	end
+
+FortreeCity_CreatorHouse_EventScript_Cap_2:
+# 260 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto_if_set FLAG_BADGE06_GET, FortreeCity_CreatorHouse_EventScript_Cap_5
+# 267 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Cap_NotUnlockedYet
+# 268 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	release
+	goto FortreeCity_CreatorHouse_EventScript_Cap_1
+
+FortreeCity_CreatorHouse_EventScript_Cap_5:
+# 262 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Cap_GreetingHard, MSGBOX_YESNO
+# 263 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto FortreeCity_CreatorHouse_EventScript_BattleCapPrompt
+	goto FortreeCity_CreatorHouse_EventScript_Cap_1
 
 
 FortreeCity_CreatorHouse_EventScript_CapRequestBattleAgain::
-# 203 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 280 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Cap_ReadyYet, MSGBOX_YESNO
-# 204 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 281 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleCapPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleCapPrompt::
-# 209 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 286 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, FortreeCity_CreatorHouse_EventScript_BattleCap
-# 210 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 287 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FortreeCity_CreatorHouse_EventScript_DeclineCapBattle
-# 211 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 288 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	closemessage
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_DeclineCapBattle::
-# 216 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 293 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_TEMP_2
-# 217 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 294 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Cap_ComeBackWhenReady, MSGBOX_DEFAULT
-# 218 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 295 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleCap::
-# 223 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 300 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox FortreeCity_CreatorHouse_EventScript_BattleCap_Text_0, MSGBOX_DEFAULT
-# 224 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 301 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_CAP, Cap_Outro
-# 225 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 302 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_CapGiveItems
 	return
 
 
 FortreeCity_CreatorHouse_EventScript_CapDefeated::
-# 231 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 308 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox PostBattle_Cap, MSGBOX_DEFAULT
-# 232 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 309 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	releaseall
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_CapGiveItems::
-# 237 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 314 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_CapGiveItems_2
+# 321 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHARIZARDITE_X
-# 238 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 322 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHARIZARDITE_Y
-# 239 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 323 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_INFERNAPITE
-# 240 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 324 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TM_DRAGON_DANCE
-# 241 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 325 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHOICE_SPECS
-# 242 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 326 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox Cap_ExplainItems
-# 243 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+FortreeCity_CreatorHouse_EventScript_CapGiveItems_1:
+# 328 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
+FortreeCity_CreatorHouse_EventScript_CapGiveItems_2:
+# 316 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	giveitem ITEM_CHOICE_SPECS
+# 317 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox Cap_ExplainItemsHard
+	goto FortreeCity_CreatorHouse_EventScript_CapGiveItems_1
+
 
 FortreeCity_CreatorHouse_EventScript_X::
-# 289 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 398 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	lockall
-# 290 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 399 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	applymovement 1, Common_Movement_FacePlayer
-# 291 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 400 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_defeated TRAINER_X, FortreeCity_CreatorHouse_EventScript_XDefeated
-# 292 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 401 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_3, FortreeCity_CreatorHouse_EventScript_XRequestBattleAgain
-# 293 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 403 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_X_2
+# 418 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox X_Greeting, MSGBOX_YESNO
-# 294 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 419 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleXPrompt
+FortreeCity_CreatorHouse_EventScript_X_1:
 	end
+
+FortreeCity_CreatorHouse_EventScript_X_2:
+# 405 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto_if_set FLAG_BADGE07_GET, FortreeCity_CreatorHouse_EventScript_X_5
+# 412 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox X_NotUnlockedYet
+# 413 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	release
+	goto FortreeCity_CreatorHouse_EventScript_X_1
+
+FortreeCity_CreatorHouse_EventScript_X_5:
+# 407 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox X_GreetingHard, MSGBOX_YESNO
+# 408 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	goto FortreeCity_CreatorHouse_EventScript_BattleXPrompt
+	goto FortreeCity_CreatorHouse_EventScript_X_1
 
 
 FortreeCity_CreatorHouse_EventScript_XRequestBattleAgain::
-# 299 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 425 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox X_ReadyYet, MSGBOX_YESNO
-# 300 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 426 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_BattleXPrompt
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleXPrompt::
-# 305 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 431 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	call_if_eq VAR_RESULT, YES, FortreeCity_CreatorHouse_EventScript_BattleX
-# 306 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 432 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FortreeCity_CreatorHouse_EventScript_DeclineXBattle
-# 307 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 433 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	closemessage
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_DeclineXBattle::
-# 312 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 438 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	setflag FLAG_TEMP_3
-# 313 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 439 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox X_ComeBackWhenReady, MSGBOX_DEFAULT
-# 314 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 440 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_BattleX::
-# 319 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 445 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox FortreeCity_CreatorHouse_EventScript_BattleX_Text_0, MSGBOX_DEFAULT
-# 320 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 446 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_X, X_Outro
-# 321 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 447 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	goto FortreeCity_CreatorHouse_EventScript_XGiveItems
 	return
 
 
 FortreeCity_CreatorHouse_EventScript_XDefeated::
-# 327 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 453 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox PostBattle_X, MSGBOX_DEFAULT
-# 328 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 454 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	releaseall
 	end
 
 
 FortreeCity_CreatorHouse_EventScript_XGiveItems::
-# 333 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 459 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge FortreeCity_CreatorHouse_EventScript_XGiveItems_2
+# 466 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TORTERRITE
-# 334 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 467 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_VENUSAURITE
-# 335 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 468 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_SCEPTILITE
-# 336 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 469 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_TM_EARTHQUAKE
-# 337 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 470 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	giveitem ITEM_CHOICE_BAND
-# 338 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 471 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	msgbox X_ExplainItems
-# 339 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+FortreeCity_CreatorHouse_EventScript_XGiveItems_1:
+# 473 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	release
 	end
 
+FortreeCity_CreatorHouse_EventScript_XGiveItems_2:
+# 461 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	giveitem ITEM_CHOICE_BAND
+# 462 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	msgbox X_ExplainItemsHard
+	goto FortreeCity_CreatorHouse_EventScript_XGiveItems_1
+
 
 FortreeCity_CreatorHouse_EventScript_BattleIriv24_Text_0:
-# 112 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 129 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Alright, let's do this.$"
 
 FortreeCity_CreatorHouse_EventScript_BattleCap_Text_0:
-# 223 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 300 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "You're cooked buddy.$"
 
 FortreeCity_CreatorHouse_EventScript_BattleX_Text_0:
-# 319 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 445 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "You're on!$"
 
 Iriv24_Greeting::
-# 137 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 161 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Hi there, {PLAYER}, I am the creator of\n"
 	.string "this hack.\l"
 	.string "I hope you are enjoying it so far.\p"
@@ -428,16 +519,52 @@ Iriv24_Greeting::
 	.string "then say the word and we can battle.\l"
 	.string "What do you say?$"
 
+Iriv24_GreetingHard::
+# 184 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Hi there, {PLAYER}, I am the creator of\n"
+	.string "this hack.\l"
+	.string "I hope you are enjoying it so far.\p"
+	.string "Since you've made it to here, I would\n"
+	.string "like to offer my sincere appreciation\l"
+	.string "to you for playing this game.\p"
+	.string "It was a lot of fun to make, and I\n"
+	.string "hope I succeeded in making it very\l"
+	.string "challenging, but not unbeatable.\p"
+	.string "Now to business: I've got a team of my\n"
+	.string "favorite Pokémon here and am ready to\l"
+	.string "battle.\p"
+	.string "If you win, I'll give you a Choice\n"
+	.string "Scarf, the most broken of the choice\l"
+	.string "items.\p"
+	.string "If this reward is worth it to you,\n"
+	.string "then say the word and we can battle.\l"
+	.string "What do you say?$"
+
+Iriv24_NotUnlockedYet::
+# 205 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Hi there, {PLAYER}, I am the creator of\n"
+	.string "this hack.\l"
+	.string "I hope you are enjoying it so far.\p"
+	.string "Since you've made it to here, I would\n"
+	.string "like to offer my sincere appreciation\l"
+	.string "to you for playing this game.\p"
+	.string "It was a lot of fun to make, and I\n"
+	.string "hope I succeeded in making it very\l"
+	.string "challenging, but not unbeatable.\p"
+	.string "Unfortunately, it looks like you're\n"
+	.string "still too green to fight me. Come back\l"
+	.string "when you have 8 badges.$"
+
 Iriv24_ReadyYet::
-# 160 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 220 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Want to battle now?$"
 
 Iriv24_ComeBackWhenReady::
-# 164 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 224 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Let me know when you want to battle.$"
 
 Iriv24_ExplainItems::
-# 168 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 228 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "There you go, as promised. Now, keep\n"
 	.string "moving forward! There are still plenty\l"
 	.string "of tough battles ahead, but if you've\l"
@@ -447,18 +574,18 @@ Iriv24_ExplainItems::
 	.string "good luck out there, {PLAYER}!$"
 
 Iriv24_Outro::
-# 178 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 238 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Looks like you've got a pretty good\n"
 	.string "team over there!$"
 
 PostBattle_Iriv24::
-# 183 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 243 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Can't believe I got beat in my own game,\n"
 	.string "definitely gonna give myself a cracked\l"
 	.string "team in the next version.$"
 
 Cap_Greeting::
-# 247 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 332 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "I was too lazy to send the creator a\n"
 	.string "script, so this is the nonsense I have\l"
 	.string "to say instead!\p"
@@ -471,31 +598,55 @@ Cap_Greeting::
 	.string "Choice Specs.\p"
 	.string "So we battling or what?$"
 
+Cap_GreetingHard::
+# 346 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "I was too lazy to send the creator a\n"
+	.string "script, so this is the nonsense I have\l"
+	.string "to say instead!\p"
+	.string "If you lose to me, it means you're a\n"
+	.string "literal gerber baby because this game\l"
+	.string "is easy.\p"
+	.string "If you manage to beat me, I'll give you\n"
+	.string "a set of Choice Specs.\p"
+	.string "So we battling or what?$"
+
+Cap_NotUnlockedYet::
+# 358 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "You don't even have 6 badges yet?!\n"
+	.string "This isn't kindergarten, come\l"
+	.string "back when you're worth fighting.$"
+
 Cap_ReadyYet::
-# 261 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 364 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Ready or what?$"
 
 Cap_ComeBackWhenReady::
-# 265 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 368 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Lame.$"
 
 Cap_ExplainItems::
-# 269 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 372 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Honestly the rewards for beating me\n"
 	.string "are goated, this was probably worth the\l"
 	.string "hassle.$"
 
+Cap_ExplainItemsHard::
+# 378 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Honestly the reward for beating me\n"
+	.string "are goated, this was probably worth the\l"
+	.string "hassle.$"
+
 Cap_Outro::
-# 275 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 384 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Looks like the team I constructed was\n"
 	.string "trash, better luck next hack I guess.$"
 
 PostBattle_Cap::
-# 281 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 390 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Back to.. doing nothing really.$"
 
 X_Greeting::
-# 343 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 477 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Yo! I was just about to have lunch on\n"
 	.string "my Torterra's back, but I guess that\l"
 	.string "can wait. Do you want to battle in the\l"
@@ -505,17 +656,35 @@ X_Greeting::
 	.string "the TM for Earthquake, and a Choice\l"
 	.string "Band. You in?$"
 
+X_GreetingHard::
+# 488 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Yo! I was just about to have lunch on\n"
+	.string "my Torterra's back, but I guess that\l"
+	.string "can wait. Do you want to battle in the\l"
+	.string "mean time?\p"
+	.string "If you can beat me, I'll give you\n"
+	.string "this Choice Band. You in?$"
+
+X_NotUnlockedYet::
+# 498 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "Yo! I was just about to have lunch on\n"
+	.string "my Torterra's back, but I guess that\l"
+	.string "can wait. Do you want to battle in the\l"
+	.string "mean time?\p"
+	.string "Oh, you haven't defeated Tate&Liza yet,\n"
+	.string "guess I got some time for lunch then.$"
+
 X_ReadyYet::
-# 354 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 507 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "You in now?$"
 
 X_ComeBackWhenReady::
-# 358 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 511 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "You know where to find me if you change\n"
 	.string "your mind.$"
 
 X_ExplainItems::
-# 363 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 516 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "This move Earthquake carried me\n"
 	.string "through many a Pearl run back in the\l"
 	.string "day.\p"
@@ -528,11 +697,25 @@ X_ExplainItems::
 	.string "Anyways, hope you like the Mega sprite,\n"
 	.string "I designed it myself!$"
 
+X_ExplainItemsHard::
+# 530 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+	.string "I wish I had a Choice Band during\n"
+	.string "my many Pearl runs back in the\l"
+	.string "day.\p"
+	.string "Though, this game should be a biiiit\n"
+	.string "more challenging (unless you use\l"
+	.string "Torterra because he's the GOAT, don't\l"
+	.string "let anyone else tell you otherwise).\p"
+	.string "What could be better than a picnic on\n"
+	.string "his back? Maybe a Starly in the tree.\p"
+	.string "Anyways, hope you like the Mega sprite,\n"
+	.string "I designed it myself!$"
+
 X_Outro::
-# 377 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 544 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "Well now you've gone and spoiled my\n"
 	.string "appetite...$"
 
 PostBattle_X::
-# 383 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
+# 550 "data/maps/FortreeCity_CreatorHouse/scripts.pory"
 	.string "... don't even deserve this sandwich...$"
