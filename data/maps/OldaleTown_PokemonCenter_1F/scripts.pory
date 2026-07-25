@@ -500,27 +500,26 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_GetWhiteOutCount{
 script OldDaleTown_PokemonCenter_EventScript_SecondNurse_ModeInfo{
 	msgbox(VersionNumber)
 
+	switch(var(VAR_GAME_SETTING_DIFFICULTY_MODE))
+	{
+		case GAME_SETTING_DIFFICULTY_VANILLA_MODE:
+			msgbox(VanillaMode)
+		case GAME_SETTING_DIFFICULTY_EASY_MODE:
+			msgbox(EasyMode)
+		case GAME_SETTING_DIFFICULTY_NORMAL_MODE:
+			msgbox(NormalMode)
+		case GAME_SETTING_DIFFICULTY_HARD_MODE:
+			msgbox(HardMode)
+		case GAME_SETTING_DIFFICULTY_HOF_MODE:
+			msgbox(HofMode)
+	}
 	if(flag(FLAG_MIN_GRINDING_MODE))
 	{
-		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
-		{
-			msgbox(EasyModeWithMgm)
-		}
-		else
-		{
-			msgbox(NormalModeWithMgm)
-		}
+		msgbox(MinimalGrindingOn)
 	}
 	else
 	{
-		if(var(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_EASY_MODE)
-		{
-			msgbox(EasyMode)
-		}
-		else
-		{
-			msgbox(NormalMode)
-		}
+		msgbox(MinimalGrindingOff)
 	}
 	msgbox("Randomizer options:")
 	if(flag(FLAG_RANDOMIZER_ENABLED))
@@ -640,7 +639,12 @@ text FeatureAvailableAfterMoveTutor
 
 text VersionNumber
 {
-	"Version: 1.3.1"
+	"Version: 2.0"
+}
+
+text VanillaMode
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Vanilla Mode"
 }
 
 text EasyMode
@@ -648,22 +652,33 @@ text EasyMode
 	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode"
 }
 
-text EasyModeWithMgm
-{
-	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Easy Mode\n"
-	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode"
-}
-
 text NormalMode
 {
 	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode"
 }
 
-text NormalModeWithMgm
+text HardMode
 {
-	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Normal Mode\n"
-	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}with {COLOR GREEN}{SHADOW LIGHT_GREEN}Minimal Grinding Mode"
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Hard Mode"
 }
+
+text HofMode
+{
+	"Difficulty: {COLOR GREEN}{SHADOW LIGHT_GREEN}Hall of Fame Mode"
+}
+
+text MinimalGrindingOn
+{
+	"Minimal Grinding Mode:\n"
+	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Enabled"
+}
+
+text MinimalGrindingOff
+{
+	"Minimal Grinding Mode:\n"
+	"{COLOR RED}{SHADOW LIGHT_RED}Disabled"
+}
+
 
 text LevelCapIncreasedTo
 {
