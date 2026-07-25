@@ -281,12 +281,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
    #if P_MEGA_EVOLUTIONS
     [SPECIES_LUXRAY_MEGA] =
     {
-        .baseHP        = 95,
+        .baseHP        = 80,
         .baseAttack    = 130,
-        .baseDefense   = 79,
+        .baseDefense   = 84,
         .baseSpeed     = 130,
         .baseSpAttack  = 110,
-        .baseSpDefense = 79,
+        .baseSpDefense = 89,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
         .catchRate = 45,
         .expYield = 262,
@@ -343,12 +343,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_TORTERRA_MEGA] =
     {
-        .baseHP        = 115, //+20
+        .baseHP        = 95, //+20
         .baseAttack    = 139, //+30
         .baseDefense   = 135, //+30
         .baseSpeed     = 56,
         .baseSpAttack  = 75,
-        .baseSpDefense = 105, //+20
+        .baseSpDefense = 125, //+20
         .types = MON_TYPES(TYPE_GRASS, TYPE_GROUND),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -494,6 +494,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .speciesName = _("Empoleon"),
         .cryId = CRY_EMPOLEON,
         .natDexNum = NATIONAL_DEX_EMPOLEON,
+        
         .categoryName = _("Emperor"),
         .height = 17,
         .weight = 1600,
@@ -752,7 +753,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = {ABILITY_PRANKSTER,  ABILITY_PRANKSTER,  ABILITY_THE_GRIPPER },
+        .abilities = {ABILITY_THE_GRIPPER,  ABILITY_THE_GRIPPER,  ABILITY_PRANKSTER },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Dusknoir"),
         .cryId = CRY_DUSKNOIR,
