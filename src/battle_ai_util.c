@@ -2882,7 +2882,8 @@ bool32 IsSupportMove(u32 move, u32 effect)
         return FALSE;
         
     return gMovesInfo[move].category == DAMAGE_CATEGORY_STATUS
-        || IsTrappingMove(move);
+        || IsTrappingMove(move)
+        || move == MOVE_FAKE_OUT;
 }
 
 static inline bool32 IsMoveSleepClauseTrigger(u32 move)
