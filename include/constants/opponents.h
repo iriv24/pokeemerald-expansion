@@ -816,9 +816,9 @@
 #define TRAINER_LUCY                        810
 #define TRAINER_BRANDON                     811
 #define TRAINER_ANDRES_2                    812
-#define TRAINER_ANDRES_3                    813
-#define TRAINER_ANDRES_4                    814
-#define TRAINER_ANDRES_5                    815
+#define TRAINER_BURMYKID                    813
+#define TRAINER_UNUSED_4                    814
+#define TRAINER_UNUSED_5                    815
 #define TRAINER_CORY_2                      816
 #define TRAINER_CORY_3                      817
 #define TRAINER_CORY_4                      818
