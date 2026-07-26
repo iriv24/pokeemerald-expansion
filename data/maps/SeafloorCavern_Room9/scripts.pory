@@ -67,7 +67,14 @@ SeafloorCavern_EventScript_Archie::
 	waitmovement 0
 	setvar VAR_LAST_TALKED, LOCALID_ARCHIE
 	setflag FLAG_HACKY_DOUBLE_BATTLE
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge SeafloorCavern_EventScript_ArchieSingle
 	trainerbattle_double TRAINER_ARCHIE, SeafloorCavern_Room9_Text_YouObstacle, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_EventScript_ArchieContinued
+	releaseall
+	end
+
+SeafloorCavern_EventScript_ArchieSingle::
+	trainerbattle_single TRAINER_ARCHIE_SFC_HC, SeafloorCavern_Room9_Text_YouObstacle, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_EventScript_ArchieContinued
 	releaseall
 	end
 

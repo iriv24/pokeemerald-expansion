@@ -51,9 +51,9 @@
 #define TRAINER_MASTA_JANES                  45
 #define TRAINER_FOSTER                       46
 #define TRAINER_DUSTY_2                      47
-#define TRAINER_UNUSED_6                     48
-#define TRAINER_UNUSED_7                     49
-#define TRAINER_UNUSED_8                     50
+#define TRAINER_ARCHIE_SFC_HC                48
+#define TRAINER_SIDNEY_DOUBLE_HC1            49
+#define TRAINER_SIDNEY_DOUBLE_HC2            50
 #define TRAINER_GABBY_AND_TY_1               51
 #define TRAINER_GABBY_AND_TY_2               52
 #define TRAINER_GABBY_AND_TY_3               53
