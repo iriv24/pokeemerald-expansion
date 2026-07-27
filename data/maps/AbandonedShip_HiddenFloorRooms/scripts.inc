@@ -332,3 +332,37 @@ AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash:
 	.string "It's bright and shiny!\n"
 # 167 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
 	.string "But it's just trash…$"
+
+AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis::
+# 173 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis_2
+AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis_1:
+# 179 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	releaseall
+	end
+
+AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis_2:
+# 175 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	msgbox OminousItem
+# 176 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, AbandonedShip_HiddenFloorRooms_BetterNotTouchThis
+# 177 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	waitmovement 0
+	goto AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis_1
+
+
+AbandonedShip_HiddenFloorRooms_BetterNotTouchThis::
+# 189 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	face_right
+# 190 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	walk_right
+# 191 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	step_end
+	return
+
+
+OminousItem::
+# 183 "data/maps/AbandonedShip_HiddenFloorRooms/scripts.pory"
+	.string "You feel an ominous energy coming from\n"
+	.string "this item…$"
