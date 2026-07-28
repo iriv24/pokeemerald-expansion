@@ -343,12 +343,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_TORTERRA_MEGA] =
     {
-        .baseHP        = 95, //+20
+        .baseHP        = 95, 
         .baseAttack    = 139, //+30
         .baseDefense   = 135, //+30
         .baseSpeed     = 56,
         .baseSpAttack  = 75,
-        .baseSpDefense = 125, //+20
+        .baseSpDefense = 125, //+40
         .types = MON_TYPES(TYPE_GRASS, TYPE_GROUND),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
