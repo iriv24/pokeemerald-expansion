@@ -7197,6 +7197,8 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
+    if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE)>=GAME_SETTING_DIFFICULTY_HARD_MODE)
+        return;
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE))
       && !gDexnavBattle)
     {
