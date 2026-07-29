@@ -629,6 +629,7 @@ script InsideOfTruck_EventScript_SaveSettingsDone {
 	{
 		setflag(FLAG_HIDE_NORMAL_MODE)
 	}
+	setflag(FLAG_HIDE_FOR_SCRIPTS)
 	releaseall
 	end
 }
