@@ -64,13 +64,13 @@ MagmaHideout_4F_EventScript_Maxie::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	setvar VAR_LAST_TALKED, LOCALID_MAXIE
-	setflag FLAG_HACKY_DOUBLE_BATTLE
+	setflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 	trainerbattle_double TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_NotEvenYou, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_EventScript_MaxieContinued
 	releaseall
 	end
 
 MagmaHideout_4F_EventScript_MaxieContinued::
-	clearflag FLAG_HACKY_DOUBLE_BATTLE
+	clearflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 	delay 30
 	setvar VAR_FOUGHT_AND_LOST_TO_BOSS, 2
 	addobject LOCALID_GROUDON

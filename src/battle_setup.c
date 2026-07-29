@@ -1217,7 +1217,7 @@ void SetMapVarsToTrainer(void)
         gSpecialVar_LastTalked = sTrainerObjectEventLocalId;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(sTrainerObjectEventLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     }
-    else if (FlagGet(FLAG_HACKY_DOUBLE_BATTLE))
+    else if (FlagGet(FLAG_HACKY_DOUBLE_BATTLE) || FlagGet(FLAG_HACKY_DOUBLE_BATTLE_WEATHER))
     {
         sTrainerObjectEventLocalId = gSpecialVar_LastTalked;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(sTrainerObjectEventLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);

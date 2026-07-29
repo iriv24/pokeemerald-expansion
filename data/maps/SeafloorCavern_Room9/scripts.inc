@@ -135,7 +135,7 @@ SeafloorCavern_EventScript_Archie::
 # 68 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_ARCHIE
 # 69 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	setflag FLAG_HACKY_DOUBLE_BATTLE
+	setflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 70 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	trainerbattle_double TRAINER_ARCHIE, SeafloorCavern_Room9_Text_YouObstacle, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_4F_Text_NotSurprised, SeafloorCavern_EventScript_ArchieContinued
 # 71 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -147,7 +147,7 @@ SeafloorCavern_EventScript_Archie::
 # 74 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_EventScript_ArchieContinued::
 # 75 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	clearflag FLAG_HACKY_DOUBLE_BATTLE
+	clearflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 76 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	delay 30
 # 77 "data/maps/SeafloorCavern_Room9/scripts.pory"
