@@ -10761,40 +10761,16 @@
         .party = TRAINER_PARTY(sParty_Andres2),
     },
 
-    [TRAINER_ANDRES_3] =
+    [TRAINER_BURMYKID] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Andres"),
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerName = _("Dank"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Andres3),
-    },
-
-    [TRAINER_ANDRES_4] =
-    {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Andres"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Andres4),
-    },
-
-    [TRAINER_ANDRES_5] =
-    {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Andres"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Andres5),
+        .party = TRAINER_PARTY(sParty_BurmyKid),
     },
 
     [TRAINER_CORY_2] =
