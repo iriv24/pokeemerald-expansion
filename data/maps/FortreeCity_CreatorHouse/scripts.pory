@@ -83,8 +83,25 @@ script FortreeCity_CreatorHouse_EventScript_Iriv24{
 	applymovement(3, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_IRIV24, FortreeCity_CreatorHouse_EventScript_Iriv24Defeated)
 	goto_if_set(FLAG_TEMP_1, FortreeCity_CreatorHouse_EventScript_Iriv24RequestBattleAgain)
-	msgbox(Iriv24_Greeting, MSGBOX_YESNO)
-	goto(FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt)
+
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		if(flag(FLAG_BADGE08_GET) == TRUE)
+		{
+			msgbox(Iriv24_GreetingHard, MSGBOX_YESNO)
+			goto(FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt)
+		}
+		else
+		{
+			msgbox(Iriv24_NotUnlockedYet)
+			release
+		}
+	}
+	else
+	{
+		msgbox(Iriv24_Greeting, MSGBOX_YESNO)
+		goto(FortreeCity_CreatorHouse_EventScript_BattleIriv24Prompt)
+	}
 	end
 }
 
@@ -123,11 +140,18 @@ script FortreeCity_CreatorHouse_EventScript_Iriv24Defeated{
 }
 
 script FortreeCity_CreatorHouse_EventScript_Iriv24GiveItems{
-	giveitem(ITEM_EMPOLEONITE_O)
-	giveitem(ITEM_BLASTOISINITE)
-	giveitem(ITEM_SWAMPERTITE)
-	giveitem(ITEM_TM_SUBSTITUTE)
-	giveitem(ITEM_CHOICE_SCARF)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_CHOICE_SCARF)
+	}
+	else
+	{
+		giveitem(ITEM_EMPOLEONITE_O)
+		giveitem(ITEM_BLASTOISINITE)
+		giveitem(ITEM_SWAMPERTITE)
+		giveitem(ITEM_TM_SUBSTITUTE)
+		giveitem(ITEM_CHOICE_SCARF)
+	}
 	msgbox(Iriv24_ExplainItems)
 	release
 	end
@@ -155,6 +179,42 @@ text Iriv24_Greeting{
 	"If those rewards are worth it to you,\n"
 	"then say the word and we can battle.\l"
 	"What do you say?"
+}
+
+text Iriv24_GreetingHard{
+	"Hi there, {PLAYER}, I am the creator of\n"
+	"this hack.\l"
+	"I hope you are enjoying it so far.\p"
+	"Since you've made it to here, I would\n"
+	"like to offer my sincere appreciation\l"
+	"to you for playing this game.\p"
+	"It was a lot of fun to make, and I\n"
+	"hope I succeeded in making it very\l"
+	"challenging, but not unbeatable.\p"
+	"Now to business: I've got a team of my\n"
+	"favorite Pokémon here and am ready to\l"
+	"battle.\p"
+	"If you win, I'll give you a Choice\n"
+	"Scarf, the most broken of the choice\l"
+	"items.\p"
+	"If this reward is worth it to you,\n"
+	"then say the word and we can battle.\l"
+	"What do you say?"
+}
+
+text Iriv24_NotUnlockedYet{
+	"Hi there, {PLAYER}, I am the creator of\n"
+	"this hack.\l"
+	"I hope you are enjoying it so far.\p"
+	"Since you've made it to here, I would\n"
+	"like to offer my sincere appreciation\l"
+	"to you for playing this game.\p"
+	"It was a lot of fun to make, and I\n"
+	"hope I succeeded in making it very\l"
+	"challenging, but not unbeatable.\p"
+	"Unfortunately, it looks like you're\n"
+	"still too green to fight me. Come back\l"
+	"when you have 8 badges."
 }
 
 text Iriv24_ReadyYet{
@@ -194,8 +254,25 @@ script FortreeCity_CreatorHouse_EventScript_Cap{
 	applymovement(2, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_CAP, FortreeCity_CreatorHouse_EventScript_CapDefeated)
 	goto_if_set(FLAG_TEMP_2, FortreeCity_CreatorHouse_EventScript_CapRequestBattleAgain)
-	msgbox(Cap_Greeting, MSGBOX_YESNO)
-	goto(FortreeCity_CreatorHouse_EventScript_BattleCapPrompt)
+
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		if(flag(FLAG_BADGE06_GET) == TRUE)
+		{
+			msgbox(Cap_GreetingHard, MSGBOX_YESNO)
+			goto(FortreeCity_CreatorHouse_EventScript_BattleCapPrompt)
+		}
+		else
+		{
+			msgbox(Cap_NotUnlockedYet)
+			release
+		}
+	}
+	else
+	{
+		msgbox(Cap_Greeting, MSGBOX_YESNO)
+		goto(FortreeCity_CreatorHouse_EventScript_BattleCapPrompt)
+	}
 	end
 }
 
@@ -234,12 +311,20 @@ script FortreeCity_CreatorHouse_EventScript_CapDefeated{
 }
 
 script FortreeCity_CreatorHouse_EventScript_CapGiveItems{
-	giveitem(ITEM_CHARIZARDITE_X)
-	giveitem(ITEM_CHARIZARDITE_Y)
-	giveitem(ITEM_INFERNAPITE)
-	giveitem(ITEM_TM_DRAGON_DANCE)
-	giveitem(ITEM_CHOICE_SPECS)
-	msgbox(Cap_ExplainItems)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_CHOICE_SPECS)
+		msgbox(Cap_ExplainItemsHard)
+	}
+	else
+	{
+		giveitem(ITEM_CHARIZARDITE_X)
+		giveitem(ITEM_CHARIZARDITE_Y)
+		giveitem(ITEM_INFERNAPITE)
+		giveitem(ITEM_TM_DRAGON_DANCE)
+		giveitem(ITEM_CHOICE_SPECS)
+		msgbox(Cap_ExplainItems)
+	}
 	release
 	end
 }
@@ -258,6 +343,24 @@ text Cap_Greeting{
 	"So we battling or what?"
 }
 
+text Cap_GreetingHard{
+	"I was too lazy to send the creator a\n"
+	"script, so this is the nonsense I have\l"
+	"to say instead!\p"
+	"If you lose to me, it means you're a\n"
+	"literal gerber baby because this game\l"
+	"is easy.\p"
+	"If you manage to beat me, I'll give you\n"
+	"a set of Choice Specs.\p"
+	"So we battling or what?"
+}
+
+text Cap_NotUnlockedYet{
+	"You don't even have 6 badges yet?!\n"
+	"This isn't kindergarten, come\l"
+	"back when you're worth fighting."
+}
+
 text Cap_ReadyYet{
 	"Ready or what?"
 }
@@ -268,6 +371,12 @@ text Cap_ComeBackWhenReady{
 
 text Cap_ExplainItems{
 	"Honestly the rewards for beating me\n"
+	"are goated, this was probably worth the\l"
+	"hassle."
+}
+
+text Cap_ExplainItemsHard{
+	"Honestly the reward for beating me\n"
 	"are goated, this was probably worth the\l"
 	"hassle."
 }
@@ -290,8 +399,25 @@ script FortreeCity_CreatorHouse_EventScript_X{
 	applymovement(1, Common_Movement_FacePlayer)
 	goto_if_defeated(TRAINER_X, FortreeCity_CreatorHouse_EventScript_XDefeated)
 	goto_if_set(FLAG_TEMP_3, FortreeCity_CreatorHouse_EventScript_XRequestBattleAgain)
-	msgbox(X_Greeting, MSGBOX_YESNO)
-	goto(FortreeCity_CreatorHouse_EventScript_BattleXPrompt)
+
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		if(flag(FLAG_BADGE07_GET) == TRUE)
+		{
+			msgbox(X_GreetingHard, MSGBOX_YESNO)
+			goto(FortreeCity_CreatorHouse_EventScript_BattleXPrompt)
+		}
+		else
+		{
+			msgbox(X_NotUnlockedYet)
+			release
+		}
+	}
+	else
+	{
+		msgbox(X_Greeting, MSGBOX_YESNO)
+		goto(FortreeCity_CreatorHouse_EventScript_BattleXPrompt)
+	}
 	end
 }
 
@@ -330,12 +456,20 @@ script FortreeCity_CreatorHouse_EventScript_XDefeated{
 }
 
 script FortreeCity_CreatorHouse_EventScript_XGiveItems{
-	giveitem(ITEM_TORTERRITE)
-	giveitem(ITEM_VENUSAURITE)
-	giveitem(ITEM_SCEPTILITE)
-	giveitem(ITEM_TM_EARTHQUAKE)
-	giveitem(ITEM_CHOICE_BAND)
-	msgbox(X_ExplainItems)
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		giveitem(ITEM_CHOICE_BAND)
+		msgbox(X_ExplainItemsHard)
+	}
+	else
+	{
+		giveitem(ITEM_TORTERRITE)
+		giveitem(ITEM_VENUSAURITE)
+		giveitem(ITEM_SCEPTILITE)
+		giveitem(ITEM_TM_EARTHQUAKE)
+		giveitem(ITEM_CHOICE_BAND)
+		msgbox(X_ExplainItems)
+	}
 	release
 	end
 }
@@ -351,6 +485,25 @@ text X_Greeting{
 	"Band. You in?"
 }
 
+text X_GreetingHard{
+	"Yo! I was just about to have lunch on\n"
+	"my Torterra's back, but I guess that\l"
+	"can wait. Do you want to battle in the\l"
+	"mean time?\p"
+	"If you can beat me, I'll give you\n"
+	"this Choice Band. You in?"
+}
+
+
+text X_NotUnlockedYet{
+	"Yo! I was just about to have lunch on\n"
+	"my Torterra's back, but I guess that\l"
+	"can wait. Do you want to battle in the\l"
+	"mean time?\p"
+	"Oh, you haven't defeated Tate&Liza yet,\n"
+	"guess I got some time for lunch then."
+}
+
 text X_ReadyYet{
 	"You in now?"
 }
@@ -363,6 +516,20 @@ text X_ComeBackWhenReady{
 text X_ExplainItems{
 	"This move Earthquake carried me\n"
 	"through many a Pearl run back in the\l"
+	"day.\p"
+	"Though, this game should be a biiiit\n"
+	"more challenging (unless you use\l"
+	"Torterra because he's the GOAT, don't\l"
+	"let anyone else tell you otherwise).\p"
+    "What could be better than a picnic on\n"
+    "his back? Maybe a Starly in the tree.\p"
+    "Anyways, hope you like the Mega sprite,\n"
+    "I designed it myself!"
+}
+
+text X_ExplainItemsHard{
+	"I wish I had a Choice Band during\n"
+	"my many Pearl runs back in the\l"
 	"day.\p"
 	"Though, this game should be a biiiit\n"
 	"more challenging (unless you use\l"
