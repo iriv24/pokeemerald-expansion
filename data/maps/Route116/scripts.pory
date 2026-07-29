@@ -394,10 +394,6 @@ Route116_EventScript_Devan::
 	msgbox Route116_Text_DevanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route116_EventScript_Johnson::
-	trainerbattle_single TRAINER_JOHNSON, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
-	msgbox Route116_Text_JohnsonPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route116_Text_ScoundrelMadeOffWithPeeko:
 	.string "Ohhh, what am I to do?\p"
@@ -649,3 +645,22 @@ text Come_Back_When_Ready{
 	"Come back when you're ready."
 }
 	
+
+script Route116_EventScript_Delibird{
+	lock
+	faceplayer
+	msgbox("Brr-eep!")
+	release
+	end
+}
+
+script Route116_EventScript_Johnson{
+	lock
+	faceplayer
+	msgbox("Realizing all the things that\n"
+	"I've lacked so far hurts…\p"
+	"But it's a good pain.")
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_QuestionMark)
+	release
+	end
+}
