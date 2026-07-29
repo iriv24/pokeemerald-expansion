@@ -141,3 +141,9 @@ EventScript_AccessPokemonBoxLinkLMenu::
 	waitstate
 	goto EventScript_TurnOffPCLMenu
 	end
+
+EventScript_ReturnPartyItemsLMenu::
+    msgbox PartyItemsReturned MSGBOX_SIGN
+    end
+PartyItemsReturned:
+    .string "Party items returned!{COLOR DARK_GRAY}$"

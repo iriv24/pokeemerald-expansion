@@ -4441,6 +4441,24 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                         effect++;
                     }
                     break;
+                case STARTING_STATUS_HEAVY_RAIN:
+                    if (!(gBattleWeather & B_WEATHER_RAIN_PRIMAL))
+                    {
+                        gBattleWeather = B_WEATHER_RAIN_PRIMAL;
+                        gBattleScripting.animArg1 = B_ANIM_RAIN_CONTINUES;
+                        gWeatherPtr->currWeather = WEATHER_DOWNPOUR;
+                        effect++;
+                    }
+                    break;
+                case STARTING_STATUS_HARSH_SUN:
+                    if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL))
+                    {
+                        gBattleWeather = B_WEATHER_SUN_PRIMAL;
+                        gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES;
+                        gWeatherPtr->currWeather = WEATHER_DROUGHT;
+                        effect++;
+                    }
+                    break;
                 }
             }
         }

@@ -189,6 +189,15 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 44,
+      "elevation": 0,
+      "var": "VAR_BEAT_RIVAL_BACK_TO_BACK",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_BackToBackTrigger"
     }
   ],
   "bg_events": [

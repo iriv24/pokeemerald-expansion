@@ -16350,14 +16350,10 @@ static const struct TrainerMon sParty_Andres2[] = {
     }
 };
 
-static const struct TrainerMon sParty_Andres3[] = {
+static const struct TrainerMon sParty_BurmyKid[] = {
     {
-    .lvl = 55,
-    .species = SPECIES_GIGALITH,
-    },
-    {
-    .lvl = 55,
-    .species = SPECIES_EXCADRILL,
+    .lvl = 1,
+    .species = SPECIES_BURMY_PLANT,
     }
 };
 

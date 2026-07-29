@@ -702,3 +702,76 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "It's hard to tell what you're like as\n"
 # 352 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
 	.string "a TRAINER from a LEAGUE BADGE.$"
+
+RustboroCity_PokemonSchool_EventScript_BurmyKid::
+# 357 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	lockall
+# 358 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+# 359 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto_if_set FLAG_TEMP_1, RustboroCity_PokemonSchool_EventScript_BurmyKidRequestBattleAgain
+# 360 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox BurmyKid_WillYouBattleMe, MSGBOX_YESNO
+# 361 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt
+	end
+
+
+RustboroCity_PokemonSchool_EventScript_BurmyKidRequestBattleAgain::
+# 366 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox Please_Fight, MSGBOX_YESNO
+# 367 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt
+	end
+
+
+RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt::
+# 372 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	call_if_eq VAR_RESULT, YES, RustboroCity_PokemonSchool_EventScript_BattleBurmyKid
+# 373 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, RustboroCity_PokemonSchool_EventScript_DeclineBurmyKidBattle
+# 374 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	closemessage
+	end
+
+
+RustboroCity_PokemonSchool_EventScript_BattleBurmyKid::
+# 379 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox RustboroCity_PokemonSchool_EventScript_BattleBurmyKid_Text_0, MSGBOX_DEFAULT
+# 380 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_BURMYKID, BurmyKid_Outro
+	return
+
+
+RustboroCity_PokemonSchool_EventScript_DeclineBurmyKidBattle::
+# 385 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	setflag FLAG_TEMP_1
+# 386 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	msgbox Come_On, MSGBOX_DEFAULT
+# 387 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	release
+	end
+
+
+RustboroCity_PokemonSchool_EventScript_BattleBurmyKid_Text_0:
+# 379 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Let's do this!$"
+
+BurmyKid_WillYouBattleMe::
+# 391 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "I delayed so long to get my\n"
+	.string "encounter and I got this Burmy…\p"
+	.string "Will you fight me so it can at\n"
+	.string "least change form please?$"
+
+Come_On::
+# 398 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Come on, I can't live with THIS.$"
+
+Please_Fight::
+# 402 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Please fight me!$"
+
+BurmyKid_Outro::
+# 406 "data/maps/RustboroCity_PokemonSchool/scripts.pory"
+	.string "Finally, Burmy's true form…$"

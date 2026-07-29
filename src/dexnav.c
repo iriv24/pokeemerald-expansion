@@ -1269,6 +1269,8 @@ static void DexNavGenerateMoveset(u16 species, u8 searchLevel, u8 encounterLevel
 
 static u16 DexNavGenerateHeldItem(u16 species, u8 searchLevel)
 {
+    if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE)>=GAME_SETTING_DIFFICULTY_HARD_MODE)
+        return ITEM_NONE;
     u16 randVal = Random() % 100;
     u8 searchLevelInfluence = searchLevel >> 1;
     u16 item1 = gSpeciesInfo[species].itemCommon;
