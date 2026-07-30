@@ -373,7 +373,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route116_EventScript_Johnson",
+      "script": "Route116_EventScript_Joshua",
       "flag": "0"
     },
     {
@@ -468,7 +468,7 @@
       "x": 50,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_CANDICEBEATSKID",
       "var_value": "0",
       "script": "Route116_EventScript_CandiceVsKid"
     }

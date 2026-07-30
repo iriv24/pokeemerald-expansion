@@ -95,7 +95,7 @@ struct TrainerMon
     u8 dynamaxLevel:4;
     u8 padding2:3;
     u16 preStatus;
-    u16 startingHP; //put a value from 1-100
+    u16 startingHP; // percentage of max HP to start with, from 1-100
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)

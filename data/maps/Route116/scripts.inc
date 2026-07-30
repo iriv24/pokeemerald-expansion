@@ -1025,7 +1025,7 @@ Route116_EventScript_Candice::
 # 516 "data/maps/Route116/scripts.pory"
 	applymovement LOCALID_CANDICE, Common_Movement_FacePlayer
 # 517 "data/maps/Route116/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_ICY_WIND, Route116_EventScript_CandiceDefeated
+	goto_if_defeated TRAINER_CANDICE, Route116_EventScript_CandiceDefeated
 # 518 "data/maps/Route116/scripts.pory"
 	goto_if_set FLAG_TEMP_1, Route116_EventScript_CandiceRequestBattleAgain
 # 519 "data/maps/Route116/scripts.pory"
@@ -1095,10 +1095,10 @@ Route116_EventScript_CandiceGiveIcyWind::
 	giveitem ITEM_TM_ICY_WIND
 # 571 "data/maps/Route116/scripts.pory"
 	msgbox Candice_ExplainIcyWindAndMuscleBand
+# 572 "data/maps/Route116/scripts.pory"
+	setflag FLAG_RECEIVED_TM_ICY_WIND
 Route116_EventScript_CandiceGiveIcyWind_1:
 # 574 "data/maps/Route116/scripts.pory"
-	setflag FLAG_RECEIVED_TM_ICY_WIND
-# 575 "data/maps/Route116/scripts.pory"
 	release
 	end
 
@@ -1110,28 +1110,150 @@ Route116_EventScript_CandiceGiveIcyWind_2:
 	goto Route116_EventScript_CandiceGiveIcyWind_1
 
 
-Route116_EventScript_Johnson::
+Route116_EventScript_Delibird::
+# 649 "data/maps/Route116/scripts.pory"
+	lock
+# 650 "data/maps/Route116/scripts.pory"
+	faceplayer
 # 651 "data/maps/Route116/scripts.pory"
-	msgbox Route116_EventScript_Johnson_Text_0
-# 654 "data/maps/Route116/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
-# 655 "data/maps/Route116/scripts.pory"
+	msgbox Route116_EventScript_Delibird_Text_0
+# 652 "data/maps/Route116/scripts.pory"
 	release
 	end
+
+
+Route116_EventScript_Joshua::
+# 657 "data/maps/Route116/scripts.pory"
+	lock
+# 658 "data/maps/Route116/scripts.pory"
+	faceplayer
+# 659 "data/maps/Route116/scripts.pory"
+	msgbox Route116_EventScript_Joshua_Text_0
+# 662 "data/maps/Route116/scripts.pory"
+	playse SE_PIN
+# 663 "data/maps/Route116/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+# 664 "data/maps/Route116/scripts.pory"
+	waitmovement 0
+# 665 "data/maps/Route116/scripts.pory"
+	release
+	end
+
+
+Route116_EventScript_CandiceVsKid::
+# 670 "data/maps/Route116/scripts.pory"
+	special SpawnCameraObject
+# 671 "data/maps/Route116/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerWalkRight
+# 672 "data/maps/Route116/scripts.pory"
+	waitmovement 0
+# 673 "data/maps/Route116/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Route116_Movement_PanToCandiceVsJoshua
+# 674 "data/maps/Route116/scripts.pory"
+	waitmovement 0
+# 675 "data/maps/Route116/scripts.pory"
+	msgbox JoshuaStunned, MSGBOX_DEFAULT
+# 676 "data/maps/Route116/scripts.pory"
+	waitmessage
+# 677 "data/maps/Route116/scripts.pory"
+	closemessage
+# 678 "data/maps/Route116/scripts.pory"
+	playse SE_PIN
+# 679 "data/maps/Route116/scripts.pory"
+	applymovement LOCALID_CANDICE, Common_Movement_WalkInPlaceFasterLeft
+# 680 "data/maps/Route116/scripts.pory"
+	waitmovement 0
+# 681 "data/maps/Route116/scripts.pory"
+	msgbox CandiceLesson, MSGBOX_DEFAULT
+# 682 "data/maps/Route116/scripts.pory"
+	waitmessage
+# 683 "data/maps/Route116/scripts.pory"
+	closemessage
+# 684 "data/maps/Route116/scripts.pory"
+	fadescreenspeed FADE_TO_BLACK, 4
+# 685 "data/maps/Route116/scripts.pory"
+	fadescreenspeed FADE_FROM_BLACK, 4
+# 686 "data/maps/Route116/scripts.pory"
+	msgbox CandiceLesson2, MSGBOX_DEFAULT
+# 687 "data/maps/Route116/scripts.pory"
+	waitmessage
+# 688 "data/maps/Route116/scripts.pory"
+	msgbox JoshuaShocked, MSGBOX_DEFAULT
+# 689 "data/maps/Route116/scripts.pory"
+	waitmessage
+# 690 "data/maps/Route116/scripts.pory"
+	closemessage
+# 691 "data/maps/Route116/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Route116_Movement_PanFromCandiceVsJoshua
+# 692 "data/maps/Route116/scripts.pory"
+	waitmovement 0
+# 693 "data/maps/Route116/scripts.pory"
+	special RemoveCameraObject
+# 694 "data/maps/Route116/scripts.pory"
+	setvar VAR_CANDICEBEATSKID, 1
+# 695 "data/maps/Route116/scripts.pory"
+	release
+	end
+
+
+PlayerWalkRight::
+# 726 "data/maps/Route116/scripts.pory"
+	face_right
+# 727 "data/maps/Route116/scripts.pory"
+	walk_right
+# 728 "data/maps/Route116/scripts.pory"
+	walk_right
+# 729 "data/maps/Route116/scripts.pory"
+	face_up
+# 730 "data/maps/Route116/scripts.pory"
+	step_end
+	return
+
+
+Route116_Movement_PanToCandiceVsJoshua::
+# 734 "data/maps/Route116/scripts.pory"
+	walk_slow_diag_northeast
+# 735 "data/maps/Route116/scripts.pory"
+	walk_slow_diag_northeast
+# 736 "data/maps/Route116/scripts.pory"
+	walk_slow_up
+# 737 "data/maps/Route116/scripts.pory"
+	walk_slow_up
+# 738 "data/maps/Route116/scripts.pory"
+	step_end
+	return
+
+
+Route116_Movement_PanFromCandiceVsJoshua::
+# 742 "data/maps/Route116/scripts.pory"
+	walk_slow_diag_southwest
+# 743 "data/maps/Route116/scripts.pory"
+	walk_slow_diag_southwest
+# 744 "data/maps/Route116/scripts.pory"
+	walk_slow_down
+# 745 "data/maps/Route116/scripts.pory"
+	walk_slow_down
+# 746 "data/maps/Route116/scripts.pory"
+	step_end
+	return
 
 
 Route116_EventScript_BattleCandice_Text_0:
 # 547 "data/maps/Route116/scripts.pory"
 	.string "Let's do this!$"
 
-Route116_EventScript_Johnson_Text_0:
+Route116_EventScript_Delibird_Text_0:
 # 651 "data/maps/Route116/scripts.pory"
+	.string "Brr-eep!$"
+
+Route116_EventScript_Joshua_Text_0:
+# 659 "data/maps/Route116/scripts.pory"
 	.string "Realizing all the things that\n"
 	.string "I've lacked so far hurts…\p"
 	.string "But it's a good pain.$"
 
 Candice_ExplainIcyWindAndMuscleBand::
-# 579 "data/maps/Route116/scripts.pory"
+# 578 "data/maps/Route116/scripts.pory"
 	.string "That Technical Machine, TM21,\n"
 	.string "contains Icy Wind.\p"
 	.string "It not only inflicts damage with a cold\n"
@@ -1147,7 +1269,7 @@ Candice_ExplainIcyWindAndMuscleBand::
 	.string "Attack if held!$"
 
 Candice_ExplainIcyWindAndMuscleBandHardMode::
-# 595 "data/maps/Route116/scripts.pory"
+# 594 "data/maps/Route116/scripts.pory"
 	.string "That Muscle Band will boost your\n"
 	.string "Attack if held!\p"
 	.string "What? Were you expecting a TM as well?\n"
@@ -1158,7 +1280,7 @@ Candice_ExplainIcyWindAndMuscleBandHardMode::
 	.string "even buy some items! Use it well!$"
 
 Candice_Greeting::
-# 606 "data/maps/Route116/scripts.pory"
+# 605 "data/maps/Route116/scripts.pory"
 	.string "Oh, hello. I'm Candice, the 7th Gym\n"
 	.string "Leader from the Sinnoh region.\p"
 	.string "I came to this Rustboro City to pay a\n"
@@ -1172,7 +1294,7 @@ Candice_Greeting::
 	.string "your first Gym challenge?$"
 
 Candice_WillYouBattleMe::
-# 620 "data/maps/Route116/scripts.pory"
+# 619 "data/maps/Route116/scripts.pory"
 	.string "Don't worry, I brought a team of lower-\n"
 	.string "level Pokémon, just in case I bumped\l"
 	.string "into any promising new trainers, so you\l"
@@ -1180,20 +1302,45 @@ Candice_WillYouBattleMe::
 	.string "What do you say we have a battle?$"
 
 Candice_Outro::
-# 628 "data/maps/Route116/scripts.pory"
+# 627 "data/maps/Route116/scripts.pory"
 	.string "Looks like the trainers here are\n"
 	.string "pretty strong! Please, take these\l"
 	.string "as rewards for beating me.$"
 
 PostBattle_Candice::
-# 635 "data/maps/Route116/scripts.pory"
+# 634 "data/maps/Route116/scripts.pory"
 	.string "It seems the quality of education here\n"
 	.string "in Hoenn is on par with ours in Sinnoh!$"
 
 Ready_Yet::
-# 640 "data/maps/Route116/scripts.pory"
+# 639 "data/maps/Route116/scripts.pory"
 	.string "Ready for our battle now?$"
 
 Come_Back_When_Ready::
-# 644 "data/maps/Route116/scripts.pory"
+# 643 "data/maps/Route116/scripts.pory"
 	.string "Come back when you're ready.$"
+
+JoshuaStunned::
+# 700 "data/maps/Route116/scripts.pory"
+	.string "Joshua: I-I…\p"
+	.string "Candice: That was a great fight! You're\n"
+	.string "showing a lot of promise!\p"
+	.string "Joshua: Quit making fun of me,\n"
+	.string "I couldn't do anything.$"
+
+CandiceLesson::
+# 708 "data/maps/Route116/scripts.pory"
+	.string "Candice: I would never make fun of\n"
+	.string "someone who gave it their all. You have\l"
+	.string "a good sense for tempo and you never\l"
+	.string "stopped trying till the end, but you\l"
+	.string "need to learn to evaluate your…$"
+
+CandiceLesson2::
+# 716 "data/maps/Route116/scripts.pory"
+	.string "… Then you'd have been able to take\n"
+	.string "that KO and reposition.$"
+
+JoshuaShocked::
+# 721 "data/maps/Route116/scripts.pory"
+	.string "Joshua:… Woah…$"
