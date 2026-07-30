@@ -965,25 +965,25 @@ DewfordTown_Gym_EventScript_Brawly::
 # 486 "data/maps/DewfordTown_Gym/scripts.pory"
 	msgbox DewfordTown_Gym_Text_BrawlyFirstTalk, MSGBOX_AUTOCLOSE
 # 487 "data/maps/DewfordTown_Gym/scripts.pory"
-	applymovement LOCALID_BRAWLY, DewfordTown_Gym_EventScript_BrawlyBreakRock
+	setobjectmovementtype LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT
 # 488 "data/maps/DewfordTown_Gym/scripts.pory"
-	applymovement LOCALID_HARIYAMA, DewfordTown_Gym_EventScript_HariyamaBreakRock
+	applymovement LOCALID_HARIYAMA, Common_Movement_FaceLeft
 # 489 "data/maps/DewfordTown_Gym/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_BRAWLY, DewfordTown_Gym_EventScript_BrawlyBreakRock
 # 490 "data/maps/DewfordTown_Gym/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_HARIYAMA, DewfordTown_Gym_EventScript_HariyamaBreakRock
 # 491 "data/maps/DewfordTown_Gym/scripts.pory"
-	delay 8
-# 492 "data/maps/DewfordTown_Gym/scripts.pory"
-	playmoncry SPECIES_HARIYAMA, CRY_MODE_ENCOUNTER
-# 493 "data/maps/DewfordTown_Gym/scripts.pory"
-	playse SE_BREAKABLE_DOOR
-# 494 "data/maps/DewfordTown_Gym/scripts.pory"
-	applymovement LOCALID_ROCKSMASHRIGHT, Movement_SmashRock
-# 495 "data/maps/DewfordTown_Gym/scripts.pory"
-	applymovement LOCALID_ROCKSMASHLEFT, Movement_SmashRock
-# 496 "data/maps/DewfordTown_Gym/scripts.pory"
 	waitmovement 0
+# 492 "data/maps/DewfordTown_Gym/scripts.pory"
+	delay 8
+# 493 "data/maps/DewfordTown_Gym/scripts.pory"
+	playmoncry SPECIES_HARIYAMA, CRY_MODE_ENCOUNTER
+# 494 "data/maps/DewfordTown_Gym/scripts.pory"
+	playse SE_BREAKABLE_DOOR
+# 495 "data/maps/DewfordTown_Gym/scripts.pory"
+	applymovement LOCALID_ROCKSMASHRIGHT, Movement_SmashRock
+# 496 "data/maps/DewfordTown_Gym/scripts.pory"
+	applymovement LOCALID_ROCKSMASHLEFT, Movement_SmashRock
 # 497 "data/maps/DewfordTown_Gym/scripts.pory"
 	waitmovement 0
 # 498 "data/maps/DewfordTown_Gym/scripts.pory"
@@ -997,44 +997,42 @@ DewfordTown_Gym_EventScript_Brawly::
 # 502 "data/maps/DewfordTown_Gym/scripts.pory"
 	waitmovement 0
 # 503 "data/maps/DewfordTown_Gym/scripts.pory"
-	waitmovement 0
+	setobjectmovementtype LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT
 # 504 "data/maps/DewfordTown_Gym/scripts.pory"
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
 # 505 "data/maps/DewfordTown_Gym/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_TM_LOW_SWEEP, DewfordTown_Gym_EventScript_GiveLowSweep2
 # 506 "data/maps/DewfordTown_Gym/scripts.pory"
-	release
-	end
-
-
-DewfordTown_Gym_EventScript_BrawlyPostBattle::
-# 523 "data/maps/DewfordTown_Gym/scripts.pory"
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_AUTOCLOSE
+	releaseall
 	end
 
 
 DewfordTown_Gym_EventScript_BrawlyBreakRock::
-# 528 "data/maps/DewfordTown_Gym/scripts.pory"
+# 511 "data/maps/DewfordTown_Gym/scripts.pory"
 	face_right
-# 529 "data/maps/DewfordTown_Gym/scripts.pory"
+# 512 "data/maps/DewfordTown_Gym/scripts.pory"
 	walk_in_place_faster_right
-# 530 "data/maps/DewfordTown_Gym/scripts.pory"
+# 513 "data/maps/DewfordTown_Gym/scripts.pory"
 	step_end
 	return
 
 
 DewfordTown_Gym_EventScript_HariyamaBreakRock::
-# 534 "data/maps/DewfordTown_Gym/scripts.pory"
-	face_left
-# 535 "data/maps/DewfordTown_Gym/scripts.pory"
+# 517 "data/maps/DewfordTown_Gym/scripts.pory"
 	walk_in_place_faster_left
-# 536 "data/maps/DewfordTown_Gym/scripts.pory"
+# 518 "data/maps/DewfordTown_Gym/scripts.pory"
 	step_end
 	return
 
 
+DewfordTown_Gym_EventScript_BrawlyPostBattle::
+# 533 "data/maps/DewfordTown_Gym/scripts.pory"
+	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
 DewfordTown_Gym_Text_BrawlyFirstTalk::
-# 511 "data/maps/DewfordTown_Gym/scripts.pory"
+# 521 "data/maps/DewfordTown_Gym/scripts.pory"
 	.string "I'm Brawly!\n"
 	.string "Dewford's Gym Leader!\p"
 	.string "I've been churned in the rough waves\n"

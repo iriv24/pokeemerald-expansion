@@ -484,9 +484,10 @@ script DewfordTown_Gym_EventScript_Brawly{
 	specialvar(VAR_RESULT, ShouldTryRematchBattle)
 	goto_if_eq(VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch)
 	msgbox(DewfordTown_Gym_Text_BrawlyFirstTalk, MSGBOX_AUTOCLOSE)
+	setobjectmovementtype(LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT)
+	applymovement(LOCALID_HARIYAMA, Common_Movement_FaceLeft)
 	applymovement(LOCALID_BRAWLY, DewfordTown_Gym_EventScript_BrawlyBreakRock)
 	applymovement(LOCALID_HARIYAMA, DewfordTown_Gym_EventScript_HariyamaBreakRock)
-	waitmovement(0)
 	waitmovement(0)
 	delay(8)
 	playmoncry(SPECIES_HARIYAMA, CRY_MODE_ENCOUNTER)
@@ -494,19 +495,28 @@ script DewfordTown_Gym_EventScript_Brawly{
 	applymovement(LOCALID_ROCKSMASHRIGHT, Movement_SmashRock)
 	applymovement(LOCALID_ROCKSMASHLEFT, Movement_SmashRock)
 	waitmovement(0)
-	waitmovement(0)
 	waitmoncry
 	delay(8)
 	applymovement(LOCALID_HARIYAMA, Common_Movement_FaceDown)
 	applymovement(LOCALID_BRAWLY, Common_Movement_FacePlayer)
 	waitmovement(0)
-	waitmovement(0)
+	setobjectmovementtype(LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT)
 	trainerbattle_single(TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC)
 	goto_if_unset(FLAG_RECEIVED_TM_LOW_SWEEP, DewfordTown_Gym_EventScript_GiveLowSweep2)
-	release
+	releaseall
 	end
 }
 
+script DewfordTown_Gym_EventScript_BrawlyBreakRock{
+	face_right
+	walk_in_place_faster_right
+	step_end
+}
+
+script DewfordTown_Gym_EventScript_HariyamaBreakRock{
+	walk_in_place_faster_left
+	step_end
+}
 
 text DewfordTown_Gym_Text_BrawlyFirstTalk{
 	"I'm Brawly!\n"
@@ -524,14 +534,3 @@ script DewfordTown_Gym_EventScript_BrawlyPostBattle{
 	end
 }
 
-script DewfordTown_Gym_EventScript_BrawlyBreakRock{
-	face_right
-	walk_in_place_faster_right
-	step_end
-}
-
-script DewfordTown_Gym_EventScript_HariyamaBreakRock{
-	face_left
-	walk_in_place_faster_left
-	step_end
-}
