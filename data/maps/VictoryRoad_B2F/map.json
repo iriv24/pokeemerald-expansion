@@ -23,7 +23,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "VictoryRoad_B2F_EventScript_Vito",
       "flag": "0"
     },
@@ -137,7 +137,60 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "VictoryRoad_B2F_EventScriptStrangeAura"
+    }
   ],
   "bg_events": [
     {

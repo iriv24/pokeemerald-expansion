@@ -214,3 +214,15 @@ VictoryRoad_B2F_Text_DiannePostBattle:
 	.string "You do have guts! I like that!\n"
 # 108 "data/maps/VictoryRoad_B2F/scripts.pory"
 	.string "Keep it going!$"
+
+VictoryRoad_B2F_EventScriptStrangeAura::
+# 113 "data/maps/VictoryRoad_B2F/scripts.pory"
+	msgbox VictoryRoad_B2F_EventScriptStrangeAura_Text_0, MSGBOX_AUTOCLOSE
+# 114 "data/maps/VictoryRoad_B2F/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	return
+
+
+VictoryRoad_B2F_EventScriptStrangeAura_Text_0:
+# 113 "data/maps/VictoryRoad_B2F/scripts.pory"
+	.string "A strange aura surrounds the area…$"

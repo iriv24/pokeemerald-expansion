@@ -108,3 +108,8 @@ VictoryRoad_B2F_Text_DiannePostBattle:
 	.string "Keep it going!$"
 
 `
+
+script VictoryRoad_B2F_EventScriptStrangeAura{
+	msgbox("A strange aura surrounds the area…", MSGBOX_AUTOCLOSE)
+	setvar(VAR_TEMP_0, 1)
+}
