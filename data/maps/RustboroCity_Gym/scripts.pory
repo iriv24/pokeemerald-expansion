@@ -1,20 +1,22 @@
 raw `
+.set LOCALID_JOSH, 2
+.set LOCALID_MARC, 4
+.set LOCALID_LARVITARKID, 6
+.set LOCALID_LOTADGIRL, 7
+.set LOCALID_LARVITAR, 8
+.set LOCALID_LOTAD, 9
+.set LOCALID_SCOTT, 10
+
 RustboroCity_Gym_MapScripts::
 	.byte 0
 
-RustboroCity_Gym_EventScript_Roxanne::
-	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
-	goto_if_unset FLAG_RECEIVED_TM_BULLDOZE, RustboroCity_Gym_EventScript_GiveBulldoze
-	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
-	release
-	end
-
 RustboroCity_Gym_EventScript_RoxanneDefeated::
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
-	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	applymovement LOCALID_SCOTT, RustboroCity_Gym_ScottLeaves
+	waitmovement 0
+	removeobject LOCALID_SCOTT
+	waitmessage
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
@@ -71,16 +73,13 @@ RustboroCity_Gym_EventScript_RoxanneRematch::
 
 RustboroCity_Gym_EventScript_Josh::
 	trainerbattle_single TRAINER_JOSH, RustboroCity_Gym_Text_JoshIntro, RustboroCity_Gym_Text_JoshDefeat
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_JoshPostRoxanne 
 	msgbox RustboroCity_Gym_Text_JoshPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-RustboroCity_Gym_EventScript_Tommy::
-	trainerbattle_single TRAINER_TOMMY, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
-	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 RustboroCity_Gym_EventScript_Marc::
 	trainerbattle_single TRAINER_MARC, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_MarcPostRoxanne 
 	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -189,18 +188,6 @@ RustboroCity_Gym_Text_JoshPostBattle:
 	.string "You haven't seen anything of the Rock\n"
 	.string "type's terrifying power!$"
 
-RustboroCity_Gym_Text_TommyIntro:
-	.string "If you can't beat me, you won't stand\n"
-	.string "a chance against Roxanne!$"
-
-RustboroCity_Gym_Text_TommyDefeat:
-	.string "Wow! You've got some potential!$"
-
-RustboroCity_Gym_Text_TommyPostBattle:
-	.string "Roxanne is stronger than me by\n"
-	.string "several times.\p"
-	.string "You'd better be on your guard!$"
-
 RustboroCity_Gym_Text_MarcIntro:
 	.string "We might be in the middle of town,\n"
 	.string "but so what?\p"
@@ -222,6 +209,8 @@ RustboroCity_Gym_Text_RoxanneIntro:
 	.string "I became a Gym Leader so that I might\n"
 	.string "apply what I learned at the Pokémon\l"
 	.string "Trainer's School in battle.\p"
+	.string "I tried to make this Gym a place for\n"
+	.string "new trainers to learn outside of school.\p"
 	.string "Would you kindly demonstrate how you\n"
 	.string "battle, and with which Pokémon?$"
 
@@ -322,3 +311,115 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 RustboroCity_Gym_Text_Nosepass:
 	.string "Nosepass: Bleleleh!$"
 `
+script RustboroCity_Gym_Lotad{
+	msgbox("Tud-ud!")
+	releaseall
+	end
+}
+
+script RustboroCity_Gym_Larvitar{
+	msgbox("Twi-uuh!")
+	releaseall
+	end
+}
+
+script RustboroCity_Gym_EventScript_LarvitarTrainer{
+	if(flag(FLAG_DEFEATED_RUSTBORO_GYM)==FALSE){
+		msgbox("Larvitar, hang in there!")
+	}
+	else
+	{
+		lock
+		faceplayer
+		msgbox("I hope I can be strong like you one day!")
+	}
+	releaseall
+	end
+}
+
+script RustboroCity_Gym_EventScript_LotadTrainer{
+	if(flag(FLAG_DEFEATED_RUSTBORO_GYM)==FALSE){
+		msgbox("Do they not teach type matchups in\n"
+		"school anymore?")
+	}
+	else
+	{
+		lock
+		faceplayer
+		msgbox("That was incredible!")
+	}
+	releaseall
+	end
+}
+
+script RustboroCity_Gym_EventScript_Roxanne{
+	goto_if_defeated(TRAINER_ROXANNE_1,RustboroCity_Gym_EventScript_RoxannePostBattle)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq(VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch)
+	fadescreen(FADE_TO_BLACK)
+	msgbox("...")
+	waitmessage
+	playse(SE_PIN)
+	playse(SE_PIN)
+	msgbox("Everyone! Roxanne's got a challenger!")
+	waitmessage
+	closemessage
+	addobject(LOCALID_SCOTT)
+	applymovement(LOCALID_LARVITARKID, RustboroCity_Gym_EventScript_FaceLeft)
+	applymovement(LOCALID_LARVITAR, RustboroCity_Gym_EventScript_FaceLeft)
+	applymovement(LOCALID_MARC, RustboroCity_Gym_EventScript_FaceUp)
+	applymovement (LOCALID_JOSH, RustboroCity_Gym_EventScript_FaceUp)
+	waitmovement(0)
+	setobjectxy(LOCALID_LARVITARKID, 9, 4)
+	setobjectxy(LOCALID_LARVITAR, 9,3)
+	setobjectxy(LOCALID_LOTADGIRL, 3, 4)
+	setobjectxy(LOCALID_LOTAD, 2, 4)
+	fadescreen(FADE_FROM_BLACK)
+	trainerbattle_single(TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_BULLDOZE, RustboroCity_Gym_EventScript_GiveBulldoze)
+	release
+	end
+}
+
+script RustboroCity_Gym_EventScript_RoxannePostBattle{
+	msgbox(RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script RustboroCity_Gym_ScottLeaves{
+	face_down
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	walk_right
+	face_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+}
+
+script RustboroCity_Gym_EventScript_FaceUp{
+	face_up
+	step_end
+}
+
+script RustboroCity_Gym_EventScript_FaceLeft{
+	face_left
+	step_end
+}
+
+script RustboroCity_Gym_EventScript_JoshPostRoxanne{
+	msgbox("No wonder you beat the pants off me!")
+	release
+	end
+}
+
+script RustboroCity_Gym_EventScript_MarcPostRoxanne{
+	msgbox("I never thought I'd see someone this\n"
+	 	"young beat Roxanne!")
+	release
+	end
+}

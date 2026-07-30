@@ -167,3 +167,26 @@ AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash:
 	.string "But it's just trash…$"
 
 `
+
+script AbandonedShip_HiddenFloorRooms_EventScript_BetterNotTouchThis
+{
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		msgbox(OminousItem)
+		applymovement(OBJ_EVENT_ID_PLAYER, AbandonedShip_HiddenFloorRooms_BetterNotTouchThis)
+		waitmovement(0)
+	}
+	releaseall
+	end
+}
+
+text OminousItem{
+	"You feel an ominous energy coming from\n"
+	"this item…"
+}
+
+script AbandonedShip_HiddenFloorRooms_BetterNotTouchThis{
+	face_right
+	walk_right
+	step_end
+}

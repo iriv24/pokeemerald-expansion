@@ -1296,7 +1296,7 @@
 #define FLAG_HIDE_NORMAL_MODE                                       0x4DA 
 #define FLAG_HIDE_HOF_MODE                                          0x4DB 
 #define FLAG_HACKY_DOUBLE_BATTLE_WEATHER                            0x4DC
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
+#define FLAG_HIDE_FOR_SCRIPTS                                       0x4DD
 #define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
 #define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
 #define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
