@@ -131,7 +131,7 @@ MagmaHideout_4F_EventScript_Maxie::
 # 66 "data/maps/MagmaHideout_4F/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_MAXIE
 # 67 "data/maps/MagmaHideout_4F/scripts.pory"
-	setflag FLAG_HACKY_DOUBLE_BATTLE
+	setflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 68 "data/maps/MagmaHideout_4F/scripts.pory"
 	trainerbattle_double TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_NotEvenYou, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_Text_MaxieDefeat, MagmaHideout_4F_EventScript_MaxieContinued
 # 69 "data/maps/MagmaHideout_4F/scripts.pory"
@@ -143,7 +143,7 @@ MagmaHideout_4F_EventScript_Maxie::
 # 72 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_EventScript_MaxieContinued::
 # 73 "data/maps/MagmaHideout_4F/scripts.pory"
-	clearflag FLAG_HACKY_DOUBLE_BATTLE
+	clearflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 74 "data/maps/MagmaHideout_4F/scripts.pory"
 	delay 30
 # 75 "data/maps/MagmaHideout_4F/scripts.pory"

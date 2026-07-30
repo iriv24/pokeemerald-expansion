@@ -52,6 +52,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/form_change_types.h"
 #include "ui_stat_editor.h"
 
 
@@ -70,6 +71,7 @@ enum
     MENU_ACTION_FOLLOWERS_OFF,
     MENU_ACTION_STAT_EDITOR,
     MENU_ACTION_POKEVIAL2,
+    MENU_ACTION_RETURNITEMS,
 };
 
 // IWRAM common
@@ -95,6 +97,7 @@ static bool8 LMenuInfiniteRepelCallback(void);
 static bool8 LMenuPokeVialCallback(void);
 static bool8 StartMenuStatEditorCallback(void);
 static bool8 LMenuPokeVial2Callback(void);
+static bool8 LMenuReturnItemsCallback(void);
 
 // Menu callbacks
 static bool8 HandleLMenuInput(void);
@@ -127,6 +130,7 @@ static const struct MenuAction sLMenuItems[] =
     [MENU_ACTION_FOLLOWERS_OFF]         = {gText_FollowersOff,  {.u8_void = LMenuFollowersCallback}},
     [MENU_ACTION_STAT_EDITOR]           = {gText_StatEditor, {.u8_void = StartMenuStatEditorCallback}},
     [MENU_ACTION_POKEVIAL2]             = {gText_MenuPokeVial2, {.u8_void = LMenuPokeVial2Callback}},
+    [MENU_ACTION_RETURNITEMS]           = {gText_MenuReturnItems,{.u8_void = LMenuReturnItemsCallback}},
 };
 
 // Local functions
@@ -150,6 +154,7 @@ static void HideLMenuWindowTimeChanger(void);
 static void HideLMenuWindowInfiniteRepel(void);
 static void HideLMenuWindowPokeVial(void);
 static void HideLMenuWindowPokeVial2(void);
+static void HideLMenuWindowReturnItems(void);
 static void HideLMenuWindowNoWildMons(void);
 static void ShowTimeWindow(void);
 static void RemoveLMenuTimeWindow(void);
@@ -211,6 +216,7 @@ static void BuildNormalLMenu(void)
         if(FlagGet(FLAG_ENTERED_ELITE_4) || VarGet(VAR_HOT_HOUSE_STATE) != 0)
         {
             AddLMenuAction(MENU_ACTION_POKEVIAL2);
+            AddLMenuAction(MENU_ACTION_RETURNITEMS);
         }
     }
 
@@ -384,6 +390,7 @@ static void BuildUnionRoomLMenu(void)
         if(FlagGet(FLAG_ENTERED_ELITE_4) || VarGet(VAR_HOT_HOUSE_STATE) != 0)
         {
             AddLMenuAction(MENU_ACTION_POKEVIAL2);
+            AddLMenuAction(MENU_ACTION_RETURNITEMS);
         }
     }
 
@@ -749,6 +756,8 @@ static bool8 ShouldCallbackFadeToBlack(void)
         return FALSE;
     if(gMenuCallback2 == LMenuPokeVial2Callback)
         return FALSE;
+    if(gMenuCallback2 == LMenuReturnItemsCallback)
+        return FALSE;
     if(gMenuCallback2 == LMenuPCCallback)
         return FALSE;
     
@@ -975,6 +984,50 @@ static void HideLMenuWindowPokeVial2(void)
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     ScriptContext_SetupScript(PokeVialHealScript2);
+}
+
+extern const u8 EventScript_ReturnPartyItemsLMenu[];
+
+static bool8 LMenuReturnItemsCallback(void)
+{
+    HideLMenuReturnItems(); // Hide start menu
+    return TRUE;
+}
+
+void HideLMenuReturnItems(void)
+{
+    PlaySE(SE_SELECT);
+    HideLMenuWindowReturnItems();
+}
+
+static void HideLMenuWindowReturnItems(void)
+{
+    u16 i;
+    u16 itemId;
+    u16 noneId = ITEM_NONE;
+    ClearStdWindowAndFrame(GetLMenuWindowId(), TRUE);
+    RemoveLMenuWindow();
+    RemoveLMenuTimeWindow();
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
+        && !GetMonData(&gPlayerParty[i], MON_DATA_MARKINGS))
+        {
+            itemId = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+            if (itemId != ITEM_NONE && AddBagItem(itemId, 1))
+            {
+                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &noneId);
+                u16 targetSpecies = GetFormChangeTargetSpecies(&gPlayerParty[i], FORM_CHANGE_ITEM_HOLD, 0);
+                if (targetSpecies != SPECIES_NONE)
+                {
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+            }
+        }
+    }
+    ScriptContext_SetupScript(EventScript_ReturnPartyItemsLMenu);
+}
 }
 
 extern const u8 EventScript_NoWildMonsFound[];

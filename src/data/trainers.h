@@ -413,6 +413,7 @@
             sParty_ArchieHideoutHard,    // HOF mode party (same as hard mode)
         },
         .additionalPartySizes = {5, 6, 6, 6},
+        .startingStatus = STARTING_STATUS_HEAVY_RAIN,
     },
     
     [TRAINER_ZANDER] =
@@ -6261,6 +6262,7 @@
             sParty_MaxieMagmaHideoutHard,    // HOF mode party (same as hard mode)
         },
         .additionalPartySizes = {5, 6, 6, 6},
+        .startingStatus = STARTING_STATUS_HARSH_SUN,
     },
 
     [TRAINER_MAXIE_MT_CHIMNEY] =

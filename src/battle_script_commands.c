@@ -10905,6 +10905,12 @@ static void Cmd_various(void)
              && IsBattlerAlive(i))
                 shouldNotClear = TRUE;
         }
+        
+        if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE && FlagGet(FLAG_HACKY_DOUBLE_BATTLE_WEATHER))
+        {
+            shouldNotClear = TRUE;
+        }
+
         if (gBattleWeather & B_WEATHER_SUN_PRIMAL && !shouldNotClear)
         {
             gBattleWeather &= ~B_WEATHER_SUN_PRIMAL;

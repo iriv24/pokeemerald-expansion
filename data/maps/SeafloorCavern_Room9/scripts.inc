@@ -135,7 +135,7 @@ SeafloorCavern_EventScript_Archie::
 # 68 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_ARCHIE
 # 69 "data/maps/SeafloorCavern_Room9/scripts.pory"
-	setflag FLAG_HACKY_DOUBLE_BATTLE
+	setflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 70 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 # 71 "data/maps/SeafloorCavern_Room9/scripts.pory"
@@ -147,7 +147,7 @@ SeafloorCavern_EventScript_Archie::
 # 74 "data/maps/SeafloorCavern_Room9/scripts.pory"
 	end
 # 75 "data/maps/SeafloorCavern_Room9/scripts.pory"
-
+	clearflag FLAG_HACKY_DOUBLE_BATTLE_WEATHER
 # 76 "data/maps/SeafloorCavern_Room9/scripts.pory"
 SeafloorCavern_EventScript_ArchieSingle::
 # 77 "data/maps/SeafloorCavern_Room9/scripts.pory"

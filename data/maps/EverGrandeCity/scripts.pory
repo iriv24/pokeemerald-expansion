@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_RIVAL, 1
+.set LOCALID_DAWN, 2
 .set LOCALID_VOLKNER, 3
 
 EverGrandeCity_MapScripts::
@@ -711,3 +713,184 @@ text PostBattle_Volkner{
 	"run my Gym for all I care."
 }
 	
+script EverGrandeCity_EventScript_BackToBackTrigger{
+	goto(EverGrandeCity_EventScript_BackToBackScene)
+	end
+}
+
+script EverGrandeCity_EventScript_BackToBackScene{
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+		lockall
+		playbgm(MUS_ENCOUNTER_MAY, FALSE)
+		playse(SE_PIN)
+		playse(SE_PIN)
+		applymovement(LOCALID_RIVAL, Common_Movement_ExclamationMark)
+		applymovement(LOCALID_DAWN, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+		applymovement(LOCALID_DAWN, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(RivalYoureHere)
+		waitmessage
+		applymovement(LOCALID_DAWN, EverGrandeCity_Movement_BackToBackDawnApproachPlayer)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, EverGrandeCity_LookAtDawn)
+		waitmovement(0)
+		msgbox(DawnApproach)
+		waitmessage
+		applymovement(OBJ_EVENT_ID_PLAYER, EverGrandeCity_LookAtRival)
+		waitmovement(0)
+		msgbox(RivalApproach)
+		waitmessage
+		playse(SE_PIN)
+		applymovement(LOCALID_DAWN, Common_Movement_ExclamationMark)
+		applymovement(OBJ_EVENT_ID_PLAYER, EverGrandeCity_LookAtDawn)
+		waitmovement(0)
+		msgbox(DawnMeFirst)
+		waitmessage
+		trainerbattle_no_intro(TRAINER_DAWN_EVERGRANDE, Dawn_OutroEvergrande)
+		msgbox(DawnPostBattle)
+		closemessage
+		applymovement(LOCALID_DAWN, DawnLost)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER, EverGrandeCity_LookAtRival)
+		waitmovement(0)
+		playse(SE_PIN)
+		applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+		waitmovement(0)
+		msgbox(RivalMyTurn)
+		waitmessage
+		checkplayergender
+		if (var(VAR_RESULT) == MALE)
+		{
+			switch (var(VAR_STARTER_MON))
+			{
+				case 0:
+					trainerbattle_no_intro(TRAINER_MAY_EVERGRANDE_TREECKO, EverGrandeCity_Text_MayDefeat)
+				case 1:
+					trainerbattle_no_intro(TRAINER_MAY_EVERGRANDE_TORCHIC, EverGrandeCity_Text_MayDefeat)
+				case 2:
+					trainerbattle_no_intro(TRAINER_MAY_EVERGRANDE_MUDKIP, EverGrandeCity_Text_MayDefeat)
+			}
+		}
+		else
+		{
+			switch (var(VAR_STARTER_MON))
+			{
+				case 0:
+					trainerbattle_no_intro(TRAINER_BRENDAN_EVERGRANDE_TREECKO, EverGrandeCity_Text_BrendanDefeat)
+				case 1:
+					trainerbattle_no_intro(TRAINER_BRENDAN_EVERGRANDE_TORCHIC, EverGrandeCity_Text_BrendanDefeat)
+				case 2:
+					trainerbattle_no_intro(TRAINER_BRENDAN_EVERGRANDE_MUDKIP, EverGrandeCity_Text_BrendanDefeat)
+			}
+		}
+		setvar(VAR_BEAT_RIVAL_BACK_TO_BACK, 1)
+		goto(EverGrandeCity_EventScript_RivalsFlyAway)
+	}
+	else
+	{
+		setvar(VAR_BEAT_RIVAL_BACK_TO_BACK, 1)
+	}
+	releaseall
+	end
+}
+
+	
+script EverGrandeCity_Movement_BackToBackDawnApproachPlayer{
+	walk_down
+	face_right
+	step_end
+}
+
+script EverGrandeCity_LookAtDawn{
+	face_left
+	step_end
+}
+
+script EverGrandeCity_LookAtRival{
+	face_up
+	step_end
+}
+
+script DawnLost {
+	face_up
+	walk_up
+	face_down
+	step_end
+}
+
+script RivalLost {
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+}
+
+text DelayForMaxie1 {
+	"Rival: Listen up, Courtney! We have\n"
+	"to do everything we can to stall\l"
+	"that brat!\p"
+	"We know {PLAYER} is on their way here\n"
+	"right now, and even though our coward\l"
+	"comrades quit on us, we need to buy\l"
+	"time for Maxie to capture Groudon!"
+}
+
+text RivalYoureHere {
+	"{RIVAL}: {PLAYER}! You're finally here!"
+}
+
+
+text DawnApproach{
+	"Dawn: Hey, {PLAYER}! After everything\n"
+	"that happened in Sootopolis, I called\l"
+	"up {RIVAL}, and we decided to meet up\l"
+	"here and wait for you."
+}
+
+text RivalApproach{
+	"{RIVAL}: Dawn told me about\n"
+	"everything that happened with Team\l"
+	"Aqua, Team Magma, and Drake!\p"
+	"I can't believe what he did, but I'm\n"
+	"more impressed with how you were able\l"
+	"to stop all of them by yourself!\p"
+	"It feels silly to even say this, but we\n"
+	"wanted to give you one final test\l"
+	"before you head into Victory Road!\p"
+	"We are rivals after all!\p"
+	"Don't worry, we won't go easy on\n"
+	"you hero, I know you'd hate that. So…\p"
+	"What do you say to one last battle?"
+}
+
+text DawnMeFirst{
+	"Dawn: Hey, no fair {RIVAL}! We agreed\n"
+	"I would go first!\p"
+	"{RIVAL}: Right, I got carried away…\n"
+	"I just can't wait to fight {PLAYER}!\p"
+	"Go ahead then, but leave some for me!\p"
+	"Dawn: I can't promise I will."
+}
+
+text DawnPostBattle{
+	"Dawn: I'd love to say I weakened you for\n"
+	"{RIVAL} but I doubt that's even true…\p"
+	"Haha… You really are something else.\n"
+	"I can't wait to go back home and tell\l"
+	"everyone about you!"
+}
+
+text RivalMyTurn{
+	"{RIVAL}: That got my blood pumping {PLAYER}!\p"
+	"Come at me with the same energy!"
+}
+
+script SetRivalsPermLoc {
+	setobjectxyperm(LOCALID_DAWN, 17, 43)
+	setobjectxyperm(LOCALID_RIVAL, 18, 43)
+	setobjectmovementtype(LOCALID_RIVAL, MOVEMENT_TYPE_FACE_DOWN)
+}
+

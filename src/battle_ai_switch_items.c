@@ -2016,11 +2016,12 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         gBattlerPartyIndexes[battler] = monIndex; // Rage Fist fix
         InitializeSwitchinCandidate(battler, &party[monIndex]);
 
-        // TODO - pull GetIncomingHealInfo from upstream?
-
         // While not really invalid per se, not really wise to switch into this mon
         if (AI_DATA->abilities[battler] == ABILITY_TRUANT && IsTruantMonVulnerable(battler, opposingBattler))
+        {
+            gBattlerPartyIndexes[battler] = storeCurrBattlerPartyIndex;
             continue;
+        }
 
         AI_DATA->switchInCalc = TRUE;
 
@@ -2041,17 +2042,23 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         {
             // Check that move has PP remaining before running calcs
             if (gBattleMons[battler].pp[moveIndex] < 1)
+            {
+                gBattlerPartyIndexes[battler] = storeCurrBattlerPartyIndex;
                 continue;
+            }
 
             if (IsDoubleBattle() && isFastKilldByPartner)
+            {
+                gBattlerPartyIndexes[battler] = storeCurrBattlerPartyIndex;
                 continue;
+            }
             
             aiMove = gBattleMons[battler].moves[moveIndex];
             aiMoveEffect = gMovesInfo[aiMove].effect;
             damageDealt = AI_GetDamage(battler, opposingBattler, moveIndex, AI_ATTACKING_IN_SWITCHIN_CALC, AI_DATA);
             hitsToKOPlayer = GetNoOfHitsToKOBattler(battler, opposingBattler, moveIndex, AI_ATTACKING_IN_SWITCHIN_CALC, CONSIDER_ENDURE);
             gBattlerPartyIndexes[battler] = storeCurrBattlerPartyIndex; // Rage Fist fix
-            
+
             // Offensive switchin decisions are based on which whether switchin moves first and whether it can win a 1v1
             isSwitchinFirst = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerMove, CONSIDER_PRIORITY);
             isSwitchinFirstPriority = AI_IsFaster(battler, opposingBattler, aiMove, bestPlayerPriorityMove, CONSIDER_PRIORITY);
@@ -2120,6 +2127,8 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         }
         if (hasSupportMove)
             supportMonIds |= (1u << monIndex);
+
+        gBattlerPartyIndexes[battler] = storeCurrBattlerPartyIndex;
     }
     AI_DATA->switchInCalc = FALSE;
 
@@ -2139,7 +2148,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         if (trapperIds != 0)                    return GetSwitchinCandidate(trapperIds, battler, lastId, switchType);
         else if (revengeKillerIds != 0)         return GetSwitchinCandidate(revengeKillerIds, battler, lastId, switchType);
         else if (slowRevengeKillerIds != 0)     return GetSwitchinCandidate(slowRevengeKillerIds, battler, lastId, switchType);
-        else if (supportMonIds != 0)             return GetSwitchinCandidate(supportMonIds, battler, lastId, switchType);
+        else if (supportMonIds != 0)            return GetSwitchinCandidate(supportMonIds, battler, lastId, switchType);
         else if (generic1v1MonIds != 0)         return GetSwitchinCandidate(generic1v1MonIds, battler, lastId, switchType);
         else if (damageMonIds != 0)             return getRandom ? GetSwitchinCandidate(damageMonIds, battler, lastId, switchType) : bestDamageMonId;
     }
@@ -2148,7 +2157,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         // Return Trapper > Type Matchup > Best Defensive > Healing Candidate > Baton Pass
         if (trapperIds != 0)                    return GetSwitchinCandidate(trapperIds, battler, lastId, switchType);
         else if (defensiveMonIds != 0)          return getRandom ? GetSwitchinCandidate(defensiveMonIds, battler, lastId, switchType) : bestDefensiveMonId;
-        else if (supportMonIds != 0)             return GetSwitchinCandidate(supportMonIds, battler, lastId, switchType);
+        else if (supportMonIds != 0)            return GetSwitchinCandidate(supportMonIds, battler, lastId, switchType);
         else if (generic1v1MonIds != 0)         return GetSwitchinCandidate(generic1v1MonIds, battler, lastId, switchType);
     }
 

@@ -42,6 +42,8 @@ extern const u8 EventScript_SprayWoreOff[];
 #define WILD_CHECK_REPEL    (1 << 0)
 #define WILD_CHECK_KEEN_EYE (1 << 1)
 
+#define WILD_MON_STARTING_HP_PERCENT 100
+
 #define HEADER_NONE 0xFFFF
 
 static u16 FeebasRandom(void);
@@ -392,6 +394,28 @@ u8 PickWildMonNature(void)
     return Random() % NUM_NATURES;
 }
 
+static void SetWildMonStartingHP(struct Pokemon *mon, u16 species)
+{
+    u16 maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+    u16 currentHp;
+    u8 hpPercent;
+
+    if (species == SPECIES_ZANGOOSE || species == SPECIES_SEVIPER)
+    {
+        hpPercent = (Random() % 100) + 1;
+        currentHp = (maxHp * hpPercent) / 100;
+    }
+    else
+    {
+        currentHp = (maxHp * WILD_MON_STARTING_HP_PERCENT) / 100;
+    }
+
+    if (currentHp == 0 && maxHp != 0)
+        currentHp = 1;
+
+    SetMonData(mon, MON_DATA_HP, &currentHp);
+}
+
 void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm = TRUE;
@@ -426,10 +450,12 @@ void CreateWildMon(u16 species, u8 level)
             gender = MON_FEMALE;
 
         CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, ivToMakeMon, gender, PickWildMonNature(), 0);
+        SetWildMonStartingHP(&gEnemyParty[0], species);
         return;
     }
 
     CreateMonWithNature(&gEnemyParty[0], species, level, ivToMakeMon, PickWildMonNature());
+    SetWildMonStartingHP(&gEnemyParty[0], species);
 }
 #ifdef BUGFIX
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)

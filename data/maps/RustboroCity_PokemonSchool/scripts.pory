@@ -352,3 +352,57 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "a TRAINER from a LEAGUE BADGE.$"
 
 `
+
+script RustboroCity_PokemonSchool_EventScript_BurmyKid{
+	lockall
+	applymovement(VAR_LAST_TALKED, Common_Movement_FacePlayer)
+	goto_if_set(FLAG_TEMP_1, RustboroCity_PokemonSchool_EventScript_BurmyKidRequestBattleAgain)
+	msgbox(BurmyKid_WillYouBattleMe, MSGBOX_YESNO)
+	goto(RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt)
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_BurmyKidRequestBattleAgain{
+	msgbox(Please_Fight, MSGBOX_YESNO)
+	goto(RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt)
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_BattleBurmyKidPrompt{
+	call_if_eq(VAR_RESULT, YES, RustboroCity_PokemonSchool_EventScript_BattleBurmyKid)
+	goto_if_eq(VAR_RESULT, NO, RustboroCity_PokemonSchool_EventScript_DeclineBurmyKidBattle)
+	closemessage
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_BattleBurmyKid{
+	msgbox("Let's do this!", MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_BURMYKID, BurmyKid_Outro)
+	return
+}
+
+script RustboroCity_PokemonSchool_EventScript_DeclineBurmyKidBattle {
+	setflag(FLAG_TEMP_1)
+	msgbox(Come_On, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text BurmyKid_WillYouBattleMe{
+	"I delayed so long to get my\n"
+	"encounter and I got this Burmy…\p"
+	"Will you fight me so it can at\n"
+	"least change form please?"
+}
+
+text Come_On{
+	"Come on, I can't live with THIS."
+}
+
+text Please_Fight{
+	"Please fight me!"
+}
+
+text BurmyKid_Outro{
+	"Finally, Burmy's true form…"
+}
