@@ -1226,14 +1226,10 @@ Route116_Movement_PanToCandiceVsJoshua::
 
 Route116_Movement_PanFromCandiceVsJoshua::
 # 742 "data/maps/Route116/scripts.pory"
-	walk_slow_diag_southwest
+	walk_slow_down
 # 743 "data/maps/Route116/scripts.pory"
-	walk_slow_diag_southwest
+	walk_slow_down
 # 744 "data/maps/Route116/scripts.pory"
-	walk_slow_down
-# 745 "data/maps/Route116/scripts.pory"
-	walk_slow_down
-# 746 "data/maps/Route116/scripts.pory"
 	step_end
 	return
 

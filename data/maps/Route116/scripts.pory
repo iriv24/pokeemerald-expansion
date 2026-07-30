@@ -739,8 +739,6 @@ script Route116_Movement_PanToCandiceVsJoshua{
 }
 
 script Route116_Movement_PanFromCandiceVsJoshua{
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
 	walk_slow_down
 	walk_slow_down
 	step_end
