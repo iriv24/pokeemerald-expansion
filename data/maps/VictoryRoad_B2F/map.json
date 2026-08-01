@@ -2,7 +2,7 @@
   "id": "MAP_VICTORY_ROAD_B2F",
   "name": "VictoryRoad_B2F",
   "layout": "LAYOUT_VICTORY_ROAD_B2F",
-  "music": "MUS_VICTORY_ROAD",
+  "music": "MUS_DP_OLD_CHATEAU",
   "region_map_section": "MAPSEC_VICTORY_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -32,7 +32,7 @@
       "x": 15,
       "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -49,14 +49,14 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "5",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "VictoryRoad_B2F_EventScript_Caroline",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
-      "x": 10,
-      "y": 26,
+      "x": 24,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "VictoryRoad_B2F_EventScript_Julie",
-      "flag": "0"
+      "flag": "FLAG_HIDE_NORMAL_MODE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 24,
-      "y": 18,
+      "x": 9,
+      "y": 24,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
