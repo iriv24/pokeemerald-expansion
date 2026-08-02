@@ -1580,6 +1580,16 @@ u16 ScriptGetPartyMonSpecies(void)
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
+void ChangePartyMonForm(void)
+{
+    u16 targetSpecies = gSpecialVar_0x8009;
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x800A];
+
+    SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+    TrySetDayLimitToFormChange(mon);
+    CalculateMonStats(mon);
+}
+
 u16 ScriptGetPartyMonLevel(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
@@ -2292,141 +2302,67 @@ void BufferBattleTowerElevatorFloors(void)
 #define tTaskId              data[15]
 // data[9] and [10] unused
 
-void ShowScrollableMultichoice(void)
-{
-    u8 taskId = CreateTask(Task_ShowScrollableMultichoice, 8);
-    struct Task *task = &gTasks[taskId];
-    task->tScrollMultiId = gSpecialVar_0x8004;
+static const u8 sText_ManiacGastrodonEast[] = _("EAST");
+static const u8 sText_ManiacGastrodonWest[] = _("WEST");
+static const u8 sText_ManiacSawsbuckSpring[] = _("SPRING");
+static const u8 sText_ManiacSawsbuckSummer[] = _("SUMMER");
+static const u8 sText_ManiacSawsbuckAutumn[] = _("AUTUMN");
+static const u8 sText_ManiacSawsbuckWinter[] = _("WINTER");
+static const u8 sText_ManiacKeldeoOrdinary[] = _("ORDINARY");
+static const u8 sText_ManiacKeldeoResolute[] = _("RESOLUTE");
+static const u8 sText_ManiacVivillonFancy[] = _("FANCY");
+static const u8 sText_ManiacVivillonPokeball[] = _("POKéBALL");
+static const u8 sText_ManiacFlorgesRed[] = _("RED");
+static const u8 sText_ManiacFlorgesYellow[] = _("YELLOW");
+static const u8 sText_ManiacFlorgesOrange[] = _("ORANGE");
+static const u8 sText_ManiacFlorgesBlue[] = _("BLUE");
+static const u8 sText_ManiacFlorgesWhite[] = _("WHITE");
+static const u8 sText_ManiacFurfrouNatural[] = _("NATURAL");
+static const u8 sText_ManiacFurfrouHeart[] = _("HEART");
+static const u8 sText_ManiacFurfrouStar[] = _("STAR");
+static const u8 sText_ManiacFurfrouDiamond[] = _("DIAMOND");
+static const u8 sText_ManiacFurfrouDebutante[] = _("DEBUTANTE");
+static const u8 sText_ManiacFurfrouMatron[] = _("MATRON");
+static const u8 sText_ManiacFurfrouDandy[] = _("DANDY");
+static const u8 sText_ManiacFurfrouLaReine[] = _("LA REINE");
+static const u8 sText_ManiacFurfrouKabuki[] = _("KABUKI");
+static const u8 sText_ManiacFurfrouPharaoh[] = _("PHARAOH");
+static const u8 sText_ManiacGourgeistAverage[] = _("AVERAGE");
+static const u8 sText_ManiacGourgeistSmall[] = _("SMALL");
+static const u8 sText_ManiacGourgeistLarge[] = _("LARGE");
+static const u8 sText_ManiacGourgeistSuper[] = _("SUPER");
+static const u8 sText_ManiacMiniorOrange[] = _("ORANGE");
+static const u8 sText_ManiacMiniorRed[] = _("RED");
+static const u8 sText_ManiacMiniorYellow[] = _("YELLOW");
+static const u8 sText_ManiacMiniorGreen[] = _("GREEN");
+static const u8 sText_ManiacMiniorBlue[] = _("BLUE");
+static const u8 sText_ManiacMiniorIndigo[] = _("INDIGO");
+static const u8 sText_ManiacMiniorViolet[] = _("VIOLET");
+static const u8 sText_ManiacMagearna[] = _("BASE");
+static const u8 sText_ManiacMagearnaOriginal[] = _("ORIGINAL");
+static const u8 sText_ManiacToxtricityAmped[] = _("AMPED");
+static const u8 sText_ManiacToxtricityLowKey[] = _("LOW-KEY");
+static const u8 sText_ManiacPolteageistPhony[] = _("PHONY");
+static const u8 sText_ManiacPolteageistAntique[] = _("ANTIQUE");
+static const u8 sText_ManiacAlcremieBerry[] = _("BERRY");
+static const u8 sText_ManiacAlcremieVanilla[] = _("VANILLA CREAM");
+static const u8 sText_ManiacAlcremieStrawberry[] = _("STRAWBERRY CREAM");
+static const u8 sText_ManiacZarude[] = _("BASE");
+static const u8 sText_ManiacZarudeDada[] = _("DADA");
+static const u8 sText_ManiacMausholdThree[] = _("THREE");
+static const u8 sText_ManiacMausholdFour[] = _("FOUR");
+static const u8 sText_ManiacSquawkabillyGreen[] = _("GREEN");
+static const u8 sText_ManiacSquawkabillyBlue[] = _("BLUE");
+static const u8 sText_ManiacSquawkabillyYellow[] = _("YELLOW");
+static const u8 sText_ManiacSquawkabillyWhite[] = _("WHITE");
+static const u8 sText_ManiacTatsugiriCurly[] = _("CURLY");
+static const u8 sText_ManiacTatsugiriDroopy[] = _("DROOPY");
+static const u8 sText_ManiacTatsugiriStretchy[] = _("STRETCHY");
+static const u8 sText_ManiacDudunsparceTwo[] = _("TWO SEGMENT");
+static const u8 sText_ManiacDudunsparceThree[] = _("THREE SEGMENT");
+static const u8 sText_ManiacSinistchaUnremarkable[] = _("UNREMARKABLE");
+static const u8 sText_ManiacSinistchaMasterpiece[] = _("MASTERPIECE");
 
-    switch (gSpecialVar_0x8004)
-    {
-    case SCROLL_MULTI_NONE:
-        task->tMaxItemsOnScreen = 1;
-        task->tNumItems = 1;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 1;
-        task->tHeight = 1;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
-        task->tNumItems = 8;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 9;
-        task->tHeight = 10;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_POKEMON_FAN_CLUB_RATER:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 12;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 8;
-        task->tLeft = 14;
-        task->tTop = 1;
-        task->tWidth = 15;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 15;
-        task->tLeft = 14;
-        task->tTop = 1;
-        task->tWidth = 15;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 12;
-        task->tLeft = 14;
-        task->tTop = 1;
-        task->tWidth = 15;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 8;
-        task->tLeft = 14;
-        task->tTop = 1;
-        task->tWidth = 15;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BERRY_POWDER_VENDOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 12;
-        task->tLeft = 15;
-        task->tTop = 1;
-        task->tWidth = 14;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_RECEPTIONIST:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 10;
-        task->tLeft = 17;
-        task->tTop = 1;
-        task->tWidth = 11;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BF_MOVE_TUTOR_1:
-    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 11;
-        task->tLeft = 15;
-        task->tTop = 1;
-        task->tWidth = 14;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_SS_TIDAL_DESTINATION:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
-        task->tLeft = 19;
-        task->tTop = 1;
-        task->tWidth = 10;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_BATTLE_TENT_RULES:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
-        task->tLeft = 17;
-        task->tTop = 1;
-        task->tWidth = 12;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    default:
-        gSpecialVar_Result = MULTI_B_PRESSED;
-        DestroyTask(taskId);
-        break;
-    }
-}
 
 static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] =
 {
@@ -2590,8 +2526,315 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_GASTRODON_FORM] =
+    {
+        sText_ManiacGastrodonEast,
+        sText_ManiacGastrodonWest,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_SAWSBUCK_FORM] =
+    {
+        sText_ManiacSawsbuckSpring,
+        sText_ManiacSawsbuckSummer,
+        sText_ManiacSawsbuckAutumn,
+        sText_ManiacSawsbuckWinter,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_KELDEO_FORM] =
+    {
+        sText_ManiacKeldeoOrdinary,
+        sText_ManiacKeldeoResolute,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_VIVILLON_FORM] =
+    {
+        sText_ManiacVivillonFancy,
+        sText_ManiacVivillonPokeball,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_FLORGES_FORM] =
+    {
+        sText_ManiacFlorgesRed,
+        sText_ManiacFlorgesYellow,
+        sText_ManiacFlorgesOrange,
+        sText_ManiacFlorgesBlue,
+        sText_ManiacFlorgesWhite,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_FURFROU_FORM] =
+    {
+        sText_ManiacFurfrouNatural,
+        sText_ManiacFurfrouHeart,
+        sText_ManiacFurfrouStar,
+        sText_ManiacFurfrouDiamond,
+        sText_ManiacFurfrouDebutante,
+        sText_ManiacFurfrouMatron,
+        sText_ManiacFurfrouDandy,
+        sText_ManiacFurfrouLaReine,
+        sText_ManiacFurfrouKabuki,
+        sText_ManiacFurfrouPharaoh,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_GOURGEIST_FORM] =
+    {
+        sText_ManiacGourgeistAverage,
+        sText_ManiacGourgeistSmall,
+        sText_ManiacGourgeistLarge,
+        sText_ManiacGourgeistSuper,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_MINIOR_FORM] =
+    {
+        sText_ManiacMiniorOrange,
+        sText_ManiacMiniorRed,
+        sText_ManiacMiniorYellow,
+        sText_ManiacMiniorGreen,
+        sText_ManiacMiniorBlue,
+        sText_ManiacMiniorIndigo,
+        sText_ManiacMiniorViolet,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_MAGEARNA_FORM] =
+    {
+        sText_ManiacMagearna,
+        sText_ManiacMagearnaOriginal,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_TOXTRICITY_FORM] =
+    {
+        sText_ManiacToxtricityAmped,
+        sText_ManiacToxtricityLowKey,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_POLTEAGEIST_FORM] =
+    {
+        sText_ManiacPolteageistPhony,
+        sText_ManiacPolteageistAntique,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_ALCREMIE_FORM] =
+    {
+        sText_ManiacAlcremieBerry,
+        sText_ManiacAlcremieVanilla,
+        sText_ManiacAlcremieStrawberry,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_ZARUDE_FORM] =
+    {
+        sText_ManiacZarude,
+        sText_ManiacZarudeDada,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_MAUSHOLD_FORM] =
+    {
+        sText_ManiacMausholdThree,
+        sText_ManiacMausholdFour,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_SQUAWKABILLY_FORM] =
+    {
+        sText_ManiacSquawkabillyGreen,
+        sText_ManiacSquawkabillyBlue,
+        sText_ManiacSquawkabillyYellow,
+        sText_ManiacSquawkabillyWhite,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_TATSUGIRI_FORM] =
+    {
+        sText_ManiacTatsugiriCurly,
+        sText_ManiacTatsugiriDroopy,
+        sText_ManiacTatsugiriStretchy,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM] =
+    {
+        sText_ManiacDudunsparceTwo,
+        sText_ManiacDudunsparceThree,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MANIAC_SINISTCHA_FORM] =
+    {
+        sText_ManiacSinistchaUnremarkable,
+        sText_ManiacSinistchaMasterpiece,
+        gText_Exit
     }
 };
+
+void ShowScrollableMultichoice(void)
+{
+    u8 taskId = CreateTask(Task_ShowScrollableMultichoice, 8);
+    struct Task *task = &gTasks[taskId];
+    task->tScrollMultiId = gSpecialVar_0x8004;
+
+    switch (gSpecialVar_0x8004)
+    {
+    case SCROLL_MULTI_NONE:
+        task->tMaxItemsOnScreen = 1;
+        task->tNumItems = 1;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 1;
+        task->tHeight = 1;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
+        task->tNumItems = 8;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 9;
+        task->tHeight = 10;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_POKEMON_FAN_CLUB_RATER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_BUFF_ITEM_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_DEFENSE_ITEM_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 15;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_OFFENSE_ITEM_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_UTILITY_ITEM_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BERRY_POWDER_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_RECEPTIONIST:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 17;
+        task->tTop = 1;
+        task->tWidth = 11;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_MOVE_TUTOR_1:
+    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SS_TIDAL_DESTINATION:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 19;
+        task->tTop = 1;
+        task->tWidth = 10;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BATTLE_TENT_RULES:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 17;
+        task->tTop = 1;
+        task->tWidth = 12;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_MANIAC_GASTRODON_FORM:
+    case SCROLL_MULTI_MANIAC_SAWSBUCK_FORM:
+    case SCROLL_MULTI_MANIAC_KELDEO_FORM:
+    case SCROLL_MULTI_MANIAC_VIVILLON_FORM:
+    case SCROLL_MULTI_MANIAC_FLORGES_FORM:
+    case SCROLL_MULTI_MANIAC_FURFROU_FORM:
+    case SCROLL_MULTI_MANIAC_GOURGEIST_FORM:
+    case SCROLL_MULTI_MANIAC_MINIOR_FORM:
+    case SCROLL_MULTI_MANIAC_MAGEARNA_FORM:
+    case SCROLL_MULTI_MANIAC_TOXTRICITY_FORM:
+    case SCROLL_MULTI_MANIAC_POLTEAGEIST_FORM:
+    case SCROLL_MULTI_MANIAC_ALCREMIE_FORM:
+    case SCROLL_MULTI_MANIAC_ZARUDE_FORM:
+    case SCROLL_MULTI_MANIAC_MAUSHOLD_FORM:
+    case SCROLL_MULTI_MANIAC_SQUAWKABILLY_FORM:
+    case SCROLL_MULTI_MANIAC_TATSUGIRI_FORM:
+    case SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM:
+    case SCROLL_MULTI_MANIAC_SINISTCHA_FORM:
+    {
+        u32 count = 0;
+        u32 visible;
+        while (count < MAX_SCROLL_MULTI_LENGTH
+            && sScrollableMultichoiceOptions[gSpecialVar_0x8004][count] != NULL)
+            count++;
+
+        visible = (count < MAX_SCROLL_MULTI_ON_SCREEN) ? count : MAX_SCROLL_MULTI_ON_SCREEN;
+
+        task->tMaxItemsOnScreen = visible;
+        task->tNumItems = count;
+        task->tLeft = 23;
+        // Each menu row takes 2 tiles; window frame adds 2 tiles.
+        // tTop pushes the window down so short lists don't float near the top.
+        task->tHeight = (visible * 2);
+        task->tTop = 13 - task->tHeight;
+        task->tWidth = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    }
+    default:
+        gSpecialVar_Result = MULTI_B_PRESSED;
+        DestroyTask(taskId);
+        break;
+    }
+}
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
 {
