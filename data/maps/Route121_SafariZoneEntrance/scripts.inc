@@ -794,8 +794,10 @@ Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm::
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm_1:
 # 391 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	closemessage
 # 392 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 393 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
@@ -816,357 +818,363 @@ Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm_5:
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonEast::
-# 397 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GASTRODON_EAST
 # 398 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
+	setvar VAR_0x8009, SPECIES_GASTRODON_EAST
 # 399 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	special ChangePartyMonForm
 # 400 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 401 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 402 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonWest::
-# 405 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GASTRODON_WEST
-# 406 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
 # 407 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	setvar VAR_0x8009, SPECIES_GASTRODON_WEST
 # 408 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 409 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 410 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 411 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm::
-# 413 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 414 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 415 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_SAWSBUCK_FORM
 # 416 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
 # 417 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
+	waitmessage
 # 418 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_SAWSBUCK_FORM
 # 419 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_3
+	special ShowScrollableMultichoice
+# 420 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
 # 421 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 422 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_3
+# 424 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_4
-# 423 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 426 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_5
-# 425 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 428 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_6
-# 427 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 430 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_7
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1:
-# 430 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 433 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 434 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 431 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 435 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_3:
-# 420 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 423 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_4:
-# 422 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 425 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_5:
-# 424 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 427 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_6:
-# 426 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 429 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckWinter
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_7:
-# 428 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 431 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring::
-# 436 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 440 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SAWSBUCK_SPRING
-# 437 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 441 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 438 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 442 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 443 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 439 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 444 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer::
-# 444 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 449 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SAWSBUCK_SUMMER
-# 445 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 450 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 446 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 451 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 452 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 447 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 453 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn::
-# 452 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 458 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SAWSBUCK_AUTUMN
-# 453 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 459 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 454 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 460 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 461 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 455 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 462 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckWinter::
-# 460 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 467 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SAWSBUCK_WINTER
-# 461 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 468 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 462 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 469 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 470 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 463 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 471 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm::
-# 468 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 469 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 470 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_KELDEO_FORM
-# 471 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 472 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 473 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 474 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_3
 # 476 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_4
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 477 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
 # 478 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_KELDEO_FORM
+# 479 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 480 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 481 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 482 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_3
+# 484 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_4
+# 486 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_1:
-# 481 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 489 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 490 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 482 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 491 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_3:
-# 475 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 483 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_4:
-# 477 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 485 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoResolute
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_5:
-# 479 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 487 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary::
-# 487 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 496 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_KELDEO_ORDINARY
-# 488 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 497 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 489 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 498 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 499 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 490 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 500 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoResolute::
-# 495 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 505 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_KELDEO_RESOLUTE
-# 496 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 506 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 497 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 507 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 508 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 498 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 509 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm::
-# 503 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 514 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 504 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 515 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 505 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 516 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_VIVILLON_FORM
-# 506 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 517 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 507 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 518 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 508 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 519 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 509 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 520 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_3
-# 511 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 522 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_4
-# 513 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 524 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_1:
-# 516 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 527 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 528 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 517 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 529 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_3:
-# 510 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 521 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_4:
-# 512 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 523 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonPokeball
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_5:
-# 514 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 525 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy::
-# 522 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 534 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_VIVILLON_FANCY
-# 523 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 535 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 524 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 536 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 537 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 525 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 538 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonPokeball::
-# 530 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 543 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_VIVILLON_POKEBALL
-# 531 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 544 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 532 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 545 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 546 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 533 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 547 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm::
-# 538 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 539 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 540 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_FLORGES_FORM
-# 541 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 542 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 543 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 544 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_3
-# 546 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_4
-# 548 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_5
-# 550 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_6
 # 552 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 4, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_7
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 553 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
 # 554 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_FLORGES_FORM
+# 555 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 556 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 557 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 558 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_3
+# 560 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_4
+# 562 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_5
+# 564 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_6
+# 566 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 4, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_7
+# 568 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_8
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1:
-# 557 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 571 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 572 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 558 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 573 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_3:
-# 545 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 559 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_4:
-# 547 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 561 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_5:
-# 549 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 563 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_6:
-# 551 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 565 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_7:
-# 553 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 567 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesWhite
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_8:
-# 555 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 569 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed::
-# 563 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 578 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FLORGES_RED
-# 564 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 565 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 566 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow::
-# 571 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FLORGES_YELLOW
-# 572 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 573 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 574 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange::
 # 579 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FLORGES_ORANGE
-# 580 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
+# 580 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
 # 581 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 582 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -1174,193 +1182,197 @@ Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange::
 	end
 
 
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue::
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow::
 # 587 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FLORGES_BLUE
+	setvar VAR_0x8009, SPECIES_FLORGES_YELLOW
 # 588 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
 # 589 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	closemessage
 # 590 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 591 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange::
+# 596 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_FLORGES_ORANGE
+# 597 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 598 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 599 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 600 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue::
+# 605 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_FLORGES_BLUE
+# 606 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 607 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 608 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 609 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesWhite::
-# 595 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 614 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FLORGES_WHITE
-# 596 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 615 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 597 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 616 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 617 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 598 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 618 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm::
-# 603 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 604 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 605 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_FURFROU_FORM
-# 606 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 607 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 608 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 609 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_3
-# 611 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_4
-# 613 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_5
-# 615 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_6
-# 617 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 4, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_7
-# 619 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 5, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_8
-# 621 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 6, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_9
 # 623 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 7, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_10
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 624 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
 # 625 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 8, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_11
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_FURFROU_FORM
+# 626 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
 # 627 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 9, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_12
+	waitstate
+# 628 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
 # 629 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_3
+# 631 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_4
+# 633 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_5
+# 635 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_6
+# 637 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 4, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_7
+# 639 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 5, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_8
+# 641 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 6, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_9
+# 643 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 7, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_10
+# 645 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 8, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_11
+# 647 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 9, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_12
+# 649 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_13
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1:
-# 632 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 652 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 653 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 633 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 654 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_3:
-# 610 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 630 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_4:
-# 612 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 632 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_5:
-# 614 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 634 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_6:
-# 616 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 636 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_7:
-# 618 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 638 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_8:
-# 620 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 640 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_9:
-# 622 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 642 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_10:
-# 624 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 644 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_11:
-# 626 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 646 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_12:
-# 628 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 648 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouPharaoh
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_13:
-# 630 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 650 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural::
-# 638 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 659 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_NATURAL
-# 639 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 660 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 640 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 661 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 662 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 641 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 663 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart::
-# 646 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 668 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_HEART_TRIM
-# 647 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 669 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 648 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 670 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 671 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 649 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 672 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar::
-# 654 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 677 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_STAR_TRIM
-# 655 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 656 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 657 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond::
-# 662 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FURFROU_DIAMOND_TRIM
-# 663 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 664 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 665 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante::
-# 670 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FURFROU_DEBUTANTE_TRIM
-# 671 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 672 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 673 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron::
 # 678 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FURFROU_MATRON_TRIM
-# 679 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
+# 679 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
 # 680 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 681 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -1368,115 +1380,97 @@ Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron::
 	end
 
 
-Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy::
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond::
 # 686 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_FURFROU_DANDY_TRIM
+	setvar VAR_0x8009, SPECIES_FURFROU_DIAMOND_TRIM
 # 687 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
 # 688 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	closemessage
 # 689 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 690 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante::
+# 695 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_FURFROU_DEBUTANTE_TRIM
+# 696 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 697 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 698 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 699 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron::
+# 704 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_FURFROU_MATRON_TRIM
+# 705 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 706 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 707 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 708 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy::
+# 713 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_FURFROU_DANDY_TRIM
+# 714 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 715 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 716 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 717 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine::
-# 694 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 722 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_LA_REINE_TRIM
-# 695 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 723 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 696 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 724 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 725 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 697 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 726 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki::
-# 702 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 731 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_KABUKI_TRIM
-# 703 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 732 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 704 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 733 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 734 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 705 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 735 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouPharaoh::
-# 710 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 740 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_FURFROU_PHARAOH_TRIM
-# 711 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 712 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 713 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm::
-# 718 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 719 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 720 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_GOURGEIST_FORM
-# 721 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 722 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 723 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 724 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_3
-# 726 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_4
-# 728 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_5
-# 730 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_6
-# 732 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_7
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1:
-# 735 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 736 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_3:
-# 725 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_4:
-# 727 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_5:
-# 729 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_6:
-# 731 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_7:
-# 733 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage::
 # 741 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GOURGEIST_AVERAGE
-# 742 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
+# 742 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
 # 743 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 744 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -1484,262 +1478,276 @@ Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage::
 	end
 
 
-Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall::
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm::
 # 749 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GOURGEIST_SMALL
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
 # 750 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
+	waitmessage
 # 751 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_GOURGEIST_FORM
 # 752 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge::
+	special ShowScrollableMultichoice
+# 753 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 754 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 755 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_3
 # 757 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GOURGEIST_LARGE
-# 758 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_4
 # 759 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 760 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper::
-# 765 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_GOURGEIST_SUPER
+	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_5
+# 761 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_6
+# 763 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_7
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1:
 # 766 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
+	closemessage
 # 767 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 768 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_3:
+# 756 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_4:
+# 758 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_5:
+# 760 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_6:
+# 762 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_7:
+# 764 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm_1
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage::
+# 773 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_GOURGEIST_AVERAGE
+# 774 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 775 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 776 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 777 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall::
+# 782 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_GOURGEIST_SMALL
+# 783 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 784 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 785 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 786 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge::
+# 791 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_GOURGEIST_LARGE
+# 792 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 793 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 794 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 795 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper::
+# 800 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_GOURGEIST_SUPER
+# 801 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 802 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 803 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 804 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm::
-# 773 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 809 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 774 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 810 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 775 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 811 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_MINIOR_FORM
-# 776 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 812 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 777 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 813 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 778 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 814 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 779 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 815 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_3
-# 781 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 817 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_4
-# 783 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 819 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_5
-# 785 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 821 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_6
-# 787 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 823 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 4, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_7
-# 789 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 825 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 5, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_8
-# 791 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 827 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 6, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_9
-# 793 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 829 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_10
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1:
-# 796 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 832 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 833 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 797 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 834 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_3:
-# 780 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 816 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_4:
-# 782 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 818 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_5:
-# 784 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 820 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_6:
-# 786 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 822 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_7:
-# 788 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 824 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_8:
-# 790 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 826 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_9:
-# 792 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 828 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_10:
-# 794 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 830 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange::
-# 802 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 839 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_ORANGE
-# 803 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 840 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 804 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 841 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 842 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 805 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 843 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed::
-# 810 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 848 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_RED
-# 811 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 849 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 812 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 850 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 851 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 813 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 852 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow::
-# 818 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 857 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_YELLOW
-# 819 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 858 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 820 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 859 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 860 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 821 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 861 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen::
-# 826 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 866 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_GREEN
-# 827 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 867 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 828 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 868 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 869 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 829 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 870 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue::
-# 834 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 875 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_BLUE
-# 835 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 876 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 836 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 877 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 878 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 837 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 879 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo::
-# 842 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 884 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MINIOR_INDIGO
-# 843 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 844 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 845 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet::
-# 850 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_MINIOR_VIOLET
-# 851 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 852 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 853 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm::
-# 858 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 859 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 860 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_MAGEARNA_FORM
-# 861 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 862 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 863 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 864 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_3
-# 866 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_4
-# 868 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_5
-Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1:
-# 871 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 872 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_3:
-# 865 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_4:
-# 867 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_5:
-# 869 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna::
-# 877 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_MAGEARNA
-# 878 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 879 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 880 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal::
 # 885 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_MAGEARNA_ORIGINAL
-# 886 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
+# 886 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
 # 887 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 888 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -1747,692 +1755,840 @@ Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal::
 	end
 
 
-Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm::
+Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet::
 # 893 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+	setvar VAR_0x8009, SPECIES_MINIOR_VIOLET
 # 894 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
+	special ChangePartyMonForm
 # 895 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_TOXTRICITY_FORM
+	closemessage
 # 896 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 897 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 898 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 899 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_3
-# 901 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_4
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm::
+# 902 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
 # 903 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
+# 904 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_MAGEARNA_FORM
+# 905 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 906 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 907 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 908 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_3
+# 910 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_4
+# 912 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_5
+Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1:
+# 915 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 916 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 917 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_3:
+# 909 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_4:
+# 911 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_5:
+# 913 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm_1
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna::
+# 922 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_MAGEARNA
+# 923 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 924 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 925 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 926 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal::
+# 931 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_MAGEARNA_ORIGINAL
+# 932 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 933 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 934 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 935 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm::
+# 940 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 941 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
+# 942 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_TOXTRICITY_FORM
+# 943 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 944 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 945 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 946 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_3
+# 948 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_4
+# 950 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_1:
-# 906 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 953 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 954 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 907 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 955 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_3:
-# 900 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 947 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_4:
-# 902 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 949 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityLowKey
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_5:
-# 904 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 951 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped::
-# 912 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 960 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_TOXTRICITY_AMPED
-# 913 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 961 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 914 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 962 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 963 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 915 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 964 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityLowKey::
-# 920 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 969 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_TOXTRICITY_LOW_KEY
-# 921 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 970 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 922 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 971 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 972 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 923 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 973 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm::
-# 928 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 978 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 929 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 979 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 930 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 980 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_POLTEAGEIST_FORM
-# 931 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 981 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 932 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 982 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 933 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 983 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 934 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 984 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_3
-# 936 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 986 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_4
-# 938 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 988 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_1:
-# 941 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 991 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 992 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 942 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 993 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_3:
-# 935 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 985 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_4:
-# 937 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 987 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistAntique
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_5:
-# 939 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 989 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony::
-# 947 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 998 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_POLTEAGEIST_PHONY
-# 948 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 999 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 949 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1000 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1001 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 950 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1002 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistAntique::
-# 955 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1007 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_POLTEAGEIST_ANTIQUE
-# 956 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1008 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 957 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1009 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1010 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 958 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1011 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm::
-# 963 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1016 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 964 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1017 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 965 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1018 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_ALCREMIE_FORM
-# 966 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1019 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 967 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1020 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 968 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1021 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 969 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1022 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_3
-# 971 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1024 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_4
-# 973 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1026 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_5
-# 975 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1028 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_6
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_1:
-# 978 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1031 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1032 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 979 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1033 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_3:
-# 970 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1023 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_4:
-# 972 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1025 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_5:
-# 974 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1027 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieStrawberry
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_6:
-# 976 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1029 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry::
-# 984 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1038 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_ALCREMIE_BERRY
-# 985 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1039 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 986 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1040 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1041 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 987 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1042 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla::
-# 992 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1047 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_ALCREMIE_VANILLA_CREAM
-# 993 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1048 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 994 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1049 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1050 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 995 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1051 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieStrawberry::
-# 1000 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1056 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM
-# 1001 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1057 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1002 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1058 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1059 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1003 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1060 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm::
-# 1008 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1065 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1009 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1066 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 1010 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1067 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_ZARUDE_FORM
-# 1011 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1068 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 1012 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1069 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 1013 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1070 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 1014 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1071 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_3
-# 1016 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1073 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_4
-# 1018 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1075 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_1:
-# 1021 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1078 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1079 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1022 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1080 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_3:
-# 1015 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1072 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_4:
-# 1017 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1074 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeZarudeDada
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_5:
-# 1019 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1076 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude::
-# 1027 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1085 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_ZARUDE
-# 1028 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1086 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1029 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1087 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1088 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1030 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1089 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeZarudeDada::
-# 1035 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1094 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_ZARUDE_DADA
-# 1036 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1095 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1037 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1096 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1097 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1038 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1098 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm::
-# 1043 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1103 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1044 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1104 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 1045 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1105 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_MAUSHOLD_FORM
-# 1046 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1106 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 1047 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1107 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 1048 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1108 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 1049 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1109 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_3
-# 1051 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1111 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_4
-# 1053 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1113 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_5
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_1:
-# 1056 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1116 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1117 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1057 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1118 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_3:
-# 1050 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1110 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_4:
-# 1052 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1112 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdFour
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_5:
-# 1054 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1114 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree::
-# 1062 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1123 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MAUSHOLD_THREE
-# 1063 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1124 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1064 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1125 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1126 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1065 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1127 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdFour::
-# 1070 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1132 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_MAUSHOLD_FOUR
-# 1071 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1133 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1072 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1134 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1135 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1073 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1136 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm::
-# 1078 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1141 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1079 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1142 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 1080 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1143 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_SQUAWKABILLY_FORM
-# 1081 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1144 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 1082 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1145 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 1083 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1146 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 1084 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1147 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_3
-# 1086 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1149 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_4
-# 1088 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1151 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_5
-# 1090 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1153 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 3, Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_6
-# 1092 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1155 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_7
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1:
-# 1095 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1158 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1159 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1096 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1160 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_3:
-# 1085 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1148 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_4:
-# 1087 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1150 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_5:
-# 1089 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1152 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_6:
-# 1091 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1154 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyWhite
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_7:
-# 1093 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1156 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen::
-# 1101 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1165 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SQUAWKABILLY_GREEN
-# 1102 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1166 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1103 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1167 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1168 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1104 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1169 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue::
-# 1109 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1174 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SQUAWKABILLY_BLUE
-# 1110 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1175 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1111 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1176 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1177 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1112 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1178 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow::
-# 1117 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1183 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SQUAWKABILLY_YELLOW
-# 1118 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1184 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1119 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1185 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1186 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1120 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1187 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyWhite::
-# 1125 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1192 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SQUAWKABILLY_WHITE
-# 1126 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1193 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1127 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1194 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1195 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1128 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1196 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm::
-# 1133 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1201 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1134 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1202 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmessage
-# 1135 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1203 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_TATSUGIRI_FORM
-# 1136 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1204 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ShowScrollableMultichoice
-# 1137 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1205 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitstate
-# 1138 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1206 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	switch VAR_RESULT
-# 1139 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1207 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_3
-# 1141 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1209 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_4
-# 1143 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1211 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case 2, Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_5
-# 1145 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1213 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_6
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_1:
-# 1148 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1216 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1217 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1149 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1218 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_3:
-# 1140 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1208 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_4:
-# 1142 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1210 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_5:
-# 1144 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1212 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_6:
-# 1146 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1214 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly::
-# 1154 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_TATSUGIRI_CURLY
-# 1155 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 1156 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1157 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy::
-# 1162 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_TATSUGIRI_DROOPY
-# 1163 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 1164 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1165 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy::
-# 1170 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_TATSUGIRI_STRETCHY
-# 1171 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 1172 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1173 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm::
-# 1178 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1179 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 1180 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM
-# 1181 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 1182 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 1183 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 1184 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_3
-# 1186 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_4
-# 1188 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_5
-Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1:
-# 1191 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1192 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_3:
-# 1185 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_4:
-# 1187 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_5:
-# 1189 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
-	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo::
-# 1197 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_DUDUNSPARCE_TWO_SEGMENT
-# 1198 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 1199 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1200 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree::
-# 1205 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8009, SPECIES_DUDUNSPARCE_THREE_SEGMENT
-# 1206 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ChangePartyMonForm
-# 1207 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1208 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	release
-	end
-
-
-Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm::
-# 1213 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	msgbox Route121_SafariZoneEntrance_Text_WhichForm
-# 1214 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitmessage
-# 1215 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_SINISTCHA_FORM
-# 1216 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	special ShowScrollableMultichoice
-# 1217 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	waitstate
-# 1218 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	switch VAR_RESULT
-# 1219 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_3
-# 1221 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_4
 # 1223 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_5
-Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_1:
+	setvar VAR_0x8009, SPECIES_TATSUGIRI_CURLY
+# 1224 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 1225 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
 # 1226 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
 # 1227 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy::
+# 1232 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_TATSUGIRI_DROOPY
+# 1233 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 1234 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1235 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1236 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy::
+# 1241 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_TATSUGIRI_STRETCHY
+# 1242 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 1243 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1244 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1245 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm::
+# 1250 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 1251 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
+# 1252 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM
+# 1253 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 1254 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 1255 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 1256 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_3
+# 1258 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_4
+# 1260 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_5
+Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1:
+# 1263 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1264 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1265 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_3:
+# 1257 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_4:
+# 1259 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_5:
+# 1261 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
+	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm_1
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo::
+# 1270 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_DUDUNSPARCE_TWO_SEGMENT
+# 1271 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 1272 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1273 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1274 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree::
+# 1279 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8009, SPECIES_DUDUNSPARCE_THREE_SEGMENT
+# 1280 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ChangePartyMonForm
+# 1281 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1282 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1283 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
+
+Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm::
+# 1288 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	msgbox Route121_SafariZoneEntrance_Text_WhichForm
+# 1289 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitmessage
+# 1290 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	setvar VAR_0x8004, SCROLL_MULTI_MANIAC_SINISTCHA_FORM
+# 1291 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	special ShowScrollableMultichoice
+# 1292 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	waitstate
+# 1293 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	switch VAR_RESULT
+# 1294 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 0, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_3
+# 1296 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case 1, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_4
+# 1298 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	case MULTI_B_PRESSED, Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_5
+Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_1:
+# 1301 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1302 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
+# 1303 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	release
+	end
+
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_3:
-# 1220 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1295 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_4:
-# 1222 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1297 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaMasterpiece
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_1
 
 Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_5:
-# 1224 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1299 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_ManiacDecline
 	goto Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm_1
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable::
-# 1232 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1308 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SINISTCHA_UNREMARKABLE
-# 1233 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1309 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1234 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1310 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1311 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1235 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1312 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaMasterpiece::
-# 1240 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1317 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	setvar VAR_0x8009, SPECIES_SINISTCHA_MASTERPIECE
-# 1241 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1318 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	special ChangePartyMonForm
-# 1242 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1319 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+	closemessage
+# 1320 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	goto Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange
-# 1243 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1321 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange::
-# 1248 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1326 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 1249 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1327 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	delay 16
-# 1250 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1328 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 1251 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1329 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	msgbox Route121_SafariZoneEntrance_Text_WhatASpecimen, MSGBOX_DEFAULT
-# 1252 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1330 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	release
 	end
 
 
 Route121_SafariZoneEntrance_EventScript_ManiacWannaChangeForm::
-# 1256 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1334 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "This place is incredible, they have all\n"
 	.string "kinds of species cohabiting. This is\l"
 	.string "the 53rd day in a row I come to visit\l"
@@ -2444,27 +2600,27 @@ Route121_SafariZoneEntrance_EventScript_ManiacWannaChangeForm::
 	.string "me analyze?$"
 
 Maniac_AskAgain::
-# 1268 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1346 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "So, which one should I analyze?$"
 
 Maniac_ComeBackWithOne::
-# 1272 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1350 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "You could have just said you didn't\n"
 	.string "want to share…$"
 
 Route121_SafariZoneEntrance_Text_WhatASpecimen::
-# 1277 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1355 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "I'm done! Thank you so much for giving me\n"
 	.string "this opportunity. I'm so lucky to have\l"
 	.string "met you. Please come back anytime with\l"
 	.string "other ones. Aren't Pokémon amazing?!$"
 
 Route121_SafariZoneEntrance_Text_WhichForm::
-# 1284 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1362 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "Fascinating! Would you like me to change\n"
 	.string "its form?$"
 
 Route121_SafariZoneEntrance_Text_ThisIsntAMon::
-# 1289 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
+# 1367 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	.string "What are you, some kind of amateur?\n"
 	.string "This Pokémon can't change forms.$"

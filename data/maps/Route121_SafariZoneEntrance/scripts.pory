@@ -388,6 +388,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -396,6 +397,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonEast{
 	setvar(VAR_0x8009, SPECIES_GASTRODON_EAST)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -404,6 +406,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonEast{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonWest{
 	setvar(VAR_0x8009, SPECIES_GASTRODON_WEST)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -427,6 +430,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -435,6 +439,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring{
 	setvar(VAR_0x8009, SPECIES_SAWSBUCK_SPRING)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -443,6 +448,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer{
 	setvar(VAR_0x8009, SPECIES_SAWSBUCK_SUMMER)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -451,6 +457,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn{
 	setvar(VAR_0x8009, SPECIES_SAWSBUCK_AUTUMN)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -459,6 +466,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckWinter{
 	setvar(VAR_0x8009, SPECIES_SAWSBUCK_WINTER)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -478,6 +486,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -486,6 +495,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary{
 	setvar(VAR_0x8009, SPECIES_KELDEO_ORDINARY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -494,6 +504,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoResolute{
 	setvar(VAR_0x8009, SPECIES_KELDEO_RESOLUTE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -513,6 +524,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -521,6 +533,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy{
 	setvar(VAR_0x8009, SPECIES_VIVILLON_FANCY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -529,6 +542,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonPokeball{
 	setvar(VAR_0x8009, SPECIES_VIVILLON_POKEBALL)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -554,6 +568,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -562,6 +577,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed{
 	setvar(VAR_0x8009, SPECIES_FLORGES_RED)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -570,6 +586,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow{
 	setvar(VAR_0x8009, SPECIES_FLORGES_YELLOW)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -578,6 +595,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange{
 	setvar(VAR_0x8009, SPECIES_FLORGES_ORANGE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -586,6 +604,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue{
 	setvar(VAR_0x8009, SPECIES_FLORGES_BLUE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -594,6 +613,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesWhite{
 	setvar(VAR_0x8009, SPECIES_FLORGES_WHITE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -629,6 +649,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -637,6 +658,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural{
 	setvar(VAR_0x8009, SPECIES_FURFROU_NATURAL)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -645,6 +667,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart{
 	setvar(VAR_0x8009, SPECIES_FURFROU_HEART_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -653,6 +676,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar{
 	setvar(VAR_0x8009, SPECIES_FURFROU_STAR_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -661,6 +685,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond{
 	setvar(VAR_0x8009, SPECIES_FURFROU_DIAMOND_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -669,6 +694,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante{
 	setvar(VAR_0x8009, SPECIES_FURFROU_DEBUTANTE_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -677,6 +703,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron{
 	setvar(VAR_0x8009, SPECIES_FURFROU_MATRON_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -685,6 +712,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy{
 	setvar(VAR_0x8009, SPECIES_FURFROU_DANDY_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -693,6 +721,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine{
 	setvar(VAR_0x8009, SPECIES_FURFROU_LA_REINE_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -701,6 +730,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki{
 	setvar(VAR_0x8009, SPECIES_FURFROU_KABUKI_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -709,6 +739,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouPharaoh{
 	setvar(VAR_0x8009, SPECIES_FURFROU_PHARAOH_TRIM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -732,6 +763,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -740,6 +772,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage{
 	setvar(VAR_0x8009, SPECIES_GOURGEIST_AVERAGE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -748,6 +781,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall{
 	setvar(VAR_0x8009, SPECIES_GOURGEIST_SMALL)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -756,6 +790,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge{
 	setvar(VAR_0x8009, SPECIES_GOURGEIST_LARGE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -764,6 +799,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper{
 	setvar(VAR_0x8009, SPECIES_GOURGEIST_SUPER)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -793,6 +829,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -801,6 +838,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange{
 	setvar(VAR_0x8009, SPECIES_MINIOR_ORANGE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -809,6 +847,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed{
 	setvar(VAR_0x8009, SPECIES_MINIOR_RED)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -817,6 +856,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow{
 	setvar(VAR_0x8009, SPECIES_MINIOR_YELLOW)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -825,6 +865,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen{
 	setvar(VAR_0x8009, SPECIES_MINIOR_GREEN)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -833,6 +874,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue{
 	setvar(VAR_0x8009, SPECIES_MINIOR_BLUE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -841,6 +883,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo{
 	setvar(VAR_0x8009, SPECIES_MINIOR_INDIGO)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -849,6 +892,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet{
 	setvar(VAR_0x8009, SPECIES_MINIOR_VIOLET)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -868,6 +912,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -876,6 +921,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna{
 	setvar(VAR_0x8009, SPECIES_MAGEARNA)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -884,6 +930,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal{
 	setvar(VAR_0x8009, SPECIES_MAGEARNA_ORIGINAL)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -903,6 +950,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -911,6 +959,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped{
 	setvar(VAR_0x8009, SPECIES_TOXTRICITY_AMPED)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -919,6 +968,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityLowKey{
 	setvar(VAR_0x8009, SPECIES_TOXTRICITY_LOW_KEY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -938,6 +988,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -946,6 +997,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony{
 	setvar(VAR_0x8009, SPECIES_POLTEAGEIST_PHONY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -954,6 +1006,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistAntique{
 	setvar(VAR_0x8009, SPECIES_POLTEAGEIST_ANTIQUE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -975,6 +1028,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -983,6 +1037,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry{
 	setvar(VAR_0x8009, SPECIES_ALCREMIE_BERRY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -991,6 +1046,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla{
 	setvar(VAR_0x8009, SPECIES_ALCREMIE_VANILLA_CREAM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -999,6 +1055,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieStrawberry{
 	setvar(VAR_0x8009, SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1018,6 +1075,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1026,6 +1084,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude{
 	setvar(VAR_0x8009, SPECIES_ZARUDE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1034,6 +1093,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeZarudeDada{
 	setvar(VAR_0x8009, SPECIES_ZARUDE_DADA)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1053,6 +1113,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1061,6 +1122,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree{
 	setvar(VAR_0x8009, SPECIES_MAUSHOLD_THREE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1069,6 +1131,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdFour{
 	setvar(VAR_0x8009, SPECIES_MAUSHOLD_FOUR)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1092,6 +1155,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1100,6 +1164,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen{
 	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_GREEN)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1108,6 +1173,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue{
 	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_BLUE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1116,6 +1182,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow{
 	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_YELLOW)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1124,6 +1191,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyWhite{
 	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_WHITE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1145,6 +1213,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1153,6 +1222,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly{
 	setvar(VAR_0x8009, SPECIES_TATSUGIRI_CURLY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1161,6 +1231,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy{
 	setvar(VAR_0x8009, SPECIES_TATSUGIRI_DROOPY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1169,6 +1240,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy{
 	setvar(VAR_0x8009, SPECIES_TATSUGIRI_STRETCHY)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1188,6 +1260,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1196,6 +1269,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo{
 	setvar(VAR_0x8009, SPECIES_DUDUNSPARCE_TWO_SEGMENT)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1204,6 +1278,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree{
 	setvar(VAR_0x8009, SPECIES_DUDUNSPARCE_THREE_SEGMENT)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1223,6 +1298,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm{
 		case MULTI_B_PRESSED:
 			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
 	}
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1231,6 +1307,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm{
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable{
 	setvar(VAR_0x8009, SPECIES_SINISTCHA_UNREMARKABLE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
@@ -1239,6 +1316,7 @@ script Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable
 script Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaMasterpiece{
 	setvar(VAR_0x8009, SPECIES_SINISTCHA_MASTERPIECE)
 	special(ChangePartyMonForm)
+	closemessage
 	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
 	release
 	end
