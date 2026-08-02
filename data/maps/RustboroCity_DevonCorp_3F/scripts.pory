@@ -159,6 +159,8 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 	end
 
 RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
+	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
+	goto_if_ge RustboroCity_DevonCorp_3F_EventScript_GiveDiscount
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
 	giveitem ITEM_WATER_STONE, 10
 	giveitem ITEM_FIRE_STONE, 10
@@ -306,3 +308,105 @@ RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
 	.string "stones assembled by the President.$"
 
 `
+
+script RustboroCity_DevonCorp_3F_EventScript_GiveDiscount{
+	msgbox(RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetterHard, MSGBOX_DEFAULT)
+	setflag(FLAG_RECEIVED_EXP_SHARE)
+	applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script RustboroCity_DevonCorp_3F_EventScript_StoneShop{
+	lock
+	faceplayer
+	if (flag(FLAG_RECEIVED_EXP_SHARE)== FALSE)
+	{
+		msgbox(ExpensiveShop)
+	}
+	else
+	{
+		msgbox(StoneShop)
+		dynmultipush("Fire Stone",ITEM_FIRE_STONE)
+		dynmultipush("Water Stone",ITEM_WATER_STONE)
+		dynmultipush("Thunder Stone",ITEM_THUNDER_STONE)
+		dynmultipush("Leaf Stone",ITEM_LEAF_STONE)
+		dynmultipush("Moon Stone",ITEM_MOON_STONE)
+		dynmultipush("Sun Stone",ITEM_SUN_STONE)
+		dynmultipush("Shiny Stone",ITEM_SHINY_STONE)
+		dynmultipush("Dusk Stone",ITEM_DUSK_STONE)
+		dynmultipush("Dawn Stone",ITEM_DAWN_STONE)
+		dynmultipush("Ice Stone",ITEM_ICE_STONE)
+		dynmultipush("Cancel", MULTI_B_PRESSED)
+		// // setting initial selected to a non-existant ID will always have it point to the first option
+		dynmultistack(0, 0, FALSE, 6, FALSE, 3, DYN_MULTICHOICE_CB_NONE)
+		copyvar(VAR_0x8005, VAR_RESULT)
+		if (var(VAR_RESULT) == MULTI_B_PRESSED) 
+		{
+			goto(RustboroCity_DevonCorp_3F_EventScript_StoneShop_No)
+		}
+		else
+		{
+			goto(RustboroCity_DevonCorp_3F_EventScript_StoneShop_BuyStone)
+		}
+	}
+		release
+		end
+}
+
+script RustboroCity_DevonCorp_3F_EventScript_StoneShop_BuyStone {
+	checkitem(ITEM_BOTTLE_CAP)
+	goto_if_eq(VAR_RESULT, FALSE, RustboroCity_DevonCorp_3F_EventScript_StoneShop_ComeBackWithBottleCap)
+	msgbox("Excellent choice.")
+	playfanfare(MUS_OBTAIN_ITEM)
+	giveitem(VAR_0x8005)
+	waitfanfare
+	removeitem(ITEM_BOTTLE_CAP)
+	msgbox("Come back anytime.")
+	release
+	end
+}
+
+script RustboroCity_DevonCorp_3F_EventScript_StoneShop_No {
+    msgbox("Please come back if you want\n"
+	"to buy anything.")
+    release
+    end
+}
+
+script RustboroCity_DevonCorp_3F_EventScript_StoneShop_ComeBackWithBottleCap {
+	msgbox("Estimed customer, it looks like you\n"
+	"don't have a Bottle Cap.\p"
+	"Please come back when you do.")
+	release
+	end
+}
+
+text ExpensiveShop{
+	"Esteemed customer, you do not have the\n"
+	"status for this shop."
+}
+
+text StoneShop{
+	"Estimed customer, you've been granted\n"
+	"full access by Mr.Stone to his shop of\l"
+	"rare Stones. You may exchange a Bottle\l"
+	"Cap for a Stone of your choosing.\p"
+	"Which one would you be interested in?"
+}
+
+text RustboroCity_DevonCorp_3F_Text_ReceivedTheStone{
+	"{PLAYER} received the Stone."
+}
+
+text RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetterHard{
+	"Mr. Stone: You delivered my Letter?\n"
+	"Thank you kindly!\p"
+	"As a reward for your efforts, I will give\n"
+	"you permanent access to our Stone\l"
+	"shop. My personal assistant here\l"
+	"will take care of things.\p"
+	"No need to thank me, I've always had\n"
+	"a heart of gold!"
+}
