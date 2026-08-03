@@ -2089,7 +2089,8 @@ bool32 ShouldLowerStat(u32 battler, u32 battlerAbility, u32 stat)
          || battlerAbility == ABILITY_WHITE_SMOKE
          || battlerAbility == ABILITY_FULL_METAL_BODY
          || battlerAbility == ABILITY_COMPETITIVE
-         || battlerAbility == ABILITY_DEFIANT)
+         || battlerAbility == ABILITY_DEFIANT
+         || battlerAbility == ABILITY_MIRROR_ARMOR)
             return FALSE;
 
         switch (stat)
@@ -2183,6 +2184,7 @@ bool32 ShouldLowerAttack(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_HYPER_CUTTER
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2204,6 +2206,7 @@ bool32 ShouldLowerDefense(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_BIG_PECKS
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2224,6 +2227,7 @@ bool32 ShouldLowerSpAtk(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2244,6 +2248,7 @@ bool32 ShouldLowerSpDef(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2264,6 +2269,7 @@ bool32 ShouldLowerAccuracy(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_MINDS_EYE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2283,6 +2289,7 @@ bool32 ShouldLowerEvasion(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
