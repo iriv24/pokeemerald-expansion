@@ -569,15 +569,11 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     u32 predictedMove = incomingMove; // Update for move prediction
     bool32 isOpposingBattlerChargingOrInvulnerable = (IsSemiInvulnerable(opposingBattler, incomingMove) || IsTwoTurnNotSemiInvulnerableMove(opposingBattler, incomingMove));
     s32 i, j;
-    bool32 playerIsChoiceLocked = (predictedMove == gBattleStruct->choicedMove[opposingBattler]);
 
     if (!(AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING))
         return FALSE;
     if (gBattleStruct->prevTurnSpecies[battler] != gBattleMons[battler].species) // AI mon has changed, player's behaviour no longer reliable; note to override this if using AI_FLAG_PREDICT_MOVE
         return FALSE;
-    if (CanUseSuperEffectiveMoveAgainstOpponents(battler) && RandomPercentage(RNG_AI_SWITCH_ABSORBING_STAY_IN, STAY_IN_ABSORBING_PERCENTAGE))
-        return FALSE;
-
     if (AreStatsRaised(battler))
         return FALSE;
 
@@ -692,7 +688,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
             // Found a mon
             if (absorbingTypeAbilities[j] == monAbility)
             {
-                if (playerIsChoiceLocked || RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE))
+                if (RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE))
                     return SetSwitchinAndSwitch(battler, i);
             }     
         }
@@ -1033,7 +1029,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless
-        else if (attackingStage < DEFAULT_STAT_STAGE - 2)
+        else if (attackingStage < DEFAULT_STAT_STAGE - 2 && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
 
@@ -1050,7 +1046,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless
-        else if (spAttackingStage < DEFAULT_STAT_STAGE - 2)
+        else if (spAttackingStage < DEFAULT_STAT_STAGE - 2 && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
     return FALSE;
@@ -1149,18 +1145,11 @@ bool32 ShouldSwitch(u32 battler)
     if (ShouldSwitchIfHasBadOdds(battler))
         return TRUE;
     if (ShouldSwitchIfEncored(battler))
-    {
-        if (!canAIWin1V1)
-            return TRUE;
-    }
+        return TRUE;
     if (ShouldSwitchIfBadChoiceLock(battler))
         return TRUE;
     if (ShouldSwitchIfAttackingStatsLowered(battler))
-    {
-        if (!canAIWin1V1)
-            return TRUE;
-    }
-
+        return TRUE;
     // Removing switch capabilities under specific conditions
     if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
         return FALSE;
@@ -1982,7 +1971,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
     int aliveCount = 0, aceMonCount = 0;
     s32 defensiveMonHitKOThreshold = 3; // 3HKO threshold that candidate defensive mons must exceed
     s32 playerMonHP = gBattleMons[opposingBattler].hp, maxDamageDealt = 0, damageDealt = 0;
-    u32 aiMove, aiMoveEffect, hitsToKOAI, hitsToKOPlayer, hitsToKOAIPriority, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE, maxHitsToKO = 0;
+    u32 aiMove, aiMoveEffect, hitsToKOAI, hitsToKOPlayer, hitsToKOAIPriority, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE, maxHitsToKO = 1;
     u32 partnerHitsToKOAI, partnerHitsToKOAIPriority, bestPartnerMove = MOVE_NONE, bestPartnerPriorityMove = MOVE_NONE;
     bool32 isFreeSwitch = IsFreeSwitch(switchType, battlerIn1, opposingBattler), isSwitchinFirst, isSwitchinFirstPriority, canSwitchinWin1v1;
     u32 storeCurrBattlerPartyIndex = gBattlerPartyIndexes[battler]; //Rage Fist fix
@@ -2071,12 +2060,12 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
             }
 
             // Track max hits to KO and set defensive mon
-            if (hitsToKOAI > defensiveMonHitKOThreshold)
+            if (hitsToKOAI > defensiveMonHitKOThreshold || hitsToKOAI == 0) // accounts for 0hko case 
             {
                 if (canSwitchinWin1v1 || AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_STALL)
                 {
                     defensiveMonIds |= (1u << monIndex);
-                    if (hitsToKOAI > maxHitsToKO)
+                    if (maxHitsToKO != 0 && (hitsToKOAI > maxHitsToKO || hitsToKOAI == 0))
                     {
                         maxHitsToKO = hitsToKOAI;
                         bestDefensiveMonId = monIndex;

@@ -15,13 +15,12 @@
 #define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       80
 #define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            100
 #define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          100
-#define STAY_IN_ABSORBING_PERCENTAGE                                60  // Chance to stay in if outgoing mon has super effective move against player, will prevent switching out for an absorber with this likelihood
 #define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         50
 #define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      50
 #define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      50
 #define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      50 // Only if locked into status move
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           50
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    100
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           30
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    60
 #define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     50
 
 // AI smart switching chances for bad statuses
