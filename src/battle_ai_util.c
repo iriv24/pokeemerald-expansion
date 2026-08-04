@@ -658,15 +658,14 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
         }
         else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
         {
-            median *= 9;
-            median /= 2;
+            median *= 4;
             minimum *= 4;
-            maximum *= 5;
+            maximum *= 4;
         }
         else
         {
             median *= 3;
-            minimum *= 2;
+            minimum *= 3;
             maximum *= 3;
         }
         break;
