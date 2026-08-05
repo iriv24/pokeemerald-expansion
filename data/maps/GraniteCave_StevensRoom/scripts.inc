@@ -367,12 +367,14 @@ GraniteCave_StevensRoom_Text_RegisteredSteven:
 # 184 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
 # 185 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Now, I've got to hurry along.$"
+	.string "Now, I've got to hurry along.\n"
 # 186 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-
+	.string "You should visit Devon Corp again.$"
 # 187 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-GraniteCave_StevensRoom_Text_OhBagIsFull:
+
 # 188 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	.string "Oh, your BAG is full…\n"
+GraniteCave_StevensRoom_Text_OhBagIsFull:
 # 189 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "Oh, your BAG is full…\n"
+# 190 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "That's too bad, then.$"
