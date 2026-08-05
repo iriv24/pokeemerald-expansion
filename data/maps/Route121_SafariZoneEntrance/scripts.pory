@@ -131,3 +131,1240 @@ Route121_SafariZoneEntrance_EventScript_TrainerTipSign::
 	end
 
 `
+
+script Route121_SafariZoneEntrance_EventScript_Maniac{
+	lock 
+	faceplayer
+	goto_if_set(FLAG_TEMP_1, Route121_SafariZoneEntrance_EventScript_ManiacAskAgain)
+	msgbox(Route121_SafariZoneEntrance_EventScript_ManiacWannaChangeForm,MSGBOX_YESNO)
+	call_if_eq(VAR_RESULT, YES, Route121_SafariZoneEntrance_EventScript_ManiacAccept)
+	goto_if_eq(VAR_RESULT, NO, Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	closemessage
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacAskAgain{
+	msgbox(Maniac_AskAgain, MSGBOX_YESNO)
+	goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeForm)
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeForm{
+	call_if_eq(VAR_RESULT, YES, Route121_SafariZoneEntrance_EventScript_ManiacAccept)
+	goto_if_eq(VAR_RESULT, NO, Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	closemessage
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacAccept{
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+	goto_if_eq(VAR_0x8004, PARTY_NOTHING_CHOSEN, Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	switch (var(VAR_RESULT)) {
+		case SPECIES_GASTRODON:
+		case SPECIES_GASTRODON_EAST:
+		case SPECIES_GASTRODON_WEST:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm)
+		case SPECIES_SAWSBUCK:
+		case SPECIES_SAWSBUCK_SPRING:
+		case SPECIES_SAWSBUCK_SUMMER:
+		case SPECIES_SAWSBUCK_AUTUMN:
+		case SPECIES_SAWSBUCK_WINTER:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm)
+		case SPECIES_KELDEO:
+		case SPECIES_KELDEO_ORDINARY:
+		case SPECIES_KELDEO_RESOLUTE:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm)
+		case SPECIES_VIVILLON:
+		case SPECIES_VIVILLON_ICY_SNOW:
+		case SPECIES_VIVILLON_POLAR:
+		case SPECIES_VIVILLON_TUNDRA:
+		case SPECIES_VIVILLON_CONTINENTAL:
+		case SPECIES_VIVILLON_GARDEN:
+		case SPECIES_VIVILLON_ELEGANT:
+		case SPECIES_VIVILLON_MEADOW:
+		case SPECIES_VIVILLON_MODERN:
+		case SPECIES_VIVILLON_MARINE:
+		case SPECIES_VIVILLON_ARCHIPELAGO:
+		case SPECIES_VIVILLON_HIGH_PLAINS:
+		case SPECIES_VIVILLON_SANDSTORM:
+		case SPECIES_VIVILLON_RIVER:
+		case SPECIES_VIVILLON_MONSOON:
+		case SPECIES_VIVILLON_SAVANNA:
+		case SPECIES_VIVILLON_SUN:
+		case SPECIES_VIVILLON_OCEAN:
+		case SPECIES_VIVILLON_JUNGLE:
+		case SPECIES_VIVILLON_FANCY:
+		case SPECIES_VIVILLON_POKEBALL:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm)
+		case SPECIES_FLORGES:
+		case SPECIES_FLORGES_RED:
+		case SPECIES_FLORGES_YELLOW:
+		case SPECIES_FLORGES_ORANGE:
+		case SPECIES_FLORGES_BLUE:
+		case SPECIES_FLORGES_WHITE:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm)
+		case SPECIES_FURFROU:
+		case SPECIES_FURFROU_NATURAL:
+		case SPECIES_FURFROU_HEART_TRIM:
+		case SPECIES_FURFROU_STAR_TRIM:
+		case SPECIES_FURFROU_DIAMOND_TRIM:
+		case SPECIES_FURFROU_DEBUTANTE_TRIM:
+		case SPECIES_FURFROU_MATRON_TRIM:
+		case SPECIES_FURFROU_DANDY_TRIM:
+		case SPECIES_FURFROU_LA_REINE_TRIM:
+		case SPECIES_FURFROU_KABUKI_TRIM:
+		case SPECIES_FURFROU_PHARAOH_TRIM:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm)
+		case SPECIES_GOURGEIST:
+		case SPECIES_GOURGEIST_AVERAGE:
+		case SPECIES_GOURGEIST_SMALL:
+		case SPECIES_GOURGEIST_LARGE:
+		case SPECIES_GOURGEIST_SUPER:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm)
+		case SPECIES_MINIOR:
+		case SPECIES_MINIOR_METEOR:
+		case SPECIES_MINIOR_RED:
+		case SPECIES_MINIOR_ORANGE:
+		case SPECIES_MINIOR_YELLOW:
+		case SPECIES_MINIOR_GREEN:
+		case SPECIES_MINIOR_BLUE:
+		case SPECIES_MINIOR_INDIGO:
+		case SPECIES_MINIOR_VIOLET:
+		case SPECIES_MINIOR_METEOR_RED:
+		case SPECIES_MINIOR_METEOR_ORANGE:
+		case SPECIES_MINIOR_METEOR_YELLOW:
+		case SPECIES_MINIOR_METEOR_GREEN:
+		case SPECIES_MINIOR_METEOR_BLUE:
+		case SPECIES_MINIOR_METEOR_INDIGO:
+		case SPECIES_MINIOR_METEOR_VIOLET:
+		case SPECIES_MINIOR_CORE:
+		case SPECIES_MINIOR_CORE_RED:
+		case SPECIES_MINIOR_CORE_ORANGE:
+		case SPECIES_MINIOR_CORE_YELLOW:
+		case SPECIES_MINIOR_CORE_GREEN:
+		case SPECIES_MINIOR_CORE_BLUE:
+		case SPECIES_MINIOR_CORE_INDIGO:
+		case SPECIES_MINIOR_CORE_VIOLET:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm)
+		case SPECIES_MAGEARNA:
+		case SPECIES_MAGEARNA_ORIGINAL:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm)
+		case SPECIES_TOXTRICITY:
+		case SPECIES_TOXTRICITY_AMPED:
+		case SPECIES_TOXTRICITY_LOW_KEY:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm)
+		case SPECIES_POLTEAGEIST:
+		case SPECIES_POLTEAGEIST_PHONY:
+		case SPECIES_POLTEAGEIST_ANTIQUE:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm)
+		case SPECIES_ALCREMIE:
+		case SPECIES_ALCREMIE_STRAWBERRY:
+		case SPECIES_ALCREMIE_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_RUBY_CREAM:
+		case SPECIES_ALCREMIE_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_MINT_CREAM:
+		case SPECIES_ALCREMIE_LEMON_CREAM:
+		case SPECIES_ALCREMIE_SALTED_CREAM:
+		case SPECIES_ALCREMIE_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_BERRY:
+		case SPECIES_ALCREMIE_BERRY_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_BERRY_RUBY_CREAM:
+		case SPECIES_ALCREMIE_BERRY_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_BERRY_MINT_CREAM:
+		case SPECIES_ALCREMIE_BERRY_LEMON_CREAM:
+		case SPECIES_ALCREMIE_BERRY_SALTED_CREAM:
+		case SPECIES_ALCREMIE_BERRY_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_LOVE:
+		case SPECIES_ALCREMIE_LOVE_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_LOVE_RUBY_CREAM:
+		case SPECIES_ALCREMIE_LOVE_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_LOVE_MINT_CREAM:
+		case SPECIES_ALCREMIE_LOVE_LEMON_CREAM:
+		case SPECIES_ALCREMIE_LOVE_SALTED_CREAM:
+		case SPECIES_ALCREMIE_LOVE_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_STAR:
+		case SPECIES_ALCREMIE_STAR_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_STAR_RUBY_CREAM:
+		case SPECIES_ALCREMIE_STAR_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_STAR_MINT_CREAM:
+		case SPECIES_ALCREMIE_STAR_LEMON_CREAM:
+		case SPECIES_ALCREMIE_STAR_SALTED_CREAM:
+		case SPECIES_ALCREMIE_STAR_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_CLOVER:
+		case SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_RUBY_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_MINT_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_LEMON_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_SALTED_CREAM:
+		case SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_FLOWER:
+		case SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_RUBY_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_MINT_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_LEMON_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_SALTED_CREAM:
+		case SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL:
+		case SPECIES_ALCREMIE_RIBBON:
+		case SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_RUBY_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_MINT_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_LEMON_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_SALTED_CREAM:
+		case SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL:
+		case SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL:
+		case SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm)
+		case SPECIES_ZARUDE:
+		case SPECIES_ZARUDE_DADA:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm)
+		case SPECIES_MAUSHOLD:
+		case SPECIES_MAUSHOLD_THREE:
+		case SPECIES_MAUSHOLD_FOUR:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm)
+		case SPECIES_SQUAWKABILLY:
+		case SPECIES_SQUAWKABILLY_GREEN:
+		case SPECIES_SQUAWKABILLY_BLUE:
+		case SPECIES_SQUAWKABILLY_YELLOW:
+		case SPECIES_SQUAWKABILLY_WHITE:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm)
+		case SPECIES_TATSUGIRI:
+		case SPECIES_TATSUGIRI_CURLY:
+		case SPECIES_TATSUGIRI_DROOPY:
+		case SPECIES_TATSUGIRI_STRETCHY:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm)
+		case SPECIES_DUDUNSPARCE:
+		case SPECIES_DUDUNSPARCE_TWO_SEGMENT:
+		case SPECIES_DUDUNSPARCE_THREE_SEGMENT:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm)
+		case SPECIES_SINISTCHA:
+		case SPECIES_SINISTCHA_UNREMARKABLE:
+		case SPECIES_SINISTCHA_MASTERPIECE:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm)
+		default:
+			msgbox(Route121_SafariZoneEntrance_Text_ThisIsntAMon, MSGBOX_DEFAULT)
+			release
+			end
+	}
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacDecline {
+	setflag(FLAG_TEMP_1)
+	msgbox(Maniac_ComeBackWithOne, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseGastrodonForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_GASTRODON_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonEast)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonWest)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonEast{
+	setvar(VAR_0x8009, SPECIES_GASTRODON_EAST)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGastrodonWest{
+	setvar(VAR_0x8009, SPECIES_GASTRODON_WEST)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseSawsbuckForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_SAWSBUCK_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckWinter)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSpring{
+	setvar(VAR_0x8009, SPECIES_SAWSBUCK_SPRING)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckSummer{
+	setvar(VAR_0x8009, SPECIES_SAWSBUCK_SUMMER)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckAutumn{
+	setvar(VAR_0x8009, SPECIES_SAWSBUCK_AUTUMN)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSawsbuckWinter{
+	setvar(VAR_0x8009, SPECIES_SAWSBUCK_WINTER)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseKeldeoForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_KELDEO_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoResolute)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoOrdinary{
+	setvar(VAR_0x8009, SPECIES_KELDEO_ORDINARY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeKeldeoResolute{
+	setvar(VAR_0x8009, SPECIES_KELDEO_RESOLUTE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseVivillonForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_VIVILLON_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonPokeball)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonFancy{
+	setvar(VAR_0x8009, SPECIES_VIVILLON_FANCY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeVivillonPokeball{
+	setvar(VAR_0x8009, SPECIES_VIVILLON_POKEBALL)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseFlorgesForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_FLORGES_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue)
+		case 4:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesWhite)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesRed{
+	setvar(VAR_0x8009, SPECIES_FLORGES_RED)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesYellow{
+	setvar(VAR_0x8009, SPECIES_FLORGES_YELLOW)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesOrange{
+	setvar(VAR_0x8009, SPECIES_FLORGES_ORANGE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesBlue{
+	setvar(VAR_0x8009, SPECIES_FLORGES_BLUE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFlorgesWhite{
+	setvar(VAR_0x8009, SPECIES_FLORGES_WHITE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseFurfrouForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_FURFROU_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond)
+		case 4:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante)
+		case 5:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron)
+		case 6:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy)
+		case 7:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine)
+		case 8:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki)
+		case 9:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouPharaoh)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouNatural{
+	setvar(VAR_0x8009, SPECIES_FURFROU_NATURAL)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouHeart{
+	setvar(VAR_0x8009, SPECIES_FURFROU_HEART_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouStar{
+	setvar(VAR_0x8009, SPECIES_FURFROU_STAR_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDiamond{
+	setvar(VAR_0x8009, SPECIES_FURFROU_DIAMOND_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDebutante{
+	setvar(VAR_0x8009, SPECIES_FURFROU_DEBUTANTE_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouMatron{
+	setvar(VAR_0x8009, SPECIES_FURFROU_MATRON_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouDandy{
+	setvar(VAR_0x8009, SPECIES_FURFROU_DANDY_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouLaReine{
+	setvar(VAR_0x8009, SPECIES_FURFROU_LA_REINE_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouKabuki{
+	setvar(VAR_0x8009, SPECIES_FURFROU_KABUKI_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeFurfrouPharaoh{
+	setvar(VAR_0x8009, SPECIES_FURFROU_PHARAOH_TRIM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseGourgeistForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_GOURGEIST_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistAverage{
+	setvar(VAR_0x8009, SPECIES_GOURGEIST_AVERAGE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSmall{
+	setvar(VAR_0x8009, SPECIES_GOURGEIST_SMALL)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistLarge{
+	setvar(VAR_0x8009, SPECIES_GOURGEIST_LARGE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeGourgeistSuper{
+	setvar(VAR_0x8009, SPECIES_GOURGEIST_SUPER)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseMiniorForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_MINIOR_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen)
+		case 4:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue)
+		case 5:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo)
+		case 6:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorOrange{
+	setvar(VAR_0x8009, SPECIES_MINIOR_ORANGE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorRed{
+	setvar(VAR_0x8009, SPECIES_MINIOR_RED)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorYellow{
+	setvar(VAR_0x8009, SPECIES_MINIOR_YELLOW)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorGreen{
+	setvar(VAR_0x8009, SPECIES_MINIOR_GREEN)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorBlue{
+	setvar(VAR_0x8009, SPECIES_MINIOR_BLUE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorIndigo{
+	setvar(VAR_0x8009, SPECIES_MINIOR_INDIGO)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMiniorViolet{
+	setvar(VAR_0x8009, SPECIES_MINIOR_VIOLET)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseMagearnaForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_MAGEARNA_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearna{
+	setvar(VAR_0x8009, SPECIES_MAGEARNA)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMagearnaOriginal{
+	setvar(VAR_0x8009, SPECIES_MAGEARNA_ORIGINAL)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseToxtricityForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_TOXTRICITY_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityLowKey)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityAmped{
+	setvar(VAR_0x8009, SPECIES_TOXTRICITY_AMPED)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeToxtricityLowKey{
+	setvar(VAR_0x8009, SPECIES_TOXTRICITY_LOW_KEY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChoosePolteageistForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_POLTEAGEIST_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistAntique)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistPhony{
+	setvar(VAR_0x8009, SPECIES_POLTEAGEIST_PHONY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangePolteageistAntique{
+	setvar(VAR_0x8009, SPECIES_POLTEAGEIST_ANTIQUE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseAlcremieForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_ALCREMIE_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieStrawberry)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieBerry{
+	setvar(VAR_0x8009, SPECIES_ALCREMIE_BERRY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieVanilla{
+	setvar(VAR_0x8009, SPECIES_ALCREMIE_VANILLA_CREAM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeAlcremieStrawberry{
+	setvar(VAR_0x8009, SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseZarudeForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_ZARUDE_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeZarudeDada)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeZarude{
+	setvar(VAR_0x8009, SPECIES_ZARUDE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeZarudeDada{
+	setvar(VAR_0x8009, SPECIES_ZARUDE_DADA)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseMausholdForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_MAUSHOLD_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdFour)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdThree{
+	setvar(VAR_0x8009, SPECIES_MAUSHOLD_THREE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeMausholdFour{
+	setvar(VAR_0x8009, SPECIES_MAUSHOLD_FOUR)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseSquawkabillyForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_SQUAWKABILLY_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow)
+		case 3:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyWhite)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyGreen{
+	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_GREEN)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyBlue{
+	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_BLUE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyYellow{
+	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_YELLOW)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSquawkabillyWhite{
+	setvar(VAR_0x8009, SPECIES_SQUAWKABILLY_WHITE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseTatsugiriForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_TATSUGIRI_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy)
+		case 2:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriCurly{
+	setvar(VAR_0x8009, SPECIES_TATSUGIRI_CURLY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriDroopy{
+	setvar(VAR_0x8009, SPECIES_TATSUGIRI_DROOPY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeTatsugiriStretchy{
+	setvar(VAR_0x8009, SPECIES_TATSUGIRI_STRETCHY)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseDudunsparceForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceTwo{
+	setvar(VAR_0x8009, SPECIES_DUDUNSPARCE_TWO_SEGMENT)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeDudunsparceThree{
+	setvar(VAR_0x8009, SPECIES_DUDUNSPARCE_THREE_SEGMENT)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChooseSinistchaForm{
+	msgbox(Route121_SafariZoneEntrance_Text_WhichForm)
+	waitmessage
+	setvar(VAR_0x8004, SCROLL_MULTI_MANIAC_SINISTCHA_FORM)
+	special(ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable)
+		case 1:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaMasterpiece)
+		case MULTI_B_PRESSED:
+			goto(Route121_SafariZoneEntrance_EventScript_ManiacDecline)
+	}
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaUnremarkable{
+	setvar(VAR_0x8009, SPECIES_SINISTCHA_UNREMARKABLE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_ManiacChangeSinistchaMasterpiece{
+	setvar(VAR_0x8009, SPECIES_SINISTCHA_MASTERPIECE)
+	special(ChangePartyMonForm)
+	closemessage
+	goto(Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange)
+	release
+	end
+}
+
+script Route121_SafariZoneEntrance_EventScript_Maniac_FinishFormChange{
+	fadescreen(FADE_TO_BLACK)
+	delay(16)
+	fadescreen(FADE_FROM_BLACK)
+	msgbox(Route121_SafariZoneEntrance_Text_WhatASpecimen, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Route121_SafariZoneEntrance_EventScript_ManiacWannaChangeForm{
+	"This place is incredible, they have all\n"
+	"kinds of species cohabiting. This is\l"
+	"the 53rd day in a row I come to visit\l"
+	"and I still discover new things!\p"
+	"Recently, I've been really interested\n"
+	"in Pokémon that can have different\l"
+	"forms in the wild.\p"
+	"Do you have such a specimen you'd let\n"
+	"me analyze?"
+}
+
+text Maniac_AskAgain{
+	"So, which one should I analyze?"
+}
+
+text Maniac_ComeBackWithOne{
+	"You could have just said you didn't\n"
+	"want to share…"
+}
+
+text Route121_SafariZoneEntrance_Text_WhatASpecimen{
+	"I'm done! Thank you so much for giving me\n"
+	"this opportunity. I'm so lucky to have\l"
+	"met you. Please come back anytime with\l"
+	"other ones. Aren't Pokémon amazing?!"
+}
+
+text Route121_SafariZoneEntrance_Text_WhichForm{
+	"Fascinating! Would you like me to change\n"
+	"its form?"
+}
+
+text Route121_SafariZoneEntrance_Text_ThisIsntAMon{
+	"What are you, some kind of amateur?\n"
+	"This Pokémon can't change forms."
+}
