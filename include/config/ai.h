@@ -12,7 +12,8 @@
 #define STAY_IN_STATS_RAISED                                    2  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 
 // AI smart switching chances; if you want more complex behaviour, modify GetSwitchChance
-#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       80
+#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       70
+#define SHOULD_SWITCH_ABSORBS_CHOICED_MOVE_PERCENTAGE               90 
 #define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            100
 #define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          100
 #define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         50
