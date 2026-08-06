@@ -644,13 +644,7 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
         median = minimum = maximum = gMovesInfo[move].argument * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
     case EFFECT_MULTI_HIT:
-        if (move == MOVE_WATER_SHURIKEN && gBattleMons[damageCalcData->battlerAtk].species == SPECIES_GRENINJA_ASH)
-        {
-            median *= 3;
-            minimum *= 3;
-            maximum *= 3;
-        }
-        else if (abilityAtk == ABILITY_SKILL_LINK)
+        if (abilityAtk == ABILITY_SKILL_LINK)
         {
             median *= 5;
             minimum *= 5;
@@ -658,15 +652,14 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
         }
         else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
         {
-            median *= 9;
-            median /= 2;
+            median *= 4;
             minimum *= 4;
-            maximum *= 5;
+            maximum *= 4;
         }
         else
         {
             median *= 3;
-            minimum *= 2;
+            minimum *= 3;
             maximum *= 3;
         }
         break;
