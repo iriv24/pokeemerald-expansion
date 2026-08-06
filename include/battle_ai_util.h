@@ -147,6 +147,7 @@ bool32 ShouldLowerSpeed(u32 battlerAtk, u32 battlerDef, u32 move, s32 statDecrea
 bool32 ShouldLowerSpeedWithStatus(u32 battlerAtk, u32 battlerDef, u32 move, s32 statDecreaseBy);
 bool32 ShouldIncreaseSpeed(u32 battlerAtk, u32 battlerDef, u32 move, u32 statIncreaseBy);
 bool32 ShouldIncreaseSpeedWithStatusMove(u32 battlerAtk, u32 battlerDef, u32 move, u32 statIncreaseBy);
+bool32 DoesBattlerIgnoreHazards(u32 battler, u32 hazardFlag);
 
 // stat stage checks
 bool32 AnyStatIsRaised(u32 battlerId);
