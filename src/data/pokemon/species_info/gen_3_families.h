@@ -9434,20 +9434,21 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "air imbued with ghost energy to\n"
             "freeze even insubstantial things,\n"
             "such as flames or the wind."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_FroslassMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_FroslassMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_FroslassMega,
+        .shinyPalette = gMonShinyPalette_FroslassMega,
+        .iconSprite = gMonIcon_FroslassMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Froslass)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
