@@ -25905,6 +25905,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Scovillain[] = INCBIN_U8("graphics/pokemon/scovillain/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/front.4bpp.lz");
+    const u32 gMonPalette_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_ScovillainMega[] = INCBIN_U32("graphics/pokemon/scovillain/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_ScovillainMega[] = INCBIN_U8("graphics/pokemon/scovillain/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Scovillain[] = INCBIN_COMP("graphics/pokemon/scovillain/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -26226,6 +26235,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Glimmora[] = INCBIN_U8("graphics/pokemon/glimmora/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_GlimmoraMega[] = INCBIN_U32("graphics/pokemon/glimmora/mega/front.4bpp.lz");
+    const u32 gMonPalette_GlimmoraMega[] = INCBIN_U32("graphics/pokemon/glimmora/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_GlimmoraMega[] = INCBIN_U32("graphics/pokemon/glimmora/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_GlimmoraMega[] = INCBIN_U32("graphics/pokemon/glimmora/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_GlimmoraMega[] = INCBIN_U8("graphics/pokemon/glimmora/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Glimmora[] = INCBIN_COMP("graphics/pokemon/glimmora/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -26366,6 +26384,24 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Tatsugiri[] = INCBIN_U8("graphics/pokemon/tatsugiri/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+
+    const u32 gMonPalette_TatsugiriMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/mega/normal.gbapal.lz");
+    const u32 gMonShinyPalette_TatsugiriMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/mega/shiny.gbapal.lz");
+
+    const u32 gMonFrontPic_TatsugiriCurlyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/mega/front.4bpp.lz");
+    const u32 gMonBackPic_TatsugiriCurlyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/mega/back.4bpp.lz");
+    const u8 gMonIcon_TatsugiriCurlyMega[] = INCBIN_U8("graphics/pokemon/tatsugiri/mega/icon.4bpp");
+
+    const u32 gMonFrontPic_TatsugiriStretchyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/stretchy/mega/front.4bpp.lz");
+    const u32 gMonBackPic_TatsugiriStretchyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/stretchy/mega/back.4bpp.lz");
+    const u8 gMonIcon_TatsugiriStretchyMega[] = INCBIN_U8("graphics/pokemon/tatsugiri/stretchy/mega/icon.4bpp");
+
+    const u32 gMonFrontPic_TatsugiriDroopyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/droopy/mega/front.4bpp.lz");
+    const u32 gMonBackPic_TatsugiriDroopyMega[] = INCBIN_U32("graphics/pokemon/tatsugiri/droopy/mega/back.4bpp.lz");
+    const u8 gMonIcon_TatsugiriDroopyMega[] = INCBIN_U8("graphics/pokemon/tatsugiri/droopy/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_TatsugiriCurly[] = INCBIN_COMP("graphics/pokemon/tatsugiri/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -26658,6 +26694,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Baxcalibur[] = INCBIN_U8("graphics/pokemon/baxcalibur/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_BaxcaliburMega[] = INCBIN_U32("graphics/pokemon/baxcalibur/mega/front.4bpp.lz");
+    const u32 gMonPalette_BaxcaliburMega[] = INCBIN_U32("graphics/pokemon/baxcalibur/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_BaxcaliburMega[] = INCBIN_U32("graphics/pokemon/baxcalibur/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_BaxcaliburMega[] = INCBIN_U32("graphics/pokemon/baxcalibur/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_BaxcaliburMega[] = INCBIN_U8("graphics/pokemon/baxcalibur/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Baxcalibur[] = INCBIN_COMP("graphics/pokemon/baxcalibur/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
