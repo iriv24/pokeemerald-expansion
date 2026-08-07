@@ -14358,6 +14358,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_Staraptor[] = INCBIN_U32("graphics/pokemon/staraptor/back.4bpp.lz");
     const u32 gMonShinyPalette_Staraptor[] = INCBIN_U32("graphics/pokemon/staraptor/shiny.gbapal.lz");
     const u8 gMonIcon_Staraptor[] = INCBIN_U8("graphics/pokemon/staraptor/icon.4bpp");
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/front.4bpp.lz");
+    const u32 gMonPalette_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_StaraptorMega[] = INCBIN_U8("graphics/pokemon/chimecho/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Staraptor[] = INCBIN_U8("graphics/pokemon/staraptor/footprint.1bpp");
 #endif //P_FOOTPRINTS
@@ -15224,6 +15233,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_GarchompMega[] = INCBIN_U32("graphics/pokemon/garchomp/mega/back.4bpp.lz");
     const u32 gMonShinyPalette_GarchompMega[] = INCBIN_U32("graphics/pokemon/garchomp/mega/shiny.gbapal.lz");
     const u8 gMonIcon_GarchompMega[] = INCBIN_U8("graphics/pokemon/garchomp/mega/icon.4bpp");
+
+    const u32 gMonFrontPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/front.4bpp.lz");
+    const u32 gMonPalette_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/normal.gbapal.lz");
+    const u32 gMonBackPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/back.4bpp.lz");
+    const u32 gMonShinyPalette_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/shiny.gbapal.lz");
+    const u8 gMonIcon_GarchompMegaZ[] = INCBIN_U8("graphics/pokemon/garchomp/mega_z/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_GarchompMega[] = INCBIN_COMP("graphics/pokemon/garchomp/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -15273,6 +15288,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_LucarioMega[] = INCBIN_U32("graphics/pokemon/lucario/mega/back.4bpp.lz");
     const u32 gMonShinyPalette_LucarioMega[] = INCBIN_U32("graphics/pokemon/lucario/mega/shiny.gbapal.lz");
     const u8 gMonIcon_LucarioMega[] = INCBIN_U8("graphics/pokemon/lucario/mega/icon.4bpp");
+
+    const u32 gMonFrontPic_LucarioMegaZ[] = INCBIN_U32("graphics/pokemon/lucario/mega_z/front.4bpp.lz");
+    const u32 gMonPalette_LucarioMegaZ[] = INCBIN_U32("graphics/pokemon/lucario/mega_z/normal.gbapal.lz");
+    const u32 gMonBackPic_LucarioMegaZ[] = INCBIN_U32("graphics/pokemon/lucario/mega_z/back.4bpp.lz");
+    const u32 gMonShinyPalette_LucarioMegaZ[] = INCBIN_U32("graphics/pokemon/lucario/mega_z/shiny.gbapal.lz");
+    const u8 gMonIcon_LucarioMegaZ[] = INCBIN_U8("graphics/pokemon/lucario/mega_z/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
     // const u32 gObjectEventPic_LucarioMega[] = INCBIN_COMP("graphics/pokemon/lucario/mega/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
