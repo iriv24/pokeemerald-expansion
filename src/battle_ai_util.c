@@ -1253,7 +1253,13 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 aiMoveConsidered, u32 pla
     if (AI_DATA->switchInCalc
      && (gSideStatuses[GetBattlerSide(battlerAI)] & SIDE_STATUS_STICKY_WEB)
      && !DoesBattlerIgnoreHazards(battlerAI, SIDE_STATUS_STICKY_WEB))
-        stickyWebDrop = -1;
+    {
+        if (abilityAI == ABILITY_CONTRARY)
+            stickyWebDrop = 1;
+        else
+            stickyWebDrop = -1;
+    }
+
 
     speedBattlerAI = GetBattlerTotalSpeedStatArgs(battlerAI, abilityAI, holdEffectAI, stickyWebDrop);
     speedBattler   = GetBattlerTotalSpeedStatArgs(battler, abilityPlayer, holdEffectPlayer, 0);
@@ -4918,13 +4924,24 @@ bool32 DoesBattlerIgnoreHazards(u32 battler, u32 hazardFlag)
     {
     case SIDE_STATUS_SPIKES:
     case SIDE_STATUS_TOXIC_SPIKES:
-    case SIDE_STATUS_STICKY_WEB:
         if (!IsBattlerGrounded(battler))
             return TRUE;
         if (hazardFlag == SIDE_STATUS_TOXIC_SPIKES
          && IS_BATTLER_ANY_TYPE(battler, TYPE_POISON, TYPE_STEEL))
             return TRUE;
         if (hazardFlag == SIDE_STATUS_SPIKES && ability == ABILITY_MAGIC_GUARD)
+            return TRUE;
+        break;
+
+    case SIDE_STATUS_STICKY_WEB:
+        if (!IsBattlerGrounded(battler))
+            return TRUE;
+        if (ability == ABILITY_CLEAR_BODY
+         || ability == ABILITY_WHITE_SMOKE
+         || ability == ABILITY_FULL_METAL_BODY
+         || ability == ABILITY_MIRROR_ARMOR)
+            return TRUE;
+        if (heldItemEffect == HOLD_EFFECT_CLEAR_AMULET)
             return TRUE;
         break;
 
