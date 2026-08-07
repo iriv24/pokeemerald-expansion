@@ -21536,6 +21536,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Crabominable[] = INCBIN_U8("graphics/pokemon/crabominable/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_CrabominableMega[] = INCBIN_U32("graphics/pokemon/crabominable/mega/front.4bpp.lz");
+    const u32 gMonPalette_CrabominableMega[] = INCBIN_U32("graphics/pokemon/crabominable/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_CrabominableMega[] = INCBIN_U32("graphics/pokemon/crabominable/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_CrabominableMega[] = INCBIN_U32("graphics/pokemon/crabominable/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_CrabominableMega[] = INCBIN_U8("graphics/pokemon/crabominable/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Crabominable[] = INCBIN_COMP("graphics/pokemon/crabominable/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22094,6 +22103,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Golisopod[] = INCBIN_U8("graphics/pokemon/golisopod/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_GolisopodMega[] = INCBIN_U32("graphics/pokemon/golisopod/mega/front.4bpp.lz");
+    const u32 gMonPalette_GolisopodMega[] = INCBIN_U32("graphics/pokemon/golisopod/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_GolisopodMega[] = INCBIN_U32("graphics/pokemon/golisopod/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_GolisopodMega[] = INCBIN_U32("graphics/pokemon/golisopod/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_GolisopodMega[] = INCBIN_U8("graphics/pokemon/golisopod/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Golisopod[] = INCBIN_COMP("graphics/pokemon/golisopod/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22397,6 +22415,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Drampa[] = INCBIN_U8("graphics/pokemon/drampa/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_DrampaMega[] = INCBIN_U32("graphics/pokemon/drampa/mega/front.4bpp.lz");
+    const u32 gMonPalette_DrampaMega[] = INCBIN_U32("graphics/pokemon/drampa/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_DrampaMega[] = INCBIN_U32("graphics/pokemon/drampa/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_DrampaMega[] = INCBIN_U32("graphics/pokemon/drampa/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_DrampaMega[] = INCBIN_U8("graphics/pokemon/drampa/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Drampa[] = INCBIN_COMP("graphics/pokemon/drampa/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22808,6 +22835,21 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Magearna[] = INCBIN_U8("graphics/pokemon/magearna/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/front.4bpp.lz");
+    const u32 gMonPalette_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_MagearnaMega[] = INCBIN_U8("graphics/pokemon/magearna/mega/icon.4bpp");
+
+    const u32 gMonFrontPic_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/original_color/mega/front.4bpp.lz");
+    const u32 gMonPalette_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/original_color/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/original_color/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/original_color/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_MagearnaOriginalMega[] = INCBIN_U8("graphics/pokemon/magearna/original_color/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Magearna[] = INCBIN_COMP("graphics/pokemon/magearna/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -22927,6 +22969,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Zeraora[] = INCBIN_U8("graphics/pokemon/zeraora/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/front.4bpp.lz");
+    const u32 gMonPalette_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_ZeraoraMega[] = INCBIN_U32("graphics/pokemon/zeraora/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_ZeraoraMega[] = INCBIN_U8("graphics/pokemon/zeraora/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Zeraora[] = INCBIN_COMP("graphics/pokemon/zeraora/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
