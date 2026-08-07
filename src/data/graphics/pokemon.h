@@ -13137,6 +13137,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/back_gba.4bpp.lz");
     const u32 gMonShinyPalette_Chimecho[] = INCBIN_U32("graphics/pokemon/chimecho/shiny_gba.gbapal.lz");
 #endif //P_GBA_STYLE_SPECIES_GFX
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/front.4bpp.lz");
+    const u32 gMonPalette_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_ChimechoMega[] = INCBIN_U32("graphics/pokemon/chimecho/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_ChimechoMega[] = INCBIN_U8("graphics/pokemon/chimecho/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if !P_GBA_STYLE_SPECIES_ICONS
     const u8 gMonIcon_Chimecho[] = INCBIN_U8("graphics/pokemon/chimecho/icon.4bpp");
 #else
@@ -13166,6 +13175,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_Absol[] = INCBIN_U32("graphics/pokemon/absol/back_gba.4bpp.lz");
     const u32 gMonShinyPalette_Absol[] = INCBIN_U32("graphics/pokemon/absol/shiny_gba.gbapal.lz");
 #endif //P_GBA_STYLE_SPECIES_GFX
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_AbsolMegaZ[] = INCBIN_U32("graphics/pokemon/absol/mega_z/front.4bpp.lz");
+    const u32 gMonPalette_AbsolMegaZ[] = INCBIN_U32("graphics/pokemon/absol/mega_z/normal.gbapal.lz");
+    const u32 gMonBackPic_AbsolMegaZ[] = INCBIN_U32("graphics/pokemon/absol/mega_z/back.4bpp.lz");
+    const u32 gMonShinyPalette_AbsolMegaZ[] = INCBIN_U32("graphics/pokemon/absol/mega_z/shiny.gbapal.lz");
+    const u8 gMonIcon_AbsolMegaZ[] = INCBIN_U8("graphics/pokemon/absol/mega_z/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if !P_GBA_STYLE_SPECIES_ICONS
     const u8 gMonIcon_Absol[] = INCBIN_U8("graphics/pokemon/absol/icon.4bpp");
 #else
