@@ -250,20 +250,20 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             "powerful Solar Beam from its four\n"
             "flowers. Another name for this is\n"
             "Mega Sol Cannon."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_MeganiumMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_MeganiumMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeganiumMega,
+        .shinyPalette = gMonShinyPalette_MeganiumMega,
+        .iconSprite = gMonIcon_MeganiumMega,
+        .iconPalIndex = 1,
+        FOOTPRINT(Meganium)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -796,20 +796,20 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             "Pokémon forms a gigantic set of jaws\n"
             "with a bite 10 times as powerful\n"
             "as Mega Feraligatr's actual jaws."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_FeraligatrMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_FeraligatrMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_FeraligatrMega,
+        .shinyPalette = gMonShinyPalette_FeraligatrMega,
+        .iconSprite = gMonIcon_FeraligatrMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Feraligatr)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -6554,20 +6554,21 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             "its pincers have taken a more\n"
             "diabolical form, ripping anything\n"
             "they pierce to shreds."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_SkarmoryMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_SkarmoryMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_SkarmoryMega,
+        .shinyPalette = gMonShinyPalette_SkarmoryMega,
+        .iconSprite = gMonIcon_SkarmoryMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Skarmory)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
