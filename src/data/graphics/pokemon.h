@@ -14373,7 +14373,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonPalette_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/normal.gbapal.lz");
     const u32 gMonBackPic_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/back.4bpp.lz");
     const u32 gMonShinyPalette_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/shiny.gbapal.lz");
-    const u8 gMonIcon_StaraptorMega[] = INCBIN_U8("graphics/pokemon/chimecho/mega/icon.4bpp");
+    const u8 gMonIcon_StaraptorMega[] = INCBIN_U8("graphics/pokemon/staraptor/mega/icon.4bpp");
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_FOOTPRINTS
@@ -24353,6 +24353,15 @@ const u32 gShinyOverworldPalette_DiancieSapphire[] = INCBIN_U32("graphics/pokemo
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Falinks[] = INCBIN_U8("graphics/pokemon/falinks/footprint.1bpp");
 #endif //P_FOOTPRINTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_FalinksMega[] = INCBIN_U32("graphics/pokemon/falinks/mega/front.4bpp.lz");
+    const u32 gMonPalette_FalinksMega[] = INCBIN_U32("graphics/pokemon/falinks/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_FalinksMega[] = INCBIN_U32("graphics/pokemon/falinks/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_FalinksMega[] = INCBIN_U32("graphics/pokemon/falinks/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_FalinksMega[] = INCBIN_U8("graphics/pokemon/falinks/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Falinks[] = INCBIN_COMP("graphics/pokemon/falinks/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
