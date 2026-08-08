@@ -864,6 +864,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_DEFIANT:
             case ABILITY_COMPETITIVE:
+            case ABILITY_MIRROR_ARMOR:
                 if ((IsStatLoweringEffect(moveEffect)
                     || IsStatLoweringSecondaryEffect(battlerAtk, battlerDef, move)) 
                     && !IS_TARGETING_PARTNER(battlerAtk, battlerDef)

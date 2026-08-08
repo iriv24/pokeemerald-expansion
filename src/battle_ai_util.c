@@ -644,13 +644,7 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
         median = minimum = maximum = gMovesInfo[move].argument * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
     case EFFECT_MULTI_HIT:
-        if (move == MOVE_WATER_SHURIKEN && gBattleMons[damageCalcData->battlerAtk].species == SPECIES_GRENINJA_ASH)
-        {
-            median *= 3;
-            minimum *= 3;
-            maximum *= 3;
-        }
-        else if (abilityAtk == ABILITY_SKILL_LINK)
+        if (abilityAtk == ABILITY_SKILL_LINK)
         {
             median *= 5;
             minimum *= 5;
@@ -1242,6 +1236,7 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 aiMoveConsidered, u32 pla
     u32 holdEffectPlayer = AI_DATA->holdEffects[battler];
     u32 abilityAI = AI_DATA->abilities[battlerAI];
     u32 abilityPlayer = AI_DATA->abilities[battler];
+    s32 stickyWebDrop = 0;
 
     if (considerPriority == CONSIDER_PRIORITY)
     {
@@ -1254,7 +1249,19 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 aiMoveConsidered, u32 pla
             return AI_IS_SLOWER;
     }
 
-    speedBattlerAI = GetBattlerTotalSpeedStatArgs(battlerAI, abilityAI, holdEffectAI, 0);
+    // Factor in sticky web if AI is not "immune" to it
+    if (AI_DATA->switchInCalc
+     && (gSideStatuses[GetBattlerSide(battlerAI)] & SIDE_STATUS_STICKY_WEB)
+     && !DoesBattlerIgnoreHazards(battlerAI, SIDE_STATUS_STICKY_WEB))
+    {
+        if (abilityAI == ABILITY_CONTRARY)
+            stickyWebDrop = 1;
+        else
+            stickyWebDrop = -1;
+    }
+
+
+    speedBattlerAI = GetBattlerTotalSpeedStatArgs(battlerAI, abilityAI, holdEffectAI, stickyWebDrop);
     speedBattler   = GetBattlerTotalSpeedStatArgs(battler, abilityPlayer, holdEffectPlayer, 0);
 
     if (holdEffectAI == HOLD_EFFECT_LAGGING_TAIL && holdEffectPlayer != HOLD_EFFECT_LAGGING_TAIL)
@@ -2088,7 +2095,8 @@ bool32 ShouldLowerStat(u32 battler, u32 battlerAbility, u32 stat)
          || battlerAbility == ABILITY_WHITE_SMOKE
          || battlerAbility == ABILITY_FULL_METAL_BODY
          || battlerAbility == ABILITY_COMPETITIVE
-         || battlerAbility == ABILITY_DEFIANT)
+         || battlerAbility == ABILITY_DEFIANT
+         || battlerAbility == ABILITY_MIRROR_ARMOR)
             return FALSE;
 
         switch (stat)
@@ -2182,6 +2190,7 @@ bool32 ShouldLowerAttack(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_HYPER_CUTTER
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2203,6 +2212,7 @@ bool32 ShouldLowerDefense(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_BIG_PECKS
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2223,6 +2233,7 @@ bool32 ShouldLowerSpAtk(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2243,6 +2254,7 @@ bool32 ShouldLowerSpDef(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2263,6 +2275,7 @@ bool32 ShouldLowerAccuracy(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_MINDS_EYE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2282,6 +2295,7 @@ bool32 ShouldLowerEvasion(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_WHITE_SMOKE
       && defAbility != ABILITY_DEFIANT
       && defAbility != ABILITY_COMPETITIVE
+      && defAbility != ABILITY_MIRROR_ARMOR
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -4893,4 +4907,49 @@ bool32 ShouldIncreaseSpeedWithStatusMove(u32 battlerAtk, u32 battlerDef, u32 mov
         return FALSE;
 
     return TRUE;
+}
+
+bool32 DoesBattlerIgnoreHazards(u32 battler, u32 hazardFlag)
+{
+    u32 ability = GetBattlerAbility(battler);
+    u32 heldItemEffect = GetBattlerHoldEffect(battler, TRUE);
+    bool32 bootsActive = (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS
+                       && ability != ABILITY_KLUTZ
+                       && !(gFieldStatuses & STATUS_FIELD_MAGIC_ROOM));
+
+    if (bootsActive)
+        return TRUE;
+
+    switch (hazardFlag)
+    {
+    case SIDE_STATUS_SPIKES:
+    case SIDE_STATUS_TOXIC_SPIKES:
+        if (!IsBattlerGrounded(battler))
+            return TRUE;
+        if (hazardFlag == SIDE_STATUS_TOXIC_SPIKES
+         && IS_BATTLER_ANY_TYPE(battler, TYPE_POISON, TYPE_STEEL))
+            return TRUE;
+        if (hazardFlag == SIDE_STATUS_SPIKES && ability == ABILITY_MAGIC_GUARD)
+            return TRUE;
+        break;
+
+    case SIDE_STATUS_STICKY_WEB:
+        if (!IsBattlerGrounded(battler))
+            return TRUE;
+        if (ability == ABILITY_CLEAR_BODY
+         || ability == ABILITY_WHITE_SMOKE
+         || ability == ABILITY_FULL_METAL_BODY
+         || ability == ABILITY_MIRROR_ARMOR)
+            return TRUE;
+        if (heldItemEffect == HOLD_EFFECT_CLEAR_AMULET)
+            return TRUE;
+        break;
+
+    case SIDE_STATUS_STEALTH_ROCK:
+        if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_MOUNTAINEER)
+            return TRUE;
+        break;
+    }
+
+    return FALSE;
 }
