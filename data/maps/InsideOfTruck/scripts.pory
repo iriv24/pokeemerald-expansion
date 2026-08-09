@@ -57,8 +57,8 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	delay 100
 	delay 100
 	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_SetDefaultSettings
-	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_StartSettingsMenu
+	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
+	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_SetDefaultSettings
 	releaseall
 	end
 
