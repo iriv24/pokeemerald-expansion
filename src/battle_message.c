@@ -494,6 +494,9 @@ static const u8 sText_WallyUsedItem[] = _("WALLY used {B_LAST_ITEM}!"); //no dec
 static const u8 sText_Trainer1UsedItem[] = _("{B_ATK_TRAINER_CLASS} {B_ATK_TRAINER_NAME} used {B_LAST_ITEM}!");
 static const u8 sText_TrainerBlockedBall[] = _("The Trainer blocked your Poké Ball!");
 static const u8 sText_DontBeAThief[] = _("Don't be a thief!");
+static const u8 sText_YouCantCatch[] = _("You can't catch this Pokémon!");
+static const u8 sText_YouAlreadyHaveLegendaryOrMythical[] = _("You already have a Legendary or Mythical Pokémon!");
+static const u8 sText_YouAlreadyHaveParadoxOrUltraBeast[] = _("You already have a Paradox Pokémon or Ultra Beast!");
 static const u8 sText_ItDodgedBall[] = _("It dodged your thrown Poké Ball! This Pokémon can't be caught!");
 static const u8 sText_YouMissedPkmn[] = _("You missed the Pokémon!");
 static const u8 sText_PkmnBrokeFree[] = _("Oh no! The Pokémon broke free!");
@@ -1593,6 +1596,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_WAGGLINGAFINGER - BATTLESTRINGS_TABLE_START] = sText_WagglingAFinger,
     [STRINGID_BLOCKEDBYSLEEPCLAUSE - BATTLESTRINGS_TABLE_START] = sText_BlockedBySleepClause,
     [STRINGID_GRIPPERACTIVATES - BATTLESTRINGS_TABLE_START] = sText_GripperActivates,
+    [STRINGID_YOUCANTCATCH - BATTLESTRINGS_TABLE_START] = sText_YouCantCatch,
+    [STRINGID_ALREADYHAVELEGENDARYORMYTHICAL - BATTLESTRINGS_TABLE_START] = sText_YouAlreadyHaveLegendaryOrMythical,
+    [STRINGID_ALREADYHAVEPARADOXORULTRABEAST - BATTLESTRINGS_TABLE_START] = sText_YouAlreadyHaveParadoxOrUltraBeast,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

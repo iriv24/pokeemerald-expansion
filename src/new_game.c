@@ -214,6 +214,8 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->dexNavChain = 0;
     gSaveBlock2Ptr->autoRun = FALSE;
     gSaveBlock1Ptr->whiteOuts = 0;
+    gSaveBlock2Ptr->caughtLegendaryOrMythical = FALSE;
+    gSaveBlock2Ptr->caughtParadoxOrUltraBeast = FALSE;
 }
 
 static void ResetMiniGamesRecords(void)
