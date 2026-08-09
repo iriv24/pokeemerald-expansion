@@ -30,6 +30,7 @@
 #include "pokedex.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "pokemon_hard.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
@@ -1729,6 +1730,7 @@ const struct HardModeAbilityMap gHardModeAbilityMap[NUM_SPECIES] =
 #include "data/object_events/object_event_pic_tables_followers.h"
 
 #include "data/pokemon/species_info.h"
+#include "data/pokemon/species_info_hard.h"
 
 #define PP_UP_SHIFTS(val)           val,        (val) << 2,        (val) << 4,        (val) << 6
 #define PP_UP_SHIFTS_INV(val) (u8)~(val), (u8)~((val) << 2), (u8)~((val) << 4), (u8)~((val) << 6)
@@ -2111,6 +2113,19 @@ void ZeroEnemyPartyMons(void)
         ZeroMonData(&gEnemyParty[i]);
 }
 
+static inline bool32 IsHardMode(void)
+{
+    return VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE;
+}
+
+u16 GetSpeciesAbility(u16 species, u8 slot)
+{
+    u16 sanitizeSpecies = SanitizeSpeciesId(species);
+    if (IsHardMode() && gSpeciesInfoHardTable[sanitizeSpecies] != NULL)
+        return gSpeciesInfoHardTable[sanitizeSpecies]->abilities[slot];
+    return gSpeciesInfo[sanitizeSpecies].abilities[slot];
+}
+
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
     u32 mail;
@@ -2288,7 +2303,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         }
     }
 
-    if (gSpeciesInfo[species].abilities[1])
+    if (GetSpeciesAbility(species, 1))
     {
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
@@ -4396,7 +4411,7 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility)
     u16 hardModeAbility;
 
     if (abilityNum < NUM_ABILITY_SLOTS)
-        gLastUsedAbility = gSpeciesInfo[species].abilities[abilityNum];
+        gLastUsedAbility = GetSpeciesAbility(species, abilityNum);
     else
         gLastUsedAbility = ABILITY_NONE;
 
@@ -4404,13 +4419,13 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility)
     {
         for (i = NUM_NORMAL_ABILITY_SLOTS; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++)
         {
-            gLastUsedAbility = gSpeciesInfo[species].abilities[i];
+            gLastUsedAbility = GetSpeciesAbility(species, i);
         }
     }
 
     for (i = 0; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++) // look for any non-empty ability
     {
-        gLastUsedAbility = gSpeciesInfo[species].abilities[i];
+        gLastUsedAbility = GetSpeciesAbility(species, i);
     }
 
     if (!cantRandomizeAbility && gLastUsedAbility != ABILITY_NONE)
@@ -4551,7 +4566,10 @@ u16 GetSpeciesWeight(u16 species)
 
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
 {
-    const struct LevelUpMove *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].levelUpLearnset;
+    u16 sanitizeSpecies = SanitizeSpeciesId(species);
+    if (IsHardMode() && gSpeciesInfoHardTable[sanitizeSpecies] != NULL)
+        return gSpeciesInfoHardTable[sanitizeSpecies]->levelUpLearnset;
+    const struct LevelUpMove *learnset = gSpeciesInfo[sanitizeSpecies].levelUpLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].levelUpLearnset;
     return learnset;
@@ -4559,7 +4577,10 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
 
 const u16 *GetSpeciesTeachableLearnset(u16 species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].teachableLearnset;
+    u16 sanitizeSpecies = SanitizeSpeciesId(species);
+    if (IsHardMode() && gSpeciesInfoHardTable[sanitizeSpecies] != NULL)
+        return gSpeciesInfoHardTable[sanitizeSpecies]->teachableLearnset;
+    const u16 *learnset = gSpeciesInfo[sanitizeSpecies].teachableLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].teachableLearnset;
     return learnset;
@@ -4567,7 +4588,10 @@ const u16 *GetSpeciesTeachableLearnset(u16 species)
 
 const u16 *GetSpeciesEggMoves(u16 species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].eggMoveLearnset;
+    u16 sanitizeSpecies = SanitizeSpeciesId(species);
+    if (IsHardMode() && gSpeciesInfoHardTable[sanitizeSpecies] != NULL)
+        return gSpeciesInfoHardTable[sanitizeSpecies]->eggMoveLearnset;
+    const u16 *learnset = gSpeciesInfo[sanitizeSpecies].eggMoveLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].eggMoveLearnset;
     return learnset;
@@ -4575,7 +4599,10 @@ const u16 *GetSpeciesEggMoves(u16 species)
 
 const struct Evolution *GetSpeciesEvolutions(u16 species)
 {
-    const struct Evolution *evolutions = gSpeciesInfo[SanitizeSpeciesId(species)].evolutions;
+    u16 sanitizeSpecies = SanitizeSpeciesId(species);
+    if (IsHardMode() && gSpeciesInfoHardTable[sanitizeSpecies] != NULL)
+        return gSpeciesInfoHardTable[sanitizeSpecies]->evolutions;
+    const struct Evolution *evolutions = gSpeciesInfo[sanitizeSpecies].evolutions;
     if (evolutions == NULL)
         return gSpeciesInfo[SPECIES_NONE].evolutions;
     return evolutions;

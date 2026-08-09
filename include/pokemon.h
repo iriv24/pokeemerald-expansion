@@ -908,5 +908,6 @@ void TrySetDayLimitToFormChange(struct Pokemon *mon);
 u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, bool32 state);
 bool32 IsRegionalForm(u16 speciesId);
 bool32 HasRegionalForm(u16 speciesId);
+u16 GetSpeciesAbility(u16 species, u8 slot);
 
 #endif // GUARD_POKEMON_H
