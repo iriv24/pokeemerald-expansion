@@ -1041,9 +1041,6 @@ struct SaveBlock1
     /*0x690*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
     /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
-#if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
-    /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
-#endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[6];
 #if FREE_MATCH_CALL == FALSE
@@ -1099,7 +1096,6 @@ struct SaveBlock1
     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
-    u8 roamersPadding[420]; // nice 
     /*0x31DC*/ struct Roamer roamer[ROAMER_COUNT];
 #if FREE_ENIGMA_BERRY == FALSE
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
@@ -1125,13 +1121,12 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
-               u8 dexNavSearchLevels[NUM_SPECIES];
-               u8 unused_speciesPadding[50];         // if you increase NUM_SPECIES, decrease this by the same amount: 1533->1535;100->98
-               u8 dexNavChain;
                u8 registeredItemLastSelected:4; //max 16 items
                u8 registeredItemListCount:4;
                struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];
                u32 whiteOuts;
+               u8 dexNavChain;
+               u8 dexNavSearchLevels[NUM_SPECIES];
     // sizeof: 0x3???
     //from debug as of 3/4/2024 before any space changes: 15568b/15872b; free space: 304b.
     //after changing SECTOR_DATA_SIZE -> 4084: 15568b/16336b; free space: 768b.
