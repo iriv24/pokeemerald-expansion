@@ -75,7 +75,7 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 # 38 "data/maps/InsideOfTruck/scripts.pory"
 	delay 100
 # 39 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	msgbox InsideOfTruck_Text_WantToChangeDefaultSettings, MSGBOX_YESNO
 # 40 "data/maps/InsideOfTruck/scripts.pory"
 	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
 # 41 "data/maps/InsideOfTruck/scripts.pory"
@@ -115,11 +115,11 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 # 58 "data/maps/InsideOfTruck/scripts.pory"
 	delay 100
 # 59 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	msgbox InsideOfTruck_Text_WantToChangeDefaultSettings, MSGBOX_YESNO
 # 60 "data/maps/InsideOfTruck/scripts.pory"
-	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_SetDefaultSettings
+	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
 # 61 "data/maps/InsideOfTruck/scripts.pory"
-	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_StartSettingsMenu
+	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_SetDefaultSettings
 # 62 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 # 63 "data/maps/InsideOfTruck/scripts.pory"
@@ -173,7 +173,7 @@ InsideOfTruck_Text_ReadCarefully:
 # 87 "data/maps/InsideOfTruck/scripts.pory"
 
 # 88 "data/maps/InsideOfTruck/scripts.pory"
-InsideOfTruck_Text_WantToUseDefaultSettings:
+InsideOfTruck_Text_WantToChangeDefaultSettings:
 # 89 "data/maps/InsideOfTruck/scripts.pory"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like to change the settings\n"
 # 90 "data/maps/InsideOfTruck/scripts.pory"

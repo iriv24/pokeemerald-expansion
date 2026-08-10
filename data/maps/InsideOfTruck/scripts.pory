@@ -36,7 +36,7 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 	waitmessage
 	delay 100
 	delay 100
-	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	msgbox InsideOfTruck_Text_WantToChangeDefaultSettings, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
 	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_SetDefaultSettings
 	releaseall
@@ -56,7 +56,7 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	waitmessage
 	delay 100
 	delay 100
-	msgbox InsideOfTruck_Text_WantToUseDefaultSettings, MSGBOX_YESNO
+	msgbox InsideOfTruck_Text_WantToChangeDefaultSettings, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, InsideOfTruck_EventScript_StartSettingsMenu
 	call_if_eq VAR_RESULT, NO, InsideOfTruck_EventScript_SetDefaultSettings
 	releaseall
@@ -85,7 +85,7 @@ InsideOfTruck_Text_ReadCarefully:
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Please take a moment to read the\n"
 	.string "following carefully.$"
 
-InsideOfTruck_Text_WantToUseDefaultSettings:
+InsideOfTruck_Text_WantToChangeDefaultSettings:
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Would you like to change the settings\n"
 	.string "for Pokémon Emerald Imperium?\p"
 	.string "The default settings are as follows:\p"
