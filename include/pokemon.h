@@ -790,7 +790,6 @@ u8 CalculateEnemyPartyCountInSide(u32 battler);
 u8 GetMonsStateToDoubles(void);
 u8 GetMonsStateToDoubles_2(void);
 u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility);
-u16 AbilityMapperHardMode(u16 species, u8 abilityNum);
 u16 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord);
 u8 GetSecretBaseTrainerPicIndex(void);
