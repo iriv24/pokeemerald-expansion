@@ -265,9 +265,9 @@ void SetBattlerData(u32 battlerId)
         if (AI_PARTY->mons[side][gBattlerPartyIndexes[battlerId]].ability != ABILITY_NONE)
             gBattleMons[battlerId].ability = AI_PARTY->mons[side][gBattlerPartyIndexes[battlerId]].ability;
         // Check if mon can only have one ability.
-        else if (gSpeciesInfo[species].abilities[1] == ABILITY_NONE
-                || gSpeciesInfo[species].abilities[1] == gSpeciesInfo[species].abilities[0])
-            gBattleMons[battlerId].ability = gSpeciesInfo[species].abilities[0];
+        else if (GetSpeciesAbility(species, 1) == ABILITY_NONE
+                || GetSpeciesAbility(species, 1) == GetSpeciesAbility(species, 0))
+            gBattleMons[battlerId].ability = GetSpeciesAbility(species, 0);
         // The ability is unknown.
         else
             gBattleMons[battlerId].ability = ABILITY_NONE;
@@ -1673,7 +1673,7 @@ s32 AI_DecideKnownAbilityForTurn(u32 battlerId)
 
     for (i = 0; i < NUM_ABILITY_SLOTS; i++)
     {
-        if (gSpeciesInfo[gBattleMons[battlerId].species].abilities[i] != ABILITY_NONE)
+        if (GetSpeciesAbility(gBattleMons[battlerId].species,i) != ABILITY_NONE)
             validAbilities[numValidAbilities++] = GetAbilityBySpecies(gBattleMons[battlerId].species, i, gBattleMons[battlerId].cantRandomizeAbility);
     }
 

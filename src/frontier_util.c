@@ -2651,7 +2651,7 @@ void CreateFrontierBrainPokemon(void)
         abilitySlot = 0; 
         for (int j = 0; j < NUM_ABILITY_SLOTS; j++)
         {
-            if (gSpeciesInfo[sFrontierBrainsMons[facility][symbol][i].species].abilities[j] == sFrontierBrainsMons[facility][symbol][i].ability)
+            if (GetSpeciesAbility(sFrontierBrainsMons[facility][symbol][i].species, j) == sFrontierBrainsMons[facility][symbol][i].ability)
             {
                 abilitySlot = j;
                 break;
