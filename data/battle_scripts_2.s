@@ -230,22 +230,6 @@ BattleScript_TrainerBallBlock::
 	waitmessage B_WAIT_TIME_LONG
 	finishaction
 
-BattleScript_TrainerBallBlockLegendaryOrMythical::
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_YOUCANTCATCH
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_ALREADYHAVELEGENDARYORMYTHICAL
-	waitmessage B_WAIT_TIME_LONG
-	finishaction
-
-BattleScript_TrainerBallBlockParadoxOrUltraBeast::
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_YOUCANTCATCH
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_ALREADYHAVEPARADOXORULTRABEAST
-	waitmessage B_WAIT_TIME_LONG
-	finishaction
-
 BattleScript_RunByUsingItem::
 	playse SE_FLEE
 	setbyte gBattleOutcome, B_OUTCOME_RAN
