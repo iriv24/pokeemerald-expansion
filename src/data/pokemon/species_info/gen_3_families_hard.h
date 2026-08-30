@@ -28,7 +28,7 @@
     ),
 
     [SPECIES_TORCHIC] = HARD_MODE(
-        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_SPEED_BOOST },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .levelUpLearnset = sTorchicLevelUpLearnset,
         .teachableLearnset = sTorchicTeachableLearnset,
         .eggMoveLearnset = sTorchicEggMoveLearnset,
@@ -36,7 +36,7 @@
     ),
 
     [SPECIES_COMBUSKEN] = HARD_MODE(
-        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_SPEED_BOOST },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .levelUpLearnset = sCombuskenLevelUpLearnset,
         .teachableLearnset = sCombuskenTeachableLearnset,
         .eggMoveLearnset = sTorchicEggMoveLearnset,
@@ -44,14 +44,14 @@
     ),
 
     [SPECIES_BLAZIKEN] = HARD_MODE(
-        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_SPEED_BOOST },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .levelUpLearnset = sBlazikenLevelUpLearnset,
         .teachableLearnset = sBlazikenTeachableLearnset,
         .eggMoveLearnset = sTorchicEggMoveLearnset,
     ),
 
     [SPECIES_BLAZIKEN_MEGA] = HARD_MODE(
-        .abilities = {ABILITY_STRIKER,  ABILITY_STRIKER,  ABILITY_SPEED_BOOST },
+        .abilities = {ABILITY_STRIKER,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .levelUpLearnset = sBlazikenLevelUpLearnset,
         .teachableLearnset = sBlazikenTeachableLearnset,
     ),
