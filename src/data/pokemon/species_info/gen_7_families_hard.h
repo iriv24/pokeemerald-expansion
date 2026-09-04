@@ -561,98 +561,84 @@
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_ORANGE] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_YELLOW] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_GREEN] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_BLUE] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_INDIGO] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_METEOR_VIOLET] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_RED] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_ORANGE] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_YELLOW] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_GREEN] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_BLUE] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_INDIGO] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_MINIOR_CORE_VIOLET] = HARD_MODE(
         .abilities = {  ABILITY_SHIELDS_DOWN,  ABILITY_NONE,  ABILITY_NONE },
         .levelUpLearnset = sMiniorLevelUpLearnset,
         .teachableLearnset = sMiniorTeachableLearnset,
-        .eggMoveLearnset = sMiniorEggMoveLearnset,
     ),
 
     [SPECIES_KOMALA] = HARD_MODE(
@@ -788,7 +774,7 @@
     ),
 
     [SPECIES_CELESTEELA] = HARD_MODE(
-        .abilities = {  ABILITY_CLEAR_BOOST,  ABILITY_NONE,  ABILITY_BEAST_BOOST },
+        .abilities = {  ABILITY_CLEAR_BODY,  ABILITY_NONE,  ABILITY_BEAST_BOOST },
         .levelUpLearnset = sCelesteelaLevelUpLearnset,
         .teachableLearnset = sCelesteelaTeachableLearnset,
     ),
