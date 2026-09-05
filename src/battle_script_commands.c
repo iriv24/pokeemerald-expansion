@@ -15421,24 +15421,6 @@ static void Cmd_handleballthrow(void)
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_WallyBallThrow;
     }
-    else if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_HOF_MODE
-        && (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isLegendary
-            || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isMythical)
-        && gSaveBlock2Ptr->caughtLegendaryOrMythical)
-    {
-        BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_TRAINER_BLOCK);
-        MarkBattlerForControllerExec(gBattlerAttacker);
-        gBattlescriptCurrInstr = BattleScript_TrainerBallBlockLegendaryOrMythical;
-    }
-    else if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_HOF_MODE
-        && (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isParadox
-            || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
-        && gSaveBlock2Ptr->caughtParadoxOrUltraBeast)
-    {
-        BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_TRAINER_BLOCK);
-        MarkBattlerForControllerExec(gBattlerAttacker);
-        gBattlescriptCurrInstr = BattleScript_TrainerBallBlockParadoxOrUltraBeast;
-    }
     else
     {
         u32 odds, i;
@@ -15659,21 +15641,6 @@ static void Cmd_handleballthrow(void)
                 gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
                 SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
             }
-
-            if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_HOF_MODE)
-            {
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isLegendary
-                    || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isMythical)
-                {
-                    gSaveBlock2Ptr->caughtLegendaryOrMythical = TRUE;
-                }
-
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isParadox
-                    || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
-                {
-                    gSaveBlock2Ptr->caughtParadoxOrUltraBeast = TRUE;
-                }
-            }
         }
         else // mon may be caught, calculate shakes
         {
@@ -15727,21 +15694,6 @@ static void Cmd_handleballthrow(void)
                     HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], STATUS1_ANY, gBattlerTarget);
                     gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
                     SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
-                }
-
-                if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) == GAME_SETTING_DIFFICULTY_HOF_MODE)
-                {
-                    if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isLegendary
-                        || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isMythical)
-                    {
-                        gSaveBlock2Ptr->caughtLegendaryOrMythical = TRUE;
-                    }
-
-                    if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isParadox
-                        || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
-                    {
-                        gSaveBlock2Ptr->caughtParadoxOrUltraBeast = TRUE;
-                    }
                 }
             }
             else // not caught
