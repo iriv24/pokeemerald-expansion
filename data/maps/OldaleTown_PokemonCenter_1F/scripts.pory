@@ -353,7 +353,7 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
 	}
 	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
 	if(var(VAR_RESULT) == SPECIES_EGG) {
-		msgbox("This one is an Egg, no need to\nchange anything.")
+		msgbox("This one is an Egg, just give it\nsome time.")
 		release
 		end
 	}

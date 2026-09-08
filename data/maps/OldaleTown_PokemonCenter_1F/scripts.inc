@@ -1163,7 +1163,7 @@ OldDaleTown_PokemonCenter_EventScript_SecondNurse_ChangeNature_Text_29:
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_0:
 # 356 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
-	.string "This one is an Egg, no need to\nchange anything.$"
+	.string "This one is an Egg, just give it\nsome time.$"
 
 OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender_Text_1:
 # 362 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
@@ -1240,7 +1240,7 @@ GenderSwapInfo::
 # 559 "data/maps/OldaleTown_PokemonCenter_1F/scripts.pory"
 	.string "I can change the Gender of any Pokémon\n"
 	.string "you desire, be it for Gender-based\l"
-	.string "evolutions or just any other reason,\l"
+	.string "evolutions or any other reason,\l"
 	.string "as long as it is from a gendered\l"
 	.string "species.\p"
 	.string "Which Pokémon do you want me to look at?$"
