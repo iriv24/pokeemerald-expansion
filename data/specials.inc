@@ -574,3 +574,4 @@ gSpecials::
 	def_special GetNumBadges
 	def_special LevelBoxesToCap
 	def_special HealPlayerPartyNonDead
+	def_special IsSelectedMonGenderless

@@ -1429,6 +1429,16 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
     return FALSE;
 }
 
+bool8 IsSelectedMonGenderless(void)
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u8 gender = GetMonGender(mon);
+    if (gender == MON_GENDERLESS)
+        return TRUE;
+
+    return FALSE;
+}
+
 u8 TryUpdateRusturfTunnelState(void)
 {
     if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
