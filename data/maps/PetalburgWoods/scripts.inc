@@ -951,9 +951,9 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 PetalburgWoods_EventScript_Sudowoodo::
 # 480 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_set FLAG_TEMP_1, PetalburgWoods_EventScript_SudowoodoObserve
-# 481 "data/maps/PetalburgWoods/scripts.pory"
 	goto_if_set FLAG_HIDE_SUDOWOODO, PetalburgWoods_EventScript_SudowoodoKO
+# 481 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_set FLAG_TEMP_1, PetalburgWoods_EventScript_SudowoodoObserve
 # 482 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 483 "data/maps/PetalburgWoods/scripts.pory"
@@ -1213,7 +1213,7 @@ PetalburgWoods_EventScript_SudowoodoObserve_Text_0:
 
 PetalburgWoods_EventScript_SudowoodoKO_Text_0:
 # 520 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Despite being knocked out, you\n"
+	.string "Despite being knocked out, you still\n"
 	.string "barely notice any difference…$"
 
 PetalburgWoods_EventScript_BattleGardenia_Text_0:

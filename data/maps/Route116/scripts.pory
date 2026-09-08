@@ -569,8 +569,8 @@ script Route116_EventScript_CandiceGiveIcyWind{
 	{
 		giveitem(ITEM_TM_ICY_WIND)
 		msgbox(Candice_ExplainIcyWindAndMuscleBand)
-		setflag(FLAG_RECEIVED_TM_ICY_WIND)
 	}
+	setflag(FLAG_RECEIVED_TM_ICY_WIND)
 	release
 	end
 }
@@ -739,6 +739,8 @@ script Route116_Movement_PanToCandiceVsJoshua{
 }
 
 script Route116_Movement_PanFromCandiceVsJoshua{
+	walk_slow_down
+	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	step_end
