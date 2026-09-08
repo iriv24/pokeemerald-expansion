@@ -352,40 +352,30 @@ script OldDaleTown_PokemonCenter_EventScript_SecondNurse_SwapGender{
 		goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
 	}
 	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
-	switch (var(VAR_RESULT)) {
-        case SPECIES_SNORUNT:
-		case SPECIES_RALTS:
-        case SPECIES_KIRLIA:
-		case SPECIES_SALANDIT:
-        case SPECIES_BURMY_PLANT:
-		case SPECIES_BURMY_SANDY:
-		case SPECIES_BURMY_TRASH:
-		case SPECIES_COMBEE:
-        case SPECIES_ESPURR:
-		case SPECIES_BASCULIN_RED_STRIPED:
-		case SPECIES_BASCULIN_BLUE_STRIPED:
-		case SPECIES_BASCULIN_WHITE_STRIPED:
-        case SPECIES_LECHONK:
-			special(BufferMonNickname)
-			msgbox(AreYouSureGenderSwap, MSGBOX_YESNO)
-			if(var(VAR_RESULT) == NO) 
-			{
-				goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
-			}
-            msgbox("Excellent. We shall begin at once!")
-			fadescreen(FADE_TO_BLACK)
-			special(ChangeMonGender)
-			playfanfare(MUS_OBTAIN_ITEM)
-			waitfanfare
-			closemessage
-			fadescreen(FADE_FROM_BLACK)
-			msgbox("{STR_VAR_1}'s Gender has been\nswapped. Come again if you need\lsomething else.")
-
-		case SPECIES_EGG:
-			msgbox("I can't swap the Gender of an Egg.")
-
-        default:
-            msgbox("Sorry, I can't swap the Gender of\nthat Pokémon.")
+	if(var(VAR_RESULT) == SPECIES_EGG) {
+		msgbox("This one is an Egg, no need to\nchange anything.")
+		release
+		end
+	}
+	specialvar(VAR_RESULT,IsSelectedMonGenderless)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox("Sorry, I can't swap the Gender of\nthat Pokémon.")
+	} 
+	else{
+		special(BufferMonNickname)
+		msgbox(AreYouSureGenderSwap, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == NO) 
+		{
+			goto(OldDaleTown_PokemonCenter_EventScript_SecondNurseNo)
+		}
+		msgbox("Excellent. We shall begin at once!")
+		fadescreen(FADE_TO_BLACK)
+		special(ChangeMonGender)
+		playfanfare(MUS_OBTAIN_ITEM)
+		waitfanfare
+		closemessage
+		fadescreen(FADE_FROM_BLACK)
+		msgbox("{STR_VAR_1}'s Gender has been\nswapped. Come again if you need\lsomething else.")
     }
 	release
 	end
@@ -568,13 +558,12 @@ text AreYouSureNatureChange
 
 text GenderSwapInfo
 {
-	"I can swap the Gender of the\n"
-	"following Pokémon:\p"
-	"{COLOR GREEN}{SHADOW LIGHT_GREEN}Snorunt, Ralts, Kirlia, Salandit, Burmy,\n"
-	"Combee, Espurr, Basculin, and Lechonk.\p"
-	"{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}This is because these Pokémon have\n"
-	"Gender-based evolutions.\p"
-	"Which Pokémon's Gender should I swap?"
+	"I can change the Gender of any Pokémon\n"
+	"you desire, be it for Gender-based\l"
+	"evolutions or any other reason,\l"
+	"as long as it is from a gendered\l"
+	"species.\p"
+	"Which Pokémon do you want me to look at?"
 }
 
 text AreYouSureGenderSwap
