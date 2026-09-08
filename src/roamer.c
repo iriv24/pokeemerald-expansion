@@ -153,21 +153,6 @@ bool8 TryAddRoamer(u16 species, u8 level)
 void InitRoamer(void)
 {
     TryAddRoamer(SPECIES_ARTICUNO, 50); //1
-    TryAddRoamer(SPECIES_ZAPDOS, 50);
-    TryAddRoamer(SPECIES_MOLTRES, 50);
-    TryAddRoamer(SPECIES_RAIKOU, 50);
-    TryAddRoamer(SPECIES_ENTEI, 50); //5
-    TryAddRoamer(SPECIES_SUICUNE, 50);
-    TryAddRoamer(SPECIES_CALYREX, 50);
-    TryAddRoamer(SPECIES_KELDEO, 50);
-    TryAddRoamer(SPECIES_TERRAKION, 50);
-    TryAddRoamer(SPECIES_COBALION, 50); //10
-    TryAddRoamer(SPECIES_VIRIZION, 50);
-    TryAddRoamer(SPECIES_CRESSELIA, 50);
-    TryAddRoamer(SPECIES_TORNADUS, 50);
-    TryAddRoamer(SPECIES_THUNDURUS, 50);
-    TryAddRoamer(SPECIES_LANDORUS, 50); //15
-    TryAddRoamer(SPECIES_ENAMORUS, 50);
 }
 
 void UpdateLocationHistoryForRoamer(void)
@@ -276,17 +261,6 @@ void CreateRoamerMonInstance(u32 roamerIndex)
 
 bool8 TryStartRoamerEncounter(void)
 {
-    u32 i;
-
-    for (i = 0; i < ROAMER_COUNT; i++)
-    {
-        if (IsRoamerAt(i, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
-        {
-            CreateRoamerMonInstance(i);
-            gEncounteredRoamerIndex = i;
-            return TRUE;
-        }
-    }
     return FALSE;
 }
 

@@ -182,7 +182,8 @@ GraniteCave_StevensRoom_Text_RegisteredSteven:
 	.string "in the PokéNav.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
+	.string "Now, I've got to hurry along.\n"
+	.string "You should visit Devon Corp again.$"
 
 GraniteCave_StevensRoom_Text_OhBagIsFull:
 	.string "Oh, your BAG is full…\n"

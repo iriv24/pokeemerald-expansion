@@ -222,20 +222,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "It has fortified armor and a\n"
             "will to defend at all costs.\n"
             "Both are absurdly strong."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_ChesnaughtMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_ChesnaughtMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 10,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ChesnaughtMega,
+        .shinyPalette = gMonShinyPalette_ChesnaughtMega,
+        .iconSprite = gMonIcon_ChesnaughtMega,
+        .iconPalIndex = 1,
+        FOOTPRINT(Chesnaught)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -262,6 +262,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sChesnaughtTeachableLearnset,
         .formSpeciesIdTable = sChesnaughtFormSpeciesIdTable,
         .formChangeTable = sChesnaughtFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CHESPIN
@@ -486,20 +487,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "dazzle its opponents before\n"
             "incinerating them with a\n"
             "huge fireball."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_DelphoxMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_DelphoxMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_DelphoxMega,
+        .shinyPalette = gMonShinyPalette_DelphoxMega,
+        .iconSprite = gMonIcon_DelphoxMega,
+        .iconPalIndex = 2,
+        FOOTPRINT(Delphox)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -526,6 +528,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sDelphoxTeachableLearnset,
         .formSpeciesIdTable = sDelphoxFormSpeciesIdTable,
         .formChangeTable = sDelphoxFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_FENNEKIN
@@ -861,20 +864,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "shuriken at high speed to make it\n"
             "float, then clings to it upside\n"
             "down to catch opponents unawares."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_GreninjaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_GreninjaMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 11,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GreninjaMega,
+        .shinyPalette = gMonShinyPalette_GreninjaMega,
+        .iconSprite = gMonIcon_GreninjaMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Greninja)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -901,6 +905,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sGreninjaTeachableLearnset,
         .formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
         .formChangeTable = sGreninjaFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_FROAKIE
@@ -1819,20 +1824,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "than 18,000 degrees Fahrenheit.\n"
             "It swings around its grand, blazing\n"
             "mane as it protects its allies."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_PyroarMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_PyroarMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 6,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_PyroarMega,
+        .shinyPalette = gMonShinyPalette_PyroarMega,
+        .iconSprite = gMonIcon_PyroarMega,
+        .iconPalIndex = 2,
+        FOOTPRINT(Pyroar)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -1859,6 +1864,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sPyroarTeachableLearnset,
         .formSpeciesIdTable = sPyroarFormSpeciesIdTable,
         .formChangeTable = sPyroarFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_LITLEO
@@ -2110,6 +2116,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sFloetteEternalLevelUpLearnset,
         .teachableLearnset = sFloetteEternalTeachableLearnset,
         .randomizerMode = MON_RANDOMIZER_INVALID,
+        .formChangeTable = sFloetteEternalFormChangeTable,
     },
 
 #define FLORGES_MISC_INFO(Form, iconPal)                                        \
@@ -2248,20 +2255,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "all the energy from Mega\n"
             "Evolution. The flower now attacks\n"
             "enemies on its own."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_FloetteMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_FloetteMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 6,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_FloetteMega,
+        .shinyPalette = gMonShinyPalette_FloetteMega,
+        .iconSprite = gMonIcon_FloetteMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Floette)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -2288,6 +2295,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sFloetteEternalTeachableLearnset,
         .formSpeciesIdTable = sFloetteFormSpeciesIdTable,
         .formChangeTable = sFloetteEternalFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_FLABEBE
@@ -2842,18 +2850,19 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "to compress or expand anything. It\n"
             "overwhelms foes by contorting space\n"
             "itself."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
         .iconPalIndex = 0,
         FOOTPRINT(Meowstic)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -2862,6 +2871,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sMeowsticMTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
         .formChangeTable = sMeowsticMFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
     
     [SPECIES_MEOWSTIC_F_MEGA] =
@@ -2894,18 +2904,19 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "to compress or expand anything. It\n"
             "overwhelms foes by contorting space\n"
             "itself."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_MeowsticMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_MeowsticMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowsticMega,
+        .shinyPalette = gMonShinyPalette_MeowsticMega,
+        .iconSprite = gMonIcon_MeowsticMega,
         .iconPalIndex = 0,
         FOOTPRINT(Meowstic)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -2914,6 +2925,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sMeowsticFTeachableLearnset,
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
         .formChangeTable = sMeowsticFFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ESPURR
@@ -3586,20 +3598,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "overwrite the personality and\n"
             "memories of others-and to\n"
             "control them."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_MalamarMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_MalamarMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MalamarMega,
+        .shinyPalette = gMonShinyPalette_MalamarMega,
+        .iconSprite = gMonIcon_MalamarMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Malamar)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -3626,6 +3638,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sMalamarTeachableLearnset,
         .formSpeciesIdTable = sMalamarFormSpeciesIdTable,
         .formChangeTable = sMalamarFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_INKAY
@@ -3789,20 +3802,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "It uses its many arms to toy\n"
             "with its opponents. This\n"
             "keeps the head extremely busy."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_BarbaracleMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_BarbaracleMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_BarbaracleMega,
+        .shinyPalette = gMonShinyPalette_BarbaracleMega,
+        .iconSprite = gMonIcon_BarbaracleMega,
+        .iconPalIndex = 2,
+        FOOTPRINT(Barbaracle)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -3829,6 +3842,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sBarbaracleTeachableLearnset,
         .formSpeciesIdTable = sBarbaracleFormSpeciesIdTable,
         .formChangeTable = sBarbaracleFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_BINACLE
@@ -3991,20 +4005,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "regenerative power of cells to run\n"
             "wild. The liquid is deadly poison\n"
             "to everything other than itself."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_DragalgeMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_DragalgeMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_DragalgeMega,
+        .shinyPalette = gMonShinyPalette_DragalgeMega,
+        .iconSprite = gMonIcon_DragalgeMega,
+        .iconPalIndex = 2,
+        FOOTPRINT(Dragalge)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -4031,6 +4045,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sDragalgeTeachableLearnset,
         .formSpeciesIdTable = sDragalgeFormSpeciesIdTable,
         .formChangeTable = sDragalgeFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_SKRELP
@@ -4643,20 +4658,20 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "Mega Evolution has pumped up all\n"
             "its muscles. Hawlucha flexes to\n"
             "show off its strength."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_HawluchaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_HawluchaMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_HawluchaMega,
+        .shinyPalette = gMonShinyPalette_HawluchaMega,
+        .iconSprite = gMonIcon_HawluchaMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Hawlucha)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -4683,6 +4698,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sHawluchaTeachableLearnset,
         .formSpeciesIdTable = sHawluchaFormSpeciesIdTable,
         .formChangeTable = sHawluchaFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_HAWLUCHA
@@ -6735,20 +6751,21 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "during an unprecedented crisis,\n"
             "Zygarde Mega Evolves and calms the\n"
             "situation with its unmatched power."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_ZygardeMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_ZygardeMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 15,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ZygardeMega,
+        .shinyPalette = gMonShinyPalette_ZygardeMega,
+        .iconSprite = gMonIcon_ZygardeMega,
+        .iconPalIndex = 1,
+        FOOTPRINT(Zygarde)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -6775,6 +6792,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sZygardeTeachableLearnset,
         .formSpeciesIdTable = sZygardeFormSpeciesIdTable,
         .formChangeTable = sZygardeCompleteFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ZYGARDE

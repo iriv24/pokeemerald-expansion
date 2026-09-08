@@ -575,9 +575,6 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         return FALSE;
     if (gBattleStruct->prevTurnSpecies[battler] != gBattleMons[battler].species) // AI mon has changed, player's behaviour no longer reliable; note to override this if using AI_FLAG_PREDICT_MOVE
         return FALSE;
-    if (CanUseSuperEffectiveMoveAgainstOpponents(battler) && RandomPercentage(RNG_AI_SWITCH_ABSORBING_STAY_IN, STAY_IN_ABSORBING_PERCENTAGE))
-        return FALSE;
-
     if (AreStatsRaised(battler))
         return FALSE;
 
@@ -692,7 +689,8 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
             // Found a mon
             if (absorbingTypeAbilities[j] == monAbility)
             {
-                if (playerIsChoiceLocked || RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE))
+                if ((playerIsChoiceLocked && RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_CHOICED_MOVE_PERCENTAGE))
+                ||(RandomPercentage(RNG_AI_SWITCH_ABSORBING, SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE) &&  !playerIsChoiceLocked))
                     return SetSwitchinAndSwitch(battler, i);
             }     
         }
@@ -1033,7 +1031,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless
-        else if (attackingStage < DEFAULT_STAT_STAGE - 2)
+        else if (attackingStage < DEFAULT_STAT_STAGE - 2 && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
 
@@ -1050,7 +1048,7 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
                 return SetSwitchinAndSwitch(battler, PARTY_SIZE);
         }
         // If at -3 or worse, switch out regardless
-        else if (spAttackingStage < DEFAULT_STAT_STAGE - 2)
+        else if (spAttackingStage < DEFAULT_STAT_STAGE - 2 && RandomPercentage(RNG_AI_SWITCH_STATS_LOWERED, SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE))
             return SetSwitchinAndSwitch(battler, PARTY_SIZE);
     }
     return FALSE;
@@ -1160,7 +1158,6 @@ bool32 ShouldSwitch(u32 battler)
         if (!canAIWin1V1)
             return TRUE;
     }
-
     // Removing switch capabilities under specific conditions
     if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
         return FALSE;
@@ -1392,301 +1389,42 @@ bool32 IsMonGrounded(u16 heldItemEffect, u32 ability, u32 battler)
 // Gets hazard damage
 static u32 GetSwitchinHazardsDamage(u32 battler)
 {
-    // u8 defType1 = battleMon->types[0], defType2 = battleMon->types[1];
-    u8 tSpikesLayers;
-    u16 heldItemEffect = AI_DATA->holdEffects[battler];
-    u32 maxHP = gBattleMons[battler].maxHP, ability = AI_DATA->abilities[battler], status = gBattleMons[battler].status1;
-    u32 spikesDamage = 0, tSpikesDamage = 0, hazardDamage = 0;
-    u32 hazardFlags = gSideStatuses[GetBattlerSide(battler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_SAFEGUARD);
+    u32 maxHP = gBattleMons[battler].maxHP;
+    u32 hazardDamage = 0;
+    u32 sideStatus = gSideStatuses[GetBattlerSide(battler)];
 
-    // Check ways mon might avoid all hazards
-    if ((ability != ABILITY_MAGIC_GUARD || ability != ABILITY_SHIELD_DUST) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
-        !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
+    // Stealth Rock
+    if ((sideStatus & SIDE_STATUS_STEALTH_ROCK)
+     && !DoesBattlerIgnoreHazards(battler, SIDE_STATUS_STEALTH_ROCK))
+        hazardDamage += GetStealthHazardDamage(gMovesInfo[MOVE_STEALTH_ROCK].type, battler);
+
+    // Spikes
+    if ((sideStatus & SIDE_STATUS_SPIKES)
+     && !DoesBattlerIgnoreHazards(battler, SIDE_STATUS_SPIKES))
     {
-        // Stealth Rock
-        if ((hazardFlags & SIDE_STATUS_STEALTH_ROCK) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS && ability != ABILITY_MOUNTAINEER)
-            hazardDamage += GetStealthHazardDamage(gMovesInfo[MOVE_STEALTH_ROCK].type, battler);
-        // G-Max Steelsurge
-        if ((hazardFlags & SIDE_STATUS_STEELSURGE) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
-            hazardDamage += GetStealthHazardDamage(gMovesInfo[MOVE_G_MAX_STEELSURGE].type, battler);
-        // Spikes
-        if ((hazardFlags & SIDE_STATUS_SPIKES) && IsMonGrounded(heldItemEffect, ability, battler))
-        {
-            spikesDamage = maxHP / ((5 - gSideTimers[GetBattlerSide(battler)].spikesAmount) * 2);
-            if (spikesDamage == 0)
-                spikesDamage = 1;
-            hazardDamage += spikesDamage;
-        }
-
-        if ((hazardFlags & SIDE_STATUS_TOXIC_SPIKES) && (!IS_BATTLER_ANY_TYPE(battler, TYPE_POISON, TYPE_STEEL)
-            && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL && ability != ABILITY_COMATOSE
-            && status == 0
-            && !(hazardFlags & SIDE_STATUS_SAFEGUARD)
-            && !(IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL))
-            && !(IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN))
-            && !(IsAbilityStatusProtected(battler))
-            && heldItemEffect != HOLD_EFFECT_CURE_PSN && heldItemEffect != HOLD_EFFECT_CURE_STATUS
-            && IsMonGrounded(heldItemEffect, ability, battler)))
-        {
-            tSpikesLayers = gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount;
-            if (tSpikesLayers == 1)
-            {
-                tSpikesDamage = maxHP / 8;
-                if (tSpikesDamage == 0)
-                    tSpikesDamage = 1;
-            }
-            else if (tSpikesLayers >= 2)
-            {
-                tSpikesDamage = maxHP / 16;
-                if (tSpikesDamage == 0)
-                    tSpikesDamage = 1;
-            }
-            hazardDamage += tSpikesDamage;
-        }
+        u32 spikesDamage = maxHP / ((5 - gSideTimers[GetBattlerSide(battler)].spikesAmount) * 2);
+        if (spikesDamage == 0)
+            spikesDamage = 1;
+        hazardDamage += spikesDamage;
     }
     return hazardDamage;
 }
 
-static s32 GetSwitchInTerrainImpact(u32 battler)
-{
-    s32 terrainImpact = 0, maxHP = gBattleMons[battler].maxHP, ability = AI_DATA->abilities[battler];
-    u32 holdEffect = AI_DATA->holdEffects[battler];
-    if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
-    {
-        // make sure switch-in candidate isn't grounded
-            // air balloon = false, flying type = false, levitate = false
-            // iron ball or gravity would force those to be true
-        bool32 isAirborne = holdEffect == HOLD_EFFECT_AIR_BALLOON || ability == ABILITY_LEVITATE || IS_BATTLER_OF_TYPE(battler, TYPE_FLYING);
-        if (holdEffect == HOLD_EFFECT_IRON_BALL || (gFieldStatuses & STATUS_FIELD_GRAVITY) || !isAirborne)
-        {
-            terrainImpact = maxHP / 16;
-            if (terrainImpact == 0)
-                terrainImpact = 1;
-        }
-    }
-
-    return terrainImpact;
-}
-
-// Gets damage / healing from weather
-static s32 GetSwitchinWeatherImpact(u32 battler)
-{
-    s32 weatherImpact = 0, maxHP = gBattleMons[battler].maxHP;
-    u32 ability = AI_DATA->abilities[battler];
-    u32 holdEffect = AI_DATA->holdEffects[battler];
-
-    if (WEATHER_HAS_EFFECT)
-    {
-        // Damage
-        if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_OVERCOAT)
-        {
-            if ((gBattleWeather & B_WEATHER_HAIL)
-             && IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-             && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY)
-            {
-                weatherImpact = maxHP / 16;
-                if (weatherImpact == 0)
-                    weatherImpact = 1;
-            }
-            else if ((gBattleWeather & B_WEATHER_SANDSTORM)
-                && IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
-                && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_FORCE)
-            {
-                weatherImpact = maxHP / 16;
-                if (weatherImpact == 0)
-                    weatherImpact = 1;
-            }
-        }
-        if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
-         && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN))
-        {
-            weatherImpact = maxHP / 8;
-            if (weatherImpact == 0)
-                weatherImpact = 1;
-        }
-
-        // Healing
-        if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
-        {
-            if (ability == ABILITY_DRY_SKIN)
-            {
-                weatherImpact = -(maxHP / 8);
-                if (weatherImpact == 0)
-                    weatherImpact = -1;
-            }
-            else if (ability == ABILITY_RAIN_DISH)
-            {
-                weatherImpact = -(maxHP / 16);
-                if (weatherImpact == 0)
-                    weatherImpact = -1;
-            }
-        }
-        if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
-        {
-            weatherImpact = -(maxHP / 16);
-            if (weatherImpact == 0)
-                weatherImpact = -1;
-        }
-    }
-    return weatherImpact;
-}
-
-// Gets one turn of recurring healing
-static u32 GetSwitchinRecurringHealing(u32 battler)
-{
-    u32 recurringHealing = 0, maxHP = gBattleMons[battler].maxHP, ability = AI_DATA->abilities[battler];
-    u32 holdEffect = AI_DATA->holdEffects[battler];
-
-    // Items
-    if (ability != ABILITY_KLUTZ)
-    {
-        if (holdEffect == HOLD_EFFECT_BLACK_SLUDGE && IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
-        {
-            recurringHealing = maxHP / 16;
-            if (recurringHealing == 0)
-                recurringHealing = 1;
-        }
-        else if (holdEffect == HOLD_EFFECT_LEFTOVERS)
-        {
-            recurringHealing = maxHP / 16;
-            if (recurringHealing == 0)
-                recurringHealing = 1;
-        }
-    } // Intentionally omitting Shell Bell for its inconsistency
-
-    // Abilities
-    if (ability == ABILITY_POISON_HEAL && (gBattleMons[battler].status1 & STATUS1_POISON))
-    {
-        u32 healing = maxHP / 8;
-        if (healing == 0)
-            healing = 1;
-        recurringHealing += healing;
-    }
-    return recurringHealing;
-}
-
-// Gets one turn of recurring damage
-static u32 GetSwitchinRecurringDamage(u32 battler)
-{
-    u32 passiveDamage = 0, maxHP = gBattleMons[battler].maxHP, ability = AI_DATA->abilities[battler];
-    u32 holdEffect = AI_DATA->holdEffects[battler];
-
-    // Items
-    if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ)
-    {
-        if (holdEffect == HOLD_EFFECT_BLACK_SLUDGE && IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
-        {
-            passiveDamage = maxHP / 8;
-            if (passiveDamage == 0)
-                passiveDamage = 1;
-        }
-        else if (holdEffect == HOLD_EFFECT_LIFE_ORB && ability != ABILITY_SHEER_FORCE)
-        {
-            passiveDamage = maxHP / 10;
-            if (passiveDamage == 0)
-                passiveDamage = 1;
-        }
-        else if (holdEffect == HOLD_EFFECT_STICKY_BARB)
-        {
-            passiveDamage = maxHP / 8;
-            if(passiveDamage == 0)
-                passiveDamage = 1;
-        }
-    }
-    return passiveDamage;
-}
-
-// Gets one turn of status damage
-static u32 GetSwitchinStatusDamage(u32 battler)
-{
-    u8 tSpikesLayers = gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount;
-    u16 heldItemEffect = AI_DATA->holdEffects[battler];
-    u32 status = gBattleMons[battler].status1, ability = AI_DATA->abilities[battler], maxHP = gBattleMons[battler].maxHP;
-    u32 statusDamage = 0;
-
-    // Status condition damage
-    if ((status != 0) && ability != ABILITY_MAGIC_GUARD)
-    {
-        if (status & STATUS1_BURN)
-        {
-            if (B_BURN_DAMAGE >= GEN_7)
-                statusDamage = maxHP / 16;
-            else
-                statusDamage = maxHP / 8;
-            if(ability == ABILITY_HEATPROOF)
-                statusDamage = statusDamage / 2;
-            if (statusDamage == 0)
-                statusDamage = 1;
-        }
-        else if (status & STATUS1_FROSTBITE)
-        {
-            if (B_BURN_DAMAGE >= GEN_7)
-                statusDamage = maxHP / 16;
-            else
-                statusDamage = maxHP / 8;
-            if (statusDamage == 0)
-                statusDamage = 1;
-        }
-        else if ((status & STATUS1_POISON) && ability != ABILITY_POISON_HEAL)
-        {
-            statusDamage = maxHP / 8;
-            if (statusDamage == 0)
-                statusDamage = 1;
-        }
-        else if ((status & STATUS1_TOXIC_POISON) && ability != ABILITY_POISON_HEAL)
-        {
-            if ((status & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(15)) // not 16 turns
-                gBattleMons[battler].status1 += STATUS1_TOXIC_TURN(1);
-            statusDamage = maxHP / 16;
-            if (statusDamage == 0)
-                statusDamage = 1;
-            statusDamage *= gBattleMons[battler].status1 & STATUS1_TOXIC_COUNTER >> 8;
-        }
-    }
-
-    // Apply hypothetical poisoning from Toxic Spikes, which means the first turn of damage already added in GetSwitchinHazardsDamage
-    // Do this last to skip one iteration of Poison / Toxic damage, and start counting Toxic damage one turn later.
-    if (tSpikesLayers != 0 && (IS_BATTLER_OF_TYPE(battler, TYPE_POISON)
-        && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL
-        && status == 0
-        && !(heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS
-            && (((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
-        && heldItemEffect != HOLD_EFFECT_CURE_PSN && heldItemEffect != HOLD_EFFECT_CURE_STATUS
-        && IsMonGrounded(heldItemEffect, ability, battler)))
-    {
-        if (tSpikesLayers == 1)
-        {
-            gBattleMons[battler].status1 = STATUS1_POISON; // Assign "hypothetical" status to the switchin candidate so we can get the damage it would take from TSpikes
-        }
-        if (tSpikesLayers == 2)
-        {
-            gBattleMons[battler].status1 = STATUS1_TOXIC_POISON; // Assign "hypothetical" status to the switchin candidate so we can get the damage it would take from TSpikes
-            gBattleMons[battler].status1 += STATUS1_TOXIC_TURN(1);
-        }
-    }
-    return statusDamage;
-}
-
 // Gets number of hits to KO factoring in hazards, healing held items, status, and weather
-static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler, bool32 isFreeSwitch)
+// Gets number of hits to KO factoring in hazards and Focus Sash / Sturdy, based only on attack damage
+static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
 {
     u32 startingHP = gBattleMons[battler].hp - GetSwitchinHazardsDamage(battler);
     u16 heldItemEffect = AI_DATA->holdEffects[battler];
-    s32 weatherImpact = GetSwitchinWeatherImpact(battler); // Signed to handle both damage and healing in the same value
-    s32 terrainImpact = GetSwitchInTerrainImpact(battler);
-    u32 recurringHeldItemDamage = GetSwitchinRecurringDamage(battler);
-    u32 recurringHealing = GetSwitchinRecurringHealing(battler);
-    u32 statusDamage = GetSwitchinStatusDamage(battler);
     u32 hitsToKO = 0;
-    u16 maxHP = gBattleMons[battler].maxHP, item = gBattleMons[battler].item;
-    u8 weatherDuration = gWishFutureKnock.weatherDuration, terrainDuration = gFieldTimers.terrainTimer, holdEffectParam = ItemId_GetHoldEffectParam(item);
+    u16 maxHP = gBattleMons[battler].maxHP;
     u32 opposingBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler)));
     u32 opposingAbility = gBattleMons[opposingBattler].ability, ability = AI_DATA->abilities[battler];
-    bool32 usedSingleUseHealingItem = FALSE, opponentCanBreakMold = IsMoldBreakerTypeAbility(opposingBattler, opposingAbility);
-    s32 currentHP = startingHP, singleUseItemHeal = 0;
+    bool32 opponentCanBreakMold = IsMoldBreakerTypeAbility(opposingBattler, opposingAbility);
+    s32 currentHP = startingHP;
 
     // No damage being dealt
-    if ((damageTaken + statusDamage + recurringHeldItemDamage <= recurringHealing) || damageTaken + statusDamage + recurringHeldItemDamage == 0)
+    if (damageTaken == 0)
         return hitsToKO;
 
     // Mon fainted to hazards
@@ -1696,98 +1434,15 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler, bool32 isFreeSwitch
     // Find hits to KO
     while (currentHP > 0)
     {
-        // Remove weather damage when it would run out
-        if (weatherImpact != 0 && weatherDuration == 0)
-            weatherImpact = 0;
-    
-        // likewise for terrain
-        if (terrainImpact != 0 && terrainDuration == 0)
-            terrainImpact = 0;
-
         // Take attack damage for the turn
         currentHP = currentHP - damageTaken;
 
         // One shot prevention effects
-        if (damageTaken >= maxHP && startingHP == maxHP && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH || (!opponentCanBreakMold && B_STURDY >= GEN_5 && ability == ABILITY_STURDY)) && hitsToKO < 1)
+        if (damageTaken >= maxHP && startingHP == maxHP
+         && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH
+          || (!opponentCanBreakMold && B_STURDY >= GEN_5 && ability == ABILITY_STURDY))
+         && hitsToKO < 1)
             currentHP = 1;
-
-        // If mon is still alive, apply terrain and weather impact first, as it might KO the mon before it can heal with its item (order is terrain -> weather -> item -> status)
-        if (currentHP > 0)
-            currentHP = currentHP + terrainImpact;
-
-        if (currentHP > 0)
-            currentHP = currentHP - weatherImpact;
-
-        // Check if we're at a single use healing item threshold
-        if (currentHP > 0 && AI_DATA->abilities[battler] != ABILITY_KLUTZ && usedSingleUseHealingItem == FALSE
-            && !(opposingAbility == ABILITY_UNNERVE && GetPocketByItemId(item) == POCKET_BERRIES))
-        {
-            switch (heldItemEffect)
-            {
-            case HOLD_EFFECT_RESTORE_HP:
-                if (currentHP < maxHP / 2)
-                    singleUseItemHeal = holdEffectParam;
-                break;
-            case HOLD_EFFECT_RESTORE_PCT_HP:
-                if (currentHP < maxHP / 2)
-                {
-                    singleUseItemHeal = maxHP / holdEffectParam;
-                    if (singleUseItemHeal == 0)
-                        singleUseItemHeal = 1;
-                }
-                break;
-            case HOLD_EFFECT_CONFUSE_SPICY:
-            case HOLD_EFFECT_CONFUSE_DRY:
-            case HOLD_EFFECT_CONFUSE_SWEET:
-            case HOLD_EFFECT_CONFUSE_BITTER:
-            case HOLD_EFFECT_CONFUSE_SOUR:
-                if (currentHP < maxHP / CONFUSE_BERRY_HP_FRACTION)
-                {
-                    singleUseItemHeal = maxHP / holdEffectParam;
-                    if (singleUseItemHeal == 0)
-                        singleUseItemHeal = 1;
-                }
-                break;
-            }
-
-            // If we used one, apply it without overcapping our maxHP
-            if (singleUseItemHeal > 0)
-            {
-                if ((currentHP + singleUseItemHeal) > maxHP)
-                    currentHP = maxHP;
-                else
-                    currentHP = currentHP + singleUseItemHeal;
-                usedSingleUseHealingItem = TRUE;
-            }
-        }
-
-        // Healing/damage from items occurs before status so we can do the rest in one block
-        if (currentHP > 0) {
-            // handle life orb chip first, since this happens at time of move execution - exclude life orb damage if it's the switch turn of a mid-battle switch
-            if (heldItemEffect == HOLD_EFFECT_LIFE_ORB && (hitsToKO > 0 || (hitsToKO == 0 && isFreeSwitch)))
-                currentHP = currentHP - recurringHeldItemDamage;
-        
-            // then, if still alive, handle other damaging held item cases (black sludge/sticky barb), recurring healing, and status damage
-            if (currentHP > 0) {
-                if (heldItemEffect != HOLD_EFFECT_LIFE_ORB)
-                    currentHP = currentHP - recurringHeldItemDamage;
-            
-                // then do all healing/status damage for the turn cleanup
-                currentHP = currentHP + recurringHealing - statusDamage;
-            }
-        }
-
-        // Recalculate toxic damage if needed
-        if (gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
-            statusDamage = GetSwitchinStatusDamage(battler);
-
-        // Reduce weather duration
-        if (weatherDuration != 0)
-            weatherDuration--;
-
-        // and terrain duration
-        if (terrainDuration != 0)
-            terrainDuration--;
 
         hitsToKO++;
     }
@@ -1982,7 +1637,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
     int aliveCount = 0, aceMonCount = 0;
     s32 defensiveMonHitKOThreshold = 3; // 3HKO threshold that candidate defensive mons must exceed
     s32 playerMonHP = gBattleMons[opposingBattler].hp, maxDamageDealt = 0, damageDealt = 0;
-    u32 aiMove, aiMoveEffect, hitsToKOAI, hitsToKOPlayer, hitsToKOAIPriority, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE, maxHitsToKO = 0;
+    u32 aiMove, aiMoveEffect, hitsToKOAI, hitsToKOPlayer, hitsToKOAIPriority, bestPlayerMove = MOVE_NONE, bestPlayerPriorityMove = MOVE_NONE, maxHitsToKO = 1;
     u32 partnerHitsToKOAI, partnerHitsToKOAIPriority, bestPartnerMove = MOVE_NONE, bestPartnerPriorityMove = MOVE_NONE;
     bool32 isFreeSwitch = IsFreeSwitch(switchType, battlerIn1, opposingBattler), isSwitchinFirst, isSwitchinFirstPriority, canSwitchinWin1v1;
     u32 storeCurrBattlerPartyIndex = gBattlerPartyIndexes[battler]; //Rage Fist fix
@@ -2026,13 +1681,13 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         AI_DATA->switchInCalc = TRUE;
 
         // Get max number of hits for player to KO AI mon and type matchup for defensive switching
-        hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, &bestPlayerMove), battler, isFreeSwitch);
-        hitsToKOAIPriority = GetSwitchinHitsToKO(GetMaxPriorityDamagePlayerCouldDealToSwitchin(battler, opposingBattler, &bestPlayerPriorityMove), battler, isFreeSwitch);
+        hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, &bestPlayerMove), battler);
+        hitsToKOAIPriority = GetSwitchinHitsToKO(GetMaxPriorityDamagePlayerCouldDealToSwitchin(battler, opposingBattler, &bestPlayerPriorityMove), battler);
 
         if (IsDoubleBattle())
         {
-            partnerHitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingPartner, &bestPartnerMove), battler, isFreeSwitch);
-            partnerHitsToKOAIPriority = GetSwitchinHitsToKO(GetMaxPriorityDamagePlayerCouldDealToSwitchin(battler, opposingPartner, &bestPartnerPriorityMove), battler, isFreeSwitch);
+            partnerHitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingPartner, &bestPartnerMove), battler);
+            partnerHitsToKOAIPriority = GetSwitchinHitsToKO(GetMaxPriorityDamagePlayerCouldDealToSwitchin(battler, opposingPartner, &bestPartnerPriorityMove), battler);
             if ((partnerHitsToKOAI == 1 && !(AI_IsFaster(battler,opposingPartner, MOVE_NONE, MOVE_NONE, CONSIDER_PRIORITY))) || partnerHitsToKOAIPriority == 1)
                 isFastKilldByPartner = TRUE;
         }
@@ -2071,12 +1726,12 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
             }
 
             // Track max hits to KO and set defensive mon
-            if (hitsToKOAI > defensiveMonHitKOThreshold)
+            if (hitsToKOAI > defensiveMonHitKOThreshold || hitsToKOAI == 0) // accounts for 0hko case 
             {
                 if (canSwitchinWin1v1 || AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_STALL)
                 {
                     defensiveMonIds |= (1u << monIndex);
-                    if (hitsToKOAI > maxHitsToKO)
+                    if (maxHitsToKO != 0 && (hitsToKOAI > maxHitsToKO || hitsToKOAI == 0))
                     {
                         maxHitsToKO = hitsToKOAI;
                         bestDefensiveMonId = monIndex;

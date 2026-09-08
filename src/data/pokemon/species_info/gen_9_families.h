@@ -3320,19 +3320,19 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "Mega Evolution has dialed up this\n"
             "Pokémon's spiciness. It swings its\n"
             "“necktie” around to wallop its foes."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_ScovillainMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
-        .iconPalIndex = 0,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_ScovillainMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ScovillainMega,
+        .shinyPalette = gMonShinyPalette_ScovillainMega,
+        .iconSprite = gMonIcon_ScovillainMega,
+        .iconPalIndex = 1,
         FOOTPRINT(Scovillain)
         SHADOW(-1, 0, SHADOW_SIZE_M)
         .isMegaEvolution = TRUE,
@@ -3340,6 +3340,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sScovillainTeachableLearnset,
         .formSpeciesIdTable = sScovillainFormSpeciesIdTable,
         .formChangeTable = sScovillainFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CAPSAKID
@@ -4581,18 +4582,19 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "separated from its main body-rotate\n"
             "around it to provide defense while\n"
             "cattering poisonous fragments."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_GlimmoraMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 7,
+        .backPic = gMonBackPic_GlimmoraMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GlimmoraMega,
+        .shinyPalette = gMonShinyPalette_GlimmoraMega,
+        .iconSprite = gMonIcon_GlimmoraMega,
         .iconPalIndex = 0,
         FOOTPRINT(Glimmora)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -4601,6 +4603,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sGlimmoraTeachableLearnset,
         .formSpeciesIdTable = sGlimmoraFormSpeciesIdTable,
         .formChangeTable = sGlimmoraFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_GLIMMET
@@ -5276,18 +5279,18 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "by Mega Evolution, making it even\n"
             "wilier. It can create and command\n"
             "copies of itself."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_TatsugiriCurlyMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 11,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_TatsugiriCurlyMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 17,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_TatsugiriMega,
+        .shinyPalette = gMonShinyPalette_TatsugiriMega,
+        .iconSprite = gMonIcon_TatsugiriCurlyMega,
         .iconPalIndex = 0,
         FOOTPRINT(Tatsugiri)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -5297,6 +5300,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .eggMoveLearnset = sTatsugiriEggMoveLearnset,
         .formSpeciesIdTable = sTatsugiriFormSpeciesIdTable,
         .formChangeTable = sTatsugiriCurlyFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_TATSUGIRI_DROOPY_MEGA] =
@@ -5329,18 +5333,18 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "building up an overflowing pile to launch\n"
             "as projectiles. These projectiles explode\n"
             "on contact."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_TatsugiriDroopyMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 11,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_TatsugiriDroopyMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 17,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_TatsugiriMega,
+        .shinyPalette = gMonShinyPalette_TatsugiriMega,
+        .iconSprite = gMonIcon_TatsugiriDroopyMega,
         .iconPalIndex = 0,
         FOOTPRINT(Tatsugiri)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -5350,6 +5354,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .eggMoveLearnset = sTatsugiriEggMoveLearnset,
         .formSpeciesIdTable = sTatsugiriFormSpeciesIdTable,
         .formChangeTable = sTatsugiriDroopyFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_TATSUGIRI_STRETCHY_MEGA] =
@@ -5382,18 +5387,18 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "creates a dish to ride upon, allowing it\n"
             "to move with total freedom-even through\n"
             "the air."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
+        .frontPic = gMonFrontPic_TatsugiriStretchyMega,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 11,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_TatsugiriStretchyMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 17,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_TatsugiriMega,
+        .shinyPalette = gMonShinyPalette_TatsugiriMega,
+        .iconSprite = gMonIcon_TatsugiriStretchyMega,
         .iconPalIndex = 0,
         FOOTPRINT(Tatsugiri)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -5403,6 +5408,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .eggMoveLearnset = sTatsugiriEggMoveLearnset,
         .formSpeciesIdTable = sTatsugiriFormSpeciesIdTable,
         .formChangeTable = sTatsugiriStretchyFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TATSUGIRI
@@ -6411,18 +6417,18 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             "more massive thanks to Mega Evolution.\n"
             "This Pokémon fires beams from the hilt\n"
             "at its solar plexus."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_BaxcaliburMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_BaxcaliburMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 5,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_BaxcaliburMega,
+        .shinyPalette = gMonShinyPalette_BaxcaliburMega,
+        .iconSprite = gMonIcon_BaxcaliburMega,
         .iconPalIndex = 0,
         FOOTPRINT(Baxcalibur)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -6431,6 +6437,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sBaxcaliburTeachableLearnset,
         .formSpeciesIdTable = sBaxcaliburFormSpeciesIdTable,
         .formChangeTable = sBaxcaliburFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_FRIGIBAX

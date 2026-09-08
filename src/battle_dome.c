@@ -2407,7 +2407,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
 
     defType1 = gSpeciesInfo[targetSpecies].types[0];
     defType2 = gSpeciesInfo[targetSpecies].types[1];
-    defAbility = gSpeciesInfo[targetSpecies].abilities[0];
+    defAbility = GetSpeciesAbility(targetSpecies, 0);
     moveType = gMovesInfo[move].type;
 
     if ((defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND) || ((defAbility == ABILITY_MOUNTAINEER) && moveType == TYPE_ROCK))
@@ -5136,9 +5136,9 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                 targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
 
                 if (personality & 1)
-                    targetAbility = gSpeciesInfo[targetSpecies].abilities[1];
+                    targetAbility = GetSpeciesAbility(targetSpecies, 1);
                 else
-                    targetAbility = gSpeciesInfo[targetSpecies].abilities[0];
+                    targetAbility = GetSpeciesAbility(targetSpecies, 0);
 
                 typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moveIds[i * 4 + j], targetSpecies, targetAbility);
                 if (typeMultiplier == UQ_4_12(0))

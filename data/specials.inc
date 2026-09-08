@@ -171,6 +171,7 @@ gSpecials::
 	def_special StartWallyTutorialBattle
 	def_special ChangePokemonNickname
 	def_special ChoosePartyMon
+	def_special ChangePartyMonForm
 	def_special LoadOpponentPartyIntoPlayerParty
 	def_special DisplayPartyForTeamPreview
 	def_special ReloadPlayerParty

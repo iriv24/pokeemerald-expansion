@@ -276,7 +276,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_BLAZE,  ABILITY_EARLY_BIRD,  ABILITY_STRIKER },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Torchic"),
         .cryId = CRY_TORCHIC,
@@ -350,7 +350,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_BLAZE,  ABILITY_EARLY_BIRD,  ABILITY_STRIKER },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Combusken"),
         .cryId = CRY_COMBUSKEN,
@@ -430,7 +430,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_BLAZE,  ABILITY_EARLY_BIRD,  ABILITY_STRIKER },
+        .abilities = {ABILITY_BLAZE,  ABILITY_STRIKER,  ABILITY_STRIKER },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Blaziken"),
         .cryId = CRY_BLAZIKEN,
@@ -6208,7 +6208,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sSpoinkLevelUpLearnset,
         .teachableLearnset = sSpoinkTeachableLearnset,
         .eggMoveLearnset = sSpoinkEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_GRUMPIG}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GRUMPIG}),
     },
 
     [SPECIES_GRUMPIG] =
@@ -8937,18 +8937,19 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "all directions using sound waves. Any who\n"
             "hear the vibrations get so confused, they\n"
             "forget who they are."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_ChimechoMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_ChimechoMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ChimechoMega,
+        .shinyPalette = gMonShinyPalette_ChimechoMega,
+        .iconSprite = gMonIcon_ChimechoMega,
         .iconPalIndex = 0,
         FOOTPRINT(Chimecho)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -8958,6 +8959,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sChimechoEggMoveLearnset,
         .formSpeciesIdTable = sChimechoFormSpeciesIdTable,
         .formChangeTable = sChimechoFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CHIMECHO
@@ -9122,18 +9124,18 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "clawlike shapes, it cuts down foes with\n"
             "a single blow. This is an act of kindness\n"
             "to keep them from suffering."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_AbsolMegaZ,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AbsolMegaZ,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AbsolMegaZ,
+        .shinyPalette = gMonShinyPalette_AbsolMegaZ,
+        .iconSprite = gMonIcon_AbsolMegaZ,
         .iconPalIndex = 0,
         FOOTPRINT(Absol)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -9143,6 +9145,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sAbsolEggMoveLearnset,
         .formSpeciesIdTable = sAbsolFormSpeciesIdTable,
         .formChangeTable = sAbsolFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
 #endif //P_FAMILY_ABSOL
@@ -9433,20 +9436,21 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "air imbued with ghost energy to\n"
             "freeze even insubstantial things,\n"
             "such as flames or the wind."),
-        .frontPic = gMonFrontPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_FroslassMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
+        .backPic = gMonBackPic_FroslassMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_FroslassMega,
+        .shinyPalette = gMonShinyPalette_FroslassMega,
+        .iconSprite = gMonIcon_FroslassMega,
         .iconPalIndex = 0,
-        FOOTPRINT(QuestionMark)
+        FOOTPRINT(Froslass)
         SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_BATTLE_ONLY_FORMS
         .overworldData = {
@@ -9473,6 +9477,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sFroslassTeachableLearnset,
         .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
         .formChangeTable = sFroslassFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS

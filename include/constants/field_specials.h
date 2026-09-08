@@ -40,6 +40,24 @@
 #define SCROLL_MULTI_BF_MOVE_TUTOR_2                        10
 #define SCROLL_MULTI_SS_TIDAL_DESTINATION                   11
 #define SCROLL_MULTI_BATTLE_TENT_RULES                      12
+#define SCROLL_MULTI_MANIAC_GASTRODON_FORM                  13
+#define SCROLL_MULTI_MANIAC_SAWSBUCK_FORM                   14
+#define SCROLL_MULTI_MANIAC_KELDEO_FORM                     15
+#define SCROLL_MULTI_MANIAC_VIVILLON_FORM                   16
+#define SCROLL_MULTI_MANIAC_FLORGES_FORM                    17
+#define SCROLL_MULTI_MANIAC_FURFROU_FORM                    18
+#define SCROLL_MULTI_MANIAC_GOURGEIST_FORM                  19
+#define SCROLL_MULTI_MANIAC_MINIOR_FORM                     20
+#define SCROLL_MULTI_MANIAC_MAGEARNA_FORM                   21
+#define SCROLL_MULTI_MANIAC_TOXTRICITY_FORM                 22
+#define SCROLL_MULTI_MANIAC_POLTEAGEIST_FORM                23
+#define SCROLL_MULTI_MANIAC_ALCREMIE_FORM                   24
+#define SCROLL_MULTI_MANIAC_ZARUDE_FORM                     25
+#define SCROLL_MULTI_MANIAC_MAUSHOLD_FORM                   26
+#define SCROLL_MULTI_MANIAC_SQUAWKABILLY_FORM               27
+#define SCROLL_MULTI_MANIAC_TATSUGIRI_FORM                  28
+#define SCROLL_MULTI_MANIAC_DUDUNSPARCE_FORM                29
+#define SCROLL_MULTI_MANIAC_SINISTCHA_FORM                  30
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
 #define MAX_SCROLL_MULTI_LENGTH 16

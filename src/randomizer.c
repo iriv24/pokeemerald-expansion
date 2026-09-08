@@ -1139,12 +1139,12 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
     {
         u8 actualAbilityNum = abilityNum;
         // If the ability slot is ABILITY_NONE, find the last valid ability slot
-        if (gSpeciesInfo[species].abilities[abilityNum] == ABILITY_NONE && abilityNum > 0)
+        if (GetSpeciesAbility(species, abilityNum) == ABILITY_NONE && abilityNum > 0)
         {
             // Search backwards from the current slot to find the last valid ability
             for (s8 i = abilityNum - 1; i >= 0; i--)
             {
-                if (gSpeciesInfo[species].abilities[i] != ABILITY_NONE)
+                if (GetSpeciesAbility(species, i) != ABILITY_NONE)
                 {
                     actualAbilityNum = i;
                     break;

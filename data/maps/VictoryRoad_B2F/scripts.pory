@@ -12,11 +12,6 @@ VictoryRoad_B2F_EventScript_Owen::
 	msgbox VictoryRoad_B2F_Text_OwenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-VictoryRoad_B2F_EventScript_Caroline::
-	trainerbattle_single TRAINER_CAROLINE, VictoryRoad_B2F_Text_CarolineIntro, VictoryRoad_B2F_Text_CarolineDefeat
-	msgbox VictoryRoad_B2F_Text_CarolinePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 VictoryRoad_B2F_EventScript_Julie::
 	trainerbattle_single TRAINER_JULIE, VictoryRoad_B2F_Text_JulieIntro, VictoryRoad_B2F_Text_JulieDefeat
 	msgbox VictoryRoad_B2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
@@ -108,3 +103,19 @@ VictoryRoad_B2F_Text_DiannePostBattle:
 	.string "Keep it going!$"
 
 `
+
+script VictoryRoad_B2F_EventScriptStrangeAura{
+	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
+	{
+	msgbox("A strange feeling emanates from this\n"
+	"floor…", MSGBOX_AUTOCLOSE)
+	}
+	setvar(VAR_TEMP_0, 1)
+	return
+}
+
+script VictoryRoad_B2F_EventScript_Caroline{
+	trainerbattle_single(TRAINER_CAROLINE, VictoryRoad_B2F_Text_CarolineIntro, VictoryRoad_B2F_Text_CarolineDefeat)
+	msgbox(VictoryRoad_B2F_Text_CarolinePostBattle, MSGBOX_AUTOCLOSE)
+	end
+}

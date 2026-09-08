@@ -869,26 +869,27 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "It can easily soar through the sky while\n"
             "gripping a Steelix that weighs more than\n"
             "880 lbs."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_StaraptorMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_StaraptorMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_StaraptorMega,
+        .shinyPalette = gMonShinyPalette_StaraptorMega,
+        .iconSprite = gMonIcon_StaraptorMega,
         .iconPalIndex = 0,
         FOOTPRINT(Staraptor)
-        SHADOW(-1, 0, SHADOW_SIZE_M)
+        SHADOW(-1, 13, SHADOW_SIZE_L)
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sStaraptorLevelUpLearnset,
         .teachableLearnset = sStaraptorTeachableLearnset,
         .formSpeciesIdTable = sStaraptorFormSpeciesIdTable,
         .formChangeTable = sStaraptorFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_STARLY
@@ -4102,18 +4103,19 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "form. It flies around foes at Mach speed\n"
             "and cuts them to shreds with its sinister\n"
             "wing claws."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_GarchompMegaZ,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_GarchompMegaZ,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GarchompMegaZ,
+        .shinyPalette = gMonShinyPalette_GarchompMegaZ,
+        .iconSprite = gMonIcon_GarchompMegaZ,
         .iconPalIndex = 0,
         FOOTPRINT(Garchomp)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -4122,6 +4124,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sGarchompTeachableLearnset,
         .formSpeciesIdTable = sGarchompFormSpeciesIdTable,
         .formChangeTable = sGarchompFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
 #endif //P_FAMILY_GIBLE
@@ -4346,18 +4349,18 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "Mega Lucario Z can parry all manner of\n"
             "attacks, battling as if it were gracefully\n"
             "dancing."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_LucarioMegaZ,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_LucarioMegaZ,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_LucarioMegaZ,
+        .shinyPalette = gMonShinyPalette_LucarioMegaZ,
+        .iconSprite = gMonIcon_LucarioMegaZ,
         .iconPalIndex = 0,
         FOOTPRINT(Lucario)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -4366,6 +4369,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sLucarioTeachableLearnset,
         .formSpeciesIdTable = sLucarioFormSpeciesIdTable,
         .formChangeTable = sLucarioFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_RIOLU
@@ -6254,18 +6258,18 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "can heat its body up to temperatures\n"
             "over 1.8 million degrees Fahrenheit.\n"
             "This heat keeps enemies at bay."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_HeatranMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_HeatranMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 15,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_HeatranMega,
+        .shinyPalette = gMonShinyPalette_HeatranMega,
+        .iconSprite = gMonIcon_HeatranMega,
         .iconPalIndex = 0,
         FOOTPRINT(Heatran)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -6276,6 +6280,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sHeatranTeachableLearnset,
         .formSpeciesIdTable = sHeatranFormSpeciesIdTable,
         .formChangeTable = sHeatranFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_HEATRAN
@@ -6821,18 +6826,19 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             "plunging the surrounding area into\n"
             "darkness. There is no escaping its\n"
             "evil eye."),
-        .frontPic = gMonBackPic_CircledQuestionMark,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPic = gMonFrontPic_DarkraiMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_None,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_CircledQuestionMark,
-        .backPicSize = MON_COORDS_SIZE(40, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_CircledQuestionMark,
-        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
-        .iconSprite = gMonIcon_QuestionMark,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_DarkraiMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_DarkraiMega,
+        .shinyPalette = gMonShinyPalette_DarkraiMega,
+        .iconSprite = gMonIcon_DarkraiMega,
         .iconPalIndex = 0,
         FOOTPRINT(Darkrai)
         SHADOW(-1, 0, SHADOW_SIZE_M)
@@ -6844,6 +6850,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sDarkraiTeachableLearnset,
         .formSpeciesIdTable = sDarkraiFormSpeciesIdTable,
         .formChangeTable = sDarkraiFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_DARKRAI

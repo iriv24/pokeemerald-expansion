@@ -113,6 +113,7 @@ enum
     LIST_ITEM_AI_INFO,
     LIST_ITEM_AI_PARTY,
     LIST_ITEM_VARIOUS,
+    LIST_ITEM_INSTANT_WIN,
     LIST_ITEM_COUNT
 };
 
@@ -292,6 +293,7 @@ static const u8 sText_AIMovePts[] = _("AI Pts/Dmg");
 static const u8 sText_AiKnowledge[] = _("AI Info");
 static const u8 sText_AiParty[] = _("AI Party");
 static const u8 sText_Various[] = _("Various");
+static const u8 sText_InstantWin[] = _("Instant Win");
 static const u8 sText_CurrHp[] = _("HP Current");
 static const u8 sText_MaxHp[] = _("HP Max");
 static const u8 sText_Attack[] = _("Attack");
@@ -522,6 +524,7 @@ static const struct ListMenuItem sMainListItems[] =
     {sText_AiKnowledge, LIST_ITEM_AI_INFO},
     {sText_AiParty, LIST_ITEM_AI_PARTY},
     {sText_Various, LIST_ITEM_VARIOUS},
+    {sText_InstantWin, LIST_ITEM_INSTANT_WIN},
 };
 
 static const struct ListMenuItem sStatsListItems[] =
@@ -1382,6 +1385,13 @@ static void Task_DebugMenuProcessInput(u8 taskId)
                 SwitchToAiPartyView(taskId);
                 return;
             }
+            else if (listItemId == LIST_ITEM_INSTANT_WIN && JOY_NEW(A_BUTTON))
+            {
+                BattleDebug_WonBattle();
+                BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+                gTasks[taskId].func = Task_DebugMenuFadeOut;
+                return;
+            }
             data->currentMainListItemId = listItemId;
 
             // Create the secondary menu list.
@@ -1581,6 +1591,7 @@ static void CreateSecondaryListMenu(struct BattleDebugMenu *data)
         listTemplate.items = sSideStatusListItems;
         itemsCount = ARRAY_COUNT(sSideStatusListItems);
         break;
+    case LIST_ITEM_INSTANT_WIN:
     case LIST_ITEM_AI_MOVES_PTS:
     case LIST_ITEM_AI_INFO:
         return;
