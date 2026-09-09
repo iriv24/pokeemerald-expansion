@@ -495,6 +495,8 @@ script PetalburgWoods_EventScript_Sudowoodo{
 	msgbox(PetalburgWoods_MonUsedFieldMoveInterrupted, MSGBOX_DEFAULT)
 	closemessage
 	playse(SE_PIN)
+	applymovement(LOCALID_GARDENIA,Common_Movement_FacePlayer)
+	waitmovement(0)
 	special(ShakeCamera)
 	msgbox("DON'T!!!")
 	special(SpawnCameraObject)
@@ -517,13 +519,13 @@ script PetalburgWoods_EventScript_SudowoodoObserve{
 }
 
 script PetalburgWoods_EventScript_SudowoodoKO{
-	msgbox("Despite being knocked out, you still\n"
+	msgbox("Despite it being knocked out, you still\n"
 	"barely notice any difference…",MSGBOX_AUTOCLOSE)
 }
 
 script PetalburgWoods_Movement_GardeniaComes{
 	walk_fast_down
-	walk_fast_down
+	jump_special_down
 	walk_fast_down
 	walk_fast_down
 	walk_fast_left
@@ -646,8 +648,8 @@ script PetalburgWoods_EventScript_GardeniaGiveItems{
 text Gardenia_Greeting{
 	"What do you think you're doing?!\n"
 	"You didn't notice this wasn't a normal\l"
-	"Cut tree? This is my partner Sudowoodo!\l"
-	"He loves to disguise as a tree,\l"
+	"Cut tree? This is my Sudowoodo!\l"
+	"They love to disguise as trees,\l"
 	"especially in forests like this one\l"
 	"where it barely ever rains.\p"
 	"Hmm… I guess you're still green after\n"

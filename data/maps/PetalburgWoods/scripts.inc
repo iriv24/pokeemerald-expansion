@@ -987,61 +987,61 @@ PetalburgWoods_EventScript_Sudowoodo::
 # 497 "data/maps/PetalburgWoods/scripts.pory"
 	playse SE_PIN
 # 498 "data/maps/PetalburgWoods/scripts.pory"
-	special ShakeCamera
+	applymovement LOCALID_GARDENIA, Common_Movement_FacePlayer
 # 499 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox PetalburgWoods_EventScript_Sudowoodo_Text_0
+	waitmovement 0
 # 500 "data/maps/PetalburgWoods/scripts.pory"
-	special SpawnCameraObject
+	special ShakeCamera
 # 501 "data/maps/PetalburgWoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_CameraPanToGardenia
+	msgbox PetalburgWoods_EventScript_Sudowoodo_Text_0
 # 502 "data/maps/PetalburgWoods/scripts.pory"
-	waitmovement 0
+	special SpawnCameraObject
 # 503 "data/maps/PetalburgWoods/scripts.pory"
-	applymovement LOCALID_GARDENIA, PetalburgWoods_Movement_GardeniaComes
+	applymovement OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_CameraPanToGardenia
 # 504 "data/maps/PetalburgWoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_GardeniaComes
+	waitmovement 0
 # 505 "data/maps/PetalburgWoods/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_GARDENIA, PetalburgWoods_Movement_GardeniaComes
 # 506 "data/maps/PetalburgWoods/scripts.pory"
-	playse SE_WALL_HIT
+	applymovement OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_GardeniaComes
 # 507 "data/maps/PetalburgWoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_PlayerBump
-# 508 "data/maps/PetalburgWoods/scripts.pory"
 	waitmovement 0
+# 508 "data/maps/PetalburgWoods/scripts.pory"
+	playse SE_WALL_HIT
 # 509 "data/maps/PetalburgWoods/scripts.pory"
-	special RemoveCameraObject
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_PlayerBump
 # 510 "data/maps/PetalburgWoods/scripts.pory"
-	goto PetalburgWoods_EventScript_Gardenia
+	waitmovement 0
 # 511 "data/maps/PetalburgWoods/scripts.pory"
+	special RemoveCameraObject
+# 512 "data/maps/PetalburgWoods/scripts.pory"
+	goto PetalburgWoods_EventScript_Gardenia
+# 513 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 	return
 
 
 PetalburgWoods_EventScript_SudowoodoObserve::
-# 515 "data/maps/PetalburgWoods/scripts.pory"
+# 517 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_SudowoodoObserve_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 PetalburgWoods_EventScript_SudowoodoKO::
-# 520 "data/maps/PetalburgWoods/scripts.pory"
+# 522 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_EventScript_SudowoodoKO_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 PetalburgWoods_Movement_GardeniaComes::
-# 525 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_down
-# 526 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_down
 # 527 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_down
 # 528 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_down
+	jump_special_down
 # 529 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 530 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 531 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_left
 # 532 "data/maps/PetalburgWoods/scripts.pory"
@@ -1049,41 +1049,41 @@ PetalburgWoods_Movement_GardeniaComes::
 # 533 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_left
 # 534 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_up
+	walk_fast_left
 # 535 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_up
+	walk_fast_left
 # 536 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_up
 # 537 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_up
 # 538 "data/maps/PetalburgWoods/scripts.pory"
-	walk_in_place_faster_up
+	walk_fast_up
 # 539 "data/maps/PetalburgWoods/scripts.pory"
+	walk_fast_up
+# 540 "data/maps/PetalburgWoods/scripts.pory"
+	walk_in_place_faster_up
+# 541 "data/maps/PetalburgWoods/scripts.pory"
 	step_end
 	return
 
 
 PetalburgWoods_Movement_PlayerBump::
-# 543 "data/maps/PetalburgWoods/scripts.pory"
+# 545 "data/maps/PetalburgWoods/scripts.pory"
 	walk_in_place_faster_down
-# 544 "data/maps/PetalburgWoods/scripts.pory"
+# 546 "data/maps/PetalburgWoods/scripts.pory"
 	step_end
 	return
 
 
 PetalburgWoods_EventScript_SudowoodoCancelCut::
-# 548 "data/maps/PetalburgWoods/scripts.pory"
+# 550 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
-# 549 "data/maps/PetalburgWoods/scripts.pory"
+# 551 "data/maps/PetalburgWoods/scripts.pory"
 	releaseall
 	end
 
 
 PetalburgWoods_Movement_CameraPanToGardenia::
-# 554 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_right
-# 555 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_right
 # 556 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_right
 # 557 "data/maps/PetalburgWoods/scripts.pory"
@@ -1091,151 +1091,155 @@ PetalburgWoods_Movement_CameraPanToGardenia::
 # 558 "data/maps/PetalburgWoods/scripts.pory"
 	walk_fast_right
 # 559 "data/maps/PetalburgWoods/scripts.pory"
-	walk_fast_down
+	walk_fast_right
 # 560 "data/maps/PetalburgWoods/scripts.pory"
+	walk_fast_right
+# 561 "data/maps/PetalburgWoods/scripts.pory"
+	walk_fast_down
+# 562 "data/maps/PetalburgWoods/scripts.pory"
 	step_end
 	return
 
 
 PetalburgWoods_EventScript_Gardenia::
-# 574 "data/maps/PetalburgWoods/scripts.pory"
-	lockall
-# 575 "data/maps/PetalburgWoods/scripts.pory"
-	applymovement 14, Common_Movement_FacePlayer
 # 576 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_defeated TRAINER_GARDENIA, PetalburgWoods_EventScript_GardeniaDefeated
+	lockall
 # 577 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_defeated TRAINER_GARDENIA2, PetalburgWoods_EventScript_GardeniaDefeated
+	applymovement 14, Common_Movement_FacePlayer
 # 578 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_set FLAG_TEMP_1, PetalburgWoods_EventScript_GardeniaRequestBattleAgain
+	goto_if_defeated TRAINER_GARDENIA, PetalburgWoods_EventScript_GardeniaDefeated
 # 579 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox Gardenia_Greeting, MSGBOX_DEFAULT
+	goto_if_defeated TRAINER_GARDENIA2, PetalburgWoods_EventScript_GardeniaDefeated
 # 580 "data/maps/PetalburgWoods/scripts.pory"
-	waitmessage
+	goto_if_set FLAG_TEMP_1, PetalburgWoods_EventScript_GardeniaRequestBattleAgain
 # 581 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox Gardenia_WillYouBattleMe, MSGBOX_YESNO
+	msgbox Gardenia_Greeting, MSGBOX_DEFAULT
 # 582 "data/maps/PetalburgWoods/scripts.pory"
+	waitmessage
+# 583 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_WillYouBattleMe, MSGBOX_YESNO
+# 584 "data/maps/PetalburgWoods/scripts.pory"
 	goto PetalburgWoods_EventScript_BattleGardeniaPrompt
 	end
 
 
 PetalburgWoods_EventScript_GardeniaRequestBattleAgain::
-# 587 "data/maps/PetalburgWoods/scripts.pory"
+# 589 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox Gardenia_ReadyYet, MSGBOX_YESNO
-# 588 "data/maps/PetalburgWoods/scripts.pory"
+# 590 "data/maps/PetalburgWoods/scripts.pory"
 	goto PetalburgWoods_EventScript_BattleGardeniaPrompt
 	end
 
 
 PetalburgWoods_EventScript_BattleGardeniaPrompt::
-# 593 "data/maps/PetalburgWoods/scripts.pory"
-	call_if_eq VAR_RESULT, YES, PetalburgWoods_EventScript_BattleGardenia
-# 594 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_DeclineGardeniaBattle
 # 595 "data/maps/PetalburgWoods/scripts.pory"
+	call_if_eq VAR_RESULT, YES, PetalburgWoods_EventScript_BattleGardenia
+# 596 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_DeclineGardeniaBattle
+# 597 "data/maps/PetalburgWoods/scripts.pory"
 	closemessage
 	end
 
 
 PetalburgWoods_EventScript_DeclineGardeniaBattle::
-# 600 "data/maps/PetalburgWoods/scripts.pory"
-	setflag FLAG_TEMP_1
-# 601 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox Gardenia_ComeBackWhenReady, MSGBOX_DEFAULT
 # 602 "data/maps/PetalburgWoods/scripts.pory"
+	setflag FLAG_TEMP_1
+# 603 "data/maps/PetalburgWoods/scripts.pory"
+	msgbox Gardenia_ComeBackWhenReady, MSGBOX_DEFAULT
+# 604 "data/maps/PetalburgWoods/scripts.pory"
 	release
 	end
 
 
 PetalburgWoods_EventScript_BattleGardenia::
-# 607 "data/maps/PetalburgWoods/scripts.pory"
-	msgbox PetalburgWoods_EventScript_BattleGardenia_Text_0, MSGBOX_DEFAULT
-# 608 "data/maps/PetalburgWoods/scripts.pory"
-	goto_if_set FLAG_BADGE03_GET, PetalburgWoods_EventScript_BattleGardenia2
 # 609 "data/maps/PetalburgWoods/scripts.pory"
-	trainerbattle_no_intro TRAINER_GARDENIA, Gardenia_Outro
+	msgbox PetalburgWoods_EventScript_BattleGardenia_Text_0, MSGBOX_DEFAULT
 # 610 "data/maps/PetalburgWoods/scripts.pory"
+	goto_if_set FLAG_BADGE03_GET, PetalburgWoods_EventScript_BattleGardenia2
+# 611 "data/maps/PetalburgWoods/scripts.pory"
+	trainerbattle_no_intro TRAINER_GARDENIA, Gardenia_Outro
+# 612 "data/maps/PetalburgWoods/scripts.pory"
 	goto PetalburgWoods_EventScript_GardeniaGiveItems
 	return
 
 
 PetalburgWoods_EventScript_BattleGardenia2::
-# 615 "data/maps/PetalburgWoods/scripts.pory"
+# 617 "data/maps/PetalburgWoods/scripts.pory"
 	trainerbattle_no_intro TRAINER_GARDENIA2, Gardenia_Outro
-# 616 "data/maps/PetalburgWoods/scripts.pory"
+# 618 "data/maps/PetalburgWoods/scripts.pory"
 	goto PetalburgWoods_EventScript_GardeniaGiveItems
 	end
 
 
 PetalburgWoods_EventScript_GardeniaDefeated::
-# 623 "data/maps/PetalburgWoods/scripts.pory"
+# 625 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PostBattle_Gardenia, MSGBOX_DEFAULT
-# 624 "data/maps/PetalburgWoods/scripts.pory"
+# 626 "data/maps/PetalburgWoods/scripts.pory"
 	releaseall
 	end
 
 
 PetalburgWoods_EventScript_GardeniaGiveItems::
-# 629 "data/maps/PetalburgWoods/scripts.pory"
-	setflag FLAG_HIDE_SUDOWOODO
-# 630 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_EVIOLITE
 # 631 "data/maps/PetalburgWoods/scripts.pory"
+	setflag FLAG_HIDE_SUDOWOODO
+# 632 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_EVIOLITE
+# 633 "data/maps/PetalburgWoods/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
 	goto_if_ge PetalburgWoods_EventScript_GardeniaGiveItems_2
-# 638 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_TM_U_TURN
-# 639 "data/maps/PetalburgWoods/scripts.pory"
-	giveitem ITEM_LEAF_STONE, 10
 # 640 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_TM_U_TURN
+# 641 "data/maps/PetalburgWoods/scripts.pory"
+	giveitem ITEM_LEAF_STONE, 10
+# 642 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox Gardenia_ExplainItems
 PetalburgWoods_EventScript_GardeniaGiveItems_1:
-# 642 "data/maps/PetalburgWoods/scripts.pory"
+# 644 "data/maps/PetalburgWoods/scripts.pory"
 	release
 	end
 
 PetalburgWoods_EventScript_GardeniaGiveItems_2:
-# 633 "data/maps/PetalburgWoods/scripts.pory"
+# 635 "data/maps/PetalburgWoods/scripts.pory"
 	giveitem ITEM_BOTTLE_CAP
-# 634 "data/maps/PetalburgWoods/scripts.pory"
+# 636 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox Gardenia_ExplainItemsHard
 	goto PetalburgWoods_EventScript_GardeniaGiveItems_1
 
 
 PetalburgWoods_EventScript_Sudowoodo_Text_0:
-# 499 "data/maps/PetalburgWoods/scripts.pory"
+# 501 "data/maps/PetalburgWoods/scripts.pory"
 	.string "DON'T!!!$"
 
 PetalburgWoods_EventScript_SudowoodoObserve_Text_0:
-# 515 "data/maps/PetalburgWoods/scripts.pory"
+# 517 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Despite what Gardenia said, you\n"
 	.string "barely notice any difference…$"
 
 PetalburgWoods_EventScript_SudowoodoKO_Text_0:
-# 520 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Despite being knocked out, you still\n"
+# 522 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Despite it being knocked out, you still\n"
 	.string "barely notice any difference…$"
 
 PetalburgWoods_EventScript_BattleGardenia_Text_0:
-# 607 "data/maps/PetalburgWoods/scripts.pory"
+# 609 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Let's go!$"
 
 PetalburgWoods_CutTree::
-# 563 "data/maps/PetalburgWoods/scripts.pory"
+# 565 "data/maps/PetalburgWoods/scripts.pory"
 	.string "This tree looks like it can be\n"
 	.string "Cut down!\p"
 	.string "Would you like to Cut it?$"
 
 PetalburgWoods_MonUsedFieldMoveInterrupted::
-# 569 "data/maps/PetalburgWoods/scripts.pory"
+# 571 "data/maps/PetalburgWoods/scripts.pory"
 	.string "{STR_VAR_1} used-$"
 
 Gardenia_Greeting::
-# 646 "data/maps/PetalburgWoods/scripts.pory"
+# 648 "data/maps/PetalburgWoods/scripts.pory"
 	.string "What do you think you're doing?!\n"
 	.string "You didn't notice this wasn't a normal\l"
-	.string "Cut tree? This is my partner Sudowoodo!\l"
-	.string "He loves to disguise as a tree,\l"
+	.string "Cut tree? This is my Sudowoodo!\l"
+	.string "They love to disguise as trees,\l"
 	.string "especially in forests like this one\l"
 	.string "where it barely ever rains.\p"
 	.string "Hmm… I guess you're still green after\n"
@@ -1256,16 +1260,16 @@ Gardenia_Greeting::
 	.string "worth your while!$"
 
 Gardenia_ReadyYet::
-# 671 "data/maps/PetalburgWoods/scripts.pory"
+# 673 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Want to battle now?$"
 
 Gardenia_ComeBackWhenReady::
-# 675 "data/maps/PetalburgWoods/scripts.pory"
+# 677 "data/maps/PetalburgWoods/scripts.pory"
 	.string "I'll be here looking for some more\n"
 	.string "Grass-types in the meantime.$"
 
 Gardenia_ExplainItems::
-# 680 "data/maps/PetalburgWoods/scripts.pory"
+# 682 "data/maps/PetalburgWoods/scripts.pory"
 	.string "That TM contains U-turn, it's very\n"
 	.string "useful for getting a hit off while\l"
 	.string "switching out a Pokémon.\p"
@@ -1275,22 +1279,22 @@ Gardenia_ExplainItems::
 	.string "evolve quite yet.$"
 
 Gardenia_ExplainItemsHard::
-# 690 "data/maps/PetalburgWoods/scripts.pory"
+# 692 "data/maps/PetalburgWoods/scripts.pory"
 	.string "The Eviolite is my favorite Item,\n"
 	.string "it's great for Pokémons you can't\l"
 	.string "evolve quite yet.$"
 
 Gardenia_WillYouBattleMe::
-# 696 "data/maps/PetalburgWoods/scripts.pory"
+# 698 "data/maps/PetalburgWoods/scripts.pory"
 	.string "How does that sound to you?\n"
 	.string "Want to have a battle?$"
 
 Gardenia_Outro::
-# 701 "data/maps/PetalburgWoods/scripts.pory"
+# 703 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Not bad at all! As promised, please take\n"
 	.string "these rewards for beating me.$"
 
 PostBattle_Gardenia::
-# 707 "data/maps/PetalburgWoods/scripts.pory"
+# 709 "data/maps/PetalburgWoods/scripts.pory"
 	.string "Hope there are some cool Grass-types in\n"
 	.string "this region!$"
