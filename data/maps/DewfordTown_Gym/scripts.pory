@@ -1,4 +1,9 @@
 raw `
+.set LOCALID_BRAWLY, 1
+.set LOCALID_HARIYAMA, 8
+.set LOCALID_ROCKSMASHLEFT, 9
+.set LOCALID_ROCKSMASHRIGHT, 10
+
 DewfordTown_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
 	.byte 0
@@ -132,15 +137,6 @@ DewfordTown_Gym_EventScript_CheckLilith::
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_StopCountingTrainers::
 	return
-
-DewfordTown_Gym_EventScript_Brawly::
-	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
-	goto_if_unset FLAG_RECEIVED_TM_LOW_SWEEP, DewfordTown_Gym_EventScript_GiveLowSweep2
-	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
-	release
-	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
 	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
@@ -407,12 +403,8 @@ DewfordTown_Gym_Text_CristianPostBattle:
 	.string "Go after that Badge!$"
 
 DewfordTown_Gym_Text_BrawlyIntro:
-	.string "I'm Brawly!\n"
-	.string "Dewford's Gym Leader!\p"
-	.string "I've been churned in the rough waves\n"
-	.string "of these parts, and I've grown tough\l"
-	.string "in the pitch-black cave!\p"
-	.string "So you wanted to challenge me?\n"
+	.string "Hariyama is as pumped as I am!\n"
+	.string "So you wanted to challenge me?\l"
 	.string "Let me see what you're made of!$"
 
 DewfordTown_Gym_Text_BrawlyDefeat:
@@ -485,3 +477,60 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 DewfordTown_Gym_Text_Hariyama:
 	.string "Hariyama: Har- Har- HARIYAMA!$"
 `
+
+
+script DewfordTown_Gym_EventScript_Brawly{
+	goto_if_defeated(TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_BrawlyPostBattle)
+	specialvar(VAR_RESULT, ShouldTryRematchBattle)
+	goto_if_eq(VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch)
+	msgbox(DewfordTown_Gym_Text_BrawlyFirstTalk, MSGBOX_AUTOCLOSE)
+	setobjectmovementtype(LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT)
+	applymovement(LOCALID_HARIYAMA, Common_Movement_FaceLeft)
+	applymovement(LOCALID_BRAWLY, DewfordTown_Gym_EventScript_BrawlyBreakRock)
+	applymovement(LOCALID_HARIYAMA, DewfordTown_Gym_EventScript_HariyamaBreakRock)
+	waitmovement(0)
+	delay(8)
+	playmoncry(SPECIES_HARIYAMA, CRY_MODE_ENCOUNTER)
+	playse(SE_BREAKABLE_DOOR)
+	applymovement(LOCALID_ROCKSMASHRIGHT, Movement_SmashRock)
+	applymovement(LOCALID_ROCKSMASHLEFT, Movement_SmashRock)
+	waitmovement(0)
+	waitmoncry
+	delay(8)
+	applymovement(LOCALID_HARIYAMA, Common_Movement_FaceDown)
+	applymovement(LOCALID_BRAWLY, Common_Movement_FacePlayer)
+	waitmovement(0)
+	setobjectmovementtype(LOCALID_HARIYAMA, MOVEMENT_TYPE_FACE_LEFT)
+	trainerbattle_single(TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC)
+	goto_if_unset(FLAG_RECEIVED_TM_LOW_SWEEP, DewfordTown_Gym_EventScript_GiveLowSweep2)
+	releaseall
+	end
+}
+
+script DewfordTown_Gym_EventScript_BrawlyBreakRock{
+	face_right
+	walk_in_place_faster_right
+	step_end
+}
+
+script DewfordTown_Gym_EventScript_HariyamaBreakRock{
+	walk_in_place_faster_left
+	step_end
+}
+
+text DewfordTown_Gym_Text_BrawlyFirstTalk{
+	"I'm Brawly!\n"
+	"Dewford's Gym Leader!\p"
+	"I've been churned in the rough waves\n"
+	"of these parts, and I've grown tough\l"
+	"in the pitch-black cave!\p"
+	"I've seen you fight my trainers,\n"
+	"you've got guts… But it will take a lot\l"
+	"more than spirit to defeat me."
+}
+
+script DewfordTown_Gym_EventScript_BrawlyPostBattle{
+	msgbox(DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+

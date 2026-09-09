@@ -1369,15 +1369,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Maylene[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Gardenia[] = {
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Gardenia, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_Gardenia, 2, 4),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Cynthia[] = {
@@ -1433,15 +1425,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Candice[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Volkner[] = {
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Volkner, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_Volkner, 2, 4),
 };
 
 const struct SpriteFrameImage sPicTable_GoldItemBall[] = {
