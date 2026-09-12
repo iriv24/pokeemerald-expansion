@@ -3150,7 +3150,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, relearnOptionToAppend);
         }
     }
-    if(!FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0)
+    if(!FlagGet(FLAG_ENTERED_ELITE_4) && VarGet(VAR_HOT_HOUSE_STATE) == 0 && !InTrickHouseGauntlet())
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MODE);
     }

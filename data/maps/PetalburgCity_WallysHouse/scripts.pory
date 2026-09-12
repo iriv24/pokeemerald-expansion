@@ -27,6 +27,7 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 	giveitem ITEM_TM_DUAL_CHOP
 	giveitem ITEM_TM_FUTURE_SIGHT
 	giveitem ITEM_TM_DUAL_WINGBEAT
+	giveitem ITEM_HM_SURF
 	setflag FLAG_RECEIVED_HM_SURF
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_CITY_STATE, 5
@@ -114,23 +115,20 @@ PetalburgCity_WallysHouse_Text_PleaseExcuseUs:
 	.string "It made me, his father, happy too.\p"
 	.string "Happy that he's gained such a great\n"
 	.string "friend as you.\p"
-	.string "Now, I feel terrible that I dropped the\n"
-	.string "HM03 Surf that I was going to give to\l"
-	.string "you out in the desert on Route 111.\p"
-	.string "I told some nice trainers to protect it\n"
-	.string "as I scampered out of there, though, so\l"
-	.string "I'm sure it's safe and they'll let you\l"
-	.string "right through!\p"
-	.string "To make it up to you, please take these!$"
-
+	.string "Now that you defeated Norman, your\n"
+	.string "next stop should be Fortree City!\l"
+	.string "Which means you'll need to Surf to\l"
+	.string "cross Route 118.\p"
+	.string "To thank you, I'd like you to have\n"
+	.string "this HM03 Surf as well as those TMs!$"
 
 PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces:
 	.string "Bit of an odd collection of TMs, I know,\n"
-	.string "but I figured it's better than nothing!$"
+	.string "but I figured you'd know how to use them!$"
 
 PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
-	.string "How silly of me, I can't believe I\n"
-	.string "dropped HM03 Surf out in the desert.$"
+	.string "I'm excited to see how far you will\n"
+	.string "go {PLAYER}{KUN}!$"
 
 PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
 	.string "Oh? You met Wally in\n"

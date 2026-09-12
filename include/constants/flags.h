@@ -62,7 +62,7 @@
 #define FLAG_RECEIVED_MEGA_STONES      0x30
 #define FLAG_RECEIVED_TMS_FROM_TUTOR   0x31
 #define FLAG_DECLINED_DANCE_BATTLE     0x32
-#define FLAG_UNUSED_0x33               0x33 // unused
+#define FLAG_BEAT_TRICK_HOUSE_HARD_MODE 0x33
 #define FLAG_UNUSED_0x34               0x34 // unused
 #define FLAG_UNUSED_0x35               0x35 // unused
 #define FLAG_RECEIVED_SCOPE_LENS       0x36

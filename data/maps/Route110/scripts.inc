@@ -1797,9 +1797,9 @@ Route110_Text_WallyRoute110Thinking:
 # 899 "data/maps/Route110/scripts.pory"
 Route110_Text_WallyLetsBattle:
 # 900 "data/maps/Route110/scripts.pory"
-	.string "Ahh! {PLAYER}! I haven't been\n"
+	.string "Ahh! {PLAYER}! I haven't been able to\n"
 # 901 "data/maps/Route110/scripts.pory"
-	.string "able to find the key my Dad gave me…\p"
+	.string "find the key my Dad gave me…\p"
 # 902 "data/maps/Route110/scripts.pory"
 	.string "What's that? You found it in the\n"
 # 903 "data/maps/Route110/scripts.pory"

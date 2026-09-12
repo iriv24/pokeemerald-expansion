@@ -302,7 +302,7 @@ Route111_WinstrateFamilysHouse_EventScript_Victoria::
 	msgbox Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMegaStones, MSGBOX_DEFAULT
 # 154 "data/maps/Route111_WinstrateFamilysHouse/scripts.pory"
 	compare VAR_GAME_SETTING_DIFFICULTY_MODE, GAME_SETTING_DIFFICULTY_HARD_MODE
-	goto_if_ge Route111_WinstrateFamilysHouse_EventScript_Victoria_2
+	goto_if_lt Route111_WinstrateFamilysHouse_EventScript_Victoria_2
 Route111_WinstrateFamilysHouse_EventScript_Victoria_1:
 # 172 "data/maps/Route111_WinstrateFamilysHouse/scripts.pory"
 	giveitemfast ITEM_AUDINITE
