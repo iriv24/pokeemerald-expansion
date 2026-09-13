@@ -351,7 +351,7 @@
     ),
 
     [SPECIES_TOEDSCOOL] = HARD_MODE(
-        .abilities = { ABILITY_MOLD_BREAKER,  ABILITY_MOLD_BREAKER,  ABILITY_QUICK_FEET },
+        .abilities = { ABILITY_CLEAR_BODY,  ABILITY_MOLD_BREAKER,  ABILITY_QUICK_FEET },
         .levelUpLearnset = sToedscoolLevelUpLearnset,
         .teachableLearnset = sToedscoolTeachableLearnset,
         .eggMoveLearnset = sToedscoolEggMoveLearnset,
@@ -359,7 +359,7 @@
     ),
 
     [SPECIES_TOEDSCRUEL] = HARD_MODE(
-        .abilities = { ABILITY_MOLD_BREAKER,  ABILITY_MOLD_BREAKER,  ABILITY_QUICK_FEET },
+        .abilities = { ABILITY_CLEAR_BODY,  ABILITY_MOLD_BREAKER,  ABILITY_QUICK_FEET },
         .levelUpLearnset = sToedscruelLevelUpLearnset,
         .teachableLearnset = sToedscruelTeachableLearnset,
         .eggMoveLearnset = sToedscoolEggMoveLearnset,
