@@ -824,22 +824,6 @@ Route110_Movement_BirchExit4:
 	walk_up
 	step_end
 
-Route110_EventScript_Wally::
-	lockall
-	msgbox Route110_Text_WallyRoute110Thinking, MSGBOX_DEFAULT
-	closemessage
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_WALLY, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_WALLY, Common_Movement_Delay48
-	waitmovement 0
-	msgbox Route110_Text_WallyLetsBattle, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_WALLY_ROUTE_110, Route110_Text_WallyDefeated
-	goto Route110_EventScript_AfterWallyBattle
-	end
-
 Route110_EventScript_AfterWallyBattle::
 	msgbox Route110_Text_WallyTimeToHeadBack, MSGBOX_DEFAULT
 	goto Route110_EventScript_WallyExit
@@ -913,18 +897,19 @@ Route110_Text_WallyRoute110Thinking:
 	.string "will I even be able to hold my own?$"
 
 Route110_Text_WallyLetsBattle:
-	.string "Ahh!\p"
-	.string "Geez, don't sneak up on me like that,\n"
-	.string "{PLAYER}.\p"
-	.string "I've gotten a lot stronger since our\n"
-	.string "battle in Mauville!\p"
+	.string "Ahh! {PLAYER}! I haven't been able to\n"
+	.string "find the key my Dad gave me…\p"
+	.string "What's that? You found it in the\n"
+	.string "desert?! I knew I dropped it there…\p"
+	.string "I'm sorry you had to clean up after me,\n"
+	.string "but we can finally go inside the\l"
+	.string "Trick House.\p"
+	.string "You know, I've gotten a lot stronger\n"
+	.string "since our battle in Mauville!\p"
 	.string "Norman, I mean um, your Dad, even gave\n"
 	.string "me my own Mega Ring!\p"
 	.string "Gardevoir and I have been working\n"
 	.string "really hard…\p"
-	.string "I've been here contemplating going into\n"
-	.string "the Trick House for a while, but I'm\l"
-	.string "still a little hesitant.\p"
 	.string "I have an idea, let's battle out here,\n"
 	.string "and the winner gets to go into the\l"
 	.string "Trick House first!\p"
@@ -1228,6 +1213,30 @@ Route110_Text_KeepAnEyeOutForRival:
 
 `
 
+script Route110_EventScript_Wally{
+	if(flag(FLAG_TEMP_1))
+	{
+		msgbox(Route110_Text_WallyNoKeyQuick, MSGBOX_NPC)
+		end
+	}
+	lockall
+	msgbox(Route110_Text_WallyRoute110Thinking, MSGBOX_DEFAULT)
+	closemessage
+	playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+	applymovement(LOCALID_WALLY, Common_Movement_FacePlayer)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(LOCALID_WALLY, Common_Movement_Delay48)
+	waitmovement(0)
+	checkitem(ITEM_TRICK_HOUSE_KEY)
+	goto_if_eq(VAR_RESULT, FALSE, Route110_EventScript_WallyNoKey)
+	msgbox(Route110_Text_WallyLetsBattle, MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_WALLY_ROUTE_110, Route110_Text_WallyDefeated)
+	goto(Route110_EventScript_AfterWallyBattle)
+	end
+}
+
 script Route110_Trigger_BlockTrickHouse{
 	lockall
 	msgbox(TrickHouseMessage)
@@ -1242,4 +1251,30 @@ text TrickHouseMessage {
 	"“Puzzles under construction,\n"
 	"come back later” - The Trick Master"
 
+}
+
+script Route110_EventScript_WallyNoKey{
+	msgbox(Route110_Text_WallyNoKey, MSGBOX_NPC)
+	setflag(FLAG_TEMP_1)
+	end
+}
+
+text Route110_Text_WallyNoKey{
+	"Ahh!\p"
+	"Geez, don't sneak up on me like that,\n"
+	"{PLAYER}.\p"
+	"What I'm doing here? Well…\p"
+	"I've been here contemplating going into\n"
+	"the Trick House for a while, but I can't\l"
+	"find the key Dad gave me.\p"
+	"I might have lost it in the desert on\n"
+	"Route 111…\p"
+	"I'm sorry to ask you this but do you\n"
+	"think you could go check for me while\l"
+	"I keep looking here?"
+}
+
+text Route110_Text_WallyNoKeyQuick{
+	"I'll stay here while you go\n"
+	"check the desert."
 }

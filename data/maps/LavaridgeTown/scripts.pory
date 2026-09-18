@@ -42,10 +42,10 @@ LavaridgeTown_EventScript_HideMapNamePopup::
 	return
 
 LavaridgeTown_OnFrame:
-	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveMegaRing
 	.2byte 0
 
-LavaridgeTown_EventScript_RivalGiveGoGoggles::
+LavaridgeTown_EventScript_RivalGiveMegaRing::
 	lockall
 	getplayerxy VAR_0x8008, VAR_0x8009
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalNoticePlayer
@@ -57,27 +57,21 @@ LavaridgeTown_EventScript_RivalGiveGoGoggles::
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalApproachPlayer1
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalApproachPlayer2
 	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, LavaridgeTown_EventScript_MayGiveGoGoggles
-	goto_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_BrendanGiveGoGoggles
+	goto_if_eq VAR_RESULT, MALE, LavaridgeTown_EventScript_MayGiveMegaRing
+	goto_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_BrendanGiveMegaRing
 	end
 
-LavaridgeTown_EventScript_MayGiveGoGoggles::
+LavaridgeTown_EventScript_MayGiveMegaRing::
 	msgbox LavaridgeTown_Text_MayNiceBadgesTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_MEGA_RING
-	giveitem ITEM_GO_GOGGLES
-	giveitem ITEM_SAFETY_GOGGLES
-	setflag FLAG_RECEIVED_GO_GOGGLES
-	msgbox LavaridgeTown_Text_MayExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Text_MayExplainMegaRingChallengeDad, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
-LavaridgeTown_EventScript_BrendanGiveGoGoggles::
+LavaridgeTown_EventScript_BrendanGiveMegaRing::
 	msgbox LavaridgeTown_Text_BrendanNiceBadgesTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_MEGA_RING
-	giveitem ITEM_GO_GOGGLES
-	giveitem ITEM_SAFETY_GOGGLES
-	setflag FLAG_RECEIVED_GO_GOGGLES
-	msgbox LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Text_BrendanExplainMegaRingChallengeDad, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
@@ -289,23 +283,20 @@ LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "yet, and look at that, great timing!\p"
 	.string "I just met your Dad at the Petalburg\n"
 	.string "Gym, and he told me that if I bumped\l"
-	.string "into you, I should give you these.$"
+	.string "into you, I should give you this.$"
 
-LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
-	.string "Those Go-Goggles will let you get\n"
-	.string "through the desert in Route 111.\p"
-	.string "I threw in some Safety Goggles as well,\n"
-	.string "can never have too many goggles,\l"
-	.string "you know?\p"
-	.string "When I spoke to your Dad, he said to\n"
+LavaridgeTown_Text_MayExplainMegaRingChallengeDad:
+	.string "When I spoke to him, he said to\n"
 	.string "give you that Mega Ring so it would be a\l"
 	.string "fair fight when you decided to\l"
 	.string "challenge him.\p"
-	.string "Oh, and one last thing.\p"
-	.string "I spoke with Wally's dad, and he told me\n"
-	.string "he was going to give you the {COLOR GREEN}{SHADOW LIGHT_GREEN}HM03 Surf,\l"
-	.string "but he accidentally dropped it out in\l"
-	.string "the desert somewhere.\p"
+	.string "Oh, that reminds me.\p"
+	.string "I saw Wally before coming here, he was\n"
+	.string "headed for the desert. If you want to\l"
+	.string "go there too, you'll have to get Goggles.\l"
+	.string "I got mine from the Winstrates Family on\l"
+	.string "Route 111 east of here. They should also give\l"
+	.string "you some Mega Stones to go with your ring.\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Okay, I think that's everything, I'll see\n"
 	.string "you around, {PLAYER}! Congrats on\l"
 	.string "beating Flannery, but don't get too\l"
@@ -320,23 +311,21 @@ LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
 	.string "yet, and look at that, great timing!\p"
 	.string "I just met your Dad at the Petalburg\n"
 	.string "Gym, and he told me that if I bumped\l"
-	.string "into you, I should give you these.$"
+	.string "into you, I should give you this.$"
 
-LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
-	.string "Those Go-Goggles will let you get\n"
-	.string "through the desert in Route 111.\p"
-	.string "I threw in some Safety Goggles as well,\n"
-	.string "can never have too many goggles,\l"
-	.string "you know?\p"
-	.string "When I spoke to your Dad, he said to\n"
-	.string "give you that Mega Ring so it would be a\l"
-	.string "fair fight when you decided to\l"
+LavaridgeTown_Text_BrendanExplainMegaRingChallengeDad:
+	.string "When I spoke to him, he said to\n"
+	.string "give you that Mega Ring so it would be\l"
+	.string "a fair fight when you decided to\l"
 	.string "challenge him.\p"
-	.string "Oh, and one last thing.\p"
-	.string "I spoke with Wally's dad, and he told me\n"
-	.string "he was going to give you the {COLOR GREEN}{SHADOW LIGHT_GREEN}HM03 Surf,\l"
-	.string "but he accidentally dropped it out in\l"
-	.string "the desert somewhere.\p"
+	.string "Oh, that reminds me.\p"
+	.string "I saw Wally before coming here, he was\n"
+	.string "headed for the desert. If you want to go\l"
+	.string "there too, you'll have to get Goggles.\l"
+	.string "I got mine from the Winstrates Family\l"
+	.string "on Route 111 east of here.\p"
+	.string "They should also give you some\n"
+	.string "Mega Stones to go with your new ring.\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Okay, I think that's everything, I'll see\n"
 	.string "you around, {PLAYER}! Congrats on\l"
 	.string "beating Flannery, but don't get too\l"

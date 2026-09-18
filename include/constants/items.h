@@ -1162,8 +1162,9 @@
 #define ITEM_GLIMMORANITE     994
 
 #define ITEM_INSTANT_CANDY    995
+#define ITEM_TRICK_HOUSE_KEY  996
 
-#define ITEMS_COUNT           996     // if this goes above 1023, see u32 heldItem:10; // 1023 items. in pokemon.h
+#define ITEMS_COUNT           997     // if this goes above 1023, see u32 heldItem:10; // 1023 items. in pokemon.h
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -115,7 +115,7 @@
 #define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
 #define VAR_ROUTE101_STATE                               0x4060
 #define VAR_CANDICEBEATSKID                              0x4061
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
+#define VAR_TRICK_HOUSE_HARD_MODE_STATE                  0x4062
 #define VAR_ROUTE104_STATE                               0x4063
 #define VAR_ROUTE105_STATE                               0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
@@ -272,7 +272,7 @@
 #define VAR_FOUGHT_DAWN_111                              0x40FC 
 #define VAR_DEXNAV_SPECIES                               0x40FD // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER                          0x40FE // steps for finding hidden pokemon
-#define VAR_BEAT_RIVAL_BACK_TO_BACK                      0x40FF // Unused Var
+#define VAR_BEAT_RIVAL_BACK_TO_BACK                      0x40FF
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
