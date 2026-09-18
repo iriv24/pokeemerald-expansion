@@ -168,6 +168,7 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt::
 	
 SlateportCity_OceanicMuseum_1F_EventScript_GiveTM_1:
 	goto_if_eq VAR_RESULT, 0, SlateportCity_OceanicMuseum_1F_EventScript_NoRoomForThief
+	giveitem ITEM_TM_WATER_PULSE
 	setflag FLAG_RECEIVED_TM_FLIP_TURN
 	msgbox SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgainHard, MSGBOX_DEFAULT
 	closemessage
