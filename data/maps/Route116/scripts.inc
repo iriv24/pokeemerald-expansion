@@ -1095,9 +1095,9 @@ Route116_EventScript_CandiceGiveIcyWind::
 	giveitem ITEM_TM_ICY_WIND
 # 571 "data/maps/Route116/scripts.pory"
 	msgbox Candice_ExplainIcyWindAndMuscleBand
-# 572 "data/maps/Route116/scripts.pory"
-	setflag FLAG_RECEIVED_TM_ICY_WIND
 Route116_EventScript_CandiceGiveIcyWind_1:
+# 573 "data/maps/Route116/scripts.pory"
+	setflag FLAG_RECEIVED_TM_ICY_WIND
 # 574 "data/maps/Route116/scripts.pory"
 	release
 	end
@@ -1226,9 +1226,9 @@ Route116_Movement_PanToCandiceVsJoshua::
 
 Route116_Movement_PanFromCandiceVsJoshua::
 # 742 "data/maps/Route116/scripts.pory"
-	walk_slow_diag_southwest
+	walk_slow_down
 # 743 "data/maps/Route116/scripts.pory"
-	walk_slow_diag_southwest
+	walk_slow_down
 # 744 "data/maps/Route116/scripts.pory"
 	walk_slow_down
 # 745 "data/maps/Route116/scripts.pory"

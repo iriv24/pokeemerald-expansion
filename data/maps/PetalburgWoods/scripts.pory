@@ -1,6 +1,8 @@
 raw `
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4
+.set LOCALID_GARDENIA, 14
+.set LOCALID_SUDOWOODO, 15
 
 PetalburgWoods_MapScripts::
 	.byte 0
@@ -474,6 +476,102 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 `
 
+script PetalburgWoods_EventScript_Sudowoodo{
+	goto_if_set(FLAG_HIDE_SUDOWOODO, PetalburgWoods_EventScript_SudowoodoKO)
+	goto_if_set(FLAG_TEMP_1, PetalburgWoods_EventScript_SudowoodoObserve)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	setvar(VAR_0x8004, 1)
+	setvar(VAR_0x8005, 1)
+	setvar(VAR_0x8006, 8)
+	setvar(VAR_0x8007, 3)
+	checkpartymove(MOVE_CUT)
+	setfieldeffectargument(0, VAR_RESULT)
+	bufferpartymonnick(STR_VAR_1, VAR_RESULT)
+	msgbox(PetalburgWoods_CutTree, MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, NO, PetalburgWoods_EventScript_SudowoodoCancelCut)
+	dofieldeffect(FLDEFF_USE_CUT_ON_TREE)
+	waitstate
+	msgbox(PetalburgWoods_MonUsedFieldMoveInterrupted, MSGBOX_DEFAULT)
+	closemessage
+	playse(SE_PIN)
+	applymovement(LOCALID_GARDENIA,Common_Movement_FacePlayer)
+	waitmovement(0)
+	special(ShakeCamera)
+	msgbox("DON'T!!!")
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_CameraPanToGardenia)
+	waitmovement(0)
+	applymovement(LOCALID_GARDENIA, PetalburgWoods_Movement_GardeniaComes)
+	applymovement(OBJ_EVENT_ID_CAMERA, PetalburgWoods_Movement_GardeniaComes)
+	waitmovement(0)
+	playse(SE_WALL_HIT)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgWoods_Movement_PlayerBump)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	goto(PetalburgWoods_EventScript_Gardenia)
+	closemessage
+}
+
+script PetalburgWoods_EventScript_SudowoodoObserve{
+	msgbox("Despite what Gardenia said, you\n"
+	"barely notice any difference…",MSGBOX_AUTOCLOSE)
+}
+
+script PetalburgWoods_EventScript_SudowoodoKO{
+	msgbox("Despite it being knocked out, you still\n"
+	"barely notice any difference…",MSGBOX_AUTOCLOSE)
+}
+
+script PetalburgWoods_Movement_GardeniaComes{
+	walk_fast_down
+	jump_special_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_in_place_faster_up
+	step_end
+}
+
+script PetalburgWoods_Movement_PlayerBump{
+	walk_in_place_faster_down
+	step_end
+}
+
+script PetalburgWoods_EventScript_SudowoodoCancelCut{
+	closemessage
+	releaseall
+	end
+}
+
+script PetalburgWoods_Movement_CameraPanToGardenia{
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	step_end
+}
+
+text PetalburgWoods_CutTree{
+	"This tree looks like it can be\n"
+	"Cut down!\p"
+	"Would you like to Cut it?"
+}
+
+text PetalburgWoods_MonUsedFieldMoveInterrupted{
+	"{STR_VAR_1} used-"
+}
+
 script PetalburgWoods_EventScript_Gardenia{
 	lockall
 	applymovement(14, Common_Movement_FacePlayer)
@@ -530,6 +628,7 @@ script PetalburgWoods_EventScript_GardeniaDefeated{
 }
 
 script PetalburgWoods_EventScript_GardeniaGiveItems{
+	setflag(FLAG_HIDE_SUDOWOODO)
 	giveitem(ITEM_EVIOLITE)
 	if (var(VAR_GAME_SETTING_DIFFICULTY_MODE) >= GAME_SETTING_DIFFICULTY_HARD_MODE)
 	{
@@ -547,7 +646,17 @@ script PetalburgWoods_EventScript_GardeniaGiveItems{
 }
 
 text Gardenia_Greeting{
-	"Aha! I saw you run by through those\n"
+	"What do you think you're doing?!\n"
+	"You didn't notice this wasn't a normal\l"
+	"Cut tree? This is my Sudowoodo!\l"
+	"They love to disguise as trees,\l"
+	"especially in forests like this one\l"
+	"where it barely ever rains.\p"
+	"Hmm… I guess you're still green after\n"
+	"all. You gotta be more careful with\l"
+	"nature and not act so recklessly if you\l"
+	"wanna be a proper trainer, y'know?\p"
+	"I saw you run by through those\n"
 	"trees earlier while I was hunting some\l"
 	"Grass-types, but it seemed clear you\l"
 	"couldn't cut them. The fact that you\l"
