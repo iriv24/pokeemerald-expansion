@@ -16195,4 +16195,20 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Aerodactylite,
         .iconPalette = gItemIconPalette_Aerodactylite,
     },
+
+    [ITEM_TRICK_HOUSE_KEY] =
+    {
+        .name = _("Trick House Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A key that can\n"
+            "open the Trick\n"
+            "House on Route 110."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
 };

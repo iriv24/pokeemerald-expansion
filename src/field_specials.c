@@ -1728,6 +1728,22 @@ bool8 InMultiPartnerRoom(void)
     return FALSE;
 }
 
+bool8 InTrickHouseGauntlet(void)
+{
+    if (VarGet(VAR_GAME_SETTING_DIFFICULTY_MODE) < GAME_SETTING_DIFFICULTY_HARD_MODE)
+        return FALSE;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE110_TRICK_HOUSE_PUZZLE6)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE110_TRICK_HOUSE_PUZZLE6))
+        return TRUE;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE110_TRICK_HOUSE_PUZZLE7)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE110_TRICK_HOUSE_PUZZLE7))
+        return TRUE;
+
+    return FALSE;
+}
+
 void OffsetCameraForBattle(void)
 {
     SetCameraPanningCallback(NULL);

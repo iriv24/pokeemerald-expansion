@@ -45,6 +45,8 @@ Route110_TrickHouseEnd_EventScript_SetDoorClosedMetatile::
 Route110_TrickHouseEnd_EventScript_TrickMaster::
 	lock
 	faceplayer
+	goto_if_eq VAR_TRICK_HOUSE_HARD_MODE_STATE, 1, Route110_TrickHouseEnd_EventScript_HardMode_NotDone
+	goto_if_eq VAR_TRICK_HOUSE_HARD_MODE_STATE, 3, Route110_TrickHouseEnd_EventScript_HardMode_YouWin
 	msgbox Route110_TrickHouseEnd_Text_YouveMadeItToMe, MSGBOX_DEFAULT
 	setvar VAR_TEMP_2, 1
 	switch VAR_TRICK_HOUSE_LEVEL
@@ -377,5 +379,94 @@ Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou:
 Route110_TrickHouseEnd_Text_YoureIgnoringMe:
 	.string "Now, now! You're ignoring me now?\n"
 	.string "Now that, I consider heartbreaking!$"
+
+Route110_TrickHouseEnd_EventScript_HardMode_NotDone::
+	goto_if_set FLAG_TEMP_1, Route110_TrickHouseEnd_EventScript_HardMode_ReadyPrompt
+	msgbox Route110_TrickHouseEnd_Text_HardMode_NotDone, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_1
+	goto Route110_TrickHouseEnd_EventScript_HardMode_ReadyPrompt
+
+Route110_TrickHouseEnd_EventScript_HardMode_ReadyPrompt::
+	msgbox Route110_TrickHouseEnd_Text_HardMode_Ready, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route110_TrickHouseEnd_EventScript_HardMode_Prepare
+	closemessage
+	msgbox Route110_TrickHouseEnd_Text_HardMode_InYouGo, MSGBOX_DEFAULT
+	setvar VAR_TRICK_HOUSE_HARD_MODE_STATE, 3
+	setvar VAR_TRICK_HOUSE_LEVEL, 6
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterJumpAway
+	waitmovement 0
+	removeobject LOCALID_TRICK_MASTER
+	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE7, 0, 21
+	waitstate
+	release
+	end
+
+Route110_TrickHouseEnd_EventScript_HardMode_Prepare::
+	msgbox Route110_TrickHouseEnd_Text_HardMode_TakeYourTime, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route110_TrickHouseEnd_EventScript_HardMode_YouWin::
+	msgbox Route110_TrickHouseEnd_Text_HardMode_YouWin, MSGBOX_DEFAULT
+	setvar VAR_TEMP_2, 1
+	setflag FLAG_BEAT_TRICK_HOUSE_3
+	setflag FLAG_BEAT_TRICK_HOUSE_HARD_MODE
+	giveitem ITEM_RARE_CANDY, 5
+	giveitem ITEM_PP_MAX, 3
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	call_if_eq VAR_PETALBURG_GYM_STATE, 7, Common_EventScript_ReadyPetalburgGymForBattle
+	msgbox Route110_TrickHouseEnd_Text_HardMode_Farewell, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_TRICK_HOUSE_HARD_MODE_STATE, 5
+	setvar VAR_TRICK_HOUSE_LEVEL, 7   @ TrickMasterExit's addvar bumps it to 8
+	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
+	special ResetTrickHouseNuggetFlag
+	delay 30
+	playfanfare MUS_LEVEL_UP
+	specialvar VAR_0x8006, GetLevelCapForText
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox LevelCapIncreasedTo, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	release
+	end
+
+Route110_TrickHouseEnd_Text_HardMode_NotDone:
+	.string "Wahaha! You cleared it, but do not\n"
+	.string "grow smug just yet!\p"
+	.string "I've one final trick prepared,\n"
+	.string "the trickiest of them all!\p"
+	.string "I'll give you some time to prepare,\n"
+	.string "it wouldn't be fun otherwise.$"
+
+Route110_TrickHouseEnd_Text_HardMode_YouWin:
+	.string "Im-impossible!\p"
+	.string "You've bested every trick I could\n"
+	.string "muster, and then some!\p"
+	.string "I concede… You are the sharpest\n"
+	.string "challenger to grace my house.$"
+
+Route110_TrickHouseEnd_Text_HardMode_Farewell:
+	.string "Take these as tokens of my defeat…\p"
+	.string "My fountain of ideas has run dry.\n"
+	.string "It is time I toured the country\l"
+	.string "on a quest to devise new tricks.\p"
+	.string "Farewell!$"
+
+Route110_TrickHouseEnd_Text_HardMode_Ready:
+	.string "Are you prepared for the next\n"
+	.string "challenge?$"
+
+Route110_TrickHouseEnd_Text_HardMode_TakeYourTime:
+	.string "Very well. Prepare yourself, and\n"
+	.string "speak to me when you are ready.$"
+
+Route110_TrickHouseEnd_Text_HardMode_InYouGo:
+	.string"In you go!$"
 
 `
